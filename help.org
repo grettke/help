@@ -56,6 +56,8 @@ tangled system.
   - Tell the story in speech, and then in code.
   - Consider it another paragraph and indent appropriately.
     - Never separate a paragraph and and a Code Block with a colon.
+- Content
+  - When importing update to conform with Style-Guide.
 - Entity
   - Code Snippet
     - Use ~code style~.
