@@ -31,7 +31,7 @@ unintentionally compile something to byte-code, resulting in unexpected
 behavior. It is also very easy to forget to compiles changes that you had wanted
 to include at run-time.
 
-This system does the simplest thing possible: when told to load a file it loads
+This System does the simplest thing possible: when told to load a file it loads
 the newest representation available. It relies on version control branches to
 selectively experiment with features in a predictable and simpler manner.
 
@@ -77,7 +77,7 @@ tangled system.
     - Replace spaces with dashes.
     - Probably the Heading name.
 - Word Choice
-  - Self Reference :: A noun. This system.
+  - Self Reference :: A noun. "This System". "The Operator".
   - Tangle :: A verb. Assemble a document for consumption by another program or
     machine.
   - Weave :: A verb. Prepare a document for consumption by a human.
