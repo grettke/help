@@ -1,6 +1,10 @@
 * Style Guide
 
-- Entity  
+- Entity
+  - Package
+    - Same as Headline.
+    - Acronyms are all upper case to distinguish from words for example "GNU"
+      vs "Gnu".
 - Headline
   - Capitalize nouns, verbs, and adjectives.
   - Don't capitalize conjunctions unless they are starting the definition.
