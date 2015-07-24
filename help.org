@@ -51,10 +51,6 @@ tangled system.
 - Entity
   - Code Snippet
     - Use ~code style~.
-  - Noweb-Ref
-    - Same as Headline.
-    - Replace spaces with dashes.
-    - Probably the Heading name.
   - Package
     - Same as Headline.
     - Dashes separate definition.
@@ -73,3 +69,8 @@ tangled system.
       non-existent.
 - Plain List
   - End single sentences with a period.
+- Literate Programming
+  - Noweb-Ref
+    - Same as Headline.
+    - Replace spaces with dashes.
+    - Probably the Heading name.
