@@ -4,7 +4,7 @@
    :header-args:   :tangle "./.emacs.el" :comments no
    :END:
 
-This tangle configures EMACS to do everything defined in this document.
+This web configures EMACS to do everything defined in this document.
 
 #+begin_src emacs-lisp
 «Principle-of-Least-Astonishment»
