@@ -1,3 +1,5 @@
 * Style Guide
 
 - Headline
+  - Capitalize nouns, verbs, and adjectives
+  - Don't capitalize conjunctions unless they are starting the definition
