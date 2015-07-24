@@ -1,6 +1,8 @@
 * Style Guide
 
 - Entity
+  - Code Snippet
+    - Use ~code style~.
   - Package
     - Same as Headline.
     - Acronyms are all upper case to distinguish from words for example "GNU"
