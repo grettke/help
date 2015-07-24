@@ -84,6 +84,8 @@ tangled system.
     - Same as Headline.
     - Replace spaces with dashes.
     - Probably the Heading name.
+- Maintenance
+  - Frequently check spelling, grammar, and weasel-words.
 - Word Choice
   - Self Reference :: A noun. "This System". "The Operator".
   - Tangle :: A verb. Assemble a document for consumption by another program or
