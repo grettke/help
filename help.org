@@ -1,4 +1,8 @@
 * Principle of Least Astonishment
+  :PROPERTIES:
+  :noweb-ref: Principle-of-Least-Astonishment
+  :END:
+  
 * Style Guide
 
 - Code Block
