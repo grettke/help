@@ -12,6 +12,10 @@ Operator is likely to use this on a daily basis.
 #+end_src
 
 * Literate Programming
+** Org-Mode
+** Tangling
+** Operating
+** Weaving
 * Principle of Least Astonishment
   :PROPERTIES:
   :noweb-ref: Principle-of-Least-Astonishment
