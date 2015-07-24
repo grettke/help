@@ -13,6 +13,10 @@ Operator is likely to use this on a daily basis.
 
 * Literate Programming
 ** Org-Mode Exemple Complet Minimal
+   :PROPERTIES:
+   :noweb-ref: org-mode-ecm
+   :END:
+   
 ** Tangling
 ** Weaving
 ** Programming
