@@ -49,7 +49,7 @@ tangled system.
 #+BEGIN_SRC emacs-lisp
 (setq load-prefer-newer t)
 #+END_SRC
-
+* Watch What You Eat
 * Style Guide
 
 - Code Block
@@ -98,4 +98,3 @@ tangled system.
     - Use ~t~ for ~true~.
 - Word Choice
   - Use Arabic numerals.
-* Watch What You Eat
