@@ -1,6 +1,7 @@
 * Style Guide
 
 - Headline
-  - Capitalize nouns, verbs, and adjectives
-  - Don't capitalize conjunctions unless they are starting the definition
+  - Capitalize nouns, verbs, and adjectives.
+  - Don't capitalize conjunctions unless they are starting the definition.
 - Plain List
+  - End single sentences with a period.
