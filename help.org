@@ -4,7 +4,7 @@
    :header-args:   :tangle "./.emacs.el" :comments no
    :END:
 
-This web configures EMACS to do everything defined in this document.
+This heading configures EMACS to do everything defined in this document.
 
 #+begin_src emacs-lisp
 «Principle-of-Least-Astonishment»
@@ -76,3 +76,7 @@ tangled system.
     - Same as Headline.
     - Replace spaces with dashes.
     - Probably the Heading name.
+- Word Choice
+  - tangle :: A verb, assembles a document for consumption by another program or
+    machine
+  - weave :: A verb, prepares a document for consumption by a human
