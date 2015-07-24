@@ -12,6 +12,12 @@
   - Capitalize nouns, verbs, and adjectives.
   - Don't capitalize conjunctions unless they are starting the definition.
   - Sell this chapter to the reader.
-- Hyperlink    
+- Hyperlink
+  - External
+    - Exclude those easily found with a search-engine unless you are willing to
+      verify their existence frequently.
+  - Internal
+    - Heading artifacts can be referenced so the need here is minimal to
+      non-existent.
 - Plain List
   - End single sentences with a period.
