@@ -1,3 +1,4 @@
+* Principle of Least Astonishment
 * Style Guide
 
 - Code Block
