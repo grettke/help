@@ -12,6 +12,8 @@
   - Capitalize nouns, verbs, and adjectives.
   - Don't capitalize conjunctions unless they are starting the definition.
   - Sell this chapter to the reader.
+  - If it has a property name then document it in the heading. That name will be
+    referenced in tangling and from in-document written references.
 - Hyperlink
   - External
     - Exclude those easily found with a search-engine unless you are willing to
