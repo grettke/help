@@ -70,6 +70,8 @@ tangled system.
 - Plain List
   - End single sentences with a period.
 - Literate Programming
+  - Comments
+    - Exclude from tangle-blocks and rely on source-block for traceability
   - Noweb-Ref
     - Same as Headline.
     - Replace spaces with dashes.
