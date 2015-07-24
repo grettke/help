@@ -14,8 +14,8 @@ Operator is likely to use this on a daily basis.
 * Literate Programming
 ** Org-Mode
 ** Tangling
-** Operating
 ** Weaving
+** Operating
 * Piano Lessons
 * Quiet and Pleasant
 * Principle of Least Astonishment
