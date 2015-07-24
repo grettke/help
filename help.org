@@ -12,7 +12,7 @@ Operator is likely to use this on a daily basis.
 #+END_SRC
 
 * Literate Programming
-** Org-Mode
+** Org-Mode Exemple Complet Minimal
 ** Tangling
 ** Weaving
 ** Programming
