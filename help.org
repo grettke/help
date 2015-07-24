@@ -58,6 +58,11 @@ tangled system.
     - Never separate a paragraph and and a Code Block with a colon.
 - Content
   - When importing update to conform with Style-Guide.
+- Dictionary
+  - Self Reference :: A noun. "This System". "The Operator".
+  - Tangle :: A verb. Assemble a document for consumption by another program or
+    machine.
+  - Weave :: A verb. Prepare a document for consumption by a human.
 - Entity
   - Code Snippet
     - Use ~code style~.
@@ -92,8 +97,4 @@ tangled system.
   - Emacs-Lisp
     - Use ~t~ for ~true~.
 - Word Choice
-  - Self Reference :: A noun. "This System". "The Operator".
-  - Tangle :: A verb. Assemble a document for consumption by another program or
-    machine.
-  - Weave :: A verb. Prepare a document for consumption by a human.
 * Watch What You Eat
