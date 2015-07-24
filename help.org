@@ -2,7 +2,31 @@
   :PROPERTIES:
   :noweb-ref: Principle-of-Least-Astonishment
   :END:
-  
+
+When you develop Emacs-Lisp code you work with two representations: text and
+byte-code. For every text representation of a file there is also a byte-code
+representation of a file. They have the same name and different extensions.
+Text ends with =.el= and byte-code ends with =.elc=. EMACS can load
+both representations. You may use these two files to develop a personal
+development workflow.
+
+You may compile text to byte-code for a speed increase. You may selectively
+compile individual artifacts to evaluate their impact on your system. This
+workflow is not only faster, it allows a code-and-run development style. You
+make your changes in text and selectively compile them to evaluate their impact
+on your system. When you run with this configuration you may also
+unintentionally compile something to byte-code, resulting in unexpected
+behavior. It is also very easy to forget to compiles changes that you had wanted
+to include at run-time.
+
+This system does the simplest thing possible: when told to load a file it loads
+the newest representation available. It relies on version control branches to
+selectively experiment with features in a predictable and simpler manner.
+
+#+begin_src emacs-lisp
+(setq load-prefer-newer t)
+#+end_src
+
 * Style Guide
 
 - Code Block
