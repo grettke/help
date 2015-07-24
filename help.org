@@ -8,6 +8,10 @@
 - Entity
   - Code Snippet
     - Use ~code style~.
+  - Noweb-Ref
+    - Same as Headline.
+    - Replace spaces with dashes.
+    - Probably the Heading name.
   - Package
     - Same as Headline.
     - Dashes separate definition.
@@ -17,8 +21,6 @@
   - Capitalize nouns, verbs, and adjectives.
   - Don't capitalize conjunctions unless they are starting the definition.
   - Sell this chapter to the reader.
-  - If it is a Noweb-Ref then its Entity name should be obvious. If it isn't
-    then include a reminder in the heading.
 - Hyperlink
   - External
     - Exclude those easily found with a search-engine unless you are willing to
