@@ -11,5 +11,6 @@
 - Headline
   - Capitalize nouns, verbs, and adjectives.
   - Don't capitalize conjunctions unless they are starting the definition.
+  - Sell this chapter to the reader.
 - Plain List
   - End single sentences with a period.
