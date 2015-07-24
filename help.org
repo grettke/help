@@ -1,5 +1,15 @@
 * Webs We Weave
 ** The Whole Enchilada
+   :PROPERTIES:
+   :header-args:   :tangle "./.emacs.el" :comments no
+   :END:
+
+This tangle configures EMACS to do everything defined in this document.
+
+#+begin_src emacs-lisp
+«Principle-of-Least-Astonishment»
+#+end_src
+
 * Principle of Least Astonishment
   :PROPERTIES:
   :noweb-ref: Principle-of-Least-Astonishment
