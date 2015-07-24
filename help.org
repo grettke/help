@@ -1,5 +1,6 @@
 * Style Guide
 
+- Code Block
 - Entity
   - Code Snippet
     - Use ~code style~.
