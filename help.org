@@ -35,6 +35,9 @@ This system does the simplest thing possible: when told to load a file it loads
 the newest representation available. It relies on version control branches to
 selectively experiment with features in a predictable and simpler manner.
 
+This is the *first* thing that needs to happen in the initialization of any
+tangled system.
+
 #+begin_src emacs-lisp
 (setq load-prefer-newer t)
 #+end_src
