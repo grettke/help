@@ -97,4 +97,5 @@ tangled system.
   - Emacs-Lisp
     - Use ~t~ for ~true~.
 - Word Choice
+  - Use Arabic numerals.
 * Watch What You Eat
