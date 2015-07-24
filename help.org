@@ -77,6 +77,7 @@ tangled system.
     - Replace spaces with dashes.
     - Probably the Heading name.
 - Word Choice
+  - self reference :: A noun, this system
   - tangle :: A verb, assembles a document for consumption by another program or
     machine
   - weave :: A verb, prepares a document for consumption by a human
