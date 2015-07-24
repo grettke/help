@@ -5,6 +5,7 @@
     - Use ~code style~.
   - Package
     - Same as Headline.
+    - Dashes separate definition.
     - Acronyms are all upper case to distinguish from words for example "GNU"
       vs "Gnu".
 - Headline
