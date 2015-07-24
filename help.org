@@ -11,6 +11,7 @@ Operator is likely to use this on a daily basis.
 «Principle-of-Least-Astonishment»
 #+end_src
 
+* Literate Programming
 * Principle of Least Astonishment
   :PROPERTIES:
   :noweb-ref: Principle-of-Least-Astonishment
