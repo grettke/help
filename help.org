@@ -7,9 +7,9 @@
 This heading configures EMACS to do everything defined in this document. The
 Operator is likely to use this on a daily basis.
 
-#+begin_src emacs-lisp
+#+BEGIN_SRC emacs-lisp
 «Principle-of-Least-Astonishment»
-#+end_src
+#+END_SRC
 
 * Literate Programming
 ** Org-Mode
@@ -46,9 +46,9 @@ selectively experiment with features in a predictable and simpler manner.
 This is the *first* thing that needs to happen in the initialization of any
 tangled system.
 
-#+begin_src emacs-lisp
+#+BEGIN_SRC emacs-lisp
 (setq load-prefer-newer t)
-#+end_src
+#+END_SRC
 
 * Style Guide
 
