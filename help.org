@@ -56,8 +56,6 @@ tangled system.
   - Tell the story in speech, and then in code.
   - Consider it another paragraph and indent appropriately.
     - Never separate a paragraph and and a Code Block with a colon.
-- Emacs-Lisp
-  - Use ~t~ for ~true~.
 - Entity
   - Code Snippet
     - Use ~code style~.
@@ -88,6 +86,9 @@ tangled system.
     - Probably the Heading name.
 - Maintenance
   - Frequently check spelling, grammar, and weasel-words.
+- Programming Language
+  - Emacs-Lisp
+    - Use ~t~ for ~true~.
 - Word Choice
   - Self Reference :: A noun. "This System". "The Operator".
   - Tangle :: A verb. Assemble a document for consumption by another program or
