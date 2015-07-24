@@ -17,8 +17,8 @@
   - Capitalize nouns, verbs, and adjectives.
   - Don't capitalize conjunctions unless they are starting the definition.
   - Sell this chapter to the reader.
-  - If it has a property name then document it in the heading. That name will be
-    referenced in tangling and from in-document written references.
+  - If it is a Noweb-Ref then its Entity name should be obvious. If it isn't
+    then include a reminder in the heading.
 - Hyperlink
   - External
     - Exclude those easily found with a search-engine unless you are willing to
