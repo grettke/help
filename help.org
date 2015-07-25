@@ -46,6 +46,7 @@ Start EMACS with this command:
 «Org-Mode-Helper-Functions»
 «Org-Mode-Tangle»
 «Org-Mode-Execute»
+«Org-Mode-Weave»
 «Watch-What-You-Eat»
 #+END_SRC
 
@@ -184,8 +185,20 @@ Replace theme each time you evaluate the block.
 #+END_SRC
 
 ** Weaving
+   :PROPERTIES:
+   :noweb-ref: Org-Mode-Weave
+   :END:
 
 *** Exports
+
+Always share source blocks and their results. Whether or not to generate a
+result for a particular source block is configured per-block. If you don't want
+to share a result for a source block then disable storage of results on that
+block.
+
+#+BEGIN_SRC emacs-lisp
+(help/set-org-babel-default-header-args :exports "both")
+#+END_SRC
 
 ** Programming
 * Piano Lessons
