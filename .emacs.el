@@ -52,3 +52,10 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
  (setq mac-control-modifier 'control)
  (setq mac-command-modifier 'meta)
  (setq mac-option-modifier 'super))
+(help/on-osx
+ (defun help/yes-or-no-p (orig-fun &rest args)
+   "Prevent yes-or-no-p from activating a dialog."
+   (let ((use-dialog-box nil))
+     (apply orig-fun args)))
+ (advice-add 'yes-or-no-p :around #'gcr/yes-or-no-p)
+ (advice-add 'y-or-n-p :around #'gcr/yes-or-no-p))

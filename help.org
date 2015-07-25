@@ -300,6 +300,20 @@ Enable the =super= key-space:
  (setq mac-option-modifier 'super))
 #+END_SRC
 
+EMACS dialogues don't work OSX. They lock up EMACS.
+
+This is a known issue. [[https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-x][Here]] is the solution.
+
+#+BEGIN_SRC emacs-lisp
+(help/on-osx
+ (defun help/yes-or-no-p (orig-fun &rest args)
+   "Prevent yes-or-no-p from activating a dialog."
+   (let ((use-dialog-box nil))
+     (apply orig-fun args)))
+ (advice-add 'yes-or-no-p :around #'gcr/yes-or-no-p)
+ (advice-add 'y-or-n-p :around #'gcr/yes-or-no-p))
+#+END_SRC
+
 * Piano Lessons
 * Standard operating procedure
 * Quiet and Pleasant
