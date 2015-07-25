@@ -18,13 +18,43 @@ Sysop is likely to use this on a daily basis.
 
 #+BEGIN_SRC emacs-lisp
 «Principle-of-Least-Astonishment»
+«Org-Mode-ECM»
 #+END_SRC
-
 * Literate Programming
 ** Org-Mode Exemple Complet Minimal
    :PROPERTIES:
-   :noweb-ref: org-mode-ecm
+   :noweb-ref: Org-Mode-ECM
    :END:
+
+A stable version of Org-Mode is provided OOTB. It's release cycle is tied to
+EMACS release cycle. To get hot-fixes, cutting edge features, and easy patch
+creation though, you need to use the version from Git.
+
+The [[http://orgmode.org/manual/Installation.html][directions]] of how to run Org-Mode from Git are detailed and clear. The only
+thing worth mentioning again is that in order to use *any* version of Org-Mode
+other than the one that comes OOTB you *must* load Org-Mode *before* anything else
+in your initialization file. This can be surprisingly easy to do! When you get
+unexpected Org-Mode behavior be sure to stop and investigate ~org-version~ and
+decide whether or not it is what you expect and prepare an ECM if necessary.
+
+Add the Org-Mode core distribution the load path.
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'load-path "~/src/org-mode/lisp")
+#+END_SRC
+
+Add the Org-Mode-Contributions distribution to the load path. The contributions
+are critical to and inseparable from the core distribution.
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'load-path "~/src/org-mode/contrib/lisp")
+#+END_SRC
+
+Load Org-Mode.
+
+#+BEGIN_SRC emacs-lisp
+(require 'org)
+#+END_SRC
 
 ** Tangling
 ** Weaving
