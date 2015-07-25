@@ -48,3 +48,7 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
    :ensure t
    :config
    (exec-path-from-shell-initialize)))
+(help/on-osx
+ (setq mac-control-modifier 'control)
+ (setq mac-command-modifier 'meta)
+ (setq mac-option-modifier 'super))

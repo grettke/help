@@ -290,6 +290,16 @@ Pull in the =ENVIRONMENT= variables because the GUI version of EMACS does not.
    (exec-path-from-shell-initialize)))
 #+END_SRC
 
+Configure the meta kays.
+
+Enable the =super= key-space:
+#+BEGIN_SRC emacs-lisp
+(help/on-osx
+ (setq mac-control-modifier 'control)
+ (setq mac-command-modifier 'meta)
+ (setq mac-option-modifier 'super))
+#+END_SRC
+
 * Piano Lessons
 * Standard operating procedure
 * Quiet and Pleasant
