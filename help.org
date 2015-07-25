@@ -28,32 +28,41 @@ Sysop is likely to use this on a daily basis.
   :noweb-ref: Principle-of-Least-Astonishment
   :END:
 
-When you develop Emacs-Lisp code you work with two representations: text and
-byte-code. For every text representation of a file there is also a byte-code
-representation of a file. They have the same name and different extensions.
-Text ends with =.el= and byte-code ends with =.elc=. EMACS can load
-both representations. You may use these two files to develop a personal
-development workflow.
+Emacs-Lisp source code files have a name and an extension. The name is the
+unique identifier for that artifact. The extension describes the representation
+of that artifact. =.el= is a human readable and uncompiled. =.elc= is not human
+readable and compiled. When you ask EMACS to ~load~ a file, which one should it
+load?
 
-You may compile text to byte-code for a speed increase. You may selectively
-compile individual artifacts to evaluate their impact on your system. This
-workflow is not only faster, it allows a code-and-run development style. You
-make your changes in text and selectively compile them to evaluate their impact
-on your system. When you run with this configuration you may also
-unintentionally compile something to byte-code, resulting in unexpected
-behavior. It is also very easy to forget to compiles changes that you had wanted
-to include at run-time.
+The variable ~load-suffixes~ and ~load-file-rep-suffixes~ tell EMACS which one to
+load first. The former only applies to text and compiled files. The latter
+applies other representations of the file. For example, EMACS will load Gzip =.gz=
+files. You may utilize these ~load~ options to develop a flexible personal
+workflow.
 
-This System does the simplest thing possible: when told to load a file it loads
-the newest representation available. It relies on version control branches to
-selectively experiment with features in a predictable and simpler manner.
+You may configure ~load~ to combine the productivity of REPL style of development
+and with the speed of compilation. Tell EMACS to prefer to load byte-compile
+files first and text files second. This workflow lets you experiment with new
+features and when you are ready to use them every time you compile them. This
+is what you get OOTB. The only downside of this approach is when you forget
+about it.
 
-This is the *first* thing that needs to happen in the initialization of any
+When you forget about that style of system you end up with surprising behavior.
+The surprise comes when you forget to compile code and write new code that
+depends on the now old version of that code. After the next build, your system
+can break in surprising ways. This says something about the Sysop and not EMACS.
+This system doesn't like surprises.
+
+HELP does the simplest thing possible: when told to ~load~ a file it loads
+the newest representation available.
+
+This is the *first* thing that needs to happen in the initialization of *any*
 tangled system.
 
 #+BEGIN_SRC emacs-lisp
 (setq load-prefer-newer t)
 #+END_SRC
+
 * Watch What You Eat
 * Style Guide
 
