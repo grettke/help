@@ -20,6 +20,7 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
 (help/set-org-babel-default-header-args :noweb "no-export")
 (help/set-org-babel-default-header-args :results "output replace")
 (help/set-org-babel-default-header-args :exports "both")
+(setq org-confirm-babel-evaluate nil)
 (package-initialize)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
