@@ -73,6 +73,7 @@ tangled system.
 - Content
   - When importing update to conform with Style-Guide.
 - Dictionary
+  - Out of the Box (OOTB) :: The default configuration of EMACS.
   - Sysop :: A proper noun. The System-Operator. The human operating this EMACS
     based Org-Mode enabled literate programming system. Yourself.
   - Tangle :: A verb. Assemble a document for consumption by another program or
