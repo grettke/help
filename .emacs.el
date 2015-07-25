@@ -15,12 +15,20 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
   (setq org-babel-default-header-args
         (cons (cons property value)
               (assq-delete-all property org-babel-default-header-args))))
+
+(defun help/set-org-babel-default-inline-header-args (property value)
+  "See `help/set-org-babel-default-header-args'; same but for inline header args."
+  (setq org-babel-default-inline-header-args
+        (cons (cons property value)
+              (assq-delete-all property org-babel-default-inline-header-args))))
 (help/set-org-babel-default-header-args :comments "noweb")
 (help/set-org-babel-default-header-args :padline "yes")
 (help/set-org-babel-default-header-args :noweb "no-export")
 (help/set-org-babel-default-header-args :eval "never-export")
+(help/set-org-babel-default-inline-header-args :eval "never-export")
 (setq org-export-babel-evaluate nil)
 (help/set-org-babel-default-header-args :results "output replace")
+(help/set-org-babel-default-inline-header-args :results "value replace")
 (help/set-org-babel-default-header-args :exports "both")
 (setq org-confirm-babel-evaluate nil)
 (package-initialize)

@@ -144,6 +144,12 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
   (setq org-babel-default-header-args
         (cons (cons property value)
               (assq-delete-all property org-babel-default-header-args))))
+
+(defun help/set-org-babel-default-inline-header-args (property value)
+  "See `help/set-org-babel-default-header-args'; same but for inline header args."
+  (setq org-babel-default-inline-header-args
+        (cons (cons property value)
+              (assq-delete-all property org-babel-default-inline-header-args))))
 #+END_SRC
 
 ** Tangling
@@ -196,16 +202,14 @@ ought to refer to the generated document.
 
 *** Eval
 
-Never evaluate source-blocks on export.
+Never evaluate source-blocks or in-line-source-blocks on export.
 
 #+BEGIN_SRC emacs-lisp
 (help/set-org-babel-default-header-args :eval "never-export")
+(help/set-org-babel-default-inline-header-args :eval "never-export")
 #+END_SRC
 
-Both source-blocks and in-line-source-blocks can replace their results. This
-maintains the goals of this system. This wasn't always the case. Now it is.
-
-Never evaluate in-line-source-blocks on export.
+Be sure to never evaluate in-line-source-blocks on export.
 
 #+BEGIN_SRC emacs-lisp
 (setq org-export-babel-evaluate nil)
@@ -216,12 +220,15 @@ Never evaluate in-line-source-blocks on export.
 This system stores the results of evaluation in the source document. It believes
 that the results are critical to the research.
 
-Always display results like you would seem them in a REPL.
+Always display results like you would seem them in a REPL. For source-blocks
+this means an =output= display and for in-line-source-blocks it means a =value=
+display.
 
 Replace theme each time you evaluate the block.
 
 #+BEGIN_SRC emacs-lisp
 (help/set-org-babel-default-header-args :results "output replace")
+(help/set-org-babel-default-inline-header-args :results "value replace")
 #+END_SRC
 
 ** Weaving
