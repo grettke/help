@@ -137,6 +137,16 @@ Before ELPA, I used SVN to manage software packages for HELP. After ELPA, HELP
 used ELPA-packages. HELP uses MELPA and GNU. MELPA packages always have their
 issues fixed very quickly. GNU packages rarely have issues.
 
+Initialize Package.
+
+#+BEGIN_SRC emacs-lisp
+(package-initialize)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+(add-to-list 'package-archives
+             '("gnu" . "http://elpa.gnu.org/packages/") t)
+#+END_SRC
+
 Use-Package is the most configurable and performant way to manage ELPA packages.
 
 Add the Use-Package distribution the load path.
