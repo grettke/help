@@ -172,6 +172,9 @@ arguably appear in the "Programming" heading because it impacts operation.
 
 *** Results
 
+This system stores the results of evaluation in the source document. It believes
+that the results are critical to the research.
+
 Always display results like you would seem them in a REPL.
 
 Replace theme each time you evaluate the block.
@@ -181,6 +184,9 @@ Replace theme each time you evaluate the block.
 #+END_SRC
 
 ** Weaving
+
+*** Exports
+
 ** Programming
 * Piano Lessons
 * Quiet and Pleasant
