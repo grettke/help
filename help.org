@@ -55,7 +55,9 @@ Start EMACS with this command:
 This system enables you to perform 3 Literate Document activities. These
 activities combine to provide a rich Literate Programming environment. Their
 configuration is defined with more granularity here to make sense of how the
-system is configured, where, and how it works.
+system is configured, where, and how it works. These activities are not
+performed interactively by the user. They are automatic operations that occur
+as a result of the configuration of the document itself.
 
 The following is the guide for the default configuration of this system and how
 it behaves.
