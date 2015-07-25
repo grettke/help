@@ -277,6 +277,7 @@ Load Use-Package.
     - Same as Headline.
     - Replace spaces with dashes.
     - Probably the Heading name.
+    - Keep depth shallow
 - Maintenance
   - Frequently check spelling, grammar, and weasel-words.
 - Plain List
