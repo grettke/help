@@ -47,6 +47,16 @@ Start EMACS with this command:
 #+END_SRC
 
 * Literate Programming
+
+This system helps you do 4 things:
+
+1) Load Org-Mode for creating Literate Documents
+2) Tangle Literate Documents
+3) Export Literate Documents
+4) Program Literate Documents
+
+They are separate and distinct operations and are defined as such.
+
 ** Org-Mode Exemple Complet Minimal
    :PROPERTIES:
    :noweb-ref: Org-Mode-ECM
@@ -92,6 +102,10 @@ Load Org-Mode.
 #+END_SRC
 
 ** Tangling
+   :PROPERTIES:
+   :noweb-ref: Org-Mode-Tangle
+   :END:
+
 ** Weaving
 ** Programming
 * Piano Lessons
