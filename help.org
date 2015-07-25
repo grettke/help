@@ -160,7 +160,9 @@ origin artifact.
 *** Padline
 
 ~org-babel-tangle-jump-to-org~ requires padded lines. This configuration could
-arguably appear in the "Programming" heading because it impacts operation.
+arguably appear in the "Programming" heading because it impacts operation. It
+lives here because it *must* occur as part of the Tangling activity so that it
+can be used in the Programming activity.
 
 #+BEGIN_SRC emacs-lisp
 (help/set-org-babel-default-header-args :padline "yes")
@@ -178,7 +180,7 @@ Expand noweb references in source-blocks before:
 
 This embraces the notion that you are telling the right thing to the
 computer and the right thing to the human. By the time you get to exporting, you
-ought to refer to the generated document. 
+ought to refer to the generated document.
 
 #+BEGIN_SRC emacs-lisp
 (help/set-org-babel-default-header-args :noweb "no-export")
