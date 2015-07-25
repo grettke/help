@@ -259,6 +259,11 @@ Never "automatically" evaluate a source block.
 #+END_SRC
 
 * Special Operating Procedure
+
+The following packages are special to HELP. They provide critical functionality
+for configuring the system. They provide ideas that make the entire system
+usable, productive, expressive, and fast.
+
 * Standard operating procedure
 * Piano Lessons
 * Quiet and Pleasant
