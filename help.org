@@ -4,8 +4,9 @@
    :header-args:   :tangle "./.emacs.el" :comments no
    :END:
 
-Configure EMACS to do everything defined in this document. Sysop is likely to
-use this on a daily basis.
+Configure EMACS to do everything defined in this document.
+
+Sysop is likely to use this on a daily basis.
 
 #+BEGIN_SRC emacs-lisp
 «Principle-of-Least-Astonishment»
