@@ -310,13 +310,34 @@ This is a known issue. [[https://superuser.com/questions/125569/how-to-fix-emacs
    "Prevent yes-or-no-p from activating a dialog."
    (let ((use-dialog-box nil))
      (apply orig-fun args)))
- (advice-add 'yes-or-no-p :around #'gcr/yes-or-no-p)
- (advice-add 'y-or-n-p :around #'gcr/yes-or-no-p))
+ (advice-add 'yes-or-no-p :around #'help/yes-or-no-p)
+ (advice-add 'y-or-n-p :around #'help/yes-or-no-p))
 #+END_SRC
 
 * Piano Lessons
-* Standard operating procedure
+* Standard Operating Procedure
 * Quiet and Pleasant
+   :PROPERTIES:
+   :noweb-ref: Quiet-and-Pleasant
+   :END:
+
+** Color Theme
+
+The Solarized theme is the perfect theme for everything. bozhidar's
+release. It is soft and gentle yet easy to read in any situation.
+
+#+BEGIN_SRC emacs-lisp
+(use-package solarized-theme
+  :ensure t
+  :config
+  (setq solarized-distinct-fringe-background t)
+  (setq solarized-high-contrast-mode-line t)
+  (setq solarized-use-less-bold t)
+  (setq solarized-use-more-italic nil)
+  (setq solarized-emphasize-indicators nil)
+  (load-theme 'solarized-dark))
+#+END_SRC
+
 * Principle of Least Astonishment
   :PROPERTIES:
   :noweb-ref: Principle-of-Least-Astonishment
