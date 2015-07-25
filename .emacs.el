@@ -38,3 +38,8 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
              '("gnu" . "http://elpa.gnu.org/packages/") t)
 (add-to-list 'load-path "~/src/use-package")
 (require 'use-package)
+(defmacro help/on-osx (statement &rest statements)
+  "Evaluate the enclosed body only when run on OSX."
+  `(when (eq system-type 'darwin)
+     ,statement
+     ,@statements))

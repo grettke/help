@@ -49,6 +49,7 @@ Start EMACS with this command:
 «Org-Mode-Weave»
 «Org-Mode-Programming»
 «Watch-What-You-Eat»
+«Special-Operating-Procedure»
 #+END_SRC
 
 * Literate Programming
@@ -259,6 +260,9 @@ Never "automatically" evaluate a source block.
 #+END_SRC
 
 * Special Operating Procedure
+   :PROPERTIES:
+   :noweb-ref: Special-Operating-Procedure
+   :END:
 
 The following code and packages are special to HELP. They provide critical
 functionality for configuring the rest of the system. They provide ideas that
