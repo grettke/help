@@ -280,6 +280,16 @@ Make it easy to evaluate code only when running on OSX.
      ,@statements))
 #+END_SRC
 
+Pull in the =ENVIRONMENT= variables because the GUI version of EMACS does not.
+
+#+BEGIN_SRC emacs-lisp
+(help/on-osx
+ (use-package exec-path-from-shell
+   :ensure t
+   :config
+   (exec-path-from-shell-initialize)))
+#+END_SRC
+
 * Piano Lessons
 * Standard operating procedure
 * Quiet and Pleasant
