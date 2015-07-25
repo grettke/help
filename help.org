@@ -131,6 +131,8 @@ tangled system.
   :noweb-ref: Watch-What-You-Eat
   :END:
 
+*Code requiring package-management can only follow this block.*
+
 Before ELPA, I used SVN to manage software packages for HELP. After ELPA, HELP
 used ELPA-packages. HELP uses MELPA and GNU. MELPA packages always have their
 issues fixed very quickly. GNU packages rarely have issues.
@@ -148,8 +150,6 @@ Load Use-Package.
 #+BEGIN_SRC emacs-lisp
 (require 'use-package)
 #+END_SRC
-
-Code requiring package-management can only follow this block.
 
 * Style Guide
 
