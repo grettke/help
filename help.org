@@ -270,7 +270,7 @@ make the entire system usable, productive, expressive, and fast.
 
 ** OSX
 
-Make it easy to evaluate code only when running on OSX.   
+Make it easy to evaluate code only when running on OSX.
 
 #+BEGIN_SRC emacs-lisp
 (defmacro help/on-osx (statement &rest statements)
