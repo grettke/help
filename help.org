@@ -82,6 +82,9 @@ tangled system.
 - Entity
   - Code Snippet
     - Use ~code style~.
+  - Non-Code Snippet
+    - Program names, file types
+    - Use =verbatim= style
   - Package
     - Same as Headline.
     - Dashes separate definition.
