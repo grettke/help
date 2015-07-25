@@ -65,7 +65,7 @@ Key:
   - T :: Destination tangled-document modified?
   - E :: Evaluation occurred?
 
-| Activity   | S | T | W | E |
+| Activity   | S | W | T | E |
 |------------+---+---+---+---|
 | Tangling   | F | F | T | F |
 | Evaluating | T | F | F | T |
