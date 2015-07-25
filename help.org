@@ -259,6 +259,7 @@ Never "automatically" evaluate a source block.
 #+BEGIN_SRC emacs-lisp
 (setq org-confirm-babel-evaluate nil)
 #+END_SRC
+* Piano Lessons
 
 * Special Operating Procedure
    :PROPERTIES:
@@ -315,7 +316,6 @@ This is a known issue. [[https://superuser.com/questions/125569/how-to-fix-emacs
  (advice-add 'y-or-n-p :around #'help/yes-or-no-p))
 #+END_SRC
 
-* Piano Lessons
 * Standard Operating Procedure
 * Quiet and Pleasant
    :PROPERTIES:
