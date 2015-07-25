@@ -5,6 +5,7 @@ HELP Enables Literate Programming.
 Setup:
 
 1) [[http://orgmode.org/][Clone]] Org-Mode to =~/src/=.
+2) [[https://github.com/jwiegley/use-package][Clone Use-Package]] to =~/src/=.
 
 * Webs We Weave
 
