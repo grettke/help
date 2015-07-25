@@ -1,4 +1,8 @@
 * README
+** HELP Enables Literate Programming
+
+The goal of HELP is to enable literate programming.
+
 * Webs We Weave
 ** The Whole Enchilada
    :PROPERTIES:
