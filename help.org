@@ -339,6 +339,20 @@ release. It is soft and gentle yet easy to read in any situation.
   (load-theme 'solarized-dark))
 #+END_SRC
 
+** Frames
+
+The scroll-bars are helpful for new users.
+
+#+BEGIN_SRC emacs-lisp
+(scroll-bar-mode 0)
+#+END_SRC
+
+The tool-bar is helpful for new users. Isn't the argument funny?
+
+#+BEGIN_SRC emacs-lisp
+(tool-bar-mode -1)
+#+END_SRC
+
 ** Windows
 
 Menu bars make HELP more accessible to non-EMACS users.
