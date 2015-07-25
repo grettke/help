@@ -86,7 +86,7 @@ are critical to and inseparable from the core distribution.
 (add-to-list 'load-path "~/src/org-mode/contrib/lisp")
 #+END_SRC
 
-This system allows for single-character alphabetical bullet ists. For Org-Mode
+This system allows for single-character alphabetical bullet lists. For Org-Mode
 to provide that, the following property must exist before Org-Mode is even
 loaded. This configuration must occur here. *Never* remove this from a submitted
 ECM.
