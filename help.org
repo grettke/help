@@ -259,6 +259,7 @@ Never "automatically" evaluate a source block.
 #+BEGIN_SRC emacs-lisp
 (setq org-confirm-babel-evaluate nil)
 #+END_SRC
+* A Fine Cup of EMACS
 * Piano Lessons
 
 * Special Operating Procedure
