@@ -45,6 +45,7 @@ Start EMACS with this command:
 «Org-Mode-ECM-Tangle-Block»
 «Org-Mode-Helper-Functions»
 «Org-Mode-Tangle»
+«Org-Mode-Execute»
 «Watch-What-You-Eat»
 #+END_SRC
 
@@ -165,6 +166,20 @@ arguably appear in the "Programming" heading because it impacts operation.
 #+END_SRC
 
 ** Evaluating
+   :PROPERTIES:
+   :noweb-ref: Org-Mode-Execute
+   :END:
+
+*** Results
+
+Always display results like you would seem them in a REPL.
+
+Replace theme each time you evaluate the block.
+
+#+BEGIN_SRC emacs-lisp
+(help/set-org-babel-default-header-args :results "output replace")
+#+END_SRC
+
 ** Weaving
 ** Programming
 * Piano Lessons
