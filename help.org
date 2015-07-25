@@ -117,6 +117,8 @@ tangled system.
     - Use ~t~ for ~true~.
 - Voice
   - The audience is Sysop.
+  - The audience is another EMACS user.
+  - Pleasant conversation style.
   - Simple and detailed.
 - Word Choice
   - Use Arabic numerals.
