@@ -258,6 +258,7 @@ Never "automatically" evaluate a source block.
 (setq org-confirm-babel-evaluate nil)
 #+END_SRC
 
+* Special Operating Procedure
 * Piano Lessons
 * Quiet and Pleasant
 * Principle of Least Astonishment
