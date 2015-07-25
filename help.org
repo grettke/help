@@ -119,8 +119,18 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
         (cons (cons property value)
               (assq-delete-all property org-babel-default-header-args))))
 #+END_SRC
+
+*** Comments
+
+Provide as much information as possible in the tangled artifact about the
+origin artifact.
+
+#+BEGIN_SRC emacs-lisp
+(help/set-org-babel-default-header-args :comments "noweb")
+#+END_SRC
+
 *** Eval
-    
+
 ** Weaving
 ** Programming
 * Piano Lessons
