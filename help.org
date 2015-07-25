@@ -102,5 +102,6 @@ tangled system.
 - Programming Language
   - Emacs-Lisp
     - Use ~t~ for ~true~.
+- Voice      
 - Word Choice
   - Use Arabic numerals.
