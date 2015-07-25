@@ -154,6 +154,8 @@ tangled system.
 - Programming Language
   - Emacs-Lisp
     - Use ~t~ for ~true~.
+- Tangling
+  - When ordering matters, rely on block-reuse to enforce correct generation.
 - Voice
   - The audience is Sysop.
   - The audience is another EMACS user.
