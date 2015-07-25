@@ -166,6 +166,24 @@ arguably appear in the "Programming" heading because it impacts operation.
 (help/set-org-babel-default-header-args :padline "yes")
 #+END_SRC
 
+*** Noweb
+
+Expand noweb references in source-blocks before:
+
+| Activity   | Expand |
+|------------+--------|
+| Tangling   | T      |
+| Evaluating | T      |
+| Exporting  | F      |
+
+This embraces the notion that you are telling the right thing to the
+computer and the right thing to the human. By the time you get to exporting, you
+ought to refer to the generated document. 
+
+#+BEGIN_SRC emacs-lisp
+(help/set-org-babel-default-header-args :noweb "no-export")
+#+END_SRC
+
 ** Evaluating
    :PROPERTIES:
    :noweb-ref: Org-Mode-Execute
