@@ -162,6 +162,7 @@ tangled system.
   - External
     - Exclude those easily found with a search-engine unless you are willing to
       verify their existence frequently.
+    - Include when they make the task at hand immensely easier.
   - Internal
     - Heading artifacts can be referenced so the need here is minimal to
       non-existent.
