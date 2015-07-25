@@ -16,7 +16,7 @@ Operator is likely to use this on a daily basis.
    :PROPERTIES:
    :noweb-ref: org-mode-ecm
    :END:
-   
+
 ** Tangling
 ** Weaving
 ** Programming
@@ -86,8 +86,6 @@ tangled system.
   - Internal
     - Heading artifacts can be referenced so the need here is minimal to
       non-existent.
-- Plain List
-  - End single sentences with a period.
 - Literate Programming
   - Comments
     - Exclude from tangle-blocks and rely on source-block for traceability
@@ -97,6 +95,8 @@ tangled system.
     - Probably the Heading name.
 - Maintenance
   - Frequently check spelling, grammar, and weasel-words.
+- Plain List
+  - End single sentences with a period.
 - Programming Language
   - Emacs-Lisp
     - Use ~t~ for ~true~.
