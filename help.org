@@ -43,6 +43,7 @@ Start EMACS with this command:
 
 #+BEGIN_SRC emacs-lisp
 «Org-Mode-ECM-Tangle-Block»
+«Org-Mode-Helper-Functions»
 «Org-Mode-Tangle»
 «Watch-What-You-Eat»
 #+END_SRC
@@ -121,9 +122,9 @@ Load Org-Mode.
 (require 'org)
 #+END_SRC
 
-** Tangling
+** Helper Functions
    :PROPERTIES:
-   :noweb-ref: Org-Mode-Tangling
+   :noweb-ref: Org-Mode-Helper-Functions
    :END:
 
 #+BEGIN_src emacs-lisp
@@ -139,6 +140,11 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
         (cons (cons property value)
               (assq-delete-all property org-babel-default-header-args))))
 #+END_SRC
+
+** Tangling
+   :PROPERTIES:
+   :noweb-ref: Org-Mode-Tangle
+   :END:
 
 *** Comments
 
