@@ -268,6 +268,10 @@ The following code and packages are special to HELP. They provide critical
 functionality for configuring the rest of the system. They provide ideas that
 make the entire system usable, productive, expressive, and fast.
 
+** OSX
+
+Make it easy to evaluate code only when running on OSX.   
+
 #+BEGIN_SRC emacs-lisp
 (defmacro help/on-osx (statement &rest statements)
   "Evaluate the enclosed body only when run on OSX."
