@@ -120,5 +120,7 @@ tangled system.
   - The audience is another EMACS user.
   - Pleasant conversation style.
   - Simple and detailed.
+  - Provide answers; this document is an answer.
+  - Do not pose questions; this document is not a question.
 - Word Choice
   - Use Arabic numerals.
