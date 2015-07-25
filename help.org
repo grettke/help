@@ -259,6 +259,7 @@ Never "automatically" evaluate a source block.
 #+END_SRC
 
 * Special Operating Procedure
+* Standard operating procedure
 * Piano Lessons
 * Quiet and Pleasant
 * Principle of Least Astonishment
