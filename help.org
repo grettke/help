@@ -223,6 +223,7 @@ Replace theme each time you evaluate the block.
 #+BEGIN_SRC emacs-lisp
 (help/set-org-babel-default-header-args :results "output replace")
 #+END_SRC
+
 ** Weaving
    :PROPERTIES:
    :noweb-ref: Org-Mode-Weave
