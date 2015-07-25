@@ -73,8 +73,9 @@ Key:
 
 They are separate and distinct operations and are defined as such.
 
-The last logical action is "Programming" which is often a combination of three
-3 activities listed above.
+The last logical action is the activity of "Programming". It is a combination of
+three 3 activities listed above combined with the configuration of EMACS to do
+so.
 
 ** Org-Mode Exemple Complet Minimal
    :PROPERTIES:
