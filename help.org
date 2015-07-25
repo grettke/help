@@ -155,7 +155,14 @@ origin artifact.
 (help/set-org-babel-default-header-args :comments "noweb")
 #+END_SRC
 
-*** Eval
+*** Padline
+
+~org-babel-tangle-jump-to-org~ requires padded lines. This configuration could
+arguably appear in the "Programming" heading because it impacts operation.
+
+#+BEGIN_SRC emacs-lisp
+(help/set-org-babel-default-header-args :padline "yes")
+#+END_SRC
 
 ** Evaluating
 ** Weaving

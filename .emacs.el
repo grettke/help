@@ -16,6 +16,7 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
         (cons (cons property value)
               (assq-delete-all property org-babel-default-header-args))))
 (help/set-org-babel-default-header-args :comments "noweb")
+(help/set-org-babel-default-header-args :padline "yes")
 (package-initialize)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
