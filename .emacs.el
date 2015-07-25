@@ -68,3 +68,4 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
   (setq solarized-use-more-italic nil)
   (setq solarized-emphasize-indicators nil)
   (load-theme 'solarized-dark))
+(menu-bar-mode t)

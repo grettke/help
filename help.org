@@ -339,6 +339,14 @@ release. It is soft and gentle yet easy to read in any situation.
   (load-theme 'solarized-dark))
 #+END_SRC
 
+** Windows
+
+Menu bars make HELP more accessible to non-EMACS users.
+
+#+BEGIN_SRC emacs-lisp
+(menu-bar-mode t)
+#+END_SRC
+
 * Principle of Least Astonishment
   :PROPERTIES:
   :noweb-ref: Principle-of-Least-Astonishment
