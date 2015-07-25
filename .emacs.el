@@ -18,6 +18,7 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
 (help/set-org-babel-default-header-args :comments "noweb")
 (help/set-org-babel-default-header-args :padline "yes")
 (help/set-org-babel-default-header-args :noweb "no-export")
+(help/set-org-babel-default-header-args :eval "never-export")
 (help/set-org-babel-default-header-args :results "output replace")
 (help/set-org-babel-default-header-args :exports "both")
 (setq org-confirm-babel-evaluate nil)

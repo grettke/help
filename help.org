@@ -195,6 +195,13 @@ ought to refer to the generated document.
    :END:
 
 *** Eval
+
+Never evaluate source-blocks on export.
+
+#+BEGIN_SRC emacs-lisp
+(help/set-org-babel-default-header-args :eval "never-export")
+#+END_SRC
+
 *** Results
 
 This system stores the results of evaluation in the source document. It believes
