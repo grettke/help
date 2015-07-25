@@ -63,8 +63,8 @@ tangled system.
 - Content
   - When importing update to conform with Style-Guide.
 - Dictionary
-  - Sysop :: A proper noun. The System Operator. The human operating this EMACS
-    based Org-Mode enabled literate programming system.
+  - Sysop :: A proper noun. The System-Operator. The human operating this EMACS
+    based Org-Mode enabled literate programming system. Yourself.
   - Tangle :: A verb. Assemble a document for consumption by another program or
     machine.
   - Weave :: A verb. Prepare a document for consumption by a human.
