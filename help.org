@@ -4,7 +4,7 @@
    :header-args:   :tangle "./.emacs.el" :comments no
    :END:
 
-Configure EMACS to do everything defined in this document.
+Configure EMACS to do everything provided by this document.
 
 Sysop is likely to use this on a daily basis.
 
