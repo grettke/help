@@ -5,7 +5,7 @@
    :END:
 
 This heading configures EMACS to do everything defined in this document. The
-Operator is likely to use this on a daily basis.
+Sysop is likely to use this on a daily basis.
 
 #+BEGIN_SRC emacs-lisp
 «Principle-of-Least-Astonishment»
@@ -63,7 +63,8 @@ tangled system.
 - Content
   - When importing update to conform with Style-Guide.
 - Dictionary
-  - Self Reference :: A noun. "This System". "The Operator".
+  - Sysop :: A noun. The System Operator. The human operating this EMACS based
+    Org-Mode enabled literate programming system.
   - Tangle :: A verb. Assemble a document for consumption by another program or
     machine.
   - Weave :: A verb. Prepare a document for consumption by a human.
