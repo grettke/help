@@ -46,7 +46,7 @@ representations are first searched by extension-name. The variable
 
 OOTB, EMACS combines the productivity of REPL style of development with the
 speed of compiled code by ~load~'ing byte-code first, text second, and compressed
-third. This workflow gives you the fastest code at runtime and lets you
+third. This workflow gives you the fastest code at run-time and lets you
 experiment with new features stored in text. When you are ready to use them
 every time, you compile them. There is only one downside of this approach: when
 you forget that it works this way it can be confusing.
@@ -58,7 +58,7 @@ can break in surprising ways. This violates the Principle of Least Astonishment.
 
 HELP values predictability so it does the simplest thing possible: ~load~ searches
 for the newest representation of a file and uses that one. It assumes that Sysop
-has total and complete control over the managment of file representations.
+has total and complete control over the management of file representations.
 
 This is the *first* thing that /ought/ to happen in the initialization of *any*
 tangled system.
