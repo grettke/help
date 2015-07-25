@@ -202,6 +202,15 @@ Never evaluate source-blocks on export.
 (help/set-org-babel-default-header-args :eval "never-export")
 #+END_SRC
 
+Both source-blocks and in-line-source-blocks can replace their results. This
+maintains the goals of this system. This wasn't always the case. Now it is.
+
+Never evaluate in-line-source-blocks on export.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-export-babel-evaluate nil)
+#+END_SRC
+
 *** Results
 
 This system stores the results of evaluation in the source document. It believes
