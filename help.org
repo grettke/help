@@ -260,9 +260,10 @@ Never "automatically" evaluate a source block.
 
 * Special Operating Procedure
 
-The following packages are special to HELP. They provide critical functionality
-for configuring the system. They provide ideas that make the entire system
-usable, productive, expressive, and fast.
+The following code and packages are special to HELP. They provide critical
+functionality for configuring the rest of the system. They provide ideas that
+make the entire system usable, productive, expressive, and fast.
+
 * Piano Lessons
 * Standard operating procedure
 * Quiet and Pleasant
