@@ -191,6 +191,7 @@ ought to refer to the generated document.
    :noweb-ref: Org-Mode-Execute
    :END:
 
+*** Eval
 *** Results
 
 This system stores the results of evaluation in the source document. It believes
@@ -203,7 +204,6 @@ Replace theme each time you evaluate the block.
 #+BEGIN_SRC emacs-lisp
 (help/set-org-babel-default-header-args :results "output replace")
 #+END_SRC
-
 ** Weaving
    :PROPERTIES:
    :noweb-ref: Org-Mode-Weave
