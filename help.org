@@ -1,7 +1,10 @@
 * README
-** HELP Enables Literate Programming
 
-The goal of HELP is to enable literate programming.
+HELP Enables Literate Programming.
+
+Setup:
+
+1) Clone Org-Mode to =~/src/=.
 
 * Webs We Weave
 ** The Whole Enchilada
