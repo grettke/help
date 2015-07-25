@@ -57,5 +57,14 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
    "Prevent yes-or-no-p from activating a dialog."
    (let ((use-dialog-box nil))
      (apply orig-fun args)))
- (advice-add 'yes-or-no-p :around #'gcr/yes-or-no-p)
- (advice-add 'y-or-n-p :around #'gcr/yes-or-no-p))
+ (advice-add 'yes-or-no-p :around #'help/yes-or-no-p)
+ (advice-add 'y-or-n-p :around #'help/yes-or-no-p))
+(use-package solarized-theme
+  :ensure t
+  :config
+  (setq solarized-distinct-fringe-background t)
+  (setq solarized-high-contrast-mode-line t)
+  (setq solarized-use-less-bold t)
+  (setq solarized-use-more-italic nil)
+  (setq solarized-emphasize-indicators nil)
+  (load-theme 'solarized-dark))

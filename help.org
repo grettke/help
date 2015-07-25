@@ -50,6 +50,7 @@ Start EMACS with this command:
 «Org-Mode-Programming»
 «Watch-What-You-Eat»
 «Special-Operating-Procedure»
+«Quiet-and-Pleasant»
 #+END_SRC
 
 * Literate Programming
