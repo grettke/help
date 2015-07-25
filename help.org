@@ -102,6 +102,8 @@ tangled system.
 - Programming Language
   - Emacs-Lisp
     - Use ~t~ for ~true~.
-- Voice      
+- Voice
+  - The audience is Sysop.
+  - Simple and detailed.
 - Word Choice
   - Use Arabic numerals.
