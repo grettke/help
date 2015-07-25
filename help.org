@@ -264,6 +264,14 @@ The following code and packages are special to HELP. They provide critical
 functionality for configuring the rest of the system. They provide ideas that
 make the entire system usable, productive, expressive, and fast.
 
+#+BEGIN_SRC emacs-lisp
+(defmacro help/on-osx (statement &rest statements)
+  "Evaluate the enclosed body only when run on OSX."
+  `(when (eq system-type 'darwin)
+     ,statement
+     ,@statements))
+#+END_SRC
+
 * Piano Lessons
 * Standard operating procedure
 * Quiet and Pleasant
