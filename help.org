@@ -123,7 +123,7 @@ Load Org-Mode.
 
 ** Tangling
    :PROPERTIES:
-   :noweb-ref: Org-Mode-Tangle
+   :noweb-ref: Org-Mode-Tangling
    :END:
 
 #+BEGIN_src emacs-lisp
