@@ -1,3 +1,4 @@
+* README
 * Webs We Weave
 ** The Whole Enchilada
    :PROPERTIES:
@@ -123,3 +124,5 @@ tangled system.
   - Do not pose questions; this document is not a question.
 - Word Choice
   - Use Arabic numerals.
+  - Instead of writing "tells EMACS", communicate the result.
+  - "HELP" not "this system".
