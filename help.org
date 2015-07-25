@@ -43,6 +43,7 @@ Start EMACS with this command:
 
 #+BEGIN_SRC emacs-lisp
 «Org-Mode-ECM-Tangle-Block»
+«Org-Mode-Tangle»
 «Watch-What-You-Eat»
 #+END_SRC
 

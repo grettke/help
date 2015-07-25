@@ -4,6 +4,18 @@
 (add-to-list 'load-path "~/src/org-mode/contrib/lisp")
 (setq org-list-allow-alphabetical t)
 (require 'org)
+(defun help/set-org-babel-default-header-args (property value)
+  "Easily set system header arguments in org mode.
+
+PROPERTY is the system-wide value that you would like to modify.
+
+VALUE is the new value you wish to store.
+
+Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.html#System_002dwide-header-arguments'"
+  (setq org-babel-default-header-args
+        (cons (cons property value)
+              (assq-delete-all property org-babel-default-header-args))))
+(help/set-org-babel-default-header-args :comments "noweb")
 (package-initialize)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
