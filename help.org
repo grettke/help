@@ -425,6 +425,15 @@ Don't use audible bells, use visual bells.
 (setq visible-bell t)
 #+END_SRC
 
+Highlight s-expressions.
+
+#+BEGIN_SRC emacs-lisp
+(setq blink-matching-paren nil)
+(show-paren-mode +1)
+(setq show-paren-delay 0)
+(setq show-paren-style 'expression)
+#+END_SRC
+
 ** Color Theme
 
 The Solarized theme is the perfect theme for everything. bozhidar's

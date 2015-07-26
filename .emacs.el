@@ -86,6 +86,10 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
 (add-hook #'prog-mode-hook #'linum-mode)
 (setq ring-bell-function 'ignore)
 (setq visible-bell t)
+(setq blink-matching-paren nil)
+(show-paren-mode +1)
+(setq show-paren-delay 0)
+(setq show-paren-style 'expression)
 (use-package solarized-theme
   :ensure t
   :config
