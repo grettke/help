@@ -285,6 +285,21 @@ fine reference for anyone to use. It wants to keep things simple and familiar so
 that anyone who has learned EMACS OOTB can use it pleasantly and productively.
 These goals are essential to configuring the keyboard for this system.
 
+** A Keyboard on Every Desk
+
+The configuration of the keyboard on an EMACS system can completely change the
+experience. No keyboard makes it impossible. A Kinesis Ergo makes it feel
+really good. Soft keys make it feel soft; hard keys make it feel faster. The
+[[http://xahlee.info/kbd/dvorak_and_all_keyboard_layouts.html][layout of letters]] is statistically proven to make you more productive. You may
+even study the statistics of your own writing and choose a layout optimized for
+you. The ways to configure your keyboard are limitless because everyone is
+unique. How to get the best configuration tips for your system? Do what works
+for everyone.
+
+Make this system easy to use on any keyboard. Make this system easy to use in
+English. Make this system easy to use with average hand strength. These goals
+are essential to configuring the keyboard for this system.
+
 * Special Operating Procedure
    :PROPERTIES:
    :noweb-ref: Special-Operating-Procedure
