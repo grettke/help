@@ -402,6 +402,8 @@ EMACS users go far together. Here is how to do it.
     - There is a logical sense of "flow" that should never be interrupted.
       There are logical stoppage points in flow. Often the place changes when
       the flow changes.
+    - There are logically related "actions" that you wish to perform in that
+      place to facilitate the flow..
 
 * Special Operating Procedure
    :PROPERTIES:
