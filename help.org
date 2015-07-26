@@ -206,6 +206,37 @@ ought to refer to the generated document.
    :noweb-ref: Org-Mode-Execute
    :END:
 
+Load the OB-SML. Perhaps some day it will end up in the mainline.
+
+#+BEGIN_SRC emacs-lisp
+(require 'ob-sml nil 'noerror)
+#+END_SRC
+
+Org-Mode may evaluate all of the listed languages.
+
+#+BEGIN_SRC emacs-lisp
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((calc . t)
+   (css . t)
+   (dot . t)
+   (ditaa . t)
+   (emacs-lisp . t)
+   (js . t)
+   (latex . t)
+   (lilypond . t)
+   (makefile . t)
+   (org . t)
+   (perl . t)
+   (python . t)
+   (plantuml . t)
+   (R . t)
+   (scheme . t)
+   (sh . t)
+   (sml . t)
+   (sql . t)))
+#+END_SRC
+
 *** Eval
 
 Never evaluate source-blocks or in-line-source-blocks on export.
@@ -280,6 +311,13 @@ same text to a buffer though, the line breaks are included. Currently I use
 When exporting anything, do not insert the exported content into the kill ring.
 #+BEGIN_SRC emacs-lisp
 (setq org-export-copy-to-kill-ring nil)
+#+END_SRC
+
+By default I never want a table of contents generated. It is so easy to enable
+it with a property, it will be fine to turn it off.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-export-with-toc nil)
 #+END_SRC
 
 *** Exports
