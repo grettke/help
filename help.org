@@ -340,7 +340,9 @@ EMACS users go far together. Here is how to do it.
         - Make your hand into a crab claw to operate keys that you normally
           thing to use your Pinky. The key must be large. Use this position for
           "stamping" and "holding" keys. You can easily to the same thing with
-          your thumb.
+          your thumb. You use the strength of you Thumb, Index, and Middle
+          finger to bolster your Ring and Pinky to push/hold the desired key.
+          This makes sense for wider. physical keys.
 - Never bind to =F= keys.
   - Assumptions.
     - They are a painful stretch on most keyboards.
