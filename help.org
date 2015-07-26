@@ -358,27 +358,27 @@ EMACS users go far together. Here is how to do it.
     - There are often sweet and precise exceptions to this advice like
       combinations for the =RET= and =<return>= but otherwise it is a bad
       idea.
-- Logical name-spaces you should use are home-key/key-chords,
-  double-home-key/key-chords, Shift-home-key/key-chords, s-name-space, and
-  Hydra-name-spaces.
+- Logical name-spaces you should use are =home-key/key-chords=,
+  =double-home-key/key-chords=, =Shift-home-key/key-chords=, =s-name-space=, and
+  =Hydra-name-space=.
   - Assumptions
     - Never makes sense to ignore previous assumptions.
-    - Will use s and shift a lot so make them accessible according to strengths
+    - Will use =s= and shift a lot so make them accessible according to strengths
       asserted above.
-    - C and M name-spaces will be used a lot.
-- Map your keyboard to make logical meta keys stomp-keys like return and
-  space-bar easily accessible. Mirror them to make them equally accessible with
+    - =C= and =M= name-spaces will be used a lot.
+- Map your keyboard to make logical meta keys =stomp-keys= like =return= and
+  =space-bar= easily accessible. Mirror them to make them equally accessible with
   each hand.
   - Assumptions.
     - You can remap your keyboard before it reaches EMACS.
-    - Shift is logically a meta key in this system using Key-Chord.
+    - =Shift= is logically a meta key in this system using Key-Chord.
     - Map is a verb for defining keys, not key-bindings.
-    - Map the space-bar to C if held and return if pressed and released.
-    - Map M to the keys to the left and right of the space-bar
-    - Map return to the keys left and right of M.
-    - Map caps-lock and return to s (super).
-    - Leave shift alone.
-    - s and shift will be critical to all custom operations in this system. Most
+    - Map the space-bar to =C= if held and return if pressed and released.
+    - Map =M= to the keys to the left and right of the space-bar
+    - Map =return= to the keys left and right of =M=.
+    - Map =caps-lock= and =return= to =s= (super).
+    - Leave =shift= alone.
+    - =s= and =shift= will be critical to all custom operations in this system. Most
       key-bindings will go there. Exceptions need to be thoughtfully considered
       and frequently revisited.
     - Here is how it looks.
