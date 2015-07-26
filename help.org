@@ -383,6 +383,42 @@ don't show them, only show the significant and last one.
 (setq org-hide-leading-stars t)
 #+END_SRC
 
+Display emphasized text as you would in a WYSIWYG editor.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-fontify-emphasized-text t)
+#+END_SRC
+
+Use Unicode characters to visualize things like right arrow eg \rarr . Most of those
+symbols are correctly exported to the destination format. The most obvious is
+this example in LaTeX versus Text.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-pretty-entities t)
+#+END_SRC
+
+Highlight LaTeX and related markup.
+
+Normally, I don't do any syntax highlighting, as I believe that should be
+delegated to source buffers, thinking that to do otherwise is distracting.
+However, I already do configure subscripts and Greek letters to be displayed
+with syntax highlighting, because I want to indicate to the human reader that
+they are special, and specifically /not/-Unicode. Do the same thing for LaTeX
+and related markup.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-highlight-latex-and-related '(latex script entities))
+#+END_SRC
+
+Allow "refactoring" of Footnotes between documents.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-footnote-define-inline t)
+(setq org-footnote-auto-label 'random)
+(setq org-footnote-auto-adjust nil)
+(setq org-footnote-section nil)
+#+END_SRC
+
 * Piano Lessons
    :PROPERTIES:
    :noweb-ref: Piano-Lessons
