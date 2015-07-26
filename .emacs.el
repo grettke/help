@@ -90,7 +90,9 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
         regexp-search-ring))
 (savehist-mode t)
 (use-package magit
-  :ensure t)
+             :ensure t
+             :config
+             (global-set-key (kbd "s-s") #'magit-status))
 (add-hook #'text-mode-hook #'linum-mode)
 (add-hook #'prog-mode-hook #'linum-mode)
 (setq ring-bell-function 'ignore)
@@ -150,3 +152,4 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
 (tool-bar-mode -1)
 (setq make-pointer-invisible t)
 (menu-bar-mode t)
+(global-set-key (kbd "s-a") #'vc-next-action)

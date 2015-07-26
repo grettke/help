@@ -137,7 +137,7 @@ Load Org-Mode.
    :noweb-ref: Org-Mode-Helper-Functions
    :END:
 
-#+BEGIN_src emacs-lisp
+#+BEGIN_SRC emacs-lisp
 (defun help/set-org-babel-default-header-args (property value)
   "Easily set system header arguments in org mode.
 
@@ -382,7 +382,7 @@ EMACS users go far together. Here is how to do it.
       and frequently revisited.
     - Here is how it looks.
       - ~set-mark-command~ clearly needs conventient new binding!
-      #+BEGIN_SRC ditaa
+      #+BEGIN_EXAMPLE
 +---------------------------------------+
 | +-----+                       +-----+ |
 | |RET  |                       |  RET| |
@@ -395,7 +395,7 @@ EMACS users go far together. Here is how to do it.
 |        +-+ +-+ +-----+ +-+ +-+        |
 |                                       |
 +---------------------------------------+
-      #+END_SRC
+      #+END_EXAMPLE
 
 - Understanding your congitive landscape.
   - Assumptions.
@@ -456,12 +456,15 @@ EMACS users go far together. Here is how to do it.
 
 ** Take a Sip
 
-Because Use-Package is used in this system, the binding definitions live in the
-call itself.
+Because Use-Package is used in this system, the binding definitions often live
+in the call itself.
 
 *** Left Side
 
-- =s-a= ~vc-next-action~
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "s-a") #'vc-next-action)
+#+END_SRC
+
 - =s-b= ~magit-status~
 
 *** Right Side
@@ -635,7 +638,9 @@ else.
 
 #+BEGIN_SRC emacs-lisp
 (use-package magit
-  :ensure t)
+             :ensure t
+             :config
+             (global-set-key (kbd "s-s") #'magit-status))
 #+END_SRC
 
 * Quiet and Pleasant Appearance
