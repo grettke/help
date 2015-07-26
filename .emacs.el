@@ -74,4 +74,5 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
   (unicode-fonts-setup))
 (scroll-bar-mode 0)
 (tool-bar-mode -1)
+(setq make-pointer-invisible t)
 (menu-bar-mode t)

@@ -379,6 +379,14 @@ The tool-bar is helpful for new users. Isn't the argument funny?
 (tool-bar-mode -1)
 #+END_SRC
 
+** Pointer
+
+Hide the pointer when typing.
+
+#+BEGIN_SRC emacs-lisp
+(setq make-pointer-invisible t)
+#+END_SRC
+
 ** Window
 
 Menu bars make EMACS more accessible to non-EMACS users.
