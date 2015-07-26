@@ -411,12 +411,20 @@ EMACS users go far together. Here is how to do it.
 
 - Identifying =places=.
   - Assumptions
-    - The right side of the keyboard should be used with the =s= name-space for
-      operations specific to the current major mode. This name-space 19
-      single-key bindings available which is enough to handle most operations.
-      =Actions= here are for the =place= inside of the buffer itself. They are for
-      immediate acting upon the contents of the buffer.
-      - For the left side
+    - =s= namespace
+      - =Actions= here are for the =place= inside of the buffer itself. They are for
+        immediate acting upon the contents of the buffer. They are logically
+        related, used frequently, and likely to be memorized.
+      - Only use single key bindings; anything more may be a new logical
+        namespace and may use a Hydra.
+      - Split the home sides of the keyboard in half.
+      - The left side of the keyboard should be use for operations common to
+        every mode. It has 15 bindings available; 20 if you use 1-5.
+        - For example ~goto-line~ and ~ispell~.
+      - The right side of the keyboard should be used operations specific to the
+        current major mode. It has 19 bindings available; 26 if you use 6-=.
+        - For example in Org-Mode navigating between source-blocks and
+          evaluating them.
 
 * Special Operating Procedure
    :PROPERTIES:
