@@ -365,7 +365,7 @@ EMACS users go far together. Here is how to do it.
     - Will use =s= and shift a lot so make them accessible according to strengths
       asserted above.
     - =C= and =M= name-spaces will be used a lot.
-- Map your keyboard to make logical meta keys =stomp-keys= like =return= and
+- Map your keyboard to make logical meta keys =stomp-keys= like =return=, =shift=, and
   =space-bar= easily accessible. Mirror them to make them equally accessible with
   each hand.
   - Assumptions.
