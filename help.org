@@ -394,6 +394,14 @@ EMACS users go far together. Here is how to do it.
 +-------------------------------------------+
       #+END_SRC
 
+- How to choose a name-space to place a key-bindings.
+  - Assumptions.
+    - There is a logical sense of immediacy and distance between "here" and
+      "there" that you can achieve the desired action. That is "the place".
+    - There is a logical sense of "flow" that should never be interrupted.
+      There are logical stoppage points in flow. Often the place changes when
+      the flow changes.
+
 * Special Operating Procedure
    :PROPERTIES:
    :noweb-ref: Special-Operating-Procedure
