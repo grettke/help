@@ -59,6 +59,16 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
      (apply orig-fun args)))
  (advice-add 'yes-or-no-p :around #'help/yes-or-no-p)
  (advice-add 'y-or-n-p :around #'help/yes-or-no-p))
+(use-package unicode-fonts
+  :ensure t
+  :config
+  (unicode-fonts-setup))
+(setq savehist-save-minibuffer-history 1)
+(setq savehist-additional-variables
+      '(kill-ring
+        search-ring
+        regexp-search-ring))
+(savehist-mode t)
 (add-hook #'text-mode-hook #'linum-mode)
 (add-hook #'prog-mode-hook #'linum-mode)
 (use-package solarized-theme
@@ -70,10 +80,6 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
   (setq solarized-use-more-italic nil)
   (setq solarized-emphasize-indicators nil)
   (load-theme 'solarized-dark))
-(use-package unicode-fonts
-  :ensure t
-  :config
-  (unicode-fonts-setup))
 (scroll-bar-mode 0)
 (tool-bar-mode -1)
 (setq make-pointer-invisible t)

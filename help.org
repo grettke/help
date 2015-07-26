@@ -326,6 +326,45 @@ This is a known issue. [[https://superuser.com/questions/125569/how-to-fix-emacs
 
 Configure EMACS to maximum utility.
 
+** Font
+
+Use Unicode-Font to provide as many Unicode fonts as possible.
+
+Here are the Unicode fonts that provide nearly everything.
+
+| Name    | Version | URL | Comments                  |
+|---------+---------+-----+---------------------------|
+| [[http://sourceforge.net/projects/dejavu/files/dejavu/2.34/dejavu-fonts-ttf-2.34.tar.bz2][DejaVu]]  |    2.43 | [[http://sourceforge.net/projects/dejavu/files/dejavu/2.34/dejavu-fonts-ttf-2.34.tar.bz2][.]]   | Modern classic            |
+| [[http://users.teilar.gr/~g1951d/][Symbola]] |    7.17 | [[http://users.teilar.gr/~g1951d/Symbola.zip][.]]   | Neat                      |
+| [[http://www.quivira-font.com/][Quivira]] |     4.0 | [[http://www.quivira-font.com/files/Quivira.otf][.]]   | Amazing                   |
+| [[https://code.google.com/p/noto/][Noto]]    |       ? | [[http://noto.googlecode.com/git/fonts/individual/hinted/NotoSans-Regular.ttc][1]] [[http://noto.googlecode.com/git/fonts/individual/unhinted/NotoSansSymbols-Regular.ttf][2]] | Has morese code, and more |
+
+To test it run =view-hello-file= and =M-x list-charset-chars RET unicode-bmp RET=.
+
+Perhaps educationally there is a character for bowel-movements: 💩.
+
+#+BEGIN_SRC emacs-lisp
+(use-package unicode-fonts
+  :ensure t
+  :config
+  (unicode-fonts-setup))
+#+END_SRC
+
+** Save History of All Things
+
+It is nice to have commands and their history saved so that every time you get
+back to work, you can just re-run stuff as you need it.
+
+#+BEGIN_SRC emacs-lisp
+(setq savehist-save-minibuffer-history 1)
+(setq savehist-additional-variables
+      '(kill-ring
+        search-ring
+        regexp-search-ring))
+(savehist-mode t)
+#+END_SRC
+
+
 * Quiet and Pleasant Appearance
    :PROPERTIES:
    :noweb-ref: Quiet-and-Pleasant-Appearance
@@ -357,30 +396,6 @@ release. It is soft and gentle yet easy to read in any situation.
   (setq solarized-use-more-italic nil)
   (setq solarized-emphasize-indicators nil)
   (load-theme 'solarized-dark))
-#+END_SRC
-
-** Font
-
-Use Unicode-Font to provide as many Unicode fonts as possible.
-
-Here are the Unicode fonts that provide nearly everything.
-
-| Name    | Version | URL | Comments                  |
-|---------+---------+-----+---------------------------|
-| [[http://sourceforge.net/projects/dejavu/files/dejavu/2.34/dejavu-fonts-ttf-2.34.tar.bz2][DejaVu]]  |    2.43 | [[http://sourceforge.net/projects/dejavu/files/dejavu/2.34/dejavu-fonts-ttf-2.34.tar.bz2][.]]   | Modern classic            |
-| [[http://users.teilar.gr/~g1951d/][Symbola]] |    7.17 | [[http://users.teilar.gr/~g1951d/Symbola.zip][.]]   | Neat                      |
-| [[http://www.quivira-font.com/][Quivira]] |     4.0 | [[http://www.quivira-font.com/files/Quivira.otf][.]]   | Amazing                   |
-| [[https://code.google.com/p/noto/][Noto]]    |       ? | [[http://noto.googlecode.com/git/fonts/individual/hinted/NotoSans-Regular.ttc][1]] [[http://noto.googlecode.com/git/fonts/individual/unhinted/NotoSansSymbols-Regular.ttf][2]] | Has morese code, and more |
-
-To test it run =view-hello-file= and =M-x list-charset-chars RET unicode-bmp RET=.
-
-Perhaps educationally there is a character for bowel-movements: 💩.
-
-#+BEGIN_SRC emacs-lisp
-(use-package unicode-fonts
-  :ensure t
-  :config
-  (unicode-fonts-setup))
 #+END_SRC
 
 ** Frame
