@@ -454,6 +454,18 @@ EMACS users go far together. Here is how to do it.
         can get the fast and sometimes more slowly. They are complementary to
         every name-space.
 
+** Take a Sip
+
+Because Use-Package is used in this system, the binding definitions live in the
+call itself.
+
+*** Left Side
+
+- =s-a= ~vc-next-action~
+- =s-b= ~magit-status~
+
+*** Right Side
+
 * Special Operating Procedure
    :PROPERTIES:
    :noweb-ref: Special-Operating-Procedure
