@@ -43,6 +43,11 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
   `(when (display-graphic-p)
      ,statement
      ,@statements))
+(use-package key-chord
+  :ensure t
+  :config
+  (key-chord-mode t)
+  (setq key-chord-two-keys-delay 0.1))
 (use-package dash
   :ensure t
   :config

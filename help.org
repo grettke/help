@@ -290,6 +290,18 @@ display.
      ,@statements))
 #+END_SRC
 
+** Keyboard
+
+Key-Chord mode is amazing. Piano-Lessons shows you how.
+
+#+BEGIN_SRC emacs-lisp
+(use-package key-chord
+  :ensure t
+  :config
+  (key-chord-mode t)
+  (setq key-chord-two-keys-delay 0.1))
+#+END_SRC
+
 ** Libraries
 
 Dash is nice to use.
