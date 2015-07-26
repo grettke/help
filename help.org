@@ -443,10 +443,6 @@ EMACS users go far together. Here is how to do it.
         In the =s= namespace you go there very quickly. For =Hydras= sometimes you
         can get the fast and sometimes more slowly. They are complementary to
         every name-space.
-    - You don't need any other name-spaces.
-      - The double-Key-Chord name-space is too difficult to generalize.
-        - For example once you set up =eshell= have fun if you bound =cd=.
-      - Both sides in the =s= name-space have a lot of bindings available.
 
 * Special Operating Procedure
    :PROPERTIES:
