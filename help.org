@@ -262,11 +262,28 @@ Never "automatically" evaluate a source block.
 #+BEGIN_SRC emacs-lisp
 (setq org-confirm-babel-evaluate nil)
 #+END_SRC
-* A Fine Cup of EMACS
 * Piano Lessons
    :PROPERTIES:
    :noweb-ref: Piano-Lessons
    :END:
+
+** A Fine Cup of EMACS
+
+
+Every EMACS user ought to have a [[http://shop.fsf.org/product/gnu-emacs-reference-mugs/][Emacs Reference Mug]] at their desk. The mug
+invite other user to ask questions. Give the mug as a gift to every user you
+know who would benefit from learning EMACS. The mug reminds us all that EMACS is
+the perfect configuration of EMACS. It is available on every machine. When you
+break your system, you can always fall back to the good and reliable default
+EMACS configuration to get your system up and running again. The OOTB
+configuration of EMACS is one of the most important system configurations that
+you will every find. That is why it is important never to ruin it.
+
+This system wants to maximize accessibility for new users. It wants anyone to be
+able to download and use it without surprises. It wants the mug to serve as a
+fine reference for anyone to use. It wants to keep things simple and familiar so
+that anyone who has learned EMACS OOTB can use it pleasantly and productively.
+These goals are essential to configuring the keyboard for this system.
 
 * Special Operating Procedure
    :PROPERTIES:
@@ -657,6 +674,7 @@ Load Use-Package.
 - Dictionary
   - Exemple Complet Minimal (ECM) :: The minimal complete example of expected
     versus actual behavior. Comes from the [[http://orgmode.org/worg/org-faq.html][Org-Mode]] community.
+  - Key-Bind :: A verb. The act of creating a Key Binding.
   - Out of the Box (OOTB) :: The default configuration of EMACS.
   - Sysop :: A proper noun. The System-Operator. The human operating this EMACS
     based Org-Mode enabled literate programming system. Yourself.
