@@ -261,6 +261,11 @@ Load Markdown export for system compatibility.
 (require 'ox-md)
 #+END_SRC
 
+Make sure that exported files are Unicode UTF-8.
+#+BEGIN_SRC emacs-lisp
+(setq org-export-coding-system 'utf-8)
+#+END_SRC
+
 *** Exports
 
 Always share source blocks and their results. Whether or not to generate a
