@@ -300,6 +300,87 @@ Make this system easy to use on any keyboard. Make this system easy to use in
 English. Make this system easy to use with average hand strength. These goals
 are essential to configuring the keyboard for this system.
 
+** A Full Pot of EMACS on Every Desk
+
+#+begin_quote
+If you want to go quickly, go alone. If you want to go far, go together.
+#+end_quote
+-- [[https://en.wikiquote.org/wiki/October_14][African proverb]]
+
+EMACS users go far together. Here is how to do it.
+
+- Use a QWERTY keyboard.
+  - Assumptions.
+    - Impossible to use EMACS without a keyboard.
+    - Available on every laptop.
+    - Likely to come with every computer ever.
+    - Easy to find nearly everywhere.
+- You are using two hands with normal strength and configuration.
+  - Assumptions.
+    - You have 5 fingers on each hand.
+      - Thumb.
+      - Index.
+      - Middle.
+      - Ring.
+      - Pinky.
+    - Each will be positioned in one of two positions at any time.
+      - Home position.
+        - Easily reach bottom "space-bar" row to top "qwerty" row.
+          - Full row accessible.
+        - Width from a-;.
+        - Difficult to reach number and =F= row.
+        - Full operational strength with every finger.
+      - Foreign position.
+        - Every key beyond the Home position.
+        - Includes caps-lock and return.
+        - Easy to reach.
+    - Home and Foreign will be used.
+      - In Home every finger has full strength.
+      - In Foreign Pinky and Ring are weakest.
+        - Make your hand into a crab claw to operate keys that you normally
+          thing to use your Pinky. The key must be large. The only likely
+          candidates are caps-lock and return.
+- Map your keyboard to make logical meta keys more easily available.
+  - Assumptions.
+    - You can remap your keyboard before it reaches EMACS.
+    - Map is a verb for defining keys, not key-bindings.
+    - Map the spacebar to C if held and return if pressed and released.
+    - Map M to the keys to the left and right of the spacebar
+    - Map return to the keys left and right of M.
+    - Map caps-lock and return to s (super).
+    - Leave shift alone.
+    - Here is how it looks on my machine
+      #+BEGIN_SRC ditaa
++-------------------------------------------+
+| +-----+                           +-----+ |
+| |RET  |                           |  RET| |
+| +-----+                           +-----+ |
+| +------+                         +------+ |
+| |SHIFT |                         | SHIFT| |
+| +------+                         +------+ |
+|        +---+ +-+ +-----+ +-+ +---+        |
+|        |RET| |M| |SPACE| |M| |RET|        |
+|        +---+ +-+ +-----+ +-+ +---+        |
+|                                           |
++-------------------------------------------+
+      #+END_SRC
+
+- Never bind to =F= keys
+  - Assumptions
+    - They are a painful stretch on most keyboards.
+    - Most operating systems bind actions to them OOTB.
+    - EMACS comes with key-bindings OOTB.
+- Almost never bind with =C= or =M= combinations
+  - Assumptions
+    - EMACS comes with key-bindings OOTB.
+    - Even though =C-c= is the "user namespace" it is usually populated with
+      binding from packages that you are likely to stomp on.
+    - There are often sweet and precise exceptions to this advice like
+      combinations for the =RET= and =<return>= but otherwise it is a bad
+      idea.
+- Arrange your keyboard keys
+  - Assumptions
+
 * Special Operating Procedure
    :PROPERTIES:
    :noweb-ref: Special-Operating-Procedure
