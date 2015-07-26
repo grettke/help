@@ -409,7 +409,7 @@ EMACS users go far together. Here is how to do it.
       =actions= that you find there.
     - As you develop these ides it will be obvious where things should go.
 
-- Identifying =places=.
+- Choosing =places=.
   - Assumptions
     - =s= namespace
       - =Actions= here are for the =place= inside of the buffer itself. They are for
