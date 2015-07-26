@@ -419,6 +419,21 @@ Allow "refactoring" of Footnotes between documents.
 (setq org-footnote-section nil)
 #+END_SRC
 
+This is an amazingly easy way to screw up your document. The more you edit
+org docs, the more you realize how you must truly protect it.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-catch-invisible-edits 'error)
+#+END_SRC
+
+Though I am not delving deep, it is hard not to want to customize some stuff
+and perhaps this is the start. Even though I enabled this, I don't think that I
+ever used it.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-loop-over-headlines-in-active-region t)
+#+END_SRC
+
 * Piano Lessons
    :PROPERTIES:
    :noweb-ref: Piano-Lessons
