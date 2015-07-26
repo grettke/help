@@ -366,8 +366,9 @@ EMACS users go far together. Here is how to do it.
     - Will use s and shift a lot so make them accessible according to strengths
       asserted above.
     - C and M name-spaces will be used a lot.
-- Map your keyboard to make logical meta keys (including return) more easily
-  available and they are mirrored for each hand (each side of the keyboard).
+- Map your keyboard to make logical meta keys stomp-keys like return and
+  space-bar easily accessible. Mirror them to make them equally accessible with
+  each hand.
   - Assumptions.
     - You can remap your keyboard before it reaches EMACS.
     - Shift is logically a meta key in this system using Key-Chord.
