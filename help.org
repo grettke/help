@@ -306,6 +306,13 @@ source-blocks outside of that place.
 (setq org-src-tab-acts-natively nil)
 #+END_SRC
 
+My personal TODO workflow.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-todo-keywords
+      '((sequence "TODO" "IN-PROGRESS" "BLOCKED" "REVIEW" "DONE")))
+#+END_SRC
+
 * Piano Lessons
    :PROPERTIES:
    :noweb-ref: Piano-Lessons
