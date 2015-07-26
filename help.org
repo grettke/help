@@ -342,7 +342,7 @@ release. It is soft and gentle yet easy to read in any situation.
 #+END_SRC
 
 ** Font
-** Frames
+** Frame
 
 The scroll-bars are helpful for new users.
 
@@ -356,7 +356,7 @@ The tool-bar is helpful for new users. Isn't the argument funny?
 (tool-bar-mode -1)
 #+END_SRC
 
-** Windows
+** Window
 
 Menu bars make EMACS more accessible to non-EMACS users.
 
