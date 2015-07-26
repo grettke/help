@@ -266,6 +266,16 @@ Make sure that exported files are Unicode UTF-8.
 (setq org-export-coding-system 'utf-8)
 #+END_SRC
 
+Do not preserve line-breaks when exporting instead let the destination
+format handle it as it sees fit. This doesn't work like I had expected and makes
+me wonder what I am confused about here. When I export to HTML text containing
+linebreaks no longer has linebreaks. This is what I expect. When I export that
+same text to a buffer though, the line breaks are included. Currently I use
+=sacha/unfill-paragraph= on that code.
+#+BEGIN_SRC emacs-lisp
+(setq org-export-preserve-breaks nil)
+#+END_SRC
+
 *** Exports
 
 Always share source blocks and their results. Whether or not to generate a
