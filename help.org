@@ -313,6 +313,12 @@ My personal TODO workflow.
       '((sequence "TODO" "IN-PROGRESS" "BLOCKED" "REVIEW" "DONE")))
 #+END_SRC
 
+When running in a GUI, I would like linked images to be displayed inside of
+Emacs.
+#+BEGIN_SRC emacs-lisp
+(setq org-startup-with-inline-images (display-graphic-p))
+#+END_SRC
+
 * Piano Lessons
    :PROPERTIES:
    :noweb-ref: Piano-Lessons
