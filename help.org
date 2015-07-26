@@ -338,8 +338,29 @@ EMACS users go far together. Here is how to do it.
       - In Home every finger has full strength.
       - In Foreign Pinky and Ring are weakest.
         - Make your hand into a crab claw to operate keys that you normally
-          thing to use your Pinky. The key must be large. The only likely
-          candidates are caps-lock and return.
+          thing to use your Pinky. The key must be large. Use this position for
+          "stamping" and "holding" keys. You can easily to the same thing with
+          your thumb.
+- Never bind to =F= keys.
+  - Assumptions.
+    - They are a painful stretch on most keyboards.
+    - Most operating systems bind actions to them OOTB.
+    - EMACS comes with key-bindings OOTB.
+- Almost never bind with =C= or =M= combinations.
+  - Assumptions.
+    - EMACS comes with key-bindings OOTB.
+    - Even though =C-c= is the "user namespace" it is usually populated with
+      binding from packages that you are likely to stomp on.
+    - There are often sweet and precise exceptions to this advice like
+      combinations for the =RET= and =<return>= but otherwise it is a bad
+      idea.
+- Logical name-spaces you should use are home-key-key-chords,
+  Shift-home-key-chords, s-name-space, and Hydra-name-spaces.
+  - Assumptions
+    - Never makes sense to ignore previous assumptions.
+    - Will use s and shift a lot so make them accessible according to strengths
+      asserted above.
+    - C and M name-spaces will be used a lot.
 - Map your keyboard to make logical meta keys (including return) more easily
   available and they are mirrored for each hand (each side of the keyboard).
   - Assumptions.
@@ -367,22 +388,6 @@ EMACS users go far together. Here is how to do it.
 |                                           |
 +-------------------------------------------+
       #+END_SRC
-
-- Never bind to =F= keys
-  - Assumptions
-    - They are a painful stretch on most keyboards.
-    - Most operating systems bind actions to them OOTB.
-    - EMACS comes with key-bindings OOTB.
-- Almost never bind with =C= or =M= combinations
-  - Assumptions
-    - EMACS comes with key-bindings OOTB.
-    - Even though =C-c= is the "user namespace" it is usually populated with
-      binding from packages that you are likely to stomp on.
-    - There are often sweet and precise exceptions to this advice like
-      combinations for the =RET= and =<return>= but otherwise it is a bad
-      idea.
-- Arrange your keyboard keys
-  - Assumptions
 
 * Special Operating Procedure
    :PROPERTIES:
