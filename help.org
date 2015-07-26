@@ -399,14 +399,13 @@ EMACS users go far together. Here is how to do it.
 
 - How to choose a name-space to place key-bindings.
   - Assumptions.
-    - There is a logical sense of immediacy and distance between "here" and
-      "there" that you can achieve the desired action. That is "the place". It
-      is a location in your cognitive landscape.
-    - There is a logical sense of "flow" that should never be interrupted.
-      There are logical stoppage points in flow. Often the place changes when
-      the flow changes.
-    - There are logically related "actions" that you wish to perform in that
-      place to facilitate the flow..
+    - You operate within a cognitive landscape and at any given moment you are
+      in a particular =place=.
+    - While residing in each =place= you perform logically related =activities=.
+      Activities facilitate logical actions like modification within that =place=.
+    - While performing =activities= there is a logical sense of "flow" while
+      performing them that should never be interrupted. Usually an interruption
+      in flow occurs when you are going to go to a new =place=.
 
 * Special Operating Procedure
    :PROPERTIES:
