@@ -364,6 +364,18 @@ This is a known issue. [[https://superuser.com/questions/125569/how-to-fix-emacs
 
 Configure EMACS to maximum utility.
 
+** Buffer
+
+Maintain buffers across sessions. Desktop-Save-Mode persists very part of the
+buffer. If you upgrade a package that uses buffer-variables that have changed
+you may get unexpected behavior. Close all buffers and open them again after
+making such breaking changes.
+
+#+BEGIN_SRC emacs-lisp
+(desktop-save-mode t)
+(setq desktop-restore-eager 10)
+#+END_SRC
+
 ** Font
 
 Use Unicode-Font to provide as many Unicode fonts as possible.

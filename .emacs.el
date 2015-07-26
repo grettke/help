@@ -72,6 +72,8 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
      (apply orig-fun args)))
  (advice-add 'yes-or-no-p :around #'help/yes-or-no-p)
  (advice-add 'y-or-n-p :around #'help/yes-or-no-p))
+(desktop-save-mode t)
+(setq desktop-restore-eager 10)
 (use-package unicode-fonts
   :ensure t
   :config
