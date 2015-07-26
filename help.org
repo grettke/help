@@ -565,6 +565,19 @@ task. Anything else results in distractions and errors.
 (setq org-src-window-setup 'current-window)
 #+END_SRC
 
+Org-Mode has a really nice feature that hitting =C-c C-c= will generally just do
+the /right thing/. It is really nice. That feature extends to source blocks of
+course. Ironically I had a typo here, typing /of curse/ instead of /of course/.
+The thing is that you really, really need to develop a personal workflow, and
+then configure the tool to enable it. The more I learn about Org-Mode, the more
+leery I am about making it really easy to evaluate code. I want it to be a
+really, really specific and decided action to evaluate a code block, so don't
+make it so easy as =C-c C-c=.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-babel-no-eval-on-ctrl-c-ctrl-c t)
+#+END_SRC
+
 * Piano Lessons
    :PROPERTIES:
    :noweb-ref: Piano-Lessons
