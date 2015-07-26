@@ -333,6 +333,7 @@ EMACS users go far together. Here is how to do it.
         - Every key beyond the Home position.
         - Includes caps-lock and return.
         - Easy to reach.
+        - Ring and Pinky fingers are weak. Thumb, Index, and Middle are strong.
     - Home and Foreign will be used.
       - In Home every finger has full strength.
       - In Foreign Pinky and Ring are weakest.
