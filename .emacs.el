@@ -77,4 +77,10 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
 (scroll-bar-mode 0)
 (tool-bar-mode -1)
 (setq make-pointer-invisible t)
+(setq savehist-save-minibuffer-history 1)
+(setq savehist-additional-variables
+      '(kill-ring
+        search-ring
+        regexp-search-ring))
+(savehist-mode t)
 (menu-bar-mode t)

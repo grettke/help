@@ -396,6 +396,20 @@ Hide the pointer when typing.
 (setq make-pointer-invisible t)
 #+END_SRC
 
+** Save History of All Things
+
+It is nice to have commands and their history saved so that every time you get
+back to work, you can just re-run stuff as you need it.
+
+#+BEGIN_SRC emacs-lisp
+(setq savehist-save-minibuffer-history 1)
+(setq savehist-additional-variables
+      '(kill-ring
+        search-ring
+        regexp-search-ring))
+(savehist-mode t)
+#+END_SRC
+
 ** Window
 
 Menu bars make EMACS more accessible to non-EMACS users.
