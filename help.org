@@ -262,6 +262,15 @@ Never "automatically" evaluate a source block.
 #+BEGIN_SRC emacs-lisp
 (setq org-confirm-babel-evaluate nil)
 #+END_SRC
+
+Make it unpleasant for Sysop to modify source-block outside of a source-block
+backed buffer. The next step is to write some code to prevent modifying
+source-blocks outside of that place.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-src-tab-acts-natively nil)
+#+END_SRC
+
 * Piano Lessons
    :PROPERTIES:
    :noweb-ref: Piano-Lessons
