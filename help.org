@@ -40,8 +40,6 @@ Sysop is likely to use this daily.
 
 Start EMACS with this command:
 
-=open /Applications/Emacs.app=
-
 #+BEGIN_SRC emacs-lisp
 «Org-Mode-ECM-Tangle-Block»
 «Org-Mode-Helper-Functions»
@@ -51,8 +49,10 @@ Start EMACS with this command:
 «Org-Mode-Programming»
 «Watch-What-You-Eat»
 «Special-Operating-Procedure»
-«Quiet-and-Pleasant»
+«Quiet-and-Pleasant-Appearance»
 #+END_SRC
+
+=open /Applications/Emacs.app=
 
 * Literate Programming
 
@@ -319,9 +319,9 @@ This is a known issue. [[https://superuser.com/questions/125569/how-to-fix-emacs
 #+END_SRC
 
 * Standard Operating Procedure
-* Quiet and Pleasant
+* Quiet and Pleasant Appearance
    :PROPERTIES:
-   :noweb-ref: Quiet-and-Pleasant
+   :noweb-ref: Quiet-and-Pleasant-Appearance
    :END:
 
 ** Buffer
