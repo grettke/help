@@ -268,9 +268,9 @@ Never "automatically" evaluate a source block.
    :noweb-ref: Special-Operating-Procedure
    :END:
 
-The following code and packages are special to HELP. They provide critical
-functionality for configuring the rest of the system. They provide ideas that
-make the entire system usable, productive, expressive, and fast.
+The following code and packages are special to this configuration. They provide
+critical functionality for configuring the rest of the system. They provide
+ideas that make the entire system usable, productive, expressive, and fast.
 
 ** OSX
 
@@ -294,7 +294,7 @@ Pull in the =ENVIRONMENT= variables because the GUI version of EMACS does not.
    (exec-path-from-shell-initialize)))
 #+END_SRC
 
-Configure the meta kays.
+Configure the meta keys.
 
 Enable the =super= key-space:
 #+BEGIN_SRC emacs-lisp
@@ -357,7 +357,7 @@ The tool-bar is helpful for new users. Isn't the argument funny?
 
 ** Windows
 
-Menu bars make HELP more accessible to non-EMACS users.
+Menu bars make EMACS more accessible to non-EMACS users.
 
 #+BEGIN_SRC emacs-lisp
 (menu-bar-mode t)
@@ -391,9 +391,10 @@ The surprise comes when you forget to compile code and then write new code that
 depends on the now old version of that code. After the next build, your system
 can break in surprising ways. This violates the Principle of Least Astonishment.
 
-HELP values predictability so it does the simplest thing possible: ~load~ searches
-for the newest representation of a file and uses that one. It assumes that Sysop
-has total and complete control over the management of file representations.
+This system values predictability so it does the simplest thing possible: ~load~
+searches for the newest representation of a file and uses that one. It assumes
+that Sysop has total and complete control over the management of file
+representations.
 
 This is the *first* thing that /ought/ to happen in the initialization of *any*
 tangled system.
@@ -409,9 +410,9 @@ tangled system.
 
 *Code requiring package-management can only follow this block.*
 
-Before ELPA, I used SVN to manage software packages for HELP. After ELPA, HELP
-used ELPA-packages. HELP uses MELPA and GNU. MELPA packages always have their
-issues fixed very quickly. GNU packages rarely have issues.
+Before ELPA, I used SVN to manage software packages for EMACS. After ELPA,
+I used ELPA-packages. Now this system uses MELPA and GNU. MELPA packages always
+have their issues fixed very quickly. GNU packages rarely have issues.
 
 Initialize Package.
 
@@ -504,4 +505,5 @@ Load Use-Package.
 - Word Choice
   - Use Arabic numerals.
   - Instead of writing "tells EMACS", communicate the result.
-  - "HELP" not "this system".
+  - "EMACS" refers to this software.
+  - "This system" refers to this configuration of EMACS.
