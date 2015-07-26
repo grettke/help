@@ -439,6 +439,8 @@ EMACS users go far together. Here is how to do it.
       - Unexpected breakage very easy.
         - =cd= in ~eshell~.
       - Use sparingly.
+      - Not worth analyzing ideal combinations; just use it and see if it
+        doesn't break.
     - Hyra name-space.
       - Sometimes you want to do something in a =place= but you aren't sure what
         and you aren't sure where you will go next from there. For example you
