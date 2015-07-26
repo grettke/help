@@ -241,6 +241,24 @@ Replace theme each time you evaluate the block.
    :noweb-ref: Org-Mode-Weave
    :END:
 
+Load Htmlize for HTML export.
+
+#+BEGIN_SRC emacs-lisp
+(require 'htmlize)
+#+END_SRC
+
+Load Beamer for creating reports.
+
+#+BEGIN_SRC emacs-lisp
+(require 'ox-beamer)
+#+END_SRC
+
+Load Markdown export for system compatibility.
+
+#+BEGIN_SRC emacs-lisp
+(require 'ox-md)
+#+END_SRC
+
 *** Exports
 
 Always share source blocks and their results. Whether or not to generate a
