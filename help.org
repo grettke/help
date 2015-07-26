@@ -427,6 +427,26 @@ EMACS users go far together. Here is how to do it.
         current major mode. It has 19 bindings available; 26 if you use 6-=.
         - For example in Org-Mode navigating between source-blocks and
           evaluating them.
+    - Single-key key-chord name-space.
+      - You will use come here often, perform your single =action=, and be done
+        and leave very frequently and quickly.
+      - Only use the symbols, so 10 without shift and 20 with shift.
+      - Using alphabetical characters always results in unpleasant surprises.
+    - Hyra name-space.
+      - Sometimes you want to do something in a =place= but you aren't sure what
+        and you aren't sure where you will go next from there. For example you
+        might want to perform an Org-Mode =action= that is important but you don't
+        really use much. For example exporting to HTML might not be common for
+        you but you value.
+      - =Hydras= can be used for very relates actions too. The difference between
+        the =s= name-space is the distance between them and where you are now.
+        In the =s= namespace you go there very quickly. For =Hydras= sometimes you
+        can get the fast and sometimes more slowly. They are complementary to
+        every name-space.
+    - You don't need any other name-spaces.
+      - The double-Key-Chord name-space is too difficult to generalize.
+        - For example once you set up =eshell= have fun if you bound =cd=.
+      - Both sides in the =s= name-space have a lot of bindings available.
 
 * Special Operating Procedure
    :PROPERTIES:
