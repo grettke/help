@@ -434,6 +434,41 @@ ever used it.
 (setq org-loop-over-headlines-in-active-region t)
 #+END_SRC
 
+It is /almost always/ faster to work with org documents when they are fully
+expanded. Anyway, the structure cycling makes it really, really easy to get an
+/outline view/ again.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-startup-folded "nofold")
+#+END_SRC
+
+When images are displayed in the buffer, display them in their actual size. As
+the operator, I want to know their true form. Any modifications required for
+export will be stated explicitly.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-image-actual-width t)
+#+END_SRC
+
+Hide the delimeter for emphasized text. Unicode characters break table
+alignment.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-hide-emphasis-markers t)
+#+END_SRC
+
+Realign tables automatically.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-startup-align-all-tables t)
+#+END_SRC
+
+Always use Unicode checkboxes.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-html-checkbox-type 'unicode)
+#+END_SRC
+
 * Piano Lessons
    :PROPERTIES:
    :noweb-ref: Piano-Lessons
