@@ -49,6 +49,8 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
   (dash-enable-font-lock))
 (use-package f
   :ensure t)
+(use-package s
+  :ensure t)
 (defmacro help/on-osx (statement &rest statements)
   "Evaluate the enclosed body only when run on OSX."
   `(when (eq system-type 'darwin)

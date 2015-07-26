@@ -304,6 +304,13 @@ F is nice to use.
   :ensure t)
 #+END_SRC
 
+S is nice to use.
+
+#+BEGIN_SRC emacs-lisp
+(use-package s
+  :ensure t)
+#+END_SRC
+
 ** OSX
 
 Make it easy to evaluate code only when running on OSX.
