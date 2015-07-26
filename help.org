@@ -432,6 +432,13 @@ EMACS users go far together. Here is how to do it.
         and leave very frequently and quickly.
       - Only use the symbols, so 10 without shift and 20 with shift.
       - Using alphabetical characters always results in unpleasant surprises.
+    - Double-key key-chord name-space.
+      - Very attractive.
+      - Nice if you don't like double-keys.
+      - Easy to use all fingers.
+      - Unexpected breakage very easy.
+        - =cd= in ~eshell~.
+      - Use sparingly.
     - Hyra name-space.
       - Sometimes you want to do something in a =place= but you aren't sure what
         and you aren't sure where you will go next from there. For example you
