@@ -241,10 +241,12 @@ Replace theme each time you evaluate the block.
    :noweb-ref: Org-Mode-Weave
    :END:
 
-Load Htmlize for HTML export.
+Load Htmlize for HTML export. Use it. Use in-line CSS.
 
 #+BEGIN_SRC emacs-lisp
 (require 'htmlize)
+(setq org-html-htmlize-output-type htmlize-output-type)
+(setq htmlize-output-type 'inline-css)
 #+END_SRC
 
 Load Beamer for creating reports.
