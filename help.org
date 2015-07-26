@@ -326,8 +326,7 @@ EMACS users go far together. Here is how to do it.
     - Each will be positioned in one of two positions at any time.
       - Home position.
         - Effortlessly reach bottom "space-bar" row to top "qwerty" row.
-          - Full row accessible.
-        - Width from a-;.
+        - Width accessible from a-;.
         - Difficult to reach number and =F= row.
         - Full operational strength with every finger.
       - Foreign position.
