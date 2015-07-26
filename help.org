@@ -360,6 +360,119 @@ block.
 (help/set-org-babel-default-header-args :exports "both")
 #+END_SRC
 
+
+*** KOMA-Script
+
+I enjoy writing letters. I enjoy reading letters. LaTeX produces letters that
+are easy to print and read. Org provides a [[http://orgmode.org/worg/exporters/koma-letter-export.html][KOMA Script exporter]] for [[https://www.ctan.org/pkg/koma-script?lang%3Den][koma-script]].
+The Org documentation mentions that the user should read the [[http://orgmode.org/cgit.cgi/org-mode.git/plain/contrib/lisp/ox-koma-letter.el][ox-koma-letter.el]]
+header documentation.
+
+The [[https://www.ctan.org/pkg/babel?lang%3Den][babel]] packages is mentioned in the Org documentation. The package
+documentation explains that it should be used with LaTeX, but not XeTeX. Some
+time ago I decided to stick with LaTeX.
+
+Load the KOMA exporter.
+
+#+BEGIN_SRC emacs-lisp
+(eval-after-load 'ox '(require 'ox-koma-letter))
+#+END_SRC
+
+- Understanding KOMA and how to use it
+  - There are 4 ways to set letter metadata, listed "from the most specific to
+    the most general" (not sure exactly what this statement means, and the conclusion of my notes tries to make sense of what is really going on here and what is the best way to do things)
+    - Org option lines (ORG)
+    - Separate Org latex classes (LTX)
+    - Emacs Lisp variables (LISP)
+    - Letter Class Option files (LCO)
+- Notes and thoughts on the ways to use it
+  - LTX
+    - By following the setup directions, you do this, creating "my-letter" class
+    - Familiar and easy if you already know LaTeX
+      - At some point in your workflow, you *must* define a class to use, anyway
+    - Very easy to do, just define the class template and set =org-koma-letter-default-class=
+  - ORG
+    - Simple way that makes it very easy to just focus on the document content
+    - This metadata takes highest priority in the workflow
+      - So you should set your typical defaults in LISP or LCO and customize it
+        here. This is exactly what I wanted to know.
+      - This lets you do your tweaking in each unique file while relying on the
+        most common defaults defined elsewhere
+  - LISP
+    - Very familiar style of configuring things
+  - LCO
+    - LCO == Letter Class Option filess
+    - LCO files are TeX
+    - They are included in the generated TeX source code from the letter
+    - Gives *full* access to KOMA-Script
+      - Big deal, because not everything is exposed through ORG or LISP
+      - Also gives full access to any and all TeX and LaTeX code
+    - LCO files are a KOMA-Script thing, so they are a LaTeX thing
+    -
+      #+begin_quote
+      Letter metadata set in LCO files overwrites letter metadata set in Emacs
+      variables but not letter metadata set in the Org file.
+      #+end_quote
+    - When you include multiple LCO files, they are evaluted LIFO. Properties
+      are set as they first appear, and are not set again. Say you include
+      "MyGeneralStuffForAnyLetter.lco" and then include
+      "MyStuffSpecificToThisLetter.lco". The specific stuff will get set first.
+      Then general stuff will get set last.
+      - Surely there is a better way to phrase this. I will work on that.
+- Recommendations
+  - What is the easiest way to starat using KOMA-Script based on what you know
+    today?
+  - If you don't know any of the approaches
+    - Then choose between learning LaTeX and Org
+  - If you only know LaTeX
+    - Then you will use the LTX/LCO metadata approach
+  - If you only know ORG
+    - Then you will use the ORG metadata approach
+  - If you only know ORG and LISP
+    - Then you will use the LISP approach for general metadata and the ORG
+      approach specific metadata
+  - If you know LTX/LCO, ORG, and LISP
+    - Then you have total flexibility
+    - The fact is that
+      - ORG settings always trump LTX/LCO and LISP
+      - LISP settings are a subset of all of the settings available in
+        KOMA-Script, so you will always have to fall back to LTX/LCO if you want
+        to use unexposed features
+      - LCO files are just plain old LaTeX, which you already know
+    - So the best thing to do
+      - Is to use ORG for letter-specific settings
+      - And LTX for general settings
+      - Everything is a lot simpler this way because
+        - One less metadata approach to keep track of
+        - All KOMA-Script features are present
+        - Need to learn details of KOMA-Script package anyway
+
+Configure the default class.
+
+[[https://tex.stackexchange.com/questions/102922/how-can-i-get-us-letter-output-from-koma-scripts-scrlttr2-class][This]] post explains how to default the US letter size. That is the likely default
+for my printed correspondence.
+
+#+BEGIN_SRC emacs-lisp
+(eval-after-load 'ox-koma-letter
+  '(progn
+     (add-to-list 'org-latex-classes
+                  '("my-letter"
+                    "\\documentclass[paper=letter, pagesize, fontsize=10pt, parskip]{scrlttr2}
+\\usepackage[english]{babel}
+\\usepackage[osf]{mathpazo}"))
+
+     (setq org-koma-letter-default-class "my-letter")))
+#+END_SRC
+
+There are two formats for the letters: [[http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-new-example.org%3Bh%3D180a9a0e10dd8f7483a67946daf36732c316f821%3Bhb%3D180a9a0e10dd8f7483a67946daf36732c316f821][heading-based]] and [[http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-example.org%3Bh%3De21b8b00c3e895be9dd573d02ea84b08796296a3%3Bhb%3De21b8b00c3e895be9dd573d02ea84b08796296a3][property-based]].
+
+Set up my default LCO files.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-koma-letter-class-option-file "UScommercial9 KomaDefault")
+#+END_SRC
+
+
 ** Programming
    :PROPERTIES:
    :noweb-ref: Org-Mode-Programming
