@@ -173,6 +173,17 @@ never allow that. Its inconsistent with how Org-Mode works.
 (setq org-babel-use-quick-and-dirty-noweb-expansion nil)
 #+END_SRC
 
+Org-Mode already uses the guillemet for demarcating noweb references, but it
+does it using the work-around of just using less-than and greather-than
+characters twice. That is fine. Because EMACS supports Unicode just fine though,
+configure Org-Mode to use the real symbol. Another option would be to configure
+Pretty-Mode.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-babel-noweb-wrap-start "«")
+(setq org-babel-noweb-wrap-end "»")
+#+END_SRC
+
 *** Comments
 
 Provide as much information as possible in the tangled artifact about the
