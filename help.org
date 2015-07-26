@@ -324,6 +324,15 @@ This is a known issue. [[https://superuser.com/questions/125569/how-to-fix-emacs
    :noweb-ref: Quiet-and-Pleasant
    :END:
 
+** Buffer
+
+Line numbers make documents easier to read. Account for Literate documents.
+
+#+BEGIN_SRC emacs-lisp
+(add-hook #'text-mode-hook #'linum-mode)
+(add-hook #'prog-mode-hook #'linum-mode)
+#+END_SRC
+
 ** Color Theme
 
 The Solarized theme is the perfect theme for everything. bozhidar's
