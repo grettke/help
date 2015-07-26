@@ -341,6 +341,7 @@ release. It is soft and gentle yet easy to read in any situation.
   (load-theme 'solarized-dark))
 #+END_SRC
 
+** Font
 ** Frames
 
 The scroll-bars are helpful for new users.
