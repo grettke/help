@@ -415,6 +415,8 @@ EMACS users go far together. Here is how to do it.
       - =Actions= here are for the =place= inside of the buffer itself. They are for
         immediate acting upon the contents of the buffer. They are logically
         related, used frequently, and likely to be memorized.
+      - When you come here, you are likely to stay for some time before getting
+        out.
       - Only use single key bindings; anything more may be a new logical
         namespace and may use a Hydra.
       - Split the home sides of the keyboard in half.
