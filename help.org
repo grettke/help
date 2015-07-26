@@ -329,10 +329,9 @@ EMACS users go far together. Here is how to do it.
         - Width accessible from a-;.
         - Difficult to reach number and =F= row.
         - Full operational strength with every finger.
+        - Includes caps-lock and return.
       - Foreign position.
         - Every key beyond the Home position.
-        - Includes caps-lock and return.
-        - Easy to reach.
         - Ring and Pinky fingers are weak. Thumb, Index, and Middle are strong.
     - Home and Foreign key usage.
       - In Home, every finger has full strength.
@@ -409,6 +408,15 @@ EMACS users go far together. Here is how to do it.
     - The =distance= between =places= is measures in the similarity between the
       =actions= that you find there.
     - As you develop these ides it will be obvious where things should go.
+
+- Identifying =places=.
+  - Assumptions
+    - The right side of the keyboard should be used with the =s= name-space for
+      operations specific to the current major mode. This name-space 19
+      single-key bindings available which is enough to handle most operations.
+      =Actions= here are for the =place= inside of the buffer itself. They are for
+      immediate acting upon the contents of the buffer.
+      - For the left side
 
 * Special Operating Procedure
    :PROPERTIES:
