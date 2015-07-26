@@ -49,6 +49,7 @@ Start EMACS with this command:
 «Org-Mode-Programming»
 «Watch-What-You-Eat»
 «Special-Operating-Procedure»
+«Standard-Operating-Procedure»
 «Quiet-and-Pleasant-Appearance»
 #+END_SRC
 
@@ -319,10 +320,18 @@ This is a known issue. [[https://superuser.com/questions/125569/how-to-fix-emacs
 #+END_SRC
 
 * Standard Operating Procedure
+   :PROPERTIES:
+   :noweb-ref: Standard-Operating-Procedure
+   :END:
+
+Configure EMACS to maximum utility.
+
 * Quiet and Pleasant Appearance
    :PROPERTIES:
    :noweb-ref: Quiet-and-Pleasant-Appearance
    :END:
+
+Configure EMACS to personal-taste for "noise" and "form".
 
 ** Buffer
 
