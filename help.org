@@ -397,7 +397,7 @@ EMACS users go far together. Here is how to do it.
 +-------------------------------------------+
       #+END_SRC
 
-- How to choose a name-space to place key-bindings.
+- Understanding your congitive landscape
   - Assumptions.
     - You operate within a cognitive landscape and at any given moment you are
       in a particular =place=.
