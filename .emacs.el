@@ -84,6 +84,8 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
         search-ring
         regexp-search-ring))
 (savehist-mode t)
+(use-package magit
+  :ensure t)
 (add-hook #'text-mode-hook #'linum-mode)
 (add-hook #'prog-mode-hook #'linum-mode)
 (setq ring-bell-function 'ignore)
