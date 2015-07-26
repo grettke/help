@@ -163,6 +163,16 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
    :noweb-ref: Org-Mode-Tangle
    :END:
 
+There is a way to disable property inheritance that speeds up tangling a lot.
+This is only for user-defined properties; *not* Org-Mode properties.
+
+The problem is that you lose property inheritance which is unacceptable. Never,
+never allow that. Its inconsistent with how Org-Mode works.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-babel-use-quick-and-dirty-noweb-expansion nil)
+#+END_SRC
+
 *** Comments
 
 Provide as much information as possible in the tangled artifact about the
@@ -318,6 +328,14 @@ it with a property, it will be fine to turn it off.
 
 #+BEGIN_SRC emacs-lisp
 (setq org-export-with-toc nil)
+#+END_SRC
+
+On export, maintain the literal spacing as found in the source block. Obviously
+this is important for makefiles. It is really important everywhere because
+anything else would violate the law of least surprise.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-src-preserve-indentation t)
 #+END_SRC
 
 *** Exports
@@ -505,6 +523,31 @@ Always use Unicode checkboxes.
 
 #+BEGIN_SRC emacs-lisp
 (setq org-html-checkbox-type 'unicode)
+#+END_SRC
+
+You may display syntax highlighting for code in source blocks. I don't.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-src-fontify-natively nil)
+#+END_SRC
+
+Never indent the contents of a source-block automatically.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-edit-src-content-indentation 0)
+#+END_SRC
+
+When edit mode is exited, the option exists to automatically remove empty
+opening and closed lines for the source block. Never do this. The thing is that
+I forgot why. When I was working on a recent analysis with ℝ there was a
+space appearing in the opening and closing line of the source block that didn't
+appear in the source editing buffer. That surprised me. I am sure that I've
+forgotten why this is the case. I don't like it because you add a bunch of
+empty lines in the source buffer for every source block. With that in mind I
+will enable this feature and try it out again.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-src-strip-leading-and-trailing-blank-lines t)
 #+END_SRC
 
 * Piano Lessons
