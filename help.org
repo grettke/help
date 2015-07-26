@@ -418,6 +418,13 @@ Line numbers make documents easier to read. Account for Literate documents.
 (add-hook #'prog-mode-hook #'linum-mode)
 #+END_SRC
 
+Don't use audible bells, use visual bells.
+
+#+BEGIN_SRC emacs-lisp
+(setq ring-bell-function 'ignore)
+(setq visible-bell t)
+#+END_SRC
+
 ** Color Theme
 
 The Solarized theme is the perfect theme for everything. bozhidar's
