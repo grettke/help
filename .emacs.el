@@ -38,6 +38,11 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
              '("gnu" . "http://elpa.gnu.org/packages/") t)
 (add-to-list 'load-path "~/src/use-package")
 (require 'use-package)
+(defmacro help/on-gui (statement &rest statements)
+  "Evaluate the enclosed body only when run on GUI."
+  `(when (display-graphic-p)
+     ,statement
+     ,@statements))
 (defmacro help/on-osx (statement &rest statements)
   "Evaluate the enclosed body only when run on OSX."
   `(when (eq system-type 'darwin)
@@ -80,13 +85,41 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
   (setq solarized-use-more-italic nil)
   (setq solarized-emphasize-indicators nil)
   (load-theme 'solarized-dark))
+(help/on-gui
+ (defvar help/font-size 10 "The preferred font size.")
+ (help/on-osx (setq help/font-size 17))
+ (defconst help/font-base "DejaVu Sans Mono" "The preferred font name.")
+ (defun help/font-ok-p ()
+   "Is the configured font valid?"
+   (interactive)
+   (member help/font-base (font-family-list)))
+ (defun help/font-name ()
+   "Compute the font name and size string."
+   (interactive)
+   (let* ((size (number-to-string help/font-size))
+          (name (concat help/font-base "-" size)))
+     name))
+ (defun help/update-font ()
+   "Updates the current font given configuration values."
+   (interactive)
+   (if (help/font-ok-p)
+       (progn
+         (message "Setting font to: %s" (help/font-name))
+         (set-default-font (help/font-name)))
+     (message (concat "Your preferred font is not available: " help/font-base))))
+ (defun help/text-scale-increase ()
+   "Increase font size"
+   (interactive)
+   (setq help/font-size (+ help/font-size 1))
+   (help/update-font))
+ (defun help/text-scale-decrease ()
+   "Reduce font size."
+   (interactive)
+   (when (> help/font-size 1)
+     (setq help/font-size (- help/font-size 1))
+     (help/update-font)))
+ (help/update-font))
 (scroll-bar-mode 0)
 (tool-bar-mode -1)
 (setq make-pointer-invisible t)
-(setq savehist-save-minibuffer-history 1)
-(setq savehist-additional-variables
-      '(kill-ring
-        search-ring
-        regexp-search-ring))
-(savehist-mode t)
 (menu-bar-mode t)
