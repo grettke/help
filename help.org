@@ -361,7 +361,7 @@ EMACS users go far together. Here is how to do it.
 | |SHIFT |                         | SHIFT| |
 | +------+                         +------+ |
 |        +---+ +-+ +-----+ +-+ +---+        |
-|        |RET| |M| |SPACE| |M| |RET|        |
+|        |RET| |M| |SPC/C| |M| |RET|        |
 |        +---+ +-+ +-----+ +-+ +---+        |
 |                                           |
 +-------------------------------------------+
