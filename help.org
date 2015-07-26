@@ -364,7 +364,6 @@ back to work, you can just re-run stuff as you need it.
 (savehist-mode t)
 #+END_SRC
 
-
 * Quiet and Pleasant Appearance
    :PROPERTIES:
    :noweb-ref: Quiet-and-Pleasant-Appearance
