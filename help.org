@@ -612,7 +612,8 @@ back to work, you can just re-run stuff as you need it.
 
 ** Version Control
 
-Use Magit for anything that you don't want to do with VC.
+Use VC for committing the current file quickly and use Magit for everything
+else.
 
 #+BEGIN_SRC emacs-lisp
 (use-package magit
