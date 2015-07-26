@@ -86,7 +86,8 @@ They are separate and distinct operations and are defined as such.
 
 The last logical action is the activity of "Programming". It is a combination of
 three 3 activities listed above combined with the configuration of EMACS to do
-so. This is an interactive activity performed Sysop.
+so. This is an interactive activity performed Sysop. The other 3 are not
+interactive.
 
 ** Org-Mode Exemple Complet Minimal
    :PROPERTIES:
@@ -320,8 +321,66 @@ My personal TODO workflow.
 
 When running in a GUI, I would like linked images to be displayed inside of
 Emacs.
+
 #+BEGIN_SRC emacs-lisp
-(setq org-startup-with-inline-images (display-graphic-p))
+(help/on-gui
+ (setq org-startup-with-inline-images t))
+#+END_SRC
+
+Use Ido completion in Org-Mode.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-completion-use-ido t)
+(setq org-outline-path-complete-in-steps nil)
+(setq org-completion-use-iswitchb nil)
+#+END_SRC
+
+Org-Mode lets you use single letter commands to do stuff on headers. I like to
+use =c= for cycling the header expansion.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-use-speed-commands t)
+#+END_SRC
+
+Ask before execution of shell links. This might seem like an Evaluation
+activity. It is. It is interactive.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-confirm-shell-link-function 'y-or-n-p)
+#+END_SRC
+
+Ask before execution of Emacs-Lisp.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-confirm-elisp-link-function 'y-or-n-p)
+#+END_SRC
+
+Make sure that incomplete TODO entries prevent the enclosing parent from every
+turning to DONE.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-enforce-todo-dependencies t)
+#+END_SRC
+
+Allow the mouse to do Org-Mode things like expand and collapse headings.
+
+#+BEGIN_SRC emacs-lisp
+(help/on-gui
+ (require 'org-mouse))
+#+END_SRC
+
+Use a real ellipsis to render an ellipsis for Org-Mode stuff like showing that a
+header is collapsed.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-ellipsis "…")
+#+END_SRC
+
+It is easy to see indentation of headlines without having to count asterisks, so
+don't show them, only show the significant and last one.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-hide-leading-stars t)
 #+END_SRC
 
 * Piano Lessons
