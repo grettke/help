@@ -276,6 +276,11 @@ same text to a buffer though, the line breaks are included. Currently I use
 (setq org-export-preserve-breaks nil)
 #+END_SRC
 
+When exporting anything, do not insert the exported content into the kill ring.
+#+BEGIN_SRC emacs-lisp
+(setq org-export-copy-to-kill-ring nil)
+#+END_SRC
+
 *** Exports
 
 Always share source blocks and their results. Whether or not to generate a
