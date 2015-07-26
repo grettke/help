@@ -90,6 +90,10 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
 (show-paren-mode +1)
 (setq show-paren-delay 0)
 (setq show-paren-style 'expression)
+(blink-cursor-mode 0)
+(help/on-gui
+ (setq-default cursor-type 'box)
+ (setq x-stretch-cursor 1))
 (use-package solarized-theme
   :ensure t
   :config

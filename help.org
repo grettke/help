@@ -434,6 +434,16 @@ Highlight s-expressions.
 (setq show-paren-style 'expression)
 #+END_SRC
 
+The cursor should not blink and distract you. On a graphic display make the
+cursor a box and stretch it as wide as the character below it.
+
+#+BEGIN_SRC emacs-lisp
+(blink-cursor-mode 0)
+(help/on-gui
+ (setq-default cursor-type 'box)
+ (setq x-stretch-cursor 1))
+#+END_SRC
+
 ** Color Theme
 
 The Solarized theme is the perfect theme for everything. bozhidar's
