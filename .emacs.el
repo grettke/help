@@ -43,6 +43,10 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
   `(when (display-graphic-p)
      ,statement
      ,@statements))
+(use-package dash
+  :ensure t
+  :config
+  (dash-enable-font-lock))
 (defmacro help/on-osx (statement &rest statements)
   "Evaluate the enclosed body only when run on OSX."
   `(when (eq system-type 'darwin)

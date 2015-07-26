@@ -286,6 +286,17 @@ display.
      ,@statements))
 #+END_SRC
 
+** Libraries
+
+Dash is nice to use.
+
+#+BEGIN_SRC emacs-lisp
+(use-package dash
+  :ensure t
+  :config
+  (dash-enable-font-lock))
+#+END_SRC
+
 ** OSX
 
 Make it easy to evaluate code only when running on OSX.
