@@ -346,8 +346,8 @@ EMACS users go far together. Here is how to do it.
     - You can remap your keyboard before it reaches EMACS.
     - Include return too.
     - Map is a verb for defining keys, not key-bindings.
-    - Map the spacebar to C if held and return if pressed and released.
-    - Map M to the keys to the left and right of the spacebar
+    - Map the space-bar to C if held and return if pressed and released.
+    - Map M to the keys to the left and right of the space-bar
     - Map return to the keys left and right of M.
     - Map caps-lock and return to s (super).
     - Leave shift alone.
