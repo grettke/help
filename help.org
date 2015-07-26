@@ -1,3 +1,4 @@
+#+STARTUP: showeverything
 * README
 
 HELP Enables Literate Programming.
