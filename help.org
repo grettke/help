@@ -358,8 +358,8 @@ EMACS users go far together. Here is how to do it.
     - There are often sweet and precise exceptions to this advice like
       combinations for the =RET= and =<return>= but otherwise it is a bad
       idea.
-- Logical name-spaces you should use are home-key-key-chords,
-  double-home-key-key-chords, Shift-home-key-chords, s-name-space, and
+- Logical name-spaces you should use are home-key/key-chords,
+  double-home-key/key-chords, Shift-home-key/key-chords, s-name-space, and
   Hydra-name-spaces.
   - Assumptions
     - Never makes sense to ignore previous assumptions.
