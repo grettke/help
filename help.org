@@ -385,7 +385,7 @@ EMACS users go far together. Here is how to do it.
       #+BEGIN_SRC ditaa
 +-------------------------------------------+
 | +-----+                           +-----+ |
-| |S    |                           |    S| |
+| |s    |                           |    s| |
 | +-----+                           +-----+ |
 | +------+                         +------+ |
 | |SHIFT |                         | SHIFT| |
