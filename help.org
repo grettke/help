@@ -550,6 +550,21 @@ will enable this feature and try it out again.
 (setq org-src-strip-leading-and-trailing-blank-lines t)
 #+END_SRC
 
+The source block buffer may be configured to appear in a few different places.
+For a while I really liked =reorganize-frame= because sometimes you want to be
+able to see the code you are editing in edition to the rest of the document. At
+least that is what I am telling myself. Once I learned you could change it I
+realized that 1 I should have asked if it could be changed and 2 I should have
+changed it. The flow that I've got configured here is that you are either in the
+source document where code blocks are not highlighted or you are in the source
+block so you are editing in a buffer that is full-fledged ALEC. That is the best
+way so you can focus completely on each task at hand in the ideal mode for that
+task. Anything else results in distractions and errors.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-src-window-setup 'current-window)
+#+END_SRC
+
 * Piano Lessons
    :PROPERTIES:
    :noweb-ref: Piano-Lessons
