@@ -347,7 +347,7 @@ EMACS users go far together. Here is how to do it.
           Pinky or Ring by themselves.
 - Never bind to =F= keys.
   - Assumptions.
-    - They are a painful stretch on most keyboards.
+    - They are a painful stretch on most keyboards. Require lone Pinky.
     - Most operating systems bind actions to them OOTB.
     - EMACS comes with key-bindings OOTB.
 - Almost never bind with =C= or =M= combinations.
