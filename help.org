@@ -340,11 +340,11 @@ EMACS users go far together. Here is how to do it.
         - Make your hand into a crab claw to operate keys that you normally
           thing to use your Pinky. The key must be large. The only likely
           candidates are caps-lock and return.
-- Map your keyboard to make logical meta keys more easily available and they
-  are mirrored for each hand (each side of the keyboard).
+- Map your keyboard to make logical meta keys (including return) more easily
+  available and they are mirrored for each hand (each side of the keyboard).
   - Assumptions.
     - You can remap your keyboard before it reaches EMACS.
-    - Include return too.
+    - Shift is logically a meta key in this system using Key-Chord.
     - Map is a verb for defining keys, not key-bindings.
     - Map the space-bar to C if held and return if pressed and released.
     - Map M to the keys to the left and right of the space-bar
