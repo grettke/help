@@ -375,7 +375,9 @@ EMACS users go far together. Here is how to do it.
     - Map return to the keys left and right of M.
     - Map caps-lock and return to s (super).
     - Leave shift alone.
-    - s and shift will be critical to all custom operations in this system.
+    - s and shift will be critical to all custom operations in this system. Most
+      key-bindings will go there. Exceptions need to be thoughtfully considered
+      and frequently revisited.
     - Here is how it looks.
       #+BEGIN_SRC ditaa
 +-------------------------------------------+
