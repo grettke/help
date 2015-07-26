@@ -351,7 +351,7 @@ EMACS users go far together. Here is how to do it.
     - Map return to the keys left and right of M.
     - Map caps-lock and return to s (super).
     - Leave shift alone.
-    - Here is how it looks on my machine
+    - Here is how it looks.
       #+BEGIN_SRC ditaa
 +-------------------------------------------+
 | +-----+                           +-----+ |
