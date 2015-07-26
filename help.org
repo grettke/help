@@ -51,6 +51,7 @@ Start EMACS with this command:
 «Special-Operating-Procedure»
 «Standard-Operating-Procedure»
 «Quiet-and-Pleasant-Appearance»
+«Piano-Lessons»
 #+END_SRC
 
 =open /Applications/Emacs.app=
@@ -263,6 +264,9 @@ Never "automatically" evaluate a source block.
 #+END_SRC
 * A Fine Cup of EMACS
 * Piano Lessons
+   :PROPERTIES:
+   :noweb-ref: Piano-Lessons
+   :END:
 
 * Special Operating Procedure
    :PROPERTIES:
