@@ -228,6 +228,13 @@ ought to refer to the generated document.
    :noweb-ref: Org-Mode-Execute
    :END:
 
+Install OB-SML.
+
+#+BEGIN_SRC emacs-lisp
+(use-package ob-sml
+  :ensure t)
+#+END_SRC
+
 Org-Mode may evaluate all of the listed languages.
 
 #+BEGIN_SRC emacs-lisp
@@ -249,6 +256,7 @@ Org-Mode may evaluate all of the listed languages.
    (R . t)
    (scheme . t)
    (sh . t)
+   (sml . t)
    (sql . t)))
 #+END_SRC
 
