@@ -44,9 +44,9 @@ Start EMACS with this command:
 «Org-Mode-ECM-Tangle-Block»
 «Org-Mode-Helper-Functions»
 «Org-Mode-Tangle»
+«Watch-What-You-Eat»
 «Org-Mode-Execute»
 «Org-Mode-Weave»
-«Watch-What-You-Eat»
 «Org-Mode-Programming»
 «Special-Operating-Procedure»
 «Standard-Operating-Procedure»
