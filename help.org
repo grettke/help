@@ -821,7 +821,7 @@ EMACS users go far together. Here is how to do it.
     - =s= and =shift= will be critical to all custom operations in this system. Most
       key-bindings will go there. Exceptions need to be thoughtfully considered
       and frequently revisited.
-    - Here is how it looks.
+    - Here was my original goal.
       #+BEGIN_EXAMPLE
 +-----------------------------------+
 | +-----+                   +-----+ |
