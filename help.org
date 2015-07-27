@@ -496,8 +496,7 @@ When running in a GUI, I would like linked images to be displayed inside of
 Emacs.
 
 #+BEGIN_SRC emacs-lisp
-(help/on-gui
- (setq org-startup-with-inline-images t))
+(setq org-startup-with-inline-images (display-graphic-p))
 #+END_SRC
 
 Use Ido completion in Org-Mode.
@@ -538,8 +537,8 @@ turning to DONE.
 Allow the mouse to do Org-Mode things like expand and collapse headings.
 
 #+BEGIN_SRC emacs-lisp
-(help/on-gui
- (require 'org-mouse))
+(when (display-graphic-p)
+  (require 'org-mouse))
 #+END_SRC
 
 Use a real ellipsis to render an ellipsis for Org-Mode stuff like showing that a

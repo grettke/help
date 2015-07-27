@@ -1,4 +1,3 @@
-
 (setq load-prefer-newer t)
 (add-to-list 'load-path "~/src/org-mode/lisp")
 (add-to-list 'load-path "~/src/org-mode/contrib/lisp")
@@ -21,9 +20,31 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
   (setq org-babel-default-inline-header-args
         (cons (cons property value)
               (assq-delete-all property org-babel-default-inline-header-args))))
+(setq org-babel-use-quick-and-dirty-noweb-expansion nil)
+(setq org-babel-noweb-wrap-start "«")
+(setq org-babel-noweb-wrap-end "»")
 (help/set-org-babel-default-header-args :comments "noweb")
 (help/set-org-babel-default-header-args :padline "yes")
 (help/set-org-babel-default-header-args :noweb "no-export")
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((calc . t)
+   (css . t)
+   (dot . t)
+   (ditaa . t)
+   (emacs-lisp . t)
+   (js . t)
+   (latex . t)
+   (lilypond . t)
+   (makefile . t)
+   (org . t)
+   (perl . t)
+   (python . t)
+   (plantuml . t)
+   (R . t)
+   (scheme . t)
+   (sh . t)
+   (sql . t)))
 (help/set-org-babel-default-header-args :eval "never-export")
 (help/set-org-babel-default-inline-header-args :eval "never-export")
 (setq org-export-babel-evaluate nil)
@@ -37,13 +58,25 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
 (setq org-export-coding-system 'utf-8)
 (setq org-export-preserve-breaks nil)
 (setq org-export-copy-to-kill-ring nil)
+(setq org-export-with-toc nil)
+(setq org-src-preserve-indentation t)
 (help/set-org-babel-default-header-args :exports "both")
+(eval-after-load 'ox '(require 'ox-koma-letter))
+(eval-after-load 'ox-koma-letter
+  '(progn
+     (add-to-list 'org-latex-classes
+                  '("my-letter"
+                    "\\documentclass[paper=letter, pagesize, fontsize=10pt, parskip]{scrlttr2}
+\\usepackage[english]{babel}
+\\usepackage[osf]{mathpazo}"))
+
+     (setq org-koma-letter-default-class "my-letter")))
+(setq org-koma-letter-class-option-file "UScommercial9 KomaDefault")
 (setq org-confirm-babel-evaluate nil)
 (setq org-src-tab-acts-natively nil)
 (setq org-todo-keywords
       '((sequence "TODO" "IN-PROGRESS" "BLOCKED" "REVIEW" "DONE")))
-(help/on-gui
- (setq org-startup-with-inline-images t))
+(setq org-startup-with-inline-images (display-graphic-p))
 (setq org-completion-use-ido t)
 (setq org-outline-path-complete-in-steps nil)
 (setq org-completion-use-iswitchb nil)
@@ -51,10 +84,29 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
 (setq org-confirm-shell-link-function 'y-or-n-p)
 (setq org-confirm-elisp-link-function 'y-or-n-p)
 (setq org-enforce-todo-dependencies t)
-(help/on-gui
- (require 'org-mouse))
+(when (display-graphic-p)
+  (require 'org-mouse))
 (setq org-ellipsis "…")
 (setq org-hide-leading-stars t)
+(setq org-fontify-emphasized-text t)
+(setq org-pretty-entities t)
+(setq org-highlight-latex-and-related '(latex script entities))
+(setq org-footnote-define-inline t)
+(setq org-footnote-auto-label 'random)
+(setq org-footnote-auto-adjust nil)
+(setq org-footnote-section nil)
+(setq org-catch-invisible-edits 'error)
+(setq org-loop-over-headlines-in-active-region t)
+(setq org-startup-folded "nofold")
+(setq org-image-actual-width t)
+(setq org-hide-emphasis-markers t)
+(setq org-startup-align-all-tables t)
+(setq org-html-checkbox-type 'unicode)
+(setq org-src-fontify-natively nil)
+(setq org-edit-src-content-indentation 0)
+(setq org-src-strip-leading-and-trailing-blank-lines t)
+(setq org-src-window-setup 'current-window)
+(setq org-babel-no-eval-on-ctrl-c-ctrl-c t)
 (package-initialize)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
