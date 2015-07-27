@@ -822,7 +822,6 @@ EMACS users go far together. Here is how to do it.
       key-bindings will go there. Exceptions need to be thoughtfully considered
       and frequently revisited.
     - Here is how it looks.
-      - ~set-mark-command~ clearly needs conventient new binding!
       #+BEGIN_EXAMPLE
 +-----------------------------------+
 | +-----+                   +-----+ |
