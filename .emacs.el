@@ -1,8 +1,11 @@
+
 (setq load-prefer-newer t)
 (add-to-list 'load-path "~/src/org-mode/lisp")
 (add-to-list 'load-path "~/src/org-mode/contrib/lisp")
 (setq org-list-allow-alphabetical t)
 (require 'org)
+(setq org-babel-noweb-wrap-start "«")
+(setq org-babel-noweb-wrap-end "»")
 (defun help/set-org-babel-default-header-args (property value)
   "Easily set system header arguments in org mode.
 
@@ -21,8 +24,6 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
         (cons (cons property value)
               (assq-delete-all property org-babel-default-inline-header-args))))
 (setq org-babel-use-quick-and-dirty-noweb-expansion nil)
-(setq org-babel-noweb-wrap-start "«")
-(setq org-babel-noweb-wrap-end "»")
 (help/set-org-babel-default-header-args :comments "noweb")
 (help/set-org-babel-default-header-args :padline "yes")
 (help/set-org-babel-default-header-args :noweb "no-export")
