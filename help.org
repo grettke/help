@@ -46,9 +46,9 @@ Start EMACS with this command:
 «Org-Mode-Tangle»
 «Org-Mode-Execute»
 «Org-Mode-Weave»
+«Org-Mode-Programming»
 «Watch-What-You-Eat»
 «Special-Operating-Procedure»
-«Org-Mode-Programming»
 «Standard-Operating-Procedure»
 «Quiet-and-Pleasant-Appearance»
 «Piano-Lessons»
@@ -227,12 +227,6 @@ ought to refer to the generated document.
    :noweb-ref: Org-Mode-Execute
    :END:
 
-Load the OB-SML. Perhaps some day it will end up in the mainline.
-
-#+BEGIN_SRC emacs-lisp
-(require 'ob-sml nil 'noerror)
-#+END_SRC
-
 Org-Mode may evaluate all of the listed languages.
 
 #+BEGIN_SRC emacs-lisp
@@ -254,7 +248,6 @@ Org-Mode may evaluate all of the listed languages.
    (R . t)
    (scheme . t)
    (sh . t)
-   (sml . t)
    (sql . t)))
 #+END_SRC
 
