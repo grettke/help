@@ -836,6 +836,24 @@ EMACS users go far together. Here is how to do it.
 |                                       |
 +---------------------------------------+
       #+END_EXAMPLE
+    - Here is what I ended up with.
+      #+BEGIN_EXAMPLE
++---------------------------------------+
+| +-----+                       +-----+ |
+| |C    |                       |C/RET| |
+| +-----+                       +-----+ |
+| +------+                     +------+ |
+| |SHIFT |                     | SHIFT| |
+| +------+                     +------+ |
+|        +-+ +-+ +-----+ +-+ +-+        |
+|        |s| |M| |spc  | |M| |s|        |
+|        +-+ +-+ +-----+ +-+ +-+        |
+|                                       |
++---------------------------------------+
+      #+END_EXAMPLE
+      - Couldn't figure out how to make [[https://pqrs.org/osx/karabiner/][Karabiner]] do it quickly. When you type
+        full-speed it activates C for you. Same as in [[https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/][this post]].
+      - [[http://scripts.sil.org/cms/scripts/page.php?site_id%3Dnrsi&id%3Dukelele][Ukelele]] may be the /right/ way to get the above layout.
 
 - Understanding your congitive landscape.
   - Assumptions.
