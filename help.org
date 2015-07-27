@@ -1057,10 +1057,11 @@ making such breaking changes.
 
 There are many ways to easily find what you need, for a command, for a file,
 and this mode seems to be a quite nice way. Something I had been curious about
-but forgotten and stumbled upon again was vertical ido listing, and I added that
+but forgotten and stumbled upon again was vertical Ido listing, and I added that
 back to see how it goes. My initial reaction was that I had wanted this all
 along, though the transition from looking left-right to top-down was a little
 unsettling.
+
 #+BEGIN_SRC emacs-lisp
 (require 'ido)
 (require 'flx-ido)
