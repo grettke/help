@@ -1168,12 +1168,7 @@ making such breaking changes.
 
 ** Finding Objects
 
-There are many ways to easily find what you need, for a command, for a file,
-and this mode seems to be a quite nice way. Something I had been curious about
-but forgotten and stumbled upon again was vertical Ido listing, and I added that
-back to see how it goes. My initial reaction was that I had wanted this all
-along, though the transition from looking left-right to top-down was a little
-unsettling.
+Access nearly every object available in this system from one place.
 
 #+BEGIN_SRC emacs-lisp
 (require 'ido)
@@ -1197,11 +1192,7 @@ unsettling.
   (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right))
 #+END_SRC
 
-Jorge [[https://lists.gnu.org/archive/html/help-gnu-emacs/2015-07/msg00364.html][notes how]] to use Ido to also open URLs. I always forget that Ido is built
-in. That looks nice. At first I felt like the Ido behavior was unpleasant here,
-but it is exactly the same. This is just a nice way to easily open URLs instead
-of having to open-url-at-point or use google-this, especially when outside of
-Org.
+Make URLs a first-class object. 
 
 #+BEGIN_SRC emacs-lisp
 (setq ido-use-url-at-point t)
