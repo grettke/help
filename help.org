@@ -1360,7 +1360,7 @@ Load Use-Package.
     machine.
   - Weave :: A verb. Prepare a document for consumption by a human.
 - Formatting
-  - Code Snippet
+  - Code Snippet.
     - Use ~code style~.
   - Non-Code Snippet
     - Program names, file types
