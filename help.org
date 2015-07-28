@@ -956,6 +956,21 @@ them much and forget their names. It is faster to put them in a Hydra. If they
 get used a lot, I will add them to =s=.
 
 *** Building Your Own Keyboard
+
+As your mastery of EMACS grows so too will your desire to build your own
+keyboard. It is natural. As you explore various dimensions of expression you
+will have a lot of fun. You will act more quickly and skillfully. Even with the
+goals of this system in place the desire grows.
+
+3D printing is one area worth exploring. A lot of EMACS users design and print
+their own custom keyboards. That looks very fun. [[http://scripts.sil.org/cms/scripts/page.php?site_id%3Dnrsi&id%3Dukelele][Ukulele]] is softer way to
+explore your keyboard. Reading its user manual is important. It contains ideas
+about stack-able-environments for bindings. You may use Ukulele or Hydras to do
+the same thing. [[https://pqrs.org/osx/karabiner/][Karabiner]] is a nice way to re-map your keys. It's easiest
+adjustment is to make return act as return when pressed alone and as control
+when pressed with another key. That introduces a symmetry to your keyboard which
+can be helpful.
+
 ** Take a Sip
 
 Because Use-Package is used in this system, the binding definitions often live
