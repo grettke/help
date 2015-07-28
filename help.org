@@ -1407,6 +1407,7 @@ Load Use-Package.
   - Simple and detailed.
   - Provide answers; this document is an answer.
   - Do not pose questions; this document is not a question.
+  - Audience is primarily the author.
 - Word Choice.
   - Use Arabic numerals.
   - Instead of writing "tells EMACS", communicate the result.
