@@ -810,6 +810,8 @@ following practices were defined.
   - Most operating systems bind actions to them OOTB anyway.
   - EMACS comes with key-bindings OOTB.
 - Don't try to set up a Hyper-key.
+- Use shift as a name-space expander.
+  - Shift doubles every name-space in which you use it.
 
 These practices say nothing about the =places= or =activities= that you choose to
 peform. The practices only look at the key-binding configuration. There are a
@@ -824,13 +826,22 @@ You need to learn how to use EMACS. You need to develop a personal preference.
 You need to develop an idea of =places= and =activities= and =distance=. The following
 headings are delineated by breaks in flow.
 
-They are described by the properties:
+The examples try to talk about doing those things and do it by exploring:
+
+- "going places to do things".
+- "how quickly I will get there and how long I will be there"
+- "how quickly I want to go somewhere else".
+
+They were initially described by the properties:
 
 - Actions :: The number of related actions in that place.
 - Expertise :: The level of skill and speed with which you are performing the
   activity.
 - Relationship :: How closely those activities are related in the current place.
 - Frequency :: How many times you perform these actions when you here.
+
+The relationship between "doing those things" and those 4 properties is still
+unclear and being explored.
 
 ***** =s=
       :PROPERTIES:
@@ -839,6 +850,24 @@ They are described by the properties:
       :Relationship:     High
       :Frequency:        High
       :END:
+
+- =Actions= here are for the =place= inside of the buffer itself. They are for
+  immediate acting upon the contents of the buffer. They are logically
+  related, used frequently, and likely to be memorized.
+- When you come here, you are likely to stay for some time before getting
+  out.
+- Only use single key bindings; anything more may be a new logical
+  name-space and may use a Hydra.
+- Split the home sides of the keyboard in half.
+- The left side of the keyboard should be use for operations common to
+  every mode.
+  - For example ~goto-line~ and ~ispell~.
+  - It has 15 bindings available; 20 if you use 1-5. 40 if you shift them.
+- The right side of the keyboard should be used operations specific to the
+  current major mode.
+  - For example in Org-Mode navigating between source-blocks and
+    evaluating them.
+  - It has 19 bindings available; 26 if you use 6-=. 52 if you shift them.
 
 For example, in Org-Mode:
 
@@ -850,15 +879,61 @@ For example, in Org-Mode:
 Every activity is related to reading, modifying, executing, and tangling code.
 
 ***** =Key-Chord=
+
+Key-Chord is intriguing because it works on every keyboard. It is powerful
+because it can you bring you to any =place= easily. It is good for taking you
+places in two differnt kinds of scenarios.
+
+One example is grammar-checking. There are a few ways to do that. I don't
+remember them all. In a given mode I want to see a list of all the ways.
+I really just want to see all of the stuff that I value for a given mode and
+don't use frequently.
+
+Another example are things that I value for a mode and use a lot but are not
+logically related to other activities in that place. For example moving the
+mark around and going to lines are performed a lot so they need to be done
+quickly and left. This is a place where key-chords and the shift modifier are
+a fast and intuitive way to go places.
+
+****** Single-Key Key-Chord Name-Space.
+      :Actions:          High
+      :Expertise:        Low
+      :Frequency:        High
+      :Relationship:     Low
+
+- Nice if you don't mind hitting the same key twice.
+- You will use come here often, perform your single =action=, and be done
+  and leave very frequently and quickly.
+- Using alphabetical characters always results in unpleasant surprises.
+- Harder for breakage but it still occurs.
+  - =#FF= color code.
+  - =cc= carbon copy.
+  - JJ nick-name.
+- Symbols are more likely to be safer bets.
+  - Only use the symbols.
+    - 8 if you use rows 3-4; 16 if you shift.
+    - Fifth row has 13; 26 with shift.
+- Good vehicle to reach a Hydra.
+
+****** Two-Key Key-Chord Name-Space.
       :Actions:          Low
       :Expertise:        High
       :Frequency:        High
       :Relationship:     Low
 
-For example I spell-check a lot. I also jump around the buffer a lot. They are
-important and I do them a lot but they are not very logically related.
+- Very attractive.
+- Nice if you don't like hitting the same key twice.
+- Easy to use all fingers.
+  - Finger strength is not an issue here; use any of them.
+- Unexpected breakage very easy.
+  - =cd= in ~=eshell=~.
+- Use sparingly.
+- Not worth analyzing ideal combinations; just use it and see if it
+  doesn't break.
+- Bringing over existing bindings. They are all for every mode so I will
+  keep it that way.
 
-***** =Key-Chord= & =Hydra=
+***** =Hydra=
       :PROPERTIES:
       :Actions:          High
       :Expertise:        Low
@@ -866,58 +941,20 @@ important and I do them a lot but they are not very logically related.
       :Relationship:     High
       :END:
 
-For example, in Org-Mode:
+- Sometimes you want to do something in a =place= but you aren't sure what
+  and you aren't sure where you will go next from there. For example you
+  might want to perform an Org-Mode =action= that is important but you don't
+  really use much. For example exporting to HTML might not be common for
+  you but you value.
+- =Hydras= can be used for very related actions too. The difference between
+  the =s= name-space is the distance between them and where you are now.
+  In the =s= namespace you go there very quickly. For =Hydras= sometimes you
+  can get the fast and sometimes more slowly. They are complementary to
+  every name-space.
 
-- I rarely export to Markdown directly, but it I value it
-- I rarely export to HTML, but I value it
-- There are ~org-babel~ functions that are really valuable that I forgot and have
-  to look up every time.
-
-- Choosing =places=.
-  - Assumptions
-    - =s= name-space
-      - =Actions= here are for the =place= inside of the buffer itself. They are for
-        immediate acting upon the contents of the buffer. They are logically
-        related, used frequently, and likely to be memorized.
-      - When you come here, you are likely to stay for some time before getting
-        out.
-      - Only use single key bindings; anything more may be a new logical
-        namespace and may use a Hydra.
-      - Split the home sides of the keyboard in half.
-      - The left side of the keyboard should be use for operations common to
-        every mode. It has 15 bindings available; 20 if you use 1-5.
-        - For example ~goto-line~ and ~ispell~.
-      - The right side of the keyboard should be used operations specific to the
-        current major mode. It has 19 bindings available; 26 if you use 6-=.
-        - For example in Org-Mode navigating between source-blocks and
-          evaluating them.
-    - Single-key key-chord name-space.
-      - You will use come here often, perform your single =action=, and be done
-        and leave very frequently and quickly.
-      - Only use the symbols, so 10 without shift and 20 with shift.
-      - Using alphabetical characters always results in unpleasant surprises.
-    - Double-key key-chord name-space.
-      - Very attractive.
-      - Nice if you don't like double-keys.
-      - Easy to use all fingers.
-      - Unexpected breakage very easy.
-        - =cd= in ~=eshell=~.
-      - Use sparingly.
-      - Not worth analyzing ideal combinations; just use it and see if it
-        doesn't break.
-      - Bringing over existing bindings. They are all for every mode so I will
-        keep it that way.
-    - Hydra name-space.
-      - Sometimes you want to do something in a =place= but you aren't sure what
-        and you aren't sure where you will go next from there. For example you
-        might want to perform an Org-Mode =action= that is important but you don't
-        really use much. For example exporting to HTML might not be common for
-        you but you value.
-      - =Hydras= can be used for very relates actions too. The difference between
-        the =s= name-space is the distance between them and where you are now.
-        In the =s= namespace you go there very quickly. For =Hydras= sometimes you
-        can get the fast and sometimes more slowly. They are complementary to
-        every name-space.
+For example, in Org-Mode I am still learning about functions and haven't used
+them much and forget their names. It is faster to put them in a Hydra. If they
+get used a lot, I will add them to =s=.
 
 ** Take a Sip
 
@@ -927,10 +964,10 @@ in the call itself.
 *** Left Side
 
 #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "s-a") #'vc-next-action)
+(global-set-key (kbd "C-;") #'vc-next-action)
 #+END_SRC
 
-- =s-b= ~magit-status~
+- =C-M-;= ~magit-status~
 
 *** Right Side
 
@@ -1136,7 +1173,7 @@ else.
 (use-package magit
              :ensure t
              :config
-             (global-set-key (kbd "s-s") #'magit-status))
+             (global-set-key (kbd "C-M-;") #'magit-status))
 #+END_SRC
 
 * Quiet and Pleasant Appearance
