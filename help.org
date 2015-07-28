@@ -745,7 +745,7 @@ the keyboard for this system.
 
 ** A Full Pot of EMACS on Every Desk
 
-*** Keyboard  Layout & Operation
+*** Keyboard Layout & Operation
 
 - Use QWERTY layout.
   - Everyone knows it.
