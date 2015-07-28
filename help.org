@@ -1154,6 +1154,20 @@ This is a known issue. [[https://superuser.com/questions/125569/how-to-fix-emacs
 
 Configure EMACS to maximum utility.
 
+** Brackets
+
+Always maintain balanced brackets. Easily wrap the selected region. Auto-escape
+strings pasted into other strings.
+
+#+BEGIN_SRC emacs-lisp
+(use-package smartparens
+             :ensure t
+             :config
+             (require 'smartparens-config)
+             (show-smartparens-global-mode t)
+             (setq sp-show-pair-from-inside nil))
+#+END_SRC
+
 ** Buffer
 
 Maintain buffers across sessions. Desktop-Save-Mode persists very part of the
