@@ -1175,20 +1175,20 @@ Access nearly every object available in this system from one place.
 (use-package flx-ido
              :ensure t
              :config
-             (ido-mode 1))
+             (ido-mode t))
 (use-package ido-hacks
              :ensure t)
 (use-package ido-ubiquitous
              :ensure t
              :config
-             (ido-ubiquitous-mode +1)
+             (ido-ubiquitous-mode t)
              (setq ido-create-new-buffer 'always)
-             (flx-ido-mode +1)
+             (flx-ido-mode t)
              (setq ido-use-faces nil))
 (use-package ido-vertical-mode
              :ensure t
              :config
-             (ido-vertical-mode +1)
+             (ido-vertical-mode t)
              (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right))
 #+END_SRC
 
