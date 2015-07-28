@@ -133,7 +133,7 @@ Load Org-Mode.
 (require 'org)
 #+END_SRC
 
-Org-Mode already uses the guillemet for demarcating noweb references, but it
+Org-Mode already uses the guillemot for demarcating noweb references, but it
 does it using the work-around of just using less-than and greater-than
 characters twice. That is fine. Because EMACS supports Unicode just fine though,
 configure Org-Mode to use the real symbol. Another option would be to configure
@@ -344,7 +344,7 @@ it with a property, it will be fine to turn it off.
 #+END_SRC
 
 On export, maintain the literal spacing as found in the source block. Obviously
-this is important for makefiles. It is really important everywhere because
+this is important for make-files. It is really important everywhere because
 anything else would violate the law of least surprise.
 
 #+BEGIN_SRC emacs-lisp
@@ -366,7 +366,7 @@ block.
 *** KOMA-Script
 
 I enjoy writing letters. I enjoy reading letters. LaTeX produces letters that
-are easy to print and read. Org provides a [[http://orgmode.org/worg/exporters/koma-letter-export.html][KOMA Script exporter]] for [[https://www.ctan.org/pkg/koma-script?lang%3Den][koma-script]].
+are easy to print and read. Org provides a [[http://orgmode.org/worg/exporters/koma-letter-export.html][KOMA Script exporter]] for [[https://www.ctan.org/pkg/koma-script?lang%3Den][KOMA-script]].
 The Org documentation mentions that the user should read the [[http://orgmode.org/cgit.cgi/org-mode.git/plain/contrib/lisp/ox-koma-letter.el][ox-koma-letter.el]]
 header documentation.
 
@@ -403,7 +403,7 @@ Load the KOMA exporter.
   - LISP
     - Very familiar style of configuring things
   - LCO
-    - LCO == Letter Class Option filess
+    - LCO == Letter Class Option files
     - LCO files are TeX
     - They are included in the generated TeX source code from the letter
     - Gives *full* access to KOMA-Script
@@ -415,14 +415,14 @@ Load the KOMA exporter.
       Letter metadata set in LCO files overwrites letter metadata set in Emacs
       variables but not letter metadata set in the Org file.
       #+end_quote
-    - When you include multiple LCO files, they are evaluted LIFO. Properties
+    - When you include multiple LCO files, they are evaluated LIFO. Properties
       are set as they first appear, and are not set again. Say you include
       "MyGeneralStuffForAnyLetter.lco" and then include
       "MyStuffSpecificToThisLetter.lco". The specific stuff will get set first.
       Then general stuff will get set last.
       - Surely there is a better way to phrase this. I will work on that.
 - Recommendations
-  - What is the easiest way to starat using KOMA-Script based on what you know
+  - What is the easiest way to start using KOMA-Script based on what you know
     today?
   - If you don't know any of the approaches
     - Then choose between learning LaTeX and Org
@@ -793,7 +793,7 @@ EMACS users go far together. Here is how to do it.
 - Almost never bind with =C= or =M= combinations.
   - Assumptions.
     - EMACS comes with key-bindings OOTB.
-    - Even though =C-c= is the "user namespace" it is usually populated with
+    - Even though =C-c= is the "user name-space" it is usually populated with
       binding from packages that you are likely to stomp on.
     - There are often sweet and precise exceptions to this advice like
       combinations for the =RET= and =<return>= but otherwise it is a bad
@@ -870,7 +870,7 @@ EMACS users go far together. Here is how to do it.
 
 - Choosing =places=.
   - Assumptions
-    - =s= namespace
+    - =s= name-space
       - =Actions= here are for the =place= inside of the buffer itself. They are for
         immediate acting upon the contents of the buffer. They are logically
         related, used frequently, and likely to be memorized.
@@ -896,13 +896,13 @@ EMACS users go far together. Here is how to do it.
       - Nice if you don't like double-keys.
       - Easy to use all fingers.
       - Unexpected breakage very easy.
-        - =cd= in ~eshell~.
+        - =cd= in ~=eshell=~.
       - Use sparingly.
       - Not worth analyzing ideal combinations; just use it and see if it
         doesn't break.
       - Bringing over existing bindings. They are all for every mode so I will
         keep it that way.
-    - Hyra name-space.
+    - Hydra name-space.
       - Sometimes you want to do something in a =place= but you aren't sure what
         and you aren't sure where you will go next from there. For example you
         might want to perform an Org-Mode =action= that is important but you don't
@@ -1095,7 +1095,7 @@ Here are the Unicode fonts that provide nearly everything.
 | [[http://sourceforge.net/projects/dejavu/files/dejavu/2.34/dejavu-fonts-ttf-2.34.tar.bz2][DejaVu]]  |    2.43 | [[http://sourceforge.net/projects/dejavu/files/dejavu/2.34/dejavu-fonts-ttf-2.34.tar.bz2][.]]   | Modern classic            |
 | [[http://users.teilar.gr/~g1951d/][Symbola]] |    7.17 | [[http://users.teilar.gr/~g1951d/Symbola.zip][.]]   | Neat                      |
 | [[http://www.quivira-font.com/][Quivira]] |     4.0 | [[http://www.quivira-font.com/files/Quivira.otf][.]]   | Amazing                   |
-| [[https://code.google.com/p/noto/][Noto]]    |       ? | [[http://noto.googlecode.com/git/fonts/individual/hinted/NotoSans-Regular.ttc][1]] [[http://noto.googlecode.com/git/fonts/individual/unhinted/NotoSansSymbols-Regular.ttf][2]] | Has morese code, and more |
+| [[https://code.google.com/p/noto/][Noto]]    |       ? | [[http://noto.googlecode.com/git/fonts/individual/hinted/NotoSans-Regular.ttc][1]] [[http://noto.googlecode.com/git/fonts/individual/unhinted/NotoSansSymbols-Regular.ttf][2]] | Has morse code, and more |
 
 To test it run =view-hello-file= and =M-x list-charset-chars RET unicode-bmp RET=.
 
