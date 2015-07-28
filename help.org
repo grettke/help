@@ -1371,43 +1371,43 @@ Load Use-Package.
     - Dashes separate definition.
     - Acronyms are all upper case to distinguish from words for example "GNU"
       vs "Gnu".
-- Headline
+- Headline.
   - Capitalize nouns, verbs, and adjectives.
   - Don't capitalize conjunctions unless they are starting the definition.
   - Sell this "chapter" to the reader.
-- Hyperlink
-  - External
+- Hyperlink.
+  - External.
     - Exclude those easily found with a search-engine unless you are willing to
       verify their existence frequently.
     - Include when they make the task at hand immensely easier.
-  - Internal
+  - Internal.
     - Heading artifacts can be referenced so the need here is minimal to
       non-existent.
-- Literate Programming
-  - Comments
-    - Exclude from tangle-blocks and rely on source-block for traceability
-  - Noweb-Ref
+- Literate Programming.
+  - Comments.
+    - Exclude from tangle-blocks and rely on source-block for traceability.
+  - Noweb-Ref.
     - Same as Headline.
     - Replace spaces with dashes.
     - Probably the Heading name.
     - Keep depth shallow
-- Maintenance
+- Maintenance.
   - Frequently check spelling, grammar, and weasel-words.
-- Plain List
+- Plain List.
   - End single sentences with a period.
-- Programming Language
-  - Emacs-Lisp
+- Programming Language.
+  - Emacs-Lisp.
     - Use ~t~ for ~true~.
-- Tangling
+- Tangling.
   - When ordering matters, rely on block-reuse to enforce correct generation.
-- Voice
+- Voice.
   - The audience is Sysop.
   - The audience is another EMACS user.
   - Pleasant conversation style.
   - Simple and detailed.
   - Provide answers; this document is an answer.
   - Do not pose questions; this document is not a question.
-- Word Choice
+- Word Choice.
   - Use Arabic numerals.
   - Instead of writing "tells EMACS", communicate the result.
   - "EMACS" refers to this software.
