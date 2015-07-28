@@ -1197,6 +1197,17 @@ unsettling.
   (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right))
 #+END_SRC
 
+Jorge [[https://lists.gnu.org/archive/html/help-gnu-emacs/2015-07/msg00364.html][notes how]] to use Ido to also open URLs. I always forget that Ido is built
+in. That looks nice. At first I felt like the Ido behavior was unpleasant here,
+but it is exactly the same. This is just a nice way to easily open URLs instead
+of having to open-url-at-point or use google-this, especially when outside of
+Org.
+
+#+BEGIN_SRC emacs-lisp
+(setq ido-use-url-at-point t)
+(setq ido-use-filename-at-point 'guess)
+#+END_SRC
+
 ** Font
 
 Use Unicode-Font to provide as many Unicode fonts as possible.
