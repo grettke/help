@@ -1281,7 +1281,6 @@ Notify Magit about every working copy that Projectile knows about.
                 magit-repository-directories-depth 1)))
 #+END_SRC
 
-
 ** Save History of All Things
 
 It is nice to have commands and their history saved so that every time you get
