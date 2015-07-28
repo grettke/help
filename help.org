@@ -1312,6 +1312,23 @@ back to work, you can just re-run stuff as you need it.
 (savehist-mode t)
 #+END_SRC
 
+** Sudo
+
+Configure Sudo with Ido.
+
+#+BEGIN_SRC emacs-lisp
+(help/on-osx
+ (defun help/ido-find-file (&rest args)
+   "Find file as root if necessary.
+
+Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
+   (unless (and buffer-file-name
+              (file-writable-p buffer-file-name))
+     (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
+
+ (advice-add 'ido-find-file :after #'help/ido-find-file))
+#+END_SRC
+
 ** Version Control
 
 Use VC for committing the current file quickly and use Magit for everything
