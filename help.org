@@ -1254,6 +1254,20 @@ with Projectile.
              (projectile-global-mode 1))
 #+END_SRC
 
+Notify Magit about every working copy that Projectile knows about.
+
+#+BEGIN_SRC emacs-lisp
+(eval-after-load "projectile"
+  '(progn (setq magit-repository-directories (mapcar (lambda (dir)
+                                                       (substring dir 0 -1))
+                                                     (remove-if-not (lambda (project)
+                                                                      (file-directory-p (concat project "/.git/")))
+                                                                    (projectile-relevant-known-projects)))
+
+                magit-repository-directories-depth 1)))
+#+END_SRC
+
+
 ** Save History of All Things
 
 It is nice to have commands and their history saved so that every time you get
