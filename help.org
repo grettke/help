@@ -1361,11 +1361,12 @@ Load Use-Package.
   - Weave :: A verb. Prepare a document for consumption by a human.
 - Formatting
   - Code Snippet.
+    - Programming language expressions.
     - Use ~code style~.
-  - Non-Code Snippet
+  - Non-Code Snippet.
     - Program names, file types
     - Use =verbatim= style
-  - Package
+  - Package.
     - Same as Headline.
     - Dashes separate definition.
     - Acronyms are all upper case to distinguish from words for example "GNU"
