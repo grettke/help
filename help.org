@@ -737,9 +737,11 @@ optimized for you. The ways to configure your keyboard are limitless because
 everyone is unique. How to get the best configuration tips for your system? Do
 what works for everyone.
 
-Make this system easy to use on any keyboard. Make this system easy to use in
-English. Make this system easy to use with average hand strength. These goals
-are essential to configuring the keyboard for this system.
+Choose a keyboard that will satisfy 80% of EMACS users using 80% of the
+keyboards out there. Make this system easy to use on any one of those keyboards.
+Make this system easy to use in English. Make this system easy to use with
+average hand strength using two hands. These goals are essential to configuring
+the keyboard for this system.
 
 ** A Full Pot of EMACS on Every Desk
 
