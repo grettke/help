@@ -159,6 +159,26 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
  (advice-add 'y-or-n-p :around #'help/yes-or-no-p))
 (desktop-save-mode t)
 (setq desktop-restore-eager 10)
+(use-package ido
+  :ensure t)
+(use-package flx-ido
+  :ensure t
+  :config
+  (ido-mode 1))
+(use-package ido-hacks
+  :ensure t)
+(use-package ido-ubiquitous
+  :ensure t
+  :config
+  (ido-ubiquitous-mode +1)
+  (setq ido-create-new-buffer 'always)
+  (flx-ido-mode +1)
+  (setq ido-use-faces nil))
+(use-package ido-vertical-mode
+  :ensure t
+  :config
+  (ido-vertical-mode +1)
+  (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right))
 (use-package unicode-fonts
   :ensure t
   :config
@@ -233,3 +253,17 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
 (setq make-pointer-invisible t)
 (menu-bar-mode t)
 (global-set-key (kbd "s-a") #'vc-next-action)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

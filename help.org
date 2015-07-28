@@ -809,7 +809,7 @@ following practices were defined.
   - Most operating systems bind actions to them OOTB anyway.
   - EMACS comes with key-bindings OOTB.
 - Don't try to set up a Hyper-key.
-- Use shift as a name-space expander.
+- Use shift as a name-space expansion vehicle.
   - Shift doubles every name-space in which you use it.
 
 These practices say nothing about the =places= or =activities= that you choose to
@@ -969,7 +969,63 @@ about stack-able-environments for bindings. You may use Ukulele or Hydras to do
 the same thing. [[https://pqrs.org/osx/karabiner/][Karabiner]] is a nice way to re-map your keys. It's easiest
 adjustment is to make return act as return when pressed alone and as control
 when pressed with another key. That introduces a symmetry to your keyboard which
-can be helpful.
+can be helpful. All of those dimensions are worth exploring.
+
+When I explored them I felt that they led me further away from the majority of
+users. Every time explored a different key-mapping (not key-binding) it reduced
+accessibility for new users. Each time I tried to work around that hiccup. The
+last pursuit was =;= and space.
+
+It would be great to set up your keyboard with the meta keys on the bottom
+like this:
+
+#+BEGIN_EXAMPLE
++---------------------------------------+
+| +-----+                       +-----+ |
+| |RET  |                       |  RET| |
+| +-----+                       +-----+ |
+| +------+                     +------+ |
+| |SHIFT |                     | SHIFT| |
+| +------+                     +------+ |
+|        +-+ +-+ +-----+ +-+ +-+        |
+|        |s| |M| |C/spc| |M| |s|        |
+|        +-+ +-+ +-----+ +-+ +-+        |
+|                                       |
++---------------------------------------+
+#+END_EXAMPLE
+
+Karabiner was too slow for my typing speed though. It [[https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/][happens]]. It seemed like a
+minimal change to use Ukelele to:
+
+- Make space send =C=
+- Make =;= send space
+- Make ='= a dead key
+  - In it's dead key state make
+    - =;= \rarr =;=
+    - =:= \rarr =:=
+    - ='= \rarr ='=
+    - ="= \rarr ="=
+
+The trouble is that it violates the POLA. Therefore, I left it alone and stuck
+with a simple "Get C on both sides".
+
+That has worked out very well. It is very easy to do on every operating system.
+It holds true to the values of this system.
+
+#+BEGIN_EXAMPLE
++---------------------------------------+
+| +-----+                       +-----+ |
+| |C    |                       |C/RET| |
+| +-----+                       +-----+ |
+| +------+                     +------+ |
+| |SHIFT |                     | SHIFT| |
+| +------+                     +------+ |
+|        +-+ +-+ +-----+ +-+ +-+        |
+|        |s| |M| |spc  | |M| |s|        |
+|        +-+ +-+ +-----+ +-+ +-+        |
+|                                       |
++---------------------------------------+
+#+END_EXAMPLE
 
 ** Take a Sip
 
