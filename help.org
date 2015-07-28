@@ -803,6 +803,7 @@ following practices were defined.
     time anyway so don't use it.
   - Some bindings are just too valuable to pass up:
     - =C-;=
+      - Your hands are in the home position already.
     - Every modifier key with return
 - Never bind to =F= keys.
   - They are a painful stretch on most keyboards.
