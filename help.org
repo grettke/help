@@ -788,16 +788,6 @@ key-bindings should go
 
 **** Choosing Places for Key-Bindings
 
-When you use EMACS:
-
-- You go =places=
-- To perform =activities=
-
-And configure them by:
-
-- Identify the mode or logical operational context for that =place=
-- And defining key-bindings to execute those =actions=
-
 OOTB you wil be visiting many =places= and performing many =activities=. EMACS comes
 with a good configuration that minimizes =distance=. This isn't worth changing.
 You can use EMACS for a lifetime without ever having to customize any of the
