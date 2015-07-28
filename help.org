@@ -1232,6 +1232,16 @@ Perhaps educationally there is a character for bowel-movements: 💩.
   (unicode-fonts-setup))
 #+END_SRC
 
+** Macros
+
+The macro recorder and Multiple-Cursors provide two ways to do the right thing
+in different situations.
+
+#+BEGIN_SRC emacs-lisp
+(use-project multiple-cursors
+             :ensure t)
+#+END_SRC
+
 ** Projects
 
 Directories that have Git working copies are logically projects. Manage them
