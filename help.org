@@ -1192,6 +1192,15 @@ Access nearly every object available in this system from one place.
              (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right))
 #+END_SRC
 
+Make functions search-able.
+
+#+BEGIN_SRC emacs-lisp
+(use-package smex
+             :ensure t
+             :config
+             (smex-initialize))
+#+END_SRC
+
 Make URLs a first-class object.
 
 #+BEGIN_SRC emacs-lisp
