@@ -745,130 +745,81 @@ the keyboard for this system.
 
 ** A Full Pot of EMACS on Every Desk
 
-#+begin_quote
-If you want to go quickly, go alone. If you want to go far, go together.
-#+end_quote
--- [[https://en.wikiquote.org/wiki/October_14][African proverb]]
+*** Decisions & Assumptions
 
-EMACS users go far together. Here is how to do it.
+**** Keyboard  Layout & Operation
 
-- Use a QWERTY keyboard.
-  - Assumptions.
-    - Impossible to use EMACS without a keyboard.
-    - Available on every laptop.
-    - Likely to come with every computer ever.
-    - Easy to find nearly everywhere.
-- You are using two hands with normal strength and configuration.
-  - Assumptions.
-    - You have 5 fingers on each hand.
-      - Thumb.
-      - Index.
-      - Middle.
-      - Ring.
-      - Pinky.
-    - Each will be positioned in one of two positions at any time.
-      - Home position.
-        - Effortlessly reach bottom "space-bar" row to top "qwerty" row.
-        - Width accessible from a-;.
-        - Difficult to reach number and =F= row.
-        - Full operational strength with every finger.
-        - Includes caps-lock and return.
-      - Foreign position.
-        - Every key beyond the Home position.
-        - Ring and Pinky fingers are weak. Thumb, Index, and Middle are strong.
-    - Home and Foreign key usage.
-      - In Home, every finger has full strength.
-        - Use them as needed.
-      - In Foreign, Pinky and Ring are weakest.
-        - Make your hand into a crab claw to operate keys that you normally
-          thing to use your Pinky. The key must be large. Use this position for
-          "stamping" and "holding" keys. You can easily to the same thing with
-          your thumb. You use the strength of you Thumb, Index, and Middle
-          finger to bolster your Ring and Pinky to push/hold the desired key.
-          This makes sense for wider physical keys. You will never use your
-          Pinky or Ring by themselves.
+- Use QWERTY layout.
+  - Everyone knows it.
+  - Easy to learn.
+  - Available on every keyboard.
+  - Inexpensive.
+  - When graduation time comes, plenty of great alternatives available like
+    DVORAK and Colemak.
+- Keep hands in home position as much as possible.
+  - Every finger is strong in the home position so RSI reduced.
+  - Single key presses are easy there.
+- Table-bang the shift, caps-lock and enter keys.
+  - Table-bang is a position of your hand. Make it by:
+    - Starting with your hands in the home position.
+    - Make a "high-five" with both of them parallel to the keyboard.
+    - Turn your left hand counter-clockwise and right hand clockwise to make
+      them perpendicular to the keyboard.
+    - Squeeze all of your fingers together.
+    - Push the keys using the side of your Pinky.
+    - In this position you are using the strength of all of your fingers.
+  - Never use those key using your Pinky alone.
+  - Practice depends 100% on user-discipline.
+- Try to achieve balance with meta keys.
+  - Provide same key of each side of the keyboard.
+
+**** Understanding Your Cognitive Landscape.
+
+You operate within a cognitive landscape. Every moment you are in a single
+=place=. While residing in each =place= you perform logically related =activities=.
+Activities facilitate logical actions like modification within that =place=.
+Modifications are performed objects. Objects include things like the contents of
+a buffer, contents of memory, or the file that backs a buffer. While performing
+those =activities= there is a logical sense of "flow". That should never be
+interrupted. Usually an interruption occurs when you are going to go to a new
+=place=. The =distance= between =places= is measured in the similarity between the
+=actions= that you find there. As you develop these ides it will be obvious where
+key-bindings should go
+
+**** Choosing Places for Key-Bindings
+
+When you use EMACS:
+
+- You go =places=
+- To perform =activities=
+
+And configure them by:
+
+- Identify the mode or logical operational context for that =place=
+- And defining key-bindings to execute those =actions=
+
+OOTB you wil be visiting many =places= and performing many =activities=. EMACS comes
+with a good configuration that minimizes =distance=. This isn't worth changing.
+You can use EMACS for a lifetime without ever having to customize any of the
+key-bindings. This is what lets anyone use your system. This is what lets you
+use the system with =-Q= when you break it. You need to decide if you every want
+to alter the default configuration. This system does not want to. It wants to
+keep EMACS true to EMACS and your hands happy. To satisfy those goals the
+following practices were defined.
+
+- 99.999% of the time never bind to the =C= or =M= name-space.
+  - They are for system key-bindings. You can break them. Don't.
+  - In theory =C-c= is the "user name-space" but packages stomp on this all of the
+    time anyway so don't use it.
+  - Some bindings are just too valuable to pass up:
+    - =C-;=
+    - Every modifier key with return
 - Never bind to =F= keys.
-  - Assumptions.
-    - They are a painful stretch on most keyboards. Require lone Pinky.
-    - Most operating systems bind actions to them OOTB.
-    - EMACS comes with key-bindings OOTB.
-- Almost never bind with =C= or =M= combinations.
-  - Assumptions.
-    - EMACS comes with key-bindings OOTB.
-    - Even though =C-c= is the "user name-space" it is usually populated with
-      binding from packages that you are likely to stomp on.
-    - There are often sweet and precise exceptions to this advice like
-      combinations for the =RET= and =<return>= but otherwise it is a bad
-      idea.
-- Logical name-spaces you should use are =home-key/key-chords=,
-  =double-home-key/key-chords=, =Shift-home-key/key-chords=, =s-name-space=, and
-  =Hydra-name-space=.
-  - Assumptions
-    - Never makes sense to ignore previous assumptions.
-    - Will use =s= and shift a lot so make them accessible according to strengths
-      asserted above.
-    - =C= and =M= name-spaces will be used a lot.
-- Map your keyboard to make logical meta keys =stomp-keys= like =return=, =shift=, and
-  =space-bar= easily accessible. Mirror them to make them equally accessible with
-  each hand if possible.
-  - Assumptions.
-    - You can remap your keyboard before it reaches EMACS.
-    - =Shift= is logically a meta key in this system using Key-Chord.
-    - Map is a verb for defining keys, not key-bindings.
-    - Map the space-bar to =C= if held and return if pressed and released.
-    - Map =M= to the keys to the left and right of the space-bar
-    - Map =return= to the keys left and right of =M=.
-    - Map =caps-lock= and =return= to =s= (super).
-    - Leave =shift= alone.
-    - =s= and =shift= will be critical to all custom operations in this system. Most
-      key-bindings will go there. Exceptions need to be thoughtfully considered
-      and frequently revisited.
-    - Here was my original goal.
-      #+BEGIN_EXAMPLE
-+---------------------------------------+
-| +-----+                       +-----+ |
-| |RET  |                       |  RET| |
-| +-----+                       +-----+ |
-| +------+                     +------+ |
-| |SHIFT |                     | SHIFT| |
-| +------+                     +------+ |
-|        +-+ +-+ +-----+ +-+ +-+        |
-|        |s| |M| |C/spc| |M| |s|        |
-|        +-+ +-+ +-----+ +-+ +-+        |
-|                                       |
-+---------------------------------------+
-      #+END_EXAMPLE
-    - Here is what I ended up with.
-      #+BEGIN_EXAMPLE
-+---------------------------------------+
-| +-----+                       +-----+ |
-| |C    |                       |C/RET| |
-| +-----+                       +-----+ |
-| +------+                     +------+ |
-| |SHIFT |                     | SHIFT| |
-| +------+                     +------+ |
-|        +-+ +-+ +-----+ +-+ +-+        |
-|        |s| |M| |spc  | |M| |s|        |
-|        +-+ +-+ +-----+ +-+ +-+        |
-|                                       |
-+---------------------------------------+
-      #+END_EXAMPLE
-      - Couldn't figure out how to make [[https://pqrs.org/osx/karabiner/][Karabiner]] do it quickly. When you type
-        full-speed it activates C for you. Same as in [[https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/][this post]].
-      - [[http://scripts.sil.org/cms/scripts/page.php?site_id%3Dnrsi&id%3Dukelele][Ukelele]] may be the /right/ way to get the above layout.
-
-- Understanding your congitive landscape.
-  - Assumptions.
-    - You operate within a cognitive landscape and at any given moment you are
-      in a particular =place=.
-    - While residing in each =place= you perform logically related =activities=.
-      Activities facilitate logical actions like modification within that =place=.
-    - While performing =activities= there is a logical sense of "flow" while
-      performing them that should never be interrupted. Usually an interruption
-      in flow occurs when you are going to go to a new =place=.
-    - The =distance= between =places= is measures in the similarity between the
-      =actions= that you find there.
-    - As you develop these ides it will be obvious where things should go.
+  - They are a painful stretch on most keyboards.
+  - Some require a lone Pinky with is worse.
+  - Most operating systems bind actions to them OOTB anyway.
+  - EMACS comes with key-bindings OOTB.
+- Don't try to set up a Hyper-key.
 
 - Choosing =places=.
   - Assumptions
