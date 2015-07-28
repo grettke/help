@@ -1166,7 +1166,7 @@ making such breaking changes.
 (setq desktop-restore-eager 10)
 #+END_SRC
 
-** Finding
+** Finding Objects
 
 There are many ways to easily find what you need, for a command, for a file,
 and this mode seems to be a quite nice way. Something I had been curious about
