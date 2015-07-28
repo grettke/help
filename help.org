@@ -1527,7 +1527,7 @@ Load Use-Package.
   - Audience is Sysop; the author included.
   - Pleasant conversation style.
   - Simple and detailed.
-  - Provide answers; do not pose questions
+  - Provide answers; do not pose questions or observations.
 - Word Choice.
   - Use Arabic numerals.
   - Instead of writing "tells EMACS", communicate the result.
