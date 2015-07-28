@@ -1355,7 +1355,7 @@ Load Use-Package.
   - Key-Bind :: A verb. The act of creating a Key Binding.
   - Out of the Box (OOTB) :: The default configuration of something.
   - Sysop :: A proper noun. The System-Operator. The human operating this EMACS
-    based Org-Mode enabled literate programming system. Yourself.
+    based Org-Mode enabled literate programming system. The reader.
   - Tangle :: A verb. Assemble a document for consumption by another program or
     machine.
   - Weave :: A verb. Prepare a document for consumption by a human.
