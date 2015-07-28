@@ -710,7 +710,6 @@ make it so easy as =C-c C-c=.
 
 ** A Fine Cup of EMACS
 
-
 Every EMACS user ought to have a [[http://shop.fsf.org/product/gnu-emacs-reference-mugs/][Emacs Reference Mug]] at their desk. The mug
 invite other user to ask questions. Give the mug as a gift to every user you
 know who would benefit from learning EMACS. The mug reminds us all that EMACS is
