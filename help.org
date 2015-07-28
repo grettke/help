@@ -786,7 +786,7 @@ interrupted. Usually an interruption occurs when you are going to go to a new
 =actions= that you find there. As you develop these ides it will be obvious where
 key-bindings should go
 
-**** Choosing Places for Key-Bindings
+**** Key-Bindings Bring you to Places to Perform Activities
 
 OOTB you wil be visiting many =places= and performing many =activities=. EMACS comes
 with a good configuration that minimizes =distance=. This isn't worth changing.
