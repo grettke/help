@@ -1348,7 +1348,7 @@ Load Use-Package.
   - Consider it another paragraph and indent appropriately.
     - Never separate a paragraph and and a Code Block with a colon.
 - Content
-  - When importing update to conform with Style-Guide.
+  - When importing, update to conform with Style-Guide.
 - Dictionary
   - Exemple Complet Minimal (ECM) :: The minimal complete example of expected
     versus actual behavior. Comes from the [[http://orgmode.org/worg/org-faq.html][Org-Mode]] community.
