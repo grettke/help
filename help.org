@@ -955,6 +955,7 @@ For example, in Org-Mode I am still learning about functions and haven't used
 them much and forget their names. It is faster to put them in a Hydra. If they
 get used a lot, I will add them to =s=.
 
+*** Building Your Own Keyboard
 ** Take a Sip
 
 Because Use-Package is used in this system, the binding definitions often live
