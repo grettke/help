@@ -786,7 +786,7 @@ interrupted. Usually an interruption occurs when you are going to go to a new
 =actions= that you find there. As you develop these ides it will be obvious where
 key-bindings should go
 
-**** Key-Bindings Bring you to Places to Perform Activities
+**** Key-Bindings Take You to Places to Perform Activities
 
 OOTB you wil be visiting many =places= and performing many =activities=. EMACS comes
 with a good configuration that minimizes =distance=. This isn't worth changing.
@@ -810,6 +810,68 @@ following practices were defined.
   - Most operating systems bind actions to them OOTB anyway.
   - EMACS comes with key-bindings OOTB.
 - Don't try to set up a Hyper-key.
+
+These practices say nothing about the =places= or =activities= that you choose to
+peform. The practices only look at the key-binding configuration. There are a
+limited number of keys on a keyboard and there are physical limitations on your
+hands. Along with the previous assuptions it may look like there are less.
+Fortunately it just looks that way and it isn't true. There are a lot of
+powerful ways to "go places" with EMACS. The next heading contains my attempt.
+
+**** How to Get There Pleasantly and Quickly
+
+You need to learn how to use EMACS. You need to develop a personal preference.
+You need to develop an idea of =places= and =activities= and =distance=. The following
+headings are delineated by breaks in flow.
+
+They are described by the properties:
+
+- Actions :: The number of related actions in that place.
+- Expertise :: The level of skill and speed with which you are performing the
+  activity.
+- Relationship :: How closely those activities are related in the current place.
+- Frequency :: How many times you perform these actions when you here.
+
+***** =s=
+      :PROPERTIES:
+      :Actions:          High
+      :Expertise:        High
+      :Relationship:     High
+      :Frequency:        High
+      :END:
+
+For example, in Org-Mode:
+
+- I traverse the entire document very quickly with
+  ~org-babel-previous-src-block~ and and ~org-babel-next-src-block.~
+- I execute source-blocks.
+- I edit source-blocks.
+
+Every activity is related to reading, modifying, executing, and tangling code.
+
+***** =Key-Chord=
+      :Actions:          Low
+      :Expertise:        High
+      :Frequency:        High
+      :Relationship:     Low
+
+For example I spell-check a lot. I also jump around the buffer a lot. They are
+important and I do them a lot but they are not very logically related.
+
+***** =Key-Chord= & =Hydra=
+      :PROPERTIES:
+      :Actions:          High
+      :Expertise:        Low
+      :Frequency:        Low
+      :Relationship:     High
+      :END:
+
+For example, in Org-Mode:
+
+- I rarely export to Markdown directly, but it I value it
+- I rarely export to HTML, but I value it
+- There are ~org-babel~ functions that are really valuable that I forgot and have
+  to look up every time.
 
 - Choosing =places=.
   - Assumptions
