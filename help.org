@@ -1232,6 +1232,18 @@ Perhaps educationally there is a character for bowel-movements: 💩.
   (unicode-fonts-setup))
 #+END_SRC
 
+** Projects
+
+Directories that have Git working copies are logically projects. Manage them
+with Projectile.
+
+#+BEGIN_SRC emacs-lisp
+(use-package projectile
+             :ensure t
+             :config
+             (projectile-global-mode 1))
+#+END_SRC
+
 ** Save History of All Things
 
 It is nice to have commands and their history saved so that every time you get
