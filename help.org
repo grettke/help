@@ -723,7 +723,8 @@ This system wants to maximize accessibility for new users. It wants anyone to be
 able to download and use it without surprises. It wants the mug to serve as a
 fine reference for anyone to use. It wants to keep things simple and familiar so
 that anyone who has learned EMACS OOTB can use it pleasantly and productively.
-These goals are essential to configuring the keyboard for this system.
+These goals are essential to configuring the keyboard for this system. This
+system will always respect the POLA.
 
 ** A Keyboard on Every Desk
 
@@ -1265,7 +1266,7 @@ Menu bars make EMACS more accessible to non-EMACS users.
 (menu-bar-mode t)
 #+END_SRC
 
-* Principle of Least Astonishment
+* Principle of Least Astonishment (POLA)
   :PROPERTIES:
   :noweb-ref: Principle-of-Least-Astonishment
   :END:
