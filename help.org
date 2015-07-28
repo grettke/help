@@ -731,7 +731,7 @@ system will always respect the POLA.
 The configuration of the keyboard on an EMACS system can completely change the
 experience. No keyboard makes it impossible. A Kinesis Ergo makes it feel
 really good. Soft keys make it feel soft; hard keys make it feel faster. The
-[[http://xahlee.info/kbd/dvorak_and_all_keyboard_layouts.html][layout of letters]] is claimed to make your "more productive" using statistics.
+[[http://xahlee.info/kbd/dvorak_and_all_keyboard_layouts.html][layout of letters]] is claimed to make you "more productive" using statistics.
 You may even study the statistics of your own writing and choose a layout
 optimized for you. The ways to configure your keyboard are limitless because
 everyone is unique. How to get the best configuration tips for your system? Do
