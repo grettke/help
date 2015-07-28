@@ -745,9 +745,7 @@ the keyboard for this system.
 
 ** A Full Pot of EMACS on Every Desk
 
-*** Decisions & Assumptions
-
-**** Keyboard  Layout & Operation
+*** Keyboard  Layout & Operation
 
 - Use QWERTY layout.
   - Everyone knows it.
@@ -773,7 +771,7 @@ the keyboard for this system.
 - Try to achieve balance with meta keys.
   - Provide same key of each side of the keyboard.
 
-**** Understanding Your Cognitive Landscape.
+*** Understanding Your Cognitive Landscape.
 
 You operate within a cognitive landscape. Every moment you are in a single
 =place=. While residing in each =place= you perform logically related =activities=.
@@ -786,7 +784,7 @@ interrupted. Usually an interruption occurs when you are going to go to a new
 =actions= that you find there. As you develop these ides it will be obvious where
 key-bindings should go
 
-**** Key-Bindings Take You to Places to Perform Activities
+*** Key-Bindings Take You to Places to Perform Activities
 
 OOTB you wil be visiting many =places= and performing many =activities=. EMACS comes
 with a good configuration that minimizes =distance=. This isn't worth changing.
@@ -821,7 +819,7 @@ hands. Along with the previous assuptions it may look like there are less.
 Fortunately it just looks that way and it isn't true. There are a lot of
 powerful ways to "go places" with EMACS. The next heading contains my attempt.
 
-**** How to Get There Pleasantly and Quickly
+*** How to Get There Pleasantly and Quickly
 
 You need to learn how to use EMACS. You need to develop a personal preference.
 You need to develop an idea of =places= and =activities= and =distance=. The following
@@ -844,7 +842,7 @@ They were initially described by the properties:
 The relationship between "doing those things" and those 4 properties is still
 unclear and being explored.
 
-***** =s=
+**** =s=
       :PROPERTIES:
       :Actions:          High
       :Expertise:        High
@@ -879,7 +877,7 @@ For example, in Org-Mode:
 
 Every activity is related to reading, modifying, executing, and tangling code.
 
-***** =Key-Chord=
+**** =Key-Chord=
 
 Key-Chord is intriguing because it works on every keyboard. It is powerful
 because it can you bring you to any =place= easily. It is good for taking you
@@ -896,7 +894,7 @@ mark around and going to lines are performed a lot so they need to be done
 quickly and left. This is a place where key-chords and the shift modifier are
 a fast and intuitive way to go places.
 
-****** Single-Key Key-Chord Name-Space.
+***** Single-Key Key-Chord Name-Space.
       :Actions:          High
       :Expertise:        Low
       :Frequency:        High
@@ -916,7 +914,7 @@ a fast and intuitive way to go places.
     - Fifth row has 13; 26 with shift.
 - Good vehicle to reach a Hydra.
 
-****** Two-Key Key-Chord Name-Space.
+***** Two-Key Key-Chord Name-Space.
       :Actions:          Low
       :Expertise:        High
       :Frequency:        High
@@ -934,7 +932,7 @@ a fast and intuitive way to go places.
 - Bringing over existing bindings. They are all for every mode so I will
   keep it that way.
 
-***** =Hydra=
+**** =Hydra=
       :PROPERTIES:
       :Actions:          High
       :Expertise:        Low
