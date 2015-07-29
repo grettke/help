@@ -22,6 +22,14 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
   (setq org-babel-default-inline-header-args
         (cons (cons property value)
               (assq-delete-all property org-babel-default-inline-header-args))))
+
+(defun help/comment-or-uncomment ()
+  "Comment or uncomment the current line or selection."
+  (interactive)
+  (cond ((not mark-active) (comment-or-uncomment-region (line-beginning-position)
+                                                      (line-end-position)))
+        ((< (point) (mark)) (comment-or-uncomment-region (point) (mark)))
+        (t (comment-or-uncomment-region (mark) (point)))))
 (setq org-babel-use-quick-and-dirty-noweb-expansion nil)
 (help/set-org-babel-default-header-args :comments "noweb")
 (help/set-org-babel-default-header-args :padline "yes")
@@ -332,3 +340,5 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
 (tool-bar-mode -1)
 (setq make-pointer-invisible t)
 (menu-bar-mode t)
+(key-chord-define-global "JK" (lambda () (interactive) (other-window 1)))
+(key-chord-define-global "qi" 'help/comment-or-uncomment)
