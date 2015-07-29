@@ -1061,6 +1061,7 @@ VC activities.
 (define-key help/vc-map "e" 'vc-ediff)
 (define-key help/vc-map "d" 'vc-diff)
 (define-key help/vc-map "u" 'vc-revert)
+(define-key help/vc-map ";" 'vc-next-action)
 #+END_SRC
 
 *** Left & Right Side
