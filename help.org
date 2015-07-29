@@ -820,7 +820,7 @@ following practices were defined.
   - Some bindings are just too valuable to pass up:
     - =C-;=
       - Your hands are in the home position already.
-    - Every modifier key with return
+    - Every modifier key with return.
 - Never bind to =F= keys.
   - They are a painful stretch on most keyboards.
   - Some require a lone Pinky with is worse.
