@@ -1757,6 +1757,9 @@ Load Use-Package.
 - Programming Language.
   - Emacs-Lisp.
     - Use ~t~ for ~true~.
+    - Almost always use ~defun~ instead of ~advice-add~.
+      - Functions are more normal and predictable.
+      - Advice can subtly break without you noticing.
 - Tangling.
   - When ordering matters, rely on block-reuse to enforce correct generation.
 - Voice.
