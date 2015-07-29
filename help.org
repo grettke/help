@@ -1375,6 +1375,19 @@ else.
              (global-set-key (kbd "C-M-;") #'magit-status))
 #+END_SRC
 
+** White-space management
+
+Make control characters easily visible.
+
+#+BEGIN_SRC emacs-lisp
+(use-package whitespace
+             :ensure t
+             :config
+             (setq whitespace-style '(trailing lines tab-mark))
+             (setq whitespace-line-column 80)
+             (global-whitespace-mode 1))
+#+END_SRC
+
 * Quiet and Pleasant Appearance
    :PROPERTIES:
    :noweb-ref: Quiet-and-Pleasant-Appearance
