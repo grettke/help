@@ -1052,6 +1052,16 @@ in the call itself.
 
 *** Left Side
 
+VC activities.
+
+#+BEGIN_SRC emacs-lisp
+(define-prefix-command 'help/vc-map)
+(global-set-key (kbd "s-v") 'help/vc-map)
+(define-key help/vc-map "h" 'diff-hl-mode)
+(define-key help/vc-map "e" 'vc-ediff)
+(define-key help/vc-map "d" 'vc-diff)
+(define-key help/vc-map "u" 'vc-revert)
+#+END_SRC
 
 *** Left & Right Side
 

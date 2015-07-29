@@ -355,6 +355,12 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
 (tool-bar-mode -1)
 (setq make-pointer-invisible t)
 (menu-bar-mode t)
+(define-prefix-command 'help/vc-map)
+(global-set-key (kbd "s-v") 'help/vc-map)
+(define-key help/vc-map "h" 'diff-hl-mode)
+(define-key help/vc-map "e" 'vc-ediff)
+(define-key help/vc-map "d" 'vc-diff)
+(define-key help/vc-map "u" 'vc-revert)
 (key-chord-define-global "JK" (lambda () (interactive) (other-window 1)))
 (key-chord-define-global "qi" 'help/comment-or-uncomment)
 (custom-set-variables
