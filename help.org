@@ -1228,7 +1228,13 @@ making such breaking changes.
 
 ** File Based System
 
+#+BEGIN_SRC emacs-lisp
+(defconst help/safb-before
+  '(magit-status))
 
+(dolist (fn help/safb-before)
+  (advice-add fn :before #'help/save-all-file-buffers))
+#+END_SRC
 
 ** Finding Objects
 
