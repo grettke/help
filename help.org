@@ -1331,6 +1331,21 @@ back to work, you can just re-run stuff as you need it.
 (savehist-mode t)
 #+END_SRC
 
+** Searching
+
+When searching allow a space to many any number.
+
+#+BEGIN_SRC emacs-lisp
+(setq isearch-lax-whitespace t)
+(setq isearch-regexp-lax-whitespace t)
+#+END_SRC
+
+Make searches case-insensitive.
+
+#+BEGIN_SRC emacs-lisp
+(setq-default case-fold-search t)
+#+END_SRC
+
 ** Sudo
 
 Configure Sudo with Ido.
