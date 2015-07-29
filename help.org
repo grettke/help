@@ -1375,7 +1375,7 @@ else.
              (global-set-key (kbd "C-M-;") #'magit-status))
 #+END_SRC
 
-** White-space management
+** Whitespace Management
 
 Make control characters easily visible.
 
