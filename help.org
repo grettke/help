@@ -1101,6 +1101,15 @@ S is nice to use.
   :ensure t)
 #+END_SRC
 
+** Modeline
+
+Reduce information about modes in the Modeline.
+
+#+BEGIN_SRC emacs-lisp
+(use-package diminish
+             :ensure t)
+#+END_SRC
+
 ** OSX
 
 Make it easy to evaluate code only when running on OSX.
