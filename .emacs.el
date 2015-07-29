@@ -190,11 +190,15 @@ LS captures arguments when this is used as before advice."
              (help/diminish "smartparens-mode"))
 (desktop-save-mode t)
 (setq desktop-restore-eager 10)
-(defconst help/safb-before
-  '(magit-status))
+(defun help/safb-vc-next-action ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (vc-next-action nil))
 
-(dolist (fn help/safb-before)
-  (advice-add fn :before #'help/save-all-file-buffers))
+(defun help/safb-magit-status ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (magit-status))
 (require 'ido)
 (use-package flx-ido
              :ensure t
@@ -287,7 +291,7 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
 (use-package magit
              :ensure t
              :config
-             (global-set-key (kbd "C-;") #'magit-status))
+             (global-set-key (kbd "s-e") #'help/safb-magit-status))
 (use-package whitespace :if nil
              :ensure t
              :config
@@ -361,6 +365,7 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
 (define-key help/vc-map "e" 'vc-ediff)
 (define-key help/vc-map "d" 'vc-diff)
 (define-key help/vc-map "u" 'vc-revert)
+(global-set-key (kbd "s-r") #'help/safb-vc-next-action)
 (key-chord-define-global "JK" (lambda () (interactive) (other-window 1)))
 (key-chord-define-global "qi" 'help/comment-or-uncomment)
 (custom-set-variables

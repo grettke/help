@@ -1061,10 +1061,10 @@ VC activities.
 (define-key help/vc-map "e" 'vc-ediff)
 (define-key help/vc-map "d" 'vc-diff)
 (define-key help/vc-map "u" 'vc-revert)
-(define-key help/vc-map ";" 'vc-next-action)
+(global-set-key (kbd "s-r") #'help/safb-vc-next-action)
 #+END_SRC
 
-- =s-t= ~magit-status~
+- =s-e= ~help/safb-magit-status~
 
 *** Left & Right Side
 
@@ -1240,11 +1240,15 @@ making such breaking changes.
 ** File Based System
 
 #+BEGIN_SRC emacs-lisp
-(defconst help/safb-before
-  '(magit-status))
+(defun help/safb-vc-next-action ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (vc-next-action nil))
 
-(dolist (fn help/safb-before)
-  (advice-add fn :before #'help/save-all-file-buffers))
+(defun help/safb-magit-status ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (magit-status))
 #+END_SRC
 
 ** Finding Objects
@@ -1472,7 +1476,7 @@ Use Magit for Git.
 (use-package magit
              :ensure t
              :config
-             (global-set-key (kbd "s-t") #'magit-status))
+             (global-set-key (kbd "s-e") #'help/safb-magit-status))
 #+END_SRC
 
 ** Whitespace Management
