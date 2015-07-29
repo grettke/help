@@ -1064,6 +1064,18 @@ display.
      ,@statements))
 #+END_SRC
 
+** Evaluation
+
+Evaluate code only after package load.
+
+#+BEGIN_SRC emacs-lisp
+(defmacro help/diminish (mode)
+  "Diminish this mode after it is loaded."
+  (interactive)
+  `(eval-after-load ,mode
+     (diminish ,mode)))
+     #+END_SRC
+
 ** Keyboard
 
 Key-Chord mode is amazing. Piano-Lessons shows you how.
@@ -1169,12 +1181,13 @@ Always maintain balanced brackets. Easily wrap the selected region. Auto-escape
 strings pasted into other strings.
 
 #+BEGIN_SRC emacs-lisp
-(use-package smartparens
+(use-package smartparens :if nil
              :ensure t
              :config
              (require 'smartparens-config)
              (show-smartparens-global-mode t)
-             (setq sp-show-pair-from-inside nil))
+             (setq sp-show-pair-from-inside nil)
+             (help/diminish "smartparens-mode"))
 #+END_SRC
 
 ** Buffer
@@ -1237,11 +1250,11 @@ Use Unicode-Font to provide as many Unicode fonts as possible.
 
 Here are the Unicode fonts that provide nearly everything.
 
-| Name    | Version | URL | Comments                  |
-|---------+---------+-----+---------------------------|
-| [[http://sourceforge.net/projects/dejavu/files/dejavu/2.34/dejavu-fonts-ttf-2.34.tar.bz2][DejaVu]]  |    2.43 | [[http://sourceforge.net/projects/dejavu/files/dejavu/2.34/dejavu-fonts-ttf-2.34.tar.bz2][.]]   | Modern classic            |
-| [[http://users.teilar.gr/~g1951d/][Symbola]] |    7.17 | [[http://users.teilar.gr/~g1951d/Symbola.zip][.]]   | Neat                      |
-| [[http://www.quivira-font.com/][Quivira]] |     4.0 | [[http://www.quivira-font.com/files/Quivira.otf][.]]   | Amazing                   |
+| Name    | Version | URL | Comments                 |
+|---------+---------+-----+--------------------------|
+| [[http://sourceforge.net/projects/dejavu/files/dejavu/2.34/dejavu-fonts-ttf-2.34.tar.bz2][DejaVu]]  |    2.43 | [[http://sourceforge.net/projects/dejavu/files/dejavu/2.34/dejavu-fonts-ttf-2.34.tar.bz2][.]]   | Modern classic           |
+| [[http://users.teilar.gr/~g1951d/][Symbola]] |    7.17 | [[http://users.teilar.gr/~g1951d/Symbola.zip][.]]   | Neat                     |
+| [[http://www.quivira-font.com/][Quivira]] |     4.0 | [[http://www.quivira-font.com/files/Quivira.otf][.]]   | Amazing                  |
 | [[https://code.google.com/p/noto/][Noto]]    |       ? | [[http://noto.googlecode.com/git/fonts/individual/hinted/NotoSans-Regular.ttc][1]] [[http://noto.googlecode.com/git/fonts/individual/unhinted/NotoSansSymbols-Regular.ttf][2]] | Has morse code, and more |
 
 To test it run =view-hello-file= and =M-x list-charset-chars RET unicode-bmp RET=.
@@ -1299,10 +1312,11 @@ Directories that have Git working copies are logically projects. Manage them
 with Projectile.
 
 #+BEGIN_SRC emacs-lisp
-(use-package projectile
+(use-package projectile :if nil
              :ensure t
              :config
-             (projectile-global-mode 1))
+             (projectile-global-mode t)
+             (help/diminish "projectile-mode"))
 #+END_SRC
 
 Notify Magit about every working copy that Projectile knows about.
@@ -1369,10 +1383,11 @@ Make searches case-insensitive.
 Perform syntactic analysis all the time.
 
 #+BEGIN_SRC emacs-lisp
-(use-package flycheck
+(use-package flycheck :if nil
              :ensure t
              :config
-             (add-hook 'after-init-hook #'global-flycheck-mode))
+             (add-hook 'after-init-hook #'global-flycheck-mode)
+             (help/diminish "flycheck-mode"))
 #+END_SRC
 
 ** Sudo
@@ -1409,12 +1424,14 @@ else.
 Make control characters easily visible.
 
 #+BEGIN_SRC emacs-lisp
-(use-package whitespace
+(use-package whitespace :if nil
              :ensure t
              :config
              (setq whitespace-style '(trailing lines tab-mark))
              (setq whitespace-line-column 80)
-             (global-whitespace-mode 1))
+             (global-whitespace-mode 1)
+             (help/diminish "global-whitespace-mode")
+             (help/diminish "whitespace-mode"))
 #+END_SRC
 
 * Quiet and Pleasant Appearance
