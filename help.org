@@ -176,6 +176,16 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
                                                       (line-end-position)))
         ((< (point) (mark)) (comment-or-uncomment-region (point) (mark)))
         (t (comment-or-uncomment-region (mark) (point)))))
+
+(defun help/save-all-file-buffers (&rest ls)
+  "Saves every buffer associated with a file
+
+LS captures arguments when this is used as before advice."
+  (interactive)
+  (dolist (buf (buffer-list))
+    (with-current-buffer buf
+      (when (and (buffer-file-name) (buffer-modified-p))
+        (save-buffer)))))
 #+END_SRC
 
 ** Tangling
