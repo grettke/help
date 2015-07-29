@@ -201,6 +201,10 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
   :ensure t
   :config
   (unicode-fonts-setup))
+(use-package avy
+  :ensure t
+  :config
+  (key-chord-define-global "df" #'avy-goto-word-1))
 (use-package multiple-cursors
              :ensure t)
 (delete-selection-mode t)

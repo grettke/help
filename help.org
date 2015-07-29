@@ -1264,6 +1264,17 @@ Perhaps educationally there is a character for bowel-movements: 💩.
   (unicode-fonts-setup))
 #+END_SRC
 
+** Going to Things
+
+Go to anything in the frame quickly.
+
+#+BEGIN_SRC emacs-lisp
+(use-package avy
+  :ensure t
+  :config
+  (key-chord-define-global "df" #'avy-goto-word-1))
+#+END_SRC
+
 ** Macros
 
 The macro recorder and Multiple-Cursors provide two ways to do the right thing
