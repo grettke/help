@@ -1355,6 +1355,17 @@ Make searches case-insensitive.
 (setq-default case-fold-search t)
 #+END_SRC
 
+** Syntax Checking
+
+Perform syntactic analysis all the time.
+
+#+BEGIN_SRC emacs-lisp
+(use-package flycheck
+             :ensure t
+             :config
+             (add-hook 'after-init-hook #'global-flycheck-mode))
+#+END_SRC
+
 ** Sudo
 
 Configure Sudo with Ido.
