@@ -30,6 +30,16 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
                                                       (line-end-position)))
         ((< (point) (mark)) (comment-or-uncomment-region (point) (mark)))
         (t (comment-or-uncomment-region (mark) (point)))))
+
+(defun help/save-all-file-buffers (&rest ls)
+  "Saves every buffer associated with a file
+
+LS captures arguments when this is used as before advice."
+  (interactive)
+  (dolist (buf (buffer-list))
+    (with-current-buffer buf
+      (when (and (buffer-file-name) (buffer-modified-p))
+        (save-buffer)))))
 (setq org-babel-use-quick-and-dirty-noweb-expansion nil)
 (help/set-org-babel-default-header-args :comments "noweb")
 (help/set-org-babel-default-header-args :padline "yes")
@@ -180,6 +190,11 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
              (help/diminish "smartparens-mode"))
 (desktop-save-mode t)
 (setq desktop-restore-eager 10)
+(defconst help/safb-before
+  '(magit-status))
+
+(dolist (fn help/safb-before)
+  (advice-add fn :before #'help/save-all-file-buffers))
 (require 'ido)
 (use-package flx-ido
              :ensure t
@@ -342,3 +357,17 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
 (menu-bar-mode t)
 (key-chord-define-global "JK" (lambda () (interactive) (other-window 1)))
 (key-chord-define-global "qi" 'help/comment-or-uncomment)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
