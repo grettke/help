@@ -1064,9 +1064,9 @@ VC activities.
 (define-key help/vc-map ";" 'vc-next-action)
 #+END_SRC
 
-*** Left & Right Side
+- =s-t= ~magit-status~
 
-- =C-;= ~magit-status~
+*** Left & Right Side
 
 #+BEGIN_SRC emacs-lisp
 (key-chord-define-global "JK" (lambda () (interactive) (other-window 1)))
@@ -1472,7 +1472,7 @@ Use Magit for Git.
 (use-package magit
              :ensure t
              :config
-             (global-set-key (kbd "C-;") #'magit-status))
+             (global-set-key (kbd "s-t") #'magit-status))
 #+END_SRC
 
 ** Whitespace Management
