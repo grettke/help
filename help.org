@@ -1256,6 +1256,25 @@ in different situations.
              :ensure t)
 #+END_SRC
 
+** Minibuffer
+
+Make it easier to answer questions.
+#+BEGIN_SRC emacs-lisp
+(fset 'yes-or-no-p 'y-or-n-p)
+#+END_SRC
+
+Comfortably display information.
+#+BEGIN_SRC emacs-lisp
+(setq resize-mini-windows t)
+(setq max-mini-window-height 0.33)
+#+END_SRC
+
+Allow recursive commands-in-commands and highlight the levels of recursion.
+#+BEGIN_SRC emacs-lisp
+(setq enable-recursive-minibuffers t)
+(minibuffer-depth-indicate-mode t)
+#+END_SRC
+
 ** Projects
 
 Directories that have Git working copies are logically projects. Manage them
