@@ -1,4 +1,3 @@
-
 (setq load-prefer-newer t)
 (add-to-list 'load-path "~/src/org-mode/lisp")
 (add-to-list 'load-path "~/src/org-mode/contrib/lisp")
@@ -123,6 +122,11 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
   `(when (display-graphic-p)
      ,statement
      ,@statements))
+(defmacro help/diminish (mode)
+  "Diminish this mode after it is loaded."
+  (interactive)
+  `(eval-after-load ,mode
+     (diminish ,mode)))
 (use-package key-chord
   :ensure t
   :config
@@ -136,6 +140,8 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
   :ensure t)
 (use-package s
   :ensure t)
+(use-package diminish
+             :ensure t)
 (defmacro help/on-osx (statement &rest statements)
   "Evaluate the enclosed body only when run on OSX."
   `(when (eq system-type 'darwin)
@@ -157,42 +163,111 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
      (apply orig-fun args)))
  (advice-add 'yes-or-no-p :around #'help/yes-or-no-p)
  (advice-add 'y-or-n-p :around #'help/yes-or-no-p))
+(use-package smartparens :if nil
+             :ensure t
+             :config
+             (require 'smartparens-config)
+             (show-smartparens-global-mode t)
+             (setq sp-show-pair-from-inside nil)
+             (help/diminish "smartparens-mode"))
 (desktop-save-mode t)
 (setq desktop-restore-eager 10)
-(use-package ido
-  :ensure t)
+(require 'ido)
 (use-package flx-ido
-  :ensure t
-  :config
-  (ido-mode 1))
+             :ensure t
+             :config
+             (ido-mode t))
 (use-package ido-hacks
-  :ensure t)
+             :ensure t)
 (use-package ido-ubiquitous
-  :ensure t
-  :config
-  (ido-ubiquitous-mode +1)
-  (setq ido-create-new-buffer 'always)
-  (flx-ido-mode +1)
-  (setq ido-use-faces nil))
+             :ensure t
+             :config
+             (ido-ubiquitous-mode t)
+             (setq ido-create-new-buffer 'always)
+             (flx-ido-mode t)
+             (setq ido-use-faces nil))
 (use-package ido-vertical-mode
-  :ensure t
-  :config
-  (ido-vertical-mode +1)
-  (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right))
+             :ensure t
+             :config
+             (ido-vertical-mode t)
+             (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right))
+(use-package smex
+             :ensure t
+             :config
+             (smex-initialize))
+(setq ido-use-url-at-point t)
+(setq ido-use-filename-at-point 'guess)
 (use-package unicode-fonts
   :ensure t
   :config
   (unicode-fonts-setup))
+(use-package multiple-cursors
+             :ensure t)
+(delete-selection-mode t)
+(fset 'yes-or-no-p 'y-or-n-p)
+(setq resize-mini-windows t)
+(setq max-mini-window-height 0.33)
+(setq enable-recursive-minibuffers t)
+(minibuffer-depth-indicate-mode t)
+(use-package projectile :if nil
+             :ensure t
+             :config
+             (projectile-global-mode t)
+             (help/diminish "projectile-mode"))
+(eval-after-load "projectile"
+  '(progn (setq magit-repository-directories (mapcar (lambda (dir)
+                                                       (substring dir 0 -1))
+                                                     (remove-if-not (lambda (project)
+                                                                      (file-directory-p (concat project "/.git/")))
+                                                                    (projectile-relevant-known-projects)))
+
+                magit-repository-directories-depth 1)))
+(use-package anzu
+             :ensure t
+             :config
+             (global-anzu-mode t)
+             (global-set-key (kbd "M-%") 'anzu-query-replace)
+             (global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)
+             (setq anzu-mode-lighter "")
+             (setq anzu-deactivate-region t)
+             (setq anzu-search-threshold 1000)
+             (setq anzu-replace-to-string-separator " => "))
 (setq savehist-save-minibuffer-history 1)
 (setq savehist-additional-variables
       '(kill-ring
         search-ring
         regexp-search-ring))
 (savehist-mode t)
+(setq isearch-lax-whitespace t)
+(setq isearch-regexp-lax-whitespace t)
+(setq-default case-fold-search t)
+(use-package flycheck :if nil
+             :ensure t
+             :config
+             (add-hook 'after-init-hook #'global-flycheck-mode)
+             (help/diminish "flycheck-mode"))
+(help/on-osx
+ (defun help/ido-find-file (&rest args)
+   "Find file as root if necessary.
+
+Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
+   (unless (and buffer-file-name
+              (file-writable-p buffer-file-name))
+     (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
+
+ (advice-add 'ido-find-file :after #'help/ido-find-file))
 (use-package magit
              :ensure t
              :config
-             (global-set-key (kbd "s-s") #'magit-status))
+             (global-set-key (kbd "C-;") #'magit-status))
+(use-package whitespace :if nil
+             :ensure t
+             :config
+             (setq whitespace-style '(trailing lines tab-mark))
+             (setq whitespace-line-column 80)
+             (global-whitespace-mode 1)
+             (help/diminish "global-whitespace-mode")
+             (help/diminish "whitespace-mode"))
 (add-hook #'text-mode-hook #'linum-mode)
 (add-hook #'prog-mode-hook #'linum-mode)
 (setq ring-bell-function 'ignore)
@@ -252,18 +327,3 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
 (tool-bar-mode -1)
 (setq make-pointer-invisible t)
 (menu-bar-mode t)
-(global-set-key (kbd "s-a") #'vc-next-action)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )

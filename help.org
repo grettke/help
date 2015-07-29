@@ -1034,11 +1034,7 @@ in the call itself.
 
 *** Left Side
 
-#+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "C-;") #'vc-next-action)
-#+END_SRC
-
-- =C-M-;= ~magit-status~
+- =C-;= ~magit-status~
 
 *** Right Side
 
@@ -1409,14 +1405,13 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
 
 ** Version Control
 
-Use VC for committing the current file quickly and use Magit for everything
-else.
+Use Magit for Git.
 
 #+BEGIN_SRC emacs-lisp
 (use-package magit
              :ensure t
              :config
-             (global-set-key (kbd "C-M-;") #'magit-status))
+             (global-set-key (kbd "C-;") #'magit-status))
 #+END_SRC
 
 ** Whitespace Management
