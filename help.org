@@ -1054,6 +1054,8 @@ in the call itself.
 
 *** Right Side
 
+Try to reserve the right side for mode-specific activities.
+
 * Special Operating Procedure
    :PROPERTIES:
    :noweb-ref: Special-Operating-Procedure
