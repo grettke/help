@@ -829,6 +829,7 @@ following practices were defined.
 - Don't try to set up a Hyper-key.
 - Use shift as a name-space expansion vehicle.
   - Shift doubles every name-space in which you use it.
+  - Use cautiously, not every name-space vehicle supports it.
 
 These practices say nothing about the =places= or =activities= that you choose to
 peform. The practices only look at the key-binding configuration. There are a
