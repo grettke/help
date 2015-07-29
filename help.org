@@ -1368,6 +1368,18 @@ Allow recursive commands-in-commands and highlight the levels of recursion.
 (minibuffer-depth-indicate-mode t)
 #+END_SRC
 
+** Mouse
+
+Scroll pleasantly with the mouse wheel. A slow turn moves the buffer up and down
+one line at a time. So does a fast turn. Anything further than 5-10 lines deserves
+a fast navigation vehicle.
+
+#+BEGIN_SRC emacs-lisp
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
+(setq mouse-wheel-progressive-speed nil)
+(setq mouse-wheel-follow-mouse +1)
+#+END_SRC
+
 ** Projects
 
 Directories that have Git working copies are logically projects. Manage them
