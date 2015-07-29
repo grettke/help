@@ -204,7 +204,8 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
 (use-package avy
   :ensure t
   :config
-  (key-chord-define-global "df" #'avy-goto-word-1))
+  (key-chord-define-global "df" #'avy-goto-word-1)
+  (key-chord-define-global "DF" #'avy-pop-mark))
 (use-package multiple-cursors
              :ensure t)
 (delete-selection-mode t)

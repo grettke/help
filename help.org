@@ -1272,7 +1272,8 @@ Go to anything in the frame quickly.
 (use-package avy
   :ensure t
   :config
-  (key-chord-define-global "df" #'avy-goto-word-1))
+  (key-chord-define-global "df" #'avy-goto-word-1)
+  (key-chord-define-global "DF" #'avy-pop-mark))
 #+END_SRC
 
 ** Macros
