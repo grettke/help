@@ -1479,7 +1479,12 @@ in different situations.
 
 #+BEGIN_SRC emacs-lisp
 (use-package multiple-cursors
-             :ensure t)
+  :ensure t
+  :config
+  (global-set-key (kbd "s-4") 'mc/mark-next-like-this)
+  (global-set-key (kbd "s-3") 'mc/mark-previous-like-this)
+  (global-set-key (kbd "s-2") 'mc/mark-all-like-this)
+  (global-set-key (kbd "s-1") 'mc/edit-lines))
 #+END_SRC
 
 ** Mark and Region
