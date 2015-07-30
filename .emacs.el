@@ -193,6 +193,8 @@ Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html
   :ensure t)
 (use-package diminish
              :ensure t)
+(size-indication-mode)
+(column-number-mode t)
 (defmacro help/on-osx (statement &rest statements)
   "Evaluate the enclosed body only when run on OSX."
   `(when (eq system-type 'darwin)

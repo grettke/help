@@ -1228,6 +1228,18 @@ Reduce information about modes in the Modeline.
              :ensure t)
 #+END_SRC
 
+Show the file size.
+
+#+BEGIN_SRC emacs-lisp
+(size-indication-mode)
+#+END_SRC
+
+Show the column number.
+
+#+BEGIN_SRC emacs-lisp
+(column-number-mode t)
+#+END_SRC
+
 ** OSX
 
 Make it easy to evaluate code only when running on OSX.
