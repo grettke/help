@@ -2251,7 +2251,7 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
          (lang (org-element-property :language eop))
          (buff-name (concat "*Org Src " name "[" lang "]*"))
          (file-name (buffer-file-name)))
-    (org-edit-src-code nil nil buff-name)
+    (org-edit-src-code nil buff-name)
     (setq buffer-file-name file-name)))
 #+END_SRC
 
@@ -2260,7 +2260,9 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
 #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "s-j") #'org-babel-next-src-block)
 (global-set-key (kbd "s-k") #'org-babel-previous-src-block)
+(global-set-key (kbd "s-i") #'help/safb-org-babel-tangle)
 (global-set-key (kbd "s-l") #'help/org-edit-src-code-plus-name)
-(global-set-key (kbd "s-;") #'org-babel-demarcate-block)
 (global-set-key (kbd "s-o") #'org-babel-execute-maybe)
+(global-set-key (kbd "s-;") #'org-babel-demarcate-block)
+(global-set-key (kbd "s-p") #'org-babel-view-src-block-info)
 #+END_SRC
