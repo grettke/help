@@ -1680,11 +1680,10 @@ Configure EMACS to personal-taste for "noise" and "form".
 
 ** Buffer
 
-Line numbers make documents easier to read. Account for Literate documents.
+Line numbers make documents easier to read.
 
 #+BEGIN_SRC emacs-lisp
 (add-hook #'text-mode-hook #'linum-mode)
-(add-hook #'prog-mode-hook #'linum-mode)
 #+END_SRC
 
 Don't use audible bells, use visual bells.
@@ -1972,3 +1971,9 @@ Load Use-Package.
   - "This system" refers to this configuration of EMACS.
 
 * Hacking
+
+Line numbers make documents easier to read. Account for Literate documents.
+
+#+BEGIN_SRC emacs-lisp
+(add-hook #'prog-mode-hook #'linum-mode)
+#+END_SRC
