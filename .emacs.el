@@ -602,6 +602,9 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (stripe-listify-buffer))
 (add-hook #'dired-mode-hook #'help/dired-mode-hook)
 (setq dired-dwim-target t)
+(help/on-osx
+ (setq ls-lisp-use-insert-directory-program nil)
+ (require 'ls-lisp))
 (use-package find-dired
   :ensure t
   :config

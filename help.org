@@ -1712,6 +1712,13 @@ Try to guess the target directory for operations.
 (setq dired-dwim-target t)
 #+END_SRC
 
+Use EMACS =ls=.
+#+BEGIN_SRC emacs-lisp
+(help/on-osx
+ (setq ls-lisp-use-insert-directory-program nil)
+ (require 'ls-lisp))
+#+END_SRC
+
 After dabbling, something happened that really changed my mind. These three
 articles changed everything: [fn:87e72370: http://www.masteringemacs.org/articles/2014/04/10/dired-shell-commands-find-xargs-replacement/] [fn:d82e40f9: http://www.masteringemacs.org/articles/2011/03/25/working-multiple-files-dired/] [fn:fe52afc4: http://www.masteringemacs.org/articles/2013/10/10/wdired-editable-dired-buffers/].
 They just made the power of Dired so obvious, and so easy to use, that it
