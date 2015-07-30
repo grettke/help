@@ -1639,6 +1639,7 @@ Future candidates:
 - sp-newline
 - with-current-buffer
 - writegood-mode
+- org-latex-export-to-pdf
 
 ** File-system/directory management (Console)
 
