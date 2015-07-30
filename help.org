@@ -1097,12 +1097,12 @@ strings pasted into other strings.
 
 #+BEGIN_SRC emacs-lisp
 (use-package smartparens :if nil
-             :ensure t
-             :config
-             (require 'smartparens-config)
-             (show-smartparens-global-mode t)
-             (setq sp-show-pair-from-inside nil)
-             (help/diminish "smartparens-mode"))
+  :ensure t
+  :config
+  (require 'smartparens-config)
+  (setq sp-show-pair-from-inside nil)
+  (smartparens-global-strict-mode)
+  (help/diminish "smartparens-mode"))
 #+END_SRC
 
 ** Buffer
@@ -2000,11 +2000,10 @@ for the mode. If the mode doesn't extend Prog-Mode then investigate why.
     lisp-interaction-mode-hook))
 
 (dolist (h help/lisp-modes)
-  (add-hook h #'turn-on-smartparens-strict-mode)
   (when (not (member h '(ielm-mode-hook)))
     (add-hook h (function (lambda ()
                             (add-hook 'local-write-file-hooks
-                            'check-parens))))))
+				      'check-parens))))))
 #+END_SRC
 
 ** Org-Mode

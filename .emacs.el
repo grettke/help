@@ -192,12 +192,12 @@ Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html
  (setq w32-lwindow-modifier 'super)
  (setq w32-rwindow-modifier 'super))
 (use-package smartparens :if nil
-             :ensure t
-             :config
-             (require 'smartparens-config)
-             (show-smartparens-global-mode t)
-             (setq sp-show-pair-from-inside nil)
-             (help/diminish "smartparens-mode"))
+  :ensure t
+  :config
+  (require 'smartparens-config)
+  (setq sp-show-pair-from-inside nil)
+  (smartparens-global-strict-mode)
+  (help/diminish "smartparens-mode"))
 (desktop-save-mode t)
 (setq desktop-restore-eager 10)
 (setq-default fill-column 80)
@@ -461,11 +461,10 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
     lisp-interaction-mode-hook))
 
 (dolist (h help/lisp-modes)
-  (add-hook h #'turn-on-smartparens-strict-mode)
   (when (not (member h '(ielm-mode-hook)))
     (add-hook h (function (lambda ()
                             (add-hook 'local-write-file-hooks
-                            'check-parens))))))
+				      'check-parens))))))
 (setq org-confirm-babel-evaluate nil)
 (setq org-src-tab-acts-natively nil)
 (setq org-todo-keywords
