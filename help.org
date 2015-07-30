@@ -1458,7 +1458,7 @@ Perhaps educationally there is a character for bowel-movements: 💩.
 Go to any object in the frame quickly.
 
 #+BEGIN_SRC emacs-lisp
-(use-package c avy
+(use-package avy
   :ensure t
   :config
   (key-chord-define-global "df" #'avy-goto-word-1)
