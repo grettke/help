@@ -1453,7 +1453,7 @@ Perhaps educationally there is a character for bowel-movements: 💩.
   (unicode-fonts-setup))
 #+END_SRC
 
-** Going to Object
+** Going to Objects
 
 Go to any object in the frame quickly.
 
