@@ -1032,7 +1032,10 @@ That has worked out very well. It is very easy to do on every operating system.
 It holds true to the values of this system. When you develop an idea of =places= and
 how often you go there the key-mapping becomes more obvious. Make it easy to get
 to key-bindings that take you to familiar places. For this system it is the home
-keys, =s=, and =key-chord=. Make those keys more easily accessible. 
+keys, =s=, and =key-chord=. Make those keys more easily accessible. =C= and =M= often
+have symmetric-definitions. =s= and =SHIFT= also often have symmetric definitions in 
+this system (mostly through Key-Chords). Therefore those key-mappings are kept 
+close together
 
 #+BEGIN_EXAMPLE
 +---------------------------------------+
