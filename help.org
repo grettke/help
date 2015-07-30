@@ -1499,6 +1499,33 @@ Easily describe just about anything.
 This system uses artifacts stored in files. It tries to update file-stores
 every chance it gets without interrupting the user's flow.
 
+Don't create backup files; use Git for versioning
+
+Automatically back file-stores if no activity has occurredn.
+
+#+BEGIN_SRC emacs-lisp
+(setq auto-save-default t)
+(setq make-backup-files nil)
+(setq auto-save-visited-file-name t)
+(setq auto-save-interval 0)
+(setq auto-save-timeout (* 60 5))
+#+END_SRC
+
+Backup file-stores when the frame loses focus.
+
+#+BEGIN_SRC emacs-lisp
+(add-hook 'focus-out-hook #'help/save-all-file-buffers)
+#+END_SRC
+
+Backup file-stores before the system exits.
+
+#+BEGIN_SRC emacs-lisp
+(advice-add #'save-buffers-kill-terminal :before #'help/save-all-file-buffers)
+#+END_SRC
+
+Save all file befores before common activities. Functions are easier to
+use than advice.
+
 #+BEGIN_SRC emacs-lisp
 (defun help/safb-vc-next-action ()
   (interactive)
@@ -1546,6 +1573,33 @@ every chance it gets without interrupting the user's flow.
       (message msg)
       (help/on-gui (alert msg :title "org-mode")))))
 #+END_SRC
+
+Future candidates:
+- avy jump
+- dired
+- eshell
+- ess-rdired
+- eval-region
+- goto-line
+- ido-switch-buffer
+- ielm
+- log-edit-done
+- next-line
+- org-export-dispatch
+- org-return
+- other-window
+- pop-to-mark-command
+- previous-line
+- eval-defun
+- gcr/newline
+- ispell
+- ispell-word
+- langtool-check-buffer
+- newline-and-indent
+- org-return
+- sp-newline
+- with-current-buffer
+- writegood-mode
 
 ** Finding Objects
 
