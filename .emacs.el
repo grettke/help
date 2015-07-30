@@ -195,6 +195,21 @@ LS captures arguments when this is used as before advice."
   (help/save-all-file-buffers)
   (vc-next-action nil))
 
+(defun help/diff-hl-mode ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (diff-hl-mode nil))
+
+(defun help/safb-vc-ediff ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (vc-ediff nil))
+
+(defun help/safb-vc-diff ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (vc-diff nil))
+
 (defun help/safb-magit-status ()
   (interactive)
   (help/save-all-file-buffers)
@@ -241,6 +256,9 @@ LS captures arguments when this is used as before advice."
 (setq max-mini-window-height 0.33)
 (setq enable-recursive-minibuffers t)
 (minibuffer-depth-indicate-mode t)
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
+(setq mouse-wheel-progressive-speed nil)
+(setq mouse-wheel-follow-mouse +1)
 (use-package projectile :if nil
              :ensure t
              :config
@@ -360,11 +378,11 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
 (setq make-pointer-invisible t)
 (menu-bar-mode t)
 (define-prefix-command 'help/vc-map)
-(global-set-key (kbd "s-v") 'help/vc-map)
-(define-key help/vc-map "h" 'diff-hl-mode)
-(define-key help/vc-map "e" 'vc-ediff)
-(define-key help/vc-map "d" 'vc-diff)
-(define-key help/vc-map "u" 'vc-revert)
+(global-set-key (kbd "s-v") #'help/vc-map)
+(define-key help/vc-map "h" #'help/safb-diff-hl-mode)
+(define-key help/vc-map "e" #'help/safb-vc-ediff)
+(define-key help/vc-map "d" #'help/safb-vc-diff)
+(define-key help/vc-map "u" #'help/safb-vc-revert)
 (global-set-key (kbd "s-r") #'help/safb-vc-next-action)
 (key-chord-define-global "JK" (lambda () (interactive) (other-window 1)))
 (key-chord-define-global "qi" 'help/comment-or-uncomment)

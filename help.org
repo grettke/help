@@ -1082,11 +1082,11 @@ VC activities.
 
 #+BEGIN_SRC emacs-lisp
 (define-prefix-command 'help/vc-map)
-(global-set-key (kbd "s-v") 'help/vc-map)
-(define-key help/vc-map "h" 'diff-hl-mode)
-(define-key help/vc-map "e" 'vc-ediff)
-(define-key help/vc-map "d" 'vc-diff)
-(define-key help/vc-map "u" 'vc-revert)
+(global-set-key (kbd "s-v") #'help/vc-map)
+(define-key help/vc-map "h" #'help/safb-diff-hl-mode)
+(define-key help/vc-map "e" #'help/safb-vc-ediff)
+(define-key help/vc-map "d" #'help/safb-vc-diff)
+(define-key help/vc-map "u" #'help/safb-vc-revert)
 (global-set-key (kbd "s-r") #'help/safb-vc-next-action)
 #+END_SRC
 
@@ -1270,6 +1270,21 @@ making such breaking changes.
   (interactive)
   (help/save-all-file-buffers)
   (vc-next-action nil))
+
+(defun help/diff-hl-mode ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (diff-hl-mode nil))
+
+(defun help/safb-vc-ediff ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (vc-ediff nil))
+
+(defun help/safb-vc-diff ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (vc-diff nil))
 
 (defun help/safb-magit-status ()
   (interactive)
