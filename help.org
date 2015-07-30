@@ -1746,7 +1746,7 @@ to do to it. Very cool.
   :config
   (setq wdired-allow-to-change-permissions t)
   (setq wdired-allow-to-redirect-links t)
-  (setq wdired-use-interactive-rename +t)
+  (setq wdired-use-interactive-rename t)
   (setq wdired-confirm-overwrite t)
   (setq wdired-use-dired-vertical-movement 'sometimes))
 #+END_SRC
@@ -1848,6 +1848,33 @@ Go to any object in the frame quickly.
   :config
   (key-chord-define-global "df" #'avy-goto-word-1)
   (key-chord-define-global "DF" #'avy-pop-mark))
+#+END_SRC
+
+
+** Intellisense (Auto Completion)
+
+#+BEGIN_SRC emacs-lisp
+(use-package fuzzy
+  :ensure t)
+(use-package auto-complete
+  :ensure t
+  :config
+  (require 'auto-complete-config)
+  (setq ac-quick-help-prefer-pos-tip nil)
+  (ac-config-default)
+  (setq ac-auto-start nil)
+  (help/not-on-gui (ac-set-trigger-key "\t"))
+  (help/on-gui (ac-set-trigger-key "<tab>"))
+  (help/diminish 'auto-complete-mode))
+(use-package auto-complete-chunk
+  :ensure t)
+#+END_SRC
+
+Auto-completion for =.=-separated words.
+
+#+BEGIN_SRC emacs-lisp
+(use-package auto-complete-chunk
+  :ensure t)
 #+END_SRC
 
 ** Macros

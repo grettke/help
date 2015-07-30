@@ -607,7 +607,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   :config
   (setq wdired-allow-to-change-permissions t)
   (setq wdired-allow-to-redirect-links t)
-  (setq wdired-use-interactive-rename +t)
+  (setq wdired-use-interactive-rename t)
   (setq wdired-confirm-overwrite t)
   (setq wdired-use-dired-vertical-movement 'sometimes))
 (use-package dired-imenu
@@ -650,6 +650,22 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   :config
   (key-chord-define-global "df" #'avy-goto-word-1)
   (key-chord-define-global "DF" #'avy-pop-mark))
+(use-package fuzzy
+  :ensure t)
+(use-package auto-complete
+  :ensure t
+  :config
+  (require 'auto-complete-config)
+  (setq ac-quick-help-prefer-pos-tip nil)
+  (ac-config-default)
+  (setq ac-auto-start nil)
+  (help/not-on-gui (ac-set-trigger-key "\t"))
+  (help/on-gui (ac-set-trigger-key "<tab>"))
+  (help/diminish 'auto-complete-mode))
+(use-package auto-complete-chunk
+  :ensure t)
+(use-package auto-complete-chunk
+  :ensure t)
 (use-package multiple-cursors
   :ensure t
   :config
@@ -779,16 +795,16 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
              (add-hook 'after-init-hook #'global-flycheck-mode)
              (help/diminish "flycheck-mode"))
 (use-package yasnippet
-  :ensure t
-  :config
-  (yas-global-mode 1)
-  (help/diminish 'yas-minor-mode)
-  (defun help/yas-minor-mode-hook ()
-    "Personal customizations."
-    (define-key yas-minor-mode-map (kbd "<tab>") nil)
-    (define-key yas-minor-mode-map (kbd "TAB") nil)
-    (define-key yas-minor-mode-map (kbd "s-5") 'yas-expand))
-  (add-hook #'yas-minor-mode-hook #'help/yas-minor-mode-hook))
+	     :ensure t
+	     :config
+	     (yas-global-mode 1)
+	     (help/diminish 'yas-minor-mode)
+	     (defun help/yas-minor-mode-hook ()
+	       "Personal customizations."
+	       (define-key yas-minor-mode-map (kbd "<tab>") nil)
+	       (define-key yas-minor-mode-map (kbd "TAB") nil)
+	       (define-key yas-minor-mode-map (kbd "s-5") 'yas-expand))
+	     (add-hook #'yas-minor-mode-hook #'help/yas-minor-mode-hook))
 (use-package magit
              :ensure t
              :config
