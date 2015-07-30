@@ -40,6 +40,26 @@ LS captures arguments when this is used as before advice."
     (with-current-buffer buf
       (when (and (buffer-file-name) (buffer-modified-p))
         (save-buffer)))))
+
+(defun help/describe-thing-in-popup ()
+    "Display help information on the current symbol.
+
+Attribution: URL `http://www.emacswiki.org/emacs/PosTip'
+Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html'"
+    (interactive)
+    (let* ((thing (symbol-at-point))
+           (help-xref-following t)
+           (description (with-temp-buffer
+                          (help-mode)
+                          (help-xref-interned thing)
+                          (buffer-string))))
+      (help/on-gui (pos-tip-show description nil nil nil 300))
+      (help/not-on-gui (popup-tip description
+                                 :point (point)
+                                 :around t
+                                 :height 30
+                                 :scroll-bar t
+                                 :margin t))))
 (setq org-babel-use-quick-and-dirty-noweb-expansion nil)
 (help/set-org-babel-default-header-args :comments "noweb")
 (help/set-org-babel-default-header-args :padline "yes")
@@ -140,6 +160,13 @@ LS captures arguments when this is used as before advice."
   `(when (display-graphic-p)
      ,statement
      ,@statements))
+
+(defmacro help/not-on-gui (statement &rest statements)
+  "Evaluate the enclosed body only when run on GUI."
+  `(when (not (display-graphic-p))
+     ,statement
+     ,@statements))
+
 (defmacro help/diminish (mode)
   "Diminish this mode after it is loaded."
   (interactive)
@@ -181,6 +208,11 @@ LS captures arguments when this is used as before advice."
      (apply orig-fun args)))
  (advice-add 'yes-or-no-p :around #'help/yes-or-no-p)
  (advice-add 'y-or-n-p :around #'help/yes-or-no-p))
+(defmacro help/on-windows (statement &rest statements)
+  "Evaluate the enclosed body only when run on Microsoft Windows."
+  `(when (eq system-type 'windows-nt)
+     ,statement
+     ,@statements))
 (use-package smartparens :if nil
              :ensure t
              :config
@@ -190,6 +222,7 @@ LS captures arguments when this is used as before advice."
              (help/diminish "smartparens-mode"))
 (desktop-save-mode t)
 (setq desktop-restore-eager 10)
+(global-set-key (kbd "s-w") 'help/describe-thing-in-popup)
 (defun help/safb-vc-next-action ()
   (interactive)
   (help/save-all-file-buffers)
@@ -259,6 +292,13 @@ LS captures arguments when this is used as before advice."
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
 (setq mouse-wheel-progressive-speed nil)
 (setq mouse-wheel-follow-mouse +1)
+(use-package pos-tip
+             :ensure t)
+(help/on-windows
+ (ignore-errors
+   (pos-tip-w32-max-width-height)))
+(setq pos-tip-foreground-color "#073642")
+(setq pos-tip-background-color "#839496")
 (use-package projectile :if nil
              :ensure t
              :config
