@@ -227,7 +227,7 @@ Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html
              (help/diminish "smartparens-mode"))
 (desktop-save-mode t)
 (setq desktop-restore-eager 10)
-(global-set-key (kbd "s-w") 'help/describe-thing-in-popup)
+(global-set-key (kbd "s-r") 'help/describe-thing-in-popup)
 (defun help/safb-vc-next-action ()
   (interactive)
   (help/save-all-file-buffers)
@@ -387,6 +387,10 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
  (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
  (help/on-windows
   (set-clipboard-coding-system 'utf-16le-dos)))
+(use-package expand-region
+  :ensure t
+  :config
+  (global-set-key (kbd "s-d") #'er/expand-region))
 (use-package solarized-theme
   :ensure t
   :config
@@ -441,7 +445,7 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
 (define-key help/vc-map "e" #'help/safb-vc-ediff)
 (define-key help/vc-map "d" #'help/safb-vc-diff)
 (define-key help/vc-map "u" #'help/safb-vc-revert)
-(global-set-key (kbd "s-r") #'help/safb-vc-next-action)
+(global-set-key (kbd "s-f") #'help/safb-vc-next-action)
 (key-chord-define-global "JK" (lambda () (interactive) (other-window 1)))
 (key-chord-define-global "qi" 'help/comment-or-uncomment)
 (custom-set-variables

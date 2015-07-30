@@ -1107,7 +1107,7 @@ VC activities.
 (define-key help/vc-map "e" #'help/safb-vc-ediff)
 (define-key help/vc-map "d" #'help/safb-vc-diff)
 (define-key help/vc-map "u" #'help/safb-vc-revert)
-(global-set-key (kbd "s-r") #'help/safb-vc-next-action)
+(global-set-key (kbd "s-f") #'help/safb-vc-next-action)
 #+END_SRC
 
 - =s-e= ~help/safb-magit-status~
@@ -1323,7 +1323,7 @@ making such breaking changes.
 Easily describe just about anything.
 
 #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "s-w") 'help/describe-thing-in-popup)
+(global-set-key (kbd "s-r") 'help/describe-thing-in-popup)
 #+END_SRC
 
 ** File Based System
@@ -1686,6 +1686,16 @@ EMACS used UTF-8 by default. Make copying and pasting easier.
  (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
  (help/on-windows
   (set-clipboard-coding-system 'utf-16le-dos)))
+#+END_SRC
+
+Intelligently select the current char, then word, then object, then block, 
+then document.
+
+#+BEGIN_SRC emacs-lisp
+(use-package expand-region
+  :ensure t
+  :config
+  (global-set-key (kbd "s-d") #'er/expand-region))
 #+END_SRC
 
 ** Color Theme
