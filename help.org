@@ -1984,7 +1984,7 @@ Line numbers make documents easier to read. Account for Literate documents.
 #+END_SRC
 
 Indent at every opportunity and automatically. Verify that it makes sense
-for the mode. If the mode doesn't extend Prog-Mode then investigate why not.
+for the mode. If the mode doesn't extend Prog-Mode then investigate why.
 
 #+BEGIN_SRC emacs-lisp
 (use-package aggressive-indent
