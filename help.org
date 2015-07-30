@@ -1029,18 +1029,21 @@ The trouble is that it violates the POLA. Therefore, I left it alone and stuck
 with a simple "Get C on both sides".
 
 That has worked out very well. It is very easy to do on every operating system.
-It holds true to the values of this system.
+It holds true to the values of this system. When you develop an idea of =places= and
+how often you go there the key-mapping becomes more obvious. Make it easy to get
+to key-bindings that take you to familiar places. For this system it is the home
+keys, =s=, and =key-chord=. Make those keys more easily accessible. 
 
 #+BEGIN_EXAMPLE
 +---------------------------------------+
 | +-----+                       +-----+ |
-| |C    |                       |C/RET| |
+| |s    |                       |s/ret| |
 | +-----+                       +-----+ |
 | +------+                     +------+ |
 | |SHIFT |                     | SHIFT| |
 | +------+                     +------+ |
 |        +-+ +-+ +-----+ +-+ +-+        |
-|        |s| |M| |spc  | |M| |s|        |
+|        |M| |C| |spc  | |C| |M|        |
 |        +-+ +-+ +-----+ +-+ +-+        |
 |                                       |
 +---------------------------------------+
