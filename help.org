@@ -2223,9 +2223,9 @@ for the mode. If the mode doesn't extend Prog-Mode then investigate why.
     lisp-interaction-mode-hook))
 
 (dolist (h help/lisp-modes)
-  (add-hook h #'
+  (add-hook h #'turn-on-smartparens-strict-mode)
   (when (not (member h '(ielm-mode-hook)))
     (add-hook h (function (lambda ()
                             (add-hook 'local-write-file-hooks
-                                      'check-parens)))))))
+                            'check-parens))))))
 #+END_SRC
