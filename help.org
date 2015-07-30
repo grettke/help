@@ -1935,3 +1935,5 @@ Load Use-Package.
   - Instead of writing "tells EMACS", communicate the result.
   - "EMACS" refers to this software.
   - "This system" refers to this configuration of EMACS.
+
+* Hacking
