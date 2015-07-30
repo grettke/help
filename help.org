@@ -2137,6 +2137,22 @@ Perform syntactic analysis all the time.
              (help/diminish "flycheck-mode"))
 #+END_SRC
 
+** Templating
+
+#+BEGIN_SRC emacs-lisp
+(use-package yasnippet
+	     :ensure t
+	     :config
+	     (yas-global-mode 1)
+	     (help/diminish 'yas-minor-mode)
+	     (defun help/yas-minor-mode-hook ()
+	       "Personal customizations."
+	       (define-key yas-minor-mode-map (kbd "<tab>") nil)
+	       (define-key yas-minor-mode-map (kbd "TAB") nil)
+	       (define-key yas-minor-mode-map (kbd "s-5") 'yas-expand))
+	     (add-hook #'yas-minor-mode-hook #'help/yas-minor-mode-hook))
+#+END_SRC
+
 ** Version Control
 
 Use Magit for Git.

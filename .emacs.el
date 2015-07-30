@@ -602,7 +602,6 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   :ensure t
   :config
   (setq find-ls-option '("-print0 | xargs -0 ls -ld" . "-ld")))
-
 (use-package wdired
   :ensure t
   :config
@@ -779,6 +778,17 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
              :config
              (add-hook 'after-init-hook #'global-flycheck-mode)
              (help/diminish "flycheck-mode"))
+(use-package yasnippet
+  :ensure t
+  :config
+  (yas-global-mode 1)
+  (help/diminish 'yas-minor-mode)
+  (defun help/yas-minor-mode-hook ()
+    "Personal customizations."
+    (define-key yas-minor-mode-map (kbd "<tab>") nil)
+    (define-key yas-minor-mode-map (kbd "TAB") nil)
+    (define-key yas-minor-mode-map (kbd "s-5") 'yas-expand))
+  (add-hook #'yas-minor-mode-hook #'help/yas-minor-mode-hook))
 (use-package magit
              :ensure t
              :config
