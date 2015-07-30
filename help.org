@@ -1359,6 +1359,29 @@ Provide expected "Undo" functionality.
   (help/diminish 'undo-tree-mode))
 #+END_SRC
 
+Ensure that buffers end with a new line. This works in company with Org-Mode
+source-blocks that probably don't need a newline.
+
+#+BEGIN_SRC emacs-lisp
+(setq require-final-newline t)
+#+END_SRC
+
+Easily wrap the current region.
+
+#+BEGIN_SRC emacs-lisp
+(use-package wrap-region
+  :ensure t
+  :config
+  (wrap-region-add-wrapper "*" "*" nil 'org-mode)
+  (wrap-region-add-wrapper "/" "/" nil 'org-mode)
+  (wrap-region-add-wrapper "_" "_" nil 'org-mode)
+  (wrap-region-add-wrapper "=" "=" nil 'org-mode)
+  (wrap-region-add-wrapper "~" "~" nil 'org-mode)
+  (wrap-region-add-wrapper "+" "+" nil 'org-mode)
+  (help/diminish 'wrap-region-mode)
+  (wrap-region-global-mode))
+#+END_SRC
+
 ** Describing Objects
 
 Easily describe just about anything.
