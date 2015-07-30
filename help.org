@@ -1729,18 +1729,6 @@ Make searches case-insensitive.
 (setq-default case-fold-search t)
 #+END_SRC
 
-** Syntax Checking
-
-Perform syntactic analysis all the time.
-
-#+BEGIN_SRC emacs-lisp
-(use-package flycheck :if nil
-             :ensure t
-             :config
-             (add-hook 'after-init-hook #'global-flycheck-mode)
-             (help/diminish "flycheck-mode"))
-#+END_SRC
-
 ** Sudo
 
 Configure Sudo with Ido.
@@ -1756,6 +1744,18 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
      (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
 
  (advice-add 'ido-find-file :after #'help/ido-find-file))
+#+END_SRC
+
+** Syntax Checking
+
+Perform syntactic analysis all the time.
+
+#+BEGIN_SRC emacs-lisp
+(use-package flycheck :if nil
+             :ensure t
+             :config
+             (add-hook 'after-init-hook #'global-flycheck-mode)
+             (help/diminish "flycheck-mode"))
 #+END_SRC
 
 ** Version Control
