@@ -233,6 +233,7 @@ Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html
              (help/diminish "smartparens-mode"))
 (desktop-save-mode t)
 (setq desktop-restore-eager 10)
+(setq-default fill-column 80)
 (global-set-key (kbd "s-r") 'help/describe-thing-in-popup)
 (defun help/safb-vc-next-action ()
   (interactive)
@@ -311,6 +312,7 @@ Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html
   :ensure t
   :config
   (unicode-fonts-setup))
+(global-font-lock-mode t)
 (use-package avy
   :ensure t
   :config
@@ -476,7 +478,12 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
 (scroll-bar-mode 0)
 (tool-bar-mode -1)
 (setq make-pointer-invisible t)
+(use-package diff-hl
+  :ensure t
+  :config
+  (global-diff-hl-mode))
 (menu-bar-mode t)
+(winner-mode t)
 (define-prefix-command 'help/vc-map)
 (global-set-key (kbd "s-t") #'help/vc-map)
 (define-key help/vc-map "h" #'help/safb-diff-hl-mode)
