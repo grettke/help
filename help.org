@@ -1628,7 +1628,6 @@ Future candidates:
 
 ** File-system/directory management (Console)
 
-
 You can use the usual machinery to work with the files. Highlight a region
 and operation selections occur for all files in that region. Commands are
 scheduled, and then executed, upon your command. Files can be viewed in modify
