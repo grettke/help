@@ -1333,6 +1333,11 @@ Easily describe just about anything.
   (help/save-all-file-buffers)
   (vc-diff nil))
 
+(defun help/safb-vc-revert ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (vc-revert))
+
 (defun help/safb-magit-status ()
   (interactive)
   (help/save-all-file-buffers)

@@ -243,6 +243,11 @@ Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html
   (help/save-all-file-buffers)
   (vc-diff nil))
 
+(defun help/safb-vc-revert ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (vc-revert))
+
 (defun help/safb-magit-status ()
   (interactive)
   (help/save-all-file-buffers)
@@ -294,7 +299,7 @@ Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html
 (setq mouse-wheel-follow-mouse +1)
 (use-package pos-tip
              :ensure t)
-(help/on-windows
+	     (help/on-windows
  (ignore-errors
    (pos-tip-w32-max-width-height)))
 (setq pos-tip-foreground-color "#073642")
