@@ -1729,6 +1729,102 @@ Make searches case-insensitive.
 (setq-default case-fold-search t)
 #+END_SRC
 
+** Spell Checking
+
+Ispell is simple and powerful.
+
+*** Org-Mode
+
+Never ispell the following objects.
+
+Source-Blocks.
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'ispell-skip-region-alist '("^#\\+begin_src ". "#\\+#+end_src$"))
+(add-to-list 'ispell-skip-region-alist '("^#\\+BEGIN_SRC ". "#\\+#+END_SRC$"))
+#+END_SRC
+
+Example-Blocks. This system often uses Source-Blocks to edit content and 
+Example-Blocks to make it easily renderable when it is not for running.
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'ispell-skip-region-alist '("^#\\+begin_example ". "#\\+end_example$"))
+(add-to-list 'ispell-skip-region-alist '("^#\\+BEGIN_EXAMPLE ". "#\\+END_EXAMPLE$"))
+#+END_SRC
+
+Properties.
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'ispell-skip-region-alist '("\:PROPERTIES\:$" . "\:END\:$"))
+#+END_SRC
+
+Footnotes.
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'ispell-skip-region-alist '("\\[fn:.+:" . "\\]"))
+#+END_SRC
+
+Footnotes with URLs that contain line-breaks.
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'ispell-skip-region-alist '("^http" . "\\]"))
+#+END_SRC
+
+Verbatim
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'ispell-skip-region-alist '("=.*" . ".*="))
+#+END_SRC
+
+Bold text list items.
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'ispell-skip-region-alist '("- \\*.+" . ".*\\*: "))
+#+END_SRC
+
+Export properties.
+
+#+BEGIN_SRC emacs-lisp
+(defun help/ispell-org-header-lines-regexp (h)
+  "Help ispell ignore org header lines."
+  (interactive)
+  (cons (concat "^#\\+" h ":") ".$"))
+
+(defun help/ispell-a2isra (block-def)
+  "Add to the ispell skip region alist the BLOCK-DEF."
+  (interactive)
+  (add-to-list 'ispell-skip-region-alist block-def))
+
+(let (void)
+  (--each
+      '("ATTR_LATEX"
+        "AUTHOR"
+        "CREATOR"
+        "DATE"
+        "DESCRIPTION"
+        "EMAIL"
+        "EXCLUDE_TAGS"
+        "HTML_CONTAINER"
+        "HTML_DOCTYPE"
+        "HTML_HEAD"
+        "HTML_HEAD_EXTRA"
+        "HTML_LINK_HOME"
+        "HTML_LINK_UP"
+        "HTML_MATHJAX"
+        "INFOJS_OPT"
+        "KEYWORDS"
+        "LANGUAGE"
+        "LATEX_CLASS"
+        "LATEX_CLASS_OPTIONS"
+        "LATEX_HEADER"
+        "LATEX_HEADER_EXTRA"
+        "OPTIONS"
+        "SELECT_TAGS"
+        "STARTUP"
+        "TITLE")
+    (help/ispell-a2isra (help/ispell-org-header-lines-regexp it))))
+#+END_SRC
+
 ** Sudo
 
 Configure Sudo with Ido.

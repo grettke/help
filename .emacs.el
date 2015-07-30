@@ -411,11 +411,53 @@ Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html
 (setq isearch-lax-whitespace t)
 (setq isearch-regexp-lax-whitespace t)
 (setq-default case-fold-search t)
-(use-package flycheck :if nil
-             :ensure t
-             :config
-             (add-hook 'after-init-hook #'global-flycheck-mode)
-             (help/diminish "flycheck-mode"))
+(add-to-list 'ispell-skip-region-alist '("^#\\+begin_src ". "#\\+#+end_src$"))
+(add-to-list 'ispell-skip-region-alist '("^#\\+BEGIN_SRC ". "#\\+#+END_SRC$"))
+(add-to-list 'ispell-skip-region-alist '("^#\\+begin_example ". "#\\+end_example$"))
+(add-to-list 'ispell-skip-region-alist '("^#\\+BEGIN_EXAMPLE ". "#\\+END_EXAMPLE$"))
+(add-to-list 'ispell-skip-region-alist '("\:PROPERTIES\:$" . "\:END\:$"))
+(add-to-list 'ispell-skip-region-alist '("\\[fn:.+:" . "\\]"))
+(add-to-list 'ispell-skip-region-alist '("^http" . "\\]"))
+(add-to-list 'ispell-skip-region-alist '("=.*" . ".*="))
+(add-to-list 'ispell-skip-region-alist '("- \\*.+" . ".*\\*: "))
+(defun help/ispell-org-header-lines-regexp (h)
+  "Help ispell ignore org header lines."
+  (interactive)
+  (cons (concat "^#\\+" h ":") ".$"))
+
+(defun help/ispell-a2isra (block-def)
+  "Add to the ispell skip region alist the BLOCK-DEF."
+  (interactive)
+  (add-to-list 'ispell-skip-region-alist block-def))
+
+(let (void)
+  (--each
+      '("ATTR_LATEX"
+        "AUTHOR"
+        "CREATOR"
+        "DATE"
+        "DESCRIPTION"
+        "EMAIL"
+        "EXCLUDE_TAGS"
+        "HTML_CONTAINER"
+        "HTML_DOCTYPE"
+        "HTML_HEAD"
+        "HTML_HEAD_EXTRA"
+        "HTML_LINK_HOME"
+        "HTML_LINK_UP"
+        "HTML_MATHJAX"
+        "INFOJS_OPT"
+        "KEYWORDS"
+        "LANGUAGE"
+        "LATEX_CLASS"
+        "LATEX_CLASS_OPTIONS"
+        "LATEX_HEADER"
+        "LATEX_HEADER_EXTRA"
+        "OPTIONS"
+        "SELECT_TAGS"
+        "STARTUP"
+        "TITLE")
+    (help/ispell-a2isra (help/ispell-org-header-lines-regexp it))))
 (help/on-osx
  (defun help/ido-find-file (&rest args)
    "Find file as root if necessary.
@@ -426,6 +468,11 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
      (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
 
  (advice-add 'ido-find-file :after #'help/ido-find-file))
+(use-package flycheck :if nil
+             :ensure t
+             :config
+             (add-hook 'after-init-hook #'global-flycheck-mode)
+             (help/diminish "flycheck-mode"))
 (use-package magit
              :ensure t
              :config
