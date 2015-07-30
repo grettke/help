@@ -50,6 +50,9 @@ Start EMACS with this command:
 «Org-Mode-Programming»
 «Special-Operating-Procedure»
 «Standard-Operating-Procedure»
+«Hacking-Everything»
+«Hacking-Emacs-Lisp»
+«Hacking-Org-Mode»
 «Quiet-and-Pleasant-Appearance»
 «Piano-Lessons»
 #+END_SRC
@@ -2198,6 +2201,11 @@ Load Use-Package.
 
 * Hacking
 
+** Everything
+  :PROPERTIES:
+  :noweb-ref: Hacking-Everything
+  :END:
+
 Line numbers make documents easier to read. Account for Literate documents.
 
 #+BEGIN_SRC emacs-lisp
@@ -2214,7 +2222,10 @@ for the mode. If the mode doesn't extend Prog-Mode then investigate why.
   (add-hook #'prog-mode-hook #'aggressive-indent-mode))
 #+END_SRC
 
-** LISP
+** Emacs Lisp
+  :PROPERTIES:
+  :noweb-ref: Hacking-Emacs-Lisp
+  :END:
 
 #+BEGIN_SRC emacs-lisp
 (defconst help/lisp-modes
@@ -2228,4 +2239,37 @@ for the mode. If the mode doesn't extend Prog-Mode then investigate why.
     (add-hook h (function (lambda ()
                             (add-hook 'local-write-file-hooks
                             'check-parens))))))
+#+END_SRC
+
+** Org-Mode
+  :PROPERTIES:
+  :noweb-ref: Hacking-Org-Mode
+  :END:
+
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "s-j") #'org-babel-next-src-block)
+(global-set-key (kbd "s-k") #'org-babel-previous-src-block)
+(global-set-key (kbd "s-l") #'help/org-edit-src-code-plus-name)
+(global-set-key (kbd "s-;") #'org-babel-demarcate-block)
+(global-set-key (kbd "s-o") #'org-babel-execute-maybe)
+#+END_SRC
+
+Promimently display the source-block's name if it has one.
+
+#+BEGIN_SRC emacs-lisp
+(defun help/org-edit-src-code-plus-name ()
+  "Edit the well-described source code block.
+
+Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2014-09/msg00778.html'
+
+Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
+  (interactive)
+  (let* ((eop  (org-element-at-point))
+         (name (or (org-element-property :name (org-element-context eop))
+                  "ॐ"))
+         (lang (org-element-property :language eop))
+         (buff-name (concat "*Org Src " name "[" lang "]*"))
+         (file-name (buffer-file-name)))
+    (org-edit-src-code nil nil buff-name)
+    (setq buffer-file-name file-name)))
 #+END_SRC

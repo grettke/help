@@ -485,6 +485,42 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
              (global-whitespace-mode 1)
              (help/diminish "global-whitespace-mode")
              (help/diminish "whitespace-mode"))
+(add-hook #'prog-mode-hook #'linum-mode)
+(use-package aggressive-indent
+  :ensure t
+  :config
+  (add-hook #'prog-mode-hook #'aggressive-indent-mode))
+(defconst help/lisp-modes
+  '(emacs-lisp-mode-hook
+    ielm-mode-hook
+    lisp-interaction-mode-hook))
+
+(dolist (h help/lisp-modes)
+  (add-hook h #'turn-on-smartparens-strict-mode)
+  (when (not (member h '(ielm-mode-hook)))
+    (add-hook h (function (lambda ()
+                            (add-hook 'local-write-file-hooks
+                            'check-parens))))))
+(global-set-key (kbd "s-j") #'org-babel-next-src-block)
+(global-set-key (kbd "s-k") #'org-babel-previous-src-block)
+(global-set-key (kbd "s-l") #'help/org-edit-src-code-plus-name)
+(global-set-key (kbd "s-;") #'org-babel-demarcate-block)
+(global-set-key (kbd "s-o") #'org-babel-execute-maybe)
+(defun help/org-edit-src-code-plus-name ()
+  "Edit the well-described source code block.
+
+Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2014-09/msg00778.html'
+
+Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
+  (interactive)
+  (let* ((eop  (org-element-at-point))
+         (name (or (org-element-property :name (org-element-context eop))
+                  "ॐ"))
+         (lang (org-element-property :language eop))
+         (buff-name (concat "*Org Src " name "[" lang "]*"))
+         (file-name (buffer-file-name)))
+    (org-edit-src-code nil nil buff-name)
+    (setq buffer-file-name file-name)))
 (add-hook #'text-mode-hook #'linum-mode)
 (setq ring-bell-function 'ignore)
 (setq visible-bell t)
@@ -567,17 +603,3 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
 (global-set-key (kbd "s-f") #'help/safb-vc-next-action)
 (key-chord-define-global "JK" (lambda () (interactive) (other-window 1)))
 (key-chord-define-global "qi" 'help/comment-or-uncomment)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
