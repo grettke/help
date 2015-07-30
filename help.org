@@ -194,18 +194,18 @@ Attribution: URL `http://www.emacswiki.org/emacs/PosTip'
 Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html'"
   (interactive)
   (let* ((thing (symbol-at-point))
-	 (help-xref-following t)
-	 (description (with-temp-buffer
-			(help-mode)
-			(help-xref-interned thing)
-			(buffer-string))))
+         (help-xref-following t)
+         (description (with-temp-buffer
+                        (help-mode)
+                        (help-xref-interned thing)
+                        (buffer-string))))
     (help/on-gui (pos-tip-show description nil nil nil 300))
     (help/not-on-gui (popup-tip description
-				:point (point)
-				:around t
-				:height 30
-				:scroll-bar t
-				:margin t))))
+                                :point (point)
+                                :around t
+                                :height 30
+                                :scroll-bar t
+                                :margin t))))
 
 (defun help/kill-other-buffers ()
   "Kill all other buffers."
@@ -798,8 +798,8 @@ Every system requires an output. You have two options. The first is a terminal
 that only displays characters. The second is a display that provides detailed
 graphics. "Display" is the EMACS term for a GUI.
 
-Some users prefer the former. Some users prefer the latter. Some users prefer to 
-use a $4000USD machine to emulate the latter. Both are good options. 
+Some users prefer the former. Some users prefer the latter. Some users prefer to
+use a $4000USD machine to emulate the latter. Both are good options.
 
 This system is configured to work pleasantly for either type of output.
 
@@ -1090,8 +1090,8 @@ It holds true to the values of this system. When you develop an idea of =places=
 how often you go there the key-mapping becomes more obvious. Make it easy to get
 to key-bindings that take you to familiar places. For this system it is the home
 keys, =s=, and =key-chord=. Make those keys more easily accessible. =C= and =M= often
-have symmetric-definitions. =s= and =SHIFT= also often have symmetric definitions in 
-this system (mostly through Key-Chords). Therefore those key-mappings are kept 
+have symmetric-definitions. =s= and =SHIFT= also often have symmetric definitions in
+this system (mostly through Key-Chords). Therefore those key-mappings are kept
 close together
 
 #+BEGIN_EXAMPLE
@@ -1120,7 +1120,7 @@ VC activities.
 
 #+BEGIN_SRC emacs-lisp
 (define-prefix-command 'help/vc-map)
-(global-set-key (kbd "s-v") #'help/vc-map)
+(global-set-key (kbd "s-t") #'help/vc-map)
 (define-key help/vc-map "h" #'help/safb-diff-hl-mode)
 (define-key help/vc-map "e" #'help/safb-vc-ediff)
 (define-key help/vc-map "d" #'help/safb-vc-diff)
@@ -1418,8 +1418,8 @@ Access nearly every object available in this system from one place.
              :config
              (ido-vertical-mode t)
              (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right))
-(key-chord-define-global "s-x" 'ido-find-file)
-(key-chord-define-global "s-c" 'ido-switch-buffer)
+(global-set-key (kbd "s-x") #'ido-find-file)
+(global-set-key (kbd "s-c") #'ido-switch-buffer)
 #+END_SRC
 
 Make functions search-able.
@@ -1429,7 +1429,7 @@ Make functions search-able.
              :ensure t
              :config
              (smex-initialize)
-	     (global-set-key (kbd "s-v"))
+             (global-set-key (kbd "s-v") #'smex))
 #+END_SRC
 
 Make URLs a first-class object.
@@ -1484,10 +1484,10 @@ in different situations.
 (use-package multiple-cursors
   :ensure t
   :config
-  (global-set-key (kbd "s-4") 'mc/mark-next-like-this)
-  (global-set-key (kbd "s-3") 'mc/mark-previous-like-this)
-  (global-set-key (kbd "s-2") 'mc/mark-all-like-this)
-  (global-set-key (kbd "s-1") 'mc/edit-lines))
+  (global-set-key (kbd "s-4") #'mc/mark-next-like-this)
+  (global-set-key (kbd "s-3") #'mc/mark-previous-like-this)
+  (global-set-key (kbd "s-2") #'mc/mark-all-like-this)
+  (global-set-key (kbd "s-1") #'mc/edit-lines))
 #+END_SRC
 
 ** Mark and Region
@@ -1572,10 +1572,10 @@ with Projectile.
              :ensure t
              :config
              (projectile-global-mode t)
-	     (key-chord-define-global "s-z" #'projectile-find-file)
+             (key-chord-define-global "s-z" #'projectile-find-file)
              (help/diminish "projectile-mode")
-	     (gcr/on-windows
-	      (setq projectile-indexing-method 'alien)))
+             (gcr/on-windows
+              (setq projectile-indexing-method 'alien)))
 #+END_SRC
 
 Notify Magit about every working copy that Projectile knows about.
@@ -1743,7 +1743,7 @@ EMACS used UTF-8 by default. Make copying and pasting easier.
   (set-clipboard-coding-system 'utf-16le-dos)))
 #+END_SRC
 
-Intelligently select the current char, then word, then object, then block, 
+Intelligently select the current char, then word, then object, then block,
 then document.
 
 #+BEGIN_SRC emacs-lisp
@@ -2007,4 +2007,20 @@ for the mode. If the mode doesn't extend Prog-Mode then investigate why.
   :ensure t
   :config
   (add-hook #'prog-mode-hook #'aggressive-indent-mode))
+#+END_SRC
+
+** LISP
+
+#+BEGIN_SRC emacs-lisp
+(defconst help/lisp-modes
+  '(emacs-lisp-mode-hook
+    ielm-mode-hook
+    lisp-interaction-mode-hook))
+
+(dolist (h help/lisp-modes)
+  (add-hook h #'
+  (when (not (member h '(ielm-mode-hook)))
+    (add-hook h (function (lambda ()
+                            (add-hook 'local-write-file-hooks
+                                      'check-parens)))))))
 #+END_SRC

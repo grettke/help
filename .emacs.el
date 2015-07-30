@@ -42,24 +42,29 @@ LS captures arguments when this is used as before advice."
         (save-buffer)))))
 
 (defun help/describe-thing-in-popup ()
-    "Display help information on the current symbol.
+  "Display help information on the current symbol.
 
 Attribution: URL `http://www.emacswiki.org/emacs/PosTip'
 Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html'"
-    (interactive)
-    (let* ((thing (symbol-at-point))
-           (help-xref-following t)
-           (description (with-temp-buffer
-                          (help-mode)
-                          (help-xref-interned thing)
-                          (buffer-string))))
-      (help/on-gui (pos-tip-show description nil nil nil 300))
-      (help/not-on-gui (popup-tip description
-                                 :point (point)
-                                 :around t
-                                 :height 30
-                                 :scroll-bar t
-                                 :margin t))))
+  (interactive)
+  (let* ((thing (symbol-at-point))
+         (help-xref-following t)
+         (description (with-temp-buffer
+                        (help-mode)
+                        (help-xref-interned thing)
+                        (buffer-string))))
+    (help/on-gui (pos-tip-show description nil nil nil 300))
+    (help/not-on-gui (popup-tip description
+                                :point (point)
+                                :around t
+                                :height 30
+                                :scroll-bar t
+                                :margin t))))
+
+(defun help/kill-other-buffers ()
+  "Kill all other buffers."
+  (interactive)
+  (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
 (setq org-babel-use-quick-and-dirty-noweb-expansion nil)
 (help/set-org-babel-default-header-args :comments "noweb")
 (help/set-org-babel-default-header-args :padline "yes")
@@ -155,7 +160,7 @@ Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html
 (setq org-src-strip-leading-and-trailing-blank-lines t)
 (setq org-src-window-setup 'current-window)
 (setq org-babel-no-eval-on-ctrl-c-ctrl-c t)
-(define-key org-mode-map (kbd "s-t") #'help/safb-org-babel-tangle)
+(define-key org-mode-map (kbd "s-u") #'help/safb-org-babel-tangle)
 (defmacro help/on-gui (statement &rest statements)
   "Evaluate the enclosed body only when run on GUI."
   `(when (display-graphic-p)
@@ -293,10 +298,13 @@ Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html
              :config
              (ido-vertical-mode t)
              (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right))
+(global-set-key (kbd "s-x") #'ido-find-file)
+(global-set-key (kbd "s-c") #'ido-switch-buffer)
 (use-package smex
              :ensure t
              :config
-             (smex-initialize))
+             (smex-initialize)
+             (global-set-key (kbd "s-v") #'smex))
 (setq ido-use-url-at-point t)
 (setq ido-use-filename-at-point 'guess)
 (use-package unicode-fonts
@@ -309,7 +317,12 @@ Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html
   (key-chord-define-global "df" #'avy-goto-word-1)
   (key-chord-define-global "DF" #'avy-pop-mark))
 (use-package multiple-cursors
-             :ensure t)
+  :ensure t
+  :config
+  (global-set-key (kbd "s-4") #'mc/mark-next-like-this)
+  (global-set-key (kbd "s-3") #'mc/mark-previous-like-this)
+  (global-set-key (kbd "s-2") #'mc/mark-all-like-this)
+  (global-set-key (kbd "s-1") #'mc/edit-lines))
 (delete-selection-mode t)
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq resize-mini-windows t)
@@ -338,9 +351,10 @@ Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html
              :ensure t
              :config
              (projectile-global-mode t)
+             (key-chord-define-global "s-z" #'projectile-find-file)
              (help/diminish "projectile-mode")
-	     (gcr/on-windows
-	      (setq projectile-indexing-method 'alien)))
+             (gcr/on-windows
+              (setq projectile-indexing-method 'alien)))
 (eval-after-load "projectile"
   '(progn (setq magit-repository-directories (mapcar (lambda (dir)
                                                        (substring dir 0 -1))
@@ -464,7 +478,7 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
 (setq make-pointer-invisible t)
 (menu-bar-mode t)
 (define-prefix-command 'help/vc-map)
-(global-set-key (kbd "s-v") #'help/vc-map)
+(global-set-key (kbd "s-t") #'help/vc-map)
 (define-key help/vc-map "h" #'help/safb-diff-hl-mode)
 (define-key help/vc-map "e" #'help/safb-vc-ediff)
 (define-key help/vc-map "d" #'help/safb-vc-diff)
