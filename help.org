@@ -761,6 +761,14 @@ Make this system easy to use in English. Make this system easy to use with
 average hand strength using two hands. These goals are essential to configuring
 the keyboard for this system.
 
+** A Display with Every Keyboard
+
+Every system requires a display. You have two options. The first is a terminal
+that only displays characters. The second is a display that provides detailed
+graphics. Some users prefer the former. Some users prefer the latter. Some 
+users prefer to use a $4000USD machine to emulate the latter. Both are good 
+options. This system is configured to work pleasantly on either type of display.
+
 ** A Full Pot of EMACS on Every Desk
 
 *** Keyboard Layout & Operation
