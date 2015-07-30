@@ -1180,6 +1180,18 @@ VC activities.
 (key-chord-define-global "qi" 'help/comment-or-uncomment)
 #+END_SRC
 
+Toggle utility buffers
+
+#+BEGIN_SRC emacs-lisp
+(key-chord-define-global "f9" 'help/util-cycle)
+#+END_SRC
+
+Use a nicer =eval-expression= approach.
+
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "s-:") 'my-eval-expression)
+#+END_SRC
+
 *** Right Side
 
 Try to reserve the right side for mode-specific activities.
@@ -2594,6 +2606,10 @@ for the mode. If the mode doesn't extend Prog-Mode then investigate why.
   :PROPERTIES:
   :noweb-ref: Hacking-Org-Mode
   :END:
+
+Use Yasnippets.
+
+
 
 Update in-buffer images after Source-Block execution. This is a programming task.
 That is why it is under this heading and Evaluation. This is a setting configuring
