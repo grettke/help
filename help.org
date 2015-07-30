@@ -749,7 +749,7 @@ make it so easy as =C-c C-c=.
 *** Keybindings
 
 #+BEGIN_SRC emacs-lisp
-(define-key org-mode-map (kbd "s-t") #'help/safb-org-babel-tangle)
+(define-key org-mode-map (kbd "s-u") #'help/safb-org-babel-tangle)
 #+END_SRC
 
 * Piano Lessons
@@ -1418,6 +1418,8 @@ Access nearly every object available in this system from one place.
              :config
              (ido-vertical-mode t)
              (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right))
+(key-chord-define-global "s-x" 'ido-find-file)
+(key-chord-define-global "s-c" 'ido-switch-buffer)
 #+END_SRC
 
 Make functions search-able.
@@ -1426,7 +1428,8 @@ Make functions search-able.
 (use-package smex
              :ensure t
              :config
-             (smex-initialize))
+             (smex-initialize)
+	     (global-set-key (kbd "s-v"))
 #+END_SRC
 
 Make URLs a first-class object.
@@ -1569,6 +1572,7 @@ with Projectile.
              :ensure t
              :config
              (projectile-global-mode t)
+	     (key-chord-define-global "s-z" #'projectile-find-file)
              (help/diminish "projectile-mode")
 	     (gcr/on-windows
 	      (setq projectile-indexing-method 'alien)))
