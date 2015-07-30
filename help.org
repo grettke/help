@@ -1977,3 +1977,11 @@ Line numbers make documents easier to read. Account for Literate documents.
 #+BEGIN_SRC emacs-lisp
 (add-hook #'prog-mode-hook #'linum-mode)
 #+END_SRC
+
+Indent at every opportunity and automatically.
+
+#+BEGIN_SRC emacs-lisp
+(use-package aggressive-indent
+  :ensure t)
+(add-hook #'prog-mode-hook #'aggressive-indent-mode)
+#+END_SRC
