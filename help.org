@@ -1465,6 +1465,27 @@ End sentences with a single space.
 (setq sentence-end-double-space nil)
 #+END_SRC
 
+** Code Folding
+
+#+BEGIN_SRC emacs-lisp
+(require 'hideshow)
+(setq hs-hide-comments-when-hiding-all t)
+(setq hs-isearch-open t)
+(defun display-code-line-counts (ov)
+  "Displaying overlay content in echo area or tooltip"
+  (when (eq 'code (overlay-get ov 'hs))
+    (overlay-put ov 'help-echo
+                 (buffer-substring (overlay-start ov)
+                                   (overlay-end ov)))))
+(setq hs-set-up-overlay 'display-code-line-counts)
+(defun help/goto-line (&rest args)
+  "How do I get it to expand upon a goto-line? hideshow-expand affected block when using goto-line in a collapsed buffer."
+  (save-excursion
+    (hs-show-block)))
+(advice-add #'goto-line :after #'help/goto-line)
+(eval-after-load "hideshow" '(diminish 'hs-minor-mode))
+#+END_SRC
+
 ** Describing Objects
 
 Easily describe just about anything.
