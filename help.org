@@ -1368,7 +1368,18 @@ Easily describe just about anything.
 (defun help/safb-org-babel-tangle ()
   (interactive)
   (help/save-all-file-buffers)
-  (org-babel-tangle))  
+  (let ((start (current-time)))
+    (message (concat "org-babel-tangle BEFORE: <"
+                     (format-time-string "%Y-%m-%dT%T%z")
+                     ">"))
+    (org-babel-tangle)
+    (let* ((dur (float-time (time-since start)))
+           (msg (format "Tangling complete after: %.06f seconds" dur)))
+      (message (concat "org-babel-tangle AFTER: <"
+                       (format-time-string "%Y-%m-%dT%T%z")
+                       ">"))
+      (message msg)
+      (help/on-gui (alert msg :title "org-mode")))))
 #+END_SRC
 
 ** Finding Objects
@@ -1516,6 +1527,19 @@ Make the colors more pleasant.
 #+BEGIN_SRC emacs-lisp
 (setq pos-tip-foreground-color "#073642")
 (setq pos-tip-background-color "#839496")
+#+END_SRC
+
+Provide popup notifications.
+
+#+BEGIN_SRC emacs-lisp
+(use-package alert
+  :ensure t
+  :config
+  (setq alert-fade-time 10)
+  (help/on-gui
+   (help/on-osx
+    (setq alert-default-style 'growl)))
+  (setq alert-reveal-idle-time 120))
 #+END_SRC
 
 ** Projects

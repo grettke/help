@@ -262,7 +262,18 @@ Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html
 (defun help/safb-org-babel-tangle ()
   (interactive)
   (help/save-all-file-buffers)
-  (org-babel-tangle))  
+  (let ((start (current-time)))
+    (message (concat "org-babel-tangle BEFORE: <"
+                     (format-time-string "%Y-%m-%dT%T%z")
+                     ">"))
+    (org-babel-tangle)
+    (let* ((dur (float-time (time-since start)))
+           (msg (format "Tangling complete after: %.06f seconds" dur)))
+      (message (concat "org-babel-tangle AFTER: <"
+                       (format-time-string "%Y-%m-%dT%T%z")
+                       ">"))
+      (message msg)
+      (help/on-gui (alert msg :title "org-mode")))))
 (require 'ido)
 (use-package flx-ido
              :ensure t
@@ -315,6 +326,14 @@ Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html
    (pos-tip-w32-max-width-height)))
 (setq pos-tip-foreground-color "#073642")
 (setq pos-tip-background-color "#839496")
+(use-package alert
+  :ensure t
+  :config
+  (setq alert-fade-time 10)
+  (help/on-gui
+   (help/on-osx
+    (setq alert-default-style 'growl)))
+  (setq alert-reveal-idle-time 120))
 (use-package projectile :if nil
              :ensure t
              :config
@@ -454,17 +473,3 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
 (global-set-key (kbd "s-f") #'help/safb-vc-next-action)
 (key-chord-define-global "JK" (lambda () (interactive) (other-window 1)))
 (key-chord-define-global "qi" 'help/comment-or-uncomment)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
