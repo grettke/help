@@ -519,6 +519,10 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (eval-after-load "hideshow" '(diminish 'hs-minor-mode))
 (help/diminish 'visual-line-mode)
 (global-set-key (kbd "s-r") 'help/describe-thing-in-popup)
+(setq-default eval-expression-print-level nil)
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+(put 'narrow-to-region 'disabled nil)
 (add-to-list 'load-path (getenv "CCRYPT"))
 (require 'ps-ccrypt "ps-ccrypt.el")
 (setq auto-save-default t)
@@ -797,7 +801,7 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
 (use-package yasnippet
 	     :ensure t
 	     :config
-	     (yas-global-mode 1)
+	     (yas-global-mode t)
 	     (help/diminish 'yas-minor-mode)
 	     (defun help/yas-minor-mode-hook ()
 	       "Personal customizations."
@@ -809,6 +813,9 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
              :ensure t
              :config
              (global-set-key (kbd "s-e") #'help/safb-magit-status))
+(eval-after-load 'log-edit
+  '(remove-hook 'log-edit-hook 'log-edit-insert-message-template))
+(add-to-list 'auto-mode-alist '(".gitignore$" . text-mode))
 (use-package whitespace :if nil
              :ensure t
              :config
@@ -832,6 +839,18 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
     (add-hook h (function (lambda ()
                             (add-hook 'local-write-file-hooks
 				      'check-parens))))))
+(add-to-list #'yas-snippet-dirs "~/src/yasnippet-org-mode")
+(yas-reload-all)
+(defun help/org-babel-after-execute-hook ()
+  "Personal settings for the `org-babel-after-execute-hook'.
+
+This does not interfere with exports.
+
+Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00534.html'"
+  (interactive)
+  (org-redisplay-inline-images))
+
+(add-hook 'org-babel-after-execute-hook 'help/org-babel-after-execute-hook)
 (setq org-confirm-babel-evaluate nil)
 (setq org-src-tab-acts-natively nil)
 (setq org-todo-keywords
@@ -971,6 +990,8 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
 (global-set-key (kbd "s-f") #'help/safb-vc-next-action)
 (key-chord-define-global "JK" (lambda () (interactive) (other-window 1)))
 (key-chord-define-global "qi" 'help/comment-or-uncomment)
+(key-chord-define-global "f9" 'help/util-cycle)
+(global-set-key (kbd "s-:") 'my-eval-expression)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

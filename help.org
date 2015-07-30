@@ -7,6 +7,7 @@ Setup:
 
 1) [[http://orgmode.org/][Clone Org-Mode]] to =~/src/=.
 2) [[https://github.com/jwiegley/use-package][Clone Use-Package]] to =~/src/=.
+3) [[https://github.com/RickMoynihan/yasnippet-org-mode/blob/master/src][Clone Yasnippet-Org-Mode]] to =~/src/=.
 
 * Webs We Weave
 
@@ -2609,7 +2610,10 @@ for the mode. If the mode doesn't extend Prog-Mode then investigate why.
 
 Use Yasnippets.
 
-
+#+BEGIN_SRC emacs-lisp
+(add-to-list #'yas-snippet-dirs "~/src/yasnippet-org-mode")
+(yas-reload-all)
+#+END_SRC
 
 Update in-buffer images after Source-Block execution. This is a programming task.
 That is why it is under this heading and Evaluation. This is a setting configuring
