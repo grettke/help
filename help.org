@@ -1391,6 +1391,25 @@ there.
 (setq line-move-visual nil)
 #+END_SRC
 
+Take the cursor with scroll activities.
+
+#+BEGIN_SRC emacs-lisp
+(setq scroll-preserve-screen-position t)
+#+END_SRC
+
+More easily visualize tabular data. Considered to non-subjective.
+
+#+BEGIN_SRC emacs-lisp
+(use-package stripe-buffer
+  :ensure t)
+#+END_SRC
+
+End sentences with a single space.
+
+#+BEGIN_SRC emacs-lisp
+(setq sentence-end-double-space nil)
+#+END_SRC
+
 ** Describing Objects
 
 Easily describe just about anything.

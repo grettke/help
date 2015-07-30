@@ -255,6 +255,10 @@ Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html
   (wrap-region-global-mode))
 (setq track-eol t)
 (setq line-move-visual nil)
+(setq scroll-preserve-screen-position t)
+(use-package stripe-buffer
+  :ensure t)
+(setq sentence-end-double-space nil)
 (global-set-key (kbd "s-r") 'help/describe-thing-in-popup)
 (defun help/safb-vc-next-action ()
   (interactive)
