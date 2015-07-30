@@ -880,6 +880,13 @@ following practices were defined.
 - Use shift as a name-space expansion vehicle.
   - Shift doubles every name-space in which you use it.
   - Use cautiously, not every name-space vehicle supports it.
+- About the =s= (super) name-space.
+  - In theory it is the best place for user-defined key-bindings because
+    EMACS OOTB uses =C= and =M= completely leaving =s= mostly open.
+  - In practice =C= and =M= are running out of space because there are a lot of
+    new packages being added to EMACS. Most new packages are binding key
+    in the =s= name-space.
+  - This system reserves =s= completely for Sysop.
 
 These practices say nothing about the =places= or =activities= that you choose to
 peform. The practices only look at the key-binding configuration. There are a
