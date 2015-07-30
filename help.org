@@ -521,240 +521,6 @@ Set up my default LCO files.
 #+END_SRC
 
 
-** Programming
-   :PROPERTIES:
-   :noweb-ref: Org-Mode-Programming
-   :END:
-
-Never "automatically" evaluate a source block.
-
-#+BEGIN_SRC emacs-lisp
-(setq org-confirm-babel-evaluate nil)
-#+END_SRC
-
-Make it unpleasant for Sysop to modify source-block outside of a source-block
-backed buffer. The next step is to write some code to prevent modifying
-source-blocks outside of that place.
-
-#+BEGIN_SRC emacs-lisp
-(setq org-src-tab-acts-natively nil)
-#+END_SRC
-
-My personal TODO workflow.
-
-#+BEGIN_SRC emacs-lisp
-(setq org-todo-keywords
-      '((sequence "TODO" "IN-PROGRESS" "BLOCKED" "REVIEW" "DONE")))
-#+END_SRC
-
-When running in a GUI, I would like linked images to be displayed inside of
-Emacs.
-
-#+BEGIN_SRC emacs-lisp
-(setq org-startup-with-inline-images (display-graphic-p))
-#+END_SRC
-
-Use Ido completion in Org-Mode.
-
-#+BEGIN_SRC emacs-lisp
-(setq org-completion-use-ido t)
-(setq org-outline-path-complete-in-steps nil)
-(setq org-completion-use-iswitchb nil)
-#+END_SRC
-
-Org-Mode lets you use single letter commands to do stuff on headers. I like to
-use =c= for cycling the header expansion.
-
-#+BEGIN_SRC emacs-lisp
-(setq org-use-speed-commands t)
-#+END_SRC
-
-Ask before execution of shell links. This might seem like an Evaluation
-activity. It is. It is interactive.
-
-#+BEGIN_SRC emacs-lisp
-(setq org-confirm-shell-link-function 'y-or-n-p)
-#+END_SRC
-
-Ask before execution of Emacs-Lisp.
-
-#+BEGIN_SRC emacs-lisp
-(setq org-confirm-elisp-link-function 'y-or-n-p)
-#+END_SRC
-
-Make sure that incomplete TODO entries prevent the enclosing parent from every
-turning to DONE.
-
-#+BEGIN_SRC emacs-lisp
-(setq org-enforce-todo-dependencies t)
-#+END_SRC
-
-Allow the mouse to do Org-Mode things like expand and collapse headings.
-
-#+BEGIN_SRC emacs-lisp
-(when (display-graphic-p)
-  (require 'org-mouse))
-#+END_SRC
-
-Use a real ellipsis to render an ellipsis for Org-Mode stuff like showing that a
-header is collapsed.
-
-#+BEGIN_SRC emacs-lisp
-(setq org-ellipsis "…")
-#+END_SRC
-
-It is easy to see indentation of headlines without having to count asterisks, so
-don't show them, only show the significant and last one.
-
-#+BEGIN_SRC emacs-lisp
-(setq org-hide-leading-stars t)
-#+END_SRC
-
-Display emphasized text as you would in a WYSIWYG editor.
-
-#+BEGIN_SRC emacs-lisp
-(setq org-fontify-emphasized-text t)
-#+END_SRC
-
-Use Unicode characters to visualize things like right arrow eg \rarr . Most of those
-symbols are correctly exported to the destination format. The most obvious is
-this example in LaTeX versus Text.
-
-#+BEGIN_SRC emacs-lisp
-(setq org-pretty-entities t)
-#+END_SRC
-
-Highlight LaTeX and related markup.
-
-Normally, I don't do any syntax highlighting, as I believe that should be
-delegated to source buffers, thinking that to do otherwise is distracting.
-However, I already do configure subscripts and Greek letters to be displayed
-with syntax highlighting, because I want to indicate to the human reader that
-they are special, and specifically /not/-Unicode. Do the same thing for LaTeX
-and related markup.
-
-#+BEGIN_SRC emacs-lisp
-(setq org-highlight-latex-and-related '(latex script entities))
-#+END_SRC
-
-Allow "refactoring" of Footnotes between documents.
-
-#+BEGIN_SRC emacs-lisp
-(setq org-footnote-define-inline t)
-(setq org-footnote-auto-label 'random)
-(setq org-footnote-auto-adjust nil)
-(setq org-footnote-section nil)
-#+END_SRC
-
-This is an amazingly easy way to screw up your document. The more you edit
-org docs, the more you realize how you must truly protect it.
-
-#+BEGIN_SRC emacs-lisp
-(setq org-catch-invisible-edits 'error)
-#+END_SRC
-
-Though I am not delving deep, it is hard not to want to customize some stuff
-and perhaps this is the start. Even though I enabled this, I don't think that I
-ever used it.
-
-#+BEGIN_SRC emacs-lisp
-(setq org-loop-over-headlines-in-active-region t)
-#+END_SRC
-
-It is /almost always/ faster to work with org documents when they are fully
-expanded. Anyway, the structure cycling makes it really, really easy to get an
-/outline view/ again.
-
-#+BEGIN_SRC emacs-lisp
-(setq org-startup-folded "nofold")
-#+END_SRC
-
-When images are displayed in the buffer, display them in their actual size. As
-the operator, I want to know their true form. Any modifications required for
-export will be stated explicitly.
-
-#+BEGIN_SRC emacs-lisp
-(setq org-image-actual-width t)
-#+END_SRC
-
-Hide the delimeter for emphasized text. Unicode characters break table
-alignment.
-
-#+BEGIN_SRC emacs-lisp
-(setq org-hide-emphasis-markers t)
-#+END_SRC
-
-Realign tables automatically.
-
-#+BEGIN_SRC emacs-lisp
-(setq org-startup-align-all-tables t)
-#+END_SRC
-
-Always use Unicode checkboxes.
-
-#+BEGIN_SRC emacs-lisp
-(setq org-html-checkbox-type 'unicode)
-#+END_SRC
-
-You may display syntax highlighting for code in source blocks. I don't.
-
-#+BEGIN_SRC emacs-lisp
-(setq org-src-fontify-natively nil)
-#+END_SRC
-
-Never indent the contents of a source-block automatically.
-
-#+BEGIN_SRC emacs-lisp
-(setq org-edit-src-content-indentation 0)
-#+END_SRC
-
-When edit mode is exited, the option exists to automatically remove empty
-opening and closed lines for the source block. Never do this. The thing is that
-I forgot why. When I was working on a recent analysis with ℝ there was a
-space appearing in the opening and closing line of the source block that didn't
-appear in the source editing buffer. That surprised me. I am sure that I've
-forgotten why this is the case. I don't like it because you add a bunch of
-empty lines in the source buffer for every source block. With that in mind I
-will enable this feature and try it out again.
-
-#+BEGIN_SRC emacs-lisp
-(setq org-src-strip-leading-and-trailing-blank-lines t)
-#+END_SRC
-
-The source block buffer may be configured to appear in a few different places.
-For a while I really liked =reorganize-frame= because sometimes you want to be
-able to see the code you are editing in edition to the rest of the document. At
-least that is what I am telling myself. Once I learned you could change it I
-realized that 1 I should have asked if it could be changed and 2 I should have
-changed it. The flow that I've got configured here is that you are either in the
-source document where code blocks are not highlighted or you are in the source
-block so you are editing in a buffer that is full-fledged ALEC. That is the best
-way so you can focus completely on each task at hand in the ideal mode for that
-task. Anything else results in distractions and errors.
-
-#+BEGIN_SRC emacs-lisp
-(setq org-src-window-setup 'current-window)
-#+END_SRC
-
-Org-Mode has a really nice feature that hitting =C-c C-c= will generally just do
-the /right thing/. It is really nice. That feature extends to source blocks of
-course. Ironically I had a typo here, typing /of curse/ instead of /of course/.
-The thing is that you really, really need to develop a personal workflow, and
-then configure the tool to enable it. The more I learn about Org-Mode, the more
-leery I am about making it really easy to evaluate code. I want it to be a
-really, really specific and decided action to evaluate a code block, so don't
-make it so easy as =C-c C-c=.
-
-#+BEGIN_SRC emacs-lisp
-(setq org-babel-no-eval-on-ctrl-c-ctrl-c t)
-#+END_SRC
-
-*** Keybindings
-
-#+BEGIN_SRC emacs-lisp
-(define-key org-mode-map (kbd "s-i") #'help/safb-org-babel-tangle)
-#+END_SRC
-
 * Piano Lessons
    :PROPERTIES:
    :noweb-ref: Piano-Lessons
@@ -2246,12 +2012,227 @@ for the mode. If the mode doesn't extend Prog-Mode then investigate why.
   :noweb-ref: Hacking-Org-Mode
   :END:
 
+Never "automatically" evaluate a source block.
+
 #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "s-j") #'org-babel-next-src-block)
-(global-set-key (kbd "s-k") #'org-babel-previous-src-block)
-(global-set-key (kbd "s-l") #'help/org-edit-src-code-plus-name)
-(global-set-key (kbd "s-;") #'org-babel-demarcate-block)
-(global-set-key (kbd "s-o") #'org-babel-execute-maybe)
+(setq org-confirm-babel-evaluate nil)
+#+END_SRC
+
+Make it unpleasant for Sysop to modify source-block outside of a source-block
+backed buffer. The next step is to write some code to prevent modifying
+source-blocks outside of that place.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-src-tab-acts-natively nil)
+#+END_SRC
+
+My personal TODO workflow.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-todo-keywords
+      '((sequence "TODO" "IN-PROGRESS" "BLOCKED" "REVIEW" "DONE")))
+#+END_SRC
+
+When running in a GUI, I would like linked images to be displayed inside of
+Emacs.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-startup-with-inline-images (display-graphic-p))
+#+END_SRC
+
+Use Ido completion in Org-Mode.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-completion-use-ido t)
+(setq org-outline-path-complete-in-steps nil)
+(setq org-completion-use-iswitchb nil)
+#+END_SRC
+
+Org-Mode lets you use single letter commands to do stuff on headers. I like to
+use =c= for cycling the header expansion.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-use-speed-commands t)
+#+END_SRC
+
+Ask before execution of shell links. This might seem like an Evaluation
+activity. It is. It is interactive.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-confirm-shell-link-function 'y-or-n-p)
+#+END_SRC
+
+Ask before execution of Emacs-Lisp.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-confirm-elisp-link-function 'y-or-n-p)
+#+END_SRC
+
+Make sure that incomplete TODO entries prevent the enclosing parent from every
+turning to DONE.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-enforce-todo-dependencies t)
+#+END_SRC
+
+Allow the mouse to do Org-Mode things like expand and collapse headings.
+
+#+BEGIN_SRC emacs-lisp
+(when (display-graphic-p)
+  (require 'org-mouse))
+#+END_SRC
+
+Use a real ellipsis to render an ellipsis for Org-Mode stuff like showing that a
+header is collapsed.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-ellipsis "…")
+#+END_SRC
+
+It is easy to see indentation of headlines without having to count asterisks, so
+don't show them, only show the significant and last one.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-hide-leading-stars t)
+#+END_SRC
+
+Display emphasized text as you would in a WYSIWYG editor.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-fontify-emphasized-text t)
+#+END_SRC
+
+Use Unicode characters to visualize things like right arrow eg \rarr . Most of those
+symbols are correctly exported to the destination format. The most obvious is
+this example in LaTeX versus Text.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-pretty-entities t)
+#+END_SRC
+
+Highlight LaTeX and related markup.
+
+Normally, I don't do any syntax highlighting, as I believe that should be
+delegated to source buffers, thinking that to do otherwise is distracting.
+However, I already do configure subscripts and Greek letters to be displayed
+with syntax highlighting, because I want to indicate to the human reader that
+they are special, and specifically /not/-Unicode. Do the same thing for LaTeX
+and related markup.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-highlight-latex-and-related '(latex script entities))
+#+END_SRC
+
+Allow "refactoring" of Footnotes between documents.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-footnote-define-inline t)
+(setq org-footnote-auto-label 'random)
+(setq org-footnote-auto-adjust nil)
+(setq org-footnote-section nil)
+#+END_SRC
+
+This is an amazingly easy way to screw up your document. The more you edit
+org docs, the more you realize how you must truly protect it.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-catch-invisible-edits 'error)
+#+END_SRC
+
+Though I am not delving deep, it is hard not to want to customize some stuff
+and perhaps this is the start. Even though I enabled this, I don't think that I
+ever used it.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-loop-over-headlines-in-active-region t)
+#+END_SRC
+
+It is /almost always/ faster to work with org documents when they are fully
+expanded. Anyway, the structure cycling makes it really, really easy to get an
+/outline view/ again.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-startup-folded "nofold")
+#+END_SRC
+
+When images are displayed in the buffer, display them in their actual size. As
+the operator, I want to know their true form. Any modifications required for
+export will be stated explicitly.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-image-actual-width t)
+#+END_SRC
+
+Hide the delimeter for emphasized text. Unicode characters break table
+alignment.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-hide-emphasis-markers t)
+#+END_SRC
+
+Realign tables automatically.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-startup-align-all-tables t)
+#+END_SRC
+
+Always use Unicode checkboxes.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-html-checkbox-type 'unicode)
+#+END_SRC
+
+You may display syntax highlighting for code in source blocks. I don't.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-src-fontify-natively nil)
+#+END_SRC
+
+Never indent the contents of a source-block automatically.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-edit-src-content-indentation 0)
+#+END_SRC
+
+When edit mode is exited, the option exists to automatically remove empty
+opening and closed lines for the source block. Never do this. The thing is that
+I forgot why. When I was working on a recent analysis with ℝ there was a
+space appearing in the opening and closing line of the source block that didn't
+appear in the source editing buffer. That surprised me. I am sure that I've
+forgotten why this is the case. I don't like it because you add a bunch of
+empty lines in the source buffer for every source block. With that in mind I
+will enable this feature and try it out again.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-src-strip-leading-and-trailing-blank-lines t)
+#+END_SRC
+
+The source block buffer may be configured to appear in a few different places.
+For a while I really liked =reorganize-frame= because sometimes you want to be
+able to see the code you are editing in edition to the rest of the document. At
+least that is what I am telling myself. Once I learned you could change it I
+realized that 1 I should have asked if it could be changed and 2 I should have
+changed it. The flow that I've got configured here is that you are either in the
+source document where code blocks are not highlighted or you are in the source
+block so you are editing in a buffer that is full-fledged ALEC. That is the best
+way so you can focus completely on each task at hand in the ideal mode for that
+task. Anything else results in distractions and errors.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-src-window-setup 'current-window)
+#+END_SRC
+
+Org-Mode has a really nice feature that hitting =C-c C-c= will generally just do
+the /right thing/. It is really nice. That feature extends to source blocks of
+course. Ironically I had a typo here, typing /of curse/ instead of /of course/.
+The thing is that you really, really need to develop a personal workflow, and
+then configure the tool to enable it. The more I learn about Org-Mode, the more
+leery I am about making it really easy to evaluate code. I want it to be a
+really, really specific and decided action to evaluate a code block, so don't
+make it so easy as =C-c C-c=.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-babel-no-eval-on-ctrl-c-ctrl-c t)
 #+END_SRC
 
 Promimently display the source-block's name if it has one.
@@ -2272,4 +2253,14 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
          (file-name (buffer-file-name)))
     (org-edit-src-code nil nil buff-name)
     (setq buffer-file-name file-name)))
+#+END_SRC
+
+*** Keybindings
+
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "s-j") #'org-babel-next-src-block)
+(global-set-key (kbd "s-k") #'org-babel-previous-src-block)
+(global-set-key (kbd "s-l") #'help/org-edit-src-code-plus-name)
+(global-set-key (kbd "s-;") #'org-babel-demarcate-block)
+(global-set-key (kbd "s-o") #'org-babel-execute-maybe)
 #+END_SRC

@@ -125,42 +125,7 @@ Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html
 
      (setq org-koma-letter-default-class "my-letter")))
 (setq org-koma-letter-class-option-file "UScommercial9 KomaDefault")
-(setq org-confirm-babel-evaluate nil)
-(setq org-src-tab-acts-natively nil)
-(setq org-todo-keywords
-      '((sequence "TODO" "IN-PROGRESS" "BLOCKED" "REVIEW" "DONE")))
-(setq org-startup-with-inline-images (display-graphic-p))
-(setq org-completion-use-ido t)
-(setq org-outline-path-complete-in-steps nil)
-(setq org-completion-use-iswitchb nil)
-(setq org-use-speed-commands t)
-(setq org-confirm-shell-link-function 'y-or-n-p)
-(setq org-confirm-elisp-link-function 'y-or-n-p)
-(setq org-enforce-todo-dependencies t)
-(when (display-graphic-p)
-  (require 'org-mouse))
-(setq org-ellipsis "…")
-(setq org-hide-leading-stars t)
-(setq org-fontify-emphasized-text t)
-(setq org-pretty-entities t)
-(setq org-highlight-latex-and-related '(latex script entities))
-(setq org-footnote-define-inline t)
-(setq org-footnote-auto-label 'random)
-(setq org-footnote-auto-adjust nil)
-(setq org-footnote-section nil)
-(setq org-catch-invisible-edits 'error)
-(setq org-loop-over-headlines-in-active-region t)
-(setq org-startup-folded "nofold")
-(setq org-image-actual-width t)
-(setq org-hide-emphasis-markers t)
-(setq org-startup-align-all-tables t)
-(setq org-html-checkbox-type 'unicode)
-(setq org-src-fontify-natively nil)
-(setq org-edit-src-content-indentation 0)
-(setq org-src-strip-leading-and-trailing-blank-lines t)
-(setq org-src-window-setup 'current-window)
-(setq org-babel-no-eval-on-ctrl-c-ctrl-c t)
-(define-key org-mode-map (kbd "s-i") #'help/safb-org-babel-tangle)
+
 (defmacro help/on-gui (statement &rest statements)
   "Evaluate the enclosed body only when run on GUI."
   `(when (display-graphic-p)
@@ -501,11 +466,41 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
     (add-hook h (function (lambda ()
                             (add-hook 'local-write-file-hooks
                             'check-parens))))))
-(global-set-key (kbd "s-j") #'org-babel-next-src-block)
-(global-set-key (kbd "s-k") #'org-babel-previous-src-block)
-(global-set-key (kbd "s-l") #'help/org-edit-src-code-plus-name)
-(global-set-key (kbd "s-;") #'org-babel-demarcate-block)
-(global-set-key (kbd "s-o") #'org-babel-execute-maybe)
+(setq org-confirm-babel-evaluate nil)
+(setq org-src-tab-acts-natively nil)
+(setq org-todo-keywords
+      '((sequence "TODO" "IN-PROGRESS" "BLOCKED" "REVIEW" "DONE")))
+(setq org-startup-with-inline-images (display-graphic-p))
+(setq org-completion-use-ido t)
+(setq org-outline-path-complete-in-steps nil)
+(setq org-completion-use-iswitchb nil)
+(setq org-use-speed-commands t)
+(setq org-confirm-shell-link-function 'y-or-n-p)
+(setq org-confirm-elisp-link-function 'y-or-n-p)
+(setq org-enforce-todo-dependencies t)
+(when (display-graphic-p)
+  (require 'org-mouse))
+(setq org-ellipsis "…")
+(setq org-hide-leading-stars t)
+(setq org-fontify-emphasized-text t)
+(setq org-pretty-entities t)
+(setq org-highlight-latex-and-related '(latex script entities))
+(setq org-footnote-define-inline t)
+(setq org-footnote-auto-label 'random)
+(setq org-footnote-auto-adjust nil)
+(setq org-footnote-section nil)
+(setq org-catch-invisible-edits 'error)
+(setq org-loop-over-headlines-in-active-region t)
+(setq org-startup-folded "nofold")
+(setq org-image-actual-width t)
+(setq org-hide-emphasis-markers t)
+(setq org-startup-align-all-tables t)
+(setq org-html-checkbox-type 'unicode)
+(setq org-src-fontify-natively nil)
+(setq org-edit-src-content-indentation 0)
+(setq org-src-strip-leading-and-trailing-blank-lines t)
+(setq org-src-window-setup 'current-window)
+(setq org-babel-no-eval-on-ctrl-c-ctrl-c t)
 (defun help/org-edit-src-code-plus-name ()
   "Edit the well-described source code block.
 
@@ -521,6 +516,11 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
          (file-name (buffer-file-name)))
     (org-edit-src-code nil nil buff-name)
     (setq buffer-file-name file-name)))
+(global-set-key (kbd "s-j") #'org-babel-next-src-block)
+(global-set-key (kbd "s-k") #'org-babel-previous-src-block)
+(global-set-key (kbd "s-l") #'help/org-edit-src-code-plus-name)
+(global-set-key (kbd "s-;") #'org-babel-demarcate-block)
+(global-set-key (kbd "s-o") #'org-babel-execute-maybe)
 (add-hook #'text-mode-hook #'linum-mode)
 (setq ring-bell-function 'ignore)
 (setq visible-bell t)
@@ -603,3 +603,17 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
 (global-set-key (kbd "s-f") #'help/safb-vc-next-action)
 (key-chord-define-global "JK" (lambda () (interactive) (other-window 1)))
 (key-chord-define-global "qi" 'help/comment-or-uncomment)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
