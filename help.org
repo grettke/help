@@ -1504,6 +1504,20 @@ Easily describe just about anything.
 (global-set-key (kbd "s-r") 'help/describe-thing-in-popup)
 #+END_SRC
 
+** Evaluation
+
+#+BEGIN_SRC emacs-lisp
+(setq-default eval-expression-print-level nil)
+#+END_SRC
+
+Allow most commands.
+
+#+BEGIN_SRC emacs-lisp
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+(put 'narrow-to-region 'disabled nil)
+#+END_SRC
+
 ** Encryption
 
 Easy to use file-based AES encryption.
@@ -2188,6 +2202,19 @@ Use Magit for Git.
              :ensure t
              :config
              (global-set-key (kbd "s-e") #'help/safb-magit-status))
+#+END_SRC
+
+Leave the VC message template empty.
+
+#+BEGIN_SRC emacs-lisp
+(eval-after-load 'log-edit
+  '(remove-hook 'log-edit-hook 'log-edit-insert-message-template))
+#+END_SRC
+
+Git ignore files are text files.
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'auto-mode-alist '(".gitignore$" . text-mode))
 #+END_SRC
 
 ** Whitespace Management
