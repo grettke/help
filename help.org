@@ -1465,6 +1465,12 @@ End sentences with a single space.
 (setq sentence-end-double-space nil)
 #+END_SRC
 
+Ban white-space at end of lines, globally.
+
+#+BEGIN_SRC emacs-lisp
+(add-hook #'write-file-hooks #'help/delete-trailing-whitespace)
+#+END_SRC
+
 ** Code Folding
 
 #+BEGIN_SRC emacs-lisp
@@ -1484,6 +1490,10 @@ End sentences with a single space.
     (hs-show-block)))
 (advice-add #'goto-line :after #'help/goto-line)
 (eval-after-load "hideshow" '(diminish 'hs-minor-mode))
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+(help/diminish 'visual-line-mode)
 #+END_SRC
 
 ** Describing Objects
@@ -1530,6 +1540,12 @@ Backup file-stores before the system exits.
 
 #+BEGIN_SRC emacs-lisp
 (advice-add #'save-buffers-kill-terminal :before #'help/save-all-file-buffers)
+#+END_SRC
+
+Always keep buffers in-sync with changes in-file.
+
+#+BEGIN_SRC emacs-lisp
+(global-auto-revert-mode 1)
 #+END_SRC
 
 Save all file befores before common activities. Functions are easier to
@@ -1874,7 +1890,7 @@ Source-Blocks.
 (add-to-list 'ispell-skip-region-alist '("^#\\+BEGIN_SRC ". "#\\+#+END_SRC$"))
 #+END_SRC
 
-Example-Blocks. This system often uses Source-Blocks to edit content and 
+Example-Blocks. This system often uses Source-Blocks to edit content and
 Example-Blocks to make it easily renderable when it is not for running.
 
 #+BEGIN_SRC emacs-lisp

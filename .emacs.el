@@ -500,6 +500,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (use-package stripe-buffer
   :ensure t)
 (setq sentence-end-double-space nil)
+(add-hook #'write-file-hooks #'help/delete-trailing-whitespace)
 (require 'hideshow)
 (setq hs-hide-comments-when-hiding-all t)
 (setq hs-isearch-open t)
@@ -516,6 +517,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
     (hs-show-block)))
 (advice-add #'goto-line :after #'help/goto-line)
 (eval-after-load "hideshow" '(diminish 'hs-minor-mode))
+(help/diminish 'visual-line-mode)
 (global-set-key (kbd "s-r") 'help/describe-thing-in-popup)
 (add-to-list 'load-path (getenv "CCRYPT"))
 (require 'ps-ccrypt "ps-ccrypt.el")
@@ -526,6 +528,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (setq auto-save-timeout (* 60 5))
 (add-hook 'focus-out-hook #'help/save-all-file-buffers)
 (advice-add #'save-buffers-kill-terminal :before #'help/save-all-file-buffers)
+(global-auto-revert-mode 1)
 (defun help/safb-vc-next-action ()
   (interactive)
   (help/save-all-file-buffers)
