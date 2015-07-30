@@ -741,6 +741,12 @@ make it so easy as =C-c C-c=.
 (setq org-babel-no-eval-on-ctrl-c-ctrl-c t)
 #+END_SRC
 
+*** Keybindings
+
+#+BEGIN_SRC emacs-lisp
+(define-key org-mode-map (kbd "s-t") #'help/safb-org-babel-tangle)
+#+END_SRC
+
 * Piano Lessons
    :PROPERTIES:
    :noweb-ref: Piano-Lessons
@@ -1334,7 +1340,7 @@ Easily describe just about anything.
   (help/save-all-file-buffers)
   (vc-next-action nil))
 
-(defun help/diff-hl-mode ()
+(defun help/safb-diff-hl-mode ()
   (interactive)
   (help/save-all-file-buffers)
   (diff-hl-mode nil))
@@ -1358,6 +1364,11 @@ Easily describe just about anything.
   (interactive)
   (help/save-all-file-buffers)
   (magit-status))
+
+(defun help/safb-org-babel-tangle ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (org-babel-tangle))  
 #+END_SRC
 
 ** Finding Objects

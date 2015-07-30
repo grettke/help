@@ -155,6 +155,7 @@ Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html
 (setq org-src-strip-leading-and-trailing-blank-lines t)
 (setq org-src-window-setup 'current-window)
 (setq org-babel-no-eval-on-ctrl-c-ctrl-c t)
+(define-key org-mode-map (kbd "s-t") #'help/safb-org-babel-tangle)
 (defmacro help/on-gui (statement &rest statements)
   "Evaluate the enclosed body only when run on GUI."
   `(when (display-graphic-p)
@@ -233,7 +234,7 @@ Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html
   (help/save-all-file-buffers)
   (vc-next-action nil))
 
-(defun help/diff-hl-mode ()
+(defun help/safb-diff-hl-mode ()
   (interactive)
   (help/save-all-file-buffers)
   (diff-hl-mode nil))
@@ -257,6 +258,11 @@ Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html
   (interactive)
   (help/save-all-file-buffers)
   (magit-status))
+
+(defun help/safb-org-babel-tangle ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (org-babel-tangle))  
 (require 'ido)
 (use-package flx-ido
              :ensure t
