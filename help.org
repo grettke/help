@@ -2184,7 +2184,7 @@ Perform syntactic analysis all the time.
 (use-package yasnippet
 	     :ensure t
 	     :config
-	     (yas-global-mode 1)
+	     (yas-global-mode t)
 	     (help/diminish 'yas-minor-mode)
 	     (defun help/yas-minor-mode-hook ()
 	       "Personal customizations."
