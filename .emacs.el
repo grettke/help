@@ -213,6 +213,11 @@ Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html
   `(when (eq system-type 'windows-nt)
      ,statement
      ,@statements))
+(help/on-windows
+ (setq shell-file-name "cmdproxy.exe"))
+(help/on-windows
+ (setq w32-lwindow-modifier 'super)
+ (setq w32-rwindow-modifier 'super))
 (use-package smartparens :if nil
              :ensure t
              :config
@@ -299,7 +304,7 @@ Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html
 (setq mouse-wheel-follow-mouse +1)
 (use-package pos-tip
              :ensure t)
-	     (help/on-windows
+(help/on-windows
  (ignore-errors
    (pos-tip-w32-max-width-height)))
 (setq pos-tip-foreground-color "#073642")
@@ -308,7 +313,9 @@ Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html
              :ensure t
              :config
              (projectile-global-mode t)
-             (help/diminish "projectile-mode"))
+             (help/diminish "projectile-mode")
+	     (gcr/on-windows
+	      (setq projectile-indexing-method 'alien)))
 (eval-after-load "projectile"
   '(progn (setq magit-repository-directories (mapcar (lambda (dir)
                                                        (substring dir 0 -1))
@@ -375,6 +382,11 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
 (help/on-gui
  (setq-default cursor-type 'box)
  (setq x-stretch-cursor 1))
+(prefer-coding-system 'utf-8)
+(help/on-gui
+ (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
+ (help/on-windows
+  (set-clipboard-coding-system 'utf-16le-dos)))
 (use-package solarized-theme
   :ensure t
   :config
@@ -387,6 +399,7 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
 (help/on-gui
  (defvar help/font-size 10 "The preferred font size.")
  (help/on-osx (setq help/font-size 17))
+ (help/on-windows (setq gcr/font-size 13))
  (defconst help/font-base "DejaVu Sans Mono" "The preferred font name.")
  (defun help/font-ok-p ()
    "Is the configured font valid?"

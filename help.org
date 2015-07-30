@@ -1234,7 +1234,8 @@ Pull in the =ENVIRONMENT= variables because the GUI version of EMACS does not.
 
 Configure the meta keys.
 
-Enable the =super= key-space:
+Enable the =super= key-space.
+
 #+BEGIN_SRC emacs-lisp
 (help/on-osx
  (setq mac-control-modifier 'control)
@@ -1266,6 +1267,21 @@ Make it easy to evaluate code only when running on Windows.
   `(when (eq system-type 'windows-nt)
      ,statement
      ,@statements))
+#+END_SRC
+
+Provide the proper shell.
+
+#+BEGIN_SRC emacs-lisp
+(help/on-windows
+ (setq shell-file-name "cmdproxy.exe"))
+#+END_SRC
+
+Enable the =super= key-space.
+
+#+BEGIN_SRC emacs-lisp
+(help/on-windows
+ (setq w32-lwindow-modifier 'super)
+ (setq w32-rwindow-modifier 'super))
 #+END_SRC
 
 * Standard Operating Procedure
@@ -1501,7 +1517,9 @@ with Projectile.
              :ensure t
              :config
              (projectile-global-mode t)
-             (help/diminish "projectile-mode"))
+             (help/diminish "projectile-mode")
+	     (gcr/on-windows
+	      (setq projectile-indexing-method 'alien)))
 #+END_SRC
 
 Notify Magit about every working copy that Projectile knows about.
@@ -1660,6 +1678,16 @@ cursor a box and stretch it as wide as the character below it.
  (setq x-stretch-cursor 1))
 #+END_SRC
 
+EMACS used UTF-8 by default. Make copying and pasting easier.
+
+#+BEGIN_SRC emacs-lisp
+(prefer-coding-system 'utf-8)
+(help/on-gui
+ (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
+ (help/on-windows
+  (set-clipboard-coding-system 'utf-16le-dos)))
+#+END_SRC
+
 ** Color Theme
 
 The Solarized theme is the perfect theme for everything. bozhidar's
@@ -1687,6 +1715,7 @@ character wide buffer and make it easy to adjust it.
 (help/on-gui
  (defvar help/font-size 10 "The preferred font size.")
  (help/on-osx (setq help/font-size 17))
+ (help/on-windows (setq gcr/font-size 13))
  (defconst help/font-base "DejaVu Sans Mono" "The preferred font name.")
  (defun help/font-ok-p ()
    "Is the configured font valid?"
