@@ -1496,6 +1496,9 @@ Easily describe just about anything.
 
 ** File Based System
 
+This system uses artifacts stored in files. It tries to update file-stores
+every chance it gets without interrupting the user's flow.
+
 #+BEGIN_SRC emacs-lisp
 (defun help/safb-vc-next-action ()
   (interactive)
