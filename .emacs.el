@@ -253,7 +253,8 @@ Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html
   (wrap-region-add-wrapper "+" "+" nil 'org-mode)
   (help/diminish 'wrap-region-mode)
   (wrap-region-global-mode))
-
+(setq track-eol t)
+(setq line-move-visual nil)
 (global-set-key (kbd "s-r") 'help/describe-thing-in-popup)
 (defun help/safb-vc-next-action ()
   (interactive)

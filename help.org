@@ -1382,6 +1382,15 @@ Easily wrap the current region.
   (wrap-region-global-mode))
 #+END_SRC
 
+If you are on the end of a line, and go up or down, then go to the end of
+line on that new line. Do not account for anything special about the character
+there.
+
+#+BEGIN_SRC emacs-lisp
+(setq track-eol t)
+(setq line-move-visual nil)
+#+END_SRC
+
 ** Describing Objects
 
 Easily describe just about anything.
