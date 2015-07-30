@@ -1455,7 +1455,7 @@ Perhaps educationally there is a character for bowel-movements: 💩.
 
 ** Going to Object
 
-Go to object in the frame quickly.
+Go to any object in the frame quickly.
 
 #+BEGIN_SRC emacs-lisp
 (use-package c avy
