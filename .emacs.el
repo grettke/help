@@ -160,7 +160,7 @@ Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html
 (setq org-src-strip-leading-and-trailing-blank-lines t)
 (setq org-src-window-setup 'current-window)
 (setq org-babel-no-eval-on-ctrl-c-ctrl-c t)
-(define-key org-mode-map (kbd "s-u") #'help/safb-org-babel-tangle)
+(define-key org-mode-map (kbd "s-i") #'help/safb-org-babel-tangle)
 (defmacro help/on-gui (statement &rest statements)
   "Evaluate the enclosed body only when run on GUI."
   `(when (display-graphic-p)

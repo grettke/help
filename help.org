@@ -749,7 +749,7 @@ make it so easy as =C-c C-c=.
 *** Keybindings
 
 #+BEGIN_SRC emacs-lisp
-(define-key org-mode-map (kbd "s-u") #'help/safb-org-babel-tangle)
+(define-key org-mode-map (kbd "s-i") #'help/safb-org-babel-tangle)
 #+END_SRC
 
 * Piano Lessons
