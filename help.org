@@ -1453,9 +1453,9 @@ Perhaps educationally there is a character for bowel-movements: 💩.
   (unicode-fonts-setup))
 #+END_SRC
 
-** Going to Things
+** Going to Objet
 
-Go to anything in the frame quickly.
+Go to object in the frame quickly.
 
 #+BEGIN_SRC emacs-lisp
 (use-package avy
