@@ -1626,6 +1626,143 @@ Future candidates:
 - with-current-buffer
 - writegood-mode
 
+** File-system/directory management (Console)
+
+
+You can use the usual machinery to work with the files. Highlight a region
+and operation selections occur for all files in that region. Commands are
+scheduled, and then executed, upon your command. Files can be viewed in modify
+or read-only mode, too. There is an idea of =mark= in files, which is to select
+them and perform operations on the marked files. There are helper methods for
+most things you can think if like directories or modified-files or whatever,
+meaning you can use regexen to mark whatever you like however you like. If that
+suits you, then don't be afraid of using the regular expression builder
+that is built into EMACS. Bulk marked file operations include additionally
+copying, deleting, creating hard links to, renaming, modifying the mode,
+owner, and group information, changing the time-stamp, listing the marked
+files, compressing them, decrypting, verifying and signing, loading or byte
+compiling them (Lisp files).
+
+=g= updates the current buffer; =s= orders the listing by alpha or date-time.
+
+=find-name-dired= beings the results back into Dired, which is nifty.
+
+Wdired lets you modify files directly via the UI, which is interesting. Image-Dired
+lets you do just that.
+
+=+= creates a new directory. =dired-copy-filename-as-kill= stores the list of
+files you have selected in the kill ring. =dired-compare-directories= lets you
+perform all sorts of directory comparisons, a handy tool that you need once in
+a while but definitely do need.
+#+BEGIN_SRC emacs-lisp
+(defun help/dired-copy-filename ()
+  "Push the path and filename of the file under the point to the kill ring.
+  Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2002-10/msg00556.html'"
+  (interactive)
+  (message "Added %s to kill ring" (kill-new (dired-get-filename))))
+(defun help/dired-copy-path ()
+  "Push the path of the directory under the point to the kill ring."
+  (interactive)
+  (message "Added %s to kill ring" (kill-new default-directory)))
+(setq dired-listing-switches "-alh")
+(setq dired-recursive-deletes  +1)
+(use-package dired-details+
+  :ensure t)
+(setq-default dired-details-hidden-string "")
+(defun help/dired-mode-hook ()
+  "Personal dired customizations."
+  (local-set-key "c" 'help/dired-copy-filename)
+  (local-set-key "]" 'help/dired-copy-path)
+  (diff-hl-dired-mode)
+  (load "dired-x")
+  (turn-on-stripe-buffer-mode)
+  (stripe-listify-buffer))
+(add-hook #'dired-mode-hook #'help/dired-mode-hook)
+#+END_SRC
+
+Try to guess the target directory for operations.
+#+BEGIN_SRC emacs-lisp
+(setq dired-dwim-target t)
+#+END_SRC
+
+After dabbling, something happened that really changed my mind. These three
+articles changed everything: [fn:87e72370: http://www.masteringemacs.org/articles/2014/04/10/dired-shell-commands-find-xargs-replacement/] [fn:d82e40f9: http://www.masteringemacs.org/articles/2011/03/25/working-multiple-files-dired/] [fn:fe52afc4: http://www.masteringemacs.org/articles/2013/10/10/wdired-editable-dired-buffers/].
+They just made the power of Dired so obvious, and so easy to use, that it
+instantly because delightful to use. That was very, very cool. Even though I
+was really, really happy with Finder and Explorer… suddenly it just became so
+obvious and pleasant to use Dired. That is so wild.
+
+Key notes when executing shell commands on file selection…
+
+Substitution:
+- =<cmd> ?= :: 1* calls to cmd, each file a single argument
+- =<cmd> *= :: 1 call to =cmd=, selected list as argument
+- =<cmd> *""= :: have the shell expand the * as a globbing wild-card
+  - Not sure what this means
+
+Synchronicity:
+- =<cmd> …= :: by default commands are called synchronously
+- =<cmd> &= :: execute in parallel
+- =<cmd> ;= :: execute sequentially, asynchronously
+- =<cmd> ;&= :: execute in parallel, asynchronously
+
+Key notes on working with files in multiple directories… use the following:
+
+Use =find= just like you would at the command line and all of the results show
+up in a single Dired buffer that you may work with just like you would any other
+file appearing in a Dired buffer. The abstraction here becomes so obvious, you
+may ask yourself why you never considered such a thing /before/ now (as I did):
+#+BEGIN_SRC emacs-lisp
+(use-package find-dired
+  :ensure t
+  :config
+  (setq find-ls-option '("-print0 | xargs -0 ls -ld" . "-ld")))
+#+END_SRC
+
+Noting that:
+- =find-dired= :: is the general use case
+- =find-name-dired= :: is for simple, single string cases
+
+And if you want to use the faster Elisp version, that uses lisp regex, use:
+- =find-lisp-find-dired= :: for anything
+- =find-lisp-find-dired-subdirectories= :: for only directories
+
+Key notes on working with editable buffers…
+
+As the author notes, you probably already instinctually knew what is possible.
+After reading his brief and concise exposition, it would be hard /not/ to
+intuit what is possible! The options are big if you make a writable file buffer.
+Think about using multiple cursors. Done? Well, that is a no-brainer. Once you
+grok multiple cursors just =find-dired= what you need and then do what you need
+to do to it. Very cool.
+
+- =dired-toggle-read-only, C-x C-q= :: cycle between dired-mode and wdired-mode
+- =wdired-finish-edit, C-c C-c= :: commit your changes
+- =wdired-abort-changes, C-c ESC= :: revert your changes
+
+#+BEGIN_SRC emacs-lisp
+(use-package wdired
+  :ensure t
+  :config
+  (setq wdired-allow-to-change-permissions t)
+  (setq wdired-allow-to-redirect-links t)
+  (setq wdired-use-interactive-rename +t)
+  (setq wdired-confirm-overwrite t)
+  (setq wdired-use-dired-vertical-movement 'sometimes))
+#+END_SRC
+
+When you selected a bunch of files or directories, you /may/ want to communicate
+somewhere your selection somehow. The simplest way to do this is to utilize
+=dired-copy-filename-as-kill=. What a nice idea, and its default binding is =w=.
+
+Since I started using a menu bar again, and wanting to get Imenu really
+exercised, Dired in Imenu seems like an obvious choice.
+
+#+BEGIN_SRC emacs-lisp
+(use-package dired-imenu
+  :ensure t)
+#+END_SRC
+
 ** Finding Objects
 
 Access nearly every object available in this system from one place.

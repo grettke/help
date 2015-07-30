@@ -574,6 +574,45 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
                        ">"))
       (message msg)
       (help/on-gui (alert msg :title "org-mode")))))
+(defun help/dired-copy-filename ()
+  "Push the path and filename of the file under the point to the kill ring.
+  Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2002-10/msg00556.html'"
+  (interactive)
+  (message "Added %s to kill ring" (kill-new (dired-get-filename))))
+(defun help/dired-copy-path ()
+  "Push the path of the directory under the point to the kill ring."
+  (interactive)
+  (message "Added %s to kill ring" (kill-new default-directory)))
+(setq dired-listing-switches "-alh")
+(setq dired-recursive-deletes  +1)
+(use-package dired-details+
+  :ensure t)
+(setq-default dired-details-hidden-string "")
+(defun help/dired-mode-hook ()
+  "Personal dired customizations."
+  (local-set-key "c" 'help/dired-copy-filename)
+  (local-set-key "]" 'help/dired-copy-path)
+  (diff-hl-dired-mode)
+  (load "dired-x")
+  (turn-on-stripe-buffer-mode)
+  (stripe-listify-buffer))
+(add-hook #'dired-mode-hook #'help/dired-mode-hook)
+(setq dired-dwim-target t)
+(use-package find-dired
+  :ensure t
+  :config
+  (setq find-ls-option '("-print0 | xargs -0 ls -ld" . "-ld")))
+
+(use-package wdired
+  :ensure t
+  :config
+  (setq wdired-allow-to-change-permissions t)
+  (setq wdired-allow-to-redirect-links t)
+  (setq wdired-use-interactive-rename +t)
+  (setq wdired-confirm-overwrite t)
+  (setq wdired-use-dired-vertical-movement 'sometimes))
+(use-package dired-imenu
+  :ensure t)
 (require 'ido)
 (use-package flx-ido
              :ensure t
