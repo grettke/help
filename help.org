@@ -1391,7 +1391,7 @@ making such breaking changes.
 (setq desktop-restore-eager 10)
 #+END_SRC
 
-Prefer buffers ot be 80 characters wide.
+Prefer buffers to be 80 characters wide.
 
 #+BEGIN_SRC emacs-lisp
 (setq-default fill-column 80)
