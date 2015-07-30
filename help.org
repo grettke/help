@@ -1342,6 +1342,23 @@ Prefer buffers ot be 80 characters wide.
 (setq-default fill-column 80)
 #+END_SRC
 
+Give buffers backed by identically named files distinguishable names.
+
+#+BEGIN_SRC emacs-lisp
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
+#+END_SRC
+
+Provide expected "Undo" functionality.
+
+#+BEGIN_SRC emacs-lisp
+(use-package undo-tree
+  :ensure t
+  :config
+  (global-undo-tree-mode 1)
+  (help/diminish 'undo-tree-mode))
+#+END_SRC
+
 ** Describing Objects
 
 Easily describe just about anything.

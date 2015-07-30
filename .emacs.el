@@ -234,6 +234,13 @@ Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html
 (desktop-save-mode t)
 (setq desktop-restore-eager 10)
 (setq-default fill-column 80)
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
+(use-package undo-tree
+  :ensure t
+  :config
+  (global-undo-tree-mode 1)
+  (help/diminish 'undo-tree-mode))
 (global-set-key (kbd "s-r") 'help/describe-thing-in-popup)
 (defun help/safb-vc-next-action ()
   (interactive)
