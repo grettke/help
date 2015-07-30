@@ -1494,6 +1494,15 @@ Easily describe just about anything.
 (global-set-key (kbd "s-r") 'help/describe-thing-in-popup)
 #+END_SRC
 
+** Encryption
+
+Easy to use file-based AES encryption.
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'load-path (getenv "CCRYPT"))
+(require 'ps-ccrypt "ps-ccrypt.el")
+#+END_SRC
+
 ** File Based System
 
 This system uses artifacts stored in files. It tries to update file-stores
