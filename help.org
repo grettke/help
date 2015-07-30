@@ -188,24 +188,29 @@ LS captures arguments when this is used as before advice."
         (save-buffer)))))
 
 (defun help/describe-thing-in-popup ()
-    "Display help information on the current symbol.
+  "Display help information on the current symbol.
 
 Attribution: URL `http://www.emacswiki.org/emacs/PosTip'
 Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html'"
-    (interactive)
-    (let* ((thing (symbol-at-point))
-           (help-xref-following t)
-           (description (with-temp-buffer
-                          (help-mode)
-                          (help-xref-interned thing)
-                          (buffer-string))))
-      (help/on-gui (pos-tip-show description nil nil nil 300))
-      (help/not-on-gui (popup-tip description
-                                 :point (point)
-                                 :around t
-                                 :height 30
-                                 :scroll-bar t
-                                 :margin t))))
+  (interactive)
+  (let* ((thing (symbol-at-point))
+	 (help-xref-following t)
+	 (description (with-temp-buffer
+			(help-mode)
+			(help-xref-interned thing)
+			(buffer-string))))
+    (help/on-gui (pos-tip-show description nil nil nil 300))
+    (help/not-on-gui (popup-tip description
+				:point (point)
+				:around t
+				:height 30
+				:scroll-bar t
+				:margin t))))
+
+(defun help/kill-other-buffers ()
+  "Kill all other buffers."
+  (interactive)
+  (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
 #+END_SRC
 
 ** Tangling
@@ -1978,10 +1983,12 @@ Line numbers make documents easier to read. Account for Literate documents.
 (add-hook #'prog-mode-hook #'linum-mode)
 #+END_SRC
 
-Indent at every opportunity and automatically.
+Indent at every opportunity and automatically. Verify that it makes sense
+for the mode. If the mode doesn't extend Prog-Mode then investigate why not.
 
 #+BEGIN_SRC emacs-lisp
 (use-package aggressive-indent
-  :ensure t)
-(add-hook #'prog-mode-hook #'aggressive-indent-mode)
+  :ensure t
+  :config
+  (add-hook #'prog-mode-hook #'aggressive-indent-mode))
 #+END_SRC
