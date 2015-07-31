@@ -972,6 +972,13 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
   (setq solarized-use-more-italic nil)
   (setq solarized-emphasize-indicators nil)
   (load-theme 'solarized-dark))
+(setq comint-scroll-to-bottom-on-input 'this)
+(setq comint-scroll-to-bottom-on-output 'others)
+(setq comint-move-point-for-output 'others)
+(setq comint-show-maximum-output t)
+(setq comint-scroll-show-maximum-output t)
+(setq comint-move-point-for-output t)
+(setq comint-prompt-read-only nil)
 (help/on-gui
  (defvar help/font-size 10 "The preferred font size.")
  (help/on-osx (setq help/font-size 17))

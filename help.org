@@ -2436,6 +2436,31 @@ release. It is soft and gentle yet easy to read in any situation.
   (load-theme 'solarized-dark))
 #+END_SRC
 
+** Comint
+
+=comint-mode= is only maybe the second most important thing for making Emacs
+really, really special.
+
+#+begin_src emacs-lisp
+(setq comint-scroll-to-bottom-on-input 'this)
+(setq comint-scroll-to-bottom-on-output 'others)
+(setq comint-move-point-for-output 'others)
+(setq comint-show-maximum-output t)
+(setq comint-scroll-show-maximum-output t)
+(setq comint-move-point-for-output t)
+#+end_src
+
+This configuration had been working fine for a long time. The intent was for it
+to be crystal clear that the prompt line in comint buffers would be read only.
+This turned out to be a mistake; though I am not sure why, when, or how it
+became a mistake. Nonetheless, this should be left alone. The way the issue here
+manifested was that all ℝ buffers opened by =ess= were 100% read only which
+obviously is a *big issue* if you actually want to use! ROFL
+
+#+BEGIN_SRC emacs-lisp
+(setq comint-prompt-read-only nil)
+#+END_SRC
+
 ** Font
 
 The best programming font is Deja Vu Sans Mono because it sans-serif and
