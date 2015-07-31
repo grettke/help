@@ -475,7 +475,11 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (help/diminish "smartparens-mode"))
 (desktop-save-mode t)
 (setq desktop-restore-eager 10)
-(setq-default fill-column 80)
+(use-package fill-column-indicator
+  :ensure t
+  :config
+  (setq-default fill-column 80)
+  (add-hook #'text-mode-hook #'fci-mode))
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 (use-package undo-tree
