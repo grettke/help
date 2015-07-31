@@ -662,6 +662,14 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   :config
   (key-chord-define-global "df" #'avy-goto-word-1)
   (key-chord-define-global "DF" #'avy-pop-mark))
+(use-package writegood-mode
+  :ensure t)
+(use-package langtool
+  :ensure t
+  :config
+  (setq langtool-language-tool-jar (concat (getenv "EELIB") "/LanguageTool-2.8/languagetool-commandline.jar"))
+  (setq langtool-mother-tongue "en")
+  (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java")))
 (use-package fuzzy
   :ensure t)
 (use-package auto-complete
@@ -1016,12 +1024,31 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
 (define-key help/vc-map "d" #'help/safb-vc-diff)
 (define-key help/vc-map "u" #'help/safb-vc-revert)
 (global-set-key (kbd "s-f") #'help/safb-help-vc-next-action)
+(key-chord-define-global "fg" #'goto-line)
+(key-chord-define-global "FG" #'pop-to-mark-command)
+(global-set-key (kbd "C-a") #'beginning-of-line-dwim)
+(global-set-key (kbd "M-s p") 'gcr/occur-dwim)
 (key-chord-define-global "JK" (lambda () (interactive) (other-window 1)))
-(key-chord-define-global "qi" 'help/comment-or-uncomment)
-(key-chord-define-global "f9" 'help/util-cycle)
-(global-set-key (kbd "s-:") 'my-eval-expression)
-(help/not-on-gui (global-set-key (kbd "s-RET") 'help/smart-open-line))
-(help/on-gui (global-set-key (kbd "s-<return>") 'help/smart-open-line))
+(key-chord-define-global "qi" #'help/comment-or-uncomment)
+(key-chord-define-global "qp" #'ispell)
+(key-chord-define-global "qo" #'ispell-word)
+(key-chord-define-global "wm" #'writegood-mode)
+(key-chord-define-global "wl" #'writegood-grade-level)
+(key-chord-define-global "wz" #'writegood-reading-ease)
+(define-prefix-command 'gcr/langtool-map)
+(key-chord-define-global "qk" #'gcr/langtool-map)
+(define-key gcr/langtool-map "c" #'langtool-check-buffer)
+(define-key gcr/langtool-map "C" #'langtool-correct-buffer)
+(define-key gcr/langtool-map "j" #'langtool-goto-previous-error)
+(define-key gcr/langtool-map "k" #'langtool-show-message-at-point)
+(define-key gcr/langtool-map "l" #'langtool-goto-next-error)
+(define-key gcr/langtool-map "q" #'langtool-check-done)
+(key-chord-define-global "f9" #'help/util-cycle)
+(global-set-key (kbd "s-:") #'my-eval-expression)
+(help/not-on-gui (global-set-key (kbd "s-RET") #'help/smart-open-line))
+(help/on-gui (global-set-key (kbd "s-<return>") #'help/smart-open-line))
+(global-set-key (kbd "M-n") (kbd "C-u 1 C-v"))
+(global-set-key (kbd "M-p") (kbd "C-u 1 M-v"))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

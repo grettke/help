@@ -1172,23 +1172,74 @@ VC activities.
 (global-set-key (kbd "s-f") #'help/safb-help-vc-next-action)
 #+END_SRC
 
+Go to a line.
+
+#+BEGIN_SRC emacs-lisp
+(key-chord-define-global "fg" #'goto-line)
+#+END_SRC
+
+Pop the mark back.
+
+#+BEGIN_SRC emacs-lisp
+(key-chord-define-global "FG" #'pop-to-mark-command)
+#+END_SRC
+
+Do the /right thing/ for getting to the start of the line.
+
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-a") #'beginning-of-line-dwim)
+#+END_SRC
+
+Occur has 3 cases. I like to use it to explore the unknown.
+
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "M-s p") 'gcr/occur-dwim)
+#+END_SRC
+
 *** Left & Right Side
 
 #+BEGIN_SRC emacs-lisp
 (key-chord-define-global "JK" (lambda () (interactive) (other-window 1)))
-(key-chord-define-global "qi" 'help/comment-or-uncomment)
+(key-chord-define-global "qi" #'help/comment-or-uncomment)
+#+END_SRC
+
+Make =ispell= accessible.
+
+#+BEGIN_SRC emacs-lisp
+(key-chord-define-global "qp" #'ispell)
+(key-chord-define-global "qo" #'ispell-word)
+#+END_SRC
+
+Writegood too.
+
+#+BEGIN_SRC emacs-lisp
+(key-chord-define-global "wm" #'writegood-mode)
+(key-chord-define-global "wl" #'writegood-grade-level)
+(key-chord-define-global "wz" #'writegood-reading-ease)
+#+END_SRC
+
+Use the default Langtool bindings.
+#+BEGIN_SRC emacs-lisp
+(define-prefix-command 'gcr/langtool-map)
+(key-chord-define-global "qk" #'gcr/langtool-map)
+(define-key gcr/langtool-map "c" #'langtool-check-buffer)
+(define-key gcr/langtool-map "C" #'langtool-correct-buffer)
+(define-key gcr/langtool-map "j" #'langtool-goto-previous-error)
+(define-key gcr/langtool-map "k" #'langtool-show-message-at-point)
+(define-key gcr/langtool-map "l" #'langtool-goto-next-error)
+(define-key gcr/langtool-map "q" #'langtool-check-done)
 #+END_SRC
 
 Toggle utility buffers
 
 #+BEGIN_SRC emacs-lisp
-(key-chord-define-global "f9" 'help/util-cycle)
+(key-chord-define-global "f9" #'help/util-cycle)
 #+END_SRC
 
 Use a nicer =eval-expression= approach.
 
 #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "s-:") 'my-eval-expression)
+(global-set-key (kbd "s-:") #'my-eval-expression)
 #+END_SRC
 
 *** Right Side
@@ -1197,10 +1248,18 @@ Try to reserve the right side for mode-specific activities.
 
 Return is an exception.
 
-Do smart new line inside, indenting given the mode:
+Do smart new line inside, indenting given the mode.
+
 #+BEGIN_SRC emacs-lisp
-(help/not-on-gui (global-set-key (kbd "s-RET") 'help/smart-open-line))
-(help/on-gui (global-set-key (kbd "s-<return>") 'help/smart-open-line))
+(help/not-on-gui (global-set-key (kbd "s-RET") #'help/smart-open-line))
+(help/on-gui (global-set-key (kbd "s-<return>") #'help/smart-open-line))
+#+END_SRC
+
+Scroll the whole buffer by one line keeping the cursor with it.
+
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "M-n") (kbd "C-u 1 C-v"))
+(global-set-key (kbd "M-p") (kbd "C-u 1 M-v"))
 #+END_SRC
 
 * Special Operating Procedure
@@ -1903,6 +1962,22 @@ Go to any object in the frame quickly.
   :config
   (key-chord-define-global "df" #'avy-goto-word-1)
   (key-chord-define-global "DF" #'avy-pop-mark))
+#+END_SRC
+
+** Grammar
+
+#+BEGIN_SRC emacs-lisp
+(use-package writegood-mode
+  :ensure t)
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+(use-package langtool
+  :ensure t
+  :config
+  (setq langtool-language-tool-jar (concat (getenv "EELIB") "/LanguageTool-2.8/languagetool-commandline.jar"))
+  (setq langtool-mother-tongue "en")
+  (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java")))
 #+END_SRC
 
 ** Intellisense (Auto Completion)
