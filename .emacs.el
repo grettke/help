@@ -652,6 +652,10 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   :config
   (unicode-fonts-setup))
 (global-font-lock-mode t)
+(use-package pretty-mode
+  :ensure t
+  :config
+  (global-font-lock-mode t))
 (use-package avy
   :ensure t
   :config

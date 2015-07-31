@@ -1872,6 +1872,15 @@ Activate font locking everywhere possible.
 (global-font-lock-mode t)
 #+END_SRC
 
+Visualize ASCII values as their most likely Unicode representation.
+
+#+BEGIN_SRC emacs-lisp
+(use-package pretty-mode
+  :ensure t
+  :config
+  (global-font-lock-mode t))
+#+END_SRC
+
 ** Going to Objects
 
 Go to any object in the frame quickly.
@@ -1883,7 +1892,6 @@ Go to any object in the frame quickly.
   (key-chord-define-global "df" #'avy-goto-word-1)
   (key-chord-define-global "DF" #'avy-pop-mark))
 #+END_SRC
-
 
 ** Intellisense (Auto Completion)
 
