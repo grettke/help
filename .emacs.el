@@ -927,7 +927,6 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
 (help/on-gui
  (define-key org-mode-map (kbd "<return>") 'org-return-indent)
  (define-key org-mode-map (kbd "C-M-<return>") 'electric-indent-just-newline))
-
 (define-key org-mode-map (kbd "s-j") #'org-babel-next-src-block)
 (define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
 (define-key org-mode-map (kbd "s-i") #'help/safb-org-babel-tangle)
@@ -935,6 +934,7 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
 (define-key org-mode-map (kbd "s-o") #'org-babel-execute-maybe)
 (define-key org-mode-map (kbd "s-;") #'org-babel-demarcate-block)
 (define-key org-mode-map (kbd "s-p") #'org-babel-view-src-block-info)
+(define-key org-src-mode-map (kbd "s-l") #'org-edit-src-exit)
 (add-hook #'text-mode-hook #'linum-mode)
 (setq ring-bell-function 'ignore)
 (setq visible-bell t)

@@ -2977,7 +2977,6 @@ in mind, RETURN is bound to that now. Now ALEC has four different kinds of
 (help/on-gui
  (define-key org-mode-map (kbd "<return>") 'org-return-indent)
  (define-key org-mode-map (kbd "C-M-<return>") 'electric-indent-just-newline))
-
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp
@@ -2988,4 +2987,10 @@ in mind, RETURN is bound to that now. Now ALEC has four different kinds of
 (define-key org-mode-map (kbd "s-o") #'org-babel-execute-maybe)
 (define-key org-mode-map (kbd "s-;") #'org-babel-demarcate-block)
 (define-key org-mode-map (kbd "s-p") #'org-babel-view-src-block-info)
+#+END_SRC
+
+Make =s-l= do the same thing to leave the Source-Block-Buffer.
+
+#+BEGIN_SRC emacs-lisp
+(define-key org-src-mode-map (kbd "s-l") #'org-edit-src-exit)
 #+END_SRC
