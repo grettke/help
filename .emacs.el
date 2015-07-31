@@ -422,6 +422,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   :config
   (key-chord-mode t)
   (setq key-chord-two-keys-delay 0.1))
+(setq echo-keystrokes 0.02)
 (use-package dash
   :ensure t
   :config
