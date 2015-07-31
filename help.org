@@ -2526,6 +2526,14 @@ The tool-bar is helpful for new users. Isn't the argument funny?
 (tool-bar-mode -1)
 #+END_SRC
 
+** Help
+
+Display it, learn what you wish, and move on by closing the buffer.
+
+#+BEGIN_SRC emacs-lisp
+(setq help-window-select t)
+#+END_SRC
+
 ** Pointer
 
 Hide the pointer when typing.

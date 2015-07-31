@@ -1017,6 +1017,7 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
  (help/update-font))
 (scroll-bar-mode 0)
 (tool-bar-mode -1)
+(setq help-window-select t)
 (setq make-pointer-invisible t)
 (use-package diff-hl
   :ensure t)
@@ -1054,17 +1055,3 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
 (help/on-gui (global-set-key (kbd "s-<return>") #'help/smart-open-line))
 (global-set-key (kbd "M-n") (kbd "C-u 1 C-v"))
 (global-set-key (kbd "M-p") (kbd "C-u 1 M-v"))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
