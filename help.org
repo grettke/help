@@ -1165,7 +1165,6 @@ VC activities.
 #+BEGIN_SRC emacs-lisp
 (define-prefix-command 'help/vc-map)
 (global-set-key (kbd "s-t") #'help/vc-map)
-(define-key help/vc-map "h" #'help/safb-diff-hl-mode)
 (define-key help/vc-map "e" #'help/safb-vc-ediff)
 (define-key help/vc-map "d" #'help/safb-vc-diff)
 (define-key help/vc-map "u" #'help/safb-vc-revert)
@@ -1668,11 +1667,6 @@ use than advice.
   (interactive)
   (help/save-all-file-buffers)
   (help/vc-next-action))
-
-(defun help/safb-diff-hl-mode ()
-  (interactive)
-  (help/save-all-file-buffers)
-  (diff-hl-mode nil))
 
 (defun help/safb-vc-ediff ()
   (interactive)
@@ -2504,13 +2498,11 @@ Hide the pointer when typing.
 
 ** Version Control
 
-Provide status indicators.
+Provide VC file status indicators.
 
 #+BEGIN_SRC emacs-lisp
 (use-package diff-hl
-  :ensure t
-  :config
-  (global-diff-hl-mode))
+  :ensure t)
 #+END_SRC
 
 ** Window

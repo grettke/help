@@ -547,11 +547,6 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (help/save-all-file-buffers)
   (help/vc-next-action))
 
-(defun help/safb-diff-hl-mode ()
-  (interactive)
-  (help/save-all-file-buffers)
-  (diff-hl-mode nil))
-
 (defun help/safb-vc-ediff ()
   (interactive)
   (help/save-all-file-buffers)
@@ -1015,14 +1010,11 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
 (tool-bar-mode -1)
 (setq make-pointer-invisible t)
 (use-package diff-hl
-  :ensure t
-  :config
-  (global-diff-hl-mode))
+  :ensure t)
 (menu-bar-mode t)
 (winner-mode t)
 (define-prefix-command 'help/vc-map)
 (global-set-key (kbd "s-t") #'help/vc-map)
-(define-key help/vc-map "h" #'help/safb-diff-hl-mode)
 (define-key help/vc-map "e" #'help/safb-vc-ediff)
 (define-key help/vc-map "d" #'help/safb-vc-diff)
 (define-key help/vc-map "u" #'help/safb-vc-revert)
