@@ -2623,11 +2623,36 @@ for the mode. If the mode doesn't extend Prog-Mode then investigate why.
   :noweb-ref: Hacking-Org-Mode
   :END:
 
+When source blocks are evaluated, their results get stored in a result area,
+typically for display. If the results are small, they are displayed with colons
+instead of an =example= block. Instead, *always* place them in an
+example block. This makes exports more consistent and other Org-Mode features seem
+to behave more predictably.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-babel-min-lines-for-block-output 0)
+#+END_SRC
+
 Use Yasnippets.
 
 #+BEGIN_SRC emacs-lisp
 (add-to-list #'yas-snippet-dirs "~/src/yasnippet-org-mode")
 (yas-reload-all)
+#+END_SRC
+
+When Source-Block evaluation results are inserted try to use the name or cache-id.
+If neither are present, the =RESULTS= block becomes a =NAME= "results" block.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-babel-results-keyword "NAME")
+#+END_SRC
+
+Configure Org-Mode to manage it's Source-Block backed buffers the same as the
+rest of this system.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-edit-src-auto-save-idle-delay 0)
+(setq org-edit-src-turn-on-auto-save nil)
 #+END_SRC
 
 Update in-buffer images after Source-Block execution. This is a programming task.
