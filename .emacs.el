@@ -280,7 +280,7 @@ SRC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.ht
   (call-interactively #'self-insert-command)
   (let ((ppss (syntax-ppss)))
     (unless (or (elt ppss 3)
-		(elt ppss 4))
+                (elt ppss 4))
       (insert "'"))))
 
 (defun help/chs ()
@@ -305,7 +305,7 @@ Attribution Nikolaj Schumacher: URL `https://lists.gnu.org/archive/html/help-gnu
   "Attribution URL: `https://iqbalansari.github.io/blog/2014/12/07/automatically-create-parent-directories-on-visiting-a-new-file-in-emacs/'"
   (let ((parent-directory (file-name-directory buffer-file-name)))
     (when (and (not (file-exists-p parent-directory))
-	       (y-or-n-p (format "Directory `%s' does not exist. Create it?" parent-directory)))
+               (y-or-n-p (format "Directory `%s' does not exist. Create it?" parent-directory)))
       (make-directory parent-directory t))))
 
 (defun help/occur-dwim ()
@@ -502,6 +502,10 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   :ensure t)
 (setq sentence-end-double-space nil)
 (add-hook #'write-file-hooks #'help/delete-trailing-whitespace)
+(use-package expand-region
+  :ensure t
+  :config
+  (global-set-key (kbd "s-d") #'er/expand-region))
 (require 'hideshow)
 (setq hs-hide-comments-when-hiding-all t)
 (setq hs-isearch-open t)
@@ -815,16 +819,16 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
              (add-hook 'after-init-hook #'global-flycheck-mode)
              (help/diminish "flycheck-mode"))
 (use-package yasnippet
-	     :ensure t
-	     :config
-	     (yas-global-mode t)
-	     (help/diminish 'yas-minor-mode)
-	     (defun help/yas-minor-mode-hook ()
-	       "Personal customizations."
-	       (define-key yas-minor-mode-map (kbd "<tab>") nil)
-	       (define-key yas-minor-mode-map (kbd "TAB") nil)
-	       (define-key yas-minor-mode-map (kbd "s-5") 'yas-expand))
-	     (add-hook #'yas-minor-mode-hook #'help/yas-minor-mode-hook))
+             :ensure t
+             :config
+             (yas-global-mode t)
+             (help/diminish 'yas-minor-mode)
+             (defun help/yas-minor-mode-hook ()
+               "Personal customizations."
+               (define-key yas-minor-mode-map (kbd "<tab>") nil)
+               (define-key yas-minor-mode-map (kbd "TAB") nil)
+               (define-key yas-minor-mode-map (kbd "s-5") 'yas-expand))
+             (add-hook #'yas-minor-mode-hook #'help/yas-minor-mode-hook))
 (use-package magit
              :ensure t
              :config
@@ -852,10 +856,7 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
 
 (dolist (h help/lisp-modes)
   (when (not (member h '(ielm-mode-hook)))
-    (add-hook h #'smartparens-strict-mode)
-    (add-hook h (function (lambda ()
-                            (add-hook 'local-write-file-hooks
-				      'check-parens))))))
+    (add-hook h #'smartparens-strict-mode)))
 (setq org-babel-min-lines-for-block-output 0)
 (add-to-list #'yas-snippet-dirs "~/src/yasnippet-org-mode")
 (yas-reload-all)
@@ -961,10 +962,7 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
  (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
  (help/on-windows
   (set-clipboard-coding-system 'utf-16le-dos)))
-(use-package expand-region
-  :ensure t
-  :config
-  (global-set-key (kbd "s-d") #'er/expand-region))
+(global-hl-line-mode t)
 (use-package solarized-theme
   :ensure t
   :config

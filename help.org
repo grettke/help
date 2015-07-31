@@ -430,7 +430,7 @@ SRC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.ht
   (call-interactively #'self-insert-command)
   (let ((ppss (syntax-ppss)))
     (unless (or (elt ppss 3)
-		(elt ppss 4))
+                (elt ppss 4))
       (insert "'"))))
 
 (defun help/chs ()
@@ -455,7 +455,7 @@ Attribution Nikolaj Schumacher: URL `https://lists.gnu.org/archive/html/help-gnu
   "Attribution URL: `https://iqbalansari.github.io/blog/2014/12/07/automatically-create-parent-directories-on-visiting-a-new-file-in-emacs/'"
   (let ((parent-directory (file-name-directory buffer-file-name)))
     (when (and (not (file-exists-p parent-directory))
-	       (y-or-n-p (format "Directory `%s' does not exist. Create it?" parent-directory)))
+               (y-or-n-p (format "Directory `%s' does not exist. Create it?" parent-directory)))
       (make-directory parent-directory t))))
 
 (defun help/occur-dwim ()
@@ -1555,6 +1555,16 @@ Ban white-space at end of lines, globally.
 (add-hook #'write-file-hooks #'help/delete-trailing-whitespace)
 #+END_SRC
 
+Intelligently select the current char, then word, then object, then block,
+then document.
+
+#+BEGIN_SRC emacs-lisp
+(use-package expand-region
+  :ensure t
+  :config
+  (global-set-key (kbd "s-d") #'er/expand-region))
+#+END_SRC
+
 ** Code Folding
 
 #+BEGIN_SRC emacs-lisp
@@ -2297,16 +2307,16 @@ Perform syntactic analysis all the time.
 
 #+BEGIN_SRC emacs-lisp
 (use-package yasnippet
-	     :ensure t
-	     :config
-	     (yas-global-mode t)
-	     (help/diminish 'yas-minor-mode)
-	     (defun help/yas-minor-mode-hook ()
-	       "Personal customizations."
-	       (define-key yas-minor-mode-map (kbd "<tab>") nil)
-	       (define-key yas-minor-mode-map (kbd "TAB") nil)
-	       (define-key yas-minor-mode-map (kbd "s-5") 'yas-expand))
-	     (add-hook #'yas-minor-mode-hook #'help/yas-minor-mode-hook))
+             :ensure t
+             :config
+             (yas-global-mode t)
+             (help/diminish 'yas-minor-mode)
+             (defun help/yas-minor-mode-hook ()
+               "Personal customizations."
+               (define-key yas-minor-mode-map (kbd "<tab>") nil)
+               (define-key yas-minor-mode-map (kbd "TAB") nil)
+               (define-key yas-minor-mode-map (kbd "s-5") 'yas-expand))
+             (add-hook #'yas-minor-mode-hook #'help/yas-minor-mode-hook))
 #+END_SRC
 
 ** Version Control
@@ -2399,14 +2409,10 @@ EMACS used UTF-8 by default. Make copying and pasting easier.
   (set-clipboard-coding-system 'utf-16le-dos)))
 #+END_SRC
 
-Intelligently select the current char, then word, then object, then block,
-then document.
+Make it very easy to see the line with the cursor.
 
 #+BEGIN_SRC emacs-lisp
-(use-package expand-region
-  :ensure t
-  :config
-  (global-set-key (kbd "s-d") #'er/expand-region))
+(global-hl-line-mode t)
 #+END_SRC
 
 ** Color Theme
@@ -2700,10 +2706,7 @@ for the mode. If the mode doesn't extend Prog-Mode then investigate why.
 
 (dolist (h help/lisp-modes)
   (when (not (member h '(ielm-mode-hook)))
-    (add-hook h #'smartparens-strict-mode)
-    (add-hook h (function (lambda ()
-                            (add-hook 'local-write-file-hooks
-				      'check-parens))))))
+    (add-hook h #'smartparens-strict-mode)))
 #+END_SRC
 
 ** Org-Mode
