@@ -533,10 +533,10 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (add-hook 'focus-out-hook #'help/save-all-file-buffers)
 (advice-add #'save-buffers-kill-terminal :before #'help/save-all-file-buffers)
 (global-auto-revert-mode 1)
-(defun help/safb-vc-next-action ()
+(defun help/safb-help-vc-next-action ()
   (interactive)
   (help/save-all-file-buffers)
-  (vc-next-action nil))
+  (help/vc-next-action))
 
 (defun help/safb-diff-hl-mode ()
   (interactive)
@@ -846,8 +846,12 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
     (add-hook h (function (lambda ()
                             (add-hook 'local-write-file-hooks
 				      'check-parens))))))
+(setq org-babel-min-lines-for-block-output 0)
 (add-to-list #'yas-snippet-dirs "~/src/yasnippet-org-mode")
 (yas-reload-all)
+(setq org-babel-results-keyword "NAME")
+(setq org-edit-src-auto-save-idle-delay 0)
+(setq org-edit-src-turn-on-auto-save nil)
 (defun help/org-babel-after-execute-hook ()
   "Personal settings for the `org-babel-after-execute-hook'.
 
@@ -908,6 +912,15 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
          (file-name (buffer-file-name)))
     (org-edit-src-code nil buff-name)
     (setq buffer-file-name file-name)))
+(defun help/vc-next-action ()
+  "If in org source block, exit it before `vc-next-action'."
+  (interactive)
+  (when (condition-case nil
+            (org-src-in-org-buffer)
+          (error nil))
+    (org-edit-src-exit))
+  (vc-next-action nil))
+(setq org-edit-src-code nil)
 (global-set-key (kbd "s-j") #'org-babel-next-src-block)
 (global-set-key (kbd "s-k") #'org-babel-previous-src-block)
 (global-set-key (kbd "s-i") #'help/safb-org-babel-tangle)
@@ -994,7 +1007,7 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
 (define-key help/vc-map "e" #'help/safb-vc-ediff)
 (define-key help/vc-map "d" #'help/safb-vc-diff)
 (define-key help/vc-map "u" #'help/safb-vc-revert)
-(global-set-key (kbd "s-f") #'help/safb-vc-next-action)
+(global-set-key (kbd "s-f") #'help/safb-help-vc-next-action)
 (key-chord-define-global "JK" (lambda () (interactive) (other-window 1)))
 (key-chord-define-global "qi" 'help/comment-or-uncomment)
 (key-chord-define-global "f9" 'help/util-cycle)

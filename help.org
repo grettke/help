@@ -1169,7 +1169,7 @@ VC activities.
 (define-key help/vc-map "e" #'help/safb-vc-ediff)
 (define-key help/vc-map "d" #'help/safb-vc-diff)
 (define-key help/vc-map "u" #'help/safb-vc-revert)
-(global-set-key (kbd "s-f") #'help/safb-vc-next-action)
+(global-set-key (kbd "s-f") #'help/safb-help-vc-next-action)
 #+END_SRC
 
 - =s-e= ~help/safb-magit-status~
@@ -1579,10 +1579,10 @@ Save all file befores before common activities. Functions are easier to
 use than advice.
 
 #+BEGIN_SRC emacs-lisp
-(defun help/safb-vc-next-action ()
+(defun help/safb-help-vc-next-action ()
   (interactive)
   (help/save-all-file-buffers)
-  (vc-next-action nil))
+  (help/vc-next-action))
 
 (defun help/safb-diff-hl-mode ()
   (interactive)
@@ -2913,6 +2913,29 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
          (file-name (buffer-file-name)))
     (org-edit-src-code nil buff-name)
     (setq buffer-file-name file-name)))
+#+END_SRC
+
+Configure the system to successfully use ~vc-next-action~ while editing a
+Source-Block. Before perfoming the edit, check if it is Org-Mode and
+exit the Source-Block Buffer (SBB). If this system stays in the SBB
+when calling ~vc-next-action~ the entire contents of the buffer are escaped
+as Org-Mode source code upon returning to the source buffer (this).
+
+#+BEGIN_SRC emacs-lisp
+(defun help/vc-next-action ()
+  "If in org source block, exit it before `vc-next-action'."
+  (interactive)
+  (when (condition-case nil
+            (org-src-in-org-buffer)
+          (error nil))
+    (org-edit-src-exit))
+  (vc-next-action nil))
+#+END_SRC
+
+Never use the original version.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-edit-src-code nil)
 #+END_SRC
 
 *** Keybindings
