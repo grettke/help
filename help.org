@@ -1478,7 +1478,11 @@ making such breaking changes.
 Prefer buffers to be 80 characters wide.
 
 #+BEGIN_SRC emacs-lisp
-(setq-default fill-column 80)
+(use-package fill-column-indicator
+  :ensure t
+  :config
+  (setq-default fill-column 80)
+  (add-hook #'text-mode-hook #'fci-mode))
 #+END_SRC
 
 Give buffers backed by identically named files distinguishable names.
