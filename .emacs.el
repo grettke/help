@@ -582,6 +582,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
                        ">"))
       (message msg)
       (help/on-gui (alert msg :title "org-mode")))))
+(add-to-list 'find-file-not-found-functions #'help/create-non-existent-directory)
 (defun help/dired-copy-filename ()
   "Push the path and filename of the file under the point to the kill ring.
   Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2002-10/msg00556.html'"

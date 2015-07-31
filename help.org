@@ -1739,6 +1739,13 @@ Future candidates:
 - writegood-mode
 - org-latex-export-to-pdf
 
+Try to visit a non-existent file and get prompted to create its parent
+directories.
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'find-file-not-found-functions #'help/create-non-existent-directory)
+#+END_SRC
+
 ** File-system/directory management (Console)
 
 You can use the usual machinery to work with the files. Highlight a region
