@@ -1521,7 +1521,7 @@ Easily wrap the current region.
   (wrap-region-add-wrapper "=" "=" nil 'org-mode)
   (wrap-region-add-wrapper "~" "~" nil 'org-mode)
   (wrap-region-add-wrapper "+" "+" nil 'org-mode)
-  (help/diminish 'wrap-region-mode)
+  (help/diminish #'wrap-region-mode)
   (wrap-region-global-mode))
 #+END_SRC
 
@@ -1591,7 +1591,7 @@ then document.
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp
-(help/diminish 'visual-line-mode)
+(help/diminish #'visual-line-mode)
 #+END_SRC
 
 ** Describing Objects
@@ -2008,7 +2008,7 @@ Go to any object in the frame quickly.
   (setq ac-auto-start nil)
   (help/not-on-gui (ac-set-trigger-key "\t"))
   (help/on-gui (ac-set-trigger-key "<tab>"))
-  (help/diminish 'auto-complete-mode))
+  (help/diminish #'auto-complete-mode))
 (use-package auto-complete-chunk
   :ensure t)
 #+END_SRC
@@ -2314,7 +2314,7 @@ Perform syntactic analysis all the time.
              :ensure t
              :config
              (yas-global-mode t)
-             (help/diminish 'yas-minor-mode)
+             (help/diminish #'yas-minor-mode)
              (defun help/yas-minor-mode-hook ()
                "Personal customizations."
                (define-key yas-minor-mode-map (kbd "<tab>") nil)

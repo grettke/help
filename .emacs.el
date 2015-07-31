@@ -486,7 +486,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   :ensure t
   :config
   (global-undo-tree-mode 1)
-  (help/diminish 'undo-tree-mode))
+  (help/diminish #'undo-tree-mode))
 (setq require-final-newline t)
 (use-package wrap-region
   :ensure t
@@ -497,7 +497,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (wrap-region-add-wrapper "=" "=" nil 'org-mode)
   (wrap-region-add-wrapper "~" "~" nil 'org-mode)
   (wrap-region-add-wrapper "+" "+" nil 'org-mode)
-  (help/diminish 'wrap-region-mode)
+  (help/diminish #'wrap-region-mode)
   (wrap-region-global-mode))
 (setq track-eol t)
 (setq line-move-visual nil)
@@ -526,7 +526,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
     (hs-show-block)))
 (advice-add #'goto-line :after #'help/goto-line)
 (eval-after-load "hideshow" '(diminish 'hs-minor-mode))
-(help/diminish 'visual-line-mode)
+(help/diminish #'visual-line-mode)
 (global-set-key (kbd "s-r") 'help/describe-thing-in-popup)
 (setq-default eval-expression-print-level nil)
 (put 'upcase-region 'disabled nil)
@@ -689,7 +689,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (setq ac-auto-start nil)
   (help/not-on-gui (ac-set-trigger-key "\t"))
   (help/on-gui (ac-set-trigger-key "<tab>"))
-  (help/diminish 'auto-complete-mode))
+  (help/diminish #'auto-complete-mode))
 (use-package auto-complete-chunk
   :ensure t)
 (use-package auto-complete-chunk
@@ -826,7 +826,7 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
              :ensure t
              :config
              (yas-global-mode t)
-             (help/diminish 'yas-minor-mode)
+             (help/diminish #'yas-minor-mode)
              (defun help/yas-minor-mode-hook ()
                "Personal customizations."
                (define-key yas-minor-mode-map (kbd "<tab>") nil)
