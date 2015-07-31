@@ -1197,6 +1197,14 @@ Use a nicer =eval-expression= approach.
 
 Try to reserve the right side for mode-specific activities.
 
+Return is an exception.
+
+Do smart new line inside, indenting given the mode:
+#+BEGIN_SRC emacs-lisp
+(help/not-on-gui (global-set-key (kbd "s-RET") 'help/smart-open-line))
+(help/on-gui (global-set-key (kbd "s-<return>") 'help/smart-open-line))
+#+END_SRC
+
 * Special Operating Procedure
    :PROPERTIES:
    :noweb-ref: Special-Operating-Procedure
@@ -2940,12 +2948,44 @@ Never use the original version.
 
 *** Keybindings
 
+Started questioning why after hitting RETURN while in lists I have to hit TAB to
+get indented properly. Kind of a dead giveaway that I should be
+return-and-indenting! Looked at =org-return= to find that it has an argument
+about indenting and then saw that =org-return-indent= passes it for you. With that
+in mind, RETURN is bound to that now. Now ALEC has four different kinds of
+"returns" in Org in order of likelihood of usage:
+
+- org-return-indent :: Make it really easy to work in existing list items,
+  headings, and tables
+  - This is listed first because I often go back to modify entries
+  - <return> because it is used the most
+- org-meta-return :: Make it really easy to add new list items, headings, and
+  table contents
+  - M-<return> because the binding comes with Org
+- electric-indent-just-newline :: For when I want to break out of the default
+  Org indentation to start working at the beginning of the line for example when
+  I'm done working in a list or have just created a new heading
+  - C-M-<return> because it is next step "lower" in the binding
+- help/smart-open-line :: When I want to insert a new line between the current
+  and next line then position the cursor correctly indented at the start of it.
+  - s-<return> because it is that is the last place in the modifier key chain
+
 #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "s-j") #'org-babel-next-src-block)
-(global-set-key (kbd "s-k") #'org-babel-previous-src-block)
-(global-set-key (kbd "s-i") #'help/safb-org-babel-tangle)
-(global-set-key (kbd "s-l") #'help/org-edit-src-code-plus-name)
-(global-set-key (kbd "s-o") #'org-babel-execute-maybe)
-(global-set-key (kbd "s-;") #'org-babel-demarcate-block)
-(global-set-key (kbd "s-p") #'org-babel-view-src-block-info)
+(help/not-on-gui
+ (define-key org-mode-map (kbd "RET") 'org-return-indent)
+ (define-key org-mode-map (kbd "C-M-RET") 'electric-indent-just-newline))
+(help/on-gui
+ (define-key org-mode-map (kbd "<return>") 'org-return-indent)
+ (define-key org-mode-map (kbd "C-M-<return>") 'electric-indent-just-newline))
+
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+(define-key org-mode-map (kbd "s-j") #'org-babel-next-src-block)
+(define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
+(define-key org-mode-map (kbd "s-i") #'help/safb-org-babel-tangle)
+(define-key org-mode-map (kbd "s-l") #'help/org-edit-src-code-plus-name)
+(define-key org-mode-map (kbd "s-o") #'org-babel-execute-maybe)
+(define-key org-mode-map (kbd "s-;") #'org-babel-demarcate-block)
+(define-key org-mode-map (kbd "s-p") #'org-babel-view-src-block-info)
 #+END_SRC

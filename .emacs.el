@@ -921,13 +921,20 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
     (org-edit-src-exit))
   (vc-next-action nil))
 (setq org-edit-src-code nil)
-(global-set-key (kbd "s-j") #'org-babel-next-src-block)
-(global-set-key (kbd "s-k") #'org-babel-previous-src-block)
-(global-set-key (kbd "s-i") #'help/safb-org-babel-tangle)
-(global-set-key (kbd "s-l") #'help/org-edit-src-code-plus-name)
-(global-set-key (kbd "s-o") #'org-babel-execute-maybe)
-(global-set-key (kbd "s-;") #'org-babel-demarcate-block)
-(global-set-key (kbd "s-p") #'org-babel-view-src-block-info)
+(help/not-on-gui
+ (define-key org-mode-map (kbd "RET") 'org-return-indent)
+ (define-key org-mode-map (kbd "C-M-RET") 'electric-indent-just-newline))
+(help/on-gui
+ (define-key org-mode-map (kbd "<return>") 'org-return-indent)
+ (define-key org-mode-map (kbd "C-M-<return>") 'electric-indent-just-newline))
+
+(define-key org-mode-map (kbd "s-j") #'org-babel-next-src-block)
+(define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
+(define-key org-mode-map (kbd "s-i") #'help/safb-org-babel-tangle)
+(define-key org-mode-map (kbd "s-l") #'help/org-edit-src-code-plus-name)
+(define-key org-mode-map (kbd "s-o") #'org-babel-execute-maybe)
+(define-key org-mode-map (kbd "s-;") #'org-babel-demarcate-block)
+(define-key org-mode-map (kbd "s-p") #'org-babel-view-src-block-info)
 (add-hook #'text-mode-hook #'linum-mode)
 (setq ring-bell-function 'ignore)
 (setq visible-bell t)
@@ -1012,6 +1019,8 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
 (key-chord-define-global "qi" 'help/comment-or-uncomment)
 (key-chord-define-global "f9" 'help/util-cycle)
 (global-set-key (kbd "s-:") 'my-eval-expression)
+(help/not-on-gui (global-set-key (kbd "s-RET") 'help/smart-open-line))
+(help/on-gui (global-set-key (kbd "s-<return>") 'help/smart-open-line))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
