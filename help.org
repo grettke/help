@@ -1172,8 +1172,6 @@ VC activities.
 (global-set-key (kbd "s-f") #'help/safb-help-vc-next-action)
 #+END_SRC
 
-- =s-e= ~help/safb-magit-status~
-
 *** Left & Right Side
 
 #+BEGIN_SRC emacs-lisp
