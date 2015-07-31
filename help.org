@@ -1241,6 +1241,12 @@ Use a nicer =eval-expression= approach.
 (global-set-key (kbd "s-:") #'my-eval-expression)
 #+END_SRC
 
+Hide and show code blocks.
+
+#+BEGIN_SRC EMACS-LISP
+(global-set-key (kbd "s-6") 'hs-toggle-hiding)
+#+END_SRC
+
 *** Right Side
 
 Try to reserve the right side for mode-specific activities.
@@ -2702,7 +2708,8 @@ for the mode. If the mode doesn't extend Prog-Mode then investigate why.
 
 (dolist (h help/lisp-modes)
   (when (not (member h '(ielm-mode-hook)))
-    (add-hook h #'smartparens-strict-mode)))
+    (add-hook h #'smartparens-strict-mode)
+    (add-hook h #'hs-minor-mode)))
 #+END_SRC
 
 ** Org-Mode

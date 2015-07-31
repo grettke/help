@@ -855,7 +855,8 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
 
 (dolist (h help/lisp-modes)
   (when (not (member h '(ielm-mode-hook)))
-    (add-hook h #'smartparens-strict-mode)))
+    (add-hook h #'smartparens-strict-mode)
+    (add-hook h #'hs-minor-mode)))
 (setq org-babel-min-lines-for-block-output 0)
 (add-to-list #'yas-snippet-dirs "~/src/yasnippet-org-mode")
 (yas-reload-all)
@@ -1040,6 +1041,7 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
 (define-key gcr/langtool-map "q" #'langtool-check-done)
 (key-chord-define-global "f9" #'help/util-cycle)
 (global-set-key (kbd "s-:") #'my-eval-expression)
+(global-set-key (kbd "s-6") 'hs-toggle-hiding)
 (help/not-on-gui (global-set-key (kbd "s-RET") #'help/smart-open-line))
 (help/on-gui (global-set-key (kbd "s-<return>") #'help/smart-open-line))
 (global-set-key (kbd "M-n") (kbd "C-u 1 C-v"))
