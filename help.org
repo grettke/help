@@ -2700,6 +2700,7 @@ for the mode. If the mode doesn't extend Prog-Mode then investigate why.
 
 (dolist (h help/lisp-modes)
   (when (not (member h '(ielm-mode-hook)))
+    (add-hook h #'smartparens-strict-mode)
     (add-hook h (function (lambda ()
                             (add-hook 'local-write-file-hooks
 				      'check-parens))))))

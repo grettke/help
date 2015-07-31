@@ -852,6 +852,7 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
 
 (dolist (h help/lisp-modes)
   (when (not (member h '(ielm-mode-hook)))
+    (add-hook h #'smartparens-strict-mode)
     (add-hook h (function (lambda ()
                             (add-hook 'local-write-file-hooks
 				      'check-parens))))))
