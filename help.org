@@ -1475,7 +1475,7 @@ making such breaking changes.
 (setq desktop-restore-eager 10)
 #+END_SRC
 
-Prefer buffers to be 80 characters wide.
+Indicate that Text-Mode buffers ought to be 80 characters wide.
 
 #+BEGIN_SRC emacs-lisp
 (use-package fill-column-indicator
