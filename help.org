@@ -1982,7 +1982,7 @@ Go to any object in the frame quickly.
 #+BEGIN_SRC emacs-lisp
 (use-package langtool
   :ensure t
-  :config
+  :init
   (setq langtool-language-tool-jar (concat (getenv "EELIB") "/LanguageTool-2.8/languagetool-commandline.jar"))
   (setq langtool-mother-tongue "en")
   (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java")))

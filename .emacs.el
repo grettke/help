@@ -669,7 +669,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   :ensure t)
 (use-package langtool
   :ensure t
-  :config
+  :init
   (setq langtool-language-tool-jar (concat (getenv "EELIB") "/LanguageTool-2.8/languagetool-commandline.jar"))
   (setq langtool-mother-tongue "en")
   (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java")))
