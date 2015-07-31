@@ -1499,7 +1499,7 @@ Provide expected "Undo" functionality.
   :ensure t
   :config
   (global-undo-tree-mode 1)
-  (help/diminish 'undo-tree-mode))
+  (help/diminish #'undo-tree-mode))
 #+END_SRC
 
 Ensure that buffers end with a new line. This works in company with Org-Mode
