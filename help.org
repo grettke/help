@@ -2473,7 +2473,7 @@ is too new. Not all programming modes inherit from it. Not even IELM is ready.
 With that in mind this system:
 
 - Defines common configuration here for reuse in every desired mode.
-- Configures each mode that want's to use it explicitly instead of relying on
+- Configures each mode that wants to use it explicitly instead of relying on
   inheriting from ~prog-mode~.
 
 - Line numbers make documents easier to read.
