@@ -1810,28 +1810,28 @@ Future candidates:
 - dired
 - eshell
 - ess-rdired
+- eval-defun
 - eval-region
+- gcr/newline
 - goto-line
 - ido-switch-buffer
 - ielm
+- ispell
+- ispell-word
+- langtool-check-buffer
 - log-edit-done
+- newline-and-indent
 - next-line
 - org-export-dispatch
+- org-latex-export-to-pdf
+- org-return
 - org-return
 - other-window
 - pop-to-mark-command
 - previous-line
-- eval-defun
-- gcr/newline
-- ispell
-- ispell-word
-- langtool-check-buffer
-- newline-and-indent
-- org-return
 - sp-newline
 - with-current-buffer
 - writegood-mode
-- org-latex-export-to-pdf
 
 Try to visit a non-existent file and get prompted to create its parent
 directories.
