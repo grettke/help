@@ -427,6 +427,8 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   :ensure t
   :config
   (dash-enable-font-lock))
+(use-package dash-functional
+  :ensure t)
 (use-package f
   :ensure t)
 (use-package s

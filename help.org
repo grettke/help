@@ -1367,6 +1367,8 @@ Dash is nice to use.
   :ensure t
   :config
   (dash-enable-font-lock))
+(use-package dash-functional
+  :ensure t)
 #+END_SRC
 
 F is nice to use.
