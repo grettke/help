@@ -2466,11 +2466,11 @@ Configure EMACS to personal-taste for "noise" and "form".
 
 ** Buffer
 
-In theory ~text-mode~ and ~prog-mode~ have common preferences for this system. The
-EMACS literature advises that modes extend one of them. That makes it easier
-to configure basically everything. In practice the latter is too new. Not all
-programming modes inherit from it. Not even IELM is ready. With that in mind
-this system:
+In practice ~text-mode~ and ~prog-mode~ have common preferencess for this system.
+The EMACS literature advises that modes extend one of them. That makes it easier
+to configure basically everything using ~prog-mode-hook~. In practice the latter
+is too new. Not all programming modes inherit from it. Not even IELM is ready.
+With that in mind this system:
 
 - Defines common configuration here for reuse in every desired mode.
 - Configures each mode that want's to use it explicitly instead of relying on
