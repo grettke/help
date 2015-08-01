@@ -1731,7 +1731,7 @@ every chance it gets without interrupting the user's flow.
 
 Don't create backup files. Instead Git for versioning
 
-Automatically back file-stores if no activity has occurredn.
+Automatically back file-stores if no activity has occurren.
 
 #+BEGIN_SRC emacs-lisp
 (setq auto-save-default t)
