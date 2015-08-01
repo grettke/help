@@ -431,6 +431,8 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   :ensure t)
 (use-package s
   :ensure t)
+(use-package uuid
+  :ensure t)
 (use-package diminish
              :ensure t)
 (size-indication-mode)
