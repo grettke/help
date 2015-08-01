@@ -470,13 +470,6 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (help/on-windows
  (setq w32-lwindow-modifier 'super)
  (setq w32-rwindow-modifier 'super))
-(use-package smartparens :if nil
-  :ensure t
-  :config
-  (require 'smartparens-config)
-  (setq sp-show-pair-from-inside nil)
-  (smartparens-global-strict-mode)
-  (help/diminish "smartparens-mode"))
 (desktop-save-mode t)
 (setq desktop-restore-eager 10)
 (use-package undo-tree
@@ -638,7 +631,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (use-package dired-details+
   :ensure t)
 (setq-default dired-details-hidden-string "")
-(defun help/dired-mode-hook ()
+(defun help/dired-mode-hook-fn ()
   "Personal dired customizations."
   (local-set-key "c" 'help/dired-copy-filename)
   (local-set-key "]" 'help/dired-copy-path)
@@ -646,7 +639,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (load "dired-x")
   (turn-on-stripe-buffer-mode)
   (stripe-listify-buffer))
-(add-hook #'dired-mode-hook #'help/dired-mode-hook)
+(add-hook #'dired-mode-hook #'help/dired-mode-hook-fn)
 (setq dired-dwim-target t)
 (help/on-osx
  (setq ls-lisp-use-insert-directory-program nil)
@@ -747,12 +740,12 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
 (setq mouse-wheel-progressive-speed nil)
 (setq mouse-wheel-follow-mouse +1)
-(defun help/occur-mode-hook ()
+(defun help/occur-mode-hook-fn ()
   "Personal customizations."
   (interactive)
   (turn-on-stripe-buffer-mode)
   (stripe-listify-buffer))
-(add-hook #'occur-mode-hook #'help/occur-mode-hook)
+(add-hook #'occur-mode-hook #'help/occur-mode-hook-fn)
 (use-package pos-tip
              :ensure t)
 (help/on-windows
@@ -870,12 +863,12 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
              :config
              (yas-global-mode t)
              (help/diminish #'yas-minor-mode)
-             (defun help/yas-minor-mode-hook ()
+             (defun help/yas-minor-mode-hook-fn ()
                "Personal customizations."
                (define-key yas-minor-mode-map (kbd "<tab>") nil)
                (define-key yas-minor-mode-map (kbd "TAB") nil)
                (define-key yas-minor-mode-map (kbd "s-5") 'yas-expand))
-             (add-hook #'yas-minor-mode-hook #'help/yas-minor-mode-hook))
+             (add-hook #'yas-minor-mode-hook #'help/yas-minor-mode-hook-fn))
 (use-package magit
              :ensure t
              :config
@@ -891,11 +884,6 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
              (global-whitespace-mode 1)
              (help/diminish "global-whitespace-mode")
              (help/diminish "whitespace-mode"))
-(add-hook #'prog-mode-hook #'linum-mode)
-(use-package aggressive-indent
-  :ensure t
-  :config
-  (add-hook #'prog-mode-hook #'aggressive-indent-mode))
 (setq initial-scratch-message nil)
 (require 'lexbind-mode)
 
@@ -927,17 +915,12 @@ RC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.htm
   (local-set-key (kbd "s-:") 'my-eval-expression)
   (local-set-key (kbd "#") 'endless/sharp))
 
-(defun help/emacs-lisp-mode-hook ()
+(defun help/emacs-lisp-mode-hook-fn ()
+  (interactive)
   (help/elisp-mode-local-bindings)
   (lexbind-mode)
   (turn-on-eldoc-mode)
-  (help/diminish 'eldoc-mode)
-  (smartparens-strict-mode)
-  (hs-minor-mode))
-
-(add-hook #'emacs-lisp-mode-hook #'help/emacs-lisp-mode-hook)
-(add-hook #'ielm-mode-hook #'help/emacs-lisp-mode-hook)
-(add-hook #'lisp-interaction-mode-hook #'help/emacs-lisp-mode-hook)
+  (help/diminish 'eldoc-mode))
 
 (setq ielm-noisy nil)
 
@@ -947,13 +930,10 @@ RC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.htm
 
 (setq ielm-dynamic-multiline-inputs nil)
 
-(defun help/ielm-mode-hook ()
+(defun help/ielm-mode-hook-fn ()
   "Personal customizations."
   (interactive)
-  (help/ielm-auto-complete)
-  (aggressive-indent-mode))
-
-(add-hook #'ielm-mode-hook #'help/ielm-mode-hook)
+  (help/ielm-auto-complete))
 (setq org-babel-min-lines-for-block-output 0)
 (add-to-list #'yas-snippet-dirs "~/src/yasnippet-org-mode")
 (yas-reload-all)
@@ -1043,12 +1023,48 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
 (define-key org-mode-map (kbd "s-;") #'org-babel-view-src-block-info)
 (define-key org-mode-map (kbd "s-p") #'org-babel-demarcate-block)
 (define-key org-src-mode-map (kbd "s-l") #'org-edit-src-exit)
-(add-hook #'text-mode-hook #'linum-mode)
+(setq help/hack-modes '())
+(setq help/hack-lisp-modes
+      '(emacs-lisp-mode-hook
+	ielm-mode-hook
+	lisp-interaction-mode))
+(setq help/hack-modes (append help/hack-modes help/hack-lisp-modes))
+(use-package aggressive-indent
+  :ensure t
+  :config)
+(use-package smartparens :if nil
+  :ensure t
+  :config
+  (require 'smartparens-config)
+  (setq sp-show-pair-from-inside nil)
+  (smartparens-global-strict-mode)
+  (help/diminish "smartparens-mode"))
+(defun help/hack-common-mode-hook-fn ()
+  (interactive)
+  (help/text-prog*-setup)
+  (smartparens-strict-mode)
+  (aggressive-indent-mode))
+(let (void)
+  (--each help/hack-modes
+    (add-hook it #'help/hack-common-mode-hook-fn)))
+
+(let (void)
+  (--each help/hack-lisp-modes
+    (add-hook it #'help/emacs-lisp-mode-hook-fn)))
+
+(add-hook #'ielm-mode-hook #'help/ielm-mode-hook)
 (use-package fill-column-indicator
   :ensure t
   :config
-  (setq-default fill-column 80)
-  (add-hook #'text-mode-hook #'fci-mode))
+  (setq-default fill-column 80))
+(defun help/text-prog*-setup ()
+  "HELP's standard configuration for buffer's working with text, often for
+   programming."
+  (interactive)
+  (linum-mode)
+  (fci-mode))
+
+(add-hook #'text-mode-hook #'help/text-prog*-setup)
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 (setq ring-bell-function 'ignore)
@@ -1158,3 +1174,17 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
 (global-set-key (kbd "M-n") (kbd "C-u 1 C-v"))
 (global-set-key (kbd "M-p") (kbd "C-u 1 M-v"))
 (global-set-key (kbd "s-:") #'my-eval-expression)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

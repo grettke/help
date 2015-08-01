@@ -57,9 +57,9 @@ Start EMACS with this command:
 «Org-Mode-Programming»
 «Special-Operating-Procedure»
 «Standard-Operating-Procedure»
-«Hacking-Everything»
 «Hacking-Emacs-Lisp»
 «Hacking-Org-Mode»
+«Hacking-Common»
 «Quiet-and-Pleasant-Appearance»
 «Piano-Lessons»
 #+END_SRC
@@ -1494,21 +1494,6 @@ Enable the =super= key-space.
 
 Configure EMACS to maximum utility.
 
-** Brackets
-
-Always maintain balanced brackets. Easily wrap the selected region. Auto-escape
-strings pasted into other strings.
-
-#+BEGIN_SRC emacs-lisp
-(use-package smartparens :if nil
-  :ensure t
-  :config
-  (require 'smartparens-config)
-  (setq sp-show-pair-from-inside nil)
-  (smartparens-global-strict-mode)
-  (help/diminish "smartparens-mode"))
-#+END_SRC
-
 ** Buffer
 
 Maintain buffers across sessions. Desktop-Save-Mode persists very part of the
@@ -2425,12 +2410,12 @@ Perform syntactic analysis all the time.
              :config
              (yas-global-mode t)
              (help/diminish #'yas-minor-mode)
-             (defun help/yas-minor-mode-hook ()
+             (defun help/yas-minor-mode-hook-fn ()
                "Personal customizations."
                (define-key yas-minor-mode-map (kbd "<tab>") nil)
                (define-key yas-minor-mode-map (kbd "TAB") nil)
                (define-key yas-minor-mode-map (kbd "s-5") 'yas-expand))
-             (add-hook #'yas-minor-mode-hook #'help/yas-minor-mode-hook))
+             (add-hook #'yas-minor-mode-hook #'help/yas-minor-mode-hook-fn))
 #+END_SRC
 
 ** Version Control
@@ -2481,20 +2466,32 @@ Configure EMACS to personal-taste for "noise" and "form".
 
 ** Buffer
 
-Line numbers make documents easier to read.
+In theory ~text-mode~ and ~prog-mode~ have common preferences for this system. In
+practice the latter is too new. Not all programming modes inherit from it. With
+that in mind this system
 
-#+BEGIN_SRC emacs-lisp
-(add-hook #'text-mode-hook #'linum-mode)
-#+END_SRC
+- Defines common configuration here for reuse in every desired mode.
+- Configures each mode that want's to use it explicitly instead of relying on
+  inheriting from ~prog-mode~.
 
-Indicate that Text-Mode buffers ought to be 80 characters wide.
-
+- Line numbers make documents easier to read.
+- Indicate that Text-Mode buffers ought to be 80 characters wide.
 #+BEGIN_SRC emacs-lisp
 (use-package fill-column-indicator
   :ensure t
   :config
-  (setq-default fill-column 80)
-  (add-hook #'text-mode-hook #'fci-mode))
+  (setq-default fill-column 80))
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+(defun help/text-prog*-setup ()
+  "HELP's standard configuration for buffer's working with text, often for
+   programming."
+  (interactive)
+  (linum-mode)
+  (fci-mode))
+
+(add-hook #'text-mode-hook #'help/text-prog*-setup)
 #+END_SRC
 
 Give buffers backed by identically named files distinguishable names.
@@ -2765,6 +2762,11 @@ Load Use-Package.
 - Code Block
   - Tell the story in speech, and then in code.
   - Consider it another paragraph and indent appropriately.
+  - When contained within a list.
+    - Indent begin/end blocks with list content; this makes it clear to Org-Mode
+      to export it as a code block.
+    - Source code is indented according to existing settings. This system keeps
+      it left-aligned, saving space.
 - Content
   - When importing, update to conform with Style-Guide.
 - Dictionary
@@ -2834,26 +2836,75 @@ Load Use-Package.
 
 * Hacking
 
-** Everything
+** Common
   :PROPERTIES:
-  :noweb-ref: Hacking-Everything
+  :noweb-ref: Hacking-Common
   :END:
 
-Line numbers make documents easier to read. Account for Literate documents.
+Common configuration definitions.
 
-#+BEGIN_SRC emacs-lisp
-(add-hook #'prog-mode-hook #'linum-mode)
-#+END_SRC
+*** Hooks
 
-Indent at every opportunity and automatically. Verify that it makes sense
-for the mode. If the mode doesn't extend Prog-Mode then investigate why.
+- Hacking mode hooks.
+  - Configurations common to every hacking vehicle.
+    #+BEGIN_SRC emacs-lisp
+(setq help/hack-modes '())
+    #+END_SRC
+  - LISP mode hooks.
+    - Are hacking modes.
+      #+BEGIN_SRC emacs-lisp
+(setq help/hack-lisp-modes
+      '(emacs-lisp-mode-hook
+	ielm-mode-hook
+	lisp-interaction-mode))
+(setq help/hack-modes (append help/hack-modes help/hack-lisp-modes))
+      #+END_SRC
+    - IELM mode hook.
+      - Does one or two more things.
 
-#+BEGIN_SRC emacs-lisp
+***  Hook Functions
+
+- Use the standard ~help/text-prog*-setup~.
+- Indent at every opportunity and automatically. Verify that it makes sense
+  for the mode. Explicitly define instead of relying on ~prog-mode~ inheritance.
+  #+BEGIN_SRC emacs-lisp
 (use-package aggressive-indent
   :ensure t
+  :config)
+  #+END_SRC
+- Always maintain balanced brackets. Easily wrap the selected region. Auto-escape
+  strings pasted into other strings.
+  #+BEGIN_SRC emacs-lisp
+(use-package smartparens :if nil
+  :ensure t
   :config
-  (add-hook #'prog-mode-hook #'aggressive-indent-mode))
+  (require 'smartparens-config)
+  (setq sp-show-pair-from-inside nil)
+  (smartparens-global-strict-mode)
+  (help/diminish "smartparens-mode"))
+  #+END_SRC
+- Implementation.
+ #+BEGIN_SRC emacs-lisp
+(defun help/hack-common-mode-hook-fn ()
+  (interactive)
+  (help/text-prog*-setup)
+  (smartparens-strict-mode)
+  (aggressive-indent-mode))
 #+END_SRC
+
+*** Wiring
+
+ #+BEGIN_SRC emacs-lisp
+(let (void)
+  (--each help/hack-modes
+    (add-hook it #'help/hack-common-mode-hook-fn)))
+
+(let (void)
+  (--each help/hack-lisp-modes
+    (add-hook it #'help/emacs-lisp-mode-hook-fn)))
+
+(add-hook #'ielm-mode-hook #'help/ielm-mode-hook)
+ #+END_SRC
 
 ** Emacs Lisp
   :PROPERTIES:
@@ -2892,17 +2943,12 @@ RC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.htm
   (local-set-key (kbd "s-:") 'my-eval-expression)
   (local-set-key (kbd "#") 'endless/sharp))
 
-(defun help/emacs-lisp-mode-hook ()
+(defun help/emacs-lisp-mode-hook-fn ()
+  (interactive)
   (help/elisp-mode-local-bindings)
   (lexbind-mode)
   (turn-on-eldoc-mode)
-  (help/diminish 'eldoc-mode)
-  (smartparens-strict-mode)
-  (hs-minor-mode))
-
-(add-hook #'emacs-lisp-mode-hook #'help/emacs-lisp-mode-hook)
-(add-hook #'ielm-mode-hook #'help/emacs-lisp-mode-hook)
-(add-hook #'lisp-interaction-mode-hook #'help/emacs-lisp-mode-hook)
+  (help/diminish 'eldoc-mode))
 
 (setq ielm-noisy nil)
 
@@ -2912,13 +2958,10 @@ RC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.htm
 
 (setq ielm-dynamic-multiline-inputs nil)
 
-(defun help/ielm-mode-hook ()
+(defun help/ielm-mode-hook-fn ()
   "Personal customizations."
   (interactive)
-  (help/ielm-auto-complete)
-  (aggressive-indent-mode))
-
-(add-hook #'ielm-mode-hook #'help/ielm-mode-hook)
+  (help/ielm-auto-complete))
 #+END_SRC
 
 ** Org-Mode
