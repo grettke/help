@@ -1726,7 +1726,7 @@ The =eshell= configuration is a version controlled directory
 
 ** File Based System
 
-This system uses artifacts stored in files. It tries to update file-stores
+This system uses artifacts stored in files. It tries to persiste file-stores
 every chance it gets without interrupting the user's flow.
 
 Don't create backup files. Instead Git for versioning
