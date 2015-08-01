@@ -627,7 +627,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (interactive)
   (message "Added %s to kill ring" (kill-new default-directory)))
 (setq dired-listing-switches "-alh")
-(setq dired-recursive-deletes  +1)
+(setq dired-recursive-deletes 'top)
 (use-package dired-details+
   :ensure t)
 (setq-default dired-details-hidden-string "")
@@ -739,7 +739,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (minibuffer-depth-indicate-mode t)
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
 (setq mouse-wheel-progressive-speed nil)
-(setq mouse-wheel-follow-mouse +1)
+(setq mouse-wheel-follow-mouse t)
 (defun help/occur-mode-hook-fn ()
   "Personal customizations."
   (interactive)
@@ -1070,7 +1070,7 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
 (setq ring-bell-function 'ignore)
 (setq visible-bell t)
 (setq blink-matching-paren nil)
-(show-paren-mode +1)
+(show-paren-mode)
 (setq show-paren-delay 0)
 (setq show-paren-style 'expression)
 (blink-cursor-mode 0)

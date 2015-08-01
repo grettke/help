@@ -1861,7 +1861,7 @@ a while but definitely do need.
   (interactive)
   (message "Added %s to kill ring" (kill-new default-directory)))
 (setq dired-listing-switches "-alh")
-(setq dired-recursive-deletes  +1)
+(setq dired-recursive-deletes 'top)
 (use-package dired-details+
   :ensure t)
 (setq-default dired-details-hidden-string "")
@@ -2156,7 +2156,7 @@ a fast navigation vehicle.
 #+BEGIN_SRC emacs-lisp
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
 (setq mouse-wheel-progressive-speed nil)
-(setq mouse-wheel-follow-mouse +1)
+(setq mouse-wheel-follow-mouse t)
 #+END_SRC
 
 ** Occur
@@ -2512,7 +2512,7 @@ Highlight s-expressions.
 
 #+BEGIN_SRC emacs-lisp
 (setq blink-matching-paren nil)
-(show-paren-mode +1)
+(show-paren-mode)
 (setq show-paren-delay 0)
 (setq show-paren-style 'expression)
 #+END_SRC
