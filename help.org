@@ -1880,7 +1880,7 @@ a while but definitely do need.
 (use-package dired-details+
   :ensure t)
 (setq-default dired-details-hidden-string "")
-(defun help/dired-mode-hook ()
+(defun help/dired-mode-hook-fn ()
   "Personal dired customizations."
   (local-set-key "c" 'help/dired-copy-filename)
   (local-set-key "]" 'help/dired-copy-path)
@@ -1888,7 +1888,7 @@ a while but definitely do need.
   (load "dired-x")
   (turn-on-stripe-buffer-mode)
   (stripe-listify-buffer))
-(add-hook #'dired-mode-hook #'help/dired-mode-hook)
+(add-hook #'dired-mode-hook #'help/dired-mode-hook-fn)
 #+END_SRC
 
 Try to guess the target directory for operations.
@@ -2177,12 +2177,12 @@ a fast navigation vehicle.
 ** Occur
 
 #+BEGIN_SRC emacs-lisp
-(defun help/occur-mode-hook ()
+(defun help/occur-mode-hook-fn ()
   "Personal customizations."
   (interactive)
   (turn-on-stripe-buffer-mode)
   (stripe-listify-buffer))
-(add-hook #'occur-mode-hook #'help/occur-mode-hook)
+(add-hook #'occur-mode-hook #'help/occur-mode-hook-fn)
 #+END_SRC
 
 ** Popups
