@@ -849,15 +849,48 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
   :ensure t
   :config
   (add-hook #'prog-mode-hook #'aggressive-indent-mode))
-(defconst help/lisp-modes
-  '(emacs-lisp-mode-hook
-    ielm-mode-hook
-    lisp-interaction-mode-hook))
+(setq initial-scratch-message nil)
+(require 'lexbind-mode)
 
-(dolist (h help/lisp-modes)
-  (when (not (member h '(ielm-mode-hook)))
-    (add-hook h #'smartparens-strict-mode)
-    (add-hook h #'hs-minor-mode)))
+(defun help/elisp-eval-buffer ()
+  "Intelligently evaluate an Elisp buffer."
+  (interactive)
+  (help/save-all-file-buffers)
+  (eval-buffer))
+
+(defun endless/sharp ()
+  "Insert #' unless in a string or comment.
+
+RC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.html?source=rss'"
+  (interactive)
+  (call-interactively #'self-insert-command)
+  (let ((ppss (syntax-ppss)))
+    (unless (or (elt ppss 3)
+		(elt ppss 4))
+      (insert "'"))))
+
+(defun help/elisp-mode-local-bindings ()
+  "Helpful behavior for Elisp buffers."
+  (local-set-key (kbd "s-l eb") 'help/elisp-eval-buffer)
+  (local-set-key (kbd "s-l ep") 'eval-print-last-sexp)
+  (local-set-key (kbd "s-l td") 'toggle-debug-on-error)
+  (local-set-key (kbd "s-l mef") 'macroexpand)
+  (local-set-key (kbd "s-l mea") 'macroexpand-all)
+  (local-set-key (kbd "s-p") 'help/describe-thing-in-popup)
+  (local-set-key (kbd "s-:") 'my-eval-expression)
+  (local-set-key (kbd "#") 'endless/sharp))
+
+(defun help/emacs-lisp-mode-hook ()
+  (help/elisp-mode-local-bindings)
+  (lexbind-mode)
+  (turn-on-eldoc-mode)
+  (help/diminish 'eldoc-mode)
+  (smartparens-strict-mode)
+  (hs-minor-mode))
+
+(add-hook #'emacs-lisp-mode-hook #'help/emacs-lisp-mode-hook)
+(add-hook #'ielm-mode-hook #'help/emacs-lisp-mode-hook)
+(add-hook #'lisp-interaction-mode-hook #'help/emacs-lisp-mode-hook)
 (setq org-babel-min-lines-for-block-output 0)
 (add-to-list #'yas-snippet-dirs "~/src/yasnippet-org-mode")
 (yas-reload-all)
@@ -1055,3 +1088,17 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
 (help/on-gui (global-set-key (kbd "s-<return>") #'help/smart-open-line))
 (global-set-key (kbd "M-n") (kbd "C-u 1 C-v"))
 (global-set-key (kbd "M-p") (kbd "C-u 1 M-v"))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
