@@ -930,6 +930,22 @@ RC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.htm
 (add-hook #'emacs-lisp-mode-hook #'help/emacs-lisp-mode-hook)
 (add-hook #'ielm-mode-hook #'help/emacs-lisp-mode-hook)
 (add-hook #'lisp-interaction-mode-hook #'help/emacs-lisp-mode-hook)
+
+(setq ielm-noisy nil)
+
+(setq ielm-prompt "𝔼LISP> ")
+
+(setq ielm-dynamic-return nil)
+
+(setq ielm-dynamic-multiline-inputs nil)
+
+(defun help/ielm-mode-hook ()
+  "Personal customizations."
+  (interactive)
+  (help/ielm-auto-complete)
+  (aggressive-indent-mode))
+
+(add-hook #'ielm-mode-hook #'help/ielm-mode-hook)
 (setq org-babel-min-lines-for-block-output 0)
 (add-to-list #'yas-snippet-dirs "~/src/yasnippet-org-mode")
 (yas-reload-all)
