@@ -1630,6 +1630,70 @@ Easy to use file-based AES encryption.
 (require 'ps-ccrypt "ps-ccrypt.el")
 #+END_SRC
 
+** Eshell
+
+Provide a cross-platform command line shell that is a first-class EMACS citizen.
+
+Commands input in eshell are delegated in order to an alias, a built in command,
+an Elisp function with the same name, and finally to a system call. Semicolons
+separate commands. =which= tells you what implementation will satisfy the call
+that you are going to make. The flag =eshell-prefer-lisp-functions= does what it
+says. =$$= is the result of the last command. Aliases live in
+=eshell-aliases-file=. History is maintained and expandable. =eshell-source-file=
+will run scripts. Since Eshell is not a terminal emulator, you need to configure
+it for any commands that need to run using a terminal emulator by adding it to
+to =eshell-visual-commands=.
+
+#+BEGIN_SRC emacs-lisp
+(setq eshell-prefer-lisp-functions nil
+      eshell-cmpl-cycle-completions nil
+      eshell-save-history-on-exit t
+      eshell-cmpl-dir-ignore "\\`\\(\\.\\.?\\|CVS\\|\\.svn\\|\\.git\\)/\\'")
+
+(eval-after-load 'esh-opt
+  '(progn
+     (require 'em-cmpl)
+     (require 'em-prompt)
+     (require 'em-term)
+     (setenv "PAGER" "cat")
+     (add-hook 'eshell-mode-hook
+               (lambda ()
+                 (message "Welcome to Eshell.")
+                 (setq pcomplete-cycle-completions nil)))
+     (add-to-list 'eshell-visual-commands "ssh")
+     (add-to-list 'eshell-visual-commands "tail")
+     (add-to-list 'eshell-command-completions-alist
+                  '("tar" "\\(\\.tar|\\.tgz\\|\\.tar\\.gz\\)\\'"))))
+#+END_SRC
+
+The =eshell= configuration is a version controlled directory
+
+#+BEGIN_SRC emacs-lisp
+(defconst gcr/eshell-dir "~/.emacs.d/eshell")
+(defun gcr/warn-eshell-dir ()
+  "Warn of eshell misconfiguration."
+  (interactive)
+  (unless (and (f-symlink? gcr/eshell-dir)
+             (f-directory? gcr/eshell-dir))
+    (warn
+     "Could not find the eshell directory at: %S. Eshell will continue to function albeit without your customizations."
+     gcr/eshell-dir)))
+(gcr/warn-eshell-dir)
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+(setq eshell-prompt-regexp "^.+@.+:.+> ")
+(setq eshell-prompt-function
+      (lambda ()
+        (concat
+         (user-login-name)
+         "@"
+         (system-name)
+         ":"
+         (eshell/pwd)
+         "> ")))
+#+END_SRC
+
 ** File Based System
 
 This system uses artifacts stored in files. It tries to update file-stores

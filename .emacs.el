@@ -534,6 +534,45 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (put 'narrow-to-region 'disabled nil)
 (add-to-list 'load-path (getenv "CCRYPT"))
 (require 'ps-ccrypt "ps-ccrypt.el")
+(setq eshell-prefer-lisp-functions nil
+      eshell-cmpl-cycle-completions nil
+      eshell-save-history-on-exit t
+      eshell-cmpl-dir-ignore "\\`\\(\\.\\.?\\|CVS\\|\\.svn\\|\\.git\\)/\\'")
+
+(eval-after-load 'esh-opt
+  '(progn
+     (require 'em-cmpl)
+     (require 'em-prompt)
+     (require 'em-term)
+     (setenv "PAGER" "cat")
+     (add-hook 'eshell-mode-hook
+               (lambda ()
+                 (message "Welcome to Eshell.")
+                 (setq pcomplete-cycle-completions nil)))
+     (add-to-list 'eshell-visual-commands "ssh")
+     (add-to-list 'eshell-visual-commands "tail")
+     (add-to-list 'eshell-command-completions-alist
+                  '("tar" "\\(\\.tar|\\.tgz\\|\\.tar\\.gz\\)\\'"))))
+(defconst gcr/eshell-dir "~/.emacs.d/eshell")
+(defun gcr/warn-eshell-dir ()
+  "Warn of eshell misconfiguration."
+  (interactive)
+  (unless (and (f-symlink? gcr/eshell-dir)
+             (f-directory? gcr/eshell-dir))
+    (warn
+     "Could not find the eshell directory at: %S. Eshell will continue to function albeit without your customizations."
+     gcr/eshell-dir)))
+(gcr/warn-eshell-dir)
+(setq eshell-prompt-regexp "^.+@.+:.+> ")
+(setq eshell-prompt-function
+      (lambda ()
+        (concat
+         (user-login-name)
+         "@"
+         (system-name)
+         ":"
+         (eshell/pwd)
+         "> ")))
 (setq auto-save-default t)
 (setq make-backup-files nil)
 (setq auto-save-visited-file-name t)

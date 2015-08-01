@@ -1,1 +1,3 @@
 *.html
+/.emacs.desktop
+/eshell/history

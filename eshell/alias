@@ -1,0 +1,8 @@
+alias clear recenter 0
+alias d 'dired $1'
+alias ff find-file $1
+alias gb git branch $*
+alias gpom git push origin master
+alias gst git status
+alias la ls -lha $*
+alias ll ls -lh $*
