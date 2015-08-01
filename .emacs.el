@@ -1134,7 +1134,7 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
 (key-chord-define-global "FG" #'pop-to-mark-command)
 (global-set-key (kbd "C-a") #'beginning-of-line-dwim)
 (global-set-key (kbd "M-s p") 'gcr/occur-dwim)
-(key-chord-define-global "df" #'help/safb-other-window)
+(key-chord-define-global "fv" #'help/safb-other-window)
 (key-chord-define-global "f9" #'help/util-cycle)
 (global-set-key (kbd "s-b") 'hs-toggle-hiding)
 (key-chord-define-global "qi" #'help/comment-or-uncomment)
