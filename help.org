@@ -1221,7 +1221,7 @@ Occur has 3 cases. I like to use it to explore the unknown.
 Simpler buffer movement.
 
 #+BEGIN_SRC emacs-lisp
-(key-chord-define-global "fv" #'help/safb-other-window)
+(key-chord-define-global "df" #'help/safb-other-window)
 #+END_SRC
 
 Toggle utility buffers ("logical F" key, so left side; "logical J" key on
