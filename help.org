@@ -2821,6 +2821,10 @@ Load Use-Package.
     - Almost always use ~defun~ instead of ~advice-add~.
       - Functions are more normal and predictable.
       - Advice can subtly break without you noticing.
+    - Paramemter.
+      - ~nil~ for =FALSE=.
+      - ~t~ for =TRUE=.
+      - ~n~ for numerical values.
 - Tangling.
   - When ordering matters, rely on block-reuse to enforce correct generation.
 - Voice.
