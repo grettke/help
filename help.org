@@ -1729,7 +1729,7 @@ The =eshell= configuration is a version controlled directory
 This system uses artifacts stored in files. It tries to update file-stores
 every chance it gets without interrupting the user's flow.
 
-Don't create backup files; use Git for versioning
+Don't create backup files. Instead Git for versioning
 
 Automatically back file-stores if no activity has occurredn.
 
