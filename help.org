@@ -1519,23 +1519,6 @@ making such breaking changes.
 (setq desktop-restore-eager 10)
 #+END_SRC
 
-Indicate that Text-Mode buffers ought to be 80 characters wide.
-
-#+BEGIN_SRC emacs-lisp
-(use-package fill-column-indicator
-  :ensure t
-  :config
-  (setq-default fill-column 80)
-  (add-hook #'text-mode-hook #'fci-mode))
-#+END_SRC
-
-Give buffers backed by identically named files distinguishable names.
-
-#+BEGIN_SRC emacs-lisp
-(require 'uniquify)
-(setq uniquify-buffer-name-style 'forward)
-#+END_SRC
-
 Provide expected "Undo" functionality.
 
 #+BEGIN_SRC emacs-lisp
@@ -2500,6 +2483,23 @@ Line numbers make documents easier to read.
 
 #+BEGIN_SRC emacs-lisp
 (add-hook #'text-mode-hook #'linum-mode)
+#+END_SRC
+
+Indicate that Text-Mode buffers ought to be 80 characters wide.
+
+#+BEGIN_SRC emacs-lisp
+(use-package fill-column-indicator
+  :ensure t
+  :config
+  (setq-default fill-column 80)
+  (add-hook #'text-mode-hook #'fci-mode))
+#+END_SRC
+
+Give buffers backed by identically named files distinguishable names.
+
+#+BEGIN_SRC emacs-lisp
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
 #+END_SRC
 
 Don't use audible bells, use visual bells.

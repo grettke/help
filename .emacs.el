@@ -477,13 +477,6 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (help/diminish "smartparens-mode"))
 (desktop-save-mode t)
 (setq desktop-restore-eager 10)
-(use-package fill-column-indicator
-  :ensure t
-  :config
-  (setq-default fill-column 80)
-  (add-hook #'text-mode-hook #'fci-mode))
-(require 'uniquify)
-(setq uniquify-buffer-name-style 'forward)
 (use-package undo-tree
   :ensure t
   :config
@@ -1049,6 +1042,13 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
 (define-key org-mode-map (kbd "s-p") #'org-babel-demarcate-block)
 (define-key org-src-mode-map (kbd "s-l") #'org-edit-src-exit)
 (add-hook #'text-mode-hook #'linum-mode)
+(use-package fill-column-indicator
+  :ensure t
+  :config
+  (setq-default fill-column 80)
+  (add-hook #'text-mode-hook #'fci-mode))
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
 (setq ring-bell-function 'ignore)
 (setq visible-bell t)
 (setq blink-matching-paren nil)
@@ -1156,17 +1156,3 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
 (global-set-key (kbd "M-n") (kbd "C-u 1 C-v"))
 (global-set-key (kbd "M-p") (kbd "C-u 1 M-v"))
 (global-set-key (kbd "s-:") #'my-eval-expression)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
