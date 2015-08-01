@@ -3266,3 +3266,4 @@ Make =s-l= do the same thing to leave the Source-Block-Buffer.
 #+BEGIN_SRC emacs-lisp
 (define-key org-src-mode-map (kbd "s-l") #'org-edit-src-exit)
 #+END_SRC
+** Structured Query Language (SQL)
