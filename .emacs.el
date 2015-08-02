@@ -1027,7 +1027,7 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
 (define-key org-mode-map (kbd "s-o") #'org-babel-execute-maybe)
 (define-key org-mode-map (kbd "s-;") #'org-babel-view-src-block-info)
 (define-key org-mode-map (kbd "s-p") #'org-babel-demarcate-block)
-(define-key org-mode-map (kbd "C-e") #'help/safb-org-export-dispatch)
+(define-key org-mode-map (kbd "C-c C-e") #'help/safb-org-export-dispatch)
 (define-key org-src-mode-map (kbd "s-l") #'org-edit-src-exit)
 (setq help/hack-modes '())
 (setq help/hack-lisp-modes

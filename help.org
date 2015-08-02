@@ -1808,11 +1808,8 @@ Future candidates:
 - ispell
 - ispell-word
 - langtool-check-buffer
-- log-edit-done
 - newline-and-indent
 - next-line
-- org-export-dispatch
-- org-latex-export-to-pdf
 - org-return
 - org-return
 - pop-to-mark-command
@@ -3339,7 +3336,7 @@ in mind, RETURN is bound to that now. Now ALEC has four different kinds of
 Safe all buffers before working with Exports.
 
 #+BEGIN_SRC emacs-lisp
-(define-key org-mode-map (kbd "C-e") #'help/safb-org-export-dispatch)
+(define-key org-mode-map (kbd "C-c C-e") #'help/safb-org-export-dispatch)
 #+END_SRC
 
 Make =s-l= do the same thing to leave the Source-Block-Buffer.
