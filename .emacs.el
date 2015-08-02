@@ -66,24 +66,6 @@ Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html
   (interactive)
   (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
 
-(defun help/untabify-buffer ()
-  "For untabifying the entire buffer."
-  (interactive)
-  (untabify (point-min) (point-max)))
-
-(defun help/untabify-buffer-hook ()
-  "Adds a buffer-local untabify on save hook"
-  (interactive)
-  (add-hook
-   'after-save-hook
-   (lambda () (help/untabify-buffer))
-   nil
-   'true))
-
-(defun help/disable-tabs ()
-  "Disables tabs."
-  (setq indent-tabs-mode nil))
-
 (defvar help/delete-trailing-whitespace-p t
   "Should trailing whitespace be removed?")
 
@@ -863,6 +845,16 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
              :config
              (add-hook 'after-init-hook #'global-flycheck-mode)
              (help/diminish "flycheck-mode"))
+(setq-default indent-tabs-mode nil)
+(defun help/untabify-if-not-indent-tabs-mode ()
+  "Untabify if `indent-tabs-mode' is false.
+
+Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
+  (interactive)
+  (when (not indent-tabs-mode)
+    (untabify (point-min) (point-max))))
+
+(add-hook #'write-file-hooks #'help/untabify-if-not-indent-tabs-mode)
 (use-package yasnippet
              :ensure t
              :config
@@ -1178,17 +1170,3 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
 (global-set-key (kbd "M-n") (kbd "C-u 1 C-v"))
 (global-set-key (kbd "M-p") (kbd "C-u 1 M-v"))
 (global-set-key (kbd "s-:") #'my-eval-expression)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )

@@ -239,24 +239,6 @@ Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html
   (interactive)
   (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
 
-(defun help/untabify-buffer ()
-  "For untabifying the entire buffer."
-  (interactive)
-  (untabify (point-min) (point-max)))
-
-(defun help/untabify-buffer-hook ()
-  "Adds a buffer-local untabify on save hook"
-  (interactive)
-  (add-hook
-   'after-save-hook
-   (lambda () (help/untabify-buffer))
-   nil
-   'true))
-
-(defun help/disable-tabs ()
-  "Disables tabs."
-  (setq indent-tabs-mode nil))
-
 (defvar help/delete-trailing-whitespace-p t
   "Should trailing whitespace be removed?")
 
@@ -2402,6 +2384,29 @@ Perform syntactic analysis all the time.
              :config
              (add-hook 'after-init-hook #'global-flycheck-mode)
              (help/diminish "flycheck-mode"))
+#+END_SRC
+
+** TAB
+
+Most modes in this system will never use TAB.
+
+#+BEGIN_SRC emacs-lisp
+(setq-default indent-tabs-mode nil)
+#+END_SRC
+
+Remove TABs from all buffers before persisting to a backing file unelss it is
+configured to retain TABs. The use case is a Makefile.
+
+#+BEGIN_SRC emacs-lisp
+(defun help/untabify-if-not-indent-tabs-mode ()
+  "Untabify if `indent-tabs-mode' is false.
+
+Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
+  (interactive)
+  (when (not indent-tabs-mode)
+    (untabify (point-min) (point-max))))
+
+(add-hook #'write-file-hooks #'help/untabify-if-not-indent-tabs-mode)
 #+END_SRC
 
 ** Templating
