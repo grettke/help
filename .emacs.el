@@ -1032,12 +1032,10 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
 (use-package aggressive-indent
   :ensure t
   :config)
-(use-package smartparens :if nil
-  :ensure t
+(use-package smartparens-config
+  :ensure smartparens
   :config
-  (require 'smartparens-config)
   (setq sp-show-pair-from-inside nil)
-  (smartparens-global-strict-mode)
   (help/diminish "smartparens-mode"))
 (defun help/hack-common-mode-hook-fn ()
   (interactive)

@@ -2881,12 +2881,10 @@ Common configuration definitions.
 - Always maintain balanced brackets. Easily wrap the selected region. Auto-escape
   strings pasted into other strings.
   #+BEGIN_SRC emacs-lisp
-(use-package smartparens :if nil
-  :ensure t
+(use-package smartparens-config
+  :ensure smartparens
   :config
-  (require 'smartparens-config)
   (setq sp-show-pair-from-inside nil)
-  (smartparens-global-strict-mode)
   (help/diminish "smartparens-mode"))
   #+END_SRC
 - Implementation.
