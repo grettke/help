@@ -484,6 +484,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   :ensure t
   :config
   (global-set-key (kbd "s-d") #'er/expand-region))
+(setq help/column-width 80)
 (require 'hideshow)
 (setq hs-hide-comments-when-hiding-all t)
 (setq hs-isearch-open t)
@@ -869,7 +870,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   :ensure t
   :config
   (setq whitespace-style '(trailing lines tab-mark))
-  (setq whitespace-line-column 80)
+  (setq whitespace-line-column help/column-width)
   (global-whitespace-mode t)
   (help/diminish 'global-whitespace-mode)
   (help/diminish 'whitespace-mode))
@@ -1044,7 +1045,7 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
 (use-package fill-column-indicator
   :ensure t
   :config
-  (setq-default fill-column 80))
+  (setq-default fill-column help/column-width))
 (defun help/text-prog*-setup ()
   "HELP's standard configuration for buffer's working with text, often for
    programming."

@@ -1565,6 +1565,12 @@ then document.
   (global-set-key (kbd "s-d") #'er/expand-region))
 #+END_SRC
 
+80 characters is wide enough for most documents.
+
+#+BEGIN_SRC emacs-lisp
+(setq help/column-width 80)
+#+END_SRC
+
 ** Code Folding
 
 #+BEGIN_SRC emacs-lisp
@@ -2445,7 +2451,7 @@ Make control characters easily visible.
   :ensure t
   :config
   (setq whitespace-style '(trailing lines tab-mark))
-  (setq whitespace-line-column 80)
+  (setq whitespace-line-column help/column-width)
   (global-whitespace-mode t)
   (help/diminish 'global-whitespace-mode)
   (help/diminish 'whitespace-mode))
@@ -2476,7 +2482,7 @@ With that in mind this system:
 (use-package fill-column-indicator
   :ensure t
   :config
-  (setq-default fill-column 80))
+  (setq-default fill-column help/column-width))
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp
