@@ -2887,7 +2887,7 @@ Common configuration definitions.
   :ensure smartparens
   :config
   (setq sp-show-pair-from-inside nil)
-  (help/diminish "smartparens-mode"))
+  (help/diminish 'smartparens-mode))
   #+END_SRC
 - Implementation.
  #+BEGIN_SRC emacs-lisp

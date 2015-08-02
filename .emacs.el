@@ -1027,7 +1027,7 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
   :ensure smartparens
   :config
   (setq sp-show-pair-from-inside nil)
-  (help/diminish "smartparens-mode"))
+  (help/diminish 'smartparens-mode))
 (defun help/hack-common-mode-hook-fn ()
   (interactive)
   (help/text-prog*-setup)
@@ -1132,7 +1132,7 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
 (menu-bar-mode t)
 (winner-mode t)
 (define-prefix-command 'help/vc-map)
-(global-set-key (kbd "s-t") #'help/vc-map)
+(global-set-key (kbd "s-r") #'help/vc-map)
 (define-key help/vc-map "e" #'help/safb-vc-ediff)
 (define-key help/vc-map "d" #'help/safb-vc-diff)
 (define-key help/vc-map "u" #'help/safb-vc-revert)
