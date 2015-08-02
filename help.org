@@ -15,6 +15,87 @@ Setup:
    - The Init file to HELP's.
      - =ln -s ~/src/help/.emacs.el ~/.emacs.el=
 
+* Style Guide
+
+- Code Block
+  - Tell the story in speech, and then in code.
+  - Consider it another paragraph and indent appropriately.
+  - When contained within a list.
+    - Indent begin/end blocks with list content; this makes it clear to Org-Mode
+      to export it as a code block.
+    - Source code is indented according to existing settings. This system keeps
+      it left-aligned, saving space.
+- Content
+  - When importing, update to conform with Style-Guide.
+- Dictionary
+  - Exemple Complet Minimal (ECM) :: The minimal complete example of expected
+    versus actual behavior. Comes from the [[http://orgmode.org/worg/org-faq.html][Org-Mode]] community.
+  - Key-Bind :: A verb. The act of creating a Key Binding.
+  - Out of the Box (OOTB) :: The default configuration of something.
+  - Sysop :: A proper noun. The System-Operator. The human operating this EMACS
+    based Org-Mode enabled literate programming system. The reader.
+  - Tangle :: A verb. Assemble a document for consumption by another program or
+    machine.
+  - Weave :: A verb. Prepare a document for consumption by a human.
+- Formatting
+  - Code Snippet.
+    - Programming language expressions.
+    - Use ~code style~.
+  - Non-Code Snippet.
+    - Program names, file types
+    - Use =verbatim= style
+  - Package.
+    - Same as Headline.
+    - Dashes separate definition.
+    - Acronyms are all upper case to distinguish from words for example "GNU"
+      vs "Gnu".
+- Headline.
+  - Capitalize nouns, verbs, and adjectives.
+  - Don't capitalize conjunctions unless they are starting the definition.
+  - Sell this "chapter" to the reader.
+- Hyperlink.
+  - External.
+    - Exclude those easily found with a search-engine unless you are willing to
+      verify their existence frequently.
+    - Include when they make the task at hand immensely easier.
+  - Internal.
+    - Heading artifacts can be referenced so the need here is minimal to
+      non-existent.
+- Literate Programming.
+  - Comments.
+    - Exclude from tangle-blocks and rely on source-block for traceability.
+  - Noweb-Ref.
+    - Same as Headline.
+    - Replace spaces with dashes.
+    - Probably the Heading name.
+    - Keep depth shallow
+- Maintenance.
+  - Frequently check spelling, grammar, and weasel-words.
+- Plain List.
+  - End single sentences with a period.
+- Programming Language.
+  - Emacs-Lisp.
+    - Use ~t~ for ~true~.
+    - Almost always use ~defun~ instead of ~advice-add~.
+      - Functions are more normal and predictable.
+      - Advice can subtly break without you noticing.
+    - Paramemter.
+      - ~nil~ for =FALSE=.
+      - ~t~ for =TRUE=.
+      - ~n~ for numerical values.
+- Tangling.
+  - When ordering matters, rely on block-reuse to enforce correct generation.
+- Voice.
+  - Provide answers; do not pose questions or observations.
+  - Simple and detailed.
+  - Pleasant conversation style.
+  - Audience is Sysop; the author included.
+- Word Choice.
+  - Use Arabic numerals.
+  - Instead of writing "tells EMACS", communicate the result.
+  - "EMACS" refers to this software.
+  - "This system" refers to this configuration of EMACS.
+
 * Webs We Weave
 
 ** Org-Mode Exemple Complet Minimal
@@ -2760,87 +2841,6 @@ Load Use-Package and it's partner Diminish.
   (require 'use-package))
 (require 'diminish)
 #+END_SRC
-
-* Style Guide
-
-- Code Block
-  - Tell the story in speech, and then in code.
-  - Consider it another paragraph and indent appropriately.
-  - When contained within a list.
-    - Indent begin/end blocks with list content; this makes it clear to Org-Mode
-      to export it as a code block.
-    - Source code is indented according to existing settings. This system keeps
-      it left-aligned, saving space.
-- Content
-  - When importing, update to conform with Style-Guide.
-- Dictionary
-  - Exemple Complet Minimal (ECM) :: The minimal complete example of expected
-    versus actual behavior. Comes from the [[http://orgmode.org/worg/org-faq.html][Org-Mode]] community.
-  - Key-Bind :: A verb. The act of creating a Key Binding.
-  - Out of the Box (OOTB) :: The default configuration of something.
-  - Sysop :: A proper noun. The System-Operator. The human operating this EMACS
-    based Org-Mode enabled literate programming system. The reader.
-  - Tangle :: A verb. Assemble a document for consumption by another program or
-    machine.
-  - Weave :: A verb. Prepare a document for consumption by a human.
-- Formatting
-  - Code Snippet.
-    - Programming language expressions.
-    - Use ~code style~.
-  - Non-Code Snippet.
-    - Program names, file types
-    - Use =verbatim= style
-  - Package.
-    - Same as Headline.
-    - Dashes separate definition.
-    - Acronyms are all upper case to distinguish from words for example "GNU"
-      vs "Gnu".
-- Headline.
-  - Capitalize nouns, verbs, and adjectives.
-  - Don't capitalize conjunctions unless they are starting the definition.
-  - Sell this "chapter" to the reader.
-- Hyperlink.
-  - External.
-    - Exclude those easily found with a search-engine unless you are willing to
-      verify their existence frequently.
-    - Include when they make the task at hand immensely easier.
-  - Internal.
-    - Heading artifacts can be referenced so the need here is minimal to
-      non-existent.
-- Literate Programming.
-  - Comments.
-    - Exclude from tangle-blocks and rely on source-block for traceability.
-  - Noweb-Ref.
-    - Same as Headline.
-    - Replace spaces with dashes.
-    - Probably the Heading name.
-    - Keep depth shallow
-- Maintenance.
-  - Frequently check spelling, grammar, and weasel-words.
-- Plain List.
-  - End single sentences with a period.
-- Programming Language.
-  - Emacs-Lisp.
-    - Use ~t~ for ~true~.
-    - Almost always use ~defun~ instead of ~advice-add~.
-      - Functions are more normal and predictable.
-      - Advice can subtly break without you noticing.
-    - Paramemter.
-      - ~nil~ for =FALSE=.
-      - ~t~ for =TRUE=.
-      - ~n~ for numerical values.
-- Tangling.
-  - When ordering matters, rely on block-reuse to enforce correct generation.
-- Voice.
-  - Provide answers; do not pose questions or observations.
-  - Simple and detailed.
-  - Pleasant conversation style.
-  - Audience is Sysop; the author included.
-- Word Choice.
-  - Use Arabic numerals.
-  - Instead of writing "tells EMACS", communicate the result.
-  - "EMACS" refers to this software.
-  - "This system" refers to this configuration of EMACS.
 
 * Hacking
 
