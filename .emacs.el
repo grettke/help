@@ -753,7 +753,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   :config
   (projectile-global-mode t)
   (key-chord-define-global "s-z" #'projectile-find-file)
-  (help/diminish "projectile-mode")
+  (help/diminish 'projectile-mode)
   (gcr/on-windows
    (setq projectile-indexing-method 'alien)))
 (eval-after-load "projectile"
@@ -844,7 +844,7 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
   :ensure t
   :config
   (add-hook 'after-init-hook #'global-flycheck-mode)
-  (help/diminish "flycheck-mode"))
+  (help/diminish 'flycheck-mode))
 (setq-default indent-tabs-mode nil)
 (defun help/untabify-if-not-indent-tabs-mode ()
   "Untabify if `indent-tabs-mode' is false.
@@ -879,8 +879,8 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (setq whitespace-style '(trailing lines tab-mark))
   (setq whitespace-line-column 80)
   (global-whitespace-mode t)
-  (help/diminish "global-whitespace-mode")
-  (help/diminish "whitespace-mode"))
+  (help/diminish 'global-whitespace-mode)
+  (help/diminish 'whitespace-mode))
 (setq initial-scratch-message nil)
 (require 'lexbind-mode)
 

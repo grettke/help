@@ -2197,7 +2197,7 @@ with Projectile.
   :config
   (projectile-global-mode t)
   (key-chord-define-global "s-z" #'projectile-find-file)
-  (help/diminish "projectile-mode")
+  (help/diminish 'projectile-mode)
   (gcr/on-windows
    (setq projectile-indexing-method 'alien)))
 #+END_SRC
@@ -2383,7 +2383,7 @@ Perform syntactic analysis all the time.
   :ensure t
   :config
   (add-hook 'after-init-hook #'global-flycheck-mode)
-  (help/diminish "flycheck-mode"))
+  (help/diminish 'flycheck-mode))
 #+END_SRC
 
 ** TAB
@@ -2460,8 +2460,8 @@ Make control characters easily visible.
   (setq whitespace-style '(trailing lines tab-mark))
   (setq whitespace-line-column 80)
   (global-whitespace-mode t)
-  (help/diminish "global-whitespace-mode")
-  (help/diminish "whitespace-mode"))
+  (help/diminish 'global-whitespace-mode)
+  (help/diminish 'whitespace-mode))
 #+END_SRC
 
 * Quiet and Pleasant Appearance
