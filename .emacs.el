@@ -527,16 +527,16 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
      (add-to-list 'eshell-visual-commands "tail")
      (add-to-list 'eshell-command-completions-alist
                   '("tar" "\\(\\.tar|\\.tgz\\|\\.tar\\.gz\\)\\'"))))
-(defconst gcr/eshell-dir "~/.emacs.d/eshell")
-(defun gcr/warn-eshell-dir ()
+(defconst help/eshell-dir "~/.emacs.d/eshell")
+(defun help/warn-eshell-dir ()
   "Warn of eshell misconfiguration."
   (interactive)
-  (unless (and (f-symlink? gcr/eshell-dir)
-             (f-directory? gcr/eshell-dir))
+  (unless (and (f-symlink? help/eshell-dir)
+             (f-directory? help/eshell-dir))
     (warn
      "Could not find the eshell directory at: %S. Eshell will continue to function albeit without your customizations."
-     gcr/eshell-dir)))
-(gcr/warn-eshell-dir)
+     help/eshell-dir)))
+(help/warn-eshell-dir)
 (setq eshell-prompt-regexp "^.+@.+:.+> ")
 (setq eshell-prompt-function
       (lambda ()
@@ -756,7 +756,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (projectile-global-mode t)
   (key-chord-define-global "s-z" #'projectile-find-file)
   (help/diminish 'projectile-mode)
-  (gcr/on-windows
+  (help/on-windows
    (setq projectile-indexing-method 'alien)))
 (eval-after-load "projectile"
   '(progn (setq magit-repository-directories (mapcar (lambda (dir)
@@ -1100,7 +1100,7 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
 (help/on-gui
  (defvar help/font-size 10 "The preferred font size.")
  (help/on-osx (setq help/font-size 17))
- (help/on-windows (setq gcr/font-size 13))
+ (help/on-windows (setq help/font-size 13))
  (defconst help/font-base "DejaVu Sans Mono" "The preferred font name.")
  (defun help/font-ok-p ()
    "Is the configured font valid?"
@@ -1149,7 +1149,7 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
 (key-chord-define-global "fg" #'goto-line)
 (key-chord-define-global "FG" #'pop-to-mark-command)
 (global-set-key (kbd "C-a") #'beginning-of-line-dwim)
-(global-set-key (kbd "M-s p") 'gcr/occur-dwim)
+(global-set-key (kbd "M-s p") 'help/occur-dwim)
 (key-chord-define-global "fv" #'help/safb-other-window)
 (key-chord-define-global "f9" #'help/util-cycle)
 (global-set-key (kbd "s-b") 'hs-toggle-hiding)

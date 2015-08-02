@@ -1197,7 +1197,7 @@ Do the /right thing/ for getting to the start of the line.
 Occur has 3 cases. I like to use it to explore the unknown.
 
 #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "M-s p") 'gcr/occur-dwim)
+(global-set-key (kbd "M-s p") 'help/occur-dwim)
 #+END_SRC
 
 Simpler buffer movement.
@@ -1660,16 +1660,16 @@ to =eshell-visual-commands=.
 The =eshell= configuration is a version controlled directory
 
 #+BEGIN_SRC emacs-lisp
-(defconst gcr/eshell-dir "~/.emacs.d/eshell")
-(defun gcr/warn-eshell-dir ()
+(defconst help/eshell-dir "~/.emacs.d/eshell")
+(defun help/warn-eshell-dir ()
   "Warn of eshell misconfiguration."
   (interactive)
-  (unless (and (f-symlink? gcr/eshell-dir)
-             (f-directory? gcr/eshell-dir))
+  (unless (and (f-symlink? help/eshell-dir)
+             (f-directory? help/eshell-dir))
     (warn
      "Could not find the eshell directory at: %S. Eshell will continue to function albeit without your customizations."
-     gcr/eshell-dir)))
-(gcr/warn-eshell-dir)
+     help/eshell-dir)))
+(help/warn-eshell-dir)
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp
@@ -1783,7 +1783,7 @@ Future candidates:
 - ess-rdired
 - eval-defun
 - eval-region
-- gcr/newline
+- help/newline
 - goto-line
 - ido-switch-buffer
 - ielm
@@ -2198,7 +2198,7 @@ with Projectile.
   (projectile-global-mode t)
   (key-chord-define-global "s-z" #'projectile-find-file)
   (help/diminish 'projectile-mode)
-  (gcr/on-windows
+  (help/on-windows
    (setq projectile-indexing-method 'alien)))
 #+END_SRC
 
@@ -2604,7 +2604,7 @@ character wide buffer and make it easy to adjust it.
 (help/on-gui
  (defvar help/font-size 10 "The preferred font size.")
  (help/on-osx (setq help/font-size 17))
- (help/on-windows (setq gcr/font-size 13))
+ (help/on-windows (setq help/font-size 13))
  (defconst help/font-base "DejaVu Sans Mono" "The preferred font name.")
  (defun help/font-ok-p ()
    "Is the configured font valid?"
