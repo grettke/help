@@ -1014,6 +1014,18 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
 (define-key org-mode-map (kbd "s-p") #'org-babel-demarcate-block)
 (define-key org-mode-map (kbd "C-c C-e") #'help/safb-org-export-dispatch)
 (define-key org-src-mode-map (kbd "s-l") #'org-edit-src-exit)
+(use-package fill-column-indicator
+  :ensure t
+  :config
+  (setq-default fill-column help/column-width))
+(defun help/text-prog*-setup ()
+  "HELP's standard configuration for buffer's working with text, often for
+   programming."
+  (interactive)
+  (linum-mode)
+  (fci-mode))
+
+(add-hook #'text-mode-hook #'help/text-prog*-setup)
 (setq help/hack-modes '())
 (setq help/hack-lisp-modes
       '(emacs-lisp-mode-hook
@@ -1028,32 +1040,20 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
   :config
   (setq sp-show-pair-from-inside nil)
   (help/diminish 'smartparens-mode))
-(defun help/hack-common-mode-hook-fn ()
+(defun help/hack-prog*-mode-hook-fn ()
   (interactive)
   (help/text-prog*-setup)
   (smartparens-strict-mode)
   (aggressive-indent-mode))
 (let (void)
   (--each help/hack-modes
-    (add-hook it #'help/hack-common-mode-hook-fn)))
+    (add-hook it #'help/hack-prog*-mode-hook-fn)))
 
 (let (void)
   (--each help/hack-lisp-modes
     (add-hook it #'help/emacs-lisp-mode-hook-fn)))
 
 (add-hook #'ielm-mode-hook #'help/ielm-mode-hook)
-(use-package fill-column-indicator
-  :ensure t
-  :config
-  (setq-default fill-column help/column-width))
-(defun help/text-prog*-setup ()
-  "HELP's standard configuration for buffer's working with text, often for
-   programming."
-  (interactive)
-  (linum-mode)
-  (fci-mode))
-
-(add-hook #'text-mode-hook #'help/text-prog*-setup)
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 (setq ring-bell-function 'ignore)

@@ -140,7 +140,7 @@ Start EMACS with this command:
 «Standard-Operating-Procedure»
 «Hacking-Emacs-Lisp»
 «Hacking-Org-Mode»
-«Hacking-Common»
+«Hacking-Prog*-Mode»
 «Quiet-and-Pleasant-Appearance»
 «Piano-Lessons»
 #+END_SRC
@@ -2547,36 +2547,6 @@ Configure EMACS to personal-taste for "noise" and "form".
 
 ** Buffer
 
-In practice ~text-mode~ and ~prog-mode~ have common preferencess for this system.
-The EMACS literature advises that modes extend one of them. That makes it easier
-to configure basically everything using ~prog-mode-hook~. In practice the latter
-is too new. Not all programming modes inherit from it. Not even IELM is ready.
-With that in mind this system:
-
-- Defines common configuration here for reuse in every desired mode.
-- Configures each mode that wants to use it explicitly instead of relying on
-  inheriting from ~prog-mode~.
-
-- Line numbers make documents easier to read.
-- Indicate that Text-Mode buffers ought to be 80 characters wide.
-#+BEGIN_SRC emacs-lisp
-(use-package fill-column-indicator
-  :ensure t
-  :config
-  (setq-default fill-column help/column-width))
-#+END_SRC
-
-#+BEGIN_SRC emacs-lisp
-(defun help/text-prog*-setup ()
-  "HELP's standard configuration for buffer's working with text, often for
-   programming."
-  (interactive)
-  (linum-mode)
-  (fci-mode))
-
-(add-hook #'text-mode-hook #'help/text-prog*-setup)
-#+END_SRC
-
 Give buffers backed by identically named files distinguishable names.
 
 #+BEGIN_SRC emacs-lisp
@@ -2844,14 +2814,50 @@ Load Use-Package and it's partner Diminish.
 
 * Hacking
 
-** Common
+** Common Configuration
   :PROPERTIES:
-  :noweb-ref: Hacking-Common
+  :noweb-ref: Hacking-Prog*-Mode
   :END:
 
-Common configuration definitions.
+This system holds similar preferences for ~text-mode~ and ~prog-mode~. The EMACS
+literature advises that modes extend one of them. That makes it easier to
+configure basically everything using ~prog-mode-hook~. In practice the latter
+is too new. Not all programming modes inherit from it. Not even =IELM= is ready.
 
-*** Hooks
+With that in mind this system:
+
+- Defines common configuration here for reuse in every desired mode starting
+  with =text-mode= and then programming modes.
+- Configures each mode that wants to use it explicitly instead of relying on
+  inheriting from ~prog-mode~.
+- Refer to this configuration of programming modes as =prog*-mode=.
+
+*** Text-Mode
+
+- Line numbers make documents easier to read.
+- Indicate that Text-Mode buffers ought to be 80 characters wide.
+  #+BEGIN_SRC emacs-lisp
+(use-package fill-column-indicator
+  :ensure t
+  :config
+  (setq-default fill-column help/column-width))
+  #+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+(defun help/text-prog*-setup ()
+  "HELP's standard configuration for buffer's working with text, often for
+   programming."
+  (interactive)
+  (linum-mode)
+  (fci-mode))
+
+(add-hook #'text-mode-hook #'help/text-prog*-setup)
+ #+END_SRC
+
+*** Prog*-Mode Modes
+
+- Mode inheritance is represented by list definition & indentation.
+- Some modes are so simple that inheritance isn't defined.
 
 - Hacking mode hooks.
   - Configurations common to every hacking vehicle.
@@ -2870,18 +2876,21 @@ Common configuration definitions.
     - IELM mode hook.
       - Does one or two more things.
 
-***  Hook Functions
+***  Prog*-Mode Hook
 
-- Use the standard ~help/text-prog*-setup~.
+**** Goal
+
 - Indent at every opportunity and automatically. Verify that it makes sense
-  for the mode. Explicitly define instead of relying on ~prog-mode~ inheritance.
+  for the mode. Explicitly define instead of relying on ~prog-mode~ inheritance;
+  use this documents logical ~prog*-mode~ approach instead.
   #+BEGIN_SRC emacs-lisp
 (use-package aggressive-indent
   :ensure t
   :config)
   #+END_SRC
 - Always maintain balanced brackets. Easily wrap the selected region. Auto-escape
-  strings pasted into other strings.
+  strings pasted into other strings. Smartparens provides built-in correct
+  behavior for most modes.
   #+BEGIN_SRC emacs-lisp
 (use-package smartparens-config
   :ensure smartparens
@@ -2889,9 +2898,11 @@ Common configuration definitions.
   (setq sp-show-pair-from-inside nil)
   (help/diminish 'smartparens-mode))
   #+END_SRC
-- Implementation.
- #+BEGIN_SRC emacs-lisp
-(defun help/hack-common-mode-hook-fn ()
+
+**** Implementation.
+
+#+BEGIN_SRC emacs-lisp
+(defun help/hack-prog*-mode-hook-fn ()
   (interactive)
   (help/text-prog*-setup)
   (smartparens-strict-mode)
@@ -2903,7 +2914,7 @@ Common configuration definitions.
  #+BEGIN_SRC emacs-lisp
 (let (void)
   (--each help/hack-modes
-    (add-hook it #'help/hack-common-mode-hook-fn)))
+    (add-hook it #'help/hack-prog*-mode-hook-fn)))
 
 (let (void)
   (--each help/hack-lisp-modes
