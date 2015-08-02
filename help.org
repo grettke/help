@@ -2542,6 +2542,16 @@ Make control characters easily visible.
   (help/diminish 'whitespace-mode))
 #+END_SRC
 
+** Word Wrap
+
+#+BEGIN_SRC emacs-lisp
+(global-visual-line-mode)
+(global-set-key (kbd "s-C-n") #'next-line)
+(global-set-key (kbd "C-n") #'next-logical-line)
+(global-set-key (kbd "s-C-p") #'previous-line)
+(global-set-key (kbd "C-p") #'previous-logical-line)
+#+END_SRC
+
 * Quiet and Pleasant Appearance
    :PROPERTIES:
    :noweb-ref: Quiet-and-Pleasant-Appearance

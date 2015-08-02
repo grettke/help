@@ -874,6 +874,11 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (global-whitespace-mode t)
   (help/diminish 'global-whitespace-mode)
   (help/diminish 'whitespace-mode))
+(global-visual-line-mode)
+(global-set-key (kbd "s-C-n") #'next-line)
+(global-set-key (kbd "C-n") #'next-logical-line)
+(global-set-key (kbd "s-C-p") #'previous-line)
+(global-set-key (kbd "C-p") #'previous-logical-line)
 (setq initial-scratch-message nil)
 (require 'lexbind-mode)
 
