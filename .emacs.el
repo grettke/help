@@ -1006,6 +1006,8 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
  (define-key org-mode-map (kbd "<return>") 'org-return-indent)
  (define-key org-mode-map (kbd "C-M-<return>") 'electric-indent-just-newline))
 (define-key org-mode-map (kbd "s-j") #'org-babel-next-src-block)
+(define-key org-mode-map (kbd "s-u") #'org-goto)
+(define-key org-mode-map (kbd "s-U") #'org-mark-ring-goto)
 (define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
 (define-key org-mode-map (kbd "s-i") #'help/safb-org-babel-tangle)
 (define-key org-mode-map (kbd "s-l") #'help/org-edit-src-code-plus-name)

@@ -3340,6 +3340,8 @@ in mind, RETURN is bound to that now. Now ALEC has four different kinds of
 
 #+BEGIN_SRC emacs-lisp
 (define-key org-mode-map (kbd "s-j") #'org-babel-next-src-block)
+(define-key org-mode-map (kbd "s-u") #'org-goto)
+(define-key org-mode-map (kbd "s-U") #'org-mark-ring-goto)
 (define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
 (define-key org-mode-map (kbd "s-i") #'help/safb-org-babel-tangle)
 (define-key org-mode-map (kbd "s-l") #'help/org-edit-src-code-plus-name)
