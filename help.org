@@ -3364,10 +3364,5 @@ Make =s-l= do the same thing to leave the Source-Block-Buffer.
 
 ** Structured Query Language (SQL)
 ** Vagrant (Ruby)
-  :PROPERTIES:
-  :noweb-ref: Hacking-Vagrant-Ruby
-  :END:
 
-#+BEGIN_SRC emacs-lisp
-(add-to-list 'auto-mode-alist '("Vagrantfile$" . ruby-mode))
-#+END_SRC
+~ruby-mode~ supports =Vagrantfile= OOTB.
