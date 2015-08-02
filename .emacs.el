@@ -748,14 +748,14 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
    (help/on-osx
     (setq alert-default-style 'growl)))
   (setq alert-reveal-idle-time 120))
-(use-package projectile :if nil
-             :ensure t
-             :config
-             (projectile-global-mode t)
-             (key-chord-define-global "s-z" #'projectile-find-file)
-             (help/diminish "projectile-mode")
-             (gcr/on-windows
-              (setq projectile-indexing-method 'alien)))
+(use-package projectile
+  :ensure t
+  :config
+  (projectile-global-mode t)
+  (key-chord-define-global "s-z" #'projectile-find-file)
+  (help/diminish "projectile-mode")
+  (gcr/on-windows
+   (setq projectile-indexing-method 'alien)))
 (eval-after-load "projectile"
   '(progn (setq magit-repository-directories (mapcar (lambda (dir)
                                                        (substring dir 0 -1))
@@ -840,11 +840,11 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
      (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
 
  (advice-add 'ido-find-file :after #'help/ido-find-file))
-(use-package flycheck :if nil
-             :ensure t
-             :config
-             (add-hook 'after-init-hook #'global-flycheck-mode)
-             (help/diminish "flycheck-mode"))
+(use-package flycheck
+  :ensure t
+  :config
+  (add-hook 'after-init-hook #'global-flycheck-mode)
+  (help/diminish "flycheck-mode"))
 (setq-default indent-tabs-mode nil)
 (defun help/untabify-if-not-indent-tabs-mode ()
   "Untabify if `indent-tabs-mode' is false.
@@ -873,14 +873,14 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 (eval-after-load 'log-edit
   '(remove-hook 'log-edit-hook 'log-edit-insert-message-template))
 (add-to-list 'auto-mode-alist '(".gitignore$" . text-mode))
-(use-package whitespace :if nil
-             :ensure t
-             :config
-             (setq whitespace-style '(trailing lines tab-mark))
-             (setq whitespace-line-column 80)
-             (global-whitespace-mode 1)
-             (help/diminish "global-whitespace-mode")
-             (help/diminish "whitespace-mode"))
+(use-package whitespace
+  :ensure t
+  :config
+  (setq whitespace-style '(trailing lines tab-mark))
+  (setq whitespace-line-column 80)
+  (global-whitespace-mode t)
+  (help/diminish "global-whitespace-mode")
+  (help/diminish "whitespace-mode"))
 (setq initial-scratch-message nil)
 (require 'lexbind-mode)
 

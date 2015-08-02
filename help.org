@@ -2192,14 +2192,14 @@ Directories that have Git working copies are logically projects. Manage them
 with Projectile.
 
 #+BEGIN_SRC emacs-lisp
-(use-package projectile :if nil
-             :ensure t
-             :config
-             (projectile-global-mode t)
-             (key-chord-define-global "s-z" #'projectile-find-file)
-             (help/diminish "projectile-mode")
-             (gcr/on-windows
-              (setq projectile-indexing-method 'alien)))
+(use-package projectile
+  :ensure t
+  :config
+  (projectile-global-mode t)
+  (key-chord-define-global "s-z" #'projectile-find-file)
+  (help/diminish "projectile-mode")
+  (gcr/on-windows
+   (setq projectile-indexing-method 'alien)))
 #+END_SRC
 
 Notify Magit about every working copy that Projectile knows about.
@@ -2379,11 +2379,11 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
 Perform syntactic analysis all the time.
 
 #+BEGIN_SRC emacs-lisp
-(use-package flycheck :if nil
-             :ensure t
-             :config
-             (add-hook 'after-init-hook #'global-flycheck-mode)
-             (help/diminish "flycheck-mode"))
+(use-package flycheck
+  :ensure t
+  :config
+  (add-hook 'after-init-hook #'global-flycheck-mode)
+  (help/diminish "flycheck-mode"))
 #+END_SRC
 
 ** TAB
@@ -2454,14 +2454,14 @@ Git ignore files are text files.
 Make control characters easily visible.
 
 #+BEGIN_SRC emacs-lisp
-(use-package whitespace :if nil
-             :ensure t
-             :config
-             (setq whitespace-style '(trailing lines tab-mark))
-             (setq whitespace-line-column 80)
-             (global-whitespace-mode 1)
-             (help/diminish "global-whitespace-mode")
-             (help/diminish "whitespace-mode"))
+(use-package whitespace
+  :ensure t
+  :config
+  (setq whitespace-style '(trailing lines tab-mark))
+  (setq whitespace-line-column 80)
+  (global-whitespace-mode t)
+  (help/diminish "global-whitespace-mode")
+  (help/diminish "whitespace-mode"))
 #+END_SRC
 
 * Quiet and Pleasant Appearance
