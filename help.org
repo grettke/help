@@ -2866,7 +2866,7 @@ With that in mind this system:
 - Hacking mode hooks.
   - Configurations common to every hacking vehicle.
     #+BEGIN_SRC emacs-lisp
-(setq help/hack-modes '())
+(setq help/hack-modes '(ruby-mode-hook))
     #+END_SRC
   - LISP mode hooks.
     - Are hacking modes.
@@ -2880,7 +2880,7 @@ With that in mind this system:
     - IELM mode hook.
       - Does one or two more things.
 
-***  Prog*-Mode Hook
+*** Prog*-Mode Hook
 
 **** Goal
 
@@ -2924,7 +2924,7 @@ With that in mind this system:
   (--each help/hack-lisp-modes
     (add-hook it #'help/emacs-lisp-mode-hook-fn)))
 
-(add-hook #'ielm-mode-hook #'help/ielm-mode-hook)
+(add-hook #'ielm-mode-hook #'help/ielm-mode-hook-fn)
  #+END_SRC
 
 ** Emacs Lisp
@@ -3363,3 +3363,11 @@ Make =s-l= do the same thing to leave the Source-Block-Buffer.
 #+END_SRC
 
 ** Structured Query Language (SQL)
+** Vagrant (Ruby)
+  :PROPERTIES:
+  :noweb-ref: Hacking-Vagrant-Ruby
+  :END:
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'auto-mode-alist '("Vagrantfile$" . ruby-mode))
+#+END_SRC

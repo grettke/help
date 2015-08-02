@@ -1028,7 +1028,7 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
   (fci-mode))
 
 (add-hook #'text-mode-hook #'help/text-prog*-setup)
-(setq help/hack-modes '())
+(setq help/hack-modes '(ruby-mode-hook))
 (setq help/hack-lisp-modes
       '(emacs-lisp-mode-hook
         ielm-mode-hook
@@ -1055,7 +1055,7 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
   (--each help/hack-lisp-modes
     (add-hook it #'help/emacs-lisp-mode-hook-fn)))
 
-(add-hook #'ielm-mode-hook #'help/ielm-mode-hook)
+(add-hook #'ielm-mode-hook #'help/ielm-mode-hook-fn)
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 (setq ring-bell-function 'ignore)
