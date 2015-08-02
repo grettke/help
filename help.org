@@ -2381,8 +2381,8 @@ Most modes in this system will never use TAB.
 (setq-default indent-tabs-mode nil)
 #+END_SRC
 
-Remove TABs from all buffers before persisting to a backing file unless it is
-configured to retain TABs. The use case is a Makefile.
+Remove TAB from all buffers before persisting to the backing file unless it is
+configured to retain TAB. The use case is a Makefile.
 
 #+BEGIN_SRC emacs-lisp
 (defun help/untabify-if-not-indent-tabs-mode ()
