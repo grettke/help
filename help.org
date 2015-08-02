@@ -1787,6 +1787,11 @@ use than advice.
   (interactive)
   (help/save-all-file-buffers)
   (other-window 1))
+
+(defun help/safb-org-export-dispatch ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (org-export-dispatch))
 #+END_SRC
 
 Future candidates:
@@ -3329,6 +3334,12 @@ in mind, RETURN is bound to that now. Now ALEC has four different kinds of
 (define-key org-mode-map (kbd "s-o") #'org-babel-execute-maybe)
 (define-key org-mode-map (kbd "s-;") #'org-babel-view-src-block-info)
 (define-key org-mode-map (kbd "s-p") #'org-babel-demarcate-block)
+#+END_SRC
+
+Safe all buffers before working with Exports.
+
+#+BEGIN_SRC emacs-lisp
+(define-key org-mode-map (kbd "C-e") #'help/safb-org-export-dispatch)
 #+END_SRC
 
 Make =s-l= do the same thing to leave the Source-Block-Buffer.
