@@ -2408,7 +2408,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
                "Personal customizations."
                (define-key yas-minor-mode-map (kbd "<tab>") nil)
                (define-key yas-minor-mode-map (kbd "TAB") nil)
-               (define-key yas-minor-mode-map (kbd "s-5") 'yas-expand))
+               (define-key yas-minor-mode-map (kbd "s-t") 'yas-expand))
              (add-hook #'yas-minor-mode-hook #'help/yas-minor-mode-hook-fn))
 #+END_SRC
 
