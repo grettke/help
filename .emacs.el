@@ -744,7 +744,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   :ensure t
   :config
   (projectile-global-mode t)
-  (key-chord-define-global "s-z" #'projectile-find-file)
+  (global-set-key (kbd "s-z") #'projectile-find-file)
   (help/diminish 'projectile-mode)
   (help/on-windows
    (setq projectile-indexing-method 'alien)))
