@@ -2868,8 +2868,8 @@ Common configuration definitions.
       #+BEGIN_SRC emacs-lisp
 (setq help/hack-lisp-modes
       '(emacs-lisp-mode-hook
-	ielm-mode-hook
-	lisp-interaction-mode))
+        ielm-mode-hook
+        lisp-interaction-mode))
 (setq help/hack-modes (append help/hack-modes help/hack-lisp-modes))
       #+END_SRC
     - IELM mode hook.
@@ -2940,7 +2940,7 @@ RC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.htm
   (call-interactively #'self-insert-command)
   (let ((ppss (syntax-ppss)))
     (unless (or (elt ppss 3)
-		(elt ppss 4))
+                (elt ppss 4))
       (insert "'"))))
 
 (defun help/elisp-mode-local-bindings ()

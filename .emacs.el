@@ -1024,8 +1024,8 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
 (setq help/hack-modes '())
 (setq help/hack-lisp-modes
       '(emacs-lisp-mode-hook
-	ielm-mode-hook
-	lisp-interaction-mode))
+        ielm-mode-hook
+        lisp-interaction-mode))
 (setq help/hack-modes (append help/hack-modes help/hack-lisp-modes))
 (use-package aggressive-indent
   :ensure t
@@ -1048,7 +1048,7 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
   (--each help/hack-lisp-modes
     (add-hook it #'help/emacs-lisp-mode-hook-fn)))
 
-(add-hook #'ielm-mode-hook #'help/ielm-mode-hook-fn)
+(add-hook #'ielm-mode-hook #'help/ielm-mode-hook)
 (use-package fill-column-indicator
   :ensure t
   :config
@@ -1170,3 +1170,17 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
 (global-set-key (kbd "M-n") (kbd "C-u 1 C-v"))
 (global-set-key (kbd "M-p") (kbd "C-u 1 M-v"))
 (global-set-key (kbd "s-:") #'my-eval-expression)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
