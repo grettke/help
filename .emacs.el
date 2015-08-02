@@ -1051,7 +1051,9 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
   (interactive)
   (help/text-prog*-setup)
   (smartparens-strict-mode)
-  (aggressive-indent-mode))
+  (aggressive-indent-mode)
+  (help/not-on-gui (local-set-key (kbd "RET") #'newline-and-indent))
+  (help/on-gui (local-set-key (kbd "<return>") #'newline-and-indent)))
 (let (void)
   (--each help/hack-modes
     (add-hook it #'help/hack-prog*-mode-hook-fn)))

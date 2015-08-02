@@ -2925,7 +2925,9 @@ With that in mind this system:
   (interactive)
   (help/text-prog*-setup)
   (smartparens-strict-mode)
-  (aggressive-indent-mode))
+  (aggressive-indent-mode)
+  (help/not-on-gui (local-set-key (kbd "RET") #'newline-and-indent))
+  (help/on-gui (local-set-key (kbd "<return>") #'newline-and-indent)))
 #+END_SRC
 
 *** Wiring
