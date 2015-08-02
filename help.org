@@ -1169,7 +1169,7 @@ VC activities.
 
 #+BEGIN_SRC emacs-lisp
 (define-prefix-command 'help/vc-map)
-(global-set-key (kbd "s-t") #'help/vc-map)
+(global-set-key (kbd "s-r") #'help/vc-map)
 (define-key help/vc-map "e" #'help/safb-vc-ediff)
 (define-key help/vc-map "d" #'help/safb-vc-diff)
 (define-key help/vc-map "u" #'help/safb-vc-revert)
