@@ -53,6 +53,10 @@ Setup:
   - Capitalize nouns, verbs, and adjectives.
   - Don't capitalize conjunctions unless they are starting the definition.
   - Sell this "chapter" to the reader.
+  - It is important to include headlines that are empty and that you may not
+    even end up keeping. You need them to help you explore the cognitive
+    landscape with them present. In this one case, premature optimization is
+    /not/ the root of all evil.
 - Hyperlink.
   - External.
     - Exclude those easily found with a search-engine unless you are willing to
