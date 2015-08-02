@@ -477,7 +477,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (use-package stripe-buffer
   :ensure t)
 (setq sentence-end-double-space nil)
-(add-hook #'write-file-hooks #'help/delete-trailing-whitespace)
+(add-hook #'before-save-hook #'help/delete-trailing-whitespace)
 (use-package expand-region
   :ensure t
   :config
@@ -854,7 +854,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (when (not indent-tabs-mode)
     (untabify (point-min) (point-max))))
 
-(add-hook #'write-file-hooks #'help/untabify-if-not-indent-tabs-mode)
+(add-hook #'before-save-hook #'help/untabify-if-not-indent-tabs-mode)
 (use-package yasnippet
              :ensure t
              :config
@@ -898,7 +898,7 @@ RC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.htm
   (call-interactively #'self-insert-command)
   (let ((ppss (syntax-ppss)))
     (unless (or (elt ppss 3)
-		(elt ppss 4))
+                (elt ppss 4))
       (insert "'"))))
 
 (defun help/elisp-mode-local-bindings ()
@@ -1048,7 +1048,7 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
   (--each help/hack-lisp-modes
     (add-hook it #'help/emacs-lisp-mode-hook-fn)))
 
-(add-hook #'ielm-mode-hook #'help/ielm-mode-hook)
+(add-hook #'ielm-mode-hook #'help/ielm-mode-hook-fn)
 (use-package fill-column-indicator
   :ensure t
   :config

@@ -1552,7 +1552,7 @@ End sentences with a single space.
 Ban white-space at end of lines, globally.
 
 #+BEGIN_SRC emacs-lisp
-(add-hook #'write-file-hooks #'help/delete-trailing-whitespace)
+(add-hook #'before-save-hook #'help/delete-trailing-whitespace)
 #+END_SRC
 
 Intelligently select the current char, then word, then object, then block,
@@ -2406,7 +2406,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (when (not indent-tabs-mode)
     (untabify (point-min) (point-max))))
 
-(add-hook #'write-file-hooks #'help/untabify-if-not-indent-tabs-mode)
+(add-hook #'before-save-hook #'help/untabify-if-not-indent-tabs-mode)
 #+END_SRC
 
 ** Templating
