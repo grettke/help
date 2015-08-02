@@ -331,7 +331,9 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (add-to-list 'package-archives
              '("gnu" . "http://elpa.gnu.org/packages/") t)
 (add-to-list 'load-path "~/src/use-package")
-(require 'use-package)
+(eval-when-compile
+  (require 'use-package))
+(require 'diminish)
 (use-package ob-sml
   :ensure t)
 (org-babel-do-load-languages

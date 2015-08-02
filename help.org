@@ -2760,10 +2760,12 @@ Add the Use-Package distribution the load path.
 (add-to-list 'load-path "~/src/use-package")
 #+END_SRC
 
-Load Use-Package.
+Load Use-Package and it's partner Diminish.
 
 #+BEGIN_SRC emacs-lisp
-(require 'use-package)
+(eval-when-compile
+  (require 'use-package))
+(require 'diminish)
 #+END_SRC
 
 * Style Guide
