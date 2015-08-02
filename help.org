@@ -1859,6 +1859,7 @@ Selection:
 - Don't perform on frequent keys like enter and line navigation.
 
 Future candidates:
+
 - avy jump
 - dired
 - eshell
