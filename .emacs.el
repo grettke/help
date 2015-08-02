@@ -527,16 +527,6 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
      (add-to-list 'eshell-visual-commands "tail")
      (add-to-list 'eshell-command-completions-alist
                   '("tar" "\\(\\.tar|\\.tgz\\|\\.tar\\.gz\\)\\'"))))
-(defconst help/eshell-dir "~/.emacs.d/eshell")
-(defun help/warn-eshell-dir ()
-  "Warn of eshell misconfiguration."
-  (interactive)
-  (unless (and (f-symlink? help/eshell-dir)
-             (f-directory? help/eshell-dir))
-    (warn
-     "Could not find the eshell directory at: %S. Eshell will continue to function albeit without your customizations."
-     help/eshell-dir)))
-(help/warn-eshell-dir)
 (setq eshell-prompt-regexp "^.+@.+:.+> ")
 (setq eshell-prompt-function
       (lambda ()

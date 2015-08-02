@@ -1657,20 +1657,7 @@ to =eshell-visual-commands=.
                   '("tar" "\\(\\.tar|\\.tgz\\|\\.tar\\.gz\\)\\'"))))
 #+END_SRC
 
-The =eshell= configuration is a version controlled directory
-
-#+BEGIN_SRC emacs-lisp
-(defconst help/eshell-dir "~/.emacs.d/eshell")
-(defun help/warn-eshell-dir ()
-  "Warn of eshell misconfiguration."
-  (interactive)
-  (unless (and (f-symlink? help/eshell-dir)
-             (f-directory? help/eshell-dir))
-    (warn
-     "Could not find the eshell directory at: %S. Eshell will continue to function albeit without your customizations."
-     help/eshell-dir)))
-(help/warn-eshell-dir)
-#+END_SRC
+Configure a =PS1= like prompt.
 
 #+BEGIN_SRC emacs-lisp
 (setq eshell-prompt-regexp "^.+@.+:.+> ")
