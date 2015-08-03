@@ -3381,4 +3381,6 @@ Make =s-l= do the same thing to leave the Source-Block-Buffer.
 ** Structured Query Language (SQL)
 ** Vagrant (Ruby)
 
-~ruby-mode~ supports =Vagrantfile= OOTB.
+~rubdy-mode~ supports =Vagrantfile= OOTB.
+
+** Make
