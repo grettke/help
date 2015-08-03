@@ -2845,7 +2845,6 @@ Load Use-Package and it's partner Diminish.
 #+END_SRC
 
 * Hacking
-
 ** Common Configuration
   :PROPERTIES:
   :noweb-ref: Hacking-Prog*-Mode
@@ -3390,11 +3389,9 @@ Make =s-l= do the same thing to leave the Source-Block-Buffer.
 #+BEGIN_SRC emacs-lisp
 (define-key org-src-mode-map (kbd "s-l") #'org-edit-src-exit)
 #+END_SRC
-
-** Shell Script
 ** Structured Query Language (SQL)
+** Shell Script
+** Make
 ** Vagrant
 
 ~ruby-mode~ supports =Vagrantfile= OOTB.
-
-** Make
