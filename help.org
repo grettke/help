@@ -2893,7 +2893,7 @@ With that in mind this system:
 - Hacking mode hooks.
   - Configurations common to every hacking vehicle.
     #+BEGIN_SRC emacs-lisp
-(setq help/hack-modes '(ruby-mode-hook makefile-mode-hook))
+(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook))
     #+END_SRC
   - LISP mode hooks.
     - Are hacking modes.
