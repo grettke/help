@@ -3391,6 +3391,7 @@ Make =s-l= do the same thing to leave the Source-Block-Buffer.
 (define-key org-src-mode-map (kbd "s-l") #'org-edit-src-exit)
 #+END_SRC
 
+** Shell Script
 ** Structured Query Language (SQL)
 ** Vagrant
 
