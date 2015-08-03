@@ -57,12 +57,15 @@ Setup:
     - Some modes don't require any configuration. The headline still needs to be
       present to remind Sysop to keep it in her cognitive landscape.
     - Configure other properties and modes taking it into account.
+    - Pros:
       - For example:
         - Every language under Hacking should show up in
           ~org-babel-load-languages~.
-       - The Prog*-Mode system configuration can result in Headlines that don't
-         need any configuration. The Headline still communicates the mode's
-         value to Sysop even if it doesn't configure EMACS.
+      - The Prog*-Mode system configuration can result in Headlines that don't
+        need any configuration. The Headline still communicates the mode's
+        value to Sysop even if it doesn't configure EMACS.
+    - Cons:
+      - Gives reader impression that modes are configured and ready to use.
 - It is important to include headlines that are empty and that you may not
   even end up keeping. You need them to help you explore the cognitive
   landscape with them present. In this one case, premature optimization is
@@ -2891,7 +2894,7 @@ With that in mind this system:
 - Hacking mode hooks.
   - Configurations common to every hacking vehicle.
     #+BEGIN_SRC emacs-lisp
-(setq help/hack-modes '(ruby-mode-hook))
+(setq help/hack-modes '(ruby-mode-hook makefile-mode-hook))
     #+END_SRC
   - LISP mode hooks.
     - Are hacking modes.
@@ -3389,8 +3392,8 @@ Make =s-l= do the same thing to leave the Source-Block-Buffer.
 #+END_SRC
 
 ** Structured Query Language (SQL)
-** Vagrant (Ruby)
+** Vagrant
 
-~rubdy-mode~ supports =Vagrantfile= OOTB.
+~ruby-mode~ supports =Vagrantfile= OOTB.
 
 ** Make
