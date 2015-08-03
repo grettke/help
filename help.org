@@ -1848,10 +1848,10 @@ use than advice.
   (help/save-all-file-buffers)
   (other-window 1))
 
-(defun help/safb-org-export-dispatch ()
+(defun help/safb-help/org-edit-src-code-plus-name ()
   (interactive)
   (help/save-all-file-buffers)
-  (org-export-dispatch))
+  (help/org-edit-src-code-plus-name))
 #+END_SRC
 
 Selection:
@@ -3291,11 +3291,10 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
   (interactive)
   (let* ((eop  (org-element-at-point))
          (name (or (org-element-property :name (org-element-context eop))
-                  "ॐ"))
+                   "ॐ"))
          (lang (org-element-property :language eop))
-         (buff-name (concat "*Org Src " name "[" lang "]*"))
          (file-name (buffer-file-name)))
-    (org-edit-src-code nil buff-name)
+    (org-edit-src-code nil name)
     (setq buffer-file-name file-name)))
 #+END_SRC
 
@@ -3361,7 +3360,7 @@ in mind, RETURN is bound to that now. Now ALEC has four different kinds of
 (define-key org-mode-map (kbd "s-U") #'org-mark-ring-goto)
 (define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
 (define-key org-mode-map (kbd "s-i") #'help/safb-org-babel-tangle)
-(define-key org-mode-map (kbd "s-l") #'help/org-edit-src-code-plus-name)
+(define-key org-mode-map (kbd "s-l") #'help/safb-help/org-edit-src-code-plus-name)
 (define-key org-mode-map (kbd "s-o") #'org-babel-execute-maybe)
 (define-key org-mode-map (kbd "s-;") #'org-babel-view-src-block-info)
 (define-key org-mode-map (kbd "s-p") #'org-babel-demarcate-block)
