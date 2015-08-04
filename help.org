@@ -328,7 +328,7 @@ Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html
     (help/on-gui (pos-tip-show description nil nil nil 300))
     (help/not-on-gui (popup-tip description
                                 :point (point)
-                                :Around t
+                                :around t
                                 :height 30
                                 :scroll-bar t
                                 :margin t))))
