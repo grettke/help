@@ -2050,6 +2050,9 @@ exercised, Dired in Imenu seems like an obvious choice.
 
 Access nearly every object available in this system from one place.
 
+These configurations are performed in the correct order. Any attempt to refactor
+this Source-Block will break Ido in this system.
+
 #+BEGIN_SRC emacs-lisp
 (require 'ido)
 (use-package flx-ido
