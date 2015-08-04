@@ -49,10 +49,11 @@ Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html
   (interactive)
   (let* ((thing (symbol-at-point))
          (help-xref-following t)
-         (description (with-temp-buffer
-                        (help-mode)
-                        (help-xref-interned thing)
-                        (buffer-string))))
+         (description (let ((help-window-select nil))
+                        (with-temp-buffer
+                          (help-mode)
+                          (help-xref-interned thing)
+                          (buffer-string)))))
     (help/on-gui (pos-tip-show description nil nil nil 300))
     (help/not-on-gui (popup-tip description
                                 :point (point)
