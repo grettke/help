@@ -1694,6 +1694,17 @@ then document.
 (help/diminish #'visual-line-mode)
 #+END_SRC
 
+** Colors
+
+Colorize color names.
+
+Rainbow-Mode handles most major modes color definitions as expected.
+
+#+BEGIN_SRC emacs-lisp
+(use-package rainbow-mode
+  :ensure t)
+#+END_SRC
+
 ** Describing Objects
 
 Easily describe just about anything.
@@ -2889,7 +2900,8 @@ With that in mind this system:
    programming."
   (interactive)
   (linum-mode)
-  (fci-mode))
+  (fci-mode)
+  (rainbow-mode))
 
 (add-hook #'text-mode-hook #'help/text-prog*-setup)
  #+END_SRC

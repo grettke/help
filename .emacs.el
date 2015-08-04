@@ -502,6 +502,8 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (advice-add #'goto-line :after #'help/goto-line)
 (eval-after-load "hideshow" '(diminish 'hs-minor-mode))
 (help/diminish #'visual-line-mode)
+(use-package rainbow-mode
+  :ensure t)
 (global-set-key (kbd "s-r") 'help/describe-thing-in-popup)
 (setq-default eval-expression-print-level nil)
 (put 'upcase-region 'disabled nil)
@@ -1030,7 +1032,8 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
    programming."
   (interactive)
   (linum-mode)
-  (fci-mode))
+  (fci-mode)
+  (rainbow-mode))
 
 (add-hook #'text-mode-hook #'help/text-prog*-setup)
 (setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook))
