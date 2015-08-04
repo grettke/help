@@ -2505,6 +2505,12 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 (add-hook #'before-save-hook #'help/untabify-if-not-indent-tabs-mode)
 #+END_SRC
 
+Most programing modes indent to 2 spaces. TABs should be the same width.
+
+#+BEGIN_SRC emacs-lisp
+(setq-default tab-width 2)
+#+END_SRC
+
 ** Templating
 
 #+BEGIN_SRC emacs-lisp

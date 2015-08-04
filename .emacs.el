@@ -848,6 +848,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
     (untabify (point-min) (point-max))))
 
 (add-hook #'before-save-hook #'help/untabify-if-not-indent-tabs-mode)
+(setq-default tab-width 2)
 (use-package yasnippet
              :ensure t
              :config
