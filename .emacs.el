@@ -854,7 +854,8 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
     (define-key yas-minor-mode-map (kbd "s-t") 'yas-expand))
   (add-hook #'yas-minor-mode-hook #'help/yas-minor-mode-hook-fn)
   (add-to-list #'yas-snippet-dirs "~/src/help/yasnippet")
-  (yas-reload-all))
+  (yas-reload-all)
+  (setq yas-prompt-functions '(yas-ido-prompt)))
 (use-package magit
              :ensure t
              :config

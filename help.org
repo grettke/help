@@ -2499,6 +2499,11 @@ Most programing modes indent to 2 spaces. TABs should be the same width.
 
 ** Templating
 
+- Enable everywhere
+- Allow expansion to occur within fields
+- Load HELP snippets
+- Use Ido to handle user decisions
+
 #+BEGIN_SRC emacs-lisp
 (use-package yasnippet
   :ensure t
@@ -2513,7 +2518,8 @@ Most programing modes indent to 2 spaces. TABs should be the same width.
     (define-key yas-minor-mode-map (kbd "s-t") 'yas-expand))
   (add-hook #'yas-minor-mode-hook #'help/yas-minor-mode-hook-fn)
   (add-to-list #'yas-snippet-dirs "~/src/help/yasnippet")
-  (yas-reload-all))
+  (yas-reload-all)
+  (setq yas-prompt-functions '(yas-ido-prompt)))
 #+END_SRC
 
 ** Version Control
