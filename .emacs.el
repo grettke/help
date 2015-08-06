@@ -499,7 +499,9 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (eval-after-load "hideshow" '(diminish 'hs-minor-mode))
 (help/diminish #'visual-line-mode)
 (use-package rainbow-mode
-  :ensure t)
+  :ensure t
+  :config
+  (eval-after-load "rainbow-mode" '(diminish 'rainbow-mode)))
 (setq-default eval-expression-print-level nil)
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)

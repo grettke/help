@@ -1698,7 +1698,9 @@ Rainbow-Mode handles most major modes color definitions as expected.
 
 #+BEGIN_SRC emacs-lisp
 (use-package rainbow-mode
-  :ensure t)
+  :ensure t
+  :config
+  (eval-after-load "rainbow-mode" '(diminish 'rainbow-mode)))
 #+END_SRC
 
 ** Evaluation
