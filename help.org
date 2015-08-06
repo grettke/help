@@ -141,7 +141,7 @@ Start EMACS with this command:
 
 Configure EMACS to do everything provided by this document.
 
-Sysop is likely to use this daily.
+Sysop is likely to use this hourly.
 
 Start EMACS with this command:
 
