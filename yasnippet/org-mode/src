@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: src
-# name: Source Block
+# name: HELP Source Block
 # contributor: gcr@wisdomandwonder.com
 # --
 #+BEGIN_SRC ${1:$$(yas-choose-value '("emacs-lisp" "sass" "R"))}
