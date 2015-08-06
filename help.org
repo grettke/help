@@ -2504,13 +2504,16 @@ Most programing modes indent to 2 spaces. TABs should be the same width.
   :ensure t
   :config
   (yas-global-mode t)
+  (setq yas-triggers-in-field t)
   (help/diminish #'yas-minor-mode)
   (defun help/yas-minor-mode-hook-fn ()
     "Personal customizations."
     (define-key yas-minor-mode-map (kbd "<tab>") nil)
     (define-key yas-minor-mode-map (kbd "TAB") nil)
     (define-key yas-minor-mode-map (kbd "s-t") 'yas-expand))
-  (add-hook #'yas-minor-mode-hook #'help/yas-minor-mode-hook-fn))
+  (add-hook #'yas-minor-mode-hook #'help/yas-minor-mode-hook-fn)
+  (add-to-list #'yas-snippet-dirs "~/src/help/yasnippet")
+  (yas-reload-all))
 #+END_SRC
 
 ** Version Control
@@ -3017,13 +3020,6 @@ to behave more predictably.
 
 #+BEGIN_SRC emacs-lisp
 (setq org-babel-min-lines-for-block-output 0)
-#+END_SRC
-
-Use Yasnippets.
-
-#+BEGIN_SRC emacs-lisp
-(add-to-list #'yas-snippet-dirs "~/src/yasnippet-org-mode")
-(yas-reload-all)
 #+END_SRC
 
 When Source-Block evaluation results are inserted try to use the name or cache-id.

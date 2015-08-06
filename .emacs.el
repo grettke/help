@@ -845,13 +845,16 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   :ensure t
   :config
   (yas-global-mode t)
+  (setq yas-triggers-in-field t)
   (help/diminish #'yas-minor-mode)
   (defun help/yas-minor-mode-hook-fn ()
     "Personal customizations."
     (define-key yas-minor-mode-map (kbd "<tab>") nil)
     (define-key yas-minor-mode-map (kbd "TAB") nil)
     (define-key yas-minor-mode-map (kbd "s-t") 'yas-expand))
-  (add-hook #'yas-minor-mode-hook #'help/yas-minor-mode-hook-fn))
+  (add-hook #'yas-minor-mode-hook #'help/yas-minor-mode-hook-fn)
+  (add-to-list #'yas-snippet-dirs "~/src/help/yasnippet")
+  (yas-reload-all))
 (use-package magit
              :ensure t
              :config
@@ -923,8 +926,6 @@ RC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.htm
   (help/ielm-auto-complete))
 (define-key emacs-lisp-mode-map (kbd "s-p") #'describe-thing-in-popup)
 (setq org-babel-min-lines-for-block-output 0)
-(add-to-list #'yas-snippet-dirs "~/src/yasnippet-org-mode")
-(yas-reload-all)
 (setq org-babel-results-keyword "NAME")
 (setq org-edit-src-auto-save-idle-delay 0)
 (setq org-edit-src-turn-on-auto-save nil)
