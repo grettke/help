@@ -853,16 +853,16 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 (add-hook #'before-save-hook #'help/untabify-if-not-indent-tabs-mode)
 (setq-default tab-width 2)
 (use-package yasnippet
-             :ensure t
-             :config
-             (yas-global-mode t)
-             (help/diminish #'yas-minor-mode)
-             (defun help/yas-minor-mode-hook-fn ()
-               "Personal customizations."
-               (define-key yas-minor-mode-map (kbd "<tab>") nil)
-               (define-key yas-minor-mode-map (kbd "TAB") nil)
-               (define-key yas-minor-mode-map (kbd "s-t") 'yas-expand))
-             (add-hook #'yas-minor-mode-hook #'help/yas-minor-mode-hook-fn))
+  :ensure t
+  :config
+  (yas-global-mode)
+  (help/diminish #'yas-minor-mode)
+  (defun help/yas-minor-mode-hook-fn ()
+    "Personal customizations."
+    (define-key yas-minor-mode-map (kbd "<tab>") nil)
+    (define-key yas-minor-mode-map (kbd "TAB") nil)
+    (define-key yas-minor-mode-map (kbd "s-t") 'yas-expand))
+  (add-hook #'yas-minor-mode-hook #'help/yas-minor-mode-hook-fn))
 (use-package magit
              :ensure t
              :config

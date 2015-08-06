@@ -2530,16 +2530,16 @@ Most programing modes indent to 2 spaces. TABs should be the same width.
 
 #+BEGIN_SRC emacs-lisp
 (use-package yasnippet
-             :ensure t
-             :config
-             (yas-global-mode t)
-             (help/diminish #'yas-minor-mode)
-             (defun help/yas-minor-mode-hook-fn ()
-               "Personal customizations."
-               (define-key yas-minor-mode-map (kbd "<tab>") nil)
-               (define-key yas-minor-mode-map (kbd "TAB") nil)
-               (define-key yas-minor-mode-map (kbd "s-t") 'yas-expand))
-             (add-hook #'yas-minor-mode-hook #'help/yas-minor-mode-hook-fn))
+  :ensure t
+  :config
+  (yas-global-mode)
+  (help/diminish #'yas-minor-mode)
+  (defun help/yas-minor-mode-hook-fn ()
+    "Personal customizations."
+    (define-key yas-minor-mode-map (kbd "<tab>") nil)
+    (define-key yas-minor-mode-map (kbd "TAB") nil)
+    (define-key yas-minor-mode-map (kbd "s-t") 'yas-expand))
+  (add-hook #'yas-minor-mode-hook #'help/yas-minor-mode-hook-fn))
 #+END_SRC
 
 ** Version Control
