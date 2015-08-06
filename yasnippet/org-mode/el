@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-# key: el
-# name: Emacs-Lisp
-# group: source-block
-# contributor: gcr@wisdomandwonder.com
-# --
-#+BEGIN_SRC emacs-lisp
-$0
-#+END_SRC
