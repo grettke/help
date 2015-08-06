@@ -855,7 +855,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 (use-package yasnippet
   :ensure t
   :config
-  (yas-global-mode)
+  (yas-global-mode t)
   (help/diminish #'yas-minor-mode)
   (defun help/yas-minor-mode-hook-fn ()
     "Personal customizations."

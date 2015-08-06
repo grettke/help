@@ -2532,7 +2532,7 @@ Most programing modes indent to 2 spaces. TABs should be the same width.
 (use-package yasnippet
   :ensure t
   :config
-  (yas-global-mode)
+  (yas-global-mode t)
   (help/diminish #'yas-minor-mode)
   (defun help/yas-minor-mode-hook-fn ()
     "Personal customizations."
