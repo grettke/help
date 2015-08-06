@@ -312,26 +312,21 @@ LS captures arguments when this is used as before advice."
       (when (and (buffer-file-name) (buffer-modified-p))
         (save-buffer)))))
 
-(defun help/describe-thing-in-popup ()
-  "Display help information on the current symbol.
-
-Attribution: URL `http://www.emacswiki.org/emacs/PosTip'
-Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html'"
+(defun describe-thing-in-popup ()
+  "Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html'."
   (interactive)
   (let* ((thing (symbol-at-point))
          (help-xref-following t)
-         (description (let ((help-window-select nil))
-                        (with-temp-buffer
-                          (help-mode)
-                          (help-xref-interned thing)
-                          (buffer-string)))))
-    (help/on-gui (pos-tip-show description nil nil nil 300))
-    (help/not-on-gui (popup-tip description
-                                :point (point)
-                                :around t
-                                :height 30
-                                :scroll-bar t
-                                :margin t))))
+         (description (with-temp-buffer
+                        (help-mode)
+                        (help-xref-interned thing)
+                        (buffer-string))))
+    (popup-tip description
+               :point (point)
+               :around t
+               :height 30
+               :scroll-bar t
+               :margin t)))
 
 (defun help/kill-other-buffers ()
   "Kill all other buffers."
@@ -1706,14 +1701,6 @@ Rainbow-Mode handles most major modes color definitions as expected.
   :ensure t)
 #+END_SRC
 
-** Describing Objects
-
-Easily describe just about anything.
-
-#+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "s-r") 'help/describe-thing-in-popup)
-#+END_SRC
-
 ** Evaluation
 
 #+BEGIN_SRC emacs-lisp
@@ -1790,8 +1777,8 @@ Configure a =PS1= like prompt.
 
 ** File Based System
 
-This system uses artifacts stored in files. It tries to persiste file-stores
-every chance it gets without interrupting the user's flow.
+This system uses artifacts stored in files. It tries to persist file-stores
+every chance it gets without interrupting the user's flow. Flow is important.
 
 Don't create backup files. Instead Git for versioning
 
@@ -2267,23 +2254,6 @@ a fast navigation vehicle.
 
 ** Popups
 
-Provide more style options for popups.
-
-#+BEGIN_SRC emacs-lisp
-(use-package pos-tip
-             :ensure t)
-(help/on-windows
- (ignore-errors
-   (pos-tip-w32-max-width-height)))
-#+END_SRC
-
-Make the colors more pleasant.
-
-#+BEGIN_SRC emacs-lisp
-(setq pos-tip-foreground-color "#073642")
-(setq pos-tip-background-color "#839496")
-#+END_SRC
-
 Provide popup notifications.
 
 #+BEGIN_SRC emacs-lisp
@@ -2747,14 +2717,6 @@ The tool-bar is helpful for new users. Isn't the argument funny?
 
 #+BEGIN_SRC emacs-lisp
 (tool-bar-mode -1)
-#+END_SRC
-
-** Help
-
-Display it, learn what you wish, and move on by closing the buffer.
-
-#+BEGIN_SRC emacs-lisp
-(setq help-window-select t)
 #+END_SRC
 
 ** Pointer

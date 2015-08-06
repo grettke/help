@@ -41,26 +41,21 @@ LS captures arguments when this is used as before advice."
       (when (and (buffer-file-name) (buffer-modified-p))
         (save-buffer)))))
 
-(defun help/describe-thing-in-popup ()
-  "Display help information on the current symbol.
-
-Attribution: URL `http://www.emacswiki.org/emacs/PosTip'
-Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html'"
+(defun describe-thing-in-popup ()
+  "Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html'."
   (interactive)
   (let* ((thing (symbol-at-point))
          (help-xref-following t)
-         (description (let ((help-window-select nil))
-                        (with-temp-buffer
-                          (help-mode)
-                          (help-xref-interned thing)
-                          (buffer-string)))))
-    (help/on-gui (pos-tip-show description nil nil nil 300))
-    (help/not-on-gui (popup-tip description
-                                :point (point)
-                                :around t
-                                :height 30
-                                :scroll-bar t
-                                :margin t))))
+         (description (with-temp-buffer
+                        (help-mode)
+                        (help-xref-interned thing)
+                        (buffer-string))))
+    (popup-tip description
+               :point (point)
+               :around t
+               :height 30
+               :scroll-bar t
+               :margin t)))
 
 (defun help/kill-other-buffers ()
   "Kill all other buffers."
@@ -505,7 +500,6 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (help/diminish #'visual-line-mode)
 (use-package rainbow-mode
   :ensure t)
-(global-set-key (kbd "s-r") 'help/describe-thing-in-popup)
 (setq-default eval-expression-print-level nil)
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
@@ -729,13 +723,6 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (turn-on-stripe-buffer-mode)
   (stripe-listify-buffer))
 (add-hook #'occur-mode-hook #'help/occur-mode-hook-fn)
-(use-package pos-tip
-             :ensure t)
-(help/on-windows
- (ignore-errors
-   (pos-tip-w32-max-width-height)))
-(setq pos-tip-foreground-color "#073642")
-(setq pos-tip-background-color "#839496")
 (use-package alert
   :ensure t
   :config
@@ -933,6 +920,7 @@ RC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.htm
   "Personal customizations."
   (interactive)
   (help/ielm-auto-complete))
+(define-key emacs-lisp-mode-map (kbd "s-p") #'describe-thing-in-popup)
 (setq org-babel-min-lines-for-block-output 0)
 (add-to-list #'yas-snippet-dirs "~/src/yasnippet-org-mode")
 (yas-reload-all)
@@ -1008,7 +996,7 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
   (vc-next-action nil))
 (setq org-edit-src-code nil)
 (help/not-on-gui
- (define-key org-mode-map (kbd "RET") 'org-return-indent)
+ (define-key org-mode-mapcd (kbd "RET") 'org-return-indent)
  (define-key org-mode-map (kbd "C-M-RET") 'electric-indent-just-newline))
 (help/on-gui
  (define-key org-mode-map (kbd "<return>") 'org-return-indent)
@@ -1138,7 +1126,6 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
  (help/update-font))
 (scroll-bar-mode 0)
 (tool-bar-mode -1)
-(setq help-window-select t)
 (setq make-pointer-invisible t)
 (use-package diff-hl
   :ensure t)
