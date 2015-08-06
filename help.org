@@ -1887,7 +1887,7 @@ Future candidates:
 - langtool-check-buffer
 - newline-and-indent
 - next-line
-- org-return
+- org-edit-src-exit
 - org-return
 - pop-to-mark-command
 - previous-line
