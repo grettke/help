@@ -2129,7 +2129,7 @@ Visualize ASCII values as their most likely Unicode representation.
 (use-package pretty-mode
   :ensure t
   :config
-  (global-font-lock-mode t))
+  (global-pretty-mode))
 #+END_SRC
 
 ** Going to Objects

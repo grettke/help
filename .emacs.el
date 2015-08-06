@@ -671,7 +671,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (use-package pretty-mode
   :ensure t
   :config
-  (global-font-lock-mode t))
+  (global-pretty-mode))
 (use-package avy
   :ensure t
   :config
@@ -995,7 +995,7 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
   (vc-next-action nil))
 (setq org-edit-src-code nil)
 (help/not-on-gui
- (define-key org-mode-mapcd (kbd "RET") 'org-return-indent)
+ (define-key org-mode-map (kbd "RET") 'org-return-indent)
  (define-key org-mode-map (kbd "C-M-RET") 'electric-indent-just-newline))
 (help/on-gui
  (define-key org-mode-map (kbd "<return>") 'org-return-indent)
