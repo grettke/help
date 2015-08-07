@@ -40,6 +40,9 @@ Setup:
   - Tangle :: A verb. Assemble a document for consumption by another program or
     machine.
   - Weave :: A verb. Prepare a document for consumption by a human.
+- File/Package Loading
+  - Those included with EMACS OOTB need to be ~diminish~'d immediately instead of
+    after load.
 - Formatting
   - Code Snippet.
     - Programming language expressions.
@@ -1663,9 +1666,7 @@ then document.
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp
-(eval-after-load "visual-line-mode"
-  '(diminish 'visual-line-mode))
-
+(diminish 'visual-line-mode)
 #+END_SRC
 
 ** Colors
@@ -2980,8 +2981,7 @@ RC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.htm
   (help/elisp-mode-local-bindings)
   (lexbind-mode)
   (turn-on-eldoc-mode)
-  (eval-after-load "eldoc-mode"
-    '(diminish 'eldoc-mode)))
+  (diminish 'eldoc-mode))
 
 (setq ielm-noisy nil)
 
