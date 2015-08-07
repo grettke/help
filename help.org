@@ -3315,7 +3315,8 @@ Never use the original version.
 (setq org-edit-src-code nil)
 #+END_SRC
 
-Easily wrap the current region; used primarily for Org-Mode.
+Easily markup text in Org-Mode. This is not used by the rest of HELP because
+Smartparens provides that functionality.
 
 #+BEGIN_SRC emacs-lisp
 (use-package wrap-region
