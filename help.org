@@ -99,6 +99,7 @@ Setup:
       - ~nil~ for =FALSE=.
       - ~t~ for =TRUE=.
       - ~n~ for numerical values.
+    - Try never to advise functions.
 - Tangling.
   - When ordering matters, rely on block-reuse to enforce correct generation.
 - Voice.
