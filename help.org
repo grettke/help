@@ -3322,13 +3322,35 @@ Smartparens provides that functionality.
 (use-package wrap-region
   :ensure t
   :config
-  (wrap-region-add-wrapper "*" "*" nil 'org-mode)
-  (wrap-region-add-wrapper "/" "/" nil 'org-mode)
-  (wrap-region-add-wrapper "_" "_" nil 'org-mode)
-  (wrap-region-add-wrapper "=" "=" nil 'org-mode)
-  (wrap-region-add-wrapper "~" "~" nil 'org-mode)
-  (wrap-region-add-wrapper "+" "+" nil 'org-mode)
   :diminish wrap-region-mode)
+#+END_SRC
+
+*Bold*.
+
+#+BEGIN_SRC emacs-lisp
+(wrap-region-add-wrapper "*" "*" nil 'org-mode)
+#+END_SRC
+
+/Italic/.
+
+#+BEGIN_SRC emacs-lisp
+(wrap-region-add-wrapper "/" "/" nil 'org-mode)
+#+END_SRC
+
+=Verbatim=.
+#+BEGIN_SRC emacs-lisp
+(wrap-region-add-wrapper "=" "=" nil 'org-mode)
+#+END_SRC
+
+~Code~.
+
+#+BEGIN_SRC emacs-lisp
+(wrap-region-add-wrapper "~" "~" nil 'org-mode)
+#+END_SRC
+
++Strike-Through+.
+#+BEGIN_SRC emacs-lisp
+(wrap-region-add-wrapper "+" "+" nil 'org-mode)
 #+END_SRC
 
 *** Keybindings
