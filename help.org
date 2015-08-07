@@ -1581,7 +1581,7 @@ Provide expected "Undo" functionality.
 #+END_SRC
 
 Ensure that buffers do not end with a new line. This is the decision of Sysop.
-This is important to YASnippets and Source-Blocks.
+This is important to YASnippets and Source-Blocks. Doing so would violate POLA.
 
 #+BEGIN_SRC emacs-lisp
 (setq require-final-newline nil)
