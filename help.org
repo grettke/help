@@ -3264,7 +3264,7 @@ least that is what I am telling myself. Once I learned you could change it I
 realized that 1 I should have asked if it could be changed and 2 I should have
 changed it. The flow that I've got configured here is that you are either in the
 source document where code blocks are not highlighted or you are in the source
-block so you are editing in a buffer that is full-fledged ALEC. That is the best
+block so you are editing in a buffer that is full-fledged HELP. That is the best
 way so you can focus completely on each task at hand in the ideal mode for that
 task. Anything else results in distractions and errors.
 
@@ -3333,7 +3333,7 @@ Started questioning why after hitting RETURN while in lists I have to hit TAB to
 get indented properly. Kind of a dead giveaway that I should be
 return-and-indenting! Looked at =org-return= to find that it has an argument
 about indenting and then saw that =org-return-indent= passes it for you. With that
-in mind, RETURN is bound to that now. Now ALEC has four different kinds of
+in mind, RETURN is bound to that now. Now HELP has four different kinds of
 "returns" in Org in order of likelihood of usage:
 
 - org-return-indent :: Make it really easy to work in existing list items,
