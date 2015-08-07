@@ -3447,6 +3447,9 @@ When a drop of water joins the ocean it becomes the ocean.
       This is not a sailboat
 #+END_SRC
 
+#+NAME:
+[[file:./image/notasailboat.png]]
+
 #+BEGIN_SRC emacs-lisp
 (defconst help/ditaa-jar (concat (getenv "EELIB") "/ditaa.jar"))
 (setq org-ditaa-jar-path help/ditaa-jar)
