@@ -453,15 +453,16 @@ Attribution: URL `http://emacsredux.com/blog/2013/03/26/smarter-open-line/'"
             (funcall font-lock-function 1))
         (read-from-minibuffer prompt initial-contents
                               my-read-expression-map nil
-                              'read-expression-history))))
+                              'read-expression-history)))))
 
-  (defun my-eval-expression (expression &optional arg)
-    (interactive (list (read (my-read--expression ""))
-                       current-prefix-arg))
-    (if arg
-        (insert (pp-to-string (eval expression lexical-binding)))
-      (pp-display-expression (eval expression lexical-binding)
-                             "*Pp Eval Output*"))))
+(defun my-eval-expression (expression &optional arg)
+  (interactive (list (read (my-read--expression ""))
+                     current-prefix-arg))
+  (if arg
+      (insert (pp-to-string (eval expression lexical-binding)))
+    (pp-display-expression (eval expression lexical-binding)
+                           "*Pp Eval Output*")))
+
 (defun help/util-ielm ()
   "Personal buffer setup for ielm.
 
