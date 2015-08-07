@@ -2993,13 +2993,13 @@ RC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.htm
 
 (defun help/elisp-mode-local-bindings ()
   "Helpful behavior for Elisp buffers."
-  (local-set-key (kbd "s-l eb") '#'help/elisp-eval-buffer)
-  (local-set-key (kbd "s-l ep") '#'eval-print-last-sexp)
-  (local-set-key (kbd "s-l td") '#'toggle-debug-on-error)
-  (local-set-key (kbd "s-l mef") '#'macroexpand)
-  (local-set-key (kbd "s-l mea") '#'macroexpand-all)
-  (local-set-key (kbd "s-:") '#'my-eval-expression)
-  (local-set-key (kbd "#") '#'endless/sharp))
+  (local-set-key (kbd "s-l eb") #'help/elisp-eval-buffer)
+  (local-set-key (kbd "s-l ep") #'eval-print-last-sexp)
+  (local-set-key (kbd "s-l td") #'toggle-debug-on-error)
+  (local-set-key (kbd "s-l mef") #'macroexpand)
+  (local-set-key (kbd "s-l mea") #'macroexpand-all)
+  (local-set-key (kbd "s-:") #'my-eval-expression)
+  (local-set-key (kbd "#") #'endless/sharp))
 
 (defun help/emacs-lisp-mode-hook-fn ()
   (interactive)
