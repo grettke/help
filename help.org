@@ -41,8 +41,8 @@ Setup:
     machine.
   - Weave :: A verb. Prepare a document for consumption by a human.
 - File/Package Loading
-  - Those included with EMACS OOTB need to be ~diminish~'d immediately instead of
-    after load.
+  - Load every one with ~use-package~ whether it came with EMACS OOTB or ELPA.
+    - ~ensure~ tells the reader which one it came from.
 - Formatting
   - Code Snippet.
     - Programming language expressions.
