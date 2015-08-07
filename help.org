@@ -8,7 +8,11 @@ Setup:
 1) [[http://orgmode.org/][Clone Org-Mode]] to =~/src/=.
    1) If necessary: [[http://orgmode.org/worg/org-hacks.html][Generating autoloads and Compiling Org without make]]
 2) [[https://github.com/jwiegley/use-package][Clone Use-Package]] to =~/src/=.
-3) Link.
+3) Create a folder for support libraries exporting it's location in a variable
+   named =EELIB=.
+4) Install supporting systems adding their exectuables to the =PATH=.
+   1) [[https://www.oracle.com/java/index.html][Oracle Java]].
+5) Link.
    - The Eshell directory to HELP's.
      - =ln -s ~/src/help/eshell/ ~/.emacs.d/eshell=
    - The Init file to HELP's.
@@ -3390,3 +3394,32 @@ Make =s-l= do the same thing to leave the Source-Block-Buffer.
 ** Vagrant
 
 ~ruby-mode~ supports =Vagrantfile= OOTB.
+** Artist
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
+(add-to-list 'auto-mode-alist '("\\.art" . artist-mode))
+(add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
+#+END_SRC
+
+** DITAA
+
+When a drop of water joins the ocean it becomes the ocean.
+
+#+BEGIN_SRC ditaa :file ./image/dropinocean.png
++---------+
+| cBLU    |
+|         |
+|    +----+
+|    |cBLU|
+|    |    |
++----+----+
+#+END_SRC
+
+#+NAME:
+[[file:./image/dropinocean.png]]
+
+#+BEGIN_SRC emacs-lisp
+(defconst help/ditaa-jar (concat (getenv "EELIB") "/ditaa.jar"))
+(setq org-ditaa-jar-path help/ditaa-jar)
+#+END_SRC
