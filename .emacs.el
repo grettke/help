@@ -453,7 +453,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (global-undo-tree-mode 1)
   (eval-after-load "undo-tree-mode"
     '(diminish 'undo-tree-mode)))
-(setq require-final-newline t)
+(setq require-final-newline nil)
 (use-package wrap-region
   :ensure t
   :config

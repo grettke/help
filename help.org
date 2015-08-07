@@ -1580,11 +1580,11 @@ Provide expected "Undo" functionality.
     '(diminish 'undo-tree-mode)))
 #+END_SRC
 
-Ensure that buffers end with a new line. This works in company with Org-Mode
-source-blocks that probably don't need a newline.
+Ensure that buffers do not end with a new line. This is the decision of Sysop.
+This is important to YASnippets and Source-Blocks.
 
 #+BEGIN_SRC emacs-lisp
-(setq require-final-newline t)
+(setq require-final-newline nil)
 #+END_SRC
 
 Easily wrap the current region.
