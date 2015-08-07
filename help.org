@@ -1863,6 +1863,16 @@ use than advice.
   (interactive)
   (help/save-all-file-buffers)
   (help/org-edit-src-code-plus-name))
+
+(defun help/safb-help/org-edit-src-code-plus-name ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (help/org-edit-src-code-plus-name))
+
+(defun help/safb-org-export-dispatch ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (org-export-dispatch))
 #+END_SRC
 
 Selection:
