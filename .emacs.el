@@ -867,11 +867,6 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (setq whitespace-line-column help/column-width)
   (global-whitespace-mode t)
   :diminish whitespace-mode global-whitespace-mode)
-(global-visual-line-mode)
-(global-set-key (kbd "s-C-n") #'next-line)
-(global-set-key (kbd "C-n") #'next-logical-line)
-(global-set-key (kbd "s-C-p") #'previous-line)
-(global-set-key (kbd "C-p") #'previous-logical-line)
 (setq initial-scratch-message nil)
 (require 'lexbind-mode)
 
@@ -1178,6 +1173,10 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
 (global-set-key (kbd "M-n") (kbd "C-u 1 C-v"))
 (global-set-key (kbd "M-p") (kbd "C-u 1 M-v"))
 (global-set-key (kbd "s-:") #'my-eval-expression)
+(global-set-key (kbd "s-C-n") #'next-line)
+(global-set-key (kbd "C-n") #'next-logical-line)
+(global-set-key (kbd "s-C-p") #'previous-line)
+(global-set-key (kbd "C-p") #'previous-logical-line)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

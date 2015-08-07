@@ -1382,6 +1382,13 @@ Use a nicer =eval-expression= approach.
 (global-set-key (kbd "s-:") #'my-eval-expression)
 #+END_SRC
 
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "s-C-n") #'next-line)
+(global-set-key (kbd "C-n") #'next-logical-line)
+(global-set-key (kbd "s-C-p") #'previous-line)
+(global-set-key (kbd "C-p") #'previous-logical-line)
+#+END_SRC
+
 * Special Operating Procedure
    :PROPERTIES:
    :noweb-ref: Special-Operating-Procedure
@@ -2553,11 +2560,10 @@ Make control characters easily visible.
 ** Word Wrap
 
 #+BEGIN_SRC emacs-lisp
-(global-visual-line-mode)
-(global-set-key (kbd "s-C-n") #'next-line)
-(global-set-key (kbd "C-n") #'next-logical-line)
-(global-set-key (kbd "s-C-p") #'previous-line)
-(global-set-key (kbd "C-p") #'previous-logical-line)
+(use-package visual-line-mode
+  :config
+  (global-visual-line-mode)
+  :diminish visual-line-mode)
 #+END_SRC
 
 * Quiet and Pleasant Appearance
