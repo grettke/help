@@ -330,7 +330,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (add-to-list 'load-path "~/src/use-package")
 (eval-when-compile
   (require 'use-package))
-(require 'diminish)
+(use-package diminish)
 (use-package ob-sml
   :ensure t)
 (org-babel-do-load-languages
@@ -411,8 +411,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   :ensure t)
 (use-package uuid
   :ensure t)
-(use-package diminish
-             :ensure t)
+(use-package diminish)
 (size-indication-mode)
 (column-number-mode t)
 (defmacro help/on-osx (statement &rest statements)
@@ -466,35 +465,33 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   :config
   (global-set-key (kbd "s-d") #'er/expand-region))
 (setq help/column-width 80)
-(require 'hideshow)
-(setq hs-hide-comments-when-hiding-all t)
-(setq hs-isearch-open t)
-(defun display-code-line-counts (ov)
-  "Displaying overlay content in echo area or tooltip"
-  (when (eq 'code (overlay-get ov 'hs))
-    (overlay-put ov 'help-echo
-                 (buffer-substring (overlay-start ov)
-                                   (overlay-end ov)))))
-(setq hs-set-up-overlay 'display-code-line-counts)
-(defun help/goto-line (&rest args)
-  "How do I get it to expand upon a goto-line? hideshow-expand affected block when using goto-line in a collapsed buffer."
-  (save-excursion
-    (hs-show-block)))
-(advice-add #'goto-line :after #'help/goto-line)
-(eval-after-load "hideshow" '(diminish 'hs-minor-mode))
-(eval-after-load "visual-line-mode"
-  '(diminish 'visual-line-mode))
-
+(use-package hideshow
+  :config
+  (setq hs-hide-comments-when-hiding-all t)
+  (setq hs-isearch-open t)
+  (defun display-code-line-counts (ov)
+    "Displaying overlay content in echo area or tooltip"
+    (when (eq 'code (overlay-get ov 'hs))
+      (overlay-put ov 'help-echo
+                   (buffer-substring (overlay-start ov)
+                                     (overlay-end ov)))))
+  (setq hs-set-up-overlay #'display-code-line-counts)
+  (defun help/goto-line (&rest args)
+    "How do I get it to expand upon a goto-line? hideshow-expand affected block when using goto-line in a collapsed buffer."
+    (save-excursion
+      (hs-show-block)))
+  (advice-add #'goto-line :after #'help/goto-line)
+  :diminish hs-minor-mode)
 (use-package rainbow-mode
   :ensure t
   :config
-  (eval-after-load "rainbow-mode" '(diminish 'rainbow-mode)))
+  :diminish rainbow-mode)
 (setq-default eval-expression-print-level nil)
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
 (add-to-list 'load-path (getenv "CCRYPT"))
-(require 'ps-ccrypt "ps-ccrypt.el")
+(use-package ps-ccrypt)
 (setq eshell-prefer-lisp-functions nil
       eshell-cmpl-cycle-completions nil
       eshell-save-history-on-exit t
@@ -502,9 +499,9 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 
 (eval-after-load 'esh-opt
   '(progn
-     (require 'em-cmpl)
-     (require 'em-prompt)
-     (require 'em-term)
+     (use-package em-cmpl)
+     (use-package em-prompt)
+     (use-package em-term)
      (setenv "PAGER" "cat")
      (add-hook 'eshell-mode-hook
                (lambda ()
@@ -578,10 +575,10 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (help/save-all-file-buffers)
   (other-window 1))
 
-(defun help/safb-help/org-edit-src-code-plus-name ()
+(defun help/safb-org-edit-src-code ()
   (interactive)
   (help/save-all-file-buffers)
-  (help/org-edit-src-code-plus-name))
+  (org-edit-src-code))
 
 (defun help/safb-help/org-edit-src-code-plus-name ()
   (interactive)
@@ -619,7 +616,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (setq dired-dwim-target t)
 (help/on-osx
  (setq ls-lisp-use-insert-directory-program nil)
- (require 'ls-lisp))
+ (use-package ls-lisp))
 (use-package find-dired
   :ensure t
   :config
@@ -634,7 +631,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (setq wdired-use-dired-vertical-movement 'sometimes))
 (use-package dired-imenu
   :ensure t)
-(require 'ido)
+(use-package ido)
 (use-package flx-ido
              :ensure t
              :config
@@ -689,7 +686,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (use-package auto-complete
   :ensure t
   :config
-  (require 'auto-complete-config)
+  (use-package auto-complete-config)
   (setq ac-quick-help-prefer-pos-tip nil)
   (ac-config-default)
   (setq ac-auto-start nil)
@@ -867,8 +864,12 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (setq whitespace-line-column help/column-width)
   (global-whitespace-mode t)
   :diminish whitespace-mode global-whitespace-mode)
+(use-package visual-line-mode
+  :config
+  (global-visual-line-mode)
+  :diminish visual-line-mode)
 (setq initial-scratch-message nil)
-(require 'lexbind-mode)
+(use-package lexbind-mode)
 
 (defun help/elisp-eval-buffer ()
   "Intelligently evaluate an Elisp buffer."
@@ -902,8 +903,7 @@ RC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.htm
   (help/elisp-mode-local-bindings)
   (lexbind-mode)
   (turn-on-eldoc-mode)
-  (eval-after-load "eldoc-mode"
-    '(diminish 'eldoc-mode)))
+  (diminish 'eldoc-mode))
 
 (setq ielm-noisy nil)
 
@@ -945,7 +945,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (setq org-confirm-elisp-link-function 'y-or-n-p)
 (setq org-enforce-todo-dependencies t)
 (when (display-graphic-p)
-  (require 'org-mouse))
+  (use-package org-mouse))
 (setq org-ellipsis "…")
 (setq org-hide-leading-stars t)
 (setq org-fontify-emphasized-text t)
@@ -967,20 +967,6 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (setq org-src-strip-leading-and-trailing-blank-lines t)
 (setq org-src-window-setup 'current-window)
 (setq org-babel-no-eval-on-ctrl-c-ctrl-c t)
-(defun help/org-edit-src-code-plus-name ()
-  "Edit the well-described source code block.
-
-Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2014-09/msg00778.html'
-
-Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
-  (interactive)
-  (let* ((eop  (org-element-at-point))
-         (name (or (org-element-property :name (org-element-context eop))
-                   "ॐ"))
-         (lang (org-element-property :language eop))
-         (file-name (buffer-file-name)))
-    (org-edit-src-code nil name)
-    (setq buffer-file-name file-name)))
 (defun help/vc-next-action ()
   "If in org source block, exit it before `vc-next-action'."
   (interactive)
@@ -1010,7 +996,7 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
 (define-key org-mode-map (kbd "s-U") #'org-mark-ring-goto)
 (define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
 (define-key org-mode-map (kbd "s-i") #'help/safb-org-babel-tangle)
-(define-key org-mode-map (kbd "s-l") #'help/safb-help/org-edit-src-code-plus-name)
+(define-key org-mode-map (kbd "s-l") #'help/safb-org-edit-src-code)
 (define-key org-mode-map (kbd "s-o") #'org-babel-execute-maybe)
 (define-key org-mode-map (kbd "s-;") #'org-babel-view-src-block-info)
 (define-key org-mode-map (kbd "s-p") #'org-babel-demarcate-block)
@@ -1065,7 +1051,7 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
     (add-hook it #'help/emacs-lisp-mode-hook-fn)))
 
 (add-hook #'ielm-mode-hook #'help/ielm-mode-hook-fn)
-(require 'uniquify)
+(use-package uniquify)
 (setq uniquify-buffer-name-style 'forward)
 (setq ring-bell-function 'ignore)
 (setq visible-bell t)

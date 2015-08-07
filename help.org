@@ -1475,8 +1475,7 @@ Generate a UUID.
 Reduce information about modes in the Modeline.
 
 #+BEGIN_SRC emacs-lisp
-(use-package diminish
-             :ensure t)
+(use-package diminish)
 #+END_SRC
 
 Show the file size.
@@ -1654,26 +1653,23 @@ then document.
 ** Code Folding
 
 #+BEGIN_SRC emacs-lisp
-(require 'hideshow)
-(setq hs-hide-comments-when-hiding-all t)
-(setq hs-isearch-open t)
-(defun display-code-line-counts (ov)
-  "Displaying overlay content in echo area or tooltip"
-  (when (eq 'code (overlay-get ov 'hs))
-    (overlay-put ov 'help-echo
-                 (buffer-substring (overlay-start ov)
-                                   (overlay-end ov)))))
-(setq hs-set-up-overlay 'display-code-line-counts)
-(defun help/goto-line (&rest args)
-  "How do I get it to expand upon a goto-line? hideshow-expand affected block when using goto-line in a collapsed buffer."
-  (save-excursion
-    (hs-show-block)))
-(advice-add #'goto-line :after #'help/goto-line)
-(eval-after-load "hideshow" '(diminish 'hs-minor-mode))
-#+END_SRC
-
-#+BEGIN_SRC emacs-lisp
-(diminish 'visual-line-mode)
+(use-package hideshow
+  :config
+  (setq hs-hide-comments-when-hiding-all t)
+  (setq hs-isearch-open t)
+  (defun display-code-line-counts (ov)
+    "Displaying overlay content in echo area or tooltip"
+    (when (eq 'code (overlay-get ov 'hs))
+      (overlay-put ov 'help-echo
+                   (buffer-substring (overlay-start ov)
+                                     (overlay-end ov)))))
+  (setq hs-set-up-overlay #'display-code-line-counts)
+  (defun help/goto-line (&rest args)
+    "How do I get it to expand upon a goto-line? hideshow-expand affected block when using goto-line in a collapsed buffer."
+    (save-excursion
+      (hs-show-block)))
+  (advice-add #'goto-line :after #'help/goto-line)
+  :diminish hs-minor-mode)
 #+END_SRC
 
 ** Colors
@@ -1686,7 +1682,7 @@ Rainbow-Mode handles most major modes color definitions as expected.
 (use-package rainbow-mode
   :ensure t
   :config
-  (eval-after-load "rainbow-mode" '(diminish 'rainbow-mode)))
+  :diminish rainbow-mode)
 #+END_SRC
 
 ** Evaluation
@@ -1709,7 +1705,7 @@ Easy to use file-based AES encryption.
 
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path (getenv "CCRYPT"))
-(require 'ps-ccrypt "ps-ccrypt.el")
+(use-package ps-ccrypt)
 #+END_SRC
 
 ** Eshell
@@ -1734,9 +1730,9 @@ to =eshell-visual-commands=.
 
 (eval-after-load 'esh-opt
   '(progn
-     (require 'em-cmpl)
-     (require 'em-prompt)
-     (require 'em-term)
+     (use-package em-cmpl)
+     (use-package em-prompt)
+     (use-package em-term)
      (setenv "PAGER" "cat")
      (add-hook 'eshell-mode-hook
                (lambda ()
@@ -1848,10 +1844,10 @@ use than advice.
   (help/save-all-file-buffers)
   (other-window 1))
 
-(defun help/safb-help/org-edit-src-code-plus-name ()
+(defun help/safb-org-edit-src-code ()
   (interactive)
   (help/save-all-file-buffers)
-  (help/org-edit-src-code-plus-name))
+  (org-edit-src-code))
 
 (defun help/safb-help/org-edit-src-code-plus-name ()
   (interactive)
@@ -1962,7 +1958,7 @@ Use EMACS =ls=.
 #+BEGIN_SRC emacs-lisp
 (help/on-osx
  (setq ls-lisp-use-insert-directory-program nil)
- (require 'ls-lisp))
+ (use-package ls-lisp))
 #+END_SRC
 
 After dabbling, something happened that really changed my mind. These three
@@ -2051,7 +2047,7 @@ These configurations are performed in the correct order. Any attempt to refactor
 this Source-Block will break Ido in this system.
 
 #+BEGIN_SRC emacs-lisp
-(require 'ido)
+(use-package ido)
 (use-package flx-ido
              :ensure t
              :config
@@ -2166,7 +2162,7 @@ Go to any object in the frame quickly.
 (use-package auto-complete
   :ensure t
   :config
-  (require 'auto-complete-config)
+  (use-package auto-complete-config)
   (setq ac-quick-help-prefer-pos-tip nil)
   (ac-config-default)
   (setq ac-auto-start nil)
@@ -2578,7 +2574,7 @@ Configure EMACS to personal-taste for "noise" and "form".
 Give buffers backed by identically named files distinguishable names.
 
 #+BEGIN_SRC emacs-lisp
-(require 'uniquify)
+(use-package uniquify)
 (setq uniquify-buffer-name-style 'forward)
 #+END_SRC
 
@@ -2824,12 +2820,13 @@ Add the Use-Package distribution the load path.
 (add-to-list 'load-path "~/src/use-package")
 #+END_SRC
 
-Load Use-Package and it's partner Diminish.
+Load Use-Package and it's partner Diminish. Every package loaded before this
+point uses ~require~. Every package loaded after this point uses ~use-package~.
 
 #+BEGIN_SRC emacs-lisp
 (eval-when-compile
   (require 'use-package))
-(require 'diminish)
+(use-package diminish)
 #+END_SRC
 
 * Hacking
@@ -2953,7 +2950,7 @@ With that in mind this system:
 
 #+BEGIN_SRC emacs-lisp
 (setq initial-scratch-message nil)
-(require 'lexbind-mode)
+(use-package lexbind-mode)
 
 (defun help/elisp-eval-buffer ()
   "Intelligently evaluate an Elisp buffer."
@@ -3123,7 +3120,7 @@ Allow the mouse to do Org-Mode things like expand and collapse headings.
 
 #+BEGIN_SRC emacs-lisp
 (when (display-graphic-p)
-  (require 'org-mouse))
+  (use-package org-mouse))
 #+END_SRC
 
 Use a real ellipsis to render an ellipsis for Org-Mode stuff like showing that a
@@ -3279,25 +3276,6 @@ make it so easy as =C-c C-c=.
 (setq org-babel-no-eval-on-ctrl-c-ctrl-c t)
 #+END_SRC
 
-Promimently display the source-block's name if it has one.
-
-#+BEGIN_SRC emacs-lisp
-(defun help/org-edit-src-code-plus-name ()
-  "Edit the well-described source code block.
-
-Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2014-09/msg00778.html'
-
-Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
-  (interactive)
-  (let* ((eop  (org-element-at-point))
-         (name (or (org-element-property :name (org-element-context eop))
-                   "ॐ"))
-         (lang (org-element-property :language eop))
-         (file-name (buffer-file-name)))
-    (org-edit-src-code nil name)
-    (setq buffer-file-name file-name)))
-#+END_SRC
-
 Configure the system to successfully use ~vc-next-action~ while editing a
 Source-Block. Before perfoming the edit, check if it is Org-Mode and
 exit the Source-Block Buffer (SBB). If this system stays in the SBB
@@ -3398,7 +3376,7 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
 (define-key org-mode-map (kbd "s-U") #'org-mark-ring-goto)
 (define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
 (define-key org-mode-map (kbd "s-i") #'help/safb-org-babel-tangle)
-(define-key org-mode-map (kbd "s-l") #'help/safb-help/org-edit-src-code-plus-name)
+(define-key org-mode-map (kbd "s-l") #'help/safb-org-edit-src-code)
 (define-key org-mode-map (kbd "s-o") #'org-babel-execute-maybe)
 (define-key org-mode-map (kbd "s-;") #'org-babel-view-src-block-info)
 (define-key org-mode-map (kbd "s-p") #'org-babel-demarcate-block)
