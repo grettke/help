@@ -1,6 +1,7 @@
 # -*- mode: snippet -*-
 # key: diminish
 # name: Diminish mode-line display of a minor mode.
+# group: HELP
 # contributor: gcr@wisdomandwonder.com
 # --
 (eval-after-load "${1:enumerate}"
