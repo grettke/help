@@ -452,8 +452,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   :ensure t
   :config
   (global-undo-tree-mode 1)
-  (eval-after-load "undo-tree-mode"
-    '(diminish 'undo-tree-mode)))
+  :diminish undo-tree-mode)
 (setq require-final-newline nil)
 (use-package wrap-region
   :ensure t
@@ -464,9 +463,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (wrap-region-add-wrapper "=" "=" nil 'org-mode)
   (wrap-region-add-wrapper "~" "~" nil 'org-mode)
   (wrap-region-add-wrapper "+" "+" nil 'org-mode)
-  (eval-after-load "wrap-region-mode"
-    '(diminish 'wrap-region-mode))
-  (wrap-region-global-mode))
+  :diminish wrap-region-mode)
 (setq track-eol t)
 (setq line-move-visual nil)
 (setq scroll-preserve-screen-position t)
@@ -708,9 +705,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (setq ac-auto-start nil)
   (help/not-on-gui (ac-set-trigger-key "\t"))
   (help/on-gui (ac-set-trigger-key "<tab>"))
-  (eval-after-load "auto-complete-mode"
-    '(diminish 'auto-complete-mode))
-)
+  :diminish auto-complete-mode)
 (use-package auto-complete-chunk
   :ensure t)
 (use-package auto-complete-chunk
@@ -750,10 +745,9 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   :config
   (projectile-global-mode t)
   (global-set-key (kbd "s-z") #'projectile-find-file)
-  (eval-after-load "projectile-mode"
-    '(diminish 'projectile-mode))
   (help/on-windows
-   (setq projectile-indexing-method 'alien)))
+   (setq projectile-indexing-method 'alien))
+  :diminish projectile-mode)
 (eval-after-load "projectile"
   '(progn (setq magit-repository-directories (mapcar (lambda (dir)
                                                        (substring dir 0 -1))
@@ -842,8 +836,7 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
   :ensure t
   :config
   (add-hook 'after-init-hook #'global-flycheck-mode)
-  (eval-after-load "flycheck-mode"
-    '(diminish 'flycheck-mode)))
+  :diminish flycheck-mode)
 (setq-default indent-tabs-mode nil)
 (defun help/untabify-if-not-indent-tabs-mode ()
   "Untabify if `indent-tabs-mode' is false.
@@ -860,8 +853,6 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   :config
   (yas-global-mode t)
   (setq yas-triggers-in-field t)
-  (eval-after-load "yas-minor-mode"
-    '(diminish 'yas-minor-mode))
   (defun help/yas-minor-mode-hook-fn ()
     "Personal customizations."
     (define-key yas-minor-mode-map (kbd "<tab>") nil)
@@ -870,7 +861,8 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (add-hook #'yas-minor-mode-hook #'help/yas-minor-mode-hook-fn)
   (add-to-list #'yas-snippet-dirs "~/src/help/yasnippet")
   (yas-reload-all)
-  (setq yas-prompt-functions '(yas-ido-prompt)))
+  (setq yas-prompt-functions '(yas-ido-prompt))
+  :diminish yas-minor-mode)
 (use-package magit
              :ensure t
              :config
@@ -884,10 +876,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (setq whitespace-style '(trailing lines tab-mark))
   (setq whitespace-line-column help/column-width)
   (global-whitespace-mode t)
-  (eval-after-load "global-whitespace-mode"
-    '(diminish 'global-whitespace-mode))
-  (eval-after-load "whitespace-mode"
-    '(diminish 'whitespace-mode)))
+  :diminish whitespace-mode global-whitespace-mode)
 (global-visual-line-mode)
 (global-set-key (kbd "s-C-n") #'next-line)
 (global-set-key (kbd "C-n") #'next-logical-line)
