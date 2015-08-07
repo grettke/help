@@ -5,9 +5,9 @@ HELP Enables Literate Programming.
 
 Setup:
 
-1) [[http://orgmode.org/][Clone Org-Mode]] to =~/src/=.
+1) [[http://orgmode.org/][Pull Org-Mode]] to =~/src/=.
    1) If necessary: [[http://orgmode.org/worg/org-hacks.html][Generating autoloads and Compiling Org without make]]
-2) [[https://github.com/jwiegley/use-package][Clone Use-Package]] to =~/src/=.
+2) [[https://github.com/jwiegley/use-package][Pull Use-Package]] to =~/src/=.
 3) Create a folder for support libraries exporting it's location in a variable
    named =EELIB=.
 4) Install supporting systems adding their exectuables to the =PATH=.
