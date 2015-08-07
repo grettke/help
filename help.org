@@ -3439,3 +3439,6 @@ When a drop of water joins the ocean it becomes the ocean.
 (defconst help/ditaa-jar (concat (getenv "EELIB") "/ditaa.jar"))
 (setq org-ditaa-jar-path help/ditaa-jar)
 #+END_SRC
+
+** Graphviz
+** PlantUML
