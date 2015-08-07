@@ -1403,18 +1403,6 @@ display.
 
 #+END_SRC
 
-** Evaluation
-
-Evaluate code only after package load.
-
-#+BEGIN_SRC emacs-lisp
-(defmacro help/diminish (mode)
-  "Diminish this mode after it is loaded."
-  (interactive)
-  `(eval-after-load ,mode
-     (diminish ,mode)))
-     #+END_SRC
-
 ** Keyboard
 
 Key-Chord mode is amazing. Piano-Lessons shows you how.
@@ -1588,7 +1576,8 @@ Provide expected "Undo" functionality.
   :ensure t
   :config
   (global-undo-tree-mode 1)
-  (help/diminish #'undo-tree-mode))
+  (eval-after-load "undo-tree-mode"
+    '(diminish 'undo-tree-mode)))
 #+END_SRC
 
 Ensure that buffers end with a new line. This works in company with Org-Mode
@@ -1610,7 +1599,8 @@ Easily wrap the current region.
   (wrap-region-add-wrapper "=" "=" nil 'org-mode)
   (wrap-region-add-wrapper "~" "~" nil 'org-mode)
   (wrap-region-add-wrapper "+" "+" nil 'org-mode)
-  (help/diminish #'wrap-region-mode)
+  (eval-after-load "wrap-region-mode"
+    '(diminish 'wrap-region-mode))
   (wrap-region-global-mode))
 #+END_SRC
 
@@ -1686,7 +1676,9 @@ then document.
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp
-(help/diminish #'visual-line-mode)
+(eval-after-load "visual-line-mode"
+  '(diminish 'visual-line-mode))
+
 #+END_SRC
 
 ** Colors
@@ -2175,7 +2167,9 @@ Go to any object in the frame quickly.
   (setq ac-auto-start nil)
   (help/not-on-gui (ac-set-trigger-key "\t"))
   (help/on-gui (ac-set-trigger-key "<tab>"))
-  (help/diminish #'auto-complete-mode))
+  (eval-after-load "auto-complete-mode"
+    '(diminish 'auto-complete-mode))
+)
 (use-package auto-complete-chunk
   :ensure t)
 #+END_SRC
@@ -2279,7 +2273,8 @@ with Projectile.
   :config
   (projectile-global-mode t)
   (global-set-key (kbd "s-z") #'projectile-find-file)
-  (help/diminish 'projectile-mode)
+  (eval-after-load "projectile-mode"
+    '(diminish 'projectile-mode))
   (help/on-windows
    (setq projectile-indexing-method 'alien)))
 #+END_SRC
@@ -2465,7 +2460,8 @@ Perform syntactic analysis all the time.
   :ensure t
   :config
   (add-hook 'after-init-hook #'global-flycheck-mode)
-  (help/diminish 'flycheck-mode))
+  (eval-after-load "flycheck-mode"
+    '(diminish 'flycheck-mode)))
 #+END_SRC
 
 ** TAB
@@ -2510,7 +2506,8 @@ Most programing modes indent to 2 spaces. TABs should be the same width.
   :config
   (yas-global-mode t)
   (setq yas-triggers-in-field t)
-  (help/diminish #'yas-minor-mode)
+  (eval-after-load "yas-minor-mode"
+    '(diminish 'yas-minor-mode))
   (defun help/yas-minor-mode-hook-fn ()
     "Personal customizations."
     (define-key yas-minor-mode-map (kbd "<tab>") nil)
@@ -2557,8 +2554,10 @@ Make control characters easily visible.
   (setq whitespace-style '(trailing lines tab-mark))
   (setq whitespace-line-column help/column-width)
   (global-whitespace-mode t)
-  (help/diminish 'global-whitespace-mode)
-  (help/diminish 'whitespace-mode))
+  (eval-after-load "global-whitespace-mode"
+    '(diminish 'global-whitespace-mode))
+  (eval-after-load "whitespace-mode"
+    '(diminish 'whitespace-mode)))
 #+END_SRC
 
 ** Word Wrap
@@ -2921,7 +2920,8 @@ With that in mind this system:
   :ensure smartparens
   :config
   (setq sp-show-pair-from-inside nil)
-  (help/diminish 'smartparens-mode))
+  (eval-after-load "smartparens-mode"
+    '(diminish 'smartparens-mode)))
   #+END_SRC
 
 **** Implementation.
@@ -2991,7 +2991,8 @@ RC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.htm
   (help/elisp-mode-local-bindings)
   (lexbind-mode)
   (turn-on-eldoc-mode)
-  (help/diminish 'eldoc-mode))
+  (eval-after-load "eldoc-mode"
+    '(diminish 'eldoc-mode)))
 
 (setq ielm-noisy nil)
 

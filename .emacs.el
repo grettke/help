@@ -392,11 +392,6 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
      ,statement
      ,@statements))
 
-(defmacro help/diminish (mode)
-  "Diminish this mode after it is loaded."
-  (interactive)
-  `(eval-after-load ,mode
-     (diminish ,mode)))
 (use-package key-chord
   :ensure t
   :config
@@ -456,7 +451,8 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   :ensure t
   :config
   (global-undo-tree-mode 1)
-  (help/diminish #'undo-tree-mode))
+  (eval-after-load "undo-tree-mode"
+    '(diminish 'undo-tree-mode)))
 (setq require-final-newline t)
 (use-package wrap-region
   :ensure t
@@ -467,7 +463,8 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (wrap-region-add-wrapper "=" "=" nil 'org-mode)
   (wrap-region-add-wrapper "~" "~" nil 'org-mode)
   (wrap-region-add-wrapper "+" "+" nil 'org-mode)
-  (help/diminish #'wrap-region-mode)
+  (eval-after-load "wrap-region-mode"
+    '(diminish 'wrap-region-mode))
   (wrap-region-global-mode))
 (setq track-eol t)
 (setq line-move-visual nil)
@@ -497,7 +494,9 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
     (hs-show-block)))
 (advice-add #'goto-line :after #'help/goto-line)
 (eval-after-load "hideshow" '(diminish 'hs-minor-mode))
-(help/diminish #'visual-line-mode)
+(eval-after-load "visual-line-mode"
+  '(diminish 'visual-line-mode))
+
 (use-package rainbow-mode
   :ensure t
   :config
@@ -698,7 +697,9 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (setq ac-auto-start nil)
   (help/not-on-gui (ac-set-trigger-key "\t"))
   (help/on-gui (ac-set-trigger-key "<tab>"))
-  (help/diminish #'auto-complete-mode))
+  (eval-after-load "auto-complete-mode"
+    '(diminish 'auto-complete-mode))
+)
 (use-package auto-complete-chunk
   :ensure t)
 (use-package auto-complete-chunk
@@ -738,7 +739,8 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   :config
   (projectile-global-mode t)
   (global-set-key (kbd "s-z") #'projectile-find-file)
-  (help/diminish 'projectile-mode)
+  (eval-after-load "projectile-mode"
+    '(diminish 'projectile-mode))
   (help/on-windows
    (setq projectile-indexing-method 'alien)))
 (eval-after-load "projectile"
@@ -829,7 +831,8 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
   :ensure t
   :config
   (add-hook 'after-init-hook #'global-flycheck-mode)
-  (help/diminish 'flycheck-mode))
+  (eval-after-load "flycheck-mode"
+    '(diminish 'flycheck-mode)))
 (setq-default indent-tabs-mode nil)
 (defun help/untabify-if-not-indent-tabs-mode ()
   "Untabify if `indent-tabs-mode' is false.
@@ -846,7 +849,8 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   :config
   (yas-global-mode t)
   (setq yas-triggers-in-field t)
-  (help/diminish #'yas-minor-mode)
+  (eval-after-load "yas-minor-mode"
+    '(diminish 'yas-minor-mode))
   (defun help/yas-minor-mode-hook-fn ()
     "Personal customizations."
     (define-key yas-minor-mode-map (kbd "<tab>") nil)
@@ -869,8 +873,10 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (setq whitespace-style '(trailing lines tab-mark))
   (setq whitespace-line-column help/column-width)
   (global-whitespace-mode t)
-  (help/diminish 'global-whitespace-mode)
-  (help/diminish 'whitespace-mode))
+  (eval-after-load "global-whitespace-mode"
+    '(diminish 'global-whitespace-mode))
+  (eval-after-load "whitespace-mode"
+    '(diminish 'whitespace-mode)))
 (global-visual-line-mode)
 (global-set-key (kbd "s-C-n") #'next-line)
 (global-set-key (kbd "C-n") #'next-logical-line)
@@ -911,7 +917,8 @@ RC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.htm
   (help/elisp-mode-local-bindings)
   (lexbind-mode)
   (turn-on-eldoc-mode)
-  (help/diminish 'eldoc-mode))
+  (eval-after-load "eldoc-mode"
+    '(diminish 'eldoc-mode)))
 
 (setq ielm-noisy nil)
 
@@ -1041,7 +1048,8 @@ Attribtion: URL `http://emacs.stackexchange.com/a/8168/341'"
   :ensure smartparens
   :config
   (setq sp-show-pair-from-inside nil)
-  (help/diminish 'smartparens-mode))
+  (eval-after-load "smartparens-mode"
+    '(diminish 'smartparens-mode)))
 (defun help/hack-prog*-mode-hook-fn ()
   (interactive)
   (help/text-prog*-setup)
