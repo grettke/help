@@ -161,6 +161,8 @@ Start EMACS with this command:
 «Standard-Operating-Procedure»
 «Hacking-Emacs-Lisp»
 «Hacking-Org-Mode»
+«Hacking-Artist»
+«Hacking-DITAA»
 «Hacking-Prog*-Mode»
 «Quiet-and-Pleasant-Appearance»
 «Piano-Lessons»
@@ -169,11 +171,8 @@ Start EMACS with this command:
 =open /Applications/Emacs.app=
 
 ** Eshell
-   :PROPERTIES:
-   :header-args:   :tangle "eshell" :comments no
-   :END:
 
-#+BEGIN_SRC sh :tangle eshell/alias :comments no
+#+BEGIN_SRC sh :tangle "./eshell/alias" :comments no
 alias clear recenter 0
 alias d 'dired $1'
 alias ff find-file $1
@@ -3404,7 +3403,11 @@ Make =s-l= do the same thing to leave the Source-Block-Buffer.
 ** Vagrant
 
 ~ruby-mode~ supports =Vagrantfile= OOTB.
+
 ** Artist
+  :PROPERTIES:
+  :noweb-ref: Hacking-Artist
+  :END:
 
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
@@ -3413,10 +3416,13 @@ Make =s-l= do the same thing to leave the Source-Block-Buffer.
 #+END_SRC
 
 ** DITAA
+  :PROPERTIES:
+  :noweb-ref: Hacking-DITAA
+  :END:
 
 When a drop of water joins the ocean it becomes the ocean.
 
-#+BEGIN_SRC ditaa :file ./image/dropinocean.png
+#+BEGIN_SRC ditaa :file "./image/dropinocean.png" :noweb-ref ignore
 +---------+
 | cBLU    |
 |         |
