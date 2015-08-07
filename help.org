@@ -1591,21 +1591,6 @@ This is important to YASnippets and Source-Blocks. Doing so would violate POLA.
 (setq require-final-newline nil)
 #+END_SRC
 
-Easily wrap the current region; used primarily for Org-Mode.
-
-#+BEGIN_SRC emacs-lisp
-(use-package wrap-region
-  :ensure t
-  :config
-  (wrap-region-add-wrapper "*" "*" nil 'org-mode)
-  (wrap-region-add-wrapper "/" "/" nil 'org-mode)
-  (wrap-region-add-wrapper "_" "_" nil 'org-mode)
-  (wrap-region-add-wrapper "=" "=" nil 'org-mode)
-  (wrap-region-add-wrapper "~" "~" nil 'org-mode)
-  (wrap-region-add-wrapper "+" "+" nil 'org-mode)
-  :diminish wrap-region-mode)
-#+END_SRC
-
 If you are on the end of a line, and go up or down, then go to the end of
 line on that new line. Do not account for anything special about the character
 there.
@@ -3328,6 +3313,21 @@ Never use the original version.
 
 #+BEGIN_SRC emacs-lisp
 (setq org-edit-src-code nil)
+#+END_SRC
+
+Easily wrap the current region; used primarily for Org-Mode.
+
+#+BEGIN_SRC emacs-lisp
+(use-package wrap-region
+  :ensure t
+  :config
+  (wrap-region-add-wrapper "*" "*" nil 'org-mode)
+  (wrap-region-add-wrapper "/" "/" nil 'org-mode)
+  (wrap-region-add-wrapper "_" "_" nil 'org-mode)
+  (wrap-region-add-wrapper "=" "=" nil 'org-mode)
+  (wrap-region-add-wrapper "~" "~" nil 'org-mode)
+  (wrap-region-add-wrapper "+" "+" nil 'org-mode)
+  :diminish wrap-region-mode)
 #+END_SRC
 
 *** Keybindings
