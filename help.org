@@ -2535,8 +2535,6 @@ Make control characters easily visible.
 
 #+BEGIN_SRC emacs-lisp
 (use-package visual-line-mode
-  :config
-  (global-visual-line-mode)
   :diminish visual-line-mode)
 #+END_SRC
 
@@ -2856,6 +2854,7 @@ With that in mind this system:
   "HELP's standard configuration for buffer's working with text, often for
    programming."
   (interactive)
+  (visual-line-mode)
   (linum-mode)
   (fci-mode)
   (rainbow-mode))
