@@ -1872,6 +1872,11 @@ use than advice.
   (interactive)
   (help/save-all-file-buffers)
   (org-export-dispatch))
+
+(defun help/safb-TeX-command-master (&optional arg)
+  (interactive)
+  (help/save-all-file-buffers)
+  (TeX-command-master arg))
 #+END_SRC
 
 Selection:
@@ -2902,7 +2907,7 @@ With that in mind this system:
 - Hacking mode hooks.
   - Configurations common to every hacking vehicle.
     #+BEGIN_SRC emacs-lisp
-(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook))
+(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook))
     #+END_SRC
   - LISP mode hooks.
     - Are hacking modes.
@@ -3461,90 +3466,47 @@ Easily enter guillemots.
   :noweb-ref: Hacking-Publishing-TeX
   :END:
 
-AUCT_{E}X is the mode that makes it possible to work with all of these fine tools.
-Visiting their website I took their advice of reading the Info document in Emacs
-by first installing it via Homebrew. That was my mistake since the prerequisites
-page starts by explaining that this mode is 100% Elisp and that you should use
-ELPA to install it. I started over again with the setup. When you read the
-documentation, the first page explains how to load the mode and associate files
-with modes but you should ignore that because when you configure it via ELPA,
-everything "just works". Installation mostly involved the prerequisites.
-
-This version of Emacs is modern. For TeX, on Linux, I've always used TeX Live [fn:841d4205: https://www.tug.org/texlive/] and on OSX I've always used
-MacTeX [fn:490cc248: https://www.tug.org/mactex/]. Ghostscript comes with
-both either via =apt-get= or =homebrew=. =texinfo= didn't seem necessary so I
-did not pursue installing it.
-
-Enable most of the stuff we need, given that I don't yet know what we need but
-the manual helps us here.
-
 #+BEGIN_SRC emacs-lisp
 (use-package tex-site
-  :ensure auctex)
+  :ensure auctex
+  :config
+  (eval-after-load "tex"
+    '(define-key TeX-mode-map (kbd "C-c C-c") #'help/safb-TeX-command-master)))
 #+END_SRC
+
+Save style info. This doesn't control the buffer save.
 
 #+BEGIN_SRC emacs-lisp
 (setq TeX-auto-save t)
+#+END_SRC
+
+Parse on load.
+
+#+BEGIN_SRC emacs-lisp
 (setq TeX-parse-self t)
 #+END_SRC
 
-The "Quick Start" lists the most frequent operations, and I think that I will
-get the PDF for them. Looking at just this tiny, tiny bit of effort to get
-AUCTeX working… it is just so inspiring to see the plethora of amazingly
-wonderful tools out there /free/ for all to use.
-
-For a start, I will just do some basic stuff that I do for most modes.
+Parse on save.
 
 #+BEGIN_SRC emacs-lisp
-(defun gcr/TeX-mode-hook ()
-  "Settings applicable to every AUCTeX supported mode."
-  (interactive)
-  (turn-on-smartparens-strict-mode)
-  (gcr/disable-tabs)
-  (fci-mode)
-  (linum-mode))
-
-(add-hook 'TeX-mode-hook 'gcr/TeX-mode-hook)
+(setq TeX-auto-save t)
 #+END_SRC
 
-Enable parse on load.
-#+BEGIN_SRC emacs-lisp
-(setq TeX-parse-self t) ;
-#+END_SRC
-
-Enable parse on save.
-#+BEGIN_SRC emacs-lisp
-(setq TeX-auto-save t) ;
-#+END_SRC
-
-Never save tabs because AUCTeX has a hard time with them.
-#+BEGIN_SRC emacs-lisp
-(setq TeX-auto-untabify t)
-#+END_SRC
-
-Before letting this mode process any file, save all buffers:
-#+BEGIN_SRC emacs-lisp
-(defadvice TeX-command-master (before before-TeX-command-master activate)
-  (gcr/save-all-file-buffers))
-#+END_SRC
-
-My typical preference is to easily work with XDVI during development and PDF for
-deployment. My want had been to turn PDF generation on, while at the same time
-still producing a DVI file. To do that, I did something like this:
+Use PDFTeX to generate both DVI and PDF files.
 
 #+BEGIN_SRC emacs-lisp
-(setq TeX-PDF-mode +1)
-(setq TeX-DVI-via-PDFTeX +1)
+(setq TeX-PDF-mode t)
+(setq TeX-DVI-via-PDFTeX t)
 #+END_SRC
 
-Don't prompt me every time I run =C-c C-c= about saving the file, instead, just
-save it [fn:b2655f5c: http://mbork.pl/2015-01-10_A_few_random_Emacs_tips].
+Don't prompt every time you run =C-c C-c= about saving the file, instead, just
+save it.
 
 #+BEGIN_SRC emacs-lisp
 (setq TeX-save-query nil)
 #+END_SRC
 
-Start the proper mode for LCO files.
+Load LCO files with AucTeX.
 
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'auto-mode-alist '("\\.lco?\\'" . TeX-latex-mode))

@@ -585,6 +585,11 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (interactive)
   (help/save-all-file-buffers)
   (org-export-dispatch))
+
+(defun help/safb-TeX-command-master (&optional arg)
+  (interactive)
+  (help/save-all-file-buffers)
+  (TeX-command-master arg))
 (add-to-list 'find-file-not-found-functions #'help/create-non-existent-directory)
 (defun help/dired-copy-filename ()
   "Push the path and filename of the file under the point to the kill ring.
@@ -871,7 +876,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (help/try-to-add-imenu))
 
 (add-hook #'text-mode-hook #'help/text-prog*-setup)
-(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook))
+(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook))
 (setq help/hack-lisp-modes
       '(emacs-lisp-mode-hook
         ielm-mode-hook
@@ -1055,25 +1060,15 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
   (setq yas-prompt-functions '(yas-ido-prompt))
   :diminish yas-minor-mode)
 (use-package tex-site
-  :ensure auctex)
+  :ensure auctex
+  :config
+  (eval-after-load "tex"
+    '(define-key TeX-mode-map (kbd "C-c C-c") #'help/safb-TeX-command-master)))
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
-(defun gcr/TeX-mode-hook ()
-  "Settings applicable to every AUCTeX supported mode."
-  (interactive)
-  (turn-on-smartparens-strict-mode)
-  (gcr/disable-tabs)
-  (fci-mode)
-  (linum-mode))
-
-(add-hook 'TeX-mode-hook 'gcr/TeX-mode-hook)
-(setq TeX-parse-self t) ;
-(setq TeX-auto-save t) ;
-(setq TeX-auto-untabify t)
-(defadvice TeX-command-master (before before-TeX-command-master activate)
-  (gcr/save-all-file-buffers))
-(setq TeX-PDF-mode +1)
-(setq TeX-DVI-via-PDFTeX +1)
+(setq TeX-auto-save t)
+(setq TeX-PDF-mode t)
+(setq TeX-DVI-via-PDFTeX t)
 (setq TeX-save-query nil)
 (add-to-list 'auto-mode-alist '("\\.lco?\\'" . TeX-latex-mode))
 (add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
