@@ -884,7 +884,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (help/try-to-add-imenu))
 
 (add-hook #'text-mode-hook #'help/text-prog*-setup)
-(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook))
+(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook ess-mode-hook))
 (setq help/hack-lisp-modes
       '(emacs-lisp-mode-hook
         ielm-mode-hook

@@ -3477,6 +3477,7 @@ Various user interaction stuff:
   - This feature is actually quite rich and a real regexen style system.
 
 Always show eldoc for ℝ stuff, everywhere it may.
+
 #+BEGIN_SRC emacs-lisp
 (setq ess-eldoc-show-on-symbol t)
 #+END_SRC
@@ -3493,17 +3494,20 @@ Data viewing:
     - No problem, call =ess-switch-to-end-of-ESS=
 - Make it easier to know what object values are.
   - =ess-describe-object-at-point=
+
 #+BEGIN_SRC emacs-lisp
 (setq ess-describe-at-point-method 'tooltip)
 #+END_SRC
 
 Always start =ess= within the curent =emacs= frame, it doesn't need to be separate.
+
 #+BEGIN_SRC emacs-lisp
 (setq inferior-ess-same-window nil)
 (setq inferior-ess-own-frame nil)
 #+END_SRC
 
 Help buffers all belong in the same frame.
+
 #+BEGIN_SRC emacs-lisp
 (setq ess-help-own-frame nil)
 #+END_SRC
@@ -3511,6 +3515,7 @@ Help buffers all belong in the same frame.
 When =ess= starts, or when ℝ starts, it takes the current directory as its
 working directory. This is totally fine; so don't ask what the working directory
 should be.
+
 #+BEGIN_SRC emacs-lisp
 (setq ess-ask-for-ess-directory nil)
 #+END_SRC
@@ -3518,6 +3523,7 @@ should be.
 My preference is for ESS to quit and not ask me whether or not I am sure. There
 is an intentional line-break after the closing round bracket because that is the
 approach of the original value here.
+
 #+BEGIN_SRC emacs-lisp
 (setq inferior-ess-exit-command "q('no')
 ")
@@ -3525,6 +3531,7 @@ approach of the original value here.
 
 When commands are executed, display their output within the current buffer,
 rather than to a new dedicated buffer for them.
+
 #+BEGIN_SRC emacs-lisp
 (setq ess-execute-in-process-buffer t)
 #+END_SRC
@@ -3533,24 +3540,28 @@ When you cycle between a the ℝ buffer and the script, you get to the process
 buffer, you will go to the end of the buffer. This setting is specifically to
 handle a buffer that is scrolling when you want to see the last result and will
 scroll back after the fact to see the history.
+
 #+BEGIN_SRC emacs-lisp
 (setq ess-switch-to-end-of-proc-buffer t)
 #+END_SRC
 
 Use typical auto completion in buffers here, but don't do it when the
 next char is a symbol or closed paren.
+
 #+BEGIN_SRC emacs-lisp
 (setq ess-tab-complete-in-script t)
 (setq ess-first-tab-never-complete 'symbol-or-paren-or-punct)
 #+END_SRC
 
 Use =ido= completion whenever possible.
+
 #+BEGIN_SRC emacs-lisp
 (setq ess-use-ido t)
 #+END_SRC
 
 Use =eldoc= for this mode. Always show it when the point is on a symbol.
 Try to keep help strings at 10 chars or less.
+
 #+BEGIN_SRC emacs-lisp
 (setq ess-use-eldoc t)
 (setq ess-eldoc-show-on-symbol t)
@@ -3559,6 +3570,7 @@ Try to keep help strings at 10 chars or less.
 
 These functions are metioned, and I am not sure where or how to use them yet,
 but Vitalie Spinu mentioned them as being useful:
+
 - =comint-previous-matching-input-from-input=
 - =comint-history-isearch-backward-regexp=
 
@@ -3584,6 +3596,7 @@ the system should be configured in this manner:
 We want to keep dump files after loading them; never delete them. The idea
 is that if we use them, then they are a valid part of the system definition and
 need to be kept.
+
 #+BEGIN_SRC emacs-lisp
 (setq ess-keep-dump-files +1)
 #+END_SRC
@@ -3595,6 +3608,7 @@ our philosophy. As such, we don't care to know that these new versions ever
 existed and their record will be forgotten from history. In other words, that
 new, modified version of the object or function, is never saved to a file for
 later reuse.
+
 #+BEGIN_SRC emacs-lisp
 (setq ess-delete-dump-files nil)
 #+END_SRC
