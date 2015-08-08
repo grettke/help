@@ -3455,7 +3455,7 @@ Easily enter guillemots.
 
 ** Structured Query Language (SQL)
 ** (Publishing)
-** TeX [fn:5bb50e18: https://en.wikipedia.org/wiki/TeX] / LaTeX [fn:a13f106f: [[https://en.wikipedia.org/wiki/LaTeX]]] / ConTeXt [fn:8a78f8ab: https://en.wikipedia.org/wiki/ConTeXt]
+** TeX
 
 AUCT_{E}X is the mode that makes it possible to work with all of these fine tools.
 Visiting their website I took their advice of reading the Info document in Emacs
