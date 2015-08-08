@@ -2517,7 +2517,8 @@ Most programing modes indent to 2 spaces. TABs should be the same width.
 
 ** Version Control
 
-Use Magit for Git.
+Use Magit for Git. The commit log editor uses With-Editor and Server modes.
+They are not not diminshed because they are infrequently used.
 
 #+BEGIN_SRC emacs-lisp
 (use-package magit
