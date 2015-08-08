@@ -1186,6 +1186,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (setq inferior-R-args "--no-save --no-restore")
 (sp-local-pair 'ess-mode "{" nil :post-handlers '((gcr/indent-curly-block "RET")))
 (setq ess-eval-visibly 'nowait)
+
 (use-package yasnippet
   :ensure t
   :config
