@@ -2921,6 +2921,7 @@ With that in mind this system:
   (help/text-prog*-setup)
   (smartparens-strict-mode)
   (aggressive-indent-mode)
+  (hs-minor-mode)
   (help/not-on-gui (local-set-key (kbd "RET") #'newline-and-indent))
   (help/on-gui (local-set-key (kbd "<return>") #'newline-and-indent)))
 #+END_SRC
