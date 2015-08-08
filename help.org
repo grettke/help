@@ -3493,70 +3493,6 @@ Always show eldoc for ℝ stuff, everywhere it may.
 (setq ess-eldoc-show-on-symbol t)
 #+END_SRC
 
-*ess-tracebug* start
-
-#+BEGIN_SRC emacs-lisp
-(setq ess-use-tracebug t)
-#+END_SRC
-
-For all =ess-tracebug= stuff, the map prefix is =C-c C-t=
-
-<2014-11-11 Tue>
-The documentation for =ess-tracebug-help= provides all of this documentation that
-I copied from the website into here. Someday I should clean this up!
-
-Breakpoints =ess-dev-map=:
-- b =ess-bp-set= :: Set BP (repeat to cycle BP type)
-- B =ess-bp-set-conditional= :: Set conditional BP
-- k =ess-bp-kill= :: Kill BP
-- K =ess-bp-kill-all= :: Kill all BPs
-- o =ess-bp-toggle-state= :: Toggle BP state
-- l =ess-bp-set-logger= :: Set logger BP
-- n =ess-bp-next= :: Goto next BP
-- p =ess-bp-previous= :: Goto previous BP
-
-Note: =C-= prefixed equivalents are also defined
-
-Debugging =ess-dev-map=:
-- ` =ess-show-traceback= (also on C-c ) :: Show traceback
-- ~ =ess-show-call-stack= (also on C-c ~) :: Show callstack
-- e =ess-debug-toggle-error-action= :: Toggle error action (repeat to cycle)
-- d =ess-debug-flag-for-debugging= :: Flag for debugging
-- u =ess-debug-unflag-for-debugging= :: Unflag for debugging
-- w =ess-watch= :: Watch window
-
-Note: =C-= prefixed equivalents are also defined)
-
-Interactive Debugging =ess-debug-minor-mode-map=:
-- M-C =ess-debug-command-continue= :: Continue
-- M-C-C =ess-debug-command-continue-multi= :: Continue multi
-- M-N =ess-debug-command-next= :: Next step
-- M-C-N =ess-debug-command-next-multi= :: Next step multi
-- M-U =ess-debug-command-up= :: Up frame
-- M-Q =ess-debug-command-quit= :: Quit debugging
-
-Navigation to errors (general Emacs functionality):
-- =C-x `=, =M-g n :: =next-error=
-- =M-g p= :: =previous-error=
-
-*ess-tracebug* stop
-
-- Be sure to specify this per-project.
-#+BEGIN_SRC emacs-lisp
-(setq ess-tracebug-search-path '())
-#+END_SRC
-
-- Make error navigation simpler
-#+BEGIN_SRC emacs-lisp
-(define-key compilation-minor-mode-map [(?n)] 'next-error-no-select)
-(define-key compilation-minor-mode-map [(?p)] 'previous-error-no-select)
-#+END_SRC
-
-- The font size for watched variables.
-#+BEGIN_SRC emacs-lisp
-(setq ess-watch-scale-amount -1)
-#+END_SRC
-
 Data viewing:
 - *Never* rely upon on the REPL for data viewing
   - Will mix up exploratory code with data
@@ -4013,6 +3949,70 @@ Completion:
 - =TAB=: Complete anything
 - =M-?=: Show completions available
 - =ess-resynch=: Refreshes the completion cache
+
+  *ess-tracebug* start
+
+#+BEGIN_SRC emacs-lisp
+(setq ess-use-tracebug t)
+#+END_SRC
+
+For all =ess-tracebug= stuff, the map prefix is =C-c C-t=
+
+<2014-11-11 Tue>
+The documentation for =ess-tracebug-help= provides all of this documentation that
+I copied from the website into here. Someday I should clean this up!
+
+Breakpoints =ess-dev-map=:
+- b =ess-bp-set= :: Set BP (repeat to cycle BP type)
+- B =ess-bp-set-conditional= :: Set conditional BP
+- k =ess-bp-kill= :: Kill BP
+- K =ess-bp-kill-all= :: Kill all BPs
+- o =ess-bp-toggle-state= :: Toggle BP state
+- l =ess-bp-set-logger= :: Set logger BP
+- n =ess-bp-next= :: Goto next BP
+- p =ess-bp-previous= :: Goto previous BP
+
+Note: =C-= prefixed equivalents are also defined
+
+Debugging =ess-dev-map=:
+- ` =ess-show-traceback= (also on C-c ) :: Show traceback
+- ~ =ess-show-call-stack= (also on C-c ~) :: Show callstack
+- e =ess-debug-toggle-error-action= :: Toggle error action (repeat to cycle)
+- d =ess-debug-flag-for-debugging= :: Flag for debugging
+- u =ess-debug-unflag-for-debugging= :: Unflag for debugging
+- w =ess-watch= :: Watch window
+
+Note: =C-= prefixed equivalents are also defined)
+
+Interactive Debugging =ess-debug-minor-mode-map=:
+- M-C =ess-debug-command-continue= :: Continue
+- M-C-C =ess-debug-command-continue-multi= :: Continue multi
+- M-N =ess-debug-command-next= :: Next step
+- M-C-N =ess-debug-command-next-multi= :: Next step multi
+- M-U =ess-debug-command-up= :: Up frame
+- M-Q =ess-debug-command-quit= :: Quit debugging
+
+Navigation to errors (general Emacs functionality):
+- =C-x `=, =M-g n :: =next-error=
+- =M-g p= :: =previous-error=
+
+*ess-tracebug* stop
+
+- Be sure to specify this per-project.
+#+BEGIN_SRC emacs-lisp
+(setq ess-tracebug-search-path '())
+#+END_SRC
+
+- Make error navigation simpler
+#+BEGIN_SRC emacs-lisp
+(define-key compilation-minor-mode-map [(?n)] 'next-error-no-select)
+(define-key compilation-minor-mode-map [(?p)] 'previous-error-no-select)
+#+END_SRC
+
+- The font size for watched variables.
+#+BEGIN_SRC emacs-lisp
+(setq ess-watch-scale-amount -1)
+#+END_SRC
 
 ** SAS (ESS)
   :PROPERTIES:
