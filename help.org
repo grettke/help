@@ -179,6 +179,7 @@ Start EMACS with this command:
 «Hacking-Org-Mode»
 «Hacking-Applied-Mathematics-ESS»
 «Hacking-Applied-Mathematics-ESS-R»
+«Hacking-Applied-Mathematics-ESS-SAS»
 «Hacking-YASnippet»
 «Hacking-Publishing-TeX»
 «Hacking-Artist»
@@ -3459,17 +3460,6 @@ For a brief, brief overview and release history, read the [[http://ess.r-project
 
 For a comprehensive overview, read the [[http://ess.r-project.org/Manual/ess.html][manual]].
 
-In it:
-- 𝕊 refers to any language in the family.
-  - ℝ is what I'm interested in.
-- First 2.5 pages do some nice expectation-setting.
-- Generally seems like a highly rich development environment with support for
-  editing, debugging, and support with everything that you would expect from
-  the best of Emacs.
-- Manual covers most requested variables for configuring, but the customize
-  facility covers more, and mentions that either way you should avoid doing so
-  until you have used =ESS= for a while.
-
 ℝ first notes:
 - ℝ will start ℝ via =Emacs=
 - Multiple =ESS= processes may run simultaneously, and may be selected by a
@@ -4013,7 +4003,21 @@ and see how it goes.
   :noweb-ref: Hacking-Applied-Mathematics-ESS-R
   :END:
 
+In it:
+- 𝕊 refers to any language in the family.
+  - ℝ is what I'm interested in.
+- First 2.5 pages do some nice expectation-setting.
+- Generally seems like a highly rich development environment with support for
+  editing, debugging, and support with everything that you would expect from
+  the best of Emacs.
+- Manual covers most requested variables for configuring, but the customize
+  facility covers more, and mentions that either way you should avoid doing so
+  until you have used =ESS= for a while.
 
+** SAS (ESS)
+  :PROPERTIES:
+  :noweb-ref: Hacking-Applied-Mathematics-ESS-SAS
+  :END:
 
 ** YASnippet
   :PROPERTIES:
