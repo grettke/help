@@ -2831,6 +2831,9 @@ With that in mind this system:
   with =text-mode= and then all logical programming modes.
 - Explicitly utilizes it directly instead of using inheritance.
 - This system refers to this configuration of programming modes as =prog*-mode=.
+- The line between "configuring EMACS", "configuring ~text-mode~", and
+  "configuring ~prog*-mode~" is often blurred and sometimes confusing. The lines
+  become wavy and intertwined with mastery of EMACS and LP.
 
 *** Text-Mode
 
