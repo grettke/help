@@ -3453,11 +3453,11 @@ Get =ESS= loaded before doing anything with it in here or out there.
   :ensure t)
 #+END_SRC
 
-For a minimalist release history, read the news file [fn:7be08525: http://ess.r-project.org/Manual/news.html].
+For a minimalist release history, read the [[http://ess.r-project.org/Manual/news.html][news file]].
 
-For a brief, brief overview and release history, read the readme [fn:1b644ec0: http://ess.r-project.org/Manual/readme.html].
+For a brief, brief overview and release history, read the [[http://ess.r-project.org/Manual/readme.html][readme]].
 
-For a comprehensive overview, read the manual [fn:adfd9a4c: http://ess.r-project.org/Manual/ess.html].
+For a comprehensive overview, read the [[http://ess.r-project.org/Manual/ess.html][manual]].
 
 In it:
 - 𝕊 refers to any language in the family.
@@ -4012,6 +4012,9 @@ and see how it goes.
   :PROPERTIES:
   :noweb-ref: Hacking-Applied-Mathematics-ESS-R
   :END:
+
+
+
 ** YASnippet
   :PROPERTIES:
   :noweb-ref: Hacking-YASnippet
