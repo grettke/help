@@ -194,7 +194,7 @@ Attribution: URL `http://emacsredux.com/blog/2013/03/26/smarter-open-line/'"
                            "*Pp Eval Output*")))
 
 (defun help/util-ielm ()
-  "Personal buffer setup for ielm.
+  "HELP buffer setup for ielm.
 
 Creates enough space for one other permanent buffer beneath it."
   (interactive)
@@ -204,7 +204,7 @@ Creates enough space for one other permanent buffer beneath it."
   (set-window-dedicated-p (selected-window) t))
 
 (defun help/util-eshell ()
-  "Personal buffer setup for eshell.
+  "HELP buffer setup for eshell.
 
 Depends upon `help/util-ielm' being run first."
   (interactive)
@@ -601,7 +601,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   :ensure t)
 (setq-default dired-details-hidden-string "")
 (defun help/dired-mode-hook-fn ()
-  "Personal dired customizations."
+  "HELP dired customizations."
   (local-set-key "c" 'help/dired-copy-filename)
   (local-set-key "]" 'help/dired-copy-path)
   (diff-hl-dired-mode)
@@ -710,7 +710,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (setq mouse-wheel-progressive-speed nil)
 (setq mouse-wheel-follow-mouse t)
 (defun help/occur-mode-hook-fn ()
-  "Personal customizations."
+  "HELP customizations."
   (interactive)
   (turn-on-stripe-buffer-mode)
   (stripe-listify-buffer))
@@ -939,7 +939,7 @@ RC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.htm
 (setq ielm-dynamic-multiline-inputs nil)
 
 (defun help/ielm-mode-hook-fn ()
-  "Personal customizations."
+  "HELP customizations."
   (interactive)
   (help/ielm-auto-complete))
 (define-key emacs-lisp-mode-map (kbd "s-p") #'describe-thing-in-popup)
@@ -948,7 +948,7 @@ RC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.htm
 (setq org-edit-src-auto-save-idle-delay 0)
 (setq org-edit-src-turn-on-auto-save nil)
 (defun help/org-babel-after-execute-hook ()
-  "Personal settings for the `org-babel-after-execute-hook'.
+  "HELP settings for the `org-babel-after-execute-hook'.
 
 This does not interfere with exports.
 
@@ -1035,7 +1035,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
   (yas-global-mode t)
   (setq yas-triggers-in-field t)
   (defun help/yas-minor-mode-hook-fn ()
-    "Personal customizations."
+    "HELP customizations."
     (define-key yas-minor-mode-map (kbd "<tab>") nil)
     (define-key yas-minor-mode-map (kbd "TAB") nil)
     (define-key yas-minor-mode-map (kbd "s-t") 'yas-expand))

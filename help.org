@@ -472,7 +472,7 @@ Attribution: URL `http://emacsredux.com/blog/2013/03/26/smarter-open-line/'"
                            "*Pp Eval Output*")))
 
 (defun help/util-ielm ()
-  "Personal buffer setup for ielm.
+  "HELP buffer setup for ielm.
 
 Creates enough space for one other permanent buffer beneath it."
   (interactive)
@@ -482,7 +482,7 @@ Creates enough space for one other permanent buffer beneath it."
   (set-window-dedicated-p (selected-window) t))
 
 (defun help/util-eshell ()
-  "Personal buffer setup for eshell.
+  "HELP buffer setup for eshell.
 
 Depends upon `help/util-ielm' being run first."
   (interactive)
@@ -1932,7 +1932,7 @@ a while but definitely do need.
   :ensure t)
 (setq-default dired-details-hidden-string "")
 (defun help/dired-mode-hook-fn ()
-  "Personal dired customizations."
+  "HELP dired customizations."
   (local-set-key "c" 'help/dired-copy-filename)
   (local-set-key "]" 'help/dired-copy-path)
   (diff-hl-dired-mode)
@@ -2233,7 +2233,7 @@ a fast navigation vehicle.
 
 #+BEGIN_SRC emacs-lisp
 (defun help/occur-mode-hook-fn ()
-  "Personal customizations."
+  "HELP customizations."
   (interactive)
   (turn-on-stripe-buffer-mode)
   (stripe-listify-buffer))
@@ -2966,7 +2966,7 @@ RC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.htm
 (setq ielm-dynamic-multiline-inputs nil)
 
 (defun help/ielm-mode-hook-fn ()
-  "Personal customizations."
+  "HELP customizations."
   (interactive)
   (help/ielm-auto-complete))
 #+END_SRC
@@ -3013,7 +3013,7 @@ how the results of evaluation are refreshed in EMACS.
 
 #+BEGIN_SRC emacs-lisp
 (defun help/org-babel-after-execute-hook ()
-  "Personal settings for the `org-babel-after-execute-hook'.
+  "HELP settings for the `org-babel-after-execute-hook'.
 
 This does not interfere with exports.
 
@@ -3389,7 +3389,7 @@ Easily enter guillemots.
   (yas-global-mode t)
   (setq yas-triggers-in-field t)
   (defun help/yas-minor-mode-hook-fn ()
-    "Personal customizations."
+    "HELP customizations."
     (define-key yas-minor-mode-map (kbd "<tab>") nil)
     (define-key yas-minor-mode-map (kbd "TAB") nil)
     (define-key yas-minor-mode-map (kbd "s-t") 'yas-expand))
