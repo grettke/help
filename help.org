@@ -3512,23 +3512,6 @@ Help buffers all belong in the same frame.
 (setq ess-help-own-frame nil)
 #+END_SRC
 
-When =ess= starts, or when ℝ starts, it takes the current directory as its
-working directory. This is totally fine; so don't ask what the working directory
-should be.
-
-#+BEGIN_SRC emacs-lisp
-(setq ess-ask-for-ess-directory nil)
-#+END_SRC
-
-My preference is for ESS to quit and not ask me whether or not I am sure. There
-is an intentional line-break after the closing round bracket because that is the
-approach of the original value here.
-
-#+BEGIN_SRC emacs-lisp
-(setq inferior-ess-exit-command "q('no')
-")
-#+END_SRC
-
 When commands are executed, display their output within the current buffer,
 rather than to a new dedicated buffer for them.
 
@@ -3801,6 +3784,23 @@ The font size for watched variables..
 
 #+BEGIN_SRC emacs-lisp
 (setq ess-watch-scale-amount -1)
+#+END_SRC
+
+When =ess= starts, or when ℝ starts, it takes the current directory as its
+working directory. This is totally fine; so don't ask what the working directory
+should be.
+
+#+BEGIN_SRC emacs-lisp
+(setq ess-ask-for-ess-directory nil)
+#+END_SRC
+
+My preference is for ESS to quit and not ask me whether or not I am sure. There
+is an intentional line-break after the closing round bracket because that is the
+approach of the original value here.
+
+#+BEGIN_SRC emacs-lisp
+(setq inferior-ess-exit-command "q('no')
+")
 #+END_SRC
 
 Visualize just about anything with ~ess-R-object-popup~.
