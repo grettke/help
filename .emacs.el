@@ -322,17 +322,6 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (help/set-org-babel-default-header-args :comments "noweb")
 (help/set-org-babel-default-header-args :padline "yes")
 (help/set-org-babel-default-header-args :noweb "no-export")
-(package-initialize)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/") t)
-(add-to-list 'package-archives
-             '("gnu" . "http://elpa.gnu.org/packages/") t)
-(add-to-list 'load-path "~/src/use-package")
-(eval-when-compile
-  (require 'use-package))
-(use-package diminish)
-(use-package ob-sml
-  :ensure t)
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((calc . t)
@@ -351,7 +340,6 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
    (R . t)
    (scheme . t)
    (sh . t)
-   (sml . t)
    (sql . t)))
 (help/set-org-babel-default-header-args :eval "never-export")
 (help/set-org-babel-default-inline-header-args :eval "never-export")
@@ -380,7 +368,15 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 
      (setq org-koma-letter-default-class "my-letter")))
 (setq org-koma-letter-class-option-file "UScommercial9 KomaDefault")
-
+(package-initialize)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+(add-to-list 'package-archives
+             '("gnu" . "http://elpa.gnu.org/packages/") t)
+(add-to-list 'load-path "~/src/use-package")
+(eval-when-compile
+  (require 'use-package))
+(use-package diminish)
 (defmacro help/on-gui (statement &rest statements)
   "Evaluate the enclosed body only when run on GUI."
   `(when (display-graphic-p)
