@@ -3784,44 +3784,53 @@ Navigation to errors (general Emacs functionality):
 
 *ess-tracebug* stop
 
-- Be sure to specify this per-project.
+ Be sure to specify this per-project.
+
 #+BEGIN_SRC emacs-lisp
 (setq ess-tracebug-search-path '())
 #+END_SRC
 
-- Make error navigation simpler
+Make error navigation simpler.
+
 #+BEGIN_SRC emacs-lisp
 (define-key compilation-minor-mode-map [(?n)] 'next-error-no-select)
 (define-key compilation-minor-mode-map [(?p)] 'previous-error-no-select)
 #+END_SRC
 
-- The font size for watched variables.
+The font size for watched variables..
+
 #+BEGIN_SRC emacs-lisp
 (setq ess-watch-scale-amount -1)
 #+END_SRC
 
-- Visualize just about anything.
-  - =ess-R-object-popup=
+Visualize just about anything with ~ess-R-object-popup~.
+
 #+BEGIN_SRC emacs-lisp
 (use-package ess-R-object-popup
   :ensure t)
 #+END_SRC
-- Rdired is another way to work with object
-  - =ess-rdired=
-  - View, delete, plot, and update buffer (ala /revert/) are single key commands
+
+Rdired is another way to work with object:
+- =ess-rdired=
+- View, delete, plot, and update buffer (ala /revert/) are single key commands
+
 #+BEGIN_SRC emacs-lisp
 (autoload 'ess-rdired "ess-rdired")
 #+END_SRC
-- Visualize data frames better.
-  - =ess-R-dv-ctable=
-  - =ess-R-dv-pprint=
+
+Visualize data frames better:
+- =ess-R-dv-ctable=
+- =ess-R-dv-pprint=
+
 #+BEGIN_SRC emacs-lisp
 (use-package ess-R-data-view
   :ensure t)
 #+END_SRC
-- inlineR
-  - /Not/ a competitor to =org-mode=
-  - Ultra lightweight LP, really
+
+inlineR
+- /Not/ a competitor to =org-mode=
+- Ultra lightweight LP, really
+
 #+BEGIN_SRC emacs-lisp
 (use-package inlineR
   :ensure t)
@@ -3868,6 +3877,7 @@ nice to know that it is an option.
 
 Store history files and dump files in a single known location. If that location
 doesn't exist, then make it.
+
 #+BEGIN_SRC emacs-lisp
 (setq help/r-dir "~/.R/")
 (defun help/make-warn-R-dir ()
@@ -3883,6 +3893,7 @@ doesn't exist, then make it.
 #+END_SRC
 
 Since I'm using ℝ for everything, configure /everything/ to be using ℝ.
+
 #+BEGIN_SRC emacs-lisp
 (setq inferior-ess-program "R")
 (setq inferior-R-program-name "R")
@@ -3890,17 +3901,20 @@ Since I'm using ℝ for everything, configure /everything/ to be using ℝ.
 #+END_SRC
 
 Handle rdoc and rmd files, though I have never used them… yet.
+
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'auto-mode-alist '("\\.rd\\'" . Rd-mode))
 (add-to-list 'auto-mode-alist '("\\.Rmd$" . r-mode))
 #+END_SRC
 
 Make it really easy to search the ℝ archives for anything.
+
 #+BEGIN_SRC emacs-lisp
 (local-set-key (kbd "C-c C-. S") 'ess-rutils-rsitesearch)
 #+END_SRC
 
 Make it really easy to do common stuff for ℝ with good keybindings.
+
 #+BEGIN_SRC emacs-lisp
 (use-package ess-rutils
   :config
@@ -3909,6 +3923,7 @@ Make it really easy to do common stuff for ℝ with good keybindings.
 
 =r-autoyas= does argument completion. I had it working nice, and didn't use it for
 a while, and now it doesn't work. This needs some TLC.
+
 #+BEGIN_SRC emacs-lisp
 (use-package r-autoyas
   :ensure t
@@ -3919,6 +3934,7 @@ a while, and now it doesn't work. This needs some TLC.
 #+END_SRC
 
 Save two spaces showing function information in the mini-buffer.
+
 #+BEGIN_SRC emacs-lisp
 (setq ess-ac-R-argument-suffix "=")
 #+END_SRC
@@ -3962,6 +3978,7 @@ assignment!
 Don't save the workspace when you quit ℝ and don't restore *ANYTHING* when you
 start it, either. This adheres to the philosopy that the system is file based.
 Period.
+
 #+BEGIN_SRC emacs-lisp
 (setq inferior-R-args "--no-save --no-restore")
 #+END_SRC
