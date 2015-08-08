@@ -1049,6 +1049,14 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
 (defconst help/ditaa-jar (concat (getenv "EELIB") "/ditaa.jar"))
 (setq org-ditaa-jar-path help/ditaa-jar)
+(use-package plantuml-mode
+  :ensure t
+  :init
+  (defconst help/plantuml-jar (concat (getenv "EELIB") "/plantuml.jar"))
+  (setq plantuml-jar-path help/plantuml-jar)
+  :config
+  (eval-after-load "ob-plantuml"
+    (setq org-plantuml-jar-path help/plantuml-jar)))
 (use-package uniquify)
 (setq uniquify-buffer-name-style 'forward)
 (setq ring-bell-function 'ignore)

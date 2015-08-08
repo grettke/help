@@ -180,6 +180,7 @@ Start EMACS with this command:
 «Hacking-YASnippet»
 «Hacking-Artist»
 «Hacking-DITAA»
+«Hacking-PlantUML»
 «Quiet-and-Pleasant-Appearance»
 «Piano-Lessons»
 #+END_SRC
@@ -2865,7 +2866,7 @@ With that in mind this system:
   (rainbow-mode))
 
 (add-hook #'text-mode-hook #'help/text-prog*-setup)
- #+END_SRC
+#+END_SRC
 
 *** Prog*-Mode Modes
 
@@ -3489,12 +3490,15 @@ When a drop of water joins the ocean it becomes the ocean.
 
 ** Graphviz
 ** PlantUML
+  :PROPERTIES:
+  :noweb-ref: Hacking-PlantUML
+  :END:
 
 #+BEGIN_SRC emacs-lisp
 (use-package plantuml-mode
   :ensure t
   :init
-  (defconst help/plantuml-jar (concat (expand-file-name (getenv "EELIB")) "/plantuml.jar"))
+  (defconst help/plantuml-jar (concat (getenv "EELIB") "/plantuml.jar"))
   (setq plantuml-jar-path help/plantuml-jar)
   :config
   (eval-after-load "ob-plantuml"
