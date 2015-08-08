@@ -3493,59 +3493,6 @@ Always show eldoc for ℝ stuff, everywhere it may.
 (setq ess-eldoc-show-on-symbol t)
 #+END_SRC
 
-Various session interaction stuff
-- Show objects in the work-space: =C-c C-x=
-- Search for what libraries are available to the work-space: =C-c C-s=
-- Load file with source: =C-c C-l=
-- Visit errors: =C-c '= and =C-x '=
-- Show help on an object: =C-c C-v=
-- Quit: =C-c C-q=
-- Abort: =C-c C-c=
-- Switch between the console and the most recent file buffer: =C-c C-z=
-
-Sending code to the ESS process
-- =ess-eval-region-or-line-and-step=: Eval the region, or the line, move to next
-  line
-- =C-M-x=: Eval the current region, function, or paragraph
-- =C-c C-c=: Do that and then go to the next line
-- =C-c C-j=: Eval the current line
-- =C-c M-j=: Eval line and jump to the console
-- =C-c C-f=: Eval the currently selected function
-- =C-c M-f=: Eval the currently selected function and jump to the console
-- =C-c C-r=: Eval the region
-- =C-c M-r=: Eval the region and jump to the console
-- =C-c C-b=: Eval the buffer
-- =C-c M-b=: Eval the buffer and jump to the console
-- You can do all this stuff from transcript files, too.
-  - My thought is that I never, ever will and if I do need to, I'm looking up the
-    commands again as I don't want to make a habit of doing that kind of
-    thing (running old transcripts).
-
-Editing objects and functions:
-- =C-c C-e C-d=: Edit the current object
-- =C-c C-l=: Load source file into the ESS process
-- =TAB= Indents/re-formats or completes code.
-- =M-;=: Correctly indents the current comment
-
-Help mode inside of ESS:
-- =C-c C-v=: =ess-display-help-on-object=: Get help on anything
-- =?=: Show commands available in help mode
-- =h=: Show help for a different object. Currently focused object defaults.
-- =n= and =p=: Cycle through sections
-- =l=: Eval the current line in the console; usually sample code.
-- =r=: Eval current region, too
-- =q=: Quit out of that buffer
-- =k=: Kill that buffer
-- =x=: Kill that buffer and return to ESS
-- =i=: Get info on a package
-- =v=: Show vignettes
-- =w=: Show current help page in browser
-
-Completion:
-- =TAB=: Complete anything
-- =M-?=: Show completions available
-- =ess-resynch=: Refreshes the completion cache
-
 *ess-tracebug* start
 
 #+BEGIN_SRC emacs-lisp
@@ -4013,6 +3960,59 @@ In it:
 - Manual covers most requested variables for configuring, but the customize
   facility covers more, and mentions that either way you should avoid doing so
   until you have used =ESS= for a while.
+
+Various session interaction stuff
+- Show objects in the work-space: =C-c C-x=
+- Search for what libraries are available to the work-space: =C-c C-s=
+- Load file with source: =C-c C-l=
+- Visit errors: =C-c '= and =C-x '=
+- Show help on an object: =C-c C-v=
+- Quit: =C-c C-q=
+- Abort: =C-c C-c=
+- Switch between the console and the most recent file buffer: =C-c C-z=
+
+Sending code to the ESS process
+- =ess-eval-region-or-line-and-step=: Eval the region, or the line, move to next
+  line
+- =C-M-x=: Eval the current region, function, or paragraph
+- =C-c C-c=: Do that and then go to the next line
+- =C-c C-j=: Eval the current line
+- =C-c M-j=: Eval line and jump to the console
+- =C-c C-f=: Eval the currently selected function
+- =C-c M-f=: Eval the currently selected function and jump to the console
+- =C-c C-r=: Eval the region
+- =C-c M-r=: Eval the region and jump to the console
+- =C-c C-b=: Eval the buffer
+- =C-c M-b=: Eval the buffer and jump to the console
+- You can do all this stuff from transcript files, too.
+  - My thought is that I never, ever will and if I do need to, I'm looking up the
+    commands again as I don't want to make a habit of doing that kind of
+    thing (running old transcripts).
+
+Editing objects and functions:
+- =C-c C-e C-d=: Edit the current object
+- =C-c C-l=: Load source file into the ESS process
+- =TAB= Indents/re-formats or completes code.
+- =M-;=: Correctly indents the current comment
+
+Help mode inside of ESS:
+- =C-c C-v=: =ess-display-help-on-object=: Get help on anything
+- =?=: Show commands available in help mode
+- =h=: Show help for a different object. Currently focused object defaults.
+- =n= and =p=: Cycle through sections
+- =l=: Eval the current line in the console; usually sample code.
+- =r=: Eval current region, too
+- =q=: Quit out of that buffer
+- =k=: Kill that buffer
+- =x=: Kill that buffer and return to ESS
+- =i=: Get info on a package
+- =v=: Show vignettes
+- =w=: Show current help page in browser
+
+Completion:
+- =TAB=: Complete anything
+- =M-?=: Show completions available
+- =ess-resynch=: Refreshes the completion cache
 
 ** SAS (ESS)
   :PROPERTIES:
