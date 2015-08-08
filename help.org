@@ -3452,11 +3452,9 @@ Easily enter guillemots.
   :ensure t)
 #+END_SRC
 
-For a minimalist release history, read the [[http://ess.r-project.org/Manual/news.html][news file]].
-
-For a brief, brief overview and release history, read the [[http://ess.r-project.org/Manual/readme.html][readme]].
-
-For a comprehensive overview, read the [[http://ess.r-project.org/Manual/ess.html][manual]].
+- For a minimalist release history read the [[http://ess.r-project.org/Manual/news.html][news file]].
+- For a brief overview and release history read the [[http://ess.r-project.org/Manual/readme.html][readme]].
+- For a comprehensive overview read the [[http://ess.r-project.org/Manual/ess.html][manual]].
 
 ℝ first notes:
 - ℝ will start ℝ via =Emacs=
