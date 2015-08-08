@@ -1,4 +1,5 @@
 #+STARTUP: showeverything
+#+PROPERTY: results output silent
 * README
 
 HELP Enables Literate Programming.
