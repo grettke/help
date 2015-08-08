@@ -2036,6 +2036,8 @@ exercised, Dired in Imenu seems like an obvious choice.
 
 ** Interactively DO Things”
 
+IDO is used everywhere possible.
+
 Access nearly every object available in this system from one place.
 
 These configurations are performed in the correct order. Any attempt to refactor
