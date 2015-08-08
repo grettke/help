@@ -23,6 +23,14 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
         (cons (cons property value)
               (assq-delete-all property org-babel-default-inline-header-args))))
 
+(defun help/set-org-babel-default-header-args:R (property value)
+  "See `help/set-org-babel-default-header-args'; same but for R.
+
+This is a copy and paste. Additional languages would warrant a refactor."
+  (setq org-babel-default-header-args:R
+        (cons (cons property value)
+              (assq-delete-all property org-babel-default-header-args:R))))
+
 (defun help/comment-or-uncomment ()
   "Comment or uncomment the current line or selection."
   (interactive)
@@ -1044,6 +1052,140 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (define-key org-src-mode-map (kbd "s-l") #'org-edit-src-exit)
 (key-chord-define org-src-mode-map "<<" (lambda () (interactive) (insert "«")))
 (key-chord-define org-src-mode-map ">>" (lambda () (interactive) (insert "»")))
+(use-package ess
+  :ensure t)
+(setq ess-eldoc-show-on-symbol t)
+(setq ess-use-tracebug t)
+(setq ess-tracebug-search-path '())
+(define-key compilation-minor-mode-map [(?n)] 'next-error-no-select)
+(define-key compilation-minor-mode-map [(?p)] 'previous-error-no-select)
+(setq ess-watch-scale-amount -1)
+(setq ess-describe-at-point-method 'tooltip)
+(use-package ess-R-object-popup
+  :ensure t)
+(autoload 'ess-rdired "ess-rdired")
+(use-package ess-R-data-view
+  :ensure t)
+(use-package inlineR
+  :ensure t)
+(setq help/r-dir "~/.R/")
+(defun help/make-warn-R-dir ()
+  "Handle of R directory misconfiguration."
+  (interactive)
+  (unless (f-directory? help/r-dir)
+    (progn
+      (message "Couldn't find %S… creating it." help/r-dir)
+      (f-mkdir help/r-dir))))
+(help/make-warn-R-dir)
+(setq ess-history-directory help/r-dir)
+(setq ess-source-directory help/r-dir)
+(setq inferior-ess-program "R")
+(setq inferior-R-program-name "R")
+(setq ess-local-process-name "R")
+(setq inferior-ess-same-window nil)
+(setq inferior-ess-own-frame nil)
+(setq ess-help-own-frame nil)
+(setq ess-ask-for-ess-directory nil)
+(setq inferior-ess-exit-command "q('no')
+")
+(setq ess-execute-in-process-buffer t)
+(setq ess-switch-to-end-of-proc-buffer t)
+(setq ess-tab-complete-in-script t)
+(setq ess-first-tab-never-complete 'symbol-or-paren-or-punct)
+(setq ess-use-ido t)
+(add-to-list 'auto-mode-alist '("\\.rd\\'" . Rd-mode))
+(add-to-list 'auto-mode-alist '("\\.Rmd$" . r-mode))
+(setq ess-use-eldoc t)
+(setq ess-eldoc-show-on-symbol t)
+(setq ess-eldoc-abbreviation-style 'normal)
+(local-set-key (kbd "C-c C-. S") 'ess-rutils-rsitesearch)
+(use-package ess-rutils
+  :config
+  (setq ess-rutils-keys t))
+(use-package r-autoyas
+  :ensure t
+  :config
+  (setq r-autoyas-debug t)
+  (setq r-autoyas-expand-package-functions-only nil)
+  (setq r-autoyas-remove-explicit-assignments nil))
+(setq ess-ac-R-argument-suffix "=")
+;; (setq help/ess-style
+;;       (copy-alist
+;;        (assoc 'RRR ess-style-alist)))
+;; (setf (nth 0 help/ess-style) 'HELP)
+;; (setf (cdr
+;;        (assoc 'ess-continued-statement-offset
+;;               (cdr help/ess-style)))
+;;       0)
+;; (add-to-list 'ess-style-alist help/ess-style)
+;; (setq ess-default-style 'HELP)
+(defun help/ess-mode-hook ()
+  (local-set-key (kbd "s-e") 'ess-switch-to-end-of-ESS)
+  (local-set-key (kbd "s-x") 'r-autoyas-expand)
+  (local-set-key (kbd "s-p") 'ess-R-object-popup)
+  (local-set-key (kbd "s-v o") 'ess-describe-object-at-point)
+  (local-set-key (kbd "s-v d") 'ess-rdired)
+  (local-set-key (kbd "s-v cc") 'ess-R-dv-ctable)
+  (local-set-key (kbd "s-v cp") 'ess-R-dv-pprint)
+  (local-set-key (kbd "C-.") (lambda () (interactive) (insert " -> ")))
+  (local-set-key (kbd "C-M-,") (lambda () (interactive) (insert " <<- ")))
+  (local-set-key (kbd "C-M-.") (lambda () (interactive) (insert " ->> ")))
+  (key-chord-define-local (kbd ",.") (lambda () (interactive) (insert " %<>% ")))
+  (local-set-key (kbd "s-.") (lambda () (interactive) (insert " %>% ")))
+  (local-set-key (kbd "C-0") 'ess-eval-buffer)
+  (turn-on-pretty-mode)
+  (r-autoyas-ess-activate)
+  (visual-line-mode)
+  (smartparens-strict-mode t)
+  (help/untabify-buffer-hook)
+  (fci-mode)
+  (hs-minor-mode 1)
+  (linum-mode)
+  (help/turn-on-r-hide-show)
+  (aggressive-indent-mode)
+  (lambda () (add-hook 'ess-presend-filter-functions
+                  (lambda ()
+                    (warn
+                     "ESS now supports a standard pre-send filter hook. Please update your configuration to use it instead of using advice.")))))
+
+(add-hook 'ess-mode-hook 'help/ess-mode-hook)
+
+(defun help/turn-on-r-hide-show ()
+  "Attribution: SRC https://github.com/mlf176f2/EmacsMate/blob/master/EmacsMate-ess.org"
+  (when (string= "S" ess-language)
+    (set (make-local-variable 'hs-special-modes-alist) '((ess-mode "{" "}" "#" nil nil)))
+    (hs-minor-mode 1)
+    (when (fboundp 'foldit-mode)
+      (foldit-mode 1))
+    (when (fboundp 'fold-dwim-org/minor-mode)
+      (fold-dwim-org/minor-mode))))
+
+(defun help/Rd-mode-hook ()
+  (help/ess-mode-hook))
+
+(add-hook 'Rd-mode-hook 'help/Rd-mode-hook)
+
+(defun help/inferior-ess-mode-hook ()
+  (help/ess-mode-hook))
+
+(add-hook 'inferior-ess-mode-hook 'help/inferior-ess-mode-hook)
+
+(defun help/ess-rdired-mode-hook ()
+  "Personal customizations."
+  (interactive)
+  (turn-on-stripe-buffer-mode)
+  (stripe-listify-buffer))
+
+(add-hook 'ess-rdired-mode-hook 'help/ess-rdired-mode-hook)
+(setq ess-S-assign-key (kbd "C-,"))
+(ess-toggle-S-assign-key t)
+(ess-toggle-underscore nil)
+(setq ess-keep-dump-files +1)
+(setq ess-delete-dump-files nil)
+(setq ess-mode-silently-save +1)
+(setq inferior-R-args "--no-save --no-restore")
+(sp-local-pair 'ess-mode "{" nil :post-handlers '((gcr/indent-curly-block "RET")))
+(setq ess-eval-visibly 'nowait)
 (use-package yasnippet
   :ensure t
   :config
