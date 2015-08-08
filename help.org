@@ -3601,16 +3601,8 @@ here how easy it is to customize it.
   (key-chord-define-local (kbd ",.") (lambda () (interactive) (insert " %<>% ")))
   (local-set-key (kbd "s-.") (lambda () (interactive) (insert " %>% ")))
   (local-set-key (kbd "C-0") 'ess-eval-buffer)
-  (turn-on-pretty-mode)
   (r-autoyas-ess-activate)
-  (visual-line-mode)
-  (smartparens-strict-mode t)
-  (help/untabify-buffer-hook)
-  (fci-mode)
-  (hs-minor-mode 1)
-  (linum-mode)
   (help/turn-on-r-hide-show)
-  (aggressive-indent-mode)
   (lambda () (add-hook 'ess-presend-filter-functions
                   (lambda ()
                     (warn
