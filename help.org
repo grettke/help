@@ -3561,41 +3561,12 @@ Use =ido= completion whenever possible.
 (setq ess-use-ido t)
 #+END_SRC
 
-Handle rdoc and rmd files, though I have never used them… yet.
-#+BEGIN_SRC emacs-lisp
-(add-to-list 'auto-mode-alist '("\\.rd\\'" . Rd-mode))
-(add-to-list 'auto-mode-alist '("\\.Rmd$" . r-mode))
-#+END_SRC
-
 Use =eldoc= for this mode. Always show it when the point is on a symbol.
 Try to keep help strings at 10 chars or less.
 #+BEGIN_SRC emacs-lisp
 (setq ess-use-eldoc t)
 (setq ess-eldoc-show-on-symbol t)
 (setq ess-eldoc-abbreviation-style 'normal)
-#+END_SRC
-
-Make it really easy to search the ℝ archives for anything.
-#+BEGIN_SRC emacs-lisp
-(local-set-key (kbd "C-c C-. S") 'ess-rutils-rsitesearch)
-#+END_SRC
-
-Make it really easy to do common stuff for ℝ with good keybindings.
-#+BEGIN_SRC emacs-lisp
-(use-package ess-rutils
-  :config
-  (setq ess-rutils-keys t))
-#+END_SRC
-
-=r-autoyas= does argument completion. I had it working nice, and didn't use it for
-a while, and now it doesn't work. This needs some TLC.
-#+BEGIN_SRC emacs-lisp
-(use-package r-autoyas
-  :ensure t
-  :config
-  (setq r-autoyas-debug t)
-  (setq r-autoyas-expand-package-functions-only nil)
-  (setq r-autoyas-remove-explicit-assignments nil))
 #+END_SRC
 
 These functions are metioned, and I am not sure where or how to use them yet,
@@ -3611,35 +3582,9 @@ For a while I used =ess-eval-buffer-and-go=, but now I know that it is insanely
 faster to use =ess-eval-buffer= instead. Previously I've read people saying that,
 and it is true.
 
-Save two spaces showing function information in the mini-buffer.
-#+BEGIN_SRC emacs-lisp
-(setq ess-ac-R-argument-suffix "=")
-#+END_SRC
-
 When I started to standardize arrows across modes, I recalled the =ess=
 documentation and was also reminded [fn:645cef99: http://www.r-bloggers.com/a-small-customization-of-ess/]
 here how easy it is to customize it.
-
-Not sure where I put the notes, but long ago I researched the ℝ coding
-standards. [[http://stackoverflow.com/questions/7502540/make-emacs-ess-follow-r-style-guide][This post]] by Eddelbuettel led me to believe that the ℝ [[http://cran.r-project.org/doc/manuals/R-ints.html#R-coding-standards][standard]]
-definition is the best. That made me think that =RRR= would be the best because
-it has identical settings to the =C++= style at the time of the post. That makes
-sense to me. I only want to change one thing to make Magrittr chains easier to
-read. The stock =RRR= indenting makes expressions trail off to the right forever.
-Here is how, make a copy of =RRR= and change one property.
-
-#+BEGIN_SRC emacs-lisp
-;; (setq help/ess-style
-;;       (copy-alist
-;;        (assoc 'RRR ess-style-alist)))
-;; (setf (nth 0 help/ess-style) 'HELP)
-;; (setf (cdr
-;;        (assoc 'ess-continued-statement-offset
-;;               (cdr help/ess-style)))
-;;       0)
-;; (add-to-list 'ess-style-alist help/ess-style)
-;; (setq ess-default-style 'HELP)
-#+END_SRC
 
 #+BEGIN_SRC emacs-lisp
 (defun help/ess-mode-hook ()
@@ -3702,21 +3647,6 @@ Here is how, make a copy of =RRR= and change one property.
 (add-hook 'ess-rdired-mode-hook 'help/ess-rdired-mode-hook)
 #+END_SRC
 
-This [fn:1ffa40c2: http://www.r-bloggers.com/a-small-customization-of-ess/]
-post shares a nice setup for the assignment key; primarily if
-you use underscores in your variable names, which I do on occasions. After
-coding like this for just 10 short minutes it drove me nuts and that is totally
-counter intuitive to me; I never would have expected that having to type two
-characters to do an assignment would give me nuts. Anyway, the default behavior
-is just fine; hit underscore twice gives you an underscore, and one gives you an
-assignment!
-
-#+BEGIN_SRC emacs-lisp
-(setq ess-S-assign-key (kbd "C-,"))
-(ess-toggle-S-assign-key t)
-(ess-toggle-underscore nil)
-#+END_SRC
-
 *Philosophy*
 
 The current =ESS= maintainers philosophies about how to maintain an ℝ code-base
@@ -3750,13 +3680,6 @@ advice before every manual =eval= call so that the buffers and their files stay
 in sync. Yes, it is really that important.
 #+BEGIN_SRC emacs-lisp
 (setq ess-mode-silently-save +1)
-#+END_SRC
-
-Don't save the workspace when you quit ℝ and don't restore *ANYTHING* when you
-start it, either. This adheres to the philosopy that the system is file based.
-Period.
-#+BEGIN_SRC emacs-lisp
-(setq inferior-R-args "--no-save --no-restore")
 #+END_SRC
 
 Indent curly brackets correctly:
@@ -4013,6 +3936,83 @@ Since I'm using ℝ for everything, configure /everything/ to be using ℝ.
 (setq inferior-ess-program "R")
 (setq inferior-R-program-name "R")
 (setq ess-local-process-name "R")
+#+END_SRC
+
+Handle rdoc and rmd files, though I have never used them… yet.
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'auto-mode-alist '("\\.rd\\'" . Rd-mode))
+(add-to-list 'auto-mode-alist '("\\.Rmd$" . r-mode))
+#+END_SRC
+
+Make it really easy to search the ℝ archives for anything.
+#+BEGIN_SRC emacs-lisp
+(local-set-key (kbd "C-c C-. S") 'ess-rutils-rsitesearch)
+#+END_SRC
+
+Make it really easy to do common stuff for ℝ with good keybindings.
+#+BEGIN_SRC emacs-lisp
+(use-package ess-rutils
+  :config
+  (setq ess-rutils-keys t))
+#+END_SRC
+
+=r-autoyas= does argument completion. I had it working nice, and didn't use it for
+a while, and now it doesn't work. This needs some TLC.
+#+BEGIN_SRC emacs-lisp
+(use-package r-autoyas
+  :ensure t
+  :config
+  (setq r-autoyas-debug t)
+  (setq r-autoyas-expand-package-functions-only nil)
+  (setq r-autoyas-remove-explicit-assignments nil))
+#+END_SRC
+
+Save two spaces showing function information in the mini-buffer.
+#+BEGIN_SRC emacs-lisp
+(setq ess-ac-R-argument-suffix "=")
+#+END_SRC
+
+Not sure where I put the notes, but long ago I researched the ℝ coding
+standards. [[http://stackoverflow.com/questions/7502540/make-emacs-ess-follow-r-style-guide][This post]] by Eddelbuettel led me to believe that the ℝ [[http://cran.r-project.org/doc/manuals/R-ints.html#R-coding-standards][standard]]
+definition is the best. That made me think that =RRR= would be the best because
+it has identical settings to the =C++= style at the time of the post. That makes
+sense to me. I only want to change one thing to make Magrittr chains easier to
+read. The stock =RRR= indenting makes expressions trail off to the right forever.
+Here is how, make a copy of =RRR= and change one property.
+
+#+BEGIN_SRC emacs-lisp
+;; (setq help/ess-style
+;;       (copy-alist
+;;        (assoc 'RRR ess-style-alist)))
+;; (setf (nth 0 help/ess-style) 'HELP)
+;; (setf (cdr
+;;        (assoc 'ess-continued-statement-offset
+;;               (cdr help/ess-style)))
+;;       0)
+;; (add-to-list 'ess-style-alist help/ess-style)
+;; (setq ess-default-style 'HELP)
+#+END_SRC
+
+This [fn:1ffa40c2: http://www.r-bloggers.com/a-small-customization-of-ess/]
+post shares a nice setup for the assignment key; primarily if
+you use underscores in your variable names, which I do on occasions. After
+coding like this for just 10 short minutes it drove me nuts and that is totally
+counter intuitive to me; I never would have expected that having to type two
+characters to do an assignment would give me nuts. Anyway, the default behavior
+is just fine; hit underscore twice gives you an underscore, and one gives you an
+assignment!
+
+#+BEGIN_SRC emacs-lisp
+(setq ess-S-assign-key (kbd "C-,"))
+(ess-toggle-S-assign-key t)
+(ess-toggle-underscore nil)
+#+END_SRC
+
+Don't save the workspace when you quit ℝ and don't restore *ANYTHING* when you
+start it, either. This adheres to the philosopy that the system is file based.
+Period.
+#+BEGIN_SRC emacs-lisp
+(setq inferior-R-args "--no-save --no-restore")
 #+END_SRC
 
 ** SAS (ESS)

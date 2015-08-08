@@ -1055,33 +1055,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (use-package ess
   :ensure t)
 (setq ess-eldoc-show-on-symbol t)
-(setq ess-use-tracebug t)
-(setq ess-tracebug-search-path '())
-(define-key compilation-minor-mode-map [(?n)] 'next-error-no-select)
-(define-key compilation-minor-mode-map [(?p)] 'previous-error-no-select)
-(setq ess-watch-scale-amount -1)
 (setq ess-describe-at-point-method 'tooltip)
-(use-package ess-R-object-popup
-  :ensure t)
-(autoload 'ess-rdired "ess-rdired")
-(use-package ess-R-data-view
-  :ensure t)
-(use-package inlineR
-  :ensure t)
-(setq help/r-dir "~/.R/")
-(defun help/make-warn-R-dir ()
-  "Handle of R directory misconfiguration."
-  (interactive)
-  (unless (f-directory? help/r-dir)
-    (progn
-      (message "Couldn't find %S… creating it." help/r-dir)
-      (f-mkdir help/r-dir))))
-(help/make-warn-R-dir)
-(setq ess-history-directory help/r-dir)
-(setq ess-source-directory help/r-dir)
-(setq inferior-ess-program "R")
-(setq inferior-R-program-name "R")
-(setq ess-local-process-name "R")
 (setq inferior-ess-same-window nil)
 (setq inferior-ess-own-frame nil)
 (setq ess-help-own-frame nil)
@@ -1093,32 +1067,9 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (setq ess-tab-complete-in-script t)
 (setq ess-first-tab-never-complete 'symbol-or-paren-or-punct)
 (setq ess-use-ido t)
-(add-to-list 'auto-mode-alist '("\\.rd\\'" . Rd-mode))
-(add-to-list 'auto-mode-alist '("\\.Rmd$" . r-mode))
 (setq ess-use-eldoc t)
 (setq ess-eldoc-show-on-symbol t)
 (setq ess-eldoc-abbreviation-style 'normal)
-(local-set-key (kbd "C-c C-. S") 'ess-rutils-rsitesearch)
-(use-package ess-rutils
-  :config
-  (setq ess-rutils-keys t))
-(use-package r-autoyas
-  :ensure t
-  :config
-  (setq r-autoyas-debug t)
-  (setq r-autoyas-expand-package-functions-only nil)
-  (setq r-autoyas-remove-explicit-assignments nil))
-(setq ess-ac-R-argument-suffix "=")
-;; (setq help/ess-style
-;;       (copy-alist
-;;        (assoc 'RRR ess-style-alist)))
-;; (setf (nth 0 help/ess-style) 'HELP)
-;; (setf (cdr
-;;        (assoc 'ess-continued-statement-offset
-;;               (cdr help/ess-style)))
-;;       0)
-;; (add-to-list 'ess-style-alist help/ess-style)
-;; (setq ess-default-style 'HELP)
 (defun help/ess-mode-hook ()
   (local-set-key (kbd "s-e") 'ess-switch-to-end-of-ESS)
   (local-set-key (kbd "s-x") 'r-autoyas-expand)
@@ -1177,15 +1128,64 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
   (stripe-listify-buffer))
 
 (add-hook 'ess-rdired-mode-hook 'help/ess-rdired-mode-hook)
-(setq ess-S-assign-key (kbd "C-,"))
-(ess-toggle-S-assign-key t)
-(ess-toggle-underscore nil)
 (setq ess-keep-dump-files +1)
 (setq ess-delete-dump-files nil)
 (setq ess-mode-silently-save +1)
-(setq inferior-R-args "--no-save --no-restore")
 (sp-local-pair 'ess-mode "{" nil :post-handlers '((gcr/indent-curly-block "RET")))
 (setq ess-eval-visibly 'nowait)
+(setq ess-use-tracebug t)
+(setq ess-tracebug-search-path '())
+(define-key compilation-minor-mode-map [(?n)] 'next-error-no-select)
+(define-key compilation-minor-mode-map [(?p)] 'previous-error-no-select)
+(setq ess-watch-scale-amount -1)
+(use-package ess-R-object-popup
+  :ensure t)
+(autoload 'ess-rdired "ess-rdired")
+(use-package ess-R-data-view
+  :ensure t)
+(use-package inlineR
+  :ensure t)
+(setq help/r-dir "~/.R/")
+(defun help/make-warn-R-dir ()
+  "Handle of R directory misconfiguration."
+  (interactive)
+  (unless (f-directory? help/r-dir)
+    (progn
+      (message "Couldn't find %S… creating it." help/r-dir)
+      (f-mkdir help/r-dir))))
+(help/make-warn-R-dir)
+(setq ess-history-directory help/r-dir)
+(setq ess-source-directory help/r-dir)
+(setq inferior-ess-program "R")
+(setq inferior-R-program-name "R")
+(setq ess-local-process-name "R")
+(add-to-list 'auto-mode-alist '("\\.rd\\'" . Rd-mode))
+(add-to-list 'auto-mode-alist '("\\.Rmd$" . r-mode))
+(local-set-key (kbd "C-c C-. S") 'ess-rutils-rsitesearch)
+(use-package ess-rutils
+  :config
+  (setq ess-rutils-keys t))
+(use-package r-autoyas
+  :ensure t
+  :config
+  (setq r-autoyas-debug t)
+  (setq r-autoyas-expand-package-functions-only nil)
+  (setq r-autoyas-remove-explicit-assignments nil))
+(setq ess-ac-R-argument-suffix "=")
+;; (setq help/ess-style
+;;       (copy-alist
+;;        (assoc 'RRR ess-style-alist)))
+;; (setf (nth 0 help/ess-style) 'HELP)
+;; (setf (cdr
+;;        (assoc 'ess-continued-statement-offset
+;;               (cdr help/ess-style)))
+;;       0)
+;; (add-to-list 'ess-style-alist help/ess-style)
+;; (setq ess-default-style 'HELP)
+(setq ess-S-assign-key (kbd "C-,"))
+(ess-toggle-S-assign-key t)
+(ess-toggle-underscore nil)
+(setq inferior-R-args "--no-save --no-restore")
 
 (use-package yasnippet
   :ensure t
