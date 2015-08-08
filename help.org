@@ -2865,7 +2865,7 @@ With that in mind this system:
 - Hacking mode hooks.
   - Configurations common to every hacking vehicle.
     #+BEGIN_SRC emacs-lisp
-(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook))
+(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook))
     #+END_SRC
   - LISP mode hooks.
     - Are hacking modes.
@@ -3478,3 +3478,156 @@ When a drop of water joins the ocean it becomes the ocean.
 
 ** Graphviz
 ** PlantUML
+
+#+BEGIN_SRC emacs-lisp
+(use-package plantuml-mode
+  :ensure t
+  :init
+  (defconst help/plantuml-jar (concat (expand-file-name (getenv "EELIB")) "/plantuml.jar"))
+  (setq plantuml-jar-path help/plantuml-jar)
+  :config
+  (eval-after-load "ob-plantuml"
+    (setq org-plantuml-jar-path help/plantuml-jar)))
+#+END_SRC
+
+*Sequence Diagram*
+
+- Feature rich.
+- Information rich.
+
+#+BEGIN_SRC plantuml :file "./image/plantuml-sequence_diagram.png" :noweb-ref ignore :results output replace
+Alice --> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+
+Alice --> Bob: Another authentication Request
+Alice <-- Bob: another authentication Response
+#+END_SRC
+
+#+NAME:
+[[file:./image/plantuml-sequence_diagram.png]]
+
+*Use Case Diagram*
+
+- Actor variable aliasing feature.
+
+#+BEGIN_SRC plantuml :file "./image/plantuml-use_case_diagram.png" :noweb-ref ignore :results output replace
+left to right direction
+skinparam packageStyle rect
+actor customer
+actor clerk
+rectangle checkout {
+customer -- (checkout)
+(checkout) .> (payment) : include (help) .> (checkout) : extends (checkout) -- clerk
+}
+#+END_SRC
+
+#+NAME:
+[[file:./image/plantuml-use_case_diagram.png]]
+
+*Class Diagram*
+
+- Valuable for all sorts of ideas in addition to classes.
+- =hide=, =show=, and =include= are mentioned.
+  - Could be a great reuse mechanism combined with noweb and tangling.
+- Spotted characters might be useful to indicating other things.
+  - Example is data which is clearly a first-class citizen.
+  - Six package visualization types.
+  - Packaging vs. namespaceing.
+  - Good support for splitting large images among output pages.
+
+#+BEGIN_SRC plantuml :file "./image/plantuml-class_diagram.png" :noweb-ref ignore :results output replace
+title This is not a sailboat
+scale 200 width
+Sailboat "1" *-- "1..3" Mast
+Sailboat "1" *-- "1..3" Hull
+#+END_SRC
+
+#+NAME:
+[[file:./image/plantuml-class_diagram.png]]
+
+*Activity Diagram*
+
+- May indicate top to bottom flow using =top=.
+- May label arrows.
+- May force arrow direction.
+- if/else structure for branching.
+- Partition construct.
+- [[http://plantuml.sourceforge.net/activity2.html][New syntax]] with more examples.
+
+#+BEGIN_SRC plantuml :file "./image/plantuml-activity_diagram.png" :noweb-ref ignore :results output replace
+start
+partition Initialization {
+    :read config file;
+    :init internal variable;
+}
+partition Running {
+    :wait for user interaction;
+    :print information;
+}
+
+stop
+#+END_SRC
+
+#+NAME:
+[[file:./image/plantuml-activity_diagram.png]]
+
+*Component Diagram*
+
+- The names to define all of the diagram entity types.
+- Identify "Modern UML".
+- Good for summaries.
+
+#+BEGIN_SRC plantuml :file "./image/plantuml-component_diagram.png" :noweb-ref ignore :results output replace
+[First component]
+[Another component]
+() "First Interface"
+() "Another interface" as Interf2
+DataAccess - [First Component]
+[First Component] ..> HTTP : use
+#+END_SRC
+
+#+NAME:
+[[file:./image/plantuml-component_diagram.png]]
+
+*State Diagram*
+
+#+BEGIN_SRC plantuml :file "./image/plantuml-state_diagram.png" :noweb-ref ignore :results output replace
+[*] --> State1
+State1 --> [*]
+State1 : this is a string State1 : this is another string
+#+END_SRC
+
+#+NAME:
+[[file:./image/plantuml-state_diagram.png]]
+
+*Object Diagram*
+
+#+BEGIN_SRC plantuml :file "./image/plantuml-object_diagram.png" :noweb-ref ignore :results output replace
+object Object01
+object Object02
+Object01 <|-- Object02
+#+END_SRC
+
+#+NAME:
+[[file:./image/plantuml-object_diagram.png]]
+
+- Commands.
+  - Header and footer values.
+  - Zoom level.
+  - Creole markup for most text elements.
+  - Lists and sub-lists.
+  - Horizontal lines. Will appear in most containers.
+  - Headings.
+  - Plain old HTML.
+  - Tables, LaTeX style.
+  - Use [[https://useiconic.com/open][OpenIconic icons]] anywhere.
+
+- Fonts and colors.
+  - You can change just about everything.
+  - You may nest definitions.
+  - =monochrome true= option.
+    - If you are printing
+    - Or don't want color.
+
+- Internationalization.
+  - Full Unicode character support.
