@@ -75,10 +75,13 @@ Setup:
         value to Sysop even if it doesn't configure EMACS.
     - Cons:
       - Gives reader impression that modes are configured and ready to use.
-- It is important to include headlines that are empty and that you may not
-  even end up keeping. You need them to help you explore the cognitive
-  landscape with them present. In this one case, premature optimization is
-  /not/ the root of all evil.
+  - It is important to include headlines that are empty and that you may not
+    even end up keeping. You need them to help you explore the cognitive
+    landscape with them present. In this one case, premature optimization is
+    /not/ the root of all evil.
+  - Sometimes headlines might better be:
+    - List items.
+    - Stand-alone bold'ed text without punctuation.
 - Hyperlink.
   - External.
     - Exclude those easily found with a search-engine unless you are willing to
