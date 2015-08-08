@@ -3456,17 +3456,9 @@ Easily enter guillemots.
 - For a brief overview and release history read the [[http://ess.r-project.org/Manual/readme.html][readme]].
 - For a comprehensive overview read the [[http://ess.r-project.org/Manual/ess.html][manual]].
 
-ℝ first notes:
-- ℝ will start ℝ via =Emacs=
 - Multiple =ESS= processes may run simultaneously, and may be selected by a
   specific language via their buffer name that has a number appended, or may be
   accessed via a menu using =ess-request-a-process=.
-- =ESS= works transparently on remote machines using =TRAMP= to manage a remote
-  ℝ instance. An example is provided for Amazon. Means exist for supporting remote
-  graphical displays or redirecting to a file. Excellent support seems to exist
-  to quite flexibly support unexpected things like starting an =ESS= supported
-  program in a plain old shell and being able to convert it to an =ESS= supported
-  buffer.
 
 Various user interaction stuff:
 - Return sends the input from wherever you hit return, nice.
@@ -3655,6 +3647,15 @@ and see how it goes.
   :PROPERTIES:
   :noweb-ref: Hacking-Applied-Mathematics-ESS-R
   :END:
+
+ℝ first notes:
+- ℝ will start ℝ via =Emacs=
+- =ESS= works transparently on remote machines using =TRAMP= to manage a remote
+  ℝ instance. An example is provided for Amazon. Means exist for supporting remote
+  graphical displays or redirecting to a file. Excellent support seems to exist
+  to quite flexibly support unexpected things like starting an =ESS= supported
+  program in a plain old shell and being able to convert it to an =ESS= supported
+  buffer.
 
 In it:
 - 𝕊 refers to any language in the family.
