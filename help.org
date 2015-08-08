@@ -107,7 +107,7 @@ Setup:
       - ~t~ for =TRUE=.
       - ~n~ for numerical values.
     - Try never to advise functions.
-    - Never ~custom-set-variables~. 
+    - Never ~custom-set-variables~.
 - Tangling.
   - When ordering matters, rely on block-reuse to enforce correct generation.
 - Voice.
@@ -2604,7 +2604,7 @@ release. It is soft and gentle yet easy to read in any situation.
   (setq solarized-use-less-bold t)
   (setq solarized-use-more-italic nil)
   (setq solarized-emphasize-indicators nil)
-  (load-theme 'solarized-dark))
+  (load-theme 'solarized-dark t))
 #+END_SRC
 
 ** Comint
