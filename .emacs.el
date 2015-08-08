@@ -846,8 +846,6 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (global-whitespace-mode t)
   :diminish whitespace-mode global-whitespace-mode)
 (use-package visual-line-mode
-  :config
-  (global-visual-line-mode)
   :diminish visual-line-mode)
 (use-package fill-column-indicator
   :ensure t
@@ -857,12 +855,13 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   "HELP's standard configuration for buffer's working with text, often for
    programming."
   (interactive)
+  (visual-line-mode)
   (linum-mode)
   (fci-mode)
   (rainbow-mode))
 
 (add-hook #'text-mode-hook #'help/text-prog*-setup)
-(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook))
+(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook))
 (setq help/hack-lisp-modes
       '(emacs-lisp-mode-hook
         ielm-mode-hook
@@ -882,6 +881,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (help/text-prog*-setup)
   (smartparens-strict-mode)
   (aggressive-indent-mode)
+  (hs-minor-mode)
   (help/not-on-gui (local-set-key (kbd "RET") #'newline-and-indent))
   (help/on-gui (local-set-key (kbd "<return>") #'newline-and-indent)))
 (let (void)
