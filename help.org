@@ -2034,7 +2034,7 @@ exercised, Dired in Imenu seems like an obvious choice.
   :ensure t)
 #+END_SRC
 
-** Finding Objects
+** Interactively DO Things”
 
 Access nearly every object available in this system from one place.
 
