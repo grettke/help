@@ -3605,6 +3605,7 @@ any ESS source buffers. This approach is in addition to two other things:
 (1) Emacs is auto-saving every file buffer quite frequently and (2) there is
 advice before every manual =eval= call so that the buffers and their files stay
 in sync. Yes, it is really that important.
+
 #+BEGIN_SRC emacs-lisp
 (setq ess-mode-silently-save +1)
 #+END_SRC
