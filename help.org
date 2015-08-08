@@ -895,7 +895,6 @@ Set up my default LCO files.
 (setq org-koma-letter-class-option-file "UScommercial9 KomaDefault")
 #+END_SRC
 
-
 * Piano Lessons
    :PROPERTIES:
    :noweb-ref: Piano-Lessons
