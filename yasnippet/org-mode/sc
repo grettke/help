@@ -4,6 +4,6 @@
 # group: HELP
 # contributor: gcr@wisdomandwonder.com
 # --
-#+BEGIN_SRC ${1:$$(yas-choose-value '("emacs-lisp" "sass" "R" "ditaa" "plantuml"))}
+#+BEGIN_SRC ${1:$$(yas-choose-value '("emacs-lisp" "org" "sass" "R" "ditaa" "dot" "plantuml"))}
 $0
 #+END_SRC
