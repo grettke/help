@@ -2491,31 +2491,6 @@ Most programing modes indent to 2 spaces. TABs should be the same width.
 (setq-default tab-width 2)
 #+END_SRC
 
-** Templating
-
-- Enable everywhere
-- Allow expansion to occur within fields
-- Load HELP snippets
-- Use Ido to handle user decisions
-
-#+BEGIN_SRC emacs-lisp
-(use-package yasnippet
-  :ensure t
-  :config
-  (yas-global-mode t)
-  (setq yas-triggers-in-field t)
-  (defun help/yas-minor-mode-hook-fn ()
-    "Personal customizations."
-    (define-key yas-minor-mode-map (kbd "<tab>") nil)
-    (define-key yas-minor-mode-map (kbd "TAB") nil)
-    (define-key yas-minor-mode-map (kbd "s-t") 'yas-expand))
-  (add-hook #'yas-minor-mode-hook #'help/yas-minor-mode-hook-fn)
-  (add-to-list #'yas-snippet-dirs "~/src/help/yasnippet")
-  (yas-reload-all)
-  (setq yas-prompt-functions '(yas-ido-prompt))
-  :diminish yas-minor-mode)
-#+END_SRC
-
 ** Version Control
 
 Use Magit for Git. The commit log editor uses With-Editor and Server modes.
@@ -3401,6 +3376,31 @@ Easily enter guillemots.
 #+BEGIN_SRC emacs-lisp
 (key-chord-define org-src-mode-map "<<" (lambda () (interactive) (insert "«")))
 (key-chord-define org-src-mode-map ">>" (lambda () (interactive) (insert "»")))
+#+END_SRC
+
+** Templating
+
+- Enable everywhere
+- Allow expansion to occur within fields
+- Load HELP snippets
+- Use Ido to handle user decisions
+
+#+BEGIN_SRC emacs-lisp
+(use-package yasnippet
+  :ensure t
+  :config
+  (yas-global-mode t)
+  (setq yas-triggers-in-field t)
+  (defun help/yas-minor-mode-hook-fn ()
+    "Personal customizations."
+    (define-key yas-minor-mode-map (kbd "<tab>") nil)
+    (define-key yas-minor-mode-map (kbd "TAB") nil)
+    (define-key yas-minor-mode-map (kbd "s-t") 'yas-expand))
+  (add-hook #'yas-minor-mode-hook #'help/yas-minor-mode-hook-fn)
+  (add-to-list #'yas-snippet-dirs "~/src/help/yasnippet")
+  (yas-reload-all)
+  (setq yas-prompt-functions '(yas-ido-prompt))
+  :diminish yas-minor-mode)
 #+END_SRC
 
 ** Structured Query Language (SQL)
