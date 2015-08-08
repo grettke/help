@@ -3440,6 +3440,7 @@ Easily enter guillemots.
 #+END_SRC
 ** (Applied Mathematics)
 ** Emacs Speaks Statistics (ESS)
+
 This section takes about 15 seconds to tangle.
 
 Get =ESS= loaded before doing anything with it in here or out there.
