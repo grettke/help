@@ -34,6 +34,7 @@ Setup:
   - Exemple Complet Minimal (ECM) :: The minimal complete example of expected
     versus actual behavior. Comes from the [[http://orgmode.org/worg/org-faq.html][Org-Mode]] community.
   - Key-Bind :: A verb. The act of creating a Key Binding.
+  - Literate Programming (LP) :: As Knuth intended.
   - Out of the Box (OOTB) :: The default configuration of something.
   - Sysop :: A proper noun. The System-Operator. The human operating this EMACS
     based Org-Mode enabled literate programming system. The reader.
@@ -2805,18 +2806,29 @@ point uses ~require~. Every package loaded after this point uses ~use-package~.
   :noweb-ref: Hacking-Prog*-Mode
   :END:
 
-This system holds similar preferences for ~text-mode~ and ~prog-mode~. The EMACS
-literature advises that modes extend one of them. That makes it easier to
-configure basically everything using ~prog-mode-hook~. In practice the latter
-is too new. Not all programming modes inherit from it. Not even =IELM= is ready.
+This system configures ~text-mode~ and ~prog-mode~ very similarly:
+
+- EMACS *exists* to help you work with text.
+- EMACS' entire configuration helps you work with text whether it is in a
+  specific mode or not.
+- Org-Mode's motto is "*Organize Your Life In Plain Text!*".
+- From an EMACS and a LP perspective ~text-mode~ *is a* programming mode.
+- In this system: *Text is the User-Interface*.
+
+This system does not rely on ~prog-mode~ inheritance to configure it's hacking
+modes:
+
+- The EMACS literature advises that modes extend ~text-mode~ or ~prog-mode~
+- That /would/ make it easier to configure nearly everything using ~prog-mode-hook~.
+- In practice ~prog-mode~ is too new.
+- Not all programming modes inherit from it. Not even =IELM= is ready.
 
 With that in mind this system:
 
 - Defines common configuration here for reuse in every desired mode starting
-  with =text-mode= and then programming modes.
-- Configures each mode that wants to use it explicitly instead of relying on
-  inheriting from ~prog-mode~.
-- Refer to this configuration of programming modes as =prog*-mode=.
+  with =text-mode= and then all logical programming modes.
+- Explicitly utilizes it directly instead of using inheritance.
+- This system refers to this configuration of programming modes as =prog*-mode=.
 
 *** Text-Mode
 
