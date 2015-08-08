@@ -3476,7 +3476,7 @@ Various user interaction stuff:
 - Previous command execution, by name, offset, or just the last one, are by =!=
   - This feature is actually quite rich and a real regexen style system.
 
-Always show eldoc for ℝ stuff, everywhere it may.
+Always show eldoc for things.
 
 #+BEGIN_SRC emacs-lisp
 (setq ess-eldoc-show-on-symbol t)
