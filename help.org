@@ -1271,6 +1271,14 @@ in the call itself.
 
 *** Left Side
 
+**** 4
+
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "s-w") #'imenu)
+#+END_SRC
+
+**** Unsorted
+
 VC activities.
 
 #+BEGIN_SRC emacs-lisp
@@ -2043,6 +2051,22 @@ exercised, Dired in Imenu seems like an obvious choice.
 #+BEGIN_SRC emacs-lisp
 (use-package dired-imenu
   :ensure t)
+#+END_SRC
+
+** IMenu
+
+Major productivity hack
+
+#+BEGIN_SRC emacs-lisp
+(use-package imenu
+  :config
+  (setq imenu-sort-function 'imenu--sort-by-name))
+(defun help/try-to-add-imenu ()
+  "Add Imenu to modes that have `font-lock-mode' activated.
+
+Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
+  (condition-case nil (imenu-add-to-menubar "Imenu") (error nil)))
+(add-hook #'font-lock-mode-hook #'help/try-to-add-imenu)
 #+END_SRC
 
 ** Interactively DO Things”
@@ -2863,7 +2887,8 @@ With that in mind this system:
   (visual-line-mode)
   (linum-mode)
   (fci-mode)
-  (rainbow-mode))
+  (rainbow-mode)
+  (help/try-to-add-imenu))
 
 (add-hook #'text-mode-hook #'help/text-prog*-setup)
 #+END_SRC

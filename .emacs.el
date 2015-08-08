@@ -627,6 +627,15 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (setq wdired-use-dired-vertical-movement 'sometimes))
 (use-package dired-imenu
   :ensure t)
+(use-package imenu
+  :config
+  (setq imenu-sort-function 'imenu--sort-by-name))
+(defun help/try-to-add-imenu ()
+  "Add Imenu to modes that have `font-lock-mode' activated.
+
+Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
+  (condition-case nil (imenu-add-to-menubar "Imenu") (error nil)))
+(add-hook #'font-lock-mode-hook #'help/try-to-add-imenu)
 (use-package ido)
 (use-package flx-ido
              :ensure t
@@ -858,7 +867,8 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (visual-line-mode)
   (linum-mode)
   (fci-mode)
-  (rainbow-mode))
+  (rainbow-mode)
+  (help/try-to-add-imenu))
 
 (add-hook #'text-mode-hook #'help/text-prog*-setup)
 (setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook))
@@ -1133,6 +1143,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
   :ensure t)
 (menu-bar-mode t)
 (winner-mode t)
+(global-set-key (kbd "s-w") #'imenu)
 (define-prefix-command 'help/vc-map)
 (global-set-key (kbd "s-r") #'help/vc-map)
 (define-key help/vc-map "e" #'help/safb-vc-ediff)
