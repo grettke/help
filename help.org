@@ -3454,7 +3454,7 @@ Easily enter guillemots.
 
 When a drop of water joins the ocean it becomes the ocean.
 
-#+BEGIN_SRC ditaa :file "./image/dropinocean.png" :noweb-ref ignore
+#+BEGIN_SRC ditaa :file "./image/ditaa-drop_in_the_ocean.png" :noweb-ref ignore :results output replace
 +---------+
 | cBLU    |
 |         |
@@ -3465,9 +3465,9 @@ When a drop of water joins the ocean it becomes the ocean.
 #+END_SRC
 
 #+NAME:
-[[file:./image/dropinocean.png]]
+[[file:./image/ditaa-drop_in_the_ocean.png]]
 
-#+BEGIN_SRC ditaa :file "./image/notasailboat.png" :noweb-ref ignore
+#+BEGIN_SRC ditaa :file "./image/ditaa-not_a_sailboat.png" :noweb-ref ignore :results output replace
 +----------+1       1…3+------+
 | Sailboat +◆----------+ Mast |
 +-----+----+           +------+
@@ -3480,7 +3480,7 @@ When a drop of water joins the ocean it becomes the ocean.
 #+END_SRC
 
 #+NAME:
-[[file:./image/notasailboat.png]]
+[[file:./image/ditaa-not_a_sailboat.png]]
 
 #+BEGIN_SRC emacs-lisp
 (defconst help/ditaa-jar (concat (getenv "EELIB") "/ditaa.jar"))
