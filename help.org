@@ -3508,94 +3508,6 @@ Data viewing:
 #+BEGIN_SRC emacs-lisp
 (setq ess-describe-at-point-method 'tooltip)
 #+END_SRC
-- Visualize just about anything.
-  - =ess-R-object-popup=
-#+BEGIN_SRC emacs-lisp
-(use-package ess-R-object-popup
-  :ensure t)
-#+END_SRC
-- Rdired is another way to work with object
-  - =ess-rdired=
-  - View, delete, plot, and update buffer (ala /revert/) are single key commands
-#+BEGIN_SRC emacs-lisp
-(autoload 'ess-rdired "ess-rdired")
-#+END_SRC
-- Visualize data frames better.
-  - =ess-R-dv-ctable=
-  - =ess-R-dv-pprint=
-#+BEGIN_SRC emacs-lisp
-(use-package ess-R-data-view
-  :ensure t)
-#+END_SRC
-- inlineR
-  - /Not/ a competitor to =org-mode=
-  - Ultra lightweight LP, really
-#+BEGIN_SRC emacs-lisp
-(use-package inlineR
-  :ensure t)
-#+END_SRC
-
-Documentation:
-- Whole section on native documentation; I'll re-visit as needed.
-- Roxygen, too.
-
-=ess-developer= helps you to easily work within specific name-spaces.
-
-Rutils: key-bindings to aid real usage
-- =C-c C-. l=: List all packages in all available libraries.
-- =C-c C-. r=: List available packages from repositories listed by =getOptions(‘‘repos’’)=
-in the current R session.
-- =C-c C-. u=: Update packages in a particular library lib and repository repos.
-- =C-c C-. a=: Search for a string using apropos.
-- =C-c C-. m=: Remove all R objects.
-- =C-c C-. o=: Manipulate R objects; wrapper for =ess-rdired=.
-- =C-c C-. w=: Load a workspace file into R.
-- =C-c C-. s=: Save a work-space file.
-- =C-c C-. d=: Change the working directory for the current R session.
-- =C-c C-. H=: Use =browse-url= to navigate R HTML documentation.
-
-=ess-mode-silently-save= is worth a million bucks; usually I have to hand code
-this.
-
-As of <2014-01-31 Fri>, you need to manually load ESS when you pull it from
-MELPA [fn:8dece4ca: https://stat.ethz.ch/pipermail/ess-help/2014-January/009705.html]. That is totally fine with me, that is really the best way to load stuff.
-Out of curiosity, I read more about it here [fn:c5cac42b: https://github.com/milkypostman/melpa/issues/6], but that occurred before
-this previous post made by the maintainers. Even the source code in
-=ess-autoloads.el= has a license from 2012, which is before the aforementioned
-post. As such, this configuration step seems correct and necessary for now.
-Additionally, this how the user manual expects a typical manual setup to be
-configured.
-
-Looked a tiny bit at how R hackers are formatting their code [fn:9039b33e: https://google-styleguide.googlecode.com/svn/trunk/Rguide.xml] [fn:da0df786: http://adv-r.had.co.nz/Style.html].
-The simple (dumb) part of me suspects that C++ formatting is generally just fine [fn:5b466d0c: https://stackoverflow.com/questions/7502540/make-emacs-ess-follow-r-style-guide].
-
-There is strangely nice discussion about where temp files may be stored;
-specifically for cases where you edit identically-named objects and want to keep
-them in the same directory but per-project. That is not the need now, and it is
-nice to know that it is an option.
-
-Store history files and dump files in a single known location. If that location
-doesn't exist, then make it.
-#+BEGIN_SRC emacs-lisp
-(setq help/r-dir "~/.R/")
-(defun help/make-warn-R-dir ()
-  "Handle of R directory misconfiguration."
-  (interactive)
-  (unless (f-directory? help/r-dir)
-    (progn
-      (message "Couldn't find %S… creating it." help/r-dir)
-      (f-mkdir help/r-dir))))
-(help/make-warn-R-dir)
-(setq ess-history-directory help/r-dir)
-(setq ess-source-directory help/r-dir)
-#+END_SRC
-
-Since I'm using ℝ for everything, configure /everything/ to be using ℝ.
-#+BEGIN_SRC emacs-lisp
-(setq inferior-ess-program "R")
-(setq inferior-R-program-name "R")
-(setq ess-local-process-name "R")
-#+END_SRC
 
 Always start =ess= within the curent =emacs= frame, it doesn't need to be separate.
 #+BEGIN_SRC emacs-lisp
@@ -4012,6 +3924,95 @@ Navigation to errors (general Emacs functionality):
 - The font size for watched variables.
 #+BEGIN_SRC emacs-lisp
 (setq ess-watch-scale-amount -1)
+#+END_SRC
+
+- Visualize just about anything.
+  - =ess-R-object-popup=
+#+BEGIN_SRC emacs-lisp
+(use-package ess-R-object-popup
+  :ensure t)
+#+END_SRC
+- Rdired is another way to work with object
+  - =ess-rdired=
+  - View, delete, plot, and update buffer (ala /revert/) are single key commands
+#+BEGIN_SRC emacs-lisp
+(autoload 'ess-rdired "ess-rdired")
+#+END_SRC
+- Visualize data frames better.
+  - =ess-R-dv-ctable=
+  - =ess-R-dv-pprint=
+#+BEGIN_SRC emacs-lisp
+(use-package ess-R-data-view
+  :ensure t)
+#+END_SRC
+- inlineR
+  - /Not/ a competitor to =org-mode=
+  - Ultra lightweight LP, really
+#+BEGIN_SRC emacs-lisp
+(use-package inlineR
+  :ensure t)
+#+END_SRC
+
+Documentation:
+- Whole section on native documentation; I'll re-visit as needed.
+- Roxygen, too.
+
+=ess-developer= helps you to easily work within specific name-spaces.
+
+Rutils: key-bindings to aid real usage
+- =C-c C-. l=: List all packages in all available libraries.
+- =C-c C-. r=: List available packages from repositories listed by =getOptions(‘‘repos’’)=
+in the current R session.
+- =C-c C-. u=: Update packages in a particular library lib and repository repos.
+- =C-c C-. a=: Search for a string using apropos.
+- =C-c C-. m=: Remove all R objects.
+- =C-c C-. o=: Manipulate R objects; wrapper for =ess-rdired=.
+- =C-c C-. w=: Load a workspace file into R.
+- =C-c C-. s=: Save a work-space file.
+- =C-c C-. d=: Change the working directory for the current R session.
+- =C-c C-. H=: Use =browse-url= to navigate R HTML documentation.
+
+=ess-mode-silently-save= is worth a million bucks; usually I have to hand code
+this.
+
+As of <2014-01-31 Fri>, you need to manually load ESS when you pull it from
+MELPA [fn:8dece4ca: https://stat.ethz.ch/pipermail/ess-help/2014-January/009705.html]. That is totally fine with me, that is really the best way to load stuff.
+Out of curiosity, I read more about it here [fn:c5cac42b: https://github.com/milkypostman/melpa/issues/6], but that occurred before
+this previous post made by the maintainers. Even the source code in
+=ess-autoloads.el= has a license from 2012, which is before the aforementioned
+post. As such, this configuration step seems correct and necessary for now.
+Additionally, this how the user manual expects a typical manual setup to be
+configured.
+
+Looked a tiny bit at how R hackers are formatting their code [fn:9039b33e: https://google-styleguide.googlecode.com/svn/trunk/Rguide.xml] [fn:da0df786: http://adv-r.had.co.nz/Style.html].
+The simple (dumb) part of me suspects that C++ formatting is generally just fine [fn:5b466d0c: https://stackoverflow.com/questions/7502540/make-emacs-ess-follow-r-style-guide].
+
+There is strangely nice discussion about where temp files may be stored;
+specifically for cases where you edit identically-named objects and want to keep
+them in the same directory but per-project. That is not the need now, and it is
+nice to know that it is an option.
+
+Store history files and dump files in a single known location. If that location
+doesn't exist, then make it.
+#+BEGIN_SRC emacs-lisp
+(setq help/r-dir "~/.R/")
+(defun help/make-warn-R-dir ()
+  "Handle of R directory misconfiguration."
+  (interactive)
+  (unless (f-directory? help/r-dir)
+    (progn
+      (message "Couldn't find %S… creating it." help/r-dir)
+      (f-mkdir help/r-dir))))
+(help/make-warn-R-dir)
+(setq ess-history-directory help/r-dir)
+(setq ess-source-directory help/r-dir)
+#+END_SRC
+
+Since I'm using ℝ for everything, configure /everything/ to be using ℝ.
+#+BEGIN_SRC emacs-lisp
+(setq inferior-ess-program "R")
+(setq inferior-R-program-name "R")
+(setq ess-local-process-name "R")
 #+END_SRC
 
 ** SAS (ESS)
