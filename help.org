@@ -178,8 +178,8 @@ Start EMACS with this command:
 «Hacking-Emacs-Lisp»
 «Hacking-Org-Mode»
 «Hacking-Applied-Mathematics-ESS»
-«Hacking-Applied-Mathematics-ESS-R»
 «Hacking-Applied-Mathematics-ESS-SAS»
+«Hacking-Applied-Mathematics-ESS-R»
 «Hacking-YASnippet»
 «Hacking-Publishing-TeX»
 «Hacking-Artist»
@@ -3641,6 +3641,12 @@ and see how it goes.
 (setq ess-eval-visibly 'nowait)
 #+END_SRC
 
+** SAS (ESS)
+  :PROPERTIES:
+  :noweb-ref: Hacking-Applied-Mathematics-ESS-SAS
+  :END:
+
+
 ** R (ESS)
   :PROPERTIES:
   :noweb-ref: Hacking-Applied-Mathematics-ESS-R
@@ -4035,11 +4041,6 @@ Period.
 
 (add-hook #'ess-rdired-mode-hook #'help/ess-rdired-mode-hook)
 #+END_SRC
-
-** SAS (ESS)
-  :PROPERTIES:
-  :noweb-ref: Hacking-Applied-Mathematics-ESS-SAS
-  :END:
 
 ** YASnippet
   :PROPERTIES:

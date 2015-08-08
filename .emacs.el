@@ -1059,9 +1059,6 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (setq inferior-ess-same-window nil)
 (setq inferior-ess-own-frame nil)
 (setq ess-help-own-frame nil)
-(setq ess-ask-for-ess-directory nil)
-(setq inferior-ess-exit-command "q('no')
-")
 (setq ess-execute-in-process-buffer t)
 (setq ess-switch-to-end-of-proc-buffer t)
 (setq ess-tab-complete-in-script t)
@@ -1070,74 +1067,20 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (setq ess-use-eldoc t)
 (setq ess-eldoc-show-on-symbol t)
 (setq ess-eldoc-abbreviation-style 'normal)
-(defun help/ess-mode-hook ()
-  (local-set-key (kbd "s-e") 'ess-switch-to-end-of-ESS)
-  (local-set-key (kbd "s-x") 'r-autoyas-expand)
-  (local-set-key (kbd "s-p") 'ess-R-object-popup)
-  (local-set-key (kbd "s-v o") 'ess-describe-object-at-point)
-  (local-set-key (kbd "s-v d") 'ess-rdired)
-  (local-set-key (kbd "s-v cc") 'ess-R-dv-ctable)
-  (local-set-key (kbd "s-v cp") 'ess-R-dv-pprint)
-  (local-set-key (kbd "C-.") (lambda () (interactive) (insert " -> ")))
-  (local-set-key (kbd "C-M-,") (lambda () (interactive) (insert " <<- ")))
-  (local-set-key (kbd "C-M-.") (lambda () (interactive) (insert " ->> ")))
-  (key-chord-define-local (kbd ",.") (lambda () (interactive) (insert " %<>% ")))
-  (local-set-key (kbd "s-.") (lambda () (interactive) (insert " %>% ")))
-  (local-set-key (kbd "C-0") 'ess-eval-buffer)
-  (turn-on-pretty-mode)
-  (r-autoyas-ess-activate)
-  (visual-line-mode)
-  (smartparens-strict-mode t)
-  (help/untabify-buffer-hook)
-  (fci-mode)
-  (hs-minor-mode 1)
-  (linum-mode)
-  (help/turn-on-r-hide-show)
-  (aggressive-indent-mode)
-  (lambda () (add-hook 'ess-presend-filter-functions
-                  (lambda ()
-                    (warn
-                     "ESS now supports a standard pre-send filter hook. Please update your configuration to use it instead of using advice.")))))
-
-(add-hook 'ess-mode-hook 'help/ess-mode-hook)
-
-(defun help/turn-on-r-hide-show ()
-  "Attribution: SRC https://github.com/mlf176f2/EmacsMate/blob/master/EmacsMate-ess.org"
-  (when (string= "S" ess-language)
-    (set (make-local-variable 'hs-special-modes-alist) '((ess-mode "{" "}" "#" nil nil)))
-    (hs-minor-mode 1)
-    (when (fboundp 'foldit-mode)
-      (foldit-mode 1))
-    (when (fboundp 'fold-dwim-org/minor-mode)
-      (fold-dwim-org/minor-mode))))
-
-(defun help/Rd-mode-hook ()
-  (help/ess-mode-hook))
-
-(add-hook 'Rd-mode-hook 'help/Rd-mode-hook)
-
-(defun help/inferior-ess-mode-hook ()
-  (help/ess-mode-hook))
-
-(add-hook 'inferior-ess-mode-hook 'help/inferior-ess-mode-hook)
-
-(defun help/ess-rdired-mode-hook ()
-  "Personal customizations."
-  (interactive)
-  (turn-on-stripe-buffer-mode)
-  (stripe-listify-buffer))
-
-(add-hook 'ess-rdired-mode-hook 'help/ess-rdired-mode-hook)
 (setq ess-keep-dump-files +1)
 (setq ess-delete-dump-files nil)
 (setq ess-mode-silently-save +1)
 (sp-local-pair 'ess-mode "{" nil :post-handlers '((gcr/indent-curly-block "RET")))
 (setq ess-eval-visibly 'nowait)
+
 (setq ess-use-tracebug t)
 (setq ess-tracebug-search-path '())
 (define-key compilation-minor-mode-map [(?n)] 'next-error-no-select)
 (define-key compilation-minor-mode-map [(?p)] 'previous-error-no-select)
 (setq ess-watch-scale-amount -1)
+(setq ess-ask-for-ess-directory nil)
+(setq inferior-ess-exit-command "q('no')
+")
 (use-package ess-R-object-popup
   :ensure t)
 (autoload 'ess-rdired "ess-rdired")
@@ -1186,7 +1129,56 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (ess-toggle-S-assign-key t)
 (ess-toggle-underscore nil)
 (setq inferior-R-args "--no-save --no-restore")
+(defun help/R-mode-hook ()
+  (local-set-key (kbd "s-e") #'ess-switch-to-end-of-ESS)
+  (local-set-key (kbd "s-x") #'r-autoyas-expand)
+  (local-set-key (kbd "s-p") #'ess-R-object-popup)
+  (local-set-key (kbd "s-v o") #'ess-describe-object-at-point)
+  (local-set-key (kbd "s-v d") #'ess-rdired)
+  (local-set-key (kbd "s-v cc") #'ess-R-dv-ctable)
+  (local-set-key (kbd "s-v cp") #'ess-R-dv-pprint)
+  (local-set-key (kbd "C-.") (lambda () (interactive) (insert " -> ")))
+  (local-set-key (kbd "C-M-,") (lambda () (interactive) (insert " <<- ")))
+  (local-set-key (kbd "C-M-.") (lambda () (interactive) (insert " ->> ")))
+  (key-chord-define-local (kbd ",.") (lambda () (interactive) (insert " %<>% ")))
+  (local-set-key (kbd "s-.") (lambda () (interactive) (insert " %>% ")))
+  (local-set-key (kbd "C-0") #'ess-eval-buffer)
+  (r-autoyas-ess-activate)
+  (help/turn-on-r-hide-show)
+  (lambda () (add-hook #'ess-presend-filter-functions
+                  (lambda ()
+                    (warn
+                     "ESS now supports a standard pre-send filter hook. Please update your configuration to use it instead of using advice.")))))
 
+(add-hook #'R-mode-hook #'help/R-mode-hook)
+
+(defun help/turn-on-r-hide-show ()
+  "Attribution: SRC https://github.com/mlf176f2/EmacsMate/blob/master/EmacsMate-ess.org"
+  (when (string= "S" ess-language)
+    (set (make-local-variable #'hs-special-modes-alist) #'((ess-mode "{" "}" "#" nil nil)))
+    (hs-minor-mode 1)
+    (when (fboundp #'foldit-mode)
+      (foldit-mode 1))
+    (when (fboundp #'fold-dwim-org/minor-mode)
+      (fold-dwim-org/minor-mode))))
+
+(defun help/Rd-mode-hook ()
+  (help/R-mode-hook))
+
+(add-hook #'Rd-mode-hook #'help/Rd-mode-hook)
+
+(defun help/inferior-ess-mode-hook ()
+  (help/R-mode-hook))
+
+(add-hook #'inferior-ess-mode-hook #'help/inferior-ess-mode-hook)
+
+(defun help/ess-rdired-mode-hook ()
+  "Personal customizations."
+  (interactive)
+  (turn-on-stripe-buffer-mode)
+  (stripe-listify-buffer))
+
+(add-hook #'ess-rdired-mode-hook #'help/ess-rdired-mode-hook)
 (use-package yasnippet
   :ensure t
   :config
