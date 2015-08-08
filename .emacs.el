@@ -1054,6 +1054,28 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
   (yas-reload-all)
   (setq yas-prompt-functions '(yas-ido-prompt))
   :diminish yas-minor-mode)
+(use-package tex-site
+  :ensure auctex)
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(defun gcr/TeX-mode-hook ()
+  "Settings applicable to every AUCTeX supported mode."
+  (interactive)
+  (turn-on-smartparens-strict-mode)
+  (gcr/disable-tabs)
+  (fci-mode)
+  (linum-mode))
+
+(add-hook 'TeX-mode-hook 'gcr/TeX-mode-hook)
+(setq TeX-parse-self t) ;
+(setq TeX-auto-save t) ;
+(setq TeX-auto-untabify t)
+(defadvice TeX-command-master (before before-TeX-command-master activate)
+  (gcr/save-all-file-buffers))
+(setq TeX-PDF-mode +1)
+(setq TeX-DVI-via-PDFTeX +1)
+(setq TeX-save-query nil)
+(add-to-list 'auto-mode-alist '("\\.lco?\\'" . TeX-latex-mode))
 (add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
 (add-to-list 'auto-mode-alist '("\\.art" . artist-mode))
 (add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))

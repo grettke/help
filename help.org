@@ -178,6 +178,7 @@ Start EMACS with this command:
 «Hacking-Emacs-Lisp»
 «Hacking-Org-Mode»
 «Hacking-YASnippet»
+«Hacking-Publishing-TeX»
 «Hacking-Artist»
 «Hacking-DITAA»
 «Hacking-PlantUML»
@@ -3456,6 +3457,9 @@ Easily enter guillemots.
 ** Structured Query Language (SQL)
 ** (Publishing)
 ** TeX
+  :PROPERTIES:
+  :noweb-ref: Hacking-Publishing-TeX
+  :END:
 
 AUCT_{E}X is the mode that makes it possible to work with all of these fine tools.
 Visiting their website I took their advice of reading the Info document in Emacs
@@ -3473,6 +3477,11 @@ did not pursue installing it.
 
 Enable most of the stuff we need, given that I don't yet know what we need but
 the manual helps us here.
+
+#+BEGIN_SRC emacs-lisp
+(use-package tex-site
+  :ensure auctex)
+#+END_SRC
 
 #+BEGIN_SRC emacs-lisp
 (setq TeX-auto-save t)
