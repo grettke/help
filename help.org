@@ -183,7 +183,7 @@ Start EMACS with this command:
 
 ** Eshell
 
-#+BEGIN_SRC sh :tangle "./eshell/alias" :comments no
+#+BEGIN_SRC sh :tangle "./eshell/alias" :comments no :eval no
 alias clear recenter 0
 alias d 'dired $1'
 alias ff find-file $1
