@@ -315,6 +315,14 @@ Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.htm
         (cons (cons property value)
               (assq-delete-all property org-babel-default-inline-header-args))))
 
+(defun help/set-org-babel-default-header-args:R (property value)
+  "See `help/set-org-babel-default-header-args'; same but for R.
+
+This is a copy and paste. Additional languages would warrant a refactor."
+  (setq org-babel-default-header-args:R
+        (cons (cons property value)
+              (assq-delete-all property org-babel-default-header-args:R))))
+
 (defun help/comment-or-uncomment ()
   "Comment or uncomment the current line or selection."
   (interactive)
@@ -3431,7 +3439,7 @@ Easily enter guillemots.
 (key-chord-define org-src-mode-map ">>" (lambda () (interactive) (insert "»")))
 #+END_SRC
 ** (Applied Mathematics)
-** Emacs Speaks Statistics (ESS) [fn:3bba0c0c: http://ess.r-project.org/] [fn:25441790: https://en.wikipedia.org/wiki/Emacs_Speaks_Statistics] [fn:a2ae633d: http://www.emacswiki.org/emacs/EmacsSpeaksStatistics] [fn:b28cb112: http://blog.revolutionanalytics.com/2011/08/ess.html] [fn:353ffc35: http://blog.revolutionanalytics.com/2014/03/emacs-ess-and-r-for-zombies.html] [fn:3b20a6da: https://rstudio-pubs-static.s3.amazonaws.com/2246_6f220d4de90c4cfda4109e62455bc70f.html]
+** Emacs Speaks Statistics (ESS)
 This section takes about 15 seconds to tangle.
 
 Get =ESS= loaded before doing anything with it in here or out there.
