@@ -2,3 +2,6 @@
 /.emacs.desktop
 /eshell/history
 /eshell/lastdir
+/auto/*
+*.pdf
+*.tex
