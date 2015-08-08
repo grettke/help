@@ -1320,7 +1320,7 @@ right).
 
 Hide and show code blocks.
 
-#+BEGIN_SRC EMACS-LISP
+#+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "s-b") 'hs-toggle-hiding)
 #+END_SRC
 
