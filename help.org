@@ -10,6 +10,7 @@ Setup:
 2) [[https://github.com/jwiegley/use-package][Pull Use-Package]] to =~/src/=.
 3) Create a folder for support libraries exporting it's location in a variable
    named =EELIB=.
+   2) Install [[http://plantuml.com/][PlantUML]] renaming the JAR to =plantuml.jar=.
 4) Install supporting systems adding their exectuables to the =PATH=.
    1) [[https://www.oracle.com/java/index.html][Oracle Java]].
 5) Link.
