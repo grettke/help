@@ -3454,6 +3454,7 @@ Easily enter guillemots.
 #+END_SRC
 
 ** Structured Query Language (SQL)
+** (Publishing)
 ** (DevOps)
 ** Shell Script
 ** Make
