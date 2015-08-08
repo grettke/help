@@ -162,11 +162,12 @@ Start EMACS with this command:
 «Org-Mode-Programming»
 «Special-Operating-Procedure»
 «Standard-Operating-Procedure»
+«Hacking-Prog*-Mode»
 «Hacking-Emacs-Lisp»
 «Hacking-Org-Mode»
+«Hacking-YASnippet»
 «Hacking-Artist»
 «Hacking-DITAA»
-«Hacking-Prog*-Mode»
 «Quiet-and-Pleasant-Appearance»
 «Piano-Lessons»
 #+END_SRC
@@ -2807,7 +2808,7 @@ point uses ~require~. Every package loaded after this point uses ~use-package~.
 #+END_SRC
 
 * Hacking
-** Common Configuration
+** Common Configurations
   :PROPERTIES:
   :noweb-ref: Hacking-Prog*-Mode
   :END:
@@ -2920,6 +2921,7 @@ With that in mind this system:
 (add-hook #'ielm-mode-hook #'help/ielm-mode-hook-fn)
  #+END_SRC
 
+** (Literate Programming)
 ** Emacs Lisp
   :PROPERTIES:
   :noweb-ref: Hacking-Emacs-Lisp
@@ -2983,7 +2985,7 @@ RC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.htm
 (define-key emacs-lisp-mode-map (kbd "s-p") #'describe-thing-in-popup)
 #+END_SRC
 
-** Org-Mode
+** Org Mode
   :PROPERTIES:
   :noweb-ref: Hacking-Org-Mode
   :END:
@@ -3377,8 +3379,11 @@ Easily enter guillemots.
 (key-chord-define org-src-mode-map "<<" (lambda () (interactive) (insert "«")))
 (key-chord-define org-src-mode-map ">>" (lambda () (interactive) (insert "»")))
 #+END_SRC
-
-** Templating
+** (Applied Mathematics)
+** YASnippet
+  :PROPERTIES:
+  :noweb-ref: Hacking-YASnippet
+  :END:
 
 - Enable everywhere
 - Allow expansion to occur within fields
@@ -3404,12 +3409,14 @@ Easily enter guillemots.
 #+END_SRC
 
 ** Structured Query Language (SQL)
+** (DevOps)
 ** Shell Script
 ** Make
 ** Vagrant
 
 ~ruby-mode~ supports =Vagrantfile= OOTB.
 
+** (Diagram, UML, Workflow)
 ** Artist
   :PROPERTIES:
   :noweb-ref: Hacking-Artist

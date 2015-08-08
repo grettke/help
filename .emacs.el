@@ -835,21 +835,6 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 
 (add-hook #'before-save-hook #'help/untabify-if-not-indent-tabs-mode)
 (setq-default tab-width 2)
-(use-package yasnippet
-  :ensure t
-  :config
-  (yas-global-mode t)
-  (setq yas-triggers-in-field t)
-  (defun help/yas-minor-mode-hook-fn ()
-    "Personal customizations."
-    (define-key yas-minor-mode-map (kbd "<tab>") nil)
-    (define-key yas-minor-mode-map (kbd "TAB") nil)
-    (define-key yas-minor-mode-map (kbd "s-t") 'yas-expand))
-  (add-hook #'yas-minor-mode-hook #'help/yas-minor-mode-hook-fn)
-  (add-to-list #'yas-snippet-dirs "~/src/help/yasnippet")
-  (yas-reload-all)
-  (setq yas-prompt-functions '(yas-ido-prompt))
-  :diminish yas-minor-mode)
 (use-package magit
              :ensure t
              :config
@@ -868,6 +853,50 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   :config
   (global-visual-line-mode)
   :diminish visual-line-mode)
+(use-package fill-column-indicator
+  :ensure t
+  :config
+  (setq-default fill-column help/column-width))
+(defun help/text-prog*-setup ()
+  "HELP's standard configuration for buffer's working with text, often for
+   programming."
+  (interactive)
+  (linum-mode)
+  (fci-mode)
+  (rainbow-mode))
+
+(add-hook #'text-mode-hook #'help/text-prog*-setup)
+(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook))
+(setq help/hack-lisp-modes
+      '(emacs-lisp-mode-hook
+        ielm-mode-hook
+        lisp-interaction-mode))
+(setq help/hack-modes (append help/hack-modes help/hack-lisp-modes))
+(use-package aggressive-indent
+  :ensure t
+  :config)
+(use-package smartparens-config
+  :ensure smartparens
+  :config
+  (setq sp-show-pair-from-inside nil)
+  (eval-after-load "smartparens-mode"
+    '(diminish 'smartparens-mode)))
+(defun help/hack-prog*-mode-hook-fn ()
+  (interactive)
+  (help/text-prog*-setup)
+  (smartparens-strict-mode)
+  (aggressive-indent-mode)
+  (help/not-on-gui (local-set-key (kbd "RET") #'newline-and-indent))
+  (help/on-gui (local-set-key (kbd "<return>") #'newline-and-indent)))
+(let (void)
+  (--each help/hack-modes
+    (add-hook it #'help/hack-prog*-mode-hook-fn)))
+
+(let (void)
+  (--each help/hack-lisp-modes
+    (add-hook it #'help/emacs-lisp-mode-hook-fn)))
+
+(add-hook #'ielm-mode-hook #'help/ielm-mode-hook-fn)
 (setq initial-scratch-message nil)
 (use-package lexbind-mode)
 
@@ -1004,55 +1033,26 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (define-key org-src-mode-map (kbd "s-l") #'org-edit-src-exit)
 (key-chord-define org-src-mode-map "<<" (lambda () (interactive) (insert "«")))
 (key-chord-define org-src-mode-map ">>" (lambda () (interactive) (insert "»")))
+(use-package yasnippet
+  :ensure t
+  :config
+  (yas-global-mode t)
+  (setq yas-triggers-in-field t)
+  (defun help/yas-minor-mode-hook-fn ()
+    "Personal customizations."
+    (define-key yas-minor-mode-map (kbd "<tab>") nil)
+    (define-key yas-minor-mode-map (kbd "TAB") nil)
+    (define-key yas-minor-mode-map (kbd "s-t") 'yas-expand))
+  (add-hook #'yas-minor-mode-hook #'help/yas-minor-mode-hook-fn)
+  (add-to-list #'yas-snippet-dirs "~/src/help/yasnippet")
+  (yas-reload-all)
+  (setq yas-prompt-functions '(yas-ido-prompt))
+  :diminish yas-minor-mode)
 (add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
 (add-to-list 'auto-mode-alist '("\\.art" . artist-mode))
 (add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
 (defconst help/ditaa-jar (concat (getenv "EELIB") "/ditaa.jar"))
 (setq org-ditaa-jar-path help/ditaa-jar)
-(use-package fill-column-indicator
-  :ensure t
-  :config
-  (setq-default fill-column help/column-width))
-(defun help/text-prog*-setup ()
-  "HELP's standard configuration for buffer's working with text, often for
-   programming."
-  (interactive)
-  (linum-mode)
-  (fci-mode)
-  (rainbow-mode))
-
-(add-hook #'text-mode-hook #'help/text-prog*-setup)
-(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook))
-(setq help/hack-lisp-modes
-      '(emacs-lisp-mode-hook
-        ielm-mode-hook
-        lisp-interaction-mode))
-(setq help/hack-modes (append help/hack-modes help/hack-lisp-modes))
-(use-package aggressive-indent
-  :ensure t
-  :config)
-(use-package smartparens-config
-  :ensure smartparens
-  :config
-  (setq sp-show-pair-from-inside nil)
-  (eval-after-load "smartparens-mode"
-    '(diminish 'smartparens-mode)))
-(defun help/hack-prog*-mode-hook-fn ()
-  (interactive)
-  (help/text-prog*-setup)
-  (smartparens-strict-mode)
-  (aggressive-indent-mode)
-  (help/not-on-gui (local-set-key (kbd "RET") #'newline-and-indent))
-  (help/on-gui (local-set-key (kbd "<return>") #'newline-and-indent)))
-(let (void)
-  (--each help/hack-modes
-    (add-hook it #'help/hack-prog*-mode-hook-fn)))
-
-(let (void)
-  (--each help/hack-lisp-modes
-    (add-hook it #'help/emacs-lisp-mode-hook-fn)))
-
-(add-hook #'ielm-mode-hook #'help/ielm-mode-hook-fn)
 (use-package uniquify)
 (setq uniquify-buffer-name-style 'forward)
 (setq ring-bell-function 'ignore)
