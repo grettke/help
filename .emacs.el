@@ -1002,6 +1002,8 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (define-key org-mode-map (kbd "s-p") #'org-babel-demarcate-block)
 (define-key org-mode-map (kbd "C-c C-e") #'help/safb-org-export-dispatch)
 (define-key org-src-mode-map (kbd "s-l") #'org-edit-src-exit)
+(key-chord-define org-src-mode-map "<<" (lambda () (interactive) (insert "«")))
+(key-chord-define org-src-mode-map ">>" (lambda () (interactive) (insert "»")))
 (add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
 (add-to-list 'auto-mode-alist '("\\.art" . artist-mode))
 (add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
