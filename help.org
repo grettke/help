@@ -3264,7 +3264,7 @@ Never use the original version.
 #+END_SRC
 
 Easily wrap text in Org-Mode. This is not used by the rest of HELP because
-Smartparens provides that functionality.
+Smartparens provides that functionality for programming modes.
 
 #+BEGIN_SRC emacs-lisp
 (use-package wrap-region
