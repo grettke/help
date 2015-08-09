@@ -868,7 +868,9 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (global-whitespace-mode t)
   :diminish whitespace-mode global-whitespace-mode)
 (use-package visual-line-mode
-  :diminish visual-line-mode)
+  :config
+  (eval-after-load "visual-line-mode"
+    '(diminish 'visual-line-mode)))
 (use-package fill-column-indicator
   :ensure t
   :config
@@ -897,8 +899,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   :ensure smartparens
   :config
   (setq sp-show-pair-from-inside nil)
-  (eval-after-load "smartparens-mode"
-    '(diminish 'smartparens-mode)))
+  :diminish smartparens-mode)
 (defun help/hack-prog*-mode-hook-fn ()
   (interactive)
   (help/text-prog*-setup)

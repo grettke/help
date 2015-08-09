@@ -2583,7 +2583,9 @@ Make control characters easily visible.
 
 #+BEGIN_SRC emacs-lisp
 (use-package visual-line-mode
-  :diminish visual-line-mode)
+  :config
+  (eval-after-load "visual-line-mode"
+    '(diminish 'visual-line-mode)))
 #+END_SRC
 
 * Quiet and Pleasant Appearance
@@ -2953,8 +2955,7 @@ With that in mind this system:
   :ensure smartparens
   :config
   (setq sp-show-pair-from-inside nil)
-  (eval-after-load "smartparens-mode"
-    '(diminish 'smartparens-mode)))
+  :diminish smartparens-mode)
   #+END_SRC
 
 **** Implementation.
