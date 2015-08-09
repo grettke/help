@@ -354,11 +354,6 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (setq org-export-babel-evaluate nil)
 (help/set-org-babel-default-header-args :results "output replace")
 (help/set-org-babel-default-inline-header-args :results "value replace")
-(require 'htmlize)
-(setq org-html-htmlize-output-type htmlize-output-type)
-(setq htmlize-output-type 'inline-css)
-(require 'ox-beamer)
-(require 'ox-md)
 (setq org-export-coding-system 'utf-8)
 (setq org-export-preserve-breaks nil)
 (setq org-export-copy-to-kill-ring nil)
@@ -1209,6 +1204,11 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 
      (setq org-koma-letter-default-class "my-letter")))
 (setq org-koma-letter-class-option-file "UScommercial9 KomaDefault")
+(use-package ox-beamer)
+(use-package htmlize
+  :config
+  (setq org-html-htmlize-output-type htmlize-output-type)
+  (setq htmlize-output-type 'inline-css))
 (add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
 (add-to-list 'auto-mode-alist '("\\.art" . artist-mode))
 (add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))

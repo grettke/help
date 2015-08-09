@@ -183,6 +183,8 @@ Start EMACS with this command:
 «Hacking-Applied-Mathematics-YASnippet»
 «Hacking-Publishing-TeX»
 «Hacking-Publishing-KOMA»
+«Hacking-Publishing-Beamer»
+«Hacking-Publishing-HTML»
 «Hacking-Diagram-Artist»
 «Hacking-Diagram-DITAA»
 «Hacking-Diagram-Graphviz»
@@ -743,27 +745,8 @@ Replace theme each time you evaluate the block.
    :noweb-ref: Org-Mode-Weave
    :END:
 
-Load Htmlize for HTML export. Use it. Use in-line CSS.
-
-#+BEGIN_SRC emacs-lisp
-(require 'htmlize)
-(setq org-html-htmlize-output-type htmlize-output-type)
-(setq htmlize-output-type 'inline-css)
-#+END_SRC
-
-Load Beamer for creating reports.
-
-#+BEGIN_SRC emacs-lisp
-(require 'ox-beamer)
-#+END_SRC
-
-Load Markdown export for system compatibility.
-
-#+BEGIN_SRC emacs-lisp
-(require 'ox-md)
-#+END_SRC
-
 Make sure that exported files are Unicode UTF-8.
+
 #+BEGIN_SRC emacs-lisp
 (setq org-export-coding-system 'utf-8)
 #+END_SRC
@@ -774,11 +757,13 @@ me wonder what I am confused about here. When I export to HTML text containing
 linebreaks no longer has linebreaks. This is what I expect. When I export that
 same text to a buffer though, the line breaks are included. Currently I use
 =sacha/unfill-paragraph= on that code.
+
 #+BEGIN_SRC emacs-lisp
 (setq org-export-preserve-breaks nil)
 #+END_SRC
 
 When exporting anything, do not insert the exported content into the kill ring.
+
 #+BEGIN_SRC emacs-lisp
 (setq org-export-copy-to-kill-ring nil)
 #+END_SRC
@@ -4171,6 +4156,31 @@ Set up my default LCO files.
 
 #+BEGIN_SRC emacs-lisp
 (setq org-koma-letter-class-option-file "UScommercial9 KomaDefault")
+#+END_SRC
+
+** Beamer
+  :PROPERTIES:
+  :noweb-ref: Hacking-Publishing-Beamer
+  :END:
+
+Load Beamer for creating presentations.
+
+#+BEGIN_SRC emacs-lisp
+(use-package ox-beamer)
+#+END_SRC
+
+** HTML
+  :PROPERTIES:
+  :noweb-ref: Hacking-Publishing-HTML
+  :END:
+
+Load Htmlize for HTML export. Use in-line CSS.
+
+#+BEGIN_SRC emacs-lisp
+(use-package htmlize
+  :config
+  (setq org-html-htmlize-output-type htmlize-output-type)
+  (setq htmlize-output-type 'inline-css))
 #+END_SRC
 
 ** (DevOps)
