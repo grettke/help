@@ -3620,6 +3620,24 @@ Smartparens provides that functionality for programming modes.
   (org-id-get-create))
 #+END_SRC
 
+[[http://article.gmane.org/gmane.emacs.orgmode/99740][Visit every Source-Block. If it doesn't have a NAME property than add one
+and assign it a UUID]].
+
+#+BEGIN_SRC emacs-lisp :noweb-ref ignore :eval no
+(let ((case-fold-search t))
+  (while (re-search-forward "^[\t]*#+BEGIN_SRC" nil t)
+    (let ((element (org-element-at-point)))
+      (when (eq (org-element-type element) 'src-block)
+        (if (not (org-element-property :name element))
+            (let ((i (org-get-indentation)))
+              (beginning-of-line)
+              (save-excursion (insert "#+NAME: whatever\n"))
+              (indent-to i)
+              (forward-line 2))
+          (re-search-backward "^[ \t]*#\\+NAME: +\\(.*\\)" nil t)
+          (replace-match "whatever" ni nil nil 1))))))
+#+END_SRC
+
 *** Keybindings
     :PROPERTIES:
     :ID:       0AA3F69B-F5F1-48DA-B8F7-B7C92CD30DB1
