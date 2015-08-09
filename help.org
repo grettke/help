@@ -410,7 +410,7 @@ This is useful for fringe cases where trailing whitespace is important."
     (move-to-column column)))
 
 (defun help/indent-curly-block (&rest _ignored)
-  "Open a new brace or bracket expression, with relevant newlines and indent. Src: https://github.com/Fuco1/smartparens/issues/80"
+  "Open a new brace or bracket expression, with relevant newlines and indent. URL: `https://github.com/Fuco1/smartparens/issues/80'"
   (newline)
   (indent-according-to-mode)
   (forward-line -1)
