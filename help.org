@@ -4159,17 +4159,6 @@ Set up my default LCO files.
 (setq org-koma-letter-class-option-file "UScommercial9 KomaDefault")
 #+END_SRC
 
-** Beamer
-  :PROPERTIES:
-  :noweb-ref: Hacking-Publishing-Beamer
-  :END:
-
-Load Beamer for creating presentations.
-
-#+BEGIN_SRC emacs-lisp
-(use-package ox-beamer)
-#+END_SRC
-
 ** HTML
   :PROPERTIES:
   :noweb-ref: Hacking-Publishing-HTML
@@ -4182,6 +4171,17 @@ Load Htmlize for HTML export. Use in-line CSS.
   :config
   (setq org-html-htmlize-output-type htmlize-output-type)
   (setq htmlize-output-type 'inline-css))
+#+END_SRC
+
+** Beamer
+  :PROPERTIES:
+  :noweb-ref: Hacking-Publishing-Beamer
+  :END:
+
+Load Beamer for creating presentations.
+
+#+BEGIN_SRC emacs-lisp
+(use-package ox-beamer)
 #+END_SRC
 
 ** (DevOps)
