@@ -1284,6 +1284,14 @@ in the call itself.
 
 *** Left Side
 
+**** 5
+
+#+BEGIN_SRC emacs-lisp
+(help/on-gui
+ (global-set-key (kbd "s-5") #'help/text-scale-increase)
+ (global-set-key (kbd "C-5") #'help/text-scale-decrease)y)
+#+END_SRC
+
 **** 4
 
 #+BEGIN_SRC emacs-lisp

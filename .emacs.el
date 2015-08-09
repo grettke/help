@@ -1300,6 +1300,9 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
   :ensure t)
 (menu-bar-mode t)
 (winner-mode t)
+(help/on-gui
+ (global-set-key (kbd "s-5") #'help/text-scale-increase)
+ (global-set-key (kbd "C-5") #'help/text-scale-decrease))
 (global-set-key (kbd "s-w") #'imenu)
 (define-prefix-command 'help/vc-map)
 (global-set-key (kbd "s-r") #'help/vc-map)
