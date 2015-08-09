@@ -3621,7 +3621,7 @@ it a UUID]].
   (org-id-get-create))
 #+END_SRC
 
-[[http://article.gmane.org/gmane.emacs.orgmode/99740][Visit every Source-Block. If it doesn't have a NAME property than add one
+[[http://article.gmane.org/gmane.emacs.orgmode/99740][Visit every Source-Block. If it doesn't have a NAME property then add one
 and assign it a UUID]].
 
 #+BEGIN_SRC emacs-lisp :noweb-ref ignore :eval no
