@@ -135,7 +135,6 @@ Setup:
    :PROPERTIES:
    :noweb-ref: Org-Mode-ECM-Tangle-Block
    :tangle:  "./.org-mode-ecm.emacs.el"
-   :comments: no
    :END:
 
 Configure EMACS to easily provide ECMs.
@@ -156,7 +155,6 @@ Start EMACS with this command:
 ** The Whole Enchilada
    :PROPERTIES:
    :tangle:  "./.emacs.el"
-   :comments: no
    :END:
 
 Configure EMACS to do everything provided by this document.
@@ -245,6 +243,7 @@ activities here.
 ** Org-Mode Exemple Complet Minimal
    :PROPERTIES:
    :noweb-ref: Org-Mode-ECM
+   :ID:       57C69AB7-A317-4823-ABBF-7DE8A5E2151C
    :END:
 
 A stable version of Org-Mode is provided OOTB. It's release cycle is tied to
@@ -260,6 +259,7 @@ decide whether or not it is what you expect and prepare an ECM if necessary.
 
 Add the Org-Mode core distribution the load path.
 
+#+NAME: block1
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path "~/src/org-mode/lisp")
 #+END_SRC
@@ -267,6 +267,7 @@ Add the Org-Mode core distribution the load path.
 Add the Org-Mode-Contributions distribution to the load path. The contributions
 are critical to and inseparable from the core distribution.
 
+#+NAME: block2
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path "~/src/org-mode/contrib/lisp")
 #+END_SRC
@@ -3262,7 +3263,7 @@ Never use the original version.
 (setq org-edit-src-code nil)
 #+END_SRC
 
-Easily markup text in Org-Mode. This is not used by the rest of HELP because
+Easily wrap text in Org-Mode. This is not used by the rest of HELP because
 Smartparens provides that functionality.
 
 #+BEGIN_SRC emacs-lisp
