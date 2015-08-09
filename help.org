@@ -2300,6 +2300,10 @@ Go to any object in the frame quickly.
   (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java")))
 #+END_SRC
 
+** Helper Functions
+   :PROPERTIES:
+   :ID:       B2257535-9891-48F1-B7CD-1B385F527C59
+   :END:
 ** Intellisense (Auto Completion)
    :PROPERTIES:
    :ID:       A7225C28-B8AE-4960-9E2A-64E6E8B58400
