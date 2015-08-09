@@ -397,6 +397,8 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
      ,statement
      ,@statements))
 
+(use-package hydra
+  :ensure t)
 (use-package key-chord
   :ensure t
   :config
@@ -1300,10 +1302,30 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
   :ensure t)
 (menu-bar-mode t)
 (winner-mode t)
-(help/on-gui
- (global-set-key (kbd "s-5") #'help/text-scale-increase)
- (global-set-key (kbd "C-5") #'help/text-scale-decrease))
 (global-set-key (kbd "s-w") #'imenu)
+(defhydra help/hydra/left-side/global (:color blue
+                                              :hint nil)
+  "
+_1_ -font  _2_ +font
+_q_ apropos"
+  ("q" hydra-apropos/body)
+  ("1" help/text-scale-decrease :exit nil)
+  ("2" help/text-scale-increase :exit nil))
+(key-chord-define-global "ff" #'help/hydra/left-side/global/body)
+(defhydra hydra-apropos (:color blue
+                                :hint nil)
+  "
+_a_propos        _c_ommand
+_d_ocumentation  _l_ibrary
+_v_ariable       _u_ser-option
+^ ^          valu_e_"
+  ("a" apropos)
+  ("d" apropos-documentation)
+  ("v" apropos-variable)
+  ("c" apropos-command)
+  ("l" apropos-library)
+  ("u" apropos-user-option)
+  ("e" apropos-value))
 (define-prefix-command 'help/vc-map)
 (global-set-key (kbd "s-r") #'help/vc-map)
 (define-key help/vc-map "e" #'help/safb-vc-ediff)

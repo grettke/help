@@ -1286,17 +1286,48 @@ in the call itself.
 
 **** 5
 
-#+BEGIN_SRC emacs-lisp
-(help/on-gui
- (global-set-key (kbd "s-5") #'help/text-scale-increase)
- (global-set-key (kbd "C-5") #'help/text-scale-decrease)y)
-#+END_SRC
-
 **** 4
 
 #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "s-w") #'imenu)
 #+END_SRC
+
+**** 3
+
+#+BEGIN_SRC emacs-lisp
+(defhydra help/hydra/left-side/global (:color blue
+                                              :hint nil)
+  "
+_1_ -font  _2_ +font
+_q_ apropos"
+  ("q" hydra-apropos/body)
+  ("1" help/text-scale-decrease :exit nil)
+  ("2" help/text-scale-increase :exit nil))
+(key-chord-define-global "ff" #'help/hydra/left-side/global/body)
+#+END_SRC
+
+[[https://github.com/abo-abo/hydra/blob/master/hydra-examples.el][Attribution.]]
+
+#+BEGIN_SRC emacs-lisp
+(defhydra hydra-apropos (:color blue
+                                :hint nil)
+  "
+_a_propos        _c_ommand
+_d_ocumentation  _l_ibrary
+_v_ariable       _u_ser-option
+^ ^          valu_e_"
+  ("a" apropos)
+  ("d" apropos-documentation)
+  ("v" apropos-variable)
+  ("c" apropos-command)
+  ("l" apropos-library)
+  ("u" apropos-user-option)
+  ("e" apropos-value))
+#+END_SRC
+
+**** 2
+
+**** 1
 
 **** Unsorted
 
@@ -1450,6 +1481,13 @@ display.
      ,statement
      ,@statements))
 
+#+END_SRC
+
+** Hydra
+
+#+BEGIN_SRC emacs-lisp
+(use-package hydra
+  :ensure t)
 #+END_SRC
 
 ** Keyboard
