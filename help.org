@@ -491,6 +491,7 @@ Attribution: URL `http://emacsredux.com/blog/2013/03/26/smarter-open-line/'"
       (comment-or-uncomment-region (line-beginning-position) (line-end-position)))))
 
 (progn
+
   (defvar my-read-expression-map
     (let ((map (make-sparse-keymap)))
       (set-keymap-parent map read-expression-map)
@@ -509,15 +510,16 @@ Attribution: URL `http://emacsredux.com/blog/2013/03/26/smarter-open-line/'"
             (funcall font-lock-function 1))
         (read-from-minibuffer prompt initial-contents
                               my-read-expression-map nil
-                              'read-expression-history)))))
+                              'read-expression-history))))
 
-(defun my-eval-expression (expression &optional arg)
-  (interactive (list (read (my-read--expression ""))
-                     current-prefix-arg))
-  (if arg
-      (insert (pp-to-string (eval expression lexical-binding)))
-    (pp-display-expression (eval expression lexical-binding)
-                           "*Pp Eval Output*")))
+  (defun my-eval-expression (expression &optional arg)
+    "Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2014-07/msg00135.html'."
+    (interactive (list (read (my-read--expression ""))
+                       current-prefix-arg))
+    (if arg
+        (insert (pp-to-string (eval expression lexical-binding)))
+      (pp-display-expression (eval expression lexical-binding)
+                             "*Pp Eval Output*"))))
 
 (defun help/util-ielm ()
   "HELP buffer setup for ielm.
