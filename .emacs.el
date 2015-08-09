@@ -884,7 +884,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (help/try-to-add-imenu))
 
 (add-hook #'text-mode-hook #'help/text-prog*-setup)
-(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook ess-mode-hook))
+(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook ess-mode-hook graphviz-dot-mode-hook))
 (setq help/hack-lisp-modes
       '(emacs-lisp-mode-hook
         ielm-mode-hook
@@ -1211,6 +1211,10 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
 (defconst help/ditaa-jar (concat (getenv "EELIB") "/ditaa.jar"))
 (setq org-ditaa-jar-path help/ditaa-jar)
+(use-package graphviz-dot-mode
+  :ensure t
+  :config
+  (setf (cdr (assoc "dot" org-src-lang-modes)) 'graphviz-dot))
 (use-package plantuml-mode
   :ensure t
   :init

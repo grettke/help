@@ -174,17 +174,18 @@ Start EMACS with this command:
 «Watch-What-You-Eat»
 «Special-Operating-Procedure»
 «Standard-Operating-Procedure»
-«Hacking-Prog*-Mode»
-«Hacking-Emacs-Lisp»
-«Hacking-Org-Mode»
+«Hacking-Common-Configurations»
+«Hacking-Literate-Programming-Emacs-Lisp»
+«Hacking-Literate-Programming-Org-Mode»
 «Hacking-Applied-Mathematics-ESS»
 «Hacking-Applied-Mathematics-ESS-SAS»
 «Hacking-Applied-Mathematics-ESS-R»
-«Hacking-YASnippet»
+«Hacking-Applied-Mathematics-YASnippet»
 «Hacking-Publishing-TeX»
-«Hacking-Artist»
-«Hacking-DITAA»
-«Hacking-PlantUML»
+«Hacking-Diagram-Artist»
+«Hacking-Diagram-DITAA»
+«Hacking-Diagram-Graphviz»
+«Hacking-Diagram-PlantUML»
 «Quiet-and-Pleasant-Appearance»
 «Piano-Lessons»
 #+END_SRC
@@ -2855,7 +2856,7 @@ point uses ~require~. Every package loaded after this point uses ~use-package~.
 * Hacking
 ** Common Configurations
   :PROPERTIES:
-  :noweb-ref: Hacking-Prog*-Mode
+  :noweb-ref: Hacking-Common-Configurations
   :END:
 
 This system configures ~text-mode~ and ~prog-mode~ very similarly:
@@ -2918,7 +2919,7 @@ With that in mind this system:
 - Hacking mode hooks.
   - Configurations common to every hacking vehicle.
     #+BEGIN_SRC emacs-lisp
-(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook ess-mode-hook))
+(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook ess-mode-hook graphviz-dot-mode-hook))
     #+END_SRC
   - LISP mode hooks.
     - Are hacking modes.
@@ -2986,7 +2987,7 @@ With that in mind this system:
 ** (Literate Programming)
 ** Emacs Lisp
   :PROPERTIES:
-  :noweb-ref: Hacking-Emacs-Lisp
+  :noweb-ref: Hacking-Literate-Programming-Emacs-Lisp
   :END:
 
 #+BEGIN_SRC emacs-lisp
@@ -3049,7 +3050,7 @@ RC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.htm
 
 ** Org Mode
   :PROPERTIES:
-  :noweb-ref: Hacking-Org-Mode
+  :noweb-ref: Hacking-Literate-Programming-Org-Mode
   :END:
 
 When source blocks are evaluated, their results get stored in a result area,
@@ -3646,7 +3647,6 @@ and see how it goes.
   :noweb-ref: Hacking-Applied-Mathematics-ESS-SAS
   :END:
 
-
 ** R (ESS)
   :PROPERTIES:
   :noweb-ref: Hacking-Applied-Mathematics-ESS-R
@@ -4044,7 +4044,7 @@ Period.
 
 ** YASnippet
   :PROPERTIES:
-  :noweb-ref: Hacking-YASnippet
+  :noweb-ref: Hacking-Applied-Mathematics-YASnippet
   :END:
 
 - Enable everywhere
@@ -4130,10 +4130,10 @@ Load LCO files with AucTeX.
 
 ~ruby-mode~ supports =Vagrantfile= OOTB.
 
-** (Diagram, UML, Workflow)
+** (Diagram)
 ** Artist
   :PROPERTIES:
-  :noweb-ref: Hacking-Artist
+  :noweb-ref: Hacking-Diagram-Artist
   :END:
 
 #+BEGIN_SRC emacs-lisp
@@ -4144,7 +4144,7 @@ Load LCO files with AucTeX.
 
 ** DITAA
   :PROPERTIES:
-  :noweb-ref: Hacking-DITAA
+  :noweb-ref: Hacking-Diagram-DITAA
   :END:
 
 When a drop of water joins the ocean it becomes the ocean.
@@ -4183,9 +4183,40 @@ When a drop of water joins the ocean it becomes the ocean.
 #+END_SRC
 
 ** Graphviz
+  :PROPERTIES:
+  :noweb-ref: Hacking-Diagram-Graphviz
+  :END:
+
+#+BEGIN_SRC emacs-lisp
+(use-package graphviz-dot-mode
+  :ensure t
+  :config
+  (setf (cdr (assoc "dot" org-src-lang-modes)) 'graphviz-dot))
+#+END_SRC
+
+#+BEGIN_SRC dot :file "./image/graphviz-life_is_simple.png" :noweb-ref ignore :results output replace
+digraph graphviz {
+  title="Life is simple:";
+  subgraph cluster {
+    ayh [label="Happy with things?", shape=ellipse];
+    no [label="No.", shape=Mdiamond];
+    yes [label="Yes.", shape=Mdiamond];
+    ayh -> no;
+    ayh -> yes;
+    no -> ayh [label="Change them."];
+    yes -> ayh [label="Keep doing them."];
+  }
+  labelloc="t";
+  label="Life is simple:";
+}
+#+END_SRC
+
+#+NAME:
+[[file:./image/graphviz-life_is_simple.png]]
+
 ** PlantUML
   :PROPERTIES:
-  :noweb-ref: Hacking-PlantUML
+  :noweb-ref: Hacking-Diagram-PlantUML
   :END:
 
 #+BEGIN_SRC emacs-lisp
