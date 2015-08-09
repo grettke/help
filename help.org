@@ -4058,7 +4058,7 @@ Load LCO files with AucTeX.
 (add-to-list 'auto-mode-alist '("\\.lco?\\'" . TeX-latex-mode))
 #+END_SRC
 
-*** KOMA-Script
+** KOMA-Script
 
 I enjoy writing letters. I enjoy reading letters. LaTeX produces letters that
 are easy to print and read. Org provides a [[http://orgmode.org/worg/exporters/koma-letter-export.html][KOMA Script exporter]] for [[https://www.ctan.org/pkg/koma-script?lang%3Den][KOMA-script]].
