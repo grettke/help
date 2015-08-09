@@ -3605,6 +3605,21 @@ Smartparens provides that functionality for programming modes.
 (wrap-region-add-wrapper "+" "+" nil 'org-mode)
 #+END_SRC
 
+*** Utility
+    :PROPERTIES:
+    :ID:       A5DC4E12-DA3D-49C8-BD44-104C0B8F10CE
+    :END:
+
+[[http://article.gmane.org/gmane.emacs.orgmode/99738][Add an ID property to every headline with a UUID]].
+
+#+BEGIN_SRC emacs-lisp :noweb-ref ignore :eval no
+(dolist (p (nreverse
+            (org-element-map (org-element-parse-buffer 'headline) 'headline
+              (lambda (headline) (org-element-property :begin headline)))))
+  (goto-char p)
+  (org-id-get-create))
+#+END_SRC
+
 *** Keybindings
     :PROPERTIES:
     :ID:       0AA3F69B-F5F1-48DA-B8F7-B7C92CD30DB1
