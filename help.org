@@ -3626,17 +3626,15 @@ and assign it a UUID]].
 
 #+BEGIN_SRC emacs-lisp :noweb-ref ignore :eval no
 (let ((case-fold-search t))
-  (while (re-search-forward "^[\t]*#+BEGIN_SRC" nil t)
+  (while (re-search-forward "^\s*#[+]BEGIN_SRC" nil t)
     (let ((element (org-element-at-point)))
       (when (eq (org-element-type element) 'src-block)
         (if (not (org-element-property :name element))
             (let ((i (org-get-indentation)))
               (beginning-of-line)
-              (save-excursion (insert "#+NAME: whatever\n"))
+              (save-excursion (insert "#+NAME: " (org-id-new) "\n"))
               (indent-to i)
-              (forward-line 2))
-          (re-search-backward "^[ \t]*#\\+NAME: +\\(.*\\)" nil t)
-          (replace-match "whatever" ni nil nil 1))))))
+              (forward-line 2)))))))
 #+END_SRC
 
 *** Keybindings
