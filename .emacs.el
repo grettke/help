@@ -748,6 +748,8 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
                                                                     (projectile-relevant-known-projects)))
 
                 magit-repository-directories-depth 1)))
+(use-package pp
+  :commands (pp-display-expression))
 (use-package anzu
              :ensure t
              :config

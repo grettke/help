@@ -144,7 +144,7 @@ Setup:
    :PROPERTIES:
    :noweb-ref: Org-Mode-ECM-Tangle-Block
    :tangle:  "./.org-mode-ecm.emacs.el"
-   :comments: no   
+   :comments: no
    :ID:       83868A6E-76C2-48AE-8A5A-6A3C97492321
    :END:
 
@@ -2467,6 +2467,16 @@ Notify Magit about every working copy that Projectile knows about.
                                                                     (projectile-relevant-known-projects)))
 
                 magit-repository-directories-depth 1)))
+#+END_SRC
+
+** Printing
+   :PROPERTIES:
+   :ID:       C6230D9E-8331-4092-8846-DB244455C922
+   :END:
+
+#+BEGIN_SRC emacs-lisp
+(use-package pp
+  :commands (pp-display-expression))
 #+END_SRC
 
 ** Replacing
