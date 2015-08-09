@@ -1,6 +1,9 @@
 #+STARTUP: showeverything
 #+PROPERTY: results output silent
 * README
+  :PROPERTIES:
+  :ID:       F651B86D-86C2-43A9-B0E6-CB94963BB502
+  :END:
 
 HELP Enables Literate Programming.
 
@@ -22,6 +25,9 @@ Setup:
      - =ln -s ~/src/help/.emacs.el ~/.emacs.el=
 
 * Style Guide
+  :PROPERTIES:
+  :ID:       03E0F0E3-DB81-4033-8F04-5D8BB5CBB2F0
+  :END:
 
 - Code Block
   - Tell the story in speech, and then in code.
@@ -130,11 +136,15 @@ Setup:
   - "This system" refers to this configuration of EMACS.
 
 * Webs We Weave
+  :PROPERTIES:
+  :ID:       DB5CDB3F-DE18-48FB-B104-D3990304FA91
+  :END:
 
 ** Org-Mode Exemple Complet Minimal
    :PROPERTIES:
    :noweb-ref: Org-Mode-ECM-Tangle-Block
    :tangle:  "./.org-mode-ecm.emacs.el"
+   :ID:       83868A6E-76C2-48AE-8A5A-6A3C97492321
    :END:
 
 Configure EMACS to easily provide ECMs.
@@ -155,6 +165,7 @@ Start EMACS with this command:
 ** The Whole Enchilada
    :PROPERTIES:
    :tangle:  "./.emacs.el"
+   :ID:       016FA25F-E70E-4BED-BA01-AEB808428791
    :END:
 
 Configure EMACS to do everything provided by this document.
@@ -194,6 +205,9 @@ Start EMACS with this command:
 =open /Applications/Emacs.app=
 
 ** Eshell
+   :PROPERTIES:
+   :ID:       FAB2B8BA-ACE0-4F99-9583-C9A287CFB610
+   :END:
 
 #+BEGIN_SRC sh :tangle "./eshell/alias" :comments no :eval no
 alias clear recenter 0
@@ -207,6 +221,9 @@ alias ll ls -lh $*
 #+END_SRC
 
 * Literate Programming
+  :PROPERTIES:
+  :ID:       8510C876-F644-4804-9F87-54A0B44DBA6A
+  :END:
 
 This system enables you to perform 3 Literate Document activities. These
 activities combine to provide a rich Literate Programming environment. Their
@@ -302,6 +319,7 @@ my code.
 ** Helper Functions
    :PROPERTIES:
    :noweb-ref: Org-Mode-Helper-Functions
+   :ID:       B14776FD-6835-4D1D-BCD3-50D56555423C
    :END:
 
 #+BEGIN_SRC emacs-lisp
@@ -631,6 +649,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 ** Tangling
    :PROPERTIES:
    :noweb-ref: Org-Mode-Tangle
+   :ID:       267EEDED-1367-405F-807C-B3C489045704
    :END:
 
 There is a way to disable property inheritance that speeds up tangling a lot.
@@ -644,6 +663,9 @@ never allow that. Its inconsistent with how Org-Mode works.
 #+END_SRC
 
 *** Comments
+    :PROPERTIES:
+    :ID:       49787FC5-CAA7-466B-B742-0F38973E070B
+    :END:
 
 Provide as much information as possible in the tangled artifact about the
 origin artifact.
@@ -653,6 +675,9 @@ origin artifact.
 #+END_SRC
 
 *** Padline
+    :PROPERTIES:
+    :ID:       DDE727A6-DDF7-4B61-9063-549614B135F0
+    :END:
 
 ~org-babel-tangle-jump-to-org~ requires padded lines. This configuration could
 arguably appear in the "Programming" heading because it impacts operation. It
@@ -664,6 +689,9 @@ can be used in the Programming activity.
 #+END_SRC
 
 *** Noweb
+    :PROPERTIES:
+    :ID:       E12B48AB-68E8-4515-89E3-30A16FB6FD22
+    :END:
 
 Expand noweb references in source-blocks before:
 
@@ -684,6 +712,7 @@ ought to refer to the generated document.
 ** Evaluating
    :PROPERTIES:
    :noweb-ref: Org-Mode-Execute
+   :ID:       ED23FF0B-1F90-435C-9B56-ACA06C1ACAE0
    :END:
 
 Org-Mode may evaluate all of the listed languages.
@@ -711,6 +740,9 @@ Org-Mode may evaluate all of the listed languages.
 #+END_SRC
 
 *** Eval
+    :PROPERTIES:
+    :ID:       0329BACE-2C99-4BB3-A7A5-7C800EF53FAD
+    :END:
 
 Never evaluate source-blocks or in-line-source-blocks on export.
 
@@ -726,6 +758,9 @@ Be sure to never evaluate in-line-source-blocks on export.
 #+END_SRC
 
 *** Results
+    :PROPERTIES:
+    :ID:       2755571E-113B-436E-9EEC-26618A55A27E
+    :END:
 
 This system stores the results of evaluation in the source document. It believes
 that the results are critical to the research.
@@ -744,6 +779,7 @@ Replace theme each time you evaluate the block.
 ** Weaving
    :PROPERTIES:
    :noweb-ref: Org-Mode-Weave
+   :ID:       F71DD8BA-B853-4903-A348-400E13C0E6F8
    :END:
 
 Make sure that exported files are Unicode UTF-8.
@@ -785,6 +821,9 @@ anything else would violate the law of least surprise.
 #+END_SRC
 
 *** Exports
+    :PROPERTIES:
+    :ID:       57B3786B-017F-4F6E-89F9-05642304F3B6
+    :END:
 
 Always share source blocks and their results. Whether or not to generate a
 result for a particular source block is configured per-block. If you don't want
@@ -798,9 +837,13 @@ block.
 * Piano Lessons
    :PROPERTIES:
    :noweb-ref: Piano-Lessons
+   :ID:       31274432-4BA2-4B03-8DDB-E590C245244D
    :END:
 
 ** A Fine Cup of EMACS
+   :PROPERTIES:
+   :ID:       01EEEC32-91D4-4DDC-A100-52CE571558DC
+   :END:
 
 Every EMACS user ought to have a [[http://shop.fsf.org/product/gnu-emacs-reference-mugs/][Emacs Reference Mug]] at their desk. The mug
 invites other users to ask questions. Give the mug as a gift to every user you
@@ -819,6 +862,9 @@ These goals are essential to configuring the keyboard for this system. This
 system will always respect the POLA.
 
 ** A Keyboard on Every Desk
+   :PROPERTIES:
+   :ID:       A50A19BB-1DE7-48C1-AEE4-03D1E88E887C
+   :END:
 
 The configuration of the keyboard on an EMACS system can completely change the
 experience. No keyboard makes it impossible. A Kinesis Ergo makes it feel
@@ -836,6 +882,9 @@ average hand strength using two hands. These goals are essential to configuring
 the keyboard for this system.
 
 ** A Display with Every Keyboard
+   :PROPERTIES:
+   :ID:       7E76A660-7828-4747-90DE-84BD293CD4E7
+   :END:
 
 Every system requires an output. You have two options. The first is a terminal
 that only displays characters. The second is a display that provides detailed
@@ -847,8 +896,14 @@ use a $4000USD machine to emulate the latter. Both are good options.
 This system is configured to work pleasantly for either type of output.
 
 ** A Full Pot of EMACS on Every Desk
+   :PROPERTIES:
+   :ID:       D8ADD840-9E9E-4A2E-B085-245C7BFA5F48
+   :END:
 
 *** Keyboard Layout & Operation
+    :PROPERTIES:
+    :ID:       D8420B75-E4B9-4DB1-885E-D5290FE9A3EA
+    :END:
 
 - Use QWERTY layout.
   - Everyone knows it.
@@ -883,6 +938,9 @@ This system is configured to work pleasantly for either type of output.
   - Also for escape =ESC= vs =C-[=
 
 *** Understanding Your Cognitive Landscape.
+    :PROPERTIES:
+    :ID:       60A17CE8-C905-4443-90A2-10D2C12F23AF
+    :END:
 
 You operate within a cognitive landscape. Every moment you are in a single
 =place=. While residing in each =place= you perform logically related =activities=.
@@ -896,6 +954,9 @@ interrupted. Usually an interruption occurs when you are going to go to a new
 key-bindings should go
 
 *** Key-Bindings Take You to Places to Perform Activities
+    :PROPERTIES:
+    :ID:       E765C8BB-ECC3-4791-A287-83B6DED2F6C3
+    :END:
 
 OOTB you wil be visiting many =places= and performing many =activities=. EMACS comes
 with a good configuration that minimizes =distance=. This isn't worth changing.
@@ -939,6 +1000,9 @@ Fortunately it just looks that way and it isn't true. There are a lot of
 powerful ways to "go places" with EMACS. The next heading contains my attempt.
 
 *** How to Get There Pleasantly and Quickly
+    :PROPERTIES:
+    :ID:       38026C1B-44D4-47EF-90D2-239876F7F31C
+    :END:
 
 You need to learn how to use EMACS. You need to develop a personal preference.
 You need to develop an idea of =places= and =activities= and =distance=. The following
@@ -967,6 +1031,7 @@ unclear and being explored.
       :Expertise:        High
       :Relationship:     High
       :Frequency:        High
+      :ID:       0A491DA9-212E-4F01-8C08-EA09E9B6D82C
       :END:
 
 - =Actions= here are for the =place= inside of the buffer itself. They are for
@@ -997,6 +1062,9 @@ For example, in Org-Mode:
 Every activity is related to reading, modifying, executing, and tangling code.
 
 **** =Key-Chord=
+     :PROPERTIES:
+     :ID:       76C81A53-52BA-47C4-A8FF-651E10A4620F
+     :END:
 
 Key-Chord is intriguing because it works on every keyboard. It is powerful
 because it can you bring you to any =place= easily. It is good for taking you
@@ -1014,6 +1082,9 @@ quickly and left. This is a place where key-chords and the shift modifier are
 a fast and intuitive way to go places.
 
 ***** Single-Key Key-Chord Name-Space.
+      :PROPERTIES:
+      :ID:       B198918B-F8C8-4036-A41B-237BDA793EC0
+      :END:
       :Actions:          High
       :Expertise:        Low
       :Frequency:        High
@@ -1034,6 +1105,9 @@ a fast and intuitive way to go places.
 - Good vehicle to reach a Hydra.
 
 ***** Two-Key Key-Chord Name-Space.
+      :PROPERTIES:
+      :ID:       9CF95F30-5872-40F4-AF00-BDB82E3D7399
+      :END:
       :Actions:          Low
       :Expertise:        High
       :Frequency:        High
@@ -1057,6 +1131,7 @@ a fast and intuitive way to go places.
       :Expertise:        Low
       :Frequency:        Low
       :Relationship:     High
+      :ID:       0410F66C-40F4-46A1-9E69-56658EA815A9
       :END:
 
 - Sometimes you want to do something in a =place= but you aren't sure what
@@ -1075,6 +1150,9 @@ them much and forget their names. It is faster to put them in a Hydra. If they
 get used a lot, I will add them to =s=.
 
 *** Building Your Own Keyboard
+    :PROPERTIES:
+    :ID:       A4257881-BD92-4826-8B0F-74B9557442F9
+    :END:
 
 As your mastery of EMACS grows so too will your desire to build your own
 keyboard. It is natural. As you explore various dimensions of expression you
@@ -1153,21 +1231,36 @@ close together
 #+END_EXAMPLE
 
 ** Take a Sip
+   :PROPERTIES:
+   :ID:       F42A8A6B-C690-4715-90CB-2207C47C6808
+   :END:
 
 Because Use-Package is used in this system, the binding definitions often live
 in the call itself.
 
 *** Left Side
+    :PROPERTIES:
+    :ID:       22246934-BE44-4D99-942C-A6DAB4506D65
+    :END:
 
 **** 5
+     :PROPERTIES:
+     :ID:       C00A4E41-0801-4696-86E6-5A1CE1EBB189
+     :END:
 
 **** 4
+     :PROPERTIES:
+     :ID:       8F467832-8FC3-42B5-8978-8CF2C1454D5B
+     :END:
 
 #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "s-w") #'imenu)
 #+END_SRC
 
 **** 3
+     :PROPERTIES:
+     :ID:       6DCD321F-6FDA-4983-9C7C-265D23D1AC4F
+     :END:
 
 #+BEGIN_SRC emacs-lisp
 (defhydra help/hydra/left-side/global (:color blue
@@ -1201,10 +1294,19 @@ _v_ariable       _u_ser-option
 #+END_SRC
 
 **** 2
+     :PROPERTIES:
+     :ID:       9E95D130-D1EC-445B-9028-24DFA5CCB28A
+     :END:
 
 **** 1
+     :PROPERTIES:
+     :ID:       4CDDC2CE-646A-4D8B-B5D3-2588FBEFF650
+     :END:
 
 **** Unsorted
+     :PROPERTIES:
+     :ID:       AD2164B2-CB66-48AD-B367-4E0CC406B022
+     :END:
 
 VC activities.
 
@@ -1261,6 +1363,9 @@ Hide and show code blocks.
 #+END_SRC
 
 ***  Left & Right Side
+    :PROPERTIES:
+    :ID:       FA2BFDC9-5242-4547-A8A5-6DECC8ED1C1B
+    :END:
 
 #+BEGIN_SRC emacs-lisp
 (key-chord-define-global "qi" #'help/comment-or-uncomment)
@@ -1295,10 +1400,16 @@ Use the default Langtool bindings.
 #+END_SRC
 
 *** Right Side
+    :PROPERTIES:
+    :ID:       16040443-9099-42C1-A7FB-90C0DDC9F8EE
+    :END:
 
 Try to reserve the right side for mode-specific activities.
 
 *** Exceptions
+    :PROPERTIES:
+    :ID:       EBBB727C-6110-4F7B-A2DC-45E9833EBEFE
+    :END:
 
 Return.
 
@@ -1332,6 +1443,7 @@ Use a nicer =eval-expression= approach.
 * Special Operating Procedure
    :PROPERTIES:
    :noweb-ref: Special-Operating-Procedure
+   :ID:       97A95862-3213-4035-9FF6-E041796DAB5C
    :END:
 
 The following code and packages are special to this configuration. They provide
@@ -1339,6 +1451,9 @@ critical functionality for configuring the rest of the system. They provide
 ideas that make the entire system usable, productive, expressive, and fast.
 
 ** Display
+   :PROPERTIES:
+   :ID:       1290DB2D-D05E-4DDD-B42F-6B11AE91F480
+   :END:
 
 Make it easy to conditionally evaluate code when running with a graphical
 display.
@@ -1359,6 +1474,9 @@ display.
 #+END_SRC
 
 ** Hydra
+   :PROPERTIES:
+   :ID:       9B78FBB7-6C6A-4BD6-A9CC-FB192D37F6C2
+   :END:
 
 #+BEGIN_SRC emacs-lisp
 (use-package hydra
@@ -1366,6 +1484,9 @@ display.
 #+END_SRC
 
 ** Keyboard
+   :PROPERTIES:
+   :ID:       8A0E58DF-7C90-4781-AC12-94D2D76F47C7
+   :END:
 
 Key-Chord mode is amazing. Piano-Lessons shows you how.
 
@@ -1384,6 +1505,9 @@ Echo keystrokes immediately.
 #+END_SRC
 
 ** Libraries
+   :PROPERTIES:
+   :ID:       21919848-B720-4D30-880E-485C41250279
+   :END:
 
 Dash is nice to use.
 
@@ -1418,6 +1542,9 @@ Generate a UUID.
 #+END_SRC
 
 ** Modeline
+   :PROPERTIES:
+   :ID:       798F14D1-EDC6-4306-8E82-0854980AEFBA
+   :END:
 
 Reduce information about modes in the Modeline.
 
@@ -1438,6 +1565,9 @@ Show the column number.
 #+END_SRC
 
 ** OSX
+   :PROPERTIES:
+   :ID:       6556EACF-2F83-4B84-8456-5BEB981D290E
+   :END:
 
 Make it easy to evaluate code only when running on OSX.
 
@@ -1485,6 +1615,9 @@ This is a known issue. [[https://superuser.com/questions/125569/how-to-fix-emacs
 #+END_SRC
 
 ** Windows
+   :PROPERTIES:
+   :ID:       B21664CF-62AF-4ACC-A239-FE20672FF9E4
+   :END:
 
 Make it easy to evaluate code only when running on Windows.
 
@@ -1514,11 +1647,15 @@ Enable the =super= key-space.
 * Standard Operating Procedure
    :PROPERTIES:
    :noweb-ref: Standard-Operating-Procedure
+   :ID:       8302B38B-67EC-4C37-9B42-69E278FF1277
    :END:
 
 Configure EMACS to maximum utility.
 
 ** Buffer
+   :PROPERTIES:
+   :ID:       F3C9BDE1-C0E0-4BDF-B121-3CE2F0D16464
+   :END:
 
 Maintain buffers across sessions. Desktop-Save-Mode persists very part of the
 buffer. If you upgrade a package that uses buffer-variables that have changed
@@ -1598,6 +1735,9 @@ then document.
 #+END_SRC
 
 ** Code Folding
+   :PROPERTIES:
+   :ID:       3F70676D-C141-4093-9E40-F42B6C7B7232
+   :END:
 
 #+BEGIN_SRC emacs-lisp
 (use-package hideshow
@@ -1620,6 +1760,9 @@ then document.
 #+END_SRC
 
 ** Colors
+   :PROPERTIES:
+   :ID:       7FA1B7C2-3C4B-4119-B9B7-4C0CC0EAA180
+   :END:
 
 Colorize color names.
 
@@ -1633,6 +1776,9 @@ Rainbow-Mode handles most major modes color definitions as expected.
 #+END_SRC
 
 ** Evaluation
+   :PROPERTIES:
+   :ID:       5E067457-9B99-459F-A660-323774C14BF5
+   :END:
 
 #+BEGIN_SRC emacs-lisp
 (setq-default eval-expression-print-level nil)
@@ -1647,6 +1793,9 @@ Allow most commands.
 #+END_SRC
 
 ** Encryption
+   :PROPERTIES:
+   :ID:       9A41F9EE-36D5-452A-986B-70B567255D36
+   :END:
 
 Easy to use file-based AES encryption.
 
@@ -1656,6 +1805,9 @@ Easy to use file-based AES encryption.
 #+END_SRC
 
 ** Eshell
+   :PROPERTIES:
+   :ID:       B371A592-1251-4D88-A055-43CA3E33BC6D
+   :END:
 
 Provide a cross-platform command line shell that is a first-class EMACS citizen.
 
@@ -1707,6 +1859,9 @@ Configure a =PS1= like prompt.
 #+END_SRC
 
 ** File Based System
+   :PROPERTIES:
+   :ID:       E6F121F0-AC8E-45C7-9F11-0E7AB93E4B71
+   :END:
 
 This system uses artifacts stored in files. It tries to persist file-stores
 every chance it gets without interrupting the user's flow. Flow is important.
@@ -1849,6 +2004,9 @@ directories.
 #+END_SRC
 
 ** File-system/directory management (Console)
+   :PROPERTIES:
+   :ID:       067D598E-7FE6-4BC5-AEF7-872966390970
+   :END:
 
 You can use the usual machinery to work with the files. Highlight a region
 and operation selections occur for all files in that region. Commands are
@@ -1993,6 +2151,9 @@ exercised, Dired in Imenu seems like an obvious choice.
 #+END_SRC
 
 ** IMenu
+   :PROPERTIES:
+   :ID:       F748CAFD-0235-4E34-8546-A9EC515759BB
+   :END:
 
 Major productivity hack
 
@@ -2009,6 +2170,9 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
 #+END_SRC
 
 ** Interactively DO Things”
+   :PROPERTIES:
+   :ID:       2DB9FDA1-9950-4FEA-A33C-E8DDFDA9420E
+   :END:
 
 IDO is used everywhere possible.
 
@@ -2059,6 +2223,9 @@ Make URLs a first-class object.
 #+END_SRC
 
 ** Font
+   :PROPERTIES:
+   :ID:       8F7A007E-5CBA-4651-84D8-5874FF393EA6
+   :END:
 
 Use Unicode-Font to provide as many Unicode fonts as possible.
 
@@ -2098,6 +2265,9 @@ Visualize ASCII values as their most likely Unicode representation.
 #+END_SRC
 
 ** Going to Objects
+   :PROPERTIES:
+   :ID:       835D3E9D-3044-4385-9AB1-F0DF17045565
+   :END:
 
 Go to any object in the frame quickly.
 
@@ -2110,6 +2280,9 @@ Go to any object in the frame quickly.
 #+END_SRC
 
 ** Grammar
+   :PROPERTIES:
+   :ID:       95A4EF33-F83D-49ED-AC74-A29DA19524BC
+   :END:
 
 #+BEGIN_SRC emacs-lisp
 (use-package writegood-mode
@@ -2126,6 +2299,9 @@ Go to any object in the frame quickly.
 #+END_SRC
 
 ** Intellisense (Auto Completion)
+   :PROPERTIES:
+   :ID:       A7225C28-B8AE-4960-9E2A-64E6E8B58400
+   :END:
 
 #+BEGIN_SRC emacs-lisp
 (use-package fuzzy
@@ -2152,6 +2328,9 @@ Auto-completion for =.=-separated words.
 #+END_SRC
 
 ** Macros
+   :PROPERTIES:
+   :ID:       E32B41C2-C761-42F0-A9AE-F89A2A18439F
+   :END:
 
 The macro recorder and Multiple-Cursors provide two ways to do the right thing
 in different situations.
@@ -2167,6 +2346,9 @@ in different situations.
 #+END_SRC
 
 ** Mark and Region
+   :PROPERTIES:
+   :ID:       A3C2AF94-B834-4FD2-9B23-F64F618B31C3
+   :END:
 
 When you start typing and text is selected, replace it with what you are typing,
 or pasting
@@ -2176,6 +2358,9 @@ or pasting
 #+END_SRC
 
 ** Minibuffer
+   :PROPERTIES:
+   :ID:       7A3C5EF1-BEF7-4007-86B1-78590CB62EB2
+   :END:
 
 Make it easier to answer questions.
 #+BEGIN_SRC emacs-lisp
@@ -2195,6 +2380,9 @@ Allow recursive commands-in-commands and highlight the levels of recursion.
 #+END_SRC
 
 ** Mouse
+   :PROPERTIES:
+   :ID:       F3E75BDE-F853-488C-AF46-03B54C0A0919
+   :END:
 
 Scroll pleasantly with the mouse wheel. A slow turn moves the buffer up and down
 one line at a time. So does a fast turn. Anything further than 5-10 lines deserves
@@ -2207,6 +2395,9 @@ a fast navigation vehicle.
 #+END_SRC
 
 ** Occur
+   :PROPERTIES:
+   :ID:       FA8195C5-30B7-44CF-8D0F-8FE2CE1CB3DA
+   :END:
 
 #+BEGIN_SRC emacs-lisp
 (defun help/occur-mode-hook-fn ()
@@ -2218,6 +2409,9 @@ a fast navigation vehicle.
 #+END_SRC
 
 ** Popups
+   :PROPERTIES:
+   :ID:       E1E4E20E-F789-422B-B0B3-706BD8A842DF
+   :END:
 
 Provide popup notifications.
 
@@ -2233,6 +2427,9 @@ Provide popup notifications.
 #+END_SRC
 
 ** Projects
+   :PROPERTIES:
+   :ID:       B35103E2-0FE9-466C-9AB9-39EA28FADEDB
+   :END:
 
 Directories that have Git working copies are logically projects. Manage them
 with Projectile.
@@ -2262,6 +2459,9 @@ Notify Magit about every working copy that Projectile knows about.
 #+END_SRC
 
 ** Replacing
+   :PROPERTIES:
+   :ID:       B10A2279-4F34-4DA2-BB1A-491B82F2F6EA
+   :END:
 
 Display information about search-and-or-replace operation.
 
@@ -2279,6 +2479,9 @@ Display information about search-and-or-replace operation.
 #+END_SRC
 
 ** Save History of All Things
+   :PROPERTIES:
+   :ID:       31961F28-1913-4247-986A-273391C4A85D
+   :END:
 
 It is nice to have commands and their history saved so that every time you get
 back to work, you can just re-run stuff as you need it.
@@ -2293,6 +2496,9 @@ back to work, you can just re-run stuff as you need it.
 #+END_SRC
 
 ** Searching
+   :PROPERTIES:
+   :ID:       960E2DE0-3F5A-40AB-A9BF-FF08A410EAB7
+   :END:
 
 When searching allow a space to many any number.
 
@@ -2308,10 +2514,16 @@ Make searches case-insensitive.
 #+END_SRC
 
 ** Spell Checking
+   :PROPERTIES:
+   :ID:       902EAA81-4FC0-40A0-AE6D-D31C474B87E0
+   :END:
 
 Ispell is simple and powerful.
 
 *** Org-Mode
+    :PROPERTIES:
+    :ID:       72540881-8F99-4ED6-9FE4-7292A66B3089
+    :END:
 
 Never ispell the following objects.
 
@@ -2404,6 +2616,9 @@ Export properties.
 #+END_SRC
 
 ** Sudo
+   :PROPERTIES:
+   :ID:       562F54F8-6E35-4DE1-9E9C-436B55CE83CE
+   :END:
 
 Configure Sudo with Ido.
 
@@ -2421,6 +2636,9 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
 #+END_SRC
 
 ** Syntax Checking
+   :PROPERTIES:
+   :ID:       B4A8362E-B218-4353-AC4B-7059A686EA89
+   :END:
 
 Perform syntactic analysis all the time.
 
@@ -2433,6 +2651,9 @@ Perform syntactic analysis all the time.
 #+END_SRC
 
 ** TAB
+   :PROPERTIES:
+   :ID:       78E2BA2B-8289-422F-99DC-5E40DE928E68
+   :END:
 
 Most modes in this system will never use TAB.
 
@@ -2462,6 +2683,9 @@ Most programing modes indent to 2 spaces. TABs should be the same width.
 #+END_SRC
 
 ** Version Control
+   :PROPERTIES:
+   :ID:       F5E2718B-F54F-41C5-9CED-6E470CAC238D
+   :END:
 
 Use Magit for Git. The commit log editor uses With-Editor and Server modes.
 They are not not diminshed because they are infrequently used.
@@ -2487,6 +2711,9 @@ Git ignore files are text files.
 #+END_SRC
 
 ** Whitespace Management
+   :PROPERTIES:
+   :ID:       5BBD948F-7239-457E-8BD9-710558C0E241
+   :END:
 
 Make control characters easily visible.
 
@@ -2501,6 +2728,9 @@ Make control characters easily visible.
 #+END_SRC
 
 ** Word Wrap
+   :PROPERTIES:
+   :ID:       2156A7CE-297E-478F-AFF2-13CE64B3C5C3
+   :END:
 
 #+BEGIN_SRC emacs-lisp
 (use-package visual-line-mode
@@ -2512,11 +2742,15 @@ Make control characters easily visible.
 * Quiet and Pleasant Appearance
    :PROPERTIES:
    :noweb-ref: Quiet-and-Pleasant-Appearance
+   :ID:       197B7B84-5090-47AE-9180-F8F606D0012F
    :END:
 
 Configure EMACS to personal-taste for "noise" and "form".
 
 ** Buffer
+   :PROPERTIES:
+   :ID:       61586A23-B774-4436-B916-348453EEA3DD
+   :END:
 
 Give buffers backed by identically named files distinguishable names.
 
@@ -2568,6 +2802,9 @@ Make it very easy to see the line with the cursor.
 #+END_SRC
 
 ** Color Theme
+   :PROPERTIES:
+   :ID:       057BBA77-4662-4F7B-B47A-CB1E79A1618B
+   :END:
 
 The Solarized theme is the perfect theme for everything. bozhidar's
 release. It is soft and gentle yet easy to read in any situation.
@@ -2585,6 +2822,9 @@ release. It is soft and gentle yet easy to read in any situation.
 #+END_SRC
 
 ** Comint
+   :PROPERTIES:
+   :ID:       B4E17CF5-5542-4526-ADEE-D5EC3DB9131F
+   :END:
 
 =comint-mode= is only maybe the second most important thing for making Emacs
 really, really special.
@@ -2610,6 +2850,9 @@ obviously is a *big issue* if you actually want to use! ROFL
 #+END_SRC
 
 ** Font
+   :PROPERTIES:
+   :ID:       EC675F88-89C0-4A5A-B910-843F28C0F90F
+   :END:
 
 The best programming font is Deja Vu Sans Mono because it sans-serif and
 support a lot of Unicode characters. Set it to a good default for an 80
@@ -2654,6 +2897,9 @@ character wide buffer and make it easy to adjust it.
 #+END_SRC
 
 ** Frame
+   :PROPERTIES:
+   :ID:       B3F90439-D007-42EE-95FC-E93BBA827325
+   :END:
 
 The scroll-bars are helpful for new users.
 
@@ -2668,6 +2914,9 @@ The tool-bar is helpful for new users. Isn't the argument funny?
 #+END_SRC
 
 ** Pointer
+   :PROPERTIES:
+   :ID:       2A437D32-2944-41B3-AD8F-438ABBD4E0CF
+   :END:
 
 Hide the pointer when typing.
 
@@ -2676,6 +2925,9 @@ Hide the pointer when typing.
 #+END_SRC
 
 ** Version Control
+   :PROPERTIES:
+   :ID:       99337D9E-DBC9-4673-B814-EBC94C044E3E
+   :END:
 
 Provide VC file status indicators.
 
@@ -2685,6 +2937,9 @@ Provide VC file status indicators.
 #+END_SRC
 
 ** Window
+   :PROPERTIES:
+   :ID:       9A848D65-DE56-4F95-A84D-CAE74781CD25
+   :END:
 
 Menu bars make EMACS more accessible to non-EMACS users.
 
@@ -2701,6 +2956,7 @@ Easily return to previous configurations.
 * Principle of Least Astonishment (POLA)
   :PROPERTIES:
   :noweb-ref: Principle-of-Least-Astonishment
+  :ID:       43D9AB52-2157-4A1D-AD9C-D35996E91269
   :END:
 
 EMACS can load 3 different representations of a Emacs-Lisp source file code
@@ -2741,6 +2997,7 @@ tangled system.
 * Watch What You Eat
   :PROPERTIES:
   :noweb-ref: Watch-What-You-Eat
+  :ID:       59073E74-83D9-4218-917C-789A27D57E5A
   :END:
 
 *Code requiring package-management can only follow this block.*
@@ -2777,9 +3034,13 @@ point uses ~require~. Every package loaded after this point uses ~use-package~.
 #+END_SRC
 
 * Hacking
+  :PROPERTIES:
+  :ID:       B7CE60F5-5510-4358-8DD5-D42D9A2F4D9B
+  :END:
 ** Common Configurations
   :PROPERTIES:
   :noweb-ref: Hacking-Common-Configurations
+  :ID:       BE02A401-AFF6-4B64-B7F3-589C69CA7099
   :END:
 
 This system configures ~text-mode~ and ~prog-mode~ very similarly:
@@ -2810,6 +3071,9 @@ With that in mind this system:
   become wavy and intertwined with mastery of EMACS and LP.
 
 *** Text-Mode
+    :PROPERTIES:
+    :ID:       7CFD11FB-F3D4-4272-9DBC-2A420884097C
+    :END:
 
 - Line numbers make documents easier to read.
 - Indicate that Text-Mode buffers ought to be 80 characters wide.
@@ -2835,6 +3099,9 @@ With that in mind this system:
 #+END_SRC
 
 *** Prog*-Mode Modes
+    :PROPERTIES:
+    :ID:       6F71F8AF-4227-46D3-9BD8-2F86B5815B72
+    :END:
 
 - Mode inheritance is represented by list definition & indentation.
 - Some modes are so simple that inheritance isn't defined.
@@ -2857,8 +3124,14 @@ With that in mind this system:
       - Does one or two more things.
 
 *** Prog*-Mode Hook
+    :PROPERTIES:
+    :ID:       FF132B34-B61B-4DAE-A0B9-E37E39B9BFCE
+    :END:
 
 **** Goal
+     :PROPERTIES:
+     :ID:       E2C7121E-2E56-4A77-8347-2E7DFB73E9B3
+     :END:
 
 - Indent at every opportunity and automatically. Verify that it makes sense
   for the mode. Explicitly define instead of relying on ~prog-mode~ inheritance;
@@ -2880,6 +3153,9 @@ With that in mind this system:
   #+END_SRC
 
 **** Implementation.
+     :PROPERTIES:
+     :ID:       61A981CB-1311-4F51-A264-D748FA34F1D3
+     :END:
 
 #+BEGIN_SRC emacs-lisp
 (defun help/hack-prog*-mode-hook-fn ()
@@ -2893,6 +3169,9 @@ With that in mind this system:
 #+END_SRC
 
 *** Wiring
+    :PROPERTIES:
+    :ID:       50304E30-682C-4C9A-9615-D6E61DAE533B
+    :END:
 
  #+BEGIN_SRC emacs-lisp
 (let (void)
@@ -2907,9 +3186,13 @@ With that in mind this system:
  #+END_SRC
 
 ** (Literate Programming)
+   :PROPERTIES:
+   :ID:       6B83373B-8898-4AC0-B7F6-C42418CCE5E4
+   :END:
 ** Emacs Lisp
   :PROPERTIES:
   :noweb-ref: Hacking-Literate-Programming-Emacs-Lisp
+  :ID:       3AD91697-42DE-4555-9F49-B7D9F5E502D3
   :END:
 
 #+BEGIN_SRC emacs-lisp
@@ -2965,6 +3248,9 @@ RC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.htm
 #+END_SRC
 
 *** Keybinding
+    :PROPERTIES:
+    :ID:       3A6B16EC-870A-4EFE-935A-C03F8DFB67BF
+    :END:
 
 #+BEGIN_SRC emacs-lisp
 (define-key emacs-lisp-mode-map (kbd "s-p") #'describe-thing-in-popup)
@@ -2973,6 +3259,7 @@ RC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.htm
 ** Org Mode
   :PROPERTIES:
   :noweb-ref: Hacking-Literate-Programming-Org-Mode
+  :ID:       EBDA3D1C-536F-4252-AE26-32A3FDF5326C
   :END:
 
 When source blocks are evaluated, their results get stored in a result area,
@@ -3302,6 +3589,9 @@ Smartparens provides that functionality for programming modes.
 #+END_SRC
 
 *** Keybindings
+    :PROPERTIES:
+    :ID:       0AA3F69B-F5F1-48DA-B8F7-B7C92CD30DB1
+    :END:
 
 Started questioning why after hitting RETURN while in lists I have to hit TAB to
 get indented properly. Kind of a dead giveaway that I should be
@@ -3365,9 +3655,13 @@ Easily enter guillemots.
 (key-chord-define org-src-mode-map ">>" (lambda () (interactive) (insert "»")))
 #+END_SRC
 ** (Applied Mathematics)
+   :PROPERTIES:
+   :ID:       BE2550C9-231A-4824-BE6C-14231A971FE9
+   :END:
 ** Emacs Speaks Statistics (ESS)
   :PROPERTIES:
   :noweb-ref: Hacking-Applied-Mathematics-ESS
+  :ID:       CB6305D8-DDBB-4865-8CAD-3648B31B76DB
   :END:
 
 #+BEGIN_SRC emacs-lisp
@@ -3567,11 +3861,13 @@ and see how it goes.
 ** SAS (ESS)
   :PROPERTIES:
   :noweb-ref: Hacking-Applied-Mathematics-ESS-SAS
+  :ID:       2442E555-0F82-48E6-96EA-2ABB5C9CC666
   :END:
 
 ** R (ESS)
   :PROPERTIES:
   :noweb-ref: Hacking-Applied-Mathematics-ESS-R
+  :ID:       1183D35B-77FC-4CFD-9BAA-4F7656AD8943
   :END:
 
 ℝ first notes:
@@ -3967,6 +4263,7 @@ Period.
 ** YASnippet
   :PROPERTIES:
   :noweb-ref: Hacking-Applied-Mathematics-YASnippet
+  :ID:       5C48A01F-D522-4AC9-A523-F8EE2E9EB384
   :END:
 
 - Enable everywhere
@@ -3993,10 +4290,17 @@ Period.
 #+END_SRC
 
 ** Structured Query Language (SQL)
+   :PROPERTIES:
+   :ID:       987C1C05-F880-4312-B902-5060208A3506
+   :END:
 ** (Publishing)
+   :PROPERTIES:
+   :ID:       7D07C2F6-38B9-49BF-A584-B029CEED6141
+   :END:
 ** TeX
   :PROPERTIES:
   :noweb-ref: Hacking-Publishing-TeX
+  :ID:       E2A1BFA2-0246-4376-9A33-E35A8DE2E5A3
   :END:
 
 #+BEGIN_SRC emacs-lisp
@@ -4048,6 +4352,7 @@ Load LCO files with AucTeX.
 ** KOMA-Script
   :PROPERTIES:
   :noweb-ref: Hacking-Publishing-KOMA
+  :ID:       BFF1402E-98D4-4F36-ACCB-B1E88A3EB2D9
   :END:
 
 I enjoy writing letters. I enjoy reading letters. LaTeX produces letters that
@@ -4160,14 +4465,24 @@ Set up my default LCO files.
 #+END_SRC
 
 ** Pandoc
+   :PROPERTIES:
+   :ID:       1E4AB0D4-F92E-48E6-9313-278C27DED142
+   :END:
 
 ** Markdown
+   :PROPERTIES:
+   :ID:       748319ED-9F02-4A4D-BEE8-E71C462663FC
+   :END:
 
 ** WordPress
-   
+   :PROPERTIES:
+   :ID:       F5E33EB2-2E26-435C-85F6-26CB7CE7FC56
+   :END:
+
 ** HTML
   :PROPERTIES:
   :noweb-ref: Hacking-Publishing-HTML
+  :ID:       84F673DF-2E6F-4BAA-8095-4A7586BB73FC
   :END:
 
 Load Htmlize for HTML export. Use in-line CSS.
@@ -4182,6 +4497,7 @@ Load Htmlize for HTML export. Use in-line CSS.
 ** Beamer
   :PROPERTIES:
   :noweb-ref: Hacking-Publishing-Beamer
+  :ID:       6B86302E-D3EC-413A-A844-9ACCAA23A056
   :END:
 
 Load Beamer for creating presentations.
@@ -4191,16 +4507,32 @@ Load Beamer for creating presentations.
 #+END_SRC
 
 ** (DevOps)
+   :PROPERTIES:
+   :ID:       8B78A8C3-E6B6-4722-9822-EF428E5DB823
+   :END:
 ** Shell Script
+   :PROPERTIES:
+   :ID:       06D022B2-53ED-4042-8152-F383F5FE309E
+   :END:
 ** Make
+   :PROPERTIES:
+   :ID:       5F2B3343-631D-41C3-BE6B-D98548F77E07
+   :END:
 ** Vagrant
+   :PROPERTIES:
+   :ID:       A1335FE5-6DA7-4FE2-A77C-60032C76B40D
+   :END:
 
 ~ruby-mode~ supports =Vagrantfile= OOTB.
 
 ** (Diagram)
+   :PROPERTIES:
+   :ID:       FA47D423-05B3-4911-9CEC-28A534E49428
+   :END:
 ** Artist
   :PROPERTIES:
   :noweb-ref: Hacking-Diagram-Artist
+  :ID:       F920A833-60D7-41C2-9363-EA2A8BD19009
   :END:
 
 #+BEGIN_SRC emacs-lisp
@@ -4212,6 +4544,7 @@ Load Beamer for creating presentations.
 ** DITAA
   :PROPERTIES:
   :noweb-ref: Hacking-Diagram-DITAA
+  :ID:       FCC8A8F8-A967-4981-9260-CFF60CC56494
   :END:
 
 When a drop of water joins the ocean it becomes the ocean.
@@ -4252,6 +4585,7 @@ When a drop of water joins the ocean it becomes the ocean.
 ** Graphviz
   :PROPERTIES:
   :noweb-ref: Hacking-Diagram-Graphviz
+  :ID:       A84665A3-4A2D-4040-926A-17159A6D4647
   :END:
 
 #+BEGIN_SRC emacs-lisp
@@ -4283,6 +4617,7 @@ digraph graphviz {
 ** PlantUML
   :PROPERTIES:
   :noweb-ref: Hacking-Diagram-PlantUML
+  :ID:       B97EAA2E-8222-4DC1-AE11-BF7A6EAEA42D
   :END:
 
 #+BEGIN_SRC emacs-lisp
