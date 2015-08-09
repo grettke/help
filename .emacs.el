@@ -365,17 +365,6 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (setq org-export-with-toc nil)
 (setq org-src-preserve-indentation t)
 (help/set-org-babel-default-header-args :exports "both")
-(eval-after-load 'ox '(require 'ox-koma-letter))
-(eval-after-load 'ox-koma-letter
-  '(progn
-     (add-to-list 'org-latex-classes
-                  '("my-letter"
-                    "\\documentclass[paper=letter, pagesize, fontsize=10pt, parskip]{scrlttr2}
-\\usepackage[english]{babel}
-\\usepackage[osf]{mathpazo}"))
-
-     (setq org-koma-letter-default-class "my-letter")))
-(setq org-koma-letter-class-option-file "UScommercial9 KomaDefault")
 (package-initialize)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
@@ -1209,6 +1198,17 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (setq TeX-DVI-via-PDFTeX t)
 (setq TeX-save-query nil)
 (add-to-list 'auto-mode-alist '("\\.lco?\\'" . TeX-latex-mode))
+(eval-after-load 'ox '(require 'ox-koma-letter))
+(eval-after-load 'ox-koma-letter
+  '(progn
+     (add-to-list 'org-latex-classes
+                  '("my-letter"
+                    "\\documentclass[paper=letter, pagesize, fontsize=10pt, parskip]{scrlttr2}
+\\usepackage[english]{babel}
+\\usepackage[osf]{mathpazo}"))
+
+     (setq org-koma-letter-default-class "my-letter")))
+(setq org-koma-letter-class-option-file "UScommercial9 KomaDefault")
 (add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
 (add-to-list 'auto-mode-alist '("\\.art" . artist-mode))
 (add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))

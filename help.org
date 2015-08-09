@@ -182,6 +182,7 @@ Start EMACS with this command:
 «Hacking-Applied-Mathematics-ESS-R»
 «Hacking-Applied-Mathematics-YASnippet»
 «Hacking-Publishing-TeX»
+«Hacking-Publishing-KOMA»
 «Hacking-Diagram-Artist»
 «Hacking-Diagram-DITAA»
 «Hacking-Diagram-Graphviz»
@@ -4059,6 +4060,9 @@ Load LCO files with AucTeX.
 #+END_SRC
 
 ** KOMA-Script
+  :PROPERTIES:
+  :noweb-ref: Hacking-Publishing-KOMA
+  :END:
 
 I enjoy writing letters. I enjoy reading letters. LaTeX produces letters that
 are easy to print and read. Org provides a [[http://orgmode.org/worg/exporters/koma-letter-export.html][KOMA Script exporter]] for [[https://www.ctan.org/pkg/koma-script?lang%3Den][KOMA-script]].
