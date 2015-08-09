@@ -3610,7 +3610,8 @@ Smartparens provides that functionality for programming modes.
     :ID:       A5DC4E12-DA3D-49C8-BD44-104C0B8F10CE
     :END:
 
-[[http://article.gmane.org/gmane.emacs.orgmode/99738][Add an ID property to every headline. Assign it a UUID]].
+[[http://article.gmane.org/gmane.emacs.orgmode/99738][Visit every Headline. If it doesn't have an ID property then add one and assign
+it a UUID]].
 
 #+BEGIN_SRC emacs-lisp :noweb-ref ignore :eval no
 (dolist (p (nreverse
