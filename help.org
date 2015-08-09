@@ -4256,7 +4256,6 @@ When a drop of water joins the ocean it becomes the ocean.
 
 #+BEGIN_SRC dot :file "./image/graphviz-life_is_simple.png" :noweb-ref ignore :results output replace
 digraph graphviz {
-  title="Life is simple:";
   subgraph cluster {
     ayh [label="Happy with things?", shape=ellipse];
     no [label="No.", shape=Mdiamond];
@@ -4267,7 +4266,7 @@ digraph graphviz {
     yes -> ayh [label="Keep doing them."];
   }
   labelloc="t";
-  label="Life is simple:";
+  label="Life is simple:\nAttribution: @tgtext";
 }
 #+END_SRC
 
