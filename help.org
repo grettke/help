@@ -248,9 +248,9 @@ Key:
   - S :: Source document modified?
   - T :: Destination tangled-document modified?
   - W :: Destination weaved-document modified?
-  - E :: Evaluation occurred?
+  - C :: Source-Block Evaluation occurred?
 
-| Activity   | S | T | W | E |
+| Activity   | S | T | W | C |
 |------------+---+---+---+---|
 | Tangling   | F | T | F | F |
 | Evaluating | T | F | F | T |
