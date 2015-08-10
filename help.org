@@ -4804,6 +4804,7 @@ Set up my default LCO files.
 (setq org-koma-letter-class-option-file "UScommercial9 KomaDefault")
 #+END_SRC
 
+** Texinfo
 ** Pandoc
    :PROPERTIES:
    :ID:       1E4AB0D4-F92E-48E6-9313-278C27DED142
