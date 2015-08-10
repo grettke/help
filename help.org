@@ -144,7 +144,6 @@ Setup:
    :PROPERTIES:
    :noweb-ref: Org-Mode-ECM-Tangle-Block
    :tangle:  "./.org-mode-ecm.emacs.el"
-   :comments: no
    :ID:       83868A6E-76C2-48AE-8A5A-6A3C97492321
    :END:
 
@@ -165,7 +164,6 @@ Start EMACS with this command:
 ** The Whole Enchilada
    :PROPERTIES:
    :tangle:  "./.emacs.el"
-   :comments: no
    :ID:       016FA25F-E70E-4BED-BA01-AEB808428791
    :END:
 
