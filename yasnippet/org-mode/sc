@@ -4,6 +4,7 @@
 # group: HELP
 # contributor: gcr@wisdomandwonder.com
 # --
+#+NAME: `(org-id-new)`
 #+BEGIN_SRC ${1:$$(yas-choose-value '("emacs-lisp" "org" "sass" "R" "ditaa" "dot" "plantuml"))}
 $0
 #+END_SRC
