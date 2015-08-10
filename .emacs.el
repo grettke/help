@@ -1270,9 +1270,6 @@ RC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.htm
 ;; [[file:~/src/help/help.org::*Org%20Mode][AB26182E-A169-4FB9-BA68-E9F7231069C1]]
 (setq org-babel-min-lines-for-block-output 0)
 ;; AB26182E-A169-4FB9-BA68-E9F7231069C1 ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][4B4B1348-4E65-45CD-97BF-8BF322C48896]]
-(setq org-babel-results-keyword "NAME")
-;; 4B4B1348-4E65-45CD-97BF-8BF322C48896 ends here
 ;; [[file:~/src/help/help.org::*Org%20Mode][8F3861FD-B2F6-4618-8E70-026316855E67]]
 (setq org-edit-src-auto-save-idle-delay 0)
 (setq org-edit-src-turn-on-auto-save nil)

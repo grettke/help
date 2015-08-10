@@ -3510,14 +3510,6 @@ to behave more predictably.
 (setq org-babel-min-lines-for-block-output 0)
 #+END_SRC
 
-When Source-Block evaluation results are inserted try to use the name or cache-id.
-If neither are present, the =RESULTS= block becomes a =NAME= "results" block.
-
-#+NAME: 4B4B1348-4E65-45CD-97BF-8BF322C48896
-#+BEGIN_SRC emacs-lisp
-(setq org-babel-results-keyword "NAME")
-#+END_SRC
-
 Configure Org-Mode to manage it's Source-Block backed buffers the same as the
 rest of this system.
 
