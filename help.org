@@ -17,7 +17,9 @@ Setup:
    1) Install [[http://ditaa.sourceforge.net/][DITAA]] renaming the JAR to =ditaa.jar=.
    2) Install [[http://plantuml.com/][PlantUML]] renaming the JAR to =plantuml.jar=.
 4) Install supporting systems adding their exectuables to the =PATH=.
-   1) [[https://www.oracle.com/java/index.html][Oracle Java]].
+   1) Install [[https://www.oracle.com/java/index.html][Oracle Java]].
+   2) Install [[https://www.languagetool.org/][LanguageTool]] unpacking it renaming it to =LanguageTool=.
+   3) Install [[https://tug.org/mactex/][MacTeX]] or [[http://miktex.org/][MiKTeX]].
 5) Link.
    - The Eshell directory to HELP's.
      - =ln -s ~/src/help/eshell/ ~/.emacs.d/eshell=
