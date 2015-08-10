@@ -29,7 +29,9 @@ Setup:
   :ID:       03E0F0E3-DB81-4033-8F04-5D8BB5CBB2F0
   :END:
 
-- Code Block
+- Source Block
+  - Be sure that every one has a =NAME= property with a =UUID= value.
+    - YASnippet =sc= does this. So does code in Hacking/Org Mode/Utility.
   - Tell the story in speech, and then in code.
   - Consider it another paragraph and indent appropriately.
   - When contained within a list.
@@ -66,6 +68,8 @@ Setup:
     - Acronyms are all upper case to distinguish from words for example "GNU"
       vs "Gnu".
 - Headline.
+  - Be sure that every one has an =ID= property with a =UUID= value.
+    - ~org-id-get-create~ does this. So does code in Hacking/Org Mode/Utility.
   - Capitalize nouns, verbs, and adjectives.
   - Don't capitalize conjunctions unless they are starting the definition.
   - Sell this "chapter" to the reader.
