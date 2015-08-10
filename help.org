@@ -1798,6 +1798,13 @@ use than advice.
   (interactive)
   (help/save-all-file-buffers)
   (TeX-command-master arg))
+
+(defun help/safb-org-babel-execute-buffer ()
+  "Immediately save results."
+  (interactive)
+  (help/save-all-file-buffers)
+  (org-babel-execute-buffer)
+  (help/save-all-file-buffers))
 #+END_SRC
 
 Selection:
@@ -3897,7 +3904,7 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
 #+NAME: E65CF1F6-F56C-4A1A-BB45-5E530FA93C04
 #+BEGIN_SRC emacs-lisp
 (define-key org-mode-map (kbd "s-j") #'org-babel-next-src-block)
-(define-key org-mode-map (kbd "s-u") #'org-goto)
+(define-key org-mode-map (kbd "s-u") #'help/safb-org-babel-execute-buffer)
 (define-key org-mode-map (kbd "s-U") #'org-mark-ring-goto)
 (define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
 (define-key org-mode-map (kbd "s-i") #'help/safb-org-babel-tangle)
@@ -3912,11 +3919,10 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
 (defhydra help/hydra/right-side/org-mode (:color blue
                                                  :hint nil)
   "
-                   _0_ tglmcro
-
-_u_ goto _i_ hdlnid"
+                _9_ igc  _0_ tglmcro
+ _u_ goto"
   ("u" org-goto)
-  ("i" org-id-get-create)
+  ("9" org-id-get-create)
   ("0" help/org-toggle-macro-markers))
 (key-chord-define-global "jj" #'help/hydra/right-side/org-mode/body)
 #+END_SRC

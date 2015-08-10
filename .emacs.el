@@ -455,6 +455,13 @@ This is a copy and paste. Additional languages would warrant a refactor."
   (interactive)
   (help/save-all-file-buffers)
   (TeX-command-master arg))
+
+(defun help/safb-org-babel-execute-buffer ()
+  "Immediately save results."
+  (interactive)
+  (help/save-all-file-buffers)
+  (org-babel-execute-buffer)
+  (help/save-all-file-buffers))
 ;; 5A0C3F05-0C41-4E50-944E-0ACC4C2F4A15 ends here
 ;; [[file:~/src/help/help.org::*File%20Based%20System][DA537B02-6E64-42FC-BE9D-E5A3408B6599]]
 (add-to-list 'find-file-not-found-functions #'help/create-non-existent-directory)
@@ -1421,7 +1428,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; 8C7E90AC-C7EB-4A43-9377-C3C85CE51849 ends here
 ;; [[file:~/src/help/help.org::*Keybindings][E65CF1F6-F56C-4A1A-BB45-5E530FA93C04]]
 (define-key org-mode-map (kbd "s-j") #'org-babel-next-src-block)
-(define-key org-mode-map (kbd "s-u") #'org-goto)
+(define-key org-mode-map (kbd "s-u") #'help/safb-org-babel-execute-buffer)
 (define-key org-mode-map (kbd "s-U") #'org-mark-ring-goto)
 (define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
 (define-key org-mode-map (kbd "s-i") #'help/safb-org-babel-tangle)
@@ -1434,11 +1441,10 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (defhydra help/hydra/right-side/org-mode (:color blue
                                                  :hint nil)
   "
-                   _0_ tglmcro
-
-_u_ goto _i_ hdlnid"
+                _9_ igc  _0_ tglmcro
+ _u_ goto"
   ("u" org-goto)
-  ("i" org-id-get-create)
+  ("9" org-id-get-create)
   ("0" help/org-toggle-macro-markers))
 (key-chord-define-global "jj" #'help/hydra/right-side/org-mode/body)
 ;; 5186DD50-F693-4297-A164-192BEA685C6D ends here
