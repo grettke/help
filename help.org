@@ -156,6 +156,7 @@ Start EMACS with this command:
 
 =open /Applications/Emacs.app --args --quick --load ~/src/help/.org-mode-ecm.emacs.el=
 
+#+NAME: 9969960B-FFEE-48B4-BD9C-F29E750FD8A3
 #+BEGIN_SRC emacs-lisp
 «Principle-of-Least-Astonishment»
 «Org-Mode-ECM»
@@ -174,6 +175,7 @@ Sysop is likely to use this hourly.
 
 Start EMACS with this command:
 
+#+NAME: AD12BE48-B87B-4AB6-814D-4FA5E47597A0
 #+BEGIN_SRC emacs-lisp
 «Org-Mode-ECM-Tangle-Block»
 «Org-Mode-Helper-Functions»
@@ -209,6 +211,7 @@ Start EMACS with this command:
    :ID:       FAB2B8BA-ACE0-4F99-9583-C9A287CFB610
    :END:
 
+#+NAME: 2C64B62C-606B-43B8-979C-355F92169D73
 #+BEGIN_SRC sh :tangle "./eshell/alias" :comments no :eval no
 alias clear recenter 0
 alias d 'dired $1'
@@ -276,6 +279,7 @@ decide whether or not it is what you expect and prepare an ECM if necessary.
 
 Add the Org-Mode core distribution the load path.
 
+#+NAME: D5D4EECF-00C5-4B2F-B9F9-988591C70852
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path "~/src/org-mode/lisp")
 #+END_SRC
@@ -283,6 +287,7 @@ Add the Org-Mode core distribution the load path.
 Add the Org-Mode-Contributions distribution to the load path. The contributions
 are critical to and inseparable from the core distribution.
 
+#+NAME: 4D4E921E-7B99-43B2-AD1F-30D2593F05D7
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path "~/src/org-mode/contrib/lisp")
 #+END_SRC
@@ -292,12 +297,14 @@ to provide that, the following property must exist before Org-Mode is even
 loaded. This configuration must occur here. *Never* remove this from a submitted
 ECM.
 
+#+NAME: 28776245-A6BB-4294-AC72-30F03F902DF7
 #+BEGIN_SRC emacs-lisp
 (setq org-list-allow-alphabetical t)
 #+END_SRC
 
 Load Org-Mode.
 
+#+NAME: 86CAEC4F-CFC4-4CAD-9993-E1DCEF3BFCD1
 #+BEGIN_SRC emacs-lisp
 (require 'org)
 #+END_SRC
@@ -309,6 +316,7 @@ configure Org-Mode to use the real symbol. Another option would be to configure
 Pretty-Mode. This is in the ECM section because so that I can verify behavior of
 my code.
 
+#+NAME: 5749B5BF-1C2A-4948-A357-E096B11539D0
 #+BEGIN_SRC emacs-lisp
 (setq org-babel-noweb-wrap-start "«")
 (setq org-babel-noweb-wrap-end "»")
@@ -320,6 +328,7 @@ my code.
    :ID:       B14776FD-6835-4D1D-BCD3-50D56555423C
    :END:
 
+#+NAME: BB2E97AF-6364-401F-8063-8B5A0BE481E6
 #+BEGIN_SRC emacs-lisp
 (defun help/set-org-babel-default-header-args (property value)
   "Easily set system header arguments in org mode.
@@ -360,6 +369,7 @@ This is only for user-defined properties; *not* Org-Mode properties.
 The problem is that you lose property inheritance which is unacceptable. Never,
 never allow that. Its inconsistent with how Org-Mode works.
 
+#+NAME: F19C629B-E784-48CA-BC53-CCFB849CE9EC
 #+BEGIN_SRC emacs-lisp
 (setq org-babel-use-quick-and-dirty-noweb-expansion nil)
 #+END_SRC
@@ -372,6 +382,7 @@ never allow that. Its inconsistent with how Org-Mode works.
 Provide as much information as possible in the tangled artifact about the
 origin artifact.
 
+#+NAME: AD42B561-29FA-4652-AD28-692CAD631E62
 #+BEGIN_SRC emacs-lisp
 (help/set-org-babel-default-header-args :comments "noweb")
 #+END_SRC
@@ -386,6 +397,7 @@ arguably appear in the "Programming" heading because it impacts operation. It
 lives here because it *must* occur as part of the Tangling activity so that it
 can be used in the Programming activity.
 
+#+NAME: 0F3E7114-A63C-44F4-A9FD-577BAEE536ED
 #+BEGIN_SRC emacs-lisp
 (help/set-org-babel-default-header-args :padline "yes")
 #+END_SRC
@@ -407,6 +419,7 @@ This embraces the notion that you are telling the right thing to the
 computer and the right thing to the human. By the time you get to exporting, you
 ought to refer to the generated document.
 
+#+NAME: 20BE9B4B-ED66-4935-A351-99D17B3A32D4
 #+BEGIN_SRC emacs-lisp
 (help/set-org-babel-default-header-args :noweb "no-export")
 #+END_SRC
@@ -419,6 +432,7 @@ ought to refer to the generated document.
 
 Org-Mode may evaluate all of the listed languages.
 
+#+NAME: 6309AF39-FCE4-43DE-BD46-BC7D0BA0971D
 #+BEGIN_SRC emacs-lisp
 (org-babel-do-load-languages
  'org-babel-load-languages
@@ -448,6 +462,7 @@ Org-Mode may evaluate all of the listed languages.
 
 Never evaluate source-blocks or in-line-source-blocks on export.
 
+#+NAME: 58541CA5-C633-4146-8E5D-15C7A3A2D1D7
 #+BEGIN_SRC emacs-lisp
 (help/set-org-babel-default-header-args :eval "never-export")
 (help/set-org-babel-default-inline-header-args :eval "never-export")
@@ -455,6 +470,7 @@ Never evaluate source-blocks or in-line-source-blocks on export.
 
 Be sure to never evaluate in-line-source-blocks on export.
 
+#+NAME: D9F32A22-B415-48EA-A189-D8EAF7C202D8
 #+BEGIN_SRC emacs-lisp
 (setq org-export-babel-evaluate nil)
 #+END_SRC
@@ -473,6 +489,7 @@ display.
 
 Replace theme each time you evaluate the block.
 
+#+NAME: BC84119C-6085-4B36-A2D9-0918A68D15C5
 #+BEGIN_SRC emacs-lisp
 (help/set-org-babel-default-header-args :results "output replace")
 (help/set-org-babel-default-inline-header-args :results "value replace")
@@ -486,6 +503,7 @@ Replace theme each time you evaluate the block.
 
 Make sure that exported files are Unicode UTF-8.
 
+#+NAME: 07E50259-E68C-465E-9387-9984220CEB69
 #+BEGIN_SRC emacs-lisp
 (setq org-export-coding-system 'utf-8)
 #+END_SRC
@@ -497,12 +515,14 @@ linebreaks no longer has linebreaks. This is what I expect. When I export that
 same text to a buffer though, the line breaks are included. Currently I use
 =sacha/unfill-paragraph= on that code.
 
+#+NAME: 18CD863D-F01D-44F8-9B4D-A9FC016EDC79
 #+BEGIN_SRC emacs-lisp
 (setq org-export-preserve-breaks nil)
 #+END_SRC
 
 When exporting anything, do not insert the exported content into the kill ring.
 
+#+NAME: F0703ECD-DB1D-47BF-BF1A-52336FE0C5D8
 #+BEGIN_SRC emacs-lisp
 (setq org-export-copy-to-kill-ring nil)
 #+END_SRC
@@ -510,6 +530,7 @@ When exporting anything, do not insert the exported content into the kill ring.
 By default I never want a table of contents generated. It is so easy to enable
 it with a property, it will be fine to turn it off.
 
+#+NAME: 5BCA100F-6AC1-454B-9F48-31B5A67CB587
 #+BEGIN_SRC emacs-lisp
 (setq org-export-with-toc nil)
 #+END_SRC
@@ -518,6 +539,7 @@ On export, maintain the literal spacing as found in the source block. Obviously
 this is important for make-files. It is really important everywhere because
 anything else would violate the law of least surprise.
 
+#+NAME: 5ACDD0B0-2B6F-4F71-BFDF-2D2D1D91B573
 #+BEGIN_SRC emacs-lisp
 (setq org-src-preserve-indentation t)
 #+END_SRC
@@ -532,6 +554,7 @@ result for a particular source block is configured per-block. If you don't want
 to share a result for a source block then disable storage of results on that
 block.
 
+#+NAME: 72A5FF8F-6597-4523-A604-B499B439A103
 #+BEGIN_SRC emacs-lisp
 (help/set-org-babel-default-header-args :exports "both")
 #+END_SRC
@@ -955,6 +978,7 @@ in the call itself.
      :ID:       8F467832-8FC3-42B5-8978-8CF2C1454D5B
      :END:
 
+#+NAME: 239A85C3-2CEB-4E40-975F-8B3584F7F450
 #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "s-w") #'imenu)
 #+END_SRC
@@ -964,6 +988,7 @@ in the call itself.
      :ID:       6DCD321F-6FDA-4983-9C7C-265D23D1AC4F
      :END:
 
+#+NAME: F6C7AAB7-DF69-4EBA-8116-15DC32022D49
 #+BEGIN_SRC emacs-lisp
 (defhydra help/hydra/left-side/global (:color blue
                                               :hint nil)
@@ -978,6 +1003,7 @@ _q_ apropos"
 
 [[https://github.com/abo-abo/hydra/blob/master/hydra-examples.el][Attribution.]]
 
+#+NAME: 362686F6-B397-44D5-812F-BE24670F4204
 #+BEGIN_SRC emacs-lisp
 (defhydra hydra-apropos (:color blue
                                 :hint nil)
@@ -1012,6 +1038,7 @@ _v_ariable       _u_ser-option
 
 VC activities.
 
+#+NAME: A45F49E2-E330-463B-82C6-907F138E8F2A
 #+BEGIN_SRC emacs-lisp
 (define-prefix-command 'help/vc-map)
 (global-set-key (kbd "s-r") #'help/vc-map)
@@ -1023,30 +1050,35 @@ VC activities.
 
 Go to a line.
 
+#+NAME: B05E89FC-9FCE-48D6-8112-9BF990A8A15D
 #+BEGIN_SRC emacs-lisp
 (key-chord-define-global "fg" #'goto-line)
 #+END_SRC
 
 Pop the mark back.
 
+#+NAME: F3708409-D807-4541-95AB-C6298540FD59
 #+BEGIN_SRC emacs-lisp
 (key-chord-define-global "FG" #'pop-to-mark-command)
 #+END_SRC
 
 Do the /right thing/ for getting to the start of the line.
 
+#+NAME: C9521BF3-23E7-4952-846F-322D107E3EE3
 #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "C-a") #'beginning-of-line-dwim)
 #+END_SRC
 
 Occur has 3 cases. I like to use it to explore the unknown.
 
+#+NAME: 2608E62D-62B4-4B82-BFE0-E1E04C0D6914
 #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "M-s p") 'help/occur-dwim)
 #+END_SRC
 
 Simpler buffer movement.
 
+#+NAME: FD9CED46-8D84-495F-A413-90DA9EA52B8A
 #+BEGIN_SRC emacs-lisp
 (key-chord-define-global "fv" #'help/safb-other-window)
 #+END_SRC
@@ -1054,12 +1086,14 @@ Simpler buffer movement.
 Toggle utility buffers ("logical F" key, so left side; "logical J" key on
 right).
 
+#+NAME: 4E784CF7-8CB1-42D0-A8EB-6FF54E7B60E9
 #+BEGIN_SRC emacs-lisp
 (key-chord-define-global "f9" #'help/util-cycle)
 #+END_SRC
 
 Hide and show code blocks.
 
+#+NAME: 374B4284-8823-4E85-A469-F3985D48EC61
 #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "s-b") 'hs-toggle-hiding)
 #+END_SRC
@@ -1069,12 +1103,14 @@ Hide and show code blocks.
     :ID:       FA2BFDC9-5242-4547-A8A5-6DECC8ED1C1B
     :END:
 
+#+NAME: 55D2A3E6-07B1-47B0-9ADD-54C966FA252B
 #+BEGIN_SRC emacs-lisp
 (key-chord-define-global "qi" #'help/comment-or-uncomment)
 #+END_SRC
 
 Make =ispell= accessible.
 
+#+NAME: E167321A-E8E5-4C54-B570-241B465B2D4B
 #+BEGIN_SRC emacs-lisp
 (key-chord-define-global "qp" #'ispell)
 (key-chord-define-global "qo" #'ispell-word)
@@ -1082,6 +1118,7 @@ Make =ispell= accessible.
 
 Writegood too.
 
+#+NAME: 04DEF261-9640-49E8-8540-DC69B4CF9BBE
 #+BEGIN_SRC emacs-lisp
 (key-chord-define-global "wm" #'writegood-mode)
 (key-chord-define-global "wl" #'writegood-grade-level)
@@ -1090,6 +1127,7 @@ Writegood too.
 
 Use the default Langtool bindings.
 
+#+NAME: 52E762F8-9A31-4FEC-859D-049BD658C6D9
 #+BEGIN_SRC emacs-lisp
 (define-prefix-command 'help/langtool-map)
 (key-chord-define-global "qk" #'help/langtool-map)
@@ -1117,6 +1155,7 @@ Return.
 
 Do smart new line inside, indenting given the mode.
 
+#+NAME: 0410911F-2D84-4799-8F68-1F3173E318B6
 #+BEGIN_SRC emacs-lisp
 (help/not-on-gui (global-set-key (kbd "s-RET") #'help/smart-open-line))
 (help/on-gui (global-set-key (kbd "s-<return>") #'help/smart-open-line))
@@ -1124,6 +1163,7 @@ Do smart new line inside, indenting given the mode.
 
 Scroll the whole buffer by one line keeping the cursor with it.
 
+#+NAME: 7B79E6A3-90F2-4F3F-AA40-1231D0DDA684
 #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "M-n") (kbd "C-u 1 C-v"))
 (global-set-key (kbd "M-p") (kbd "C-u 1 M-v"))
@@ -1131,10 +1171,12 @@ Scroll the whole buffer by one line keeping the cursor with it.
 
 Use a nicer =eval-expression= approach.
 
+#+NAME: FA4DDBA3-494B-4062-B43F-5D17DB239AF5
 #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "s-:") #'my-eval-expression)
 #+END_SRC
 
+#+NAME: 65D190DA-D23D-427D-B070-1C74053EDC4E
 #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "s-C-n") #'next-line)
 (global-set-key (kbd "C-n") #'next-logical-line)
@@ -1160,6 +1202,7 @@ ideas that make the entire system usable, productive, expressive, and fast.
 Make it easy to conditionally evaluate code when running with a graphical
 display.
 
+#+NAME: 20CC11BB-D72C-4A86-8558-44D9AE44FEAF
 #+BEGIN_SRC emacs-lisp
 (defmacro help/on-gui (statement &rest statements)
   "Evaluate the enclosed body only when run on GUI."
@@ -1180,6 +1223,7 @@ display.
    :ID:       9B78FBB7-6C6A-4BD6-A9CC-FB192D37F6C2
    :END:
 
+#+NAME: 2652BC97-28FA-41DC-9E0F-4B107292D78D
 #+BEGIN_SRC emacs-lisp
 (use-package hydra
   :ensure t)
@@ -1192,6 +1236,7 @@ display.
 
 Key-Chord mode is amazing. Piano-Lessons shows you how.
 
+#+NAME: 06C30DE0-5B5D-4021-B82E-C30CF1DBE923
 #+BEGIN_SRC emacs-lisp
 (use-package key-chord
   :ensure t
@@ -1202,6 +1247,7 @@ Key-Chord mode is amazing. Piano-Lessons shows you how.
 
 Echo keystrokes immediately.
 
+#+NAME: 3EF213A9-048C-4A3D-B242-3A4D699D087C
 #+BEGIN_SRC emacs-lisp
 (setq echo-keystrokes 0.02)
 #+END_SRC
@@ -1213,6 +1259,7 @@ Echo keystrokes immediately.
 
 Dash is nice to use.
 
+#+NAME: 6205B309-A576-4272-9D2B-C65966ECA286
 #+BEGIN_SRC emacs-lisp
 (use-package dash
   :ensure t
@@ -1224,6 +1271,7 @@ Dash is nice to use.
 
 F is nice to use.
 
+#+NAME: D483F480-4716-4F79-BD0A-C99691618DC5
 #+BEGIN_SRC emacs-lisp
 (use-package f
   :ensure t)
@@ -1231,6 +1279,7 @@ F is nice to use.
 
 S is nice to use.
 
+#+NAME: FA4C219D-DCAB-4416-954D-231D3F89FB36
 #+BEGIN_SRC emacs-lisp
 (use-package s
   :ensure t)
@@ -1238,6 +1287,7 @@ S is nice to use.
 
 Generate a UUID.
 
+#+NAME: 2C5BF550-AB37-4783-AB18-4B2C50D106FB
 #+BEGIN_SRC emacs-lisp
 (use-package uuid
   :ensure t)
@@ -1250,18 +1300,21 @@ Generate a UUID.
 
 Reduce information about modes in the Modeline.
 
+#+NAME: 1F5BD72D-2E4B-4298-B4BF-DD52BD26FC3E
 #+BEGIN_SRC emacs-lisp
 (use-package diminish)
 #+END_SRC
 
 Show the file size.
 
+#+NAME: 4E0CC8F8-620E-41F4-AB7E-B68A82430FE0
 #+BEGIN_SRC emacs-lisp
 (size-indication-mode)
 #+END_SRC
 
 Show the column number.
 
+#+NAME: 551CCCA8-8B54-4B5C-9118-22F411C687E0
 #+BEGIN_SRC emacs-lisp
 (column-number-mode t)
 #+END_SRC
@@ -1273,6 +1326,7 @@ Show the column number.
 
 Make it easy to evaluate code only when running on OSX.
 
+#+NAME: 84EB04EB-9149-495E-AF38-942C3732D62D
 #+BEGIN_SRC emacs-lisp
 (defmacro help/on-osx (statement &rest statements)
   "Evaluate the enclosed body only when run on OSX."
@@ -1283,6 +1337,7 @@ Make it easy to evaluate code only when running on OSX.
 
 Pull in the =ENVIRONMENT= variables because the GUI version of EMACS does not.
 
+#+NAME: EA03614E-3B8C-4D07-A8E5-B03FFB120AE4
 #+BEGIN_SRC emacs-lisp
 (help/on-osx
  (use-package exec-path-from-shell
@@ -1295,6 +1350,7 @@ Configure the meta keys.
 
 Enable the =super= key-space.
 
+#+NAME: 98237FE5-5D02-4DCF-BCCB-082F90AE38D8
 #+BEGIN_SRC emacs-lisp
 (help/on-osx
  (setq mac-control-modifier 'control)
@@ -1306,6 +1362,7 @@ EMACS dialogues don't work OSX. They lock up EMACS.
 
 This is a known issue. [[https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-x][Here]] is the solution.
 
+#+NAME: 8764885C-9AFD-49DD-9E4B-F21AA0ED0D2F
 #+BEGIN_SRC emacs-lisp
 (help/on-osx
  (defun help/yes-or-no-p (orig-fun &rest args)
@@ -1323,6 +1380,7 @@ This is a known issue. [[https://superuser.com/questions/125569/how-to-fix-emacs
 
 Make it easy to evaluate code only when running on Windows.
 
+#+NAME: DB9672CE-E027-408F-B072-6E73FDD47349
 #+BEGIN_SRC emacs-lisp
 (defmacro help/on-windows (statement &rest statements)
   "Evaluate the enclosed body only when run on Microsoft Windows."
@@ -1333,6 +1391,7 @@ Make it easy to evaluate code only when running on Windows.
 
 Provide the proper shell.
 
+#+NAME: A69B960E-400A-4BC7-961C-AECF3522C7AF
 #+BEGIN_SRC emacs-lisp
 (help/on-windows
  (setq shell-file-name "cmdproxy.exe"))
@@ -1340,6 +1399,7 @@ Provide the proper shell.
 
 Enable the =super= key-space.
 
+#+NAME: B66E53C2-D90F-422E-BD67-250EB644C6BB
 #+BEGIN_SRC emacs-lisp
 (help/on-windows
  (setq w32-lwindow-modifier 'super)
@@ -1364,6 +1424,7 @@ buffer. If you upgrade a package that uses buffer-variables that have changed
 you may get unexpected behavior. Close all buffers and open them again after
 making such breaking changes.
 
+#+NAME: 0E6156C3-4259-4539-BDAC-899B0AF4E80F
 #+BEGIN_SRC emacs-lisp
 (desktop-save-mode t)
 (setq desktop-restore-eager 10)
@@ -1371,6 +1432,7 @@ making such breaking changes.
 
 Provide expected "Undo" functionality.
 
+#+NAME: 170E0633-2AA6-47AD-9234-4C1F0978C058
 #+BEGIN_SRC emacs-lisp
 (use-package undo-tree
   :ensure t
@@ -1382,6 +1444,7 @@ Provide expected "Undo" functionality.
 Ensure that buffers do not end with a new line. This is the decision of Sysop.
 This is important to YASnippets and Source-Blocks. Doing so would violate POLA.
 
+#+NAME: 7CA01CFF-D9B6-4F1D-B120-88AFC30F281E
 #+BEGIN_SRC emacs-lisp
 (setq require-final-newline nil)
 #+END_SRC
@@ -1390,6 +1453,7 @@ If you are on the end of a line, and go up or down, then go to the end of
 line on that new line. Do not account for anything special about the character
 there.
 
+#+NAME: C2215D90-ADDA-47C9-9F1E-21FD79BDDBC0
 #+BEGIN_SRC emacs-lisp
 (setq track-eol t)
 (setq line-move-visual nil)
@@ -1397,12 +1461,14 @@ there.
 
 Take the cursor with scroll activities.
 
+#+NAME: CDBC5A4D-F67C-412C-A1DE-69EB52287E2C
 #+BEGIN_SRC emacs-lisp
 (setq scroll-preserve-screen-position t)
 #+END_SRC
 
 More easily visualize tabular data. Considered to non-subjective.
 
+#+NAME: 4B565992-E3BA-4355-AD8F-061E6A1736D9
 #+BEGIN_SRC emacs-lisp
 (use-package stripe-buffer
   :ensure t)
@@ -1410,12 +1476,14 @@ More easily visualize tabular data. Considered to non-subjective.
 
 End sentences with a single space.
 
+#+NAME: C82EDEC4-3E13-4B4A-A947-B8ACDB5C8160
 #+BEGIN_SRC emacs-lisp
 (setq sentence-end-double-space nil)
 #+END_SRC
 
 Ban white-space at end of lines, globally.
 
+#+NAME: B80399BE-3E19-441E-93CF-C613A1309C35
 #+BEGIN_SRC emacs-lisp
 (add-hook #'before-save-hook #'help/delete-trailing-whitespace)
 #+END_SRC
@@ -1423,6 +1491,7 @@ Ban white-space at end of lines, globally.
 Intelligently select the current char, then word, then object, then block,
 then document.
 
+#+NAME: DA9A04CF-ABF9-4BF4-A9FF-85E89DA740E1
 #+BEGIN_SRC emacs-lisp
 (use-package expand-region
   :ensure t
@@ -1432,6 +1501,7 @@ then document.
 
 80 characters is wide enough for most documents.
 
+#+NAME: 9DB523BC-E21B-42B7-AEE2-31ED24C14D92
 #+BEGIN_SRC emacs-lisp
 (setq help/column-width 80)
 #+END_SRC
@@ -1441,6 +1511,7 @@ then document.
    :ID:       3F70676D-C141-4093-9E40-F42B6C7B7232
    :END:
 
+#+NAME: 2D731158-FCE7-4BDA-AE78-383EAAD1FE4B
 #+BEGIN_SRC emacs-lisp
 (use-package hideshow
   :config
@@ -1470,6 +1541,7 @@ Colorize color names.
 
 Rainbow-Mode handles most major modes color definitions as expected.
 
+#+NAME: 5CDF03F0-974F-4AFC-9F63-EA9B5D7C6923
 #+BEGIN_SRC emacs-lisp
 (use-package rainbow-mode
   :ensure t
@@ -1482,12 +1554,14 @@ Rainbow-Mode handles most major modes color definitions as expected.
    :ID:       5E067457-9B99-459F-A660-323774C14BF5
    :END:
 
+#+NAME: 96387299-8865-4DF8-8B98-8EF290A319B8
 #+BEGIN_SRC emacs-lisp
 (setq-default eval-expression-print-level nil)
 #+END_SRC
 
 Allow most commands.
 
+#+NAME: F082B76A-8371-43DE-8FF5-2D95F3FD687A
 #+BEGIN_SRC emacs-lisp
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
@@ -1501,6 +1575,7 @@ Allow most commands.
 
 Easy to use file-based AES encryption.
 
+#+NAME: A7C4590E-53C4-4159-B627-178E367B0A12
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path (getenv "CCRYPT"))
 (use-package ps-ccrypt)
@@ -1523,6 +1598,7 @@ will run scripts. Since Eshell is not a terminal emulator, you need to configure
 it for any commands that need to run using a terminal emulator by adding it to
 to =eshell-visual-commands=.
 
+#+NAME: A9A01E59-A084-4849-93F3-957753D65D24
 #+BEGIN_SRC emacs-lisp
 (setq eshell-prefer-lisp-functions nil
       eshell-cmpl-cycle-completions nil
@@ -1547,6 +1623,7 @@ to =eshell-visual-commands=.
 
 Configure a =PS1= like prompt.
 
+#+NAME: 6D58C096-C7DE-44D2-AA33-0602237F46C5
 #+BEGIN_SRC emacs-lisp
 (setq eshell-prompt-regexp "^.+@.+:.+> ")
 (setq eshell-prompt-function
@@ -1572,6 +1649,7 @@ Don't create backup files. Instead Git for versioning
 
 Automatically back file-stores if no activity has occurred.
 
+#+NAME: 423B343F-CA48-4C7C-A0A5-45D533FFD8D6
 #+BEGIN_SRC emacs-lisp
 (setq auto-save-default t)
 (setq make-backup-files nil)
@@ -1582,18 +1660,21 @@ Automatically back file-stores if no activity has occurred.
 
 Backup file-stores when the frame loses focus.
 
+#+NAME: 84B0605F-AA20-4CBB-8D14-5B55CF8D097D
 #+BEGIN_SRC emacs-lisp
 (add-hook 'focus-out-hook #'help/save-all-file-buffers)
 #+END_SRC
 
 Backup file-stores before the system exits.
 
+#+NAME: FC0763F4-B0A9-45DA-A0EA-8E3203501804
 #+BEGIN_SRC emacs-lisp
 (advice-add #'save-buffers-kill-terminal :before #'help/save-all-file-buffers)
 #+END_SRC
 
 Always keep buffers in-sync with changes in-file.
 
+#+NAME: B04C1388-6C2A-45D9-BFA6-7E21861FB9E3
 #+BEGIN_SRC emacs-lisp
 (global-auto-revert-mode 1)
 #+END_SRC
@@ -1601,6 +1682,7 @@ Always keep buffers in-sync with changes in-file.
 Save all file befores before common activities. Functions are easier to
 use than advice.
 
+#+NAME: 5A0C3F05-0C41-4E50-944E-0ACC4C2F4A15
 #+BEGIN_SRC emacs-lisp
 (defun help/safb-help-vc-next-action ()
   (interactive)
@@ -1701,6 +1783,7 @@ Future candidates:
 Try to visit a non-existent file and get prompted to create its parent
 directories.
 
+#+NAME: DA537B02-6E64-42FC-BE9D-E5A3408B6599
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'find-file-not-found-functions #'help/create-non-existent-directory)
 #+END_SRC
@@ -1735,6 +1818,7 @@ lets you do just that.
 files you have selected in the kill ring. =dired-compare-directories= lets you
 perform all sorts of directory comparisons, a handy tool that you need once in
 a while but definitely do need.
+#+NAME: 26EA1235-E9EC-4DC0-9F7D-B3D14E1A27B7
 #+BEGIN_SRC emacs-lisp
 (defun help/dired-copy-filename ()
   "Push the path and filename of the file under the point to the kill ring.
@@ -1762,11 +1846,13 @@ a while but definitely do need.
 #+END_SRC
 
 Try to guess the target directory for operations.
+#+NAME: 720D3D44-21F6-4AA0-82B7-C23EE86783C9
 #+BEGIN_SRC emacs-lisp
 (setq dired-dwim-target t)
 #+END_SRC
 
 Use EMACS =ls=.
+#+NAME: 8E592C34-93F5-47DC-A072-ACB8C96D3753
 #+BEGIN_SRC emacs-lisp
 (help/on-osx
  (setq ls-lisp-use-insert-directory-program nil)
@@ -1801,6 +1887,7 @@ Use =find= just like you would at the command line and all of the results show
 up in a single Dired buffer that you may work with just like you would any other
 file appearing in a Dired buffer. The abstraction here becomes so obvious, you
 may ask yourself why you never considered such a thing /before/ now (as I did):
+#+NAME: 8FE141D1-224D-415F-8D68-D1A30196EA33
 #+BEGIN_SRC emacs-lisp
 (use-package find-dired
   :ensure t
@@ -1829,6 +1916,7 @@ to do to it. Very cool.
 - =wdired-finish-edit, C-c C-c= :: commit your changes
 - =wdired-abort-changes, C-c ESC= :: revert your changes
 
+#+NAME: 66FFA0AC-973A-412E-9056-F9B4BE9D3641
 #+BEGIN_SRC emacs-lisp
 (use-package wdired
   :ensure t
@@ -1847,6 +1935,7 @@ somewhere your selection somehow. The simplest way to do this is to utilize
 Since I started using a menu bar again, and wanting to get Imenu really
 exercised, Dired in Imenu seems like an obvious choice.
 
+#+NAME: 41A96AA5-4736-40CF-BECD-5AE7C43DCEFF
 #+BEGIN_SRC emacs-lisp
 (use-package dired-imenu
   :ensure t)
@@ -1859,6 +1948,7 @@ exercised, Dired in Imenu seems like an obvious choice.
 
 Major productivity hack
 
+#+NAME: D722C567-86BA-45AD-91AB-2536696312C8
 #+BEGIN_SRC emacs-lisp
 (use-package imenu
   :config
@@ -1883,6 +1973,7 @@ Access nearly every object available in this system from one place.
 These configurations are performed in the correct order. Any attempt to refactor
 this Source-Block will break Ido in this system.
 
+#+NAME: CCCA7B51-6A71-41EF-906C-C1C3A6B0C927
 #+BEGIN_SRC emacs-lisp
 (use-package ido)
 (use-package flx-ido
@@ -1909,6 +2000,7 @@ this Source-Block will break Ido in this system.
 
 Make functions search-able.
 
+#+NAME: 4C4179A9-2415-4309-A127-FA143D3331DD
 #+BEGIN_SRC emacs-lisp
 (use-package smex
              :ensure t
@@ -1919,6 +2011,7 @@ Make functions search-able.
 
 Make URLs a first-class object.
 
+#+NAME: 667AED70-8685-4BEA-A32F-7B304483C05F
 #+BEGIN_SRC emacs-lisp
 (setq ido-use-url-at-point t)
 (setq ido-use-filename-at-point 'guess)
@@ -1944,6 +2037,7 @@ To test it run =view-hello-file= and =M-x list-charset-chars RET unicode-bmp RET
 
 Perhaps educationally there is a character for bowel-movements: 💩.
 
+#+NAME: 6CE3010A-0F52-4050-89FF-C3DB72794822
 #+BEGIN_SRC emacs-lisp
 (use-package unicode-fonts
   :ensure t
@@ -1953,12 +2047,14 @@ Perhaps educationally there is a character for bowel-movements: 💩.
 
 Activate font locking everywhere possible.
 
+#+NAME: 54E78DF3-0C8E-4ABE-8CD8-36C0AF24DD26
 #+BEGIN_SRC emacs-lisp
 (global-font-lock-mode t)
 #+END_SRC
 
 Visualize ASCII values as their most likely Unicode representation.
 
+#+NAME: 391224F7-3242-4B91-BC34-6E8083947884
 #+BEGIN_SRC emacs-lisp
 (use-package pretty-mode
   :ensure t
@@ -1973,6 +2069,7 @@ Visualize ASCII values as their most likely Unicode representation.
 
 Go to any object in the frame quickly.
 
+#+NAME: C95AD351-D087-473F-88EB-B0930C86FBDF
 #+BEGIN_SRC emacs-lisp
 (use-package avy
   :ensure t
@@ -1986,11 +2083,13 @@ Go to any object in the frame quickly.
    :ID:       95A4EF33-F83D-49ED-AC74-A29DA19524BC
    :END:
 
+#+NAME: 42DD3C85-F2C4-4A82-8B76-5BFBCF692E86
 #+BEGIN_SRC emacs-lisp
 (use-package writegood-mode
   :ensure t)
 #+END_SRC
 
+#+NAME: 4FF40D35-DDA0-4E02-80C0-52962DCD449A
 #+BEGIN_SRC emacs-lisp
 (use-package langtool
   :ensure t
@@ -2005,6 +2104,7 @@ Go to any object in the frame quickly.
    :ID:       B2257535-9891-48F1-B7CD-1B385F527C59
    :END:
 
+#+NAME: D523CBF8-67C4-4C96-9298-A4A49FE54E61
 #+BEGIN_SRC emacs-lisp
 (defun help/comment-or-uncomment ()
   "Comment or uncomment the current line or selection."
@@ -2310,6 +2410,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
    :ID:       A7225C28-B8AE-4960-9E2A-64E6E8B58400
    :END:
 
+#+NAME: 487B46D5-C025-4114-A1B4-BAAF5FAFE430
 #+BEGIN_SRC emacs-lisp
 (use-package fuzzy
   :ensure t)
@@ -2329,6 +2430,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 
 Auto-completion for =.=-separated words.
 
+#+NAME: 36899F5A-7606-461A-A17C-622B0B807E8E
 #+BEGIN_SRC emacs-lisp
 (use-package auto-complete-chunk
   :ensure t)
@@ -2342,6 +2444,7 @@ Auto-completion for =.=-separated words.
 The macro recorder and Multiple-Cursors provide two ways to do the right thing
 in different situations.
 
+#+NAME: 989C4727-473A-4DAB-8446-5077F3042587
 #+BEGIN_SRC emacs-lisp
 (use-package multiple-cursors
   :ensure t
@@ -2360,6 +2463,7 @@ in different situations.
 When you start typing and text is selected, replace it with what you are typing,
 or pasting
 
+#+NAME: 0B6E0831-FE6F-442F-918F-48488A6FCD2D
 #+BEGIN_SRC emacs-lisp
 (delete-selection-mode t)
 #+END_SRC
@@ -2370,17 +2474,20 @@ or pasting
    :END:
 
 Make it easier to answer questions.
+#+NAME: 2D2A8781-9A67-4D3A-B0E4-B09EEBBC65D8
 #+BEGIN_SRC emacs-lisp
 (fset 'yes-or-no-p 'y-or-n-p)
 #+END_SRC
 
 Comfortably display information.
+#+NAME: F40D1069-58B9-42CA-A64E-789B56C914EC
 #+BEGIN_SRC emacs-lisp
 (setq resize-mini-windows t)
 (setq max-mini-window-height 0.33)
 #+END_SRC
 
 Allow recursive commands-in-commands and highlight the levels of recursion.
+#+NAME: A6E43252-3A7E-4647-BC3E-EB93CF178233
 #+BEGIN_SRC emacs-lisp
 (setq enable-recursive-minibuffers t)
 (minibuffer-depth-indicate-mode t)
@@ -2395,6 +2502,7 @@ Scroll pleasantly with the mouse wheel. A slow turn moves the buffer up and down
 one line at a time. So does a fast turn. Anything further than 5-10 lines deserves
 a fast navigation vehicle.
 
+#+NAME: 9B580380-CA8C-4134-80CC-FE3B0376BE73
 #+BEGIN_SRC emacs-lisp
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
 (setq mouse-wheel-progressive-speed nil)
@@ -2406,6 +2514,7 @@ a fast navigation vehicle.
    :ID:       FA8195C5-30B7-44CF-8D0F-8FE2CE1CB3DA
    :END:
 
+#+NAME: 00A4417A-8BE6-4417-B054-2F9D8287FAFD
 #+BEGIN_SRC emacs-lisp
 (defun help/occur-mode-hook-fn ()
   "HELP customizations."
@@ -2422,6 +2531,7 @@ a fast navigation vehicle.
 
 Provide popup notifications.
 
+#+NAME: 2DE86EF6-3E4B-42FD-AA11-1914A83029BE
 #+BEGIN_SRC emacs-lisp
 (use-package alert
   :ensure t
@@ -2441,6 +2551,7 @@ Provide popup notifications.
 Directories that have Git working copies are logically projects. Manage them
 with Projectile.
 
+#+NAME: 037534FF-945E-477A-9813-D9E4C7E54359
 #+BEGIN_SRC emacs-lisp
 (use-package projectile
   :ensure t
@@ -2454,6 +2565,7 @@ with Projectile.
 
 Notify Magit about every working copy that Projectile knows about.
 
+#+NAME: 8431ABE6-1C81-4AD3-AB47-C0B793C98FE3
 #+BEGIN_SRC emacs-lisp
 (eval-after-load "projectile"
   '(progn (setq magit-repository-directories (mapcar (lambda (dir)
@@ -2470,6 +2582,7 @@ Notify Magit about every working copy that Projectile knows about.
    :ID:       C6230D9E-8331-4092-8846-DB244455C922
    :END:
 
+#+NAME: BD085F97-3BDA-43A5-A5BC-A17DD446E36B
 #+BEGIN_SRC emacs-lisp
 (use-package pp
   :commands (pp-display-expression))
@@ -2482,6 +2595,7 @@ Notify Magit about every working copy that Projectile knows about.
 
 Display information about search-and-or-replace operation.
 
+#+NAME: D9A8B6E9-E328-47C1-9B75-863B640BEAB7
 #+BEGIN_SRC emacs-lisp
 (use-package anzu
              :ensure t
@@ -2503,6 +2617,7 @@ Display information about search-and-or-replace operation.
 It is nice to have commands and their history saved so that every time you get
 back to work, you can just re-run stuff as you need it.
 
+#+NAME: FDA728C0-CBE2-4B1B-A30F-CC8EA3E810DB
 #+BEGIN_SRC emacs-lisp
 (setq savehist-save-minibuffer-history 1)
 (setq savehist-additional-variables
@@ -2519,6 +2634,7 @@ back to work, you can just re-run stuff as you need it.
 
 When searching allow a space to many any number.
 
+#+NAME: B5DDBCA8-42F2-49DF-9E7F-71E776A99946
 #+BEGIN_SRC emacs-lisp
 (setq isearch-lax-whitespace t)
 (setq isearch-regexp-lax-whitespace t)
@@ -2526,6 +2642,7 @@ When searching allow a space to many any number.
 
 Make searches case-insensitive.
 
+#+NAME: 4B9FE2A1-6A5F-42EF-AEEA-222B72170B64
 #+BEGIN_SRC emacs-lisp
 (setq-default case-fold-search t)
 #+END_SRC
@@ -2546,6 +2663,7 @@ Never ispell the following objects.
 
 Source-Blocks.
 
+#+NAME: 23D5548B-1081-48A8-BBCD-5C69AC2C57B8
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'ispell-skip-region-alist '("^#\\+begin_src ". "#\\+#+end_src$"))
 (add-to-list 'ispell-skip-region-alist '("^#\\+BEGIN_SRC ". "#\\+#+END_SRC$"))
@@ -2554,6 +2672,7 @@ Source-Blocks.
 Example-Blocks. This system often uses Source-Blocks to edit content and
 Example-Blocks to make it easily renderable when it is not for running.
 
+#+NAME: CE78FEAC-B28A-4F76-95F2-4FE246FCDCAD
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'ispell-skip-region-alist '("^#\\+begin_example ". "#\\+end_example$"))
 (add-to-list 'ispell-skip-region-alist '("^#\\+BEGIN_EXAMPLE ". "#\\+END_EXAMPLE$"))
@@ -2561,36 +2680,42 @@ Example-Blocks to make it easily renderable when it is not for running.
 
 Properties.
 
+#+NAME: 01BEC0C6-64F7-440F-A217-EA73CDA75DDA
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'ispell-skip-region-alist '("\:PROPERTIES\:$" . "\:END\:$"))
 #+END_SRC
 
 Footnotes.
 
+#+NAME: F5DC40F2-20EC-45C0-BDB3-7C788514CD23
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'ispell-skip-region-alist '("\\[fn:.+:" . "\\]"))
 #+END_SRC
 
 Footnotes with URLs that contain line-breaks.
 
+#+NAME: F5636C6E-61AC-491F-936E-FAE5974ED541
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'ispell-skip-region-alist '("^http" . "\\]"))
 #+END_SRC
 
 Verbatim
 
+#+NAME: 5BF4C8DE-63B8-4684-B8F4-0021781B1E1E
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'ispell-skip-region-alist '("=.*" . ".*="))
 #+END_SRC
 
 Bold text list items.
 
+#+NAME: D1A2D129-9299-4349-AFF3-8F65F7D0CF95
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'ispell-skip-region-alist '("- \\*.+" . ".*\\*: "))
 #+END_SRC
 
 Export properties.
 
+#+NAME: 3745D1E1-33D3-4D2F-B527-BBBCA619D455
 #+BEGIN_SRC emacs-lisp
 (defun help/ispell-org-header-lines-regexp (h)
   "Help ispell ignore org header lines."
@@ -2639,6 +2764,7 @@ Export properties.
 
 Configure Sudo with Ido.
 
+#+NAME: E2D66077-10AC-46D1-AAAA-D0C81BED451B
 #+BEGIN_SRC emacs-lisp
 (help/on-osx
  (defun help/ido-find-file (&rest args)
@@ -2659,6 +2785,7 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
 
 Perform syntactic analysis all the time.
 
+#+NAME: 33473D12-CA77-453B-8115-FE060E033ED4
 #+BEGIN_SRC emacs-lisp
 (use-package flycheck
   :ensure t
@@ -2674,6 +2801,7 @@ Perform syntactic analysis all the time.
 
 Most modes in this system will never use TAB.
 
+#+NAME: 6A9C209F-8228-4D10-B23D-6A8376FD7FB3
 #+BEGIN_SRC emacs-lisp
 (setq-default indent-tabs-mode nil)
 #+END_SRC
@@ -2681,6 +2809,7 @@ Most modes in this system will never use TAB.
 Remove TAB from all buffers before persisting to the backing file unless it is
 configured to retain TAB. The use case is a Makefile.
 
+#+NAME: FD5B749C-AC7A-40A7-AB88-851F2190E906
 #+BEGIN_SRC emacs-lisp
 (defun help/untabify-if-not-indent-tabs-mode ()
   "Untabify if `indent-tabs-mode' is false.
@@ -2695,6 +2824,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 
 Most programing modes indent to 2 spaces. TABs should be the same width.
 
+#+NAME: 1AB838F7-4C9B-4C35-97B5-35390871A22D
 #+BEGIN_SRC emacs-lisp
 (setq-default tab-width 2)
 #+END_SRC
@@ -2707,6 +2837,7 @@ Most programing modes indent to 2 spaces. TABs should be the same width.
 Use Magit for Git. The commit log editor uses With-Editor and Server modes.
 They are not not diminshed because they are infrequently used.
 
+#+NAME: 14B95634-E6E8-46A0-9698-2C9B847DD404
 #+BEGIN_SRC emacs-lisp
 (use-package magit
              :ensure t
@@ -2716,6 +2847,7 @@ They are not not diminshed because they are infrequently used.
 
 Leave the VC message template empty.
 
+#+NAME: 27D5DC40-DD13-4E08-9EF9-D962DD08A7D5
 #+BEGIN_SRC emacs-lisp
 (eval-after-load 'log-edit
   '(remove-hook 'log-edit-hook 'log-edit-insert-message-template))
@@ -2723,6 +2855,7 @@ Leave the VC message template empty.
 
 Git ignore files are text files.
 
+#+NAME: 6FD11818-DB10-4AF4-A714-C32C04291AF2
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'auto-mode-alist '(".gitignore$" . text-mode))
 #+END_SRC
@@ -2734,6 +2867,7 @@ Git ignore files are text files.
 
 Make control characters easily visible.
 
+#+NAME: 3327B4FF-82CF-42E7-AEF8-DCC968B97BDC
 #+BEGIN_SRC emacs-lisp
 (use-package whitespace
   :ensure t
@@ -2749,6 +2883,7 @@ Make control characters easily visible.
    :ID:       2156A7CE-297E-478F-AFF2-13CE64B3C5C3
    :END:
 
+#+NAME: EDD8ABBB-B76A-4B95-9367-211A765348CD
 #+BEGIN_SRC emacs-lisp
 (use-package visual-line-mode
   :config
@@ -2771,6 +2906,7 @@ Configure EMACS to personal-taste for "noise" and "form".
 
 Give buffers backed by identically named files distinguishable names.
 
+#+NAME: A5438CB6-5228-4753-B2A7-BFEFC573F6B6
 #+BEGIN_SRC emacs-lisp
 (use-package uniquify)
 (setq uniquify-buffer-name-style 'forward)
@@ -2778,6 +2914,7 @@ Give buffers backed by identically named files distinguishable names.
 
 Don't use audible bells, use visual bells.
 
+#+NAME: 295C91F5-6CD4-41C8-A62C-600B11838B2B
 #+BEGIN_SRC emacs-lisp
 (setq ring-bell-function 'ignore)
 (setq visible-bell t)
@@ -2785,6 +2922,7 @@ Don't use audible bells, use visual bells.
 
 Highlight s-expressions.
 
+#+NAME: 59F87147-F8C3-49D0-BEC6-A8D19989001E
 #+BEGIN_SRC emacs-lisp
 (setq blink-matching-paren nil)
 (show-paren-mode)
@@ -2795,6 +2933,7 @@ Highlight s-expressions.
 The cursor should not blink and distract you. On a graphic display make the
 cursor a box and stretch it as wide as the character below it.
 
+#+NAME: CC0CDAEB-8460-43CE-BA7E-3A9D986A02BB
 #+BEGIN_SRC emacs-lisp
 (blink-cursor-mode 0)
 (help/on-gui
@@ -2804,6 +2943,7 @@ cursor a box and stretch it as wide as the character below it.
 
 EMACS used UTF-8 by default. Make copying and pasting easier.
 
+#+NAME: BC706CBF-2B98-4FD7-9A5A-61F5483D0899
 #+BEGIN_SRC emacs-lisp
 (prefer-coding-system 'utf-8)
 (help/on-gui
@@ -2814,6 +2954,7 @@ EMACS used UTF-8 by default. Make copying and pasting easier.
 
 Make it very easy to see the line with the cursor.
 
+#+NAME: 6FD9F092-7062-4E7A-BB58-4B5F45AF0AD0
 #+BEGIN_SRC emacs-lisp
 (global-hl-line-mode t)
 #+END_SRC
@@ -2826,6 +2967,7 @@ Make it very easy to see the line with the cursor.
 The Solarized theme is the perfect theme for everything. bozhidar's
 release. It is soft and gentle yet easy to read in any situation.
 
+#+NAME: 021B7D3A-E696-43B9-BC08-C8BDABB33999
 #+BEGIN_SRC emacs-lisp
 (use-package solarized-theme
   :ensure t
@@ -2846,6 +2988,7 @@ release. It is soft and gentle yet easy to read in any situation.
 =comint-mode= is only maybe the second most important thing for making Emacs
 really, really special.
 
+#+NAME: CDD7F353-867A-4E9C-A060-5C0F6A26866B
 #+begin_src emacs-lisp
 (setq comint-scroll-to-bottom-on-input 'this)
 (setq comint-scroll-to-bottom-on-output 'others)
@@ -2862,6 +3005,7 @@ became a mistake. Nonetheless, this should be left alone. The way the issue here
 manifested was that all ℝ buffers opened by =ess= were 100% read only which
 obviously is a *big issue* if you actually want to use! ROFL
 
+#+NAME: 346012D4-6861-458B-8352-3874D1F934E6
 #+BEGIN_SRC emacs-lisp
 (setq comint-prompt-read-only nil)
 #+END_SRC
@@ -2875,6 +3019,7 @@ The best programming font is Deja Vu Sans Mono because it sans-serif and
 support a lot of Unicode characters. Set it to a good default for an 80
 character wide buffer and make it easy to adjust it.
 
+#+NAME: 21687556-D79E-4734-86E6-52FF9EE107B5
 #+BEGIN_SRC emacs-lisp
 (help/on-gui
  (defvar help/font-size 10 "The preferred font size.")
@@ -2920,12 +3065,14 @@ character wide buffer and make it easy to adjust it.
 
 The scroll-bars are helpful for new users.
 
+#+NAME: 96EB14DD-CB63-46F3-B2E3-6F433D70DFAE
 #+BEGIN_SRC emacs-lisp
 (scroll-bar-mode 0)
 #+END_SRC
 
 The tool-bar is helpful for new users. Isn't the argument funny?
 
+#+NAME: 2063ECD7-C23B-4CDC-96E0-786361DFAA9C
 #+BEGIN_SRC emacs-lisp
 (tool-bar-mode -1)
 #+END_SRC
@@ -2937,6 +3084,7 @@ The tool-bar is helpful for new users. Isn't the argument funny?
 
 Hide the pointer when typing.
 
+#+NAME: 9E122111-1074-42D5-A57D-855E3A888C8E
 #+BEGIN_SRC emacs-lisp
 (setq make-pointer-invisible t)
 #+END_SRC
@@ -2948,6 +3096,7 @@ Hide the pointer when typing.
 
 Provide VC file status indicators.
 
+#+NAME: 668C63F3-C52E-4BDF-929D-E2BF2E985304
 #+BEGIN_SRC emacs-lisp
 (use-package diff-hl
   :ensure t)
@@ -2960,12 +3109,14 @@ Provide VC file status indicators.
 
 Menu bars make EMACS more accessible to non-EMACS users.
 
+#+NAME: 00BC7BEE-F9FC-4B9D-AC1A-4B1A3FFA64A7
 #+BEGIN_SRC emacs-lisp
 (menu-bar-mode t)
 #+END_SRC
 
 Easily return to previous configurations.
 
+#+NAME: 3FB7FA94-1A6B-4E3B-8EDE-7A4D1D86E50E
 #+BEGIN_SRC emacs-lisp
 (winner-mode t)
 #+END_SRC
@@ -3007,6 +3158,7 @@ representations.
 This is the *first* thing that /ought/ to happen in the initialization of *any*
 tangled system.
 
+#+NAME: 87B0CAB9-E6E5-4C68-B389-9289E65FCA7F
 #+BEGIN_SRC emacs-lisp
 (setq load-prefer-newer t)
 #+END_SRC
@@ -3025,6 +3177,7 @@ have their issues fixed very quickly. GNU packages rarely have issues.
 
 Initialize Package.
 
+#+NAME: 804FD197-8B2A-49F5-A4CB-48F6036FBCEC
 #+BEGIN_SRC emacs-lisp
 (package-initialize)
 (add-to-list 'package-archives
@@ -3037,6 +3190,7 @@ Use-Package is the most configurable and performant way to manage ELPA packages.
 
 Add the Use-Package distribution the load path.
 
+#+NAME: FAB22F99-AB0C-4A75-AFEF-9E680A5EE95D
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path "~/src/use-package")
 #+END_SRC
@@ -3044,6 +3198,7 @@ Add the Use-Package distribution the load path.
 Load Use-Package and it's partner Diminish. Every package loaded before this
 point uses ~require~. Every package loaded after this point uses ~use-package~.
 
+#+NAME: 54841CA9-6491-46E8-8F40-4DCF7182CCD7
 #+BEGIN_SRC emacs-lisp
 (eval-when-compile
   (require 'use-package))
@@ -3094,6 +3249,7 @@ With that in mind this system:
 
 - Line numbers make documents easier to read.
 - Indicate that Text-Mode buffers ought to be 80 characters wide.
+  #+NAME: 9288AC00-4B73-4E10-ABAE-F2E886981F97
   #+BEGIN_SRC emacs-lisp
 (use-package fill-column-indicator
   :ensure t
@@ -3101,6 +3257,7 @@ With that in mind this system:
   (setq-default fill-column help/column-width))
   #+END_SRC
 
+#+NAME: 42D5F313-65F0-49E1-8759-9259D4020FA9
 #+BEGIN_SRC emacs-lisp
 (defun help/text-prog*-setup ()
   "HELP's standard configuration for buffer's working with text, often for
@@ -3125,11 +3282,13 @@ With that in mind this system:
 
 - Hacking mode hooks.
   - Configurations common to every hacking vehicle.
+    #+NAME: B56D8E08-DF7C-4EBB-922E-EA215BD66C0D
     #+BEGIN_SRC emacs-lisp
 (setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook ess-mode-hook graphviz-dot-mode-hook))
     #+END_SRC
   - LISP mode hooks.
     - Are hacking modes.
+      #+NAME: 963C787F-BC23-4A6C-9637-3922541B26E2
       #+BEGIN_SRC emacs-lisp
 (setq help/hack-lisp-modes
       '(emacs-lisp-mode-hook
@@ -3153,6 +3312,7 @@ With that in mind this system:
 - Indent at every opportunity and automatically. Verify that it makes sense
   for the mode. Explicitly define instead of relying on ~prog-mode~ inheritance;
   use this documents logical ~prog*-mode~ approach instead.
+  #+NAME: 9585BEED-D8EE-4B47-94FA-7E0C604B5804
   #+BEGIN_SRC emacs-lisp
 (use-package aggressive-indent
   :ensure t
@@ -3161,6 +3321,7 @@ With that in mind this system:
 - Always maintain balanced brackets. Easily wrap the selected region. Auto-escape
   strings pasted into other strings. Smartparens provides built-in correct
   behavior for most modes.
+  #+NAME: 2B027700-7A37-4C26-BA3C-AAD0E6549F9F
   #+BEGIN_SRC emacs-lisp
 (use-package smartparens-config
   :ensure smartparens
@@ -3174,6 +3335,7 @@ With that in mind this system:
      :ID:       61A981CB-1311-4F51-A264-D748FA34F1D3
      :END:
 
+#+NAME: A0515707-4727-4A01-82E3-01A41CAA841F
 #+BEGIN_SRC emacs-lisp
 (defun help/hack-prog*-mode-hook-fn ()
   (interactive)
@@ -3190,6 +3352,7 @@ With that in mind this system:
     :ID:       50304E30-682C-4C9A-9615-D6E61DAE533B
     :END:
 
+ #+NAME: EBACFD45-C2FF-47B3-B991-28591C112F28
  #+BEGIN_SRC emacs-lisp
 (let (void)
   (--each help/hack-modes
@@ -3212,6 +3375,7 @@ With that in mind this system:
   :ID:       3AD91697-42DE-4555-9F49-B7D9F5E502D3
   :END:
 
+#+NAME: BDF6F6E5-D219-4C49-BB3F-D414A9741B11
 #+BEGIN_SRC emacs-lisp
 (setq initial-scratch-message nil)
 (use-package lexbind-mode)
@@ -3269,6 +3433,7 @@ RC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.htm
     :ID:       3A6B16EC-870A-4EFE-935A-C03F8DFB67BF
     :END:
 
+#+NAME: 7CEA216B-6A18-47F6-B1DE-327CFA8A591A
 #+BEGIN_SRC emacs-lisp
 (define-key emacs-lisp-mode-map (kbd "s-p") #'describe-thing-in-popup)
 #+END_SRC
@@ -3285,6 +3450,7 @@ instead of an =example= block. Instead, *always* place them in an
 example block. This makes exports more consistent and other Org-Mode features seem
 to behave more predictably.
 
+#+NAME: AB26182E-A169-4FB9-BA68-E9F7231069C1
 #+BEGIN_SRC emacs-lisp
 (setq org-babel-min-lines-for-block-output 0)
 #+END_SRC
@@ -3292,6 +3458,7 @@ to behave more predictably.
 When Source-Block evaluation results are inserted try to use the name or cache-id.
 If neither are present, the =RESULTS= block becomes a =NAME= "results" block.
 
+#+NAME: 4B4B1348-4E65-45CD-97BF-8BF322C48896
 #+BEGIN_SRC emacs-lisp
 (setq org-babel-results-keyword "NAME")
 #+END_SRC
@@ -3299,6 +3466,7 @@ If neither are present, the =RESULTS= block becomes a =NAME= "results" block.
 Configure Org-Mode to manage it's Source-Block backed buffers the same as the
 rest of this system.
 
+#+NAME: 8F3861FD-B2F6-4618-8E70-026316855E67
 #+BEGIN_SRC emacs-lisp
 (setq org-edit-src-auto-save-idle-delay 0)
 (setq org-edit-src-turn-on-auto-save nil)
@@ -3308,6 +3476,7 @@ Update in-buffer images after Source-Block execution. This is a programming task
 That is why it is under this heading and Evaluation. This is a setting configuring
 how the results of evaluation are refreshed in EMACS.
 
+#+NAME: 11B7C941-8AA4-471A-B4A4-BCEBFE850206
 #+BEGIN_SRC emacs-lisp
 (defun help/org-babel-after-execute-hook ()
   "HELP settings for the `org-babel-after-execute-hook'.
@@ -3323,6 +3492,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 
 Never "automatically" evaluate a source block.
 
+#+NAME: 9947D738-D140-4CBF-BB6D-21E2FF58BD24
 #+BEGIN_SRC emacs-lisp
 (setq org-confirm-babel-evaluate nil)
 #+END_SRC
@@ -3331,12 +3501,14 @@ Make it unpleasant for Sysop to modify source-block outside of a source-block
 backed buffer. The next step is to write some code to prevent modifying
 source-blocks outside of that place.
 
+#+NAME: 6CE707AD-A340-4B63-B747-8692E0DFF41C
 #+BEGIN_SRC emacs-lisp
 (setq org-src-tab-acts-natively nil)
 #+END_SRC
 
 My personal TODO workflow.
 
+#+NAME: BB8A752F-713B-4450-98DC-CE04957577EF
 #+BEGIN_SRC emacs-lisp
 (setq org-todo-keywords
       '((sequence "TODO" "IN-PROGRESS" "BLOCKED" "REVIEW" "DONE")))
@@ -3345,12 +3517,14 @@ My personal TODO workflow.
 When running in a GUI, I would like linked images to be displayed inside of
 Emacs.
 
+#+NAME: 548D2D49-98E0-456B-91BC-37D0C0BC3557
 #+BEGIN_SRC emacs-lisp
 (setq org-startup-with-inline-images (display-graphic-p))
 #+END_SRC
 
 Use Ido completion in Org-Mode.
 
+#+NAME: CE97A1D8-07E2-4445-80B9-3C91ACFE7FB8
 #+BEGIN_SRC emacs-lisp
 (setq org-completion-use-ido t)
 (setq org-outline-path-complete-in-steps nil)
@@ -3360,6 +3534,7 @@ Use Ido completion in Org-Mode.
 Org-Mode lets you use single letter commands to do stuff on headers. I like to
 use =c= for cycling the header expansion.
 
+#+NAME: 232DFCF9-BFC7-4022-8B93-09F323CB1BA8
 #+BEGIN_SRC emacs-lisp
 (setq org-use-speed-commands t)
 #+END_SRC
@@ -3367,12 +3542,14 @@ use =c= for cycling the header expansion.
 Ask before execution of shell links. This might seem like an Evaluation
 activity. It is. It is interactive.
 
+#+NAME: F5ABA576-FB0D-4FCE-A000-AA5E38B7EB3D
 #+BEGIN_SRC emacs-lisp
 (setq org-confirm-shell-link-function 'y-or-n-p)
 #+END_SRC
 
 Ask before execution of Emacs-Lisp.
 
+#+NAME: 13BBCE85-2D3B-4903-8098-EB565B5CB708
 #+BEGIN_SRC emacs-lisp
 (setq org-confirm-elisp-link-function 'y-or-n-p)
 #+END_SRC
@@ -3380,12 +3557,14 @@ Ask before execution of Emacs-Lisp.
 Make sure that incomplete TODO entries prevent the enclosing parent from every
 turning to DONE.
 
+#+NAME: 4AE6A326-034C-475A-BC95-877D528A94D6
 #+BEGIN_SRC emacs-lisp
 (setq org-enforce-todo-dependencies t)
 #+END_SRC
 
 Allow the mouse to do Org-Mode things like expand and collapse headings.
 
+#+NAME: BA1565BE-2BF1-4121-96BD-A3F7462676CC
 #+BEGIN_SRC emacs-lisp
 (when (display-graphic-p)
   (use-package org-mouse))
@@ -3394,6 +3573,7 @@ Allow the mouse to do Org-Mode things like expand and collapse headings.
 Use a real ellipsis to render an ellipsis for Org-Mode stuff like showing that a
 header is collapsed.
 
+#+NAME: 42F9CE2D-591D-4BDD-998E-C85E0B7B5DF5
 #+BEGIN_SRC emacs-lisp
 (setq org-ellipsis "…")
 #+END_SRC
@@ -3401,12 +3581,14 @@ header is collapsed.
 It is easy to see indentation of headlines without having to count asterisks, so
 don't show them, only show the significant and last one.
 
+#+NAME: A0FB5129-6EF9-4D5F-A35A-CB5505C8FD6F
 #+BEGIN_SRC emacs-lisp
 (setq org-hide-leading-stars t)
 #+END_SRC
 
 Display emphasized text as you would in a WYSIWYG editor.
 
+#+NAME: 4FDB1A19-4906-48EE-B7CB-26B3E9301964
 #+BEGIN_SRC emacs-lisp
 (setq org-fontify-emphasized-text t)
 #+END_SRC
@@ -3415,6 +3597,7 @@ Use Unicode characters to visualize things like right arrow eg \rarr . Most of t
 symbols are correctly exported to the destination format. The most obvious is
 this example in LaTeX versus Text.
 
+#+NAME: D2453829-D976-4FE0-B517-7CCD8C3C1A2C
 #+BEGIN_SRC emacs-lisp
 (setq org-pretty-entities t)
 #+END_SRC
@@ -3428,12 +3611,14 @@ with syntax highlighting, because I want to indicate to the human reader that
 they are special, and specifically /not/-Unicode. Do the same thing for LaTeX
 and related markup.
 
+#+NAME: B5A535CA-E024-4592-A787-734032E48860
 #+BEGIN_SRC emacs-lisp
 (setq org-highlight-latex-and-related '(latex script entities))
 #+END_SRC
 
 Allow "refactoring" of Footnotes between documents.
 
+#+NAME: 834535C5-DCEA-47D3-B251-76DADE4CE897
 #+BEGIN_SRC emacs-lisp
 (setq org-footnote-define-inline t)
 (setq org-footnote-auto-label 'random)
@@ -3444,6 +3629,7 @@ Allow "refactoring" of Footnotes between documents.
 This is an amazingly easy way to screw up your document. The more you edit
 org docs, the more you realize how you must truly protect it.
 
+#+NAME: 939BFF91-F7AC-446A-B797-6B294D364082
 #+BEGIN_SRC emacs-lisp
 (setq org-catch-invisible-edits 'error)
 #+END_SRC
@@ -3452,6 +3638,7 @@ Though I am not delving deep, it is hard not to want to customize some stuff
 and perhaps this is the start. Even though I enabled this, I don't think that I
 ever used it.
 
+#+NAME: D8426EE3-702E-4008-B2F5-0A839E0B9C27
 #+BEGIN_SRC emacs-lisp
 (setq org-loop-over-headlines-in-active-region t)
 #+END_SRC
@@ -3460,6 +3647,7 @@ It is /almost always/ faster to work with org documents when they are fully
 expanded. Anyway, the structure cycling makes it really, really easy to get an
 /outline view/ again.
 
+#+NAME: EB229153-0540-4EFE-BB44-D44EE0D0E9B8
 #+BEGIN_SRC emacs-lisp
 (setq org-startup-folded "nofold")
 #+END_SRC
@@ -3468,6 +3656,7 @@ When images are displayed in the buffer, display them in their actual size. As
 the operator, I want to know their true form. Any modifications required for
 export will be stated explicitly.
 
+#+NAME: 862CCD19-46D8-47E9-85CF-43F0EE9E8404
 #+BEGIN_SRC emacs-lisp
 (setq org-image-actual-width t)
 #+END_SRC
@@ -3475,30 +3664,35 @@ export will be stated explicitly.
 Hide the delimeter for emphasized text. Unicode characters break table
 alignment.
 
+#+NAME: 4F8C7477-3CE5-4C83-9C00-FCBAAECEB5E8
 #+BEGIN_SRC emacs-lisp
 (setq org-hide-emphasis-markers t)
 #+END_SRC
 
 Realign tables automatically.
 
+#+NAME: 78196A51-0117-4C66-8616-1508D81568A7
 #+BEGIN_SRC emacs-lisp
 (setq org-startup-align-all-tables t)
 #+END_SRC
 
 Always use Unicode checkboxes.
 
+#+NAME: 0102E34E-3098-48E9-AAB9-F5433AE37D66
 #+BEGIN_SRC emacs-lisp
 (setq org-html-checkbox-type 'unicode)
 #+END_SRC
 
 You may display syntax highlighting for code in source blocks. I don't.
 
+#+NAME: A1636BE6-8477-4085-BB14-E0870A19A440
 #+BEGIN_SRC emacs-lisp
 (setq org-src-fontify-natively nil)
 #+END_SRC
 
 Never indent the contents of a source-block automatically.
 
+#+NAME: EA9E78DF-18FA-477B-8CFF-CF921479CD40
 #+BEGIN_SRC emacs-lisp
 (setq org-edit-src-content-indentation 0)
 #+END_SRC
@@ -3512,6 +3706,7 @@ forgotten why this is the case. I don't like it because you add a bunch of
 empty lines in the source buffer for every source block. With that in mind I
 will enable this feature and try it out again.
 
+#+NAME: 59E79DBC-FDA4-4F1A-9306-DB9204233A7C
 #+BEGIN_SRC emacs-lisp
 (setq org-src-strip-leading-and-trailing-blank-lines t)
 #+END_SRC
@@ -3527,6 +3722,7 @@ block so you are editing in a buffer that is full-fledged HELP. That is the best
 way so you can focus completely on each task at hand in the ideal mode for that
 task. Anything else results in distractions and errors.
 
+#+NAME: 767547FC-FCB3-433C-AC2E-4240D040F5F8
 #+BEGIN_SRC emacs-lisp
 (setq org-src-window-setup 'current-window)
 #+END_SRC
@@ -3540,6 +3736,7 @@ leery I am about making it really easy to evaluate code. I want it to be a
 really, really specific and decided action to evaluate a code block, so don't
 make it so easy as =C-c C-c=.
 
+#+NAME: C0FFD815-3AB7-4101-B1E8-D73A10026CB4
 #+BEGIN_SRC emacs-lisp
 (setq org-babel-no-eval-on-ctrl-c-ctrl-c t)
 #+END_SRC
@@ -3550,6 +3747,7 @@ exit the Source-Block Buffer (SBB). If this system stays in the SBB
 when calling ~vc-next-action~ the entire contents of the buffer are escaped
 as Org-Mode source code upon returning to the source buffer (this).
 
+#+NAME: C1F1C610-AC69-40E8-AD2F-EB6C849B40CB
 #+BEGIN_SRC emacs-lisp
 (defun help/vc-next-action ()
   "If in org source block, exit it before `vc-next-action'."
@@ -3563,6 +3761,7 @@ as Org-Mode source code upon returning to the source buffer (this).
 
 Never use the original version.
 
+#+NAME: 727834EF-DF94-4190-98AC-B791FCCDE7E3
 #+BEGIN_SRC emacs-lisp
 (setq org-edit-src-code nil)
 #+END_SRC
@@ -3570,6 +3769,7 @@ Never use the original version.
 Easily wrap text in Org-Mode. This is not used by the rest of HELP because
 Smartparens provides that functionality for programming modes.
 
+#+NAME: 593A037F-9615-47CA-9C13-5BC88074F24D
 #+BEGIN_SRC emacs-lisp
 (use-package wrap-region
   :ensure t
@@ -3579,28 +3779,33 @@ Smartparens provides that functionality for programming modes.
 
 *Bold*.
 
+#+NAME: 8055DBFC-C839-4EED-BA59-E56D2E05F027
 #+BEGIN_SRC emacs-lisp
 (wrap-region-add-wrapper "*" "*" nil 'org-mode)
 #+END_SRC
 
 /Italic/.
 
+#+NAME: 15774582-183E-4625-9BDB-E36D3A7B2AFE
 #+BEGIN_SRC emacs-lisp
 (wrap-region-add-wrapper "/" "/" nil 'org-mode)
 #+END_SRC
 
 =Verbatim=.
+#+NAME: F3B847CA-C89F-4566-98C3-240514B37447
 #+BEGIN_SRC emacs-lisp
 (wrap-region-add-wrapper "=" "=" nil 'org-mode)
 #+END_SRC
 
 ~Code~.
 
+#+NAME: 0E2ECE84-87AB-4B18-9929-6E752C88118C
 #+BEGIN_SRC emacs-lisp
 (wrap-region-add-wrapper "~" "~" nil 'org-mode)
 #+END_SRC
 
 +Strike-Through+.
+#+NAME: 0EBE9F71-59AC-4D54-B792-AFC3F78985D8
 #+BEGIN_SRC emacs-lisp
 (wrap-region-add-wrapper "+" "+" nil 'org-mode)
 #+END_SRC
@@ -3613,6 +3818,7 @@ Smartparens provides that functionality for programming modes.
 [[http://article.gmane.org/gmane.emacs.orgmode/99738][Visit every Headline. If it doesn't have an ID property then add one and assign
 it a UUID]].
 
+#+NAME: AF974EFC-7ED4-420F-9861-29EB37D2E22D
 #+BEGIN_SRC emacs-lisp :noweb-ref ignore :eval no
 (dolist (p (nreverse
             (org-element-map (org-element-parse-buffer 'headline) 'headline
@@ -3624,6 +3830,7 @@ it a UUID]].
 [[http://article.gmane.org/gmane.emacs.orgmode/99740][Visit every Source-Block. If it doesn't have a NAME property then add one
 and assign it a UUID]].
 
+#+NAME: 1481FCDC-428E-4D42-A464-73DCA1E436C2
 #+BEGIN_SRC emacs-lisp :noweb-ref ignore :eval no
 (let ((case-fold-search t))
   (while (re-search-forward "^\s*#[+]BEGIN_SRC" nil t)
@@ -3664,6 +3871,7 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
   and next line then position the cursor correctly indented at the start of it.
   - s-<return> because it is that is the last place in the modifier key chain
 
+#+NAME: 8C7E90AC-C7EB-4A43-9377-C3C85CE51849
 #+BEGIN_SRC emacs-lisp
 (help/not-on-gui
  (define-key org-mode-map (kbd "RET") 'org-return-indent)
@@ -3673,6 +3881,7 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
  (define-key org-mode-map (kbd "C-M-<return>") 'electric-indent-just-newline))
 #+END_SRC
 
+#+NAME: E65CF1F6-F56C-4A1A-BB45-5E530FA93C04
 #+BEGIN_SRC emacs-lisp
 (define-key org-mode-map (kbd "s-j") #'org-babel-next-src-block)
 (define-key org-mode-map (kbd "s-u") #'org-goto)
@@ -3687,18 +3896,21 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
 
 Safe all buffers before working with Exports.
 
+#+NAME: BFF7A955-3107-4ED3-9022-CAB792E779EC
 #+BEGIN_SRC emacs-lisp
 (define-key org-mode-map (kbd "C-c C-e") #'help/safb-org-export-dispatch)
 #+END_SRC
 
 Make =s-l= do the same thing to leave the Source-Block-Buffer.
 
+#+NAME: B489F70A-F1B0-41A9-BB98-A5861A867547
 #+BEGIN_SRC emacs-lisp
 (define-key org-src-mode-map (kbd "s-l") #'org-edit-src-exit)
 #+END_SRC
 
 Easily enter guillemots.
 
+#+NAME: 46FE856B-D5C6-45B0-95D5-891211AC295C
 #+BEGIN_SRC emacs-lisp
 (key-chord-define org-src-mode-map "<<" (lambda () (interactive) (insert "«")))
 (key-chord-define org-src-mode-map ">>" (lambda () (interactive) (insert "»")))
@@ -3713,6 +3925,7 @@ Easily enter guillemots.
   :ID:       CB6305D8-DDBB-4865-8CAD-3648B31B76DB
   :END:
 
+#+NAME: E7AE32C1-42CC-482F-92D2-43DBD703500C
 #+BEGIN_SRC emacs-lisp
 (use-package ess
   :ensure t)
@@ -3744,6 +3957,7 @@ Various user interaction stuff:
 
 Always show eldoc for things.
 
+#+NAME: DC7E5F11-0C1A-4F9B-B6B1-2133C8B86617
 #+BEGIN_SRC emacs-lisp
 (setq ess-eldoc-show-on-symbol t)
 #+END_SRC
@@ -3761,12 +3975,14 @@ Data viewing:
 - Make it easier to know what object values are.
   - =ess-describe-object-at-point=
 
+#+NAME: 7EF0A0EB-FBE6-4411-A0E5-F0B37AF1743D
 #+BEGIN_SRC emacs-lisp
 (setq ess-describe-at-point-method 'tooltip)
 #+END_SRC
 
 Always start =ess= within the curent =emacs= frame, it doesn't need to be separate.
 
+#+NAME: 2FB01FE3-71DD-4FB6-AEC9-E4499AF5E007
 #+BEGIN_SRC emacs-lisp
 (setq inferior-ess-same-window nil)
 (setq inferior-ess-own-frame nil)
@@ -3774,6 +3990,7 @@ Always start =ess= within the curent =emacs= frame, it doesn't need to be separa
 
 Help buffers all belong in the same frame.
 
+#+NAME: 47202D29-D75E-426E-AD24-7218BB5F2673
 #+BEGIN_SRC emacs-lisp
 (setq ess-help-own-frame nil)
 #+END_SRC
@@ -3781,6 +3998,7 @@ Help buffers all belong in the same frame.
 When commands are executed, display their output within the current buffer,
 rather than to a new dedicated buffer for them.
 
+#+NAME: FCB70937-540C-4CC9-B0B7-63E0F0626E25
 #+BEGIN_SRC emacs-lisp
 (setq ess-execute-in-process-buffer t)
 #+END_SRC
@@ -3790,6 +4008,7 @@ buffer, you will go to the end of the buffer. This setting is specifically to
 handle a buffer that is scrolling when you want to see the last result and will
 scroll back after the fact to see the history.
 
+#+NAME: 36F5EACF-A2AA-42D2-B7B7-EC5C07B2E1A4
 #+BEGIN_SRC emacs-lisp
 (setq ess-switch-to-end-of-proc-buffer t)
 #+END_SRC
@@ -3797,6 +4016,7 @@ scroll back after the fact to see the history.
 Use typical auto completion in buffers here, but don't do it when the
 next char is a symbol or closed paren.
 
+#+NAME: 0274002E-BB6F-4131-B6B2-5531D9F630F4
 #+BEGIN_SRC emacs-lisp
 (setq ess-tab-complete-in-script t)
 (setq ess-first-tab-never-complete 'symbol-or-paren-or-punct)
@@ -3804,6 +4024,7 @@ next char is a symbol or closed paren.
 
 Use =ido= completion whenever possible.
 
+#+NAME: 043204D6-59AA-4DB4-ABF4-03D2E8D61154
 #+BEGIN_SRC emacs-lisp
 (setq ess-use-ido t)
 #+END_SRC
@@ -3811,6 +4032,7 @@ Use =ido= completion whenever possible.
 Use =eldoc= for this mode. Always show it when the point is on a symbol.
 Try to keep help strings at 10 chars or less.
 
+#+NAME: 6C6DC638-6869-4534-AA0D-746263D47FD5
 #+BEGIN_SRC emacs-lisp
 (setq ess-use-eldoc t)
 (setq ess-eldoc-show-on-symbol t)
@@ -3846,6 +4068,7 @@ We want to keep dump files after loading them; never delete them. The idea
 is that if we use them, then they are a valid part of the system definition and
 need to be kept.
 
+#+NAME: F0740222-26A5-4DA0-9C60-6EC04DCCDDFB
 #+BEGIN_SRC emacs-lisp
 (setq ess-keep-dump-files +1)
 #+END_SRC
@@ -3858,6 +4081,7 @@ existed and their record will be forgotten from history. In other words, that
 new, modified version of the object or function, is never saved to a file for
 later reuse.
 
+#+NAME: 9FD6F694-08ED-4E08-96FE-28634970388B
 #+BEGIN_SRC emacs-lisp
 (setq ess-delete-dump-files nil)
 #+END_SRC
@@ -3869,6 +4093,7 @@ any ESS source buffers. This approach is in addition to two other things:
 advice before every manual =eval= call so that the buffers and their files stay
 in sync. Yes, it is really that important.
 
+#+NAME: 252643D9-4FC2-4037-BAF8-5F6043D02C5A
 #+BEGIN_SRC emacs-lisp
 (setq ess-mode-silently-save +1)
 #+END_SRC
@@ -3887,6 +4112,7 @@ with exactly my situation referencing that aforementioned solution, too [fn:2c7c
 approach that should serve me well for just about everything in this solution-area. Here [fn:5a732a42:: https://github.com/rdallasgray/graphene/blob/master/graphene-smartparens-config.el] is a post
 showing a more advanced usage that handles context which is nice to know is an option.
 
+#+NAME: F25A516C-7FD0-4F88-96AA-E53EBE01C5C3
 #+BEGIN_SRC emacs-lisp
 (sp-local-pair 'ess-mode "{" nil :post-handlers '((gcr/indent-curly-block "RET")))
 #+END_SRC
@@ -3903,6 +4129,7 @@ write this, I'm not totally sure how this will work, but the documentation and
 post are consistent and describe what I had wanted here so I will give it a try
 and see how it goes.
 
+#+NAME: B46D5051-6F7D-4BC9-8A47-DDE14B41C3A5
 #+BEGIN_SRC emacs-lisp
 (setq ess-eval-visibly 'nowait)
 #+END_SRC
@@ -3994,6 +4221,7 @@ Completion:
 
 *ess-tracebug* start
 
+#+NAME: 77E7570C-C08D-42B4-996D-F38C9F91C248
 #+BEGIN_SRC emacs-lisp
 (setq ess-use-tracebug t)
 #+END_SRC
@@ -4042,12 +4270,14 @@ Navigation to errors (general Emacs functionality):
 
  Be sure to specify this per-project.
 
+#+NAME: F21989AE-7351-49A7-9B1F-6926F7298182
 #+BEGIN_SRC emacs-lisp
 (setq ess-tracebug-search-path '())
 #+END_SRC
 
 Make error navigation simpler.
 
+#+NAME: FAFD7683-E1BF-43CF-B862-B90029FBB319
 #+BEGIN_SRC emacs-lisp
 (define-key compilation-minor-mode-map [(?n)] 'next-error-no-select)
 (define-key compilation-minor-mode-map [(?p)] 'previous-error-no-select)
@@ -4055,6 +4285,7 @@ Make error navigation simpler.
 
 The font size for watched variables..
 
+#+NAME: 08D73B43-0EAC-433E-A5C8-F4E89A5ADA12
 #+BEGIN_SRC emacs-lisp
 (setq ess-watch-scale-amount -1)
 #+END_SRC
@@ -4063,6 +4294,7 @@ When =ess= starts, or when ℝ starts, it takes the current directory as its
 working directory. This is totally fine; so don't ask what the working directory
 should be.
 
+#+NAME: CAA06F3F-C308-4C51-B5EA-84CB75C66DE7
 #+BEGIN_SRC emacs-lisp
 (setq ess-ask-for-ess-directory nil)
 #+END_SRC
@@ -4071,6 +4303,7 @@ My preference is for ESS to quit and not ask me whether or not I am sure. There
 is an intentional line-break after the closing round bracket because that is the
 approach of the original value here.
 
+#+NAME: 4A9DDBA7-1715-45C8-A979-69725E37381E
 #+BEGIN_SRC emacs-lisp
 (setq inferior-ess-exit-command "q('no')
 ")
@@ -4078,6 +4311,7 @@ approach of the original value here.
 
 Visualize just about anything with ~ess-R-object-popup~.
 
+#+NAME: A0EA1072-089F-4C7A-AE35-7C05D090097E
 #+BEGIN_SRC emacs-lisp
 (use-package ess-R-object-popup
   :ensure t)
@@ -4087,6 +4321,7 @@ Rdired is another way to work with object:
 - =ess-rdired=
 - View, delete, plot, and update buffer (ala /revert/) are single key commands
 
+#+NAME: FCFBA6B6-B76D-4230-93BE-1DDFE411FF82
 #+BEGIN_SRC emacs-lisp
 (autoload 'ess-rdired "ess-rdired")
 #+END_SRC
@@ -4095,6 +4330,7 @@ Visualize data frames better:
 - =ess-R-dv-ctable=
 - =ess-R-dv-pprint=
 
+#+NAME: B2C94B37-92A9-4320-A5EE-BAAD81FAB1AD
 #+BEGIN_SRC emacs-lisp
 (use-package ess-R-data-view
   :ensure t)
@@ -4104,6 +4340,7 @@ inlineR
 - /Not/ a competitor to =org-mode=
 - Ultra lightweight LP, really
 
+#+NAME: E49028CA-9CE0-41FD-9B1E-004C3D68445B
 #+BEGIN_SRC emacs-lisp
 (use-package inlineR
   :ensure t)
@@ -4151,6 +4388,7 @@ nice to know that it is an option.
 Store history files and dump files in a single known location. If that location
 doesn't exist, then make it.
 
+#+NAME: D0976061-7DE0-4441-898F-4014547FFB29
 #+BEGIN_SRC emacs-lisp
 (setq help/r-dir "~/.R/")
 (defun help/make-warn-R-dir ()
@@ -4167,6 +4405,7 @@ doesn't exist, then make it.
 
 Since I'm using ℝ for everything, configure /everything/ to be using ℝ.
 
+#+NAME: 931F150B-01FB-455C-B6F9-D730BEC162FF
 #+BEGIN_SRC emacs-lisp
 (setq inferior-ess-program "R")
 (setq inferior-R-program-name "R")
@@ -4175,6 +4414,7 @@ Since I'm using ℝ for everything, configure /everything/ to be using ℝ.
 
 Handle rdoc and rmd files, though I have never used them… yet.
 
+#+NAME: 5D17A7DE-ECAF-4FAE-8425-AD43FEDD2D45
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'auto-mode-alist '("\\.rd\\'" . Rd-mode))
 (add-to-list 'auto-mode-alist '("\\.Rmd$" . r-mode))
@@ -4182,12 +4422,14 @@ Handle rdoc and rmd files, though I have never used them… yet.
 
 Make it really easy to search the ℝ archives for anything.
 
+#+NAME: 8122AAC4-008A-454B-A3F6-4F9B11F7278E
 #+BEGIN_SRC emacs-lisp
 (local-set-key (kbd "C-c C-. S") 'ess-rutils-rsitesearch)
 #+END_SRC
 
 Make it really easy to do common stuff for ℝ with good keybindings.
 
+#+NAME: 17FD6489-F187-4667-9E96-5ECF3DAED95B
 #+BEGIN_SRC emacs-lisp
 (use-package ess-rutils
   :config
@@ -4197,6 +4439,7 @@ Make it really easy to do common stuff for ℝ with good keybindings.
 =r-autoyas= does argument completion. I had it working nice, and didn't use it for
 a while, and now it doesn't work. This needs some TLC.
 
+#+NAME: 588C7A99-908C-4CD9-A1BE-1818938E2D13
 #+BEGIN_SRC emacs-lisp
 (use-package r-autoyas
   :ensure t
@@ -4208,6 +4451,7 @@ a while, and now it doesn't work. This needs some TLC.
 
 Save two spaces showing function information in the mini-buffer.
 
+#+NAME: 5D526636-47A1-463B-9466-4DD240C7F382
 #+BEGIN_SRC emacs-lisp
 (setq ess-ac-R-argument-suffix "=")
 #+END_SRC
@@ -4220,6 +4464,7 @@ sense to me. I only want to change one thing to make Magrittr chains easier to
 read. The stock =RRR= indenting makes expressions trail off to the right forever.
 Here is how, make a copy of =RRR= and change one property.
 
+#+NAME: D614F687-D054-43F4-BA17-3D1E55D6787E
 #+BEGIN_SRC emacs-lisp
 ;; (setq help/ess-style
 ;;       (copy-alist
@@ -4242,6 +4487,7 @@ characters to do an assignment would give me nuts. Anyway, the default behavior
 is just fine; hit underscore twice gives you an underscore, and one gives you an
 assignment!
 
+#+NAME: 9E931868-056E-49E6-A0AE-D1447BA27039
 #+BEGIN_SRC emacs-lisp
 (setq ess-S-assign-key (kbd "C-,"))
 (ess-toggle-S-assign-key t)
@@ -4252,10 +4498,12 @@ Don't save the workspace when you quit ℝ and don't restore *ANYTHING* when you
 start it, either. This adheres to the philosopy that the system is file based.
 Period.
 
+#+NAME: 4B373CC7-EF17-4900-87BE-E38995585C46
 #+BEGIN_SRC emacs-lisp
 (setq inferior-R-args "--no-save --no-restore")
 #+END_SRC
 
+#+NAME: E5F48F7A-E926-4FB0-92D2-92204808630E
 #+BEGIN_SRC emacs-lisp
 (defun help/R-mode-hook ()
   (local-set-key (kbd "s-e") #'ess-switch-to-end-of-ESS)
@@ -4320,6 +4568,7 @@ Period.
 - Load HELP snippets
 - Use Ido to handle user decisions
 
+#+NAME: 1827B724-7BC0-4228-8389-2B06F308D6AF
 #+BEGIN_SRC emacs-lisp
 (use-package yasnippet
   :ensure t
@@ -4352,6 +4601,7 @@ Period.
   :ID:       E2A1BFA2-0246-4376-9A33-E35A8DE2E5A3
   :END:
 
+#+NAME: B97EDF2E-0538-475A-AA0A-6C708DCCEC11
 #+BEGIN_SRC emacs-lisp
 (use-package tex-site
   :ensure auctex
@@ -4362,24 +4612,28 @@ Period.
 
 Save style info. This doesn't control the buffer save.
 
+#+NAME: 2B0193C4-291A-4C5E-9FA0-36A80DE1D379
 #+BEGIN_SRC emacs-lisp
 (setq TeX-auto-save t)
 #+END_SRC
 
 Parse on load.
 
+#+NAME: 278E7DC2-6BD3-4F90-A4F2-25B9BE614981
 #+BEGIN_SRC emacs-lisp
 (setq TeX-parse-self t)
 #+END_SRC
 
 Parse on save.
 
+#+NAME: 10789FA5-E5AA-4F8C-BB0E-62307655F7AD
 #+BEGIN_SRC emacs-lisp
 (setq TeX-auto-save t)
 #+END_SRC
 
 Use PDFTeX to generate both DVI and PDF files.
 
+#+NAME: F89FBF57-D32D-45B0-B43F-D5A9EB489ABE
 #+BEGIN_SRC emacs-lisp
 (setq TeX-PDF-mode t)
 (setq TeX-DVI-via-PDFTeX t)
@@ -4388,12 +4642,14 @@ Use PDFTeX to generate both DVI and PDF files.
 Don't prompt every time you run =C-c C-c= about saving the file, instead, just
 save it.
 
+#+NAME: A193F562-9E1C-49A2-982C-EBF7D9AFF32F
 #+BEGIN_SRC emacs-lisp
 (setq TeX-save-query nil)
 #+END_SRC
 
 Load LCO files with AucTeX.
 
+#+NAME: 083E953F-E95D-4596-98D1-C8554D451721
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'auto-mode-alist '("\\.lco?\\'" . TeX-latex-mode))
 #+END_SRC
@@ -4415,6 +4671,7 @@ time ago I decided to stick with LaTeX.
 
 Load the KOMA exporter.
 
+#+NAME: C2C100F1-B302-4BC7-8633-A79BCBFE1FC7
 #+BEGIN_SRC emacs-lisp
 (eval-after-load 'ox '(require 'ox-koma-letter))
 #+END_SRC
@@ -4493,6 +4750,7 @@ Configure the default class.
 [[https://tex.stackexchange.com/questions/102922/how-can-i-get-us-letter-output-from-koma-scripts-scrlttr2-class][This]] post explains how to default the US letter size. That is the likely default
 for my printed correspondence.
 
+#+NAME: 05968019-B83F-4F5B-ACF7-4CFF10CB8690
 #+BEGIN_SRC emacs-lisp
 (eval-after-load 'ox-koma-letter
   '(progn
@@ -4509,6 +4767,7 @@ There are two formats for the letters: [[http://orgmode.org/w/?p%3Dworg.git%3Ba%
 
 Set up my default LCO files.
 
+#+NAME: EFFC0DFD-168F-42F5-9405-BAECD7EC5CB4
 #+BEGIN_SRC emacs-lisp
 (setq org-koma-letter-class-option-file "UScommercial9 KomaDefault")
 #+END_SRC
@@ -4536,6 +4795,7 @@ Set up my default LCO files.
 
 Load Htmlize for HTML export. Use in-line CSS.
 
+#+NAME: E26F69F8-ED1F-4F10-A291-6F9CB958FD18
 #+BEGIN_SRC emacs-lisp
 (use-package htmlize
   :config
@@ -4551,6 +4811,7 @@ Load Htmlize for HTML export. Use in-line CSS.
 
 Load Beamer for creating presentations.
 
+#+NAME: B77E265B-EE1A-469D-BEFB-51360B7AB45E
 #+BEGIN_SRC emacs-lisp
 (use-package ox-beamer)
 #+END_SRC
@@ -4584,6 +4845,7 @@ Load Beamer for creating presentations.
   :ID:       F920A833-60D7-41C2-9363-EA2A8BD19009
   :END:
 
+#+NAME: 7592B1CF-CDA3-4ED1-99FA-205E41C74FFF
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
 (add-to-list 'auto-mode-alist '("\\.art" . artist-mode))
@@ -4598,6 +4860,7 @@ Load Beamer for creating presentations.
 
 When a drop of water joins the ocean it becomes the ocean.
 
+#+NAME: 17781273-6E7B-4142-8EEE-7637DAA6DA67
 #+BEGIN_SRC ditaa :file "./image/ditaa-drop_in_the_ocean.png" :noweb-ref ignore :results output replace
 +---------+
 | cBLU    |
@@ -4608,6 +4871,7 @@ When a drop of water joins the ocean it becomes the ocean.
 +----+----+
 #+END_SRC
 
+#+NAME: 819A4588-7EAD-4C89-A357-0ADCFDDFA082
 #+BEGIN_SRC ditaa :file "./image/ditaa-not_a_sailboat.png" :noweb-ref ignore :results output replace
 +----------+1       1…3+------+
 | Sailboat +◆----------+ Mast |
@@ -4620,6 +4884,7 @@ When a drop of water joins the ocean it becomes the ocean.
       This is not a sailboat
 #+END_SRC
 
+#+NAME: 6907A176-CCF4-4BDF-A242-BDBC4C67239F
 #+BEGIN_SRC emacs-lisp
 (defconst help/ditaa-jar (concat (getenv "EELIB") "/ditaa.jar"))
 (setq org-ditaa-jar-path help/ditaa-jar)
@@ -4631,6 +4896,7 @@ When a drop of water joins the ocean it becomes the ocean.
   :ID:       A84665A3-4A2D-4040-926A-17159A6D4647
   :END:
 
+#+NAME: EAADBBCB-9054-4040-8579-1EC08FB97BDE
 #+BEGIN_SRC emacs-lisp
 (use-package graphviz-dot-mode
   :ensure t
@@ -4638,6 +4904,7 @@ When a drop of water joins the ocean it becomes the ocean.
   (setf (cdr (assoc "dot" org-src-lang-modes)) 'graphviz-dot))
 #+END_SRC
 
+#+NAME: 1616CF46-A4AD-4EF2-9C0C-7F7890287452
 #+BEGIN_SRC dot :file "./image/graphviz-life_is_simple.png" :noweb-ref ignore :results output replace
 digraph graphviz {
   subgraph cluster {
@@ -4660,6 +4927,7 @@ digraph graphviz {
   :ID:       B97EAA2E-8222-4DC1-AE11-BF7A6EAEA42D
   :END:
 
+#+NAME: 47763C94-7458-4242-8EE6-6D915B878310
 #+BEGIN_SRC emacs-lisp
 (use-package plantuml-mode
   :ensure t
@@ -4676,6 +4944,7 @@ digraph graphviz {
 - Feature rich.
 - Information rich.
 
+#+NAME: FD10BA65-CB12-452D-BC53-A9E19076E5C5
 #+BEGIN_SRC plantuml :file "./image/plantuml-sequence_diagram.png" :noweb-ref ignore :results output replace
 Alice --> Bob: Authentication Request
 Bob --> Alice: Authentication Response
@@ -4688,6 +4957,7 @@ Alice <-- Bob: another authentication Response
 
 - Actor variable aliasing feature.
 
+#+NAME: AF7D36BC-1CFB-4A31-90AD-7E0C3DC4CC7A
 #+BEGIN_SRC plantuml :file "./image/plantuml-use_case_diagram.png" :noweb-ref ignore :results output replace
 left to right direction
 skinparam packageStyle rect
@@ -4710,6 +4980,7 @@ customer -- (checkout)
   - Packaging vs. namespaceing.
   - Good support for splitting large images among output pages.
 
+#+NAME: BEA0E6F9-0E1F-4919-B8B6-7725C8E84708
 #+BEGIN_SRC plantuml :file "./image/plantuml-class_diagram.png" :noweb-ref ignore :results output replace
 title This is not a sailboat
 scale 200 width
@@ -4726,6 +4997,7 @@ Sailboat "1" *-- "1..3" Hull
 - Partition construct.
 - [[http://plantuml.sourceforge.net/activity2.html][New syntax]] with more examples.
 
+#+NAME: 7C0E37BA-A0D7-4BB7-8BE2-0CD201C67A55
 #+BEGIN_SRC plantuml :file "./image/plantuml-activity_diagram.png" :noweb-ref ignore :results output replace
 start
 partition Initialization {
@@ -4746,6 +5018,7 @@ stop
 - Identify "Modern UML".
 - Good for summaries.
 
+#+NAME: A12A6039-FAFF-4B68-9064-3EDDD32CF9A8
 #+BEGIN_SRC plantuml :file "./image/plantuml-component_diagram.png" :noweb-ref ignore :results output replace
 [First component]
 [Another component]
@@ -4757,6 +5030,7 @@ DataAccess - [First Component]
 
 *State Diagram*
 
+#+NAME: 03907179-FD15-4C9A-9E12-2BE2F11247B7
 #+BEGIN_SRC plantuml :file "./image/plantuml-state_diagram.png" :noweb-ref ignore :results output replace
 [*] --> State1
 State1 --> [*]
@@ -4765,6 +5039,7 @@ State1 : this is a string State1 : this is another string
 
 *Object Diagram*
 
+#+NAME: A4711DE9-E5AB-451E-A9BC-0624AF0C407B
 #+BEGIN_SRC plantuml :file "./image/plantuml-object_diagram.png" :noweb-ref ignore :results output replace
 object Object01
 object Object02
