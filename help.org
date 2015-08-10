@@ -2407,6 +2407,24 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
                  (list t)))
   (let ((fill-column (point-max)))
     (fill-paragraph nil region)))
+(defun help/text-scale-increase ()
+  "Increase font size"
+  (interactive)
+  (help/on-gui
+   (setq help/font-size (+ help/font-size 1))
+   (help/update-font))
+  (help/not-on-gui
+   (message "Please resize the terminal emulator font.")))
+(defun help/text-scale-decrease ()
+  "Reduce font size."
+  (interactive)
+  (help/on-gui
+   (when (> help/font-size 1)
+     (setq help/font-size (- help/font-size 1))
+     (help/update-font)))
+  (help/not-on-gui
+   (message "Please resize the terminal emulator font.")))ff2
+   
 #+END_SRC
 
 ** Intellisense (Auto Completion)
@@ -3048,17 +3066,6 @@ character wide buffer and make it easy to adjust it.
          (message "Setting font to: %s" (help/font-name))
          (set-default-font (help/font-name)))
      (message (concat "Your preferred font is not available: " help/font-base))))
- (defun help/text-scale-increase ()
-   "Increase font size"
-   (interactive)
-   (setq help/font-size (+ help/font-size 1))
-   (help/update-font))
- (defun help/text-scale-decrease ()
-   "Reduce font size."
-   (interactive)
-   (when (> help/font-size 1)
-     (setq help/font-size (- help/font-size 1))
-     (help/update-font)))
  (help/update-font))
 #+END_SRC
 

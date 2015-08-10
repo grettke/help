@@ -852,6 +852,23 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
                  (list t)))
   (let ((fill-column (point-max)))
     (fill-paragraph nil region)))
+(defun help/text-scale-increase ()
+  "Increase font size"
+  (interactive)
+  (help/on-gui
+   (setq help/font-size (+ help/font-size 1))
+   (help/update-font))
+  (help/not-on-gui
+   (message "Please resize the terminal emulator font.")))
+(defun help/text-scale-decrease ()
+  "Reduce font size."
+  (interactive)
+  (help/on-gui
+   (when (> help/font-size 1)
+     (setq help/font-size (- help/font-size 1))
+     (help/update-font)))
+  (help/not-on-gui
+   (message "Please resize the terminal emulator font.")))
 ;; D523CBF8-67C4-4C96-9298-A4A49FE54E61 ends here
 ;; [[file:~/src/help/help.org::*Intellisense%20(Auto%20Completion)][487B46D5-C025-4114-A1B4-BAAF5FAFE430]]
 (use-package fuzzy
@@ -1767,17 +1784,6 @@ _u_ goto _i_ hdlnid"
          (message "Setting font to: %s" (help/font-name))
          (set-default-font (help/font-name)))
      (message (concat "Your preferred font is not available: " help/font-base))))
- (defun help/text-scale-increase ()
-   "Increase font size"
-   (interactive)
-   (setq help/font-size (+ help/font-size 1))
-   (help/update-font))
- (defun help/text-scale-decrease ()
-   "Reduce font size."
-   (interactive)
-   (when (> help/font-size 1)
-     (setq help/font-size (- help/font-size 1))
-     (help/update-font)))
  (help/update-font))
 ;; 21687556-D79E-4734-86E6-52FF9EE107B5 ends here
 ;; [[file:~/src/help/help.org::*Frame][96EB14DD-CB63-46F3-B2E3-6F433D70DFAE]]
