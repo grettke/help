@@ -365,6 +365,33 @@ This is a copy and paste. Additional languages would warrant a refactor."
 (defun help/org-toggle-macro-markers ()
   (interactive)
   (setq org-hide-macro-markers (not org-hide-macro-markers)))
+
+(defun help/org-prp-hdln ()
+  "Visit every Headline. If it doesn't have an ID property then add one and
+  assign it a UUID. Attribution: URL `http://article.gmane.org/gmane.emacs.orgmode/99738'"
+  (interactive)
+  (dolist (p (nreverse
+              (org-element-map (org-element-parse-buffer 'headline) 'headline
+                (lambda (headline) (org-element-property :begin headline)))))
+    (goto-char p)
+    (org-id-get-create))
+  (save-buffer))
+
+(defun help/org-prp-src-blk ()
+  "Visit every Source-Block. If it doesn't have a NAME property then add one and
+   assign it a UUID. Attribution: URL `http://article.gmane.org/gmane.emacs.orgmode/99740'"
+  (interactive)
+  (let ((case-fold-search t))
+    (while (re-search-forward "^\s*#[+]BEGIN_SRC" nil t)
+      (let ((element (org-element-at-point)))
+        (when (eq (org-element-type element) 'src-block)
+          (if (not (org-element-property :name element))
+              (let ((i (org-get-indentation)))
+                (beginning-of-line)
+                (save-excursion (insert "#+NAME: " (org-id-new) "\n"))
+                (indent-to i)
+                (forward-line 2)))))))
+  (save-buffer))
 #+END_SRC
 
 ** Tangling
@@ -372,6 +399,14 @@ This is a copy and paste. Additional languages would warrant a refactor."
    :noweb-ref: Org-Mode-Tangle
    :ID:       267EEDED-1367-405F-807C-B3C489045704
    :END:
+
+=ID= and =NAME= are essential for successful =LP= using ~org-babel-tangle-jump-to-org~.
+
+#+NAME: 31E14CA7-296C-491F-A200-D8B3ED23EC4C
+#+BEGIN_SRC emacs-lisp
+(add-hook #'org-babel-pre-tangle-hook #'help/org-prp-hdln)
+(add-hook #'org-babel-pre-tangle-hook #'help/org-prp-src-blk)
+#+END_SRC
 
 There is a way to disable property inheritance that speeds up tangling a lot.
 This is only for user-defined properties; *not* Org-Mode properties.
@@ -3828,40 +3863,6 @@ Smartparens provides that functionality for programming modes.
 (wrap-region-add-wrapper "+" "+" nil 'org-mode)
 #+END_SRC
 
-*** Utility
-    :PROPERTIES:
-    :ID:       A5DC4E12-DA3D-49C8-BD44-104C0B8F10CE
-    :END:
-
-[[http://article.gmane.org/gmane.emacs.orgmode/99738][Visit every Headline. If it doesn't have an ID property then add one and assign
-it a UUID]].
-
-#+NAME: AF974EFC-7ED4-420F-9861-29EB37D2E22D
-#+BEGIN_SRC emacs-lisp :noweb-ref ignore :eval no
-(dolist (p (nreverse
-            (org-element-map (org-element-parse-buffer 'headline) 'headline
-              (lambda (headline) (org-element-property :begin headline)))))
-  (goto-char p)
-  (org-id-get-create))
-#+END_SRC
-
-[[http://article.gmane.org/gmane.emacs.orgmode/99740][Visit every Source-Block. If it doesn't have a NAME property then add one
-and assign it a UUID]].
-
-#+NAME: 1481FCDC-428E-4D42-A464-73DCA1E436C2
-#+BEGIN_SRC emacs-lisp :noweb-ref ignore :eval no
-(let ((case-fold-search t))
-  (while (re-search-forward "^\s*#[+]BEGIN_SRC" nil t)
-    (let ((element (org-element-at-point)))
-      (when (eq (org-element-type element) 'src-block)
-        (if (not (org-element-property :name element))
-            (let ((i (org-get-indentation)))
-              (beginning-of-line)
-              (save-excursion (insert "#+NAME: " (org-id-new) "\n"))
-              (indent-to i)
-              (forward-line 2)))))))
-#+END_SRC
-
 *** Keybindings
     :PROPERTIES:
     :ID:       0AA3F69B-F5F1-48DA-B8F7-B7C92CD30DB1
@@ -4805,6 +4806,9 @@ Set up my default LCO files.
 #+END_SRC
 
 ** Texinfo
+   :PROPERTIES:
+   :ID:       8C9472CC-F401-4017-AC9C-CF1094A86EDE
+   :END:
 ** Pandoc
    :PROPERTIES:
    :ID:       1E4AB0D4-F92E-48E6-9313-278C27DED142
@@ -4815,6 +4819,7 @@ Set up my default LCO files.
    :ID:       748319ED-9F02-4A4D-BEE8-E71C462663FC
    :END:
 
+#+NAME: 02005BF5-AADC-45B1-AC64-67ECB028352A
 #+BEGIN_SRC emacs-lisp
 (use-package ox-md)
 #+END_SRC
