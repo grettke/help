@@ -996,10 +996,12 @@ in the call itself.
                                               :hint nil)
   "
 _1_ -font  _2_ +font
-_q_ apropos"
+_q_ apropos
+_r_ obtj2o"
   ("q" hydra-apropos/body)
   ("1" help/text-scale-decrease :exit nil)
-  ("2" help/text-scale-increase :exit nil))
+  ("2" help/text-scale-increase :exit nil)
+  ("r" org-babel-tangle-jump-to-org))
 (key-chord-define-global "ff" #'help/hydra/left-side/global/body)
 #+END_SRC
 
@@ -3894,6 +3896,17 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
 (define-key org-mode-map (kbd "s-o") #'org-babel-execute-maybe)
 (define-key org-mode-map (kbd "s-;") #'org-babel-view-src-block-info)
 (define-key org-mode-map (kbd "s-p") #'org-babel-demarcate-block)
+#+END_SRC
+
+#+NAME: 5186DD50-F693-4297-A164-192BEA685C6D
+#+BEGIN_SRC emacs-lisp
+(defhydra help/hydra/right-side/org-mode (:color blue
+                                                 :hint nil)
+  "
+_u_ goto _i_ hdlnid"
+  ("u" org-goto)
+  ("i" org-id-get-create))
+(key-chord-define-global "jj" #'help/hydra/right-side/org-mode/body)
 #+END_SRC
 
 Safe all buffers before working with Exports.
