@@ -39,6 +39,32 @@ Setup:
       to export it as a code block.
     - Source code is indented according to existing settings. This system keeps
       it left-aligned, saving space.
+- Headline.
+  - Be sure that every one has an =ID= property with a =UUID= value.
+    - ~org-id-get-create~ does this. So does code in Hacking/Org Mode/Utility.
+  - Capitalize nouns, verbs, and adjectives.
+  - Don't capitalize conjunctions unless they are starting the definition.
+  - Sell this "chapter" to the reader.
+  - Some headlines will be empty and significant; keep them.
+    - Some modes don't require any configuration. The headline still needs to be
+      present to remind Sysop to keep it in her cognitive landscape.
+    - Configure other properties and modes taking it into account.
+    - Pros:
+      - For example:
+        - Every language under Hacking should show up in
+          ~org-babel-load-languages~.
+      - The Prog*-Mode system configuration can result in Headlines that don't
+        need any configuration. The Headline still communicates the mode's
+        value to Sysop even if it doesn't configure EMACS.
+    - Cons:
+      - Gives reader impression that modes are configured and ready to use.
+  - It is important to include headlines that are empty and that you may not
+    even end up keeping. You need them to help you explore the cognitive
+    landscape with them present. In this one case, premature optimization is
+    /not/ the root of all evil.
+  - Sometimes headlines might better be:
+    - List items.
+    - Stand-alone bold'ed text without punctuation.
 - Content
   - When importing, update to conform with Style-Guide.
 - Dictionary
@@ -67,32 +93,6 @@ Setup:
     - Dashes separate definition.
     - Acronyms are all upper case to distinguish from words for example "GNU"
       vs "Gnu".
-- Headline.
-  - Be sure that every one has an =ID= property with a =UUID= value.
-    - ~org-id-get-create~ does this. So does code in Hacking/Org Mode/Utility.
-  - Capitalize nouns, verbs, and adjectives.
-  - Don't capitalize conjunctions unless they are starting the definition.
-  - Sell this "chapter" to the reader.
-  - Some headlines will be empty and significant; keep them.
-    - Some modes don't require any configuration. The headline still needs to be
-      present to remind Sysop to keep it in her cognitive landscape.
-    - Configure other properties and modes taking it into account.
-    - Pros:
-      - For example:
-        - Every language under Hacking should show up in
-          ~org-babel-load-languages~.
-      - The Prog*-Mode system configuration can result in Headlines that don't
-        need any configuration. The Headline still communicates the mode's
-        value to Sysop even if it doesn't configure EMACS.
-    - Cons:
-      - Gives reader impression that modes are configured and ready to use.
-  - It is important to include headlines that are empty and that you may not
-    even end up keeping. You need them to help you explore the cognitive
-    landscape with them present. In this one case, premature optimization is
-    /not/ the root of all evil.
-  - Sometimes headlines might better be:
-    - List items.
-    - Stand-alone bold'ed text without punctuation.
 - Hyperlink.
   - External.
     - Exclude those easily found with a search-engine unless you are willing to
