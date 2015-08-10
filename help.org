@@ -361,6 +361,10 @@ This is a copy and paste. Additional languages would warrant a refactor."
   (setq org-babel-default-header-args:R
         (cons (cons property value)
               (assq-delete-all property org-babel-default-header-args:R))))
+
+(defun help/org-toggle-macro-markers ()
+  (interactive)
+  (setq org-hide-macro-markers (not org-hide-macro-markers)))
 #+END_SRC
 
 ** Tangling
@@ -1001,8 +1005,7 @@ in the call itself.
                                               :hint nil)
   "
 _1_ -font  _2_ +font
-_q_ apropos
-_r_ obtj2o"
+_q_ apropos _r_ obtj2o"
   ("q" hydra-apropos/body)
   ("1" help/text-scale-decrease :exit nil)
   ("2" help/text-scale-increase :exit nil)
@@ -2428,8 +2431,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
      (setq help/font-size (- help/font-size 1))
      (help/update-font)))
   (help/not-on-gui
-   (message "Please resize the terminal emulator font.")))ff2
-
+   (message "Please resize the terminal emulator font.")))
 #+END_SRC
 
 ** Intellisense (Auto Completion)
@@ -3915,9 +3917,12 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
 (defhydra help/hydra/right-side/org-mode (:color blue
                                                  :hint nil)
   "
+                   _0_ tglmcro
+
 _u_ goto _i_ hdlnid"
   ("u" org-goto)
-  ("i" org-id-get-create))
+  ("i" org-id-get-create)
+  ("0" help/org-toggle-macro-markers))
 (key-chord-define-global "jj" #'help/hydra/right-side/org-mode/body)
 #+END_SRC
 

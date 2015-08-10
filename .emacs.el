@@ -46,6 +46,10 @@ This is a copy and paste. Additional languages would warrant a refactor."
   (setq org-babel-default-header-args:R
         (cons (cons property value)
               (assq-delete-all property org-babel-default-header-args:R))))
+
+(defun help/org-toggle-macro-markers ()
+  (interactive)
+  (setq org-hide-macro-markers (not org-hide-macro-markers)))
 ;; BB2E97AF-6364-401F-8063-8B5A0BE481E6 ends here
 ;; [[file:~/src/help/help.org::*Tangling][F19C629B-E784-48CA-BC53-CCFB849CE9EC]]
 (setq org-babel-use-quick-and-dirty-noweb-expansion nil)
@@ -1400,9 +1404,12 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (defhydra help/hydra/right-side/org-mode (:color blue
                                                  :hint nil)
   "
+                   _0_ tglmcro
+
 _u_ goto _i_ hdlnid"
   ("u" org-goto)
-  ("i" org-id-get-create))
+  ("i" org-id-get-create)
+  ("0" help/org-toggle-macro-markers))
 (key-chord-define-global "jj" #'help/hydra/right-side/org-mode/body)
 ;; 5186DD50-F693-4297-A164-192BEA685C6D ends here
 ;; [[file:~/src/help/help.org::*Keybindings][BFF7A955-3107-4ED3-9022-CAB792E779EC]]
@@ -1813,8 +1820,7 @@ _u_ goto _i_ hdlnid"
                                               :hint nil)
   "
 _1_ -font  _2_ +font
-_q_ apropos
-_r_ obtj2o"
+_q_ apropos _r_ obtj2o"
   ("q" hydra-apropos/body)
   ("1" help/text-scale-decrease :exit nil)
   ("2" help/text-scale-increase :exit nil)
