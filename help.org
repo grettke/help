@@ -871,6 +871,7 @@ a fast and intuitive way to go places.
   In the =s= namespace you go there very quickly. For =Hydras= sometimes you
   can get the fast and sometimes more slowly. They are complementary to
   every name-space.
+- Use =SPC= to exit the Hydra.  
 
 For example, in Org-Mode I am still learning about functions and haven't used
 them much and forget their names. It is faster to put them in a Hydra. If they
@@ -2424,7 +2425,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
      (help/update-font)))
   (help/not-on-gui
    (message "Please resize the terminal emulator font.")))ff2
-   
+
 #+END_SRC
 
 ** Intellisense (Auto Completion)
