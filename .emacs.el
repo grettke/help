@@ -55,6 +55,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
   "Visit every Headline. If it doesn't have an ID property then add one and
   assign it a UUID. Attribution: URL `http://article.gmane.org/gmane.emacs.orgmode/99738'"
   (interactive)
+  (goto-char (point-min))
   (dolist (p (nreverse
               (org-element-map (org-element-parse-buffer 'headline) 'headline
                 (lambda (headline) (org-element-property :begin headline)))))
@@ -66,6 +67,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
   "Visit every Source-Block. If it doesn't have a NAME property then add one and
    assign it a UUID. Attribution: URL `http://article.gmane.org/gmane.emacs.orgmode/99740'"
   (interactive)
+  (goto-char (point-min))
   (let ((case-fold-search t))
     (while (re-search-forward "^\s*#[+]BEGIN_SRC" nil t)
       (let ((element (org-element-at-point)))
@@ -78,10 +80,10 @@ This is a copy and paste. Additional languages would warrant a refactor."
                 (forward-line 2)))))))
   (save-buffer))
 ;; BB2E97AF-6364-401F-8063-8B5A0BE481E6 ends here
-;; [[file:~/src/help/help.org::*Tangling][nil]]
+;; [[file:~/src/help/help.org::*Tangling][859E61A4-D910-4731-8328-A63F6B6ACD3F]]
 (add-hook #'org-babel-pre-tangle-hook #'help/org-prp-hdln)
 (add-hook #'org-babel-pre-tangle-hook #'help/org-prp-src-blk)
-;; nil ends here
+;; 859E61A4-D910-4731-8328-A63F6B6ACD3F ends here
 ;; [[file:~/src/help/help.org::*Tangling][F19C629B-E784-48CA-BC53-CCFB849CE9EC]]
 (setq org-babel-use-quick-and-dirty-noweb-expansion nil)
 ;; F19C629B-E784-48CA-BC53-CCFB849CE9EC ends here

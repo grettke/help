@@ -370,6 +370,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
   "Visit every Headline. If it doesn't have an ID property then add one and
   assign it a UUID. Attribution: URL `http://article.gmane.org/gmane.emacs.orgmode/99738'"
   (interactive)
+  (goto-char (point-min))
   (dolist (p (nreverse
               (org-element-map (org-element-parse-buffer 'headline) 'headline
                 (lambda (headline) (org-element-property :begin headline)))))
@@ -381,6 +382,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
   "Visit every Source-Block. If it doesn't have a NAME property then add one and
    assign it a UUID. Attribution: URL `http://article.gmane.org/gmane.emacs.orgmode/99740'"
   (interactive)
+  (goto-char (point-min))
   (let ((case-fold-search t))
     (while (re-search-forward "^\s*#[+]BEGIN_SRC" nil t)
       (let ((element (org-element-at-point)))
@@ -402,7 +404,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
 
 =ID= and =NAME= are essential for successful =LP= using ~org-babel-tangle-jump-to-org~.
 
-#+NAME: 31E14CA7-296C-491F-A200-D8B3ED23EC4C
+#+NAME: 859E61A4-D910-4731-8328-A63F6B6ACD3F
 #+BEGIN_SRC emacs-lisp
 (add-hook #'org-babel-pre-tangle-hook #'help/org-prp-hdln)
 (add-hook #'org-babel-pre-tangle-hook #'help/org-prp-src-blk)
@@ -4807,7 +4809,7 @@ Set up my default LCO files.
 
 ** Texinfo
    :PROPERTIES:
-   :ID:       8C9472CC-F401-4017-AC9C-CF1094A86EDE
+   :ID:       F2C5CEB7-1252-4E6F-B192-C5D2D41A6D47
    :END:
 ** Pandoc
    :PROPERTIES:
