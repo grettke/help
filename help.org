@@ -249,12 +249,13 @@ Key:
   - T :: Destination tangled-document modified?
   - W :: Destination weaved-document modified?
   - C :: Source-Block Evaluation occurred?
+  - O :: Org-Macro Expansion occurred?
 
-| Activity   | S | T | W | C |
-|------------+---+---+---+---|
-| Tangling   | F | T | F | F |
-| Evaluating | T | F | F | T |
-| Exporting  | F | F | T | F |
+| Activity   | S | T | W | C | O |
+|------------+---+---+---+---+---|
+| Tangling   | F | T | F | F | F |
+| Evaluating | T | F | F | T | F |
+| Exporting  | F | F | T | F | T |
 
 They are separate and distinct operations and are defined as such.
 
