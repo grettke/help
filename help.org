@@ -67,6 +67,7 @@ Setup:
   - Sometimes headlines might better be:
     - List items.
     - Stand-alone bold'ed text without punctuation.
+- Org-Macro
 - Content
   - When importing, update to conform with Style-Guide.
 - Dictionary
