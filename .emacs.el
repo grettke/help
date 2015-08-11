@@ -1662,13 +1662,11 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
   :ensure t
   :config
   (yas-global-mode t)
-  (setq yas-triggers-in-field t)
-  (defun help/yas-minor-mode-hook-fn ()
-    "HELP customizations."
-    (define-key yas-minor-mode-map (kbd "<tab>") nil)
-    (define-key yas-minor-mode-map (kbd "TAB") nil)
-    (define-key yas-minor-mode-map (kbd "s-t") 'yas-expand))
-  (add-hook #'yas-minor-mode-hook #'help/yas-minor-mode-hook-fn)
+  (help/not-on-gui (define-key yas-minor-mode-map (kbd "TAB") nil))
+  (help/on-gui (define-key yas-minor-mode-map (kbd "<tab>") nil))
+  (define-key yas-minor-mode-map (kbd "s-t") 'yas-expand)
+  (help/not-on-gui (define-key yas-keymap (kbd "TAB") #'yas-next-field))
+  (help/on-gui (define-key yas-keymap (kbd "<tab>") #'yas-next-field))
   (add-to-list #'yas-snippet-dirs "~/src/help/yasnippet")
   (yas-reload-all)
   (setq yas-prompt-functions '(yas-ido-prompt))

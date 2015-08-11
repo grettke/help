@@ -4607,13 +4607,11 @@ Period.
   :ensure t
   :config
   (yas-global-mode t)
-  (setq yas-triggers-in-field t)
-  (defun help/yas-minor-mode-hook-fn ()
-    "HELP customizations."
-    (define-key yas-minor-mode-map (kbd "<tab>") nil)
-    (define-key yas-minor-mode-map (kbd "TAB") nil)
-    (define-key yas-minor-mode-map (kbd "s-t") 'yas-expand))
-  (add-hook #'yas-minor-mode-hook #'help/yas-minor-mode-hook-fn)
+  (help/not-on-gui (define-key yas-minor-mode-map (kbd "TAB") nil))
+  (help/on-gui (define-key yas-minor-mode-map (kbd "<tab>") nil))
+  (define-key yas-minor-mode-map (kbd "s-t") 'yas-expand)
+  (help/not-on-gui (define-key yas-keymap (kbd "TAB") #'yas-next-field))
+  (help/on-gui (define-key yas-keymap (kbd "<tab>") #'yas-next-field))
   (add-to-list #'yas-snippet-dirs "~/src/help/yasnippet")
   (yas-reload-all)
   (setq yas-prompt-functions '(yas-ido-prompt))
@@ -4903,7 +4901,7 @@ Load Beamer for creating presentations.
 When a drop of water joins the ocean it becomes the ocean.
 
 #+NAME: 17781273-6E7B-4142-8EEE-7637DAA6DA67
-#+BEGIN_SRC ditaa :file "./image/ditaa-drop_in_the_ocean.png" :noweb-ref ignore :results output replace
+#+BEGIN_SRC ditaa :file '("./image/ditaa-drop_in_the_ocean.png" . "foo") :noweb-ref ignore :results output replace
 +---------+
 | cBLU    |
 |         |
