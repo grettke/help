@@ -4,7 +4,7 @@
 # group: HELP
 # contributor: gcr@wisdomandwonder.com
 # --
-#+NAME: ${1:$$(yas-choose-value (list (org-id-new) "TBD"))}
+#+NAME: ${1:$$(yas-choose-value (list (org-id-new) "!TBD!"))}
 #+BEGIN_SRC ${2:$$(yas-choose-value '("emacs-lisp" "org" "sass" "R" "ditaa" "dot" "plantuml"))}${2:$(when (-contains? '("ditaa" "dot" "plantuml") yas-text) " :file \\"\\"")} $3
 $0
 #+END_SRC
