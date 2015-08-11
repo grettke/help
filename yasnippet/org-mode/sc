@@ -5,6 +5,6 @@
 # contributor: gcr@wisdomandwonder.com
 # --
 #+NAME: `(org-id-new)`
-#+BEGIN_SRC ${1:$$(yas-choose-value '("emacs-lisp" "org" "sass" "R" "ditaa" "dot" "plantuml"))} ${1:$(when (-contains? '("ditaa" "dot" "plantuml") yas-text) ":file \\"\\"")}
+#+BEGIN_SRC ${1:$$(yas-choose-value '("emacs-lisp" "org" "sass" "R" "ditaa" "dot" "plantuml"))} ${1:$(when (-contains? '("ditaa" "dot" "plantuml") yas-text) ":file \\"\\"")}$2
 $0
 #+END_SRC
