@@ -4596,10 +4596,11 @@ Period.
   :ID:       5C48A01F-D522-4AC9-A523-F8EE2E9EB384
   :END:
 
-- Enable everywhere
-- Allow expansion to occur within fields
-- Load HELP snippets
-- Use Ido to handle user decisions
+- Enable everywhere.
+- Never expand with =TAB= *anywhere*.
+  - Allow expansion to occur within fields.
+- Load HELP snippets.
+- Use Ido to handle user decisions.
 
 #+NAME: 1827B724-7BC0-4228-8389-2B06F308D6AF
 #+BEGIN_SRC emacs-lisp
