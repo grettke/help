@@ -41,6 +41,7 @@ Setup:
       to export it as a code block.
     - Source code is indented according to existing settings. This system keeps
       it left-aligned, saving space.
+  - Tangle =:file= should have the same =NAME=.
 - Headline.
   - Be sure that every one has an =ID= property with a =UUID= value.
     - ~org-id-get-create~ does this. So does code in Hacking/Org Mode/Utility.
@@ -4901,8 +4902,8 @@ Load Beamer for creating presentations.
 
 When a drop of water joins the ocean it becomes the ocean.
 
-#+NAME: 17781273-6E7B-4142-8EEE-7637DAA6DA67
-#+BEGIN_SRC ditaa :file '("./image/ditaa-drop_in_the_ocean.png" . "foo") :noweb-ref ignore :results output replace
+#+NAME: ditaa-drop_in_the_ocean
+#+BEGIN_SRC ditaa :file "./image/ditaa-drop_in_the_ocean.png"  :noweb-ref ignore :results output replace
 +---------+
 | cBLU    |
 |         |
@@ -4912,10 +4913,10 @@ When a drop of water joins the ocean it becomes the ocean.
 +----+----+
 #+END_SRC
 
-#+RESULTS: 17781273-6E7B-4142-8EEE-7637DAA6DA67
+#+RESULTS: ditaa-drop_in_the_ocean
 [[file:./image/ditaa-drop_in_the_ocean.png]]
 
-#+NAME: 819A4588-7EAD-4C89-A357-0ADCFDDFA082
+#+NAME: ditaa-not_a_sailboat
 #+BEGIN_SRC ditaa :file "./image/ditaa-not_a_sailboat.png" :noweb-ref ignore :results output replace
 +----------+1       1…3+------+
 | Sailboat +◆----------+ Mast |
@@ -4928,7 +4929,7 @@ When a drop of water joins the ocean it becomes the ocean.
       This is not a sailboat
 #+END_SRC
 
-#+RESULTS: 819A4588-7EAD-4C89-A357-0ADCFDDFA082
+#+RESULTS: ditaa-not_a_sailboat
 [[file:./image/ditaa-not_a_sailboat.png]]
 
 #+NAME: 6907A176-CCF4-4BDF-A242-BDBC4C67239F
@@ -4951,7 +4952,7 @@ When a drop of water joins the ocean it becomes the ocean.
   (setf (cdr (assoc "dot" org-src-lang-modes)) 'graphviz-dot))
 #+END_SRC
 
-#+NAME: 1616CF46-A4AD-4EF2-9C0C-7F7890287452
+#+NAME: graphviz-life_is_simple
 #+BEGIN_SRC dot :file "./image/graphviz-life_is_simple.png" :noweb-ref ignore :results output replace
 digraph graphviz {
   subgraph cluster {
@@ -4968,7 +4969,7 @@ digraph graphviz {
 }
 #+END_SRC
 
-#+RESULTS: 1616CF46-A4AD-4EF2-9C0C-7F7890287452
+#+RESULTS: graphviz-life_is_simple
 [[file:./image/graphviz-life_is_simple.png]]
 
 ** PlantUML
@@ -4994,7 +4995,7 @@ digraph graphviz {
 - Feature rich.
 - Information rich.
 
-#+NAME: FD10BA65-CB12-452D-BC53-A9E19076E5C5
+#+NAME: plantuml-sequence_diagram
 #+BEGIN_SRC plantuml :file "./image/plantuml-sequence_diagram.png" :noweb-ref ignore :results output replace
 Alice --> Bob: Authentication Request
 Bob --> Alice: Authentication Response
@@ -5003,14 +5004,13 @@ Alice --> Bob: Another authentication Request
 Alice <-- Bob: another authentication Response
 #+END_SRC
 
-#+RESULTS: FD10BA65-CB12-452D-BC53-A9E19076E5C5
+#+RESULTS: plantuml-sequence_diagram
 [[file:./image/plantuml-sequence_diagram.png]]
 
 *Use Case Diagram*
 
 - Actor variable aliasing feature.
-
-#+NAME: AF7D36BC-1CFB-4A31-90AD-7E0C3DC4CC7A
+#+NAME: plantuml-use_case_diagram
 #+BEGIN_SRC plantuml :file "./image/plantuml-use_case_diagram.png" :noweb-ref ignore :results output replace
 left to right direction
 skinparam packageStyle rect
@@ -5022,7 +5022,7 @@ customer -- (checkout)
 }
 #+END_SRC
 
-#+RESULTS: AF7D36BC-1CFB-4A31-90AD-7E0C3DC4CC7A
+#+RESULTS: plantuml-use_case_diagram
 [[file:./image/plantuml-use_case_diagram.png]]
 
 *Class Diagram*
@@ -5036,7 +5036,7 @@ customer -- (checkout)
   - Packaging vs. namespaceing.
   - Good support for splitting large images among output pages.
 
-#+NAME: BEA0E6F9-0E1F-4919-B8B6-7725C8E84708
+#+NAME: plantuml-class_diagram
 #+BEGIN_SRC plantuml :file "./image/plantuml-class_diagram.png" :noweb-ref ignore :results output replace
 title This is not a sailboat
 scale 200 width
@@ -5044,7 +5044,7 @@ Sailboat "1" *-- "1..3" Mast
 Sailboat "1" *-- "1..3" Hull
 #+END_SRC
 
-#+RESULTS: BEA0E6F9-0E1F-4919-B8B6-7725C8E84708
+#+RESULTS: plantuml-class_diagram
 [[file:./image/plantuml-class_diagram.png]]
 
 *Activity Diagram*
@@ -5056,7 +5056,7 @@ Sailboat "1" *-- "1..3" Hull
 - Partition construct.
 - [[http://plantuml.sourceforge.net/activity2.html][New syntax]] with more examples.
 
-#+NAME: 7C0E37BA-A0D7-4BB7-8BE2-0CD201C67A55
+#+NAME: plantuml-activity_diagram
 #+BEGIN_SRC plantuml :file "./image/plantuml-activity_diagram.png" :noweb-ref ignore :results output replace
 start
 partition Initialization {
@@ -5071,7 +5071,7 @@ partition Running {
 stop
 #+END_SRC
 
-#+RESULTS: 7C0E37BA-A0D7-4BB7-8BE2-0CD201C67A55
+#+RESULTS: plantuml-activity_diagram
 [[file:./image/plantuml-activity_diagram.png]]
 
 *Component Diagram*
@@ -5080,7 +5080,7 @@ stop
 - Identify "Modern UML".
 - Good for summaries.
 
-#+NAME: A12A6039-FAFF-4B68-9064-3EDDD32CF9A8
+#+NAME: plantuml-component_diagram
 #+BEGIN_SRC plantuml :file "./image/plantuml-component_diagram.png" :noweb-ref ignore :results output replace
 [First component]
 [Another component]
@@ -5090,31 +5090,31 @@ DataAccess - [First Component]
 [First Component] ..> HTTP : use
 #+END_SRC
 
-#+RESULTS: A12A6039-FAFF-4B68-9064-3EDDD32CF9A8
+#+RESULTS: plantuml-component_diagram
 [[file:./image/plantuml-component_diagram.png]]
 
 *State Diagram*
 
-#+NAME: 03907179-FD15-4C9A-9E12-2BE2F11247B7
+#+NAME: plantuml-state_diagram
 #+BEGIN_SRC plantuml :file "./image/plantuml-state_diagram.png" :noweb-ref ignore :results output replace
 [*] --> State1
 State1 --> [*]
 State1 : this is a string State1 : this is another string
 #+END_SRC
 
-#+RESULTS: 03907179-FD15-4C9A-9E12-2BE2F11247B7
+#+RESULTS: plantuml-state_diagram
 [[file:./image/plantuml-state_diagram.png]]
 
 *Object Diagram*
 
-#+NAME: A4711DE9-E5AB-451E-A9BC-0624AF0C407B
+#+NAME: plantuml-object_diagram
 #+BEGIN_SRC plantuml :file "./image/plantuml-object_diagram.png" :noweb-ref ignore :results output replace
 object Object01
 object Object02
 Object01 <|-- Object02
 #+END_SRC
 
-#+RESULTS: A4711DE9-E5AB-451E-A9BC-0624AF0C407B
+#+RESULTS: plantuml-object_diagram
 [[file:./image/plantuml-object_diagram.png]]
 
 - Commands.
