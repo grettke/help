@@ -4913,6 +4913,9 @@ When a drop of water joins the ocean it becomes the ocean.
 +----+----+
 #+END_SRC
 
+#+RESULTS: 17781273-6E7B-4142-8EEE-7637DAA6DA67
+[[file:./image/ditaa-drop_in_the_ocean.png]]
+
 #+NAME: 819A4588-7EAD-4C89-A357-0ADCFDDFA082
 #+BEGIN_SRC ditaa :file "./image/ditaa-not_a_sailboat.png" :noweb-ref ignore :results output replace
 +----------+1       1…3+------+
@@ -4925,6 +4928,9 @@ When a drop of water joins the ocean it becomes the ocean.
                        +------+
       This is not a sailboat
 #+END_SRC
+
+#+RESULTS: 819A4588-7EAD-4C89-A357-0ADCFDDFA082
+[[file:./image/ditaa-not_a_sailboat.png]]
 
 #+NAME: 6907A176-CCF4-4BDF-A242-BDBC4C67239F
 #+BEGIN_SRC emacs-lisp
@@ -4963,6 +4969,9 @@ digraph graphviz {
 }
 #+END_SRC
 
+#+RESULTS: 1616CF46-A4AD-4EF2-9C0C-7F7890287452
+[[file:./image/graphviz-life_is_simple.png]]
+
 ** PlantUML
   :PROPERTIES:
   :noweb-ref: Hacking-Diagram-PlantUML
@@ -4995,6 +5004,9 @@ Alice --> Bob: Another authentication Request
 Alice <-- Bob: another authentication Response
 #+END_SRC
 
+#+RESULTS: FD10BA65-CB12-452D-BC53-A9E19076E5C5
+[[file:./image/plantuml-sequence_diagram.png]]
+
 *Use Case Diagram*
 
 - Actor variable aliasing feature.
@@ -5010,6 +5022,9 @@ customer -- (checkout)
 (checkout) .> (payment) : include (help) .> (checkout) : extends (checkout) -- clerk
 }
 #+END_SRC
+
+#+RESULTS: AF7D36BC-1CFB-4A31-90AD-7E0C3DC4CC7A
+[[file:./image/plantuml-use_case_diagram.png]]
 
 *Class Diagram*
 
@@ -5029,6 +5044,9 @@ scale 200 width
 Sailboat "1" *-- "1..3" Mast
 Sailboat "1" *-- "1..3" Hull
 #+END_SRC
+
+#+RESULTS: BEA0E6F9-0E1F-4919-B8B6-7725C8E84708
+[[file:./image/plantuml-class_diagram.png]]
 
 *Activity Diagram*
 
@@ -5054,6 +5072,9 @@ partition Running {
 stop
 #+END_SRC
 
+#+RESULTS: 7C0E37BA-A0D7-4BB7-8BE2-0CD201C67A55
+[[file:./image/plantuml-activity_diagram.png]]
+
 *Component Diagram*
 
 - The names to define all of the diagram entity types.
@@ -5070,6 +5091,9 @@ DataAccess - [First Component]
 [First Component] ..> HTTP : use
 #+END_SRC
 
+#+RESULTS: A12A6039-FAFF-4B68-9064-3EDDD32CF9A8
+[[file:./image/plantuml-component_diagram.png]]
+
 *State Diagram*
 
 #+NAME: 03907179-FD15-4C9A-9E12-2BE2F11247B7
@@ -5079,6 +5103,9 @@ State1 --> [*]
 State1 : this is a string State1 : this is another string
 #+END_SRC
 
+#+RESULTS: 03907179-FD15-4C9A-9E12-2BE2F11247B7
+[[file:./image/plantuml-state_diagram.png]]
+
 *Object Diagram*
 
 #+NAME: A4711DE9-E5AB-451E-A9BC-0624AF0C407B
@@ -5087,6 +5114,9 @@ object Object01
 object Object02
 Object01 <|-- Object02
 #+END_SRC
+
+#+RESULTS: A4711DE9-E5AB-451E-A9BC-0624AF0C407B
+[[file:./image/plantuml-object_diagram.png]]
 
 - Commands.
   - Header and footer values.
