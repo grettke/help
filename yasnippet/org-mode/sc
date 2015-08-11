@@ -2,7 +2,7 @@
 # key: sc
 # name: Source Block
 # group: HELP
-# contributor: gcr@wisdomandwonder.comb
+# contributor: gcr@wisdomandwonder.com
 # --
 #+NAME: ${1:`(org-id-new)`}
 #+BEGIN_SRC ${2:$$(yas-choose-value '("emacs-lisp" "org" "sass" "R" "ditaa" "dot" "plantuml"))}${2:$(when (-contains? '("ditaa" "dot" "plantuml") yas-text) (concat " :file \\"" (yas-field-value 1) ".png\\""))} $3
