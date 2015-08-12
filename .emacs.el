@@ -1715,6 +1715,9 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; [[file:~/src/help/help.org::*KOMA-Script][EFFC0DFD-168F-42F5-9405-BAECD7EC5CB4]]
 (setq org-koma-letter-class-option-file "UScommercial9 KomaDefault")
 ;; EFFC0DFD-168F-42F5-9405-BAECD7EC5CB4 ends here
+;; [[file:~/src/help/help.org::*Markdown][02005BF5-AADC-45B1-AC64-67ECB028352A]]
+(use-package ox-gfm)
+;; 02005BF5-AADC-45B1-AC64-67ECB028352A ends here
 ;; [[file:~/src/help/help.org::*Beamer][B77E265B-EE1A-469D-BEFB-51360B7AB45E]]
 (use-package ox-beamer)
 ;; B77E265B-EE1A-469D-BEFB-51360B7AB45E ends here

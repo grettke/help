@@ -208,6 +208,7 @@ Start EMACS with this command:
 «Hacking-Applied-Mathematics-YASnippet»
 «Hacking-Publishing-TeX»
 «Hacking-Publishing-KOMA»
+«Hacking-Publishing-Markdown»
 «Hacking-Publishing-Beamer»
 «Hacking-Publishing-HTML»
 «Hacking-Diagram-Artist»
@@ -4821,12 +4822,15 @@ Set up my default LCO files.
 
 ** Markdown
    :PROPERTIES:
+   :noweb-ref: Hacking-Publishing-Markdown
    :ID:       748319ED-9F02-4A4D-BEE8-E71C462663FC
    :END:
 
+Provide Github Flavored Markdown.
+
 #+NAME: 02005BF5-AADC-45B1-AC64-67ECB028352A
 #+BEGIN_SRC emacs-lisp
-(use-package ox-md)
+(use-package ox-gfm)
 #+END_SRC
 
 ** WordPress
