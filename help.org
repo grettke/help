@@ -90,7 +90,6 @@ Setup:
     used as a whole. If a single sub-system is broken then the entire system is
     broken. Everything is conceptually and literally tightly woven. It is a
     monolithic system.
-  - Prefer to byte-compile all references by using ~function~.
 - Formatting
   - Code Snippet.
     - Programming language expressions.
@@ -136,6 +135,9 @@ Setup:
     - Try never to advise functions.
     - Never ~custom-set-variables~.
   - Always use relative file paths.
+  - Prefer to byte-compile all references by using ~function~.
+      - Fail-fast: it is better to know immediately if there are resolution
+        issues.
 - Tangling.
   - When ordering matters, rely on block-reuse to enforce correct generation.
 - Voice.
