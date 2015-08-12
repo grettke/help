@@ -90,7 +90,7 @@ Setup:
     used as a whole. If a single sub-system is broken then the entire system is
     broken. Everything is conceptually and literally tightly woven. It is a
     monolithic system.
-  - Prefer to byte-compile all references.
+  - Prefer to byte-compile all references by using ~function~.
 - Formatting
   - Code Snippet.
     - Programming language expressions.
