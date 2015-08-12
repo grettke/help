@@ -1048,7 +1048,7 @@ _q_ apropos _r_ obtj2o"
   ("1" help/text-scale-decrease :exit nil)
   ("2" help/text-scale-increase :exit nil)
   ("r" org-babel-tangle-jump-to-org))
-(key-chord-define-global "ff" #'help/hydra/left-side/global/body)
+(key-chord-define-global "gg" #'help/hydra/left-side/global/body)
 #+END_SRC
 
 [[https://github.com/abo-abo/hydra/blob/master/hydra-examples.el][Attribution.]]
@@ -3925,7 +3925,7 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
   ("u" org-goto)
   ("9" org-id-get-create)
   ("0" help/org-toggle-macro-markers))
-(key-chord-define-global "jj" #'help/hydra/right-side/org-mode/body)
+(key-chord-define-global "hh" #'help/hydra/right-side/org-mode/body)
 #+END_SRC
 
 Safe all buffers before working with Exports.

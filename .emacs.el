@@ -1446,7 +1446,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
   ("u" org-goto)
   ("9" org-id-get-create)
   ("0" help/org-toggle-macro-markers))
-(key-chord-define-global "jj" #'help/hydra/right-side/org-mode/body)
+(key-chord-define-global "hh" #'help/hydra/right-side/org-mode/body)
 ;; 5186DD50-F693-4297-A164-192BEA685C6D ends here
 ;; [[file:~/src/help/help.org::*Keybindings][BFF7A955-3107-4ED3-9022-CAB792E779EC]]
 (define-key org-mode-map (kbd "C-c C-e") #'help/safb-org-export-dispatch)
@@ -1859,7 +1859,7 @@ _q_ apropos _r_ obtj2o"
   ("1" help/text-scale-decrease :exit nil)
   ("2" help/text-scale-increase :exit nil)
   ("r" org-babel-tangle-jump-to-org))
-(key-chord-define-global "ff" #'help/hydra/left-side/global/body)
+(key-chord-define-global "gg" #'help/hydra/left-side/global/body)
 ;; F6C7AAB7-DF69-4EBA-8116-15DC32022D49 ends here
 ;; [[file:~/src/help/help.org::*3][362686F6-B397-44D5-812F-BE24670F4204]]
 (defhydra hydra-apropos (:color blue
