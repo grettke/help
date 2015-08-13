@@ -2543,7 +2543,7 @@ Auto-completion for =.=-separated words.
    :END:
 
 The macro recorder and Multiple-Cursors provide two ways to do the right thing
-in different situations.
+in different situations. Be very thoughtful and allow every function.
 
 #+NAME: 989C4727-473A-4DAB-8446-5077F3042587
 #+BEGIN_SRC emacs-lisp
