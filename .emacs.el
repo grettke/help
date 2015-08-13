@@ -989,6 +989,8 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (turn-on-stripe-buffer-mode)
   (stripe-listify-buffer))
 (add-hook #'occur-mode-hook #'help/occur-mode-hook-fn)
+(define-key occur-mode-map (kbd "n") #'next-logical-line)
+(define-key occur-mode-map (kbd "p") #'previous-logical-line)
 ;; 00A4417A-8BE6-4417-B054-2F9D8287FAFD ends here
 ;; [[file:~/src/help/help.org::*Popups][2DE86EF6-3E4B-42FD-AA11-1914A83029BE]]
 (use-package alert

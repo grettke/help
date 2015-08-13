@@ -2623,6 +2623,8 @@ a fast navigation vehicle.
   (turn-on-stripe-buffer-mode)
   (stripe-listify-buffer))
 (add-hook #'occur-mode-hook #'help/occur-mode-hook-fn)
+(define-key occur-mode-map (kbd "n") #'next-logical-line)
+(define-key occur-mode-map (kbd "p") #'previous-logical-line)
 #+END_SRC
 
 ** Popups
