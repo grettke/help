@@ -189,6 +189,8 @@ Sysop is likely to use this constantly.
 
 Start EMACS with this command:
 
+=open /Applications/Emacs.app=
+
 #+NAME: AD12BE48-B87B-4AB6-814D-4FA5E47597A0
 #+BEGIN_SRC emacs-lisp
 «Org-Mode-ECM-Tangle-Block»
@@ -218,8 +220,6 @@ Start EMACS with this command:
 «Quiet-and-Pleasant-Appearance»
 «Piano-Lessons»
 #+END_SRC
-
-=open /Applications/Emacs.app=
 
 ** Eshell
    :PROPERTIES:
@@ -1049,8 +1049,9 @@ close together
                                               :hint nil)
   "
 _1_ -font  _2_ +font
-_q_ apropos _r_ obtj2o"
+_q_ apropos _w_ widen _r_ obtj2o"
   ("q" hydra-apropos/body)
+  ("w" widen)
   ("1" help/text-scale-decrease :exit nil)
   ("2" help/text-scale-increase :exit nil)
   ("r" org-babel-tangle-jump-to-org))
@@ -1811,6 +1812,13 @@ use than advice.
   (interactive)
   (help/save-all-file-buffers)
   (org-babel-execute-buffer)
+  (help/save-all-file-buffers))
+
+(defun help/safb-org-babel-execute-subtree ()
+  "Immediately save results."
+  (interactive)
+  (help/save-all-file-buffers)
+  (org-babel-execute-subtree)
   (help/save-all-file-buffers))
 #+END_SRC
 
@@ -3910,14 +3918,19 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
 
 #+NAME: E65CF1F6-F56C-4A1A-BB45-5E530FA93C04
 #+BEGIN_SRC emacs-lisp
+(define-key org-mode-map (kbd "s-7") #'org-babel-load-in-session)
+(define-key org-mode-map (kbd "s-8") #'org-babel-switch-to-session)
+(define-key org-mode-map (kbd "s-9") #'org-babel-switch-to-session-with-code)
 (define-key org-mode-map (kbd "s-j") #'org-babel-next-src-block)
+(define-key org-mode-map (kbd "s-y") #'help/safb-org-babel-execute-subtree)
 (define-key org-mode-map (kbd "s-u") #'help/safb-org-babel-execute-buffer)
 (define-key org-mode-map (kbd "s-U") #'org-mark-ring-goto)
 (define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
 (define-key org-mode-map (kbd "s-i") #'help/safb-org-babel-tangle)
 (define-key org-mode-map (kbd "s-l") #'help/safb-org-edit-src-code)
-(define-key org-mode-map (kbd "s-o") #'org-babel-execute-maybe)
+(define-key org-mode-map (kbd "s-o") #'org-babel-execute-src-block-maybe)
 (define-key org-mode-map (kbd "s-;") #'org-babel-view-src-block-info)
+(define-key org-mode-map (kbd "s-'") #'org-babel-open-src-block-result)
 (define-key org-mode-map (kbd "s-p") #'org-babel-demarcate-block)
 #+END_SRC
 
@@ -3926,11 +3939,26 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
 (defhydra help/hydra/right-side/org-mode (:color blue
                                                  :hint nil)
   "
-                _9_ igc  _0_ tglmcro
- _u_ goto"
+_4_ +imgs _5_ -imgs                       _9_ igc  _0_ tglmcro
+_q_ n2sbtre _w_ tbletfld _e_ g2nmrst _r_ g2nms-b _t_ g2s-b/hd      _u_ goto
+_a_ inshdrgs             _h_ dksieb
+_c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
+  ("e" org-babel-goto-named-result)
+  ("r" org-babel-goto-named-src-block)
+  ("t" org-babel-goto-src-block-head)
+  ("a" org-babel-insert-header-arg)
+  ("h" org-babel-do-key-sequence-in-edit-buffer)
+  ("m" org-babel-expand-src-block-maybe)
+  ("c" org-babel-check-src-block)
+  ("w" org-table-edit-field)
+  ("q" org-narrow-to-subtree)
   ("u" org-goto)
   ("9" org-id-get-create)
-  ("0" help/org-toggle-macro-markers))
+  ("0" help/org-toggle-macro-markers)
+  ("b" org-babel-switch-to-session)
+  ("n" org-babel-switch-to-session-with-code)
+  ("4" org-display-inline-images)
+  ("5" org-remove-inline-images))
 (key-chord-define-global "hh" #'help/hydra/right-side/org-mode/body)
 #+END_SRC
 

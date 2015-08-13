@@ -462,6 +462,13 @@ This is a copy and paste. Additional languages would warrant a refactor."
   (help/save-all-file-buffers)
   (org-babel-execute-buffer)
   (help/save-all-file-buffers))
+
+(defun help/safb-org-babel-execute-subtree ()
+  "Immediately save results."
+  (interactive)
+  (help/save-all-file-buffers)
+  (org-babel-execute-subtree)
+  (help/save-all-file-buffers))
 ;; 5A0C3F05-0C41-4E50-944E-0ACC4C2F4A15 ends here
 ;; [[file:~/src/help/help.org::*File%20Based%20System][DA537B02-6E64-42FC-BE9D-E5A3408B6599]]
 (add-to-list 'find-file-not-found-functions #'help/create-non-existent-directory)
@@ -1427,25 +1434,45 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
  (define-key org-mode-map (kbd "C-M-<return>") 'electric-indent-just-newline))
 ;; 8C7E90AC-C7EB-4A43-9377-C3C85CE51849 ends here
 ;; [[file:~/src/help/help.org::*Keybindings][E65CF1F6-F56C-4A1A-BB45-5E530FA93C04]]
+(define-key org-mode-map (kbd "s-7") #'org-babel-load-in-session)
+(define-key org-mode-map (kbd "s-8") #'org-babel-switch-to-session)
+(define-key org-mode-map (kbd "s-9") #'org-babel-switch-to-session-with-code)
 (define-key org-mode-map (kbd "s-j") #'org-babel-next-src-block)
+(define-key org-mode-map (kbd "s-y") #'help/safb-org-babel-execute-subtree)
 (define-key org-mode-map (kbd "s-u") #'help/safb-org-babel-execute-buffer)
 (define-key org-mode-map (kbd "s-U") #'org-mark-ring-goto)
 (define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
 (define-key org-mode-map (kbd "s-i") #'help/safb-org-babel-tangle)
 (define-key org-mode-map (kbd "s-l") #'help/safb-org-edit-src-code)
-(define-key org-mode-map (kbd "s-o") #'org-babel-execute-maybe)
+(define-key org-mode-map (kbd "s-o") #'org-babel-execute-src-block-maybe)
 (define-key org-mode-map (kbd "s-;") #'org-babel-view-src-block-info)
+(define-key org-mode-map (kbd "s-'") #'org-babel-open-src-block-result)
 (define-key org-mode-map (kbd "s-p") #'org-babel-demarcate-block)
 ;; E65CF1F6-F56C-4A1A-BB45-5E530FA93C04 ends here
 ;; [[file:~/src/help/help.org::*Keybindings][5186DD50-F693-4297-A164-192BEA685C6D]]
 (defhydra help/hydra/right-side/org-mode (:color blue
                                                  :hint nil)
   "
-                _9_ igc  _0_ tglmcro
- _u_ goto"
+_4_ +imgs _5_ -imgs                       _9_ igc  _0_ tglmcro
+_q_ n2sbtre _w_ tbletfld _e_ g2nmrst _r_ g2nms-b _t_ g2s-b/hd      _u_ goto
+_a_ inshdrgs             _h_ dksieb
+_c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
+  ("e" org-babel-goto-named-result)
+  ("r" org-babel-goto-named-src-block)
+  ("t" org-babel-goto-src-block-head)
+  ("a" org-babel-insert-header-arg)
+  ("h" org-babel-do-key-sequence-in-edit-buffer)
+  ("m" org-babel-expand-src-block-maybe)
+  ("c" org-babel-check-src-block)
+  ("w" org-table-edit-field)
+  ("q" org-narrow-to-subtree)
   ("u" org-goto)
   ("9" org-id-get-create)
-  ("0" help/org-toggle-macro-markers))
+  ("0" help/org-toggle-macro-markers)
+  ("b" org-babel-switch-to-session)
+  ("n" org-babel-switch-to-session-with-code)
+  ("4" org-display-inline-images)
+  ("5" org-remove-inline-images))
 (key-chord-define-global "hh" #'help/hydra/right-side/org-mode/body)
 ;; 5186DD50-F693-4297-A164-192BEA685C6D ends here
 ;; [[file:~/src/help/help.org::*Keybindings][BFF7A955-3107-4ED3-9022-CAB792E779EC]]
@@ -1857,8 +1884,9 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
                                               :hint nil)
   "
 _1_ -font  _2_ +font
-_q_ apropos _r_ obtj2o"
+_q_ apropos _w_ widen _r_ obtj2o"
   ("q" hydra-apropos/body)
+  ("w" widen)
   ("1" help/text-scale-decrease :exit nil)
   ("2" help/text-scale-increase :exit nil)
   ("r" org-babel-tangle-jump-to-org))
