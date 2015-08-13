@@ -404,6 +404,14 @@ This is a copy and paste. Additional languages would warrant a refactor."
                 (indent-to i)
                 (forward-line 2)))))))
   (save-buffer))
+
+(defun help/org-babel-demarcate-block ()
+  "Add a NAME property then assign it a UUID."
+  (interactive)
+  (org-babel-demarcate-block)
+  (insert "\n#+NAME: " (org-id-new))
+  (move-beginning-of-line)
+  (org-babel-next-src-block))
 #+END_SRC
 
 ** Tangling
@@ -1819,6 +1827,11 @@ use than advice.
   (interactive)
   (help/save-all-file-buffers)
   (org-babel-execute-subtree)
+  (help/save-all-file-buffers))
+
+(defun help/safb-help/org-babel-demarcate-block ()
+  (interactive)
+  (help/org-babel-demarcate-block)
   (help/save-all-file-buffers))
 #+END_SRC
 
@@ -3931,7 +3944,7 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
 (define-key org-mode-map (kbd "s-o") #'org-babel-execute-src-block-maybe)
 (define-key org-mode-map (kbd "s-;") #'org-babel-view-src-block-info)
 (define-key org-mode-map (kbd "s-'") #'org-babel-open-src-block-result)
-(define-key org-mode-map (kbd "s-p") #'org-babel-demarcate-block)
+(define-key org-mode-map (kbd "s-p") #'help/safb-help/org-babel-demarcate-block)
 #+END_SRC
 
 #+NAME: 5186DD50-F693-4297-A164-192BEA685C6D

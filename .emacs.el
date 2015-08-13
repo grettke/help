@@ -79,6 +79,14 @@ This is a copy and paste. Additional languages would warrant a refactor."
                 (indent-to i)
                 (forward-line 2)))))))
   (save-buffer))
+
+(defun help/org-babel-demarcate-block ()
+  "Add a NAME property then assign it a UUID."
+  (interactive)
+  (org-babel-demarcate-block)
+  (insert "\n#+NAME: " (org-id-new))
+  (move-beginning-of-line)
+  (org-babel-next-src-block))
 ;; BB2E97AF-6364-401F-8063-8B5A0BE481E6 ends here
 ;; [[file:~/src/help/help.org::*Tangling][859E61A4-D910-4731-8328-A63F6B6ACD3F]]
 (add-hook #'org-babel-pre-tangle-hook #'help/org-prp-hdln)
@@ -468,6 +476,11 @@ This is a copy and paste. Additional languages would warrant a refactor."
   (interactive)
   (help/save-all-file-buffers)
   (org-babel-execute-subtree)
+  (help/save-all-file-buffers))
+
+(defun help/safb-help/org-babel-demarcate-block ()
+  (interactive)
+  (help/org-babel-demarcate-block)
   (help/save-all-file-buffers))
 ;; 5A0C3F05-0C41-4E50-944E-0ACC4C2F4A15 ends here
 ;; [[file:~/src/help/help.org::*File%20Based%20System][DA537B02-6E64-42FC-BE9D-E5A3408B6599]]
@@ -1447,7 +1460,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (define-key org-mode-map (kbd "s-o") #'org-babel-execute-src-block-maybe)
 (define-key org-mode-map (kbd "s-;") #'org-babel-view-src-block-info)
 (define-key org-mode-map (kbd "s-'") #'org-babel-open-src-block-result)
-(define-key org-mode-map (kbd "s-p") #'org-babel-demarcate-block)
+(define-key org-mode-map (kbd "s-p") #'help/safb-help/org-babel-demarcate-block)
 ;; E65CF1F6-F56C-4A1A-BB45-5E530FA93C04 ends here
 ;; [[file:~/src/help/help.org::*Keybindings][5186DD50-F693-4297-A164-192BEA685C6D]]
 (defhydra help/hydra/right-side/org-mode (:color blue
