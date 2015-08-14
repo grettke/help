@@ -416,10 +416,10 @@ This is a copy and paste. Additional languages would warrant a refactor."
   (help/save-all-file-buffers)
   (vc-revert))
 
-(defun help/safb-magit-status ()
+(defun help/safb-help/magit-status ()
   (interactive)
   (help/save-all-file-buffers)
-  (magit-status))
+  (help/magit-status))
 
 (defun help/safb-org-babel-tangle ()
   (interactive)
@@ -1152,9 +1152,9 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 ;; 1AB838F7-4C9B-4C35-97B5-35390871A22D ends here
 ;; [[file:~/src/help/help.org::*Version%20Control][14B95634-E6E8-46A0-9698-2C9B847DD404]]
 (use-package magit
-             :ensure t
-             :config
-             (global-set-key (kbd "s-e") #'help/safb-magit-status))
+  :ensure t
+  :config
+  (global-set-key (kbd "s-e") #'help/safb-help/magit-status))
 ;; 14B95634-E6E8-46A0-9698-2C9B847DD404 ends here
 ;; [[file:~/src/help/help.org::*Version%20Control][27D5DC40-DD13-4E08-9EF9-D962DD08A7D5]]
 (eval-after-load 'log-edit
@@ -1409,10 +1409,18 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
   "If in org source block, exit it before `vc-next-action'."
   (interactive)
   (when (condition-case nil
-            (org-src-in-org-buffer)
+            (org-src-edit-buffer-p)
           (error nil))
     (org-edit-src-exit))
   (vc-next-action nil))
+(defun help/magit-status ()
+  "If in org source block, exit it before `magit-status'."
+  (interactive)
+  (when (condition-case nil
+            (org-src-edit-buffer-p)
+          (error nil))
+    (org-edit-src-exit))
+  (magit-status))
 ;; C1F1C610-AC69-40E8-AD2F-EB6C849B40CB ends here
 ;; [[file:~/src/help/help.org::*Org%20Mode][727834EF-DF94-4190-98AC-B791FCCDE7E3]]
 (setq org-edit-src-code nil)

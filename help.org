@@ -1767,10 +1767,10 @@ use than advice.
   (help/save-all-file-buffers)
   (vc-revert))
 
-(defun help/safb-magit-status ()
+(defun help/safb-help/magit-status ()
   (interactive)
   (help/save-all-file-buffers)
-  (magit-status))
+  (help/magit-status))
 
 (defun help/safb-org-babel-tangle ()
   (interactive)
@@ -2941,9 +2941,9 @@ They are not not diminshed because they are infrequently used.
 #+NAME: 14B95634-E6E8-46A0-9698-2C9B847DD404
 #+BEGIN_SRC emacs-lisp
 (use-package magit
-             :ensure t
-             :config
-             (global-set-key (kbd "s-e") #'help/safb-magit-status))
+  :ensure t
+  :config
+  (global-set-key (kbd "s-e") #'help/safb-help/magit-status))
 #+END_SRC
 
 Leave the VC message template empty.
@@ -3827,7 +3827,8 @@ Configure the system to successfully use ~vc-next-action~ while editing a
 Source-Block. Before perfoming the edit, check if it is Org-Mode and
 exit the Source-Block Buffer (SBB). If this system stays in the SBB
 when calling ~vc-next-action~ the entire contents of the buffer are escaped
-as Org-Mode source code upon returning to the source buffer (this).
+as Org-Mode source code upon returning to the source buffer (this). Do the same
+thing before any version control modes that would result in the same condition.
 
 #+NAME: C1F1C610-AC69-40E8-AD2F-EB6C849B40CB
 #+BEGIN_SRC emacs-lisp
@@ -3835,10 +3836,18 @@ as Org-Mode source code upon returning to the source buffer (this).
   "If in org source block, exit it before `vc-next-action'."
   (interactive)
   (when (condition-case nil
-            (org-src-in-org-buffer)
+            (org-src-edit-buffer-p)
           (error nil))
     (org-edit-src-exit))
   (vc-next-action nil))
+(defun help/magit-status ()
+  "If in org source block, exit it before `magit-status'."
+  (interactive)
+  (when (condition-case nil
+            (org-src-edit-buffer-p)
+          (error nil))
+    (org-edit-src-exit))
+  (magit-status))
 #+END_SRC
 
 Never use the original version.
