@@ -5,3 +5,6 @@
 /auto/*
 *.pdf
 *.tex
+/*.aux
+/*.log
+*.out

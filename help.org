@@ -297,7 +297,7 @@ Add the Org-Mode core distribution the load path.
 
 #+NAME: D5D4EECF-00C5-4B2F-B9F9-988591C70852
 #+BEGIN_SRC emacs-lisp
-(add-to-list 'load-path "~/src/org-mode/lisp")
+(add-to-list #'load-path "~/src/org-mode/lisp")
 #+END_SRC
 
 Add the Org-Mode-Contributions distribution to the load path. The contributions
@@ -305,7 +305,7 @@ are critical to and inseparable from the core distribution.
 
 #+NAME: 4D4E921E-7B99-43B2-AD1F-30D2593F05D7
 #+BEGIN_SRC emacs-lisp
-(add-to-list 'load-path "~/src/org-mode/contrib/lisp")
+(add-to-list #'load-path "~/src/org-mode/contrib/lisp")
 #+END_SRC
 
 This system allows for single-character alphabetical bullet lists. For Org-Mode
@@ -500,7 +500,7 @@ Org-Mode may evaluate all of the listed languages.
 #+NAME: 6309AF39-FCE4-43DE-BD46-BC7D0BA0971D
 #+BEGIN_SRC emacs-lisp
 (org-babel-do-load-languages
- 'org-babel-load-languages
+ #'org-babel-load-languages
  '((calc . t)
    (css . t)
    (dot . t)
@@ -1138,7 +1138,7 @@ Occur has 3 cases. I like to use it to explore the unknown.
 
 #+NAME: 2608E62D-62B4-4B82-BFE0-E1E04C0D6914
 #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "M-s p") 'help/occur-dwim)
+(global-set-key (kbd "M-s p") #'help/occur-dwim)
 #+END_SRC
 
 Simpler buffer movement.
@@ -1160,7 +1160,7 @@ Hide and show code blocks.
 
 #+NAME: 374B4284-8823-4E85-A469-F3985D48EC61
 #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "s-b") 'hs-toggle-hiding)
+(global-set-key (kbd "s-b") #'hs-toggle-hiding)
 #+END_SRC
 
 ***  Left & Right Side
@@ -1434,8 +1434,8 @@ This is a known issue. [[https://superuser.com/questions/125569/how-to-fix-emacs
    "Prevent yes-or-no-p from activating a dialog."
    (let ((use-dialog-box nil))
      (apply orig-fun args)))
- (advice-add 'yes-or-no-p :around #'help/yes-or-no-p)
- (advice-add 'y-or-n-p :around #'help/yes-or-no-p))
+ (advice-add #'yes-or-no-p :around #'help/yes-or-no-p)
+ (advice-add #'y-or-n-p :around #'help/yes-or-no-p))
 #+END_SRC
 
 ** Windows
@@ -1628,9 +1628,9 @@ Allow most commands.
 
 #+NAME: F082B76A-8371-43DE-8FF5-2D95F3FD687A
 #+BEGIN_SRC emacs-lisp
-(put 'upcase-region 'disabled nil)
-(put 'downcase-region 'disabled nil)
-(put 'narrow-to-region 'disabled nil)
+(put #'upcase-region 'disabled nil)
+(put #'downcase-region 'disabled nil)
+(put #'narrow-to-region 'disabled nil)
 #+END_SRC
 
 ** Encryption
@@ -1642,7 +1642,7 @@ Easy to use file-based AES encryption.
 
 #+NAME: A7C4590E-53C4-4159-B627-178E367B0A12
 #+BEGIN_SRC emacs-lisp
-(add-to-list 'load-path (getenv "CCRYPT"))
+(add-to-list #'load-path (getenv "CCRYPT"))
 (use-package ps-ccrypt)
 #+END_SRC
 
@@ -1676,13 +1676,13 @@ to =eshell-visual-commands=.
      (use-package em-prompt)
      (use-package em-term)
      (setenv "PAGER" "cat")
-     (add-hook 'eshell-mode-hook
+     (add-hook #'eshell-mode-hook
                (lambda ()
                  (message "Welcome to Eshell.")
                  (setq pcomplete-cycle-completions nil)))
-     (add-to-list 'eshell-visual-commands "ssh")
-     (add-to-list 'eshell-visual-commands "tail")
-     (add-to-list 'eshell-command-completions-alist
+     (add-to-list #'eshell-visual-commands "ssh")
+     (add-to-list #'eshell-visual-commands "tail")
+     (add-to-list #'eshell-command-completions-alist
                   '("tar" "\\(\\.tar|\\.tgz\\|\\.tar\\.gz\\)\\'"))))
 #+END_SRC
 
@@ -1727,7 +1727,7 @@ Backup file-stores when the frame loses focus.
 
 #+NAME: 84B0605F-AA20-4CBB-8D14-5B55CF8D097D
 #+BEGIN_SRC emacs-lisp
-(add-hook 'focus-out-hook #'help/save-all-file-buffers)
+(add-hook #'focus-out-hook #'help/save-all-file-buffers)
 #+END_SRC
 
 Backup file-stores before the system exits.
@@ -1869,7 +1869,7 @@ directories.
 
 #+NAME: DA537B02-6E64-42FC-BE9D-E5A3408B6599
 #+BEGIN_SRC emacs-lisp
-(add-to-list 'find-file-not-found-functions #'help/create-non-existent-directory)
+(add-to-list #'find-file-not-found-functions #'help/create-non-existent-directory)
 #+END_SRC
 
 ** File-system/directory management (Console)
@@ -1920,8 +1920,8 @@ a while but definitely do need.
 (setq-default dired-details-hidden-string "")
 (defun help/dired-mode-hook-fn ()
   "HELP dired customizations."
-  (local-set-key "c" 'help/dired-copy-filename)
-  (local-set-key "]" 'help/dired-copy-path)
+  (local-set-key "c" #'help/dired-copy-filename)
+  (local-set-key "]" #'help/dired-copy-path)
   (diff-hl-dired-mode)
   (load "dired-x")
   (turn-on-stripe-buffer-mode)
@@ -2036,7 +2036,7 @@ Major productivity hack
 #+BEGIN_SRC emacs-lisp
 (use-package imenu
   :config
-  (setq imenu-sort-function 'imenu--sort-by-name))
+  (setq imenu-sort-function #'imenu--sort-by-name))
 (defun help/try-to-add-imenu ()
   "Add Imenu to modes that have `font-lock-mode' activated.
 
@@ -2227,7 +2227,7 @@ LS captures arguments when this is used as before advice."
 (defun help/kill-other-buffers ()
   "Kill all other buffers."
   (interactive)
-  (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
+  (mapc #'kill-buffer (delq (current-buffer) (buffer-list))))
 
 (defvar help/delete-trailing-whitespace-p t
   "Should trailing whitespace be removed?")
@@ -2412,7 +2412,7 @@ Attribution: URL `http://www.masteringemacs.org/articles/2010/11/29/evaluating-e
                      ac-source-features
                      ac-source-symbols
                      ac-source-words-in-same-mode-buffers))
-  (add-to-list 'ac-modes 'inferior-emacs-lisp-mode)
+  (add-to-list #'ac-modes #'inferior-emacs-lisp-mode)
   (auto-complete-mode 1))
 
 (defun help/uuid-string ()
@@ -2577,7 +2577,7 @@ or pasting
 Make it easier to answer questions.
 #+NAME: 2D2A8781-9A67-4D3A-B0E4-B09EEBBC65D8
 #+BEGIN_SRC emacs-lisp
-(fset 'yes-or-no-p 'y-or-n-p)
+(fset #'yes-or-no-p #'y-or-n-p)
 #+END_SRC
 
 Comfortably display information.
@@ -2701,15 +2701,15 @@ Display information about search-and-or-replace operation.
 #+NAME: D9A8B6E9-E328-47C1-9B75-863B640BEAB7
 #+BEGIN_SRC emacs-lisp
 (use-package anzu
-             :ensure t
-             :config
-             (global-anzu-mode t)
-             (global-set-key (kbd "M-%") 'anzu-query-replace)
-             (global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)
-             (setq anzu-mode-lighter "")
-             (setq anzu-deactivate-region t)
-             (setq anzu-search-threshold 1000)
-             (setq anzu-replace-to-string-separator " => "))
+  :ensure t
+  :config
+  (global-anzu-mode t)
+  (global-set-key (kbd "M-%") #'anzu-query-replace)
+  (global-set-key (kbd "C-M-%") #'anzu-query-replace-regexp)
+  (setq anzu-mode-lighter "")
+  (setq anzu-deactivate-region t)
+  (setq anzu-search-threshold 1000)
+  (setq anzu-replace-to-string-separator " => "))
 #+END_SRC
 
 ** Save History of All Things
@@ -2768,8 +2768,8 @@ Source-Blocks.
 
 #+NAME: 23D5548B-1081-48A8-BBCD-5C69AC2C57B8
 #+BEGIN_SRC emacs-lisp
-(add-to-list 'ispell-skip-region-alist '("^#\\+begin_src ". "#\\+#+end_src$"))
-(add-to-list 'ispell-skip-region-alist '("^#\\+BEGIN_SRC ". "#\\+#+END_SRC$"))
+(add-to-list #'ispell-skip-region-alist '("^#\\+begin_src ". "#\\+#+end_src$"))
+(add-to-list #'ispell-skip-region-alist '("^#\\+BEGIN_SRC ". "#\\+#+END_SRC$"))
 #+END_SRC
 
 Example-Blocks. This system often uses Source-Blocks to edit content and
@@ -2777,43 +2777,43 @@ Example-Blocks to make it easily renderable when it is not for running.
 
 #+NAME: CE78FEAC-B28A-4F76-95F2-4FE246FCDCAD
 #+BEGIN_SRC emacs-lisp
-(add-to-list 'ispell-skip-region-alist '("^#\\+begin_example ". "#\\+end_example$"))
-(add-to-list 'ispell-skip-region-alist '("^#\\+BEGIN_EXAMPLE ". "#\\+END_EXAMPLE$"))
+(add-to-list #'ispell-skip-region-alist '("^#\\+begin_example ". "#\\+end_example$"))
+(add-to-list #'ispell-skip-region-alist '("^#\\+BEGIN_EXAMPLE ". "#\\+END_EXAMPLE$"))
 #+END_SRC
 
 Properties.
 
 #+NAME: 01BEC0C6-64F7-440F-A217-EA73CDA75DDA
 #+BEGIN_SRC emacs-lisp
-(add-to-list 'ispell-skip-region-alist '("\:PROPERTIES\:$" . "\:END\:$"))
+(add-to-list #'ispell-skip-region-alist '("\:PROPERTIES\:$" . "\:END\:$"))
 #+END_SRC
 
 Footnotes.
 
 #+NAME: F5DC40F2-20EC-45C0-BDB3-7C788514CD23
 #+BEGIN_SRC emacs-lisp
-(add-to-list 'ispell-skip-region-alist '("\\[fn:.+:" . "\\]"))
+(add-to-list #'ispell-skip-region-alist '("\\[fn:.+:" . "\\]"))
 #+END_SRC
 
 Footnotes with URLs that contain line-breaks.
 
 #+NAME: F5636C6E-61AC-491F-936E-FAE5974ED541
 #+BEGIN_SRC emacs-lisp
-(add-to-list 'ispell-skip-region-alist '("^http" . "\\]"))
+(add-to-list #'ispell-skip-region-alist '("^http" . "\\]"))
 #+END_SRC
 
 Verbatim
 
 #+NAME: 5BF4C8DE-63B8-4684-B8F4-0021781B1E1E
 #+BEGIN_SRC emacs-lisp
-(add-to-list 'ispell-skip-region-alist '("=.*" . ".*="))
+(add-to-list #'ispell-skip-region-alist '("=.*" . ".*="))
 #+END_SRC
 
 Bold text list items.
 
 #+NAME: D1A2D129-9299-4349-AFF3-8F65F7D0CF95
 #+BEGIN_SRC emacs-lisp
-(add-to-list 'ispell-skip-region-alist '("- \\*.+" . ".*\\*: "))
+(add-to-list #'ispell-skip-region-alist '("- \\*.+" . ".*\\*: "))
 #+END_SRC
 
 Export properties.
@@ -2828,7 +2828,7 @@ Export properties.
 (defun help/ispell-a2isra (block-def)
   "Add to the ispell skip region alist the BLOCK-DEF."
   (interactive)
-  (add-to-list 'ispell-skip-region-alist block-def))
+  (add-to-list #'ispell-skip-region-alist block-def))
 
 (let (void)
   (--each
@@ -2878,7 +2878,7 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
               (file-writable-p buffer-file-name))
      (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
 
- (advice-add 'ido-find-file :after #'help/ido-find-file))
+ (advice-add #'ido-find-file :after #'help/ido-find-file))
 #+END_SRC
 
 ** Syntax Checking
@@ -2893,7 +2893,7 @@ Perform syntactic analysis all the time.
 (use-package flycheck
   :ensure t
   :config
-  (add-hook 'after-init-hook #'global-flycheck-mode)
+  (add-hook #'after-init-hook #'global-flycheck-mode)
   :diminish flycheck-mode)
 #+END_SRC
 
@@ -2960,7 +2960,7 @@ Git ignore files are text files.
 
 #+NAME: 6FD11818-DB10-4AF4-A714-C32C04291AF2
 #+BEGIN_SRC emacs-lisp
-(add-to-list 'auto-mode-alist '(".gitignore$" . text-mode))
+(add-to-list #'auto-mode-alist '(".gitignore$" . text-mode))
 #+END_SRC
 
 ** Whitespace Management
@@ -3272,9 +3272,9 @@ Initialize Package.
 #+NAME: 804FD197-8B2A-49F5-A4CB-48F6036FBCEC
 #+BEGIN_SRC emacs-lisp
 (package-initialize)
-(add-to-list 'package-archives
+(add-to-list #'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
-(add-to-list 'package-archives
+(add-to-list #'package-archives
              '("gnu" . "http://elpa.gnu.org/packages/") t)
 #+END_SRC
 
@@ -3284,7 +3284,7 @@ Add the Use-Package distribution the load path.
 
 #+NAME: FAB22F99-AB0C-4A75-AFEF-9E680A5EE95D
 #+BEGIN_SRC emacs-lisp
-(add-to-list 'load-path "~/src/use-package")
+(add-to-list #'load-path"~/src/use-package")
 #+END_SRC
 
 Load Use-Package and it's partner Diminish. Every package loaded before this
@@ -3571,7 +3571,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
   (interactive)
   (org-redisplay-inline-images))
 
-(add-hook 'org-babel-after-execute-hook 'help/org-babel-after-execute-hook)
+(add-hook #'org-babel-after-execute-hook #'help/org-babel-after-execute-hook)
 #+END_SRC
 
 Never "automatically" evaluate a source block.
@@ -3924,11 +3924,11 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
 #+NAME: 8C7E90AC-C7EB-4A43-9377-C3C85CE51849
 #+BEGIN_SRC emacs-lisp
 (help/not-on-gui
- (define-key org-mode-map (kbd "RET") 'org-return-indent)
- (define-key org-mode-map (kbd "C-M-RET") 'electric-indent-just-newline))
+ (define-key org-mode-map (kbd "RET") #'org-return-indent)
+ (define-key org-mode-map (kbd "C-M-RET") #'electric-indent-just-newline))
 (help/on-gui
- (define-key org-mode-map (kbd "<return>") 'org-return-indent)
- (define-key org-mode-map (kbd "C-M-<return>") 'electric-indent-just-newline))
+ (define-key org-mode-map (kbd "<return>") #'org-return-indent)
+ (define-key org-mode-map (kbd "C-M-<return>") #'electric-indent-just-newline))
 #+END_SRC
 
 #+NAME: E65CF1F6-F56C-4A1A-BB45-5E530FA93C04
@@ -4199,7 +4199,7 @@ showing a more advanced usage that handles context which is nice to know is an o
 
 #+NAME: F25A516C-7FD0-4F88-96AA-E53EBE01C5C3
 #+BEGIN_SRC emacs-lisp
-(sp-local-pair 'ess-mode "{" nil :post-handlers '((gcr/indent-curly-block "RET")))
+(sp-local-pair #'ess-mode "{" nil :post-handlers '((gcr/indent-curly-block "RET")))
 #+END_SRC
 
 =ESS= executes code in another process. That is no secret. When displaying output
@@ -4364,8 +4364,8 @@ Make error navigation simpler.
 
 #+NAME: FAFD7683-E1BF-43CF-B862-B90029FBB319
 #+BEGIN_SRC emacs-lisp
-(define-key compilation-minor-mode-map [(?n)] 'next-error-no-select)
-(define-key compilation-minor-mode-map [(?p)] 'previous-error-no-select)
+(define-key compilation-minor-mode-map [(?n)] #'next-error-no-select)
+(define-key compilation-minor-mode-map [(?p)] #'previous-error-no-select)
 #+END_SRC
 
 The font size for watched variables..
@@ -4501,15 +4501,15 @@ Handle rdoc and rmd files, though I have never used them… yet.
 
 #+NAME: 5D17A7DE-ECAF-4FAE-8425-AD43FEDD2D45
 #+BEGIN_SRC emacs-lisp
-(add-to-list 'auto-mode-alist '("\\.rd\\'" . Rd-mode))
-(add-to-list 'auto-mode-alist '("\\.Rmd$" . r-mode))
+(add-to-list #'auto-mode-alist '("\\.rd\\'" . Rd-mode))
+(add-to-list #'auto-mode-alist '("\\.Rmd$" . r-mode))
 #+END_SRC
 
 Make it really easy to search the ℝ archives for anything.
 
 #+NAME: 8122AAC4-008A-454B-A3F6-4F9B11F7278E
 #+BEGIN_SRC emacs-lisp
-(local-set-key (kbd "C-c C-. S") 'ess-rutils-rsitesearch)
+(local-set-key (kbd "C-c C-. S") #'ess-rutils-rsitesearch)
 #+END_SRC
 
 Make it really easy to do common stuff for ℝ with good keybindings.
@@ -4662,7 +4662,7 @@ Period.
   (yas-global-mode t)
   (help/not-on-gui (define-key yas-minor-mode-map (kbd "TAB") nil))
   (help/on-gui (define-key yas-minor-mode-map (kbd "<tab>") nil))
-  (define-key yas-minor-mode-map (kbd "s-t") 'yas-expand)
+  (define-key yas-minor-mode-map (kbd "s-t") #'yas-expand)
   (help/not-on-gui (define-key yas-keymap (kbd "TAB") #'yas-next-field))
   (help/on-gui (define-key yas-keymap (kbd "<tab>") #'yas-next-field))
   (add-to-list #'yas-snippet-dirs "~/src/help/yasnippet")
@@ -4735,7 +4735,7 @@ Load LCO files with AucTeX.
 
 #+NAME: 083E953F-E95D-4596-98D1-C8554D451721
 #+BEGIN_SRC emacs-lisp
-(add-to-list 'auto-mode-alist '("\\.lco?\\'" . TeX-latex-mode))
+(add-to-list #'auto-mode-alist '("\\.lco?\\'" . TeX-latex-mode))
 #+END_SRC
 
 ** KOMA-Script
@@ -4943,9 +4943,9 @@ Load Beamer for creating presentations.
 
 #+NAME: 7592B1CF-CDA3-4ED1-99FA-205E41C74FFF
 #+BEGIN_SRC emacs-lisp
-(add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
-(add-to-list 'auto-mode-alist '("\\.art" . artist-mode))
-(add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
+(add-to-list #'auto-mode-alist '("\\.asc" . artist-mode))
+(add-to-list #'auto-mode-alist '("\\.art" . artist-mode))
+(add-to-list #'auto-mode-alist '("\\.asc" . artist-mode))
 #+END_SRC
 
 ** DITAA
