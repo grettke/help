@@ -1908,12 +1908,19 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
                                               :hint nil)
   "
 _1_ -font  _2_ +font
-_q_ apropos _w_ widen _r_ obtj2o"
+_q_ apropos _w_ widen _r_ obtj2o     _i_ scrollUp _I_ prevLogLine
+                 _j_ back-char _k_ scrollDown _K_ _K_ nextLogLine _l_ forw-char"
   ("q" hydra-apropos/body)
   ("w" widen)
   ("1" help/text-scale-decrease :exit nil)
   ("2" help/text-scale-increase :exit nil)
-  ("r" org-babel-tangle-jump-to-org))
+  ("r" org-babel-tangle-jump-to-org)
+  ("i" scroll-down-command :exit nil)
+  ("k" scroll-up-command :exit nil)
+  ("I" previous-logical-line :exit nil)
+  ("K" next-logical-line :exit nil)
+  ("j" backward-char :exit nil)
+  ("l" forward-char :exit nil))
 (key-chord-define-global "gg" #'help/hydra/left-side/global/body)
 ;; F6C7AAB7-DF69-4EBA-8116-15DC32022D49 ends here
 ;; [[file:~/src/help/help.org::*3][362686F6-B397-44D5-812F-BE24670F4204]]
