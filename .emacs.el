@@ -191,8 +191,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
 (use-package key-chord
   :ensure t
   :config
-  (key-chord-mode t)
-  (setq key-chord-two-keys-delay 0.1))
+  (key-chord-mode t))
 ;; 06C30DE0-5B5D-4021-B82E-C30CF1DBE923 ends here
 ;; [[file:~/src/help/help.org::*Keyboard][3EF213A9-048C-4A3D-B242-3A4D699D087C]]
 (setq echo-keystrokes 0.02)
