@@ -184,7 +184,7 @@ Start EMACS with this command:
    :ID:       7E71A009-4DD3-4296-9851-293BC71D2DFF
    :END:
 
-Configure EMACS to easily study configure of its core functionality.
+Configure Org-Mode core functionality to compile this system.
 
 Sysop is likely to use this periodically.
 
