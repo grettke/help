@@ -1,4 +1,5 @@
 ;; [[file:help.org::*The%20Whole%20Enchilada][AD12BE48-B87B-4AB6-814D-4FA5E47597A0]]
+;; [[file:~/src/help/help.org::*Org-Mode%20Fundamentals][78D777D3-FA69-4361-874C-7262DE96F753]]
 ;; [[file:~/src/help/help.org::*Org-Mode%20Exemple%20Complet%20Minimal][9969960B-FFEE-48B4-BD9C-F29E750FD8A3]]
 ;; [[file:~/src/help/help.org::*Principle%20of%20Least%20Astonishment%20(POLA)][87B0CAB9-E6E5-4C68-B389-9289E65FCA7F]]
 (setq load-prefer-newer t)
@@ -152,6 +153,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
 ;; [[file:~/src/help/help.org::*Exports][72A5FF8F-6597-4523-A604-B499B439A103]]
 (help/set-org-babel-default-header-args :exports "both")
 ;; 72A5FF8F-6597-4523-A604-B499B439A103 ends here
+;; 78D777D3-FA69-4361-874C-7262DE96F753 ends here
 ;; [[file:~/src/help/help.org::*Watch%20What%20You%20Eat][804FD197-8B2A-49F5-A4CB-48F6036FBCEC]]
 (package-initialize)
 (add-to-list #'package-archives

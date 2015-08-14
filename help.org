@@ -158,7 +158,7 @@ Setup:
 
 ** Org-Mode Exemple Complet Minimal
    :PROPERTIES:
-   :noweb-ref: Org-Mode-ECM-Tangle-Block
+   :noweb-ref: Org-Mode-ECM-Web
    :tangle:  "./.org-mode-ecm.emacs.el"
    :ID:       83868A6E-76C2-48AE-8A5A-6A3C97492321
    :END:
@@ -177,6 +177,30 @@ Start EMACS with this command:
 «Org-Mode-ECM»
 #+END_SRC
 
+** Org-Mode Fundamentals
+   :PROPERTIES:
+   :noweb-ref: Org-Mode-Fundamentals-Web
+   :tangle:  "./.org-mode-fundamentals.emacs.el"
+   :ID:       7E71A009-4DD3-4296-9851-293BC71D2DFF
+   :END:
+
+Configure EMACS to easily study configure of its core functionality.
+
+Sysop is likely to use this periodically.
+
+Start EMACS with this command:
+
+=open /Applications/Emacs.app --args --quick --load ~/src/help/.org-mode-fundamentals.emacs.el=
+
+#+NAME: 78D777D3-FA69-4361-874C-7262DE96F753
+#+BEGIN_SRC emacs-lisp
+«Org-Mode-ECM-Web»
+«Org-Mode-Helper-Functions»
+«Org-Mode-Tangle»
+«Org-Mode-Execute»
+«Org-Mode-Weave»
+#+END_SRC
+
 ** The Whole Enchilada
    :PROPERTIES:
    :tangle:  "./.emacs.el"
@@ -193,11 +217,7 @@ Start EMACS with this command:
 
 #+NAME: AD12BE48-B87B-4AB6-814D-4FA5E47597A0
 #+BEGIN_SRC emacs-lisp
-«Org-Mode-ECM-Tangle-Block»
-«Org-Mode-Helper-Functions»
-«Org-Mode-Tangle»
-«Org-Mode-Execute»
-«Org-Mode-Weave»
+«Org-Mode-Fundamentals-Web»
 «Watch-What-You-Eat»
 «Special-Operating-Procedure»
 «Standard-Operating-Procedure»
