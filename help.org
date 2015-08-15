@@ -286,7 +286,7 @@ Key:
 |------------+---+---+---+---+---|
 | Tangling   | F | T | F | F | F |
 | Evaluating | T | F | F | T | F |
-| Exporting  | F | F | T | F | T |
+| Weaving    | F | F | T | F | T |
 
 They are separate and distinct operations and are defined as such.
 
