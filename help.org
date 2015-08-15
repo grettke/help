@@ -263,6 +263,8 @@ alias ll ls -lh $*
   :ID:       8510C876-F644-4804-9F87-54A0B44DBA6A
   :END:
 
+#+MACRO: header-arg-per-source-block Likely only ever to be configured per Source-Block
+
 This system enables you to perform 3 Literate Document activities. These
 activities combine to provide a rich Literate Programming environment. Their
 configuration is defined with more granularity here to make sense of how the
