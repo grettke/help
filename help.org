@@ -472,21 +472,6 @@ origin artifact.
 (help/set-org-babel-default-header-args :comments "noweb")
 #+END_SRC
 
-*** Padline
-    :PROPERTIES:
-    :ID:       DDE727A6-DDF7-4B61-9063-549614B135F0
-    :END:
-
-~org-babel-tangle-jump-to-org~ requires padded lines. This configuration could
-arguably appear in the "Programming" heading because it impacts operation. It
-lives here because it *must* occur as part of the Tangling activity so that it
-can be used in the Programming activity.
-
-#+NAME: 0F3E7114-A63C-44F4-A9FD-577BAEE536ED
-#+BEGIN_SRC emacs-lisp
-(help/set-org-babel-default-header-args :padline "yes")
-#+END_SRC
-
 *** Noweb
     :PROPERTIES:
     :ID:       E12B48AB-68E8-4515-89E3-30A16FB6FD22
@@ -507,6 +492,21 @@ ought to refer to the generated document.
 #+NAME: 20BE9B4B-ED66-4935-A351-99D17B3A32D4
 #+BEGIN_SRC emacs-lisp
 (help/set-org-babel-default-header-args :noweb "no-export")
+#+END_SRC
+
+*** Padline
+    :PROPERTIES:
+    :ID:       DDE727A6-DDF7-4B61-9063-549614B135F0
+    :END:
+
+~org-babel-tangle-jump-to-org~ requires padded lines. This configuration could
+arguably appear in the "Programming" heading because it impacts operation. It
+lives here because it *must* occur as part of the Tangling activity so that it
+can be used in the Programming activity.
+
+#+NAME: 0F3E7114-A63C-44F4-A9FD-577BAEE536ED
+#+BEGIN_SRC emacs-lisp
+(help/set-org-babel-default-header-args :padline "yes")
 #+END_SRC
 
 ** Evaluating
