@@ -542,7 +542,7 @@ Org-Mode may evaluate all of the listed languages.
 
 *** Epilogue
 
-{{{lp-header-arg-per-source-block}}}.
+See Prologue.
 
 *** Eval
     :PROPERTIES:
@@ -563,6 +563,21 @@ Be sure to never evaluate in-line-source-blocks on export.
 #+BEGIN_SRC emacs-lisp
 (setq org-export-babel-evaluate nil)
 #+END_SRC
+
+*** Prologue
+
+{{{lp-header-arg-per-source-block}}}.
+
+For some situations, this may be the same for every source block for a
+particular language. The user manual described ~gnuplot~, which often shows up on
+the list and the solution is to ~reset~ the session.
+
+Another example, say that you've got a bunch of R Source-Blocks and you want to
+be able to rearrange them as you please. You want to be sure that there are no
+dependencies between them upon bindings created in the workspace. Set ~prologue~
+to ~rm(list = ls())~.
+
+Epilgue works hand-in-hand with this.
 
 *** Results
     :PROPERTIES:
