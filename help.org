@@ -459,10 +459,14 @@ never allow that. Its inconsistent with how Org-Mode works.
 (setq org-babel-use-quick-and-dirty-noweb-expansion nil)
 #+END_SRC
 
-*** Comments
+*** comments
     :PROPERTIES:
     :ID:       49787FC5-CAA7-466B-B742-0F38973E070B
     :END:
+
+#+BEGIN_QUOTE
+Toggle insertion of comments in tangled code files
+#+END_QUOTE
 
 Provide as much information as possible in the tangled artifact about the
 origin artifact.
