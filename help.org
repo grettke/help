@@ -494,6 +494,14 @@ ought to refer to the generated document.
 (help/set-org-babel-default-header-args :noweb "no-export")
 #+END_SRC
 
+*** noweb-ref
+
+#+BEGIN_QUOTE
+Specify block's noweb reference resolution target
+#+END_QUOTE
+
+{{{lp-header-arg-per-source-block}}}.
+
 *** noweb-sep
 
 #+BEGIN_QUOTE
