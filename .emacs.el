@@ -97,12 +97,12 @@ This is a copy and paste. Additional languages would warrant a refactor."
 ;; [[file:~/src/help/help.org::*Comments][AD42B561-29FA-4652-AD28-692CAD631E62]]
 (help/set-org-babel-default-header-args :comments "noweb")
 ;; AD42B561-29FA-4652-AD28-692CAD631E62 ends here
-;; [[file:~/src/help/help.org::*Padline][0F3E7114-A63C-44F4-A9FD-577BAEE536ED]]
-(help/set-org-babel-default-header-args :padline "yes")
-;; 0F3E7114-A63C-44F4-A9FD-577BAEE536ED ends here
 ;; [[file:~/src/help/help.org::*Noweb][20BE9B4B-ED66-4935-A351-99D17B3A32D4]]
 (help/set-org-babel-default-header-args :noweb "no-export")
 ;; 20BE9B4B-ED66-4935-A351-99D17B3A32D4 ends here
+;; [[file:~/src/help/help.org::*Padline][0F3E7114-A63C-44F4-A9FD-577BAEE536ED]]
+(help/set-org-babel-default-header-args :padline "yes")
+;; 0F3E7114-A63C-44F4-A9FD-577BAEE536ED ends here
 ;; [[file:~/src/help/help.org::*Evaluating][6309AF39-FCE4-43DE-BD46-BC7D0BA0971D]]
 (org-babel-do-load-languages
  #'org-babel-load-languages
@@ -932,6 +932,11 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
      (help/update-font)))
   (help/not-on-gui
    (message "Please resize the terminal emulator font.")))
+
+(defun help/insert-ellipsis ()
+  "Insert an ellipsis into the current buffer."
+  (interactive)
+  (insert "…"))
 ;; D523CBF8-67C4-4C96-9298-A4A49FE54E61 ends here
 ;; [[file:~/src/help/help.org::*Intellisense%20(Auto%20Completion)][487B46D5-C025-4114-A1B4-BAAF5FAFE430]]
 (use-package fuzzy
@@ -1907,7 +1912,7 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
 (defhydra help/hydra/left-side/global (:color blue
                                               :hint nil)
   "
-_1_ -font  _2_ +font
+_1_ -font  _2_ +font _3_ ellipsis
 _q_ apropos _w_ widen _r_ obtj2o     _i_ scrollUp _I_ prevLogLine
                  _j_ back-char _k_ scrollDown _K_ _K_ nextLogLine _l_ forw-char"
   ("q" hydra-apropos/body)
@@ -1920,7 +1925,8 @@ _q_ apropos _w_ widen _r_ obtj2o     _i_ scrollUp _I_ prevLogLine
   ("I" previous-logical-line :exit nil)
   ("K" next-logical-line :exit nil)
   ("j" backward-char :exit nil)
-  ("l" forward-char :exit nil))
+  ("l" forward-char :exit nil)
+  ("3" help/insert-ellipsis))
 (key-chord-define-global "gg" #'help/hydra/left-side/global/body)
 ;; F6C7AAB7-DF69-4EBA-8116-15DC32022D49 ends here
 ;; [[file:~/src/help/help.org::*3][362686F6-B397-44D5-812F-BE24670F4204]]

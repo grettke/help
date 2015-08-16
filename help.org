@@ -541,6 +541,9 @@ Org-Mode may evaluate all of the listed languages.
 #+END_SRC
 
 *** Epilogue
+    :PROPERTIES:
+    :ID:       CA7F5086-9D4B-4847-9449-3231CE027804
+    :END:
 
 See Prologue.
 
@@ -567,12 +570,18 @@ Be sure to never evaluate in-line-source-blocks on export.
 #+END_SRC
 
 *** Post
+    :PROPERTIES:
+    :ID:       1A4DEC98-C735-4D88-8261-6AD13C495EF2
+    :END:
 
 "...post-process the results of a code block execution".
 
 {{{lp-header-arg-per-source-block}}}.
 
 *** Prologue
+    :PROPERTIES:
+    :ID:       3D1780E0-2E6D-428C-916D-BFB10E79C76F
+    :END:
 
 {{{lp-header-arg-per-source-block}}}.
 
@@ -608,6 +617,9 @@ Replace theme each time you evaluate the block.
 #+END_SRC
 
 *** Wrap
+    :PROPERTIES:
+    :ID:       94D6B3BE-5DA1-499A-B5C7-A6B71710A1EA
+    :END:
 
 "...mark the results of source block evaluation".
 
@@ -1109,7 +1121,7 @@ close together
 (defhydra help/hydra/left-side/global (:color blue
                                               :hint nil)
   "
-_1_ -font  _2_ +font
+_1_ -font  _2_ +font _3_ ellipsis
 _q_ apropos _w_ widen _r_ obtj2o     _i_ scrollUp _I_ prevLogLine
                  _j_ back-char _k_ scrollDown _K_ _K_ nextLogLine _l_ forw-char"
   ("q" hydra-apropos/body)
@@ -1122,7 +1134,8 @@ _q_ apropos _w_ widen _r_ obtj2o     _i_ scrollUp _I_ prevLogLine
   ("I" previous-logical-line :exit nil)
   ("K" next-logical-line :exit nil)
   ("j" backward-char :exit nil)
-  ("l" forward-char :exit nil))
+  ("l" forward-char :exit nil)
+  ("3" help/insert-ellipsis))
 (key-chord-define-global "gg" #'help/hydra/left-side/global/body)
 #+END_SRC
 
@@ -2563,6 +2576,11 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
      (help/update-font)))
   (help/not-on-gui
    (message "Please resize the terminal emulator font.")))
+
+(defun help/insert-ellipsis ()
+  "Insert an ellipsis into the current buffer."
+  (interactive)
+  (insert "…"))
 #+END_SRC
 
 ** Intellisense (Auto Completion)

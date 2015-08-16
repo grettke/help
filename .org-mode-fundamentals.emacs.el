@@ -96,12 +96,12 @@ This is a copy and paste. Additional languages would warrant a refactor."
 ;; [[file:~/src/help/help.org::*Comments][AD42B561-29FA-4652-AD28-692CAD631E62]]
 (help/set-org-babel-default-header-args :comments "noweb")
 ;; AD42B561-29FA-4652-AD28-692CAD631E62 ends here
-;; [[file:~/src/help/help.org::*Padline][0F3E7114-A63C-44F4-A9FD-577BAEE536ED]]
-(help/set-org-babel-default-header-args :padline "yes")
-;; 0F3E7114-A63C-44F4-A9FD-577BAEE536ED ends here
 ;; [[file:~/src/help/help.org::*Noweb][20BE9B4B-ED66-4935-A351-99D17B3A32D4]]
 (help/set-org-babel-default-header-args :noweb "no-export")
 ;; 20BE9B4B-ED66-4935-A351-99D17B3A32D4 ends here
+;; [[file:~/src/help/help.org::*Padline][0F3E7114-A63C-44F4-A9FD-577BAEE536ED]]
+(help/set-org-babel-default-header-args :padline "yes")
+;; 0F3E7114-A63C-44F4-A9FD-577BAEE536ED ends here
 ;; [[file:~/src/help/help.org::*Evaluating][6309AF39-FCE4-43DE-BD46-BC7D0BA0971D]]
 (org-babel-do-load-languages
  #'org-babel-load-languages
