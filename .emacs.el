@@ -282,8 +282,8 @@ This is a copy and paste. Additional languages would warrant a refactor."
 ;; A69B960E-400A-4BC7-961C-AECF3522C7AF ends here
 ;; [[file:~/src/help/help.org::*Windows][B66E53C2-D90F-422E-BD67-250EB644C6BB]]
 (help/on-windows
- (setq w32-lwindow-modifier 'super)
- (setq w32-rwindow-modifier 'super))
+ (defvar w32-lwindow-modifier 'super)
+ (defvar w32-rwindow-modifier 'super))
 ;; B66E53C2-D90F-422E-BD67-250EB644C6BB ends here
 ;; [[file:~/src/help/help.org::*Buffer][0E6156C3-4259-4539-BDAC-899B0AF4E80F]]
 (desktop-save-mode t)

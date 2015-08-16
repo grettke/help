@@ -1820,8 +1820,8 @@ Enable the =super= key-space.
 #+NAME: B66E53C2-D90F-422E-BD67-250EB644C6BB
 #+BEGIN_SRC emacs-lisp
 (help/on-windows
- (setq w32-lwindow-modifier 'super)
- (setq w32-rwindow-modifier 'super))
+ (defvar w32-lwindow-modifier 'super)
+ (defvar w32-rwindow-modifier 'super))
 #+END_SRC
 
 * Standard Operating Procedure
