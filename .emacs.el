@@ -855,7 +855,7 @@ Attribution: URL `http://www.masteringemacs.org/articles/2010/11/29/evaluating-e
                      ac-source-features
                      ac-source-symbols
                      ac-source-words-in-same-mode-buffers))
-  (add-to-list 'ac-modes 'inferior-emacs-lisp-mode)
+  (add-to-list 'ac-modes #'inferior-emacs-lisp-mode)
   (auto-complete-mode 1))
 
 (defun help/uuid-string ()
@@ -1677,7 +1677,7 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
 (setq inferior-R-args "--no-save --no-restore")
 ;; 4B373CC7-EF17-4900-87BE-E38995585C46 ends here
 ;; [[file:~/src/help/help.org::*R%20(ESS)][E5F48F7A-E926-4FB0-92D2-92204808630E]]
-(defun help/R-mode-hook ()
+(defun help/R-mode-hook-fn ()
   (local-set-key (kbd "s-e") #'ess-switch-to-end-of-ESS)
   (local-set-key (kbd "s-x") #'r-autoyas-expand)
   (local-set-key (kbd "s-p") #'ess-R-object-popup)
@@ -1698,7 +1698,7 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
                     (warn
                      "ESS now supports a standard pre-send filter hook. Please update your configuration to use it instead of using advice.")))))
 
-(add-hook 'R-mode-hook #'help/R-mode-hook)
+(add-hook 'R-mode-hook #'help/R-mode-hook-fn)
 
 (defun help/turn-on-r-hide-show ()
   "Attribution: SRC https://github.com/mlf176f2/EmacsMate/blob/master/EmacsMate-ess.org"
@@ -1710,23 +1710,23 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
     (when (fboundp 'fold-dwim-org/minor-mode)
       (fold-dwim-org/minor-mode))))
 
-(defun help/Rd-mode-hook ()
-  (help/R-mode-hook))
+(defun help/Rd-mode-hook-fn ()
+  (help/R-mode-hook-fn))
 
-(add-hook 'Rd-mode-hook #'help/Rd-mode-hook)
+(add-hook 'Rd-mode-hook #'help/Rd-mode-hook-fn)
 
-(defun help/inferior-ess-mode-hook ()
-  (help/R-mode-hook))
+(defun help/inferior-ess-mode-hook-fn ()
+  (help/R-mode-hook-fn))
 
-(add-hook 'inferior-ess-mode-hook #'help/inferior-ess-mode-hook)
+(add-hook 'inferior-ess-mode-hook #'help/inferior-ess-mode-hook-fn)
 
-(defun help/ess-rdired-mode-hook ()
+(defun help/ess-rdired-mode-hook-fn ()
   "Personal customizations."
   (interactive)
   (turn-on-stripe-buffer-mode)
   (stripe-listify-buffer))
 
-(add-hook 'ess-rdired-mode-hook #'help/ess-rdired-mode-hook)
+(add-hook 'ess-rdired-mode-hook #'help/ess-rdired-mode-hook-fn)
 ;; E5F48F7A-E926-4FB0-92D2-92204808630E ends here
 ;; [[file:~/src/help/help.org::*YASnippet][1827B724-7BC0-4228-8389-2B06F308D6AF]]
 (use-package yasnippet
