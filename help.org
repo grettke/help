@@ -566,6 +566,8 @@ Be sure to never evaluate in-line-source-blocks on export.
 
 *** Post
 
+"...post-process the results of a code block execution".
+
 {{{lp-header-arg-per-source-block}}}.
 
 *** Prologue
