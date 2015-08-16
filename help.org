@@ -476,6 +476,17 @@ origin artifact.
 (help/set-org-babel-default-header-args :comments "noweb")
 #+END_SRC
 
+*** mkdirp
+
+#+BEGIN_QUOTE
+Toggle creation of parent directories of target files during tangling
+#+END_QUOTE
+
+#+NAME: F501D202-9F0B-4343-B257-E0DEB4483A0B
+#+BEGIN_SRC emacs-lisp
+(help/set-org-babel-default-header-args :mkdirp "yes")
+#+END_SRC
+
 *** no-expand
 
 #+BEGIN_QUOTE
