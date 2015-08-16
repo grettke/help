@@ -762,10 +762,14 @@ to ~rm(list = ls())~.
 
 Epilgue works hand-in-hand with this.
 
-*** Results
+*** results
     :PROPERTIES:
     :ID:       2755571E-113B-436E-9EEC-26618A55A27E
     :END:
+
+#+BEGIN_QUOTE
+Specify the type of results and how they will be collected and handled
+#+END_QUOTE
 
 This system stores the results of evaluation in the source document. It believes
 that the results are critical to the research.
