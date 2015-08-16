@@ -771,7 +771,7 @@ Epilgue works hand-in-hand with this.
 Specify the type of results and how they will be collected and handled
 #+END_QUOTE
 
-Ways to configure results: src_emacs-lisp{(* 2 4 7 4)}. 
+Ways to configure results: src_emacs-lisp{(* 2 4 7 4)}.
 
 This system stores the results of evaluation in the source document. It believes
 that the results are critical to the research.
@@ -803,6 +803,21 @@ Delimiter for writing tabular results outside Org
 #+END_QUOTE
 
 {{{lp-header-arg-per-source-block}}}
+
+*** var
+
+#+BEGIN_QUOTE
+Pass arguments to code blocks
+#+END_QUOTE
+
+- *The* most revealing of the power of Org-Mode's LP offering
+- Values-by-reference
+  - Table
+  - List
+  - Source-Block without and with parameters
+  - Literal-Block
+- Idexable variable values
+- Emacs Lisp evaluation of variables
 
 *** wrap
     :PROPERTIES:
