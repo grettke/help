@@ -463,11 +463,6 @@ This is a copy and paste. Additional languages would warrant a refactor."
   (help/save-all-file-buffers)
   (org-edit-src-code))
 
-(defun help/safb-help/org-edit-src-code-plus-name ()
-  (interactive)
-  (help/save-all-file-buffers)
-  (help/org-edit-src-code-plus-name))
-
 (defun help/safb-org-export-dispatch ()
   (interactive)
   (help/save-all-file-buffers)
@@ -936,11 +931,6 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
      (help/update-font)))
   (help/not-on-gui
    (message "Please resize the terminal emulator font.")))
-
-(defun help/insert-ellipsis ()
-  "Insert an ellipsis into the current buffer."
-  (interactive)
-  (insert "…"))
 ;; D523CBF8-67C4-4C96-9298-A4A49FE54E61 ends here
 ;; [[file:~/src/help/help.org::*Intellisense%20(Auto%20Completion)][487B46D5-C025-4114-A1B4-BAAF5FAFE430]]
 (use-package fuzzy
@@ -1260,17 +1250,6 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (help/save-all-file-buffers)
   (eval-buffer))
 
-(defun endless/sharp ()
-  "Insert #' unless in a string or comment.
-
-RC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.html?source=rss'"
-  (interactive)
-  (call-interactively #'self-insert-command)
-  (let ((ppss (syntax-ppss)))
-    (unless (or (elt ppss 3)
-               (elt ppss 4))
-      (insert "'"))))
-
 (defun help/elisp-mode-local-bindings ()
   "Helpful behavior for Elisp buffers."
   (local-set-key (kbd "s-l eb") #'help/elisp-eval-buffer)
@@ -1285,7 +1264,7 @@ RC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.htm
   (interactive)
   (help/elisp-mode-local-bindings)
   (lexbind-mode)
-  (turn-on-eldoc-mode)
+  (eldoc-mode)
   (diminish 'eldoc-mode))
 
 (setq ielm-noisy nil)
@@ -1643,7 +1622,7 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
   (setq r-autoyas-remove-explicit-assignments nil))
 ;; 588C7A99-908C-4CD9-A1BE-1818938E2D13 ends here
 ;; [[file:~/src/help/help.org::*R%20(ESS)][5D526636-47A1-463B-9466-4DD240C7F382]]
-(setq ess-ac-R-argument-suffix "=")
+(setq ess-R-argument-suffix "=")
 ;; 5D526636-47A1-463B-9466-4DD240C7F382 ends here
 ;; [[file:~/src/help/help.org::*R%20(ESS)][D614F687-D054-43F4-BA17-3D1E55D6787E]]
 ;; (setq help/ess-style
@@ -1886,7 +1865,7 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
    (if (help/font-ok-p)
        (progn
          (message "Setting font to: %s" (help/font-name))
-         (set-default-font (help/font-name)))
+         (set-frame-font (help/font-name)))
      (message (concat "Your preferred font is not available: " help/font-base))))
  (help/update-font))
 ;; 21687556-D79E-4734-86E6-52FF9EE107B5 ends here

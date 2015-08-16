@@ -2153,11 +2153,6 @@ use than advice.
   (help/save-all-file-buffers)
   (org-edit-src-code))
 
-(defun help/safb-help/org-edit-src-code-plus-name ()
-  (interactive)
-  (help/save-all-file-buffers)
-  (help/org-edit-src-code-plus-name))
-
 (defun help/safb-org-export-dispatch ()
   (interactive)
   (help/save-all-file-buffers)
@@ -2846,11 +2841,6 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
      (help/update-font)))
   (help/not-on-gui
    (message "Please resize the terminal emulator font.")))
-
-(defun help/insert-ellipsis ()
-  "Insert an ellipsis into the current buffer."
-  (interactive)
-  (insert "…"))
 #+END_SRC
 
 ** Intellisense (Auto Completion)
@@ -3492,7 +3482,7 @@ character wide buffer and make it easy to adjust it.
    (if (help/font-ok-p)
        (progn
          (message "Setting font to: %s" (help/font-name))
-         (set-default-font (help/font-name)))
+         (set-frame-font (help/font-name)))
      (message (concat "Your preferred font is not available: " help/font-base))))
  (help/update-font))
 #+END_SRC
@@ -3830,17 +3820,6 @@ With that in mind this system:
   (help/save-all-file-buffers)
   (eval-buffer))
 
-(defun endless/sharp ()
-  "Insert #' unless in a string or comment.
-
-RC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.html?source=rss'"
-  (interactive)
-  (call-interactively #'self-insert-command)
-  (let ((ppss (syntax-ppss)))
-    (unless (or (elt ppss 3)
-               (elt ppss 4))
-      (insert "'"))))
-
 (defun help/elisp-mode-local-bindings ()
   "Helpful behavior for Elisp buffers."
   (local-set-key (kbd "s-l eb") #'help/elisp-eval-buffer)
@@ -3855,7 +3834,7 @@ RC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.htm
   (interactive)
   (help/elisp-mode-local-bindings)
   (lexbind-mode)
-  (turn-on-eldoc-mode)
+  (eldoc-mode)
   (diminish 'eldoc-mode))
 
 (setq ielm-noisy nil)
@@ -4899,7 +4878,7 @@ Save two spaces showing function information in the mini-buffer.
 
 #+NAME: 5D526636-47A1-463B-9466-4DD240C7F382
 #+BEGIN_SRC emacs-lisp
-(setq ess-ac-R-argument-suffix "=")
+(setq ess-R-argument-suffix "=")
 #+END_SRC
 
 Not sure where I put the notes, but long ago I researched the ℝ coding
