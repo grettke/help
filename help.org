@@ -576,7 +576,9 @@ Be sure to never evaluate in-line-source-blocks on export.
     :ID:       1A4DEC98-C735-4D88-8261-6AD13C495EF2
     :END:
 
-"...post-process the results of a code block execution".
+#+BEGIN_QUOTE
+Post processing of code block results
+#+END_QUOTE
 
 {{{lp-header-arg-per-source-block}}}.
 
