@@ -710,6 +710,9 @@ Specify a directory to write file output to
 
 {{{lp-header-arg-per-source-block}}}
 
+One example is a System where *all* intermediate results are stored to individual
+files.
+
 *** post
     :PROPERTIES:
     :ID:       1A4DEC98-C735-4D88-8261-6AD13C495EF2
