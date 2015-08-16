@@ -556,6 +556,16 @@ Org-Mode may evaluate all of the listed languages.
    (sql . t)))
 #+END_SRC
 
+*** cache
+
+#+BEGIN_QUOTE
+Avoid re-evaluating unchanged code blocks
+#+END_QUOTE
+
+{{{lp-header-arg-per-source-block}}
+
+Default =no= is correct for nearly every scenario.
+
 *** colnames
 
 #+BEGIN_QUOTE
