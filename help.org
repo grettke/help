@@ -509,6 +509,14 @@ can be used in the Programming activity.
 (help/set-org-babel-default-header-args :padline "yes")
 #+END_SRC
 
+*** Tangle-Mode
+
+#+BEGIN_QUOTE
+Set permission of tangled files
+#+END_QUOTE
+
+{{{lp-header-arg-per-source-block}}}.
+
 ** Evaluating
    :PROPERTIES:
    :noweb-ref: Org-Mode-Execute
