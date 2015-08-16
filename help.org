@@ -629,7 +629,9 @@ Replace theme each time you evaluate the block.
     :ID:       94D6B3BE-5DA1-499A-B5C7-A6B71710A1EA
     :END:
 
-"...mark the results of source block evaluation".
+#+BEGIN_QUOTE
+Mark source block evaluation results
+#+END_QUOTE
 
 {{{lp-header-arg-per-source-block}}}.
 
