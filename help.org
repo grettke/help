@@ -509,7 +509,15 @@ can be used in the Programming activity.
 (help/set-org-babel-default-header-args :padline "yes")
 #+END_SRC
 
-*** Tangle-Mode
+*** shebang
+
+#+BEGIN_SRC
+Make tangled files executable
+#+END_SRC
+
+{{{lp-header-arg-per-source-block}}}.
+
+*** tangle-mode
 
 #+BEGIN_QUOTE
 Set permission of tangled files
@@ -548,7 +556,7 @@ Org-Mode may evaluate all of the listed languages.
    (sql . t)))
 #+END_SRC
 
-*** Epilogue
+*** epilogue
     :PROPERTIES:
     :ID:       CA7F5086-9D4B-4847-9449-3231CE027804
     :END:
@@ -559,7 +567,7 @@ Text to append to code block body
 
 See Prologue.
 
-*** Eval
+*** eval
     :PROPERTIES:
     :ID:       0329BACE-2C99-4BB3-A7A5-7C800EF53FAD
     :END:
@@ -583,7 +591,7 @@ Be sure to never evaluate in-line-source-blocks *on export*.
 (setq org-export-babel-evaluate nil)
 #+END_SRC
 
-*** Post
+*** post
     :PROPERTIES:
     :ID:       1A4DEC98-C735-4D88-8261-6AD13C495EF2
     :END:
@@ -594,7 +602,7 @@ Post processing of code block results
 
 {{{lp-header-arg-per-source-block}}}.
 
-*** Prologue
+*** prologue
     :PROPERTIES:
     :ID:       3D1780E0-2E6D-428C-916D-BFB10E79C76F
     :END:
@@ -616,6 +624,14 @@ to ~rm(list = ls())~.
 
 Epilgue works hand-in-hand with this.
 
+*** rownames
+
+#+BEGIN_QUOTE
+Handle row names in tables
+#+END_QUOTE
+
+{{{lp-header-arg-per-source-block}}}..
+
 *** Results
     :PROPERTIES:
     :ID:       2755571E-113B-436E-9EEC-26618A55A27E
@@ -636,7 +652,7 @@ Replace theme each time you evaluate the block.
 (help/set-org-babel-default-inline-header-args :results "value replace")
 #+END_SRC
 
-*** Wrap
+*** wrap
     :PROPERTIES:
     :ID:       94D6B3BE-5DA1-499A-B5C7-A6B71710A1EA
     :END:
