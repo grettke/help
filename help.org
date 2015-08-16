@@ -575,6 +575,17 @@ Make tangled files executable
 
 {{{lp-header-arg-per-source-block}}}.
 
+*** tangle
+
+#+BEGIN_QUOTE
+Toggle tangling and specify file name
+#+END_QUOTE
+
+#+NAME: 5E69E152-9921-4527-A2B2-24467EEF1BE9
+#+BEGIN_SRC emacs-lisp
+(help/set-org-babel-default-header-args :tangle "no")
+#+END_SRC
+
 *** tangle-mode
 
 #+BEGIN_QUOTE
