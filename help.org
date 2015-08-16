@@ -549,6 +549,8 @@ See Prologue.
     :ID:       0329BACE-2C99-4BB3-A7A5-7C800EF53FAD
     :END:
 
+"...limit the evaluation of specific code blocks".
+
 Never evaluate source-blocks or in-line-source-blocks on export.
 
 #+NAME: 58541CA5-C633-4146-8E5D-15C7A3A2D1D7
