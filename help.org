@@ -601,7 +601,7 @@ the list and the solution is to ~reset~ the session.
 
 Another example, say that you've got a bunch of R Source-Blocks and you want to
 be able to rearrange them as you please. You want to be sure that there are no
-dependencies between them upon bindings created in the workspace. Set ~prologue~
+dependencies between them on bindings created in the workspace. Set ~prologue~
 to ~rm(list = ls())~.
 
 Epilgue works hand-in-hand with this.
