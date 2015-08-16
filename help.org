@@ -599,6 +599,14 @@ Handle column names in tables
 
 {{{lp-header-arg-per-source-block}}}
 
+*** hlines
+
+#+BEGIN_QUOTE
+Handle horizontal lines in tables
+#+END_QUOTE
+
+{{{lp-header-arg-per-source-block}}}
+
 *** post
     :PROPERTIES:
     :ID:       1A4DEC98-C735-4D88-8261-6AD13C495EF2
