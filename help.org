@@ -138,6 +138,7 @@ Setup:
   - Prefer to byte-compile all references by using ~function~.
       - Fail-fast: it is better to know immediately if there are resolution
         issues.
+  - Prefer to declare anonymous functions with ~function~.     
 - Tangling.
   - When ordering matters, rely on block-reuse to enforce correct generation.
 - Voice.
