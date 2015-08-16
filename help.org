@@ -585,6 +585,10 @@ Be sure to never evaluate in-line-source-blocks on export.
     :ID:       3D1780E0-2E6D-428C-916D-BFB10E79C76F
     :END:
 
+#+BEGIN_QUOTE
+Text to prepend to code block body
+#+END_QUOTE
+
 {{{lp-header-arg-per-source-block}}}.
 
 For some situations, this may be the same for every source block for a
