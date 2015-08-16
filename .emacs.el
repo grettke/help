@@ -704,17 +704,6 @@ This is useful for fringe cases where trailing whitespace is important."
   (interactive)
   (insert (format-time-string "%Y-%m-%d")))
 
-(defun help/no-control-m ()
-  "Aka dos2unix."
-  (interactive)
-  (let ((line (line-number-at-pos))
-        (column (current-column)))
-    (mark-whole-buffer)
-    (replace-string "
-          " "")
-    (goto-line line)
-    (move-to-column column)))
-
 (defun help/indent-curly-block (&rest _ignored)
   "Open a new brace or bracket expression, with relevant newlines and indent. URL: `https://github.com/Fuco1/smartparens/issues/80'"
   (newline)
