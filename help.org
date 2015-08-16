@@ -1960,7 +1960,7 @@ then document.
                    (buffer-substring (overlay-start ov)
                                      (overlay-end ov)))))
   (setq hs-set-up-overlay #'display-code-line-counts)
-  (defun help/goto-line (&rest args)
+  (defun help/goto-line ()
     "How do I get it to expand upon a goto-line? hideshow-expand affected block when using goto-line in a collapsed buffer."
     (save-excursion
       (hs-show-block)))
@@ -2564,7 +2564,7 @@ Go to any object in the frame quickly.
         ((< (point) (mark)) (comment-or-uncomment-region (point) (mark)))
         (t (comment-or-uncomment-region (mark) (point)))))
 
-(defun help/save-all-file-buffers (&rest ls)
+(defun help/save-all-file-buffers ()
   "Saves every buffer associated with a file
 
 LS captures arguments when this is used as before advice."
@@ -3185,7 +3185,7 @@ Export properties.
   (interactive)
   (add-to-list 'ispell-skip-region-alist block-def))
 
-(let (void)
+(let ()
   (--each
       '("ATTR_LATEX"
         "AUTHOR"
@@ -3225,7 +3225,7 @@ Configure Sudo with Ido.
 #+NAME: E2D66077-10AC-46D1-AAAA-D0C81BED451B
 #+BEGIN_SRC emacs-lisp
 (help/on-osx
- (defun help/ido-find-file (&rest args)
+ (defun help/ido-find-file ()
    "Find file as root if necessary.
 
 Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
@@ -3825,11 +3825,11 @@ With that in mind this system:
 
  #+NAME: EBACFD45-C2FF-47B3-B991-28591C112F28
  #+BEGIN_SRC emacs-lisp
-(let (void)
+(let ()
   (--each help/hack-modes
     (add-hook it #'help/hack-prog*-mode-hook-fn)))
 
-(let (void)
+(let ()
   (--each help/hack-lisp-modes
     (add-hook it #'help/emacs-lisp-mode-hook-fn)))
 

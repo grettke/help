@@ -339,7 +339,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
                    (buffer-substring (overlay-start ov)
                                      (overlay-end ov)))))
   (setq hs-set-up-overlay #'display-code-line-counts)
-  (defun help/goto-line (&rest args)
+  (defun help/goto-line ()
     "How do I get it to expand upon a goto-line? hideshow-expand affected block when using goto-line in a collapsed buffer."
     (save-excursion
       (hs-show-block)))
@@ -638,7 +638,7 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
         ((< (point) (mark)) (comment-or-uncomment-region (point) (mark)))
         (t (comment-or-uncomment-region (mark) (point)))))
 
-(defun help/save-all-file-buffers (&rest ls)
+(defun help/save-all-file-buffers ()
   "Saves every buffer associated with a file
 
 LS captures arguments when this is used as before advice."
@@ -1087,7 +1087,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (interactive)
   (add-to-list 'ispell-skip-region-alist block-def))
 
-(let (void)
+(let ()
   (--each
       '("ATTR_LATEX"
         "AUTHOR"
@@ -1118,7 +1118,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 ;; 3745D1E1-33D3-4D2F-B527-BBBCA619D455 ends here
 ;; [[file:~/src/help/help.org::*Sudo][E2D66077-10AC-46D1-AAAA-D0C81BED451B]]
 (help/on-osx
- (defun help/ido-find-file (&rest args)
+ (defun help/ido-find-file ()
    "Find file as root if necessary.
 
 Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
@@ -1232,11 +1232,11 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (help/on-gui (local-set-key (kbd "<return>") #'newline-and-indent)))
 ;; A0515707-4727-4A01-82E3-01A41CAA841F ends here
 ;; [[file:~/src/help/help.org::*Wiring][EBACFD45-C2FF-47B3-B991-28591C112F28]]
-(let (void)
+(let ()
   (--each help/hack-modes
     (add-hook it #'help/hack-prog*-mode-hook-fn)))
 
-(let (void)
+(let ()
   (--each help/hack-lisp-modes
     (add-hook it #'help/emacs-lisp-mode-hook-fn)))
 
