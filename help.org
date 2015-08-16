@@ -556,6 +556,14 @@ Org-Mode may evaluate all of the listed languages.
    (sql . t)))
 #+END_SRC
 
+*** colnames
+
+#+BEGIN_QUOTE
+Handle column names in tables
+#+END_QUOTE
+
+{{{lp-header-arg-per-source-block}}}
+
 *** epilogue
     :PROPERTIES:
     :ID:       CA7F5086-9D4B-4847-9449-3231CE027804
@@ -590,14 +598,6 @@ Be sure to never evaluate in-line-source-blocks *on export*.
 #+BEGIN_SRC emacs-lisp
 (setq org-export-babel-evaluate nil)
 #+END_SRC
-
-*** colnames
-
-#+BEGIN_QUOTE
-Handle column names in tables
-#+END_QUOTE
-
-{{{lp-header-arg-per-source-block}}}
 
 *** hlines
 
@@ -640,14 +640,6 @@ to ~rm(list = ls())~.
 
 Epilgue works hand-in-hand with this.
 
-*** rownames
-
-#+BEGIN_QUOTE
-Handle row names in tables
-#+END_QUOTE
-
-{{{lp-header-arg-per-source-block}}}..
-
 *** Results
     :PROPERTIES:
     :ID:       2755571E-113B-436E-9EEC-26618A55A27E
@@ -667,6 +659,14 @@ Replace theme each time you evaluate the block.
 (help/set-org-babel-default-header-args :results "output replace")
 (help/set-org-babel-default-inline-header-args :results "value replace")
 #+END_SRC
+
+*** rownames
+
+#+BEGIN_QUOTE
+Handle row names in tables
+#+END_QUOTE
+
+{{{lp-header-arg-per-source-block}}}..
 
 *** sep
 
