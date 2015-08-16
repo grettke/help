@@ -5,10 +5,10 @@
 (setq load-prefer-newer t)
 ;; 87B0CAB9-E6E5-4C68-B389-9289E65FCA7F ends here
 ;; [[file:~/src/help/help.org::*Org-Mode%20Exemple%20Complet%20Minimal][D5D4EECF-00C5-4B2F-B9F9-988591C70852]]
-(add-to-list #'load-path "~/src/org-mode/lisp")
+(add-to-list 'load-path "~/src/org-mode/lisp")
 ;; D5D4EECF-00C5-4B2F-B9F9-988591C70852 ends here
 ;; [[file:~/src/help/help.org::*Org-Mode%20Exemple%20Complet%20Minimal][4D4E921E-7B99-43B2-AD1F-30D2593F05D7]]
-(add-to-list #'load-path "~/src/org-mode/contrib/lisp")
+(add-to-list 'load-path "~/src/org-mode/contrib/lisp")
 ;; 4D4E921E-7B99-43B2-AD1F-30D2593F05D7 ends here
 ;; [[file:~/src/help/help.org::*Org-Mode%20Exemple%20Complet%20Minimal][28776245-A6BB-4294-AC72-30F03F902DF7]]
 (setq org-list-allow-alphabetical t)
@@ -97,8 +97,8 @@ This is a copy and paste. Additional languages would warrant a refactor."
   (insert "\n#+NAME: " (org-id-new)))
 ;; BB2E97AF-6364-401F-8063-8B5A0BE481E6 ends here
 ;; [[file:~/src/help/help.org::*Tangling][859E61A4-D910-4731-8328-A63F6B6ACD3F]]
-(add-hook #'org-babel-pre-tangle-hook #'help/org-prp-hdln)
-(add-hook #'org-babel-pre-tangle-hook #'help/org-prp-src-blk)
+(add-hook 'org-babel-pre-tangle-hook #'help/org-prp-hdln)
+(add-hook 'org-babel-pre-tangle-hook #'help/org-prp-src-blk)
 ;; 859E61A4-D910-4731-8328-A63F6B6ACD3F ends here
 ;; [[file:~/src/help/help.org::*Tangling][F19C629B-E784-48CA-BC53-CCFB849CE9EC]]
 (setq org-babel-use-quick-and-dirty-noweb-expansion nil)
@@ -120,7 +120,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
 ;; 5E69E152-9921-4527-A2B2-24467EEF1BE9 ends here
 ;; [[file:~/src/help/help.org::*Evaluating][6309AF39-FCE4-43DE-BD46-BC7D0BA0971D]]
 (org-babel-do-load-languages
- #'org-babel-load-languages
+ 'org-babel-load-languages
  '((calc . t)
    (css . t)
    (dot . t)
@@ -171,13 +171,13 @@ This is a copy and paste. Additional languages would warrant a refactor."
 ;; 78D777D3-FA69-4361-874C-7262DE96F753 ends here
 ;; [[file:~/src/help/help.org::*Watch%20What%20You%20Eat][804FD197-8B2A-49F5-A4CB-48F6036FBCEC]]
 (package-initialize)
-(add-to-list #'package-archives
+(add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
-(add-to-list #'package-archives
+(add-to-list 'package-archives
              '("gnu" . "http://elpa.gnu.org/packages/") t)
 ;; 804FD197-8B2A-49F5-A4CB-48F6036FBCEC ends here
 ;; [[file:~/src/help/help.org::*Watch%20What%20You%20Eat][FAB22F99-AB0C-4A75-AFEF-9E680A5EE95D]]
-(add-to-list #'load-path"~/src/use-package")
+(add-to-list 'load-path"~/src/use-package")
 ;; FAB22F99-AB0C-4A75-AFEF-9E680A5EE95D ends here
 ;; [[file:~/src/help/help.org::*Watch%20What%20You%20Eat][54841CA9-6491-46E8-8F40-4DCF7182CCD7]]
 (eval-when-compile
@@ -314,7 +314,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
 (setq sentence-end-double-space nil)
 ;; C82EDEC4-3E13-4B4A-A947-B8ACDB5C8160 ends here
 ;; [[file:~/src/help/help.org::*Buffer][B80399BE-3E19-441E-93CF-C613A1309C35]]
-(add-hook #'before-save-hook #'help/delete-trailing-whitespace)
+(add-hook 'before-save-hook #'help/delete-trailing-whitespace)
 ;; B80399BE-3E19-441E-93CF-C613A1309C35 ends here
 ;; [[file:~/src/help/help.org::*Buffer][DA9A04CF-ABF9-4BF4-A9FF-85E89DA740E1]]
 (use-package expand-region
@@ -359,7 +359,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
 (put #'narrow-to-region 'disabled nil)
 ;; F082B76A-8371-43DE-8FF5-2D95F3FD687A ends here
 ;; [[file:~/src/help/help.org::*Encryption][A7C4590E-53C4-4159-B627-178E367B0A12]]
-(add-to-list #'load-path (getenv "CCRYPT"))
+(add-to-list 'load-path (getenv "CCRYPT"))
 (use-package ps-ccrypt)
 ;; A7C4590E-53C4-4159-B627-178E367B0A12 ends here
 ;; [[file:~/src/help/help.org::*Eshell][A9A01E59-A084-4849-93F3-957753D65D24]]
@@ -374,13 +374,13 @@ This is a copy and paste. Additional languages would warrant a refactor."
      (use-package em-prompt)
      (use-package em-term)
      (setenv "PAGER" "cat")
-     (add-hook #'eshell-mode-hook
+     (add-hook 'eshell-mode-hook
                (lambda ()
                  (message "Welcome to Eshell.")
                  (setq pcomplete-cycle-completions nil)))
-     (add-to-list #'eshell-visual-commands "ssh")
-     (add-to-list #'eshell-visual-commands "tail")
-     (add-to-list #'eshell-command-completions-alist
+     (add-to-list 'eshell-visual-commands "ssh")
+     (add-to-list 'eshell-visual-commands "tail")
+     (add-to-list 'eshell-command-completions-alist
                   '("tar" "\\(\\.tar|\\.tgz\\|\\.tar\\.gz\\)\\'"))))
 ;; A9A01E59-A084-4849-93F3-957753D65D24 ends here
 ;; [[file:~/src/help/help.org::*Eshell][6D58C096-C7DE-44D2-AA33-0602237F46C5]]
@@ -403,7 +403,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
 (setq auto-save-timeout (* 60 5))
 ;; 423B343F-CA48-4C7C-A0A5-45D533FFD8D6 ends here
 ;; [[file:~/src/help/help.org::*File%20Based%20System][84B0605F-AA20-4CBB-8D14-5B55CF8D097D]]
-(add-hook #'focus-out-hook #'help/save-all-file-buffers)
+(add-hook 'focus-out-hook #'help/save-all-file-buffers)
 ;; 84B0605F-AA20-4CBB-8D14-5B55CF8D097D ends here
 ;; [[file:~/src/help/help.org::*File%20Based%20System][FC0763F4-B0A9-45DA-A0EA-8E3203501804]]
 (advice-add #'save-buffers-kill-terminal :before #'help/save-all-file-buffers)
@@ -498,7 +498,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
   (help/save-all-file-buffers))
 ;; 5A0C3F05-0C41-4E50-944E-0ACC4C2F4A15 ends here
 ;; [[file:~/src/help/help.org::*File%20Based%20System][DA537B02-6E64-42FC-BE9D-E5A3408B6599]]
-(add-to-list #'find-file-not-found-functions #'help/create-non-existent-directory)
+(add-to-list 'find-file-not-found-functions #'help/create-non-existent-directory)
 ;; DA537B02-6E64-42FC-BE9D-E5A3408B6599 ends here
 ;; [[file:~/src/help/help.org::*File-system/directory%20management%20(Console)][26EA1235-E9EC-4DC0-9F7D-B3D14E1A27B7]]
 (defun help/dired-copy-filename ()
@@ -523,7 +523,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
   (load "dired-x")
   (turn-on-stripe-buffer-mode)
   (stripe-listify-buffer))
-(add-hook #'dired-mode-hook #'help/dired-mode-hook-fn)
+(add-hook 'dired-mode-hook #'help/dired-mode-hook-fn)
 ;; 26EA1235-E9EC-4DC0-9F7D-B3D14E1A27B7 ends here
 ;; [[file:~/src/help/help.org::*File-system/directory%20management%20(Console)][720D3D44-21F6-4AA0-82B7-C23EE86783C9]]
 (setq dired-dwim-target t)
@@ -562,7 +562,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
 
 Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
   (condition-case nil (imenu-add-to-menubar "Imenu") (error nil)))
-(add-hook #'font-lock-mode-hook #'help/try-to-add-imenu)
+(add-hook 'font-lock-mode-hook #'help/try-to-add-imenu)
 ;; D722C567-86BA-45AD-91AB-2536696312C8 ends here
 ;; [[file:~/src/help/help.org::*Interactively%20DO%20Things%E2%80%9D][CCCA7B51-6A71-41EF-906C-C1C3A6B0C927]]
 (use-package ido)
@@ -855,7 +855,7 @@ Attribution: URL `http://www.masteringemacs.org/articles/2010/11/29/evaluating-e
                      ac-source-features
                      ac-source-symbols
                      ac-source-words-in-same-mode-buffers))
-  (add-to-list #'ac-modes #'inferior-emacs-lisp-mode)
+  (add-to-list 'ac-modes 'inferior-emacs-lisp-mode)
   (auto-complete-mode 1))
 
 (defun help/uuid-string ()
@@ -1007,7 +1007,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (interactive)
   (turn-on-stripe-buffer-mode)
   (stripe-listify-buffer))
-(add-hook #'occur-mode-hook #'help/occur-mode-hook-fn)
+(add-hook 'occur-mode-hook #'help/occur-mode-hook-fn)
 (define-key occur-mode-map (kbd "n") #'next-logical-line)
 (define-key occur-mode-map (kbd "p") #'previous-logical-line)
 ;; 00A4417A-8BE6-4417-B054-2F9D8287FAFD ends here
@@ -1073,27 +1073,27 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (setq-default case-fold-search t)
 ;; 4B9FE2A1-6A5F-42EF-AEEA-222B72170B64 ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][23D5548B-1081-48A8-BBCD-5C69AC2C57B8]]
-(add-to-list #'ispell-skip-region-alist '("^#\\+begin_src ". "#\\+#+end_src$"))
-(add-to-list #'ispell-skip-region-alist '("^#\\+BEGIN_SRC ". "#\\+#+END_SRC$"))
+(add-to-list 'ispell-skip-region-alist '("^#\\+begin_src ". "#\\+#+end_src$"))
+(add-to-list 'ispell-skip-region-alist '("^#\\+BEGIN_SRC ". "#\\+#+END_SRC$"))
 ;; 23D5548B-1081-48A8-BBCD-5C69AC2C57B8 ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][CE78FEAC-B28A-4F76-95F2-4FE246FCDCAD]]
-(add-to-list #'ispell-skip-region-alist '("^#\\+begin_example ". "#\\+end_example$"))
-(add-to-list #'ispell-skip-region-alist '("^#\\+BEGIN_EXAMPLE ". "#\\+END_EXAMPLE$"))
+(add-to-list 'ispell-skip-region-alist '("^#\\+begin_example ". "#\\+end_example$"))
+(add-to-list 'ispell-skip-region-alist '("^#\\+BEGIN_EXAMPLE ". "#\\+END_EXAMPLE$"))
 ;; CE78FEAC-B28A-4F76-95F2-4FE246FCDCAD ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][01BEC0C6-64F7-440F-A217-EA73CDA75DDA]]
-(add-to-list #'ispell-skip-region-alist '("\:PROPERTIES\:$" . "\:END\:$"))
+(add-to-list 'ispell-skip-region-alist '("\:PROPERTIES\:$" . "\:END\:$"))
 ;; 01BEC0C6-64F7-440F-A217-EA73CDA75DDA ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][F5DC40F2-20EC-45C0-BDB3-7C788514CD23]]
-(add-to-list #'ispell-skip-region-alist '("\\[fn:.+:" . "\\]"))
+(add-to-list 'ispell-skip-region-alist '("\\[fn:.+:" . "\\]"))
 ;; F5DC40F2-20EC-45C0-BDB3-7C788514CD23 ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][F5636C6E-61AC-491F-936E-FAE5974ED541]]
-(add-to-list #'ispell-skip-region-alist '("^http" . "\\]"))
+(add-to-list 'ispell-skip-region-alist '("^http" . "\\]"))
 ;; F5636C6E-61AC-491F-936E-FAE5974ED541 ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][5BF4C8DE-63B8-4684-B8F4-0021781B1E1E]]
-(add-to-list #'ispell-skip-region-alist '("=.*" . ".*="))
+(add-to-list 'ispell-skip-region-alist '("=.*" . ".*="))
 ;; 5BF4C8DE-63B8-4684-B8F4-0021781B1E1E ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][D1A2D129-9299-4349-AFF3-8F65F7D0CF95]]
-(add-to-list #'ispell-skip-region-alist '("- \\*.+" . ".*\\*: "))
+(add-to-list 'ispell-skip-region-alist '("- \\*.+" . ".*\\*: "))
 ;; D1A2D129-9299-4349-AFF3-8F65F7D0CF95 ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][3745D1E1-33D3-4D2F-B527-BBBCA619D455]]
 (defun help/ispell-org-header-lines-regexp (h)
@@ -1104,7 +1104,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (defun help/ispell-a2isra (block-def)
   "Add to the ispell skip region alist the BLOCK-DEF."
   (interactive)
-  (add-to-list #'ispell-skip-region-alist block-def))
+  (add-to-list 'ispell-skip-region-alist block-def))
 
 (let (void)
   (--each
@@ -1151,7 +1151,7 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
 (use-package flycheck
   :ensure t
   :config
-  (add-hook #'after-init-hook #'global-flycheck-mode)
+  (add-hook 'after-init-hook #'global-flycheck-mode)
   :diminish flycheck-mode)
 ;; 33473D12-CA77-453B-8115-FE060E033ED4 ends here
 ;; [[file:~/src/help/help.org::*TAB][6A9C209F-8228-4D10-B23D-6A8376FD7FB3]]
@@ -1166,7 +1166,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (when (not indent-tabs-mode)
     (untabify (point-min) (point-max))))
 
-(add-hook #'before-save-hook #'help/untabify-if-not-indent-tabs-mode)
+(add-hook 'before-save-hook #'help/untabify-if-not-indent-tabs-mode)
 ;; FD5B749C-AC7A-40A7-AB88-851F2190E906 ends here
 ;; [[file:~/src/help/help.org::*TAB][1AB838F7-4C9B-4C35-97B5-35390871A22D]]
 (setq-default tab-width 2)
@@ -1182,7 +1182,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   '(remove-hook 'log-edit-hook 'log-edit-insert-message-template))
 ;; 27D5DC40-DD13-4E08-9EF9-D962DD08A7D5 ends here
 ;; [[file:~/src/help/help.org::*Version%20Control][6FD11818-DB10-4AF4-A714-C32C04291AF2]]
-(add-to-list #'auto-mode-alist '(".gitignore$" . text-mode))
+(add-to-list 'auto-mode-alist '(".gitignore$" . text-mode))
 ;; 6FD11818-DB10-4AF4-A714-C32C04291AF2 ends here
 ;; [[file:~/src/help/help.org::*Whitespace%20Management][3327B4FF-82CF-42E7-AEF8-DCC968B97BDC]]
 (use-package whitespace
@@ -1216,7 +1216,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (rainbow-mode)
   (help/try-to-add-imenu))
 
-(add-hook #'text-mode-hook #'help/text-prog*-setup)
+(add-hook 'text-mode-hook #'help/text-prog*-setup)
 ;; 42D5F313-65F0-49E1-8759-9259D4020FA9 ends here
 ;; [[file:~/src/help/help.org::*Prog*-Mode%20Modes][B56D8E08-DF7C-4EBB-922E-EA215BD66C0D]]
 (setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook ess-mode-hook graphviz-dot-mode-hook))
@@ -1259,7 +1259,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (--each help/hack-lisp-modes
     (add-hook it #'help/emacs-lisp-mode-hook-fn)))
 
-(add-hook #'ielm-mode-hook #'help/ielm-mode-hook-fn)
+(add-hook 'ielm-mode-hook #'help/ielm-mode-hook-fn)
 ;; EBACFD45-C2FF-47B3-B991-28591C112F28 ends here
 ;; [[file:~/src/help/help.org::*Emacs%20Lisp][BDF6F6E5-D219-4C49-BB3F-D414A9741B11]]
 (setq initial-scratch-message nil)
@@ -1332,7 +1332,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
   (interactive)
   (org-redisplay-inline-images))
 
-(add-hook #'org-babel-after-execute-hook #'help/org-babel-after-execute-hook)
+(add-hook 'org-babel-after-execute-hook #'help/org-babel-after-execute-hook)
 ;; 11B7C941-8AA4-471A-B4A4-BCEBFE850206 ends here
 ;; [[file:~/src/help/help.org::*Org%20Mode][9947D738-D140-4CBF-BB6D-21E2FF58BD24]]
 (setq org-confirm-babel-evaluate nil)
@@ -1634,8 +1634,8 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
 (setq ess-local-process-name "R")
 ;; 931F150B-01FB-455C-B6F9-D730BEC162FF ends here
 ;; [[file:~/src/help/help.org::*R%20(ESS)][5D17A7DE-ECAF-4FAE-8425-AD43FEDD2D45]]
-(add-to-list #'auto-mode-alist '("\\.rd\\'" . Rd-mode))
-(add-to-list #'auto-mode-alist '("\\.Rmd$" . r-mode))
+(add-to-list 'auto-mode-alist '("\\.rd\\'" . Rd-mode))
+(add-to-list 'auto-mode-alist '("\\.Rmd$" . r-mode))
 ;; 5D17A7DE-ECAF-4FAE-8425-AD43FEDD2D45 ends here
 ;; [[file:~/src/help/help.org::*R%20(ESS)][8122AAC4-008A-454B-A3F6-4F9B11F7278E]]
 (local-set-key (kbd "C-c C-. S") #'ess-rutils-rsitesearch)
@@ -1693,32 +1693,32 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
   (local-set-key (kbd "C-0") #'ess-eval-buffer)
   (r-autoyas-ess-activate)
   (help/turn-on-r-hide-show)
-  (lambda () (add-hook #'ess-presend-filter-functions
+  (lambda () (add-hook 'ess-presend-filter-functions
                   (lambda ()
                     (warn
                      "ESS now supports a standard pre-send filter hook. Please update your configuration to use it instead of using advice.")))))
 
-(add-hook #'R-mode-hook #'help/R-mode-hook)
+(add-hook 'R-mode-hook #'help/R-mode-hook)
 
 (defun help/turn-on-r-hide-show ()
   "Attribution: SRC https://github.com/mlf176f2/EmacsMate/blob/master/EmacsMate-ess.org"
   (when (string= "S" ess-language)
-    (set (make-local-variable #'hs-special-modes-alist) #'((ess-mode "{" "}" "#" nil nil)))
+    (set (make-local-variable 'hs-special-modes-alist) #'((ess-mode "{" "}" "#" nil nil)))
     (hs-minor-mode 1)
-    (when (fboundp #'foldit-mode)
+    (when (fboundp 'foldit-mode)
       (foldit-mode 1))
-    (when (fboundp #'fold-dwim-org/minor-mode)
+    (when (fboundp 'fold-dwim-org/minor-mode)
       (fold-dwim-org/minor-mode))))
 
 (defun help/Rd-mode-hook ()
   (help/R-mode-hook))
 
-(add-hook #'Rd-mode-hook #'help/Rd-mode-hook)
+(add-hook 'Rd-mode-hook #'help/Rd-mode-hook)
 
 (defun help/inferior-ess-mode-hook ()
   (help/R-mode-hook))
 
-(add-hook #'inferior-ess-mode-hook #'help/inferior-ess-mode-hook)
+(add-hook 'inferior-ess-mode-hook #'help/inferior-ess-mode-hook)
 
 (defun help/ess-rdired-mode-hook ()
   "Personal customizations."
@@ -1726,7 +1726,7 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
   (turn-on-stripe-buffer-mode)
   (stripe-listify-buffer))
 
-(add-hook #'ess-rdired-mode-hook #'help/ess-rdired-mode-hook)
+(add-hook 'ess-rdired-mode-hook #'help/ess-rdired-mode-hook)
 ;; E5F48F7A-E926-4FB0-92D2-92204808630E ends here
 ;; [[file:~/src/help/help.org::*YASnippet][1827B724-7BC0-4228-8389-2B06F308D6AF]]
 (use-package yasnippet
@@ -1767,7 +1767,7 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
 (setq TeX-save-query nil)
 ;; A193F562-9E1C-49A2-982C-EBF7D9AFF32F ends here
 ;; [[file:~/src/help/help.org::*TeX][083E953F-E95D-4596-98D1-C8554D451721]]
-(add-to-list #'auto-mode-alist '("\\.lco?\\'" . TeX-latex-mode))
+(add-to-list 'auto-mode-alist '("\\.lco?\\'" . TeX-latex-mode))
 ;; 083E953F-E95D-4596-98D1-C8554D451721 ends here
 ;; [[file:~/src/help/help.org::*KOMA-Script][C2C100F1-B302-4BC7-8633-A79BCBFE1FC7]]
 (eval-after-load 'ox '(require 'ox-koma-letter))
@@ -1799,9 +1799,9 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
   (setq htmlize-output-type 'inline-css))
 ;; E26F69F8-ED1F-4F10-A291-6F9CB958FD18 ends here
 ;; [[file:~/src/help/help.org::*Artist][7592B1CF-CDA3-4ED1-99FA-205E41C74FFF]]
-(add-to-list #'auto-mode-alist '("\\.asc" . artist-mode))
-(add-to-list #'auto-mode-alist '("\\.art" . artist-mode))
-(add-to-list #'auto-mode-alist '("\\.asc" . artist-mode))
+(add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
+(add-to-list 'auto-mode-alist '("\\.art" . artist-mode))
+(add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
 ;; 7592B1CF-CDA3-4ED1-99FA-205E41C74FFF ends here
 ;; [[file:~/src/help/help.org::*DITAA][6907A176-CCF4-4BDF-A242-BDBC4C67239F]]
 (defconst help/ditaa-jar (concat (getenv "EELIB") "/ditaa.jar"))

@@ -323,7 +323,7 @@ Add the Org-Mode core distribution the load path.
 
 #+NAME: D5D4EECF-00C5-4B2F-B9F9-988591C70852
 #+BEGIN_SRC emacs-lisp
-(add-to-list #'load-path "~/src/org-mode/lisp")
+(add-to-list 'load-path "~/src/org-mode/lisp")
 #+END_SRC
 
 Add the Org-Mode-Contributions distribution to the load path. The contributions
@@ -331,7 +331,7 @@ are critical to and inseparable from the core distribution.
 
 #+NAME: 4D4E921E-7B99-43B2-AD1F-30D2593F05D7
 #+BEGIN_SRC emacs-lisp
-(add-to-list #'load-path "~/src/org-mode/contrib/lisp")
+(add-to-list 'load-path "~/src/org-mode/contrib/lisp")
 #+END_SRC
 
 This system allows for single-character alphabetical bullet lists. For Org-Mode
@@ -457,8 +457,8 @@ This is a copy and paste. Additional languages would warrant a refactor."
 
 #+NAME: 859E61A4-D910-4731-8328-A63F6B6ACD3F
 #+BEGIN_SRC emacs-lisp
-(add-hook #'org-babel-pre-tangle-hook #'help/org-prp-hdln)
-(add-hook #'org-babel-pre-tangle-hook #'help/org-prp-src-blk)
+(add-hook 'org-babel-pre-tangle-hook #'help/org-prp-hdln)
+(add-hook 'org-babel-pre-tangle-hook #'help/org-prp-src-blk)
 #+END_SRC
 
 There is a way to disable property inheritance that speeds up tangling a lot.
@@ -643,7 +643,7 @@ Org-Mode may evaluate all of the listed languages.
 #+NAME: 6309AF39-FCE4-43DE-BD46-BC7D0BA0971D
 #+BEGIN_SRC emacs-lisp
 (org-babel-do-load-languages
- #'org-babel-load-languages
+ 'org-babel-load-languages
  '((calc . t)
    (css . t)
    (dot . t)
@@ -1903,7 +1903,7 @@ Ban white-space at end of lines, globally.
 
 #+NAME: B80399BE-3E19-441E-93CF-C613A1309C35
 #+BEGIN_SRC emacs-lisp
-(add-hook #'before-save-hook #'help/delete-trailing-whitespace)
+(add-hook 'before-save-hook #'help/delete-trailing-whitespace)
 #+END_SRC
 
 Intelligently select the current char, then word, then object, then block,
@@ -1995,7 +1995,7 @@ Easy to use file-based AES encryption.
 
 #+NAME: A7C4590E-53C4-4159-B627-178E367B0A12
 #+BEGIN_SRC emacs-lisp
-(add-to-list #'load-path (getenv "CCRYPT"))
+(add-to-list 'load-path (getenv "CCRYPT"))
 (use-package ps-ccrypt)
 #+END_SRC
 
@@ -2029,13 +2029,13 @@ to =eshell-visual-commands=.
      (use-package em-prompt)
      (use-package em-term)
      (setenv "PAGER" "cat")
-     (add-hook #'eshell-mode-hook
+     (add-hook 'eshell-mode-hook
                (lambda ()
                  (message "Welcome to Eshell.")
                  (setq pcomplete-cycle-completions nil)))
-     (add-to-list #'eshell-visual-commands "ssh")
-     (add-to-list #'eshell-visual-commands "tail")
-     (add-to-list #'eshell-command-completions-alist
+     (add-to-list 'eshell-visual-commands "ssh")
+     (add-to-list 'eshell-visual-commands "tail")
+     (add-to-list 'eshell-command-completions-alist
                   '("tar" "\\(\\.tar|\\.tgz\\|\\.tar\\.gz\\)\\'"))))
 #+END_SRC
 
@@ -2080,7 +2080,7 @@ Backup file-stores when the frame loses focus.
 
 #+NAME: 84B0605F-AA20-4CBB-8D14-5B55CF8D097D
 #+BEGIN_SRC emacs-lisp
-(add-hook #'focus-out-hook #'help/save-all-file-buffers)
+(add-hook 'focus-out-hook #'help/save-all-file-buffers)
 #+END_SRC
 
 Backup file-stores before the system exits.
@@ -2222,7 +2222,7 @@ directories.
 
 #+NAME: DA537B02-6E64-42FC-BE9D-E5A3408B6599
 #+BEGIN_SRC emacs-lisp
-(add-to-list #'find-file-not-found-functions #'help/create-non-existent-directory)
+(add-to-list 'find-file-not-found-functions #'help/create-non-existent-directory)
 #+END_SRC
 
 ** File-system/directory management (Console)
@@ -2279,7 +2279,7 @@ a while but definitely do need.
   (load "dired-x")
   (turn-on-stripe-buffer-mode)
   (stripe-listify-buffer))
-(add-hook #'dired-mode-hook #'help/dired-mode-hook-fn)
+(add-hook 'dired-mode-hook #'help/dired-mode-hook-fn)
 #+END_SRC
 
 Try to guess the target directory for operations.
@@ -2395,7 +2395,7 @@ Major productivity hack
 
 Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
   (condition-case nil (imenu-add-to-menubar "Imenu") (error nil)))
-(add-hook #'font-lock-mode-hook #'help/try-to-add-imenu)
+(add-hook 'font-lock-mode-hook #'help/try-to-add-imenu)
 #+END_SRC
 
 ** Interactively DO Things”
@@ -2765,7 +2765,7 @@ Attribution: URL `http://www.masteringemacs.org/articles/2010/11/29/evaluating-e
                      ac-source-features
                      ac-source-symbols
                      ac-source-words-in-same-mode-buffers))
-  (add-to-list #'ac-modes #'inferior-emacs-lisp-mode)
+  (add-to-list 'ac-modes #'inferior-emacs-lisp-mode)
   (auto-complete-mode 1))
 
 (defun help/uuid-string ()
@@ -2980,7 +2980,7 @@ a fast navigation vehicle.
   (interactive)
   (turn-on-stripe-buffer-mode)
   (stripe-listify-buffer))
-(add-hook #'occur-mode-hook #'help/occur-mode-hook-fn)
+(add-hook 'occur-mode-hook #'help/occur-mode-hook-fn)
 (define-key occur-mode-map (kbd "n") #'next-logical-line)
 (define-key occur-mode-map (kbd "p") #'previous-logical-line)
 #+END_SRC
@@ -3126,8 +3126,8 @@ Source-Blocks.
 
 #+NAME: 23D5548B-1081-48A8-BBCD-5C69AC2C57B8
 #+BEGIN_SRC emacs-lisp
-(add-to-list #'ispell-skip-region-alist '("^#\\+begin_src ". "#\\+#+end_src$"))
-(add-to-list #'ispell-skip-region-alist '("^#\\+BEGIN_SRC ". "#\\+#+END_SRC$"))
+(add-to-list 'ispell-skip-region-alist '("^#\\+begin_src ". "#\\+#+end_src$"))
+(add-to-list 'ispell-skip-region-alist '("^#\\+BEGIN_SRC ". "#\\+#+END_SRC$"))
 #+END_SRC
 
 Example-Blocks. This system often uses Source-Blocks to edit content and
@@ -3135,43 +3135,43 @@ Example-Blocks to make it easily renderable when it is not for running.
 
 #+NAME: CE78FEAC-B28A-4F76-95F2-4FE246FCDCAD
 #+BEGIN_SRC emacs-lisp
-(add-to-list #'ispell-skip-region-alist '("^#\\+begin_example ". "#\\+end_example$"))
-(add-to-list #'ispell-skip-region-alist '("^#\\+BEGIN_EXAMPLE ". "#\\+END_EXAMPLE$"))
+(add-to-list 'ispell-skip-region-alist '("^#\\+begin_example ". "#\\+end_example$"))
+(add-to-list 'ispell-skip-region-alist '("^#\\+BEGIN_EXAMPLE ". "#\\+END_EXAMPLE$"))
 #+END_SRC
 
 Properties.
 
 #+NAME: 01BEC0C6-64F7-440F-A217-EA73CDA75DDA
 #+BEGIN_SRC emacs-lisp
-(add-to-list #'ispell-skip-region-alist '("\:PROPERTIES\:$" . "\:END\:$"))
+(add-to-list 'ispell-skip-region-alist '("\:PROPERTIES\:$" . "\:END\:$"))
 #+END_SRC
 
 Footnotes.
 
 #+NAME: F5DC40F2-20EC-45C0-BDB3-7C788514CD23
 #+BEGIN_SRC emacs-lisp
-(add-to-list #'ispell-skip-region-alist '("\\[fn:.+:" . "\\]"))
+(add-to-list 'ispell-skip-region-alist '("\\[fn:.+:" . "\\]"))
 #+END_SRC
 
 Footnotes with URLs that contain line-breaks.
 
 #+NAME: F5636C6E-61AC-491F-936E-FAE5974ED541
 #+BEGIN_SRC emacs-lisp
-(add-to-list #'ispell-skip-region-alist '("^http" . "\\]"))
+(add-to-list 'ispell-skip-region-alist '("^http" . "\\]"))
 #+END_SRC
 
 Verbatim
 
 #+NAME: 5BF4C8DE-63B8-4684-B8F4-0021781B1E1E
 #+BEGIN_SRC emacs-lisp
-(add-to-list #'ispell-skip-region-alist '("=.*" . ".*="))
+(add-to-list 'ispell-skip-region-alist '("=.*" . ".*="))
 #+END_SRC
 
 Bold text list items.
 
 #+NAME: D1A2D129-9299-4349-AFF3-8F65F7D0CF95
 #+BEGIN_SRC emacs-lisp
-(add-to-list #'ispell-skip-region-alist '("- \\*.+" . ".*\\*: "))
+(add-to-list 'ispell-skip-region-alist '("- \\*.+" . ".*\\*: "))
 #+END_SRC
 
 Export properties.
@@ -3186,7 +3186,7 @@ Export properties.
 (defun help/ispell-a2isra (block-def)
   "Add to the ispell skip region alist the BLOCK-DEF."
   (interactive)
-  (add-to-list #'ispell-skip-region-alist block-def))
+  (add-to-list 'ispell-skip-region-alist block-def))
 
 (let (void)
   (--each
@@ -3251,7 +3251,7 @@ Perform syntactic analysis all the time.
 (use-package flycheck
   :ensure t
   :config
-  (add-hook #'after-init-hook #'global-flycheck-mode)
+  (add-hook 'after-init-hook #'global-flycheck-mode)
   :diminish flycheck-mode)
 #+END_SRC
 
@@ -3280,7 +3280,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (when (not indent-tabs-mode)
     (untabify (point-min) (point-max))))
 
-(add-hook #'before-save-hook #'help/untabify-if-not-indent-tabs-mode)
+(add-hook 'before-save-hook #'help/untabify-if-not-indent-tabs-mode)
 #+END_SRC
 
 Most programing modes indent to 2 spaces. TABs should be the same width.
@@ -3318,7 +3318,7 @@ Git ignore files are text files.
 
 #+NAME: 6FD11818-DB10-4AF4-A714-C32C04291AF2
 #+BEGIN_SRC emacs-lisp
-(add-to-list #'auto-mode-alist '(".gitignore$" . text-mode))
+(add-to-list 'auto-mode-alist '(".gitignore$" . text-mode))
 #+END_SRC
 
 ** Whitespace Management
@@ -3635,9 +3635,9 @@ Initialize Package.
 #+NAME: 804FD197-8B2A-49F5-A4CB-48F6036FBCEC
 #+BEGIN_SRC emacs-lisp
 (package-initialize)
-(add-to-list #'package-archives
+(add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
-(add-to-list #'package-archives
+(add-to-list 'package-archives
              '("gnu" . "http://elpa.gnu.org/packages/") t)
 #+END_SRC
 
@@ -3647,7 +3647,7 @@ Add the Use-Package distribution the load path.
 
 #+NAME: FAB22F99-AB0C-4A75-AFEF-9E680A5EE95D
 #+BEGIN_SRC emacs-lisp
-(add-to-list #'load-path"~/src/use-package")
+(add-to-list 'load-path"~/src/use-package")
 #+END_SRC
 
 Load Use-Package and it's partner Diminish. Every package loaded before this
@@ -3724,7 +3724,7 @@ With that in mind this system:
   (rainbow-mode)
   (help/try-to-add-imenu))
 
-(add-hook #'text-mode-hook #'help/text-prog*-setup)
+(add-hook 'text-mode-hook #'help/text-prog*-setup)
 #+END_SRC
 
 *** Prog*-Mode Modes
@@ -3817,7 +3817,7 @@ With that in mind this system:
   (--each help/hack-lisp-modes
     (add-hook it #'help/emacs-lisp-mode-hook-fn)))
 
-(add-hook #'ielm-mode-hook #'help/ielm-mode-hook-fn)
+(add-hook 'ielm-mode-hook #'help/ielm-mode-hook-fn)
  #+END_SRC
 
 ** (Literate Programming)
@@ -3934,7 +3934,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
   (interactive)
   (org-redisplay-inline-images))
 
-(add-hook #'org-babel-after-execute-hook #'help/org-babel-after-execute-hook)
+(add-hook 'org-babel-after-execute-hook #'help/org-babel-after-execute-hook)
 #+END_SRC
 
 Never "automatically" evaluate a source block.
@@ -4873,8 +4873,8 @@ Handle rdoc and rmd files, though I have never used them… yet.
 
 #+NAME: 5D17A7DE-ECAF-4FAE-8425-AD43FEDD2D45
 #+BEGIN_SRC emacs-lisp
-(add-to-list #'auto-mode-alist '("\\.rd\\'" . Rd-mode))
-(add-to-list #'auto-mode-alist '("\\.Rmd$" . r-mode))
+(add-to-list 'auto-mode-alist '("\\.rd\\'" . Rd-mode))
+(add-to-list 'auto-mode-alist '("\\.Rmd$" . r-mode))
 #+END_SRC
 
 Make it really easy to search the ℝ archives for anything.
@@ -4978,32 +4978,32 @@ Period.
   (local-set-key (kbd "C-0") #'ess-eval-buffer)
   (r-autoyas-ess-activate)
   (help/turn-on-r-hide-show)
-  (lambda () (add-hook #'ess-presend-filter-functions
+  (lambda () (add-hook 'ess-presend-filter-functions
                   (lambda ()
                     (warn
                      "ESS now supports a standard pre-send filter hook. Please update your configuration to use it instead of using advice.")))))
 
-(add-hook #'R-mode-hook #'help/R-mode-hook)
+(add-hook 'R-mode-hook #'help/R-mode-hook)
 
 (defun help/turn-on-r-hide-show ()
   "Attribution: SRC https://github.com/mlf176f2/EmacsMate/blob/master/EmacsMate-ess.org"
   (when (string= "S" ess-language)
-    (set (make-local-variable #'hs-special-modes-alist) #'((ess-mode "{" "}" "#" nil nil)))
+    (set (make-local-variable 'hs-special-modes-alist) #'((ess-mode "{" "}" "#" nil nil)))
     (hs-minor-mode 1)
-    (when (fboundp #'foldit-mode)
+    (when (fboundp 'foldit-mode)
       (foldit-mode 1))
-    (when (fboundp #'fold-dwim-org/minor-mode)
+    (when (fboundp 'fold-dwim-org/minor-mode)
       (fold-dwim-org/minor-mode))))
 
 (defun help/Rd-mode-hook ()
   (help/R-mode-hook))
 
-(add-hook #'Rd-mode-hook #'help/Rd-mode-hook)
+(add-hook 'Rd-mode-hook #'help/Rd-mode-hook)
 
 (defun help/inferior-ess-mode-hook ()
   (help/R-mode-hook))
 
-(add-hook #'inferior-ess-mode-hook #'help/inferior-ess-mode-hook)
+(add-hook 'inferior-ess-mode-hook #'help/inferior-ess-mode-hook)
 
 (defun help/ess-rdired-mode-hook ()
   "Personal customizations."
@@ -5011,7 +5011,7 @@ Period.
   (turn-on-stripe-buffer-mode)
   (stripe-listify-buffer))
 
-(add-hook #'ess-rdired-mode-hook #'help/ess-rdired-mode-hook)
+(add-hook 'ess-rdired-mode-hook #'help/ess-rdired-mode-hook)
 #+END_SRC
 
 ** YASnippet
@@ -5107,7 +5107,7 @@ Load LCO files with AucTeX.
 
 #+NAME: 083E953F-E95D-4596-98D1-C8554D451721
 #+BEGIN_SRC emacs-lisp
-(add-to-list #'auto-mode-alist '("\\.lco?\\'" . TeX-latex-mode))
+(add-to-list 'auto-mode-alist '("\\.lco?\\'" . TeX-latex-mode))
 #+END_SRC
 
 ** KOMA-Script
@@ -5315,9 +5315,9 @@ Load Beamer for creating presentations.
 
 #+NAME: 7592B1CF-CDA3-4ED1-99FA-205E41C74FFF
 #+BEGIN_SRC emacs-lisp
-(add-to-list #'auto-mode-alist '("\\.asc" . artist-mode))
-(add-to-list #'auto-mode-alist '("\\.art" . artist-mode))
-(add-to-list #'auto-mode-alist '("\\.asc" . artist-mode))
+(add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
+(add-to-list 'auto-mode-alist '("\\.art" . artist-mode))
+(add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
 #+END_SRC
 
 ** DITAA

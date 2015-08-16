@@ -4,10 +4,10 @@
 (setq load-prefer-newer t)
 ;; 87B0CAB9-E6E5-4C68-B389-9289E65FCA7F ends here
 ;; [[file:~/src/help/help.org::*Org-Mode%20Exemple%20Complet%20Minimal][D5D4EECF-00C5-4B2F-B9F9-988591C70852]]
-(add-to-list #'load-path "~/src/org-mode/lisp")
+(add-to-list 'load-path "~/src/org-mode/lisp")
 ;; D5D4EECF-00C5-4B2F-B9F9-988591C70852 ends here
 ;; [[file:~/src/help/help.org::*Org-Mode%20Exemple%20Complet%20Minimal][4D4E921E-7B99-43B2-AD1F-30D2593F05D7]]
-(add-to-list #'load-path "~/src/org-mode/contrib/lisp")
+(add-to-list 'load-path "~/src/org-mode/contrib/lisp")
 ;; 4D4E921E-7B99-43B2-AD1F-30D2593F05D7 ends here
 ;; [[file:~/src/help/help.org::*Org-Mode%20Exemple%20Complet%20Minimal][28776245-A6BB-4294-AC72-30F03F902DF7]]
 (setq org-list-allow-alphabetical t)
@@ -96,8 +96,8 @@ This is a copy and paste. Additional languages would warrant a refactor."
   (insert "\n#+NAME: " (org-id-new)))
 ;; BB2E97AF-6364-401F-8063-8B5A0BE481E6 ends here
 ;; [[file:~/src/help/help.org::*Tangling][859E61A4-D910-4731-8328-A63F6B6ACD3F]]
-(add-hook #'org-babel-pre-tangle-hook #'help/org-prp-hdln)
-(add-hook #'org-babel-pre-tangle-hook #'help/org-prp-src-blk)
+(add-hook 'org-babel-pre-tangle-hook #'help/org-prp-hdln)
+(add-hook 'org-babel-pre-tangle-hook #'help/org-prp-src-blk)
 ;; 859E61A4-D910-4731-8328-A63F6B6ACD3F ends here
 ;; [[file:~/src/help/help.org::*Tangling][F19C629B-E784-48CA-BC53-CCFB849CE9EC]]
 (setq org-babel-use-quick-and-dirty-noweb-expansion nil)
@@ -119,7 +119,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
 ;; 5E69E152-9921-4527-A2B2-24467EEF1BE9 ends here
 ;; [[file:~/src/help/help.org::*Evaluating][6309AF39-FCE4-43DE-BD46-BC7D0BA0971D]]
 (org-babel-do-load-languages
- #'org-babel-load-languages
+ 'org-babel-load-languages
  '((calc . t)
    (css . t)
    (dot . t)
