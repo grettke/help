@@ -643,6 +643,14 @@ Handle column names in tables
 
 {{{lp-header-arg-per-source-block}}}
 
+*** dir
+
+#+BEGIN_QUOTE
+Specify the default (possibly remote) directory for code block execution
+#+END_QUOTE
+
+{{{lp-header-arg-per-source-block}}}
+
 *** epilogue
     :PROPERTIES:
     :ID:       CA7F5086-9D4B-4847-9449-3231CE027804
