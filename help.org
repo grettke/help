@@ -591,6 +591,14 @@ Be sure to never evaluate in-line-source-blocks *on export*.
 (setq org-export-babel-evaluate nil)
 #+END_SRC
 
+*** colnames
+
+#+BEGIN_QUOTE
+Handle column names in tables
+#+END_QUOTE
+
+{{{lp-header-arg-per-source-block}}}
+
 *** post
     :PROPERTIES:
     :ID:       1A4DEC98-C735-4D88-8261-6AD13C495EF2
