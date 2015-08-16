@@ -494,6 +494,14 @@ ought to refer to the generated document.
 (help/set-org-babel-default-header-args :noweb "no-export")
 #+END_SRC
 
+*** noweb-sep
+
+#+BEGIN_QUOTE
+String used to separate noweb references
+#+END_QUOTE
+
+{{{lp-header-arg-per-source-block}}}.
+
 *** Padline
     :PROPERTIES:
     :ID:       DDE727A6-DDF7-4B61-9063-549614B135F0
