@@ -145,6 +145,13 @@ Setup:
     - Fail-fast: it is better to know immediately if there are resolution
       issues.
   - Prefer to declare anonymous functions with ~function~.
+  - [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Using-Lexical-Binding.html#Using-Lexical-Binding][Quoted via]].
+    - If a non-special variable is used outside of a let form, the byte-compiler
+      will warn about reference or assignment to a “free variable”. If a
+      non-special variable is bound but not used within a let form, the
+      byte-compiler will warn about an “unused lexical variable”. The
+      byte-compiler will also issue a warning if you use a special variable as a
+      function argument.
 - Tangling.
   - When ordering matters, rely on block-reuse to enforce correct generation.
 - Voice.
