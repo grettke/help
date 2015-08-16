@@ -545,7 +545,9 @@ Org-Mode may evaluate all of the listed languages.
     :ID:       CA7F5086-9D4B-4847-9449-3231CE027804
     :END:
 
-See Prologue.
+#+BEGIN_QUOTE
+Text to append to code block body
+#+END_QUOTE
 
 *** Eval
     :PROPERTIES:
