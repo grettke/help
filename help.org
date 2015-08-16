@@ -82,6 +82,8 @@ Setup:
   - Tangle :: A verb. Assemble a document for consumption by another program or
     machine.
   - Weave :: A verb. Prepare a document for consumption by a human.
+  - Web :: A Source-Block definition of one or more that define part or all of
+    a system.
 - Synonyms.
   - Document and System.
     - A Document defines a System.
@@ -176,6 +178,11 @@ Start EMACS with this command:
 
 =open /Applications/Emacs.app --args --quick --load ~/src/help/.org-mode-ecm.emacs.el=
 
+#+NAME: EE055B39-1C93-45AB-B9A6-2FCFD54D47A5
+#+BEGIN_SRC emacs-lisp :comments no :noweb-ref ignore-ecm
+;; -*- lexical-binding: t -*-
+#+END_SRC
+
 #+NAME: 9969960B-FFEE-48B4-BD9C-F29E750FD8A3
 #+BEGIN_SRC emacs-lisp
 «Principle-of-Least-Astonishment»
@@ -196,6 +203,11 @@ Sysop is likely to use this periodically.
 Start EMACS with this command:
 
 =open /Applications/Emacs.app --args --quick --load ~/src/help/.org-mode-fundamentals.emacs.el=
+
+#+NAME: BFE6C470-861B-4367-9735-DAA8E7C33C0A
+#+BEGIN_SRC emacs-lisp  :comments no :noweb-ref ignore-fundamentals
+;; -*- lexical-binding: t -*-
+#+END_SRC
 
 #+NAME: 78D777D3-FA69-4361-874C-7262DE96F753
 #+BEGIN_SRC emacs-lisp
@@ -219,6 +231,11 @@ Sysop is likely to use this constantly.
 Start EMACS with this command:
 
 =open /Applications/Emacs.app=
+
+#+NAME: 3EB2F596-DAE1-4083-B2B9-DB61A15AFDEF
+#+BEGIN_SRC emacs-lisp  :comments no :noweb-ref ignore-whole
+;; -*- lexical-binding: t -*-
+#+END_SRC
 
 #+NAME: AD12BE48-B87B-4AB6-814D-4FA5E47597A0
 #+BEGIN_SRC emacs-lisp
@@ -3556,6 +3573,25 @@ Easily return to previous configurations.
   :noweb-ref: Principle-of-Least-Astonishment
   :ID:       43D9AB52-2157-4A1D-AD9C-D35996E91269
   :END:
+
+** Scoping Behavior
+   :PROPERTIES:
+   :ID:       C0F8DDC4-C2B7-4578-B9B4-FA13E3BF0EBD
+   :END:
+
+EMACS values dynamic-scoping for now and in the future.
+
+EMACS values lexical-scoping in the future.
+
+There are pecuilar interactions between [[https://yoo2080.wordpress.com/2011/12/31/lexical-scoping-and-dynamic-scoping-in-emacs-lisp/][lexically and dynamically scope closures]]
+and [[https://yoo2080.wordpress.com/2013/08/14/invasion-of-special-variables-in-emacs-lisp/][special variables]].
+
+With the future in mind, make the switch now.
+
+It is enabled with a non-nil buffer-local variable ~lexical-binding~. The variable
+is inserted into each of the Web definitions that this system provides. Those
+definitions can't use Org-Mode comments so they are defined individually in each
+Web.
 
 ** Load Behavior
    :PROPERTIES:

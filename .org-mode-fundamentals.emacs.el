@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t -*-
+
 ;; [[file:help.org::*Org-Mode%20Fundamentals][78D777D3-FA69-4361-874C-7262DE96F753]]
 ;; [[file:~/src/help/help.org::*Org-Mode%20Exemple%20Complet%20Minimal][9969960B-FFEE-48B4-BD9C-F29E750FD8A3]]
 ;; [[file:~/src/help/help.org::*Load%20Behavior][87B0CAB9-E6E5-4C68-B389-9289E65FCA7F]]

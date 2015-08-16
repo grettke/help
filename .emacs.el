@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t -*-
+
 ;; [[file:help.org::*The%20Whole%20Enchilada][AD12BE48-B87B-4AB6-814D-4FA5E47597A0]]
 ;; [[file:~/src/help/help.org::*Org-Mode%20Fundamentals][78D777D3-FA69-4361-874C-7262DE96F753]]
 ;; [[file:~/src/help/help.org::*Org-Mode%20Exemple%20Complet%20Minimal][9969960B-FFEE-48B4-BD9C-F29E750FD8A3]]
