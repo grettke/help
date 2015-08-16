@@ -66,8 +66,20 @@ This is a copy and paste. Additional languages would warrant a refactor."
     (save-buffer)))
 
 (defun help/org-prp-src-blk ()
-  "Visit every Source-Block. If it doesn't have a NAME property then add one and
+  "If it doesn't have a NAME property then add one and
    assign it a UUID. Attribution: URL `http://article.gmane.org/gmane.emacs.orgmode/99740'"
+  (interactive)
+  (help/org-2every-src-block
+   #'(lambda (element)
+       (if (not (org-element-property :name element))
+           (let ((i (org-get-indentation)))
+             (beginning-of-line)
+             (save-excursion (insert "#+NAME: " (org-id-new) "\n"))
+             (indent-to i)
+             (forward-line 2))))))
+
+(defun help/org-2every-src-block (fn)
+  "Visit every Source-Block and evaluate `FN'."
   (interactive)
   (save-excursion
     (goto-char (point-min))
@@ -75,12 +87,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
       (while (re-search-forward "^\s*#[+]BEGIN_SRC" nil t)
         (let ((element (org-element-at-point)))
           (when (eq (org-element-type element) 'src-block)
-            (if (not (org-element-property :name element))
-                (let ((i (org-get-indentation)))
-                  (beginning-of-line)
-                  (save-excursion (insert "#+NAME: " (org-id-new) "\n"))
-                  (indent-to i)
-                  (forward-line 2)))))))
+            (funcall fn element)))))
     (save-buffer)))
 
 (defun help/org-babel-demarcate-block ()
@@ -1806,7 +1813,7 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
   :config
   (setf (cdr (assoc "dot" org-src-lang-modes)) 'graphviz-dot))
 ;; EAADBBCB-9054-4040-8579-1EC08FB97BDE ends here
-;; [[file:~/src/help/help.org::*PlantUML][47763C94-7458-4242-8EE6-6D915B878310]]
+;; [[file:~/src/help/help.org::*PlantUML][80EE7930-0025-4D06-96BB-24A70169CDEA]]
 (use-package plantuml-mode
   :ensure t
   :init
@@ -1815,7 +1822,7 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
   :config
   (eval-after-load "ob-plantuml"
     (setq org-plantuml-jar-path help/plantuml-jar)))
-;; 47763C94-7458-4242-8EE6-6D915B878310 ends here
+;; 80EE7930-0025-4D06-96BB-24A70169CDEA ends here
 ;; [[file:~/src/help/help.org::*Buffer][A5438CB6-5228-4753-B2A7-BFEFC573F6B6]]
 (use-package uniquify)
 (setq uniquify-buffer-name-style 'forward)

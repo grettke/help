@@ -65,8 +65,20 @@ This is a copy and paste. Additional languages would warrant a refactor."
     (save-buffer)))
 
 (defun help/org-prp-src-blk ()
-  "Visit every Source-Block. If it doesn't have a NAME property then add one and
+  "If it doesn't have a NAME property then add one and
    assign it a UUID. Attribution: URL `http://article.gmane.org/gmane.emacs.orgmode/99740'"
+  (interactive)
+  (help/org-2every-src-block
+   #'(lambda (element)
+       (if (not (org-element-property :name element))
+           (let ((i (org-get-indentation)))
+             (beginning-of-line)
+             (save-excursion (insert "#+NAME: " (org-id-new) "\n"))
+             (indent-to i)
+             (forward-line 2))))))
+
+(defun help/org-2every-src-block (fn)
+  "Visit every Source-Block and evaluate `FN'."
   (interactive)
   (save-excursion
     (goto-char (point-min))
@@ -74,12 +86,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
       (while (re-search-forward "^\s*#[+]BEGIN_SRC" nil t)
         (let ((element (org-element-at-point)))
           (when (eq (org-element-type element) 'src-block)
-            (if (not (org-element-property :name element))
-                (let ((i (org-get-indentation)))
-                  (beginning-of-line)
-                  (save-excursion (insert "#+NAME: " (org-id-new) "\n"))
-                  (indent-to i)
-                  (forward-line 2)))))))
+            (funcall fn element)))))
     (save-buffer)))
 
 (defun help/org-babel-demarcate-block ()
