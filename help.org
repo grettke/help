@@ -546,7 +546,7 @@ Org-Mode may evaluate all of the listed languages.
     :END:
 
 #+BEGIN_QUOTE
-Text to append to code block body
+Pre processing of code block results
 #+END_QUOTE
 
 See Prologue.
