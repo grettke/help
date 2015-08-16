@@ -815,10 +815,14 @@ anything else would violate the law of least surprise.
 (setq org-src-preserve-indentation t)
 #+END_SRC
 
-*** Exports
+*** exports
     :PROPERTIES:
     :ID:       57B3786B-017F-4F6E-89F9-05642304F3B6
     :END:
+
+#+BEGIN_SRC
+Export code and/or results
+#+END_SRC
 
 Always share source blocks and their results. Whether or not to generate a
 result for a particular source block is configured per-block. If you don't want
