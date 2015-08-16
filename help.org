@@ -82,6 +82,9 @@ Setup:
   - Tangle :: A verb. Assemble a document for consumption by another program or
     machine.
   - Weave :: A verb. Prepare a document for consumption by a human.
+- Synonyms.
+  - Document and System.
+    - A Document defines a System.
 - File/Package Loading
   - Load every one with ~use-package~ whether it came with EMACS OOTB or ELPA.
     - ~ensure~ tells the reader which one it came from.
@@ -136,8 +139,8 @@ Setup:
     - Never ~custom-set-variables~.
   - Always use relative file paths.
   - Prefer to byte-compile all references by using ~function~.
-      - Fail-fast: it is better to know immediately if there are resolution
-        issues.
+    - Fail-fast: it is better to know immediately if there are resolution
+      issues.
   - Prefer to declare anonymous functions with ~function~.
 - Tangling.
   - When ordering matters, rely on block-reuse to enforce correct generation.
