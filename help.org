@@ -487,7 +487,7 @@ Expand noweb references in source-blocks before:
 |------------+--------|
 | Tangling   | T      |
 | Evaluating | T      |
-| Exporting  | F      |
+| Weaving    | F      |
 
 This embraces the notion that you are telling the right thing to the
 computer and the right thing to the human. By the time you get to exporting, you
