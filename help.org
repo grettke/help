@@ -668,6 +668,14 @@ Replace theme each time you evaluate the block.
 (help/set-org-babel-default-inline-header-args :results "value replace")
 #+END_SRC
 
+*** sep
+
+#+BEGIN_QUOTE
+Delimiter for writing tabular results outside Org
+#+END_QUOTE
+
+{{{lp-header-arg-per-source-block}}}
+
 *** wrap
     :PROPERTIES:
     :ID:       94D6B3BE-5DA1-499A-B5C7-A6B71710A1EA
