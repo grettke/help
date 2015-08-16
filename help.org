@@ -472,6 +472,14 @@ origin artifact.
 (help/set-org-babel-default-header-args :comments "noweb")
 #+END_SRC
 
+*** no-expand
+
+#+BEGIN_QUOTE
+Turn off variable assignment and noweb expansion during tangling
+#+END_QUOTE
+
+{{{lp-header-arg-per-source-block}}}.
+
 *** noweb
     :PROPERTIES:
     :ID:       E12B48AB-68E8-4515-89E3-30A16FB6FD22
