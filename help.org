@@ -529,6 +529,17 @@ can be used in the Programming activity.
 (help/set-org-babel-default-header-args :padline "yes")
 #+END_SRC
 
+*** session
+
+#+BEGIN_QUOTE
+Preserve the state of code evaluation
+#+END_QUOTE
+
+{{{lp-header-arg-per-source-block}}}.
+
+For some situations, this may be the same for every source block for a
+particular language. R is a good example.
+
 *** shebang
 
 #+BEGIN_SRC
