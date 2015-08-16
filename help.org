@@ -138,7 +138,7 @@ Setup:
   - Prefer to byte-compile all references by using ~function~.
       - Fail-fast: it is better to know immediately if there are resolution
         issues.
-  - Prefer to declare anonymous functions with ~function~.     
+  - Prefer to declare anonymous functions with ~function~.
 - Tangling.
   - When ordering matters, rely on block-reuse to enforce correct generation.
 - Voice.
@@ -3573,6 +3573,11 @@ Easily return to previous configurations.
   :noweb-ref: Principle-of-Least-Astonishment
   :ID:       43D9AB52-2157-4A1D-AD9C-D35996E91269
   :END:
+
+** Load Behavior
+   :PROPERTIES:
+   :ID:       B1A48CB2-9295-466E-947F-EE24D57DB548
+   :END:
 
 EMACS can load 3 different representations of a Emacs-Lisp source file code
 OOTB. The name of source code file is the value before the file extension. When

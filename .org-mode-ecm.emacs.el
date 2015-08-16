@@ -1,5 +1,5 @@
 ;; [[file:help.org::*Org-Mode%20Exemple%20Complet%20Minimal][9969960B-FFEE-48B4-BD9C-F29E750FD8A3]]
-;; [[file:~/src/help/help.org::*Principle%20of%20Least%20Astonishment%20(POLA)][87B0CAB9-E6E5-4C68-B389-9289E65FCA7F]]
+;; [[file:~/src/help/help.org::*Load%20Behavior][87B0CAB9-E6E5-4C68-B389-9289E65FCA7F]]
 (setq load-prefer-newer t)
 ;; 87B0CAB9-E6E5-4C68-B389-9289E65FCA7F ends here
 ;; [[file:~/src/help/help.org::*Org-Mode%20Exemple%20Complet%20Minimal][D5D4EECF-00C5-4B2F-B9F9-988591C70852]]
