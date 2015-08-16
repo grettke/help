@@ -2410,23 +2410,23 @@ this Source-Block will break Ido in this system.
 #+BEGIN_SRC emacs-lisp
 (use-package ido)
 (use-package flx-ido
-             :ensure t
-             :config
-             (ido-mode t))
+  :ensure t
+  :config
+  (ido-mode t))
 (use-package ido-hacks
-             :ensure t)
+  :ensure t)
 (use-package ido-ubiquitous
-             :ensure t
-             :config
-             (ido-ubiquitous-mode t)
-             (setq ido-create-new-buffer 'always)
-             (flx-ido-mode t)
-             (setq ido-use-faces nil))
+  :ensure t
+  :config
+  (ido-ubiquitous-mode t)
+  (setq ido-create-new-buffer 'always)
+  (flx-ido-mode t)
+  (setq ido-use-faces nil))
 (use-package ido-vertical-mode
-             :ensure t
-             :config
-             (ido-vertical-mode t)
-             (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right))
+  :ensure t
+  :config
+  (ido-vertical-mode t)
+  (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right))
 (global-set-key (kbd "s-x") #'ido-find-file)
 (global-set-key (kbd "s-c") #'ido-switch-buffer)
 #+END_SRC
@@ -2436,10 +2436,10 @@ Make functions search-able.
 #+NAME: 4C4179A9-2415-4309-A127-FA143D3331DD
 #+BEGIN_SRC emacs-lisp
 (use-package smex
-             :ensure t
-             :config
-             (smex-initialize)
-             (global-set-key (kbd "s-v") #'smex))
+  :ensure t
+  :config
+  (smex-initialize)
+  (global-set-key (kbd "s-v") #'smex))
 #+END_SRC
 
 Make URLs a first-class object.
@@ -3840,7 +3840,7 @@ RC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.htm
   (call-interactively #'self-insert-command)
   (let ((ppss (syntax-ppss)))
     (unless (or (elt ppss 3)
-                (elt ppss 4))
+               (elt ppss 4))
       (insert "'"))))
 
 (defun help/elisp-mode-local-bindings ()
@@ -5477,12 +5477,12 @@ Sailboat "1" *-- "1..3" Hull
 #+BEGIN_SRC plantuml :file "./image/plantuml-activity_diagram.png" :noweb-ref ignore :results output replace
 start
 partition Initialization {
-    :read config file;
-    :init internal variable;
+:read config file;
+:init internal variable;
 }
 partition Running {
-    :wait for user interaction;
-    :print information;
+:wait for user interaction;
+:print information;
 }
 
 stop

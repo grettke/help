@@ -567,32 +567,32 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
 ;; [[file:~/src/help/help.org::*Interactively%20DO%20Things%E2%80%9D][CCCA7B51-6A71-41EF-906C-C1C3A6B0C927]]
 (use-package ido)
 (use-package flx-ido
-             :ensure t
-             :config
-             (ido-mode t))
+  :ensure t
+  :config
+  (ido-mode t))
 (use-package ido-hacks
-             :ensure t)
+  :ensure t)
 (use-package ido-ubiquitous
-             :ensure t
-             :config
-             (ido-ubiquitous-mode t)
-             (setq ido-create-new-buffer 'always)
-             (flx-ido-mode t)
-             (setq ido-use-faces nil))
+  :ensure t
+  :config
+  (ido-ubiquitous-mode t)
+  (setq ido-create-new-buffer 'always)
+  (flx-ido-mode t)
+  (setq ido-use-faces nil))
 (use-package ido-vertical-mode
-             :ensure t
-             :config
-             (ido-vertical-mode t)
-             (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right))
+  :ensure t
+  :config
+  (ido-vertical-mode t)
+  (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right))
 (global-set-key (kbd "s-x") #'ido-find-file)
 (global-set-key (kbd "s-c") #'ido-switch-buffer)
 ;; CCCA7B51-6A71-41EF-906C-C1C3A6B0C927 ends here
 ;; [[file:~/src/help/help.org::*Interactively%20DO%20Things%E2%80%9D][4C4179A9-2415-4309-A127-FA143D3331DD]]
 (use-package smex
-             :ensure t
-             :config
-             (smex-initialize)
-             (global-set-key (kbd "s-v") #'smex))
+  :ensure t
+  :config
+  (smex-initialize)
+  (global-set-key (kbd "s-v") #'smex))
 ;; 4C4179A9-2415-4309-A127-FA143D3331DD ends here
 ;; [[file:~/src/help/help.org::*Interactively%20DO%20Things%E2%80%9D][667AED70-8685-4BEA-A32F-7B304483C05F]]
 (setq ido-use-url-at-point t)
@@ -1279,7 +1279,7 @@ RC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.htm
   (call-interactively #'self-insert-command)
   (let ((ppss (syntax-ppss)))
     (unless (or (elt ppss 3)
-                (elt ppss 4))
+               (elt ppss 4))
       (insert "'"))))
 
 (defun help/elisp-mode-local-bindings ()
