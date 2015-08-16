@@ -138,6 +138,7 @@ Setup:
     - Try never to advise functions.
     - Never ~custom-set-variables~.
   - Always use relative file paths.
+  - Byte-compile frequently to minimize System warnings.
   - Prefer to byte-compile all references by using ~function~.
     - Fail-fast: it is better to know immediately if there are resolution
       issues.
