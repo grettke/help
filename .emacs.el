@@ -56,30 +56,32 @@ This is a copy and paste. Additional languages would warrant a refactor."
   "Visit every Headline. If it doesn't have an ID property then add one and
   assign it a UUID. Attribution: URL `http://article.gmane.org/gmane.emacs.orgmode/99738'"
   (interactive)
-  (goto-char (point-min))
-  (dolist (p (nreverse
-              (org-element-map (org-element-parse-buffer 'headline) 'headline
-                (lambda (headline) (org-element-property :begin headline)))))
-    (goto-char p)
-    (org-id-get-create))
-  (save-buffer))
+  (save-excursion
+    (goto-char (point-min))
+    (dolist (p (nreverse
+                (org-element-map (org-element-parse-buffer 'headline) 'headline
+                  (lambda (headline) (org-element-property :begin headline)))))
+      (goto-char p)
+      (org-id-get-create))
+    (save-buffer)))
 
 (defun help/org-prp-src-blk ()
   "Visit every Source-Block. If it doesn't have a NAME property then add one and
    assign it a UUID. Attribution: URL `http://article.gmane.org/gmane.emacs.orgmode/99740'"
   (interactive)
-  (goto-char (point-min))
-  (let ((case-fold-search t))
-    (while (re-search-forward "^\s*#[+]BEGIN_SRC" nil t)
-      (let ((element (org-element-at-point)))
-        (when (eq (org-element-type element) 'src-block)
-          (if (not (org-element-property :name element))
-              (let ((i (org-get-indentation)))
-                (beginning-of-line)
-                (save-excursion (insert "#+NAME: " (org-id-new) "\n"))
-                (indent-to i)
-                (forward-line 2)))))))
-  (save-buffer))
+  (save-excursion
+    (goto-char (point-min))
+    (let ((case-fold-search t))
+      (while (re-search-forward "^\s*#[+]BEGIN_SRC" nil t)
+        (let ((element (org-element-at-point)))
+          (when (eq (org-element-type element) 'src-block)
+            (if (not (org-element-property :name element))
+                (let ((i (org-get-indentation)))
+                  (beginning-of-line)
+                  (save-excursion (insert "#+NAME: " (org-id-new) "\n"))
+                  (indent-to i)
+                  (forward-line 2)))))))
+    (save-buffer)))
 
 (defun help/org-babel-demarcate-block ()
   "Add a NAME property then assign it a UUID."
