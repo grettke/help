@@ -2633,9 +2633,9 @@ This is useful for fringe cases where trailing whitespace is important."
   "Insert a new line without breaking the current line."
   (interactive)
   (beginning-of-line)
-  (next-line)
+  (forward-line 1)
   (newline)
-  (previous-line))
+  (forward-line -1))
 
 (defun help/smart-open-line ()
   "Insert a new line, indent it, and move the cursor there.
@@ -2664,7 +2664,7 @@ Attribution: URL `http://emacsredux.com/blog/2013/03/26/smarter-open-line/'"
       (message "I may only insert a NSCL at the beginning of a line.")
     (let ((ncl (make-string 70 ?✂)))
       (newline)
-      (previous-line)
+      (forward-line -1)
       (insert ncl)
       (comment-or-uncomment-region (line-beginning-position) (line-end-position)))))
 
