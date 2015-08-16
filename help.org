@@ -694,6 +694,14 @@ Handle horizontal lines in tables
 
 {{{lp-header-arg-per-source-block}}}
 
+*** output-dir
+
+#+BEGIN_QUOTE
+Specify a directory to write file output to
+#+END_QUOTE
+
+{{{lp-header-arg-per-source-block}}}
+
 *** post
     :PROPERTIES:
     :ID:       1A4DEC98-C735-4D88-8261-6AD13C495EF2
