@@ -522,10 +522,14 @@ String used to separate noweb references
 
 {{{lp-header-arg-per-source-block}}}.
 
-*** Padline
+*** padline
     :PROPERTIES:
     :ID:       DDE727A6-DDF7-4B61-9063-549614B135F0
     :END:
+
+#+BEGIN_QUOTE
+Control insertion of padding lines in tangled code files
+#+END_QUOTE
 
 ~org-babel-tangle-jump-to-org~ requires padded lines. This configuration could
 arguably appear in the "Programming" heading because it impacts operation. It
