@@ -686,6 +686,14 @@ Be sure to never evaluate in-line-source-blocks *on export*.
 (setq org-export-babel-evaluate nil)
 #+END_SRC
 
+*** file-desc
+
+#+BEGIN_QUOTE
+Specify a description for file results
+#+END_QUOTE
+
+{{{lp-header-arg-per-source-block}}}
+
 *** file-ext
 
 #+BEGIN_QUOTE
