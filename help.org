@@ -472,10 +472,14 @@ origin artifact.
 (help/set-org-babel-default-header-args :comments "noweb")
 #+END_SRC
 
-*** Noweb
+*** noweb
     :PROPERTIES:
     :ID:       E12B48AB-68E8-4515-89E3-30A16FB6FD22
     :END:
+
+#+BEGIN_QUOTE
+Toggle expansion of noweb references
+#+END_QUOTE
 
 Expand noweb references in source-blocks before:
 
