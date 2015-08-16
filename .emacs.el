@@ -94,15 +94,21 @@ This is a copy and paste. Additional languages would warrant a refactor."
 ;; [[file:~/src/help/help.org::*Tangling][F19C629B-E784-48CA-BC53-CCFB849CE9EC]]
 (setq org-babel-use-quick-and-dirty-noweb-expansion nil)
 ;; F19C629B-E784-48CA-BC53-CCFB849CE9EC ends here
-;; [[file:~/src/help/help.org::*Comments][AD42B561-29FA-4652-AD28-692CAD631E62]]
+;; [[file:~/src/help/help.org::*comments][AD42B561-29FA-4652-AD28-692CAD631E62]]
 (help/set-org-babel-default-header-args :comments "noweb")
 ;; AD42B561-29FA-4652-AD28-692CAD631E62 ends here
-;; [[file:~/src/help/help.org::*Noweb][20BE9B4B-ED66-4935-A351-99D17B3A32D4]]
+;; [[file:~/src/help/help.org::*mkdirp][F501D202-9F0B-4343-B257-E0DEB4483A0B]]
+(help/set-org-babel-default-header-args :mkdirp "yes")
+;; F501D202-9F0B-4343-B257-E0DEB4483A0B ends here
+;; [[file:~/src/help/help.org::*noweb][20BE9B4B-ED66-4935-A351-99D17B3A32D4]]
 (help/set-org-babel-default-header-args :noweb "no-export")
 ;; 20BE9B4B-ED66-4935-A351-99D17B3A32D4 ends here
-;; [[file:~/src/help/help.org::*Padline][0F3E7114-A63C-44F4-A9FD-577BAEE536ED]]
+;; [[file:~/src/help/help.org::*padline][0F3E7114-A63C-44F4-A9FD-577BAEE536ED]]
 (help/set-org-babel-default-header-args :padline "yes")
 ;; 0F3E7114-A63C-44F4-A9FD-577BAEE536ED ends here
+;; [[file:~/src/help/help.org::*tangle][5E69E152-9921-4527-A2B2-24467EEF1BE9]]
+(help/set-org-babel-default-header-args :tangle "no")
+;; 5E69E152-9921-4527-A2B2-24467EEF1BE9 ends here
 ;; [[file:~/src/help/help.org::*Evaluating][6309AF39-FCE4-43DE-BD46-BC7D0BA0971D]]
 (org-babel-do-load-languages
  #'org-babel-load-languages
@@ -124,14 +130,14 @@ This is a copy and paste. Additional languages would warrant a refactor."
    (sh . t)
    (sql . t)))
 ;; 6309AF39-FCE4-43DE-BD46-BC7D0BA0971D ends here
-;; [[file:~/src/help/help.org::*Eval][58541CA5-C633-4146-8E5D-15C7A3A2D1D7]]
+;; [[file:~/src/help/help.org::*eval][58541CA5-C633-4146-8E5D-15C7A3A2D1D7]]
 (help/set-org-babel-default-header-args :eval "never-export")
 (help/set-org-babel-default-inline-header-args :eval "never-export")
 ;; 58541CA5-C633-4146-8E5D-15C7A3A2D1D7 ends here
-;; [[file:~/src/help/help.org::*Eval][D9F32A22-B415-48EA-A189-D8EAF7C202D8]]
+;; [[file:~/src/help/help.org::*eval][D9F32A22-B415-48EA-A189-D8EAF7C202D8]]
 (setq org-export-babel-evaluate nil)
 ;; D9F32A22-B415-48EA-A189-D8EAF7C202D8 ends here
-;; [[file:~/src/help/help.org::*Results][BC84119C-6085-4B36-A2D9-0918A68D15C5]]
+;; [[file:~/src/help/help.org::*results][BC84119C-6085-4B36-A2D9-0918A68D15C5]]
 (help/set-org-babel-default-header-args :results "output replace")
 (help/set-org-babel-default-inline-header-args :results "value replace")
 ;; BC84119C-6085-4B36-A2D9-0918A68D15C5 ends here
@@ -150,7 +156,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
 ;; [[file:~/src/help/help.org::*Weaving][5ACDD0B0-2B6F-4F71-BFDF-2D2D1D91B573]]
 (setq org-src-preserve-indentation t)
 ;; 5ACDD0B0-2B6F-4F71-BFDF-2D2D1D91B573 ends here
-;; [[file:~/src/help/help.org::*Exports][72A5FF8F-6597-4523-A604-B499B439A103]]
+;; [[file:~/src/help/help.org::*exports][72A5FF8F-6597-4523-A604-B499B439A103]]
 (help/set-org-babel-default-header-args :exports "both")
 ;; 72A5FF8F-6597-4523-A604-B499B439A103 ends here
 ;; 78D777D3-FA69-4361-874C-7262DE96F753 ends here

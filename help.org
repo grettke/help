@@ -477,6 +477,9 @@ origin artifact.
 #+END_SRC
 
 *** mkdirp
+    :PROPERTIES:
+    :ID:       B0F9A321-3B69-46BB-B512-0AF3C663A4C0
+    :END:
 
 #+BEGIN_QUOTE
 Toggle creation of parent directories of target files during tangling
@@ -488,6 +491,9 @@ Toggle creation of parent directories of target files during tangling
 #+END_SRC
 
 *** no-expand
+    :PROPERTIES:
+    :ID:       90170E6A-AA1A-44EA-9BF8-1A6AA38FD224
+    :END:
 
 #+BEGIN_QUOTE
 Turn off variable assignment and noweb expansion during tangling
@@ -522,6 +528,9 @@ ought to refer to the generated document.
 #+END_SRC
 
 *** noweb-ref
+    :PROPERTIES:
+    :ID:       2836D0AA-5DBA-48AC-A338-B47002DE8D7F
+    :END:
 
 #+BEGIN_QUOTE
 Specify block's noweb reference resolution target
@@ -530,6 +539,9 @@ Specify block's noweb reference resolution target
 {{{lp-header-arg-per-source-block}}}.
 
 *** noweb-sep
+    :PROPERTIES:
+    :ID:       B1A57D15-6BBF-4E78-A0D9-0B02C283C6B0
+    :END:
 
 #+BEGIN_QUOTE
 String used to separate noweb references
@@ -557,6 +569,9 @@ can be used in the Programming activity.
 #+END_SRC
 
 *** session
+    :PROPERTIES:
+    :ID:       8219A42A-E90F-418A-8EF0-EB150CF6D730
+    :END:
 
 #+BEGIN_QUOTE
 Preserve the state of code evaluation
@@ -568,7 +583,11 @@ For some situations, this may be the same for every source block for a
 particular language. R is a good example.
 
 *** shebang
+    :PROPERTIES:
+    :ID:       542185DD-4FD6-459A-B422-DA7B546FB292
+    :END:
 
+#+NAME: A6265252-8CBF-4FE3-BC12-53514B2F2A2B
 #+BEGIN_SRC
 Make tangled files executable
 #+END_SRC
@@ -576,6 +595,9 @@ Make tangled files executable
 {{{lp-header-arg-per-source-block}}}.
 
 *** tangle
+    :PROPERTIES:
+    :ID:       EA716FC9-4A90-4F3E-ABD0-31FEA575C969
+    :END:
 
 #+BEGIN_QUOTE
 Toggle tangling and specify file name
@@ -587,6 +609,9 @@ Toggle tangling and specify file name
 #+END_SRC
 
 *** tangle-mode
+    :PROPERTIES:
+    :ID:       5F0B7157-2DC8-4AFD-8F26-4B21025A5ECE
+    :END:
 
 #+BEGIN_QUOTE
 Set permission of tangled files
@@ -626,6 +651,9 @@ Org-Mode may evaluate all of the listed languages.
 #+END_SRC
 
 *** cache
+    :PROPERTIES:
+    :ID:       49B8BFE9-643B-450F-A8A1-20CE3079E215
+    :END:
 
 #+BEGIN_QUOTE
 Avoid re-evaluating unchanged code blocks
@@ -636,6 +664,9 @@ Avoid re-evaluating unchanged code blocks
 Default =no= is correct for nearly every scenario.
 
 *** colnames
+    :PROPERTIES:
+    :ID:       4D683007-14AE-4A7D-A506-E2301FD32E82
+    :END:
 
 #+BEGIN_QUOTE
 Handle column names in tables
@@ -644,6 +675,9 @@ Handle column names in tables
 {{{lp-header-arg-per-source-block}}}
 
 *** dir
+    :PROPERTIES:
+    :ID:       CD1494F1-0A2A-44D0-9955-0D0501AF1539
+    :END:
 
 #+BEGIN_QUOTE
 Specify the default (possibly remote) directory for code block execution
@@ -687,6 +721,9 @@ Be sure to never evaluate in-line-source-blocks *on export*.
 #+END_SRC
 
 *** file
+    :PROPERTIES:
+    :ID:       80824708-62AF-4337-A517-828DA22D1FCA
+    :END:
 
 #+BEGIN_QUOTE
 Specify a path for file output
@@ -695,6 +732,9 @@ Specify a path for file output
 {{{lp-header-arg-per-source-block}}}
 
 *** file-desc
+    :PROPERTIES:
+    :ID:       6F9A2745-7118-469E-9FDB-4B327C02E5FA
+    :END:
 
 #+BEGIN_QUOTE
 Specify a description for file results
@@ -703,6 +743,9 @@ Specify a description for file results
 {{{lp-header-arg-per-source-block}}}
 
 *** file-ext
+    :PROPERTIES:
+    :ID:       0716A48E-9227-44FD-B1FA-185DF6545E91
+    :END:
 
 #+BEGIN_QUOTE
 Specify an extension for file output
@@ -711,6 +754,9 @@ Specify an extension for file output
 {{{lp-header-arg-per-source-block}}}
 
 *** hlines
+    :PROPERTIES:
+    :ID:       721F4E5E-A343-4D7C-A3A3-12A544B3A273
+    :END:
 
 #+BEGIN_QUOTE
 Handle horizontal lines in tables
@@ -719,6 +765,9 @@ Handle horizontal lines in tables
 {{{lp-header-arg-per-source-block}}}
 
 *** output-dir
+    :PROPERTIES:
+    :ID:       D0DDFE88-1B41-4A67-A5F4-88B1B35A7513
+    :END:
 
 #+BEGIN_QUOTE
 Specify a directory to write file output to
@@ -789,6 +838,9 @@ Replace theme each time you evaluate the block.
 #+END_SRC
 
 *** rownames
+    :PROPERTIES:
+    :ID:       B184A507-1B03-4096-A4D8-E50A1DA047DB
+    :END:
 
 #+BEGIN_QUOTE
 Handle row names in tables
@@ -797,6 +849,9 @@ Handle row names in tables
 {{{lp-header-arg-per-source-block}}}..
 
 *** sep
+    :PROPERTIES:
+    :ID:       F1336AAA-68EF-4E87-B253-458103B6FF2F
+    :END:
 
 #+BEGIN_QUOTE
 Delimiter for writing tabular results outside Org
@@ -805,6 +860,9 @@ Delimiter for writing tabular results outside Org
 {{{lp-header-arg-per-source-block}}}
 
 *** var
+    :PROPERTIES:
+    :ID:       3B4D638C-82EE-47F3-835C-52B2F03620A0
+    :END:
 
 #+BEGIN_QUOTE
 Pass arguments to code blocks
@@ -884,6 +942,7 @@ anything else would violate the law of least surprise.
     :ID:       57B3786B-017F-4F6E-89F9-05642304F3B6
     :END:
 
+#+NAME: 888BE6BD-9A34-488B-9183-7427984B9BDE
 #+BEGIN_SRC
 Export code and/or results
 #+END_SRC
