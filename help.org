@@ -1,13 +1,18 @@
 #+STARTUP: showeverything
+
 #+PROPERTY: results output silent
+
 * README
   :PROPERTIES:
   :ID:       F651B86D-86C2-43A9-B0E6-CB94963BB502
   :END:
 
-HELP Enables Literate Programming.
+** HELP Enables Literate Programming
+   :PROPERTIES:
+   :ID:       39A2F05A-BC60-4879-9B66-85E43297FC97
+   :END:
 
-Setup:
+*Setup*
 
 1) [[http://orgmode.org/][Pull Org-Mode]] to =~/src/=.
    1) If necessary: [[http://orgmode.org/worg/org-hacks.html][Generating autoloads and Compiling Org without make]]
@@ -479,6 +484,8 @@ This is a copy and paste. Additional languages would warrant a refactor."
    :END:
 
 =ID= and =NAME= are essential for successful =LP= using ~org-babel-tangle-jump-to-org~.
+
+Generate the =README=.
 
 #+NAME: 859E61A4-D910-4731-8328-A63F6B6ACD3F
 #+BEGIN_SRC emacs-lisp
@@ -2861,6 +2868,15 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
      (help/update-font)))
   (help/not-on-gui
    (message "Please resize the terminal emulator font.")))
+
+(defun help/org-xprt-rdme ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (save-excursion
+    (let ((hidx (org-find-property "ID" "F651B86D-86C2-43A9-B0E6-CB94963BB502")))
+      (when hidx
+        (goto-char hidx)
+        (org-export-to-file 'gfm "README.md" nil t nil)))))
 #+END_SRC
 
 ** Intellisense (Auto Completion)
@@ -4271,6 +4287,13 @@ Smartparens provides that functionality for programming modes.
 #+NAME: 0EBE9F71-59AC-4D54-B792-AFC3F78985D8
 #+BEGIN_SRC emacs-lisp
 (wrap-region-add-wrapper "+" "+" nil 'org-mode)
+#+END_SRC
+
+Generate the README for GitHub.
+
+#+NAME: BB37579C-08EC-42AB-8706-7ECFD9506B8B
+#+BEGIN_SRC emacs-lisp
+(add-hook 'org-babel-pre-tangle-hook #'help/org-xprt-rdme)
 #+END_SRC
 
 *** Keybindings

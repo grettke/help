@@ -930,6 +930,15 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
      (help/update-font)))
   (help/not-on-gui
    (message "Please resize the terminal emulator font.")))
+
+(defun help/org-xprt-rdme ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (save-excursion
+    (let ((hidx (org-find-property "ID" "F651B86D-86C2-43A9-B0E6-CB94963BB502")))
+      (when hidx
+        (goto-char hidx)
+        (org-export-to-file 'gfm "README.md" nil t nil)))))
 ;; D523CBF8-67C4-4C96-9298-A4A49FE54E61 ends here
 ;; [[file:~/src/help/help.org::*Intellisense%20(Auto%20Completion)][487B46D5-C025-4114-A1B4-BAAF5FAFE430]]
 (use-package fuzzy
@@ -1434,6 +1443,9 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; [[file:~/src/help/help.org::*Org%20Mode][0EBE9F71-59AC-4D54-B792-AFC3F78985D8]]
 (wrap-region-add-wrapper "+" "+" nil 'org-mode)
 ;; 0EBE9F71-59AC-4D54-B792-AFC3F78985D8 ends here
+;; [[file:~/src/help/help.org::*Org%20Mode][BB37579C-08EC-42AB-8706-7ECFD9506B8B]]
+(add-hook 'org-babel-pre-tangle-hook #'help/org-xprt-rdme)
+;; BB37579C-08EC-42AB-8706-7ECFD9506B8B ends here
 ;; [[file:~/src/help/help.org::*Keybindings][8C7E90AC-C7EB-4A43-9377-C3C85CE51849]]
 (help/not-on-gui
  (define-key org-mode-map (kbd "RET") #'org-return-indent)
