@@ -407,9 +407,6 @@ This is a copy and paste. Additional languages would warrant a refactor."
 ;; [[file:~/src/help/help.org::*File%20Based%20System][84B0605F-AA20-4CBB-8D14-5B55CF8D097D]]
 (add-hook 'focus-out-hook #'help/save-all-file-buffers)
 ;; 84B0605F-AA20-4CBB-8D14-5B55CF8D097D ends here
-;; [[file:~/src/help/help.org::*File%20Based%20System][FC0763F4-B0A9-45DA-A0EA-8E3203501804]]
-(advice-add #'save-buffers-kill-terminal :before #'help/save-all-file-buffers)
-;; FC0763F4-B0A9-45DA-A0EA-8E3203501804 ends here
 ;; [[file:~/src/help/help.org::*File%20Based%20System][B04C1388-6C2A-45D9-BFA6-7E21861FB9E3]]
 (global-auto-revert-mode 1)
 ;; B04C1388-6C2A-45D9-BFA6-7E21861FB9E3 ends here
@@ -493,6 +490,12 @@ This is a copy and paste. Additional languages would warrant a refactor."
   (interactive)
   (help/org-babel-demarcate-block)
   (help/save-all-file-buffers))
+
+(defun help/safb-save-buffers-kill-terminal ()
+  "Partially redundant; kept for consistency among `SAFB' functions."
+  (interactive)
+  (help/save-all-file-buffers)
+  (save-buffers-kill-terminal))
 ;; 5A0C3F05-0C41-4E50-944E-0ACC4C2F4A15 ends here
 ;; [[file:~/src/help/help.org::*File%20Based%20System][DA537B02-6E64-42FC-BE9D-E5A3408B6599]]
 (add-to-list 'find-file-not-found-functions #'help/create-non-existent-directory)
@@ -1928,6 +1931,9 @@ _v_ariable       _u_ser-option
   ("u" apropos-user-option)
   ("e" apropos-value))
 ;; 362686F6-B397-44D5-812F-BE24670F4204 ends here
+;; [[file:~/src/help/help.org::*2][9224105B-2CDB-46F4-AF3F-312B3467C2B8]]
+(global-set-key (kbd "C-x C-c") #'help/safb-save-buffers-kill-terminal)
+;; 9224105B-2CDB-46F4-AF3F-312B3467C2B8 ends here
 ;; [[file:~/src/help/help.org::*Unsorted][A45F49E2-E330-463B-82C6-907F138E8F2A]]
 (define-prefix-command 'help/vc-map)
 (global-set-key (kbd "s-r") #'help/vc-map)

@@ -1470,6 +1470,11 @@ _v_ariable       _u_ser-option
      :ID:       9E95D130-D1EC-445B-9028-24DFA5CCB28A
      :END:
 
+#+NAME: 9224105B-2CDB-46F4-AF3F-312B3467C2B8
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-x C-c") #'help/safb-save-buffers-kill-terminal)
+#+END_SRC
+
 **** 1
      :PROPERTIES:
      :ID:       4CDDC2CE-646A-4D8B-B5D3-2588FBEFF650
@@ -2108,13 +2113,6 @@ Backup file-stores when the frame loses focus.
 (add-hook 'focus-out-hook #'help/save-all-file-buffers)
 #+END_SRC
 
-Backup file-stores before the system exits.
-
-#+NAME: FC0763F4-B0A9-45DA-A0EA-8E3203501804
-#+BEGIN_SRC emacs-lisp
-(advice-add #'save-buffers-kill-terminal :before #'help/save-all-file-buffers)
-#+END_SRC
-
 Always keep buffers in-sync with changes in-file.
 
 #+NAME: B04C1388-6C2A-45D9-BFA6-7E21861FB9E3
@@ -2206,6 +2204,12 @@ use than advice.
   (interactive)
   (help/org-babel-demarcate-block)
   (help/save-all-file-buffers))
+
+(defun help/safb-save-buffers-kill-terminal ()
+  "Partially redundant; kept for consistency among `SAFB' functions."
+  (interactive)
+  (help/save-all-file-buffers)
+  (save-buffers-kill-terminal))
 #+END_SRC
 
 Selection:
