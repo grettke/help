@@ -335,8 +335,9 @@ This is a copy and paste. Additional languages would warrant a refactor."
                    (buffer-substring (overlay-start ov)
                                      (overlay-end ov)))))
   (setq hs-set-up-overlay #'display-code-line-counts)
-  (defun help/goto-line ()
+  (defun help/goto-line (line &optional buffer)
     "How do I get it to expand upon a goto-line? hideshow-expand affected block when using goto-line in a collapsed buffer."
+    (identity line)
     (save-excursion
       (hs-show-block)))
   (advice-add #'goto-line :after #'help/goto-line)
