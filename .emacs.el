@@ -639,9 +639,7 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
         (t (comment-or-uncomment-region (mark) (point)))))
 
 (defun help/save-all-file-buffers ()
-  "Saves every buffer associated with a file
-
-LS captures arguments when this is used as before advice."
+  "Saves every buffer associated with a file."
   (interactive)
   (dolist (buf (buffer-list))
     (with-current-buffer buf
