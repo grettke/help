@@ -3916,7 +3916,7 @@ With that in mind this system:
 (define-key emacs-lisp-mode-map (kbd "s-p") #'describe-thing-in-popup)
 #+END_SRC
 
-** Org Mode
+** Org-Mode
   :PROPERTIES:
   :noweb-ref: Hacking-Literate-Programming-Org-Mode
   :ID:       EBDA3D1C-536F-4252-AE26-32A3FDF5326C
