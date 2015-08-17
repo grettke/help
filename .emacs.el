@@ -1768,6 +1768,13 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
 ;; [[file:~/src/help/help.org::*Markdown][02005BF5-AADC-45B1-AC64-67ECB028352A]]
 (use-package ox-gfm)
 ;; 02005BF5-AADC-45B1-AC64-67ECB028352A ends here
+;; [[file:~/src/help/help.org::*Markdown][8A4DB408-7888-4705-AB2B-C7EED9262DF2]]
+(use-package markdown-mode
+  :ensure t
+  :config
+  (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
+  (setq markdown-coding-system "utf-8"))
+;; 8A4DB408-7888-4705-AB2B-C7EED9262DF2 ends here
 ;; [[file:~/src/help/help.org::*Beamer][B77E265B-EE1A-469D-BEFB-51360B7AB45E]]
 (use-package ox-beamer)
 ;; B77E265B-EE1A-469D-BEFB-51360B7AB45E ends here

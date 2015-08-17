@@ -5273,11 +5273,22 @@ Set up my default LCO files.
    :ID:       748319ED-9F02-4A4D-BEE8-E71C462663FC
    :END:
 
-Provide Github Flavored Markdown.
+Provide Github Flavored Markdown (GFM).
 
 #+NAME: 02005BF5-AADC-45B1-AC64-67ECB028352A
 #+BEGIN_SRC emacs-lisp
 (use-package ox-gfm)
+#+END_SRC
+
+Program GFM.
+
+#+NAME: 8A4DB408-7888-4705-AB2B-C7EED9262DF2
+#+BEGIN_SRC emacs-lisp
+(use-package markdown-mode
+  :ensure t
+  :config
+  (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
+  (setq markdown-coding-system "utf-8"))
 #+END_SRC
 
 ** WordPress
