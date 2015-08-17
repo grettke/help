@@ -1427,7 +1427,7 @@ close together
 (defhydra help/hydra/left-side/global (:color blue
                                               :hint nil)
   "
-_1_ -font  _2_ +font _3_ ellipsis
+_1_ -font  _2_ +font _3_ ellipsis _4_ UUID
 _q_ apropos _w_ widen _r_ obtj2o     _i_ scrollUp _I_ prevLogLine
                  _j_ back-char _k_ scrollDown _K_ _K_ nextLogLine _l_ forw-char"
   ("q" hydra-apropos/body)
@@ -1441,7 +1441,8 @@ _q_ apropos _w_ widen _r_ obtj2o     _i_ scrollUp _I_ prevLogLine
   ("K" next-logical-line :exit nil)
   ("j" backward-char :exit nil)
   ("l" forward-char :exit nil)
-  ("3" help/insert-ellipsis))
+  ("3" help/insert-ellipsis)
+  ("4" help/uuid))
 (key-chord-define-global "gg" #'help/hydra/left-side/global/body)
 #+END_SRC
 
@@ -1730,14 +1731,6 @@ S is nice to use.
 #+NAME: FA4C219D-DCAB-4416-954D-231D3F89FB36
 #+BEGIN_SRC emacs-lisp
 (use-package s
-  :ensure t)
-#+END_SRC
-
-Generate a UUID.
-
-#+NAME: 2C5BF550-AB37-4783-AB18-4B2C50D106FB
-#+BEGIN_SRC emacs-lisp
-(use-package uuid
   :ensure t)
 #+END_SRC
 
@@ -2779,10 +2772,10 @@ Attribution: URL `http://www.masteringemacs.org/articles/2010/11/29/evaluating-e
   (add-to-list 'ac-modes #'inferior-emacs-lisp-mode)
   (auto-complete-mode 1))
 
-(defun help/uuid-string ()
-  "Insert a string form of a UUID."
+(defun help/uuid ()
+  "Insert a UUID."
   (interactive)
-  (insert (uuid-to-stringy (uuid-create))))
+  (insert (org-id-new)))
 
 (defun endless/sharp ()
   "Insert #' unless in a string or comment.

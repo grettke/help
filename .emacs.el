@@ -229,10 +229,6 @@ This is a copy and paste. Additional languages would warrant a refactor."
 (use-package s
   :ensure t)
 ;; FA4C219D-DCAB-4416-954D-231D3F89FB36 ends here
-;; [[file:~/src/help/help.org::*Libraries][2C5BF550-AB37-4783-AB18-4B2C50D106FB]]
-(use-package uuid
-  :ensure t)
-;; 2C5BF550-AB37-4783-AB18-4B2C50D106FB ends here
 ;; [[file:~/src/help/help.org::*Modeline][1F5BD72D-2E4B-4298-B4BF-DD52BD26FC3E]]
 (use-package diminish)
 ;; 1F5BD72D-2E4B-4298-B4BF-DD52BD26FC3E ends here
@@ -845,10 +841,10 @@ Attribution: URL `http://www.masteringemacs.org/articles/2010/11/29/evaluating-e
   (add-to-list 'ac-modes #'inferior-emacs-lisp-mode)
   (auto-complete-mode 1))
 
-(defun help/uuid-string ()
-  "Insert a string form of a UUID."
+(defun help/uuid ()
+  "Insert a UUID."
   (interactive)
-  (insert (uuid-to-stringy (uuid-create))))
+  (insert (org-id-new)))
 
 (defun endless/sharp ()
   "Insert #' unless in a string or comment.
@@ -1898,7 +1894,7 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
 (defhydra help/hydra/left-side/global (:color blue
                                               :hint nil)
   "
-_1_ -font  _2_ +font _3_ ellipsis
+_1_ -font  _2_ +font _3_ ellipsis _4_ UUID
 _q_ apropos _w_ widen _r_ obtj2o     _i_ scrollUp _I_ prevLogLine
                  _j_ back-char _k_ scrollDown _K_ _K_ nextLogLine _l_ forw-char"
   ("q" hydra-apropos/body)
@@ -1912,7 +1908,8 @@ _q_ apropos _w_ widen _r_ obtj2o     _i_ scrollUp _I_ prevLogLine
   ("K" next-logical-line :exit nil)
   ("j" backward-char :exit nil)
   ("l" forward-char :exit nil)
-  ("3" help/insert-ellipsis))
+  ("3" help/insert-ellipsis)
+  ("4" help/uuid))
 (key-chord-define-global "gg" #'help/hydra/left-side/global/body)
 ;; F6C7AAB7-DF69-4EBA-8116-15DC32022D49 ends here
 ;; [[file:~/src/help/help.org::*3][362686F6-B397-44D5-812F-BE24670F4204]]
