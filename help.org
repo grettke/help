@@ -1517,7 +1517,7 @@ Go to a line.
 
 #+NAME: B05E89FC-9FCE-48D6-8112-9BF990A8A15D
 #+BEGIN_SRC emacs-lisp
-(key-chord-define-global "fg" #'goto-line)
+(key-chord-define-global "fg" #'help/safb-help/goto-line)
 #+END_SRC
 
 Pop the mark back.
@@ -1981,10 +1981,11 @@ then document.
                                      (overlay-end ov)))))
   (setq hs-set-up-overlay #'display-code-line-counts)
   (defun help/goto-line ()
-    "How do I get it to expand upon a goto-line? hideshow-expand affected block when using goto-line in a collapsed buffer."
+    "How do I get it to expand upon a goto-line? hideshow-expand affected block
+    when using goto-line in a collapsed buffer."
+    (call-interactively #'goto-line)
     (save-excursion
       (hs-show-block)))
-  (advice-add #'goto-line :after #'help/goto-line)
   :diminish hs-minor-mode)
 #+END_SRC
 
@@ -2218,6 +2219,11 @@ use than advice.
   (interactive)
   (help/save-all-file-buffers)
   (save-buffers-kill-terminal))
+
+(defun help/safb-help/goto-line ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (help/goto-line))
 #+END_SRC
 
 Selection:

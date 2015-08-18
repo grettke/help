@@ -335,12 +335,12 @@ This is a copy and paste. Additional languages would warrant a refactor."
                    (buffer-substring (overlay-start ov)
                                      (overlay-end ov)))))
   (setq hs-set-up-overlay #'display-code-line-counts)
-  (defun help/goto-line (line &optional buffer)
-    "How do I get it to expand upon a goto-line? hideshow-expand affected block when using goto-line in a collapsed buffer."
-    (identity line)
+  (defun help/goto-line ()
+    "How do I get it to expand upon a goto-line? hideshow-expand affected block
+    when using goto-line in a collapsed buffer."
+    (call-interactively #'goto-line)
     (save-excursion
       (hs-show-block)))
-  (advice-add #'goto-line :after #'help/goto-line)
   :diminish hs-minor-mode)
 ;; 2D731158-FCE7-4BDA-AE78-383EAAD1FE4B ends here
 ;; [[file:~/src/help/help.org::*Colors][5CDF03F0-974F-4AFC-9F63-EA9B5D7C6923]]
@@ -493,6 +493,11 @@ This is a copy and paste. Additional languages would warrant a refactor."
   (interactive)
   (help/save-all-file-buffers)
   (save-buffers-kill-terminal))
+
+(defun help/safb-help/goto-line ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (help/goto-line))
 ;; 5A0C3F05-0C41-4E50-944E-0ACC4C2F4A15 ends here
 ;; [[file:~/src/help/help.org::*File%20Based%20System][DA537B02-6E64-42FC-BE9D-E5A3408B6599]]
 (add-to-list 'find-file-not-found-functions #'help/create-non-existent-directory)
@@ -1292,14 +1297,14 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 ;; [[file:~/src/help/help.org::*Keybinding][7CEA216B-6A18-47F6-B1DE-327CFA8A591A]]
 (define-key emacs-lisp-mode-map (kbd "s-p") #'describe-thing-in-popup)
 ;; 7CEA216B-6A18-47F6-B1DE-327CFA8A591A ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][AB26182E-A169-4FB9-BA68-E9F7231069C1]]
+;; [[file:~/src/help/help.org::*Org-Mode][AB26182E-A169-4FB9-BA68-E9F7231069C1]]
 (setq org-babel-min-lines-for-block-output 0)
 ;; AB26182E-A169-4FB9-BA68-E9F7231069C1 ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][8F3861FD-B2F6-4618-8E70-026316855E67]]
+;; [[file:~/src/help/help.org::*Org-Mode][8F3861FD-B2F6-4618-8E70-026316855E67]]
 (setq org-edit-src-auto-save-idle-delay 0)
 (setq org-edit-src-turn-on-auto-save nil)
 ;; 8F3861FD-B2F6-4618-8E70-026316855E67 ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][11B7C941-8AA4-471A-B4A4-BCEBFE850206]]
+;; [[file:~/src/help/help.org::*Org-Mode][11B7C941-8AA4-471A-B4A4-BCEBFE850206]]
 (defun help/org-babel-after-execute-hook ()
   "HELP settings for the `org-babel-after-execute-hook'.
 
@@ -1311,98 +1316,98 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 
 (add-hook 'org-babel-after-execute-hook #'help/org-babel-after-execute-hook)
 ;; 11B7C941-8AA4-471A-B4A4-BCEBFE850206 ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][9947D738-D140-4CBF-BB6D-21E2FF58BD24]]
+;; [[file:~/src/help/help.org::*Org-Mode][9947D738-D140-4CBF-BB6D-21E2FF58BD24]]
 (setq org-confirm-babel-evaluate nil)
 ;; 9947D738-D140-4CBF-BB6D-21E2FF58BD24 ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][6CE707AD-A340-4B63-B747-8692E0DFF41C]]
+;; [[file:~/src/help/help.org::*Org-Mode][6CE707AD-A340-4B63-B747-8692E0DFF41C]]
 (setq org-src-tab-acts-natively nil)
 ;; 6CE707AD-A340-4B63-B747-8692E0DFF41C ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][BB8A752F-713B-4450-98DC-CE04957577EF]]
+;; [[file:~/src/help/help.org::*Org-Mode][BB8A752F-713B-4450-98DC-CE04957577EF]]
 (setq org-todo-keywords
       '((sequence "TODO" "IN-PROGRESS" "BLOCKED" "REVIEW" "DONE")))
 ;; BB8A752F-713B-4450-98DC-CE04957577EF ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][548D2D49-98E0-456B-91BC-37D0C0BC3557]]
+;; [[file:~/src/help/help.org::*Org-Mode][548D2D49-98E0-456B-91BC-37D0C0BC3557]]
 (setq org-startup-with-inline-images (display-graphic-p))
 ;; 548D2D49-98E0-456B-91BC-37D0C0BC3557 ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][CE97A1D8-07E2-4445-80B9-3C91ACFE7FB8]]
+;; [[file:~/src/help/help.org::*Org-Mode][CE97A1D8-07E2-4445-80B9-3C91ACFE7FB8]]
 (setq org-completion-use-ido t)
 (setq org-outline-path-complete-in-steps nil)
 (setq org-completion-use-iswitchb nil)
 ;; CE97A1D8-07E2-4445-80B9-3C91ACFE7FB8 ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][232DFCF9-BFC7-4022-8B93-09F323CB1BA8]]
+;; [[file:~/src/help/help.org::*Org-Mode][232DFCF9-BFC7-4022-8B93-09F323CB1BA8]]
 (setq org-use-speed-commands t)
 ;; 232DFCF9-BFC7-4022-8B93-09F323CB1BA8 ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][F5ABA576-FB0D-4FCE-A000-AA5E38B7EB3D]]
+;; [[file:~/src/help/help.org::*Org-Mode][F5ABA576-FB0D-4FCE-A000-AA5E38B7EB3D]]
 (setq org-confirm-shell-link-function 'y-or-n-p)
 ;; F5ABA576-FB0D-4FCE-A000-AA5E38B7EB3D ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][13BBCE85-2D3B-4903-8098-EB565B5CB708]]
+;; [[file:~/src/help/help.org::*Org-Mode][13BBCE85-2D3B-4903-8098-EB565B5CB708]]
 (setq org-confirm-elisp-link-function 'y-or-n-p)
 ;; 13BBCE85-2D3B-4903-8098-EB565B5CB708 ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][4AE6A326-034C-475A-BC95-877D528A94D6]]
+;; [[file:~/src/help/help.org::*Org-Mode][4AE6A326-034C-475A-BC95-877D528A94D6]]
 (setq org-enforce-todo-dependencies t)
 ;; 4AE6A326-034C-475A-BC95-877D528A94D6 ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][BA1565BE-2BF1-4121-96BD-A3F7462676CC]]
+;; [[file:~/src/help/help.org::*Org-Mode][BA1565BE-2BF1-4121-96BD-A3F7462676CC]]
 (when (display-graphic-p)
   (use-package org-mouse))
 ;; BA1565BE-2BF1-4121-96BD-A3F7462676CC ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][42F9CE2D-591D-4BDD-998E-C85E0B7B5DF5]]
+;; [[file:~/src/help/help.org::*Org-Mode][42F9CE2D-591D-4BDD-998E-C85E0B7B5DF5]]
 (setq org-ellipsis "…")
 ;; 42F9CE2D-591D-4BDD-998E-C85E0B7B5DF5 ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][A0FB5129-6EF9-4D5F-A35A-CB5505C8FD6F]]
+;; [[file:~/src/help/help.org::*Org-Mode][A0FB5129-6EF9-4D5F-A35A-CB5505C8FD6F]]
 (setq org-hide-leading-stars t)
 ;; A0FB5129-6EF9-4D5F-A35A-CB5505C8FD6F ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][4FDB1A19-4906-48EE-B7CB-26B3E9301964]]
+;; [[file:~/src/help/help.org::*Org-Mode][4FDB1A19-4906-48EE-B7CB-26B3E9301964]]
 (setq org-fontify-emphasized-text t)
 ;; 4FDB1A19-4906-48EE-B7CB-26B3E9301964 ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][D2453829-D976-4FE0-B517-7CCD8C3C1A2C]]
+;; [[file:~/src/help/help.org::*Org-Mode][D2453829-D976-4FE0-B517-7CCD8C3C1A2C]]
 (setq org-pretty-entities t)
 ;; D2453829-D976-4FE0-B517-7CCD8C3C1A2C ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][B5A535CA-E024-4592-A787-734032E48860]]
+;; [[file:~/src/help/help.org::*Org-Mode][B5A535CA-E024-4592-A787-734032E48860]]
 (setq org-highlight-latex-and-related '(latex script entities))
 ;; B5A535CA-E024-4592-A787-734032E48860 ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][834535C5-DCEA-47D3-B251-76DADE4CE897]]
+;; [[file:~/src/help/help.org::*Org-Mode][834535C5-DCEA-47D3-B251-76DADE4CE897]]
 (setq org-footnote-define-inline t)
 (setq org-footnote-auto-label 'random)
 (setq org-footnote-auto-adjust nil)
 (setq org-footnote-section nil)
 ;; 834535C5-DCEA-47D3-B251-76DADE4CE897 ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][939BFF91-F7AC-446A-B797-6B294D364082]]
+;; [[file:~/src/help/help.org::*Org-Mode][939BFF91-F7AC-446A-B797-6B294D364082]]
 (setq org-catch-invisible-edits 'error)
 ;; 939BFF91-F7AC-446A-B797-6B294D364082 ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][D8426EE3-702E-4008-B2F5-0A839E0B9C27]]
+;; [[file:~/src/help/help.org::*Org-Mode][D8426EE3-702E-4008-B2F5-0A839E0B9C27]]
 (setq org-loop-over-headlines-in-active-region t)
 ;; D8426EE3-702E-4008-B2F5-0A839E0B9C27 ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][EB229153-0540-4EFE-BB44-D44EE0D0E9B8]]
+;; [[file:~/src/help/help.org::*Org-Mode][EB229153-0540-4EFE-BB44-D44EE0D0E9B8]]
 (setq org-startup-folded "nofold")
 ;; EB229153-0540-4EFE-BB44-D44EE0D0E9B8 ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][862CCD19-46D8-47E9-85CF-43F0EE9E8404]]
+;; [[file:~/src/help/help.org::*Org-Mode][862CCD19-46D8-47E9-85CF-43F0EE9E8404]]
 (setq org-image-actual-width t)
 ;; 862CCD19-46D8-47E9-85CF-43F0EE9E8404 ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][4F8C7477-3CE5-4C83-9C00-FCBAAECEB5E8]]
+;; [[file:~/src/help/help.org::*Org-Mode][4F8C7477-3CE5-4C83-9C00-FCBAAECEB5E8]]
 (setq org-hide-emphasis-markers t)
 ;; 4F8C7477-3CE5-4C83-9C00-FCBAAECEB5E8 ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][78196A51-0117-4C66-8616-1508D81568A7]]
+;; [[file:~/src/help/help.org::*Org-Mode][78196A51-0117-4C66-8616-1508D81568A7]]
 (setq org-startup-align-all-tables t)
 ;; 78196A51-0117-4C66-8616-1508D81568A7 ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][0102E34E-3098-48E9-AAB9-F5433AE37D66]]
+;; [[file:~/src/help/help.org::*Org-Mode][0102E34E-3098-48E9-AAB9-F5433AE37D66]]
 (setq org-html-checkbox-type 'unicode)
 ;; 0102E34E-3098-48E9-AAB9-F5433AE37D66 ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][A1636BE6-8477-4085-BB14-E0870A19A440]]
+;; [[file:~/src/help/help.org::*Org-Mode][A1636BE6-8477-4085-BB14-E0870A19A440]]
 (setq org-src-fontify-natively nil)
 ;; A1636BE6-8477-4085-BB14-E0870A19A440 ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][EA9E78DF-18FA-477B-8CFF-CF921479CD40]]
+;; [[file:~/src/help/help.org::*Org-Mode][EA9E78DF-18FA-477B-8CFF-CF921479CD40]]
 (setq org-edit-src-content-indentation 0)
 ;; EA9E78DF-18FA-477B-8CFF-CF921479CD40 ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][59E79DBC-FDA4-4F1A-9306-DB9204233A7C]]
+;; [[file:~/src/help/help.org::*Org-Mode][59E79DBC-FDA4-4F1A-9306-DB9204233A7C]]
 (setq org-src-strip-leading-and-trailing-blank-lines t)
 ;; 59E79DBC-FDA4-4F1A-9306-DB9204233A7C ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][767547FC-FCB3-433C-AC2E-4240D040F5F8]]
+;; [[file:~/src/help/help.org::*Org-Mode][767547FC-FCB3-433C-AC2E-4240D040F5F8]]
 (setq org-src-window-setup 'current-window)
 ;; 767547FC-FCB3-433C-AC2E-4240D040F5F8 ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][C0FFD815-3AB7-4101-B1E8-D73A10026CB4]]
+;; [[file:~/src/help/help.org::*Org-Mode][C0FFD815-3AB7-4101-B1E8-D73A10026CB4]]
 (setq org-babel-no-eval-on-ctrl-c-ctrl-c t)
 ;; C0FFD815-3AB7-4101-B1E8-D73A10026CB4 ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][C1F1C610-AC69-40E8-AD2F-EB6C849B40CB]]
+;; [[file:~/src/help/help.org::*Org-Mode][C1F1C610-AC69-40E8-AD2F-EB6C849B40CB]]
 (defun help/vc-next-action ()
   "If in org source block, exit it before `vc-next-action'."
   (interactive)
@@ -1420,31 +1425,31 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
     (org-edit-src-exit))
   (magit-status))
 ;; C1F1C610-AC69-40E8-AD2F-EB6C849B40CB ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][727834EF-DF94-4190-98AC-B791FCCDE7E3]]
+;; [[file:~/src/help/help.org::*Org-Mode][727834EF-DF94-4190-98AC-B791FCCDE7E3]]
 (setq org-edit-src-code nil)
 ;; 727834EF-DF94-4190-98AC-B791FCCDE7E3 ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][593A037F-9615-47CA-9C13-5BC88074F24D]]
+;; [[file:~/src/help/help.org::*Org-Mode][593A037F-9615-47CA-9C13-5BC88074F24D]]
 (use-package wrap-region
   :ensure t
   :config
   :diminish wrap-region-mode)
 ;; 593A037F-9615-47CA-9C13-5BC88074F24D ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][8055DBFC-C839-4EED-BA59-E56D2E05F027]]
+;; [[file:~/src/help/help.org::*Org-Mode][8055DBFC-C839-4EED-BA59-E56D2E05F027]]
 (wrap-region-add-wrapper "*" "*" nil 'org-mode)
 ;; 8055DBFC-C839-4EED-BA59-E56D2E05F027 ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][15774582-183E-4625-9BDB-E36D3A7B2AFE]]
+;; [[file:~/src/help/help.org::*Org-Mode][15774582-183E-4625-9BDB-E36D3A7B2AFE]]
 (wrap-region-add-wrapper "/" "/" nil 'org-mode)
 ;; 15774582-183E-4625-9BDB-E36D3A7B2AFE ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][F3B847CA-C89F-4566-98C3-240514B37447]]
+;; [[file:~/src/help/help.org::*Org-Mode][F3B847CA-C89F-4566-98C3-240514B37447]]
 (wrap-region-add-wrapper "=" "=" nil 'org-mode)
 ;; F3B847CA-C89F-4566-98C3-240514B37447 ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][0E2ECE84-87AB-4B18-9929-6E752C88118C]]
+;; [[file:~/src/help/help.org::*Org-Mode][0E2ECE84-87AB-4B18-9929-6E752C88118C]]
 (wrap-region-add-wrapper "~" "~" nil 'org-mode)
 ;; 0E2ECE84-87AB-4B18-9929-6E752C88118C ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][0EBE9F71-59AC-4D54-B792-AFC3F78985D8]]
+;; [[file:~/src/help/help.org::*Org-Mode][0EBE9F71-59AC-4D54-B792-AFC3F78985D8]]
 (wrap-region-add-wrapper "+" "+" nil 'org-mode)
 ;; 0EBE9F71-59AC-4D54-B792-AFC3F78985D8 ends here
-;; [[file:~/src/help/help.org::*Org%20Mode][BB37579C-08EC-42AB-8706-7ECFD9506B8B]]
+;; [[file:~/src/help/help.org::*Org-Mode][BB37579C-08EC-42AB-8706-7ECFD9506B8B]]
 (add-hook 'org-babel-pre-tangle-hook #'help/org-xprt-rdme)
 ;; BB37579C-08EC-42AB-8706-7ECFD9506B8B ends here
 ;; [[file:~/src/help/help.org::*Keybindings][8C7E90AC-C7EB-4A43-9377-C3C85CE51849]]
@@ -1960,7 +1965,7 @@ _v_ariable       _u_ser-option
 (global-set-key (kbd "s-f") #'help/safb-help-vc-next-action)
 ;; A45F49E2-E330-463B-82C6-907F138E8F2A ends here
 ;; [[file:~/src/help/help.org::*Unsorted][B05E89FC-9FCE-48D6-8112-9BF990A8A15D]]
-(key-chord-define-global "fg" #'goto-line)
+(key-chord-define-global "fg" #'help/safb-help/goto-line)
 ;; B05E89FC-9FCE-48D6-8112-9BF990A8A15D ends here
 ;; [[file:~/src/help/help.org::*Unsorted][F3708409-D807-4541-95AB-C6298540FD59]]
 (key-chord-define-global "FG" #'pop-to-mark-command)
