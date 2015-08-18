@@ -878,7 +878,9 @@ that the results are critical to the research.
 
 Always display results like you would seem them in a REPL. For source-blocks
 this means an =output= display and for in-line-source-blocks it means a =value=
-display.
+display. The former cares most the data in the context of a REPL. The latter
+cares most about the data in the context of the written content referencing that
+data.
 
 Replace theme each time you evaluate the block.
 
