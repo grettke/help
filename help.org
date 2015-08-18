@@ -49,6 +49,10 @@
     - Source code is indented according to existing settings. This system keeps
       it left-aligned, saving space.
   - Tangle =:file= should have the same =NAME=.
+  - Virtually never edit the contents within buffer-of-origin.
+    - Out of buffer edits:
+      - Fast when spoken language.
+      - Risky when LISPY.
 - Headline.
   - Be sure that every one has an =ID= property with a =UUID= value.
     - ~org-id-get-create~ does this. So does code in Hacking/Org Mode/Utility.
