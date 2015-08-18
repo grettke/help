@@ -1,3 +1,5 @@
+# -*- lexical-binding: t -*-
+
 #+STARTUP: showeverything
 
 #+PROPERTY: results output silent
