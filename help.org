@@ -136,6 +136,9 @@
     - Keep depth shallow
 - Maintenance.
   - Frequently check spelling, grammar, and weasel-words.
+- Macros
+  - Never implement new ones; use inline Source-Blocks instead.
+  - Add once an important idea is express more than 2 times.
 - Plain List.
   - End single sentences with a period.
 - Programming Language.
