@@ -760,7 +760,7 @@ Never evaluate source-blocks or in-line-source-blocks *on export*.
 (help/set-org-babel-default-inline-header-args :eval "never-export")
 #+END_SRC
 
-Be sure to never evaluate in-line-source-blocks *on export*.
+Never evaluate in-line-source-blocks *on export*.
 
 #+NAME: D9F32A22-B415-48EA-A189-D8EAF7C202D8
 #+BEGIN_SRC emacs-lisp
