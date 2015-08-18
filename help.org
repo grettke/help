@@ -1510,7 +1510,7 @@ VC activities.
 (define-key help/vc-map "e" #'help/safb-vc-ediff)
 (define-key help/vc-map "d" #'help/safb-vc-diff)
 (define-key help/vc-map "u" #'help/safb-vc-revert)
-(global-set-key (kbd "s-f") #'help/safb-help-vc-next-action)
+(global-set-key (kbd "s-f") #'help/safb-help-vc/next-action)
 #+END_SRC
 
 Go to a line.
@@ -2134,7 +2134,7 @@ use than advice.
 
 #+NAME: 5A0C3F05-0C41-4E50-944E-0ACC4C2F4A15
 #+BEGIN_SRC emacs-lisp
-(defun help/safb-help-vc-next-action ()
+(defun help/safb-help/vc-next-action ()
   (interactive)
   (help/save-all-file-buffers)
   (help/vc-next-action))
