@@ -1513,7 +1513,7 @@ VC activities.
 (define-key help/vc-map "e" #'help/safb-vc-ediff)
 (define-key help/vc-map "d" #'help/safb-vc-diff)
 (define-key help/vc-map "u" #'help/safb-vc-revert)
-(global-set-key (kbd "s-f") #'help/safb-help-vc/next-action)
+(global-set-key (kbd "s-f") #'help/safb-help/vc-next-action)
 #+END_SRC
 
 Go to a line.

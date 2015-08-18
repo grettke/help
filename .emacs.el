@@ -1962,7 +1962,7 @@ _v_ariable       _u_ser-option
 (define-key help/vc-map "e" #'help/safb-vc-ediff)
 (define-key help/vc-map "d" #'help/safb-vc-diff)
 (define-key help/vc-map "u" #'help/safb-vc-revert)
-(global-set-key (kbd "s-f") #'help/safb-help-vc/next-action)
+(global-set-key (kbd "s-f") #'help/safb-help/vc-next-action)
 ;; A45F49E2-E330-463B-82C6-907F138E8F2A ends here
 ;; [[file:~/src/help/help.org::*Unsorted][B05E89FC-9FCE-48D6-8112-9BF990A8A15D]]
 (key-chord-define-global "fg" #'help/safb-help/goto-line)
