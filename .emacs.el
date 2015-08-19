@@ -1481,7 +1481,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (defhydra help/hydra/right-side/org-mode (:color blue
                                                  :hint nil)
   "
-_1_ SHA-1_4_ +imgs _5_ -imgs                       _9_ igc  _0_ tglmcro
+_1_ SHA-1_4_ +imgs _5_ -imgs                   _8_ detangle _9_ igc  _0_ tglmcro
 _q_ n2sbtre _w_ tbletfld _e_ g2nmrst _r_ g2nms-b _t_ g2s-b/hd      _u_ goto
 _a_ inshdrgs _s_ oblobigst            _h_ dksieb
 _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
@@ -1497,6 +1497,7 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
   ("w" org-table-edit-field)
   ("q" org-narrow-to-subtree)
   ("u" org-goto)
+  ("8" org-babel-detangle)
   ("9" org-id-get-create)
   ("0" help/org-toggle-macro-markers)
   ("b" org-babel-switch-to-session)
