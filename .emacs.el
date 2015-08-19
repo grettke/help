@@ -165,6 +165,9 @@ This is a copy and paste. Additional languages would warrant a refactor."
 ;; [[file:~/src/help/help.org::*Weaving][5ACDD0B0-2B6F-4F71-BFDF-2D2D1D91B573]]
 (setq org-src-preserve-indentation t)
 ;; 5ACDD0B0-2B6F-4F71-BFDF-2D2D1D91B573 ends here
+;; [[file:~/src/help/help.org::*Weaving][A2FF8367-4A6A-444C-BB2E-F5AA494E33B5]]
+(setq org-export-allow-bind-keywords t)
+;; A2FF8367-4A6A-444C-BB2E-F5AA494E33B5 ends here
 ;; [[file:~/src/help/help.org::*exports][72A5FF8F-6597-4523-A604-B499B439A103]]
 (help/set-org-babel-default-header-args :exports "both")
 ;; 72A5FF8F-6597-4523-A604-B499B439A103 ends here

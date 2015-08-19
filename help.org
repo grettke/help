@@ -1004,6 +1004,13 @@ anything else would violate the law of least surprise.
 (setq org-src-preserve-indentation t)
 #+END_SRC
 
+Maximize flexibility for weaving operations during export.
+
+#+NAME: A2FF8367-4A6A-444C-BB2E-F5AA494E33B5
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq org-export-allow-bind-keywords t)
+#+END_SRC
+
 *** exports
     :PROPERTIES:
     :ID:       57B3786B-017F-4F6E-89F9-05642304F3B6
