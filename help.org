@@ -5305,6 +5305,9 @@ Set up my default LCO files.
    :PROPERTIES:
    :ID:       F2C5CEB7-1252-4E6F-B192-C5D2D41A6D47
    :END:
+
+Perhaps the [[https://lists.gnu.org/archive/html/emacs-orgmode/2015-07/msg00042.html][first]] document typeset with Org-Texinfo.
+
 ** Pandoc
    :PROPERTIES:
    :ID:       1E4AB0D4-F92E-48E6-9313-278C27DED142
