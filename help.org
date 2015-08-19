@@ -4313,6 +4313,13 @@ Generate the README for GitHub.
 (add-hook 'org-babel-pre-tangle-hook #'help/org-xprt-rdme)
 #+END_SRC
 
+Minimize Macro text.
+
+#+NAME: 6C80DBCA-AE28-4FE3-91E3-825E642735BA
+#+BEGIN_SRC emacs-lisp
+(setq org-hide-macro-markers t)
+#+END_SRC
+
 *** Keybindings
     :PROPERTIES:
     :ID:       0AA3F69B-F5F1-48DA-B8F7-B7C92CD30DB1

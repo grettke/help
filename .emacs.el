@@ -1452,6 +1452,9 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; [[file:~/src/help/help.org::*Org-Mode][BB37579C-08EC-42AB-8706-7ECFD9506B8B]]
 (add-hook 'org-babel-pre-tangle-hook #'help/org-xprt-rdme)
 ;; BB37579C-08EC-42AB-8706-7ECFD9506B8B ends here
+;; [[file:~/src/help/help.org::*Org-Mode][6C80DBCA-AE28-4FE3-91E3-825E642735BA]]
+(setq org-hide-macro-markers t)
+;; 6C80DBCA-AE28-4FE3-91E3-825E642735BA ends here
 ;; [[file:~/src/help/help.org::*Keybindings][8C7E90AC-C7EB-4A43-9377-C3C85CE51849]]
 (help/not-on-gui
  (define-key org-mode-map (kbd "RET") #'org-return-indent)
