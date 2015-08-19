@@ -1,5 +1,7 @@
 # -*- lexical-binding: t -*-
 
+#  LocalWords:
+
 #+STARTUP: showeverything
 
 * README
@@ -93,6 +95,9 @@
   - Weave :: A verb. Prepare a document for consumption by a human.
   - Web :: A Source-Block definition of one or more that define part or all of
     a system.
+- ISpell
+  - Place =LocalWords= at the beginning of the document. That way it won't get
+    stomped on during development.
 - Synonyms.
   - Document and System.
     - A Document defines a System.
