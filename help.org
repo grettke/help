@@ -306,7 +306,7 @@ alias ll ls -lh $*
   :ID:       8510C876-F644-4804-9F87-54A0B44DBA6A
   :END:
 
-#+MACRO: lp-header-arg-per-source-block Likely only ever to be configured per Source-Block or System
+#+MACRO: lp-configure-each-sb Likely only ever to be configured per Source-Block or System
 
 This system enables you to perform 3 Literate Document activities. These
 activities combine to provide a rich Literate Programming environment. Their
@@ -553,7 +553,7 @@ Toggle creation of parent directories of target files during tangling
 Turn off variable assignment and noweb expansion during tangling
 #+END_QUOTE
 
-{{{lp-header-arg-per-source-block}}}.
+{{{lp-configure-each-sb}}}.
 
 *** noweb
     :PROPERTIES:
@@ -590,7 +590,7 @@ ought to refer to the generated document.
 Specify block's noweb reference resolution target
 #+END_QUOTE
 
-{{{lp-header-arg-per-source-block}}}.
+{{{lp-configure-each-sb}}}.
 
 *** noweb-sep
     :PROPERTIES:
@@ -601,7 +601,7 @@ Specify block's noweb reference resolution target
 String used to separate noweb references
 #+END_QUOTE
 
-{{{lp-header-arg-per-source-block}}}.
+{{{lp-configure-each-sb}}}.
 
 *** padline
     :PROPERTIES:
@@ -631,7 +631,7 @@ can be used in the Programming activity.
 Preserve the state of code evaluation
 #+END_QUOTE
 
-{{{lp-header-arg-per-source-block}}}.
+{{{lp-configure-each-sb}}}.
 
 For some situations, this may be the same for every source block for a
 particular language. R is a good example.
@@ -646,7 +646,7 @@ particular language. R is a good example.
 Make tangled files executable
 #+END_SRC
 
-{{{lp-header-arg-per-source-block}}}.
+{{{lp-configure-each-sb}}}.
 
 *** tangle
     :PROPERTIES:
@@ -671,7 +671,7 @@ Toggle tangling and specify file name
 Set permission of tangled files
 #+END_QUOTE
 
-{{{lp-header-arg-per-source-block}}}.
+{{{lp-configure-each-sb}}}.
 
 ** Evaluating
    :PROPERTIES:
@@ -713,7 +713,7 @@ Org-Mode may evaluate all of the listed languages.
 Avoid re-evaluating unchanged code blocks
 #+END_QUOTE
 
-{{{lp-header-arg-per-source-block}}
+{{{lp-configure-each-sb}}
 
 Default =no= is correct for nearly every scenario.
 
@@ -726,7 +726,7 @@ Default =no= is correct for nearly every scenario.
 Handle column names in tables
 #+END_QUOTE
 
-{{{lp-header-arg-per-source-block}}}
+{{{lp-configure-each-sb}}}
 
 *** dir
     :PROPERTIES:
@@ -737,7 +737,7 @@ Handle column names in tables
 Specify the default (possibly remote) directory for code block execution
 #+END_QUOTE
 
-{{{lp-header-arg-per-source-block}}}
+{{{lp-configure-each-sb}}}
 
 *** epilogue
     :PROPERTIES:
@@ -783,7 +783,7 @@ Never evaluate in-line-source-blocks *on export*.
 Specify a path for file output
 #+END_QUOTE
 
-{{{lp-header-arg-per-source-block}}}
+{{{lp-configure-each-sb}}}
 
 *** file-desc
     :PROPERTIES:
@@ -794,7 +794,7 @@ Specify a path for file output
 Specify a description for file results
 #+END_QUOTE
 
-{{{lp-header-arg-per-source-block}}}
+{{{lp-configure-each-sb}}}
 
 *** file-ext
     :PROPERTIES:
@@ -805,7 +805,7 @@ Specify a description for file results
 Specify an extension for file output
 #+END_QUOTE
 
-{{{lp-header-arg-per-source-block}}}
+{{{lp-configure-each-sb}}}
 
 *** hlines
     :PROPERTIES:
@@ -816,7 +816,7 @@ Specify an extension for file output
 Handle horizontal lines in tables
 #+END_QUOTE
 
-{{{lp-header-arg-per-source-block}}}
+{{{lp-configure-each-sb}}}
 
 *** output-dir
     :PROPERTIES:
@@ -827,7 +827,7 @@ Handle horizontal lines in tables
 Specify a directory to write file output to
 #+END_QUOTE
 
-{{{lp-header-arg-per-source-block}}}
+{{{lp-configure-each-sb}}}
 
 One example is a System where *all* intermediate results are stored to individual
 files.
@@ -841,7 +841,7 @@ files.
 Post processing of code block results
 #+END_QUOTE
 
-{{{lp-header-arg-per-source-block}}}.
+{{{lp-configure-each-sb}}}.
 
 *** prologue
     :PROPERTIES:
@@ -852,7 +852,7 @@ Post processing of code block results
 Text to prepend to code block body
 #+END_QUOTE
 
-{{{lp-header-arg-per-source-block}}}.
+{{{lp-configure-each-sb}}}.
 
 For some situations, this may be the same for every source block for a
 particular language. The user manual described ~gnuplot~, which often shows up on
@@ -902,7 +902,7 @@ Replace theme each time you evaluate the block.
 Handle row names in tables
 #+END_QUOTE
 
-{{{lp-header-arg-per-source-block}}}..
+{{{lp-configure-each-sb}}}..
 
 *** sep
     :PROPERTIES:
@@ -913,7 +913,7 @@ Handle row names in tables
 Delimiter for writing tabular results outside Org
 #+END_QUOTE
 
-{{{lp-header-arg-per-source-block}}}
+{{{lp-configure-each-sb}}}
 
 *** var
     :PROPERTIES:
@@ -942,7 +942,7 @@ Pass arguments to code blocks
 Mark source block evaluation results
 #+END_QUOTE
 
-{{{lp-header-arg-per-source-block}}}.
+{{{lp-configure-each-sb}}}.
 
 ** Weaving
    :PROPERTIES:
