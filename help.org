@@ -643,10 +643,9 @@ particular language. R is a good example.
     :ID:       542185DD-4FD6-459A-B422-DA7B546FB292
     :END:
 
-#+NAME: A6265252-8CBF-4FE3-BC12-53514B2F2A2B
-#+BEGIN_SRC
+#+BEGIN_QUOTE
 Make tangled files executable
-#+END_SRC
+#+END_QUOTE
 
 {{{lp-configure-each-sb}}}.
 
