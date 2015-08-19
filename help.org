@@ -137,6 +137,7 @@
 - Maintenance.
   - Frequently check spelling, grammar, and weasel-words.
 - Macros
+  - Define as many as are useful.
   - Never implement new ones; use inline Source-Blocks instead.
   - Add once an important idea is express more than 2 times.
 - Plain List.
