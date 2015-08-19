@@ -138,6 +138,7 @@
   - Frequently check spelling, grammar, and weasel-words.
 - Macros
   - Define as many as are useful.
+  - Mostly for speech; infrequently custom-code.
   - Never implement new ones; use inline Source-Blocks instead.
   - Add once an important idea is express more than 2 times.
   - Expanded during weaving, not during tangling.
