@@ -169,6 +169,7 @@
       byte-compiler will warn about an “unused lexical variable”. The
       byte-compiler will also issue a warning if you use a special variable as a
       function argument.
+  - If only for weaving, consider making it a Macro.
 - Tangling.
   - When ordering matters, rely on block-reuse to enforce correct generation.
 - Voice.
