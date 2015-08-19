@@ -122,23 +122,21 @@ This is a copy and paste. Additional languages would warrant a refactor."
 ;; [[file:~/src/help/help.org::*Evaluating][6309AF39-FCE4-43DE-BD46-BC7D0BA0971D]]
 (org-babel-do-load-languages
  'org-babel-load-languages
- '((calc . t)
-   (css . t)
-   (dot . t)
-   (ditaa . t)
-   (emacs-lisp . t)
-   (js . t)
-   (latex . t)
-   (lilypond . t)
-   (makefile . t)
+ '((emacs-lisp . t)
    (org . t)
-   (perl . t)
-   (python . t)
-   (plantuml . t)
+   ;;
+   (sass . t)
    (R . t)
-   (scheme . t)
+   (sql . t)
+   ;;
+   (latex . t)
+   ;;
    (sh . t)
-   (sql . t)))
+   (makefile . t)
+   ;;
+   (ditaa . t)
+   (dot . t)
+   (plantuml . t)))
 ;; 6309AF39-FCE4-43DE-BD46-BC7D0BA0971D ends here
 ;; [[file:~/src/help/help.org::*eval][58541CA5-C633-4146-8E5D-15C7A3A2D1D7]]
 (help/set-org-babel-default-header-args :eval "never-export")

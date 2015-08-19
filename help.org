@@ -689,23 +689,21 @@ Org-Mode may evaluate all of the listed languages.
 #+BEGIN_SRC emacs-lisp
 (org-babel-do-load-languages
  'org-babel-load-languages
- '((calc . t)
-   (css . t)
-   (dot . t)
-   (ditaa . t)
-   (emacs-lisp . t)
-   (js . t)
-   (latex . t)
-   (lilypond . t)
-   (makefile . t)
+ '((emacs-lisp . t)
    (org . t)
-   (perl . t)
-   (python . t)
-   (plantuml . t)
+   ;;
+   (sass . t)
    (R . t)
-   (scheme . t)
+   (sql . t)
+   ;;
+   (latex . t)
+   ;;
    (sh . t)
-   (sql . t)))
+   (makefile . t)
+   ;;
+   (ditaa . t)
+   (dot . t)
+   (plantuml . t)))
 #+END_SRC
 
 *** cache
