@@ -2067,7 +2067,7 @@ to =eshell-visual-commands=.
       eshell-save-history-on-exit t
       eshell-cmpl-dir-ignore "\\`\\(\\.\\.?\\|CVS\\|\\.svn\\|\\.git\\)/\\'")
 
-(eval-after-load 'esh-opt
+(eval-after-load "esh-opt"
   '(progn
      (use-package em-cmpl)
      (use-package em-prompt)
@@ -3344,7 +3344,7 @@ Leave the VC message template empty.
 
 #+NAME: 27D5DC40-DD13-4E08-9EF9-D962DD08A7D5
 #+BEGIN_SRC emacs-lisp :results output silent
-(eval-after-load 'log-edit
+(eval-after-load "log-edit"
   '(remove-hook 'log-edit-hook 'log-edit-insert-message-template))
 #+END_SRC
 
@@ -5186,7 +5186,7 @@ Load the KOMA exporter.
 
 #+NAME: C2C100F1-B302-4BC7-8633-A79BCBFE1FC7
 #+BEGIN_SRC emacs-lisp :results output silent
-(eval-after-load 'ox '(require 'ox-koma-letter))
+(eval-after-load "ox" '(require 'ox-koma-letter))
 #+END_SRC
 
 - Understanding KOMA and how to use it
@@ -5265,7 +5265,7 @@ for my printed correspondence.
 
 #+NAME: 05968019-B83F-4F5B-ACF7-4CFF10CB8690
 #+BEGIN_SRC emacs-lisp :results output silent
-(eval-after-load 'ox-koma-letter
+(eval-after-load "ox-koma-letter"
   '(progn
      (add-to-list 'org-latex-classes
                   '("my-letter"

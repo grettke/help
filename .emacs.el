@@ -365,7 +365,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
       eshell-save-history-on-exit t
       eshell-cmpl-dir-ignore "\\`\\(\\.\\.?\\|CVS\\|\\.svn\\|\\.git\\)/\\'")
 
-(eval-after-load 'esh-opt
+(eval-after-load "esh-opt"
   '(progn
      (use-package em-cmpl)
      (use-package em-prompt)
@@ -1169,7 +1169,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (global-set-key (kbd "s-e") #'help/safb-help/magit-status))
 ;; 14B95634-E6E8-46A0-9698-2C9B847DD404 ends here
 ;; [[file:~/src/help/help.org::*Version%20Control][27D5DC40-DD13-4E08-9EF9-D962DD08A7D5]]
-(eval-after-load 'log-edit
+(eval-after-load "log-edit"
   '(remove-hook 'log-edit-hook 'log-edit-insert-message-template))
 ;; 27D5DC40-DD13-4E08-9EF9-D962DD08A7D5 ends here
 ;; [[file:~/src/help/help.org::*Version%20Control][6FD11818-DB10-4AF4-A714-C32C04291AF2]]
@@ -1757,10 +1757,10 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
 (add-to-list 'auto-mode-alist '("\\.lco?\\'" . TeX-latex-mode))
 ;; 083E953F-E95D-4596-98D1-C8554D451721 ends here
 ;; [[file:~/src/help/help.org::*KOMA-Script][C2C100F1-B302-4BC7-8633-A79BCBFE1FC7]]
-(eval-after-load 'ox '(require 'ox-koma-letter))
+(eval-after-load "ox" '(require 'ox-koma-letter))
 ;; C2C100F1-B302-4BC7-8633-A79BCBFE1FC7 ends here
 ;; [[file:~/src/help/help.org::*KOMA-Script][05968019-B83F-4F5B-ACF7-4CFF10CB8690]]
-(eval-after-load 'ox-koma-letter
+(eval-after-load "ox-koma-letter"
   '(progn
      (add-to-list 'org-latex-classes
                   '("my-letter"
