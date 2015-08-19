@@ -1000,10 +1000,9 @@ anything else would violate the law of least surprise.
     :ID:       57B3786B-017F-4F6E-89F9-05642304F3B6
     :END:
 
-#+NAME: 888BE6BD-9A34-488B-9183-7427984B9BDE
-#+BEGIN_SRC
+#+BEGIN_QUOTE
 Export code and/or results
-#+END_SRC
+#+END_QUOTE
 
 Always share source blocks and their results. Whether or not to generate a
 result for a particular source block is configured per-block. If you don't want
