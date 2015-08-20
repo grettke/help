@@ -99,8 +99,9 @@
   - Place =LocalWords= at the beginning of the document. That way it won't get
     stomped on during development.
 - Synonyms.
-  - Document and System.
-    - A Document defines a System.
+  - Document and System and Web.
+    - A Web defines a system.
+    - A Web is realized in a document.
 - File/Package Loading
   - Load every one with ~use-package~ whether it came with EMACS OOTB or ELPA.
     - ~ensure~ tells the reader which one it came from.
