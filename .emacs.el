@@ -1820,6 +1820,9 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
   (eval-after-load "ob-plantuml"
     (setq org-plantuml-jar-path help/plantuml-jar)))
 ;; 80EE7930-0025-4D06-96BB-24A70169CDEA ends here
+;; [[file:~/src/help/help.org::*Buffer][61F1703A-48AA-4C2E-AE78-4C9766B6C8BC]]
+(setq inhibit-eol-conversion t)
+;; 61F1703A-48AA-4C2E-AE78-4C9766B6C8BC ends here
 ;; [[file:~/src/help/help.org::*Buffer][A5438CB6-5228-4753-B2A7-BFEFC573F6B6]]
 (use-package uniquify)
 (setq uniquify-buffer-name-style 'forward)
@@ -1850,6 +1853,9 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
 ;; [[file:~/src/help/help.org::*Buffer][6FD9F092-7062-4E7A-BB58-4B5F45AF0AD0]]
 (global-hl-line-mode t)
 ;; 6FD9F092-7062-4E7A-BB58-4B5F45AF0AD0 ends here
+;; [[file:~/src/help/help.org::*Buffer][D0F5616F-1609-4E12-A4D7-7A1F46D34A2C]]
+(setq default-input-method 'TeX)
+;; D0F5616F-1609-4E12-A4D7-7A1F46D34A2C ends here
 ;; [[file:~/src/help/help.org::*Color%20Theme][021B7D3A-E696-43B9-BC08-C8BDABB33999]]
 (use-package solarized-theme
   :ensure t
@@ -1924,14 +1930,17 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
 (defhydra help/hydra/left-side/global (:color blue
                                               :hint nil)
   "
-_1_ -font  _2_ +font _3_ ellipsis _4_ UUID
-_q_ apropos _w_ widen _r_ obtj2o     _i_ scrollUp _I_ prevLogLine
-                 _j_ back-char _k_ scrollDown _K_ _K_ nextLogLine _l_ forw-char"
+_1_ -font  _2_ +font _3_ ellipsis _4_ UUID _5_ bfr-cdng-systm
+_q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine
+                 _j_ back-char _k_ scrollDown _K_ nextLogLine _l_ forw-char
+_x_ delete-indentation"
+  ("x" delete-indentation)
   ("q" hydra-apropos/body)
   ("w" widen)
   ("1" help/text-scale-decrease :exit nil)
   ("2" help/text-scale-increase :exit nil)
-  ("r" org-babel-tangle-jump-to-org)
+  ("r" rgrep)
+  ("t" org-babel-tangle-jump-to-org)
   ("i" scroll-down-command :exit nil)
   ("k" scroll-up-command :exit nil)
   ("I" previous-logical-line :exit nil)
@@ -1939,7 +1948,8 @@ _q_ apropos _w_ widen _r_ obtj2o     _i_ scrollUp _I_ prevLogLine
   ("j" backward-char :exit nil)
   ("l" forward-char :exit nil)
   ("3" help/insert-ellipsis)
-  ("4" help/uuid))
+  ("4" help/uuid)
+  ("5" set-buffer-file-coding-system))
 (key-chord-define-global "gg" #'help/hydra/left-side/global/body)
 ;; F6C7AAB7-DF69-4EBA-8116-15DC32022D49 ends here
 ;; [[file:~/src/help/help.org::*3][362686F6-B397-44D5-812F-BE24670F4204]]
