@@ -1927,7 +1927,7 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
                                               :hint nil)
   "
 _1_ -font  _2_ +font _3_ ellipsis _4_ UUID _5_ bfr-cdng-systm
-_q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine
+_q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr
                  _j_ back-char _k_ scrollDown _K_ nextLogLine _l_ forw-char
 _x_ delete-indentation"
   ("x" delete-indentation)
@@ -1945,8 +1945,9 @@ _x_ delete-indentation"
   ("l" forward-char :exit nil)
   ("3" help/insert-ellipsis)
   ("4" help/uuid)
-  ("5" set-buffer-file-coding-system))
-(key-chord-define-global "gg" #'help/hydra/left-side/global/body)
+  ("5" set-buffer-file-coding-system)
+  ("o" toggle-debug-on-error))
+(key-chord-define-global "vv" #'help/hydra/left-side/global/body)
 ;; F6C7AAB7-DF69-4EBA-8116-15DC32022D49 ends here
 ;; [[file:~/src/help/help.org::*3][362686F6-B397-44D5-812F-BE24670F4204]]
 (defhydra hydra-apropos (:color blue
