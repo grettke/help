@@ -3482,6 +3482,13 @@ Make it very easy to see the line with the cursor.
 (global-hl-line-mode t)
 #+END_SRC
 
+Make it very easy to input special-characters using TeX coding.
+
+#+NAME: D0F5616F-1609-4E12-A4D7-7A1F46D34A2C
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq default-input-method 'TeX)
+#+END_SRC
+
 ** Color Theme
    :PROPERTIES:
    :ID:       057BBA77-4662-4F7B-B47A-CB1E79A1618B
