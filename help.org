@@ -218,8 +218,8 @@ Start EMACS with this command:
 
 #+NAME: 9969960B-FFEE-48B4-BD9C-F29E750FD8A3
 #+BEGIN_SRC emacs-lisp :results output silent
-«Principle-of-Least-Astonishment»
-«Org-Mode-ECM»
+<<Principle-of-Least-Astonishment>>
+<<Org-Mode-ECM>>
 #+END_SRC
 
 ** Org-Mode Fundamentals
@@ -244,11 +244,11 @@ Start EMACS with this command:
 
 #+NAME: 78D777D3-FA69-4361-874C-7262DE96F753
 #+BEGIN_SRC emacs-lisp :results output silent
-«Org-Mode-ECM-Web»
-«Org-Mode-Helper-Functions»
-«Org-Mode-Tangle»
-«Org-Mode-Execute»
-«Org-Mode-Weave»
+<<Org-Mode-ECM-Web>>
+<<Org-Mode-Helper-Functions>>
+<<Org-Mode-Tangle>>
+<<Org-Mode-Execute>>
+<<Org-Mode-Weave>>
 #+END_SRC
 
 ** The Whole Enchilada
@@ -272,28 +272,28 @@ Start EMACS with this command:
 
 #+NAME: AD12BE48-B87B-4AB6-814D-4FA5E47597A0
 #+BEGIN_SRC emacs-lisp :results output silent
-«Org-Mode-Fundamentals-Web»
-«Watch-What-You-Eat»
-«Special-Operating-Procedure»
-«Standard-Operating-Procedure»
-«Hacking-Common-Configurations»
-«Hacking-Literate-Programming-Emacs-Lisp»
-«Hacking-Literate-Programming-Org-Mode»
-«Hacking-Applied-Mathematics-ESS»
-«Hacking-Applied-Mathematics-ESS-SAS»
-«Hacking-Applied-Mathematics-ESS-R»
-«Hacking-Applied-Mathematics-YASnippet»
-«Hacking-Publishing-TeX»
-«Hacking-Publishing-KOMA»
-«Hacking-Publishing-Markdown»
-«Hacking-Publishing-Beamer»
-«Hacking-Publishing-HTML»
-«Hacking-Diagram-Artist»
-«Hacking-Diagram-DITAA»
-«Hacking-Diagram-Graphviz»
-«Hacking-Diagram-PlantUML»
-«Quiet-and-Pleasant-Appearance»
-«Piano-Lessons»
+<<Org-Mode-Fundamentals-Web>>
+<<Watch-What-You-Eat>>
+<<Special-Operating-Procedure>>
+<<Standard-Operating-Procedure>>
+<<Hacking-Common-Configurations>>
+<<Hacking-Literate-Programming-Emacs-Lisp>>
+<<Hacking-Literate-Programming-Org-Mode>>
+<<Hacking-Applied-Mathematics-ESS>>
+<<Hacking-Applied-Mathematics-ESS-SAS>>
+<<Hacking-Applied-Mathematics-ESS-R>>
+<<Hacking-Applied-Mathematics-YASnippet>>
+<<Hacking-Publishing-TeX>>
+<<Hacking-Publishing-KOMA>>
+<<Hacking-Publishing-Markdown>>
+<<Hacking-Publishing-Beamer>>
+<<Hacking-Publishing-HTML>>
+<<Hacking-Diagram-Artist>>
+<<Hacking-Diagram-DITAA>>
+<<Hacking-Diagram-Graphviz>>
+<<Hacking-Diagram-PlantUML>>
+<<Quiet-and-Pleasant-Appearance>>
+<<Piano-Lessons>>
 #+END_SRC
 
 ** Eshell
@@ -400,19 +400,6 @@ Load Org-Mode.
 #+NAME: 86CAEC4F-CFC4-4CAD-9993-E1DCEF3BFCD1
 #+BEGIN_SRC emacs-lisp :results output silent
 (require 'org)
-#+END_SRC
-
-Org-Mode already uses the guillemot for demarcating noweb references, but it
-does it using the work-around of just using less-than and greater-than
-characters twice. That is fine. Because EMACS supports Unicode just fine though,
-configure Org-Mode to use the real symbol. Another option would be to configure
-Pretty-Mode. This is in the ECM section because so that I can verify behavior of
-my code.
-
-#+NAME: 5749B5BF-1C2A-4948-A357-E096B11539D0
-#+BEGIN_SRC emacs-lisp :results output silent
-(setq org-babel-noweb-wrap-start "«")
-(setq org-babel-noweb-wrap-end "»")
 #+END_SRC
 
 ** Helper Functions

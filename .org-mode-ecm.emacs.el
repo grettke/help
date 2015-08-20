@@ -16,8 +16,4 @@
 ;; [[file:~/src/help/help.org::*Org-Mode%20Exemple%20Complet%20Minimal][86CAEC4F-CFC4-4CAD-9993-E1DCEF3BFCD1]]
 (require 'org)
 ;; 86CAEC4F-CFC4-4CAD-9993-E1DCEF3BFCD1 ends here
-;; [[file:~/src/help/help.org::*Org-Mode%20Exemple%20Complet%20Minimal][5749B5BF-1C2A-4948-A357-E096B11539D0]]
-(setq org-babel-noweb-wrap-start "«")
-(setq org-babel-noweb-wrap-end "»")
-;; 5749B5BF-1C2A-4948-A357-E096B11539D0 ends here
 ;; 9969960B-FFEE-48B4-BD9C-F29E750FD8A3 ends here
