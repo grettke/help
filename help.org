@@ -1464,13 +1464,16 @@ close together
                                               :hint nil)
   "
 _1_ -font  _2_ +font _3_ ellipsis _4_ UUID
-_q_ apropos _w_ widen _r_ obtj2o     _i_ scrollUp _I_ prevLogLine
-                 _j_ back-char _k_ scrollDown _K_ _K_ nextLogLine _l_ forw-char"
+_q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine
+                 _j_ back-char _k_ scrollDown _K_ nextLogLine _l_ forw-char
+_x_ delete-indentation"
+  ("x" delete-indentation)
   ("q" hydra-apropos/body)
   ("w" widen)
   ("1" help/text-scale-decrease :exit nil)
   ("2" help/text-scale-increase :exit nil)
-  ("r" org-babel-tangle-jump-to-org)
+  ("r" rgrep)
+  ("t" org-babel-tangle-jump-to-org)
   ("i" scroll-down-command :exit nil)
   ("k" scroll-up-command :exit nil)
   ("I" previous-logical-line :exit nil)
