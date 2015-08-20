@@ -1463,7 +1463,7 @@ close together
 (defhydra help/hydra/left-side/global (:color blue
                                               :hint nil)
   "
-_1_ -font  _2_ +font _3_ ellipsis _4_ UUID
+_1_ -font  _2_ +font _3_ ellipsis _4_ UUID _5_ bfr-cdng-systm
 _q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine
                  _j_ back-char _k_ scrollDown _K_ nextLogLine _l_ forw-char
 _x_ delete-indentation"
@@ -1481,7 +1481,8 @@ _x_ delete-indentation"
   ("j" backward-char :exit nil)
   ("l" forward-char :exit nil)
   ("3" help/insert-ellipsis)
-  ("4" help/uuid))
+  ("4" help/uuid)
+  ("5" set-buffer-file-coding-system))
 (key-chord-define-global "gg" #'help/hydra/left-side/global/body)
 #+END_SRC
 
@@ -3417,6 +3418,14 @@ Configure EMACS to personal-taste for "noise" and "form".
    :PROPERTIES:
    :ID:       61586A23-B774-4436-B916-348453EEA3DD
    :END:
+
+Never automatically convert the end of the line character. For most of us this
+is between UNIX and DOS.
+
+#+NAME: 61F1703A-48AA-4C2E-AE78-4C9766B6C8BC
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq inhibit-eol-conversion t)
+#+END_SRC
 
 Give buffers backed by identically named files distinguishable names.
 
