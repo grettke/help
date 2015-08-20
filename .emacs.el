@@ -1424,7 +1424,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
             (org-src-edit-buffer-p)
           (error nil))
     (org-edit-src-exit))
-  (magit-status))
+  (call-interactively 'magit-status))
 ;; C1F1C610-AC69-40E8-AD2F-EB6C849B40CB ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][727834EF-DF94-4190-98AC-B791FCCDE7E3]]
 (setq org-edit-src-code nil)
