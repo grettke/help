@@ -1664,19 +1664,18 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
 ;; 4B373CC7-EF17-4900-87BE-E38995585C46 ends here
 ;; [[file:~/src/help/help.org::*R%20(ESS)][E5F48F7A-E926-4FB0-92D2-92204808630E]]
 (defun help/R-mode-hook-fn ()
-  (local-set-key (kbd "s-e") #'ess-switch-to-end-of-ESS)
-  (local-set-key (kbd "s-x") #'r-autoyas-expand)
+  (local-set-key (kbd "s-6") #'ess-switch-to-end-of-ESS)
+  (local-set-key (kbd "s-7") #'ess-rdired)
+  (local-set-key (kbd "s-8") #'ess-R-dv-ctable)
+  (local-set-key (kbd "s-9") #'ess-R-dv-pprint)
+  (local-set-key (kbd "s-y") #'r-autoyas-expand)
+  (local-set-key (kbd "s-o") #'ess-describe-object-at-point)
   (local-set-key (kbd "s-p") #'ess-R-object-popup)
-  (local-set-key (kbd "s-v o") #'ess-describe-object-at-point)
-  (local-set-key (kbd "s-v d") #'ess-rdired)
-  (local-set-key (kbd "s-v cc") #'ess-R-dv-ctable)
-  (local-set-key (kbd "s-v cp") #'ess-R-dv-pprint)
-  (local-set-key (kbd "C-.") (lambda () (interactive) (insert " -> ")))
-  (local-set-key (kbd "C-M-,") (lambda () (interactive) (insert " <<- ")))
-  (local-set-key (kbd "C-M-.") (lambda () (interactive) (insert " ->> ")))
-  (key-chord-define-local (kbd ",.") (lambda () (interactive) (insert " %<>% ")))
-  (local-set-key (kbd "s-.") (lambda () (interactive) (insert " %>% ")))
-  (local-set-key (kbd "C-0") #'ess-eval-buffer)
+  (local-set-key (kbd "C-.") #'(lambda () (interactive) (insert " -> ")))
+  (key-chord-define-local "<<" #'(lambda () (interactive) (insert " <<- ")))
+  (key-chord-define-local ">>" #'(lambda () (interactive) (insert " ->> ")))
+  (key-chord-define-local "<>" #'(lambda () (interactive) (insert " %<>% ")))
+  (local-set-key (kbd "C->") #'(lambda () (interactive) (insert " %>% ")))
   (r-autoyas-ess-activate)
   (help/turn-on-r-hide-show)
   (lambda () (add-hook 'ess-presend-filter-functions
@@ -1947,7 +1946,7 @@ _x_ delete-indentation"
   ("4" help/uuid)
   ("5" set-buffer-file-coding-system)
   ("o" toggle-debug-on-error))
-(key-chord-define-global "vv" #'help/hydra/left-side/global/body)
+(key-chord-define-global "dd" #'help/hydra/left-side/global/body)
 ;; F6C7AAB7-DF69-4EBA-8116-15DC32022D49 ends here
 ;; [[file:~/src/help/help.org::*3][362686F6-B397-44D5-812F-BE24670F4204]]
 (defhydra hydra-apropos (:color blue
