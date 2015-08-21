@@ -621,7 +621,10 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
 ;; C95AD351-D087-473F-88EB-B0930C86FBDF ends here
 ;; [[file:~/src/help/help.org::*Grammar][42DD3C85-F2C4-4A82-8B76-5BFBCF692E86]]
 (use-package writegood-mode
-  :ensure t)
+  :ensure t
+  :config
+  (eval-after-load "writegood-mode"
+    '(diminish 'writegood-mode)))
 ;; 42DD3C85-F2C4-4A82-8B76-5BFBCF692E86 ends here
 ;; [[file:~/src/help/help.org::*Grammar][4FF40D35-DDA0-4E02-80C0-52962DCD449A]]
 (use-package langtool
@@ -1205,7 +1208,8 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (linum-mode)
   (fci-mode)
   (rainbow-mode)
-  (help/try-to-add-imenu))
+  (help/try-to-add-imenu)
+  (writegood-mode))
 
 (add-hook 'text-mode-hook #'help/text-prog*-setup)
 ;; 42D5F313-65F0-49E1-8759-9259D4020FA9 ends here
@@ -1915,15 +1919,20 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
 (defhydra help/hydra/left-side/global (:color blue
                                               :hint nil)
   "
-_1_ -font  _2_ +font _3_ ellipsis _4_ UUID _5_ bfr-cdng-systm
+_1_ -font  _2_ +font _3_ ellipsis _4_ UUID _5_ bfr-cdng-systm _6_ grade-level _7_ reading-ease
 _q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr
                  _j_ back-char _k_ scrollDown _K_ nextLogLine _l_ forw-char
 _x_ delete-indentation"
+  ("1" help/text-scale-decrease :exit nil)
+  ("2" help/text-scale-increase :exit nil)
+  ("3" help/insert-ellipsis)
+  ("4" help/uuid)
+  ("5" set-buffer-file-coding-system)
+  ("6" writegood-grade-level)
+  ("7" writegood-reading-ease)
   ("x" delete-indentation)
   ("q" hydra-apropos/body)
   ("w" widen)
-  ("1" help/text-scale-decrease :exit nil)
-  ("2" help/text-scale-increase :exit nil)
   ("r" rgrep)
   ("t" org-babel-tangle-jump-to-org)
   ("i" scroll-down-command :exit nil)
@@ -1932,9 +1941,6 @@ _x_ delete-indentation"
   ("K" next-logical-line :exit nil)
   ("j" backward-char :exit nil)
   ("l" forward-char :exit nil)
-  ("3" help/insert-ellipsis)
-  ("4" help/uuid)
-  ("5" set-buffer-file-coding-system)
   ("o" toggle-debug-on-error))
 (key-chord-define-global "dd" #'help/hydra/left-side/global/body)
 ;; F6C7AAB7-DF69-4EBA-8116-15DC32022D49 ends here
@@ -1993,11 +1999,6 @@ _v_ariable       _u_ser-option
 (key-chord-define-global "qp" #'ispell)
 (key-chord-define-global "qo" #'ispell-word)
 ;; E167321A-E8E5-4C54-B570-241B465B2D4B ends here
-;; [[file:~/src/help/help.org::*Left%20&%20Right%20Side][04DEF261-9640-49E8-8540-DC69B4CF9BBE]]
-(key-chord-define-global "wm" #'writegood-mode)
-(key-chord-define-global "wl" #'writegood-grade-level)
-(key-chord-define-global "wz" #'writegood-reading-ease)
-;; 04DEF261-9640-49E8-8540-DC69B4CF9BBE ends here
 ;; [[file:~/src/help/help.org::*Left%20&%20Right%20Side][52E762F8-9A31-4FEC-859D-049BD658C6D9]]
 (define-prefix-command 'help/langtool-map)
 (key-chord-define-global "qk" #'help/langtool-map)
