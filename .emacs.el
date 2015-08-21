@@ -1809,6 +1809,9 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
   (eval-after-load "ob-plantuml"
     (setq org-plantuml-jar-path help/plantuml-jar)))
 ;; 80EE7930-0025-4D06-96BB-24A70169CDEA ends here
+;; [[file:~/src/help/help.org::*Line%20Number][DC131133-BEC7-45D2-BA35-42E77FC3BB22]]
+(defvar linum-format "%05d")
+;; DC131133-BEC7-45D2-BA35-42E77FC3BB22 ends here
 ;; [[file:~/src/help/help.org::*Buffer][61F1703A-48AA-4C2E-AE78-4C9766B6C8BC]]
 (setq inhibit-eol-conversion t)
 ;; 61F1703A-48AA-4C2E-AE78-4C9766B6C8BC ends here

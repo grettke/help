@@ -3409,6 +3409,22 @@ Make control characters easily visible.
 
 Configure EMACS to personal-taste for "noise" and "form".
 
+** Line Number
+   :PROPERTIES:
+   :ID:       4D367462-1C7B-4110-B7D1-E973D386B4E1
+   :END:
+
+The linum gutter should not "shift" as it transitions between line numbers of
+different magnitudes. For example going from line 99 to 100 will shift the
+buffer contents by one character. That is distracting and interrupts the flow.
+
+Most files will be less than 100,000 lines.
+
+#+NAME: DC131133-BEC7-45D2-BA35-42E77FC3BB22
+#+BEGIN_SRC emacs-lisp :results output silent
+(defvar linum-format "%05d")
+#+END_SRC
+
 ** Buffer
    :PROPERTIES:
    :ID:       61586A23-B774-4436-B916-348453EEA3DD
