@@ -1281,7 +1281,8 @@ a fast and intuitive way to go places.
 - Harder for breakage but it still occurs.
   - =#FF= color code.
   - =cc= carbon copy.
-  - JJ nick-name.
+  - =JJ= nick-name.
+  - =dd= add
 - Symbols are more likely to be safer bets.
   - Only use the symbols.
     - 8 if you use rows 3-4; 16 if you shift.
@@ -1474,7 +1475,7 @@ _x_ delete-indentation"
   ("j" backward-char :exit nil)
   ("l" forward-char :exit nil)
   ("o" toggle-debug-on-error))
-(key-chord-define-global "dd" #'help/hydra/left-side/global/body)
+(key-chord-define-global "vv" #'help/hydra/left-side/global/body)
 #+END_SRC
 
 [[https://github.com/abo-abo/hydra/blob/master/hydra-examples.el][Attribution.]]

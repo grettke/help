@@ -1942,7 +1942,7 @@ _x_ delete-indentation"
   ("j" backward-char :exit nil)
   ("l" forward-char :exit nil)
   ("o" toggle-debug-on-error))
-(key-chord-define-global "dd" #'help/hydra/left-side/global/body)
+(key-chord-define-global "vv" #'help/hydra/left-side/global/body)
 ;; F6C7AAB7-DF69-4EBA-8116-15DC32022D49 ends here
 ;; [[file:~/src/help/help.org::*3][362686F6-B397-44D5-812F-BE24670F4204]]
 (defhydra hydra-apropos (:color blue
