@@ -138,6 +138,7 @@
     - Keep depth shallow
 - Maintenance.
   - Frequently check spelling, grammar, and weasel-words.
+  - Only keep working features in the system.
 - Macros
   - Define as many as are useful.
   - Mostly for speech; infrequently custom-code.
