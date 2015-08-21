@@ -3483,8 +3483,15 @@ Make it very easy to input special-characters using TeX coding.
    :ID:       057BBA77-4662-4F7B-B47A-CB1E79A1618B
    :END:
 
-The Solarized theme is the perfect theme for everything. bozhidar's
-release. It is soft and gentle yet easy to read in any situation.
+[[https://github.com/bbatsov/solarized-emacs][Solarized Theme]]
+
+- src_emacs-lisp{(- 1284 25)} {{{results(=1259=)}}} Faces Defined
+- 47,869 Downloads
+
+- A distinct fringe provides a definition of space.
+- The modeline is always at the bottom and doesn't need differentiation.
+- Minimize bold and italic faces.
+- Minimize fringe indicators.
 
 #+NAME: 021B7D3A-E696-43B9-BC08-C8BDABB33999
 #+BEGIN_SRC emacs-lisp :results output silent
@@ -3492,7 +3499,7 @@ release. It is soft and gentle yet easy to read in any situation.
   :ensure t
   :config
   (setq solarized-distinct-fringe-background t)
-  (setq solarized-high-contrast-mode-line t)
+  (setq solarized-high-contrast-mode-line nil)
   (setq solarized-use-less-bold t)
   (setq solarized-use-more-italic nil)
   (setq solarized-emphasize-indicators nil)

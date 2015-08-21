@@ -1850,7 +1850,7 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
   :ensure t
   :config
   (setq solarized-distinct-fringe-background t)
-  (setq solarized-high-contrast-mode-line t)
+  (setq solarized-high-contrast-mode-line nil)
   (setq solarized-use-less-bold t)
   (setq solarized-use-more-italic nil)
   (setq solarized-emphasize-indicators nil)
