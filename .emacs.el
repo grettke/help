@@ -1920,7 +1920,7 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
                                               :hint nil)
   "
 _1_ -font  _2_ +font _3_ ellipsis _4_ UUID _5_ bfr-cdng-systm _6_ grade-level _7_ reading-ease
-_q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr
+_q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace
                  _j_ back-char _k_ scrollDown _K_ nextLogLine _l_ forw-char
 _x_ delete-indentation"
   ("1" help/text-scale-decrease :exit nil)
@@ -1941,9 +1941,12 @@ _x_ delete-indentation"
   ("K" next-logical-line :exit nil)
   ("j" backward-char :exit nil)
   ("l" forward-char :exit nil)
-  ("o" toggle-debug-on-error))
-(key-chord-define-global "vv" #'help/hydra/left-side/global/body)
+  ("o" toggle-debug-on-error)
+  ("p" anzu-query-replace))
 ;; F6C7AAB7-DF69-4EBA-8116-15DC32022D49 ends here
+;; [[file:~/src/help/help.org::*3][EFFA5A5F-58A8-476D-A8D4-16F232231EC7]]
+(key-chord-define-global "vv" #'help/hydra/left-side/global/body)
+;; EFFA5A5F-58A8-476D-A8D4-16F232231EC7 ends here
 ;; [[file:~/src/help/help.org::*3][362686F6-B397-44D5-812F-BE24670F4204]]
 (defhydra hydra-apropos (:color blue
                                 :hint nil)
