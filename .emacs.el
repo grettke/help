@@ -1049,7 +1049,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (setq anzu-mode-lighter "")
   (setq anzu-deactivate-region t)
   (setq anzu-search-threshold 1000)
-  (setq anzu-replace-to-string-separator " => "))
+  (setq anzu-replace-to-string-separator " ⇒ "))
 ;; D9A8B6E9-E328-47C1-9B75-863B640BEAB7 ends here
 ;; [[file:~/src/help/help.org::*Save%20History%20of%20All%20Things][FDA728C0-CBE2-4B1B-A30F-CC8EA3E810DB]]
 (setq savehist-save-minibuffer-history 1)
