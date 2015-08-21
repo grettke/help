@@ -105,11 +105,10 @@
 - File/Package Loading
   - Load every one with ~use-package~ whether it came with EMACS OOTB or ELPA.
     - ~ensure~ tells the reader which one it came from.
-  - Binding definitions often live in Piano Lessons. Use-Package definitions
-    aren't meant to be fully transplant-able because this system is meant to be
-    used as a whole. If a single sub-system is broken then the entire system is
-    broken. Everything is conceptually and literally tightly woven. It is a
-    monolithic system.
+  - Binding definitions often live in Piano Lessons.
+  - Configurations aren't meant to be fully transplant-able because this system
+    monolithic. In the interest of collaboration as much of the package
+    configuration lives in the =use-package= block as possible.
 - Formatting
   - Code Snippet.
     - Programming language expressions.
