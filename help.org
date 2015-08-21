@@ -2666,6 +2666,7 @@ This is useful for fringe cases where trailing whitespace is important."
 
 (defun help/indent-curly-block (&rest _ignored)
   "Open a new brace or bracket expression, with relevant newlines and indent. URL: `https://github.com/Fuco1/smartparens/issues/80'"
+  (interactive)
   (newline)
   (indent-according-to-mode)
   (forward-line -1)
@@ -4652,7 +4653,7 @@ showing a more advanced usage that handles context which is nice to know is an o
 
 #+NAME: F25A516C-7FD0-4F88-96AA-E53EBE01C5C3
 #+BEGIN_SRC emacs-lisp :results output silent
-(sp-local-pair #'ess-mode "{" nil :post-handlers '((gcr/indent-curly-block "RET")))
+(sp-local-pair #'ess-mode "{" nil :post-handlers '((help/indent-curly-block "RET")))
 #+END_SRC
 
 =ESS= executes code in another process. That is no secret. When displaying output

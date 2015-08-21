@@ -703,6 +703,7 @@ This is useful for fringe cases where trailing whitespace is important."
 
 (defun help/indent-curly-block (&rest _ignored)
   "Open a new brace or bracket expression, with relevant newlines and indent. URL: `https://github.com/Fuco1/smartparens/issues/80'"
+  (interactive)
   (newline)
   (indent-according-to-mode)
   (forward-line -1)
@@ -1560,7 +1561,7 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
 (setq ess-mode-silently-save +1)
 ;; 252643D9-4FC2-4037-BAF8-5F6043D02C5A ends here
 ;; [[file:~/src/help/help.org::*Emacs%20Speaks%20Statistics%20(ESS)][F25A516C-7FD0-4F88-96AA-E53EBE01C5C3]]
-(sp-local-pair #'ess-mode "{" nil :post-handlers '((gcr/indent-curly-block "RET")))
+(sp-local-pair #'ess-mode "{" nil :post-handlers '((help/indent-curly-block "RET")))
 ;; F25A516C-7FD0-4F88-96AA-E53EBE01C5C3 ends here
 ;; [[file:~/src/help/help.org::*Emacs%20Speaks%20Statistics%20(ESS)][B46D5051-6F7D-4BC9-8A47-DDE14B41C3A5]]
 (setq ess-eval-visibly 'nowait)
