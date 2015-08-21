@@ -4994,28 +4994,6 @@ Save two spaces showing function information in the mini-buffer.
 (setq ess-R-argument-suffix "=")
 #+END_SRC
 
-Not sure where I put the notes, but long ago I researched the ℝ coding
-standards. [[http://stackoverflow.com/questions/7502540/make-emacs-ess-follow-r-style-guide][This post]] by Eddelbuettel led me to believe that the ℝ [[http://cran.r-project.org/doc/manuals/R-ints.html#R-coding-standards][standard]]
-definition is the best. That made me think that =RRR= would be the best because
-it has identical settings to the =C++= style at the time of the post. That makes
-sense to me. I only want to change one thing to make Magrittr chains easier to
-read. The stock =RRR= indenting makes expressions trail off to the right forever.
-Here is how, make a copy of =RRR= and change one property.
-
-#+NAME: D614F687-D054-43F4-BA17-3D1E55D6787E
-#+BEGIN_SRC emacs-lisp :results output silent
-;; (setq help/ess-style
-;;       (copy-alist
-;;        (assoc 'RRR ess-style-alist)))
-;; (setf (nth 0 help/ess-style) 'HELP)
-;; (setf (cdr
-;;        (assoc 'ess-continued-statement-offset
-;;               (cdr help/ess-style)))
-;;       0)
-;; (add-to-list 'ess-style-alist help/ess-style)
-;; (setq ess-default-style 'HELP)
-#+END_SRC
-
 This [fn:1ffa40c2: http://www.r-bloggers.com/a-small-customization-of-ess/]
 post shares a nice setup for the assignment key; primarily if
 you use underscores in your variable names, which I do on occasions. After
@@ -5061,7 +5039,8 @@ Period.
   (lambda () (add-hook 'ess-presend-filter-functions
                   (lambda ()
                     (warn
-                     "ESS now supports a standard pre-send filter hook. Please update your configuration to use it instead of using advice.")))))
+                     "ESS now supports a standard pre-send filter hook. Please update your configuration to use it instead of using advice."))))
+  (ess-set-style 'RRR))
 
 (add-hook 'R-mode-hook #'help/R-mode-hook-fn)
 

@@ -1642,18 +1642,6 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
 ;; [[file:~/src/help/help.org::*R%20(ESS)][5D526636-47A1-463B-9466-4DD240C7F382]]
 (setq ess-R-argument-suffix "=")
 ;; 5D526636-47A1-463B-9466-4DD240C7F382 ends here
-;; [[file:~/src/help/help.org::*R%20(ESS)][D614F687-D054-43F4-BA17-3D1E55D6787E]]
-;; (setq help/ess-style
-;;       (copy-alist
-;;        (assoc 'RRR ess-style-alist)))
-;; (setf (nth 0 help/ess-style) 'HELP)
-;; (setf (cdr
-;;        (assoc 'ess-continued-statement-offset
-;;               (cdr help/ess-style)))
-;;       0)
-;; (add-to-list 'ess-style-alist help/ess-style)
-;; (setq ess-default-style 'HELP)
-;; D614F687-D054-43F4-BA17-3D1E55D6787E ends here
 ;; [[file:~/src/help/help.org::*R%20(ESS)][9E931868-056E-49E6-A0AE-D1447BA27039]]
 (setq ess-S-assign-key (kbd "C-,"))
 (ess-toggle-S-assign-key t)
@@ -1681,7 +1669,8 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
   (lambda () (add-hook 'ess-presend-filter-functions
                   (lambda ()
                     (warn
-                     "ESS now supports a standard pre-send filter hook. Please update your configuration to use it instead of using advice.")))))
+                     "ESS now supports a standard pre-send filter hook. Please update your configuration to use it instead of using advice."))))
+  (ess-set-style 'RRR))
 
 (add-hook 'R-mode-hook #'help/R-mode-hook-fn)
 
