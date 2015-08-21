@@ -2572,7 +2572,7 @@ Go to any object in the frame quickly.
    :ID:       95A4EF33-F83D-49ED-AC74-A29DA19524BC
    :END:
 
-Grammar is an important place to interrupt flow immediately.
+Warn of poor grammar immediately interrupting flow with a visual indicator.
 
 #+NAME: 42DD3C85-F2C4-4A82-8B76-5BFBCF692E86
 #+BEGIN_SRC emacs-lisp :results output silent
