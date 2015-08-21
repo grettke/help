@@ -3651,7 +3651,8 @@ Menu bars make EMACS more accessible to non-EMACS users.
 (menu-bar-mode t)
 #+END_SRC
 
-Easily return to previous configurations.
+Easily return to previous configurations. 2-4 windows are easily managed by
+hand.
 
 #+NAME: 3FB7FA94-1A6B-4E3B-8EDE-7A4D1D86E50E
 #+BEGIN_SRC emacs-lisp :results output silent
