@@ -259,7 +259,8 @@ Start EMACS with this command:
    :ID:       016FA25F-E70E-4BED-BA01-AEB808428791
    :END:
 
-Configure EMACS to do everything provided by this document.
+Configure EMACS to do everything provided by this document. HELP is a monolithic
+system.
 
 Sysop is likely to use this constantly.
 
