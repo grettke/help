@@ -190,6 +190,8 @@
   - Instead of writing "tells EMACS", communicate the result.
   - "EMACS" refers to this software.
   - "This system" refers to this configuration of EMACS.
+  - Never describe something as "perfect" or "delightful". If it is part of this
+    system then it is perfect and delightful.
 
 * Webs We Weave
   :PROPERTIES:
