@@ -1784,6 +1784,9 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
 ;; [[file:~/src/help/help.org::*Beamer][B77E265B-EE1A-469D-BEFB-51360B7AB45E]]
 (use-package ox-beamer)
 ;; B77E265B-EE1A-469D-BEFB-51360B7AB45E ends here
+;; [[file:~/src/help/help.org::*HTML][080472B8-EC76-4318-876A-A4A65547B056]]
+(setq org-html-doctype "html5")
+;; 080472B8-EC76-4318-876A-A4A65547B056 ends here
 ;; [[file:~/src/help/help.org::*HTML][E26F69F8-ED1F-4F10-A291-6F9CB958FD18]]
 (use-package htmlize
   :config

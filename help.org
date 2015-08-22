@@ -5394,6 +5394,11 @@ Program GFM.
   :ID:       84F673DF-2E6F-4BAA-8095-4A7586BB73FC
   :END:
 
+#+NAME: 080472B8-EC76-4318-876A-A4A65547B056
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq org-html-doctype "html5")
+#+END_SRC
+
 Load Htmlize for HTML export. Use in-line CSS.
 
 #+NAME: E26F69F8-ED1F-4F10-A291-6F9CB958FD18
@@ -5423,6 +5428,17 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
       (when help/htmlize-initial-fci-state
         (fci-mode t))))
   (add-hook 'htmlize-after-hook #'help/htmlize-after-hook-fn))
+#+END_SRC
+
+** ASCII
+   :PROPERTIES:
+   :ID:       1F20F4EC-1D8B-402A-A0A9-504E733AEFDC
+   :END:
+
+#+NAME: B7F010D3-4A47-4E4A-9E00-D54E4D0F9D63
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq org-ascii-text-width 80)
+(setq org-ascii-global-margin 0)
 #+END_SRC
 
 ** Beamer
