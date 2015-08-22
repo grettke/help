@@ -5388,20 +5388,13 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
     (when (fboundp 'fci-mode)
       (setq help/htmlize-initial-fci-state fci-mode)
       (when fci-mode
-        (fci-mode -1)))
-    (when (fboundp 'flyspell-mode)
-      (setq help/htmlize-initial-flyspell-state flyspell-mode)
-      (when flyspell-mode
-        (flyspell-mode -1))))
+        (fci-mode -1))))
   (add-hook 'htmlize-before-hook #'help/htmlize-before-hook-fn)
 
   (defun help/htmlize-after-hook-fn ()
     (when (fboundp 'fci-mode)
       (when help/htmlize-initial-fci-state
-        (fci-mode 1)))
-    (when (fboundp 'flyspell-mode)
-      (when help/htmlize-initial-flyspell-state
-        (flyspell-mode 1))))
+        (fci-mode t))))
   (add-hook 'htmlize-after-hook #'help/htmlize-after-hook-fn))
 #+END_SRC
 

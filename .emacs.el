@@ -1782,7 +1782,28 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
 (use-package htmlize
   :config
   (setq org-html-htmlize-output-type htmlize-output-type)
-  (setq htmlize-output-type 'inline-css))
+  (setq htmlize-output-type 'inline-css)
+  (defvar help/htmlize-initial-fci-state nil
+    "Variable to store the state of `fci-mode' upon calling `htmlize-buffer'.
+
+Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
+  (defvar help/htmlize-initial-flyspell-state nil
+    "Variable to store the state of `flyspell-mode' upon calling `htmlize-buffer'.
+
+Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
+
+  (defun help/htmlize-before-hook-fn ()
+    (when (fboundp 'fci-mode)
+      (setq help/htmlize-initial-fci-state fci-mode)
+      (when fci-mode
+        (fci-mode -1))))
+  (add-hook 'htmlize-before-hook #'help/htmlize-before-hook-fn)
+
+  (defun help/htmlize-after-hook-fn ()
+    (when (fboundp 'fci-mode)
+      (when help/htmlize-initial-fci-state
+        (fci-mode t))))
+  (add-hook 'htmlize-after-hook #'help/htmlize-after-hook-fn))
 ;; E26F69F8-ED1F-4F10-A291-6F9CB958FD18 ends here
 ;; [[file:~/src/help/help.org::*Artist][7592B1CF-CDA3-4ED1-99FA-205E41C74FFF]]
 (add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
