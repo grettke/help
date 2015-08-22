@@ -2366,10 +2366,10 @@ articles changed everything: [[http://www.masteringemacs.org/articles/2014/04/10
 Working with multiple files in dired]], and [[https://www.masteringemacs.org/article/wdired-editable-dired-buffers][WDired: Editable Dired Buffers]]..
 They just made the power of Dired so obvious, and so easy to use, that it
 instantly because delightful to use. That was very, very cool. Even though I
-was really, really happy with Finder and Explorer… suddenly it just became so
+was really, really happy with Finder and Explorer... suddenly it just became so
 obvious and pleasant to use Dired. That is so wild.
 
-Key notes when executing shell commands on file selection…
+Key notes when executing shell commands on file selection...
 
 Substitution:
 - =<cmd> ?= :: 1* calls to cmd, each file a single argument
@@ -2378,12 +2378,12 @@ Substitution:
   - Not sure what this means
 
 Synchronicity:
-- =<cmd> …= :: by default commands are called synchronously
+- =<cmd> ...= :: by default commands are called synchronously
 - =<cmd> &= :: execute in parallel
 - =<cmd> ;= :: execute sequentially, asynchronously
 - =<cmd> ;&= :: execute in parallel, asynchronously
 
-Key notes on working with files in multiple directories… use the following:
+Key notes on working with files in multiple directories... use the following:
 
 Use =find= just like you would at the command line and all of the results show
 up in a single Dired buffer that you may work with just like you would any other
@@ -2405,7 +2405,7 @@ And if you want to use the faster Elisp version, that uses lisp regex, use:
 - =find-lisp-find-dired= :: for anything
 - =find-lisp-find-dired-subdirectories= :: for only directories
 
-Key notes on working with editable buffers…
+Key notes on working with editable buffers...
 
 As the author notes, you probably already instinctually knew what is possible.
 After reading his brief and concise exposition, it would be hard /not/ to
@@ -4994,7 +4994,7 @@ Since I'm using ℝ for everything, configure /everything/ to be using ℝ.
 (setq ess-local-process-name "R")
 #+END_SRC
 
-Handle rdoc and rmd files, though I have never used them… yet.
+Handle rdoc and rmd files, though I have never used them... yet.
 
 #+NAME: 5D17A7DE-ECAF-4FAE-8425-AD43FEDD2D45
 #+BEGIN_SRC emacs-lisp :results output silent
