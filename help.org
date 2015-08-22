@@ -176,6 +176,7 @@
   - Document and System and Web.
     - A Web defines a system.
     - A Web is realized in a document.
+  - Weave and Export.    
 - Tangling.
   - When ordering matters, rely on block-reuse to enforce correct generation.
 - Voice.
