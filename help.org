@@ -38,21 +38,42 @@
   :ID:       03E0F0E3-DB81-4033-8F04-5D8BB5CBB2F0
   :END:
 
-- Source Block
-  - Be sure that every one has a =NAME= property with a =UUID= value.
-    - YASnippet =sc= does this. So does code in Hacking/Org Mode/Utility.
-  - Tell the story in speech, and then in code.
-  - Consider it another paragraph and indent appropriately.
-  - When contained within a list.
-    - Indent begin/end blocks with list content; this makes it clear to Org-Mode
-      to export it as a code block.
-    - Source code is indented according to existing settings. This system keeps
-      it left-aligned, saving space.
-  - Tangle =:file= should have the same =NAME=.
-  - Virtually never edit the contents within buffer-of-origin.
-    - Out of buffer edits:
-      - Fast when spoken language.
-      - Risky when LISPY.
+- Content
+  - When importing, update to conform with Style-Guide.
+- Dictionary
+  - Exemple Complet Minimal (ECM) :: The minimal complete example of expected
+    versus actual behavior. Comes from the [[http://orgmode.org/worg/org-faq.html][Org-Mode]] community.
+  - Key-Bind :: A verb. The act of creating a Key Binding.
+  - Literate Programming (LP) :: As Knuth intended.
+  - Out of the Box (OOTB) :: The default configuration of something.
+  - Sysop :: A proper noun. The System-Operator. The human operating this EMACS
+    based Org-Mode enabled literate programming system. The reader.
+  - Tangle :: A verb. Assemble a document for consumption by another program or
+    machine.
+  - Weave :: A verb. Prepare a document for consumption by a human.
+  - Web :: A Source-Block definition of one or more that define part or all of
+    a system.
+- Encoding
+  - Prefer Unicode characters over ASCII equivalents.
+- File/Package Loading
+  - Load every one with ~use-package~ whether it came with EMACS OOTB or ELPA.
+    - ~ensure~ tells the reader which one it came from.
+  - Binding definitions often live in Piano Lessons.
+  - Configurations aren't meant to be fully transplant-able because this system
+    monolithic. In the interest of collaboration as much of the package
+    configuration lives in the =use-package= block as possible.
+- Formatting
+  - Code Snippet.
+    - Programming language expressions.
+    - Use ~code style~.
+  - Non-Code Snippet.
+    - Program names, file types
+    - Use =verbatim= style
+  - Package.
+    - Same as Headline.
+    - Dashes separate definition.
+    - Acronyms are all upper case to distinguish from words for example "GNU"
+      vs "Gnu".
 - Headline.
   - Be sure that every one has an =ID= property with a =UUID= value.
     - ~org-id-get-create~ does this. So does code in Hacking/Org Mode/Utility.
@@ -79,49 +100,6 @@
   - Sometimes headlines might better be:
     - List items.
     - Stand-alone bold'ed text without punctuation.
-- Content
-  - When importing, update to conform with Style-Guide.
-- Dictionary
-  - Exemple Complet Minimal (ECM) :: The minimal complete example of expected
-    versus actual behavior. Comes from the [[http://orgmode.org/worg/org-faq.html][Org-Mode]] community.
-  - Key-Bind :: A verb. The act of creating a Key Binding.
-  - Literate Programming (LP) :: As Knuth intended.
-  - Out of the Box (OOTB) :: The default configuration of something.
-  - Sysop :: A proper noun. The System-Operator. The human operating this EMACS
-    based Org-Mode enabled literate programming system. The reader.
-  - Tangle :: A verb. Assemble a document for consumption by another program or
-    machine.
-  - Weave :: A verb. Prepare a document for consumption by a human.
-  - Web :: A Source-Block definition of one or more that define part or all of
-    a system.
-- Encoding
-  - Prefer Unicode characters over ASCII equivalents.
-- ISpell
-  - Place =LocalWords= at the beginning of the document. That way it won't get
-    stomped on during development.
-- Synonyms.
-  - Document and System and Web.
-    - A Web defines a system.
-    - A Web is realized in a document.
-- File/Package Loading
-  - Load every one with ~use-package~ whether it came with EMACS OOTB or ELPA.
-    - ~ensure~ tells the reader which one it came from.
-  - Binding definitions often live in Piano Lessons.
-  - Configurations aren't meant to be fully transplant-able because this system
-    monolithic. In the interest of collaboration as much of the package
-    configuration lives in the =use-package= block as possible.
-- Formatting
-  - Code Snippet.
-    - Programming language expressions.
-    - Use ~code style~.
-  - Non-Code Snippet.
-    - Program names, file types
-    - Use =verbatim= style
-  - Package.
-    - Same as Headline.
-    - Dashes separate definition.
-    - Acronyms are all upper case to distinguish from words for example "GNU"
-      vs "Gnu".
 - Hyperlink.
   - External.
     - Exclude those easily found with a search-engine unless you are willing to
@@ -175,6 +153,28 @@
       byte-compiler will also issue a warning if you use a special variable as a
       function argument.
   - If only for weaving, consider making it a Macro.
+- Source Block
+  - Be sure that every one has a =NAME= property with a =UUID= value.
+    - YASnippet =sc= does this. So does code in Hacking/Org Mode/Utility.
+  - Tell the story in speech, and then in code.
+  - Consider it another paragraph and indent appropriately.
+  - When contained within a list.
+    - Indent begin/end blocks with list content; this makes it clear to Org-Mode
+      to export it as a code block.
+    - Source code is indented according to existing settings. This system keeps
+      it left-aligned, saving space.
+  - Tangle =:file= should have the same =NAME=.
+  - Virtually never edit the contents within buffer-of-origin.
+    - Out of buffer edits:
+      - Fast when spoken language.
+      - Risky when LISPY.
+- ISpell
+  - Place =LocalWords= at the beginning of the document. That way it won't get
+    stomped on during development.
+- Synonyms.
+  - Document and System and Web.
+    - A Web defines a system.
+    - A Web is realized in a document.
 - Tangling.
   - When ordering matters, rely on block-reuse to enforce correct generation.
 - Voice.
