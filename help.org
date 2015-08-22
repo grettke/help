@@ -168,7 +168,7 @@
     - Out of buffer edits:
       - Fast when spoken language.
       - Risky when LISPY.
-- ISpell
+- Spelling
   - Place =LocalWords= at the beginning of the document. That way it won't get
     stomped on during development.
 - Synonyms.
