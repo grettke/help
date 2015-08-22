@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# key: fun
+# name: R Function Definition
+# condition: (string= "S" ess-language)
+# expand-env: ((yas-indent-line 'fixed))
+# group: HELP
+# contributor: gcr@wisdomandwonder.com
+# --
+$1 <- function($2) {
+    $0
+}
