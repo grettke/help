@@ -5376,9 +5376,13 @@ Load Htmlize for HTML export. Use in-line CSS.
   (setq org-html-htmlize-output-type htmlize-output-type)
   (setq htmlize-output-type 'inline-css)
   (defvar help/htmlize-initial-fci-state nil
-    "Variable to store the state of `fci-mode' when `htmlize-buffer' is called.")
+    "Variable to store the state of `fci-mode' when `htmlize-buffer' is called.
+
+Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
   (defvar help/htmlize-initial-flyspell-state nil
-    "Variable to store the state of `flyspell-mode' when `htmlize-buffer' is called.")
+    "Variable to store the state of `flyspell-mode' when `htmlize-buffer' is called.
+
+Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 
   (defun help/htmlize-before-hook-fn ()
     (when (fboundp 'fci-mode)
