@@ -176,7 +176,7 @@
   - Document and System and Web.
     - A Web defines a system.
     - A Web is realized in a document.
-  - Weave and Export.    
+  - Weave and Export.
 - Tangling.
   - When ordering matters, rely on block-reuse to enforce correct generation.
 - Voice.
@@ -954,6 +954,13 @@ Mark source block evaluation results
    :noweb-ref: Org-Mode-Weave
    :ID:       F71DD8BA-B853-4903-A348-400E13C0E6F8
    :END:
+
+Stop your flow to monitor the export for errors.
+
+#+NAME: 49FDDABE-7999-4F51-BD93-969187A220D7
+#+BEGIN_SRC emacs-lisp
+(seta org-export-in-background nil)
+#+END_SRC
 
 Make sure that exported files are Unicode UTF-8.
 
