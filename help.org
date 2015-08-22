@@ -5375,30 +5375,30 @@ Load Htmlize for HTML export. Use in-line CSS.
   :config
   (setq org-html-htmlize-output-type htmlize-output-type)
   (setq htmlize-output-type 'inline-css)
-  (defvar modi/htmlize-initial-fci-state nil
+  (defvar help/htmlize-initial-fci-state nil
     "Variable to store the state of `fci-mode' when `htmlize-buffer' is called.")
-  (defvar modi/htmlize-initial-flyspell-state nil
+  (defvar help/htmlize-initial-flyspell-state nil
     "Variable to store the state of `flyspell-mode' when `htmlize-buffer' is called.")
 
-  (defun modi/htmlize-before-hook-fn ()
+  (defun help/htmlize-before-hook-fn ()
     (when (fboundp 'fci-mode)
-      (setq modi/htmlize-initial-fci-state fci-mode)
+      (setq help/htmlize-initial-fci-state fci-mode)
       (when fci-mode
         (fci-mode -1)))
     (when (fboundp 'flyspell-mode)
-      (setq modi/htmlize-initial-flyspell-state flyspell-mode)
+      (setq help/htmlize-initial-flyspell-state flyspell-mode)
       (when flyspell-mode
         (flyspell-mode -1))))
-  (add-hook 'htmlize-before-hook #'modi/htmlize-before-hook-fn)
+  (add-hook 'htmlize-before-hook #'help/htmlize-before-hook-fn)
 
-  (defun modi/htmlize-after-hook-fn ()
+  (defun help/htmlize-after-hook-fn ()
     (when (fboundp 'fci-mode)
-      (when modi/htmlize-initial-fci-state
+      (when help/htmlize-initial-fci-state
         (fci-mode 1)))
     (when (fboundp 'flyspell-mode)
-      (when modi/htmlize-initial-flyspell-state
+      (when help/htmlize-initial-flyspell-state
         (flyspell-mode 1))))
-  (add-hook 'htmlize-after-hook #'modi/htmlize-after-hook-fn))
+  (add-hook 'htmlize-after-hook #'help/htmlize-after-hook-fn))
 #+END_SRC
 
 ** Beamer
