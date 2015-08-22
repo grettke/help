@@ -955,11 +955,19 @@ Mark source block evaluation results
    :ID:       F71DD8BA-B853-4903-A348-400E13C0E6F8
    :END:
 
+Help the reader make sense of the document by displaying it's internal
+properties.
+
+#+NAME: 71BFB4A2-DABD-4621-A6E0-C3CAECD34BC4
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq org-export-with-properties t)
+#+END_SRC
+
 Stop your flow to monitor the export for errors.
 
 #+NAME: 49FDDABE-7999-4F51-BD93-969187A220D7
-#+BEGIN_SRC emacs-lisp
-(seta org-export-in-background nil)
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq org-export-in-background nil)
 #+END_SRC
 
 Make sure that exported files are Unicode UTF-8.
@@ -1603,6 +1611,14 @@ Hide and show code blocks.
     :PROPERTIES:
     :ID:       FA2BFDC9-5242-4547-A8A5-6DECC8ED1C1B
     :END:
+
+Exploratory programming in EMACS.
+
+#+NAME: 779A4232-960E-4CE1-B6EC-018FC997F0DD
+#+BEGIN_SRC emacs-lisp :results output silent
+(key-chord-define-global "dn" #'describe-function)
+(key-chord-define-global "dl" #'describe-variable)
+#+END_SRC
 
 #+NAME: 55D2A3E6-07B1-47B0-9ADD-54C966FA252B
 #+BEGIN_SRC emacs-lisp :results output silent

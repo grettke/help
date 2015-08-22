@@ -146,6 +146,12 @@ This is a copy and paste. Additional languages would warrant a refactor."
 (help/set-org-babel-default-header-args :results "output replace")
 (help/set-org-babel-default-inline-header-args :results "value replace")
 ;; BC84119C-6085-4B36-A2D9-0918A68D15C5 ends here
+;; [[file:~/src/help/help.org::*Weaving][71BFB4A2-DABD-4621-A6E0-C3CAECD34BC4]]
+(setq org-export-with-properties t)
+;; 71BFB4A2-DABD-4621-A6E0-C3CAECD34BC4 ends here
+;; [[file:~/src/help/help.org::*Weaving][49FDDABE-7999-4F51-BD93-969187A220D7]]
+(setq org-export-in-background nil)
+;; 49FDDABE-7999-4F51-BD93-969187A220D7 ends here
 ;; [[file:~/src/help/help.org::*Weaving][07E50259-E68C-465E-9387-9984220CEB69]]
 (setq org-export-coding-system 'utf-8)
 ;; 07E50259-E68C-465E-9387-9984220CEB69 ends here
@@ -2019,6 +2025,10 @@ _v_ariable       _u_ser-option
 ;; [[file:~/src/help/help.org::*Unsorted][374B4284-8823-4E85-A469-F3985D48EC61]]
 (global-set-key (kbd "s-b") #'hs-toggle-hiding)
 ;; 374B4284-8823-4E85-A469-F3985D48EC61 ends here
+;; [[file:~/src/help/help.org::*Left%20&%20Right%20Side][779A4232-960E-4CE1-B6EC-018FC997F0DD]]
+(key-chord-define-global "dn" #'describe-function)
+(key-chord-define-global "dl" #'describe-variable)
+;; 779A4232-960E-4CE1-B6EC-018FC997F0DD ends here
 ;; [[file:~/src/help/help.org::*Left%20&%20Right%20Side][55D2A3E6-07B1-47B0-9ADD-54C966FA252B]]
 (key-chord-define-global "qi" #'help/comment-or-uncomment)
 ;; 55D2A3E6-07B1-47B0-9ADD-54C966FA252B ends here

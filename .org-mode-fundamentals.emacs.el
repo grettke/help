@@ -145,6 +145,12 @@ This is a copy and paste. Additional languages would warrant a refactor."
 (help/set-org-babel-default-header-args :results "output replace")
 (help/set-org-babel-default-inline-header-args :results "value replace")
 ;; BC84119C-6085-4B36-A2D9-0918A68D15C5 ends here
+;; [[file:~/src/help/help.org::*Weaving][71BFB4A2-DABD-4621-A6E0-C3CAECD34BC4]]
+(setq org-export-with-properties t)
+;; 71BFB4A2-DABD-4621-A6E0-C3CAECD34BC4 ends here
+;; [[file:~/src/help/help.org::*Weaving][49FDDABE-7999-4F51-BD93-969187A220D7]]
+(setq org-export-in-background nil)
+;; 49FDDABE-7999-4F51-BD93-969187A220D7 ends here
 ;; [[file:~/src/help/help.org::*Weaving][07E50259-E68C-465E-9387-9984220CEB69]]
 (setq org-export-coding-system 'utf-8)
 ;; 07E50259-E68C-465E-9387-9984220CEB69 ends here
