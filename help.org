@@ -167,6 +167,8 @@
     - Out of buffer edits:
       - Fast when spoken language.
       - Risky when LISPY.
+  - While similar to Org-Macro, the =RESULT= formatting indicates to the reader
+    that the value is the result of an evaluation.
 - Spelling
   - Place =LocalWords= at the beginning of the document. That way it won't get
     stomped on during development.
