@@ -94,6 +94,8 @@
   - Weave :: A verb. Prepare a document for consumption by a human.
   - Web :: A Source-Block definition of one or more that define part or all of
     a system.
+- Encoding
+  - Prefer Unicode characters over ASCII equivalents.
 - ISpell
   - Place =LocalWords= at the beginning of the document. That way it won't get
     stomped on during development.
