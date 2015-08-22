@@ -1614,10 +1614,12 @@ Hide and show code blocks.
 
 Exploratory programming in EMACS.
 
+Don't use "dn" for "describe-fuNction" because of "and"-words.
+
 #+NAME: 779A4232-960E-4CE1-B6EC-018FC997F0DD
 #+BEGIN_SRC emacs-lisp :results output silent
-(key-chord-define-global "dn" #'describe-function)
-(key-chord-define-global "dl" #'describe-variable)
+(key-chord-define-global "d." #'describe-function)
+(key-chord-define-global "d," #'describe-variable)
 #+END_SRC
 
 #+NAME: 55D2A3E6-07B1-47B0-9ADD-54C966FA252B
