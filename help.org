@@ -120,6 +120,7 @@
     - Replace spaces with dashes.
     - Probably the Heading name.
     - Keep depth shallow
+  - Weaver and mode configurations are tightly bound.
 - Maintenance.
   - Frequently check spelling, grammar, and weasel-words.
   - Only keep working features in the system.
