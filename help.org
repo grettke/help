@@ -5283,6 +5283,13 @@ Standard article class.
 (setq org-latex-default-class "help-article")
 #+END_SRC
 
+Use "Smartquotes".
+
+#+NAME: 9B903D8E-6E42-41BB-83AA-EBE64298A7C8
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq org-export-with-smart-quotes t)
+#+END_SRC
+
 ** KOMA-Script
   :PROPERTIES:
   :noweb-ref: Hacking-Publishing-KOMA

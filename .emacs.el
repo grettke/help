@@ -1782,6 +1782,9 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
 
 (setq org-latex-default-class "help-article")
 ;; 6C864008-5602-4E73-A8DE-6DDE5DFA1EE0 ends here
+;; [[file:~/src/help/help.org::*TeX][9B903D8E-6E42-41BB-83AA-EBE64298A7C8]]
+(setq org-export-with-smart-quotes t)
+;; 9B903D8E-6E42-41BB-83AA-EBE64298A7C8 ends here
 ;; [[file:~/src/help/help.org::*KOMA-Script][C2C100F1-B302-4BC7-8633-A79BCBFE1FC7]]
 (eval-after-load "ox" '(require 'ox-koma-letter))
 ;; C2C100F1-B302-4BC7-8633-A79BCBFE1FC7 ends here
