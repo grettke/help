@@ -5252,6 +5252,20 @@ Standard LaTeX class options.
 (defvar help/ltx-cls-opt "paper=letter, pagesize, fontsize=10pt, parskip")
 #+END_SRC
 
+Standard article class.
+
+#+NAME: 6C864008-5602-4E73-A8DE-6DDE5DFA1EE0
+#+BEGIN_SRC emacs-lisp :results output silent
+(eval-after-load "ox-latex"
+  '(add-to-list 'org-latex-classes
+                `("help-article"
+                  ,(concat "\\documentclass["
+                           help/ltx-cls-opt
+                           "]{article}"))))
+
+(setq org-latex-default-class "help-article")
+#+END_SRC
+
 ** KOMA-Script
   :PROPERTIES:
   :noweb-ref: Hacking-Publishing-KOMA

@@ -1763,6 +1763,16 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
 ;; [[file:~/src/help/help.org::*TeX][E6559423-7FC3-4924-A38B-FE4C9CA8CD91]]
 (defvar help/ltx-cls-opt "paper=letter, pagesize, fontsize=10pt, parskip")
 ;; E6559423-7FC3-4924-A38B-FE4C9CA8CD91 ends here
+;; [[file:~/src/help/help.org::*TeX][6C864008-5602-4E73-A8DE-6DDE5DFA1EE0]]
+(eval-after-load "ox-latex"
+  '(add-to-list 'org-latex-classes
+                `("help-article"
+                  ,(concat "\\documentclass["
+                           help/ltx-cls-opt
+                           "]{article}"))))
+
+(setq org-latex-default-class "help-article")
+;; 6C864008-5602-4E73-A8DE-6DDE5DFA1EE0 ends here
 ;; [[file:~/src/help/help.org::*KOMA-Script][C2C100F1-B302-4BC7-8633-A79BCBFE1FC7]]
 (eval-after-load "ox" '(require 'ox-koma-letter))
 ;; C2C100F1-B302-4BC7-8633-A79BCBFE1FC7 ends here
