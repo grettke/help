@@ -1754,6 +1754,12 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
 ;; [[file:~/src/help/help.org::*TeX][083E953F-E95D-4596-98D1-C8554D451721]]
 (add-to-list 'auto-mode-alist '("\\.lco?\\'" . TeX-latex-mode))
 ;; 083E953F-E95D-4596-98D1-C8554D451721 ends here
+;; [[file:~/src/help/help.org::*TeX][9FA4E728-0AB8-4A18-9EE8-DC4387E6DD08]]
+(add-to-list 'org-latex-packages-alist '("english" "babel" t))
+;; 9FA4E728-0AB8-4A18-9EE8-DC4387E6DD08 ends here
+;; [[file:~/src/help/help.org::*TeX][6C50239B-2D5D-4022-8645-+BEGIN_SRC]]
+(add-to-list 'org-latex-packages-alist '("osf" "mathpazo" t))
+;; 6C50239B-2D5D-4022-8645-+BEGIN_SRC ends here
 ;; [[file:~/src/help/help.org::*KOMA-Script][C2C100F1-B302-4BC7-8633-A79BCBFE1FC7]]
 (eval-after-load "ox" '(require 'ox-koma-letter))
 ;; C2C100F1-B302-4BC7-8633-A79BCBFE1FC7 ends here
@@ -1762,9 +1768,7 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
   '(progn
      (add-to-list 'org-latex-classes
                   '("my-letter"
-                    "\\documentclass[paper=letter, pagesize, fontsize=10pt, parskip]{scrlttr2}
-\\usepackage[english]{babel}
-\\usepackage[osf]{mathpazo}"))
+                    "\\documentclass[paper=letter, pagesize, fontsize=10pt, parskip]{scrlttr2}"))
 
      (setq org-koma-letter-default-class "my-letter")))
 ;; 05968019-B83F-4F5B-ACF7-4CFF10CB8690 ends here

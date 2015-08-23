@@ -5231,6 +5231,20 @@ Load LCO files with AucTeX.
 (add-to-list 'auto-mode-alist '("\\.lco?\\'" . TeX-latex-mode))
 #+END_SRC
 
+Culture-dependent typographical results.
+
+#+NAME: 9FA4E728-0AB8-4A18-9EE8-DC4387E6DD08
+#+BEGIN_SRC emacs-lisp :results output silent
+(add-to-list 'org-latex-packages-alist '("english" "babel" t))
+#+END_SRC
+
+Palatino friendly mathematics fonts.
+
+#+NAME: 6C50239B-2D5D-4022-8645-+BEGIN_SRC
+#+BEGIN_SRC emacs-lisp :results output silent
+(add-to-list 'org-latex-packages-alist '("osf" "mathpazo" t))
+#+END_SRC
+
 ** KOMA-Script
   :PROPERTIES:
   :noweb-ref: Hacking-Publishing-KOMA
@@ -5333,9 +5347,7 @@ for my printed correspondence.
   '(progn
      (add-to-list 'org-latex-classes
                   '("my-letter"
-                    "\\documentclass[paper=letter, pagesize, fontsize=10pt, parskip]{scrlttr2}
-\\usepackage[english]{babel}
-\\usepackage[osf]{mathpazo}"))
+                    "\\documentclass[paper=letter, pagesize, fontsize=10pt, parskip]{scrlttr2}"))
 
      (setq org-koma-letter-default-class "my-letter")))
 #+END_SRC
