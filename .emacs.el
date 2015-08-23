@@ -1760,6 +1760,9 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
 ;; [[file:~/src/help/help.org::*TeX][6C50239B-2D5D-4022-8645-+BEGIN_SRC]]
 (add-to-list 'org-latex-packages-alist '("osf" "mathpazo" t))
 ;; 6C50239B-2D5D-4022-8645-+BEGIN_SRC ends here
+;; [[file:~/src/help/help.org::*TeX][E6559423-7FC3-4924-A38B-FE4C9CA8CD91]]
+(defvar help/ltx-cls-opt "paper=letter, pagesize, fontsize=10pt, parskip")
+;; E6559423-7FC3-4924-A38B-FE4C9CA8CD91 ends here
 ;; [[file:~/src/help/help.org::*KOMA-Script][C2C100F1-B302-4BC7-8633-A79BCBFE1FC7]]
 (eval-after-load "ox" '(require 'ox-koma-letter))
 ;; C2C100F1-B302-4BC7-8633-A79BCBFE1FC7 ends here
@@ -1767,8 +1770,10 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
 (eval-after-load "ox-koma-letter"
   '(progn
      (add-to-list 'org-latex-classes
-                  '("help-letter"
-                    "\\documentclass[paper=letter, pagesize, fontsize=10pt, parskip]{scrlttr2}"))
+                  `("help-letter"
+                    ,(concat "\\documentclass["
+                             help/ltx-cls-opt
+                             "]{scrlttr2}")))
 
      (setq org-koma-letter-default-class "help-letter")))
 ;; 05968019-B83F-4F5B-ACF7-4CFF10CB8690 ends here

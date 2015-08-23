@@ -5245,6 +5245,13 @@ Palatino friendly mathematics fonts.
 (add-to-list 'org-latex-packages-alist '("osf" "mathpazo" t))
 #+END_SRC
 
+Standard LaTeX class options.
+
+#+NAME: E6559423-7FC3-4924-A38B-FE4C9CA8CD91
+#+BEGIN_SRC emacs-lisp :results output silent
+(defvar help/ltx-cls-opt "paper=letter, pagesize, fontsize=10pt, parskip")
+#+END_SRC
+
 ** KOMA-Script
   :PROPERTIES:
   :noweb-ref: Hacking-Publishing-KOMA
@@ -5346,8 +5353,10 @@ for my printed correspondence.
 (eval-after-load "ox-koma-letter"
   '(progn
      (add-to-list 'org-latex-classes
-                  '("help-letter"
-                    "\\documentclass[paper=letter, pagesize, fontsize=10pt, parskip]{scrlttr2}"))
+                  `("help-letter"
+                    ,(concat "\\documentclass["
+                             help/ltx-cls-opt
+                             "]{scrlttr2}")))
 
      (setq org-koma-letter-default-class "help-letter")))
 #+END_SRC
