@@ -1486,9 +1486,9 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
                                                  :hint nil)
   "
 _1_ SHA-1 _2_ export-all _4_ +imgs _5_ -imgs                   _8_ detangle _9_ igc  _0_ tglmcro
-_q_ n2sbtre _w_ tbletfld _e_ g2nmrst _r_ g2nms-b _t_ g2s-b/hd      _u_ goto
+_q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ g2nms-b _t_ g2s-b/hd      _u_ goto
 _a_ inshdrgs _s_ oblobigst            _h_ dksieb
-_c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
+_c_ cksrcblk _b_ swtch2sessn _n_ n2sbtre _m_ xpndsrcblk"
   ("1" org-babel-sha1-hash)
   ("2" help/xprt-all)
   ("4" org-display-inline-images)
@@ -1505,10 +1505,10 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
   ("m" org-babel-expand-src-block-maybe)
   ("c" org-babel-check-src-block)
   ("w" org-table-edit-field)
-  ("q" org-narrow-to-subtree)
+  ("n" org-narrow-to-subtree)
   ("u" org-goto)
   ("b" org-babel-switch-to-session)
-  ("n" org-babel-switch-to-session-with-code))
+  ("q" org-babel-switch-to-session-with-code))
 (key-chord-define-global "hh" #'help/hydra/right-side/org-mode/body)
 ;; 5186DD50-F693-4297-A164-192BEA685C6D ends here
 ;; [[file:~/src/help/help.org::*Keybindings][BFF7A955-3107-4ED3-9022-CAB792E779EC]]
