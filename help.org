@@ -2950,6 +2950,14 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
       (when hidx
         (goto-char hidx)
         (org-export-to-file 'gfm "README.md" nil t nil)))))
+
+(defun help/xprt-all ()
+  "Export this entire document in configured weavers."
+  (interactive)
+  (org-ascii-export-to-ascii)
+  (org-html-export-to-html)
+  (org-gfm-export-to-markdown)
+  (org-latex-export-to-pdf))
 #+END_SRC
 
 ** Intellisense (Auto Completion)
@@ -4476,11 +4484,17 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
 (defhydra help/hydra/right-side/org-mode (:color blue
                                                  :hint nil)
   "
-_1_ SHA-1_4_ +imgs _5_ -imgs                   _8_ detangle _9_ igc  _0_ tglmcro
+_1_ SHA-1 _2_ export-all _4_ +imgs _5_ -imgs                   _8_ detangle _9_ igc  _0_ tglmcro
 _q_ n2sbtre _w_ tbletfld _e_ g2nmrst _r_ g2nms-b _t_ g2s-b/hd      _u_ goto
 _a_ inshdrgs _s_ oblobigst            _h_ dksieb
 _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
   ("1" org-babel-sha1-hash)
+  ("2" help/xprt-all)
+  ("4" org-display-inline-images)
+  ("5" org-remove-inline-images)
+  ("8" org-babel-detangle)
+  ("9" org-id-get-create)
+  ("0" help/org-toggle-macro-markers)
   ("s" org-babel-lob-ingest)
   ("e" org-babel-goto-named-result)
   ("r" org-babel-goto-named-src-block)
@@ -4492,13 +4506,8 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
   ("w" org-table-edit-field)
   ("q" org-narrow-to-subtree)
   ("u" org-goto)
-  ("8" org-babel-detangle)
-  ("9" org-id-get-create)
-  ("0" help/org-toggle-macro-markers)
   ("b" org-babel-switch-to-session)
-  ("n" org-babel-switch-to-session-with-code)
-  ("4" org-display-inline-images)
-  ("5" org-remove-inline-images))
+  ("n" org-babel-switch-to-session-with-code))
 (key-chord-define-global "hh" #'help/hydra/right-side/org-mode/body)
 #+END_SRC
 
