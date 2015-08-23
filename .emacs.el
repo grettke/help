@@ -1767,10 +1767,10 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
 (eval-after-load "ox-koma-letter"
   '(progn
      (add-to-list 'org-latex-classes
-                  '("my-letter"
+                  '("help-letter"
                     "\\documentclass[paper=letter, pagesize, fontsize=10pt, parskip]{scrlttr2}"))
 
-     (setq org-koma-letter-default-class "my-letter")))
+     (setq org-koma-letter-default-class "help-letter")))
 ;; 05968019-B83F-4F5B-ACF7-4CFF10CB8690 ends here
 ;; [[file:~/src/help/help.org::*KOMA-Script][EFFC0DFD-168F-42F5-9405-BAECD7EC5CB4]]
 (setq org-koma-letter-class-option-file "UScommercial9 KomaDefault")

@@ -5276,7 +5276,7 @@ Load the KOMA exporter.
     - Letter Class Option files (LCO)
 - Notes and thoughts on the ways to use it
   - LTX
-    - By following the setup directions, you do this, creating "my-letter" class
+    - By following the setup directions, you do this, creating "help-letter" class
     - Familiar and easy if you already know LaTeX
       - At some point in your workflow, you *must* define a class to use, anyway
     - Very easy to do, just define the class template and set =org-koma-letter-default-class=
@@ -5346,10 +5346,10 @@ for my printed correspondence.
 (eval-after-load "ox-koma-letter"
   '(progn
      (add-to-list 'org-latex-classes
-                  '("my-letter"
+                  '("help-letter"
                     "\\documentclass[paper=letter, pagesize, fontsize=10pt, parskip]{scrlttr2}"))
 
-     (setq org-koma-letter-default-class "my-letter")))
+     (setq org-koma-letter-default-class "help-letter")))
 #+END_SRC
 
 There are two formats for the letters: [[http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-new-example.org%3Bh%3D180a9a0e10dd8f7483a67946daf36732c316f821%3Bhb%3D180a9a0e10dd8f7483a67946daf36732c316f821][heading-based]] and [[http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-example.org%3Bh%3De21b8b00c3e895be9dd573d02ea84b08796296a3%3Bhb%3De21b8b00c3e895be9dd573d02ea84b08796296a3][property-based]].
