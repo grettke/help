@@ -1769,8 +1769,11 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
 ;; [[file:~/src/help/help.org::*TeX][6C50239B-2D5D-4022-8645-+BEGIN_SRC]]
 (add-to-list 'org-latex-packages-alist '("osf" "mathpazo" t))
 ;; 6C50239B-2D5D-4022-8645-+BEGIN_SRC ends here
+;; [[file:~/src/help/help.org::*TeX][AA859065-4868-4A02-882E-AD5840B74349]]
+(add-to-list 'org-latex-packages-alist '("margin=0.5in" "geometry" nil))
+;; AA859065-4868-4A02-882E-AD5840B74349 ends here
 ;; [[file:~/src/help/help.org::*TeX][E6559423-7FC3-4924-A38B-FE4C9CA8CD91]]
-(defvar help/ltx-cls-opt "paper=letter, pagesize, fontsize=10pt, parskip")
+(defvar help/ltx-cls-opt "paper=letter, fontsize=10pt, parskip")
 ;; E6559423-7FC3-4924-A38B-FE4C9CA8CD91 ends here
 ;; [[file:~/src/help/help.org::*TeX][6C864008-5602-4E73-A8DE-6DDE5DFA1EE0]]
 (eval-after-load "ox-latex"

@@ -5262,11 +5262,18 @@ Palatino friendly mathematics fonts.
 (add-to-list 'org-latex-packages-alist '("osf" "mathpazo" t))
 #+END_SRC
 
+Small margins.
+
+#+NAME: AA859065-4868-4A02-882E-AD5840B74349
+#+BEGIN_SRC emacs-lisp :results output silent
+(add-to-list 'org-latex-packages-alist '("margin=0.5in" "geometry" nil))
+#+END_SRC
+
 Standard LaTeX class options.
 
 #+NAME: E6559423-7FC3-4924-A38B-FE4C9CA8CD91
 #+BEGIN_SRC emacs-lisp :results output silent
-(defvar help/ltx-cls-opt "paper=letter, pagesize, fontsize=10pt, parskip")
+(defvar help/ltx-cls-opt "paper=letter, fontsize=10pt, parskip")
 #+END_SRC
 
 Standard article class.
