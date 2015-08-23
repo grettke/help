@@ -1461,6 +1461,14 @@ close together
      :ID:       C00A4E41-0801-4696-86E6-5A1CE1EBB189
      :END:
 
+#+NAME: E4B98196-FDFB-42B4-A52A-8CA7DC066E8E
+#+BEGIN_SRC emacs-lisp :results output silent
+(global-set-key (kbd "s-4") #'mc/mark-next-like-this)
+(global-set-key (kbd "s-3") #'mc/mark-previous-like-this)
+(global-set-key (kbd "s-2") #'mc/mark-all-like-this)
+(global-set-key (kbd "s-1") #'mc/edit-lines)
+#+END_SRC
+
 **** 4
      :PROPERTIES:
      :ID:       8F467832-8FC3-42B5-8978-8CF2C1454D5B
@@ -1475,6 +1483,13 @@ close together
      :PROPERTIES:
      :ID:       6DCD321F-6FDA-4983-9C7C-265D23D1AC4F
      :END:
+
+#+NAME: E60EA15F-28A0-4E98-B62E-1F8BDE444BD8
+#+BEGIN_SRC emacs-lisp :results output silent
+(global-set-key (kbd "s-d") #'er/expand-region)
+(key-chord-define-global "df" #'avy-goto-word-1)
+(key-chord-define-global "DF" #'avy-pop-mark)
+#+END_SRC
 
 #+NAME: F6C7AAB7-DF69-4EBA-8116-15DC32022D49
 #+BEGIN_SRC emacs-lisp :results output silent
@@ -1540,7 +1555,10 @@ _v_ariable       _u_ser-option
 
 #+NAME: 9224105B-2CDB-46F4-AF3F-312B3467C2B8
 #+BEGIN_SRC emacs-lisp :results output silent
+(global-set-key (kbd "s-v") #'smex)
 (global-set-key (kbd "C-x C-c") #'help/safb-save-buffers-kill-terminal)
+(global-set-key (kbd "s-x") #'ido-find-file)
+(global-set-key (kbd "s-c") #'ido-switch-buffer)
 #+END_SRC
 
 **** 1
@@ -1700,6 +1718,14 @@ Use a nicer =eval-expression= approach.
 (global-set-key (kbd "C-n") #'next-logical-line)
 (global-set-key (kbd "s-C-p") #'previous-line)
 (global-set-key (kbd "C-p") #'previous-logical-line)
+#+END_SRC
+
+Ansu.
+
+#+NAME: C8A58EDC-466A-493E-8709-2A241ED10808
+#+BEGIN_SRC emacs-lisp :results output silent
+(global-set-key (kbd "M-%") #'anzu-query-replace)
+(global-set-key (kbd "C-M-%") #'anzu-query-replace-regexp)
 #+END_SRC
 
 * Special Operating Procedure
@@ -2003,9 +2029,7 @@ then document.
 #+NAME: DA9A04CF-ABF9-4BF4-A9FF-85E89DA740E1
 #+BEGIN_SRC emacs-lisp :results output silent
 (use-package expand-region
-  :ensure t
-  :config
-  (global-set-key (kbd "s-d") #'er/expand-region))
+  :ensure t)
 #+END_SRC
 
 80 characters is wide enough for most documents.
@@ -2522,8 +2546,6 @@ this Source-Block will break Ido in this system.
   :config
   (ido-vertical-mode t)
   (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right))
-(global-set-key (kbd "s-x") #'ido-find-file)
-(global-set-key (kbd "s-c") #'ido-switch-buffer)
 #+END_SRC
 
 Make functions search-able.
@@ -2533,8 +2555,7 @@ Make functions search-able.
 (use-package smex
   :ensure t
   :config
-  (smex-initialize)
-  (global-set-key (kbd "s-v") #'smex))
+  (smex-initialize))
 #+END_SRC
 
 Make URLs a first-class object.
@@ -2601,9 +2622,7 @@ Go to any object in the frame quickly.
 #+BEGIN_SRC emacs-lisp :results output silent
 (use-package avy
   :ensure t
-  :config
-  (key-chord-define-global "df" #'avy-goto-word-1)
-  (key-chord-define-global "DF" #'avy-pop-mark))
+  :config)
 #+END_SRC
 
 ** Grammar
@@ -3002,12 +3021,7 @@ in different situations. Be very thoughtful and allow every function.
 #+NAME: 989C4727-473A-4DAB-8446-5077F3042587
 #+BEGIN_SRC emacs-lisp :results output silent
 (use-package multiple-cursors
-  :ensure t
-  :config
-  (global-set-key (kbd "s-4") #'mc/mark-next-like-this)
-  (global-set-key (kbd "s-3") #'mc/mark-previous-like-this)
-  (global-set-key (kbd "s-2") #'mc/mark-all-like-this)
-  (global-set-key (kbd "s-1") #'mc/edit-lines))
+  :ensure t)
 #+END_SRC
 
 ** Mark and Region
@@ -3158,8 +3172,6 @@ Display information about search-and-or-replace operation.
   :ensure t
   :config
   (global-anzu-mode t)
-  (global-set-key (kbd "M-%") #'anzu-query-replace)
-  (global-set-key (kbd "C-M-%") #'anzu-query-replace-regexp)
   (setq anzu-mode-lighter "")
   (setq anzu-deactivate-region t)
   (setq anzu-search-threshold 1000)

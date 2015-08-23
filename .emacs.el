@@ -319,9 +319,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
 ;; B80399BE-3E19-441E-93CF-C613A1309C35 ends here
 ;; [[file:~/src/help/help.org::*Buffer][DA9A04CF-ABF9-4BF4-A9FF-85E89DA740E1]]
 (use-package expand-region
-  :ensure t
-  :config
-  (global-set-key (kbd "s-d") #'er/expand-region))
+  :ensure t)
 ;; DA9A04CF-ABF9-4BF4-A9FF-85E89DA740E1 ends here
 ;; [[file:~/src/help/help.org::*Buffer][9DB523BC-E21B-42B7-AEE2-31ED24C14D92]]
 (setq help/column-width 80)
@@ -589,15 +587,12 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
   :config
   (ido-vertical-mode t)
   (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right))
-(global-set-key (kbd "s-x") #'ido-find-file)
-(global-set-key (kbd "s-c") #'ido-switch-buffer)
 ;; CCCA7B51-6A71-41EF-906C-C1C3A6B0C927 ends here
 ;; [[file:~/src/help/help.org::*Interactively%20DO%20Things%E2%80%9D][4C4179A9-2415-4309-A127-FA143D3331DD]]
 (use-package smex
   :ensure t
   :config
-  (smex-initialize)
-  (global-set-key (kbd "s-v") #'smex))
+  (smex-initialize))
 ;; 4C4179A9-2415-4309-A127-FA143D3331DD ends here
 ;; [[file:~/src/help/help.org::*Interactively%20DO%20Things%E2%80%9D][667AED70-8685-4BEA-A32F-7B304483C05F]]
 (setq ido-use-url-at-point t)
@@ -621,9 +616,7 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
 ;; [[file:~/src/help/help.org::*Going%20to%20Objects][C95AD351-D087-473F-88EB-B0930C86FBDF]]
 (use-package avy
   :ensure t
-  :config
-  (key-chord-define-global "df" #'avy-goto-word-1)
-  (key-chord-define-global "DF" #'avy-pop-mark))
+  :config)
 ;; C95AD351-D087-473F-88EB-B0930C86FBDF ends here
 ;; [[file:~/src/help/help.org::*Grammar][42DD3C85-F2C4-4A82-8B76-5BFBCF692E86]]
 (use-package writegood-mode
@@ -983,12 +976,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 ;; 36899F5A-7606-461A-A17C-622B0B807E8E ends here
 ;; [[file:~/src/help/help.org::*Macros][989C4727-473A-4DAB-8446-5077F3042587]]
 (use-package multiple-cursors
-  :ensure t
-  :config
-  (global-set-key (kbd "s-4") #'mc/mark-next-like-this)
-  (global-set-key (kbd "s-3") #'mc/mark-previous-like-this)
-  (global-set-key (kbd "s-2") #'mc/mark-all-like-this)
-  (global-set-key (kbd "s-1") #'mc/edit-lines))
+  :ensure t)
 ;; 989C4727-473A-4DAB-8446-5077F3042587 ends here
 ;; [[file:~/src/help/help.org::*Mark%20and%20Region][0B6E0831-FE6F-442F-918F-48488A6FCD2D]]
 (delete-selection-mode t)
@@ -1058,8 +1046,6 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   :ensure t
   :config
   (global-anzu-mode t)
-  (global-set-key (kbd "M-%") #'anzu-query-replace)
-  (global-set-key (kbd "C-M-%") #'anzu-query-replace-regexp)
   (setq anzu-mode-lighter "")
   (setq anzu-deactivate-region t)
   (setq anzu-search-threshold 1000)
@@ -1979,9 +1965,20 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 ;; [[file:~/src/help/help.org::*Window][3FB7FA94-1A6B-4E3B-8EDE-7A4D1D86E50E]]
 (winner-mode t)
 ;; 3FB7FA94-1A6B-4E3B-8EDE-7A4D1D86E50E ends here
+;; [[file:~/src/help/help.org::*5][E4B98196-FDFB-42B4-A52A-8CA7DC066E8E]]
+(global-set-key (kbd "s-4") #'mc/mark-next-like-this)
+(global-set-key (kbd "s-3") #'mc/mark-previous-like-this)
+(global-set-key (kbd "s-2") #'mc/mark-all-like-this)
+(global-set-key (kbd "s-1") #'mc/edit-lines)
+;; E4B98196-FDFB-42B4-A52A-8CA7DC066E8E ends here
 ;; [[file:~/src/help/help.org::*4][239A85C3-2CEB-4E40-975F-8B3584F7F450]]
 (global-set-key (kbd "s-w") #'imenu)
 ;; 239A85C3-2CEB-4E40-975F-8B3584F7F450 ends here
+;; [[file:~/src/help/help.org::*3][E60EA15F-28A0-4E98-B62E-1F8BDE444BD8]]
+(global-set-key (kbd "s-d") #'er/expand-region)
+(key-chord-define-global "df" #'avy-goto-word-1)
+(key-chord-define-global "DF" #'avy-pop-mark)
+;; E60EA15F-28A0-4E98-B62E-1F8BDE444BD8 ends here
 ;; [[file:~/src/help/help.org::*3][F6C7AAB7-DF69-4EBA-8116-15DC32022D49]]
 (defhydra help/hydra/left-side/global (:color blue
                                               :hint nil)
@@ -2031,7 +2028,10 @@ _v_ariable       _u_ser-option
   ("e" apropos-value))
 ;; 362686F6-B397-44D5-812F-BE24670F4204 ends here
 ;; [[file:~/src/help/help.org::*2][9224105B-2CDB-46F4-AF3F-312B3467C2B8]]
+(global-set-key (kbd "s-v") #'smex)
 (global-set-key (kbd "C-x C-c") #'help/safb-save-buffers-kill-terminal)
+(global-set-key (kbd "s-x") #'ido-find-file)
+(global-set-key (kbd "s-c") #'ido-switch-buffer)
 ;; 9224105B-2CDB-46F4-AF3F-312B3467C2B8 ends here
 ;; [[file:~/src/help/help.org::*Unsorted][A45F49E2-E330-463B-82C6-907F138E8F2A]]
 (define-prefix-command 'help/vc-map)
@@ -2100,4 +2100,8 @@ _v_ariable       _u_ser-option
 (global-set-key (kbd "s-C-p") #'previous-line)
 (global-set-key (kbd "C-p") #'previous-logical-line)
 ;; 65D190DA-D23D-427D-B070-1C74053EDC4E ends here
+;; [[file:~/src/help/help.org::*Exceptions][C8A58EDC-466A-493E-8709-2A241ED10808]]
+(global-set-key (kbd "M-%") #'anzu-query-replace)
+(global-set-key (kbd "C-M-%") #'anzu-query-replace-regexp)
+;; C8A58EDC-466A-493E-8709-2A241ED10808 ends here
 ;; AD12BE48-B87B-4AB6-814D-4FA5E47597A0 ends here
