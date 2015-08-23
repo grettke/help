@@ -33,38 +33,38 @@
    - The Init file to HELP's.
      - =ln -s ~/src/help/.emacs.el ~/.emacs.el=
 
-* Style Guide
+# * Style Guide
   :PROPERTIES:
   :ID:       03E0F0E3-DB81-4033-8F04-5D8BB5CBB2F0
   :END:
 
 - Appearance.
   - Never override theme colors.
-  - When the theme doesn't configure a face then patch and submit it.
+  - When the theme doesn't configure a face then submit a patch.
 - Content
-  - When importing, update to conform with Style-Guide.
-  - Keep tangled and weaved documents synchronized with their source web.
+  - When importing update to conform with Style-Guide.
+  - Keep tangled and weaved documents synchronized with their web.
   - Ask yourself:
     - Does it belong in this web?
     - Does it belong in this headline?
 - Dictionary
   - Exemple Complet Minimal (ECM) :: The minimal complete example of expected
-    versus actual behavior. Comes from the [[http://orgmode.org/worg/org-faq.html][Org-Mode]] community.
+    versus actual behavior. [[http://orgmode.org/worg/org-faq.html][Source]].
   - Key-Bind :: A verb. The act of creating a Key Binding.
   - Literate Programming (LP) :: As Knuth intended.
-  - Out of the Box (OOTB) :: The default configuration of something.
+  - Out of the Box (OOTB) :: The default configuration.
   - Sysop :: A proper noun. The System-Operator. The human operating this EMACS
     based Org-Mode enabled literate programming system. The reader.
   - Tangle :: A verb. Assemble a document for consumption by another program or
     machine.
   - Weave :: A verb. Prepare a document for consumption by a human.
-  - Web :: A Source-Block definition of one or more that define part or all of
-    a system.
+  - Web :: A document contained Source-Block definitions that define a system.
 - Encoding
   - Prefer Unicode characters over ASCII equivalents.
+  - Consider Org-Mode automatic handling of ASCII to UTF-8 symbols.
 - File/Package Loading
   - Load every one with ~use-package~ whether it came with EMACS OOTB or ELPA.
-    - ~ensure~ tells the reader which one it came from.
+    - ~ensure t~ tells the reader which one it came from.
   - Binding definitions often live in Piano Lessons.
   - Configurations aren't meant to be fully transplant-able because this system
     monolithic. In the interest of collaboration as much of the package
@@ -84,37 +84,31 @@
 - Headline.
   - Be sure that every one has an =ID= property with a =UUID= value.
     - ~org-id-get-create~ does this. So does code in Hacking/Org Mode/Utility.
-  - Capitalize nouns, verbs, and adjectives.
+  - Capitalize: nouns, verbs, and adjectives.
   - Don't capitalize conjunctions unless they are starting the definition.
   - Sell this "chapter" to the reader.
   - Some headlines will be empty and significant; keep them.
     - Some modes don't require any configuration. The headline still needs to be
-      present to remind Sysop to keep it in her cognitive landscape.
-    - Configure other properties and modes taking it into account.
-    - Pros:
-      - For example:
-        - Every language under Hacking should show up in
-          ~org-babel-load-languages~.
-      - The Prog*-Mode system configuration can result in Headlines that don't
-        need any configuration. The Headline still communicates the mode's
-        value to Sysop even if it doesn't configure EMACS.
-    - Cons:
-      - Gives reader impression that modes are configured and ready to use.
+      present to remind the reader to keep it in her cognitive landscape.
+      Configure other properties and modes taking it into account.
+    - Every language under Hacking should show up in ~org-babel-load-languages~.
+    - The =Prog*-Mode= system configuration can result in Headlines that don't
+      need any configuration. The Headline still communicates the mode's
+      value to the reader even if it doesn't configure EMACS.
   - It is important to include headlines that are empty and that you may not
     even end up keeping. You need them to help you explore the cognitive
     landscape with them present. In this one case, premature optimization is
     /not/ the root of all evil.
   - Sometimes headlines might better be:
     - List items.
-    - Stand-alone bold'ed text without punctuation.
+    - Stand-alone bold text without punctuation.
 - Hyperlink.
   - External.
     - Exclude those easily found with a search-engine unless you are willing to
       verify their existence frequently.
     - Include when they make the task at hand immensely easier.
   - Internal.
-    - Heading artifacts can be referenced so the need here is minimal to
-      non-existent.
+    - Minimize usage.
 - Literate Programming.
   - Comments.
     - Exclude from tangle-blocks and rely on source-block for traceability.
@@ -128,7 +122,7 @@
   - Frequently check spelling, grammar, and weasel-words.
   - Only keep working features in the system.
 - Macros
-  - Render as written-text.
+  - Rendered as written-text.
   - Don't contain source code.
   - Create for ideas expressed more than 2 times.
   - Expanded during weaving, not during tangling.
@@ -136,45 +130,40 @@
   - End single sentences with a period.
 - Programming Language.
   - Emacs-Lisp.
-    - Use ~t~ for ~true~.
     - Almost always use ~defun~ instead of ~advice-add~.
       - Functions are more normal and predictable.
       - Advice can subtly break without you noticing.
-    - Paramemter.
+    - Parameter.
       - ~nil~ for =FALSE=.
       - ~t~ for =TRUE=.
       - ~n~ for numerical values.
-    - Try never to advise functions.
     - Never ~custom-set-variables~.
-  - Always use relative file paths.
-  - Byte-compile frequently to minimize System warnings.
-  - Prefer to byte-compile all references by using ~function~.
-    - Fail-fast: it is better to know immediately if there are resolution
-      issues.
-  - Prefer to declare anonymous functions with ~function~.
-  - [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Using-Lexical-Binding.html#Using-Lexical-Binding][Quoted via]].
+    - Always use relative file paths.
+    - Byte-compile frequently to minimize System warnings.
+    - Prefer to byte-compile all references by using ~function~.
+      - Fail-fast: it is better to know immediately if there are resolution
+        issues.
+    - Prefer to declare anonymous functions with ~function~.
+    - [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Using-Lexical-Binding.html#Using-Lexical-Binding][Quoted via]].
     - If a non-special variable is used outside of a let form, the byte-compiler
       will warn about reference or assignment to a “free variable”. If a
       non-special variable is bound but not used within a let form, the
       byte-compiler will warn about an “unused lexical variable”. The
       byte-compiler will also issue a warning if you use a special variable as a
       function argument.
-  - If only for weaving, consider making it a Macro.
 - Source Block
   - Be sure that every one has a =NAME= property with a =UUID= value.
     - YASnippet =sc= does this. So does code in Hacking/Org Mode/Utility.
   - Tell the story in speech, and then in code.
   - Consider it another paragraph and indent appropriately.
-  - When contained within a list.
+  - When contained within a list:
     - Indent begin/end blocks with list content; this makes it clear to Org-Mode
       to export it as a code block.
-    - Source code is indented according to existing settings. This system keeps
-      it left-aligned, saving space.
   - Tangle =:file= should have the same =NAME=.
   - Virtually never edit the contents within buffer-of-origin.
     - Out of buffer edits:
       - Fast when spoken language.
-      - Risky when LISPY.
+      - Risky when LISP.
   - While similar to Org-Macro, the =RESULT= formatting indicates to the reader
     that the value is the result of an evaluation.
 - Spelling
@@ -185,24 +174,25 @@
     - A Web defines a system.
     - A Web is realized in a document.
   - Weave and Export.
+  - Sysop and Reader.
 - Tangling.
-  - When ordering matters, rely on block-reuse to enforce correct generation.
+  - When ordering matters, rely on block-reuse to enforce correct order.
 - Voice.
   - Provide answers; do not pose questions or observations.
   - Simple and detailed.
   - Pleasant conversation style.
   - Audience is Sysop; the author included.
 - Weaving.
-  - Periodically Weave this Web and publish it on GitHub. The Org-Mode rendering
-    there is delightful. It is important to see the difference between a Web and
-    it's Weaved result.
+  - Strive to keep the weaving in synchronization with the tangling.
 - Word Choice.
   - Use Arabic numerals.
   - Instead of writing "tells EMACS", communicate the result.
-  - "EMACS" refers to this software.
-  - "This system" refers to this configuration of EMACS.
+  - "EMACS" refers to the EMACS software
+  - "HELP" refers to the system configured by tangling this we.
   - Never describe something as "perfect" or "delightful". If it is part of this
     system then it is perfect and delightful.
+
+#  LocalWords:  YASnippet UTF defun
 
 * Webs We Weave
   :PROPERTIES:
