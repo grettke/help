@@ -38,6 +38,9 @@
   :ID:       03E0F0E3-DB81-4033-8F04-5D8BB5CBB2F0
   :END:
 
+- Appearance.
+  - Never override theme colors.
+  - When the theme doesn't configure a face then patch and submit it.
 - Content
   - When importing, update to conform with Style-Guide.
   - Keep tangled and weaved documents synchronized with their source web.
