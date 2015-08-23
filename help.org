@@ -723,7 +723,7 @@ Org-Mode may evaluate all of the listed languages.
 Avoid re-evaluating unchanged code blocks
 #+END_QUOTE
 
-{{{lp-configure-each-sb}}
+{{{lp-configure-each-sb}}}
 
 Default =no= is correct for nearly every scenario.
 
