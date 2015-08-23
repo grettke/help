@@ -41,6 +41,9 @@
 - Content
   - When importing, update to conform with Style-Guide.
   - Keep tangled and weaved documents synchronized with their source web.
+  - Ask yourself:
+    - Does it belong in this web?
+    - Does it belong in this headline?
 - Dictionary
   - Exemple Complet Minimal (ECM) :: The minimal complete example of expected
     versus actual behavior. Comes from the [[http://orgmode.org/worg/org-faq.html][Org-Mode]] community.
