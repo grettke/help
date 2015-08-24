@@ -33,7 +33,7 @@
    - The Initialization file to HELP's.
      - =ln -s ~/src/help/.emacs.el ~/.emacs.el=
 
-# * Style Guide
+* Style Guide
   :PROPERTIES:
   :ID:       03E0F0E3-DB81-4033-8F04-5D8BB5CBB2F0
   :END:
