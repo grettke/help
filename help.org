@@ -1,6 +1,6 @@
 # -*- lexical-binding: t -*-
 
-#  LocalWords:  YASnippet UTF defun PlantUML LanguageTool HELP's Eshell
+#  LocalWords:  YASnippet UTF defun PlantUML LanguageTool HELP's Eshell args
 
 #+STARTUP: showeverything
 
