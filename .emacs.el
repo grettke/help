@@ -941,7 +941,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (interactive)
   (help/save-all-file-buffers)
   (save-excursion
-    (let ((hidx (org-find-property "ID" "03E0F0E3-DB81-4033-8F04-5D8BB5CBB2F0")))
+    (let ((hidx (org-find-property "ID" "39A2F05A-BC60-4879-9B66-85E43297FC97")))
       (when hidx
         (goto-char hidx)
         (org-export-to-file 'gfm "README.md" nil t nil)))))
