@@ -146,9 +146,9 @@
     - Prefer to declare anonymous functions with ~function~.
     - [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Using-Lexical-Binding.html#Using-Lexical-Binding][Quoted via]].
     - If a non-special variable appears outside of a let form, the byte-compiler
-      will warn about reference or assignment to a “free variable”. An
+      will warn about reference or assignment to a "free variable". An
       unused non-special variable binding within a let form provokes the
-      byte-compiler will warn about an “unused lexical variable”. The
+      byte-compiler will warn about an "unused lexical variable". The
       byte-compiler will also issue a warning if you use a special variable as a
       function argument.
 - Source Block
@@ -2501,7 +2501,7 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
 (add-hook 'font-lock-mode-hook #'help/try-to-add-imenu)
 #+END_SRC
 
-** Interactively DO Things”
+** Interactively DO Things
    :PROPERTIES:
    :ID:       2DB9FDA1-9950-4FEA-A33C-E8DDFDA9420E
    :END:
