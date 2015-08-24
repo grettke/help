@@ -567,7 +567,7 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
   (condition-case nil (imenu-add-to-menubar "Imenu") (error nil)))
 (add-hook 'font-lock-mode-hook #'help/try-to-add-imenu)
 ;; D722C567-86BA-45AD-91AB-2536696312C8 ends here
-;; [[file:~/src/help/help.org::*Interactively%20DO%20Things%E2%80%9D][CCCA7B51-6A71-41EF-906C-C1C3A6B0C927]]
+;; [[file:~/src/help/help.org::*Interactively%20DO%20Things][CCCA7B51-6A71-41EF-906C-C1C3A6B0C927]]
 (use-package ido)
 (use-package flx-ido
   :ensure t
@@ -588,13 +588,13 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
   (ido-vertical-mode t)
   (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right))
 ;; CCCA7B51-6A71-41EF-906C-C1C3A6B0C927 ends here
-;; [[file:~/src/help/help.org::*Interactively%20DO%20Things%E2%80%9D][4C4179A9-2415-4309-A127-FA143D3331DD]]
+;; [[file:~/src/help/help.org::*Interactively%20DO%20Things][4C4179A9-2415-4309-A127-FA143D3331DD]]
 (use-package smex
   :ensure t
   :config
   (smex-initialize))
 ;; 4C4179A9-2415-4309-A127-FA143D3331DD ends here
-;; [[file:~/src/help/help.org::*Interactively%20DO%20Things%E2%80%9D][667AED70-8685-4BEA-A32F-7B304483C05F]]
+;; [[file:~/src/help/help.org::*Interactively%20DO%20Things][667AED70-8685-4BEA-A32F-7B304483C05F]]
 (setq ido-use-url-at-point t)
 (setq ido-use-filename-at-point 'guess)
 ;; 667AED70-8685-4BEA-A32F-7B304483C05F ends here
