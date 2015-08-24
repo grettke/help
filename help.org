@@ -3222,8 +3222,7 @@ Source-Blocks.
 
 #+NAME: 23D5548B-1081-48A8-BBCD-5C69AC2C57B8
 #+BEGIN_SRC emacs-lisp :results output silent
-(add-to-list 'ispell-skip-region-alist '("^#\\+begin_src ". "#\\+#+end_src$"))
-(add-to-list 'ispell-skip-region-alist '("^#\\+BEGIN_SRC ". "#\\+#+END_SRC$"))
+(add-to-list 'ispell-skip-region-alist '("^\s*#[+]BEGIN_SRC" . "^\s*#[+]END_SRC"))
 #+END_SRC
 
 Example-Blocks. This system often uses Source-Blocks to edit content and
@@ -3231,8 +3230,7 @@ Example-Blocks to make it easily renderable when it is not for running.
 
 #+NAME: CE78FEAC-B28A-4F76-95F2-4FE246FCDCAD
 #+BEGIN_SRC emacs-lisp :results output silent
-(add-to-list 'ispell-skip-region-alist '("^#\\+begin_example ". "#\\+end_example$"))
-(add-to-list 'ispell-skip-region-alist '("^#\\+BEGIN_EXAMPLE ". "#\\+END_EXAMPLE$"))
+(add-to-list 'ispell-skip-region-alist '("^\s*#[+]BEGIN_EXAMPLE" . "^\s*#[+]END_EXAMPLE"))
 #+END_SRC
 
 Properties.

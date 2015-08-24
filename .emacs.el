@@ -1067,12 +1067,10 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (setq-default case-fold-search t)
 ;; 4B9FE2A1-6A5F-42EF-AEEA-222B72170B64 ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][23D5548B-1081-48A8-BBCD-5C69AC2C57B8]]
-(add-to-list 'ispell-skip-region-alist '("^#\\+begin_src ". "#\\+#+end_src$"))
-(add-to-list 'ispell-skip-region-alist '("^#\\+BEGIN_SRC ". "#\\+#+END_SRC$"))
+(add-to-list 'ispell-skip-region-alist '("^\s*#[+]BEGIN_SRC" . "^\s*#[+]END_SRC"))
 ;; 23D5548B-1081-48A8-BBCD-5C69AC2C57B8 ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][CE78FEAC-B28A-4F76-95F2-4FE246FCDCAD]]
-(add-to-list 'ispell-skip-region-alist '("^#\\+begin_example ". "#\\+end_example$"))
-(add-to-list 'ispell-skip-region-alist '("^#\\+BEGIN_EXAMPLE ". "#\\+END_EXAMPLE$"))
+(add-to-list 'ispell-skip-region-alist '("^\s*#[+]BEGIN_EXAMPLE" . "^\s*#[+]END_EXAMPLE"))
 ;; CE78FEAC-B28A-4F76-95F2-4FE246FCDCAD ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][01BEC0C6-64F7-440F-A217-EA73CDA75DDA]]
 (add-to-list 'ispell-skip-region-alist '("\:PROPERTIES\:$" . "\:END\:$"))
