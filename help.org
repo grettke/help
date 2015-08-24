@@ -1,6 +1,6 @@
 # -*- lexical-binding: t -*-
 
-#  LocalWords:
+#  LocalWords:  YASnippet UTF defun PlantUML LanguageTool HELP's
 
 #+STARTUP: showeverything
 
@@ -30,7 +30,7 @@
 5) Link.
    - The Eshell directory to HELP's.
      - =ln -s ~/src/help/eshell/ ~/.emacs.d/eshell=
-   - The Init file to HELP's.
+   - The Initialization file to HELP's.
      - =ln -s ~/src/help/.emacs.el ~/.emacs.el=
 
 # * Style Guide
@@ -191,8 +191,6 @@
   - "HELP" refers to the system configured by tangling this we.
   - Never describe something as "perfect" or "delightful". If it is part of this
     system then it is perfect and delightful.
-
-#  LocalWords:  YASnippet UTF defun
 
 * Webs We Weave
   :PROPERTIES:
