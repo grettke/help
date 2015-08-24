@@ -1,6 +1,6 @@
 # -*- lexical-binding: t -*-
 
-#  LocalWords:  YASnippet UTF defun PlantUML LanguageTool HELP's Eshell args
+#  LocalWords:  YASnippet UTF defun PlantUML LanguageTool HELP's Eshell
 
 #+STARTUP: showeverything
 
@@ -3264,7 +3264,7 @@ Verbatim
 
 #+NAME: 5BF4C8DE-63B8-4684-B8F4-0021781B1E1E
 #+BEGIN_SRC emacs-lisp :results output silent
-(add-to-list 'ispell-skip-region-alist '("=.*" . ".*="))
+(add-to-list 'ispell-skip-region-alist '("=" . ".+="))
 #+END_SRC
 
 Bold text list items.

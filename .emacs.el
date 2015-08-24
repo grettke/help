@@ -1069,6 +1069,9 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 ;; [[file:~/src/help/help.org::*Org-Mode][23D5548B-1081-48A8-BBCD-5C69AC2C57B8]]
 (add-to-list 'ispell-skip-region-alist '("^\s*#[+]BEGIN_SRC" . "^\s*#[+]END_SRC"))
 ;; 23D5548B-1081-48A8-BBCD-5C69AC2C57B8 ends here
+;; [[file:~/src/help/help.org::*Org-Mode][A110A1CF-FFE2-443B-A83A-33CE3428BB09]]
+(add-to-list 'ispell-skip-region-alist '("^\s*#[+]NAME:" . "$"))
+;; A110A1CF-FFE2-443B-A83A-33CE3428BB09 ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][CE78FEAC-B28A-4F76-95F2-4FE246FCDCAD]]
 (add-to-list 'ispell-skip-region-alist '("^\s*#[+]BEGIN_EXAMPLE" . "^\s*#[+]END_EXAMPLE"))
 ;; CE78FEAC-B28A-4F76-95F2-4FE246FCDCAD ends here
@@ -1082,7 +1085,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (add-to-list 'ispell-skip-region-alist '("^http" . "\\]"))
 ;; F5636C6E-61AC-491F-936E-FAE5974ED541 ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][5BF4C8DE-63B8-4684-B8F4-0021781B1E1E]]
-(add-to-list 'ispell-skip-region-alist '("=.*" . ".*="))
+(add-to-list 'ispell-skip-region-alist '("=" . ".+="))
 ;; 5BF4C8DE-63B8-4684-B8F4-0021781B1E1E ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][D1A2D129-9299-4349-AFF3-8F65F7D0CF95]]
 (add-to-list 'ispell-skip-region-alist '("- \\*.+" . ".*\\*: "))
