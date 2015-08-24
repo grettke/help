@@ -1,100 +1,66 @@
 
 # README
 
+    ID: F651B86D-86C2-43A9-B0E6-CB94963BB502
+
 ## HELP Enables Literate Programming
+
+    ID: 39A2F05A-BC60-4879-9B66-85E43297FC97
 
 **Setup**
 
 1.  [Pull Org-Mode](http://orgmode.org/) to `~/src/`.
-    1.  If necessary: [Generating autoloads and Compiling Org without make](http://orgmode.org/worg/org-hacks.html)
+    1.  Without `Make`: [Generating autoloads and Compiling Org without make](http://orgmode.org/worg/org-hacks.html)
 2.  [Pull Use-Package](https://github.com/jwiegley/use-package) to `~/src/`.
-3.  Create a folder for support libraries exporting it's location in a variable
+3.  Create a folder for support libraries exporting it&rsquo;s location in a variable
     named `EELIB`.
     1.  Install [DITAA](http://ditaa.sourceforge.net/) renaming the JAR to `ditaa.jar`.
     2.  Install [PlantUML](http://plantuml.com/) renaming the JAR to `plantuml.jar`.
-4.  Install supporting systems adding their exectuables to the `PATH`.
+4.  Install supporting software adding their exectuable location to the `PATH`.
     1.  Install [Oracle Java](https://www.oracle.com/java/index.html).
-    2.  Install [LanguageTool](https://www.languagetool.org/) unpacking it renaming it to `LanguageTool`.
-    3.  Install [MacTeX](https://tug.org/mactex/) or [MiKTeX](http://miktex.org/).
-5.  Link.
-    -   The Eshell directory to HELP's.
+    2.  Install [LanguageTool](https://www.languagetool.org/) renaming it&rsquo;s folder to `LanguageTool`.
+    3.  Install [MacTeX](https://tug.org/mactex/).
+5.  Link:
+    -   The Eshell directory to HELP&rsquo;s.
         -   `ln -s ~/src/help/eshell/ ~/.emacs.d/eshell`
-    -   The Init file to HELP's.
+    -   The Initialization file to HELP&rsquo;s.
         -   `ln -s ~/src/help/.emacs.el ~/.emacs.el`
 
 # Style Guide
 
--   Source Block
-    -   Be sure that every one has a `NAME` property with a `UUID` value.
-        -   YASnippet `sc` does this. So does code in Hacking/Org Mode/Utility.
-    -   Tell the story in speech, and then in code.
-    -   Consider it another paragraph and indent appropriately.
-    -   When contained within a list.
-        -   Indent begin/end blocks with list content; this makes it clear to Org-Mode
-            to export it as a code block.
-        -   Source code is indented according to existing settings. This system keeps
-            it left-aligned, saving space.
-    -   Tangle `:file` should have the same `NAME`.
-    -   Virtually never edit the contents within buffer-of-origin.
-        -   Out of buffer edits:
-            -   Fast when spoken language.
-            -   Risky when LISPY.
--   Headline.
-    -   Be sure that every one has an `ID` property with a `UUID` value.
-        -   `org-id-get-create` does this. So does code in Hacking/Org Mode/Utility.
-    -   Capitalize nouns, verbs, and adjectives.
-    -   Don't capitalize conjunctions unless they are starting the definition.
-    -   Sell this "chapter" to the reader.
-    -   Some headlines will be empty and significant; keep them.
-        -   Some modes don't require any configuration. The headline still needs to be
-            present to remind Sysop to keep it in her cognitive landscape.
-        -   Configure other properties and modes taking it into account.
-        -   Pros:
-            -   For example:
-                -   Every language under Hacking should show up in
-                    `org-babel-load-languages`.
-            -   The Prog\*-Mode system configuration can result in Headlines that don't
-                need any configuration. The Headline still communicates the mode's
-                value to Sysop even if it doesn't configure EMACS.
-        -   Cons:
-            -   Gives reader impression that modes are configured and ready to use.
-    -   It is important to include headlines that are empty and that you may not
-        even end up keeping. You need them to help you explore the cognitive
-        landscape with them present. In this one case, premature optimization is
-        *not* the root of all evil.
-    -   Sometimes headlines might better be:
-        -   List items.
-        -   Stand-alone bold'ed text without punctuation.
--   Org-Macro
+    ID: 03E0F0E3-DB81-4033-8F04-5D8BB5CBB2F0
+
+-   Appearance.
+    -   Never override theme colors.
+    -   When the theme doesn&rsquo;t configure a face then submit a patch.
 -   Content
-    -   When importing, update to conform with Style-Guide.
+    -   When importing update to conform with Style-Guide.
+    -   Keep tangled and weaved documents synchronized with their web.
+    -   Ask yourself:
+        -   Does it belong in this web?
+        -   Does it belong in this headline?
 -   Dictionary
     -   **Exemple Complet Minimal (ECM):** The minimal complete example of expected
-        versus actual behavior. Comes from the [Org-Mode](http://orgmode.org/worg/org-faq.html) community.
+        versus actual behavior. [Source](http://orgmode.org/worg/org-faq.html).
     -   **Key-Bind:** A verb. The act of creating a Key Binding.
     -   **Literate Programming (LP):** As Knuth intended.
-    -   **Out of the Box (OOTB):** The default configuration of something.
+    -   **Out of the Box (OOTB):** The default configuration.
     -   **Sysop:** A proper noun. The System-Operator. The human operating this EMACS
         based Org-Mode enabled literate programming system. The reader.
     -   **Tangle:** A verb. Assemble a document for consumption by another program or
         machine.
     -   **Weave:** A verb. Prepare a document for consumption by a human.
-    -   **Web:** A Source-Block definition of one or more that define part or all of
-        a system.
--   ISpell
-    -   Place `LocalWords` at the beginning of the document. That way it won't get
-        stomped on during development.
--   Synonyms.
-    -   Document and System.
-        -   A Document defines a System.
+    -   **Web:** A document contained Source-Block definitions that define a system.
+-   Encoding
+    -   Prefer Unicode characters over ASCII equivalents.
+    -   Consider Org-Mode automatic handling of ASCII to UTF-8 symbols.
 -   File/Package Loading
     -   Load every one with `use-package` whether it came with EMACS OOTB or ELPA.
-        -   `ensure` tells the reader which one it came from.
-    -   Binding definitions often live in Piano Lessons. Use-Package definitions
-        aren't meant to be fully transplant-able because this system is meant to be
-        used as a whole. If a single sub-system is broken then the entire system is
-        broken. Everything is conceptually and literally tightly woven. It is a
-        monolithic system.
+        -   `ensure t` tells the reader which one it came from.
+    -   Binding definitions often live in Piano Lessons.
+    -   Configurations aren&rsquo;t meant to be fully transplant-able because this system
+        monolithic. In the interest of collaboration as much of the package
+        configuration lives in the `use-package` block as possible.
 -   Formatting
     -   Code Snippet.
         -   Programming language expressions.
@@ -105,16 +71,36 @@
     -   Package.
         -   Same as Headline.
         -   Dashes separate definition.
-        -   Acronyms are all upper case to distinguish from words for example "GNU"
-            vs "Gnu".
+        -   Acronyms are all upper case to distinguish from words for example &ldquo;GNU&rdquo;
+            vs &ldquo;Gnu&rdquo;.
+-   Headline.
+    -   Be sure that every one has an `ID` property with a `UUID` value.
+        -   `org-id-get-create` does this. So does code in Hacking/Org Mode/Utility.
+    -   Capitalize: nouns, verbs, and adjectives.
+    -   Don&rsquo;t capitalize conjunctions unless they are starting the definition.
+    -   Sell this &ldquo;chapter&rdquo; to the reader.
+    -   Some headlines will be empty and significant; keep them.
+        -   Some modes don&rsquo;t require any configuration. The headline still needs to be
+            present to remind the reader to keep it in her cognitive landscape.
+            Configure other properties and modes taking it into account.
+        -   Every language under Hacking should show up in `org-babel-load-languages`.
+        -   The `Prog*-Mode` system configuration can result in Headlines that don&rsquo;t
+            need any configuration. The Headline still communicates the mode&rsquo;s
+            value to the reader even if it doesn&rsquo;t configure EMACS.
+    -   It is important to include headlines that are empty and that you may not
+        even end up keeping. You need them to help you explore the cognitive
+        landscape with them present. In this one case, premature optimization is
+        *not* the root of all evil.
+    -   Sometimes headlines might better be:
+        -   List items.
+        -   Stand-alone bold text without punctuation.
 -   Hyperlink.
     -   External.
         -   Exclude those easily found with a search-engine unless you are willing to
             verify their existence frequently.
         -   Include when they make the task at hand immensely easier.
     -   Internal.
-        -   Heading artifacts can be referenced so the need here is minimal to
-            non-existent.
+        -   Minimize usage.
 -   Literate Programming.
     -   Comments.
         -   Exclude from tangle-blocks and rely on source-block for traceability.
@@ -123,62 +109,92 @@
         -   Replace spaces with dashes.
         -   Probably the Heading name.
         -   Keep depth shallow
+    -   Weaver and mode configurations are tightly bound.
 -   Maintenance.
     -   Frequently check spelling, grammar, and weasel-words.
+    -   Only keep working features in the system.
 -   Macros
-    -   Define as many as are useful.
-    -   Mostly for speech; infrequently custom-code.
-    -   Never implement new ones; use inline Source-Blocks instead.
-    -   Add once an important idea is express more than 2 times.
+    -   Rendered as written-text.
+    -   Don&rsquo;t contain source code.
+    -   Create for ideas expressed more than 2 times.
     -   Expanded during weaving, not during tangling.
 -   Plain List.
     -   End single sentences with a period.
 -   Programming Language.
     -   Emacs-Lisp.
-        -   Use `t` for `true`.
         -   Almost always use `defun` instead of `advice-add`.
             -   Functions are more normal and predictable.
             -   Advice can subtly break without you noticing.
-        -   Paramemter.
+        -   Parameter.
             -   `nil` for `FALSE`.
             -   `t` for `TRUE`.
             -   `n` for numerical values.
-        -   Try never to advise functions.
         -   Never `custom-set-variables`.
-    -   Always use relative file paths.
-    -   Byte-compile frequently to minimize System warnings.
-    -   Prefer to byte-compile all references by using `function`.
-        -   Fail-fast: it is better to know immediately if there are resolution
-            issues.
-    -   Prefer to declare anonymous functions with `function`.
-    -   [Quoted via](https://www.gnu.org/software/emacs/manual/html_node/elisp/Using-Lexical-Binding.html#Using-Lexical-Binding).
-        -   If a non-special variable is used outside of a let form, the byte-compiler
-            will warn about reference or assignment to a “free variable”. If a
-            non-special variable is bound but not used within a let form, the
-            byte-compiler will warn about an “unused lexical variable”. The
+        -   Always use relative file paths.
+        -   Byte-compile frequently to minimize System warnings.
+        -   Prefer to byte-compile all references by using `function`.
+            -   Fail-fast: it is better to know immediately if there are resolution
+                issues.
+        -   Prefer to declare anonymous functions with `function`.
+        -   [Quoted via](https://www.gnu.org/software/emacs/manual/html_node/elisp/Using-Lexical-Binding.html#Using-Lexical-Binding).
+        -   If a non-special variable appears outside of a let form, the byte-compiler
+            will warn about reference or assignment to a &ldquo;free variable&rdquo;. An
+            unused non-special variable binding within a let form provokes the
+            byte-compiler will warn about an &ldquo;unused lexical variable&rdquo;. The
             byte-compiler will also issue a warning if you use a special variable as a
             function argument.
-    -   If only for weaving, consider making it a Macro.
+-   Source Block
+    -   Be sure that every one has a `NAME` property with a `UUID` value.
+        -   YASnippet `sc` does this. So does code in Hacking/Org Mode/Utility.
+    -   Tell the story in speech, and then in code.
+    -   Consider it another paragraph and indent appropriately.
+    -   When contained within a list:
+        -   Indent begin/end blocks with list content; this makes it clear to Org-Mode
+            to export it as a code block.
+    -   Tangle `:file` should have the same `NAME`.
+    -   Virtually never edit the contents within buffer-of-origin.
+        -   Out of buffer edits:
+            -   Fast when spoken language.
+            -   Risky when LISP.
+    -   While similar to Org-Macro, the `RESULT` formatting indicates to the reader
+        that the value is the result of an evaluation.
+-   Spelling
+    -   Place `LocalWords` at the beginning of the document. That way it won&rsquo;t get
+        stomped on during development.
+-   Synonyms.
+    -   Document and System and Web.
+        -   A Web defines a system.
+        -   This document is a Web.
+    -   Weave and Export.
+    -   Sysop and Reader.
 -   Tangling.
-    -   When ordering matters, rely on block-reuse to enforce correct generation.
+    -   When ordering matters, rely on block-reuse to enforce correct order.
 -   Voice.
     -   Provide answers; do not pose questions or observations.
     -   Simple and detailed.
     -   Pleasant conversation style.
     -   Audience is Sysop; the author included.
 -   Weaving.
-    -   Periodically Weave this Web and publish it on GitHub. The Org-Mode rendering
-        there is delightful. It is important to see the difference between a Web and
-        it's Weaved result.
+    -   Strive to keep the weaving in synchronization with the tangling.
 -   Word Choice.
     -   Use Arabic numerals.
-    -   Instead of writing "tells EMACS", communicate the result.
-    -   "EMACS" refers to this software.
-    -   "This system" refers to this configuration of EMACS.
+    -   Instead of writing &ldquo;tells EMACS&rdquo;, communicate the result.
+    -   &ldquo;EMACS&rdquo; refers to the EMACS software
+    -   &ldquo;HELP&rdquo; refers to the system configured by tangling this we.
+    -   Never describe something as &ldquo;perfect&rdquo; or &ldquo;delightful&rdquo;. If it is part of this
+        system then it is perfect and delightful.
 
 # Webs We Weave
 
+    ID: DB5CDB3F-DE18-48FB-B104-D3990304FA91
+
 ## Org-Mode Exemple Complet Minimal
+
+    noweb-ref: Org-Mode-ECM-Web
+
+    tangle: "./.org-mode-ecm.emacs.el"
+
+    ID: 83868A6E-76C2-48AE-8A5A-6A3C97492321
 
 Configure EMACS to easily provide ECMs.
 
@@ -193,11 +209,17 @@ Start EMACS with this command:
 ```
 
 ```lisp
-«Principle-of-Least-Astonishment»
-«Org-Mode-ECM»
+<<Principle-of-Least-Astonishment>>
+<<Org-Mode-ECM>>
 ```
 
 ## Org-Mode Fundamentals
+
+    noweb-ref: Org-Mode-Fundamentals-Web
+
+    tangle: "./.org-mode-fundamentals.emacs.el"
+
+    ID: 7E71A009-4DD3-4296-9851-293BC71D2DFF
 
 Configure Org-Mode core functionality to compile this system.
 
@@ -212,16 +234,21 @@ Start EMACS with this command:
 ```
 
 ```lisp
-«Org-Mode-ECM-Web»
-«Org-Mode-Helper-Functions»
-«Org-Mode-Tangle»
-«Org-Mode-Execute»
-«Org-Mode-Weave»
+<<Org-Mode-ECM-Web>>
+<<Org-Mode-Helper-Functions>>
+<<Org-Mode-Tangle>>
+<<Org-Mode-Execute>>
+<<Org-Mode-Weave>>
 ```
 
 ## The Whole Enchilada
 
-Configure EMACS to do everything provided by this document.
+    tangle: "./.emacs.el"
+
+    ID: 016FA25F-E70E-4BED-BA01-AEB808428791
+
+Configure EMACS to do everything provided by this document. HELP is a monolithic
+system.
 
 Sysop is likely to use this constantly.
 
@@ -234,31 +261,33 @@ Start EMACS with this command:
 ```
 
 ```lisp
-«Org-Mode-Fundamentals-Web»
-«Watch-What-You-Eat»
-«Special-Operating-Procedure»
-«Standard-Operating-Procedure»
-«Hacking-Common-Configurations»
-«Hacking-Literate-Programming-Emacs-Lisp»
-«Hacking-Literate-Programming-Org-Mode»
-«Hacking-Applied-Mathematics-ESS»
-«Hacking-Applied-Mathematics-ESS-SAS»
-«Hacking-Applied-Mathematics-ESS-R»
-«Hacking-Applied-Mathematics-YASnippet»
-«Hacking-Publishing-TeX»
-«Hacking-Publishing-KOMA»
-«Hacking-Publishing-Markdown»
-«Hacking-Publishing-Beamer»
-«Hacking-Publishing-HTML»
-«Hacking-Diagram-Artist»
-«Hacking-Diagram-DITAA»
-«Hacking-Diagram-Graphviz»
-«Hacking-Diagram-PlantUML»
-«Quiet-and-Pleasant-Appearance»
-«Piano-Lessons»
+<<Org-Mode-Fundamentals-Web>>
+<<Watch-What-You-Eat>>
+<<Special-Operating-Procedure>>
+<<Standard-Operating-Procedure>>
+<<Hacking-Common-Configurations>>
+<<Hacking-Literate-Programming-Emacs-Lisp>>
+<<Hacking-Literate-Programming-Org-Mode>>
+<<Hacking-Applied-Mathematics-ESS>>
+<<Hacking-Applied-Mathematics-ESS-SAS>>
+<<Hacking-Applied-Mathematics-ESS-R>>
+<<Hacking-Applied-Mathematics-YASnippet>>
+<<Hacking-Publishing-TeX>>
+<<Hacking-Publishing-KOMA>>
+<<Hacking-Publishing-Markdown>>
+<<Hacking-Publishing-Beamer>>
+<<Hacking-Publishing-HTML>>
+<<Hacking-Diagram-Artist>>
+<<Hacking-Diagram-DITAA>>
+<<Hacking-Diagram-Graphviz>>
+<<Hacking-Diagram-PlantUML>>
+<<Quiet-and-Pleasant-Appearance>>
+<<Piano-Lessons>>
 ```
 
 ## Eshell
+
+    ID: FAB2B8BA-ACE0-4F99-9583-C9A287CFB610
 
 ```sh
 alias clear recenter 0
@@ -272,6 +301,8 @@ alias ll ls -lh $*
 ```
 
 # Literate Programming
+
+    ID: 8510C876-F644-4804-9F87-54A0B44DBA6A
 
 This system enables you to perform 3 Literate Document activities. These
 activities combine to provide a rich Literate Programming environment. Their
@@ -292,21 +323,21 @@ Key:
     -   **C:** Source-Block Evaluation occurred?
     -   **O:** Org-Macro Expansion occurred?
 
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table>
 
 
 <colgroup>
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 </colgroup>
 <thead>
 <tr>
@@ -353,15 +384,19 @@ Key:
 
 They are separate and distinct operations and are defined as such.
 
-The last logical action is the activity of "Programming". It is a combination of
+The last logical action is the activity of &ldquo;Programming&rdquo;. It is a combination of
 three 3 activities listed above combined with the configuration of EMACS to do
-so. This is an interactive activity performed Sysop. The results of Sysop's
+so. This is an interactive activity performed Sysop. The results of Sysop&rsquo;s
 activities are contained within the document. Those contents are input for the
 activities here.
 
 ## Org-Mode Exemple Complet Minimal
 
-A stable version of Org-Mode is provided OOTB. It's release cycle is tied to
+    noweb-ref: Org-Mode-ECM
+
+    ID: 57C69AB7-A317-4823-ABBF-7DE8A5E2151C
+
+A stable version of Org-Mode is provided OOTB. It&rsquo;s release cycle is tied to
 EMACS release cycle. To get hot-fixes, cutting edge features, and easy patch
 creation though, you need to use the version from Git.
 
@@ -400,19 +435,11 @@ Load Org-Mode.
 (require 'org)
 ```
 
-Org-Mode already uses the guillemot for demarcating noweb references, but it
-does it using the work-around of just using less-than and greater-than
-characters twice. That is fine. Because EMACS supports Unicode just fine though,
-configure Org-Mode to use the real symbol. Another option would be to configure
-Pretty-Mode. This is in the ECM section because so that I can verify behavior of
-my code.
-
-```lisp
-(setq org-babel-noweb-wrap-start "«")
-(setq org-babel-noweb-wrap-end "»")
-```
-
 ## Helper Functions
+
+    noweb-ref: Org-Mode-Helper-Functions
+
+    ID: B14776FD-6835-4D1D-BCD3-50D56555423C
 
 ```lisp
 (defun help/set-org-babel-default-header-args (property value)
@@ -492,6 +519,10 @@ This is a copy and paste. Additional languages would warrant a refactor."
 
 ## Tangling
 
+    noweb-ref: Org-Mode-Tangle
+
+    ID: 267EEDED-1367-405F-807C-B3C489045704
+
 `ID` and `NAME` are essential for successful `LP` using `org-babel-tangle-jump-to-org`.
 
 Generate the `README`.
@@ -513,6 +544,8 @@ never allow that. Its inconsistent with how Org-Mode works.
 
 ### comments
 
+    ID: 49787FC5-CAA7-466B-B742-0F38973E070B
+
 > Toggle insertion of comments in tangled code files
 
 Provide as much information as possible in the tangled artifact about the
@@ -524,6 +557,8 @@ origin artifact.
 
 ### mkdirp
 
+    ID: B0F9A321-3B69-46BB-B512-0AF3C663A4C0
+
 > Toggle creation of parent directories of target files during tangling
 
 ```lisp
@@ -532,23 +567,27 @@ origin artifact.
 
 ### no-expand
 
+    ID: 90170E6A-AA1A-44EA-9BF8-1A6AA38FD224
+
 > Turn off variable assignment and noweb expansion during tangling
 
 Likely only ever to be configured per Source-Block or System.
 
 ### noweb
 
+    ID: E12B48AB-68E8-4515-89E3-30A16FB6FD22
+
 > Toggle expansion of noweb references
 
 Expand noweb references in source-blocks before:
 
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table>
 
 
 <colgroup>
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 </colgroup>
 <thead>
 <tr>
@@ -587,11 +626,15 @@ ought to refer to the generated document.
 
 ### noweb-ref
 
-> Specify block's noweb reference resolution target
+    ID: 2836D0AA-5DBA-48AC-A338-B47002DE8D7F
+
+> Specify block&rsquo;s noweb reference resolution target
 
 Likely only ever to be configured per Source-Block or System.
 
 ### noweb-sep
+
+    ID: B1A57D15-6BBF-4E78-A0D9-0B02C283C6B0
 
 > String used to separate noweb references
 
@@ -599,10 +642,12 @@ Likely only ever to be configured per Source-Block or System.
 
 ### padline
 
+    ID: DDE727A6-DDF7-4B61-9063-549614B135F0
+
 > Control insertion of padding lines in tangled code files
 
 `org-babel-tangle-jump-to-org` requires padded lines. This configuration could
-arguably appear in the "Programming" heading because it impacts operation. It
+arguably appear in the &ldquo;Programming&rdquo; heading because it impacts operation. It
 lives here because it **must** occur as part of the Tangling activity so that it
 can be used in the Programming activity.
 
@@ -611,6 +656,8 @@ can be used in the Programming activity.
 ```
 
 ### session
+
+    ID: 8219A42A-E90F-418A-8EF0-EB150CF6D730
 
 > Preserve the state of code evaluation
 
@@ -621,11 +668,15 @@ particular language. R is a good example.
 
 ### shebang
 
+    ID: 542185DD-4FD6-459A-B422-DA7B546FB292
+
 > Make tangled files executable
 
 Likely only ever to be configured per Source-Block or System.
 
 ### tangle
+
+    ID: EA716FC9-4A90-4F3E-ABD0-31FEA575C969
 
 > Toggle tangling and specify file name
 
@@ -635,11 +686,17 @@ Likely only ever to be configured per Source-Block or System.
 
 ### tangle-mode
 
+    ID: 5F0B7157-2DC8-4AFD-8F26-4B21025A5ECE
+
 > Set permission of tangled files
 
 Likely only ever to be configured per Source-Block or System.
 
 ## Evaluating
+
+    noweb-ref: Org-Mode-Execute
+
+    ID: ED23FF0B-1F90-435C-9B56-ACA06C1ACAE0
 
 Org-Mode may evaluate all of the listed languages.
 
@@ -665,13 +722,17 @@ Org-Mode may evaluate all of the listed languages.
 
 ### cache
 
+    ID: 49B8BFE9-643B-450F-A8A1-20CE3079E215
+
 > Avoid re-evaluating unchanged code blocks
 
-{{{lp-configure-each-sb}}
+Likely only ever to be configured per Source-Block or System
 
 Default `no` is correct for nearly every scenario.
 
 ### colnames
+
+    ID: 4D683007-14AE-4A7D-A506-E2301FD32E82
 
 > Handle column names in tables
 
@@ -679,17 +740,23 @@ Likely only ever to be configured per Source-Block or System
 
 ### dir
 
+    ID: CD1494F1-0A2A-44D0-9955-0D0501AF1539
+
 > Specify the default (possibly remote) directory for code block execution
 
 Likely only ever to be configured per Source-Block or System
 
 ### epilogue
 
+    ID: CA7F5086-9D4B-4847-9449-3231CE027804
+
 > Text to append to code block body
 
 See Prologue.
 
 ### eval
+
+    ID: 0329BACE-2C99-4BB3-A7A5-7C800EF53FAD
 
 > Limit evaluation of specific code blocks
 
@@ -708,11 +775,15 @@ Never evaluate in-line-source-blocks **on export**.
 
 ### file
 
+    ID: 80824708-62AF-4337-A517-828DA22D1FCA
+
 > Specify a path for file output
 
 Likely only ever to be configured per Source-Block or System
 
 ### file-desc
+
+    ID: 6F9A2745-7118-469E-9FDB-4B327C02E5FA
 
 > Specify a description for file results
 
@@ -720,17 +791,23 @@ Likely only ever to be configured per Source-Block or System
 
 ### file-ext
 
+    ID: 0716A48E-9227-44FD-B1FA-185DF6545E91
+
 > Specify an extension for file output
 
 Likely only ever to be configured per Source-Block or System
 
 ### hlines
 
+    ID: 721F4E5E-A343-4D7C-A3A3-12A544B3A273
+
 > Handle horizontal lines in tables
 
 Likely only ever to be configured per Source-Block or System
 
 ### output-dir
+
+    ID: D0DDFE88-1B41-4A67-A5F4-88B1B35A7513
 
 > Specify a directory to write file output to
 
@@ -741,11 +818,15 @@ files.
 
 ### post
 
+    ID: 1A4DEC98-C735-4D88-8261-6AD13C495EF2
+
 > Post processing of code block results
 
 Likely only ever to be configured per Source-Block or System.
 
 ### prologue
+
+    ID: 3D1780E0-2E6D-428C-916D-BFB10E79C76F
 
 > Text to prepend to code block body
 
@@ -755,7 +836,7 @@ For some situations, this may be the same for every source block for a
 particular language. The user manual described `gnuplot`, which often shows up on
 the list and the solution is to `reset` the session.
 
-Another example, say that you've got a bunch of R Source-Blocks and you want to
+Another example, say that you&rsquo;ve got a bunch of R Source-Blocks and you want to
 be able to rearrange them as you please. You want to be sure that there are no
 dependencies between them on bindings created in the workspace. Set `prologue`
 to `rm(list = ls())`.
@@ -763,6 +844,8 @@ to `rm(list = ls())`.
 Epilgue works hand-in-hand with this.
 
 ### results
+
+    ID: 2755571E-113B-436E-9EEC-26618A55A27E
 
 > Specify the type of results and how they will be collected and handled
 
@@ -789,11 +872,15 @@ Replace theme each time you evaluate the block.
 
 ### rownames
 
+    ID: B184A507-1B03-4096-A4D8-E50A1DA047DB
+
 > Handle row names in tables
 
 Likely only ever to be configured per Source-Block or System..
 
 ### sep
+
+    ID: F1336AAA-68EF-4E87-B253-458103B6FF2F
 
 > Delimiter for writing tabular results outside Org
 
@@ -801,9 +888,11 @@ Likely only ever to be configured per Source-Block or System
 
 ### var
 
+    ID: 3B4D638C-82EE-47F3-835C-52B2F03620A0
+
 > Pass arguments to code blocks
 
--   **The** most revealing of the power of Org-Mode's LP offering
+-   **The** most revealing of the power of Org-Mode&rsquo;s LP offering
 -   Values-by-reference
     -   Table
     -   List
@@ -814,11 +903,30 @@ Likely only ever to be configured per Source-Block or System
 
 ### wrap
 
+    ID: 94D6B3BE-5DA1-499A-B5C7-A6B71710A1EA
+
 > Mark source block evaluation results
 
 Likely only ever to be configured per Source-Block or System.
 
 ## Weaving
+
+    noweb-ref: Org-Mode-Weave
+
+    ID: F71DD8BA-B853-4903-A348-400E13C0E6F8
+
+Help the reader make sense of the document by displaying it&rsquo;s internal
+properties.
+
+```lisp
+(setq org-export-with-properties t)
+```
+
+Stop your flow to monitor the export for errors.
+
+```lisp
+(setq org-export-in-background nil)
+```
 
 Make sure that exported files are Unicode UTF-8.
 
@@ -827,7 +935,7 @@ Make sure that exported files are Unicode UTF-8.
 ```
 
 Do not preserve line-breaks when exporting instead let the destination
-format handle it as it sees fit. This doesn't work like I had expected and makes
+format handle it as it sees fit. This doesn&rsquo;t work like I had expected and makes
 me wonder what I am confused about here. When I export to HTML text containing
 linebreaks no longer has linebreaks. This is what I expect. When I export that
 same text to a buffer though, the line breaks are included. Currently I use
@@ -858,12 +966,20 @@ anything else would violate the law of least surprise.
 (setq org-src-preserve-indentation t)
 ```
 
+Maximize flexibility for weaving operations during export.
+
+```lisp
+(setq org-export-allow-bind-keywords t)
+```
+
 ### exports
+
+    ID: 57B3786B-017F-4F6E-89F9-05642304F3B6
 
 > Export code and/or results
 
 Always share source blocks and their results. Whether or not to generate a
-result for a particular source block is configured per-block. If you don't want
+result for a particular source block is configured per-block. If you don&rsquo;t want
 to share a result for a source block then disable storage of results on that
 block.
 
@@ -873,7 +989,13 @@ block.
 
 # Piano Lessons
 
+    noweb-ref: Piano-Lessons
+
+    ID: 31274432-4BA2-4B03-8DDB-E590C245244D
+
 ## A Fine Cup of EMACS
+
+    ID: 01EEEC32-91D4-4DDC-A100-52CE571558DC
 
 Every EMACS user ought to have a [Emacs Reference Mug](http://shop.fsf.org/product/gnu-emacs-reference-mugs/) at their desk. The mug
 invites other users to ask questions. Give the mug as a gift to every user you
@@ -893,10 +1015,12 @@ system will always respect the POLA.
 
 ## A Keyboard on Every Desk
 
+    ID: A50A19BB-1DE7-48C1-AEE4-03D1E88E887C
+
 The configuration of the keyboard on an EMACS system can completely change the
 experience. No keyboard makes it impossible. A Kinesis Ergo makes it feel
 really good. Soft keys make it feel soft; hard keys make it feel faster. The
-[layout of letters](http://xahlee.info/kbd/dvorak_and_all_keyboard_layouts.html) is claimed to make you "more productive" using statistics.
+[layout of letters](http://xahlee.info/kbd/dvorak_and_all_keyboard_layouts.html) is claimed to make you &ldquo;more productive&rdquo; using statistics.
 You may even study the statistics of your own writing and choose a layout
 optimized for you. The ways to configure your keyboard are limitless because
 everyone is unique. How to get the best configuration tips for your system? Do
@@ -910,9 +1034,11 @@ the keyboard for this system.
 
 ## A Display with Every Keyboard
 
+    ID: 7E76A660-7828-4747-90DE-84BD293CD4E7
+
 Every system requires an output. You have two options. The first is a terminal
 that only displays characters. The second is a display that provides detailed
-graphics. "Display" is the EMACS term for a GUI.
+graphics. &ldquo;Display&rdquo; is the EMACS term for a GUI.
 
 Some users prefer the former. Some users prefer the latter. Some users prefer to
 use a $4000USD machine to emulate the latter. Both are good options.
@@ -921,7 +1047,11 @@ This system is configured to work pleasantly for either type of output.
 
 ## A Full Pot of EMACS on Every Desk
 
+    ID: D8ADD840-9E9E-4A2E-B085-245C7BFA5F48
+
 ### Keyboard Layout & Operation
+
+    ID: D8420B75-E4B9-4DB1-885E-D5290FE9A3EA
 
 -   Use QWERTY layout.
     -   Everyone knows it.
@@ -936,7 +1066,7 @@ This system is configured to work pleasantly for either type of output.
 -   Table-bang the shift, caps-lock and enter keys.
     -   Table-bang is a position of your hand. Make it by:
         -   Starting with your hands in the home position.
-        -   Make a "high-five" with both of them parallel to the keyboard.
+        -   Make a &ldquo;high-five&rdquo; with both of them parallel to the keyboard.
         -   Turn your left hand counter-clockwise and right hand clockwise to make
             them perpendicular to the keyboard.
         -   Squeeze all of your fingers together.
@@ -957,12 +1087,14 @@ This system is configured to work pleasantly for either type of output.
 
 ### Understanding Your Cognitive Landscape.
 
+    ID: 60A17CE8-C905-4443-90A2-10D2C12F23AF
+
 You operate within a cognitive landscape. Every moment you are in a single
 `place`. While residing in each `place` you perform logically related `activities`.
 Activities facilitate logical actions like modification within that `place`.
 Modifications are performed objects. Objects include things like the contents of
 a buffer, contents of memory, or the file that backs a buffer. While performing
-those `activities` there is a logical sense of "flow". That should never be
+those `activities` there is a logical sense of &ldquo;flow&rdquo;. That should never be
 interrupted. Usually an interruption occurs when you are going to go to a new
 `place`. The `distance` between `places` is measured in the similarity between the
 `actions` that you find there. As you develop these ides it will be obvious where
@@ -970,8 +1102,10 @@ key-bindings should go
 
 ### Key-Bindings Take You to Places to Perform Activities
 
+    ID: E765C8BB-ECC3-4791-A287-83B6DED2F6C3
+
 OOTB you wil be visiting many `places` and performing many `activities`. EMACS comes
-with a good configuration that minimizes `distance`. This isn't worth changing.
+with a good configuration that minimizes `distance`. This isn&rsquo;t worth changing.
 You can use EMACS for a lifetime without ever having to customize any of the
 key-bindings. This is what lets anyone use your system. This is what lets you
 use the system with `-Q` when you break it. You need to decide if you every want
@@ -980,9 +1114,9 @@ keep EMACS true to EMACS and your hands happy. To satisfy those goals the
 following practices were defined.
 
 -   99.999% of the time never bind to the `C` or `M` name-space.
-    -   They are for system key-bindings. You can break them. Don't.
-    -   In theory `C-c` is the "user name-space" but packages stomp on this all of the
-        time anyway so don't use it.
+    -   They are for system key-bindings. You can break them. Don&rsquo;t.
+    -   In theory `C-c` is the &ldquo;user name-space&rdquo; but packages stomp on this all of the
+        time anyway so don&rsquo;t use it.
     -   Some bindings are just too valuable to pass up:
         -   `C-;`
             -   Your hands are in the home position already.
@@ -992,7 +1126,7 @@ following practices were defined.
     -   Some require a lone Pinky with is worse.
     -   Most operating systems bind actions to them OOTB anyway.
     -   EMACS comes with key-bindings OOTB.
--   Don't try to set up a Hyper-key.
+-   Don&rsquo;t try to set up a Hyper-key.
 -   Use shift as a name-space expansion vehicle.
     -   Shift doubles every name-space in which you use it.
     -   Use cautiously, not every name-space vehicle supports it.
@@ -1008,10 +1142,12 @@ These practices say nothing about the `places` or `activities` that you choose t
 peform. The practices only look at the key-binding configuration. There are a
 limited number of keys on a keyboard and there are physical limitations on your
 hands. Along with the previous assuptions it may look like there are less.
-Fortunately it just looks that way and it isn't true. There are a lot of
-powerful ways to "go places" with EMACS. The next heading contains my attempt.
+Fortunately it just looks that way and it isn&rsquo;t true. There are a lot of
+powerful ways to &ldquo;go places&rdquo; with EMACS. The next heading contains my attempt.
 
 ### How to Get There Pleasantly and Quickly
+
+    ID: 38026C1B-44D4-47EF-90D2-239876F7F31C
 
 You need to learn how to use EMACS. You need to develop a personal preference.
 You need to develop an idea of `places` and `activities` and `distance`. The following
@@ -1019,9 +1155,9 @@ headings are delineated by breaks in flow.
 
 The examples try to talk about doing those things and do it by exploring:
 
--   "going places to do things".
--   "how quickly I will get there and how long I will be there"
--   "how quickly I want to go somewhere else".
+-   &ldquo;going places to do things&rdquo;.
+-   &ldquo;how quickly I will get there and how long I will be there&rdquo;
+-   &ldquo;how quickly I want to go somewhere else&rdquo;.
 
 They were initially described by the properties:
 
@@ -1031,10 +1167,20 @@ They were initially described by the properties:
 -   **Relationship:** How closely those activities are related in the current place.
 -   **Frequency:** How many times you perform these actions when you here.
 
-The relationship between "doing those things" and those 4 properties is still
+The relationship between &ldquo;doing those things&rdquo; and those 4 properties is still
 unclear and being explored.
 
 1.  `s`
+
+        Actions: High
+
+        Expertise: High
+
+        Relationship: High
+
+        Frequency: High
+
+        ID: 0A491DA9-212E-4F01-8C08-EA09E9B6D82C
 
     -   `Actions` here are for the `place` inside of the buffer itself. They are for
         immediate acting upon the contents of the buffer. They are logically
@@ -1065,14 +1211,16 @@ unclear and being explored.
 
 2.  `Key-Chord`
 
+        ID: 76C81A53-52BA-47C4-A8FF-651E10A4620F
+
     Key-Chord is intriguing because it works on every keyboard. It is powerful
     because it can you bring you to any `place` easily. It is good for taking you
     places in two differnt kinds of scenarios.
 
-    One example is grammar-checking. There are a few ways to do that. I don't
+    One example is grammar-checking. There are a few ways to do that. I don&rsquo;t
     remember them all. In a given mode I want to see a list of all the ways.
     I really just want to see all of the stuff that I value for a given mode and
-    don't use frequently.
+    don&rsquo;t use frequently.
 
     Another example are things that I value for a mode and use a lot but are not
     logically related to other activities in that place. For example moving the
@@ -1082,19 +1230,22 @@ unclear and being explored.
 
     1.  Single-Key Key-Chord Name-Space.
 
+            ID: B198918B-F8C8-4036-A41B-237BDA793EC0
+
         :Actions:          High
         :Expertise:        Low
         :Frequency:        High
         :Relationship:     Low
 
-        -   Nice if you don't mind hitting the same key twice.
+        -   Nice if you don&rsquo;t mind hitting the same key twice.
         -   You will use come here often, perform your single `action`, and be done
             and leave very frequently and quickly.
         -   Using alphabetical characters always results in unpleasant surprises.
         -   Harder for breakage but it still occurs.
             -   `#FF` color code.
             -   `cc` carbon copy.
-            -   JJ nick-name.
+            -   `JJ` nick-name.
+            -   `dd` add
         -   Symbols are more likely to be safer bets.
             -   Only use the symbols.
                 -   8 if you use rows 3-4; 16 if you shift.
@@ -1103,28 +1254,40 @@ unclear and being explored.
 
     2.  Two-Key Key-Chord Name-Space.
 
+            ID: 9CF95F30-5872-40F4-AF00-BDB82E3D7399
+
         :Actions:          Low
         :Expertise:        High
         :Frequency:        High
         :Relationship:     Low
 
         -   Very attractive.
-        -   Nice if you don't like hitting the same key twice.
+        -   Nice if you don&rsquo;t like hitting the same key twice.
         -   Easy to use all fingers.
             -   Finger strength is not an issue here; use any of them.
         -   Unexpected breakage very easy.
             -   `cd` in `=eshell=`.
         -   Use sparingly.
         -   Not worth analyzing ideal combinations; just use it and see if it
-            doesn't break.
+            doesn&rsquo;t break.
         -   Bringing over existing bindings. They are all for every mode so I will
             keep it that way.
 
 3.  `Hydra`
 
-    -   Sometimes you want to do something in a `place` but you aren't sure what
-        and you aren't sure where you will go next from there. For example you
-        might want to perform an Org-Mode `action` that is important but you don't
+        Actions: High
+
+        Expertise: Low
+
+        Frequency: Low
+
+        Relationship: High
+
+        ID: 0410F66C-40F4-46A1-9E69-56658EA815A9
+
+    -   Sometimes you want to do something in a `place` but you aren&rsquo;t sure what
+        and you aren&rsquo;t sure where you will go next from there. For example you
+        might want to perform an Org-Mode `action` that is important but you don&rsquo;t
         really use much. For example exporting to HTML might not be common for
         you but you value.
     -   `Hydras` can be used for very related actions too. The difference between
@@ -1135,11 +1298,13 @@ unclear and being explored.
     -   `SHIFT` doubles your key-space.
     -   Use `C-g` to exit the Hydra.
 
-    For example, in Org-Mode I am still learning about functions and haven't used
+    For example, in Org-Mode I am still learning about functions and haven&rsquo;t used
     them much and forget their names. It is faster to put them in a Hydra. If they
     get used a lot, I will add them to `s`.
 
 ### Building Your Own Keyboard
+
+    ID: A4257881-BD92-4826-8B0F-74B9557442F9
 
 As your mastery of EMACS grows so too will your desire to build your own
 keyboard. It is natural. As you explore various dimensions of expression you
@@ -1150,7 +1315,7 @@ goals of this system in place the desire grows.
 their own custom keyboards. That looks very fun. [Ukulele](http://scripts.sil.org/cms/scripts/page.php?site_id%3Dnrsi&id%3Dukelele) is softer way to
 explore your keyboard. Reading its user manual is important. It contains ideas
 about stack-able-environments for bindings. You may use Ukulele or Hydras to do
-the same thing. [Karabiner](https://pqrs.org/osx/karabiner/) is a nice way to re-map your keys. It's easiest
+the same thing. [Karabiner](https://pqrs.org/osx/karabiner/) is a nice way to re-map your keys. It&rsquo;s easiest
 adjustment is to make return act as return when pressed alone and as control
 when pressed with another key. That introduces a symmetry to your keyboard which
 can be helpful. All of those dimensions are worth exploring.
@@ -1181,15 +1346,15 @@ minimal change to use Ukelele to:
 
 -   Make space send `C`
 -   Make `;` send space
--   Make ='= a dead key
-    -   In it's dead key state make
+-   Make =&rsquo;= a dead key
+    -   In it&rsquo;s dead key state make
         -   `;` &rarr; `;`
         -   `:` &rarr; `:`
-        -   ='= &rarr; ='=
-        -   ="= &rarr; ="=
+        -   =&rsquo;= &rarr; =&rsquo;=
+        -   =&ldquo;= &rarr; =&rdquo;=
 
 The trouble is that it violates the POLA. Therefore, I left it alone and stuck
-with a simple "Get C on both sides".
+with a simple &ldquo;Get C on both sides&rdquo;.
 
 That has worked out very well. It is very easy to do on every operating system.
 It holds true to the values of this system. When you develop an idea of `places` and
@@ -1215,11 +1380,26 @@ close together
 
 ## Take a Sip
 
+    ID: F42A8A6B-C690-4715-90CB-2207C47C6808
+
 ### Left Side
+
+    ID: 22246934-BE44-4D99-942C-A6DAB4506D65
 
 1.  5
 
+        ID: C00A4E41-0801-4696-86E6-5A1CE1EBB189
+
+    ```lisp
+    (global-set-key (kbd "s-4") #'mc/mark-next-like-this)
+    (global-set-key (kbd "s-3") #'mc/mark-previous-like-this)
+    (global-set-key (kbd "s-2") #'mc/mark-all-like-this)
+    (global-set-key (kbd "s-1") #'mc/edit-lines)
+    ```
+
 2.  4
+
+        ID: 8F467832-8FC3-42B5-8978-8CF2C1454D5B
 
     ```lisp
     (global-set-key (kbd "s-w") #'imenu)
@@ -1227,27 +1407,46 @@ close together
 
 3.  3
 
+        ID: 6DCD321F-6FDA-4983-9C7C-265D23D1AC4F
+
+    ```lisp
+    (global-set-key (kbd "s-d") #'er/expand-region)
+    (key-chord-define-global "df" #'avy-goto-word-1)
+    (key-chord-define-global "DF" #'avy-pop-mark)
+    ```
+
     ```lisp
     (defhydra help/hydra/left-side/global (:color blue
                                                   :hint nil)
       "
-    _1_ -font  _2_ +font _3_ ellipsis _4_ UUID
-    _q_ apropos _w_ widen _r_ obtj2o     _i_ scrollUp _I_ prevLogLine
-                     _j_ back-char _k_ scrollDown _K_ _K_ nextLogLine _l_ forw-char"
-      ("q" hydra-apropos/body)
-      ("w" widen)
+    _1_ -font  _2_ +font _3_ ellipsis _4_ UUID _5_ bfr-cdng-systm _6_ grade-level _7_ reading-ease
+    _q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace
+                     _j_ back-char _k_ scrollDown _K_ nextLogLine _l_ forw-char
+    _x_ delete-indentation"
       ("1" help/text-scale-decrease :exit nil)
       ("2" help/text-scale-increase :exit nil)
-      ("r" org-babel-tangle-jump-to-org)
+      ("3" help/insert-ellipsis)
+      ("4" help/uuid)
+      ("5" set-buffer-file-coding-system)
+      ("6" writegood-grade-level)
+      ("7" writegood-reading-ease)
+      ("x" delete-indentation)
+      ("q" hydra-apropos/body)
+      ("w" widen)
+      ("r" rgrep)
+      ("t" org-babel-tangle-jump-to-org)
       ("i" scroll-down-command :exit nil)
       ("k" scroll-up-command :exit nil)
       ("I" previous-logical-line :exit nil)
       ("K" next-logical-line :exit nil)
       ("j" backward-char :exit nil)
       ("l" forward-char :exit nil)
-      ("3" help/insert-ellipsis)
-      ("4" help/uuid))
-    (key-chord-define-global "gg" #'help/hydra/left-side/global/body)
+      ("o" toggle-debug-on-error)
+      ("p" anzu-query-replace))
+    ```
+
+    ```lisp
+    (key-chord-define-global "vv" #'help/hydra/left-side/global/body)
     ```
 
     [Attribution.](https://github.com/abo-abo/hydra/blob/master/hydra-examples.el)
@@ -1271,13 +1470,22 @@ close together
 
 4.  2
 
+        ID: 9E95D130-D1EC-445B-9028-24DFA5CCB28A
+
     ```lisp
+    (global-set-key (kbd "s-v") #'smex)
     (global-set-key (kbd "C-x C-c") #'help/safb-save-buffers-kill-terminal)
+    (global-set-key (kbd "s-x") #'ido-find-file)
+    (global-set-key (kbd "s-c") #'ido-switch-buffer)
     ```
 
 5.  1
 
+        ID: 4CDDC2CE-646A-4D8B-B5D3-2588FBEFF650
+
 6.  Unsorted
+
+        ID: AD2164B2-CB66-48AD-B367-4E0CC406B022
 
     VC activities.
 
@@ -1320,7 +1528,7 @@ close together
     (key-chord-define-global "fv" #'help/safb-other-window)
     ```
 
-    Toggle utility buffers ("logical F" key, so left side; "logical J" key on
+    Toggle utility buffers (&ldquo;logical F&rdquo; key, so left side; &ldquo;logical J&rdquo; key on
     right).
 
     ```lisp
@@ -1335,6 +1543,17 @@ close together
 
 ### Left & Right Side
 
+    ID: FA2BFDC9-5242-4547-A8A5-6DECC8ED1C1B
+
+Exploratory programming in EMACS.
+
+Don&rsquo;t use &ldquo;dn&rdquo; for &ldquo;describe-fuNction&rdquo; because of &ldquo;and&rdquo;-words.
+
+```lisp
+(key-chord-define-global "d." #'describe-function)
+(key-chord-define-global "d," #'describe-variable)
+```
+
 ```lisp
 (key-chord-define-global "qi" #'help/comment-or-uncomment)
 ```
@@ -1344,14 +1563,6 @@ Make `ispell` accessible.
 ```lisp
 (key-chord-define-global "qp" #'ispell)
 (key-chord-define-global "qo" #'ispell-word)
-```
-
-Writegood too.
-
-```lisp
-(key-chord-define-global "wm" #'writegood-mode)
-(key-chord-define-global "wl" #'writegood-grade-level)
-(key-chord-define-global "wz" #'writegood-reading-ease)
 ```
 
 Use the default Langtool bindings.
@@ -1369,9 +1580,13 @@ Use the default Langtool bindings.
 
 ### Right Side
 
+    ID: 16040443-9099-42C1-A7FB-90C0DDC9F8EE
+
 Try to reserve the right side for mode-specific activities.
 
 ### Exceptions
+
+    ID: EBBB727C-6110-4F7B-A2DC-45E9833EBEFE
 
 Return.
 
@@ -1402,13 +1617,26 @@ Use a nicer `eval-expression` approach.
 (global-set-key (kbd "C-p") #'previous-logical-line)
 ```
 
+Ansu.
+
+```lisp
+(global-set-key (kbd "M-%") #'anzu-query-replace)
+(global-set-key (kbd "C-M-%") #'anzu-query-replace-regexp)
+```
+
 # Special Operating Procedure
+
+    noweb-ref: Special-Operating-Procedure
+
+    ID: 97A95862-3213-4035-9FF6-E041796DAB5C
 
 The following code and packages are special to this configuration. They provide
 critical functionality for configuring the rest of the system. They provide
 ideas that make the entire system usable, productive, expressive, and fast.
 
 ## Display
+
+    ID: 1290DB2D-D05E-4DDD-B42F-6B11AE91F480
 
 Make it easy to conditionally evaluate code when running with a graphical
 display.
@@ -1429,12 +1657,16 @@ display.
 
 ## Hydra
 
+    ID: 9B78FBB7-6C6A-4BD6-A9CC-FB192D37F6C2
+
 ```lisp
 (use-package hydra
   :ensure t)
 ```
 
 ## Keyboard
+
+    ID: 8A0E58DF-7C90-4781-AC12-94D2D76F47C7
 
 Key-Chord mode is amazing. Piano-Lessons shows you how.
 
@@ -1452,6 +1684,8 @@ Echo keystrokes immediately.
 ```
 
 ## Libraries
+
+    ID: 21919848-B720-4D30-880E-485C41250279
 
 Dash is nice to use.
 
@@ -1480,6 +1714,8 @@ S is nice to use.
 
 ## Modeline
 
+    ID: 798F14D1-EDC6-4306-8E82-0854980AEFBA
+
 Reduce information about modes in the Modeline.
 
 ```lisp
@@ -1499,6 +1735,8 @@ Show the column number.
 ```
 
 ## OSX
+
+    ID: 6556EACF-2F83-4B84-8456-5BEB981D290E
 
 Make it easy to evaluate code only when running on OSX.
 
@@ -1531,7 +1769,7 @@ Enable the `super` key-space.
  (setq mac-option-modifier 'super))
 ```
 
-EMACS dialogues don't work OSX. They lock up EMACS.
+EMACS dialogues don&rsquo;t work OSX. They lock up EMACS.
 
 This is a known issue. [Here](https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-x) is the solution.
 
@@ -1546,6 +1784,8 @@ This is a known issue. [Here](https://superuser.com/questions/125569/how-to-fix-
 ```
 
 ## Windows
+
+    ID: B21664CF-62AF-4ACC-A239-FE20672FF9E4
 
 Make it easy to evaluate code only when running on Windows.
 
@@ -1574,9 +1814,15 @@ Enable the `super` key-space.
 
 # Standard Operating Procedure
 
+    noweb-ref: Standard-Operating-Procedure
+
+    ID: 8302B38B-67EC-4C37-9B42-69E278FF1277
+
 Configure EMACS to maximum utility.
 
 ## Buffer
+
+    ID: F3C9BDE1-C0E0-4BDF-B121-3CE2F0D16464
 
 Maintain buffers across sessions. Desktop-Save-Mode persists very part of the
 buffer. If you upgrade a package that uses buffer-variables that have changed
@@ -1588,7 +1834,7 @@ making such breaking changes.
 (setq desktop-restore-eager 10)
 ```
 
-Provide expected "Undo" functionality.
+Provide expected &ldquo;Undo&rdquo; functionality.
 
 ```lisp
 (use-package undo-tree
@@ -1644,9 +1890,7 @@ then document.
 
 ```lisp
 (use-package expand-region
-  :ensure t
-  :config
-  (global-set-key (kbd "s-d") #'er/expand-region))
+  :ensure t)
 ```
 
 80 characters is wide enough for most documents.
@@ -1656,6 +1900,8 @@ then document.
 ```
 
 ## Code Folding
+
+    ID: 3F70676D-C141-4093-9E40-F42B6C7B7232
 
 ```lisp
 (use-package hideshow
@@ -1680,6 +1926,8 @@ then document.
 
 ## Colors
 
+    ID: 7FA1B7C2-3C4B-4119-B9B7-4C0CC0EAA180
+
 Colorize color names.
 
 Rainbow-Mode handles most major modes color definitions as expected.
@@ -1692,6 +1940,8 @@ Rainbow-Mode handles most major modes color definitions as expected.
 ```
 
 ## Evaluation
+
+    ID: 5E067457-9B99-459F-A660-323774C14BF5
 
 ```lisp
 (setq-default eval-expression-print-level nil)
@@ -1707,6 +1957,8 @@ Allow most commands.
 
 ## Encryption
 
+    ID: 9A41F9EE-36D5-452A-986B-70B567255D36
+
 Easy to use file-based AES encryption.
 
 ```lisp
@@ -1715,6 +1967,8 @@ Easy to use file-based AES encryption.
 ```
 
 ## Eshell
+
+    ID: B371A592-1251-4D88-A055-43CA3E33BC6D
 
 Provide a cross-platform command line shell that is a first-class EMACS citizen.
 
@@ -1767,10 +2021,12 @@ Configure a `PS1` like prompt.
 
 ## File Based System
 
-This system uses artifacts stored in files. It tries to persist file-stores
-every chance it gets without interrupting the user's flow. Flow is important.
+    ID: E6F121F0-AC8E-45C7-9F11-0E7AB93E4B71
 
-Don't create backup files. Instead Git for versioning
+This system uses artifacts stored in files. It tries to persist file-stores
+every chance it gets without interrupting the user&rsquo;s flow. Flow is important.
+
+Don&rsquo;t create backup files. Instead Git for versioning
 
 Automatically back file-stores if no activity has occurred.
 
@@ -1892,7 +2148,7 @@ use than advice.
 
 Selection:
 
--   Don't perform on frequent keys like enter and line navigation.
+-   Don&rsquo;t perform on frequent keys like enter and line navigation.
 
 Future candidates:
 
@@ -1928,6 +2184,8 @@ directories.
 
 ## File-system/directory management (Console)
 
+    ID: 067D598E-7FE6-4BC5-AEF7-872966390970
+
 You can use the usual machinery to work with the files. Highlight a region
 and operation selections occur for all files in that region. Commands are
 scheduled, and then executed, upon your command. Files can be viewed in modify
@@ -1935,7 +2193,7 @@ or read-only mode, too. There is an idea of `mark` in files, which is to select
 them and perform operations on the marked files. There are helper methods for
 most things you can think if like directories or modified-files or whatever,
 meaning you can use regexen to mark whatever you like however you like. If that
-suits you, then don't be afraid of using the regular expression builder
+suits you, then don&rsquo;t be afraid of using the regular expression builder
 that is built into EMACS. Bulk marked file operations include additionally
 copying, deleting, creating hard links to, renaming, modifying the mode,
 owner, and group information, changing the time-stamp, listing the marked
@@ -1999,26 +2257,26 @@ articles changed everything: [Dired Shell Command](http://www.masteringemacs.org
 Working with multiple files in dired](https://www.masteringemacs.org/article/working-multiple-files-dired), and [WDired: Editable Dired Buffers](https://www.masteringemacs.org/article/wdired-editable-dired-buffers)..
 They just made the power of Dired so obvious, and so easy to use, that it
 instantly because delightful to use. That was very, very cool. Even though I
-was really, really happy with Finder and Explorer… suddenly it just became so
+was really, really happy with Finder and Explorer&#x2026; suddenly it just became so
 obvious and pleasant to use Dired. That is so wild.
 
-Key notes when executing shell commands on file selection…
+Key notes when executing shell commands on file selection&#x2026;
 
 Substitution:
 
 -   **`<cmd> ?`:** 1\* calls to cmd, each file a single argument
 -   **`<cmd> *`:** 1 call to `cmd`, selected list as argument
--   **=<cmd> \*""=:** have the shell expand the \* as a globbing wild-card
+-   **=<cmd> \*&ldquo;&rdquo;=:** have the shell expand the \* as a globbing wild-card
     -   Not sure what this means
 
 Synchronicity:
 
--   **`<cmd> …`:** by default commands are called synchronously
+-   **`<cmd> ...`:** by default commands are called synchronously
 -   **`<cmd> &`:** execute in parallel
 -   **`<cmd> ;`:** execute sequentially, asynchronously
 -   **`<cmd> ;&`:** execute in parallel, asynchronously
 
-Key notes on working with files in multiple directories… use the following:
+Key notes on working with files in multiple directories&#x2026; use the following:
 
 Use `find` just like you would at the command line and all of the results show
 up in a single Dired buffer that you may work with just like you would any other
@@ -2042,7 +2300,7 @@ And if you want to use the faster Elisp version, that uses lisp regex, use:
 -   **`find-lisp-find-dired`:** for anything
 -   **`find-lisp-find-dired-subdirectories`:** for only directories
 
-Key notes on working with editable buffers…
+Key notes on working with editable buffers&#x2026;
 
 As the author notes, you probably already instinctually knew what is possible.
 After reading his brief and concise exposition, it would be hard *not* to
@@ -2080,6 +2338,8 @@ exercised, Dired in Imenu seems like an obvious choice.
 
 ## IMenu
 
+    ID: F748CAFD-0235-4E34-8546-A9EC515759BB
+
 Major productivity hack
 
 ```lisp
@@ -2094,7 +2354,9 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
 (add-hook 'font-lock-mode-hook #'help/try-to-add-imenu)
 ```
 
-## Interactively DO Things”
+## Interactively DO Things
+
+    ID: 2DB9FDA1-9950-4FEA-A33C-E8DDFDA9420E
 
 IDO is used everywhere possible.
 
@@ -2123,8 +2385,6 @@ this Source-Block will break Ido in this system.
   :config
   (ido-vertical-mode t)
   (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right))
-(global-set-key (kbd "s-x") #'ido-find-file)
-(global-set-key (kbd "s-c") #'ido-switch-buffer)
 ```
 
 Make functions search-able.
@@ -2133,8 +2393,7 @@ Make functions search-able.
 (use-package smex
   :ensure t
   :config
-  (smex-initialize)
-  (global-set-key (kbd "s-v") #'smex))
+  (smex-initialize))
 ```
 
 Make URLs a first-class object.
@@ -2146,21 +2405,23 @@ Make URLs a first-class object.
 
 ## Font
 
+    ID: 8F7A007E-5CBA-4651-84D8-5874FF393EA6
+
 Use Unicode-Font to provide as many Unicode fonts as possible.
 
 Here are the Unicode fonts that provide nearly everything.
 
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table>
 
 
 <colgroup>
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-right" />
+<col  class="org-right">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 </colgroup>
 <thead>
 <tr>
@@ -2233,21 +2494,28 @@ Visualize ASCII values as their most likely Unicode representation.
 
 ## Going to Objects
 
+    ID: 835D3E9D-3044-4385-9AB1-F0DF17045565
+
 Go to any object in the frame quickly.
 
 ```lisp
 (use-package avy
   :ensure t
-  :config
-  (key-chord-define-global "df" #'avy-goto-word-1)
-  (key-chord-define-global "DF" #'avy-pop-mark))
+  :config)
 ```
 
 ## Grammar
 
+    ID: 95A4EF33-F83D-49ED-AC74-A29DA19524BC
+
+Warn of poor grammar immediately interrupting flow with a visual indicator.
+
 ```lisp
 (use-package writegood-mode
-  :ensure t)
+  :ensure t
+  :config
+  (eval-after-load "writegood-mode"
+    '(diminish 'writegood-mode)))
 ```
 
 ```lisp
@@ -2260,6 +2528,8 @@ Go to any object in the frame quickly.
 ```
 
 ## Helper Functions
+
+    ID: B2257535-9891-48F1-B7CD-1B385F527C59
 
 ```lisp
 (defun help/comment-or-uncomment ()
@@ -2333,6 +2603,7 @@ This is useful for fringe cases where trailing whitespace is important."
 
 (defun help/indent-curly-block (&rest _ignored)
   "Open a new brace or bracket expression, with relevant newlines and indent. URL: `https://github.com/Fuco1/smartparens/issues/80'"
+  (interactive)
   (newline)
   (indent-according-to-mode)
   (forward-line -1)
@@ -2568,13 +2839,23 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (interactive)
   (help/save-all-file-buffers)
   (save-excursion
-    (let ((hidx (org-find-property "ID" "F651B86D-86C2-43A9-B0E6-CB94963BB502")))
+    (let ((hidx (org-find-property "ID" "39A2F05A-BC60-4879-9B66-85E43297FC97")))
       (when hidx
         (goto-char hidx)
         (org-export-to-file 'gfm "README.md" nil t nil)))))
+
+(defun help/xprt-all ()
+  "Export this entire document in configured weavers."
+  (interactive)
+  (org-ascii-export-to-ascii)
+  (org-html-export-to-html)
+  (org-gfm-export-to-markdown)
+  (org-latex-export-to-pdf))
 ```
 
 ## Intellisense (Auto Completion)
+
+    ID: A7225C28-B8AE-4960-9E2A-64E6E8B58400
 
 ```lisp
 (use-package fuzzy
@@ -2602,20 +2883,19 @@ Auto-completion for `.`-separated words.
 
 ## Macros
 
+    ID: E32B41C2-C761-42F0-A9AE-F89A2A18439F
+
 The macro recorder and Multiple-Cursors provide two ways to do the right thing
 in different situations. Be very thoughtful and allow every function.
 
 ```lisp
 (use-package multiple-cursors
-  :ensure t
-  :config
-  (global-set-key (kbd "s-4") #'mc/mark-next-like-this)
-  (global-set-key (kbd "s-3") #'mc/mark-previous-like-this)
-  (global-set-key (kbd "s-2") #'mc/mark-all-like-this)
-  (global-set-key (kbd "s-1") #'mc/edit-lines))
+  :ensure t)
 ```
 
 ## Mark and Region
+
+    ID: A3C2AF94-B834-4FD2-9B23-F64F618B31C3
 
 When you start typing and text is selected, replace it with what you are typing,
 or pasting
@@ -2625,6 +2905,8 @@ or pasting
 ```
 
 ## Minibuffer
+
+    ID: 7A3C5EF1-BEF7-4007-86B1-78590CB62EB2
 
 Make it easier to answer questions.
 
@@ -2648,6 +2930,8 @@ Allow recursive commands-in-commands and highlight the levels of recursion.
 
 ## Mouse
 
+    ID: F3E75BDE-F853-488C-AF46-03B54C0A0919
+
 Scroll pleasantly with the mouse wheel. A slow turn moves the buffer up and down
 one line at a time. So does a fast turn. Anything further than 5-10 lines deserves
 a fast navigation vehicle.
@@ -2659,6 +2943,8 @@ a fast navigation vehicle.
 ```
 
 ## Occur
+
+    ID: FA8195C5-30B7-44CF-8D0F-8FE2CE1CB3DA
 
 ```lisp
 (defun help/occur-mode-hook-fn ()
@@ -2672,6 +2958,8 @@ a fast navigation vehicle.
 ```
 
 ## Popups
+
+    ID: E1E4E20E-F789-422B-B0B3-706BD8A842DF
 
 Provide popup notifications.
 
@@ -2687,6 +2975,8 @@ Provide popup notifications.
 ```
 
 ## Projects
+
+    ID: B35103E2-0FE9-466C-9AB9-39EA28FADEDB
 
 Directories that have Git working copies are logically projects. Manage them
 with Projectile.
@@ -2717,12 +3007,16 @@ Notify Magit about every working copy that Projectile knows about.
 
 ## Printing
 
+    ID: C6230D9E-8331-4092-8846-DB244455C922
+
 ```lisp
 (use-package pp
   :commands (pp-display-expression))
 ```
 
 ## Replacing
+
+    ID: B10A2279-4F34-4DA2-BB1A-491B82F2F6EA
 
 Display information about search-and-or-replace operation.
 
@@ -2731,15 +3025,15 @@ Display information about search-and-or-replace operation.
   :ensure t
   :config
   (global-anzu-mode t)
-  (global-set-key (kbd "M-%") #'anzu-query-replace)
-  (global-set-key (kbd "C-M-%") #'anzu-query-replace-regexp)
   (setq anzu-mode-lighter "")
   (setq anzu-deactivate-region t)
   (setq anzu-search-threshold 1000)
-  (setq anzu-replace-to-string-separator " => "))
+  (setq anzu-replace-to-string-separator " ⇒ "))
 ```
 
 ## Save History of All Things
+
+    ID: 31961F28-1913-4247-986A-273391C4A85D
 
 It is nice to have commands and their history saved so that every time you get
 back to work, you can just re-run stuff as you need it.
@@ -2754,6 +3048,8 @@ back to work, you can just re-run stuff as you need it.
 ```
 
 ## Searching
+
+    ID: 960E2DE0-3F5A-40AB-A9BF-FF08A410EAB7
 
 When searching allow a space to many any number.
 
@@ -2770,25 +3066,33 @@ Make searches case-insensitive.
 
 ## Spell Checking
 
+    ID: 902EAA81-4FC0-40A0-AE6D-D31C474B87E0
+
 Ispell is simple and powerful.
 
 ### Org-Mode
+
+    ID: 72540881-8F99-4ED6-9FE4-7292A66B3089
 
 Never ispell the following objects.
 
 Source-Blocks.
 
 ```lisp
-(add-to-list 'ispell-skip-region-alist '("^#\\+begin_src ". "#\\+#+end_src$"))
-(add-to-list 'ispell-skip-region-alist '("^#\\+BEGIN_SRC ". "#\\+#+END_SRC$"))
+(add-to-list 'ispell-skip-region-alist '("^\s*#[+]BEGIN_SRC" . "^\s*#[+]END_SRC"))
+```
+
+Name definitions.
+
+```lisp
+(add-to-list 'ispell-skip-region-alist '("^\s*#[+]NAME:" . "$"))
 ```
 
 Example-Blocks. This system often uses Source-Blocks to edit content and
 Example-Blocks to make it easily renderable when it is not for running.
 
 ```lisp
-(add-to-list 'ispell-skip-region-alist '("^#\\+begin_example ". "#\\+end_example$"))
-(add-to-list 'ispell-skip-region-alist '("^#\\+BEGIN_EXAMPLE ". "#\\+END_EXAMPLE$"))
+(add-to-list 'ispell-skip-region-alist '("^\s*#[+]BEGIN_EXAMPLE" . "^\s*#[+]END_EXAMPLE"))
 ```
 
 Properties.
@@ -2812,7 +3116,7 @@ Footnotes with URLs that contain line-breaks.
 Verbatim
 
 ```lisp
-(add-to-list 'ispell-skip-region-alist '("=.*" . ".*="))
+(add-to-list 'ispell-skip-region-alist '("=" . ".+="))
 ```
 
 Bold text list items.
@@ -2866,6 +3170,8 @@ Export properties.
 
 ## Sudo
 
+    ID: 562F54F8-6E35-4DE1-9E9C-436B55CE83CE
+
 Configure Sudo with Ido.
 
 ```lisp
@@ -2883,6 +3189,8 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
 
 ## Syntax Checking
 
+    ID: B4A8362E-B218-4353-AC4B-7059A686EA89
+
 Perform syntactic analysis all the time.
 
 ```lisp
@@ -2894,6 +3202,8 @@ Perform syntactic analysis all the time.
 ```
 
 ## TAB
+
+    ID: 78E2BA2B-8289-422F-99DC-5E40DE928E68
 
 Most modes in this system will never use TAB.
 
@@ -2924,6 +3234,8 @@ Most programing modes indent to 2 spaces. TABs should be the same width.
 
 ## Version Control
 
+    ID: F5E2718B-F54F-41C5-9CED-6E470CAC238D
+
 Use Magit for Git. The commit log editor uses With-Editor and Server modes.
 They are not not diminshed because they are infrequently used.
 
@@ -2949,6 +3261,8 @@ Git ignore files are text files.
 
 ## Whitespace Management
 
+    ID: 5BBD948F-7239-457E-8BD9-710558C0E241
+
 Make control characters easily visible.
 
 ```lisp
@@ -2963,6 +3277,8 @@ Make control characters easily visible.
 
 ## Word Wrap
 
+    ID: 2156A7CE-297E-478F-AFF2-13CE64B3C5C3
+
 ```lisp
 (use-package visual-line-mode
   :config
@@ -2972,9 +3288,36 @@ Make control characters easily visible.
 
 # Quiet and Pleasant Appearance
 
-Configure EMACS to personal-taste for "noise" and "form".
+    noweb-ref: Quiet-and-Pleasant-Appearance
+
+    ID: 197B7B84-5090-47AE-9180-F8F606D0012F
+
+Configure EMACS to personal-taste for &ldquo;noise&rdquo; and &ldquo;form&rdquo;.
+
+## Line Number
+
+    ID: 4D367462-1C7B-4110-B7D1-E973D386B4E1
+
+The linum gutter should not &ldquo;shift&rdquo; as it transitions between line numbers of
+different magnitudes. For example going from line 99 to 100 will shift the
+buffer contents by one character. That is distracting and interrupts the flow.
+
+Most files will be less than 100,000 lines.
+
+```lisp
+(defvar linum-format "%05d")
+```
 
 ## Buffer
+
+    ID: 61586A23-B774-4436-B916-348453EEA3DD
+
+Never automatically convert the end of the line character. For most of us this
+is between UNIX and DOS.
+
+```lisp
+(setq inhibit-eol-conversion t)
+```
 
 Give buffers backed by identically named files distinguishable names.
 
@@ -2983,7 +3326,7 @@ Give buffers backed by identically named files distinguishable names.
 (setq uniquify-buffer-name-style 'forward)
 ```
 
-Don't use audible bells, use visual bells.
+Don&rsquo;t use audible bells, use visual bells.
 
 ```lisp
 (setq ring-bell-function 'ignore)
@@ -3025,17 +3368,32 @@ Make it very easy to see the line with the cursor.
 (global-hl-line-mode t)
 ```
 
+Make it very easy to input special-characters using TeX coding.
+
+```lisp
+(setq default-input-method 'TeX)
+```
+
 ## Color Theme
 
-The Solarized theme is the perfect theme for everything. bozhidar's
-release. It is soft and gentle yet easy to read in any situation.
+    ID: 057BBA77-4662-4F7B-B47A-CB1E79A1618B
+
+[Solarized Theme](https://github.com/bbatsov/solarized-emacs)
+
+-   `1259` Faces Defined
+-   47,869 Downloads
+
+-   A distinct fringe provides a definition of space.
+-   The modeline is always at the bottom and doesn&rsquo;t need differentiation.
+-   Minimize bold and italic faces.
+-   Minimize fringe indicators.
 
 ```lisp
 (use-package solarized-theme
   :ensure t
   :config
   (setq solarized-distinct-fringe-background t)
-  (setq solarized-high-contrast-mode-line t)
+  (setq solarized-high-contrast-mode-line nil)
   (setq solarized-use-less-bold t)
   (setq solarized-use-more-italic nil)
   (setq solarized-emphasize-indicators nil)
@@ -3043,6 +3401,8 @@ release. It is soft and gentle yet easy to read in any situation.
 ```
 
 ## Comint
+
+    ID: B4E17CF5-5542-4526-ADEE-D5EC3DB9131F
 
 `comint-mode` is only maybe the second most important thing for making Emacs
 really, really special.
@@ -3068,6 +3428,8 @@ obviously is a **big issue** if you actually want to use! ROFL
 ```
 
 ## Font
+
+    ID: EC675F88-89C0-4A5A-B910-843F28C0F90F
 
 The best programming font is Deja Vu Sans Mono because it sans-serif and
 support a lot of Unicode characters. Set it to a good default for an 80
@@ -3102,19 +3464,23 @@ character wide buffer and make it easy to adjust it.
 
 ## Frame
 
+    ID: B3F90439-D007-42EE-95FC-E93BBA827325
+
 The scroll-bars are helpful for new users.
 
 ```lisp
 (scroll-bar-mode 0)
 ```
 
-The tool-bar is helpful for new users. Isn't the argument funny?
+The tool-bar is helpful for new users. Isn&rsquo;t the argument funny?
 
 ```lisp
 (tool-bar-mode -1)
 ```
 
 ## Pointer
+
+    ID: 2A437D32-2944-41B3-AD8F-438ABBD4E0CF
 
 Hide the pointer when typing.
 
@@ -3123,6 +3489,8 @@ Hide the pointer when typing.
 ```
 
 ## Version Control
+
+    ID: 99337D9E-DBC9-4673-B814-EBC94C044E3E
 
 Provide VC file status indicators.
 
@@ -3133,13 +3501,16 @@ Provide VC file status indicators.
 
 ## Window
 
+    ID: 9A848D65-DE56-4F95-A84D-CAE74781CD25
+
 Menu bars make EMACS more accessible to non-EMACS users.
 
 ```lisp
 (menu-bar-mode t)
 ```
 
-Easily return to previous configurations.
+Easily return to previous configurations. 2-4 windows are easily managed by
+hand.
 
 ```lisp
 (winner-mode t)
@@ -3147,7 +3518,13 @@ Easily return to previous configurations.
 
 # Principle of Least Astonishment (POLA)
 
+    noweb-ref: Principle-of-Least-Astonishment
+
+    ID: 43D9AB52-2157-4A1D-AD9C-D35996E91269
+
 ## Scoping Behavior
+
+    ID: C0F8DDC4-C2B7-4578-B9B4-FA13E3BF0EBD
 
 EMACS values dynamic-scoping for now and in the future.
 
@@ -3160,10 +3537,12 @@ With the future in mind, make the switch now.
 
 It is enabled with a non-nil buffer-local variable `lexical-binding`. The variable
 is inserted into each of the Web definitions that this system provides. Those
-definitions can't use Org-Mode comments so they are defined individually in each
+definitions can&rsquo;t use Org-Mode comments so they are defined individually in each
 Web.
 
 ## Load Behavior
+
+    ID: B1A48CB2-9295-466E-947F-EE24D57DB548
 
 EMACS can load 3 different representations of a Emacs-Lisp source file code
 OOTB. The name of source code file is the value before the file extension. When
@@ -3177,7 +3556,7 @@ representations are first searched by extension-name. The variable
 `load-file-rep-suffixes` determines the order for all other extension types.
 
 OOTB, EMACS combines the productivity of REPL style of development with the
-speed of compiled code by `load`'ing byte-code first, text second, and compressed
+speed of compiled code by `load`&rsquo;ing byte-code first, text second, and compressed
 third. This workflow gives you the fastest code at run-time and lets you
 experiment with new features stored in text. When you are ready to use them
 every time, you compile them. There is only one downside of this approach: when
@@ -3201,6 +3580,10 @@ tangled system.
 ```
 
 # Watch What You Eat
+
+    noweb-ref: Watch-What-You-Eat
+
+    ID: 59073E74-83D9-4218-917C-789A27D57E5A
 
 **Code requiring package-management can only follow this block.**
 
@@ -3226,7 +3609,7 @@ Add the Use-Package distribution the load path.
 (add-to-list 'load-path"~/src/use-package")
 ```
 
-Load Use-Package and it's partner Diminish. Every package loaded before this
+Load Use-Package and it&rsquo;s partner Diminish. Every package loaded before this
 point uses `require`. Every package loaded after this point uses `use-package`.
 
 ```lisp
@@ -3237,18 +3620,24 @@ point uses `require`. Every package loaded after this point uses `use-package`.
 
 # Hacking
 
+    ID: B7CE60F5-5510-4358-8DD5-D42D9A2F4D9B
+
 ## Common Configurations
+
+    noweb-ref: Hacking-Common-Configurations
+
+    ID: BE02A401-AFF6-4B64-B7F3-589C69CA7099
 
 This system configures `text-mode` and `prog-mode` very similarly:
 
 -   EMACS **exists** to help you work with text.
--   EMACS' entire configuration helps you work with text whether it is in a
+-   EMACS&rsquo; entire configuration helps you work with text whether it is in a
     specific mode or not.
--   Org-Mode's motto is "**Organize Your Life In Plain Text!**".
+-   Org-Mode&rsquo;s motto is &ldquo;**Organize Your Life In Plain Text!**&rdquo;.
 -   From an EMACS and a LP perspective `text-mode` **is a** programming mode.
 -   In this system: **Text is the User-Interface**.
 
-This system does not rely on `prog-mode` inheritance to configure it's hacking
+This system does not rely on `prog-mode` inheritance to configure it&rsquo;s hacking
 modes:
 
 -   The EMACS literature advises that modes extend `text-mode` or `prog-mode`
@@ -3262,11 +3651,13 @@ With that in mind this system:
     with `text-mode` and then all logical programming modes.
 -   Explicitly utilizes it directly instead of using inheritance.
 -   This system refers to this configuration of programming modes as `prog*-mode`.
--   The line between "configuring EMACS", "configuring `text-mode`", and
-    "configuring `prog*-mode`" is often blurred and sometimes confusing. The lines
+-   The line between &ldquo;configuring EMACS&rdquo;, &ldquo;configuring `text-mode`&rdquo;, and
+    &ldquo;configuring `prog*-mode`&rdquo; is often blurred and sometimes confusing. The lines
     become wavy and intertwined with mastery of EMACS and LP.
 
 ### Text-Mode
+
+    ID: 7CFD11FB-F3D4-4272-9DBC-2A420884097C
 
 -   Line numbers make documents easier to read.
 -   Indicate that Text-Mode buffers ought to be 80 characters wide.
@@ -3287,15 +3678,18 @@ With that in mind this system:
   (linum-mode)
   (fci-mode)
   (rainbow-mode)
-  (help/try-to-add-imenu))
+  (help/try-to-add-imenu)
+  (writegood-mode))
 
 (add-hook 'text-mode-hook #'help/text-prog*-setup)
 ```
 
 ### Prog\*-Mode Modes
 
+    ID: 6F71F8AF-4227-46D3-9BD8-2F86B5815B72
+
 -   Mode inheritance is represented by list definition & indentation.
--   Some modes are so simple that inheritance isn't defined.
+-   Some modes are so simple that inheritance isn&rsquo;t defined.
 
 -   Hacking mode hooks.
     -   Configurations common to every hacking vehicle.
@@ -3318,7 +3712,11 @@ With that in mind this system:
 
 ### Prog\*-Mode Hook
 
+    ID: FF132B34-B61B-4DAE-A0B9-E37E39B9BFCE
+
 1.  Goal
+
+        ID: E2C7121E-2E56-4A77-8347-2E7DFB73E9B3
 
     -   Indent at every opportunity and automatically. Verify that it makes sense
         for the mode. Explicitly define instead of relying on `prog-mode` inheritance;
@@ -3343,6 +3741,8 @@ With that in mind this system:
 
 2.  Implementation.
 
+        ID: 61A981CB-1311-4F51-A264-D748FA34F1D3
+
     ```lisp
     (defun help/hack-prog*-mode-hook-fn ()
       (interactive)
@@ -3355,6 +3755,8 @@ With that in mind this system:
     ```
 
 ### Wiring
+
+    ID: 50304E30-682C-4C9A-9615-D6E61DAE533B
 
 ```lisp
 (let ()
@@ -3370,7 +3772,13 @@ With that in mind this system:
 
 ## (Literate Programming)
 
+    ID: 6B83373B-8898-4AC0-B7F6-C42418CCE5E4
+
 ## Emacs Lisp
+
+    noweb-ref: Hacking-Literate-Programming-Emacs-Lisp
+
+    ID: 3AD91697-42DE-4555-9F49-B7D9F5E502D3
 
 ```lisp
 (setq initial-scratch-message nil)
@@ -3415,11 +3823,17 @@ With that in mind this system:
 
 ### Keybinding
 
+    ID: 3A6B16EC-870A-4EFE-935A-C03F8DFB67BF
+
 ```lisp
 (define-key emacs-lisp-mode-map (kbd "s-p") #'describe-thing-in-popup)
 ```
 
 ## Org-Mode
+
+    noweb-ref: Hacking-Literate-Programming-Org-Mode
+
+    ID: EBDA3D1C-536F-4252-AE26-32A3FDF5326C
 
 When source blocks are evaluated, their results get stored in a result area,
 typically for display. If the results are small, they are displayed with colons
@@ -3431,7 +3845,7 @@ to behave more predictably.
 (setq org-babel-min-lines-for-block-output 0)
 ```
 
-Configure Org-Mode to manage it's Source-Block backed buffers the same as the
+Configure Org-Mode to manage it&rsquo;s Source-Block backed buffers the same as the
 rest of this system.
 
 ```lisp
@@ -3456,7 +3870,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (add-hook 'org-babel-after-execute-hook #'help/org-babel-after-execute-hook)
 ```
 
-Never "automatically" evaluate a source block.
+Never &ldquo;automatically&rdquo; evaluate a source block.
 
 ```lisp
 (setq org-confirm-babel-evaluate nil)
@@ -3534,7 +3948,7 @@ header is collapsed.
 ```
 
 It is easy to see indentation of headlines without having to count asterisks, so
-don't show them, only show the significant and last one.
+don&rsquo;t show them, only show the significant and last one.
 
 ```lisp
 (setq org-hide-leading-stars t)
@@ -3556,7 +3970,7 @@ this example in LaTeX versus Text.
 
 Highlight LaTeX and related markup.
 
-Normally, I don't do any syntax highlighting, as I believe that should be
+Normally, I don&rsquo;t do any syntax highlighting, as I believe that should be
 delegated to source buffers, thinking that to do otherwise is distracting.
 However, I already do configure subscripts and Greek letters to be displayed
 with syntax highlighting, because I want to indicate to the human reader that
@@ -3567,7 +3981,7 @@ and related markup.
 (setq org-highlight-latex-and-related '(latex script entities))
 ```
 
-Allow "refactoring" of Footnotes between documents.
+Allow &ldquo;refactoring&rdquo; of Footnotes between documents.
 
 ```lisp
 (setq org-footnote-define-inline t)
@@ -3584,7 +3998,7 @@ org docs, the more you realize how you must truly protect it.
 ```
 
 Though I am not delving deep, it is hard not to want to customize some stuff
-and perhaps this is the start. Even though I enabled this, I don't think that I
+and perhaps this is the start. Even though I enabled this, I don&rsquo;t think that I
 ever used it.
 
 ```lisp
@@ -3626,7 +4040,7 @@ Always use Unicode checkboxes.
 (setq org-html-checkbox-type 'unicode)
 ```
 
-You may display syntax highlighting for code in source blocks. I don't.
+You may display syntax highlighting for code in source blocks. I don&rsquo;t.
 
 ```lisp
 (setq org-src-fontify-natively nil)
@@ -3641,9 +4055,9 @@ Never indent the contents of a source-block automatically.
 When edit mode is exited, the option exists to automatically remove empty
 opening and closed lines for the source block. Never do this. The thing is that
 I forgot why. When I was working on a recent analysis with ℝ there was a
-space appearing in the opening and closing line of the source block that didn't
-appear in the source editing buffer. That surprised me. I am sure that I've
-forgotten why this is the case. I don't like it because you add a bunch of
+space appearing in the opening and closing line of the source block that didn&rsquo;t
+appear in the source editing buffer. That surprised me. I am sure that I&rsquo;ve
+forgotten why this is the case. I don&rsquo;t like it because you add a bunch of
 empty lines in the source buffer for every source block. With that in mind I
 will enable this feature and try it out again.
 
@@ -3656,7 +4070,7 @@ For a while I really liked `reorganize-frame` because sometimes you want to be
 able to see the code you are editing in edition to the rest of the document. At
 least that is what I am telling myself. Once I learned you could change it I
 realized that 1 I should have asked if it could be changed and 2 I should have
-changed it. The flow that I've got configured here is that you are either in the
+changed it. The flow that I&rsquo;ve got configured here is that you are either in the
 source document where code blocks are not highlighted or you are in the source
 block so you are editing in a buffer that is full-fledged HELP. That is the best
 way so you can focus completely on each task at hand in the ideal mode for that
@@ -3672,7 +4086,7 @@ course. Ironically I had a typo here, typing *of curse* instead of *of course*.
 The thing is that you really, really need to develop a personal workflow, and
 then configure the tool to enable it. The more I learn about Org-Mode, the more
 leery I am about making it really easy to evaluate code. I want it to be a
-really, really specific and decided action to evaluate a code block, so don't
+really, really specific and decided action to evaluate a code block, so don&rsquo;t
 make it so easy as `C-c C-c`.
 
 ```lisp
@@ -3702,7 +4116,7 @@ thing before any version control modes that would result in the same condition.
             (org-src-edit-buffer-p)
           (error nil))
     (org-edit-src-exit))
-  (magit-status))
+  (call-interactively 'magit-status))
 ```
 
 Never use the original version.
@@ -3765,12 +4179,14 @@ Minimize Macro text.
 
 ### Keybindings
 
+    ID: 0AA3F69B-F5F1-48DA-B8F7-B7C92CD30DB1
+
 Started questioning why after hitting RETURN while in lists I have to hit TAB to
 get indented properly. Kind of a dead giveaway that I should be
 return-and-indenting! Looked at `org-return` to find that it has an argument
 about indenting and then saw that `org-return-indent` passes it for you. With that
 in mind, RETURN is bound to that now. Now HELP has four different kinds of
-"returns" in Org in order of likelihood of usage:
+&ldquo;returns&rdquo; in Org in order of likelihood of usage:
 
 -   **org-return-indent:** Make it really easy to work in existing list items,
     headings, and tables
@@ -3781,8 +4197,8 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
     -   M-<return> because the binding comes with Org
 -   **electric-indent-just-newline:** For when I want to break out of the default
     Org indentation to start working at the beginning of the line for example when
-    I'm done working in a list or have just created a new heading
-    -   C-M-<return> because it is next step "lower" in the binding
+    I&rsquo;m done working in a list or have just created a new heading
+    -   C-M-<return> because it is next step &ldquo;lower&rdquo; in the binding
 -   **help/smart-open-line:** When I want to insert a new line between the current
     and next line then position the cursor correctly indented at the start of it.
     -   s-<return> because it is that is the last place in the modifier key chain
@@ -3817,11 +4233,17 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
 (defhydra help/hydra/right-side/org-mode (:color blue
                                                  :hint nil)
   "
-_1_ SHA-1_4_ +imgs _5_ -imgs                   _8_ detangle _9_ igc  _0_ tglmcro
-_q_ n2sbtre _w_ tbletfld _e_ g2nmrst _r_ g2nms-b _t_ g2s-b/hd      _u_ goto
+_1_ SHA-1 _2_ export-all _4_ +imgs _5_ -imgs                   _8_ detangle _9_ igc  _0_ tglmcro
+_q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ g2nms-b _t_ g2s-b/hd      _u_ goto
 _a_ inshdrgs _s_ oblobigst            _h_ dksieb
-_c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
+_c_ cksrcblk _b_ swtch2sessn _n_ n2sbtre _m_ xpndsrcblk"
   ("1" org-babel-sha1-hash)
+  ("2" help/xprt-all)
+  ("4" org-display-inline-images)
+  ("5" org-remove-inline-images)
+  ("8" org-babel-detangle)
+  ("9" org-id-get-create)
+  ("0" help/org-toggle-macro-markers)
   ("s" org-babel-lob-ingest)
   ("e" org-babel-goto-named-result)
   ("r" org-babel-goto-named-src-block)
@@ -3831,15 +4253,10 @@ _c_ cksrcblk _b_ swtch2sessn _n_ <-/w-code _m_ xpndsrcblk"
   ("m" org-babel-expand-src-block-maybe)
   ("c" org-babel-check-src-block)
   ("w" org-table-edit-field)
-  ("q" org-narrow-to-subtree)
+  ("n" org-narrow-to-subtree)
   ("u" org-goto)
-  ("8" org-babel-detangle)
-  ("9" org-id-get-create)
-  ("0" help/org-toggle-macro-markers)
   ("b" org-babel-switch-to-session)
-  ("n" org-babel-switch-to-session-with-code)
-  ("4" org-display-inline-images)
-  ("5" org-remove-inline-images))
+  ("q" org-babel-switch-to-session-with-code))
 (key-chord-define-global "hh" #'help/hydra/right-side/org-mode/body)
 ```
 
@@ -3864,7 +4281,13 @@ Easily enter guillemots.
 
 ## (Applied Mathematics)
 
+    ID: BE2550C9-231A-4824-BE6C-14231A971FE9
+
 ## Emacs Speaks Statistics (ESS)
+
+    noweb-ref: Hacking-Applied-Mathematics-ESS
+
+    ID: CB6305D8-DDBB-4865-8CAD-3648B31B76DB
 
 ```lisp
 (use-package ess
@@ -3883,7 +4306,7 @@ Various user interaction stuff:
 
 -   Return sends the input from wherever you hit return, nice.
 -   `M-{` and `M-}` cycle through commands you ran
--   `M-h` select a whole "paragraph", a block in their terms
+-   `M-h` select a whole &ldquo;paragraph&rdquo;, a block in their terms
 -   `C-x [` moves through the previous ESS sessions, `C-x ]` forward.
 -   `C-c C-p` and `C-c C-n` cycle through previous commands.
     -   How is this different than the other one?
@@ -3906,7 +4329,7 @@ Data viewing:
 
 -   **Never** rely upon on the REPL for data viewing
     -   Will mix up exploratory code with data
-        -   Can't easily distinguish between code and data
+        -   Can&rsquo;t easily distinguish between code and data
         -   Distracting you
         -   Breaking your flow
 -   Sometimes
@@ -3920,7 +4343,7 @@ Data viewing:
 (setq ess-describe-at-point-method 'tooltip)
 ```
 
-Always start `ess` within the curent `emacs` frame, it doesn't need to be separate.
+Always start `ess` within the curent `emacs` frame, it doesn&rsquo;t need to be separate.
 
 ```lisp
 (setq inferior-ess-same-window nil)
@@ -3949,7 +4372,7 @@ scroll back after the fact to see the history.
 (setq ess-switch-to-end-of-proc-buffer t)
 ```
 
-Use typical auto completion in buffers here, but don't do it when the
+Use typical auto completion in buffers here, but don&rsquo;t do it when the
 next char is a symbol or closed paren.
 
 ```lisp
@@ -3983,7 +4406,7 @@ Personal customizations for this mode. For some currently unknown reason,
 `turn-on-smartparens-strict-mode` like it does everywhere else.
 
 For a while I used `ess-eval-buffer-and-go`, but now I know that it is insanely
-faster to use `ess-eval-buffer` instead. Previously I've read people saying that,
+faster to use `ess-eval-buffer` instead. Previously I&rsquo;ve read people saying that,
 and it is true.
 
 When I started to standardize arrows across modes, I recalled the `ess`
@@ -4008,7 +4431,7 @@ need to be kept.
 `ESS` allows us to quite easily modify live 𝕊 objects and functions. It provides
 this functionality via `ess-dump-object-into-edit-buffer`. These changes are
 considered to be experimental, and not part of the master record according to
-our philosophy. As such, we don't care to know that these new versions ever
+our philosophy. As such, we don&rsquo;t care to know that these new versions ever
 existed and their record will be forgotten from history. In other words, that
 new, modified version of the object or function, is never saved to a file for
 later reuse.
@@ -4030,11 +4453,11 @@ in sync. Yes, it is really that important.
 
 Indent curly brackets correctly:
 
-`smartparens` is serving me well. In this mode it is for curly, round, and square brackets. `ESS` handles indenting mostly right, too. One thing was unpleasant, though. When you define a new function, hitting return brings the curely bracket down to the newline but doesn't give it an empty line and indent the cursor one indentation over so that you may begin implementing the function. That is a big hassle; 4 unnecessary keystroke, it is really distracting and takes you out of the flow. It is such a little thing yet it is so powerfully distracting. It is like a mosquito in your tent! Searching for a solution revealed that I am not alone here.
+`smartparens` is serving me well. In this mode it is for curly, round, and square brackets. `ESS` handles indenting mostly right, too. One thing was unpleasant, though. When you define a new function, hitting return brings the curely bracket down to the newline but doesn&rsquo;t give it an empty line and indent the cursor one indentation over so that you may begin implementing the function. That is a big hassle; 4 unnecessary keystroke, it is really distracting and takes you out of the flow. It is such a little thing yet it is so powerfully distracting. It is like a mosquito in your tent! Searching for a solution revealed that I am not alone here.
 
 This post <sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> handles brackets,
-indentation quite well <sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> but doesn't provide the behavior that I want.
-This post <sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup> captured exactly what I was facing, yet didn't end with a
+indentation quite well <sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> but doesn&rsquo;t provide the behavior that I want.
+This post <sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup> captured exactly what I was facing, yet didn&rsquo;t end with a
 solution which was kind of shocking. Searching some more I ended up here <sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup>, and this seems like the
 ideal solution by the author of smartparens himself. This is probably a common thing
  as I found another post
@@ -4043,18 +4466,18 @@ approach that should serve me well for just about everything in this solution-ar
 showing a more advanced usage that handles context which is nice to know is an option.
 
 ```lisp
-(sp-local-pair #'ess-mode "{" nil :post-handlers '((gcr/indent-curly-block "RET")))
+(sp-local-pair #'ess-mode "{" nil :post-handlers '((help/indent-curly-block "RET")))
 ```
 
 `ESS` executes code in another process. That is no secret. When displaying output
 from that code running in another process though, it can look like Emacs is
 locking up. That is not the case <sup><a id="fnr.8" class="footref" href="#fn.8">8</a></sup>.
 What is happening that Emacs is waiting for the output. Configure this mode to
-continue to accept user input, which is obviously critical, but don't wait for
+continue to accept user input, which is obviously critical, but don&rsquo;t wait for
 the process to provide its output. Instead, all output is printed after the last
 input lines. What we gain is perceived speed, and what we lose is the nice
 sequential this/that/this/that we get from a typical REPL interaction. As I
-write this, I'm not totally sure how this will work, but the documentation and
+write this, I&rsquo;m not totally sure how this will work, but the documentation and
 post are consistent and describe what I had wanted here so I will give it a try
 and see how it goes.
 
@@ -4064,7 +4487,15 @@ and see how it goes.
 
 ## SAS (ESS)
 
+    noweb-ref: Hacking-Applied-Mathematics-ESS-SAS
+
+    ID: 2442E555-0F82-48E6-96EA-2ABB5C9CC666
+
 ## R (ESS)
+
+    noweb-ref: Hacking-Applied-Mathematics-ESS-R
+
+    ID: 1183D35B-77FC-4CFD-9BAA-4F7656AD8943
 
 ℝ first notes:
 
@@ -4079,7 +4510,7 @@ and see how it goes.
 In it:
 
 -   𝕊 refers to any language in the family.
-    -   ℝ is what I'm interested in.
+    -   ℝ is what I&rsquo;m interested in.
 -   First 2.5 pages do some nice expectation-setting.
 -   Generally seems like a highly rich development environment with support for
     editing, debugging, and support with everything that you would expect from
@@ -4093,7 +4524,7 @@ Various session interaction stuff
 -   Show objects in the work-space: `C-c C-x`
 -   Search for what libraries are available to the work-space: `C-c C-s`
 -   Load file with source: `C-c C-l`
--   Visit errors: =C-c '= and =C-x '=
+-   Visit errors: =C-c &rsquo;= and =C-x &rsquo;=
 -   Show help on an object: `C-c C-v`
 -   Quit: `C-c C-q`
 -   Abort: `C-c C-c`
@@ -4114,8 +4545,8 @@ Sending code to the ESS process
 -   `C-c C-b`: Eval the buffer
 -   `C-c M-b`: Eval the buffer and jump to the console
 -   You can do all this stuff from transcript files, too.
-    -   My thought is that I never, ever will and if I do need to, I'm looking up the
-        commands again as I don't want to make a habit of doing that kind of
+    -   My thought is that I never, ever will and if I do need to, I&rsquo;m looking up the
+        commands again as I don&rsquo;t want to make a habit of doing that kind of
         thing (running old transcripts).
 
 Editing objects and functions:
@@ -4218,7 +4649,7 @@ The font size for watched variables..
 ```
 
 When `ess` starts, or when ℝ starts, it takes the current directory as its
-working directory. This is totally fine; so don't ask what the working directory
+working directory. This is totally fine; so don&rsquo;t ask what the working directory
 should be.
 
 ```lisp
@@ -4272,7 +4703,7 @@ inlineR
 
 Documentation:
 
--   Whole section on native documentation; I'll re-visit as needed.
+-   Whole section on native documentation; I&rsquo;ll re-visit as needed.
 -   Roxygen, too.
 
 `ess-developer` helps you to easily work within specific name-spaces.
@@ -4314,7 +4745,7 @@ them in the same directory but per-project. That is not the need now, and it is
 nice to know that it is an option.
 
 Store history files and dump files in a single known location. If that location
-doesn't exist, then make it.
+doesn&rsquo;t exist, then make it.
 
 ```lisp
 (setq help/r-dir "~/.R/")
@@ -4330,7 +4761,7 @@ doesn't exist, then make it.
 (setq ess-source-directory help/r-dir)
 ```
 
-Since I'm using ℝ for everything, configure *everything* to be using ℝ.
+Since I&rsquo;m using ℝ for everything, configure *everything* to be using ℝ.
 
 ```lisp
 (setq inferior-ess-program "R")
@@ -4338,7 +4769,7 @@ Since I'm using ℝ for everything, configure *everything* to be using ℝ.
 (setq ess-local-process-name "R")
 ```
 
-Handle rdoc and rmd files, though I have never used them… yet.
+Handle rdoc and rmd files, though I have never used them&#x2026; yet.
 
 ```lisp
 (add-to-list 'auto-mode-alist '("\\.rd\\'" . Rd-mode))
@@ -4359,8 +4790,8 @@ Make it really easy to do common stuff for ℝ with good keybindings.
   (setq ess-rutils-keys t))
 ```
 
-`r-autoyas` does argument completion. I had it working nice, and didn't use it for
-a while, and now it doesn't work. This needs some TLC.
+`r-autoyas` does argument completion. I had it working nice, and didn&rsquo;t use it for
+a while, and now it doesn&rsquo;t work. This needs some TLC.
 
 ```lisp
 (use-package r-autoyas
@@ -4375,27 +4806,6 @@ Save two spaces showing function information in the mini-buffer.
 
 ```lisp
 (setq ess-R-argument-suffix "=")
-```
-
-Not sure where I put the notes, but long ago I researched the ℝ coding
-standards. [This post](http://stackoverflow.com/questions/7502540/make-emacs-ess-follow-r-style-guide) by Eddelbuettel led me to believe that the ℝ [standard](http://cran.r-project.org/doc/manuals/R-ints.html#R-coding-standards)
-definition is the best. That made me think that `RRR` would be the best because
-it has identical settings to the `C++` style at the time of the post. That makes
-sense to me. I only want to change one thing to make Magrittr chains easier to
-read. The stock `RRR` indenting makes expressions trail off to the right forever.
-Here is how, make a copy of `RRR` and change one property.
-
-```lisp
-;; (setq help/ess-style
-;;       (copy-alist
-;;        (assoc 'RRR ess-style-alist)))
-;; (setf (nth 0 help/ess-style) 'HELP)
-;; (setf (cdr
-;;        (assoc 'ess-continued-statement-offset
-;;               (cdr help/ess-style)))
-;;       0)
-;; (add-to-list 'ess-style-alist help/ess-style)
-;; (setq ess-default-style 'HELP)
 ```
 
 This <sup><a id="fnr.14" class="footref" href="#fn.14">14</a></sup>
@@ -4413,7 +4823,7 @@ assignment!
 (ess-toggle-underscore nil)
 ```
 
-Don't save the workspace when you quit ℝ and don't restore **ANYTHING** when you
+Don&rsquo;t save the workspace when you quit ℝ and don&rsquo;t restore **ANYTHING** when you
 start it, either. This adheres to the philosopy that the system is file based.
 Period.
 
@@ -4423,25 +4833,25 @@ Period.
 
 ```lisp
 (defun help/R-mode-hook-fn ()
-  (local-set-key (kbd "s-e") #'ess-switch-to-end-of-ESS)
-  (local-set-key (kbd "s-x") #'r-autoyas-expand)
+  (local-set-key (kbd "s-6") #'ess-switch-to-end-of-ESS)
+  (local-set-key (kbd "s-7") #'ess-rdired)
+  (local-set-key (kbd "s-8") #'ess-R-dv-ctable)
+  (local-set-key (kbd "s-9") #'ess-R-dv-pprint)
+  (local-set-key (kbd "s-y") #'r-autoyas-expand)
+  (local-set-key (kbd "s-o") #'ess-describe-object-at-point)
   (local-set-key (kbd "s-p") #'ess-R-object-popup)
-  (local-set-key (kbd "s-v o") #'ess-describe-object-at-point)
-  (local-set-key (kbd "s-v d") #'ess-rdired)
-  (local-set-key (kbd "s-v cc") #'ess-R-dv-ctable)
-  (local-set-key (kbd "s-v cp") #'ess-R-dv-pprint)
-  (local-set-key (kbd "C-.") (lambda () (interactive) (insert " -> ")))
-  (local-set-key (kbd "C-M-,") (lambda () (interactive) (insert " <<- ")))
-  (local-set-key (kbd "C-M-.") (lambda () (interactive) (insert " ->> ")))
-  (key-chord-define-local (kbd ",.") (lambda () (interactive) (insert " %<>% ")))
-  (local-set-key (kbd "s-.") (lambda () (interactive) (insert " %>% ")))
-  (local-set-key (kbd "C-0") #'ess-eval-buffer)
+  (local-set-key (kbd "C-.") #'(lambda () (interactive) (insert " -> ")))
+  (key-chord-define-local "<<" #'(lambda () (interactive) (insert " <<- ")))
+  (key-chord-define-local ">>" #'(lambda () (interactive) (insert " ->> ")))
+  (key-chord-define-local "<>" #'(lambda () (interactive) (insert " %<>% ")))
+  (local-set-key (kbd "C->") #'(lambda () (interactive) (insert " %>% ")))
   (r-autoyas-ess-activate)
   (help/turn-on-r-hide-show)
   (lambda () (add-hook 'ess-presend-filter-functions
                   (lambda ()
                     (warn
-                     "ESS now supports a standard pre-send filter hook. Please update your configuration to use it instead of using advice.")))))
+                     "ESS now supports a standard pre-send filter hook. Please update your configuration to use it instead of using advice."))))
+  (ess-set-style 'RRR))
 
 (add-hook 'R-mode-hook #'help/R-mode-hook-fn)
 
@@ -4476,6 +4886,10 @@ Period.
 
 ## YASnippet
 
+    noweb-ref: Hacking-Applied-Mathematics-YASnippet
+
+    ID: 5C48A01F-D522-4AC9-A523-F8EE2E9EB384
+
 -   Enable everywhere.
 -   Never expand with `TAB` **anywhere**.
     -   Allow expansion to occur within fields.
@@ -4500,9 +4914,17 @@ Period.
 
 ## Structured Query Language (SQL)
 
+    ID: 987C1C05-F880-4312-B902-5060208A3506
+
 ## (Publishing)
 
+    ID: 7D07C2F6-38B9-49BF-A584-B029CEED6141
+
 ## TeX
+
+    noweb-ref: Hacking-Publishing-TeX
+
+    ID: E2A1BFA2-0246-4376-9A33-E35A8DE2E5A3
 
 ```lisp
 (use-package tex-site
@@ -4512,7 +4934,7 @@ Period.
     '(define-key TeX-mode-map (kbd "C-c C-c") #'help/safb-TeX-command-master)))
 ```
 
-Save style info. This doesn't control the buffer save.
+Save style info. This doesn&rsquo;t control the buffer save.
 
 ```lisp
 (setq TeX-auto-save t)
@@ -4537,7 +4959,7 @@ Use PDFTeX to generate both DVI and PDF files.
 (setq TeX-DVI-via-PDFTeX t)
 ```
 
-Don't prompt every time you run `C-c C-c` about saving the file, instead, just
+Don&rsquo;t prompt every time you run `C-c C-c` about saving the file, instead, just
 save it.
 
 ```lisp
@@ -4550,7 +4972,54 @@ Load LCO files with AucTeX.
 (add-to-list 'auto-mode-alist '("\\.lco?\\'" . TeX-latex-mode))
 ```
 
+Culture-dependent typographical results.
+
+```lisp
+(add-to-list 'org-latex-packages-alist '("english" "babel" t))
+```
+
+Palatino friendly mathematics fonts.
+
+```lisp
+(add-to-list 'org-latex-packages-alist '("osf" "mathpazo" t))
+```
+
+Small margins.
+
+```lisp
+(add-to-list 'org-latex-packages-alist '("margin=0.5in" "geometry" nil))
+```
+
+Standard LaTeX class options.
+
+```lisp
+(defvar help/ltx-cls-opt "paper=letter, fontsize=10pt, parskip")
+```
+
+Standard article class.
+
+```lisp
+(eval-after-load "ox-latex"
+  '(add-to-list 'org-latex-classes
+                `("help-article"
+                  ,(concat "\\documentclass["
+                           help/ltx-cls-opt
+                           "]{article}"))))
+
+(setq org-latex-default-class "help-article")
+```
+
+Use &ldquo;Smartquotes&rdquo;.
+
+```lisp
+(setq org-export-with-smart-quotes t)
+```
+
 ## KOMA-Script
+
+    noweb-ref: Hacking-Publishing-KOMA
+
+    ID: BFF1402E-98D4-4F36-ACCB-B1E88A3EB2D9
 
 I enjoy writing letters. I enjoy reading letters. LaTeX produces letters that
 are easy to print and read. Org provides a [KOMA Script exporter](http://orgmode.org/worg/exporters/koma-letter-export.html) for [KOMA-script](https://www.ctan.org/pkg/koma-script?lang%3Den).
@@ -4568,15 +5037,15 @@ Load the KOMA exporter.
 ```
 
 -   Understanding KOMA and how to use it
-    -   There are 4 ways to set letter metadata, listed "from the most specific to
-        the most general" (not sure exactly what this statement means, and the conclusion of my notes tries to make sense of what is really going on here and what is the best way to do things)
+    -   There are 4 ways to set letter metadata, listed &ldquo;from the most specific to
+        the most general&rdquo; (not sure exactly what this statement means, and the conclusion of my notes tries to make sense of what is really going on here and what is the best way to do things)
         -   Org option lines (ORG)
         -   Separate Org latex classes (LTX)
         -   Emacs Lisp variables (LISP)
         -   Letter Class Option files (LCO)
 -   Notes and thoughts on the ways to use it
     -   LTX
-        -   By following the setup directions, you do this, creating "my-letter" class
+        -   By following the setup directions, you do this, creating &ldquo;help-letter&rdquo; class
         -   Familiar and easy if you already know LaTeX
             -   At some point in your workflow, you **must** define a class to use, anyway
         -   Very easy to do, just define the class template and set `org-koma-letter-default-class`
@@ -4601,14 +5070,14 @@ Load the KOMA exporter.
             > variables but not letter metadata set in the Org file.
         -   When you include multiple LCO files, they are evaluated LIFO. Properties
             are set as they first appear, and are not set again. Say you include
-            "MyGeneralStuffForAnyLetter.lco" and then include
-            "MyStuffSpecificToThisLetter.lco". The specific stuff will get set first.
+            &ldquo;MyGeneralStuffForAnyLetter.lco&rdquo; and then include
+            &ldquo;MyStuffSpecificToThisLetter.lco&rdquo;. The specific stuff will get set first.
             Then general stuff will get set last.
             -   Surely there is a better way to phrase this. I will work on that.
 -   Recommendations
     -   What is the easiest way to start using KOMA-Script based on what you know
         today?
-    -   If you don't know any of the approaches
+    -   If you don&rsquo;t know any of the approaches
         -   Then choose between learning LaTeX and Org
     -   If you only know LaTeX
         -   Then you will use the LTX/LCO metadata approach
@@ -4642,12 +5111,12 @@ for my printed correspondence.
 (eval-after-load "ox-koma-letter"
   '(progn
      (add-to-list 'org-latex-classes
-                  '("my-letter"
-                    "\\documentclass[paper=letter, pagesize, fontsize=10pt, parskip]{scrlttr2}
-\\usepackage[english]{babel}
-\\usepackage[osf]{mathpazo}"))
+                  `("help-letter"
+                    ,(concat "\\documentclass["
+                             help/ltx-cls-opt
+                             "]{scrlttr2}")))
 
-     (setq org-koma-letter-default-class "my-letter")))
+     (setq org-koma-letter-default-class "help-letter")))
 ```
 
 There are two formats for the letters: [heading-based](http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-new-example.org%3Bh%3D180a9a0e10dd8f7483a67946daf36732c316f821%3Bhb%3D180a9a0e10dd8f7483a67946daf36732c316f821) and [property-based](http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-example.org%3Bh%3De21b8b00c3e895be9dd573d02ea84b08796296a3%3Bhb%3De21b8b00c3e895be9dd573d02ea84b08796296a3).
@@ -4660,9 +5129,19 @@ Set up my default LCO files.
 
 ## Texinfo
 
+    ID: F2C5CEB7-1252-4E6F-B192-C5D2D41A6D47
+
+Perhaps the [first](https://lists.gnu.org/archive/html/emacs-orgmode/2015-07/msg00042.html) document typeset with Org-Texinfo.
+
 ## Pandoc
 
+    ID: 1E4AB0D4-F92E-48E6-9313-278C27DED142
+
 ## Markdown
+
+    noweb-ref: Hacking-Publishing-Markdown
+
+    ID: 748319ED-9F02-4A4D-BEE8-E71C462663FC
 
 Provide Github Flavored Markdown (GFM).
 
@@ -4682,7 +5161,17 @@ Program GFM.
 
 ## WordPress
 
+    ID: F5E33EB2-2E26-435C-85F6-26CB7CE7FC56
+
 ## HTML
+
+    noweb-ref: Hacking-Publishing-HTML
+
+    ID: 84F673DF-2E6F-4BAA-8095-4A7586BB73FC
+
+```lisp
+(setq org-html-doctype "html5")
+```
 
 Load Htmlize for HTML export. Use in-line CSS.
 
@@ -4690,10 +5179,44 @@ Load Htmlize for HTML export. Use in-line CSS.
 (use-package htmlize
   :config
   (setq org-html-htmlize-output-type htmlize-output-type)
-  (setq htmlize-output-type 'inline-css))
+  (setq htmlize-output-type 'inline-css)
+  (defvar help/htmlize-initial-fci-state nil
+    "Variable to store the state of `fci-mode' upon calling `htmlize-buffer'.
+
+Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
+  (defvar help/htmlize-initial-flyspell-state nil
+    "Variable to store the state of `flyspell-mode' upon calling `htmlize-buffer'.
+
+Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
+
+  (defun help/htmlize-before-hook-fn ()
+    (when (fboundp 'fci-mode)
+      (setq help/htmlize-initial-fci-state fci-mode)
+      (when fci-mode
+        (fci-mode -1))))
+  (add-hook 'htmlize-before-hook #'help/htmlize-before-hook-fn)
+
+  (defun help/htmlize-after-hook-fn ()
+    (when (fboundp 'fci-mode)
+      (when help/htmlize-initial-fci-state
+        (fci-mode t))))
+  (add-hook 'htmlize-after-hook #'help/htmlize-after-hook-fn))
+```
+
+## ASCII
+
+    ID: 1F20F4EC-1D8B-402A-A0A9-504E733AEFDC
+
+```lisp
+(setq org-ascii-text-width 80)
+(setq org-ascii-global-margin 0)
 ```
 
 ## Beamer
+
+    noweb-ref: Hacking-Publishing-Beamer
+
+    ID: 6B86302E-D3EC-413A-A844-9ACCAA23A056
 
 Load Beamer for creating presentations.
 
@@ -4703,17 +5226,31 @@ Load Beamer for creating presentations.
 
 ## (DevOps)
 
+    ID: 8B78A8C3-E6B6-4722-9822-EF428E5DB823
+
 ## Shell Script
+
+    ID: 06D022B2-53ED-4042-8152-F383F5FE309E
 
 ## Make
 
+    ID: 5F2B3343-631D-41C3-BE6B-D98548F77E07
+
 ## Vagrant
+
+    ID: A1335FE5-6DA7-4FE2-A77C-60032C76B40D
 
 `ruby-mode` supports `Vagrantfile` OOTB.
 
 ## (Diagram)
 
+    ID: FA47D423-05B3-4911-9CEC-28A534E49428
+
 ## Artist
+
+    noweb-ref: Hacking-Diagram-Artist
+
+    ID: F920A833-60D7-41C2-9363-EA2A8BD19009
 
 ```lisp
 (add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
@@ -4722,6 +5259,10 @@ Load Beamer for creating presentations.
 ```
 
 ## DITAA
+
+    noweb-ref: Hacking-Diagram-DITAA
+
+    ID: FCC8A8F8-A967-4981-9260-CFF60CC56494
 
 When a drop of water joins the ocean it becomes the ocean.
 
@@ -4736,6 +5277,10 @@ When a drop of water joins the ocean it becomes the ocean.
 
 ## Graphviz
 
+    noweb-ref: Hacking-Diagram-Graphviz
+
+    ID: A84665A3-4A2D-4040-926A-17159A6D4647
+
 ```lisp
 (use-package graphviz-dot-mode
   :ensure t
@@ -4746,6 +5291,10 @@ When a drop of water joins the ocean it becomes the ocean.
 ![img](./image/graphviz-life_is_simple.png)
 
 ## PlantUML
+
+    noweb-ref: Hacking-Diagram-PlantUML
+
+    ID: FCC259F8-0858-4778-B97F-07D2B21012F5
 
 ```lisp
 (use-package plantuml-mode
@@ -4798,7 +5347,7 @@ When a drop of water joins the ocean it becomes the ocean.
 **Component Diagram**
 
 -   The names to define all of the diagram entity types.
--   Identify "Modern UML".
+-   Identify &ldquo;Modern UML&rdquo;.
 -   Good for summaries.
 
 ![img](./image/plantuml-component_diagram.png)
@@ -4827,7 +5376,7 @@ When a drop of water joins the ocean it becomes the ocean.
     -   You may nest definitions.
     -   `monochrome true` option.
         -   If you are printing
-        -   Or don't want color.
+        -   Or don&rsquo;t want color.
 
 -   Internationalization.
     -   Full Unicode character support.
