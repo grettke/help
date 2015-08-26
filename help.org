@@ -955,7 +955,7 @@ properties.
 
 #+NAME: 71BFB4A2-DABD-4621-A6E0-C3CAECD34BC4
 #+BEGIN_SRC emacs-lisp :results output silent
-(setq org-export-with-properties t)
+(setq org-export-with-properties nil)
 #+END_SRC
 
 Stop your flow to monitor the export for errors.
