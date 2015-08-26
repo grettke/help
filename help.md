@@ -3082,12 +3082,6 @@ Source-Blocks.
 (add-to-list 'ispell-skip-region-alist '("^\s*#[+]BEGIN_SRC" . "^\s*#[+]END_SRC"))
 ```
 
-Name definitions.
-
-```lisp
-(add-to-list 'ispell-skip-region-alist '("^\s*#[+]NAME:" . "$"))
-```
-
 Example-Blocks. This system often uses Source-Blocks to edit content and
 Example-Blocks to make it easily renderable when it is not for running.
 
@@ -3131,7 +3125,7 @@ Export properties.
 (defun help/ispell-org-header-lines-regexp (h)
   "Help ispell ignore org header lines."
   (interactive)
-  (cons (concat "^#\\+" h ":") ".$"))
+  (cons (concat "^\s*#[+]" h ":") ".$"))
 
 (defun help/ispell-a2isra (block-def)
   "Add to the ispell skip region alist the BLOCK-DEF."
@@ -3161,6 +3155,7 @@ Export properties.
         "LATEX_CLASS_OPTIONS"
         "LATEX_HEADER"
         "LATEX_HEADER_EXTRA"
+        "NAME"
         "OPTIONS"
         "SELECT_TAGS"
         "STARTUP"
