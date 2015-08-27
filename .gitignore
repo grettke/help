@@ -3,7 +3,6 @@
 /eshell/history
 /eshell/lastdir
 /auto/*
-*.pdf
 *.tex
 *.aux
 *.log
