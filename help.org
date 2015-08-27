@@ -2982,7 +2982,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (setq ac-quick-help-prefer-pos-tip nil)
   (ac-config-default)
   (setq ac-auto-start nil)
-  (help/not-on-gui (ac-set-trigger-key "\t"))
+  (help/not-on-gui (ac-set-trigger-key "TAB"))
   (help/on-gui (ac-set-trigger-key "<tab>"))
   :diminish auto-complete-mode)
 (use-package auto-complete-chunk
