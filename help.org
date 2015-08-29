@@ -1627,7 +1627,7 @@ Hide and show code blocks.
 
 Exploratory programming in EMACS.
 
-Don't use "dn" for "describe-fuNction" because of "and"-words.
+Don't use "dn" for "describe-function" because of "and"-words.
 
 #+NAME: 779A4232-960E-4CE1-B6EC-018FC997F0DD
 #+BEGIN_SRC emacs-lisp :results output silent
