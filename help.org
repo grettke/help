@@ -1635,9 +1635,11 @@ Don't use "dn" for "describe-fuNction" because of "and"-words.
 (key-chord-define-global "d," #'describe-variable)
 #+END_SRC
 
+Don't use "qi"; "unique".
+
 #+NAME: 55D2A3E6-07B1-47B0-9ADD-54C966FA252B
 #+BEGIN_SRC emacs-lisp :results output silent
-(key-chord-define-global "qi" #'help/comment-or-uncomment)
+(key-chord-define-global "f-" #'help/comment-or-uncomment)
 #+END_SRC
 
 Make =ispell= accessible.
