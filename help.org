@@ -16,8 +16,9 @@
 
 *Setup*
 
-1) [[http://orgmode.org/][Pull Org-Mode]] to =~/src/=.
+1) [[http://orgmode.org/][Clone Org-Mode]] to =~/src/=.
    1) Without =Make=: [[http://orgmode.org/worg/org-hacks.html][Generating autoloads and Compiling Org without make]]
+2) [[https://github.com/grettke/wisdomandwonder][Clone WisdomAndWonder]] to =~/src/=.
 2) [[https://github.com/jwiegley/use-package][Pull Use-Package]] to =~/src/=.
 3) Create a folder for support libraries exporting it's location in a variable
    named =EELIB=.
@@ -288,6 +289,7 @@ Start EMACS with this command:
 <<Hacking-Publishing-TeX>>
 <<Hacking-Publishing-KOMA>>
 <<Hacking-Publishing-Markdown>>
+<<Hacking-Publishing-Wordpress>>
 <<Hacking-Publishing-Beamer>>
 <<Hacking-Publishing-HTML>>
 <<Hacking-Diagram-Artist>>
@@ -5451,10 +5453,66 @@ Program GFM.
   (setq markdown-coding-system "utf-8"))
 #+END_SRC
 
-** WordPress
+** Blog (WordPress)
    :PROPERTIES:
+   :noweb-ref: Hacking-Publishing-Wordpress
    :ID:       F5E33EB2-2E26-435C-85F6-26CB7CE7FC56
    :END:
+
+#+BEGIN_QUOTE
+An elisp implementation of clientside XML-RPC
+#+END_QUOTE
+
+#+NAME: E99598C8-D394-484B-A7FB-333FA2544CB0
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package xml-rpc
+  :ensure t)
+#+END_SRC
+
+#+BEGIN_QUOTE
+Weblog maintenance via XML-RPC APIs
+#+END_QUOTE
+
+#+NAME: 79F63BAD-0CD7-4A97-8A7D-CBAA51BB48E1
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package metaweblog
+  :ensure t)
+#+END_SRC
+
+#+BEGIN_QUOTE
+Blog from Org mode to wordpress
+#+END_QUOTE
+
+#+NAME: DF522DDF-4A71-4D8B-B6F9-9BD6F11EB832
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package org2blog
+  :ensure t)
+#+END_SRC
+
+Org2Blog depends on Org-Mode. This system loads Org-Mode from Git. Enter the
+=ELPA= cache directory and delete it.
+
+This system works with WisdomAndWonder. It keeps its posts separate giving focus
+to each Web.
+
+#+NAME: 9C1EAE6B-9D05-43FB-AC35-7FBFE6CB4F7E
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq org2blog/wp-track-posts nil)
+#+END_SRC
+
+Configure Org2Blog.
+
+#+NAME: BCA2FE29-930C-4E66-A662-17FF451D1591
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq org2blog/wp-image-thumbnails t)
+(setq org2blog/wp-blog-alist
+      '(("wisdomandwonder"
+         :url "http://www.wisdomandwonder.com/wordpress/xmlrpc.php"
+         :username "admin"
+         :default-categories ("Article" "Link")
+         :confirm t
+         :show 'show)))
+#+END_SRC
 
 ** HTML
   :PROPERTIES:

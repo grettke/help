@@ -1800,6 +1800,31 @@ _c_ cksrcblk _b_ swtch2sessn _n_ n2sbtre _m_ xpndsrcblk"
   (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
   (setq markdown-coding-system "utf-8"))
 ;; 8A4DB408-7888-4705-AB2B-C7EED9262DF2 ends here
+;; [[file:~/src/help/help.org::*Blog%20(WordPress)][E99598C8-D394-484B-A7FB-333FA2544CB0]]
+(use-package xml-rpc
+  :ensure t)
+;; E99598C8-D394-484B-A7FB-333FA2544CB0 ends here
+;; [[file:~/src/help/help.org::*Blog%20(WordPress)][79F63BAD-0CD7-4A97-8A7D-CBAA51BB48E1]]
+(use-package metaweblog
+  :ensure t)
+;; 79F63BAD-0CD7-4A97-8A7D-CBAA51BB48E1 ends here
+;; [[file:~/src/help/help.org::*Blog%20(WordPress)][DF522DDF-4A71-4D8B-B6F9-9BD6F11EB832]]
+(use-package org2blog
+  :ensure t)
+;; DF522DDF-4A71-4D8B-B6F9-9BD6F11EB832 ends here
+;; [[file:~/src/help/help.org::*Blog%20(WordPress)][9C1EAE6B-9D05-43FB-AC35-7FBFE6CB4F7E]]
+(setq org2blog/wp-track-posts nil)
+;; 9C1EAE6B-9D05-43FB-AC35-7FBFE6CB4F7E ends here
+;; [[file:~/src/help/help.org::*Blog%20(WordPress)][BCA2FE29-930C-4E66-A662-17FF451D1591]]
+(setq org2blog/wp-image-thumbnails t)
+(setq org2blog/wp-blog-alist
+      '(("wisdomandwonder"
+         :url "http://www.wisdomandwonder.com/wordpress/xmlrpc.php"
+         :username "admin"
+         :default-categories ("Article" "Link")
+         :confirm t
+         :show 'show)))
+;; BCA2FE29-930C-4E66-A662-17FF451D1591 ends here
 ;; [[file:~/src/help/help.org::*Beamer][B77E265B-EE1A-469D-BEFB-51360B7AB45E]]
 (use-package ox-beamer)
 ;; B77E265B-EE1A-469D-BEFB-51360B7AB45E ends here
@@ -2066,7 +2091,7 @@ _v_ariable       _u_ser-option
 (key-chord-define-global "d," #'describe-variable)
 ;; 779A4232-960E-4CE1-B6EC-018FC997F0DD ends here
 ;; [[file:~/src/help/help.org::*Left%20&%20Right%20Side][55D2A3E6-07B1-47B0-9ADD-54C966FA252B]]
-(key-chord-define-global "f-" #'help/comment-or-uncomment)
+(key-chord-define-global "f-" #'help/comment-or-uncomment) ;
 ;; 55D2A3E6-07B1-47B0-9ADD-54C966FA252B ends here
 ;; [[file:~/src/help/help.org::*Left%20&%20Right%20Side][E167321A-E8E5-4C54-B570-241B465B2D4B]]
 (key-chord-define-global "qp" #'ispell)
