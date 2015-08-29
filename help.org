@@ -2331,11 +2331,13 @@ directories.
 (add-to-list 'find-file-not-found-functions #'help/create-non-existent-directory)
 #+END_SRC
 
-Be aware of files larger than 10MiB.
+Be aware of files larger than 2MiB. Turn off Aggressive-Indent and other
+expensive features in those buffers. NXML also seems to have a difficult time
+with large files.
 
 #+NAME: E99CAE8F-970F-4584-9B28-9C77D5B79356
 #+BEGIN_SRC emacs-lisp :results output silent
-(setq large-file-warning-threshold (* 1024 1024 10))
+(setq large-file-warning-threshold (* 1024 1024 2))
 #+END_SRC
 
 ** File-system/directory management (Console)

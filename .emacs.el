@@ -504,7 +504,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
 (add-to-list 'find-file-not-found-functions #'help/create-non-existent-directory)
 ;; DA537B02-6E64-42FC-BE9D-E5A3408B6599 ends here
 ;; [[file:~/src/help/help.org::*File%20Based%20System][E99CAE8F-970F-4584-9B28-9C77D5B79356]]
-(setq large-file-warning-threshold (* 1024 1024 10))
+(setq large-file-warning-threshold (* 1024 1024 2))
 ;; E99CAE8F-970F-4584-9B28-9C77D5B79356 ends here
 ;; [[file:~/src/help/help.org::*File-system/directory%20management%20(Console)][26EA1235-E9EC-4DC0-9F7D-B3D14E1A27B7]]
 (defun help/dired-copy-filename ()
