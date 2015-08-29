@@ -2331,6 +2331,13 @@ directories.
 (add-to-list 'find-file-not-found-functions #'help/create-non-existent-directory)
 #+END_SRC
 
+Be aware of files larger than 10MiB.
+
+#+NAME: E99CAE8F-970F-4584-9B28-9C77D5B79356
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq large-file-warning-threshold (* 1024 1024 10))
+#+END_SRC
+
 ** File-system/directory management (Console)
    :PROPERTIES:
    :ID:       067D598E-7FE6-4BC5-AEF7-872966390970
