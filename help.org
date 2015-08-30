@@ -18,17 +18,16 @@
 
 1) [[http://orgmode.org/][Clone Org-Mode]] to =~/src/=.
    1) Without =Make=: [[http://orgmode.org/worg/org-hacks.html][Generating autoloads and Compiling Org without make]]
-2) [[https://github.com/grettke/wisdomandwonder][Clone WisdomAndWonder]] to =~/src/=.
-3) [[https://github.com/jwiegley/use-package][Clone Use-Package]] to =~/src/=.
-4) Create a folder for support libraries exporting it's location in a variable
+2) [[https://github.com/jwiegley/use-package][Clone Use-Package]] to =~/src/=.
+3) Create a folder for support libraries exporting it's location in a variable
    named =EELIB=.
    1) Install [[http://ditaa.sourceforge.net/][DITAA]] renaming the JAR to =ditaa.jar=.
    2) Install [[http://plantuml.com/][PlantUML]] renaming the JAR to =plantuml.jar=.
-5) Install supporting software adding their exectuable location to the =PATH=.
+4) Install supporting software adding their exectuable location to the =PATH=.
    1) Install [[https://www.oracle.com/java/index.html][Oracle Java]].
    2) Install [[https://www.languagetool.org/][LanguageTool]] renaming it's folder to =LanguageTool=.
    3) Install [[https://tug.org/mactex/][MacTeX]].
-6) Link:
+5) Link:
    - The Eshell directory to HELP's.
      - =ln -s ~/src/help/eshell/ ~/.emacs.d/eshell=
    - The Initialization file to HELP's.
