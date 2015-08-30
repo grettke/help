@@ -19,16 +19,16 @@
 1) [[http://orgmode.org/][Clone Org-Mode]] to =~/src/=.
    1) Without =Make=: [[http://orgmode.org/worg/org-hacks.html][Generating autoloads and Compiling Org without make]]
 2) [[https://github.com/grettke/wisdomandwonder][Clone WisdomAndWonder]] to =~/src/=.
-2) [[https://github.com/jwiegley/use-package][Pull Use-Package]] to =~/src/=.
-3) Create a folder for support libraries exporting it's location in a variable
+3) [[https://github.com/jwiegley/use-package][Clone Use-Package]] to =~/src/=.
+4) Create a folder for support libraries exporting it's location in a variable
    named =EELIB=.
    1) Install [[http://ditaa.sourceforge.net/][DITAA]] renaming the JAR to =ditaa.jar=.
    2) Install [[http://plantuml.com/][PlantUML]] renaming the JAR to =plantuml.jar=.
-4) Install supporting software adding their exectuable location to the =PATH=.
+5) Install supporting software adding their exectuable location to the =PATH=.
    1) Install [[https://www.oracle.com/java/index.html][Oracle Java]].
    2) Install [[https://www.languagetool.org/][LanguageTool]] renaming it's folder to =LanguageTool=.
    3) Install [[https://tug.org/mactex/][MacTeX]].
-5) Link:
+6) Link:
    - The Eshell directory to HELP's.
      - =ln -s ~/src/help/eshell/ ~/.emacs.d/eshell=
    - The Initialization file to HELP's.
@@ -5513,7 +5513,6 @@ Configure Org2Blog.
 
 #+NAME: BCA2FE29-930C-4E66-A662-17FF451D1591
 #+BEGIN_SRC emacs-lisp :results output silent
-(setq org2blog/wp-image-thumbnails t)
 (setq org2blog/wp-blog-alist
       '(("wisdomandwonder"
          :url "http://www.wisdomandwonder.com/wordpress/xmlrpc.php"

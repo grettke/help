@@ -1819,7 +1819,6 @@ _c_ cksrcblk _b_ swtch2sessn _n_ n2sbtre _m_ xpndsrcblk"
 (setq org2blog/wp-track-posts nil)
 ;; 9C1EAE6B-9D05-43FB-AC35-7FBFE6CB4F7E ends here
 ;; [[file:~/src/help/help.org::*Blog%20(WordPress)][BCA2FE29-930C-4E66-A662-17FF451D1591]]
-(setq org2blog/wp-image-thumbnails t)
 (setq org2blog/wp-blog-alist
       '(("wisdomandwonder"
          :url "http://www.wisdomandwonder.com/wordpress/xmlrpc.php"
