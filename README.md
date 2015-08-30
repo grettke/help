@@ -5,7 +5,7 @@
 1.  [Clone Org-Mode](http://orgmode.org/) to `~/src/`.
     1.  Without `Make`: [Generating autoloads and Compiling Org without make](http://orgmode.org/worg/org-hacks.html)
 2.  [Clone WisdomAndWonder](https://github.com/grettke/wisdomandwonder) to `~/src/`.
-3.  [Pull Use-Package](https://github.com/jwiegley/use-package) to `~/src/`.
+3.  [Clone Use-Package](https://github.com/jwiegley/use-package) to `~/src/`.
 4.  Create a folder for support libraries exporting it&rsquo;s location in a variable
     named `EELIB`.
     1.  Install [DITAA](http://ditaa.sourceforge.net/) renaming the JAR to `ditaa.jar`.
