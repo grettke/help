@@ -1105,6 +1105,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (--each
       '("ATTR_LATEX"
         "AUTHOR"
+        "BLOG"
         "CREATOR"
         "DATE"
         "DESCRIPTION"
@@ -1126,6 +1127,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
         "LATEX_HEADER_EXTRA"
         "NAME"
         "OPTIONS"
+        "POSTID"
         "SELECT_TAGS"
         "STARTUP"
         "TITLE")
