@@ -3229,11 +3229,23 @@ Ispell is simple and powerful.
 
 Never ispell the following objects.
 
+Block regex helper.
+
+#+NAME: 62360083-1CE2-4EEF-BF61-AEA8F3FA9944
+#+BEGIN_SRC emacs-lisp :results output silent
+(add-to-list 'ispell-skip-region-alist '("^\s*#[+]BEGIN_SRC" . "^\s*#[+]END_SRC"))
+(defun help/block-regex (special)
+  "Make an ispell skip-region alist for a SPECIAL block."
+  (interactive)
+  (let ((spec "^\s*#[+]"))
+    `(,(concat spec "BEGIN_" special) . ,(concat "END_" special))))
+#+END_SRC
+
 Source-Blocks.
 
 #+NAME: 23D5548B-1081-48A8-BBCD-5C69AC2C57B8
 #+BEGIN_SRC emacs-lisp :results output silent
-(add-to-list 'ispell-skip-region-alist '("^\s*#[+]BEGIN_SRC" . "^\s*#[+]END_SRC"))
+(add-to-list 'ispell-skip-region-alist (help/block-regex "SRC"))
 #+END_SRC
 
 Example-Blocks. This system often uses Source-Blocks to edit content and
@@ -3241,14 +3253,14 @@ Example-Blocks to make it easily renderable when it is not for running.
 
 #+NAME: CE78FEAC-B28A-4F76-95F2-4FE246FCDCAD
 #+BEGIN_SRC emacs-lisp :results output silent
-(add-to-list 'ispell-skip-region-alist '("^\s*#[+]BEGIN_EXAMPLE" . "^\s*#[+]END_EXAMPLE"))
+(add-to-list 'ispell-skip-region-alist (help/block-regex "EXAMPLE"))
 #+END_SRC
 
 Properties.
 
 #+NAME: 01BEC0C6-64F7-440F-A217-EA73CDA75DDA
 #+BEGIN_SRC emacs-lisp :results output silent
-(add-to-list 'ispell-skip-region-alist '("\:PROPERTIES\:$" . "\:END\:$"))
+(add-to-list 'ispell-skip-region-alist '("^\s*:PROPERTIES\:$" . "^\s*:END\:$"))
 #+END_SRC
 
 Footnotes.
@@ -3263,13 +3275,6 @@ Footnotes with URLs that contain line-breaks.
 #+NAME: F5636C6E-61AC-491F-936E-FAE5974ED541
 #+BEGIN_SRC emacs-lisp :results output silent
 (add-to-list 'ispell-skip-region-alist '("^http" . "\\]"))
-#+END_SRC
-
-Verbatim
-
-#+NAME: 5BF4C8DE-63B8-4684-B8F4-0021781B1E1E
-#+BEGIN_SRC emacs-lisp :results output silent
-(add-to-list 'ispell-skip-region-alist '("=" . ".+="))
 #+END_SRC
 
 Bold text list items.

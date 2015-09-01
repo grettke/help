@@ -1069,14 +1069,22 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 ;; [[file:~/src/help/help.org::*Searching][4B9FE2A1-6A5F-42EF-AEEA-222B72170B64]]
 (setq-default case-fold-search t)
 ;; 4B9FE2A1-6A5F-42EF-AEEA-222B72170B64 ends here
-;; [[file:~/src/help/help.org::*Org-Mode][23D5548B-1081-48A8-BBCD-5C69AC2C57B8]]
+;; [[file:~/src/help/help.org::*Org-Mode][62360083-1CE2-4EEF-BF61-AEA8F3FA9944]]
 (add-to-list 'ispell-skip-region-alist '("^\s*#[+]BEGIN_SRC" . "^\s*#[+]END_SRC"))
+(defun help/block-regex (special)
+  "Make an ispell skip-region alist for a SPECIAL block."
+  (interactive)
+  (let ((spec "^\s*#[+]"))
+    `(,(concat spec "BEGIN_" special) . ,(concat "END_" special))))
+;; 62360083-1CE2-4EEF-BF61-AEA8F3FA9944 ends here
+;; [[file:~/src/help/help.org::*Org-Mode][23D5548B-1081-48A8-BBCD-5C69AC2C57B8]]
+(add-to-list 'ispell-skip-region-alist (help/block-regex "SRC"))
 ;; 23D5548B-1081-48A8-BBCD-5C69AC2C57B8 ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][CE78FEAC-B28A-4F76-95F2-4FE246FCDCAD]]
-(add-to-list 'ispell-skip-region-alist '("^\s*#[+]BEGIN_EXAMPLE" . "^\s*#[+]END_EXAMPLE"))
+(add-to-list 'ispell-skip-region-alist (help/block-regex "EXAMPLE"))
 ;; CE78FEAC-B28A-4F76-95F2-4FE246FCDCAD ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][01BEC0C6-64F7-440F-A217-EA73CDA75DDA]]
-(add-to-list 'ispell-skip-region-alist '("\:PROPERTIES\:$" . "\:END\:$"))
+(add-to-list 'ispell-skip-region-alist '("^\s*:PROPERTIES\:$" . "^\s*:END\:$"))
 ;; 01BEC0C6-64F7-440F-A217-EA73CDA75DDA ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][F5DC40F2-20EC-45C0-BDB3-7C788514CD23]]
 (add-to-list 'ispell-skip-region-alist '("\\[fn:.+:" . "\\]"))
@@ -1084,9 +1092,6 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 ;; [[file:~/src/help/help.org::*Org-Mode][F5636C6E-61AC-491F-936E-FAE5974ED541]]
 (add-to-list 'ispell-skip-region-alist '("^http" . "\\]"))
 ;; F5636C6E-61AC-491F-936E-FAE5974ED541 ends here
-;; [[file:~/src/help/help.org::*Org-Mode][5BF4C8DE-63B8-4684-B8F4-0021781B1E1E]]
-(add-to-list 'ispell-skip-region-alist '("=" . ".+="))
-;; 5BF4C8DE-63B8-4684-B8F4-0021781B1E1E ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][D1A2D129-9299-4349-AFF3-8F65F7D0CF95]]
 (add-to-list 'ispell-skip-region-alist '("- \\*.+" . ".*\\*: "))
 ;; D1A2D129-9299-4349-AFF3-8F65F7D0CF95 ends here
