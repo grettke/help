@@ -76,13 +76,15 @@ This is a copy and paste. Additional languages would warrant a refactor."
              (indent-to i)
              (forward-line 2))))))
 
+(defconst help/org-special-pre "^\s*#[+]")
+
 (defun help/org-2every-src-block (fn)
   "Visit every Source-Block and evaluate `FN'."
   (interactive)
   (save-excursion
     (goto-char (point-min))
     (let ((case-fold-search t))
-      (while (re-search-forward "^\s*#[+]BEGIN_SRC" nil t)
+      (while (re-search-forward (concat help/org-special-pre "BEGIN_SRC") nil t)
         (let ((element (org-element-at-point)))
           (when (eq (org-element-type element) 'src-block)
             (funcall fn element)))))
@@ -1073,8 +1075,9 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (defun help/block-regex (special)
   "Make an ispell skip-region alist for a SPECIAL block."
   (interactive)
-  (let ((spec "^\s*#[+]"))
-    `(,(concat spec "BEGIN_" special) . ,(concat "END_" special))))
+  `(,(concat help/org-special-pre "BEGIN_" special)
+    .
+    ,(concat help/org-special-pre "END_" special)))
 ;; 62360083-1CE2-4EEF-BF61-AEA8F3FA9944 ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][23D5548B-1081-48A8-BBCD-5C69AC2C57B8]]
 (add-to-list 'ispell-skip-region-alist (help/block-regex "SRC"))
