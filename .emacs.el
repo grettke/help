@@ -1091,16 +1091,6 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (add-to-list 'ispell-skip-region-alist '("- \\*.+" . ".*\\*: "))
 ;; D1A2D129-9299-4349-AFF3-8F65F7D0CF95 ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][3745D1E1-33D3-4D2F-B527-BBBCA619D455]]
-(defun help/ispell-org-header-lines-regexp (h)
-  "Help ispell ignore org header lines."
-  (interactive)
-  (cons (concat "^\s*#[+]" h ":") ".$"))
-
-(defun help/ispell-a2isra (block-def)
-  "Add to the ispell skip region alist the BLOCK-DEF."
-  (interactive)
-  (add-to-list 'ispell-skip-region-alist block-def))
-
 (let ()
   (--each
       '("ATTR_LATEX"
@@ -1131,7 +1121,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
         "SELECT_TAGS"
         "STARTUP"
         "TITLE")
-    (help/ispell-a2isra (help/ispell-org-header-lines-regexp it))))
+    (add-to-list 'ispell-skip-region-alist `(,(concat "#[+]" it ":")))))
 ;; 3745D1E1-33D3-4D2F-B527-BBBCA619D455 ends here
 ;; [[file:~/src/help/help.org::*Sudo][E2D66077-10AC-46D1-AAAA-D0C81BED451B]]
 (help/on-osx

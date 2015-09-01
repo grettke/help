@@ -1,6 +1,6 @@
 # -*- lexical-binding: t -*-
 
-#  LocalWords:  YASnippet UTF defun PlantUML LanguageTool HELP's Eshell
+#  LocalWords:  YASnippet UTF defun PlantUML LanguageTool HELP's Eshell showeverything
 
 #+STARTUP: showeverything
 
@@ -3279,20 +3279,10 @@ Bold text list items.
 (add-to-list 'ispell-skip-region-alist '("- \\*.+" . ".*\\*: "))
 #+END_SRC
 
-Ignore special line definitions.
+Check =SPECIAL LINE= definitions, ignoring their type.
 
 #+NAME: 3745D1E1-33D3-4D2F-B527-BBBCA619D455
 #+BEGIN_SRC emacs-lisp :results output silent
-(defun help/ispell-org-header-lines-regexp (h)
-  "Help ispell ignore org header lines."
-  (interactive)
-  (cons (concat "^\s*#[+]" h ":") ".$"))
-
-(defun help/ispell-a2isra (block-def)
-  "Add to the ispell skip region alist the BLOCK-DEF."
-  (interactive)
-  (add-to-list 'ispell-skip-region-alist block-def))
-
 (let ()
   (--each
       '("ATTR_LATEX"
@@ -3323,7 +3313,7 @@ Ignore special line definitions.
         "SELECT_TAGS"
         "STARTUP"
         "TITLE")
-    (help/ispell-a2isra (help/ispell-org-header-lines-regexp it))))
+    (add-to-list 'ispell-skip-region-alist `(,(concat "#[+]" it ":")))))
 #+END_SRC
 
 ** Sudo
