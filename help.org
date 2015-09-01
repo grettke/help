@@ -3233,7 +3233,6 @@ Block regex helper.
 
 #+NAME: 62360083-1CE2-4EEF-BF61-AEA8F3FA9944
 #+BEGIN_SRC emacs-lisp :results output silent
-(add-to-list 'ispell-skip-region-alist '("^\s*#[+]BEGIN_SRC" . "^\s*#[+]END_SRC"))
 (defun help/block-regex (special)
   "Make an ispell skip-region alist for a SPECIAL block."
   (interactive)

@@ -1070,7 +1070,6 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (setq-default case-fold-search t)
 ;; 4B9FE2A1-6A5F-42EF-AEEA-222B72170B64 ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][62360083-1CE2-4EEF-BF61-AEA8F3FA9944]]
-(add-to-list 'ispell-skip-region-alist '("^\s*#[+]BEGIN_SRC" . "^\s*#[+]END_SRC"))
 (defun help/block-regex (special)
   "Make an ispell skip-region alist for a SPECIAL block."
   (interactive)
