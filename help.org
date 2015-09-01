@@ -3279,7 +3279,7 @@ Bold text list items.
 (add-to-list 'ispell-skip-region-alist '("- \\*.+" . ".*\\*: "))
 #+END_SRC
 
-Export properties.
+Ignore special line definitions.
 
 #+NAME: 3745D1E1-33D3-4D2F-B527-BBBCA619D455
 #+BEGIN_SRC emacs-lisp :results output silent
