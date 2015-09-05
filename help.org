@@ -5319,7 +5319,7 @@ header documentation.
 
 The [[https://www.ctan.org/pkg/babel?lang%3Den][babel]] packages is mentioned in the Org documentation. The package
 documentation explains that it should be used with LaTeX, but not XeTeX. Some
-time ago I decided to stick with LaTeX. This decisions needs documentation. This
+time ago I decided to stick with LaTeX. This decision needs documentation. This
 system leans towards LuaTeX because of its Unicode support and sticks with
 PDFLaTeX because of its broad acceptance. Those two decisions are at odds with
 each other.
