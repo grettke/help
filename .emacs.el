@@ -1744,6 +1744,15 @@ _c_ cksrcblk _b_ swtch2sessn _n_ n2sbtre _m_ xpndsrcblk"
 (use-package geiser
   :ensure t)
 ;; 8BF8587E-9227-4BA4-8693-E43971E5F9CB ends here
+;; [[file:~/src/help/help.org::*Scheme%20(LISP)][E0EBE05B-F57B-4F99-A791-E45634671737]]
+(use-package ac-geiser
+  :ensure t
+  :config
+  (add-hook 'geiser-mode-hook 'ac-geiser-setup)
+  (add-hook 'geiser-repl-mode-hook 'ac-geiser-setup)
+  (eval-after-load "auto-complete"
+    '(add-to-list 'ac-modes 'geiser-repl-mode)))
+;; E0EBE05B-F57B-4F99-A791-E45634671737 ends here
 ;; [[file:~/src/help/help.org::*YASnippet][1827B724-7BC0-4228-8389-2B06F308D6AF]]
 (use-package yasnippet
   :ensure t

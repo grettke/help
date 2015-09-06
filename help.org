@@ -5018,6 +5018,19 @@ Use Geiser for Racket and Guile
   :ensure t)
 #+END_SRC
 
+Enable Auto-Complete via Geiser.
+
+#+NAME: E0EBE05B-F57B-4F99-A791-E45634671737
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package ac-geiser
+  :ensure t
+  :config
+  (add-hook 'geiser-mode-hook 'ac-geiser-setup)
+  (add-hook 'geiser-repl-mode-hook 'ac-geiser-setup)
+  (eval-after-load "auto-complete"
+    '(add-to-list 'ac-modes 'geiser-repl-mode)))
+#+END_SRC
+
 ** YASnippet
   :PROPERTIES:
   :noweb-ref: Hacking-Applied-Mathematics-YASnippet
