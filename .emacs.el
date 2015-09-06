@@ -1729,6 +1729,21 @@ _c_ cksrcblk _b_ swtch2sessn _n_ n2sbtre _m_ xpndsrcblk"
 
 (add-hook 'ess-rdired-mode-hook #'help/ess-rdired-mode-hook-fn)
 ;; E5F48F7A-E926-4FB0-92D2-92204808630E ends here
+;; [[file:~/src/help/help.org::*Scheme%20(LISP)][4798425A-55ED-49F1-AA3A-D0AB82DC070C]]
+  (add-to-list 'auto-mode-alist '("\\.scm\\'" . scheme-mode))
+  (add-to-list 'auto-mode-alist '("\\.ss\\'" . scheme-mode))
+;; 4798425A-55ED-49F1-AA3A-D0AB82DC070C ends here
+;; [[file:~/src/help/help.org::*Scheme%20(LISP)][E937C67E-3F3B-4B46-9F0F-F14C558559FC]]
+  (add-to-list 'auto-mode-alist '("\\.rkt\\'" . scheme-mode))
+;; E937C67E-3F3B-4B46-9F0F-F14C558559FC ends here
+;; [[file:~/src/help/help.org::*Scheme%20(LISP)][69A655C1-D6E9-4043-A064-477C33736BD8]]
+  (add-to-list 'auto-mode-alist '("\\.sls\\'" . scheme-mode))
+  (add-to-list 'auto-mode-alist '("\\.sps\\'" . scheme-mode))
+;; 69A655C1-D6E9-4043-A064-477C33736BD8 ends here
+;; [[file:~/src/help/help.org::*Scheme%20(LISP)][8BF8587E-9227-4BA4-8693-E43971E5F9CB]]
+(use-package geiser
+  :ensure t)
+;; 8BF8587E-9227-4BA4-8693-E43971E5F9CB ends here
 ;; [[file:~/src/help/help.org::*YASnippet][1827B724-7BC0-4228-8389-2B06F308D6AF]]
 (use-package yasnippet
   :ensure t

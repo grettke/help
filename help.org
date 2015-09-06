@@ -285,6 +285,7 @@ Start EMACS with this command:
 <<Hacking-Applied-Mathematics-ESS>>
 <<Hacking-Applied-Mathematics-ESS-SAS>>
 <<Hacking-Applied-Mathematics-ESS-R>>
+<<Hacking-Applied-Mathematics-LISP-Scheme>>
 <<Hacking-Applied-Mathematics-YASnippet>>
 <<Hacking-Publishing-TeX>>
 <<Hacking-Publishing-KOMA>>
@@ -4982,6 +4983,39 @@ R mode hook.
   (stripe-listify-buffer))
 
 (add-hook 'ess-rdired-mode-hook #'help/ess-rdired-mode-hook-fn)
+#+END_SRC
+
+** Scheme (LISP)
+  :PROPERTIES:
+  :noweb-ref: Hacking-Applied-Mathematics-LISP-Scheme
+  :ID:       D68EC042-5CBA-4547-B28A-CF878FB080C1
+  :END:
+
+Handle all file extensions:
+- Traditional.
+  #+NAME: 4798425A-55ED-49F1-AA3A-D0AB82DC070C
+  #+BEGIN_SRC emacs-lisp :results output silent
+  (add-to-list 'auto-mode-alist '("\\.scm\\'" . scheme-mode))
+  (add-to-list 'auto-mode-alist '("\\.ss\\'" . scheme-mode))
+  #+END_SRC
+- Racket.
+  #+NAME: E937C67E-3F3B-4B46-9F0F-F14C558559FC
+  #+BEGIN_SRC emacs-lisp :results output silent
+  (add-to-list 'auto-mode-alist '("\\.rkt\\'" . scheme-mode))
+  #+END_SRC
+- R6RS.
+  #+NAME: 69A655C1-D6E9-4043-A064-477C33736BD8
+  #+BEGIN_SRC emacs-lisp :results output silent
+  (add-to-list 'auto-mode-alist '("\\.sls\\'" . scheme-mode))
+  (add-to-list 'auto-mode-alist '("\\.sps\\'" . scheme-mode))
+  #+END_SRC
+
+Use Geiser for Racket and Guile
+
+#+NAME: 8BF8587E-9227-4BA4-8693-E43971E5F9CB
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package geiser
+  :ensure t)
 #+END_SRC
 
 ** YASnippet
