@@ -1246,7 +1246,8 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 (setq help/hack-lisp-modes
       '(emacs-lisp-mode-hook
         ielm-mode-hook
-        lisp-interaction-mode))
+        lisp-interaction-mode-hook
+        scheme-mode-hook))
 (setq help/hack-modes (append help/hack-modes help/hack-lisp-modes))
 ;; 963C787F-BC23-4A6C-9637-3922541B26E2 ends here
 ;; [[file:~/src/help/help.org::*Goal][9585BEED-D8EE-4B47-94FA-7E0C604B5804]]
