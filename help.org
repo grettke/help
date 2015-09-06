@@ -259,8 +259,7 @@ Start EMACS with this command:
    :ID:       016FA25F-E70E-4BED-BA01-AEB808428791
    :END:
 
-Configure EMACS to do everything provided by this document. HELP is a monolithic
-system.
+Configure EMACS to for everything defined within this monolithic system.
 
 Sysop is likely to use this constantly.
 
@@ -316,19 +315,23 @@ alias gst git status
 alias la ls -lha $*
 alias ll ls -lh $*
 #+END_SRC
+
 * Literate Programming
   :PROPERTIES:
   :ID:       8510C876-F644-4804-9F87-54A0B44DBA6A
   :END:
 
-#+MACRO: lp-configure-each-sb Likely only ever to be configured per Source-Block or System
+#+MACRO: lp-configure-each-sb Configuration likely per Source-Block or System
 
-This system enables you to perform 3 Literate Document activities. These
-activities combine to provide a rich Literate Programming environment. Their
-configuration is defined with more granularity here to make sense of how the
-system is configured, where, and how it works. These activities are not
-performed interactively by the user. They are automatic operations that occur
-as a result of the configuration of the document itself.
+This system enables you to perform 3 Literate Document activities
+- Tangling
+- Evaluating
+- Weaving
+
+Combined they provide a rich Literate Programming environment.
+
+These activities are not performed interactively by the user. They are automatic
+operations that occur as a result of the configuration by the document itself.
 
 The following is the guide for the default configuration of this system and how
 it behaves.
@@ -348,13 +351,12 @@ Key:
 | Evaluating | T | F | F | T | F |
 | Weaving    | F | F | T | F | T |
 
-They are separate and distinct operations and are defined as such.
+They are separate and distinct operations.
 
-The last logical action is the activity of "Programming". It is a combination of
-three 3 activities listed above combined with the configuration of EMACS to do
-so. This is an interactive activity performed Sysop. The results of Sysop's
-activities are contained within the document. Those contents are input for the
-activities here.
+"Programming" is logically an activity that is the combination of these 3
+activites. It is interactively performed by Sysop. It is not a distinct
+or isolated operation. Results of one activity exist here and serve as inputs to
+another activity.
 
 ** Org-Mode Exemple Complet Minimal
    :PROPERTIES:
@@ -362,14 +364,14 @@ activities here.
    :ID:       57C69AB7-A317-4823-ABBF-7DE8A5E2151C
    :END:
 
-A stable version of Org-Mode is provided OOTB. It's release cycle is tied to
-EMACS release cycle. To get hot-fixes, cutting edge features, and easy patch
-creation though, you need to use the version from Git.
+Every new EMACS releases comes with the latest stable Org-Mode release. To get
+hot-fixes, cutting edge features, and easy patch creation though, you need to
+use the version from Git.
 
-The [[http://orgmode.org/manual/Installation.html][directions]] of how to run Org-Mode from Git are detailed and clear. The only
+These detailed and clear [[http://orgmode.org/manual/Installation.html][directions]] explain how ot run Org-Mode from Git. The only
 thing worth mentioning again is that in order to use *any* version of Org-Mode
 other than the one that comes OOTB you *must* load Org-Mode *before* anything else
-in your initialization file. This can be surprisingly easy to do! When you get
+in your initialization file. It is easy to do! When you get
 unexpected Org-Mode behavior be sure to stop and investigate ~org-version~ and
 decide whether or not it is what you expect and prepare an ECM if necessary.
 
@@ -381,16 +383,16 @@ Add the Org-Mode core distribution the load path.
 #+END_SRC
 
 Add the Org-Mode-Contributions distribution to the load path. The contributions
-are critical to and inseparable from the core distribution.
+are essential.
 
 #+NAME: 4D4E921E-7B99-43B2-AD1F-30D2593F05D7
 #+BEGIN_SRC emacs-lisp :results output silent
 (add-to-list 'load-path "~/src/org-mode/contrib/lisp")
 #+END_SRC
 
-This system allows for single-character alphabetical bullet lists. For Org-Mode
-to provide that, the following property must exist before Org-Mode is even
-loaded. This configuration must occur here. *Never* remove this from a submitted
+Allow single-character alphabetical bullet lists. Set ~org-list-allow-alphabetical~
+before loading Org-Mode. This configuration must occur here. *Never* remove this
+from a submitted
 ECM.
 
 #+NAME: 28776245-A6BB-4294-AC72-30F03F902DF7
@@ -410,6 +412,8 @@ Load Org-Mode.
    :noweb-ref: Org-Mode-Helper-Functions
    :ID:       B14776FD-6835-4D1D-BCD3-50D56555423C
    :END:
+
+Help configure Org-Mode.
 
 #+NAME: BB2E97AF-6364-401F-8063-8B5A0BE481E6
 #+BEGIN_SRC emacs-lisp :results output silent
@@ -497,8 +501,6 @@ This is a copy and paste. Additional languages would warrant a refactor."
    :END:
 
 =ID= and =NAME= are essential for successful =LP= using ~org-babel-tangle-jump-to-org~.
-
-Generate the =README=.
 
 #+NAME: 859E61A4-D910-4731-8328-A63F6B6ACD3F
 #+BEGIN_SRC emacs-lisp :results output silent
