@@ -608,6 +608,12 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
    "39A2F05A-BC60-4879-9B66-85E43297FC97"
    "README.md"))
 
+(defun help/org-export-style-guide ()
+  (interactive)
+  (help/org-export-subtree-gfm
+   "03E0F0E3-DB81-4033-8F04-5D8BB5CBB2F0"
+   "STYLEGUIDE.md"))
+
 (defun help/xprt-all ()
   "Export this entire document in configured weavers."
   (interactive)
@@ -1466,6 +1472,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; 0EBE9F71-59AC-4D54-B792-AFC3F78985D8 ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][BB37579C-08EC-42AB-8706-7ECFD9506B8B]]
 (add-hook 'org-babel-pre-tangle-hook #'help/org-export-readme)
+(add-hook 'org-babel-pre-tangle-hook #'help/org-export-style-guide)
 ;; BB37579C-08EC-42AB-8706-7ECFD9506B8B ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][6C80DBCA-AE28-4FE3-91E3-825E642735BA]]
 (setq org-hide-macro-markers t)
