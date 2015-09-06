@@ -192,6 +192,7 @@
   - "HELP" refers to the system configured by tangling this we.
   - Never describe something as "perfect" or "delightful". If it is part of this
     system then it is perfect and delightful.
+  - Capture decisions that allow this system to move forward.
 
 * Webs We Weave
   :PROPERTIES:
