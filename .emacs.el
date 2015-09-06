@@ -1119,35 +1119,35 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
 ;; [[file:~/src/help/help.org::*Org-Mode][3745D1E1-33D3-4D2F-B527-BBBCA619D455]]
 (let ()
   (--each
-      '("ATTR_LATEX"
-        "AUTHOR"
-        "BLOG"
-        "CREATOR"
-        "DATE"
-        "DESCRIPTION"
-        "EMAIL"
-        "EXCLUDE_TAGS"
-        "HTML_CONTAINER"
-        "HTML_DOCTYPE"
-        "HTML_HEAD"
-        "HTML_HEAD_EXTRA"
-        "HTML_LINK_HOME"
-        "HTML_LINK_UP"
-        "HTML_MATHJAX"
-        "INFOJS_OPT"
-        "KEYWORDS"
-        "LANGUAGE"
-        "LATEX_CLASS"
-        "LATEX_CLASS_OPTIONS"
-        "LATEX_HEADER"
-        "LATEX_HEADER_EXTRA"
-        "NAME"
-        "OPTIONS"
-        "POSTID"
-        "SELECT_TAGS"
-        "STARTUP"
-        "TITLE")
-    (add-to-list 'ispell-skip-region-alist `(,(concat "#[+]" it ":")))))
+      '(("ATTR_LATEX" nil)
+        ("AUTHOR" nil)
+        ("BLOG" nil)
+        ("CREATOR" nil)
+        ("DATE" nil)
+        ("DESCRIPTION" nil)
+        ("EMAIL" nil)
+        ("EXCLUDE_TAGS" nil)
+        ("HTML_CONTAINER" nil)
+        ("HTML_DOCTYPE" nil)
+        ("HTML_HEAD" nil)
+        ("HTML_HEAD_EXTRA" nil)
+        ("HTML_LINK_HOME" nil)
+        ("HTML_LINK_UP" nil)
+        ("HTML_MATHJAX" nil)
+        ("INFOJS_OPT" nil)
+        ("KEYWORDS" nil)
+        ("LANGUAGE" nil)
+        ("LATEX_CLASS" nil)
+        ("LATEX_CLASS_OPTIONS" nil)
+        ("LATEX_HEADER" nil)
+        ("LATEX_HEADER_EXTRA" nil)
+        ("NAME" nil)
+        ("OPTIONS" nil)
+        ("POSTID" nil)
+        ("SELECT_TAGS" nil)
+        ("STARTUP" nil)
+        ("TITLE" nil))
+    (add-to-list 'ispell-skip-region-alist (list (concat "#[+]" (car it) ":")))))
 ;; 3745D1E1-33D3-4D2F-B527-BBBCA619D455 ends here
 ;; [[file:~/src/help/help.org::*Sudo][E2D66077-10AC-46D1-AAAA-D0C81BED451B]]
 (help/on-osx
