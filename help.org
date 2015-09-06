@@ -3633,7 +3633,7 @@ This configuration had been working fine for a long time. The intent was for it
 to be crystal clear that the prompt line in comint buffers would be read only.
 This turned out to be a mistake; though I am not sure why, when, or how it
 became a mistake. Nonetheless, this should be left alone. The way the issue here
-manifested was that all ℝ buffers opened by =ess= were 100% read only which
+manifested was that all R buffers opened by =ess= were 100% read only which
 obviously is a *big issue* if you actually want to use! ROFL
 
 #+NAME: 346012D4-6861-458B-8352-3874D1F934E6
@@ -4327,7 +4327,7 @@ Never indent the contents of a source-block automatically.
 
 When edit mode is exited, the option exists to automatically remove empty
 opening and closed lines for the source block. Never do this. The thing is that
-I forgot why. When I was working on a recent analysis with ℝ there was a
+I forgot why. When I was working on a recent analysis with R there was a
 space appearing in the opening and closing line of the source block that didn't
 appear in the source editing buffer. That surprised me. I am sure that I've
 forgotten why this is the case. I don't like it because you add a bunch of
@@ -4578,31 +4578,7 @@ Easily enter guillemots.
   :ensure t)
 #+END_SRC
 
-- For a minimalist release history read the [[http://ess.r-project.org/Manual/news.html][news file]].
-- For a brief overview and release history read the [[http://ess.r-project.org/Manual/readme.html][readme]].
-- For a comprehensive overview read the [[http://ess.r-project.org/Manual/ess.html][manual]].
-
-- Multiple =ESS= processes may run simultaneously, and may be selected by a
-  specific language via their buffer name that has a number appended, or may be
-  accessed via a menu using =ess-request-a-process=.
-
-Various user interaction stuff:
-- Return sends the input from wherever you hit return, nice.
-- =M-{= and =M-}= cycle through commands you ran
-- =M-h= select a whole "paragraph", a block in their terms
-- =C-x [= moves through the previous ESS sessions, =C-x ]= forward.
-- =C-c C-p= and =C-c C-n= cycle through previous commands.
-  - How is this different than the other one?
-- =C-c RET= copies an old command to the prompt without running it
-  - Great idea
-- Keep your session transcript pruned
-  - =ess-transcript-clean-region= removes non-commands from a transcript for you
-- Previous command look-up can be done by completion via =comint-*-matching=.
-  - =M-p= and =M-n= seem to work just fine though.
-- Previous command execution, by name, offset, or just the last one, are by =!=
-  - This feature is actually quite rich and a real regexen style system.
-
-Always show eldoc for things.
+Display object documentation.
 
 #+NAME: DC7E5F11-0C1A-4F9B-B6B1-2133C8B86617
 #+BEGIN_SRC emacs-lisp :results output silent
@@ -4650,7 +4626,7 @@ rather than to a new dedicated buffer for them.
 (setq ess-execute-in-process-buffer t)
 #+END_SRC
 
-When you cycle between a the ℝ buffer and the script, you get to the process
+When you cycle between a the REPL buffer and the script, you get to the process
 buffer, you will go to the end of the buffer. This setting is specifically to
 handle a buffer that is scrolling when you want to see the last result and will
 scroll back after the fact to see the history.
@@ -4692,21 +4668,13 @@ but Vitalie Spinu mentioned them as being useful:
 - =comint-previous-matching-input-from-input=
 - =comint-history-isearch-backward-regexp=
 
-Personal customizations for this mode. For some currently unknown reason,
-=smartparens= only runs when you call =smartparens-strict-mode= and not
-=turn-on-smartparens-strict-mode= like it does everywhere else.
-
 For a while I used =ess-eval-buffer-and-go=, but now I know that it is insanely
 faster to use =ess-eval-buffer= instead. Previously I've read people saying that,
 and it is true.
 
-When I started to standardize arrows across modes, I recalled the =ess=
-documentation and was also reminded [fn:645cef99: http://www.r-bloggers.com/a-small-customization-of-ess/]
-here how easy it is to customize it.
-
 *Philosophy*
 
-The current =ESS= maintainers philosophies about how to maintain an ℝ code-base
+The current =ESS= maintainers philosophies about how to maintain an R code-base
 make sense to me and are virtually the same as my own. Quite simply, the rule is
 that the code artifacts are the single source of system definition. Consequently,
 the system should be configured in this manner:
@@ -4720,7 +4688,7 @@ need to be kept.
 (setq ess-keep-dump-files +1)
 #+END_SRC
 
-=ESS= allows us to quite easily modify live 𝕊 objects and functions. It provides
+=ESS= allows us to quite easily modify live R objects and functions. It provides
 this functionality via =ess-dump-object-into-edit-buffer=. These changes are
 considered to be experimental, and not part of the master record according to
 our philosophy. As such, we don't care to know that these new versions ever
@@ -4743,25 +4711,6 @@ in sync. Yes, it is really that important.
 #+NAME: 252643D9-4FC2-4037-BAF8-5F6043D02C5A
 #+BEGIN_SRC emacs-lisp :results output silent
 (setq ess-mode-silently-save +1)
-#+END_SRC
-
-Indent curly brackets correctly:
-
-=smartparens= is serving me well. In this mode it is for curly, round, and square brackets. =ESS= handles indenting mostly right, too. One thing was unpleasant, though. When you define a new function, hitting return brings the curely bracket down to the newline but doesn't give it an empty line and indent the cursor one indentation over so that you may begin implementing the function. That is a big hassle; 4 unnecessary keystroke, it is really distracting and takes you out of the flow. It is such a little thing yet it is so powerfully distracting. It is like a mosquito in your tent! Searching for a solution revealed that I am not alone here.
-
-This post [fn:32fe93bc: http://www.emacswiki.org/emacs/ESSAutoParens] handles brackets,
-indentation quite well [fn:5f2adfb8: http://emacs.1067599.n5.nabble.com/indentation-not-working-if-parentheses-are-already-closed-td283806.html] but doesn't provide the behavior that I want.
-This post [fn:47104806: https://stackoverflow.com/questions/18420933/enabling-mode-specific-paren-indentation-in-emacs-prelude] captured exactly what I was facing, yet didn't end with a
-solution which was kind of shocking. Searching some more I ended up here [fn:cd67477f: https://github.com/Fuco1/smartparens/issues/80], and this seems like the
-ideal solution by the author of smartparens himself. This is probably a common thing
- as I found another post
-with exactly my situation referencing that aforementioned solution, too [fn:2c7c401d: https://github.com/bbatsov/prelude/issues/374]. This is a nice generalizable
-approach that should serve me well for just about everything in this solution-area. Here [fn:5a732a42:: https://github.com/rdallasgray/graphene/blob/master/graphene-smartparens-config.el] is a post
-showing a more advanced usage that handles context which is nice to know is an option.
-
-#+NAME: F25A516C-7FD0-4F88-96AA-E53EBE01C5C3
-#+BEGIN_SRC emacs-lisp :results output silent
-(sp-local-pair #'ess-mode "{" nil :post-handlers '((help/indent-curly-block "RET")))
 #+END_SRC
 
 =ESS= executes code in another process. That is no secret. When displaying output
@@ -4793,136 +4742,21 @@ and see how it goes.
   :ID:       1183D35B-77FC-4CFD-9BAA-4F7656AD8943
   :END:
 
-ℝ first notes:
-- ℝ will start ℝ via =Emacs=
-- =ESS= works transparently on remote machines using =TRAMP= to manage a remote
-  ℝ instance. An example is provided for Amazon. Means exist for supporting remote
-  graphical displays or redirecting to a file. Excellent support seems to exist
-  to quite flexibly support unexpected things like starting an =ESS= supported
-  program in a plain old shell and being able to convert it to an =ESS= supported
-  buffer.
-
-In it:
-- 𝕊 refers to any language in the family.
-  - ℝ is what I'm interested in.
-- First 2.5 pages do some nice expectation-setting.
-- Generally seems like a highly rich development environment with support for
-  editing, debugging, and support with everything that you would expect from
-  the best of Emacs.
-- Manual covers most requested variables for configuring, but the customize
-  facility covers more, and mentions that either way you should avoid doing so
-  until you have used =ESS= for a while.
-
-Various session interaction stuff
-- Show objects in the work-space: =C-c C-x=
-- Search for what libraries are available to the work-space: =C-c C-s=
-- Load file with source: =C-c C-l=
-- Visit errors: =C-c '= and =C-x '=
-- Show help on an object: =C-c C-v=
-- Quit: =C-c C-q=
-- Abort: =C-c C-c=
-- Switch between the console and the most recent file buffer: =C-c C-z=
-
-Sending code to the ESS process
-- =ess-eval-region-or-line-and-step=: Eval the region, or the line, move to next
-  line
-- =C-M-x=: Eval the current region, function, or paragraph
-- =C-c C-c=: Do that and then go to the next line
-- =C-c C-j=: Eval the current line
-- =C-c M-j=: Eval line and jump to the console
-- =C-c C-f=: Eval the currently selected function
-- =C-c M-f=: Eval the currently selected function and jump to the console
-- =C-c C-r=: Eval the region
-- =C-c M-r=: Eval the region and jump to the console
-- =C-c C-b=: Eval the buffer
-- =C-c M-b=: Eval the buffer and jump to the console
-- You can do all this stuff from transcript files, too.
-  - My thought is that I never, ever will and if I do need to, I'm looking up the
-    commands again as I don't want to make a habit of doing that kind of
-    thing (running old transcripts).
-
-Editing objects and functions:
-- =C-c C-e C-d=: Edit the current object
-- =C-c C-l=: Load source file into the ESS process
-- =TAB= Indents/re-formats or completes code.
-- =M-;=: Correctly indents the current comment
-
-Help mode inside of ESS:
-- =C-c C-v=: =ess-display-help-on-object=: Get help on anything
-- =?=: Show commands available in help mode
-- =h=: Show help for a different object. Currently focused object defaults.
-- =n= and =p=: Cycle through sections
-- =l=: Eval the current line in the console; usually sample code.
-- =r=: Eval current region, too
-- =q=: Quit out of that buffer
-- =k=: Kill that buffer
-- =x=: Kill that buffer and return to ESS
-- =i=: Get info on a package
-- =v=: Show vignettes
-- =w=: Show current help page in browser
-
-Completion:
-- =TAB=: Complete anything
-- =M-?=: Show completions available
-- =ess-resynch=: Refreshes the completion cache
-
-*ess-tracebug* start
+Enable a debugger.
 
 #+NAME: 77E7570C-C08D-42B4-996D-F38C9F91C248
 #+BEGIN_SRC emacs-lisp :results output silent
 (setq ess-use-tracebug t)
 #+END_SRC
 
-For all =ess-tracebug= stuff, the map prefix is =C-c C-t=
-
-<2014-11-11 Tue>
-The documentation for =ess-tracebug-help= provides all of this documentation that
-I copied from the website into here. Someday I should clean this up!
-
-Breakpoints =ess-dev-map=:
-- b =ess-bp-set= :: Set BP (repeat to cycle BP type)
-- B =ess-bp-set-conditional= :: Set conditional BP
-- k =ess-bp-kill= :: Kill BP
-- K =ess-bp-kill-all= :: Kill all BPs
-- o =ess-bp-toggle-state= :: Toggle BP state
-- l =ess-bp-set-logger= :: Set logger BP
-- n =ess-bp-next= :: Goto next BP
-- p =ess-bp-previous= :: Goto previous BP
-
-Note: =C-= prefixed equivalents are also defined
-
-Debugging =ess-dev-map=:
-- ` =ess-show-traceback= (also on C-c ) :: Show traceback
-- ~ =ess-show-call-stack= (also on C-c ~) :: Show callstack
-- e =ess-debug-toggle-error-action= :: Toggle error action (repeat to cycle)
-- d =ess-debug-flag-for-debugging= :: Flag for debugging
-- u =ess-debug-unflag-for-debugging= :: Unflag for debugging
-- w =ess-watch= :: Watch window
-
-Note: =C-= prefixed equivalents are also defined)
-
-Interactive Debugging =ess-debug-minor-mode-map=:
-- M-C =ess-debug-command-continue= :: Continue
-- M-C-C =ess-debug-command-continue-multi= :: Continue multi
-- M-N =ess-debug-command-next= :: Next step
-- M-C-N =ess-debug-command-next-multi= :: Next step multi
-- M-U =ess-debug-command-up= :: Up frame
-- M-Q =ess-debug-command-quit= :: Quit debugging
-
-Navigation to errors (general Emacs functionality):
-- =C-x `=, =M-g n :: =next-error=
-- =M-g p= :: =previous-error=
-
-*ess-tracebug* stop
-
- Be sure to specify this per-project.
+Configure debugger search path per-project.
 
 #+NAME: F21989AE-7351-49A7-9B1F-6926F7298182
 #+BEGIN_SRC emacs-lisp :results output silent
 (setq ess-tracebug-search-path '())
 #+END_SRC
 
-Make error navigation simpler.
+Easily nevigate errors.
 
 #+NAME: FAFD7683-E1BF-43CF-B862-B90029FBB319
 #+BEGIN_SRC emacs-lisp :results output silent
@@ -4930,14 +4764,14 @@ Make error navigation simpler.
 (define-key compilation-minor-mode-map [(?p)] #'previous-error-no-select)
 #+END_SRC
 
-The font size for watched variables..
+Diminish watched variable font-size.
 
 #+NAME: 08D73B43-0EAC-433E-A5C8-F4E89A5ADA12
 #+BEGIN_SRC emacs-lisp :results output silent
 (setq ess-watch-scale-amount -1)
 #+END_SRC
 
-When =ess= starts, or when ℝ starts, it takes the current directory as its
+When =ess= starts, or when R starts, it takes the current directory as its
 working directory. This is totally fine; so don't ask what the working directory
 should be.
 
@@ -4999,39 +4833,6 @@ Documentation:
 
 =ess-developer= helps you to easily work within specific name-spaces.
 
-Rutils: key-bindings to aid real usage
-- =C-c C-. l=: List all packages in all available libraries.
-- =C-c C-. r=: List available packages from repositories listed by =getOptions(‘‘repos’’)=
-in the current R session.
-- =C-c C-. u=: Update packages in a particular library lib and repository repos.
-- =C-c C-. a=: Search for a string using apropos.
-- =C-c C-. m=: Remove all R objects.
-- =C-c C-. o=: Manipulate R objects; wrapper for =ess-rdired=.
-- =C-c C-. w=: Load a workspace file into R.
-- =C-c C-. s=: Save a work-space file.
-- =C-c C-. d=: Change the working directory for the current R session.
-- =C-c C-. H=: Use =browse-url= to navigate R HTML documentation.
-
-=ess-mode-silently-save= is worth a million bucks; usually I have to hand code
-this.
-
-As of <2014-01-31 Fri>, you need to manually load ESS when you pull it from
-MELPA [fn:8dece4ca: https://stat.ethz.ch/pipermail/ess-help/2014-January/009705.html]. That is totally fine with me, that is really the best way to load stuff.
-Out of curiosity, I read more about it here [fn:c5cac42b: https://github.com/milkypostman/melpa/issues/6], but that occurred before
-this previous post made by the maintainers. Even the source code in
-=ess-autoloads.el= has a license from 2012, which is before the aforementioned
-post. As such, this configuration step seems correct and necessary for now.
-Additionally, this how the user manual expects a typical manual setup to be
-configured.
-
-Looked a tiny bit at how R hackers are formatting their code [fn:9039b33e: https://google-styleguide.googlecode.com/svn/trunk/Rguide.xml] [fn:da0df786: http://adv-r.had.co.nz/Style.html].
-The simple (dumb) part of me suspects that C++ formatting is generally just fine [fn:5b466d0c: https://stackoverflow.com/questions/7502540/make-emacs-ess-follow-r-style-guide].
-
-There is strangely nice discussion about where temp files may be stored;
-specifically for cases where you edit identically-named objects and want to keep
-them in the same directory but per-project. That is not the need now, and it is
-nice to know that it is an option.
-
 Store history files and dump files in a single known location. If that location
 doesn't exist, then make it.
 
@@ -5050,7 +4851,7 @@ doesn't exist, then make it.
 (setq ess-source-directory help/r-dir)
 #+END_SRC
 
-Since I'm using ℝ for everything, configure /everything/ to be using ℝ.
+Since I'm using R for everything, configure /everything/ to be using R.
 
 #+NAME: 931F150B-01FB-455C-B6F9-D730BEC162FF
 #+BEGIN_SRC emacs-lisp :results output silent
@@ -5067,14 +4868,14 @@ Handle rdoc and rmd files, though I have never used them... yet.
 (add-to-list 'auto-mode-alist '("\\.Rmd$" . r-mode))
 #+END_SRC
 
-Make it really easy to search the ℝ archives for anything.
+Make it really easy to search the R archives for anything.
 
 #+NAME: 8122AAC4-008A-454B-A3F6-4F9B11F7278E
 #+BEGIN_SRC emacs-lisp :results output silent
 (local-set-key (kbd "C-c C-. S") #'ess-rutils-rsitesearch)
 #+END_SRC
 
-Make it really easy to do common stuff for ℝ with good keybindings.
+Make it really easy to do common stuff for R with good keybindings.
 
 #+NAME: 17FD6489-F187-4667-9E96-5ECF3DAED95B
 #+BEGIN_SRC emacs-lisp :results output silent
@@ -5103,14 +4904,7 @@ Save two spaces showing function information in the mini-buffer.
 (setq ess-R-argument-suffix "=")
 #+END_SRC
 
-This [fn:1ffa40c2: http://www.r-bloggers.com/a-small-customization-of-ess/]
-post shares a nice setup for the assignment key; primarily if
-you use underscores in your variable names, which I do on occasions. After
-coding like this for just 10 short minutes it drove me nuts and that is totally
-counter intuitive to me; I never would have expected that having to type two
-characters to do an assignment would give me nuts. Anyway, the default behavior
-is just fine; hit underscore twice gives you an underscore, and one gives you an
-assignment!
+Don't use the default assignment binding and allow underscores in names.
 
 #+NAME: 9E931868-056E-49E6-A0AE-D1447BA27039
 #+BEGIN_SRC emacs-lisp :results output silent
@@ -5119,14 +4913,15 @@ assignment!
 (ess-toggle-underscore nil)
 #+END_SRC
 
-Don't save the workspace when you quit ℝ and don't restore *ANYTHING* when you
+Don't save the workspace when you quit R and don't restore *ANYTHING* when you
 start it, either. This adheres to the philosopy that the system is file based.
-Period.
 
 #+NAME: 4B373CC7-EF17-4900-87BE-E38995585C46
 #+BEGIN_SRC emacs-lisp :results output silent
 (setq inferior-R-args "--no-save --no-restore")
 #+END_SRC
+
+R mode hook.
 
 #+NAME: E5F48F7A-E926-4FB0-92D2-92204808630E
 #+BEGIN_SRC emacs-lisp :results output silent
