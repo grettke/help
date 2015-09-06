@@ -1142,12 +1142,17 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
         ("LATEX_HEADER" nil)
         ("LATEX_HEADER_EXTRA" nil)
         ("NAME" nil)
-        ("OPTIONS" nil)
+        ("OPTIONS" t)
         ("POSTID" nil)
         ("SELECT_TAGS" nil)
         ("STARTUP" nil)
         ("TITLE" nil))
-    (add-to-list 'ispell-skip-region-alist (list (concat "#[+]" (car it) ":")))))
+    (add-to-list
+     'ispell-skip-region-alist
+     (let ((special (concat "#[+]" (car it) ":")))
+       (if (cadr it)
+           (cons special "$")
+         (list special))))))
 ;; 3745D1E1-33D3-4D2F-B527-BBBCA619D455 ends here
 ;; [[file:~/src/help/help.org::*Sudo][E2D66077-10AC-46D1-AAAA-D0C81BED451B]]
 (help/on-osx

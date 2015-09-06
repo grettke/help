@@ -3343,12 +3343,17 @@ Check =SPECIAL LINE= definitions, ignoring their type.
         ("LATEX_HEADER" nil)
         ("LATEX_HEADER_EXTRA" nil)
         ("NAME" nil)
-        ("OPTIONS" nil)
+        ("OPTIONS" t)
         ("POSTID" nil)
         ("SELECT_TAGS" nil)
         ("STARTUP" nil)
         ("TITLE" nil))
-    (add-to-list 'ispell-skip-region-alist (list (concat "#[+]" (car it) ":")))))
+    (add-to-list
+     'ispell-skip-region-alist
+     (let ((special (concat "#[+]" (car it) ":")))
+       (if (cadr it)
+           (cons special "$")
+         (list special))))))
 #+END_SRC
 
 ** Sudo
