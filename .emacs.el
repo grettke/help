@@ -1751,7 +1751,9 @@ _c_ cksrcblk _b_ swtch2sessn _n_ n2sbtre _m_ xpndsrcblk"
   (add-hook 'geiser-mode-hook 'ac-geiser-setup)
   (add-hook 'geiser-repl-mode-hook 'ac-geiser-setup)
   (eval-after-load "auto-complete"
-    '(add-to-list 'ac-modes 'geiser-repl-mode)))
+    '(add-to-list 'ac-modes 'geiser-repl-mode))
+  (setq geiser-active-implementations '(racket guile))
+  (setq geiser-repl-history-no-dups-p t))
 ;; E0EBE05B-F57B-4F99-A791-E45634671737 ends here
 ;; [[file:~/src/help/help.org::*YASnippet][1827B724-7BC0-4228-8389-2B06F308D6AF]]
 (use-package yasnippet

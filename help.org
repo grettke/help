@@ -5028,7 +5028,9 @@ Enable Auto-Complete via Geiser.
   (add-hook 'geiser-mode-hook 'ac-geiser-setup)
   (add-hook 'geiser-repl-mode-hook 'ac-geiser-setup)
   (eval-after-load "auto-complete"
-    '(add-to-list 'ac-modes 'geiser-repl-mode)))
+    '(add-to-list 'ac-modes 'geiser-repl-mode))
+  (setq geiser-active-implementations '(racket guile))
+  (setq geiser-repl-history-no-dups-p t))
 #+END_SRC
 
 ** YASnippet
