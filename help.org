@@ -2280,7 +2280,9 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (org-ascii-export-to-ascii)
   (org-html-export-to-html)
   (org-gfm-export-to-markdown)
-  (org-latex-export-to-pdf))
+  (org-latex-export-to-pdf)
+  (help/org-export-readme)
+  (help/org-export-style-guide))
 #+END_SRC
 
 ** Buffer
@@ -4440,14 +4442,6 @@ Smartparens provides that functionality for programming modes.
 #+NAME: 0EBE9F71-59AC-4D54-B792-AFC3F78985D8
 #+BEGIN_SRC emacs-lisp :results output silent
 (wrap-region-add-wrapper "+" "+" nil 'org-mode)
-#+END_SRC
-
-Generate the README and STYLEGUIDE for GitHub.
-
-#+NAME: BB37579C-08EC-42AB-8706-7ECFD9506B8B
-#+BEGIN_SRC emacs-lisp :results output silent
-(add-hook 'org-babel-pre-tangle-hook #'help/org-export-readme)
-(add-hook 'org-babel-pre-tangle-hook #'help/org-export-style-guide)
 #+END_SRC
 
 Minimize Macro text.

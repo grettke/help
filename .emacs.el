@@ -620,7 +620,9 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (org-ascii-export-to-ascii)
   (org-html-export-to-html)
   (org-gfm-export-to-markdown)
-  (org-latex-export-to-pdf))
+  (org-latex-export-to-pdf)
+  (help/org-export-readme)
+  (help/org-export-style-guide))
 ;; D523CBF8-67C4-4C96-9298-A4A49FE54E61 ends here
 ;; [[file:~/src/help/help.org::*Buffer][0E6156C3-4259-4539-BDAC-899B0AF4E80F]]
 (desktop-save-mode t)
@@ -1470,10 +1472,6 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; [[file:~/src/help/help.org::*Org-Mode][0EBE9F71-59AC-4D54-B792-AFC3F78985D8]]
 (wrap-region-add-wrapper "+" "+" nil 'org-mode)
 ;; 0EBE9F71-59AC-4D54-B792-AFC3F78985D8 ends here
-;; [[file:~/src/help/help.org::*Org-Mode][BB37579C-08EC-42AB-8706-7ECFD9506B8B]]
-(add-hook 'org-babel-pre-tangle-hook #'help/org-export-readme)
-(add-hook 'org-babel-pre-tangle-hook #'help/org-export-style-guide)
-;; BB37579C-08EC-42AB-8706-7ECFD9506B8B ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][6C80DBCA-AE28-4FE3-91E3-825E642735BA]]
 (setq org-hide-macro-markers t)
 ;; 6C80DBCA-AE28-4FE3-91E3-825E642735BA ends here
