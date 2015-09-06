@@ -288,6 +288,334 @@ This is a copy and paste. Additional languages would warrant a refactor."
  (defvar w32-lwindow-modifier 'super)
  (defvar w32-rwindow-modifier 'super))
 ;; B66E53C2-D90F-422E-BD67-250EB644C6BB ends here
+;; [[file:~/src/help/help.org::*Helper%20Functions][D523CBF8-67C4-4C96-9298-A4A49FE54E61]]
+(defun help/comment-or-uncomment ()
+  "Comment or uncomment the current line or selection."
+  (interactive)
+  (cond ((not mark-active) (comment-or-uncomment-region (line-beginning-position)
+                                                      (line-end-position)))
+        ((< (point) (mark)) (comment-or-uncomment-region (point) (mark)))
+        (t (comment-or-uncomment-region (mark) (point)))))
+
+(defun help/save-all-file-buffers ()
+  "Saves every buffer associated with a file."
+  (interactive)
+  (dolist (buf (buffer-list))
+    (with-current-buffer buf
+      (when (and (buffer-file-name) (buffer-modified-p))
+        (save-buffer)))))
+
+(defun describe-thing-in-popup ()
+  "Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html'."
+  (interactive)
+  (let* ((thing (symbol-at-point))
+         (help-xref-following t)
+         (description (with-temp-buffer
+                        (help-mode)
+                        (help-xref-interned thing)
+                        (buffer-string))))
+    (popup-tip description
+               :point (point)
+               :around t
+               :height 30
+               :scroll-bar t
+               :margin t)))
+
+(defun help/kill-other-buffers ()
+  "Kill all other buffers."
+  (interactive)
+  (mapc #'kill-buffer (delq (current-buffer) (buffer-list))))
+
+(defvar help/delete-trailing-whitespace-p t
+  "Should trailing whitespace be removed?")
+
+(defun help/delete-trailing-whitespace ()
+  "Delete trailing whitespace for everything but the current line.
+
+If `help/delete-trailing-whitespace-p' is non-nil, then delete the whitespace.
+This is useful for fringe cases where trailing whitespace is important."
+  (interactive)
+  (when help/delete-trailing-whitespace-p
+    (let ((first-part-start (point-min))
+          (first-part-end (point-at-bol))
+          (second-part-start (point-at-eol))
+          (second-part-end (point-max)))
+      (delete-trailing-whitespace first-part-start first-part-end)
+      (delete-trailing-whitespace second-part-start second-part-end))))
+
+(defun help/insert-timestamp ()
+  "Produces and inserts a full ISO 8601 format timestamp."
+  (interactive)
+  (insert (format-time-string "%Y-%m-%dT%T%z")))
+
+(defun help/insert-timestamp* ()
+  "Produces and inserts a near-full ISO 8601 format timestamp."
+  (interactive)
+  (insert (format-time-string "%Y-%m-%dT%T")))
+
+(defun help/insert-datestamp ()
+  "Produces and inserts a partial ISO 8601 format timestamp."
+  (interactive)
+  (insert (format-time-string "%Y-%m-%d")))
+
+(defun help/indent-curly-block (&rest _ignored)
+  "Open a new brace or bracket expression, with relevant newlines and indent. URL: `https://github.com/Fuco1/smartparens/issues/80'"
+  (interactive)
+  (newline)
+  (indent-according-to-mode)
+  (forward-line -1)
+  (indent-according-to-mode))
+
+(defun beginning-of-line-dwim ()
+  "Toggles between moving point to the first non-whitespace character, and
+    the start of the line. Src: http://www.wilfred.me.uk/"
+  (interactive)
+  (let ((start-position (point)))
+    ;; see if going to the beginning of the line changes our position
+    (move-beginning-of-line nil)
+
+    (when (= (point) start-position)
+      ;; we're already at the beginning of the line, so go to the
+      ;; first non-whitespace character
+      (back-to-indentation))))
+
+(defun help/lazy-new-open-line ()
+  "Insert a new line without breaking the current line."
+  (interactive)
+  (beginning-of-line)
+  (forward-line 1)
+  (newline)
+  (forward-line -1))
+
+(defun help/smart-open-line ()
+  "Insert a new line, indent it, and move the cursor there.
+
+This behavior is different then the typical function bound to return
+which may be `open-line' or `newline-and-indent'. When you call with
+the cursor between ^ and $, the contents of the line to the right of
+it will be moved to the newly inserted line. This function will not
+do that. The current line is left alone, a new line is inserted, indented,
+and the cursor is moved there.
+
+Attribution: URL `http://emacsredux.com/blog/2013/03/26/smarter-open-line/'"
+  (interactive)
+  (move-end-of-line nil)
+  (newline-and-indent))
+
+(defun help/insert-ellipsis ()
+  "Insert an ellipsis into the current buffer."
+  (interactive)
+  (insert "…"))
+
+(defun help/insert-noticeable-snip-comment-line ()
+  "Insert a noticeable snip comment line (NSCL)."
+  (interactive)
+  (if (not (bolp))
+      (message "I may only insert a NSCL at the beginning of a line.")
+    (let ((ncl (make-string 70 ?✂)))
+      (newline)
+      (forward-line -1)
+      (insert ncl)
+      (comment-or-uncomment-region (line-beginning-position) (line-end-position)))))
+
+(progn
+
+  (defvar my-read-expression-map
+    (let ((map (make-sparse-keymap)))
+      (set-keymap-parent map read-expression-map)
+      (define-key map [(control ?g)] #'minibuffer-keyboard-quit)
+      (define-key map [up]   nil)
+      (define-key map [down] nil)
+      map))
+
+  (defun my-read--expression (prompt &optional initial-contents)
+    (let ((minibuffer-completing-symbol t))
+      (minibuffer-with-setup-hook
+          (lambda ()
+            (emacs-lisp-mode)
+            (use-local-map my-read-expression-map)
+            (setq font-lock-mode t)
+            (funcall font-lock-function 1))
+        (read-from-minibuffer prompt initial-contents
+                              my-read-expression-map nil
+                              'read-expression-history))))
+
+  (defun my-eval-expression (expression &optional arg)
+    "Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2014-07/msg00135.html'."
+    (interactive (list (read (my-read--expression ""))
+                       current-prefix-arg))
+    (if arg
+        (insert (pp-to-string (eval expression lexical-binding)))
+      (pp-display-expression (eval expression lexical-binding)
+                             "*Pp Eval Output*"))))
+
+(defun help/util-ielm ()
+  "HELP buffer setup for ielm.
+
+Creates enough space for one other permanent buffer beneath it."
+  (interactive)
+  (split-window-below -20)
+  (help/safb-other-window)
+  (ielm)
+  (set-window-dedicated-p (selected-window) t))
+
+(defun help/util-eshell ()
+  "HELP buffer setup for eshell.
+
+Depends upon `help/util-ielm' being run first."
+  (interactive)
+  (split-window-below -10)
+  (help/safb-other-window)
+  (eshell)
+  (set-window-dedicated-p (selected-window) t))
+
+(defvar help/util-state nil "Track whether the util buffers are displayed or not.")
+
+(defun help/util-state-toggle ()
+  "Toggle the util state."
+  (interactive)
+  (setq help/util-state (not help/util-state)))
+
+(defun help/util-start ()
+  "Perhaps utility buffers."
+  (interactive)
+  (help/util-ielm)
+  (help/util-eshell)
+  (help/util-state-toggle))
+
+(defun help/util-stop ()
+  "Remove personal utility buffers."
+  (interactive)
+  (if (get-buffer "*ielm*") (kill-buffer "*ielm*"))
+  (if (get-buffer "*eshell*") (kill-buffer "*eshell*"))
+  (help/util-state-toggle))
+
+(defun help/ielm-auto-complete ()
+  "Enables `auto-complete' support in \\[ielm].
+
+Attribution: URL `http://www.masteringemacs.org/articles/2010/11/29/evaluating-elisp-emacs/'"
+  (setq ac-sources '(ac-source-functions
+                     ac-source-variables
+                     ac-source-features
+                     ac-source-symbols
+                     ac-source-words-in-same-mode-buffers))
+  (add-to-list 'ac-modes #'inferior-emacs-lisp-mode)
+  (auto-complete-mode 1))
+
+(defun help/uuid ()
+  "Insert a UUID."
+  (interactive)
+  (insert (org-id-new)))
+
+(defun endless/sharp ()
+  "Insert #' unless in a string or comment.
+
+SRC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.html?source=rss'"
+  (interactive)
+  (call-interactively #'self-insert-command)
+  (let ((ppss (syntax-ppss)))
+    (unless (or (elt ppss 3)
+                (elt ppss 4))
+      (insert "'"))))
+
+(defun help/chs ()
+  "Insert opening \"cut here start\" snippet."
+  (interactive)
+  (insert "--8<---------------cut here---------------start------------->8---"))
+
+(defun help/che ()
+  "Insert closing \"cut here end\" snippet."
+  (interactive)
+  (insert "--8<---------------cut here---------------end--------------->8---"))
+
+(defmacro help/measure-time (&rest body)
+  "Measure the time it takes to evaluate BODY.
+
+Attribution Nikolaj Schumacher: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2008-06/msg00087.html'"
+  `(let ((time (current-time)))
+     ,@body
+     (message "%.06f" (float-time (time-since time)))))
+
+(defun help/create-non-existent-directory ()
+  "Attribution URL: `https://iqbalansari.github.io/blog/2014/12/07/automatically-create-parent-directories-on-visiting-a-new-file-in-emacs/'"
+  (let ((parent-directory (file-name-directory buffer-file-name)))
+    (when (and (not (file-exists-p parent-directory))
+               (y-or-n-p (format "Directory `%s' does not exist. Create it?" parent-directory)))
+      (make-directory parent-directory t))))
+
+(defun help/occur-dwim ()
+  "Call `occur' with a mostly sane default.
+
+Attribution Oleh Krehel (abo-abo): URL `http://oremacs.com/2015/01/26/occur-dwim/'"
+  (interactive)
+  (push (if (region-active-p)
+            (buffer-substring-no-properties
+             (region-beginning)
+             (region-end))
+          (let ((sym (thing-at-point 'symbol)))
+            (when (stringp sym)
+              (regexp-quote sym))))
+        regexp-history)
+  (call-interactively 'occur))
+
+(defun help/util-cycle ()
+  "Display or hide the utility buffers."
+  (interactive)
+  (if help/util-state
+      (help/util-stop)
+    (help/util-start)))
+
+(defun sacha/unfill-paragraph (&optional region)
+  "Takes a multi-line paragraph and makes it into a single line of text.
+
+ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfill-paragraph"
+  (interactive (progn
+                 (barf-if-buffer-read-only)
+                 (list t)))
+  (let ((fill-column (point-max)))
+    (fill-paragraph nil region)))
+(defun help/text-scale-increase ()
+  "Increase font size"
+  (interactive)
+  (help/on-gui
+   (setq help/font-size (+ help/font-size 1))
+   (help/update-font))
+  (help/not-on-gui
+   (message "Please resize the terminal emulator font.")))
+(defun help/text-scale-decrease ()
+  "Reduce font size."
+  (interactive)
+  (help/on-gui
+   (when (> help/font-size 1)
+     (setq help/font-size (- help/font-size 1))
+     (help/update-font)))
+  (help/not-on-gui
+   (message "Please resize the terminal emulator font.")))
+
+(defun help/org-export-subtree-gfm (id file)
+  "Export the subtree with ID to FILE in gfm."
+  (interactive)
+  (help/save-all-file-buffers)
+  (save-excursion
+    (let ((hidx (org-find-property "ID" id)))
+      (when hidx
+        (goto-char hidx)
+        (org-export-to-file 'gfm file nil t nil)))))
+
+(defun help/org-export-readme ()
+  (interactive)
+  (help/org-export-subtree-gfm
+   "39A2F05A-BC60-4879-9B66-85E43297FC97"
+   "README.md"))
+
+(defun help/xprt-all ()
+  "Export this entire document in configured weavers."
+  (interactive)
+  (org-ascii-export-to-ascii)
+  (org-html-export-to-html)
+  (org-gfm-export-to-markdown)
+  (org-latex-export-to-pdf))
+;; D523CBF8-67C4-4C96-9298-A4A49FE54E61 ends here
 ;; [[file:~/src/help/help.org::*Buffer][0E6156C3-4259-4539-BDAC-899B0AF4E80F]]
 (desktop-save-mode t)
 (setq desktop-restore-eager 10)
@@ -326,6 +654,10 @@ This is a copy and paste. Additional languages would warrant a refactor."
 ;; [[file:~/src/help/help.org::*Buffer][9DB523BC-E21B-42B7-AEE2-31ED24C14D92]]
 (setq help/column-width 80)
 ;; 9DB523BC-E21B-42B7-AEE2-31ED24C14D92 ends here
+;; [[file:~/src/help/help.org::*Buffer][A1A8FE84-0A12-4C5F-9565-F4EACE3DB694]]
+(use-package page-break-lines
+  :ensure t)
+;; A1A8FE84-0A12-4C5F-9565-F4EACE3DB694 ends here
 ;; [[file:~/src/help/help.org::*Code%20Folding][2D731158-FCE7-4BDA-AE78-383EAAD1FE4B]]
 (use-package hideshow
   :config
@@ -638,327 +970,6 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
   (setq langtool-mother-tongue "en")
   (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java")))
 ;; 4FF40D35-DDA0-4E02-80C0-52962DCD449A ends here
-;; [[file:~/src/help/help.org::*Helper%20Functions][D523CBF8-67C4-4C96-9298-A4A49FE54E61]]
-(defun help/comment-or-uncomment ()
-  "Comment or uncomment the current line or selection."
-  (interactive)
-  (cond ((not mark-active) (comment-or-uncomment-region (line-beginning-position)
-                                                      (line-end-position)))
-        ((< (point) (mark)) (comment-or-uncomment-region (point) (mark)))
-        (t (comment-or-uncomment-region (mark) (point)))))
-
-(defun help/save-all-file-buffers ()
-  "Saves every buffer associated with a file."
-  (interactive)
-  (dolist (buf (buffer-list))
-    (with-current-buffer buf
-      (when (and (buffer-file-name) (buffer-modified-p))
-        (save-buffer)))))
-
-(defun describe-thing-in-popup ()
-  "Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html'."
-  (interactive)
-  (let* ((thing (symbol-at-point))
-         (help-xref-following t)
-         (description (with-temp-buffer
-                        (help-mode)
-                        (help-xref-interned thing)
-                        (buffer-string))))
-    (popup-tip description
-               :point (point)
-               :around t
-               :height 30
-               :scroll-bar t
-               :margin t)))
-
-(defun help/kill-other-buffers ()
-  "Kill all other buffers."
-  (interactive)
-  (mapc #'kill-buffer (delq (current-buffer) (buffer-list))))
-
-(defvar help/delete-trailing-whitespace-p t
-  "Should trailing whitespace be removed?")
-
-(defun help/delete-trailing-whitespace ()
-  "Delete trailing whitespace for everything but the current line.
-
-If `help/delete-trailing-whitespace-p' is non-nil, then delete the whitespace.
-This is useful for fringe cases where trailing whitespace is important."
-  (interactive)
-  (when help/delete-trailing-whitespace-p
-    (let ((first-part-start (point-min))
-          (first-part-end (point-at-bol))
-          (second-part-start (point-at-eol))
-          (second-part-end (point-max)))
-      (delete-trailing-whitespace first-part-start first-part-end)
-      (delete-trailing-whitespace second-part-start second-part-end))))
-
-(defun help/insert-timestamp ()
-  "Produces and inserts a full ISO 8601 format timestamp."
-  (interactive)
-  (insert (format-time-string "%Y-%m-%dT%T%z")))
-
-(defun help/insert-timestamp* ()
-  "Produces and inserts a near-full ISO 8601 format timestamp."
-  (interactive)
-  (insert (format-time-string "%Y-%m-%dT%T")))
-
-(defun help/insert-datestamp ()
-  "Produces and inserts a partial ISO 8601 format timestamp."
-  (interactive)
-  (insert (format-time-string "%Y-%m-%d")))
-
-(defun help/indent-curly-block (&rest _ignored)
-  "Open a new brace or bracket expression, with relevant newlines and indent. URL: `https://github.com/Fuco1/smartparens/issues/80'"
-  (interactive)
-  (newline)
-  (indent-according-to-mode)
-  (forward-line -1)
-  (indent-according-to-mode))
-
-(defun beginning-of-line-dwim ()
-  "Toggles between moving point to the first non-whitespace character, and
-    the start of the line. Src: http://www.wilfred.me.uk/"
-  (interactive)
-  (let ((start-position (point)))
-    ;; see if going to the beginning of the line changes our position
-    (move-beginning-of-line nil)
-
-    (when (= (point) start-position)
-      ;; we're already at the beginning of the line, so go to the
-      ;; first non-whitespace character
-      (back-to-indentation))))
-
-(defun help/lazy-new-open-line ()
-  "Insert a new line without breaking the current line."
-  (interactive)
-  (beginning-of-line)
-  (forward-line 1)
-  (newline)
-  (forward-line -1))
-
-(defun help/smart-open-line ()
-  "Insert a new line, indent it, and move the cursor there.
-
-This behavior is different then the typical function bound to return
-which may be `open-line' or `newline-and-indent'. When you call with
-the cursor between ^ and $, the contents of the line to the right of
-it will be moved to the newly inserted line. This function will not
-do that. The current line is left alone, a new line is inserted, indented,
-and the cursor is moved there.
-
-Attribution: URL `http://emacsredux.com/blog/2013/03/26/smarter-open-line/'"
-  (interactive)
-  (move-end-of-line nil)
-  (newline-and-indent))
-
-(defun help/insert-ellipsis ()
-  "Insert an ellipsis into the current buffer."
-  (interactive)
-  (insert "…"))
-
-(defun help/insert-noticeable-snip-comment-line ()
-  "Insert a noticeable snip comment line (NSCL)."
-  (interactive)
-  (if (not (bolp))
-      (message "I may only insert a NSCL at the beginning of a line.")
-    (let ((ncl (make-string 70 ?✂)))
-      (newline)
-      (forward-line -1)
-      (insert ncl)
-      (comment-or-uncomment-region (line-beginning-position) (line-end-position)))))
-
-(progn
-
-  (defvar my-read-expression-map
-    (let ((map (make-sparse-keymap)))
-      (set-keymap-parent map read-expression-map)
-      (define-key map [(control ?g)] #'minibuffer-keyboard-quit)
-      (define-key map [up]   nil)
-      (define-key map [down] nil)
-      map))
-
-  (defun my-read--expression (prompt &optional initial-contents)
-    (let ((minibuffer-completing-symbol t))
-      (minibuffer-with-setup-hook
-          (lambda ()
-            (emacs-lisp-mode)
-            (use-local-map my-read-expression-map)
-            (setq font-lock-mode t)
-            (funcall font-lock-function 1))
-        (read-from-minibuffer prompt initial-contents
-                              my-read-expression-map nil
-                              'read-expression-history))))
-
-  (defun my-eval-expression (expression &optional arg)
-    "Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2014-07/msg00135.html'."
-    (interactive (list (read (my-read--expression ""))
-                       current-prefix-arg))
-    (if arg
-        (insert (pp-to-string (eval expression lexical-binding)))
-      (pp-display-expression (eval expression lexical-binding)
-                             "*Pp Eval Output*"))))
-
-(defun help/util-ielm ()
-  "HELP buffer setup for ielm.
-
-Creates enough space for one other permanent buffer beneath it."
-  (interactive)
-  (split-window-below -20)
-  (help/safb-other-window)
-  (ielm)
-  (set-window-dedicated-p (selected-window) t))
-
-(defun help/util-eshell ()
-  "HELP buffer setup for eshell.
-
-Depends upon `help/util-ielm' being run first."
-  (interactive)
-  (split-window-below -10)
-  (help/safb-other-window)
-  (eshell)
-  (set-window-dedicated-p (selected-window) t))
-
-(defvar help/util-state nil "Track whether the util buffers are displayed or not.")
-
-(defun help/util-state-toggle ()
-  "Toggle the util state."
-  (interactive)
-  (setq help/util-state (not help/util-state)))
-
-(defun help/util-start ()
-  "Perhaps utility buffers."
-  (interactive)
-  (help/util-ielm)
-  (help/util-eshell)
-  (help/util-state-toggle))
-
-(defun help/util-stop ()
-  "Remove personal utility buffers."
-  (interactive)
-  (if (get-buffer "*ielm*") (kill-buffer "*ielm*"))
-  (if (get-buffer "*eshell*") (kill-buffer "*eshell*"))
-  (help/util-state-toggle))
-
-(defun help/ielm-auto-complete ()
-  "Enables `auto-complete' support in \\[ielm].
-
-Attribution: URL `http://www.masteringemacs.org/articles/2010/11/29/evaluating-elisp-emacs/'"
-  (setq ac-sources '(ac-source-functions
-                     ac-source-variables
-                     ac-source-features
-                     ac-source-symbols
-                     ac-source-words-in-same-mode-buffers))
-  (add-to-list 'ac-modes #'inferior-emacs-lisp-mode)
-  (auto-complete-mode 1))
-
-(defun help/uuid ()
-  "Insert a UUID."
-  (interactive)
-  (insert (org-id-new)))
-
-(defun endless/sharp ()
-  "Insert #' unless in a string or comment.
-
-SRC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.html?source=rss'"
-  (interactive)
-  (call-interactively #'self-insert-command)
-  (let ((ppss (syntax-ppss)))
-    (unless (or (elt ppss 3)
-                (elt ppss 4))
-      (insert "'"))))
-
-(defun help/chs ()
-  "Insert opening \"cut here start\" snippet."
-  (interactive)
-  (insert "--8<---------------cut here---------------start------------->8---"))
-
-(defun help/che ()
-  "Insert closing \"cut here end\" snippet."
-  (interactive)
-  (insert "--8<---------------cut here---------------end--------------->8---"))
-
-(defmacro help/measure-time (&rest body)
-  "Measure the time it takes to evaluate BODY.
-
-Attribution Nikolaj Schumacher: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2008-06/msg00087.html'"
-  `(let ((time (current-time)))
-     ,@body
-     (message "%.06f" (float-time (time-since time)))))
-
-(defun help/create-non-existent-directory ()
-  "Attribution URL: `https://iqbalansari.github.io/blog/2014/12/07/automatically-create-parent-directories-on-visiting-a-new-file-in-emacs/'"
-  (let ((parent-directory (file-name-directory buffer-file-name)))
-    (when (and (not (file-exists-p parent-directory))
-               (y-or-n-p (format "Directory `%s' does not exist. Create it?" parent-directory)))
-      (make-directory parent-directory t))))
-
-(defun help/occur-dwim ()
-  "Call `occur' with a mostly sane default.
-
-Attribution Oleh Krehel (abo-abo): URL `http://oremacs.com/2015/01/26/occur-dwim/'"
-  (interactive)
-  (push (if (region-active-p)
-            (buffer-substring-no-properties
-             (region-beginning)
-             (region-end))
-          (let ((sym (thing-at-point 'symbol)))
-            (when (stringp sym)
-              (regexp-quote sym))))
-        regexp-history)
-  (call-interactively 'occur))
-
-(defun help/util-cycle ()
-  "Display or hide the utility buffers."
-  (interactive)
-  (if help/util-state
-      (help/util-stop)
-    (help/util-start)))
-
-(defun sacha/unfill-paragraph (&optional region)
-  "Takes a multi-line paragraph and makes it into a single line of text.
-
-ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfill-paragraph"
-  (interactive (progn
-                 (barf-if-buffer-read-only)
-                 (list t)))
-  (let ((fill-column (point-max)))
-    (fill-paragraph nil region)))
-(defun help/text-scale-increase ()
-  "Increase font size"
-  (interactive)
-  (help/on-gui
-   (setq help/font-size (+ help/font-size 1))
-   (help/update-font))
-  (help/not-on-gui
-   (message "Please resize the terminal emulator font.")))
-(defun help/text-scale-decrease ()
-  "Reduce font size."
-  (interactive)
-  (help/on-gui
-   (when (> help/font-size 1)
-     (setq help/font-size (- help/font-size 1))
-     (help/update-font)))
-  (help/not-on-gui
-   (message "Please resize the terminal emulator font.")))
-
-(defun help/org-xprt-rdme ()
-  (interactive)
-  (help/save-all-file-buffers)
-  (save-excursion
-    (let ((hidx (org-find-property "ID" "39A2F05A-BC60-4879-9B66-85E43297FC97")))
-      (when hidx
-        (goto-char hidx)
-        (org-export-to-file 'gfm "README.md" nil t nil)))))
-
-(defun help/xprt-all ()
-  "Export this entire document in configured weavers."
-  (interactive)
-  (org-ascii-export-to-ascii)
-  (org-html-export-to-html)
-  (org-gfm-export-to-markdown)
-  (org-latex-export-to-pdf))
-;; D523CBF8-67C4-4C96-9298-A4A49FE54E61 ends here
 ;; [[file:~/src/help/help.org::*Intellisense%20(Auto%20Completion)][487B46D5-C025-4114-A1B4-BAAF5FAFE430]]
 (use-package fuzzy
   :ensure t)
@@ -1210,7 +1221,8 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (fci-mode)
   (rainbow-mode)
   (help/try-to-add-imenu)
-  (writegood-mode))
+  (writegood-mode)
+  (turn-on-page-break-lines-mode))
 
 (add-hook 'text-mode-hook #'help/text-prog*-setup)
 ;; 42D5F313-65F0-49E1-8759-9259D4020FA9 ends here
@@ -1453,7 +1465,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (wrap-region-add-wrapper "+" "+" nil 'org-mode)
 ;; 0EBE9F71-59AC-4D54-B792-AFC3F78985D8 ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][BB37579C-08EC-42AB-8706-7ECFD9506B8B]]
-(add-hook 'org-babel-pre-tangle-hook #'help/org-xprt-rdme)
+(add-hook 'org-babel-pre-tangle-hook #'help/org-export-readme)
 ;; BB37579C-08EC-42AB-8706-7ECFD9506B8B ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][6C80DBCA-AE28-4FE3-91E3-825E642735BA]]
 (setq org-hide-macro-markers t)
@@ -2009,7 +2021,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
                                               :hint nil)
   "
 _1_ -font  _2_ +font _3_ ellipsis _4_ UUID _5_ bfr-cdng-systm _6_ grade-level _7_ reading-ease
-_q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace
+_q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
                  _j_ back-char _k_ scrollDown _K_ nextLogLine _l_ forw-char
 _x_ delete-indentation"
   ("1" help/text-scale-decrease :exit nil)
@@ -2031,7 +2043,9 @@ _x_ delete-indentation"
   ("j" backward-char :exit nil)
   ("l" forward-char :exit nil)
   ("o" toggle-debug-on-error)
-  ("p" anzu-query-replace))
+  ("p" anzu-query-replace)
+  ("[" backward-page :exit nil)
+  ("]" forward-page :exit nil))
 ;; F6C7AAB7-DF69-4EBA-8116-15DC32022D49 ends here
 ;; [[file:~/src/help/help.org::*3][EFFA5A5F-58A8-476D-A8D4-16F232231EC7]]
 (key-chord-define-global "vv" #'help/hydra/left-side/global/body)

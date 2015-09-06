@@ -2252,14 +2252,21 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (help/not-on-gui
    (message "Please resize the terminal emulator font.")))
 
-(defun help/org-xprt-rdme ()
+(defun help/org-export-subtree-gfm (id file)
+  "Export the subtree with ID to FILE in gfm."
   (interactive)
   (help/save-all-file-buffers)
   (save-excursion
-    (let ((hidx (org-find-property "ID" "39A2F05A-BC60-4879-9B66-85E43297FC97")))
+    (let ((hidx (org-find-property "ID" id)))
       (when hidx
         (goto-char hidx)
-        (org-export-to-file 'gfm "README.md" nil t nil)))))
+        (org-export-to-file 'gfm file nil t nil)))))
+
+(defun help/org-export-readme ()
+  (interactive)
+  (help/org-export-subtree-gfm
+   "39A2F05A-BC60-4879-9B66-85E43297FC97"
+   "README.md"))
 
 (defun help/xprt-all ()
   "Export this entire document in configured weavers."
@@ -4433,7 +4440,7 @@ Generate the README for GitHub.
 
 #+NAME: BB37579C-08EC-42AB-8706-7ECFD9506B8B
 #+BEGIN_SRC emacs-lisp :results output silent
-(add-hook 'org-babel-pre-tangle-hook #'help/org-xprt-rdme)
+(add-hook 'org-babel-pre-tangle-hook #'help/org-export-readme)
 #+END_SRC
 
 Minimize Macro text.
