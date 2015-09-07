@@ -126,6 +126,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
    (sass . t)
    (R . t)
    (sql . t)
+   (scheme . t)
    ;;
    (latex . t)
    ;;
