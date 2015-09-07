@@ -887,14 +887,16 @@ that the results are critical to the research.
 Keep the document as close to being executable as possible; make it very visible
 when it is not.
 
-- Evaluated Source-Blocks return a result
-- Raw tables are the best result because they are human-readable in text, work
+- Evaluated Source-Blocks return a result.
+- Tables are the best result because they are human-readable in text, work
   with Babel LP, and weavers.
+- Always store results in the Web so format them as Org-Mode. Wrapped in a
+  =SRC= special block they are replaceable.
 - Replace theme each time you evaluate the block.
 
 #+NAME: BC84119C-6085-4B36-A2D9-0918A68D15C5
 #+BEGIN_SRC emacs-lisp :results output silent
-(help/set-org-babel-default-header-args :results "value table raw replace")
+(help/set-org-babel-default-header-args :results "value table org replace")
 (help/set-org-babel-default-inline-header-args :results "value replace")
 #+END_SRC
 
