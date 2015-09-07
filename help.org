@@ -3431,8 +3431,9 @@ Most programing modes indent to 2 spaces. TABs should be the same width.
    :ID:       F5E2718B-F54F-41C5-9CED-6E470CAC238D
    :END:
 
-Use Magit for Git. The commit log editor uses With-Editor and Server modes.
-They are not not diminshed because they are infrequently used.
+Use VC for single files and Magit for multiple files.
+
+The commit log editor uses With-Editor and Server modes. They are not diminished because they are infrequently used.
 
 #+NAME: 14B95634-E6E8-46A0-9698-2C9B847DD404
 #+BEGIN_SRC emacs-lisp :results output silent
