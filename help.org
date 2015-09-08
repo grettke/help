@@ -94,6 +94,7 @@
       Configure other properties and modes taking it into account.
     - Every language under Hacking
       - Should show up in ~org-babel-load-languages~.
+      - Read the user manual for each one.
     - The =Prog*-Mode= system configuration can result in Headlines that don't
       need any configuration. The Headline still communicates the mode's
       value to the reader even if it doesn't configure EMACS.
