@@ -127,9 +127,6 @@ This is a copy and paste. Additional languages would warrant a refactor."
    (sass . t)
    (R . t)
    (scheme . t)
-   (lisp . t)
-   (gnuplot . t)
-   (calc . t)
    (sql . t)
    ;;
    (latex . t)

@@ -705,9 +705,6 @@ Org-Mode may evaluate all of the listed languages.
    (sass . t)
    (R . t)
    (scheme . t)
-   (lisp . t)
-   (gnuplot . t)
-   (calc . t)
    (sql . t)
    ;;
    (latex . t)
@@ -5048,19 +5045,6 @@ Enable Auto-Complete via Geiser.
   (setq geiser-repl-history-no-dups-p t))
 #+END_SRC
 
-** Common Lisp (LISP)
-   :PROPERTIES:
-   :ID:       CC2615EA-EDE5-45AA-B874-AE5E673C01ED
-   :END:
-
-** Gnuplot
-   :PROPERTIES:
-   :ID:       7DAB84A1-E670-46D3-8415-117FB24EE048
-   :END:
-** Calc
-   :PROPERTIES:
-   :ID:       43410767-3100-4448-959C-967235161CAA
-   :END:
 ** YASnippet
   :PROPERTIES:
   :noweb-ref: Hacking-Applied-Mathematics-YASnippet
