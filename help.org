@@ -92,7 +92,8 @@
     - Some modes don't require any configuration. The headline still needs to be
       present to remind the reader to keep it in her cognitive landscape.
       Configure other properties and modes taking it into account.
-    - Every language under Hacking should show up in ~org-babel-load-languages~.
+    - Every language under Hacking
+      - Should show up in ~org-babel-load-languages~.
     - The =Prog*-Mode= system configuration can result in Headlines that don't
       need any configuration. The Headline still communicates the mode's
       value to the reader even if it doesn't configure EMACS.
