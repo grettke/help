@@ -597,7 +597,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (help/not-on-gui
    (message "Please resize the terminal emulator font.")))
 
-(defun help/org-export-subtree-gfm (id file)
+(defun help/org-weave-subtree-gfm (id file)
   "Export the subtree with ID to FILE in gfm."
   (interactive)
   (help/save-all-file-buffers)
@@ -607,27 +607,27 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
         (goto-char hidx)
         (org-export-to-file 'gfm file nil t nil)))))
 
-(defun help/org-export-readme ()
+(defun help/org-weave-readme ()
   (interactive)
-  (help/org-export-subtree-gfm
+  (help/org-weave-subtree-gfm
    "39A2F05A-BC60-4879-9B66-85E43297FC97"
    "README.md"))
 
-(defun help/org-export-style-guide ()
+(defun help/org-weave-style-guide ()
   (interactive)
-  (help/org-export-subtree-gfm
+  (help/org-weave-subtree-gfm
    "03E0F0E3-DB81-4033-8F04-5D8BB5CBB2F0"
    "STYLEGUIDE.md"))
 
-(defun help/xprt-all ()
+(defun help/weave-everything-everywhere ()
   "Export this entire document in configured weavers."
   (interactive)
   (org-ascii-export-to-ascii)
   (org-html-export-to-html)
   (org-gfm-export-to-markdown)
   (org-latex-export-to-pdf)
-  (help/org-export-readme)
-  (help/org-export-style-guide))
+  (help/org-weave-readme)
+  (help/org-weave-style-guide))
 ;; D523CBF8-67C4-4C96-9298-A4A49FE54E61 ends here
 ;; [[file:~/src/help/help.org::*Buffer][0E6156C3-4259-4539-BDAC-899B0AF4E80F]]
 (desktop-save-mode t)
@@ -1519,7 +1519,7 @@ _q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ g2nms-b _t_ g2s-b/hd      _u_ goto
 _a_ inshdrgs _s_ oblobigst            _h_ dksieb
 _c_ cksrcblk _b_ swtch2sessn _n_ n2sbtre _m_ xpndsrcblk"
   ("1" org-babel-sha1-hash)
-  ("2" help/xprt-all)
+  ("2" help/weave-everything-everywhere)
   ("4" org-display-inline-images)
   ("5" org-remove-inline-images)
   ("8" org-babel-detangle)
