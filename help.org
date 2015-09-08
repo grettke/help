@@ -92,9 +92,14 @@
     - Some modes don't require any configuration. The headline still needs to be
       present to remind the reader to keep it in her cognitive landscape.
       Configure other properties and modes taking it into account.
-    - Every language under Hacking
-      - Should show up in ~org-babel-load-languages~.
-      - Read the user manual for each one.
+    - For every language under Hacking you should:
+      - Only include it if it is valuable and you will invest adequate time to
+        configure this well and use it well. When reading Org-Mode examples you
+        will want to add Org-Mode language support because it is easy and fun
+        and then you are left with an insufficiently configured environment.
+        That is unacceptable.
+      - Enable it in ~org-babel-load-languages~.
+      - Read the user manual for it.
     - The =Prog*-Mode= system configuration can result in Headlines that don't
       need any configuration. The Headline still communicates the mode's
       value to the reader even if it doesn't configure EMACS.
