@@ -699,6 +699,7 @@ Org-Mode may evaluate all of the listed languages.
    (R . t)
    (scheme . t)
    (lisp . t)
+   (calc . t)
    (sql . t)
    ;;
    (latex . t)
@@ -5042,6 +5043,10 @@ Enable Auto-Complete via Geiser.
 ** Common Lisp (LISP)
    :PROPERTIES:
    :ID:       CC2615EA-EDE5-45AA-B874-AE5E673C01ED
+   :END:
+** Calc
+   :PROPERTIES:
+   :ID:       43410767-3100-4448-959C-967235161CAA
    :END:
 ** YASnippet
   :PROPERTIES:

@@ -127,6 +127,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
    (R . t)
    (scheme . t)
    (lisp . t)
+   (calc . t)
    (sql . t)
    ;;
    (latex . t)
