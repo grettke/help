@@ -9,9 +9,9 @@
 
 **Setup**
 
-1.  [Pull Org-Mode](http://orgmode.org/) to `~/src/`.
+1.  [Clone Org-Mode](http://orgmode.org/) to `~/src/`.
     1.  Without `Make`: [Generating autoloads and Compiling Org without make](http://orgmode.org/worg/org-hacks.html)
-2.  [Pull Use-Package](https://github.com/jwiegley/use-package) to `~/src/`.
+2.  [Clone Use-Package](https://github.com/jwiegley/use-package) to `~/src/`.
 3.  Create a folder for support libraries exporting it&rsquo;s location in a variable
     named `EELIB`.
     1.  Install [DITAA](http://ditaa.sourceforge.net/) renaming the JAR to `ditaa.jar`.
@@ -53,6 +53,7 @@
     -   **Web:** A document contained Source-Block definitions that define a system.
 -   Encoding
     -   Prefer Unicode characters over ASCII equivalents.
+        -   Note eventual switch form PDFLaTeX to LuaTeX.
     -   Consider Org-Mode automatic handling of ASCII to UTF-8 symbols.
 -   File/Package Loading
     -   Load every one with `use-package` whether it came with EMACS OOTB or ELPA.
@@ -174,6 +175,7 @@
     -   Simple and detailed.
     -   Pleasant conversation style.
     -   Audience is Sysop; the author included.
+    -   Capture decisions that allow this system to move forward.
 -   Weaving.
     -   Strive to keep the weaving in synchronization with the tangling.
 -   Word Choice.
@@ -247,8 +249,7 @@ Start EMACS with this command:
 
     ID: 016FA25F-E70E-4BED-BA01-AEB808428791
 
-Configure EMACS to do everything provided by this document. HELP is a monolithic
-system.
+Configure EMACS to for everything defined within this monolithic system.
 
 Sysop is likely to use this constantly.
 
@@ -271,10 +272,12 @@ Start EMACS with this command:
 <<Hacking-Applied-Mathematics-ESS>>
 <<Hacking-Applied-Mathematics-ESS-SAS>>
 <<Hacking-Applied-Mathematics-ESS-R>>
+<<Hacking-Applied-Mathematics-LISP-Scheme>>
 <<Hacking-Applied-Mathematics-YASnippet>>
 <<Hacking-Publishing-TeX>>
 <<Hacking-Publishing-KOMA>>
 <<Hacking-Publishing-Markdown>>
+<<Hacking-Publishing-Wordpress>>
 <<Hacking-Publishing-Beamer>>
 <<Hacking-Publishing-HTML>>
 <<Hacking-Diagram-Artist>>
@@ -304,12 +307,16 @@ alias ll ls -lh $*
 
     ID: 8510C876-F644-4804-9F87-54A0B44DBA6A
 
-This system enables you to perform 3 Literate Document activities. These
-activities combine to provide a rich Literate Programming environment. Their
-configuration is defined with more granularity here to make sense of how the
-system is configured, where, and how it works. These activities are not
-performed interactively by the user. They are automatic operations that occur
-as a result of the configuration of the document itself.
+This system enables you to perform 3 Literate Document activities
+
+-   Tangling
+-   Evaluating
+-   Weaving
+
+Combined they provide a rich Literate Programming environment.
+
+These activities are not performed interactively by the user. They are automatic
+operations that occur as a result of the configuration by the document itself.
 
 The following is the guide for the default configuration of this system and how
 it behaves.
@@ -382,13 +389,12 @@ Key:
 </tbody>
 </table>
 
-They are separate and distinct operations and are defined as such.
+They are separate and distinct operations.
 
-The last logical action is the activity of &ldquo;Programming&rdquo;. It is a combination of
-three 3 activities listed above combined with the configuration of EMACS to do
-so. This is an interactive activity performed Sysop. The results of Sysop&rsquo;s
-activities are contained within the document. Those contents are input for the
-activities here.
+&ldquo;Programming&rdquo; is logically an activity that is the combination of these 3
+activites. It is interactively performed by Sysop. It is not a distinct
+or isolated operation. Results of one activity exist here and serve as inputs to
+another activity.
 
 ## Org-Mode Exemple Complet Minimal
 
@@ -396,14 +402,14 @@ activities here.
 
     ID: 57C69AB7-A317-4823-ABBF-7DE8A5E2151C
 
-A stable version of Org-Mode is provided OOTB. It&rsquo;s release cycle is tied to
-EMACS release cycle. To get hot-fixes, cutting edge features, and easy patch
-creation though, you need to use the version from Git.
+Every new EMACS releases comes with the latest stable Org-Mode release. To get
+hot-fixes, cutting edge features, and easy patch creation though, you need to
+use the version from Git.
 
-The [directions](http://orgmode.org/manual/Installation.html) of how to run Org-Mode from Git are detailed and clear. The only
+These detailed and clear [directions](http://orgmode.org/manual/Installation.html) explain how ot run Org-Mode from Git. The only
 thing worth mentioning again is that in order to use **any** version of Org-Mode
 other than the one that comes OOTB you **must** load Org-Mode **before** anything else
-in your initialization file. This can be surprisingly easy to do! When you get
+in your initialization file. It is easy to do! When you get
 unexpected Org-Mode behavior be sure to stop and investigate `org-version` and
 decide whether or not it is what you expect and prepare an ECM if necessary.
 
@@ -414,15 +420,15 @@ Add the Org-Mode core distribution the load path.
 ```
 
 Add the Org-Mode-Contributions distribution to the load path. The contributions
-are critical to and inseparable from the core distribution.
+are essential.
 
 ```lisp
 (add-to-list 'load-path "~/src/org-mode/contrib/lisp")
 ```
 
-This system allows for single-character alphabetical bullet lists. For Org-Mode
-to provide that, the following property must exist before Org-Mode is even
-loaded. This configuration must occur here. **Never** remove this from a submitted
+Allow single-character alphabetical bullet lists. Set `org-list-allow-alphabetical`
+before loading Org-Mode. This configuration must occur here. **Never** remove this
+from a submitted
 ECM.
 
 ```lisp
@@ -440,6 +446,8 @@ Load Org-Mode.
     noweb-ref: Org-Mode-Helper-Functions
 
     ID: B14776FD-6835-4D1D-BCD3-50D56555423C
+
+Help configure Org-Mode.
 
 ```lisp
 (defun help/set-org-babel-default-header-args (property value)
@@ -498,13 +506,15 @@ This is a copy and paste. Additional languages would warrant a refactor."
              (indent-to i)
              (forward-line 2))))))
 
+(defconst help/org-special-pre "^\s*#[+]")
+
 (defun help/org-2every-src-block (fn)
   "Visit every Source-Block and evaluate `FN'."
   (interactive)
   (save-excursion
     (goto-char (point-min))
     (let ((case-fold-search t))
-      (while (re-search-forward "^\s*#[+]BEGIN_SRC" nil t)
+      (while (re-search-forward (concat help/org-special-pre "BEGIN_SRC") nil t)
         (let ((element (org-element-at-point)))
           (when (eq (org-element-type element) 'src-block)
             (funcall fn element)))))
@@ -524,8 +534,6 @@ This is a copy and paste. Additional languages would warrant a refactor."
     ID: 267EEDED-1367-405F-807C-B3C489045704
 
 `ID` and `NAME` are essential for successful `LP` using `org-babel-tangle-jump-to-org`.
-
-Generate the `README`.
 
 ```lisp
 (add-hook 'org-babel-pre-tangle-hook #'help/org-prp-hdln)
@@ -571,7 +579,7 @@ origin artifact.
 
 > Turn off variable assignment and noweb expansion during tangling
 
-Likely only ever to be configured per Source-Block or System.
+Configuration likely per Source-Block or System.
 
 ### noweb
 
@@ -630,7 +638,7 @@ ought to refer to the generated document.
 
 > Specify block&rsquo;s noweb reference resolution target
 
-Likely only ever to be configured per Source-Block or System.
+Configuration likely per Source-Block or System.
 
 ### noweb-sep
 
@@ -638,7 +646,7 @@ Likely only ever to be configured per Source-Block or System.
 
 > String used to separate noweb references
 
-Likely only ever to be configured per Source-Block or System.
+Configuration likely per Source-Block or System.
 
 ### padline
 
@@ -661,7 +669,7 @@ can be used in the Programming activity.
 
 > Preserve the state of code evaluation
 
-Likely only ever to be configured per Source-Block or System.
+Configuration likely per Source-Block or System.
 
 For some situations, this may be the same for every source block for a
 particular language. R is a good example.
@@ -672,7 +680,7 @@ particular language. R is a good example.
 
 > Make tangled files executable
 
-Likely only ever to be configured per Source-Block or System.
+Configuration likely per Source-Block or System.
 
 ### tangle
 
@@ -690,7 +698,7 @@ Likely only ever to be configured per Source-Block or System.
 
 > Set permission of tangled files
 
-Likely only ever to be configured per Source-Block or System.
+Configuration likely per Source-Block or System.
 
 ## Evaluating
 
@@ -708,6 +716,8 @@ Org-Mode may evaluate all of the listed languages.
    ;;
    (sass . t)
    (R . t)
+   (scheme . t)
+   (lisp . t)
    (sql . t)
    ;;
    (latex . t)
@@ -726,7 +736,7 @@ Org-Mode may evaluate all of the listed languages.
 
 > Avoid re-evaluating unchanged code blocks
 
-Likely only ever to be configured per Source-Block or System
+Configuration likely per Source-Block or System
 
 Default `no` is correct for nearly every scenario.
 
@@ -736,7 +746,7 @@ Default `no` is correct for nearly every scenario.
 
 > Handle column names in tables
 
-Likely only ever to be configured per Source-Block or System
+Configuration likely per Source-Block or System
 
 ### dir
 
@@ -744,7 +754,7 @@ Likely only ever to be configured per Source-Block or System
 
 > Specify the default (possibly remote) directory for code block execution
 
-Likely only ever to be configured per Source-Block or System
+Configuration likely per Source-Block or System
 
 ### epilogue
 
@@ -779,7 +789,7 @@ Never evaluate in-line-source-blocks **on export**.
 
 > Specify a path for file output
 
-Likely only ever to be configured per Source-Block or System
+Configuration likely per Source-Block or System
 
 ### file-desc
 
@@ -787,7 +797,7 @@ Likely only ever to be configured per Source-Block or System
 
 > Specify a description for file results
 
-Likely only ever to be configured per Source-Block or System
+Configuration likely per Source-Block or System
 
 ### file-ext
 
@@ -795,7 +805,7 @@ Likely only ever to be configured per Source-Block or System
 
 > Specify an extension for file output
 
-Likely only ever to be configured per Source-Block or System
+Configuration likely per Source-Block or System
 
 ### hlines
 
@@ -803,7 +813,7 @@ Likely only ever to be configured per Source-Block or System
 
 > Handle horizontal lines in tables
 
-Likely only ever to be configured per Source-Block or System
+Configuration likely per Source-Block or System
 
 ### output-dir
 
@@ -811,7 +821,7 @@ Likely only ever to be configured per Source-Block or System
 
 > Specify a directory to write file output to
 
-Likely only ever to be configured per Source-Block or System
+Configuration likely per Source-Block or System
 
 One example is a System where **all** intermediate results are stored to individual
 files.
@@ -822,7 +832,7 @@ files.
 
 > Post processing of code block results
 
-Likely only ever to be configured per Source-Block or System.
+Configuration likely per Source-Block or System.
 
 ### prologue
 
@@ -830,7 +840,7 @@ Likely only ever to be configured per Source-Block or System.
 
 > Text to prepend to code block body
 
-Likely only ever to be configured per Source-Block or System.
+Configuration likely per Source-Block or System.
 
 For some situations, this may be the same for every source block for a
 particular language. The user manual described `gnuplot`, which often shows up on
@@ -857,17 +867,20 @@ that the results are critical to the research.
 Keep the document as close to being executable as possible; make it very visible
 when it is not.
 
-Always display results like you would seem them in a REPL. For source-blocks
-this means an `output` display and for in-line-source-blocks it means a `value`
-display. The former cares most the data in the context of a REPL. The latter
-cares most about the data in the context of the written content referencing that
-data.
-
-Replace theme each time you evaluate the block.
+-   Evaluated Source-Blocks return a result.
+-   Tables are the best result because they are human-readable in text, work
+    with Babel LP, and weavers.
+    -   Inline Source-Blocks disallow tables so use scalars instead.
+-   Always store results in the Web so format them as Org-Mode. Wrapped in a
+    `SRC` special block they are replaceable.
+-   Replace theme each time you evaluate the block.
 
 ```lisp
-(help/set-org-babel-default-header-args :results "output replace")
-(help/set-org-babel-default-inline-header-args :results "value replace")
+(defconst help/org-sb-results-cfg "value table org replace")
+(help/set-org-babel-default-header-args :results help/org-sb-results-cfg)
+(defconst help/org-isb-results-cfg
+  (replace-regexp-in-string "table" "scalar" help/org-sb-results-cfg))
+(help/set-org-babel-default-inline-header-args :results help/org-isb-results-cfg)
 ```
 
 ### rownames
@@ -876,7 +889,7 @@ Replace theme each time you evaluate the block.
 
 > Handle row names in tables
 
-Likely only ever to be configured per Source-Block or System..
+Configuration likely per Source-Block or System..
 
 ### sep
 
@@ -884,7 +897,7 @@ Likely only ever to be configured per Source-Block or System..
 
 > Delimiter for writing tabular results outside Org
 
-Likely only ever to be configured per Source-Block or System
+Configuration likely per Source-Block or System
 
 ### var
 
@@ -907,7 +920,7 @@ Likely only ever to be configured per Source-Block or System
 
 > Mark source block evaluation results
 
-Likely only ever to be configured per Source-Block or System.
+Configuration likely per Source-Block or System.
 
 ## Weaving
 
@@ -1420,7 +1433,7 @@ close together
                                                   :hint nil)
       "
     _1_ -font  _2_ +font _3_ ellipsis _4_ UUID _5_ bfr-cdng-systm _6_ grade-level _7_ reading-ease
-    _q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace
+    _q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
                      _j_ back-char _k_ scrollDown _K_ nextLogLine _l_ forw-char
     _x_ delete-indentation"
       ("1" help/text-scale-decrease :exit nil)
@@ -1442,7 +1455,9 @@ close together
       ("j" backward-char :exit nil)
       ("l" forward-char :exit nil)
       ("o" toggle-debug-on-error)
-      ("p" anzu-query-replace))
+      ("p" anzu-query-replace)
+      ("[" backward-page :exit nil)
+      ("]" forward-page :exit nil))
     ```
 
     ```lisp
@@ -1547,15 +1562,17 @@ close together
 
 Exploratory programming in EMACS.
 
-Don&rsquo;t use &ldquo;dn&rdquo; for &ldquo;describe-fuNction&rdquo; because of &ldquo;and&rdquo;-words.
+Don&rsquo;t use &ldquo;dn&rdquo; for &ldquo;describe-function&rdquo; because of &ldquo;and&rdquo;-words.
 
 ```lisp
 (key-chord-define-global "d." #'describe-function)
 (key-chord-define-global "d," #'describe-variable)
 ```
 
+Don&rsquo;t use &ldquo;qi&rdquo;; &ldquo;unique&rdquo;.
+
 ```lisp
-(key-chord-define-global "qi" #'help/comment-or-uncomment)
+(key-chord-define-global "f-" #'help/comment-or-uncomment) ;
 ```
 
 Make `ispell` accessible.
@@ -1820,6 +1837,347 @@ Enable the `super` key-space.
 
 Configure EMACS to maximum utility.
 
+## Helper Functions
+
+    ID: B2257535-9891-48F1-B7CD-1B385F527C59
+
+```lisp
+(defun help/comment-or-uncomment ()
+  "Comment or uncomment the current line or selection."
+  (interactive)
+  (cond ((not mark-active) (comment-or-uncomment-region (line-beginning-position)
+                                                      (line-end-position)))
+        ((< (point) (mark)) (comment-or-uncomment-region (point) (mark)))
+        (t (comment-or-uncomment-region (mark) (point)))))
+
+(defun help/save-all-file-buffers ()
+  "Saves every buffer associated with a file."
+  (interactive)
+  (dolist (buf (buffer-list))
+    (with-current-buffer buf
+      (when (and (buffer-file-name) (buffer-modified-p))
+        (save-buffer)))))
+
+(defun describe-thing-in-popup ()
+  "Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html'."
+  (interactive)
+  (let* ((thing (symbol-at-point))
+         (help-xref-following t)
+         (description (with-temp-buffer
+                        (help-mode)
+                        (help-xref-interned thing)
+                        (buffer-string))))
+    (popup-tip description
+               :point (point)
+               :around t
+               :height 30
+               :scroll-bar t
+               :margin t)))
+
+(defun help/kill-other-buffers ()
+  "Kill all other buffers."
+  (interactive)
+  (mapc #'kill-buffer (delq (current-buffer) (buffer-list))))
+
+(defvar help/delete-trailing-whitespace-p t
+  "Should trailing whitespace be removed?")
+
+(defun help/delete-trailing-whitespace ()
+  "Delete trailing whitespace for everything but the current line.
+
+If `help/delete-trailing-whitespace-p' is non-nil, then delete the whitespace.
+This is useful for fringe cases where trailing whitespace is important."
+  (interactive)
+  (when help/delete-trailing-whitespace-p
+    (let ((first-part-start (point-min))
+          (first-part-end (point-at-bol))
+          (second-part-start (point-at-eol))
+          (second-part-end (point-max)))
+      (delete-trailing-whitespace first-part-start first-part-end)
+      (delete-trailing-whitespace second-part-start second-part-end))))
+
+(defun help/insert-timestamp ()
+  "Produces and inserts a full ISO 8601 format timestamp."
+  (interactive)
+  (insert (format-time-string "%Y-%m-%dT%T%z")))
+
+(defun help/insert-timestamp* ()
+  "Produces and inserts a near-full ISO 8601 format timestamp."
+  (interactive)
+  (insert (format-time-string "%Y-%m-%dT%T")))
+
+(defun help/insert-datestamp ()
+  "Produces and inserts a partial ISO 8601 format timestamp."
+  (interactive)
+  (insert (format-time-string "%Y-%m-%d")))
+
+(defun help/indent-curly-block (&rest _ignored)
+  "Open a new brace or bracket expression, with relevant newlines and indent. URL: `https://github.com/Fuco1/smartparens/issues/80'"
+  (interactive)
+  (newline)
+  (indent-according-to-mode)
+  (forward-line -1)
+  (indent-according-to-mode))
+
+(defun beginning-of-line-dwim ()
+  "Toggles between moving point to the first non-whitespace character, and
+    the start of the line. Src: http://www.wilfred.me.uk/"
+  (interactive)
+  (let ((start-position (point)))
+    ;; see if going to the beginning of the line changes our position
+    (move-beginning-of-line nil)
+
+    (when (= (point) start-position)
+      ;; we're already at the beginning of the line, so go to the
+      ;; first non-whitespace character
+      (back-to-indentation))))
+
+(defun help/lazy-new-open-line ()
+  "Insert a new line without breaking the current line."
+  (interactive)
+  (beginning-of-line)
+  (forward-line 1)
+  (newline)
+  (forward-line -1))
+
+(defun help/smart-open-line ()
+  "Insert a new line, indent it, and move the cursor there.
+
+This behavior is different then the typical function bound to return
+which may be `open-line' or `newline-and-indent'. When you call with
+the cursor between ^ and $, the contents of the line to the right of
+it will be moved to the newly inserted line. This function will not
+do that. The current line is left alone, a new line is inserted, indented,
+and the cursor is moved there.
+
+Attribution: URL `http://emacsredux.com/blog/2013/03/26/smarter-open-line/'"
+  (interactive)
+  (move-end-of-line nil)
+  (newline-and-indent))
+
+(defun help/insert-ellipsis ()
+  "Insert an ellipsis into the current buffer."
+  (interactive)
+  (insert "…"))
+
+(defun help/insert-noticeable-snip-comment-line ()
+  "Insert a noticeable snip comment line (NSCL)."
+  (interactive)
+  (if (not (bolp))
+      (message "I may only insert a NSCL at the beginning of a line.")
+    (let ((ncl (make-string 70 ?✂)))
+      (newline)
+      (forward-line -1)
+      (insert ncl)
+      (comment-or-uncomment-region (line-beginning-position) (line-end-position)))))
+
+(progn
+
+  (defvar my-read-expression-map
+    (let ((map (make-sparse-keymap)))
+      (set-keymap-parent map read-expression-map)
+      (define-key map [(control ?g)] #'minibuffer-keyboard-quit)
+      (define-key map [up]   nil)
+      (define-key map [down] nil)
+      map))
+
+  (defun my-read--expression (prompt &optional initial-contents)
+    (let ((minibuffer-completing-symbol t))
+      (minibuffer-with-setup-hook
+          (lambda ()
+            (emacs-lisp-mode)
+            (use-local-map my-read-expression-map)
+            (setq font-lock-mode t)
+            (funcall font-lock-function 1))
+        (read-from-minibuffer prompt initial-contents
+                              my-read-expression-map nil
+                              'read-expression-history))))
+
+  (defun my-eval-expression (expression &optional arg)
+    "Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2014-07/msg00135.html'."
+    (interactive (list (read (my-read--expression ""))
+                       current-prefix-arg))
+    (if arg
+        (insert (pp-to-string (eval expression lexical-binding)))
+      (pp-display-expression (eval expression lexical-binding)
+                             "*Pp Eval Output*"))))
+
+(defun help/util-ielm ()
+  "HELP buffer setup for ielm.
+
+Creates enough space for one other permanent buffer beneath it."
+  (interactive)
+  (split-window-below -20)
+  (help/safb-other-window)
+  (ielm)
+  (set-window-dedicated-p (selected-window) t))
+
+(defun help/util-eshell ()
+  "HELP buffer setup for eshell.
+
+Depends upon `help/util-ielm' being run first."
+  (interactive)
+  (split-window-below -10)
+  (help/safb-other-window)
+  (eshell)
+  (set-window-dedicated-p (selected-window) t))
+
+(defvar help/util-state nil "Track whether the util buffers are displayed or not.")
+
+(defun help/util-state-toggle ()
+  "Toggle the util state."
+  (interactive)
+  (setq help/util-state (not help/util-state)))
+
+(defun help/util-start ()
+  "Perhaps utility buffers."
+  (interactive)
+  (help/util-ielm)
+  (help/util-eshell)
+  (help/util-state-toggle))
+
+(defun help/util-stop ()
+  "Remove personal utility buffers."
+  (interactive)
+  (if (get-buffer "*ielm*") (kill-buffer "*ielm*"))
+  (if (get-buffer "*eshell*") (kill-buffer "*eshell*"))
+  (help/util-state-toggle))
+
+(defun help/ielm-auto-complete ()
+  "Enables `auto-complete' support in \\[ielm].
+
+Attribution: URL `http://www.masteringemacs.org/articles/2010/11/29/evaluating-elisp-emacs/'"
+  (setq ac-sources '(ac-source-functions
+                     ac-source-variables
+                     ac-source-features
+                     ac-source-symbols
+                     ac-source-words-in-same-mode-buffers))
+  (add-to-list 'ac-modes #'inferior-emacs-lisp-mode)
+  (auto-complete-mode 1))
+
+(defun help/uuid ()
+  "Insert a UUID."
+  (interactive)
+  (insert (org-id-new)))
+
+(defun endless/sharp ()
+  "Insert #' unless in a string or comment.
+
+SRC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.html?source=rss'"
+  (interactive)
+  (call-interactively #'self-insert-command)
+  (let ((ppss (syntax-ppss)))
+    (unless (or (elt ppss 3)
+                (elt ppss 4))
+      (insert "'"))))
+
+(defun help/chs ()
+  "Insert opening \"cut here start\" snippet."
+  (interactive)
+  (insert "--8<---------------cut here---------------start------------->8---"))
+
+(defun help/che ()
+  "Insert closing \"cut here end\" snippet."
+  (interactive)
+  (insert "--8<---------------cut here---------------end--------------->8---"))
+
+(defmacro help/measure-time (&rest body)
+  "Measure the time it takes to evaluate BODY.
+
+Attribution Nikolaj Schumacher: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2008-06/msg00087.html'"
+  `(let ((time (current-time)))
+     ,@body
+     (message "%.06f" (float-time (time-since time)))))
+
+(defun help/create-non-existent-directory ()
+  "Attribution URL: `https://iqbalansari.github.io/blog/2014/12/07/automatically-create-parent-directories-on-visiting-a-new-file-in-emacs/'"
+  (let ((parent-directory (file-name-directory buffer-file-name)))
+    (when (and (not (file-exists-p parent-directory))
+               (y-or-n-p (format "Directory `%s' does not exist. Create it?" parent-directory)))
+      (make-directory parent-directory t))))
+
+(defun help/occur-dwim ()
+  "Call `occur' with a mostly sane default.
+
+Attribution Oleh Krehel (abo-abo): URL `http://oremacs.com/2015/01/26/occur-dwim/'"
+  (interactive)
+  (push (if (region-active-p)
+            (buffer-substring-no-properties
+             (region-beginning)
+             (region-end))
+          (let ((sym (thing-at-point 'symbol)))
+            (when (stringp sym)
+              (regexp-quote sym))))
+        regexp-history)
+  (call-interactively 'occur))
+
+(defun help/util-cycle ()
+  "Display or hide the utility buffers."
+  (interactive)
+  (if help/util-state
+      (help/util-stop)
+    (help/util-start)))
+
+(defun sacha/unfill-paragraph (&optional region)
+  "Takes a multi-line paragraph and makes it into a single line of text.
+
+ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfill-paragraph"
+  (interactive (progn
+                 (barf-if-buffer-read-only)
+                 (list t)))
+  (let ((fill-column (point-max)))
+    (fill-paragraph nil region)))
+(defun help/text-scale-increase ()
+  "Increase font size"
+  (interactive)
+  (help/on-gui
+   (setq help/font-size (+ help/font-size 1))
+   (help/update-font))
+  (help/not-on-gui
+   (message "Please resize the terminal emulator font.")))
+(defun help/text-scale-decrease ()
+  "Reduce font size."
+  (interactive)
+  (help/on-gui
+   (when (> help/font-size 1)
+     (setq help/font-size (- help/font-size 1))
+     (help/update-font)))
+  (help/not-on-gui
+   (message "Please resize the terminal emulator font.")))
+
+(defun help/org-weave-subtree-gfm (id file)
+  "Export the subtree with ID to FILE in gfm."
+  (interactive)
+  (help/save-all-file-buffers)
+  (save-excursion
+    (let ((hidx (org-find-property "ID" id)))
+      (when hidx
+        (goto-char hidx)
+        (org-export-to-file 'gfm file nil t nil)))))
+
+(defun help/org-weave-readme ()
+  (interactive)
+  (help/org-weave-subtree-gfm
+   "39A2F05A-BC60-4879-9B66-85E43297FC97"
+   "README.md"))
+
+(defun help/org-weave-style-guide ()
+  (interactive)
+  (help/org-weave-subtree-gfm
+   "03E0F0E3-DB81-4033-8F04-5D8BB5CBB2F0"
+   "STYLEGUIDE.md"))
+
+(defun help/weave-everything-everywhere ()
+  "Export this entire document in configured weavers."
+  (interactive)
+  (org-ascii-export-to-ascii)
+  (org-html-export-to-html)
+  (org-gfm-export-to-markdown)
+  (org-latex-export-to-pdf)
+  (help/org-weave-readme)
+  (help/org-weave-style-guide))
+```
+
 ## Buffer
 
     ID: F3C9BDE1-C0E0-4BDF-B121-3CE2F0D16464
@@ -1897,6 +2255,13 @@ then document.
 
 ```lisp
 (setq help/column-width 80)
+```
+
+Visualize the formfeed character.
+
+```lisp
+(use-package page-break-lines
+  :ensure t)
 ```
 
 ## Code Folding
@@ -2180,6 +2545,14 @@ directories.
 
 ```lisp
 (add-to-list 'find-file-not-found-functions #'help/create-non-existent-directory)
+```
+
+Be aware of files larger than 2MiB. Turn off Aggressive-Indent and other
+expensive features in those buffers. NXML also seems to have a difficult time
+with large files.
+
+```lisp
+(setq large-file-warning-threshold (* 1024 1024 2))
 ```
 
 ## File-system/directory management (Console)
@@ -2527,332 +2900,6 @@ Warn of poor grammar immediately interrupting flow with a visual indicator.
   (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java")))
 ```
 
-## Helper Functions
-
-    ID: B2257535-9891-48F1-B7CD-1B385F527C59
-
-```lisp
-(defun help/comment-or-uncomment ()
-  "Comment or uncomment the current line or selection."
-  (interactive)
-  (cond ((not mark-active) (comment-or-uncomment-region (line-beginning-position)
-                                                      (line-end-position)))
-        ((< (point) (mark)) (comment-or-uncomment-region (point) (mark)))
-        (t (comment-or-uncomment-region (mark) (point)))))
-
-(defun help/save-all-file-buffers ()
-  "Saves every buffer associated with a file."
-  (interactive)
-  (dolist (buf (buffer-list))
-    (with-current-buffer buf
-      (when (and (buffer-file-name) (buffer-modified-p))
-        (save-buffer)))))
-
-(defun describe-thing-in-popup ()
-  "Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html'."
-  (interactive)
-  (let* ((thing (symbol-at-point))
-         (help-xref-following t)
-         (description (with-temp-buffer
-                        (help-mode)
-                        (help-xref-interned thing)
-                        (buffer-string))))
-    (popup-tip description
-               :point (point)
-               :around t
-               :height 30
-               :scroll-bar t
-               :margin t)))
-
-(defun help/kill-other-buffers ()
-  "Kill all other buffers."
-  (interactive)
-  (mapc #'kill-buffer (delq (current-buffer) (buffer-list))))
-
-(defvar help/delete-trailing-whitespace-p t
-  "Should trailing whitespace be removed?")
-
-(defun help/delete-trailing-whitespace ()
-  "Delete trailing whitespace for everything but the current line.
-
-If `help/delete-trailing-whitespace-p' is non-nil, then delete the whitespace.
-This is useful for fringe cases where trailing whitespace is important."
-  (interactive)
-  (when help/delete-trailing-whitespace-p
-    (let ((first-part-start (point-min))
-          (first-part-end (point-at-bol))
-          (second-part-start (point-at-eol))
-          (second-part-end (point-max)))
-      (delete-trailing-whitespace first-part-start first-part-end)
-      (delete-trailing-whitespace second-part-start second-part-end))))
-
-(defun help/insert-timestamp ()
-  "Produces and inserts a full ISO 8601 format timestamp."
-  (interactive)
-  (insert (format-time-string "%Y-%m-%dT%T%z")))
-
-(defun help/insert-timestamp* ()
-  "Produces and inserts a near-full ISO 8601 format timestamp."
-  (interactive)
-  (insert (format-time-string "%Y-%m-%dT%T")))
-
-(defun help/insert-datestamp ()
-  "Produces and inserts a partial ISO 8601 format timestamp."
-  (interactive)
-  (insert (format-time-string "%Y-%m-%d")))
-
-(defun help/indent-curly-block (&rest _ignored)
-  "Open a new brace or bracket expression, with relevant newlines and indent. URL: `https://github.com/Fuco1/smartparens/issues/80'"
-  (interactive)
-  (newline)
-  (indent-according-to-mode)
-  (forward-line -1)
-  (indent-according-to-mode))
-
-(defun beginning-of-line-dwim ()
-  "Toggles between moving point to the first non-whitespace character, and
-    the start of the line. Src: http://www.wilfred.me.uk/"
-  (interactive)
-  (let ((start-position (point)))
-    ;; see if going to the beginning of the line changes our position
-    (move-beginning-of-line nil)
-
-    (when (= (point) start-position)
-      ;; we're already at the beginning of the line, so go to the
-      ;; first non-whitespace character
-      (back-to-indentation))))
-
-(defun help/lazy-new-open-line ()
-  "Insert a new line without breaking the current line."
-  (interactive)
-  (beginning-of-line)
-  (forward-line 1)
-  (newline)
-  (forward-line -1))
-
-(defun help/smart-open-line ()
-  "Insert a new line, indent it, and move the cursor there.
-
-This behavior is different then the typical function bound to return
-which may be `open-line' or `newline-and-indent'. When you call with
-the cursor between ^ and $, the contents of the line to the right of
-it will be moved to the newly inserted line. This function will not
-do that. The current line is left alone, a new line is inserted, indented,
-and the cursor is moved there.
-
-Attribution: URL `http://emacsredux.com/blog/2013/03/26/smarter-open-line/'"
-  (interactive)
-  (move-end-of-line nil)
-  (newline-and-indent))
-
-(defun help/insert-ellipsis ()
-  "Insert an ellipsis into the current buffer."
-  (interactive)
-  (insert "…"))
-
-(defun help/insert-noticeable-snip-comment-line ()
-  "Insert a noticeable snip comment line (NSCL)."
-  (interactive)
-  (if (not (bolp))
-      (message "I may only insert a NSCL at the beginning of a line.")
-    (let ((ncl (make-string 70 ?✂)))
-      (newline)
-      (forward-line -1)
-      (insert ncl)
-      (comment-or-uncomment-region (line-beginning-position) (line-end-position)))))
-
-(progn
-
-  (defvar my-read-expression-map
-    (let ((map (make-sparse-keymap)))
-      (set-keymap-parent map read-expression-map)
-      (define-key map [(control ?g)] #'minibuffer-keyboard-quit)
-      (define-key map [up]   nil)
-      (define-key map [down] nil)
-      map))
-
-  (defun my-read--expression (prompt &optional initial-contents)
-    (let ((minibuffer-completing-symbol t))
-      (minibuffer-with-setup-hook
-          (lambda ()
-            (emacs-lisp-mode)
-            (use-local-map my-read-expression-map)
-            (setq font-lock-mode t)
-            (funcall font-lock-function 1))
-        (read-from-minibuffer prompt initial-contents
-                              my-read-expression-map nil
-                              'read-expression-history))))
-
-  (defun my-eval-expression (expression &optional arg)
-    "Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2014-07/msg00135.html'."
-    (interactive (list (read (my-read--expression ""))
-                       current-prefix-arg))
-    (if arg
-        (insert (pp-to-string (eval expression lexical-binding)))
-      (pp-display-expression (eval expression lexical-binding)
-                             "*Pp Eval Output*"))))
-
-(defun help/util-ielm ()
-  "HELP buffer setup for ielm.
-
-Creates enough space for one other permanent buffer beneath it."
-  (interactive)
-  (split-window-below -20)
-  (help/safb-other-window)
-  (ielm)
-  (set-window-dedicated-p (selected-window) t))
-
-(defun help/util-eshell ()
-  "HELP buffer setup for eshell.
-
-Depends upon `help/util-ielm' being run first."
-  (interactive)
-  (split-window-below -10)
-  (help/safb-other-window)
-  (eshell)
-  (set-window-dedicated-p (selected-window) t))
-
-(defvar help/util-state nil "Track whether the util buffers are displayed or not.")
-
-(defun help/util-state-toggle ()
-  "Toggle the util state."
-  (interactive)
-  (setq help/util-state (not help/util-state)))
-
-(defun help/util-start ()
-  "Perhaps utility buffers."
-  (interactive)
-  (help/util-ielm)
-  (help/util-eshell)
-  (help/util-state-toggle))
-
-(defun help/util-stop ()
-  "Remove personal utility buffers."
-  (interactive)
-  (if (get-buffer "*ielm*") (kill-buffer "*ielm*"))
-  (if (get-buffer "*eshell*") (kill-buffer "*eshell*"))
-  (help/util-state-toggle))
-
-(defun help/ielm-auto-complete ()
-  "Enables `auto-complete' support in \\[ielm].
-
-Attribution: URL `http://www.masteringemacs.org/articles/2010/11/29/evaluating-elisp-emacs/'"
-  (setq ac-sources '(ac-source-functions
-                     ac-source-variables
-                     ac-source-features
-                     ac-source-symbols
-                     ac-source-words-in-same-mode-buffers))
-  (add-to-list 'ac-modes #'inferior-emacs-lisp-mode)
-  (auto-complete-mode 1))
-
-(defun help/uuid ()
-  "Insert a UUID."
-  (interactive)
-  (insert (org-id-new)))
-
-(defun endless/sharp ()
-  "Insert #' unless in a string or comment.
-
-SRC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.html?source=rss'"
-  (interactive)
-  (call-interactively #'self-insert-command)
-  (let ((ppss (syntax-ppss)))
-    (unless (or (elt ppss 3)
-                (elt ppss 4))
-      (insert "'"))))
-
-(defun help/chs ()
-  "Insert opening \"cut here start\" snippet."
-  (interactive)
-  (insert "--8<---------------cut here---------------start------------->8---"))
-
-(defun help/che ()
-  "Insert closing \"cut here end\" snippet."
-  (interactive)
-  (insert "--8<---------------cut here---------------end--------------->8---"))
-
-(defmacro help/measure-time (&rest body)
-  "Measure the time it takes to evaluate BODY.
-
-Attribution Nikolaj Schumacher: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2008-06/msg00087.html'"
-  `(let ((time (current-time)))
-     ,@body
-     (message "%.06f" (float-time (time-since time)))))
-
-(defun help/create-non-existent-directory ()
-  "Attribution URL: `https://iqbalansari.github.io/blog/2014/12/07/automatically-create-parent-directories-on-visiting-a-new-file-in-emacs/'"
-  (let ((parent-directory (file-name-directory buffer-file-name)))
-    (when (and (not (file-exists-p parent-directory))
-               (y-or-n-p (format "Directory `%s' does not exist. Create it?" parent-directory)))
-      (make-directory parent-directory t))))
-
-(defun help/occur-dwim ()
-  "Call `occur' with a mostly sane default.
-
-Attribution Oleh Krehel (abo-abo): URL `http://oremacs.com/2015/01/26/occur-dwim/'"
-  (interactive)
-  (push (if (region-active-p)
-            (buffer-substring-no-properties
-             (region-beginning)
-             (region-end))
-          (let ((sym (thing-at-point 'symbol)))
-            (when (stringp sym)
-              (regexp-quote sym))))
-        regexp-history)
-  (call-interactively 'occur))
-
-(defun help/util-cycle ()
-  "Display or hide the utility buffers."
-  (interactive)
-  (if help/util-state
-      (help/util-stop)
-    (help/util-start)))
-
-(defun sacha/unfill-paragraph (&optional region)
-  "Takes a multi-line paragraph and makes it into a single line of text.
-
-ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfill-paragraph"
-  (interactive (progn
-                 (barf-if-buffer-read-only)
-                 (list t)))
-  (let ((fill-column (point-max)))
-    (fill-paragraph nil region)))
-(defun help/text-scale-increase ()
-  "Increase font size"
-  (interactive)
-  (help/on-gui
-   (setq help/font-size (+ help/font-size 1))
-   (help/update-font))
-  (help/not-on-gui
-   (message "Please resize the terminal emulator font.")))
-(defun help/text-scale-decrease ()
-  "Reduce font size."
-  (interactive)
-  (help/on-gui
-   (when (> help/font-size 1)
-     (setq help/font-size (- help/font-size 1))
-     (help/update-font)))
-  (help/not-on-gui
-   (message "Please resize the terminal emulator font.")))
-
-(defun help/org-xprt-rdme ()
-  (interactive)
-  (help/save-all-file-buffers)
-  (save-excursion
-    (let ((hidx (org-find-property "ID" "39A2F05A-BC60-4879-9B66-85E43297FC97")))
-      (when hidx
-        (goto-char hidx)
-        (org-export-to-file 'gfm "README.md" nil t nil)))))
-
-(defun help/xprt-all ()
-  "Export this entire document in configured weavers."
-  (interactive)
-  (org-ascii-export-to-ascii)
-  (org-html-export-to-html)
-  (org-gfm-export-to-markdown)
-  (org-latex-export-to-pdf))
-```
-
 ## Intellisense (Auto Completion)
 
     ID: A7225C28-B8AE-4960-9E2A-64E6E8B58400
@@ -2867,7 +2914,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (setq ac-quick-help-prefer-pos-tip nil)
   (ac-config-default)
   (setq ac-auto-start nil)
-  (help/not-on-gui (ac-set-trigger-key "\t"))
+  (help/not-on-gui (ac-set-trigger-key "TAB"))
   (help/on-gui (ac-set-trigger-key "<tab>"))
   :diminish auto-complete-mode)
 (use-package auto-complete-chunk
@@ -3076,23 +3123,34 @@ Ispell is simple and powerful.
 
 Never ispell the following objects.
 
+Block regex helper.
+
+```lisp
+(defun help/block-regex (special)
+  "Make an ispell skip-region alist for a SPECIAL block."
+  (interactive)
+  `(,(concat help/org-special-pre "BEGIN_" special)
+    .
+    ,(concat help/org-special-pre "END_" special)))
+```
+
 Source-Blocks.
 
 ```lisp
-(add-to-list 'ispell-skip-region-alist '("^\s*#[+]BEGIN_SRC" . "^\s*#[+]END_SRC"))
+(add-to-list 'ispell-skip-region-alist (help/block-regex "SRC"))
 ```
 
 Example-Blocks. This system often uses Source-Blocks to edit content and
 Example-Blocks to make it easily renderable when it is not for running.
 
 ```lisp
-(add-to-list 'ispell-skip-region-alist '("^\s*#[+]BEGIN_EXAMPLE" . "^\s*#[+]END_EXAMPLE"))
+(add-to-list 'ispell-skip-region-alist (help/block-regex "EXAMPLE"))
 ```
 
 Properties.
 
 ```lisp
-(add-to-list 'ispell-skip-region-alist '("\:PROPERTIES\:$" . "\:END\:$"))
+(add-to-list 'ispell-skip-region-alist '("^\s*:PROPERTIES\:$" . "^\s*:END\:$"))
 ```
 
 Footnotes.
@@ -3107,60 +3165,51 @@ Footnotes with URLs that contain line-breaks.
 (add-to-list 'ispell-skip-region-alist '("^http" . "\\]"))
 ```
 
-Verbatim
-
-```lisp
-(add-to-list 'ispell-skip-region-alist '("=" . ".+="))
-```
-
 Bold text list items.
 
 ```lisp
 (add-to-list 'ispell-skip-region-alist '("- \\*.+" . ".*\\*: "))
 ```
 
-Export properties.
+Check `SPECIAL LINE` definitions, ignoring their type.
 
 ```lisp
-(defun help/ispell-org-header-lines-regexp (h)
-  "Help ispell ignore org header lines."
-  (interactive)
-  (cons (concat "^\s*#[+]" h ":") ".$"))
-
-(defun help/ispell-a2isra (block-def)
-  "Add to the ispell skip region alist the BLOCK-DEF."
-  (interactive)
-  (add-to-list 'ispell-skip-region-alist block-def))
-
 (let ()
   (--each
-      '("ATTR_LATEX"
-        "AUTHOR"
-        "CREATOR"
-        "DATE"
-        "DESCRIPTION"
-        "EMAIL"
-        "EXCLUDE_TAGS"
-        "HTML_CONTAINER"
-        "HTML_DOCTYPE"
-        "HTML_HEAD"
-        "HTML_HEAD_EXTRA"
-        "HTML_LINK_HOME"
-        "HTML_LINK_UP"
-        "HTML_MATHJAX"
-        "INFOJS_OPT"
-        "KEYWORDS"
-        "LANGUAGE"
-        "LATEX_CLASS"
-        "LATEX_CLASS_OPTIONS"
-        "LATEX_HEADER"
-        "LATEX_HEADER_EXTRA"
-        "NAME"
-        "OPTIONS"
-        "SELECT_TAGS"
-        "STARTUP"
-        "TITLE")
-    (help/ispell-a2isra (help/ispell-org-header-lines-regexp it))))
+      '(("ATTR_LATEX" nil)
+        ("AUTHOR" nil)
+        ("BLOG" nil)
+        ("CREATOR" nil)
+        ("DATE" nil)
+        ("DESCRIPTION" nil)
+        ("EMAIL" nil)
+        ("EXCLUDE_TAGS" nil)
+        ("HTML_CONTAINER" nil)
+        ("HTML_DOCTYPE" nil)
+        ("HTML_HEAD" nil)
+        ("HTML_HEAD_EXTRA" nil)
+        ("HTML_LINK_HOME" nil)
+        ("HTML_LINK_UP" nil)
+        ("HTML_MATHJAX" nil)
+        ("INFOJS_OPT" nil)
+        ("KEYWORDS" nil)
+        ("LANGUAGE" nil)
+        ("LATEX_CLASS" nil)
+        ("LATEX_CLASS_OPTIONS" nil)
+        ("LATEX_HEADER" nil)
+        ("LATEX_HEADER_EXTRA" nil)
+        ("NAME" nil)
+        ("OPTIONS" t)
+        ("POSTID" nil)
+        ("SELECT_TAGS" nil)
+        ("STARTUP" nil)
+        ("TITLE" nil))
+    (add-to-list
+     'ispell-skip-region-alist
+     (let ((special (concat "#[+]" (car it) ":")))
+       (if (cadr it)
+           (cons special "$")
+         (list special))))))
 ```
 
 ## Sudo
@@ -3231,8 +3280,9 @@ Most programing modes indent to 2 spaces. TABs should be the same width.
 
     ID: F5E2718B-F54F-41C5-9CED-6E470CAC238D
 
-Use Magit for Git. The commit log editor uses With-Editor and Server modes.
-They are not not diminshed because they are infrequently used.
+Use VC for single files and Magit for multiple files.
+
+The commit log editor uses With-Editor and Server modes. They are not diminished because they are infrequently used.
 
 ```lisp
 (use-package magit
@@ -3415,7 +3465,7 @@ This configuration had been working fine for a long time. The intent was for it
 to be crystal clear that the prompt line in comint buffers would be read only.
 This turned out to be a mistake; though I am not sure why, when, or how it
 became a mistake. Nonetheless, this should be left alone. The way the issue here
-manifested was that all ℝ buffers opened by `ess` were 100% read only which
+manifested was that all R buffers opened by `ess` were 100% read only which
 obviously is a **big issue** if you actually want to use! ROFL
 
 ```lisp
@@ -3674,7 +3724,8 @@ With that in mind this system:
   (fci-mode)
   (rainbow-mode)
   (help/try-to-add-imenu)
-  (writegood-mode))
+  (writegood-mode)
+  (turn-on-page-break-lines-mode))
 
 (add-hook 'text-mode-hook #'help/text-prog*-setup)
 ```
@@ -3699,7 +3750,8 @@ With that in mind this system:
             (setq help/hack-lisp-modes
                   '(emacs-lisp-mode-hook
                     ielm-mode-hook
-                    lisp-interaction-mode))
+                    lisp-interaction-mode-hook
+                    scheme-mode-hook))
             (setq help/hack-modes (append help/hack-modes help/hack-lisp-modes))
             ```
         -   IELM mode hook.
@@ -4049,7 +4101,7 @@ Never indent the contents of a source-block automatically.
 
 When edit mode is exited, the option exists to automatically remove empty
 opening and closed lines for the source block. Never do this. The thing is that
-I forgot why. When I was working on a recent analysis with ℝ there was a
+I forgot why. When I was working on a recent analysis with R there was a
 space appearing in the opening and closing line of the source block that didn&rsquo;t
 appear in the source editing buffer. That surprised me. I am sure that I&rsquo;ve
 forgotten why this is the case. I don&rsquo;t like it because you add a bunch of
@@ -4160,12 +4212,6 @@ Smartparens provides that functionality for programming modes.
 (wrap-region-add-wrapper "+" "+" nil 'org-mode)
 ```
 
-Generate the README for GitHub.
-
-```lisp
-(add-hook 'org-babel-pre-tangle-hook #'help/org-xprt-rdme)
-```
-
 Minimize Macro text.
 
 ```lisp
@@ -4233,7 +4279,7 @@ _q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ g2nms-b _t_ g2s-b/hd      _u_ goto
 _a_ inshdrgs _s_ oblobigst            _h_ dksieb
 _c_ cksrcblk _b_ swtch2sessn _n_ n2sbtre _m_ xpndsrcblk"
   ("1" org-babel-sha1-hash)
-  ("2" help/xprt-all)
+  ("2" help/weave-everything-everywhere)
   ("4" org-display-inline-images)
   ("5" org-remove-inline-images)
   ("8" org-babel-detangle)
@@ -4289,32 +4335,7 @@ Easily enter guillemots.
   :ensure t)
 ```
 
--   For a minimalist release history read the [news file](http://ess.r-project.org/Manual/news.html).
--   For a brief overview and release history read the [readme](http://ess.r-project.org/Manual/readme.html).
--   For a comprehensive overview read the [manual](http://ess.r-project.org/Manual/ess.html).
-
--   Multiple `ESS` processes may run simultaneously, and may be selected by a
-    specific language via their buffer name that has a number appended, or may be
-    accessed via a menu using `ess-request-a-process`.
-
-Various user interaction stuff:
-
--   Return sends the input from wherever you hit return, nice.
--   `M-{` and `M-}` cycle through commands you ran
--   `M-h` select a whole &ldquo;paragraph&rdquo;, a block in their terms
--   `C-x [` moves through the previous ESS sessions, `C-x ]` forward.
--   `C-c C-p` and `C-c C-n` cycle through previous commands.
-    -   How is this different than the other one?
--   `C-c RET` copies an old command to the prompt without running it
-    -   Great idea
--   Keep your session transcript pruned
-    -   `ess-transcript-clean-region` removes non-commands from a transcript for you
--   Previous command look-up can be done by completion via `comint-*-matching`.
-    -   `M-p` and `M-n` seem to work just fine though.
--   Previous command execution, by name, offset, or just the last one, are by `!`
-    -   This feature is actually quite rich and a real regexen style system.
-
-Always show eldoc for things.
+Display object documentation.
 
 ```lisp
 (setq ess-eldoc-show-on-symbol t)
@@ -4358,7 +4379,7 @@ rather than to a new dedicated buffer for them.
 (setq ess-execute-in-process-buffer t)
 ```
 
-When you cycle between a the ℝ buffer and the script, you get to the process
+When you cycle between a the REPL buffer and the script, you get to the process
 buffer, you will go to the end of the buffer. This setting is specifically to
 handle a buffer that is scrolling when you want to see the last result and will
 scroll back after the fact to see the history.
@@ -4396,21 +4417,13 @@ but Vitalie Spinu mentioned them as being useful:
 -   `comint-previous-matching-input-from-input`
 -   `comint-history-isearch-backward-regexp`
 
-Personal customizations for this mode. For some currently unknown reason,
-`smartparens` only runs when you call `smartparens-strict-mode` and not
-`turn-on-smartparens-strict-mode` like it does everywhere else.
-
 For a while I used `ess-eval-buffer-and-go`, but now I know that it is insanely
 faster to use `ess-eval-buffer` instead. Previously I&rsquo;ve read people saying that,
 and it is true.
 
-When I started to standardize arrows across modes, I recalled the `ess`
-documentation and was also reminded <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
-here how easy it is to customize it.
-
 **Philosophy**
 
-The current `ESS` maintainers philosophies about how to maintain an ℝ code-base
+The current `ESS` maintainers philosophies about how to maintain an R code-base
 make sense to me and are virtually the same as my own. Quite simply, the rule is
 that the code artifacts are the single source of system definition. Consequently,
 the system should be configured in this manner:
@@ -4423,7 +4436,7 @@ need to be kept.
 (setq ess-keep-dump-files +1)
 ```
 
-`ESS` allows us to quite easily modify live 𝕊 objects and functions. It provides
+`ESS` allows us to quite easily modify live R objects and functions. It provides
 this functionality via `ess-dump-object-into-edit-buffer`. These changes are
 considered to be experimental, and not part of the master record according to
 our philosophy. As such, we don&rsquo;t care to know that these new versions ever
@@ -4446,27 +4459,9 @@ in sync. Yes, it is really that important.
 (setq ess-mode-silently-save +1)
 ```
 
-Indent curly brackets correctly:
-
-`smartparens` is serving me well. In this mode it is for curly, round, and square brackets. `ESS` handles indenting mostly right, too. One thing was unpleasant, though. When you define a new function, hitting return brings the curely bracket down to the newline but doesn&rsquo;t give it an empty line and indent the cursor one indentation over so that you may begin implementing the function. That is a big hassle; 4 unnecessary keystroke, it is really distracting and takes you out of the flow. It is such a little thing yet it is so powerfully distracting. It is like a mosquito in your tent! Searching for a solution revealed that I am not alone here.
-
-This post <sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> handles brackets,
-indentation quite well <sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> but doesn&rsquo;t provide the behavior that I want.
-This post <sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup> captured exactly what I was facing, yet didn&rsquo;t end with a
-solution which was kind of shocking. Searching some more I ended up here <sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup>, and this seems like the
-ideal solution by the author of smartparens himself. This is probably a common thing
- as I found another post
-with exactly my situation referencing that aforementioned solution, too <sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup>. This is a nice generalizable
-approach that should serve me well for just about everything in this solution-area. Here <sup><a id="fnr.7" class="footref" href="#fn.7">7</a></sup> is a post
-showing a more advanced usage that handles context which is nice to know is an option.
-
-```lisp
-(sp-local-pair #'ess-mode "{" nil :post-handlers '((help/indent-curly-block "RET")))
-```
-
 `ESS` executes code in another process. That is no secret. When displaying output
 from that code running in another process though, it can look like Emacs is
-locking up. That is not the case <sup><a id="fnr.8" class="footref" href="#fn.8">8</a></sup>.
+locking up. That is not the case <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>.
 What is happening that Emacs is waiting for the output. Configure this mode to
 continue to accept user input, which is obviously critical, but don&rsquo;t wait for
 the process to provide its output. Instead, all output is printed after the last
@@ -4492,158 +4487,32 @@ and see how it goes.
 
     ID: 1183D35B-77FC-4CFD-9BAA-4F7656AD8943
 
-ℝ first notes:
-
--   ℝ will start ℝ via `Emacs`
--   `ESS` works transparently on remote machines using `TRAMP` to manage a remote
-    ℝ instance. An example is provided for Amazon. Means exist for supporting remote
-    graphical displays or redirecting to a file. Excellent support seems to exist
-    to quite flexibly support unexpected things like starting an `ESS` supported
-    program in a plain old shell and being able to convert it to an `ESS` supported
-    buffer.
-
-In it:
-
--   𝕊 refers to any language in the family.
-    -   ℝ is what I&rsquo;m interested in.
--   First 2.5 pages do some nice expectation-setting.
--   Generally seems like a highly rich development environment with support for
-    editing, debugging, and support with everything that you would expect from
-    the best of Emacs.
--   Manual covers most requested variables for configuring, but the customize
-    facility covers more, and mentions that either way you should avoid doing so
-    until you have used `ESS` for a while.
-
-Various session interaction stuff
-
--   Show objects in the work-space: `C-c C-x`
--   Search for what libraries are available to the work-space: `C-c C-s`
--   Load file with source: `C-c C-l`
--   Visit errors: =C-c &rsquo;= and =C-x &rsquo;=
--   Show help on an object: `C-c C-v`
--   Quit: `C-c C-q`
--   Abort: `C-c C-c`
--   Switch between the console and the most recent file buffer: `C-c C-z`
-
-Sending code to the ESS process
-
--   `ess-eval-region-or-line-and-step`: Eval the region, or the line, move to next
-    line
--   `C-M-x`: Eval the current region, function, or paragraph
--   `C-c C-c`: Do that and then go to the next line
--   `C-c C-j`: Eval the current line
--   `C-c M-j`: Eval line and jump to the console
--   `C-c C-f`: Eval the currently selected function
--   `C-c M-f`: Eval the currently selected function and jump to the console
--   `C-c C-r`: Eval the region
--   `C-c M-r`: Eval the region and jump to the console
--   `C-c C-b`: Eval the buffer
--   `C-c M-b`: Eval the buffer and jump to the console
--   You can do all this stuff from transcript files, too.
-    -   My thought is that I never, ever will and if I do need to, I&rsquo;m looking up the
-        commands again as I don&rsquo;t want to make a habit of doing that kind of
-        thing (running old transcripts).
-
-Editing objects and functions:
-
--   `C-c C-e C-d`: Edit the current object
--   `C-c C-l`: Load source file into the ESS process
--   `TAB` Indents/re-formats or completes code.
--   `M-;`: Correctly indents the current comment
-
-Help mode inside of ESS:
-
--   `C-c C-v`: `ess-display-help-on-object`: Get help on anything
--   `?`: Show commands available in help mode
--   `h`: Show help for a different object. Currently focused object defaults.
--   `n` and `p`: Cycle through sections
--   `l`: Eval the current line in the console; usually sample code.
--   `r`: Eval current region, too
--   `q`: Quit out of that buffer
--   `k`: Kill that buffer
--   `x`: Kill that buffer and return to ESS
--   `i`: Get info on a package
--   `v`: Show vignettes
--   `w`: Show current help page in browser
-
-Completion:
-
--   `TAB`: Complete anything
--   `M-?`: Show completions available
--   `ess-resynch`: Refreshes the completion cache
-
-**ess-tracebug** start
+Enable a debugger.
 
 ```lisp
 (setq ess-use-tracebug t)
 ```
 
-For all `ess-tracebug` stuff, the map prefix is `C-c C-t`
-
-<span class="timestamp-wrapper"><span class="timestamp">&lt;2014-11-11 Tue&gt;</span></span>
-The documentation for `ess-tracebug-help` provides all of this documentation that
-I copied from the website into here. Someday I should clean this up!
-
-Breakpoints `ess-dev-map`:
-
--   **b `ess-bp-set`:** Set BP (repeat to cycle BP type)
--   **B `ess-bp-set-conditional`:** Set conditional BP
--   **k `ess-bp-kill`:** Kill BP
--   **K `ess-bp-kill-all`:** Kill all BPs
--   **o `ess-bp-toggle-state`:** Toggle BP state
--   **l `ess-bp-set-logger`:** Set logger BP
--   **n `ess-bp-next`:** Goto next BP
--   **p `ess-bp-previous`:** Goto previous BP
-
-Note: `C-` prefixed equivalents are also defined
-
-Debugging `ess-dev-map`:
-
--   **\` `ess-show-traceback` (also on C-c ):** Show traceback
--   **~ `ess-show-call-stack` (also on C-c ~):** Show callstack
--   **e `ess-debug-toggle-error-action`:** Toggle error action (repeat to cycle)
--   **d `ess-debug-flag-for-debugging`:** Flag for debugging
--   **u `ess-debug-unflag-for-debugging`:** Unflag for debugging
--   **w `ess-watch`:** Watch window
-
-Note: `C-` prefixed equivalents are also defined)
-
-Interactive Debugging `ess-debug-minor-mode-map`:
-
--   **M-C `ess-debug-command-continue`:** Continue
--   **M-C-C `ess-debug-command-continue-multi`:** Continue multi
--   **M-N `ess-debug-command-next`:** Next step
--   **M-C-N `ess-debug-command-next-multi`:** Next step multi
--   **M-U `ess-debug-command-up`:** Up frame
--   **M-Q `ess-debug-command-quit`:** Quit debugging
-
-Navigation to errors (general Emacs functionality):
-
--   **`` C-x ` ``, =M-g n:** `next-error`
--   **`M-g p`:** `previous-error`
-
-**ess-tracebug** stop
-
-Be sure to specify this per-project.
+Configure debugger search path per-project.
 
 ```lisp
 (setq ess-tracebug-search-path '())
 ```
 
-Make error navigation simpler.
+Easily nevigate errors.
 
 ```lisp
 (define-key compilation-minor-mode-map [(?n)] #'next-error-no-select)
 (define-key compilation-minor-mode-map [(?p)] #'previous-error-no-select)
 ```
 
-The font size for watched variables..
+Diminish watched variable font-size.
 
 ```lisp
 (setq ess-watch-scale-amount -1)
 ```
 
-When `ess` starts, or when ℝ starts, it takes the current directory as its
+When `ess` starts, or when R starts, it takes the current directory as its
 working directory. This is totally fine; so don&rsquo;t ask what the working directory
 should be.
 
@@ -4703,42 +4572,6 @@ Documentation:
 
 `ess-developer` helps you to easily work within specific name-spaces.
 
-Rutils: key-bindings to aid real usage
-
--   `C-c C-. l`: List all packages in all available libraries.
--   `C-c C-. r`: List available packages from repositories listed by `getOptions(‘‘repos’’)`
-
-in the current R session.
-
--   `C-c C-. u`: Update packages in a particular library lib and repository repos.
--   `C-c C-. a`: Search for a string using apropos.
--   `C-c C-. m`: Remove all R objects.
--   `C-c C-. o`: Manipulate R objects; wrapper for `ess-rdired`.
--   `C-c C-. w`: Load a workspace file into R.
--   `C-c C-. s`: Save a work-space file.
--   `C-c C-. d`: Change the working directory for the current R session.
--   `C-c C-. H`: Use `browse-url` to navigate R HTML documentation.
-
-`ess-mode-silently-save` is worth a million bucks; usually I have to hand code
-this.
-
-As of <span class="timestamp-wrapper"><span class="timestamp">&lt;2014-01-31 Fri&gt;</span></span>, you need to manually load ESS when you pull it from
-MELPA <sup><a id="fnr.9" class="footref" href="#fn.9">9</a></sup>. That is totally fine with me, that is really the best way to load stuff.
-Out of curiosity, I read more about it here <sup><a id="fnr.10" class="footref" href="#fn.10">10</a></sup>, but that occurred before
-this previous post made by the maintainers. Even the source code in
-`ess-autoloads.el` has a license from 2012, which is before the aforementioned
-post. As such, this configuration step seems correct and necessary for now.
-Additionally, this how the user manual expects a typical manual setup to be
-configured.
-
-Looked a tiny bit at how R hackers are formatting their code <sup><a id="fnr.11" class="footref" href="#fn.11">11</a></sup> <sup>, </sup><sup><a id="fnr.12" class="footref" href="#fn.12">12</a></sup>.
-The simple (dumb) part of me suspects that C++ formatting is generally just fine <sup><a id="fnr.13" class="footref" href="#fn.13">13</a></sup>.
-
-There is strangely nice discussion about where temp files may be stored;
-specifically for cases where you edit identically-named objects and want to keep
-them in the same directory but per-project. That is not the need now, and it is
-nice to know that it is an option.
-
 Store history files and dump files in a single known location. If that location
 doesn&rsquo;t exist, then make it.
 
@@ -4756,7 +4589,7 @@ doesn&rsquo;t exist, then make it.
 (setq ess-source-directory help/r-dir)
 ```
 
-Since I&rsquo;m using ℝ for everything, configure *everything* to be using ℝ.
+Since I&rsquo;m using R for everything, configure *everything* to be using R.
 
 ```lisp
 (setq inferior-ess-program "R")
@@ -4771,13 +4604,13 @@ Handle rdoc and rmd files, though I have never used them&#x2026; yet.
 (add-to-list 'auto-mode-alist '("\\.Rmd$" . r-mode))
 ```
 
-Make it really easy to search the ℝ archives for anything.
+Make it really easy to search the R archives for anything.
 
 ```lisp
 (local-set-key (kbd "C-c C-. S") #'ess-rutils-rsitesearch)
 ```
 
-Make it really easy to do common stuff for ℝ with good keybindings.
+Make it really easy to do common stuff for R with good keybindings.
 
 ```lisp
 (use-package ess-rutils
@@ -4803,14 +4636,7 @@ Save two spaces showing function information in the mini-buffer.
 (setq ess-R-argument-suffix "=")
 ```
 
-This <sup><a id="fnr.14" class="footref" href="#fn.14">14</a></sup>
-post shares a nice setup for the assignment key; primarily if
-you use underscores in your variable names, which I do on occasions. After
-coding like this for just 10 short minutes it drove me nuts and that is totally
-counter intuitive to me; I never would have expected that having to type two
-characters to do an assignment would give me nuts. Anyway, the default behavior
-is just fine; hit underscore twice gives you an underscore, and one gives you an
-assignment!
+Don&rsquo;t use the default assignment binding and allow underscores in names.
 
 ```lisp
 (setq ess-S-assign-key (kbd "C-,"))
@@ -4818,13 +4644,14 @@ assignment!
 (ess-toggle-underscore nil)
 ```
 
-Don&rsquo;t save the workspace when you quit ℝ and don&rsquo;t restore **ANYTHING** when you
+Don&rsquo;t save the workspace when you quit R and don&rsquo;t restore **ANYTHING** when you
 start it, either. This adheres to the philosopy that the system is file based.
-Period.
 
 ```lisp
 (setq inferior-R-args "--no-save --no-restore")
 ```
+
+R mode hook.
 
 ```lisp
 (defun help/R-mode-hook-fn ()
@@ -4878,6 +4705,57 @@ Period.
 
 (add-hook 'ess-rdired-mode-hook #'help/ess-rdired-mode-hook-fn)
 ```
+
+## Scheme (LISP)
+
+    noweb-ref: Hacking-Applied-Mathematics-LISP-Scheme
+
+    ID: D68EC042-5CBA-4547-B28A-CF878FB080C1
+
+Handle all file extensions:
+
+-   Traditional.
+
+    ```lisp
+    (add-to-list 'auto-mode-alist '("\\.scm\\'" . scheme-mode))
+    (add-to-list 'auto-mode-alist '("\\.ss\\'" . scheme-mode))
+    ```
+-   Racket.
+
+    ```lisp
+    (add-to-list 'auto-mode-alist '("\\.rkt\\'" . scheme-mode))
+    ```
+-   R6RS.
+
+    ```lisp
+    (add-to-list 'auto-mode-alist '("\\.sls\\'" . scheme-mode))
+    (add-to-list 'auto-mode-alist '("\\.sps\\'" . scheme-mode))
+    ```
+
+Use Geiser for Racket and Guile
+
+```lisp
+(use-package geiser
+  :ensure t)
+```
+
+Enable Auto-Complete via Geiser.
+
+```lisp
+(use-package ac-geiser
+  :ensure t
+  :config
+  (add-hook 'geiser-mode-hook 'ac-geiser-setup)
+  (add-hook 'geiser-repl-mode-hook 'ac-geiser-setup)
+  (eval-after-load "auto-complete"
+    '(add-to-list 'ac-modes 'geiser-repl-mode))
+  (setq geiser-active-implementations '(racket guile))
+  (setq geiser-repl-history-no-dups-p t))
+```
+
+## Common Lisp (LISP)
+
+    ID: CC2615EA-EDE5-45AA-B874-AE5E673C01ED
 
 ## YASnippet
 
@@ -5023,7 +4901,10 @@ header documentation.
 
 The [babel](https://www.ctan.org/pkg/babel?lang%3Den) packages is mentioned in the Org documentation. The package
 documentation explains that it should be used with LaTeX, but not XeTeX. Some
-time ago I decided to stick with LaTeX.
+time ago I decided to stick with LaTeX. This decision needs documentation. This
+system leans towards LuaTeX because of its Unicode support and sticks with
+PDFLaTeX because of its broad acceptance. Those two goals are at odds with each
+other.
 
 Load the KOMA exporter.
 
@@ -5154,9 +5035,54 @@ Program GFM.
   (setq markdown-coding-system "utf-8"))
 ```
 
-## WordPress
+## Blog (WordPress)
+
+    noweb-ref: Hacking-Publishing-Wordpress
 
     ID: F5E33EB2-2E26-435C-85F6-26CB7CE7FC56
+
+> An elisp implementation of clientside XML-RPC
+
+```lisp
+(use-package xml-rpc
+  :ensure t)
+```
+
+> Weblog maintenance via XML-RPC APIs
+
+```lisp
+(use-package metaweblog
+  :ensure t)
+```
+
+> Blog from Org mode to wordpress
+
+```lisp
+(use-package org2blog
+  :ensure t)
+```
+
+Org2Blog depends on Org-Mode. This system loads Org-Mode from Git. Enter the
+`ELPA` cache directory and delete it.
+
+This system works with WisdomAndWonder. It keeps its posts separate giving focus
+to each Web.
+
+```lisp
+(setq org2blog/wp-track-posts nil)
+```
+
+Configure Org2Blog.
+
+```lisp
+(setq org2blog/wp-blog-alist
+      '(("wisdomandwonder"
+         :url "http://www.wisdomandwonder.com/wordpress/xmlrpc.php"
+         :username "admin"
+         :default-categories ("Article" "Link")
+         :confirm t
+         :show 'show)))
+```
 
 ## HTML
 

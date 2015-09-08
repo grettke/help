@@ -17,10 +17,10 @@ Grant Rettke
 
   *Setup*
 
-  1) [Pull Org-Mode] to `~/src/'.
+  1) [Clone Org-Mode] to `~/src/'.
      1) Without `Make': [Generating autoloads and Compiling Org without
         make]
-  2) [Pull Use-Package] to `~/src/'.
+  2) [Clone Use-Package] to `~/src/'.
   3) Create a folder for support libraries exporting it's location in a
      variable named `EELIB'.
      1) Install [DITAA] renaming the JAR to `ditaa.jar'.
@@ -37,12 +37,12 @@ Grant Rettke
        - `ln -s ~/src/help/.emacs.el ~/.emacs.el'
 
 
-  [Pull Org-Mode] http://orgmode.org/
+  [Clone Org-Mode] http://orgmode.org/
 
   [Generating autoloads and Compiling Org without make]
   http://orgmode.org/worg/org-hacks.html
 
-  [Pull Use-Package] https://github.com/jwiegley/use-package
+  [Clone Use-Package] https://github.com/jwiegley/use-package
 
   [DITAA] http://ditaa.sourceforge.net/
 
@@ -86,6 +86,7 @@ Grant Rettke
          system.
   - Encoding
     - Prefer Unicode characters over ASCII equivalents.
+      - Note eventual switch form PDFLaTeX to LuaTeX.
     - Consider Org-Mode automatic handling of ASCII to UTF-8 symbols.
   - File/Package Loading
     - Load every one with `use-package' whether it came with EMACS OOTB
@@ -217,6 +218,7 @@ Grant Rettke
     - Simple and detailed.
     - Pleasant conversation style.
     - Audience is Sysop; the author included.
+    - Capture decisions that allow this system to move forward.
   - Weaving.
     - Strive to keep the weaving in synchronization with the tangling.
   - Word Choice.
@@ -301,8 +303,8 @@ Grant Rettke
   tangle: "./.emacs.el"
   ID: 016FA25F-E70E-4BED-BA01-AEB808428791
 
-  Configure EMACS to do everything provided by this document. HELP is a
-  monolithic system.
+  Configure EMACS to for everything defined within this monolithic
+  system.
 
   Sysop is likely to use this constantly.
 
@@ -325,10 +327,12 @@ Grant Rettke
   | <<Hacking-Applied-Mathematics-ESS>>
   | <<Hacking-Applied-Mathematics-ESS-SAS>>
   | <<Hacking-Applied-Mathematics-ESS-R>>
+  | <<Hacking-Applied-Mathematics-LISP-Scheme>>
   | <<Hacking-Applied-Mathematics-YASnippet>>
   | <<Hacking-Publishing-TeX>>
   | <<Hacking-Publishing-KOMA>>
   | <<Hacking-Publishing-Markdown>>
+  | <<Hacking-Publishing-Wordpress>>
   | <<Hacking-Publishing-Beamer>>
   | <<Hacking-Publishing-HTML>>
   | <<Hacking-Diagram-Artist>>
@@ -362,13 +366,16 @@ Grant Rettke
 
   ID: 8510C876-F644-4804-9F87-54A0B44DBA6A
 
-  This system enables you to perform 3 Literate Document activities.
-  These activities combine to provide a rich Literate Programming
-  environment. Their configuration is defined with more granularity here
-  to make sense of how the system is configured, where, and how it
-  works. These activities are not performed interactively by the user.
-  They are automatic operations that occur as a result of the
-  configuration of the document itself.
+  This system enables you to perform 3 Literate Document activities
+  - Tangling
+  - Evaluating
+  - Weaving
+
+  Combined they provide a rich Literate Programming environment.
+
+  These activities are not performed interactively by the user. They are
+  automatic operations that occur as a result of the configuration by
+  the document itself.
 
   The following is the guide for the default configuration of this
   system and how it behaves.
@@ -388,13 +395,12 @@ Grant Rettke
    Evaluating  T  F  F  T  F
    Weaving     F  F  T  F  T
 
-  They are separate and distinct operations and are defined as such.
+  They are separate and distinct operations.
 
-  The last logical action is the activity of "Programming". It is a
-  combination of three 3 activities listed above combined with the
-  configuration of EMACS to do so. This is an interactive activity
-  performed Sysop. The results of Sysop's activities are contained
-  within the document. Those contents are input for the activities here.
+  "Programming" is logically an activity that is the combination of
+  these 3 activites. It is interactively performed by Sysop. It is not a
+  distinct or isolated operation. Results of one activity exist here and
+  serve as inputs to another activity.
 
 
 4.1 Org-Mode Exemple Complet Minimal
@@ -403,18 +409,17 @@ Grant Rettke
   noweb-ref: Org-Mode-ECM
   ID: 57C69AB7-A317-4823-ABBF-7DE8A5E2151C
 
-  A stable version of Org-Mode is provided OOTB. It's release cycle is
-  tied to EMACS release cycle. To get hot-fixes, cutting edge features,
-  and easy patch creation though, you need to use the version from Git.
+  Every new EMACS releases comes with the latest stable Org-Mode
+  release. To get hot-fixes, cutting edge features, and easy patch
+  creation though, you need to use the version from Git.
 
-  The [directions] of how to run Org-Mode from Git are detailed and
-  clear. The only thing worth mentioning again is that in order to use
+  These detailed and clear [directions] explain how ot run Org-Mode from
+  Git. The only thing worth mentioning again is that in order to use
   *any* version of Org-Mode other than the one that comes OOTB you
   *must* load Org-Mode *before* anything else in your initialization
-  file. This can be surprisingly easy to do! When you get unexpected
-  Org-Mode behavior be sure to stop and investigate `org-version' and
-  decide whether or not it is what you expect and prepare an ECM if
-  necessary.
+  file. It is easy to do! When you get unexpected Org-Mode behavior be
+  sure to stop and investigate `org-version' and decide whether or not
+  it is what you expect and prepare an ECM if necessary.
 
   Add the Org-Mode core distribution the load path.
 
@@ -423,17 +428,16 @@ Grant Rettke
   `----
 
   Add the Org-Mode-Contributions distribution to the load path. The
-  contributions are critical to and inseparable from the core
-  distribution.
+  contributions are essential.
 
   ,----
   | (add-to-list 'load-path "~/src/org-mode/contrib/lisp")
   `----
 
-  This system allows for single-character alphabetical bullet lists. For
-  Org-Mode to provide that, the following property must exist before
-  Org-Mode is even loaded. This configuration must occur here. *Never*
-  remove this from a submitted ECM.
+  Allow single-character alphabetical bullet lists. Set
+  `org-list-allow-alphabetical' before loading Org-Mode. This
+  configuration must occur here. *Never* remove this from a submitted
+  ECM.
 
   ,----
   | (setq org-list-allow-alphabetical t)
@@ -454,6 +458,8 @@ Grant Rettke
 
   noweb-ref: Org-Mode-Helper-Functions
   ID: B14776FD-6835-4D1D-BCD3-50D56555423C
+
+  Help configure Org-Mode.
 
   ,----
   | (defun help/set-org-babel-default-header-args (property value)
@@ -512,13 +518,15 @@ Grant Rettke
   |              (indent-to i)
   |              (forward-line 2))))))
   |
+  | (defconst help/org-special-pre "^\s*#[+]")
+  |
   | (defun help/org-2every-src-block (fn)
   |   "Visit every Source-Block and evaluate `FN'."
   |   (interactive)
   |   (save-excursion
   |     (goto-char (point-min))
   |     (let ((case-fold-search t))
-  |       (while (re-search-forward "^\s*#[+]BEGIN_SRC" nil t)
+  |       (while (re-search-forward (concat help/org-special-pre "BEGIN_SRC") nil t)
   |         (let ((element (org-element-at-point)))
   |           (when (eq (org-element-type element) 'src-block)
   |             (funcall fn element)))))
@@ -540,8 +548,6 @@ Grant Rettke
 
   `ID' and `NAME' are essential for successful `LP' using
   `org-babel-tangle-jump-to-org'.
-
-  Generate the `README'.
 
   ,----
   | (add-hook 'org-babel-pre-tangle-hook #'help/org-prp-hdln)
@@ -597,7 +603,7 @@ Grant Rettke
         Turn off variable assignment and noweb expansion during
         tangling
 
-  Likely only ever to be configured per Source-Block or System.
+  Configuration likely per Source-Block or System.
 
 
 4.3.4 noweb
@@ -631,7 +637,7 @@ Grant Rettke
 
         Specify block's noweb reference resolution target
 
-  Likely only ever to be configured per Source-Block or System.
+  Configuration likely per Source-Block or System.
 
 
 4.3.6 noweb-sep
@@ -641,7 +647,7 @@ Grant Rettke
 
         String used to separate noweb references
 
-  Likely only ever to be configured per Source-Block or System.
+  Configuration likely per Source-Block or System.
 
 
 4.3.7 padline
@@ -669,7 +675,7 @@ Grant Rettke
 
         Preserve the state of code evaluation
 
-  Likely only ever to be configured per Source-Block or System.
+  Configuration likely per Source-Block or System.
 
   For some situations, this may be the same for every source block for a
   particular language. R is a good example.
@@ -682,7 +688,7 @@ Grant Rettke
 
         Make tangled files executable
 
-  Likely only ever to be configured per Source-Block or System.
+  Configuration likely per Source-Block or System.
 
 
 4.3.10 tangle
@@ -704,7 +710,7 @@ Grant Rettke
 
         Set permission of tangled files
 
-  Likely only ever to be configured per Source-Block or System.
+  Configuration likely per Source-Block or System.
 
 
 4.4 Evaluating
@@ -723,6 +729,8 @@ Grant Rettke
   |    ;;
   |    (sass . t)
   |    (R . t)
+  |    (scheme . t)
+  |    (lisp . t)
   |    (sql . t)
   |    ;;
   |    (latex . t)
@@ -743,7 +751,7 @@ Grant Rettke
 
         Avoid re-evaluating unchanged code blocks
 
-  Likely only ever to be configured per Source-Block or System
+  Configuration likely per Source-Block or System
 
   Default `no' is correct for nearly every scenario.
 
@@ -755,7 +763,7 @@ Grant Rettke
 
         Handle column names in tables
 
-  Likely only ever to be configured per Source-Block or System
+  Configuration likely per Source-Block or System
 
 
 4.4.3 dir
@@ -766,7 +774,7 @@ Grant Rettke
         Specify the default (possibly remote) directory for code
         block execution
 
-  Likely only ever to be configured per Source-Block or System
+  Configuration likely per Source-Block or System
 
 
 4.4.4 epilogue
@@ -807,7 +815,7 @@ Grant Rettke
 
         Specify a path for file output
 
-  Likely only ever to be configured per Source-Block or System
+  Configuration likely per Source-Block or System
 
 
 4.4.7 file-desc
@@ -817,7 +825,7 @@ Grant Rettke
 
         Specify a description for file results
 
-  Likely only ever to be configured per Source-Block or System
+  Configuration likely per Source-Block or System
 
 
 4.4.8 file-ext
@@ -827,7 +835,7 @@ Grant Rettke
 
         Specify an extension for file output
 
-  Likely only ever to be configured per Source-Block or System
+  Configuration likely per Source-Block or System
 
 
 4.4.9 hlines
@@ -837,7 +845,7 @@ Grant Rettke
 
         Handle horizontal lines in tables
 
-  Likely only ever to be configured per Source-Block or System
+  Configuration likely per Source-Block or System
 
 
 4.4.10 output-dir
@@ -847,7 +855,7 @@ Grant Rettke
 
         Specify a directory to write file output to
 
-  Likely only ever to be configured per Source-Block or System
+  Configuration likely per Source-Block or System
 
   One example is a System where *all* intermediate results are stored to
   individual files.
@@ -860,7 +868,7 @@ Grant Rettke
 
         Post processing of code block results
 
-  Likely only ever to be configured per Source-Block or System.
+  Configuration likely per Source-Block or System.
 
 
 4.4.12 prologue
@@ -870,7 +878,7 @@ Grant Rettke
 
         Text to prepend to code block body
 
-  Likely only ever to be configured per Source-Block or System.
+  Configuration likely per Source-Block or System.
 
   For some situations, this may be the same for every source block for a
   particular language. The user manual described `gnuplot', which often
@@ -900,17 +908,20 @@ Grant Rettke
   Keep the document as close to being executable as possible; make it
   very visible when it is not.
 
-  Always display results like you would seem them in a REPL. For
-  source-blocks this means an `output' display and for
-  in-line-source-blocks it means a `value' display. The former cares
-  most the data in the context of a REPL. The latter cares most about
-  the data in the context of the written content referencing that data.
-
-  Replace theme each time you evaluate the block.
+  - Evaluated Source-Blocks return a result.
+  - Tables are the best result because they are human-readable in text,
+    work with Babel LP, and weavers.
+    - Inline Source-Blocks disallow tables so use scalars instead.
+  - Always store results in the Web so format them as Org-Mode. Wrapped
+    in a `SRC' special block they are replaceable.
+  - Replace theme each time you evaluate the block.
 
   ,----
-  | (help/set-org-babel-default-header-args :results "output replace")
-  | (help/set-org-babel-default-inline-header-args :results "value replace")
+  | (defconst help/org-sb-results-cfg "value table org replace")
+  | (help/set-org-babel-default-header-args :results help/org-sb-results-cfg)
+  | (defconst help/org-isb-results-cfg
+  |   (replace-regexp-in-string "table" "scalar" help/org-sb-results-cfg))
+  | (help/set-org-babel-default-inline-header-args :results help/org-isb-results-cfg)
   `----
 
 
@@ -921,7 +932,7 @@ Grant Rettke
 
         Handle row names in tables
 
-  Likely only ever to be configured per Source-Block or System..
+  Configuration likely per Source-Block or System..
 
 
 4.4.15 sep
@@ -931,7 +942,7 @@ Grant Rettke
 
         Delimiter for writing tabular results outside Org
 
-  Likely only ever to be configured per Source-Block or System
+  Configuration likely per Source-Block or System
 
 
 4.4.16 var
@@ -958,7 +969,7 @@ Grant Rettke
 
         Mark source block evaluation results
 
-  Likely only ever to be configured per Source-Block or System.
+  Configuration likely per Source-Block or System.
 
 
 4.5 Weaving
@@ -1538,7 +1549,7 @@ Grant Rettke
   |                                               :hint nil)
   |   "
   | _1_ -font  _2_ +font _3_ ellipsis _4_ UUID _5_ bfr-cdng-systm _6_ grade-level _7_ reading-ease
-  | _q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace
+  | _q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
   |                  _j_ back-char _k_ scrollDown _K_ nextLogLine _l_ forw-char
   | _x_ delete-indentation"
   |   ("1" help/text-scale-decrease :exit nil)
@@ -1560,8 +1571,11 @@ Grant Rettke
   |   ("j" backward-char :exit nil)
   |   ("l" forward-char :exit nil)
   |   ("o" toggle-debug-on-error)
-  |   ("p" anzu-query-replace))
+  |   ("p" anzu-query-replace)
+  |   ("[" backward-page :exit nil)
+  |   ("]" forward-page :exit nil))
   `----
+
   ,----
   | (key-chord-define-global "vv" #'help/hydra/left-side/global/body)
   `----
@@ -1673,15 +1687,17 @@ Grant Rettke
 
   Exploratory programming in EMACS.
 
-  Don't use "dn" for "describe-fuNction" because of "and"-words.
+  Don't use "dn" for "describe-function" because of "and"-words.
 
   ,----
   | (key-chord-define-global "d." #'describe-function)
   | (key-chord-define-global "d," #'describe-variable)
   `----
 
+  Don't use "qi"; "unique".
+
   ,----
-  | (key-chord-define-global "qi" #'help/comment-or-uncomment)
+  | (key-chord-define-global "f-" #'help/comment-or-uncomment) ;
   `----
 
   Make `ispell' accessible.
@@ -1973,733 +1989,8 @@ Grant Rettke
   Configure EMACS to maximum utility.
 
 
-7.1 Buffer
-~~~~~~~~~~
-
-  ID: F3C9BDE1-C0E0-4BDF-B121-3CE2F0D16464
-
-  Maintain buffers across sessions. Desktop-Save-Mode persists very part
-  of the buffer. If you upgrade a package that uses buffer-variables
-  that have changed you may get unexpected behavior. Close all buffers
-  and open them again after making such breaking changes.
-
-  ,----
-  | (desktop-save-mode t)
-  | (setq desktop-restore-eager 10)
-  `----
-
-  Provide expected "Undo" functionality.
-
-  ,----
-  | (use-package undo-tree
-  |   :ensure t
-  |   :config
-  |   (global-undo-tree-mode 1)
-  |   :diminish undo-tree-mode)
-  `----
-
-  Ensure that buffers do not end with a new line. This is the decision
-  of Sysop. This is important to YASnippets and Source-Blocks. Doing so
-  would violate POLA.
-
-  ,----
-  | (setq require-final-newline nil)
-  `----
-
-  If you are on the end of a line, and go up or down, then go to the end
-  of line on that new line. Do not account for anything special about
-  the character there.
-
-  ,----
-  | (setq track-eol t)
-  | (setq line-move-visual nil)
-  `----
-
-  Take the cursor with scroll activities.
-
-  ,----
-  | (setq scroll-preserve-screen-position t)
-  `----
-
-  More easily visualize tabular data. Considered to non-subjective.
-
-  ,----
-  | (use-package stripe-buffer
-  |   :ensure t)
-  `----
-
-  End sentences with a single space.
-
-  ,----
-  | (setq sentence-end-double-space nil)
-  `----
-
-  Ban white-space at end of lines, globally.
-
-  ,----
-  | (add-hook 'before-save-hook #'help/delete-trailing-whitespace)
-  `----
-
-  Intelligently select the current char, then word, then object, then
-  block, then document.
-
-  ,----
-  | (use-package expand-region
-  |   :ensure t)
-  `----
-
-  80 characters is wide enough for most documents.
-
-  ,----
-  | (setq help/column-width 80)
-  `----
-
-
-7.2 Code Folding
-~~~~~~~~~~~~~~~~
-
-  ID: 3F70676D-C141-4093-9E40-F42B6C7B7232
-
-  ,----
-  | (use-package hideshow
-  |   :config
-  |   (setq hs-hide-comments-when-hiding-all t)
-  |   (setq hs-isearch-open t)
-  |   (defun display-code-line-counts (ov)
-  |     "Displaying overlay content in echo area or tooltip"
-  |     (when (eq 'code (overlay-get ov 'hs))
-  |       (overlay-put ov 'help-echo
-  |                    (buffer-substring (overlay-start ov)
-  |                                      (overlay-end ov)))))
-  |   (setq hs-set-up-overlay #'display-code-line-counts)
-  |   (defun help/goto-line ()
-  |     "How do I get it to expand upon a goto-line? hideshow-expand affected block
-  |     when using goto-line in a collapsed buffer."
-  |     (call-interactively #'goto-line)
-  |     (save-excursion
-  |       (hs-show-block)))
-  |   :diminish hs-minor-mode)
-  `----
-
-
-7.3 Colors
-~~~~~~~~~~
-
-  ID: 7FA1B7C2-3C4B-4119-B9B7-4C0CC0EAA180
-
-  Colorize color names.
-
-  Rainbow-Mode handles most major modes color definitions as expected.
-
-  ,----
-  | (use-package rainbow-mode
-  |   :ensure t
-  |   :config
-  |   :diminish rainbow-mode)
-  `----
-
-
-7.4 Evaluation
-~~~~~~~~~~~~~~
-
-  ID: 5E067457-9B99-459F-A660-323774C14BF5
-
-  ,----
-  | (setq-default eval-expression-print-level nil)
-  `----
-
-  Allow most commands.
-
-  ,----
-  | (put #'upcase-region 'disabled nil)
-  | (put #'downcase-region 'disabled nil)
-  | (put #'narrow-to-region 'disabled nil)
-  `----
-
-
-7.5 Encryption
-~~~~~~~~~~~~~~
-
-  ID: 9A41F9EE-36D5-452A-986B-70B567255D36
-
-  Easy to use file-based AES encryption.
-
-  ,----
-  | (add-to-list 'load-path (getenv "CCRYPT"))
-  | (use-package ps-ccrypt)
-  `----
-
-
-7.6 Eshell
-~~~~~~~~~~
-
-  ID: B371A592-1251-4D88-A055-43CA3E33BC6D
-
-  Provide a cross-platform command line shell that is a first-class
-  EMACS citizen.
-
-  Commands input in eshell are delegated in order to an alias, a built
-  in command, an Elisp function with the same name, and finally to a
-  system call. Semicolons separate commands. `which' tells you what
-  implementation will satisfy the call that you are going to make. The
-  flag `eshell-prefer-lisp-functions' does what it says. `$$' is the
-  result of the last command. Aliases live in `eshell-aliases-file'.
-  History is maintained and expandable. `eshell-source-file' will run
-  scripts. Since Eshell is not a terminal emulator, you need to
-  configure it for any commands that need to run using a terminal
-  emulator by adding it to to `eshell-visual-commands'.
-
-  ,----
-  | (setq eshell-prefer-lisp-functions nil
-  |       eshell-cmpl-cycle-completions nil
-  |       eshell-save-history-on-exit t
-  |       eshell-cmpl-dir-ignore "\\`\\(\\.\\.?\\|CVS\\|\\.svn\\|\\.git\\)/\\'")
-  |
-  | (eval-after-load "esh-opt"
-  |   '(progn
-  |      (use-package em-cmpl)
-  |      (use-package em-prompt)
-  |      (use-package em-term)
-  |      (setenv "PAGER" "cat")
-  |      (add-hook 'eshell-mode-hook
-  |                (lambda ()
-  |                  (message "Welcome to Eshell.")
-  |                  (setq pcomplete-cycle-completions nil)))
-  |      (add-to-list 'eshell-visual-commands "ssh")
-  |      (add-to-list 'eshell-visual-commands "tail")
-  |      (add-to-list 'eshell-command-completions-alist
-  |                   '("tar" "\\(\\.tar|\\.tgz\\|\\.tar\\.gz\\)\\'"))))
-  `----
-
-  Configure a `PS1' like prompt.
-
-  ,----
-  | (setq eshell-prompt-regexp "^.+@.+:.+> ")
-  | (setq eshell-prompt-function
-  |       (lambda ()
-  |         (concat
-  |          (user-login-name)
-  |          "@"
-  |          (system-name)
-  |          ":"
-  |          (eshell/pwd)
-  |          "> ")))
-  `----
-
-
-7.7 File Based System
-~~~~~~~~~~~~~~~~~~~~~
-
-  ID: E6F121F0-AC8E-45C7-9F11-0E7AB93E4B71
-
-  This system uses artifacts stored in files. It tries to persist
-  file-stores every chance it gets without interrupting the user's flow.
-  Flow is important.
-
-  Don't create backup files. Instead Git for versioning
-
-  Automatically back file-stores if no activity has occurred.
-
-  ,----
-  | (setq auto-save-default t)
-  | (setq make-backup-files nil)
-  | (setq auto-save-visited-file-name t)
-  | (setq auto-save-interval 0)
-  | (setq auto-save-timeout (* 60 5))
-  `----
-
-  Backup file-stores when the frame loses focus.
-
-  ,----
-  | (add-hook 'focus-out-hook #'help/save-all-file-buffers)
-  `----
-
-  Always keep buffers in-sync with changes in-file.
-
-  ,----
-  | (global-auto-revert-mode 1)
-  `----
-
-  Save all file befores before common activities. Functions are easier
-  to use than advice.
-
-  ,----
-  | (defun help/safb-help/vc-next-action ()
-  |   (interactive)
-  |   (help/save-all-file-buffers)
-  |   (help/vc-next-action))
-  |
-  | (defun help/safb-vc-ediff ()
-  |   (interactive)
-  |   (help/save-all-file-buffers)
-  |   (vc-ediff nil))
-  |
-  | (defun help/safb-vc-diff ()
-  |   (interactive)
-  |   (help/save-all-file-buffers)
-  |   (vc-diff nil))
-  |
-  | (defun help/safb-vc-revert ()
-  |   (interactive)
-  |   (help/save-all-file-buffers)
-  |   (vc-revert))
-  |
-  | (defun help/safb-help/magit-status ()
-  |   (interactive)
-  |   (help/save-all-file-buffers)
-  |   (help/magit-status))
-  |
-  | (defun help/safb-org-babel-tangle ()
-  |   (interactive)
-  |   (help/save-all-file-buffers)
-  |   (let ((start (current-time)))
-  |     (message (concat "org-babel-tangle BEFORE: <"
-  |                      (format-time-string "%Y-%m-%dT%T%z")
-  |                      ">"))
-  |     (org-babel-tangle)
-  |     (let* ((dur (float-time (time-since start)))
-  |            (msg (format "Tangling complete after: %.06f seconds" dur)))
-  |       (message (concat "org-babel-tangle AFTER: <"
-  |                        (format-time-string "%Y-%m-%dT%T%z")
-  |                        ">"))
-  |       (message msg)
-  |       (help/on-gui (alert msg :title "org-mode")))))
-  |
-  | (defun help/safb-other-window ()
-  |   (interactive)
-  |   (help/save-all-file-buffers)
-  |   (other-window 1))
-  |
-  | (defun help/safb-org-edit-src-code ()
-  |   (interactive)
-  |   (help/save-all-file-buffers)
-  |   (org-edit-src-code))
-  |
-  | (defun help/safb-org-export-dispatch ()
-  |   (interactive)
-  |   (help/save-all-file-buffers)
-  |   (org-export-dispatch))
-  |
-  | (defun help/safb-TeX-command-master (&optional arg)
-  |   (interactive)
-  |   (help/save-all-file-buffers)
-  |   (TeX-command-master arg))
-  |
-  | (defun help/safb-org-babel-execute-buffer ()
-  |   "Immediately save results."
-  |   (interactive)
-  |   (help/save-all-file-buffers)
-  |   (org-babel-execute-buffer)
-  |   (help/save-all-file-buffers))
-  |
-  | (defun help/safb-org-babel-execute-subtree ()
-  |   "Immediately save results."
-  |   (interactive)
-  |   (help/save-all-file-buffers)
-  |   (org-babel-execute-subtree)
-  |   (help/save-all-file-buffers))
-  |
-  | (defun help/safb-help/org-babel-demarcate-block ()
-  |   (interactive)
-  |   (help/org-babel-demarcate-block)
-  |   (help/save-all-file-buffers))
-  |
-  | (defun help/safb-save-buffers-kill-terminal ()
-  |   "Partially redundant; kept for consistency among `SAFB' functions."
-  |   (interactive)
-  |   (help/save-all-file-buffers)
-  |   (save-buffers-kill-terminal))
-  |
-  | (defun help/safb-help/goto-line ()
-  |   (interactive)
-  |   (help/save-all-file-buffers)
-  |   (help/goto-line))
-  `----
-
-  Selection:
-
-  - Don't perform on frequent keys like enter and line navigation.
-
-  Future candidates:
-
-  - avy jump
-  - dired
-  - eshell
-  - ess-rdired
-  - eval-defun
-  - eval-region
-  - help/newline
-  - goto-line
-  - ido-switch-buffer
-  - ielm
-  - ispell
-  - ispell-word
-  - langtool-check-buffer
-  - newline-and-indent
-  - next-line
-  - org-edit-src-exit
-  - org-return
-  - pop-to-mark-command
-  - previous-line
-  - sp-newline
-  - with-current-buffer
-  - writegood-mode
-
-  Try to visit a non-existent file and get prompted to create its parent
-  directories.
-
-  ,----
-  | (add-to-list 'find-file-not-found-functions #'help/create-non-existent-directory)
-  `----
-
-
-7.8 File-system/directory management (Console)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  ID: 067D598E-7FE6-4BC5-AEF7-872966390970
-
-  You can use the usual machinery to work with the files. Highlight a
-  region and operation selections occur for all files in that region.
-  Commands are scheduled, and then executed, upon your command. Files
-  can be viewed in modify or read-only mode, too. There is an idea of
-  `mark' in files, which is to select them and perform operations on the
-  marked files. There are helper methods for most things you can think
-  if like directories or modified-files or whatever, meaning you can use
-  regexen to mark whatever you like however you like. If that suits you,
-  then don't be afraid of using the regular expression builder that is
-  built into EMACS. Bulk marked file operations include additionally
-  copying, deleting, creating hard links to, renaming, modifying the
-  mode, owner, and group information, changing the time-stamp, listing
-  the marked files, compressing them, decrypting, verifying and signing,
-  loading or byte compiling them (Lisp files).
-
-  `g' updates the current buffer; `s' orders the listing by alpha or
-  date-time.
-
-  `find-name-dired' beings the results back into Dired, which is nifty.
-
-  Wdired lets you modify files directly via the UI, which is
-  interesting. Image-Dired lets you do just that.
-
-  `+' creates a new directory. `dired-copy-filename-as-kill' stores the
-  list of files you have selected in the kill ring.
-  `dired-compare-directories' lets you perform all sorts of directory
-  comparisons, a handy tool that you need once in a while but definitely
-  do need.
-  ,----
-  | (defun help/dired-copy-filename ()
-  |   "Push the path and filename of the file under the point to the kill ring.
-  |   Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2002-10/msg00556.html'"
-  |   (interactive)
-  |   (message "Added %s to kill ring" (kill-new (dired-get-filename))))
-  | (defun help/dired-copy-path ()
-  |   "Push the path of the directory under the point to the kill ring."
-  |   (interactive)
-  |   (message "Added %s to kill ring" (kill-new default-directory)))
-  | (setq dired-listing-switches "-alh")
-  | (setq dired-recursive-deletes 'top)
-  | (use-package dired-details+
-  |   :ensure t)
-  | (setq-default dired-details-hidden-string "")
-  | (defun help/dired-mode-hook-fn ()
-  |   "HELP dired customizations."
-  |   (local-set-key "c" #'help/dired-copy-filename)
-  |   (local-set-key "]" #'help/dired-copy-path)
-  |   (diff-hl-dired-mode)
-  |   (load "dired-x")
-  |   (turn-on-stripe-buffer-mode)
-  |   (stripe-listify-buffer))
-  | (add-hook 'dired-mode-hook #'help/dired-mode-hook-fn)
-  `----
-
-  Try to guess the target directory for operations.
-  ,----
-  | (setq dired-dwim-target t)
-  `----
-
-  Use EMACS `ls'.
-  ,----
-  | (help/on-osx
-  |  (setq ls-lisp-use-insert-directory-program nil)
-  |  (use-package ls-lisp))
-  `----
-
-  After dabbling, something happened that really changed my mind. These
-  three articles changed everything: [Dired Shell Command], [ Working
-  with multiple files in dired], and [WDired: Editable Dired Buffers]..
-  They just made the power of Dired so obvious, and so easy to use, that
-  it instantly because delightful to use. That was very, very cool. Even
-  though I was really, really happy with Finder and Explorer... suddenly
-  it just became so obvious and pleasant to use Dired. That is so wild.
-
-  Key notes when executing shell commands on file selection...
-
-  Substitution:
-  `<cmd> ?': 1* calls to cmd, each file a single argument
-  `<cmd> *': 1 call to `cmd', selected list as argument
-  =<cmd> *""=: have the shell expand the * as a globbing wild-card
-               - Not sure what this means
-
-  Synchronicity:
-  `<cmd> ...': by default commands are called synchronously
-  `<cmd> &': execute in parallel
-  `<cmd> ;': execute sequentially, asynchronously
-  `<cmd> ;&': execute in parallel, asynchronously
-
-  Key notes on working with files in multiple directories... use the
-  following:
-
-  Use `find' just like you would at the command line and all of the
-  results show up in a single Dired buffer that you may work with just
-  like you would any other file appearing in a Dired buffer. The
-  abstraction here becomes so obvious, you may ask yourself why you
-  never considered such a thing /before/ now (as I did):
-  ,----
-  | (use-package find-dired
-  |   :ensure t
-  |   :config
-  |   (setq find-ls-option '("-print0 | xargs -0 ls -ld" . "-ld")))
-  `----
-
-  Noting that:
-  `find-dired': is the general use case
-  `find-name-dired': is for simple, single string cases
-
-  And if you want to use the faster Elisp version, that uses lisp regex,
-  use:
-  `find-lisp-find-dired': for anything
-  `find-lisp-find-dired-subdirectories': for only directories
-
-  Key notes on working with editable buffers...
-
-  As the author notes, you probably already instinctually knew what is
-  possible. After reading his brief and concise exposition, it would be
-  hard /not/ to intuit what is possible! The options are big if you make
-  a writable file buffer. Think about using multiple cursors. Done?
-  Well, that is a no-brainer. Once you grok multiple cursors just
-  `find-dired' what you need and then do what you need to do to it. Very
-  cool.
-
-  `dired-toggle-read-only, C-x C-q': cycle between dired-mode and
-                                     wdired-mode
-  `wdired-finish-edit, C-c C-c': commit your changes
-  `wdired-abort-changes, C-c ESC': revert your changes
-
-  ,----
-  | (use-package wdired
-  |   :ensure t
-  |   :config
-  |   (setq wdired-allow-to-change-permissions t)
-  |   (setq wdired-allow-to-redirect-links t)
-  |   (setq wdired-use-interactive-rename t)
-  |   (setq wdired-confirm-overwrite t)
-  |   (setq wdired-use-dired-vertical-movement 'sometimes))
-  `----
-
-  When you selected a bunch of files or directories, you /may/ want to
-  communicate somewhere your selection somehow. The simplest way to do
-  this is to utilize `dired-copy-filename-as-kill'. What a nice idea,
-  and its default binding is `w'.
-
-  Since I started using a menu bar again, and wanting to get Imenu
-  really exercised, Dired in Imenu seems like an obvious choice.
-
-  ,----
-  | (use-package dired-imenu
-  |   :ensure t)
-  `----
-
-
-  [Dired Shell Command]
-  http://www.masteringemacs.org/articles/2014/04/10/dired-shell-commands-find-xargs-replacement/
-
-  [ Working with multiple files in dired]
-  https://www.masteringemacs.org/article/working-multiple-files-dired
-
-  [WDired: Editable Dired Buffers]
-  https://www.masteringemacs.org/article/wdired-editable-dired-buffers
-
-
-7.9 IMenu
-~~~~~~~~~
-
-  ID: F748CAFD-0235-4E34-8546-A9EC515759BB
-
-  Major productivity hack
-
-  ,----
-  | (use-package imenu
-  |   :config
-  |   (setq imenu-sort-function #'imenu--sort-by-name))
-  | (defun help/try-to-add-imenu ()
-  |   "Add Imenu to modes that have `font-lock-mode' activated.
-  |
-  | Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
-  |   (condition-case nil (imenu-add-to-menubar "Imenu") (error nil)))
-  | (add-hook 'font-lock-mode-hook #'help/try-to-add-imenu)
-  `----
-
-
-7.10 Interactively DO Things
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  ID: 2DB9FDA1-9950-4FEA-A33C-E8DDFDA9420E
-
-  IDO is used everywhere possible.
-
-  Access nearly every object available in this system from one place.
-
-  These configurations are performed in the correct order. Any attempt
-  to refactor this Source-Block will break Ido in this system.
-
-  ,----
-  | (use-package ido)
-  | (use-package flx-ido
-  |   :ensure t
-  |   :config
-  |   (ido-mode t))
-  | (use-package ido-hacks
-  |   :ensure t)
-  | (use-package ido-ubiquitous
-  |   :ensure t
-  |   :config
-  |   (ido-ubiquitous-mode t)
-  |   (setq ido-create-new-buffer 'always)
-  |   (flx-ido-mode t)
-  |   (setq ido-use-faces nil))
-  | (use-package ido-vertical-mode
-  |   :ensure t
-  |   :config
-  |   (ido-vertical-mode t)
-  |   (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right))
-  `----
-
-  Make functions search-able.
-
-  ,----
-  | (use-package smex
-  |   :ensure t
-  |   :config
-  |   (smex-initialize))
-  `----
-
-  Make URLs a first-class object.
-
-  ,----
-  | (setq ido-use-url-at-point t)
-  | (setq ido-use-filename-at-point 'guess)
-  `----
-
-
-7.11 Font
-~~~~~~~~~
-
-  ID: 8F7A007E-5CBA-4651-84D8-5874FF393EA6
-
-  Use Unicode-Font to provide as many Unicode fonts as possible.
-
-  Here are the Unicode fonts that provide nearly everything.
-
-   Name       Version  URL      Comments
-  -------------------------------------------------------
-   [DejaVu]      2.43  [.]      Modern classic
-   [Symbola]     7.17  [.]      Neat
-   [Quivira]      4.0  [.]      Amazing
-   [Noto]           ?  [1] [2]  Has morse code, and more
-
-  To test it run `view-hello-file' and `M-x list-charset-chars RET
-  unicode-bmp RET'.
-
-  Perhaps educationally there is a character for bowel-movements: 💩.
-
-  ,----
-  | (use-package unicode-fonts
-  |   :ensure t
-  |   :config
-  |   (unicode-fonts-setup))
-  `----
-
-  Activate font locking everywhere possible.
-
-  ,----
-  | (global-font-lock-mode t)
-  `----
-
-  Visualize ASCII values as their most likely Unicode representation.
-
-  ,----
-  | (use-package pretty-mode
-  |   :ensure t
-  |   :config
-  |   (global-pretty-mode))
-  `----
-
-
-  [DejaVu]
-  http://sourceforge.net/projects/dejavu/files/dejavu/2.34/dejavu-fonts-ttf-2.34.tar.bz2
-
-  [.]
-  http://sourceforge.net/projects/dejavu/files/dejavu/2.34/dejavu-fonts-ttf-2.34.tar.bz2
-
-  [Symbola] http://users.teilar.gr/~g1951d/
-
-  [.] http://users.teilar.gr/~g1951d/Symbola.zip
-
-  [Quivira] http://www.quivira-font.com/
-
-  [.] http://www.quivira-font.com/files/Quivira.otf
-
-  [Noto] https://code.google.com/p/noto/
-
-  [1]
-  http://noto.googlecode.com/git/fonts/individual/hinted/NotoSans-Regular.ttc
-
-  [2]
-  http://noto.googlecode.com/git/fonts/individual/unhinted/NotoSansSymbols-Regular.ttf
-
-
-7.12 Going to Objects
-~~~~~~~~~~~~~~~~~~~~~
-
-  ID: 835D3E9D-3044-4385-9AB1-F0DF17045565
-
-  Go to any object in the frame quickly.
-
-  ,----
-  | (use-package avy
-  |   :ensure t
-  |   :config)
-  `----
-
-
-7.13 Grammar
-~~~~~~~~~~~~
-
-  ID: 95A4EF33-F83D-49ED-AC74-A29DA19524BC
-
-  Warn of poor grammar immediately interrupting flow with a visual
-  indicator.
-
-  ,----
-  | (use-package writegood-mode
-  |   :ensure t
-  |   :config
-  |   (eval-after-load "writegood-mode"
-  |     '(diminish 'writegood-mode)))
-  `----
-
-  ,----
-  | (use-package langtool
-  |   :ensure t
-  |   :init
-  |   (setq langtool-language-tool-jar (concat (getenv "EELIB") "/LanguageTool-2.8/languagetool-commandline.jar"))
-  |   (setq langtool-mother-tongue "en")
-  |   (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java")))
-  `----
-
-
-7.14 Helper Functions
-~~~~~~~~~~~~~~~~~~~~~
+7.1 Helper Functions
+~~~~~~~~~~~~~~~~~~~~
 
   ID: B2257535-9891-48F1-B7CD-1B385F527C59
 
@@ -3007,22 +2298,777 @@ Grant Rettke
   |   (help/not-on-gui
   |    (message "Please resize the terminal emulator font.")))
   |
-  | (defun help/org-xprt-rdme ()
+  | (defun help/org-weave-subtree-gfm (id file)
+  |   "Export the subtree with ID to FILE in gfm."
   |   (interactive)
   |   (help/save-all-file-buffers)
   |   (save-excursion
-  |     (let ((hidx (org-find-property "ID" "39A2F05A-BC60-4879-9B66-85E43297FC97")))
+  |     (let ((hidx (org-find-property "ID" id)))
   |       (when hidx
   |         (goto-char hidx)
-  |         (org-export-to-file 'gfm "README.md" nil t nil)))))
+  |         (org-export-to-file 'gfm file nil t nil)))))
   |
-  | (defun help/xprt-all ()
+  | (defun help/org-weave-readme ()
+  |   (interactive)
+  |   (help/org-weave-subtree-gfm
+  |    "39A2F05A-BC60-4879-9B66-85E43297FC97"
+  |    "README.md"))
+  |
+  | (defun help/org-weave-style-guide ()
+  |   (interactive)
+  |   (help/org-weave-subtree-gfm
+  |    "03E0F0E3-DB81-4033-8F04-5D8BB5CBB2F0"
+  |    "STYLEGUIDE.md"))
+  |
+  | (defun help/weave-everything-everywhere ()
   |   "Export this entire document in configured weavers."
   |   (interactive)
   |   (org-ascii-export-to-ascii)
   |   (org-html-export-to-html)
   |   (org-gfm-export-to-markdown)
-  |   (org-latex-export-to-pdf))
+  |   (org-latex-export-to-pdf)
+  |   (help/org-weave-readme)
+  |   (help/org-weave-style-guide))
+  `----
+
+
+7.2 Buffer
+~~~~~~~~~~
+
+  ID: F3C9BDE1-C0E0-4BDF-B121-3CE2F0D16464
+
+  Maintain buffers across sessions. Desktop-Save-Mode persists very part
+  of the buffer. If you upgrade a package that uses buffer-variables
+  that have changed you may get unexpected behavior. Close all buffers
+  and open them again after making such breaking changes.
+
+  ,----
+  | (desktop-save-mode t)
+  | (setq desktop-restore-eager 10)
+  `----
+
+  Provide expected "Undo" functionality.
+
+  ,----
+  | (use-package undo-tree
+  |   :ensure t
+  |   :config
+  |   (global-undo-tree-mode 1)
+  |   :diminish undo-tree-mode)
+  `----
+
+  Ensure that buffers do not end with a new line. This is the decision
+  of Sysop. This is important to YASnippets and Source-Blocks. Doing so
+  would violate POLA.
+
+  ,----
+  | (setq require-final-newline nil)
+  `----
+
+  If you are on the end of a line, and go up or down, then go to the end
+  of line on that new line. Do not account for anything special about
+  the character there.
+
+  ,----
+  | (setq track-eol t)
+  | (setq line-move-visual nil)
+  `----
+
+  Take the cursor with scroll activities.
+
+  ,----
+  | (setq scroll-preserve-screen-position t)
+  `----
+
+  More easily visualize tabular data. Considered to non-subjective.
+
+  ,----
+  | (use-package stripe-buffer
+  |   :ensure t)
+  `----
+
+  End sentences with a single space.
+
+  ,----
+  | (setq sentence-end-double-space nil)
+  `----
+
+  Ban white-space at end of lines, globally.
+
+  ,----
+  | (add-hook 'before-save-hook #'help/delete-trailing-whitespace)
+  `----
+
+  Intelligently select the current char, then word, then object, then
+  block, then document.
+
+  ,----
+  | (use-package expand-region
+  |   :ensure t)
+  `----
+
+  80 characters is wide enough for most documents.
+
+  ,----
+  | (setq help/column-width 80)
+  `----
+
+  Visualize the formfeed character.
+
+  ,----
+  | (use-package page-break-lines
+  |   :ensure t)
+  `----
+
+
+7.3 Code Folding
+~~~~~~~~~~~~~~~~
+
+  ID: 3F70676D-C141-4093-9E40-F42B6C7B7232
+
+  ,----
+  | (use-package hideshow
+  |   :config
+  |   (setq hs-hide-comments-when-hiding-all t)
+  |   (setq hs-isearch-open t)
+  |   (defun display-code-line-counts (ov)
+  |     "Displaying overlay content in echo area or tooltip"
+  |     (when (eq 'code (overlay-get ov 'hs))
+  |       (overlay-put ov 'help-echo
+  |                    (buffer-substring (overlay-start ov)
+  |                                      (overlay-end ov)))))
+  |   (setq hs-set-up-overlay #'display-code-line-counts)
+  |   (defun help/goto-line ()
+  |     "How do I get it to expand upon a goto-line? hideshow-expand affected block
+  |     when using goto-line in a collapsed buffer."
+  |     (call-interactively #'goto-line)
+  |     (save-excursion
+  |       (hs-show-block)))
+  |   :diminish hs-minor-mode)
+  `----
+
+
+7.4 Colors
+~~~~~~~~~~
+
+  ID: 7FA1B7C2-3C4B-4119-B9B7-4C0CC0EAA180
+
+  Colorize color names.
+
+  Rainbow-Mode handles most major modes color definitions as expected.
+
+  ,----
+  | (use-package rainbow-mode
+  |   :ensure t
+  |   :config
+  |   :diminish rainbow-mode)
+  `----
+
+
+7.5 Evaluation
+~~~~~~~~~~~~~~
+
+  ID: 5E067457-9B99-459F-A660-323774C14BF5
+
+  ,----
+  | (setq-default eval-expression-print-level nil)
+  `----
+
+  Allow most commands.
+
+  ,----
+  | (put #'upcase-region 'disabled nil)
+  | (put #'downcase-region 'disabled nil)
+  | (put #'narrow-to-region 'disabled nil)
+  `----
+
+
+7.6 Encryption
+~~~~~~~~~~~~~~
+
+  ID: 9A41F9EE-36D5-452A-986B-70B567255D36
+
+  Easy to use file-based AES encryption.
+
+  ,----
+  | (add-to-list 'load-path (getenv "CCRYPT"))
+  | (use-package ps-ccrypt)
+  `----
+
+
+7.7 Eshell
+~~~~~~~~~~
+
+  ID: B371A592-1251-4D88-A055-43CA3E33BC6D
+
+  Provide a cross-platform command line shell that is a first-class
+  EMACS citizen.
+
+  Commands input in eshell are delegated in order to an alias, a built
+  in command, an Elisp function with the same name, and finally to a
+  system call. Semicolons separate commands. `which' tells you what
+  implementation will satisfy the call that you are going to make. The
+  flag `eshell-prefer-lisp-functions' does what it says. `$$' is the
+  result of the last command. Aliases live in `eshell-aliases-file'.
+  History is maintained and expandable. `eshell-source-file' will run
+  scripts. Since Eshell is not a terminal emulator, you need to
+  configure it for any commands that need to run using a terminal
+  emulator by adding it to to `eshell-visual-commands'.
+
+  ,----
+  | (setq eshell-prefer-lisp-functions nil
+  |       eshell-cmpl-cycle-completions nil
+  |       eshell-save-history-on-exit t
+  |       eshell-cmpl-dir-ignore "\\`\\(\\.\\.?\\|CVS\\|\\.svn\\|\\.git\\)/\\'")
+  |
+  | (eval-after-load "esh-opt"
+  |   '(progn
+  |      (use-package em-cmpl)
+  |      (use-package em-prompt)
+  |      (use-package em-term)
+  |      (setenv "PAGER" "cat")
+  |      (add-hook 'eshell-mode-hook
+  |                (lambda ()
+  |                  (message "Welcome to Eshell.")
+  |                  (setq pcomplete-cycle-completions nil)))
+  |      (add-to-list 'eshell-visual-commands "ssh")
+  |      (add-to-list 'eshell-visual-commands "tail")
+  |      (add-to-list 'eshell-command-completions-alist
+  |                   '("tar" "\\(\\.tar|\\.tgz\\|\\.tar\\.gz\\)\\'"))))
+  `----
+
+  Configure a `PS1' like prompt.
+
+  ,----
+  | (setq eshell-prompt-regexp "^.+@.+:.+> ")
+  | (setq eshell-prompt-function
+  |       (lambda ()
+  |         (concat
+  |          (user-login-name)
+  |          "@"
+  |          (system-name)
+  |          ":"
+  |          (eshell/pwd)
+  |          "> ")))
+  `----
+
+
+7.8 File Based System
+~~~~~~~~~~~~~~~~~~~~~
+
+  ID: E6F121F0-AC8E-45C7-9F11-0E7AB93E4B71
+
+  This system uses artifacts stored in files. It tries to persist
+  file-stores every chance it gets without interrupting the user's flow.
+  Flow is important.
+
+  Don't create backup files. Instead Git for versioning
+
+  Automatically back file-stores if no activity has occurred.
+
+  ,----
+  | (setq auto-save-default t)
+  | (setq make-backup-files nil)
+  | (setq auto-save-visited-file-name t)
+  | (setq auto-save-interval 0)
+  | (setq auto-save-timeout (* 60 5))
+  `----
+
+  Backup file-stores when the frame loses focus.
+
+  ,----
+  | (add-hook 'focus-out-hook #'help/save-all-file-buffers)
+  `----
+
+  Always keep buffers in-sync with changes in-file.
+
+  ,----
+  | (global-auto-revert-mode 1)
+  `----
+
+  Save all file befores before common activities. Functions are easier
+  to use than advice.
+
+  ,----
+  | (defun help/safb-help/vc-next-action ()
+  |   (interactive)
+  |   (help/save-all-file-buffers)
+  |   (help/vc-next-action))
+  |
+  | (defun help/safb-vc-ediff ()
+  |   (interactive)
+  |   (help/save-all-file-buffers)
+  |   (vc-ediff nil))
+  |
+  | (defun help/safb-vc-diff ()
+  |   (interactive)
+  |   (help/save-all-file-buffers)
+  |   (vc-diff nil))
+  |
+  | (defun help/safb-vc-revert ()
+  |   (interactive)
+  |   (help/save-all-file-buffers)
+  |   (vc-revert))
+  |
+  | (defun help/safb-help/magit-status ()
+  |   (interactive)
+  |   (help/save-all-file-buffers)
+  |   (help/magit-status))
+  |
+  | (defun help/safb-org-babel-tangle ()
+  |   (interactive)
+  |   (help/save-all-file-buffers)
+  |   (let ((start (current-time)))
+  |     (message (concat "org-babel-tangle BEFORE: <"
+  |                      (format-time-string "%Y-%m-%dT%T%z")
+  |                      ">"))
+  |     (org-babel-tangle)
+  |     (let* ((dur (float-time (time-since start)))
+  |            (msg (format "Tangling complete after: %.06f seconds" dur)))
+  |       (message (concat "org-babel-tangle AFTER: <"
+  |                        (format-time-string "%Y-%m-%dT%T%z")
+  |                        ">"))
+  |       (message msg)
+  |       (help/on-gui (alert msg :title "org-mode")))))
+  |
+  | (defun help/safb-other-window ()
+  |   (interactive)
+  |   (help/save-all-file-buffers)
+  |   (other-window 1))
+  |
+  | (defun help/safb-org-edit-src-code ()
+  |   (interactive)
+  |   (help/save-all-file-buffers)
+  |   (org-edit-src-code))
+  |
+  | (defun help/safb-org-export-dispatch ()
+  |   (interactive)
+  |   (help/save-all-file-buffers)
+  |   (org-export-dispatch))
+  |
+  | (defun help/safb-TeX-command-master (&optional arg)
+  |   (interactive)
+  |   (help/save-all-file-buffers)
+  |   (TeX-command-master arg))
+  |
+  | (defun help/safb-org-babel-execute-buffer ()
+  |   "Immediately save results."
+  |   (interactive)
+  |   (help/save-all-file-buffers)
+  |   (org-babel-execute-buffer)
+  |   (help/save-all-file-buffers))
+  |
+  | (defun help/safb-org-babel-execute-subtree ()
+  |   "Immediately save results."
+  |   (interactive)
+  |   (help/save-all-file-buffers)
+  |   (org-babel-execute-subtree)
+  |   (help/save-all-file-buffers))
+  |
+  | (defun help/safb-help/org-babel-demarcate-block ()
+  |   (interactive)
+  |   (help/org-babel-demarcate-block)
+  |   (help/save-all-file-buffers))
+  |
+  | (defun help/safb-save-buffers-kill-terminal ()
+  |   "Partially redundant; kept for consistency among `SAFB' functions."
+  |   (interactive)
+  |   (help/save-all-file-buffers)
+  |   (save-buffers-kill-terminal))
+  |
+  | (defun help/safb-help/goto-line ()
+  |   (interactive)
+  |   (help/save-all-file-buffers)
+  |   (help/goto-line))
+  `----
+
+  Selection:
+
+  - Don't perform on frequent keys like enter and line navigation.
+
+  Future candidates:
+
+  - avy jump
+  - dired
+  - eshell
+  - ess-rdired
+  - eval-defun
+  - eval-region
+  - help/newline
+  - goto-line
+  - ido-switch-buffer
+  - ielm
+  - ispell
+  - ispell-word
+  - langtool-check-buffer
+  - newline-and-indent
+  - next-line
+  - org-edit-src-exit
+  - org-return
+  - pop-to-mark-command
+  - previous-line
+  - sp-newline
+  - with-current-buffer
+  - writegood-mode
+
+  Try to visit a non-existent file and get prompted to create its parent
+  directories.
+
+  ,----
+  | (add-to-list 'find-file-not-found-functions #'help/create-non-existent-directory)
+  `----
+
+  Be aware of files larger than 2MiB. Turn off Aggressive-Indent and
+  other expensive features in those buffers. NXML also seems to have a
+  difficult time with large files.
+
+  ,----
+  | (setq large-file-warning-threshold (* 1024 1024 2))
+  `----
+
+
+7.9 File-system/directory management (Console)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  ID: 067D598E-7FE6-4BC5-AEF7-872966390970
+
+  You can use the usual machinery to work with the files. Highlight a
+  region and operation selections occur for all files in that region.
+  Commands are scheduled, and then executed, upon your command. Files
+  can be viewed in modify or read-only mode, too. There is an idea of
+  `mark' in files, which is to select them and perform operations on the
+  marked files. There are helper methods for most things you can think
+  if like directories or modified-files or whatever, meaning you can use
+  regexen to mark whatever you like however you like. If that suits you,
+  then don't be afraid of using the regular expression builder that is
+  built into EMACS. Bulk marked file operations include additionally
+  copying, deleting, creating hard links to, renaming, modifying the
+  mode, owner, and group information, changing the time-stamp, listing
+  the marked files, compressing them, decrypting, verifying and signing,
+  loading or byte compiling them (Lisp files).
+
+  `g' updates the current buffer; `s' orders the listing by alpha or
+  date-time.
+
+  `find-name-dired' beings the results back into Dired, which is nifty.
+
+  Wdired lets you modify files directly via the UI, which is
+  interesting. Image-Dired lets you do just that.
+
+  `+' creates a new directory. `dired-copy-filename-as-kill' stores the
+  list of files you have selected in the kill ring.
+  `dired-compare-directories' lets you perform all sorts of directory
+  comparisons, a handy tool that you need once in a while but definitely
+  do need.
+  ,----
+  | (defun help/dired-copy-filename ()
+  |   "Push the path and filename of the file under the point to the kill ring.
+  |   Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2002-10/msg00556.html'"
+  |   (interactive)
+  |   (message "Added %s to kill ring" (kill-new (dired-get-filename))))
+  | (defun help/dired-copy-path ()
+  |   "Push the path of the directory under the point to the kill ring."
+  |   (interactive)
+  |   (message "Added %s to kill ring" (kill-new default-directory)))
+  | (setq dired-listing-switches "-alh")
+  | (setq dired-recursive-deletes 'top)
+  | (use-package dired-details+
+  |   :ensure t)
+  | (setq-default dired-details-hidden-string "")
+  | (defun help/dired-mode-hook-fn ()
+  |   "HELP dired customizations."
+  |   (local-set-key "c" #'help/dired-copy-filename)
+  |   (local-set-key "]" #'help/dired-copy-path)
+  |   (diff-hl-dired-mode)
+  |   (load "dired-x")
+  |   (turn-on-stripe-buffer-mode)
+  |   (stripe-listify-buffer))
+  | (add-hook 'dired-mode-hook #'help/dired-mode-hook-fn)
+  `----
+
+  Try to guess the target directory for operations.
+  ,----
+  | (setq dired-dwim-target t)
+  `----
+
+  Use EMACS `ls'.
+  ,----
+  | (help/on-osx
+  |  (setq ls-lisp-use-insert-directory-program nil)
+  |  (use-package ls-lisp))
+  `----
+
+  After dabbling, something happened that really changed my mind. These
+  three articles changed everything: [Dired Shell Command], [ Working
+  with multiple files in dired], and [WDired: Editable Dired Buffers]..
+  They just made the power of Dired so obvious, and so easy to use, that
+  it instantly because delightful to use. That was very, very cool. Even
+  though I was really, really happy with Finder and Explorer... suddenly
+  it just became so obvious and pleasant to use Dired. That is so wild.
+
+  Key notes when executing shell commands on file selection...
+
+  Substitution:
+  `<cmd> ?': 1* calls to cmd, each file a single argument
+  `<cmd> *': 1 call to `cmd', selected list as argument
+  =<cmd> *""=: have the shell expand the * as a globbing wild-card
+               - Not sure what this means
+
+  Synchronicity:
+  `<cmd> ...': by default commands are called synchronously
+  `<cmd> &': execute in parallel
+  `<cmd> ;': execute sequentially, asynchronously
+  `<cmd> ;&': execute in parallel, asynchronously
+
+  Key notes on working with files in multiple directories... use the
+  following:
+
+  Use `find' just like you would at the command line and all of the
+  results show up in a single Dired buffer that you may work with just
+  like you would any other file appearing in a Dired buffer. The
+  abstraction here becomes so obvious, you may ask yourself why you
+  never considered such a thing /before/ now (as I did):
+  ,----
+  | (use-package find-dired
+  |   :ensure t
+  |   :config
+  |   (setq find-ls-option '("-print0 | xargs -0 ls -ld" . "-ld")))
+  `----
+
+  Noting that:
+  `find-dired': is the general use case
+  `find-name-dired': is for simple, single string cases
+
+  And if you want to use the faster Elisp version, that uses lisp regex,
+  use:
+  `find-lisp-find-dired': for anything
+  `find-lisp-find-dired-subdirectories': for only directories
+
+  Key notes on working with editable buffers...
+
+  As the author notes, you probably already instinctually knew what is
+  possible. After reading his brief and concise exposition, it would be
+  hard /not/ to intuit what is possible! The options are big if you make
+  a writable file buffer. Think about using multiple cursors. Done?
+  Well, that is a no-brainer. Once you grok multiple cursors just
+  `find-dired' what you need and then do what you need to do to it. Very
+  cool.
+
+  `dired-toggle-read-only, C-x C-q': cycle between dired-mode and
+                                     wdired-mode
+  `wdired-finish-edit, C-c C-c': commit your changes
+  `wdired-abort-changes, C-c ESC': revert your changes
+
+  ,----
+  | (use-package wdired
+  |   :ensure t
+  |   :config
+  |   (setq wdired-allow-to-change-permissions t)
+  |   (setq wdired-allow-to-redirect-links t)
+  |   (setq wdired-use-interactive-rename t)
+  |   (setq wdired-confirm-overwrite t)
+  |   (setq wdired-use-dired-vertical-movement 'sometimes))
+  `----
+
+  When you selected a bunch of files or directories, you /may/ want to
+  communicate somewhere your selection somehow. The simplest way to do
+  this is to utilize `dired-copy-filename-as-kill'. What a nice idea,
+  and its default binding is `w'.
+
+  Since I started using a menu bar again, and wanting to get Imenu
+  really exercised, Dired in Imenu seems like an obvious choice.
+
+  ,----
+  | (use-package dired-imenu
+  |   :ensure t)
+  `----
+
+
+  [Dired Shell Command]
+  http://www.masteringemacs.org/articles/2014/04/10/dired-shell-commands-find-xargs-replacement/
+
+  [ Working with multiple files in dired]
+  https://www.masteringemacs.org/article/working-multiple-files-dired
+
+  [WDired: Editable Dired Buffers]
+  https://www.masteringemacs.org/article/wdired-editable-dired-buffers
+
+
+7.10 IMenu
+~~~~~~~~~~
+
+  ID: F748CAFD-0235-4E34-8546-A9EC515759BB
+
+  Major productivity hack
+
+  ,----
+  | (use-package imenu
+  |   :config
+  |   (setq imenu-sort-function #'imenu--sort-by-name))
+  | (defun help/try-to-add-imenu ()
+  |   "Add Imenu to modes that have `font-lock-mode' activated.
+  |
+  | Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
+  |   (condition-case nil (imenu-add-to-menubar "Imenu") (error nil)))
+  | (add-hook 'font-lock-mode-hook #'help/try-to-add-imenu)
+  `----
+
+
+7.11 Interactively DO Things
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  ID: 2DB9FDA1-9950-4FEA-A33C-E8DDFDA9420E
+
+  IDO is used everywhere possible.
+
+  Access nearly every object available in this system from one place.
+
+  These configurations are performed in the correct order. Any attempt
+  to refactor this Source-Block will break Ido in this system.
+
+  ,----
+  | (use-package ido)
+  | (use-package flx-ido
+  |   :ensure t
+  |   :config
+  |   (ido-mode t))
+  | (use-package ido-hacks
+  |   :ensure t)
+  | (use-package ido-ubiquitous
+  |   :ensure t
+  |   :config
+  |   (ido-ubiquitous-mode t)
+  |   (setq ido-create-new-buffer 'always)
+  |   (flx-ido-mode t)
+  |   (setq ido-use-faces nil))
+  | (use-package ido-vertical-mode
+  |   :ensure t
+  |   :config
+  |   (ido-vertical-mode t)
+  |   (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right))
+  `----
+
+  Make functions search-able.
+
+  ,----
+  | (use-package smex
+  |   :ensure t
+  |   :config
+  |   (smex-initialize))
+  `----
+
+  Make URLs a first-class object.
+
+  ,----
+  | (setq ido-use-url-at-point t)
+  | (setq ido-use-filename-at-point 'guess)
+  `----
+
+
+7.12 Font
+~~~~~~~~~
+
+  ID: 8F7A007E-5CBA-4651-84D8-5874FF393EA6
+
+  Use Unicode-Font to provide as many Unicode fonts as possible.
+
+  Here are the Unicode fonts that provide nearly everything.
+
+   Name       Version  URL      Comments
+  -------------------------------------------------------
+   [DejaVu]      2.43  [.]      Modern classic
+   [Symbola]     7.17  [.]      Neat
+   [Quivira]      4.0  [.]      Amazing
+   [Noto]           ?  [1] [2]  Has morse code, and more
+
+  To test it run `view-hello-file' and `M-x list-charset-chars RET
+  unicode-bmp RET'.
+
+  Perhaps educationally there is a character for bowel-movements: 💩.
+
+  ,----
+  | (use-package unicode-fonts
+  |   :ensure t
+  |   :config
+  |   (unicode-fonts-setup))
+  `----
+
+  Activate font locking everywhere possible.
+
+  ,----
+  | (global-font-lock-mode t)
+  `----
+
+  Visualize ASCII values as their most likely Unicode representation.
+
+  ,----
+  | (use-package pretty-mode
+  |   :ensure t
+  |   :config
+  |   (global-pretty-mode))
+  `----
+
+
+  [DejaVu]
+  http://sourceforge.net/projects/dejavu/files/dejavu/2.34/dejavu-fonts-ttf-2.34.tar.bz2
+
+  [.]
+  http://sourceforge.net/projects/dejavu/files/dejavu/2.34/dejavu-fonts-ttf-2.34.tar.bz2
+
+  [Symbola] http://users.teilar.gr/~g1951d/
+
+  [.] http://users.teilar.gr/~g1951d/Symbola.zip
+
+  [Quivira] http://www.quivira-font.com/
+
+  [.] http://www.quivira-font.com/files/Quivira.otf
+
+  [Noto] https://code.google.com/p/noto/
+
+  [1]
+  http://noto.googlecode.com/git/fonts/individual/hinted/NotoSans-Regular.ttc
+
+  [2]
+  http://noto.googlecode.com/git/fonts/individual/unhinted/NotoSansSymbols-Regular.ttf
+
+
+7.13 Going to Objects
+~~~~~~~~~~~~~~~~~~~~~
+
+  ID: 835D3E9D-3044-4385-9AB1-F0DF17045565
+
+  Go to any object in the frame quickly.
+
+  ,----
+  | (use-package avy
+  |   :ensure t
+  |   :config)
+  `----
+
+
+7.14 Grammar
+~~~~~~~~~~~~
+
+  ID: 95A4EF33-F83D-49ED-AC74-A29DA19524BC
+
+  Warn of poor grammar immediately interrupting flow with a visual
+  indicator.
+
+  ,----
+  | (use-package writegood-mode
+  |   :ensure t
+  |   :config
+  |   (eval-after-load "writegood-mode"
+  |     '(diminish 'writegood-mode)))
+  `----
+
+  ,----
+  | (use-package langtool
+  |   :ensure t
+  |   :init
+  |   (setq langtool-language-tool-jar (concat (getenv "EELIB") "/LanguageTool-2.8/languagetool-commandline.jar"))
+  |   (setq langtool-mother-tongue "en")
+  |   (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java")))
   `----
 
 
@@ -3041,7 +3087,7 @@ Grant Rettke
   |   (setq ac-quick-help-prefer-pos-tip nil)
   |   (ac-config-default)
   |   (setq ac-auto-start nil)
-  |   (help/not-on-gui (ac-set-trigger-key "\t"))
+  |   (help/not-on-gui (ac-set-trigger-key "TAB"))
   |   (help/on-gui (ac-set-trigger-key "<tab>"))
   |   :diminish auto-complete-mode)
   | (use-package auto-complete-chunk
@@ -3275,10 +3321,21 @@ Grant Rettke
 
   Never ispell the following objects.
 
+  Block regex helper.
+
+  ,----
+  | (defun help/block-regex (special)
+  |   "Make an ispell skip-region alist for a SPECIAL block."
+  |   (interactive)
+  |   `(,(concat help/org-special-pre "BEGIN_" special)
+  |     .
+  |     ,(concat help/org-special-pre "END_" special)))
+  `----
+
   Source-Blocks.
 
   ,----
-  | (add-to-list 'ispell-skip-region-alist '("^\s*#[+]BEGIN_SRC" . "^\s*#[+]END_SRC"))
+  | (add-to-list 'ispell-skip-region-alist (help/block-regex "SRC"))
   `----
 
   Example-Blocks. This system often uses Source-Blocks to edit content
@@ -3286,13 +3343,13 @@ Grant Rettke
   running.
 
   ,----
-  | (add-to-list 'ispell-skip-region-alist '("^\s*#[+]BEGIN_EXAMPLE" . "^\s*#[+]END_EXAMPLE"))
+  | (add-to-list 'ispell-skip-region-alist (help/block-regex "EXAMPLE"))
   `----
 
   Properties.
 
   ,----
-  | (add-to-list 'ispell-skip-region-alist '("\:PROPERTIES\:$" . "\:END\:$"))
+  | (add-to-list 'ispell-skip-region-alist '("^\s*:PROPERTIES\:$" . "^\s*:END\:$"))
   `----
 
   Footnotes.
@@ -3307,60 +3364,51 @@ Grant Rettke
   | (add-to-list 'ispell-skip-region-alist '("^http" . "\\]"))
   `----
 
-  Verbatim
-
-  ,----
-  | (add-to-list 'ispell-skip-region-alist '("=" . ".+="))
-  `----
-
   Bold text list items.
 
   ,----
   | (add-to-list 'ispell-skip-region-alist '("- \\*.+" . ".*\\*: "))
   `----
 
-  Export properties.
+  Check `SPECIAL LINE' definitions, ignoring their type.
 
   ,----
-  | (defun help/ispell-org-header-lines-regexp (h)
-  |   "Help ispell ignore org header lines."
-  |   (interactive)
-  |   (cons (concat "^\s*#[+]" h ":") ".$"))
-  |
-  | (defun help/ispell-a2isra (block-def)
-  |   "Add to the ispell skip region alist the BLOCK-DEF."
-  |   (interactive)
-  |   (add-to-list 'ispell-skip-region-alist block-def))
-  |
   | (let ()
   |   (--each
-  |       '("ATTR_LATEX"
-  |         "AUTHOR"
-  |         "CREATOR"
-  |         "DATE"
-  |         "DESCRIPTION"
-  |         "EMAIL"
-  |         "EXCLUDE_TAGS"
-  |         "HTML_CONTAINER"
-  |         "HTML_DOCTYPE"
-  |         "HTML_HEAD"
-  |         "HTML_HEAD_EXTRA"
-  |         "HTML_LINK_HOME"
-  |         "HTML_LINK_UP"
-  |         "HTML_MATHJAX"
-  |         "INFOJS_OPT"
-  |         "KEYWORDS"
-  |         "LANGUAGE"
-  |         "LATEX_CLASS"
-  |         "LATEX_CLASS_OPTIONS"
-  |         "LATEX_HEADER"
-  |         "LATEX_HEADER_EXTRA"
-  |         "NAME"
-  |         "OPTIONS"
-  |         "SELECT_TAGS"
-  |         "STARTUP"
-  |         "TITLE")
-  |     (help/ispell-a2isra (help/ispell-org-header-lines-regexp it))))
+  |       '(("ATTR_LATEX" nil)
+  |         ("AUTHOR" nil)
+  |         ("BLOG" nil)
+  |         ("CREATOR" nil)
+  |         ("DATE" nil)
+  |         ("DESCRIPTION" nil)
+  |         ("EMAIL" nil)
+  |         ("EXCLUDE_TAGS" nil)
+  |         ("HTML_CONTAINER" nil)
+  |         ("HTML_DOCTYPE" nil)
+  |         ("HTML_HEAD" nil)
+  |         ("HTML_HEAD_EXTRA" nil)
+  |         ("HTML_LINK_HOME" nil)
+  |         ("HTML_LINK_UP" nil)
+  |         ("HTML_MATHJAX" nil)
+  |         ("INFOJS_OPT" nil)
+  |         ("KEYWORDS" nil)
+  |         ("LANGUAGE" nil)
+  |         ("LATEX_CLASS" nil)
+  |         ("LATEX_CLASS_OPTIONS" nil)
+  |         ("LATEX_HEADER" nil)
+  |         ("LATEX_HEADER_EXTRA" nil)
+  |         ("NAME" nil)
+  |         ("OPTIONS" t)
+  |         ("POSTID" nil)
+  |         ("SELECT_TAGS" nil)
+  |         ("STARTUP" nil)
+  |         ("TITLE" nil))
+  |     (add-to-list
+  |      'ispell-skip-region-alist
+  |      (let ((special (concat "#[+]" (car it) ":")))
+  |        (if (cadr it)
+  |            (cons special "$")
+  |          (list special))))))
   `----
 
 
@@ -3440,8 +3488,10 @@ Grant Rettke
 
   ID: F5E2718B-F54F-41C5-9CED-6E470CAC238D
 
-  Use Magit for Git. The commit log editor uses With-Editor and Server
-  modes. They are not not diminshed because they are infrequently used.
+  Use VC for single files and Magit for multiple files.
+
+  The commit log editor uses With-Editor and Server modes. They are not
+  diminished because they are infrequently used.
 
   ,----
   | (use-package magit
@@ -3643,7 +3693,7 @@ Grant Rettke
   was for it to be crystal clear that the prompt line in comint buffers
   would be read only. This turned out to be a mistake; though I am not
   sure why, when, or how it became a mistake. Nonetheless, this should
-  be left alone. The way the issue here manifested was that all ℝ
+  be left alone. The way the issue here manifested was that all R
   buffers opened by `ess' were 100% read only which obviously is a *big
   issue* if you actually want to use! ROFL
 
@@ -3941,7 +3991,8 @@ Grant Rettke
   |   (fci-mode)
   |   (rainbow-mode)
   |   (help/try-to-add-imenu)
-  |   (writegood-mode))
+  |   (writegood-mode)
+  |   (turn-on-page-break-lines-mode))
   |
   | (add-hook 'text-mode-hook #'help/text-prog*-setup)
   `----
@@ -3966,7 +4017,8 @@ Grant Rettke
         | (setq help/hack-lisp-modes
         |       '(emacs-lisp-mode-hook
         |         ielm-mode-hook
-        |         lisp-interaction-mode))
+        |         lisp-interaction-mode-hook
+        |         scheme-mode-hook))
         | (setq help/hack-modes (append help/hack-modes help/hack-lisp-modes))
         `----
       - IELM mode hook.
@@ -4331,7 +4383,7 @@ Grant Rettke
   When edit mode is exited, the option exists to automatically remove
   empty opening and closed lines for the source block. Never do this.
   The thing is that I forgot why. When I was working on a recent
-  analysis with ℝ there was a space appearing in the opening and closing
+  analysis with R there was a space appearing in the opening and closing
   line of the source block that didn't appear in the source editing
   buffer. That surprised me. I am sure that I've forgotten why this is
   the case. I don't like it because you add a bunch of empty lines in
@@ -4444,12 +4496,6 @@ Grant Rettke
   | (wrap-region-add-wrapper "+" "+" nil 'org-mode)
   `----
 
-  Generate the README for GitHub.
-
-  ,----
-  | (add-hook 'org-babel-pre-tangle-hook #'help/org-xprt-rdme)
-  `----
-
   Minimize Macro text.
 
   ,----
@@ -4524,7 +4570,7 @@ Grant Rettke
   | _a_ inshdrgs _s_ oblobigst            _h_ dksieb
   | _c_ cksrcblk _b_ swtch2sessn _n_ n2sbtre _m_ xpndsrcblk"
   |   ("1" org-babel-sha1-hash)
-  |   ("2" help/xprt-all)
+  |   ("2" help/weave-everything-everywhere)
   |   ("4" org-display-inline-images)
   |   ("5" org-remove-inline-images)
   |   ("8" org-babel-detangle)
@@ -4583,36 +4629,7 @@ Grant Rettke
   |   :ensure t)
   `----
 
-  - For a minimalist release history read the [news file].
-  - For a brief overview and release history read the [readme].
-  - For a comprehensive overview read the [manual].
-
-  - Multiple `ESS' processes may run simultaneously, and may be selected
-    by a specific language via their buffer name that has a number
-    appended, or may be accessed via a menu using
-    `ess-request-a-process'.
-
-  Various user interaction stuff:
-  - Return sends the input from wherever you hit return, nice.
-  - `M-{' and `M-}' cycle through commands you ran
-  - `M-h' select a whole "paragraph", a block in their terms
-  - `C-x [' moves through the previous ESS sessions, `C-x ]' forward.
-  - `C-c C-p' and `C-c C-n' cycle through previous commands.
-    - How is this different than the other one?
-  - `C-c RET' copies an old command to the prompt without running it
-    - Great idea
-  - Keep your session transcript pruned
-    - `ess-transcript-clean-region' removes non-commands from a
-      transcript for you
-  - Previous command look-up can be done by completion via
-    `comint-*-matching'.
-    - `M-p' and `M-n' seem to work just fine though.
-  - Previous command execution, by name, offset, or just the last one,
-    are by `!'
-    - This feature is actually quite rich and a real regexen style
-      system.
-
-  Always show eldoc for things.
+  Display object documentation.
 
   ,----
   | (setq ess-eldoc-show-on-symbol t)
@@ -4656,10 +4673,10 @@ Grant Rettke
   | (setq ess-execute-in-process-buffer t)
   `----
 
-  When you cycle between a the ℝ buffer and the script, you get to the
-  process buffer, you will go to the end of the buffer. This setting is
-  specifically to handle a buffer that is scrolling when you want to see
-  the last result and will scroll back after the fact to see the
+  When you cycle between a the REPL buffer and the script, you get to
+  the process buffer, you will go to the end of the buffer. This setting
+  is specifically to handle a buffer that is scrolling when you want to
+  see the last result and will scroll back after the fact to see the
   history.
 
   ,----
@@ -4695,22 +4712,13 @@ Grant Rettke
   - `comint-previous-matching-input-from-input'
   - `comint-history-isearch-backward-regexp'
 
-  Personal customizations for this mode. For some currently unknown
-  reason, `smartparens' only runs when you call
-  `smartparens-strict-mode' and not `turn-on-smartparens-strict-mode'
-  like it does everywhere else.
-
   For a while I used `ess-eval-buffer-and-go', but now I know that it is
   insanely faster to use `ess-eval-buffer' instead. Previously I've read
   people saying that, and it is true.
 
-  When I started to standardize arrows across modes, I recalled the
-  `ess' documentation and was also reminded [1] here how easy it is to
-  customize it.
-
   *Philosophy*
 
-  The current `ESS' maintainers philosophies about how to maintain an ℝ
+  The current `ESS' maintainers philosophies about how to maintain an R
   code-base make sense to me and are virtually the same as my own. Quite
   simply, the rule is that the code artifacts are the single source of
   system definition. Consequently, the system should be configured in
@@ -4724,7 +4732,7 @@ Grant Rettke
   | (setq ess-keep-dump-files +1)
   `----
 
-  `ESS' allows us to quite easily modify live 𝕊 objects and functions.
+  `ESS' allows us to quite easily modify live R objects and functions.
   It provides this functionality via `ess-dump-object-into-edit-buffer'.
   These changes are considered to be experimental, and not part of the
   master record according to our philosophy. As such, we don't care to
@@ -4748,38 +4756,9 @@ Grant Rettke
   | (setq ess-mode-silently-save +1)
   `----
 
-  Indent curly brackets correctly:
-
-  `smartparens' is serving me well. In this mode it is for curly, round,
-  and square brackets. `ESS' handles indenting mostly right, too. One
-  thing was unpleasant, though. When you define a new function, hitting
-  return brings the curely bracket down to the newline but doesn't give
-  it an empty line and indent the cursor one indentation over so that
-  you may begin implementing the function. That is a big hassle; 4
-  unnecessary keystroke, it is really distracting and takes you out of
-  the flow. It is such a little thing yet it is so powerfully
-  distracting. It is like a mosquito in your tent! Searching for a
-  solution revealed that I am not alone here.
-
-  This post [2] handles brackets, indentation quite well [3] but doesn't
-  provide the behavior that I want. This post [4] captured exactly what
-  I was facing, yet didn't end with a solution which was kind of
-  shocking. Searching some more I ended up here [5], and this seems like
-  the ideal solution by the author of smartparens himself. This is
-  probably a common thing as I found another post with exactly my
-  situation referencing that aforementioned solution, too [6]. This is a
-  nice generalizable approach that should serve me well for just about
-  everything in this solution-area. Here [7] is a post showing a more
-  advanced usage that handles context which is nice to know is an
-  option.
-
-  ,----
-  | (sp-local-pair #'ess-mode "{" nil :post-handlers '((help/indent-curly-block "RET")))
-  `----
-
   `ESS' executes code in another process. That is no secret. When
   displaying output from that code running in another process though, it
-  can look like Emacs is locking up. That is not the case [8]. What is
+  can look like Emacs is locking up. That is not the case [1]. What is
   happening that Emacs is waiting for the output. Configure this mode to
   continue to accept user input, which is obviously critical, but don't
   wait for the process to provide its output. Instead, all output is
@@ -4795,13 +4774,6 @@ Grant Rettke
   `----
 
 
-  [news file] http://ess.r-project.org/Manual/news.html
-
-  [readme] http://ess.r-project.org/Manual/readme.html
-
-  [manual] http://ess.r-project.org/Manual/ess.html
-
-
 11.7 SAS (ESS)
 ~~~~~~~~~~~~~~
 
@@ -4815,151 +4787,32 @@ Grant Rettke
   noweb-ref: Hacking-Applied-Mathematics-ESS-R
   ID: 1183D35B-77FC-4CFD-9BAA-4F7656AD8943
 
-  ℝ first notes:
-  - ℝ will start ℝ via `Emacs'
-  - `ESS' works transparently on remote machines using `TRAMP' to manage
-    a remote ℝ instance. An example is provided for Amazon. Means exist
-    for supporting remote graphical displays or redirecting to a file.
-    Excellent support seems to exist to quite flexibly support
-    unexpected things like starting an `ESS' supported program in a
-    plain old shell and being able to convert it to an `ESS' supported
-    buffer.
-
-  In it:
-  - 𝕊 refers to any language in the family.
-    - ℝ is what I'm interested in.
-  - First 2.5 pages do some nice expectation-setting.
-  - Generally seems like a highly rich development environment with
-    support for editing, debugging, and support with everything that you
-    would expect from the best of Emacs.
-  - Manual covers most requested variables for configuring, but the
-    customize facility covers more, and mentions that either way you
-    should avoid doing so until you have used `ESS' for a while.
-
-  Various session interaction stuff
-  - Show objects in the work-space: `C-c C-x'
-  - Search for what libraries are available to the work-space: `C-c C-s'
-  - Load file with source: `C-c C-l'
-  - Visit errors: =C-c '= and =C-x '=
-  - Show help on an object: `C-c C-v'
-  - Quit: `C-c C-q'
-  - Abort: `C-c C-c'
-  - Switch between the console and the most recent file buffer: `C-c
-    C-z'
-
-  Sending code to the ESS process
-  - `ess-eval-region-or-line-and-step': Eval the region, or the line,
-    move to next line
-  - `C-M-x': Eval the current region, function, or paragraph
-  - `C-c C-c': Do that and then go to the next line
-  - `C-c C-j': Eval the current line
-  - `C-c M-j': Eval line and jump to the console
-  - `C-c C-f': Eval the currently selected function
-  - `C-c M-f': Eval the currently selected function and jump to the
-    console
-  - `C-c C-r': Eval the region
-  - `C-c M-r': Eval the region and jump to the console
-  - `C-c C-b': Eval the buffer
-  - `C-c M-b': Eval the buffer and jump to the console
-  - You can do all this stuff from transcript files, too.
-    - My thought is that I never, ever will and if I do need to, I'm
-      looking up the commands again as I don't want to make a habit of
-      doing that kind of thing (running old transcripts).
-
-  Editing objects and functions:
-  - `C-c C-e C-d': Edit the current object
-  - `C-c C-l': Load source file into the ESS process
-  - `TAB' Indents/re-formats or completes code.
-  - `M-;': Correctly indents the current comment
-
-  Help mode inside of ESS:
-  - `C-c C-v': `ess-display-help-on-object': Get help on anything
-  - `?': Show commands available in help mode
-  - `h': Show help for a different object. Currently focused object
-    defaults.
-  - `n' and `p': Cycle through sections
-  - `l': Eval the current line in the console; usually sample code.
-  - `r': Eval current region, too
-  - `q': Quit out of that buffer
-  - `k': Kill that buffer
-  - `x': Kill that buffer and return to ESS
-  - `i': Get info on a package
-  - `v': Show vignettes
-  - `w': Show current help page in browser
-
-  Completion:
-  - `TAB': Complete anything
-  - `M-?': Show completions available
-  - `ess-resynch': Refreshes the completion cache
-
-  *ess-tracebug* start
+  Enable a debugger.
 
   ,----
   | (setq ess-use-tracebug t)
   `----
 
-  For all `ess-tracebug' stuff, the map prefix is `C-c C-t'
-
-  <2014-11-11 Tue> The documentation for `ess-tracebug-help' provides
-  all of this documentation that I copied from the website into here.
-  Someday I should clean this up!
-
-  Breakpoints `ess-dev-map':
-  b `ess-bp-set': Set BP (repeat to cycle BP type)
-  B `ess-bp-set-conditional': Set conditional BP
-  k `ess-bp-kill': Kill BP
-  K `ess-bp-kill-all': Kill all BPs
-  o `ess-bp-toggle-state': Toggle BP state
-  l `ess-bp-set-logger': Set logger BP
-  n `ess-bp-next': Goto next BP
-  p `ess-bp-previous': Goto previous BP
-
-  Note: `C-' prefixed equivalents are also defined
-
-  Debugging `ess-dev-map':
-  ` `ess-show-traceback' (also on C-c ): Show traceback
-  ~ `ess-show-call-stack' (also on C-c ~): Show callstack
-  e `ess-debug-toggle-error-action': Toggle error action (repeat to cycle)
-  d `ess-debug-flag-for-debugging': Flag for debugging
-  u `ess-debug-unflag-for-debugging': Unflag for debugging
-  w `ess-watch': Watch window
-
-  Note: `C-' prefixed equivalents are also defined)
-
-  Interactive Debugging `ess-debug-minor-mode-map':
-  M-C `ess-debug-command-continue': Continue
-  M-C-C `ess-debug-command-continue-multi': Continue multi
-  M-N `ess-debug-command-next': Next step
-  M-C-N `ess-debug-command-next-multi': Next step multi
-  M-U `ess-debug-command-up': Up frame
-  M-Q `ess-debug-command-quit': Quit debugging
-
-  Navigation to errors (general Emacs functionality):
-  `C-x `', =M-g n: `next-error'
-  `M-g p': `previous-error'
-
-  *ess-tracebug* stop
-
-  Be sure to specify this per-project.
+  Configure debugger search path per-project.
 
   ,----
   | (setq ess-tracebug-search-path '())
   `----
 
-  Make error navigation simpler.
+  Easily nevigate errors.
 
   ,----
   | (define-key compilation-minor-mode-map [(?n)] #'next-error-no-select)
   | (define-key compilation-minor-mode-map [(?p)] #'previous-error-no-select)
   `----
 
-  The font size for watched variables..
+  Diminish watched variable font-size.
 
   ,----
   | (setq ess-watch-scale-amount -1)
   `----
 
-  When `ess' starts, or when ℝ starts, it takes the current directory as
+  When `ess' starts, or when R starts, it takes the current directory as
   its working directory. This is totally fine; so don't ask what the
   working directory should be.
 
@@ -5016,42 +4869,6 @@ Grant Rettke
 
   `ess-developer' helps you to easily work within specific name-spaces.
 
-  Rutils: key-bindings to aid real usage
-  - `C-c C-. l': List all packages in all available libraries.
-  - `C-c C-. r': List available packages from repositories listed by
-    `getOptions(‘‘repos’’)'
-  in the current R session.
-  - `C-c C-. u': Update packages in a particular library lib and
-    repository repos.
-  - `C-c C-. a': Search for a string using apropos.
-  - `C-c C-. m': Remove all R objects.
-  - `C-c C-. o': Manipulate R objects; wrapper for `ess-rdired'.
-  - `C-c C-. w': Load a workspace file into R.
-  - `C-c C-. s': Save a work-space file.
-  - `C-c C-. d': Change the working directory for the current R session.
-  - `C-c C-. H': Use `browse-url' to navigate R HTML documentation.
-
-  `ess-mode-silently-save' is worth a million bucks; usually I have to
-  hand code this.
-
-  As of <2014-01-31 Fri>, you need to manually load ESS when you pull it
-  from MELPA [9]. That is totally fine with me, that is really the best
-  way to load stuff. Out of curiosity, I read more about it here [10],
-  but that occurred before this previous post made by the maintainers.
-  Even the source code in `ess-autoloads.el' has a license from 2012,
-  which is before the aforementioned post. As such, this configuration
-  step seems correct and necessary for now. Additionally, this how the
-  user manual expects a typical manual setup to be configured.
-
-  Looked a tiny bit at how R hackers are formatting their code [11]
-  [12]. The simple (dumb) part of me suspects that C++ formatting is
-  generally just fine [13].
-
-  There is strangely nice discussion about where temp files may be
-  stored; specifically for cases where you edit identically-named
-  objects and want to keep them in the same directory but per-project.
-  That is not the need now, and it is nice to know that it is an option.
-
   Store history files and dump files in a single known location. If that
   location doesn't exist, then make it.
 
@@ -5069,8 +4886,8 @@ Grant Rettke
   | (setq ess-source-directory help/r-dir)
   `----
 
-  Since I'm using ℝ for everything, configure /everything/ to be using
-  ℝ.
+  Since I'm using R for everything, configure /everything/ to be using
+  R.
 
   ,----
   | (setq inferior-ess-program "R")
@@ -5085,13 +4902,13 @@ Grant Rettke
   | (add-to-list 'auto-mode-alist '("\\.Rmd$" . r-mode))
   `----
 
-  Make it really easy to search the ℝ archives for anything.
+  Make it really easy to search the R archives for anything.
 
   ,----
   | (local-set-key (kbd "C-c C-. S") #'ess-rutils-rsitesearch)
   `----
 
-  Make it really easy to do common stuff for ℝ with good keybindings.
+  Make it really easy to do common stuff for R with good keybindings.
 
   ,----
   | (use-package ess-rutils
@@ -5118,14 +4935,8 @@ Grant Rettke
   | (setq ess-R-argument-suffix "=")
   `----
 
-  This [14] post shares a nice setup for the assignment key; primarily
-  if you use underscores in your variable names, which I do on
-  occasions. After coding like this for just 10 short minutes it drove
-  me nuts and that is totally counter intuitive to me; I never would
-  have expected that having to type two characters to do an assignment
-  would give me nuts. Anyway, the default behavior is just fine; hit
-  underscore twice gives you an underscore, and one gives you an
-  assignment!
+  Don't use the default assignment binding and allow underscores in
+  names.
 
   ,----
   | (setq ess-S-assign-key (kbd "C-,"))
@@ -5133,13 +4944,15 @@ Grant Rettke
   | (ess-toggle-underscore nil)
   `----
 
-  Don't save the workspace when you quit ℝ and don't restore *ANYTHING*
+  Don't save the workspace when you quit R and don't restore *ANYTHING*
   when you start it, either. This adheres to the philosopy that the
-  system is file based. Period.
+  system is file based.
 
   ,----
   | (setq inferior-R-args "--no-save --no-restore")
   `----
+
+  R mode hook.
 
   ,----
   | (defun help/R-mode-hook-fn ()
@@ -5195,8 +5008,58 @@ Grant Rettke
   `----
 
 
-11.9 YASnippet
-~~~~~~~~~~~~~~
+11.9 Scheme (LISP)
+~~~~~~~~~~~~~~~~~~
+
+  noweb-ref: Hacking-Applied-Mathematics-LISP-Scheme
+  ID: D68EC042-5CBA-4547-B28A-CF878FB080C1
+
+  Handle all file extensions:
+  - Traditional.
+    ,----
+    | (add-to-list 'auto-mode-alist '("\\.scm\\'" . scheme-mode))
+    | (add-to-list 'auto-mode-alist '("\\.ss\\'" . scheme-mode))
+    `----
+  - Racket.
+    ,----
+    | (add-to-list 'auto-mode-alist '("\\.rkt\\'" . scheme-mode))
+    `----
+  - R6RS.
+    ,----
+    | (add-to-list 'auto-mode-alist '("\\.sls\\'" . scheme-mode))
+    | (add-to-list 'auto-mode-alist '("\\.sps\\'" . scheme-mode))
+    `----
+
+  Use Geiser for Racket and Guile
+
+  ,----
+  | (use-package geiser
+  |   :ensure t)
+  `----
+
+  Enable Auto-Complete via Geiser.
+
+  ,----
+  | (use-package ac-geiser
+  |   :ensure t
+  |   :config
+  |   (add-hook 'geiser-mode-hook 'ac-geiser-setup)
+  |   (add-hook 'geiser-repl-mode-hook 'ac-geiser-setup)
+  |   (eval-after-load "auto-complete"
+  |     '(add-to-list 'ac-modes 'geiser-repl-mode))
+  |   (setq geiser-active-implementations '(racket guile))
+  |   (setq geiser-repl-history-no-dups-p t))
+  `----
+
+
+11.10 Common Lisp (LISP)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  ID: CC2615EA-EDE5-45AA-B874-AE5E673C01ED
+
+
+11.11 YASnippet
+~~~~~~~~~~~~~~~
 
   noweb-ref: Hacking-Applied-Mathematics-YASnippet
   ID: 5C48A01F-D522-4AC9-A523-F8EE2E9EB384
@@ -5224,19 +5087,19 @@ Grant Rettke
   `----
 
 
-11.10 Structured Query Language (SQL)
+11.12 Structured Query Language (SQL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   ID: 987C1C05-F880-4312-B902-5060208A3506
 
 
-11.11 (Publishing)
+11.13 (Publishing)
 ~~~~~~~~~~~~~~~~~~
 
   ID: 7D07C2F6-38B9-49BF-A584-B029CEED6141
 
 
-11.12 TeX
+11.14 TeX
 ~~~~~~~~~
 
   noweb-ref: Hacking-Publishing-TeX
@@ -5332,7 +5195,7 @@ Grant Rettke
   `----
 
 
-11.13 KOMA-Script
+11.15 KOMA-Script
 ~~~~~~~~~~~~~~~~~
 
   noweb-ref: Hacking-Publishing-KOMA
@@ -5345,7 +5208,10 @@ Grant Rettke
 
   The [babel] packages is mentioned in the Org documentation. The
   package documentation explains that it should be used with LaTeX, but
-  not XeTeX. Some time ago I decided to stick with LaTeX.
+  not XeTeX. Some time ago I decided to stick with LaTeX. This decision
+  needs documentation. This system leans towards LuaTeX because of its
+  Unicode support and sticks with PDFLaTeX because of its broad
+  acceptance. Those two goals are at odds with each other.
 
   Load the KOMA exporter.
 
@@ -5478,7 +5344,7 @@ Grant Rettke
   http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-example.org%3Bh%3De21b8b00c3e895be9dd573d02ea84b08796296a3%3Bhb%3De21b8b00c3e895be9dd573d02ea84b08796296a3
 
 
-11.14 Texinfo
+11.16 Texinfo
 ~~~~~~~~~~~~~
 
   ID: F2C5CEB7-1252-4E6F-B192-C5D2D41A6D47
@@ -5490,13 +5356,13 @@ Grant Rettke
   https://lists.gnu.org/archive/html/emacs-orgmode/2015-07/msg00042.html
 
 
-11.15 Pandoc
+11.17 Pandoc
 ~~~~~~~~~~~~
 
   ID: 1E4AB0D4-F92E-48E6-9313-278C27DED142
 
 
-11.16 Markdown
+11.18 Markdown
 ~~~~~~~~~~~~~~
 
   noweb-ref: Hacking-Publishing-Markdown
@@ -5519,13 +5385,57 @@ Grant Rettke
   `----
 
 
-11.17 WordPress
-~~~~~~~~~~~~~~~
+11.19 Blog (WordPress)
+~~~~~~~~~~~~~~~~~~~~~~
 
+  noweb-ref: Hacking-Publishing-Wordpress
   ID: F5E33EB2-2E26-435C-85F6-26CB7CE7FC56
 
+        An elisp implementation of clientside XML-RPC
 
-11.18 HTML
+  ,----
+  | (use-package xml-rpc
+  |   :ensure t)
+  `----
+
+        Weblog maintenance via XML-RPC APIs
+
+  ,----
+  | (use-package metaweblog
+  |   :ensure t)
+  `----
+
+        Blog from Org mode to wordpress
+
+  ,----
+  | (use-package org2blog
+  |   :ensure t)
+  `----
+
+  Org2Blog depends on Org-Mode. This system loads Org-Mode from Git.
+  Enter the `ELPA' cache directory and delete it.
+
+  This system works with WisdomAndWonder. It keeps its posts separate
+  giving focus to each Web.
+
+  ,----
+  | (setq org2blog/wp-track-posts nil)
+  `----
+
+  Configure Org2Blog.
+
+  ,----
+  | (setq org2blog/wp-blog-alist
+  |       '(("wisdomandwonder"
+  |          :url "http://www.wisdomandwonder.com/wordpress/xmlrpc.php"
+  |          :username "admin"
+  |          :default-categories ("Article" "Link")
+  |          :confirm t
+  |          :show 'show)))
+  `----
+
+
+11.20 HTML
 ~~~~~~~~~~
 
   noweb-ref: Hacking-Publishing-HTML
@@ -5566,7 +5476,7 @@ Grant Rettke
   `----
 
 
-11.19 ASCII
+11.21 ASCII
 ~~~~~~~~~~~
 
   ID: 1F20F4EC-1D8B-402A-A0A9-504E733AEFDC
@@ -5577,7 +5487,7 @@ Grant Rettke
   `----
 
 
-11.20 Beamer
+11.22 Beamer
 ~~~~~~~~~~~~
 
   noweb-ref: Hacking-Publishing-Beamer
@@ -5590,25 +5500,25 @@ Grant Rettke
   `----
 
 
-11.21 (DevOps)
+11.23 (DevOps)
 ~~~~~~~~~~~~~~
 
   ID: 8B78A8C3-E6B6-4722-9822-EF428E5DB823
 
 
-11.22 Shell Script
+11.24 Shell Script
 ~~~~~~~~~~~~~~~~~~
 
   ID: 06D022B2-53ED-4042-8152-F383F5FE309E
 
 
-11.23 Make
+11.25 Make
 ~~~~~~~~~~
 
   ID: 5F2B3343-631D-41C3-BE6B-D98548F77E07
 
 
-11.24 Vagrant
+11.26 Vagrant
 ~~~~~~~~~~~~~
 
   ID: A1335FE5-6DA7-4FE2-A77C-60032C76B40D
@@ -5616,13 +5526,13 @@ Grant Rettke
   `ruby-mode' supports `Vagrantfile' OOTB.
 
 
-11.25 (Diagram)
+11.27 (Diagram)
 ~~~~~~~~~~~~~~~
 
   ID: FA47D423-05B3-4911-9CEC-28A534E49428
 
 
-11.26 Artist
+11.28 Artist
 ~~~~~~~~~~~~
 
   noweb-ref: Hacking-Diagram-Artist
@@ -5635,7 +5545,7 @@ Grant Rettke
   `----
 
 
-11.27 DITAA
+11.29 DITAA
 ~~~~~~~~~~~
 
   noweb-ref: Hacking-Diagram-DITAA
@@ -5653,7 +5563,7 @@ Grant Rettke
   `----
 
 
-11.28 Graphviz
+11.30 Graphviz
 ~~~~~~~~~~~~~~
 
   noweb-ref: Hacking-Diagram-Graphviz
@@ -5669,7 +5579,7 @@ Grant Rettke
   [file:./image/graphviz-life_is_simple.png]
 
 
-11.29 PlantUML
+11.31 PlantUML
 ~~~~~~~~~~~~~~
 
   noweb-ref: Hacking-Diagram-PlantUML
@@ -5769,35 +5679,5 @@ Grant Rettke
 Footnotes
 _________
 
-[1] [http://www.r-bloggers.com/a-small-customization-of-ess/]
-
-[2] [http://www.emacswiki.org/emacs/ESSAutoParens]
-
-[3]
-[http://emacs.1067599.n5.nabble.com/indentation-not-working-if-parentheses-are-already-closed-td283806.html]
-
-[4]
-[https://stackoverflow.com/questions/18420933/enabling-mode-specific-paren-indentation-in-emacs-prelude]
-
-[5] [https://github.com/Fuco1/smartparens/issues/80]
-
-[6] [https://github.com/bbatsov/prelude/issues/374]
-
-[7] :
-[https://github.com/rdallasgray/graphene/blob/master/graphene-smartparens-config.el]
-
-[8]
+[1]
 [https://stackoverflow.com/questions/2770523/how-can-i-background-the-r-process-in-ess-emacs]
-
-[9] [https://stat.ethz.ch/pipermail/ess-help/2014-January/009705.html]
-
-[10] [https://github.com/milkypostman/melpa/issues/6]
-
-[11] [https://google-styleguide.googlecode.com/svn/trunk/Rguide.xml]
-
-[12] [http://adv-r.had.co.nz/Style.html]
-
-[13]
-[https://stackoverflow.com/questions/7502540/make-emacs-ess-follow-r-style-guide]
-
-[14] [http://www.r-bloggers.com/a-small-customization-of-ess/]

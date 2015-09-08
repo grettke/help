@@ -23,6 +23,7 @@
     -   **Web:** A document contained Source-Block definitions that define a system.
 -   Encoding
     -   Prefer Unicode characters over ASCII equivalents.
+        -   Note eventual switch form PDFLaTeX to LuaTeX.
     -   Consider Org-Mode automatic handling of ASCII to UTF-8 symbols.
 -   File/Package Loading
     -   Load every one with `use-package` whether it came with EMACS OOTB or ELPA.
@@ -144,6 +145,7 @@
     -   Simple and detailed.
     -   Pleasant conversation style.
     -   Audience is Sysop; the author included.
+    -   Capture decisions that allow this system to move forward.
 -   Weaving.
     -   Strive to keep the weaving in synchronization with the tangling.
 -   Word Choice.
