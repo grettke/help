@@ -128,6 +128,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
    (R . t)
    (scheme . t)
    (lisp . t)
+   (gnuplot . t)
    (calc . t)
    (sql . t)
    ;;
