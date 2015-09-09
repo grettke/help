@@ -4533,8 +4533,9 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
 (define-key org-mode-map (kbd "s-y") #'help/safb-org-babel-execute-buffer)
 (define-key org-mode-map (kbd "s-u") #'help/safb-org-babel-execute-subtree)
 (define-key org-mode-map (kbd "s-U") #'org-mark-ring-goto)
-(define-key org-mode-map (kbd "s-i") #'org-babel-execute-maybe)
- #+END_SRC
+(define-key org-mode-map (kbd "s-i") #'org-babel-execute-src-block)
+(define-key org-mode-map (kbd "s-o") #'org-babel-remove-result)
+(define-key org-mode-map (kbd "s-p") #'org-babel-remove-inline-result)
 
 **** Row 3
      :PROPERTIES:

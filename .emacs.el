@@ -1502,7 +1502,9 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (define-key org-mode-map (kbd "s-y") #'help/safb-org-babel-execute-buffer)
 (define-key org-mode-map (kbd "s-u") #'help/safb-org-babel-execute-subtree)
 (define-key org-mode-map (kbd "s-U") #'org-mark-ring-goto)
-(define-key org-mode-map (kbd "s-i") #'org-babel-execute-maybe)
+(define-key org-mode-map (kbd "s-i") #'org-babel-execute-src-block)
+(define-key org-mode-map (kbd "s-o") #'org-babel-remove-result)
+(define-key org-mode-map (kbd "s-p") #'org-babel-remove-inline-result)
 ;; 9CB5CC76-4C1D-40CB-829C-A5AC98FE23FD ends here
 ;; [[file:~/src/help/help.org::*Row%203][933B1A3A-A77A-4616-B9D8-9DACED018CC2]]
 (define-key org-mode-map (kbd "s-h") #'help/safb-org-babel-tangle)
