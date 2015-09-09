@@ -4516,59 +4516,60 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
      :ID:       B09BE660-B5D5-40CA-8952-D2DEAE20E7BD
      :END:
 
- #+NAME: E65CF1F6-F56C-4A1A-BB45-5E530FA93C04
- #+BEGIN_SRC emacs-lisp :results output silent
+#+NAME: E65CF1F6-F56C-4A1A-BB45-5E530FA93C04
+#+BEGIN_SRC emacs-lisp :results output silent
 (define-key org-mode-map (kbd "s-6") #'org-babel-load-in-session)
 (define-key org-mode-map (kbd "s-7") #'org-babel-switch-to-session)
 (define-key org-mode-map (kbd "s-8") #'org-babel-switch-to-session-with-code)
- #+END_SRC
+#+END_SRC
 
 **** Row 4
      :PROPERTIES:
      :ID:       1E49694B-6350-45E2-BE58-21EAAF09D4A2
      :END:
 
- #+NAME: 9CB5CC76-4C1D-40CB-829C-A5AC98FE23FD
- #+BEGIN_SRC emacs-lisp :results output silent
+#+NAME: 9CB5CC76-4C1D-40CB-829C-A5AC98FE23FD
+#+BEGIN_SRC emacs-lisp :results output silent
 (define-key org-mode-map (kbd "s-y") #'help/safb-org-babel-execute-buffer)
 (define-key org-mode-map (kbd "s-u") #'help/safb-org-babel-execute-subtree)
 (define-key org-mode-map (kbd "s-U") #'org-mark-ring-goto)
 (define-key org-mode-map (kbd "s-i") #'org-babel-execute-src-block)
 (define-key org-mode-map (kbd "s-o") #'org-babel-remove-result)
 (define-key org-mode-map (kbd "s-p") #'org-babel-remove-inline-result)
+#+END_SRC
 
 **** Row 3
      :PROPERTIES:
      :ID:       D11109EE-AD92-4E26-988F-AF3CC70A2F69
      :END:
 
- #+NAME: 933B1A3A-A77A-4616-B9D8-9DACED018CC2
- #+BEGIN_SRC emacs-lisp :results output silent
+#+NAME: 933B1A3A-A77A-4616-B9D8-9DACED018CC2
+#+BEGIN_SRC emacs-lisp :results output silent
 (define-key org-mode-map (kbd "s-h") #'help/safb-org-babel-tangle)
 (define-key org-mode-map (kbd "s-j") #'org-babel-next-src-block)
 (define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
 (define-key org-mode-map (kbd "s-l") #'help/safb-org-edit-src-code)
- #+END_SRC
+#+END_SRC
 
 **** Row 2
      :PROPERTIES:
      :ID:       CA925DDA-8EA8-47B0-AE9A-D73073CF51B7
      :END:
 
- #+NAME: 2F8DDC77-27C4-4E81-8913-28243C4A44B6
- #+BEGIN_SRC emacs-lisp :results output silent
+#+NAME: 2F8DDC77-27C4-4E81-8913-28243C4A44B6
+#+BEGIN_SRC emacs-lisp :results output silent
 (define-key org-mode-map (kbd "s-n") #'org-babel-view-src-block-info)
 (define-key org-mode-map (kbd "s-m") #'org-babel-open-src-block-result)
 (define-key org-mode-map (kbd "s-,") #'help/safb-help/org-babel-demarcate-block)
- #+END_SRC
+#+END_SRC
 
 **** Hydra
      :PROPERTIES:
      :ID:       46BCE65B-B8C9-49A0-A687-30D1330DB07D
      :END:
 
- #+NAME: 5186DD50-F693-4297-A164-192BEA685C6D
- #+BEGIN_SRC emacs-lisp :results output silent
+#+NAME: 5186DD50-F693-4297-A164-192BEA685C6D
+#+BEGIN_SRC emacs-lisp :results output silent
 (defhydra help/hydra/right-side/org-mode (:color blue
                                                  :hint nil)
   "
@@ -4600,7 +4601,7 @@ _c_ cksrcblk _b_ swtch2sessn _n_ n2sbtre _m_ xpndsrcblk"
   ("n" org-narrow-to-subtree)
   ("m" org-babel-expand-src-block-maybe))
 (key-chord-define-global "hh" #'help/hydra/right-side/org-mode/body)
- #+END_SRC
+#+END_SRC
 
  Safe all buffers before working with Exports.
 
