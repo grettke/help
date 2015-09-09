@@ -705,6 +705,7 @@ Org-Mode may evaluate all of the listed languages.
    (sass . t)
    (R . t)
    (scheme . t)
+   (python . t)
    (sql . t)
    ;;
    (latex . t)
@@ -5088,6 +5089,10 @@ Enable Auto-Complete via Geiser.
   (setq geiser-repl-history-no-dups-p t))
 #+END_SRC
 
+** Python
+   :PROPERTIES:
+   :ID:       F4577EEA-FB0F-4E7B-AF02-A4DEA74BB763
+   :END:
 ** YASnippet
   :PROPERTIES:
   :noweb-ref: Hacking-Applied-Mathematics-YASnippet
