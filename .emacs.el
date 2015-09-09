@@ -1493,59 +1493,68 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
  (define-key org-mode-map (kbd "<return>") #'org-return-indent)
  (define-key org-mode-map (kbd "C-M-<return>") #'electric-indent-just-newline))
 ;; 8C7E90AC-C7EB-4A43-9377-C3C85CE51849 ends here
-;; [[file:~/src/help/help.org::*Keybindings][E65CF1F6-F56C-4A1A-BB45-5E530FA93C04]]
-(define-key org-mode-map (kbd "s-7") #'org-babel-load-in-session)
-(define-key org-mode-map (kbd "s-8") #'org-babel-switch-to-session)
-(define-key org-mode-map (kbd "s-9") #'org-babel-switch-to-session-with-code)
-(define-key org-mode-map (kbd "s-j") #'org-babel-next-src-block)
-(define-key org-mode-map (kbd "s-y") #'help/safb-org-babel-execute-subtree)
-(define-key org-mode-map (kbd "s-u") #'help/safb-org-babel-execute-buffer)
-(define-key org-mode-map (kbd "s-U") #'org-mark-ring-goto)
-(define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
-(define-key org-mode-map (kbd "s-i") #'help/safb-org-babel-tangle)
-(define-key org-mode-map (kbd "s-l") #'help/safb-org-edit-src-code)
-(define-key org-mode-map (kbd "s-o") #'org-babel-execute-src-block-maybe)
-(define-key org-mode-map (kbd "s-;") #'org-babel-view-src-block-info)
-(define-key org-mode-map (kbd "s-'") #'org-babel-open-src-block-result)
-(define-key org-mode-map (kbd "s-p") #'help/safb-help/org-babel-demarcate-block)
+;; [[file:~/src/help/help.org::*Row%205][E65CF1F6-F56C-4A1A-BB45-5E530FA93C04]]
+(define-key org-mode-map (kbd "s-6") #'org-babel-load-in-session)
+(define-key org-mode-map (kbd "s-7") #'org-babel-switch-to-session)
+(define-key org-mode-map (kbd "s-8") #'org-babel-switch-to-session-with-code)
 ;; E65CF1F6-F56C-4A1A-BB45-5E530FA93C04 ends here
-;; [[file:~/src/help/help.org::*Keybindings][5186DD50-F693-4297-A164-192BEA685C6D]]
+;; [[file:~/src/help/help.org::*Row%204][9CB5CC76-4C1D-40CB-829C-A5AC98FE23FD]]
+(define-key org-mode-map (kbd "s-y") #'help/safb-org-babel-execute-buffer)
+(define-key org-mode-map (kbd "s-u") #'help/safb-org-babel-execute-subtree)
+(define-key org-mode-map (kbd "s-U") #'org-mark-ring-goto)
+(define-key org-mode-map (kbd "s-i") #'org-babel-execute-maybe)
+;; 9CB5CC76-4C1D-40CB-829C-A5AC98FE23FD ends here
+;; [[file:~/src/help/help.org::*Row%203][933B1A3A-A77A-4616-B9D8-9DACED018CC2]]
+(define-key org-mode-map (kbd "s-h") #'help/safb-org-babel-tangle)
+(define-key org-mode-map (kbd "s-j") #'org-babel-next-src-block)
+(define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
+(define-key org-mode-map (kbd "s-l") #'help/safb-org-edit-src-code)
+;; 933B1A3A-A77A-4616-B9D8-9DACED018CC2 ends here
+;; [[file:~/src/help/help.org::*Row%202][2F8DDC77-27C4-4E81-8913-28243C4A44B6]]
+(define-key org-mode-map (kbd "s-n") #'org-babel-view-src-block-info)
+(define-key org-mode-map (kbd "s-m") #'org-babel-open-src-block-result)
+(define-key org-mode-map (kbd "s-,") #'help/safb-help/org-babel-demarcate-block)
+;; 2F8DDC77-27C4-4E81-8913-28243C4A44B6 ends here
+;; [[file:~/src/help/help.org::*Hydra][5186DD50-F693-4297-A164-192BEA685C6D]]
 (defhydra help/hydra/right-side/org-mode (:color blue
                                                  :hint nil)
   "
-_1_ SHA-1 _2_ export-all _4_ +imgs _5_ -imgs                   _8_ detangle _9_ igc  _0_ tglmcro
+_1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ detangle _5_ id-create _6_ toggle-macro
 _q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ g2nms-b _t_ g2s-b/hd      _u_ goto
 _a_ inshdrgs _s_ oblobigst            _h_ dksieb
 _c_ cksrcblk _b_ swtch2sessn _n_ n2sbtre _m_ xpndsrcblk"
+  ;; Row 5
   ("1" org-babel-sha1-hash)
-  ("2" help/weave-everything-everywhere)
-  ("4" org-display-inline-images)
-  ("5" org-remove-inline-images)
-  ("8" org-babel-detangle)
-  ("9" org-id-get-create)
-  ("0" help/org-toggle-macro-markers)
-  ("s" org-babel-lob-ingest)
+  ("2" org-display-inline-images)
+  ("3" org-remove-inline-images)
+  ("4" org-babel-detangle)
+  ("5" org-id-get-create)
+  ("6" help/org-toggle-macro-markers)
+  ;; Row 4
+  ("q" org-babel-switch-to-session-with-code)
+  ("w" org-table-edit-field)
   ("e" org-babel-goto-named-result)
   ("r" org-babel-goto-named-src-block)
   ("t" org-babel-goto-src-block-head)
-  ("a" org-babel-insert-header-arg)
-  ("h" org-babel-do-key-sequence-in-edit-buffer)
-  ("m" org-babel-expand-src-block-maybe)
-  ("c" org-babel-check-src-block)
-  ("w" org-table-edit-field)
-  ("n" org-narrow-to-subtree)
   ("u" org-goto)
+  ;; Row 3
+  ("a" org-babel-insert-header-arg)
+  ("s" org-babel-lob-ingest)
+  ("h" org-babel-do-key-sequence-in-edit-buffer)
+  ;; Row 2
+  ("c" org-babel-check-src-block)
   ("b" org-babel-switch-to-session)
-  ("q" org-babel-switch-to-session-with-code))
+  ("n" org-narrow-to-subtree)
+  ("m" org-babel-expand-src-block-maybe))
 (key-chord-define-global "hh" #'help/hydra/right-side/org-mode/body)
 ;; 5186DD50-F693-4297-A164-192BEA685C6D ends here
-;; [[file:~/src/help/help.org::*Keybindings][BFF7A955-3107-4ED3-9022-CAB792E779EC]]
+;; [[file:~/src/help/help.org::*Hydra][BFF7A955-3107-4ED3-9022-CAB792E779EC]]
 (define-key org-mode-map (kbd "C-c C-e") #'help/safb-org-export-dispatch)
 ;; BFF7A955-3107-4ED3-9022-CAB792E779EC ends here
-;; [[file:~/src/help/help.org::*Keybindings][B489F70A-F1B0-41A9-BB98-A5861A867547]]
+;; [[file:~/src/help/help.org::*Hydra][B489F70A-F1B0-41A9-BB98-A5861A867547]]
 (define-key org-src-mode-map (kbd "s-l") #'org-edit-src-exit)
 ;; B489F70A-F1B0-41A9-BB98-A5861A867547 ends here
-;; [[file:~/src/help/help.org::*Keybindings][46FE856B-D5C6-45B0-95D5-891211AC295C]]
+;; [[file:~/src/help/help.org::*Hydra][46FE856B-D5C6-45B0-95D5-891211AC295C]]
 (key-chord-define org-src-mode-map "<<" (lambda () (interactive) (insert "«")))
 (key-chord-define org-src-mode-map ">>" (lambda () (interactive) (insert "»")))
 ;; 46FE856B-D5C6-45B0-95D5-891211AC295C ends here
@@ -2040,21 +2049,21 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 ;; [[file:~/src/help/help.org::*Window][3FB7FA94-1A6B-4E3B-8EDE-7A4D1D86E50E]]
 (winner-mode t)
 ;; 3FB7FA94-1A6B-4E3B-8EDE-7A4D1D86E50E ends here
-;; [[file:~/src/help/help.org::*5][E4B98196-FDFB-42B4-A52A-8CA7DC066E8E]]
+;; [[file:~/src/help/help.org::*Row%205][E4B98196-FDFB-42B4-A52A-8CA7DC066E8E]]
 (global-set-key (kbd "s-4") #'mc/mark-next-like-this)
 (global-set-key (kbd "s-3") #'mc/mark-previous-like-this)
 (global-set-key (kbd "s-2") #'mc/mark-all-like-this)
 (global-set-key (kbd "s-1") #'mc/edit-lines)
 ;; E4B98196-FDFB-42B4-A52A-8CA7DC066E8E ends here
-;; [[file:~/src/help/help.org::*4][239A85C3-2CEB-4E40-975F-8B3584F7F450]]
+;; [[file:~/src/help/help.org::*Row%204][239A85C3-2CEB-4E40-975F-8B3584F7F450]]
 (global-set-key (kbd "s-w") #'imenu)
 ;; 239A85C3-2CEB-4E40-975F-8B3584F7F450 ends here
-;; [[file:~/src/help/help.org::*3][E60EA15F-28A0-4E98-B62E-1F8BDE444BD8]]
+;; [[file:~/src/help/help.org::*Row%203][E60EA15F-28A0-4E98-B62E-1F8BDE444BD8]]
 (global-set-key (kbd "s-d") #'er/expand-region)
 (key-chord-define-global "df" #'avy-goto-word-1)
 (key-chord-define-global "DF" #'avy-pop-mark)
 ;; E60EA15F-28A0-4E98-B62E-1F8BDE444BD8 ends here
-;; [[file:~/src/help/help.org::*3][F6C7AAB7-DF69-4EBA-8116-15DC32022D49]]
+;; [[file:~/src/help/help.org::*Row%203][F6C7AAB7-DF69-4EBA-8116-15DC32022D49]]
 (defhydra help/hydra/left-side/global (:color blue
                                               :hint nil)
   "
@@ -2085,10 +2094,10 @@ _x_ delete-indentation"
   ("[" backward-page :exit nil)
   ("]" forward-page :exit nil))
 ;; F6C7AAB7-DF69-4EBA-8116-15DC32022D49 ends here
-;; [[file:~/src/help/help.org::*3][EFFA5A5F-58A8-476D-A8D4-16F232231EC7]]
+;; [[file:~/src/help/help.org::*Row%203][EFFA5A5F-58A8-476D-A8D4-16F232231EC7]]
 (key-chord-define-global "vv" #'help/hydra/left-side/global/body)
 ;; EFFA5A5F-58A8-476D-A8D4-16F232231EC7 ends here
-;; [[file:~/src/help/help.org::*3][362686F6-B397-44D5-812F-BE24670F4204]]
+;; [[file:~/src/help/help.org::*Row%203][362686F6-B397-44D5-812F-BE24670F4204]]
 (defhydra hydra-apropos (:color blue
                                 :hint nil)
   "
@@ -2104,7 +2113,7 @@ _v_ariable       _u_ser-option
   ("u" apropos-user-option)
   ("e" apropos-value))
 ;; 362686F6-B397-44D5-812F-BE24670F4204 ends here
-;; [[file:~/src/help/help.org::*2][9224105B-2CDB-46F4-AF3F-312B3467C2B8]]
+;; [[file:~/src/help/help.org::*Row%202][9224105B-2CDB-46F4-AF3F-312B3467C2B8]]
 (global-set-key (kbd "s-v") #'smex)
 (global-set-key (kbd "C-x C-c") #'help/safb-save-buffers-kill-terminal)
 (global-set-key (kbd "s-x") #'ido-find-file)
