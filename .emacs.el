@@ -147,7 +147,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
 (setq org-export-babel-evaluate nil)
 ;; D9F32A22-B415-48EA-A189-D8EAF7C202D8 ends here
 ;; [[file:~/src/help/help.org::*results][BC84119C-6085-4B36-A2D9-0918A68D15C5]]
-(defconst help/org-sb-results-cfg "value table org replace")
+(defconst help/org-sb-results-cfg "value table drawer replace")
 (help/set-org-babel-default-header-args :results help/org-sb-results-cfg)
 (defconst help/org-isb-results-cfg
   (replace-regexp-in-string "table" "scalar" help/org-sb-results-cfg))
