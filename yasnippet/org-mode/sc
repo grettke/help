@@ -5,6 +5,6 @@
 # contributor: gcr@wisdomandwonder.com
 # --
 #+NAME: ${1:`(org-id-new)`}
-#+BEGIN_SRC ${2:$$(yas-choose-value '("emacs-lisp" "org" "sass" "R" "ditaa" "dot" "plantuml"))}${2:$(when (-contains? '("ditaa" "dot" "plantuml") yas-text) (concat " :file \\"./image/" (yas-field-value 1) ".png\\""))} $3
+#+BEGIN_SRC ${2:$$(yas-choose-value (sort (-map (lambda (x) (symbol-name (car x))) org-babel-load-languages) 'string<))}${2:$(when (-contains? '("ditaa" "dot" "plantuml") yas-text) (concat " :file \\"./image/" (yas-field-value 1) ".png\\""))} $3
 $0
 #+END_SRC
