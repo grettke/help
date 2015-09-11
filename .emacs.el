@@ -1874,8 +1874,8 @@ _c_ cksrcblk _b_ swtch2sessn _n_ n2sbtre _m_ xpndsrcblk"
   :ensure t)
 ;; 79F63BAD-0CD7-4A97-8A7D-CBAA51BB48E1 ends here
 ;; [[file:~/src/help/help.org::*Blog%20(WordPress)][DF522DDF-4A71-4D8B-B6F9-9BD6F11EB832]]
-(use-package org2blog
-  :ensure t)
+(add-to-list 'load-path "~/src/org2blog")
+(require 'org2blog-autoloads)
 ;; DF522DDF-4A71-4D8B-B6F9-9BD6F11EB832 ends here
 ;; [[file:~/src/help/help.org::*Blog%20(WordPress)][9C1EAE6B-9D05-43FB-AC35-7FBFE6CB4F7E]]
 (setq org2blog/wp-track-posts nil)
