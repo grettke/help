@@ -910,6 +910,7 @@ when it is not.
   - Tables are the best type because
     - Dimensions make them human-readable in text.
     - Work with Babel LP.
+    - Appear as lists to programming languages.
     - Weaves well.
     - Inline Source-Blocks disallow tables so use scalars instead.
 - Format
