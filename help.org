@@ -507,7 +507,9 @@ This is a copy and paste. Additional languages would warrant a refactor."
   "Add a NAME property then assign it a UUID."
   (interactive)
   (org-babel-demarcate-block)
-  (insert "\n#+NAME: " (org-id-new)))
+  (insert "#+NAME: " (org-id-new))
+  (beginning-of-line)
+  (insert "\n"))
 #+END_SRC
 
 ** Tangling

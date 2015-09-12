@@ -97,7 +97,9 @@ This is a copy and paste. Additional languages would warrant a refactor."
   "Add a NAME property then assign it a UUID."
   (interactive)
   (org-babel-demarcate-block)
-  (insert "\n#+NAME: " (org-id-new)))
+  (insert "#+NAME: " (org-id-new))
+  (beginning-of-line)
+  (insert "\n"))
 ;; BB2E97AF-6364-401F-8063-8B5A0BE481E6 ends here
 ;; [[file:~/src/help/help.org::*Tangling][859E61A4-D910-4731-8328-A63F6B6ACD3F]]
 (add-hook 'org-babel-pre-tangle-hook #'help/org-prp-hdln)
