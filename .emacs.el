@@ -185,6 +185,9 @@ This is a copy and paste. Additional languages would warrant a refactor."
 ;; [[file:~/src/help/help.org::*exports][72A5FF8F-6597-4523-A604-B499B439A103]]
 (help/set-org-babel-default-header-args :exports "both")
 ;; 72A5FF8F-6597-4523-A604-B499B439A103 ends here
+;; [[file:~/src/help/help.org::*exports][4EA406BB-7D8F-447A-BE18-48FE241A3930]]
+(help/set-org-babel-default-inline-header-args :exports "results")
+;; 4EA406BB-7D8F-447A-BE18-48FE241A3930 ends here
 ;; 78D777D3-FA69-4361-874C-7262DE96F753 ends here
 ;; [[file:~/src/help/help.org::*Watch%20What%20You%20Eat][804FD197-8B2A-49F5-A4CB-48F6036FBCEC]]
 (package-initialize)
