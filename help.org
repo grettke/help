@@ -4210,7 +4210,7 @@ Ask before execution of Emacs-Lisp.
 (setq org-confirm-elisp-link-function 'y-or-n-p)
 #+END_SRC
 
-Make sure that incomplete TODO entries prevent the enclosing parent from every
+Make sure that incomplete TODO entries prevent the enclosing parent from ever
 turning to DONE.
 
 #+NAME: 4AE6A326-034C-475A-BC95-877D528A94D6
