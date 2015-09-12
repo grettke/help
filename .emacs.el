@@ -674,6 +674,10 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (use-package page-break-lines
   :ensure t)
 ;; A1A8FE84-0A12-4C5F-9565-F4EACE3DB694 ends here
+;; [[file:~/src/help/help.org::*Buffer][C3EAB237-661B-494B-88FF-0133C4AB51DF]]
+(use-package page-break-lines
+  :diminish page-break-lines-mode)
+;; C3EAB237-661B-494B-88FF-0133C4AB51DF ends here
 ;; [[file:~/src/help/help.org::*Code%20Folding][2D731158-FCE7-4BDA-AE78-383EAAD1FE4B]]
 (use-package hideshow
   :config
@@ -1221,10 +1225,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   :diminish whitespace-mode global-whitespace-mode)
 ;; 3327B4FF-82CF-42E7-AEF8-DCC968B97BDC ends here
 ;; [[file:~/src/help/help.org::*Word%20Wrap][EDD8ABBB-B76A-4B95-9367-211A765348CD]]
-(use-package visual-line-mode
-  :config
-  (eval-after-load "visual-line-mode"
-    '(diminish 'visual-line-mode)))
+(diminish 'visual-line-mode)
 ;; EDD8ABBB-B76A-4B95-9367-211A765348CD ends here
 ;; [[file:~/src/help/help.org::*Text-Mode][9288AC00-4B73-4E10-ABAE-F2E886981F97]]
 (use-package fill-column-indicator

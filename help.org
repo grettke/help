@@ -2413,6 +2413,14 @@ Visualize the formfeed character.
   :ensure t)
 #+END_SRC
 
+Configure Page-Break-Lines-Mode.
+
+#+NAME: C3EAB237-661B-494B-88FF-0133C4AB51DF
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package page-break-lines
+  :diminish page-break-lines-mode)
+#+END_SRC
+
 ** Code Folding
    :PROPERTIES:
    :ID:       3F70676D-C141-4093-9E40-F42B6C7B7232
@@ -3511,10 +3519,7 @@ Make control characters easily visible.
 
 #+NAME: EDD8ABBB-B76A-4B95-9367-211A765348CD
 #+BEGIN_SRC emacs-lisp :results output silent
-(use-package visual-line-mode
-  :config
-  (eval-after-load "visual-line-mode"
-    '(diminish 'visual-line-mode)))
+(diminish 'visual-line-mode)
 #+END_SRC
 
 * Quiet and Pleasant Appearance
