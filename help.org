@@ -400,14 +400,20 @@ are essential.
 (add-to-list 'load-path "~/src/org-mode/contrib/lisp")
 #+END_SRC
 
-Allow single-character alphabetical bullet lists. Set ~org-list-allow-alphabetical~
-before loading Org-Mode. This configuration must occur here. *Never* remove this
-from a submitted
-ECM.
+Allow single-character alphabetical bullet lists. This configuration must occur
+before loading Org-Mode. *Never* remove this from a submitted ECM.
 
 #+NAME: 28776245-A6BB-4294-AC72-30F03F902DF7
 #+BEGIN_SRC emacs-lisp :results output silent
 (setq org-list-allow-alphabetical t)
+#+END_SRC
+
+Unchecked boxes prevent marking the parent as done. This configuration must
+occur before loading Org-Mode. *Never* remove this from a submitted ECM.
+
+#+NAME: 5112469C-F95A-484B-9D56-90DDC863686A
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq org-enforce-todo-checkbox-dependencies t)
 #+END_SRC
 
 Load Org-Mode.

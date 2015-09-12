@@ -13,6 +13,9 @@
 ;; [[file:~/src/help/help.org::*Org-Mode%20Exemple%20Complet%20Minimal][28776245-A6BB-4294-AC72-30F03F902DF7]]
 (setq org-list-allow-alphabetical t)
 ;; 28776245-A6BB-4294-AC72-30F03F902DF7 ends here
+;; [[file:~/src/help/help.org::*Org-Mode%20Exemple%20Complet%20Minimal][5112469C-F95A-484B-9D56-90DDC863686A]]
+(setq org-enforce-todo-checkbox-dependencies t)
+;; 5112469C-F95A-484B-9D56-90DDC863686A ends here
 ;; [[file:~/src/help/help.org::*Org-Mode%20Exemple%20Complet%20Minimal][86CAEC4F-CFC4-4CAD-9993-E1DCEF3BFCD1]]
 (require 'org)
 ;; 86CAEC4F-CFC4-4CAD-9993-E1DCEF3BFCD1 ends here

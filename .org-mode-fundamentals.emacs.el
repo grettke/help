@@ -14,6 +14,9 @@
 ;; [[file:~/src/help/help.org::*Org-Mode%20Exemple%20Complet%20Minimal][28776245-A6BB-4294-AC72-30F03F902DF7]]
 (setq org-list-allow-alphabetical t)
 ;; 28776245-A6BB-4294-AC72-30F03F902DF7 ends here
+;; [[file:~/src/help/help.org::*Org-Mode%20Exemple%20Complet%20Minimal][5112469C-F95A-484B-9D56-90DDC863686A]]
+(setq org-enforce-todo-checkbox-dependencies t)
+;; 5112469C-F95A-484B-9D56-90DDC863686A ends here
 ;; [[file:~/src/help/help.org::*Org-Mode%20Exemple%20Complet%20Minimal][86CAEC4F-CFC4-4CAD-9993-E1DCEF3BFCD1]]
 (require 'org)
 ;; 86CAEC4F-CFC4-4CAD-9993-E1DCEF3BFCD1 ends here
@@ -146,7 +149,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
 (setq org-export-babel-evaluate nil)
 ;; D9F32A22-B415-48EA-A189-D8EAF7C202D8 ends here
 ;; [[file:~/src/help/help.org::*results][BC84119C-6085-4B36-A2D9-0918A68D15C5]]
-(defconst help/org-sb-results-cfg "value table org replace")
+(defconst help/org-sb-results-cfg "value table drawer replace")
 (help/set-org-babel-default-header-args :results help/org-sb-results-cfg)
 (defconst help/org-isb-results-cfg
   (replace-regexp-in-string "table" "scalar" help/org-sb-results-cfg))
