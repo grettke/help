@@ -3981,7 +3981,7 @@ With that in mind this system:
   - Configurations common to every hacking vehicle.
     #+NAME: B56D8E08-DF7C-4EBB-922E-EA215BD66C0D
     #+BEGIN_SRC emacs-lisp :results output silent
-(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook ess-mode-hook graphviz-dot-mode-hook))
+(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook R-mode-hook SAS-mode-hook graphviz-dot-mode-hook))
     #+END_SRC
   - LISP mode hooks.
     - Are hacking modes.
