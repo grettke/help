@@ -618,13 +618,13 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (defun help/org-weave-readme ()
   (interactive)
   (help/org-weave-subtree-gfm
-   "39A2F05A-BC60-4879-9B66-85E43297FC97"
+   "README"
    "README.md"))
 
 (defun help/org-weave-style-guide ()
   (interactive)
   (help/org-weave-subtree-gfm
-   "03E0F0E3-DB81-4033-8F04-5D8BB5CBB2F0"
+   "STYLEGUIDE"
    "STYLEGUIDE.md"))
 
 (defun help/weave-everything-everywhere ()
