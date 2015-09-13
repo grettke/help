@@ -1158,7 +1158,7 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
         ("LATEX_CLASS_OPTIONS" nil)
         ("LATEX_HEADER" nil)
         ("LATEX_HEADER_EXTRA" nil)
-        ("NAME" nil)
+        ("NAME" t)
         ("OPTIONS" t)
         ("POSTID" nil)
         ("SELECT_TAGS" nil)

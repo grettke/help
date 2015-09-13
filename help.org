@@ -3388,7 +3388,7 @@ Check =SPECIAL LINE= definitions, ignoring their type.
         ("LATEX_CLASS_OPTIONS" nil)
         ("LATEX_HEADER" nil)
         ("LATEX_HEADER_EXTRA" nil)
-        ("NAME" nil)
+        ("NAME" t)
         ("OPTIONS" t)
         ("POSTID" nil)
         ("SELECT_TAGS" nil)
