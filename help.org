@@ -4552,6 +4552,7 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
 (define-key org-mode-map (kbd "s-6") #'org-babel-load-in-session)
 (define-key org-mode-map (kbd "s-7") #'org-babel-switch-to-session)
 (define-key org-mode-map (kbd "s-8") #'org-babel-switch-to-session-with-code)
+(define-key org-mode-map (kbd "s-9") #'org-todo)
 #+END_SRC
 
 **** Row 4

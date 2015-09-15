@@ -1507,6 +1507,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (define-key org-mode-map (kbd "s-6") #'org-babel-load-in-session)
 (define-key org-mode-map (kbd "s-7") #'org-babel-switch-to-session)
 (define-key org-mode-map (kbd "s-8") #'org-babel-switch-to-session-with-code)
+(define-key org-mode-map (kbd "s-9") #'org-todo)
 ;; E65CF1F6-F56C-4A1A-BB45-5E530FA93C04 ends here
 ;; [[file:~/src/help/help.org::*Row%204][9CB5CC76-4C1D-40CB-829C-A5AC98FE23FD]]
 (define-key org-mode-map (kbd "s-y") #'help/safb-org-babel-execute-buffer)
