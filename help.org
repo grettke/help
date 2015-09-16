@@ -1499,6 +1499,8 @@ close together
 (global-set-key (kbd "s-3") #'mc/mark-previous-like-this)
 (global-set-key (kbd "s-2") #'mc/mark-all-like-this)
 (global-set-key (kbd "s-1") #'mc/edit-lines)
+(global-set-key (kbd "s--") #'decrement-integer-at-point)
+(global-set-key (kbd "s-+") #'increment-integer-at-point)
 #+END_SRC
 
 **** Row 4
@@ -4636,8 +4638,6 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
 (define-key org-mode-map (kbd "s-7") #'org-babel-switch-to-session)
 (define-key org-mode-map (kbd "s-8") #'org-babel-switch-to-session-with-code)
 (define-key org-mode-map (kbd "s-9") #'org-todo)
-(global-set-key (kbd "s--") #'decrement-integer-at-point)
-(global-set-key (kbd "s-+") #'increment-integer-at-point)
 #+END_SRC
 
 **** Row 4
