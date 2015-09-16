@@ -683,6 +683,10 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (use-package page-break-lines
   :diminish page-break-lines-mode)
 ;; C3EAB237-661B-494B-88FF-0133C4AB51DF ends here
+;; [[file:~/src/help/help.org::*Buffer][240E646E-D7F6-40A1-AA60-F6D0CD83DDD7]]
+(advice-add #'backward-page :after #'recenter)
+(advice-add #'forward-page :after #'recenter)
+;; 240E646E-D7F6-40A1-AA60-F6D0CD83DDD7 ends here
 ;; [[file:~/src/help/help.org::*Code%20Folding][2D731158-FCE7-4BDA-AE78-383EAAD1FE4B]]
 (use-package hideshow
   :config

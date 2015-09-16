@@ -2433,6 +2433,14 @@ Configure Page-Break-Lines-Mode.
   :diminish page-break-lines-mode)
 #+END_SRC
 
+Center the buffer after navigating pages.
+
+#+NAME: 240E646E-D7F6-40A1-AA60-F6D0CD83DDD7
+#+BEGIN_SRC emacs-lisp :results output silent
+(advice-add #'backward-page :after #'recenter)
+(advice-add #'forward-page :after #'recenter)
+#+END_SRC
+
 ** Code Folding
    :PROPERTIES:
    :ID:       3F70676D-C141-4093-9E40-F42B6C7B7232
