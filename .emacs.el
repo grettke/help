@@ -2264,6 +2264,9 @@ _v_ariable       _u_ser-option
 (define-key help/langtool-map "l" #'langtool-goto-next-error)
 (define-key help/langtool-map "q" #'langtool-check-done)
 ;; 52E762F8-9A31-4FEC-859D-049BD658C6D9 ends here
+;; [[file:~/src/help/help.org::*Left%20&%20Right%20Side][5C8D8A46-256B-4533-97AD-52968CC92C75]]
+(key-chord-define-global "TH" (lambda () (interactive) (insert "Th")))
+;; 5C8D8A46-256B-4533-97AD-52968CC92C75 ends here
 ;; [[file:~/src/help/help.org::*Exceptions][0410911F-2D84-4799-8F68-1F3173E318B6]]
 (help/not-on-gui (global-set-key (kbd "s-RET") #'help/smart-open-line))
 (help/on-gui (global-set-key (kbd "s-<return>") #'help/smart-open-line))
