@@ -2154,6 +2154,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 (global-set-key (kbd "s-w") #'imenu)
 ;; 239A85C3-2CEB-4E40-975F-8B3584F7F450 ends here
 ;; [[file:~/src/help/help.org::*Row%203][E60EA15F-28A0-4E98-B62E-1F8BDE444BD8]]
+(global-set-key (kbd "s-a") #'kill-buffer)
 (global-set-key (kbd "s-d") #'er/expand-region)
 (key-chord-define-global "df" #'avy-goto-word-1)
 (key-chord-define-global "DF" #'avy-pop-mark)
