@@ -2249,7 +2249,7 @@ _v_ariable       _u_ser-option
 (key-chord-define-global "d," #'describe-variable)
 ;; 779A4232-960E-4CE1-B6EC-018FC997F0DD ends here
 ;; [[file:~/src/help/help.org::*Left%20&%20Right%20Side][55D2A3E6-07B1-47B0-9ADD-54C966FA252B]]
-(key-chord-define-global "f-" #'help/comment-or-uncomment) ;
+(global-set-key (kbd "s-`") #'help/comment-or-uncomment)
 ;; 55D2A3E6-07B1-47B0-9ADD-54C966FA252B ends here
 ;; [[file:~/src/help/help.org::*Left%20&%20Right%20Side][E167321A-E8E5-4C54-B570-241B465B2D4B]]
 (key-chord-define-global "qp" #'ispell)

@@ -1690,7 +1690,7 @@ Don't use "qi"; "unique".
 
 #+NAME: 55D2A3E6-07B1-47B0-9ADD-54C966FA252B
 #+BEGIN_SRC emacs-lisp :results output silent
-(key-chord-define-global "f-" #'help/comment-or-uncomment) ;
+(global-set-key (kbd "s-`") #'help/comment-or-uncomment)
 #+END_SRC
 
 Make =ispell= accessible.
