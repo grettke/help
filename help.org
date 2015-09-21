@@ -711,16 +711,17 @@ Org-Mode may evaluate all of the listed languages.
  '((emacs-lisp . t)
    (org . t)
    ;;
-   (sass . t)
+   (C . t)
    (R . t)
-   (scheme . t)
    (python . t)
+   (sass . t)
+   (scheme . t)
    (sql . t)
    ;;
    (latex . t)
    ;;
-   (sh . t)
    (makefile . t)
+   (sh . t)
    ;;
    (ditaa . t)
    (dot . t)
@@ -5240,6 +5241,10 @@ Enable Auto-Complete via Geiser.
   (setq geiser-repl-history-no-dups-p t))
 #+END_SRC
 
+** C
+   :PROPERTIES:
+   :ID:       6F4A6F8E-277C-45E2-B26E-51455C2CBC16
+   :END:
 ** Python
    :PROPERTIES:
    :ID:       F4577EEA-FB0F-4E7B-AF02-A4DEA74BB763

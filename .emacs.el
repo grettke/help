@@ -129,16 +129,17 @@ This is a copy and paste. Additional languages would warrant a refactor."
  '((emacs-lisp . t)
    (org . t)
    ;;
-   (sass . t)
+   (C . t)
    (R . t)
-   (scheme . t)
    (python . t)
+   (sass . t)
+   (scheme . t)
    (sql . t)
    ;;
    (latex . t)
    ;;
-   (sh . t)
    (makefile . t)
+   (sh . t)
    ;;
    (ditaa . t)
    (dot . t)
