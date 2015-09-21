@@ -1338,7 +1338,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 (add-hook 'text-mode-hook #'help/text-prog*-setup)
 ;; 42D5F313-65F0-49E1-8759-9259D4020FA9 ends here
 ;; [[file:~/src/help/help.org::*Prog*-Mode%20Modes][B56D8E08-DF7C-4EBB-922E-EA215BD66C0D]]
-(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook R-mode-hook SAS-mode-hook graphviz-dot-mode-hook))
+(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook R-mode-hook SAS-mode-hook graphviz-dot-mode-hook c-mode-common-hook))
 ;; B56D8E08-DF7C-4EBB-922E-EA215BD66C0D ends here
 ;; [[file:~/src/help/help.org::*Prog*-Mode%20Modes][963C787F-BC23-4A6C-9637-3922541B26E2]]
 (setq help/hack-lisp-modes
