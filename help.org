@@ -4765,7 +4765,7 @@ _c_ cksrcblk _b_ swtch2sessn _n_ n2sbtre _m_ xpndsrcblk"
 (key-chord-define-global "hh" #'help/hydra/right-side/org-mode/body)
 #+END_SRC
 
- Safe all buffers before working with Exports.
+ Save all buffers before working with Exports.
 
  #+NAME: BFF7A955-3107-4ED3-9022-CAB792E779EC
  #+BEGIN_SRC emacs-lisp :results output silent
