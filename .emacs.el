@@ -1646,7 +1646,7 @@ _c_ cksrcblk _b_ swtch2sessn _n_ n2sbtre _m_ xpndsrcblk"
   ("c" org-babel-check-src-block)
   ("b" org-babel-switch-to-session)
   ("n" org-narrow-to-subtree)
-  ("m" org-babel-expand-src-block-maybe))
+  ("m" org-babel-expand-src-block))
 (key-chord-define-global "hh" #'help/hydra/right-side/org-mode/body)
 ;; 5186DD50-F693-4297-A164-192BEA685C6D ends here
 ;; [[file:~/src/help/help.org::*Hydra][BFF7A955-3107-4ED3-9022-CAB792E779EC]]
