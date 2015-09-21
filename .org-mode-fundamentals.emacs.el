@@ -188,4 +188,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
 ;; [[file:~/src/help/help.org::*exports][4EA406BB-7D8F-447A-BE18-48FE241A3930]]
 (help/set-org-babel-default-inline-header-args :exports "results")
 ;; 4EA406BB-7D8F-447A-BE18-48FE241A3930 ends here
+;; [[file:~/src/help/help.org::*wrap][7DA47704-25D2-4812-A838-7FE29E9F88FE]]
+(help/set-org-babel-default-header-args :wrap "EXAMPLE")
+;; 7DA47704-25D2-4812-A838-7FE29E9F88FE ends here
 ;; 78D777D3-FA69-4361-874C-7262DE96F753 ends here

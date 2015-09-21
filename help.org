@@ -970,17 +970,6 @@ Pass arguments to code blocks
 - Idexable variable values
 - Emacs Lisp evaluation of variables
 
-*** wrap
-    :PROPERTIES:
-    :ID:       94D6B3BE-5DA1-499A-B5C7-A6B71710A1EA
-    :END:
-
-#+BEGIN_QUOTE
-Mark source block evaluation results
-#+END_QUOTE
-
-{{{lp-configure-each-sb}}}.
-
 ** Weaving
    :PROPERTIES:
    :noweb-ref: Org-Mode-Weave
@@ -1078,6 +1067,25 @@ inlinse Source-Blocks to function as /rich/ macros when combined with ~org-sbe~.
 #+NAME: 4EA406BB-7D8F-447A-BE18-48FE241A3930
 #+BEGIN_SRC emacs-lisp :results output silent
 (help/set-org-babel-default-inline-header-args :exports "results")
+#+END_SRC
+
+*** wrap
+    :PROPERTIES:
+    :ID:       94D6B3BE-5DA1-499A-B5C7-A6B71710A1EA
+    :END:
+
+#+BEGIN_QUOTE
+Mark source block evaluation results
+#+END_QUOTE
+
+Inline-Source-Blocks are recognizable by their =verbatim= font. They do not
+interrupt the flow. Source-Blocks are their own entities. They stand out. Their
+results need to be visibly noticeably different for the reader by making them
+=EXAMPLE= special blocks.
+
+#+NAME: 7DA47704-25D2-4812-A838-7FE29E9F88FE
+#+BEGIN_SRC emacs-lisp :results output silent
+(help/set-org-babel-default-header-args :wrap "EXAMPLE")
 #+END_SRC
 
 * Piano Lessons
