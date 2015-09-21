@@ -4711,6 +4711,7 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
 (define-key org-mode-map (kbd "s-j") #'org-babel-next-src-block)
 (define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
 (define-key org-mode-map (kbd "s-l") #'help/safb-org-edit-src-code)
+(define-key org-mode-map (kbd "s-;") #'help/safb-help/org-babel-demarcate-block)
 #+END_SRC
 
 **** Row 2
@@ -4722,7 +4723,6 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
 #+BEGIN_SRC emacs-lisp :results output silent
 (define-key org-mode-map (kbd "s-n") #'org-babel-view-src-block-info)
 (define-key org-mode-map (kbd "s-m") #'org-babel-open-src-block-result)
-(define-key org-mode-map (kbd "s-,") #'help/safb-help/org-babel-demarcate-block)
 #+END_SRC
 
 **** Hydra
@@ -4761,7 +4761,8 @@ _c_ cksrcblk _b_ swtch2sessn _n_ n2sbtre _m_ xpndsrcblk"
   ("c" org-babel-check-src-block)
   ("b" org-babel-switch-to-session)
   ("n" org-narrow-to-subtree)
-  ("m" org-babel-expand-src-block))
+  ("m" org-babel-expand-src-block)
+  ("," org-babel-open-src-block-result))
 (key-chord-define-global "hh" #'help/hydra/right-side/org-mode/body)
 #+END_SRC
 
