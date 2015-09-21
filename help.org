@@ -4765,27 +4765,27 @@ _c_ cksrcblk _b_ swtch2sessn _n_ n2sbtre _m_ xpndsrcblk"
 (key-chord-define-global "hh" #'help/hydra/right-side/org-mode/body)
 #+END_SRC
 
- Save all buffers before working with Exports.
+Save all buffers before working with Exports.
 
- #+NAME: BFF7A955-3107-4ED3-9022-CAB792E779EC
- #+BEGIN_SRC emacs-lisp :results output silent
+#+NAME: BFF7A955-3107-4ED3-9022-CAB792E779EC
+#+BEGIN_SRC emacs-lisp :results output silent
 (define-key org-mode-map (kbd "C-c C-e") #'help/safb-org-export-dispatch)
- #+END_SRC
+#+END_SRC
 
- Make =s-l= do the same thing to leave the Source-Block-Buffer.
+Make =s-l= do the same thing to leave the Source-Block-Buffer.
 
- #+NAME: B489F70A-F1B0-41A9-BB98-A5861A867547
- #+BEGIN_SRC emacs-lisp :results output silent
+#+NAME: B489F70A-F1B0-41A9-BB98-A5861A867547
+#+BEGIN_SRC emacs-lisp :results output silent
 (define-key org-src-mode-map (kbd "s-l") #'org-edit-src-exit)
- #+END_SRC
+#+END_SRC
 
- Easily enter guillemots.
+Easily enter guillemots.
 
- #+NAME: 46FE856B-D5C6-45B0-95D5-891211AC295C
- #+BEGIN_SRC emacs-lisp :results output silent
+#+NAME: 46FE856B-D5C6-45B0-95D5-891211AC295C
+#+BEGIN_SRC emacs-lisp :results output silent
 (key-chord-define org-src-mode-map "<<" (lambda () (interactive) (insert "«")))
 (key-chord-define org-src-mode-map ">>" (lambda () (interactive) (insert "»")))
- #+END_SRC
+#+END_SRC
 ** (Applied Mathematics)
    :PROPERTIES:
    :ID:       BE2550C9-231A-4824-BE6C-14231A971FE9
