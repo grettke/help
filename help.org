@@ -1501,6 +1501,7 @@ close together
 (global-set-key (kbd "s-1") #'mc/edit-lines)
 (global-set-key (kbd "s--") #'decrement-integer-at-point)
 (global-set-key (kbd "s-+") #'increment-integer-at-point)
+(global-set-key (kbd "M-s-3") #'help/split-into-3-windows)
 #+END_SRC
 
 **** Row 4
@@ -3329,6 +3330,17 @@ Notify Magit about every working copy that Projectile knows about.
   :commands (pp-display-expression))
 #+END_SRC
 
+** Register
+   :PROPERTIES:
+   :ID:       34801113-5002-4502-821E-248C6406395C
+   :END:
+
+#+NAME: 3E6EFC3D-E8FA-4C27-B58B-DFAA640DD405
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq register-preview-delay 2)
+(setq register-separator "\n\n")
+#+END_SRC
+
 ** Replacing
    :PROPERTIES:
    :ID:       B10A2279-4F34-4DA2-BB1A-491B82F2F6EA
@@ -3885,6 +3897,19 @@ hand.
 #+NAME: 3FB7FA94-1A6B-4E3B-8EDE-7A4D1D86E50E
 #+BEGIN_SRC emacs-lisp :results output silent
 (winner-mode t)
+#+END_SRC
+
+Frequently use between 1 and 3 windows. 1 and 2 are already managed. Easily
+create 3.
+
+#+NAME: EA28235F-22B2-463F-AC06-EC79FA613F22
+#+BEGIN_SRC emacs-lisp :results output silent
+(defun help/split-into-3-windows ()
+  (interactive)
+  (delete-other-windows)
+  (split-window-vertically)
+  (split-window-vertically)
+  (balance-windows))
 #+END_SRC
 
 * Principle of Least Astonishment (POLA)

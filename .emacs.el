@@ -1161,6 +1161,10 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
 (use-package pp
   :commands (pp-display-expression))
 ;; BD085F97-3BDA-43A5-A5BC-A17DD446E36B ends here
+;; [[file:~/src/help/help.org::*Register][3E6EFC3D-E8FA-4C27-B58B-DFAA640DD405]]
+(setq register-preview-delay 2)
+(setq register-separator "\n\n")
+;; 3E6EFC3D-E8FA-4C27-B58B-DFAA640DD405 ends here
 ;; [[file:~/src/help/help.org::*Replacing][D9A8B6E9-E328-47C1-9B75-863B640BEAB7]]
 (use-package anzu
   :ensure t
@@ -2142,6 +2146,14 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 ;; [[file:~/src/help/help.org::*Window][3FB7FA94-1A6B-4E3B-8EDE-7A4D1D86E50E]]
 (winner-mode t)
 ;; 3FB7FA94-1A6B-4E3B-8EDE-7A4D1D86E50E ends here
+;; [[file:~/src/help/help.org::*Window][EA28235F-22B2-463F-AC06-EC79FA613F22]]
+(defun help/split-into-3-windows ()
+  (interactive)
+  (delete-other-windows)
+  (split-window-vertically)
+  (split-window-vertically)
+  (balance-windows))
+;; EA28235F-22B2-463F-AC06-EC79FA613F22 ends here
 ;; [[file:~/src/help/help.org::*Row%205][E4B98196-FDFB-42B4-A52A-8CA7DC066E8E]]
 (global-set-key (kbd "s-4") #'mc/mark-next-like-this)
 (global-set-key (kbd "s-3") #'mc/mark-previous-like-this)
@@ -2149,6 +2161,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 (global-set-key (kbd "s-1") #'mc/edit-lines)
 (global-set-key (kbd "s--") #'decrement-integer-at-point)
 (global-set-key (kbd "s-+") #'increment-integer-at-point)
+(global-set-key (kbd "M-s-3") #'help/split-into-3-windows)
 ;; E4B98196-FDFB-42B4-A52A-8CA7DC066E8E ends here
 ;; [[file:~/src/help/help.org::*Row%204][239A85C3-2CEB-4E40-975F-8B3584F7F450]]
 (global-set-key (kbd "s-w") #'imenu)
