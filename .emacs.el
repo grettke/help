@@ -1,3 +1,4 @@
+
 ;; -*- lexical-binding: t -*-
 
 ;; [[file:help.org::*The%20Whole%20Enchilada][AD12BE48-B87B-4AB6-814D-4FA5E47597A0]]
@@ -1614,7 +1615,8 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; 933B1A3A-A77A-4616-B9D8-9DACED018CC2 ends here
 ;; [[file:~/src/help/help.org::*Row%202][2F8DDC77-27C4-4E81-8913-28243C4A44B6]]
 (define-key org-mode-map (kbd "s-n") #'org-babel-view-src-block-info)
-(define-key org-mode-map (kbd "s-m") #'org-babel-open-src-block-result)
+(define-key org-mode-map (kbd "s-m") #'org-babel-expand-src-block)
+(define-key org-mode-map (kbd "s-,") #'org-babel-open-src-block-result)
 ;; 2F8DDC77-27C4-4E81-8913-28243C4A44B6 ends here
 ;; [[file:~/src/help/help.org::*Hydra][5186DD50-F693-4297-A164-192BEA685C6D]]
 (defhydra help/hydra/right-side/org-mode (:color blue
@@ -1623,7 +1625,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ detangle _5_ id-create _6_ toggle-macro
 _q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ g2nms-b _t_ g2s-b/hd      _u_ goto
 _a_ inshdrgs _s_ oblobigst            _h_ dksieb
-_c_ cksrcblk _b_ swtch2sessn _n_ n2sbtre _m_ xpndsrcblk"
+_c_ cksrcblk _b_ swtch2sessn _n_ n2sbtre"
   ;; Row 5
   ("1" org-babel-sha1-hash)
   ("2" org-display-inline-images)
@@ -1645,9 +1647,7 @@ _c_ cksrcblk _b_ swtch2sessn _n_ n2sbtre _m_ xpndsrcblk"
   ;; Row 2
   ("c" org-babel-check-src-block)
   ("b" org-babel-switch-to-session)
-  ("n" org-narrow-to-subtree)
-  ("m" org-babel-expand-src-block)
-  ("," org-babel-open-src-block-result))
+  ("n" org-narrow-to-subtree))
 (key-chord-define-global "hh" #'help/hydra/right-side/org-mode/body)
 ;; 5186DD50-F693-4297-A164-192BEA685C6D ends here
 ;; [[file:~/src/help/help.org::*Hydra][BFF7A955-3107-4ED3-9022-CAB792E779EC]]
