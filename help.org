@@ -4498,13 +4498,6 @@ You may display syntax highlighting for code in source blocks. I don't.
 (setq org-src-fontify-natively nil)
 #+END_SRC
 
-Never indent the contents of a source-block automatically.
-
-#+NAME: EA9E78DF-18FA-477B-8CFF-CF921479CD40
-#+BEGIN_SRC emacs-lisp :results output silent
-(setq org-edit-src-content-indentation 0)
-#+END_SRC
-
 When edit mode is exited, the option exists to automatically remove empty
 opening and closed lines for the source block. Never do this. The thing is that
 I forgot why. When I was working on a recent analysis with R there was a

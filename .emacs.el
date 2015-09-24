@@ -1,4 +1,3 @@
-
 ;; -*- lexical-binding: t -*-
 
 ;; [[file:help.org::*The%20Whole%20Enchilada][AD12BE48-B87B-4AB6-814D-4FA5E47597A0]]
@@ -1526,9 +1525,6 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; [[file:~/src/help/help.org::*Org-Mode][A1636BE6-8477-4085-BB14-E0870A19A440]]
 (setq org-src-fontify-natively nil)
 ;; A1636BE6-8477-4085-BB14-E0870A19A440 ends here
-;; [[file:~/src/help/help.org::*Org-Mode][EA9E78DF-18FA-477B-8CFF-CF921479CD40]]
-(setq org-edit-src-content-indentation 0)
-;; EA9E78DF-18FA-477B-8CFF-CF921479CD40 ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][59E79DBC-FDA4-4F1A-9306-DB9204233A7C]]
 (setq org-src-strip-leading-and-trailing-blank-lines t)
 ;; 59E79DBC-FDA4-4F1A-9306-DB9204233A7C ends here
