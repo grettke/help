@@ -634,10 +634,11 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (defun help/weave-everything-everywhere ()
   "Export this entire document in configured weavers."
   (interactive)
-  (org-ascii-export-to-ascii)
-  (org-html-export-to-html)
-  (org-gfm-export-to-markdown)
-  (org-latex-export-to-pdf)
+  (save-excursion
+    (org-ascii-export-to-ascii)
+    (org-html-export-to-html)
+    (org-gfm-export-to-markdown)
+    (org-latex-export-to-pdf))
   (help/org-weave-readme)
   (help/org-weave-style-guide))
 
