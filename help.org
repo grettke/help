@@ -3888,6 +3888,13 @@ Provide VC file status indicators.
   :ensure t)
 #+END_SRC
 
+Ediff split frame horizontally.
+
+#+NAME: 5B8FCEDB-66BA-4912-8FC8-B6EFBF6EF34D
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq ediff-split-window-function 'split-window-horizontally)
+#+END_SRC
+
 ** Window
    :PROPERTIES:
    :ID:       9A848D65-DE56-4F95-A84D-CAE74781CD25

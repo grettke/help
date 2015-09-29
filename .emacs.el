@@ -2141,6 +2141,9 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 (use-package diff-hl
   :ensure t)
 ;; 668C63F3-C52E-4BDF-929D-E2BF2E985304 ends here
+;; [[file:~/src/help/help.org::*Version%20Control][5B8FCEDB-66BA-4912-8FC8-B6EFBF6EF34D]]
+(setq ediff-split-window-function 'split-window-horizontally)
+;; 5B8FCEDB-66BA-4912-8FC8-B6EFBF6EF34D ends here
 ;; [[file:~/src/help/help.org::*Window][00BC7BEE-F9FC-4B9D-AC1A-4B1A3FFA64A7]]
 (menu-bar-mode t)
 ;; 00BC7BEE-F9FC-4B9D-AC1A-4B1A3FFA64A7 ends here
