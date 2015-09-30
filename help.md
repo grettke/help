@@ -5,22 +5,23 @@
 
 ## HELP Enables Literate Programming
 
-    ID: 39A2F05A-BC60-4879-9B66-85E43297FC97
+    ID: README
 
 **Setup**
 
 1.  [Clone Org-Mode](http://orgmode.org/) to `~/src/`.
     1.  Without `Make`: [Generating autoloads and Compiling Org without make](http://orgmode.org/worg/org-hacks.html)
-2.  [Clone Use-Package](https://github.com/jwiegley/use-package) to `~/src/`.
-3.  Create a folder for support libraries exporting it&rsquo;s location in a variable
+2.  [Clone Org2Blog](https://github.com/punchagan/org2blog) to `~/src/`.
+3.  [Clone Use-Package](https://github.com/jwiegley/use-package) to `~/src/`.
+4.  Create a folder for support libraries exporting it&rsquo;s location in a variable
     named `EELIB`.
     1.  Install [DITAA](http://ditaa.sourceforge.net/) renaming the JAR to `ditaa.jar`.
     2.  Install [PlantUML](http://plantuml.com/) renaming the JAR to `plantuml.jar`.
-4.  Install supporting software adding their exectuable location to the `PATH`.
+5.  Install supporting software adding their exectuable location to the `PATH`.
     1.  Install [Oracle Java](https://www.oracle.com/java/index.html).
     2.  Install [LanguageTool](https://www.languagetool.org/) renaming it&rsquo;s folder to `LanguageTool`.
     3.  Install [MacTeX](https://tug.org/mactex/).
-5.  Link:
+6.  Link:
     -   The Eshell directory to HELP&rsquo;s.
         -   `ln -s ~/src/help/eshell/ ~/.emacs.d/eshell`
     -   The Initialization file to HELP&rsquo;s.
@@ -28,7 +29,7 @@
 
 # Style Guide
 
-    ID: 03E0F0E3-DB81-4033-8F04-5D8BB5CBB2F0
+    ID: STYLEGUIDE
 
 -   Appearance.
     -   Never override theme colors.
@@ -84,7 +85,14 @@
         -   Some modes don&rsquo;t require any configuration. The headline still needs to be
             present to remind the reader to keep it in her cognitive landscape.
             Configure other properties and modes taking it into account.
-        -   Every language under Hacking should show up in `org-babel-load-languages`.
+        -   For every language under Hacking you should:
+            -   Only include it if it is valuable and you will invest adequate time to
+                configure this well and use it well. When reading Org-Mode examples you
+                will want to add Org-Mode language support because it is easy and fun
+                and then you are left with an insufficiently configured environment.
+                That is unacceptable.
+            -   Enable it in `org-babel-load-languages`.
+            -   Read the user manual for it.
         -   The `Prog*-Mode` system configuration can result in Headlines that don&rsquo;t
             need any configuration. The Headline still communicates the mode&rsquo;s
             value to the reader even if it doesn&rsquo;t configure EMACS.
@@ -426,13 +434,18 @@ are essential.
 (add-to-list 'load-path "~/src/org-mode/contrib/lisp")
 ```
 
-Allow single-character alphabetical bullet lists. Set `org-list-allow-alphabetical`
-before loading Org-Mode. This configuration must occur here. **Never** remove this
-from a submitted
-ECM.
+Allow single-character alphabetical bullet lists. This configuration must occur
+before loading Org-Mode. **Never** remove this from a submitted ECM.
 
 ```lisp
 (setq org-list-allow-alphabetical t)
+```
+
+Unchecked boxes prevent marking the parent as done. This configuration must
+occur before loading Org-Mode. **Never** remove this from a submitted ECM.
+
+```lisp
+(setq org-enforce-todo-checkbox-dependencies t)
 ```
 
 Load Org-Mode.
@@ -524,7 +537,9 @@ This is a copy and paste. Additional languages would warrant a refactor."
   "Add a NAME property then assign it a UUID."
   (interactive)
   (org-babel-demarcate-block)
-  (insert "\n#+NAME: " (org-id-new)))
+  (insert "#+NAME: " (org-id-new))
+  (beginning-of-line)
+  (insert "\n"))
 ```
 
 ## Tangling
@@ -714,16 +729,17 @@ Org-Mode may evaluate all of the listed languages.
  '((emacs-lisp . t)
    (org . t)
    ;;
-   (sass . t)
+   (C . t)
    (R . t)
+   (python . t)
+   (sass . t)
    (scheme . t)
-   (lisp . t)
    (sql . t)
    ;;
    (latex . t)
    ;;
-   (sh . t)
    (makefile . t)
+   (sh . t)
    ;;
    (ditaa . t)
    (dot . t)
@@ -859,7 +875,7 @@ Epilgue works hand-in-hand with this.
 
 > Specify the type of results and how they will be collected and handled
 
-Ways to configure `:results:` `224`.
+Ways to configure `:results`: 224.
 
 This system stores the results of evaluation in the source document. It believes
 that the results are critical to the research.
@@ -867,16 +883,23 @@ that the results are critical to the research.
 Keep the document as close to being executable as possible; make it very visible
 when it is not.
 
--   Evaluated Source-Blocks return a result.
--   Tables are the best result because they are human-readable in text, work
-    with Babel LP, and weavers.
-    -   Inline Source-Blocks disallow tables so use scalars instead.
--   Always store results in the Web so format them as Org-Mode. Wrapped in a
-    `SRC` special block they are replaceable.
--   Replace theme each time you evaluate the block.
+-   Collection
+    -   `value`: Functions have a single result. So do Source-Blocks.
+-   Type
+    -   `table`:
+    -   Tables are the best type because
+        -   Dimensions make them human-readable in text.
+        -   Work with Babel LP.
+        -   Appear as lists to programming languages.
+        -   Weaves well.
+        -   Inline Source-Blocks disallow tables so use scalars instead.
+-   Format
+    -   `drawer`: Enable results replacement
+-   Handling
+    -   `replace`: Replace theme each time you evaluate the block.
 
 ```lisp
-(defconst help/org-sb-results-cfg "value table org replace")
+(defconst help/org-sb-results-cfg "value table drawer replace")
 (help/set-org-babel-default-header-args :results help/org-sb-results-cfg)
 (defconst help/org-isb-results-cfg
   (replace-regexp-in-string "table" "scalar" help/org-sb-results-cfg))
@@ -913,14 +936,6 @@ Configuration likely per Source-Block or System
     -   Literal-Block
 -   Idexable variable values
 -   Emacs Lisp evaluation of variables
-
-### wrap
-
-    ID: 94D6B3BE-5DA1-499A-B5C7-A6B71710A1EA
-
-> Mark source block evaluation results
-
-Configuration likely per Source-Block or System.
 
 ## Weaving
 
@@ -998,6 +1013,29 @@ block.
 
 ```lisp
 (help/set-org-babel-default-header-args :exports "both")
+```
+
+Use inline Source-Blocks to provide values read as part of the document. Their
+format will show that they are results. Don&rsquo;t show their source code. Allows
+inlinse Source-Blocks to function as *rich* macros when combined with `org-sbe`.
+
+```lisp
+(help/set-org-babel-default-inline-header-args :exports "results")
+```
+
+### wrap
+
+    ID: 94D6B3BE-5DA1-499A-B5C7-A6B71710A1EA
+
+> Mark source block evaluation results
+
+Inline-Source-Blocks are recognizable by their `verbatim` font. They do not
+interrupt the flow. Source-Blocks are their own entities. They stand out. Their
+results need to be visibly noticeably different for the reader by making them
+`EXAMPLE` special blocks.
+
+```lisp
+(help/set-org-babel-default-header-args :wrap "EXAMPLE")
 ```
 
 # Piano Lessons
@@ -1399,7 +1437,7 @@ close together
 
     ID: 22246934-BE44-4D99-942C-A6DAB4506D65
 
-1.  5
+1.  Row 5
 
         ID: C00A4E41-0801-4696-86E6-5A1CE1EBB189
 
@@ -1408,9 +1446,12 @@ close together
     (global-set-key (kbd "s-3") #'mc/mark-previous-like-this)
     (global-set-key (kbd "s-2") #'mc/mark-all-like-this)
     (global-set-key (kbd "s-1") #'mc/edit-lines)
+    (global-set-key (kbd "s--") #'decrement-integer-at-point)
+    (global-set-key (kbd "s-+") #'increment-integer-at-point)
+    (global-set-key (kbd "M-s-3") #'help/split-into-3-windows)
     ```
 
-2.  4
+2.  Row 4
 
         ID: 8F467832-8FC3-42B5-8978-8CF2C1454D5B
 
@@ -1418,11 +1459,14 @@ close together
     (global-set-key (kbd "s-w") #'imenu)
     ```
 
-3.  3
+3.  Row 3
 
         ID: 6DCD321F-6FDA-4983-9C7C-265D23D1AC4F
 
+    Easily kill buffers.
+
     ```lisp
+    (global-set-key (kbd "s-a") #'kill-buffer)
     (global-set-key (kbd "s-d") #'er/expand-region)
     (key-chord-define-global "df" #'avy-goto-word-1)
     (key-chord-define-global "DF" #'avy-pop-mark)
@@ -1483,7 +1527,7 @@ close together
       ("e" apropos-value))
     ```
 
-4.  2
+4.  Row 2
 
         ID: 9E95D130-D1EC-445B-9028-24DFA5CCB28A
 
@@ -1494,7 +1538,7 @@ close together
     (global-set-key (kbd "s-c") #'ido-switch-buffer)
     ```
 
-5.  1
+5.  Row 1
 
         ID: 4CDDC2CE-646A-4D8B-B5D3-2588FBEFF650
 
@@ -1572,7 +1616,7 @@ Don&rsquo;t use &ldquo;dn&rdquo; for &ldquo;describe-function&rdquo; because of 
 Don&rsquo;t use &ldquo;qi&rdquo;; &ldquo;unique&rdquo;.
 
 ```lisp
-(key-chord-define-global "f-" #'help/comment-or-uncomment) ;
+(global-set-key (kbd "s-`") #'help/comment-or-uncomment)
 ```
 
 Make `ispell` accessible.
@@ -1593,6 +1637,12 @@ Use the default Langtool bindings.
 (define-key help/langtool-map "k" #'langtool-show-message-at-point)
 (define-key help/langtool-map "l" #'langtool-goto-next-error)
 (define-key help/langtool-map "q" #'langtool-check-done)
+```
+
+Via [comments](http://endlessparentheses.com/fixing-double-capitals-as-you-type.html?source=rss):
+
+```lisp
+(key-chord-define-global "TH" (lambda () (interactive) (insert "Th")))
 ```
 
 ### Right Side
@@ -2158,24 +2208,100 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (defun help/org-weave-readme ()
   (interactive)
   (help/org-weave-subtree-gfm
-   "39A2F05A-BC60-4879-9B66-85E43297FC97"
+   "README"
    "README.md"))
 
 (defun help/org-weave-style-guide ()
   (interactive)
   (help/org-weave-subtree-gfm
-   "03E0F0E3-DB81-4033-8F04-5D8BB5CBB2F0"
+   "STYLEGUIDE"
    "STYLEGUIDE.md"))
 
 (defun help/weave-everything-everywhere ()
   "Export this entire document in configured weavers."
   (interactive)
-  (org-ascii-export-to-ascii)
-  (org-html-export-to-html)
-  (org-gfm-export-to-markdown)
-  (org-latex-export-to-pdf)
+  (save-excursion
+    (org-ascii-export-to-ascii)
+    (org-html-export-to-html)
+    (org-gfm-export-to-markdown)
+    (org-latex-export-to-pdf))
   (help/org-weave-readme)
   (help/org-weave-style-guide))
+
+(require 'thingatpt)
+
+(defun thing-at-point-goto-end-of-integer ()
+  "Go to end of integer at point.
+
+Attribution: URL `http://emacsredux.com/blog/2013/07/25/increment-and-decrement-integer-at-point/'"
+  (let ((inhibit-changing-match-data t))
+    ;; Skip over optional sign
+    (when (looking-at "[+-]")
+      (forward-char 1))
+    ;; Skip over digits
+    (skip-chars-forward "[[:digit:]]")
+    ;; Check for at least one digit
+    (unless (looking-back "[[:digit:]]")
+      (error "No integer here"))))
+(put 'integer 'beginning-op 'thing-at-point-goto-end-of-integer)
+
+(defun thing-at-point-goto-beginning-of-integer ()
+  "Go to end of integer at point.
+
+Attribution: URL `http://emacsredux.com/blog/2013/07/25/increment-and-decrement-integer-at-point/'"
+  (let ((inhibit-changing-match-data t))
+    ;; Skip backward over digits
+    (skip-chars-backward "[[:digit:]]")
+    ;; Check for digits and optional sign
+    (unless (looking-at "[+-]?[[:digit:]]")
+      (error "No integer here"))
+    ;; Skip backward over optional sign
+    (when (looking-back "[+-]")
+      (backward-char 1))))
+(put 'integer 'beginning-op 'thing-at-point-goto-beginning-of-integer)
+
+(defun thing-at-point-bounds-of-integer-at-point ()
+  "Get boundaries of integer at point.
+
+Attribution: URL `http://emacsredux.com/blog/2013/07/25/increment-and-decrement-integer-at-point/'"
+  (save-excursion
+    (let (beg end)
+      (thing-at-point-goto-beginning-of-integer)
+      (setq beg (point))
+      (thing-at-point-goto-end-of-integer)
+      (setq end (point))
+      (cons beg end))))
+(put 'integer 'bounds-of-thing-at-point 'thing-at-point-bounds-of-integer-at-point)
+
+(defun thing-at-point-integer-at-point ()
+  "Get integer at point.
+
+Attribution: URL `http://emacsredux.com/blog/2013/07/25/increment-and-decrement-integer-at-point/'"
+  (let ((bounds (bounds-of-thing-at-point 'integer)))
+    (string-to-number (buffer-substring (car bounds) (cdr bounds)))))
+(put 'integer 'thing-at-point 'thing-at-point-integer-at-point)
+
+(defun increment-integer-at-point (&optional inc)
+  "Increment integer at point by one.
+
+With numeric prefix arg INC, increment the integer by INC amount.
+
+Attribution: URL `http://emacsredux.com/blog/2013/07/25/increment-and-decrement-integer-at-point/'"
+  (interactive "p")
+  (let ((inc (or inc 1))
+        (n (thing-at-point 'integer))
+        (bounds (bounds-of-thing-at-point 'integer)))
+    (delete-region (car bounds) (cdr bounds))
+    (insert (int-to-string (+ n inc)))))
+
+(defun decrement-integer-at-point (&optional dec)
+  "Decrement integer at point by one.
+
+With numeric prefix arg DEC, decrement the integer by DEC amount.
+
+Attribution: URL `http://emacsredux.com/blog/2013/07/25/increment-and-decrement-integer-at-point/'"
+  (interactive "p")
+  (increment-integer-at-point (- (or dec 1))))
 ```
 
 ## Buffer
@@ -2262,6 +2388,20 @@ Visualize the formfeed character.
 ```lisp
 (use-package page-break-lines
   :ensure t)
+```
+
+Configure Page-Break-Lines-Mode.
+
+```lisp
+(use-package page-break-lines
+  :diminish page-break-lines-mode)
+```
+
+Center the buffer after navigating pages.
+
+```lisp
+(advice-add #'backward-page :after #'recenter)
+(advice-add #'forward-page :after #'recenter)
 ```
 
 ## Code Folding
@@ -3061,6 +3201,15 @@ Notify Magit about every working copy that Projectile knows about.
   :commands (pp-display-expression))
 ```
 
+## Register
+
+    ID: 34801113-5002-4502-821E-248C6406395C
+
+```lisp
+(setq register-preview-delay 2)
+(setq register-separator "\n\n")
+```
+
 ## Replacing
 
     ID: B10A2279-4F34-4DA2-BB1A-491B82F2F6EA
@@ -3198,7 +3347,7 @@ Check `SPECIAL LINE` definitions, ignoring their type.
         ("LATEX_CLASS_OPTIONS" nil)
         ("LATEX_HEADER" nil)
         ("LATEX_HEADER_EXTRA" nil)
-        ("NAME" nil)
+        ("NAME" t)
         ("OPTIONS" t)
         ("POSTID" nil)
         ("SELECT_TAGS" nil)
@@ -3325,10 +3474,7 @@ Make control characters easily visible.
     ID: 2156A7CE-297E-478F-AFF2-13CE64B3C5C3
 
 ```lisp
-(use-package visual-line-mode
-  :config
-  (eval-after-load "visual-line-mode"
-    '(diminish 'visual-line-mode)))
+(diminish 'visual-line-mode)
 ```
 
 # Quiet and Pleasant Appearance
@@ -3544,6 +3690,12 @@ Provide VC file status indicators.
   :ensure t)
 ```
 
+Ediff split frame horizontally.
+
+```lisp
+(setq ediff-split-window-function 'split-window-horizontally)
+```
+
 ## Window
 
     ID: 9A848D65-DE56-4F95-A84D-CAE74781CD25
@@ -3559,6 +3711,18 @@ hand.
 
 ```lisp
 (winner-mode t)
+```
+
+Frequently use between 1 and 3 windows. 1 and 2 are already managed. Easily
+create 3.
+
+```lisp
+(defun help/split-into-3-windows ()
+  (interactive)
+  (delete-other-windows)
+  (split-window-vertically)
+  (split-window-vertically)
+  (balance-windows))
 ```
 
 # Principle of Least Astonishment (POLA)
@@ -3741,7 +3905,7 @@ With that in mind this system:
     -   Configurations common to every hacking vehicle.
 
         ```lisp
-        (setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook ess-mode-hook graphviz-dot-mode-hook))
+        (setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook R-mode-hook SAS-mode-hook graphviz-dot-mode-hook c-mode-common-hook))
         ```
     -   LISP mode hooks.
         -   Are hacking modes.
@@ -3973,7 +4137,7 @@ Ask before execution of Emacs-Lisp.
 (setq org-confirm-elisp-link-function 'y-or-n-p)
 ```
 
-Make sure that incomplete TODO entries prevent the enclosing parent from every
+Make sure that incomplete TODO entries prevent the enclosing parent from ever
 turning to DONE.
 
 ```lisp
@@ -4091,12 +4255,6 @@ You may display syntax highlighting for code in source blocks. I don&rsquo;t.
 
 ```lisp
 (setq org-src-fontify-natively nil)
-```
-
-Never indent the contents of a source-block automatically.
-
-```lisp
-(setq org-edit-src-content-indentation 0)
 ```
 
 When edit mode is exited, the option exists to automatically remove empty
@@ -4253,72 +4411,108 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
  (define-key org-mode-map (kbd "C-M-<return>") #'electric-indent-just-newline))
 ```
 
-```lisp
-(define-key org-mode-map (kbd "s-7") #'org-babel-load-in-session)
-(define-key org-mode-map (kbd "s-8") #'org-babel-switch-to-session)
-(define-key org-mode-map (kbd "s-9") #'org-babel-switch-to-session-with-code)
-(define-key org-mode-map (kbd "s-j") #'org-babel-next-src-block)
-(define-key org-mode-map (kbd "s-y") #'help/safb-org-babel-execute-subtree)
-(define-key org-mode-map (kbd "s-u") #'help/safb-org-babel-execute-buffer)
-(define-key org-mode-map (kbd "s-U") #'org-mark-ring-goto)
-(define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
-(define-key org-mode-map (kbd "s-i") #'help/safb-org-babel-tangle)
-(define-key org-mode-map (kbd "s-l") #'help/safb-org-edit-src-code)
-(define-key org-mode-map (kbd "s-o") #'org-babel-execute-src-block-maybe)
-(define-key org-mode-map (kbd "s-;") #'org-babel-view-src-block-info)
-(define-key org-mode-map (kbd "s-'") #'org-babel-open-src-block-result)
-(define-key org-mode-map (kbd "s-p") #'help/safb-help/org-babel-demarcate-block)
-```
+1.  Row 5
 
-```lisp
-(defhydra help/hydra/right-side/org-mode (:color blue
-                                                 :hint nil)
-  "
-_1_ SHA-1 _2_ export-all _4_ +imgs _5_ -imgs                   _8_ detangle _9_ igc  _0_ tglmcro
-_q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ g2nms-b _t_ g2s-b/hd      _u_ goto
-_a_ inshdrgs _s_ oblobigst            _h_ dksieb
-_c_ cksrcblk _b_ swtch2sessn _n_ n2sbtre _m_ xpndsrcblk"
-  ("1" org-babel-sha1-hash)
-  ("2" help/weave-everything-everywhere)
-  ("4" org-display-inline-images)
-  ("5" org-remove-inline-images)
-  ("8" org-babel-detangle)
-  ("9" org-id-get-create)
-  ("0" help/org-toggle-macro-markers)
-  ("s" org-babel-lob-ingest)
-  ("e" org-babel-goto-named-result)
-  ("r" org-babel-goto-named-src-block)
-  ("t" org-babel-goto-src-block-head)
-  ("a" org-babel-insert-header-arg)
-  ("h" org-babel-do-key-sequence-in-edit-buffer)
-  ("m" org-babel-expand-src-block-maybe)
-  ("c" org-babel-check-src-block)
-  ("w" org-table-edit-field)
-  ("n" org-narrow-to-subtree)
-  ("u" org-goto)
-  ("b" org-babel-switch-to-session)
-  ("q" org-babel-switch-to-session-with-code))
-(key-chord-define-global "hh" #'help/hydra/right-side/org-mode/body)
-```
+        ID: B09BE660-B5D5-40CA-8952-D2DEAE20E7BD
 
-Safe all buffers before working with Exports.
+    ```lisp
+    (define-key org-mode-map (kbd "s-6") #'org-babel-load-in-session)
+    (define-key org-mode-map (kbd "s-7") #'org-babel-switch-to-session)
+    (define-key org-mode-map (kbd "s-8") #'org-babel-switch-to-session-with-code)
+    (define-key org-mode-map (kbd "s-9") #'org-todo)
+    ```
 
-```lisp
-(define-key org-mode-map (kbd "C-c C-e") #'help/safb-org-export-dispatch)
-```
+2.  Row 4
 
-Make `s-l` do the same thing to leave the Source-Block-Buffer.
+        ID: 1E49694B-6350-45E2-BE58-21EAAF09D4A2
 
-```lisp
-(define-key org-src-mode-map (kbd "s-l") #'org-edit-src-exit)
-```
+    ```lisp
+    (define-key org-mode-map (kbd "s-y") #'help/safb-org-babel-execute-buffer)
+    (define-key org-mode-map (kbd "s-u") #'help/safb-org-babel-execute-subtree)
+    (define-key org-mode-map (kbd "s-U") #'org-mark-ring-goto)
+    (define-key org-mode-map (kbd "s-i") #'org-babel-execute-src-block)
+    (define-key org-mode-map (kbd "s-o") #'org-babel-remove-result)
+    (define-key org-mode-map (kbd "s-p") #'org-babel-execute-maybe)
+    (define-key org-mode-map (kbd "s-[") #'org-babel-remove-inline-result)
+    ```
 
-Easily enter guillemots.
+3.  Row 3
 
-```lisp
-(key-chord-define org-src-mode-map "<<" (lambda () (interactive) (insert "«")))
-(key-chord-define org-src-mode-map ">>" (lambda () (interactive) (insert "»")))
-```
+        ID: D11109EE-AD92-4E26-988F-AF3CC70A2F69
+
+    ```lisp
+    (define-key org-mode-map (kbd "s-h") #'help/safb-org-babel-tangle)
+    (define-key org-mode-map (kbd "s-j") #'org-babel-next-src-block)
+    (define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
+    (define-key org-mode-map (kbd "s-l") #'help/safb-org-edit-src-code)
+    (define-key org-mode-map (kbd "s-;") #'help/safb-help/org-babel-demarcate-block)
+    ```
+
+4.  Row 2
+
+        ID: CA925DDA-8EA8-47B0-AE9A-D73073CF51B7
+
+    ```lisp
+    (define-key org-mode-map (kbd "s-n") #'org-babel-view-src-block-info)
+    (define-key org-mode-map (kbd "s-m") #'org-babel-expand-src-block)
+    (define-key org-mode-map (kbd "s-,") #'org-babel-open-src-block-result)
+    ```
+
+5.  Hydra
+
+        ID: 46BCE65B-B8C9-49A0-A687-30D1330DB07D
+
+    ```lisp
+    (defhydra help/hydra/right-side/org-mode (:color blue
+                                                     :hint nil)
+      "
+    _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ detangle _5_ id-create _6_ toggle-macro
+    _q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ g2nms-b _t_ g2s-b/hd      _u_ goto
+    _a_ inshdrgs _s_ oblobigst            _h_ dksieb
+    _c_ cksrcblk _b_ swtch2sessn _n_ n2sbtre"
+      ;; Row 5
+      ("1" org-babel-sha1-hash)
+      ("2" org-display-inline-images)
+      ("3" org-remove-inline-images)
+      ("4" org-babel-detangle)
+      ("5" org-id-get-create)
+      ("6" help/org-toggle-macro-markers)
+      ;; Row 4
+      ("q" org-babel-switch-to-session-with-code)
+      ("w" org-table-edit-field)
+      ("e" org-babel-goto-named-result)
+      ("r" org-babel-goto-named-src-block)
+      ("t" org-babel-goto-src-block-head)
+      ("u" org-goto)
+      ;; Row 3
+      ("a" org-babel-insert-header-arg)
+      ("s" org-babel-lob-ingest)
+      ("h" org-babel-do-key-sequence-in-edit-buffer)
+      ;; Row 2
+      ("c" org-babel-check-src-block)
+      ("b" org-babel-switch-to-session)
+      ("n" org-narrow-to-subtree))
+    (key-chord-define-global "hh" #'help/hydra/right-side/org-mode/body)
+    ```
+
+    Save all buffers before working with Exports.
+
+    ```lisp
+    (define-key org-mode-map (kbd "C-c C-e") #'help/safb-org-export-dispatch)
+    ```
+
+    Make `s-l` do the same thing to leave the Source-Block-Buffer.
+
+    ```lisp
+    (define-key org-src-mode-map (kbd "s-l") #'org-edit-src-exit)
+    ```
+
+    Easily enter guillemots.
+
+    ```lisp
+    (key-chord-define org-src-mode-map "<<" (lambda () (interactive) (insert "«")))
+    (key-chord-define org-src-mode-map ">>" (lambda () (interactive) (insert "»")))
+    ```
 
 ## (Applied Mathematics)
 
@@ -4753,9 +4947,13 @@ Enable Auto-Complete via Geiser.
   (setq geiser-repl-history-no-dups-p t))
 ```
 
-## Common Lisp (LISP)
+## C
 
-    ID: CC2615EA-EDE5-45AA-B874-AE5E673C01ED
+    ID: 6F4A6F8E-277C-45E2-B26E-51455C2CBC16
+
+## Python
+
+    ID: F4577EEA-FB0F-4E7B-AF02-A4DEA74BB763
 
 ## YASnippet
 
@@ -5058,8 +5256,8 @@ Program GFM.
 > Blog from Org mode to wordpress
 
 ```lisp
-(use-package org2blog
-  :ensure t)
+(add-to-list 'load-path "~/src/org2blog")
+(require 'org2blog-autoloads)
 ```
 
 Org2Blog depends on Org-Mode. This system loads Org-Mode from Git. Enter the
