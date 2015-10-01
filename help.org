@@ -4327,7 +4327,7 @@ My personal TODO workflow.
 #+NAME: BB8A752F-713B-4450-98DC-CE04957577EF
 #+BEGIN_SRC emacs-lisp :results output silent
 (setq org-todo-keywords
-      '((sequence "TODO" "IN-PROGRESS" "BLOCKED" "REVIEW" "DONE")))
+      '((sequence "TODO" "IN-PROGRESS" "BLOCKED" "ON-HOLD" "REVIEW" "DONE")))
 #+END_SRC
 
 When running in a GUI, I would like linked images to be displayed inside of
