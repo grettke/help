@@ -1609,6 +1609,10 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
 (define-key org-mode-map (kbd "s-l") #'help/safb-org-edit-src-code)
 (define-key org-mode-map (kbd "s-;") #'help/safb-help/org-babel-demarcate-block)
+(define-key org-mode-map (kbd "s-C-i") #'org-metaup)
+(define-key org-mode-map (kbd "s-C-k") #'org-metadown)
+(define-key org-mode-map (kbd "s-C-l") #'org-metaright)
+(define-key org-mode-map (kbd "s-C-j") #'org-metaleft)
 ;; 933B1A3A-A77A-4616-B9D8-9DACED018CC2 ends here
 ;; [[file:~/src/help/help.org::*Row%202][2F8DDC77-27C4-4E81-8913-28243C4A44B6]]
 (define-key org-mode-map (kbd "s-n") #'org-babel-view-src-block-info)
