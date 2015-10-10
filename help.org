@@ -4328,7 +4328,7 @@ Personal workflow:
 - PROGRESS :: Forward movement.
 - BLOCKED-BY :: External factor halting progress.
 - HELD-BY :: Internal decision halting progress
-- WAIT-UNTIL :: Reinitialize on date.
+- WAIT-UNTIL :: Addressed and waiting for time or event.
 - REVIEW :: Work is complete and needs to be evaluated.
 - DONE :: Progress stops.
 
