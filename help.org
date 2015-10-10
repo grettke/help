@@ -4322,19 +4322,28 @@ source-blocks outside of that place.
 (setq org-src-tab-acts-natively nil)
 #+END_SRC
 
-My personal TODO workflow. Existence of a task means that it has focus and
-value.
-- TODO: Has zero progress.
-- IN-PROGRESS: Has greater-than-zero progress.
-- BLOCKED: Progress halted by not-me.
-- ON-HOLD: Progress halted by me.
-- REVIEW: Work is complete and needs to be evaluated.
-- DONE: Progress stops.
+Personal workflow:
+
+- TODO :: Zero progress.
+- PROGRESS :: Forward movement.
+- BLOCKED-BY :: External factor halting progress.
+- HELD-BY :: Internal decision halting progress
+- WAIT-UNTIL :: Reinitialize on date.
+- REVIEW :: Work is complete and needs to be evaluated.
+- DONE :: Progress stops.
 
 #+NAME: BB8A752F-713B-4450-98DC-CE04957577EF
 #+BEGIN_SRC emacs-lisp :results output silent
 (setq org-todo-keywords
-      '((sequence "TODO" "IN-PROGRESS" "BLOCKED" "ON-HOLD" "REVIEW" "DONE")))
+      '((sequence
+         "TODO"
+         "PROGRESS"
+         "BLOCKED-BY"
+         "HELD-BY"
+         "WAIT-UNTIL"
+         "REVIEW"
+         "DONE"
+         )))
 #+END_SRC
 
 When running in a GUI, I would like linked images to be displayed inside of

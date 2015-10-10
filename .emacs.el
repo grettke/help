@@ -1455,7 +1455,15 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; 6CE707AD-A340-4B63-B747-8692E0DFF41C ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][BB8A752F-713B-4450-98DC-CE04957577EF]]
 (setq org-todo-keywords
-      '((sequence "TODO" "IN-PROGRESS" "BLOCKED" "ON-HOLD" "REVIEW" "DONE")))
+      '((sequence
+         "TODO"
+         "PROGRESS"
+         "BLOCKED-BY"
+         "HELD-BY"
+         "WAIT-UNTIL"
+         "REVIEW"
+         "DONE"
+         )))
 ;; BB8A752F-713B-4450-98DC-CE04957577EF ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][548D2D49-98E0-456B-91BC-37D0C0BC3557]]
 (setq org-startup-with-inline-images (display-graphic-p))
