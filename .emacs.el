@@ -1458,9 +1458,9 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
       '((sequence
          "TODO"
          "PROGRESS"
-         "BLOCKED-BY"
-         "HELD-BY"
-         "WAIT-UNTIL"
+         "HELD-BLOCKED"
+         "HELD-FROZEN"
+         "HELD-UNTIL"
          "REVIEW"
          "DONE"
          )))

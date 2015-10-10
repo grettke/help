@@ -4326,9 +4326,9 @@ Personal workflow:
 
 - TODO :: Zero progress.
 - PROGRESS :: Forward movement.
-- BLOCKED-BY :: External factor halting progress.
-- HELD-BY :: Internal decision halting progress
-- WAIT-UNTIL :: Addressed and waiting for time or event.
+- HELD-BLOCKED :: Can't move forward until external agent completes.
+- HELD-FROZEN :: Won't move forward until I reinitialize it.
+- HELD-UNTIL :: Reinitialize when conditional.
 - REVIEW :: Work is complete and needs to be evaluated.
 - DONE :: Progress stops.
 
@@ -4338,9 +4338,9 @@ Personal workflow:
       '((sequence
          "TODO"
          "PROGRESS"
-         "BLOCKED-BY"
-         "HELD-BY"
-         "WAIT-UNTIL"
+         "HELD-BLOCKED"
+         "HELD-FROZEN"
+         "HELD-UNTIL"
          "REVIEW"
          "DONE"
          )))
