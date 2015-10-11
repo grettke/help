@@ -1041,6 +1041,13 @@ Maximize flexibility for weaving operations during export.
 (setq org-export-allow-bind-keywords t)
 #+END_SRC
 
+Disable element caching because it might break weaves via [[https://lists.gnu.org/archive/html/emacs-orgmode/2015-09/msg00646.html][this thread]].
+
+#+NAME: E44782C1-A02D-4D4A-982C-9F0908773CF9
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq org-element-use-cache nil)
+#+END_SRC
+
 *** exports
     :PROPERTIES:
     :ID:       57B3786B-017F-4F6E-89F9-05642304F3B6
