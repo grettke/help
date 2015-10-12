@@ -3764,7 +3764,7 @@ Make it very easy to input special-characters using TeX coding.
 
 [[https://github.com/bbatsov/solarized-emacs][Solarized Theme]]
 
-- src_emacs-lisp{(- 1284 25)} {{{results(=1259=)}}} Faces Defined
+- ~1,000 Faces Defined
 - 47,869 Downloads
 
 - A distinct fringe provides a definition of space.
