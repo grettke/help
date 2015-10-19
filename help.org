@@ -4597,7 +4597,7 @@ thing before any version control modes that would result in the same condition.
             (org-src-edit-buffer-p)
           (error nil))
     (org-edit-src-exit))
-  (call-interactively 'magit-status))
+  (magit-status))
 #+END_SRC
 
 Never use the original version.
