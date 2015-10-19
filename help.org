@@ -4752,6 +4752,7 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
 (define-key org-mode-map (kbd "s-n") #'org-babel-view-src-block-info)
 (define-key org-mode-map (kbd "s-m") #'org-babel-expand-src-block)
 (define-key org-mode-map (kbd "s-,") #'org-babel-open-src-block-result)
+(define-key org-mode-map (kbd "s-.") #'org-time-stamp)
 #+END_SRC
 
 **** Hydra

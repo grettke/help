@@ -1629,6 +1629,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (define-key org-mode-map (kbd "s-n") #'org-babel-view-src-block-info)
 (define-key org-mode-map (kbd "s-m") #'org-babel-expand-src-block)
 (define-key org-mode-map (kbd "s-,") #'org-babel-open-src-block-result)
+(define-key org-mode-map (kbd "s-.") #'org-time-stamp)
 ;; 2F8DDC77-27C4-4E81-8913-28243C4A44B6 ends here
 ;; [[file:~/src/help/help.org::*Hydra][5186DD50-F693-4297-A164-192BEA685C6D]]
 (defhydra help/hydra/right-side/org-mode (:color blue
