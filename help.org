@@ -721,7 +721,7 @@ Org-Mode may evaluate all of the listed languages.
    (latex . t)
    ;;
    (makefile . t)
-   (sh . t)
+   (shell . t)
    ;;
    (ditaa . t)
    (dot . t)

@@ -139,7 +139,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
    (latex . t)
    ;;
    (makefile . t)
-   (sh . t)
+   (shell . t)
    ;;
    (ditaa . t)
    (dot . t)
@@ -1636,7 +1636,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
                                                  :hint nil)
   "
 _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ detangle _5_ id-create _6_ toggle-macro
-_q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ g2nms-b _t_ g2s-b/hd _y_ o-arc-sub _u_ goto
+_q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ g2nms-b _t_ g2s-b/hd      _u_ goto
 _a_ inshdrgs _s_ oblobigst            _h_ dksieb
 _c_ cksrcblk _b_ swtch2sessn _n_ n2sbtre"
   ;; Row 5
@@ -1652,7 +1652,6 @@ _c_ cksrcblk _b_ swtch2sessn _n_ n2sbtre"
   ("e" org-babel-goto-named-result)
   ("r" org-babel-goto-named-src-block)
   ("t" org-babel-goto-src-block-head)
-  ("y" org-archive-subtree)
   ("u" org-goto)
   ;; Row 3
   ("a" org-babel-insert-header-arg)

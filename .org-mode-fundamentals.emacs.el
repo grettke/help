@@ -138,7 +138,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
    (latex . t)
    ;;
    (makefile . t)
-   (sh . t)
+   (shell . t)
    ;;
    (ditaa . t)
    (dot . t)
