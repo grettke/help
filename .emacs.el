@@ -1192,8 +1192,8 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
 (savehist-mode t)
 ;; FDA728C0-CBE2-4B1B-A30F-CC8EA3E810DB ends here
 ;; [[file:~/src/help/help.org::*Searching][B5DDBCA8-42F2-49DF-9E7F-71E776A99946]]
-(setq isearch-lax-whitespace t)
-(setq isearch-regexp-lax-whitespace t)
+(setq isearch-lax-whitespace nil)
+(setq isearch-regexp-lax-whitespace nil)
 ;; B5DDBCA8-42F2-49DF-9E7F-71E776A99946 ends here
 ;; [[file:~/src/help/help.org::*Searching][4B9FE2A1-6A5F-42EF-AEEA-222B72170B64]]
 (setq-default case-fold-search t)
@@ -2200,7 +2200,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
   "
 _1_ -font  _2_ +font _3_ ellipsis _4_ UUID _5_ bfr-cdng-systm _6_ grade-level _7_ reading-ease
 _q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
-                 _j_ back-char _k_ scrollDown _K_ nextLogLine _l_ forw-char
+                 _j_ back-char _k_ scrollDown _K_ nextLogLine _l_ forw-char _;_ toggle-lax-whitespace
 _x_ delete-indentation"
   ("1" help/text-scale-decrease :exit nil)
   ("2" help/text-scale-increase :exit nil)
@@ -2220,6 +2220,7 @@ _x_ delete-indentation"
   ("K" next-logical-line :exit nil)
   ("j" backward-char :exit nil)
   ("l" forward-char :exit nil)
+  (";" isearch-toggle-lax-whitespace)
   ("o" toggle-debug-on-error)
   ("p" anzu-query-replace)
   ("[" backward-page :exit nil)

@@ -1552,7 +1552,7 @@ Easily kill buffers.
   "
 _1_ -font  _2_ +font _3_ ellipsis _4_ UUID _5_ bfr-cdng-systm _6_ grade-level _7_ reading-ease
 _q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
-                 _j_ back-char _k_ scrollDown _K_ nextLogLine _l_ forw-char
+                 _j_ back-char _k_ scrollDown _K_ nextLogLine _l_ forw-char _;_ toggle-lax-whitespace
 _x_ delete-indentation"
   ("1" help/text-scale-decrease :exit nil)
   ("2" help/text-scale-increase :exit nil)
@@ -1572,6 +1572,7 @@ _x_ delete-indentation"
   ("K" next-logical-line :exit nil)
   ("j" backward-char :exit nil)
   ("l" forward-char :exit nil)
+  (";" isearch-toggle-lax-whitespace)
   ("o" toggle-debug-on-error)
   ("p" anzu-query-replace)
   ("[" backward-page :exit nil)
@@ -3400,12 +3401,12 @@ back to work, you can just re-run stuff as you need it.
    :ID:       960E2DE0-3F5A-40AB-A9BF-FF08A410EAB7
    :END:
 
-When searching allow a space to many any number.
+When searching don't use lax whitespace matching; and make it easy to toggle.
 
 #+NAME: B5DDBCA8-42F2-49DF-9E7F-71E776A99946
 #+BEGIN_SRC emacs-lisp :results output silent
-(setq isearch-lax-whitespace t)
-(setq isearch-regexp-lax-whitespace t)
+(setq isearch-lax-whitespace nil)
+(setq isearch-regexp-lax-whitespace nil)
 #+END_SRC
 
 Make searches case-insensitive.
