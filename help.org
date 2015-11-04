@@ -262,6 +262,33 @@ Start EMACS with this command:
 <<Org-Mode-Weave>>
 #+END_SRC
 
+** Org2blog
+   :PROPERTIES:
+   :noweb-ref: Hacking-Publishing-Org2blog-Web
+   :tangle:  "./.org-mode-org2blog.emacs.el"
+   :ID:       BA37913C-D781-453B-B438-F6464B60CFDF
+   :END:
+
+Configure Org2blog for use, development, and support.
+
+Sysop is likely to use this periodically.
+
+Start EMACS with this command:
+
+=open /Applications/Emacs.app --args --quick --load ~/src/help/.org-mode-org2blog.emacs.el=
+
+#+NAME: 414DD245-B282-4D95-910D-29F43DD90D9B
+#+BEGIN_SRC emacs-lisp :results output silent :comments no :noweb-ref ignore-org2blog
+;; -*- lexical-binding: t -*-
+#+END_SRC
+
+#+NAME: E32697AE-784E-458F-A042-D9B559908721
+#+BEGIN_SRC emacs-lisp :results output silent
+<<Org-Mode-Fundamentals-Web>>
+<<Watch-What-You-Eat>>
+<<Hacking-Publishing-Org2blog>>
+#+END_SRC
+
 ** The Whole Enchilada
    :PROPERTIES:
    :tangle:  "./.emacs.el"
@@ -283,8 +310,7 @@ Start EMACS with this command:
 
 #+NAME: AD12BE48-B87B-4AB6-814D-4FA5E47597A0
 #+BEGIN_SRC emacs-lisp :results output silent
-<<Org-Mode-Fundamentals-Web>>
-<<Watch-What-You-Eat>>
+<<Hacking-Publishing-Org2blog-Web>>
 <<Special-Operating-Procedure>>
 <<Standard-Operating-Procedure>>
 <<Hacking-Common-Configurations>>
@@ -298,7 +324,6 @@ Start EMACS with this command:
 <<Hacking-Publishing-TeX>>
 <<Hacking-Publishing-KOMA>>
 <<Hacking-Publishing-Markdown>>
-<<Hacking-Publishing-Wordpress>>
 <<Hacking-Publishing-Beamer>>
 <<Hacking-Publishing-HTML>>
 <<Hacking-Diagram-Artist>>
@@ -5590,9 +5615,9 @@ Program GFM.
   (setq markdown-coding-system "utf-8"))
 #+END_SRC
 
-** Blog (WordPress)
+** Blog
    :PROPERTIES:
-   :noweb-ref: Hacking-Publishing-Wordpress
+   :noweb-ref: Hacking-Publishing-Org2blog
    :ID:       F5E33EB2-2E26-435C-85F6-26CB7CE7FC56
    :END:
 

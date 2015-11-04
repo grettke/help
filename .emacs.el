@@ -1,6 +1,7 @@
 ;; -*- lexical-binding: t -*-
 
 ;; [[file:help.org::*The%20Whole%20Enchilada][AD12BE48-B87B-4AB6-814D-4FA5E47597A0]]
+;; [[file:~/src/help/help.org::*Org2blog][E32697AE-784E-458F-A042-D9B559908721]]
 ;; [[file:~/src/help/help.org::*Org-Mode%20Fundamentals][78D777D3-FA69-4361-874C-7262DE96F753]]
 ;; [[file:~/src/help/help.org::*Org-Mode%20Exemple%20Complet%20Minimal][9969960B-FFEE-48B4-BD9C-F29E750FD8A3]]
 ;; [[file:~/src/help/help.org::*Load%20Behavior][87B0CAB9-E6E5-4C68-B389-9289E65FCA7F]]
@@ -211,6 +212,31 @@ This is a copy and paste. Additional languages would warrant a refactor."
   (require 'use-package))
 (use-package diminish)
 ;; 54841CA9-6491-46E8-8F40-4DCF7182CCD7 ends here
+;; [[file:~/src/help/help.org::*Blog][E99598C8-D394-484B-A7FB-333FA2544CB0]]
+(use-package xml-rpc
+  :ensure t)
+;; E99598C8-D394-484B-A7FB-333FA2544CB0 ends here
+;; [[file:~/src/help/help.org::*Blog][79F63BAD-0CD7-4A97-8A7D-CBAA51BB48E1]]
+(use-package metaweblog
+  :ensure t)
+;; 79F63BAD-0CD7-4A97-8A7D-CBAA51BB48E1 ends here
+;; [[file:~/src/help/help.org::*Blog][DF522DDF-4A71-4D8B-B6F9-9BD6F11EB832]]
+(add-to-list 'load-path "~/src/org2blog")
+(require 'org2blog-autoloads)
+;; DF522DDF-4A71-4D8B-B6F9-9BD6F11EB832 ends here
+;; [[file:~/src/help/help.org::*Blog][9C1EAE6B-9D05-43FB-AC35-7FBFE6CB4F7E]]
+(setq org2blog/wp-track-posts nil)
+;; 9C1EAE6B-9D05-43FB-AC35-7FBFE6CB4F7E ends here
+;; [[file:~/src/help/help.org::*Blog][BCA2FE29-930C-4E66-A662-17FF451D1591]]
+(setq org2blog/wp-blog-alist
+      '(("wisdomandwonder"
+         :url "http://www.wisdomandwonder.com/wordpress/xmlrpc.php"
+         :username "admin"
+         :default-categories ("Article" "Link")
+         :confirm t
+         :show 'show)))
+;; BCA2FE29-930C-4E66-A662-17FF451D1591 ends here
+;; E32697AE-784E-458F-A042-D9B559908721 ends here
 ;; [[file:~/src/help/help.org::*Display][20CC11BB-D72C-4A86-8558-44D9AE44FEAF]]
 (defmacro help/on-gui (statement &rest statements)
   "Evaluate the enclosed body only when run on GUI."
@@ -1977,30 +2003,6 @@ _c_ cksrcblk _b_ swtch2sessn _n_ n2sbtre"
   (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
   (setq markdown-coding-system "utf-8"))
 ;; 8A4DB408-7888-4705-AB2B-C7EED9262DF2 ends here
-;; [[file:~/src/help/help.org::*Blog%20(WordPress)][E99598C8-D394-484B-A7FB-333FA2544CB0]]
-(use-package xml-rpc
-  :ensure t)
-;; E99598C8-D394-484B-A7FB-333FA2544CB0 ends here
-;; [[file:~/src/help/help.org::*Blog%20(WordPress)][79F63BAD-0CD7-4A97-8A7D-CBAA51BB48E1]]
-(use-package metaweblog
-  :ensure t)
-;; 79F63BAD-0CD7-4A97-8A7D-CBAA51BB48E1 ends here
-;; [[file:~/src/help/help.org::*Blog%20(WordPress)][DF522DDF-4A71-4D8B-B6F9-9BD6F11EB832]]
-(add-to-list 'load-path "~/src/org2blog")
-(require 'org2blog-autoloads)
-;; DF522DDF-4A71-4D8B-B6F9-9BD6F11EB832 ends here
-;; [[file:~/src/help/help.org::*Blog%20(WordPress)][9C1EAE6B-9D05-43FB-AC35-7FBFE6CB4F7E]]
-(setq org2blog/wp-track-posts nil)
-;; 9C1EAE6B-9D05-43FB-AC35-7FBFE6CB4F7E ends here
-;; [[file:~/src/help/help.org::*Blog%20(WordPress)][BCA2FE29-930C-4E66-A662-17FF451D1591]]
-(setq org2blog/wp-blog-alist
-      '(("wisdomandwonder"
-         :url "http://www.wisdomandwonder.com/wordpress/xmlrpc.php"
-         :username "admin"
-         :default-categories ("Article" "Link")
-         :confirm t
-         :show 'show)))
-;; BCA2FE29-930C-4E66-A662-17FF451D1591 ends here
 ;; [[file:~/src/help/help.org::*Beamer][B77E265B-EE1A-469D-BEFB-51360B7AB45E]]
 (use-package ox-beamer)
 ;; B77E265B-EE1A-469D-BEFB-51360B7AB45E ends here

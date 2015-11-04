@@ -251,6 +251,32 @@ Start EMACS with this command:
 <<Org-Mode-Weave>>
 ```
 
+## Org2blog
+
+    noweb-ref: Hacking-Publishing-Org2blog-Web
+
+    tangle: "./.org-mode-org2blog.emacs.el"
+
+    ID: BA37913C-D781-453B-B438-F6464B60CFDF
+
+Configure Org2blog for use, development, and support.
+
+Sysop is likely to use this periodically.
+
+Start EMACS with this command:
+
+`open /Applications/Emacs.app --args --quick --load ~/src/help/.org-mode-org2blog.emacs.el`
+
+```lisp
+;; -*- lexical-binding: t -*-
+```
+
+```lisp
+<<Org-Mode-Fundamentals-Web>>
+<<Watch-What-You-Eat>>
+<<Hacking-Publishing-Org2blog>>
+```
+
 ## The Whole Enchilada
 
     tangle: "./.emacs.el"
@@ -270,8 +296,7 @@ Start EMACS with this command:
 ```
 
 ```lisp
-<<Org-Mode-Fundamentals-Web>>
-<<Watch-What-You-Eat>>
+<<Hacking-Publishing-Org2blog-Web>>
 <<Special-Operating-Procedure>>
 <<Standard-Operating-Procedure>>
 <<Hacking-Common-Configurations>>
@@ -285,7 +310,6 @@ Start EMACS with this command:
 <<Hacking-Publishing-TeX>>
 <<Hacking-Publishing-KOMA>>
 <<Hacking-Publishing-Markdown>>
-<<Hacking-Publishing-Wordpress>>
 <<Hacking-Publishing-Beamer>>
 <<Hacking-Publishing-HTML>>
 <<Hacking-Diagram-Artist>>
@@ -739,7 +763,7 @@ Org-Mode may evaluate all of the listed languages.
    (latex . t)
    ;;
    (makefile . t)
-   (sh . t)
+   (shell . t)
    ;;
    (ditaa . t)
    (dot . t)
@@ -998,6 +1022,12 @@ Maximize flexibility for weaving operations during export.
 
 ```lisp
 (setq org-export-allow-bind-keywords t)
+```
+
+Disable element caching because it might break weaves via [this thread](https://lists.gnu.org/archive/html/emacs-orgmode/2015-09/msg00646.html).
+
+```lisp
+(setq org-element-use-cache nil)
 ```
 
 ### exports
@@ -1397,12 +1427,12 @@ minimal change to use Ukelele to:
 
 -   Make space send `C`
 -   Make `;` send space
--   Make =&rsquo;= a dead key
+-   Make `'` a dead key
     -   In it&rsquo;s dead key state make
         -   `;` &rarr; `;`
         -   `:` &rarr; `:`
-        -   =&rsquo;= &rarr; =&rsquo;=
-        -   =&ldquo;= &rarr; =&rdquo;=
+        -   `'` &rarr; `'`
+        -   `"` &rarr; `"`
 
 The trouble is that it violates the POLA. Therefore, I left it alone and stuck
 with a simple &ldquo;Get C on both sides&rdquo;.
@@ -1478,7 +1508,7 @@ close together
       "
     _1_ -font  _2_ +font _3_ ellipsis _4_ UUID _5_ bfr-cdng-systm _6_ grade-level _7_ reading-ease
     _q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
-                     _j_ back-char _k_ scrollDown _K_ nextLogLine _l_ forw-char
+                     _j_ back-char _k_ scrollDown _K_ nextLogLine _l_ forw-char _;_ toggle-lax-whitespace
     _x_ delete-indentation"
       ("1" help/text-scale-decrease :exit nil)
       ("2" help/text-scale-increase :exit nil)
@@ -1498,6 +1528,7 @@ close together
       ("K" next-logical-line :exit nil)
       ("j" backward-char :exit nil)
       ("l" forward-char :exit nil)
+      (";" isearch-toggle-lax-whitespace)
       ("o" toggle-debug-on-error)
       ("p" anzu-query-replace)
       ("[" backward-page :exit nil)
@@ -2779,7 +2810,7 @@ Substitution:
 
 -   **`<cmd> ?`:** 1\* calls to cmd, each file a single argument
 -   **`<cmd> *`:** 1 call to `cmd`, selected list as argument
--   **=<cmd> \*&ldquo;&rdquo;=:** have the shell expand the \* as a globbing wild-card
+-   **`<cmd> *""`:** have the shell expand the \* as a globbing wild-card
     -   Not sure what this means
 
 Synchronicity:
@@ -3247,11 +3278,11 @@ back to work, you can just re-run stuff as you need it.
 
     ID: 960E2DE0-3F5A-40AB-A9BF-FF08A410EAB7
 
-When searching allow a space to many any number.
+When searching don&rsquo;t use lax whitespace matching; and make it easy to toggle.
 
 ```lisp
-(setq isearch-lax-whitespace t)
-(setq isearch-regexp-lax-whitespace t)
+(setq isearch-lax-whitespace nil)
+(setq isearch-regexp-lax-whitespace nil)
 ```
 
 Make searches case-insensitive.
@@ -3571,7 +3602,7 @@ Make it very easy to input special-characters using TeX coding.
 
 [Solarized Theme](https://github.com/bbatsov/solarized-emacs)
 
--   `1259` Faces Defined
+-   ~1,000 Faces Defined
 -   47,869 Downloads
 
 -   A distinct fringe provides a definition of space.
@@ -4095,11 +4126,27 @@ source-blocks outside of that place.
 (setq org-src-tab-acts-natively nil)
 ```
 
-My personal TODO workflow.
+Personal workflow:
+
+-   **TODO:** Zero progress.
+-   **PROGRESS:** Forward movement.
+-   **HELD-BLOCKED:** Can&rsquo;t move forward until external agent completes.
+-   **HELD-FROZEN:** Won&rsquo;t move forward until I reinitialize it.
+-   **HELD-UNTIL:** Reinitialize when conditional.
+-   **REVIEW:** Work is complete and needs to be evaluated.
+-   **DONE:** Progress stops.
 
 ```lisp
 (setq org-todo-keywords
-      '((sequence "TODO" "IN-PROGRESS" "BLOCKED" "REVIEW" "DONE")))
+      '((sequence
+         "TODO"
+         "PROGRESS"
+         "HELD-BLOCKED"
+         "HELD-FROZEN"
+         "HELD-UNTIL"
+         "REVIEW"
+         "DONE"
+         )))
 ```
 
 When running in a GUI, I would like linked images to be displayed inside of
@@ -4321,7 +4368,7 @@ thing before any version control modes that would result in the same condition.
             (org-src-edit-buffer-p)
           (error nil))
     (org-edit-src-exit))
-  (call-interactively 'magit-status))
+  (magit-status))
 ```
 
 Never use the original version.
@@ -4446,6 +4493,10 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
     (define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
     (define-key org-mode-map (kbd "s-l") #'help/safb-org-edit-src-code)
     (define-key org-mode-map (kbd "s-;") #'help/safb-help/org-babel-demarcate-block)
+    (define-key org-mode-map (kbd "s-C-i") #'org-metaup)
+    (define-key org-mode-map (kbd "s-C-k") #'org-metadown)
+    (define-key org-mode-map (kbd "s-C-l") #'org-metaright)
+    (define-key org-mode-map (kbd "s-C-j") #'org-metaleft)
     ```
 
 4.  Row 2
@@ -4456,6 +4507,7 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
     (define-key org-mode-map (kbd "s-n") #'org-babel-view-src-block-info)
     (define-key org-mode-map (kbd "s-m") #'org-babel-expand-src-block)
     (define-key org-mode-map (kbd "s-,") #'org-babel-open-src-block-result)
+    (define-key org-mode-map (kbd "s-.") #'org-time-stamp)
     ```
 
 5.  Hydra
@@ -4467,7 +4519,7 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
                                                      :hint nil)
       "
     _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ detangle _5_ id-create _6_ toggle-macro
-    _q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ g2nms-b _t_ g2s-b/hd      _u_ goto
+    _q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ g2nms-b _t_ g2s-b/hd _y_ org-archive-subtree __u_ goto
     _a_ inshdrgs _s_ oblobigst            _h_ dksieb
     _c_ cksrcblk _b_ swtch2sessn _n_ n2sbtre"
       ;; Row 5
@@ -4483,6 +4535,7 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
       ("e" org-babel-goto-named-result)
       ("r" org-babel-goto-named-src-block)
       ("t" org-babel-goto-src-block-head)
+      ("y" org-archive-subtree)
       ("u" org-goto)
       ;; Row 3
       ("a" org-babel-insert-header-arg)
@@ -5233,9 +5286,9 @@ Program GFM.
   (setq markdown-coding-system "utf-8"))
 ```
 
-## Blog (WordPress)
+## Blog
 
-    noweb-ref: Hacking-Publishing-Wordpress
+    noweb-ref: Hacking-Publishing-Org2blog
 
     ID: F5E33EB2-2E26-435C-85F6-26CB7CE7FC56
 
