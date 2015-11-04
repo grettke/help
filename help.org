@@ -249,7 +249,7 @@ Start EMACS with this command:
 =open /Applications/Emacs.app --args --quick --load ~/src/help/.org-mode-fundamentals.emacs.el=
 
 #+NAME: BFE6C470-861B-4367-9735-DAA8E7C33C0A
-#+BEGIN_SRC emacs-lisp :results output silent  :comments no :noweb-ref ignore-fundamentals
+#+BEGIN_SRC emacs-lisp :results output silent :comments no :noweb-ref ignore-fundamentals
 ;; -*- lexical-binding: t -*-
 #+END_SRC
 
@@ -277,7 +277,7 @@ Start EMACS with this command:
 =open /Applications/Emacs.app=
 
 #+NAME: 3EB2F596-DAE1-4083-B2B9-DB61A15AFDEF
-#+BEGIN_SRC emacs-lisp :results output silent  :comments no :noweb-ref ignore-whole
+#+BEGIN_SRC emacs-lisp :results output silent :comments no :noweb-ref ignore-whole
 ;; -*- lexical-binding: t -*-
 #+END_SRC
 
