@@ -923,7 +923,7 @@ Epilgue works hand-in-hand with this.
 Specify the type of results and how they will be collected and handled
 #+END_QUOTE
 
-Ways to configure =:results=: src_emacs-lisp[:export results]{(apply '* (-keep 'cdr '((Collection . 2) (Type . 4) (Format . 7) (Handling . 4))))} {{{results(224)}}}.
+Ways to configure =:results=: src_emacs-lisp[:exports results]{(apply '* (-keep 'cdr '((Collection . 2) (Type . 4) (Format . 7) (Handling . 4))))} {{{results(224)}}}.
 
 This system stores the results of evaluation in the source document. It believes
 that the results are critical to the research.
