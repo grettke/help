@@ -4995,7 +4995,7 @@ in sync. Yes, it is really that important.
 
 =ESS= executes code in another process. That is no secret. When displaying output
 from that code running in another process though, it can look like Emacs is
-locking up. That is not the case [fn:2fbb65bd: https://stackoverflow.com/questions/2770523/how-can-i-background-the-r-process-in-ess-emacs].
+locking up. That is not the case: https://stackoverflow.com/questions/2770523/how-can-i-background-the-r-process-in-ess-emacs.
 What is happening that Emacs is waiting for the output. Configure this mode to
 continue to accept user input, which is obviously critical, but don't wait for
 the process to provide its output. Instead, all output is printed after the last
