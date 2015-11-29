@@ -2203,7 +2203,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 _1_ -font  _2_ +font _3_ ellipsis _4_ UUID _5_ bfr-cdng-systm _6_ grade-level _7_ reading-ease
 _q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
                  _j_ back-char _k_ scrollDown _K_ nextLogLine _l_ forw-char _;_ toggle-lax-whitespace
-_x_ delete-indentation"
+_x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer"
   ("1" help/text-scale-decrease :exit nil)
   ("2" help/text-scale-increase :exit nil)
   ("3" help/insert-ellipsis)
@@ -2226,7 +2226,9 @@ _x_ delete-indentation"
   ("o" toggle-debug-on-error)
   ("p" anzu-query-replace)
   ("[" backward-page :exit nil)
-  ("]" forward-page :exit nil))
+  ("]" forward-page :exit nil)
+  ("c" fill-paragraph )
+  ("b" erase-buffer))
 ;; F6C7AAB7-DF69-4EBA-8116-15DC32022D49 ends here
 ;; [[file:~/src/help/help.org::*Row%203][EFFA5A5F-58A8-476D-A8D4-16F232231EC7]]
 (key-chord-define-global "vv" #'help/hydra/left-side/global/body)
