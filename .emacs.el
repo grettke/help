@@ -1524,6 +1524,9 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; [[file:~/src/help/help.org::*Org-Mode][A0FB5129-6EF9-4D5F-A35A-CB5505C8FD6F]]
 (setq org-hide-leading-stars t)
 ;; A0FB5129-6EF9-4D5F-A35A-CB5505C8FD6F ends here
+;; [[file:~/src/help/help.org::*Org-Mode][6801CC24-7220-45DF-BF00-0E3649F2AB4C]]
+(setq org-adapt-indentation nil)
+;; 6801CC24-7220-45DF-BF00-0E3649F2AB4C ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][4FDB1A19-4906-48EE-B7CB-26B3E9301964]]
 (setq org-fontify-emphasized-text t)
 ;; 4FDB1A19-4906-48EE-B7CB-26B3E9301964 ends here

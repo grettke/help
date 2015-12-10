@@ -4453,6 +4453,15 @@ don't show them, only show the significant and last one.
 (setq org-hide-leading-stars t)
 #+END_SRC
 
+Maximize character space for writing. Do not indent according to the outline
+node level because it would waste a lot of space. Ident the next body just like
+any other text document.
+
+#+NAME: 6801CC24-7220-45DF-BF00-0E3649F2AB4C
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq org-adapt-indentation nil)
+#+END_SRC
+
 Display emphasized text as you would in a WYSIWYG editor.
 
 #+NAME: 4FDB1A19-4906-48EE-B7CB-26B3E9301964
