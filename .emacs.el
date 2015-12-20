@@ -1437,7 +1437,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 (defun help/emacs-lisp-mode-hook-fn ()
   (interactive)
   (help/elisp-mode-local-bindings)
-  (lexbind-mode)
+  ;; (lexbind-mode)
   (eldoc-mode)
   (diminish 'eldoc-mode))
 
