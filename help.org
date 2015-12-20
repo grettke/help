@@ -5808,7 +5808,9 @@ When a drop of water joins the ocean it becomes the ocean.
 #+END_SRC
 
 #+RESULTS: ditaa-drop_in_the_ocean
+#+BEGIN_EXAMPLE
 [[file:./image/ditaa-drop_in_the_ocean.png]]
+#+END_EXAMPLE
 
 #+NAME: ditaa-not_a_sailboat
 #+BEGIN_SRC ditaa :file "./image/ditaa-not_a_sailboat.png" :noweb-ref ignore
@@ -5824,7 +5826,9 @@ When a drop of water joins the ocean it becomes the ocean.
 #+END_SRC
 
 #+RESULTS: ditaa-not_a_sailboat
+#+BEGIN_EXAMPLE
 [[file:./image/ditaa-not_a_sailboat.png]]
+#+END_EXAMPLE
 
 #+NAME: 6907A176-CCF4-4BDF-A242-BDBC4C67239F
 #+BEGIN_SRC emacs-lisp :results output silent
@@ -5864,7 +5868,9 @@ digraph graphviz {
 #+END_SRC
 
 #+RESULTS: graphviz-life_is_simple
+#+BEGIN_EXAMPLE
 [[file:./image/graphviz-life_is_simple.png]]
+#+END_EXAMPLE
 
 ** PlantUML
   :PROPERTIES:
@@ -5899,7 +5905,9 @@ Alice <-- Bob: another authentication Response
 #+END_SRC
 
 #+RESULTS: plantuml-sequence_diagram
+#+BEGIN_EXAMPLE
 [[file:./image/plantuml-sequence_diagram.png]]
+#+END_EXAMPLE
 
 *Use Case Diagram*
 
@@ -5917,7 +5925,9 @@ customer -- (checkout)
 #+END_SRC
 
 #+RESULTS: plantuml-use_case_diagram
+#+BEGIN_EXAMPLE
 [[file:./image/plantuml-use_case_diagram.png]]
+#+END_EXAMPLE
 
 *Class Diagram*
 
@@ -5939,7 +5949,9 @@ Sailboat "1" *-- "1..3" Hull
 #+END_SRC
 
 #+RESULTS: plantuml-class_diagram
+#+BEGIN_EXAMPLE
 [[file:./image/plantuml-class_diagram.png]]
+#+END_EXAMPLE
 
 *Activity Diagram*
 
@@ -5966,7 +5978,9 @@ stop
 #+END_SRC
 
 #+RESULTS: plantuml-activity_diagram
+#+BEGIN_EXAMPLE
 [[file:./image/plantuml-activity_diagram.png]]
+#+END_EXAMPLE
 
 *Component Diagram*
 
@@ -5985,7 +5999,9 @@ DataAccess - [First Component]
 #+END_SRC
 
 #+RESULTS: plantuml-component_diagram
+#+BEGIN_EXAMPLE
 [[file:./image/plantuml-component_diagram.png]]
+#+END_EXAMPLE
 
 *State Diagram*
 
@@ -5997,7 +6013,9 @@ State1 : this is a string State1 : this is another string
 #+END_SRC
 
 #+RESULTS: plantuml-state_diagram
+#+BEGIN_EXAMPLE
 [[file:./image/plantuml-state_diagram.png]]
+#+END_EXAMPLE
 
 *Object Diagram*
 
@@ -6009,7 +6027,9 @@ Object01 <|-- Object02
 #+END_SRC
 
 #+RESULTS: plantuml-object_diagram
+#+BEGIN_EXAMPLE
 [[file:./image/plantuml-object_diagram.png]]
+#+END_EXAMPLE
 
 - Commands.
   - Header and footer values.
