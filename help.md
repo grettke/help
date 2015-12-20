@@ -1509,7 +1509,7 @@ close together
     _1_ -font  _2_ +font _3_ ellipsis _4_ UUID _5_ bfr-cdng-systm _6_ grade-level _7_ reading-ease
     _q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
                      _j_ back-char _k_ scrollDown _K_ nextLogLine _l_ forw-char _;_ toggle-lax-whitespace
-    _x_ delete-indentation"
+    _x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer"
       ("1" help/text-scale-decrease :exit nil)
       ("2" help/text-scale-increase :exit nil)
       ("3" help/insert-ellipsis)
@@ -1532,7 +1532,9 @@ close together
       ("o" toggle-debug-on-error)
       ("p" anzu-query-replace)
       ("[" backward-page :exit nil)
-      ("]" forward-page :exit nil))
+      ("]" forward-page :exit nil)
+      ("c" fill-paragraph )
+      ("b" erase-buffer))
     ```
 
     ```lisp
@@ -4024,7 +4026,7 @@ With that in mind this system:
 
 ```lisp
 (setq initial-scratch-message nil)
-(use-package lexbind-mode)
+;; (use-package lexbind-mode)
 
 (defun help/elisp-eval-buffer ()
   "Intelligently evaluate an Elisp buffer."
@@ -4045,7 +4047,7 @@ With that in mind this system:
 (defun help/emacs-lisp-mode-hook-fn ()
   (interactive)
   (help/elisp-mode-local-bindings)
-  (lexbind-mode)
+  ;; (lexbind-mode)
   (eldoc-mode)
   (diminish 'eldoc-mode))
 
@@ -4210,6 +4212,14 @@ don&rsquo;t show them, only show the significant and last one.
 
 ```lisp
 (setq org-hide-leading-stars t)
+```
+
+Maximize character space for writing. Do not indent according to the outline
+node level because it would waste a lot of space. Ident the next body just like
+any other text document.
+
+```lisp
+(setq org-adapt-indentation nil)
 ```
 
 Display emphasized text as you would in a WYSIWYG editor.
@@ -4708,7 +4718,7 @@ in sync. Yes, it is really that important.
 
 `ESS` executes code in another process. That is no secret. When displaying output
 from that code running in another process though, it can look like Emacs is
-locking up. That is not the case <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>.
+locking up. That is not the case: <https://stackoverflow.com/questions/2770523/how-can-i-background-the-r-process-in-ess-emacs>.
 What is happening that Emacs is waiting for the output. Configure this mode to
 continue to accept user input, which is obviously critical, but don&rsquo;t wait for
 the process to provide its output. Instead, all output is printed after the last
@@ -5438,9 +5448,9 @@ Load Beamer for creating presentations.
 
 When a drop of water joins the ocean it becomes the ocean.
 
-![img](./image/ditaa-drop_in_the_ocean.png)
+    [[file:./image/ditaa-drop_in_the_ocean.png]]
 
-![img](./image/ditaa-not_a_sailboat.png)
+    [[file:./image/ditaa-not_a_sailboat.png]]
 
 ```lisp
 (defconst help/ditaa-jar (concat (getenv "EELIB") "/ditaa.jar"))
@@ -5460,7 +5470,7 @@ When a drop of water joins the ocean it becomes the ocean.
   (setf (cdr (assoc "dot" org-src-lang-modes)) 'graphviz-dot))
 ```
 
-![img](./image/graphviz-life_is_simple.png)
+    [[file:./image/graphviz-life_is_simple.png]]
 
 ## PlantUML
 
@@ -5484,13 +5494,13 @@ When a drop of water joins the ocean it becomes the ocean.
 -   Feature rich.
 -   Information rich.
 
-![img](./image/plantuml-sequence_diagram.png)
+    [[file:./image/plantuml-sequence_diagram.png]]
 
 **Use Case Diagram**
 
 -   Actor variable aliasing feature.
 
-![img](./image/plantuml-use_case_diagram.png)
+    [[file:./image/plantuml-use_case_diagram.png]]
 
 **Class Diagram**
 
@@ -5503,7 +5513,7 @@ When a drop of water joins the ocean it becomes the ocean.
     -   Packaging vs. namespaceing.
     -   Good support for splitting large images among output pages.
 
-![img](./image/plantuml-class_diagram.png)
+    [[file:./image/plantuml-class_diagram.png]]
 
 **Activity Diagram**
 
@@ -5514,7 +5524,7 @@ When a drop of water joins the ocean it becomes the ocean.
 -   Partition construct.
 -   [New syntax](http://plantuml.sourceforge.net/activity2.html) with more examples.
 
-![img](./image/plantuml-activity_diagram.png)
+    [[file:./image/plantuml-activity_diagram.png]]
 
 **Component Diagram**
 
@@ -5522,15 +5532,15 @@ When a drop of water joins the ocean it becomes the ocean.
 -   Identify &ldquo;Modern UML&rdquo;.
 -   Good for summaries.
 
-![img](./image/plantuml-component_diagram.png)
+    [[file:./image/plantuml-component_diagram.png]]
 
 **State Diagram**
 
-![img](./image/plantuml-state_diagram.png)
+    [[file:./image/plantuml-state_diagram.png]]
 
 **Object Diagram**
 
-![img](./image/plantuml-object_diagram.png)
+    [[file:./image/plantuml-object_diagram.png]]
 
 -   Commands.
     -   Header and footer values.

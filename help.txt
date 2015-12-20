@@ -18,16 +18,14 @@ Grant Rettke
   *Setup*
 
   1) [Clone Org-Mode] to `~/src/'.
-     1) Without `Make': [Generating autoloads and Compiling Org without
-        make]
+     1) Without `Make': [Generating autoloads and Compiling Org without make]
   2) [Clone Org2Blog] to `~/src/'.
   3) [Clone Use-Package] to `~/src/'.
-  4) Create a folder for support libraries exporting it's location in a
-     variable named `EELIB'.
+  4) Create a folder for support libraries exporting it's location in a variable
+     named `EELIB'.
      1) Install [DITAA] renaming the JAR to `ditaa.jar'.
      2) Install [PlantUML] renaming the JAR to `plantuml.jar'.
-  5) Install supporting software adding their exectuable location to the
-     `PATH'.
+  5) Install supporting software adding their exectuable location to the `PATH'.
      1) Install [Oracle Java].
      2) Install [LanguageTool] renaming it's folder to `LanguageTool'.
      3) Install [MacTeX].
@@ -73,33 +71,28 @@ Grant Rettke
       - Does it belong in this web?
       - Does it belong in this headline?
   - Dictionary
-    Exemple Complet Minimal (ECM): The minimal complete example of
-                                   expected versus actual behavior.
-                                   [Source].
+    Exemple Complet Minimal (ECM): The minimal complete example of expected versus
+                                   actual behavior. [Source].
     Key-Bind: A verb. The act of creating a Key Binding.
     Literate Programming (LP): As Knuth intended.
     Out of the Box (OOTB): The default configuration.
-    Sysop: A proper noun. The System-Operator. The human operating this
-           EMACS based Org-Mode enabled literate programming system. The
-           reader.
-    Tangle: A verb. Assemble a document for consumption by another program
-            or machine.
+    Sysop: A proper noun. The System-Operator. The human operating this EMACS
+           based Org-Mode enabled literate programming system. The reader.
+    Tangle: A verb. Assemble a document for consumption by another program or
+            machine.
     Weave: A verb. Prepare a document for consumption by a human.
-    Web: A document contained Source-Block definitions that define a
-         system.
+    Web: A document contained Source-Block definitions that define a system.
   - Encoding
     - Prefer Unicode characters over ASCII equivalents.
       - Note eventual switch form PDFLaTeX to LuaTeX.
     - Consider Org-Mode automatic handling of ASCII to UTF-8 symbols.
   - File/Package Loading
-    - Load every one with `use-package' whether it came with EMACS OOTB
-      or ELPA.
+    - Load every one with `use-package' whether it came with EMACS OOTB or ELPA.
       - `ensure t' tells the reader which one it came from.
     - Binding definitions often live in Piano Lessons.
-    - Configurations aren't meant to be fully transplant-able because
-      this system monolithic. In the interest of collaboration as much
-      of the package configuration lives in the `use-package' block as
-      possible.
+    - Configurations aren't meant to be fully transplant-able because this
+      system monolithic. In the interest of collaboration as much of the package
+      configuration lives in the `use-package' block as possible.
   - Formatting
     - Code Snippet.
       - Programming language expressions.
@@ -110,52 +103,46 @@ Grant Rettke
     - Package.
       - Same as Headline.
       - Dashes separate definition.
-      - Acronyms are all upper case to distinguish from words for
-        example "GNU" vs "Gnu".
+      - Acronyms are all upper case to distinguish from words for example "GNU"
+        vs "Gnu".
   - Headline.
     - Be sure that every one has an `ID' property with a `UUID' value.
-      - `org-id-get-create' does this. So does code in Hacking/Org
-        Mode/Utility.
+      - `org-id-get-create' does this. So does code in Hacking/Org Mode/Utility.
     - Capitalize: nouns, verbs, and adjectives.
-    - Don't capitalize conjunctions unless they are starting the
-      definition.
+    - Don't capitalize conjunctions unless they are starting the definition.
     - Sell this "chapter" to the reader.
     - Some headlines will be empty and significant; keep them.
-      - Some modes don't require any configuration. The headline still
-        needs to be present to remind the reader to keep it in her
-        cognitive landscape. Configure other properties and modes taking
-        it into account.
+      - Some modes don't require any configuration. The headline still needs to
+        be present to remind the reader to keep it in her cognitive landscape.
+        Configure other properties and modes taking it into account.
       - For every language under Hacking you should:
-        - Only include it if it is valuable and you will invest adequate
-          time to configure this well and use it well. When reading
-          Org-Mode examples you will want to add Org-Mode language
-          support because it is easy and fun and then you are left with
-          an insufficiently configured environment. That is
-          unacceptable.
+        - Only include it if it is valuable and you will invest adequate time to
+          configure this well and use it well. When reading Org-Mode examples
+          you will want to add Org-Mode language support because it is easy and
+          fun and then you are left with an insufficiently configured
+          environment. That is unacceptable.
         - Enable it in `org-babel-load-languages'.
         - Read the user manual for it.
-      - The `Prog*-Mode' system configuration can result in Headlines
-        that don't need any configuration. The Headline still
-        communicates the mode's value to the reader even if it doesn't
-        configure EMACS.
-    - It is important to include headlines that are empty and that you
-      may not even end up keeping. You need them to help you explore the
-      cognitive landscape with them present. In this one case, premature
-      optimization is /not/ the root of all evil.
+      - The `Prog*-Mode' system configuration can result in Headlines that don't
+        need any configuration. The Headline still communicates the mode's value
+        to the reader even if it doesn't configure EMACS.
+    - It is important to include headlines that are empty and that you may not
+      even end up keeping. You need them to help you explore the cognitive
+      landscape with them present. In this one case, premature optimization is
+      /not/ the root of all evil.
     - Sometimes headlines might better be:
       - List items.
       - Stand-alone bold text without punctuation.
   - Hyperlink.
     - External.
-      - Exclude those easily found with a search-engine unless you are
-        willing to verify their existence frequently.
+      - Exclude those easily found with a search-engine unless you are willing
+        to verify their existence frequently.
       - Include when they make the task at hand immensely easier.
     - Internal.
       - Minimize usage.
   - Literate Programming.
     - Comments.
-      - Exclude from tangle-blocks and rely on source-block for
-        traceability.
+      - Exclude from tangle-blocks and rely on source-block for traceability.
     - Noweb-Ref.
       - Same as Headline.
       - Replace spaces with dashes.
@@ -185,35 +172,34 @@ Grant Rettke
       - Always use relative file paths.
       - Byte-compile frequently to minimize System warnings.
       - Prefer to byte-compile all references by using `function'.
-        - Fail-fast: it is better to know immediately if there are
-          resolution issues.
+        - Fail-fast: it is better to know immediately if there are resolution
+          issues.
       - Prefer to declare anonymous functions with `function'.
       - [Quoted via].
       - If a non-special variable appears outside of a let form, the
         byte-compiler will warn about reference or assignment to a "free
-        variable". An unused non-special variable binding within a let
-        form provokes the byte-compiler will warn about an "unused
-        lexical variable". The byte-compiler will also issue a warning
-        if you use a special variable as a function argument.
+        variable". An unused non-special variable binding within a let form
+        provokes the byte-compiler will warn about an "unused lexical variable".
+        The byte-compiler will also issue a warning if you use a special
+        variable as a function argument.
   - Source Block
     - Be sure that every one has a `NAME' property with a `UUID' value.
-      - YASnippet `sc' does this. So does code in Hacking/Org
-        Mode/Utility.
+      - YASnippet `sc' does this. So does code in Hacking/Org Mode/Utility.
     - Tell the story in speech, and then in code.
     - Consider it another paragraph and indent appropriately.
     - When contained within a list:
-      - Indent begin/end blocks with list content; this makes it clear
-        to Org-Mode to export it as a code block.
+      - Indent begin/end blocks with list content; this makes it clear to
+        Org-Mode to export it as a code block.
     - Tangle `:file' should have the same `NAME'.
     - Virtually never edit the contents within buffer-of-origin.
       - Out of buffer edits:
         - Fast when spoken language.
         - Risky when LISP.
-    - While similar to Org-Macro, the `RESULT' formatting indicates to
-      the reader that the value is the result of an evaluation.
+    - While similar to Org-Macro, the `RESULT' formatting indicates to the
+      reader that the value is the result of an evaluation.
   - Spelling
-    - Place `LocalWords' at the beginning of the document. That way it
-      won't get stomped on during development.
+    - Place `LocalWords' at the beginning of the document. That way it won't get
+      stomped on during development.
   - Synonyms.
     - Document and System and Web.
       - A Web defines a system.
@@ -221,8 +207,7 @@ Grant Rettke
     - Weave and Export.
     - Sysop and Reader.
   - Tangling.
-    - When ordering matters, rely on block-reuse to enforce correct
-      order.
+    - When ordering matters, rely on block-reuse to enforce correct order.
   - Voice.
     - Provide answers; do not pose questions or observations.
     - Simple and detailed.
@@ -236,8 +221,8 @@ Grant Rettke
     - Instead of writing "tells EMACS", communicate the result.
     - "EMACS" refers to the EMACS software
     - "HELP" refers to the system configured by tangling this we.
-    - Never describe something as "perfect" or "delightful". If it is
-      part of this system then it is perfect and delightful.
+    - Never describe something as "perfect" or "delightful". If it is part of
+      this system then it is perfect and delightful.
 
 
   [Source] http://orgmode.org/worg/org-faq.html
@@ -340,8 +325,7 @@ Grant Rettke
   tangle: "./.emacs.el"
   ID: 016FA25F-E70E-4BED-BA01-AEB808428791
 
-  Configure EMACS to for everything defined within this monolithic
-  system.
+  Configure EMACS to for everything defined within this monolithic system.
 
   Sysop is likely to use this constantly.
 
@@ -409,11 +393,11 @@ Grant Rettke
   Combined they provide a rich Literate Programming environment.
 
   These activities are not performed interactively by the user. They are
-  automatic operations that occur as a result of the configuration by
-  the document itself.
+  automatic operations that occur as a result of the configuration by the
+  document itself.
 
-  The following is the guide for the default configuration of this
-  system and how it behaves.
+  The following is the guide for the default configuration of this system and
+  how it behaves.
 
   Key:
 
@@ -432,10 +416,10 @@ Grant Rettke
 
   They are separate and distinct operations.
 
-  "Programming" is logically an activity that is the combination of
-  these 3 activites. It is interactively performed by Sysop. It is not a
-  distinct or isolated operation. Results of one activity exist here and
-  serve as inputs to another activity.
+  "Programming" is logically an activity that is the combination of these 3
+  activites. It is interactively performed by Sysop. It is not a distinct or
+  isolated operation. Results of one activity exist here and serve as inputs to
+  another activity.
 
 
 4.1 Org-Mode Exemple Complet Minimal
@@ -444,17 +428,16 @@ Grant Rettke
   noweb-ref: Org-Mode-ECM
   ID: 57C69AB7-A317-4823-ABBF-7DE8A5E2151C
 
-  Every new EMACS releases comes with the latest stable Org-Mode
-  release. To get hot-fixes, cutting edge features, and easy patch
-  creation though, you need to use the version from Git.
+  Every new EMACS releases comes with the latest stable Org-Mode release. To get
+  hot-fixes, cutting edge features, and easy patch creation though, you need to
+  use the version from Git.
 
-  These detailed and clear [directions] explain how ot run Org-Mode from
-  Git. The only thing worth mentioning again is that in order to use
-  *any* version of Org-Mode other than the one that comes OOTB you
-  *must* load Org-Mode *before* anything else in your initialization
-  file. It is easy to do! When you get unexpected Org-Mode behavior be
-  sure to stop and investigate `org-version' and decide whether or not
-  it is what you expect and prepare an ECM if necessary.
+  These detailed and clear [directions] explain how ot run Org-Mode from Git.
+  The only thing worth mentioning again is that in order to use *any* version of
+  Org-Mode other than the one that comes OOTB you *must* load Org-Mode *before*
+  anything else in your initialization file. It is easy to do! When you get
+  unexpected Org-Mode behavior be sure to stop and investigate `org-version' and
+  decide whether or not it is what you expect and prepare an ECM if necessary.
 
   Add the Org-Mode core distribution the load path.
 
@@ -469,17 +452,15 @@ Grant Rettke
   | (add-to-list 'load-path "~/src/org-mode/contrib/lisp")
   `----
 
-  Allow single-character alphabetical bullet lists. This configuration
-  must occur before loading Org-Mode. *Never* remove this from a
-  submitted ECM.
+  Allow single-character alphabetical bullet lists. This configuration must
+  occur before loading Org-Mode. *Never* remove this from a submitted ECM.
 
   ,----
   | (setq org-list-allow-alphabetical t)
   `----
 
-  Unchecked boxes prevent marking the parent as done. This configuration
-  must occur before loading Org-Mode. *Never* remove this from a
-  submitted ECM.
+  Unchecked boxes prevent marking the parent as done. This configuration must
+  occur before loading Org-Mode. *Never* remove this from a submitted ECM.
 
   ,----
   | (setq org-enforce-todo-checkbox-dependencies t)
@@ -598,13 +579,11 @@ Grant Rettke
   | (add-hook 'org-babel-pre-tangle-hook #'help/org-prp-src-blk)
   `----
 
-  There is a way to disable property inheritance that speeds up tangling
-  a lot. This is only for user-defined properties; *not* Org-Mode
-  properties.
+  There is a way to disable property inheritance that speeds up tangling a lot.
+  This is only for user-defined properties; *not* Org-Mode properties.
 
-  The problem is that you lose property inheritance which is
-  unacceptable. Never, never allow that. Its inconsistent with how
-  Org-Mode works.
+  The problem is that you lose property inheritance which is unacceptable.
+  Never, never allow that. Its inconsistent with how Org-Mode works.
 
   ,----
   | (setq org-babel-use-quick-and-dirty-noweb-expansion nil)
@@ -618,8 +597,8 @@ Grant Rettke
 
         Toggle insertion of comments in tangled code files
 
-  Provide as much information as possible in the tangled artifact about
-  the origin artifact.
+  Provide as much information as possible in the tangled artifact about the
+  origin artifact.
 
   ,----
   | (help/set-org-babel-default-header-args :comments "noweb")
@@ -631,8 +610,8 @@ Grant Rettke
 
   ID: B0F9A321-3B69-46BB-B512-0AF3C663A4C0
 
-        Toggle creation of parent directories of target files
-        during tangling
+        Toggle creation of parent directories of target files during
+        tangling
 
   ,----
   | (help/set-org-babel-default-header-args :mkdirp "yes")
@@ -644,8 +623,7 @@ Grant Rettke
 
   ID: 90170E6A-AA1A-44EA-9BF8-1A6AA38FD224
 
-        Turn off variable assignment and noweb expansion during
-        tangling
+        Turn off variable assignment and noweb expansion during tangling
 
   Configuration likely per Source-Block or System.
 
@@ -665,9 +643,9 @@ Grant Rettke
    Evaluating  T
    Weaving     F
 
-  This embraces the notion that you are telling the right thing to the
-  computer and the right thing to the human. By the time you get to
-  exporting, you ought to refer to the generated document.
+  This embraces the notion that you are telling the right thing to the computer
+  and the right thing to the human. By the time you get to exporting, you ought
+  to refer to the generated document.
 
   ,----
   | (help/set-org-babel-default-header-args :noweb "no-export")
@@ -701,11 +679,10 @@ Grant Rettke
 
         Control insertion of padding lines in tangled code files
 
-  `org-babel-tangle-jump-to-org' requires padded lines. This
-  configuration could arguably appear in the "Programming" heading
-  because it impacts operation. It lives here because it *must* occur as
-  part of the Tangling activity so that it can be used in the
-  Programming activity.
+  `org-babel-tangle-jump-to-org' requires padded lines. This configuration could
+  arguably appear in the "Programming" heading because it impacts operation. It
+  lives here because it *must* occur as part of the Tangling activity so that it
+  can be used in the Programming activity.
 
   ,----
   | (help/set-org-babel-default-header-args :padline "yes")
@@ -816,8 +793,8 @@ Grant Rettke
 
   ID: CD1494F1-0A2A-44D0-9955-0D0501AF1539
 
-        Specify the default (possibly remote) directory for code
-        block execution
+        Specify the default (possibly remote) directory for code block
+        execution
 
   Configuration likely per Source-Block or System
 
@@ -926,13 +903,13 @@ Grant Rettke
   Configuration likely per Source-Block or System.
 
   For some situations, this may be the same for every source block for a
-  particular language. The user manual described `gnuplot', which often
-  shows up on the list and the solution is to `reset' the session.
+  particular language. The user manual described `gnuplot', which often shows up
+  on the list and the solution is to `reset' the session.
 
-  Another example, say that you've got a bunch of R Source-Blocks and
-  you want to be able to rearrange them as you please. You want to be
-  sure that there are no dependencies between them on bindings created
-  in the workspace. Set `prologue' to `rm(list = ls())'.
+  Another example, say that you've got a bunch of R Source-Blocks and you want
+  to be able to rearrange them as you please. You want to be sure that there are
+  no dependencies between them on bindings created in the workspace. Set
+  `prologue' to `rm(list = ls())'.
 
   Epilgue works hand-in-hand with this.
 
@@ -942,16 +919,16 @@ Grant Rettke
 
   ID: 2755571E-113B-436E-9EEC-26618A55A27E
 
-        Specify the type of results and how they will be collected
-        and handled
+        Specify the type of results and how they will be collected and
+        handled
 
   Ways to configure `:results': 224.
 
-  This system stores the results of evaluation in the source document.
-  It believes that the results are critical to the research.
+  This system stores the results of evaluation in the source document. It
+  believes that the results are critical to the research.
 
-  Keep the document as close to being executable as possible; make it
-  very visible when it is not.
+  Keep the document as close to being executable as possible; make it very
+  visible when it is not.
 
   - Collection
     - `value': Functions have a single result. So do Source-Blocks.
@@ -1039,36 +1016,34 @@ Grant Rettke
   | (setq org-export-coding-system 'utf-8)
   `----
 
-  Do not preserve line-breaks when exporting instead let the destination
-  format handle it as it sees fit. This doesn't work like I had expected
-  and makes me wonder what I am confused about here. When I export to
-  HTML text containing linebreaks no longer has linebreaks. This is what
-  I expect. When I export that same text to a buffer though, the line
-  breaks are included. Currently I use `sacha/unfill-paragraph' on that
-  code.
+  Do not preserve line-breaks when exporting instead let the destination format
+  handle it as it sees fit. This doesn't work like I had expected and makes me
+  wonder what I am confused about here. When I export to HTML text containing
+  linebreaks no longer has linebreaks. This is what I expect. When I export that
+  same text to a buffer though, the line breaks are included. Currently I use
+  `sacha/unfill-paragraph' on that code.
 
   ,----
   | (setq org-export-preserve-breaks nil)
   `----
 
-  When exporting anything, do not insert the exported content into the
-  kill ring.
+  When exporting anything, do not insert the exported content into the kill
+  ring.
 
   ,----
   | (setq org-export-copy-to-kill-ring nil)
   `----
 
-  By default I never want a table of contents generated. It is so easy
-  to enable it with a property, it will be fine to turn it off.
+  By default I never want a table of contents generated. It is so easy to enable
+  it with a property, it will be fine to turn it off.
 
   ,----
   | (setq org-export-with-toc nil)
   `----
 
   On export, maintain the literal spacing as found in the source block.
-  Obviously this is important for make-files. It is really important
-  everywhere because anything else would violate the law of least
-  surprise.
+  Obviously this is important for make-files. It is really important everywhere
+  because anything else would violate the law of least surprise.
 
   ,----
   | (setq org-src-preserve-indentation t)
@@ -1080,8 +1055,7 @@ Grant Rettke
   | (setq org-export-allow-bind-keywords t)
   `----
 
-  Disable element caching because it might break weaves via [this
-  thread].
+  Disable element caching because it might break weaves via [this thread].
 
   ,----
   | (setq org-element-use-cache nil)
@@ -1099,19 +1073,19 @@ Grant Rettke
 
         Export code and/or results
 
-  Always share source blocks and their results. Whether or not to
-  generate a result for a particular source block is configured
-  per-block. If you don't want to share a result for a source block then
-  disable storage of results on that block.
+  Always share source blocks and their results. Whether or not to generate a
+  result for a particular source block is configured per-block. If you don't
+  want to share a result for a source block then disable storage of results on
+  that block.
 
   ,----
   | (help/set-org-babel-default-header-args :exports "both")
   `----
 
-  Use inline Source-Blocks to provide values read as part of the
-  document. Their format will show that they are results. Don't show
-  their source code. Allows inlinse Source-Blocks to function as /rich/
-  macros when combined with `org-sbe'.
+  Use inline Source-Blocks to provide values read as part of the document. Their
+  format will show that they are results. Don't show their source code. Allows
+  inlinse Source-Blocks to function as /rich/ macros when combined with
+  `org-sbe'.
 
   ,----
   | (help/set-org-babel-default-inline-header-args :exports "results")
@@ -1125,10 +1099,10 @@ Grant Rettke
 
         Mark source block evaluation results
 
-  Inline-Source-Blocks are recognizable by their `verbatim' font. They
-  do not interrupt the flow. Source-Blocks are their own entities. They
-  stand out. Their results need to be visibly noticeably different for
-  the reader by making them `EXAMPLE' special blocks.
+  Inline-Source-Blocks are recognizable by their `verbatim' font. They do not
+  interrupt the flow. Source-Blocks are their own entities. They stand out.
+  Their results need to be visibly noticeably different for the reader by making
+  them `EXAMPLE' special blocks.
 
   ,----
   | (help/set-org-babel-default-header-args :wrap "EXAMPLE")
@@ -1147,27 +1121,24 @@ Grant Rettke
 
   ID: 01EEEC32-91D4-4DDC-A100-52CE571558DC
 
-  Every EMACS user ought to have a [Emacs Reference Mug] at their desk.
-  The mug invites other users to ask questions. Give the mug as a gift
-  to every user you know who would benefit from learning EMACS. The mug
-  reminds us all that EMACS is the perfect configuration of EMACS. It is
-  available on every machine. When you break your system, you can always
-  fall back to the good and reliable default EMACS configuration to get
-  your system up and running again. The OOTB configuration of EMACS is
-  one of the most important system configurations that you will every
-  find. That is why it is important never to ruin it.
+  Every EMACS user ought to have a [Emacs Reference Mug] at their desk. The mug
+  invites other users to ask questions. Give the mug as a gift to every user you
+  know who would benefit from learning EMACS. The mug reminds us all that EMACS
+  is the perfect configuration of EMACS. It is available on every machine. When
+  you break your system, you can always fall back to the good and reliable
+  default EMACS configuration to get your system up and running again. The OOTB
+  configuration of EMACS is one of the most important system configurations that
+  you will every find. That is why it is important never to ruin it.
 
-  This system wants to maximize accessibility for new users. It wants
-  anyone to be able to download and use it without surprises. It wants
-  the mug to serve as a fine reference for anyone to use. It wants to
-  keep things simple and familiar so that anyone who has learned EMACS
-  OOTB can use it pleasantly and productively. These goals are essential
-  to configuring the keyboard for this system. This system will always
-  respect the POLA.
+  This system wants to maximize accessibility for new users. It wants anyone to
+  be able to download and use it without surprises. It wants the mug to serve as
+  a fine reference for anyone to use. It wants to keep things simple and
+  familiar so that anyone who has learned EMACS OOTB can use it pleasantly and
+  productively. These goals are essential to configuring the keyboard for this
+  system. This system will always respect the POLA.
 
 
-  [Emacs Reference Mug]
-  http://shop.fsf.org/product/gnu-emacs-reference-mugs/
+  [Emacs Reference Mug] http://shop.fsf.org/product/gnu-emacs-reference-mugs/
 
 
 5.2 A Keyboard on Every Desk
@@ -1175,21 +1146,20 @@ Grant Rettke
 
   ID: A50A19BB-1DE7-48C1-AEE4-03D1E88E887C
 
-  The configuration of the keyboard on an EMACS system can completely
-  change the experience. No keyboard makes it impossible. A Kinesis Ergo
-  makes it feel really good. Soft keys make it feel soft; hard keys make
-  it feel faster. The [layout of letters] is claimed to make you "more
-  productive" using statistics. You may even study the statistics of
-  your own writing and choose a layout optimized for you. The ways to
-  configure your keyboard are limitless because everyone is unique. How
-  to get the best configuration tips for your system? Do what works for
-  everyone.
+  The configuration of the keyboard on an EMACS system can completely change the
+  experience. No keyboard makes it impossible. A Kinesis Ergo makes it feel
+  really good. Soft keys make it feel soft; hard keys make it feel faster. The
+  [layout of letters] is claimed to make you "more productive" using statistics.
+  You may even study the statistics of your own writing and choose a layout
+  optimized for you. The ways to configure your keyboard are limitless because
+  everyone is unique. How to get the best configuration tips for your system? Do
+  what works for everyone.
 
-  Choose a keyboard that will satisfy 80% of EMACS users using 80% of
-  the keyboards out there. Make this system easy to use on any one of
-  those keyboards. Make this system easy to use in English. Make this
-  system easy to use with average hand strength using two hands. These
-  goals are essential to configuring the keyboard for this system.
+  Choose a keyboard that will satisfy 80% of EMACS users using 80% of the
+  keyboards out there. Make this system easy to use on any one of those
+  keyboards. Make this system easy to use in English. Make this system easy to
+  use with average hand strength using two hands. These goals are essential to
+  configuring the keyboard for this system.
 
 
   [layout of letters]
@@ -1201,16 +1171,14 @@ Grant Rettke
 
   ID: 7E76A660-7828-4747-90DE-84BD293CD4E7
 
-  Every system requires an output. You have two options. The first is a
-  terminal that only displays characters. The second is a display that
-  provides detailed graphics. "Display" is the EMACS term for a GUI.
+  Every system requires an output. You have two options. The first is a terminal
+  that only displays characters. The second is a display that provides detailed
+  graphics. "Display" is the EMACS term for a GUI.
 
-  Some users prefer the former. Some users prefer the latter. Some users
-  prefer to use a $4000USD machine to emulate the latter. Both are good
-  options.
+  Some users prefer the former. Some users prefer the latter. Some users prefer
+  to use a $4000USD machine to emulate the latter. Both are good options.
 
-  This system is configured to work pleasantly for either type of
-  output.
+  This system is configured to work pleasantly for either type of output.
 
 
 5.4 A Full Pot of EMACS on Every Desk
@@ -1229,8 +1197,8 @@ Grant Rettke
     - Easy to learn.
     - Available on every keyboard.
     - Inexpensive.
-    - When graduation time comes, plenty of great alternatives available
-      like DVORAK and Colemak.
+    - When graduation time comes, plenty of great alternatives available like
+      DVORAK and Colemak.
   - Keep hands in home position as much as possible.
     - Every finger is strong in the home position so RSI reduced.
     - Single key presses are easy there.
@@ -1238,12 +1206,11 @@ Grant Rettke
     - Table-bang is a position of your hand. Make it by:
       - Starting with your hands in the home position.
       - Make a "high-five" with both of them parallel to the keyboard.
-      - Turn your left hand counter-clockwise and right hand clockwise
-        to make them perpendicular to the keyboard.
+      - Turn your left hand counter-clockwise and right hand clockwise to make
+        them perpendicular to the keyboard.
       - Squeeze all of your fingers together.
       - Push the keys using the side of your Pinky.
-      - In this position you are using the strength of all of your
-        fingers.
+      - In this position you are using the strength of all of your fingers.
     - Never use those key using your Pinky alone.
     - Practice depends 100% on user-discipline.
   - Try to achieve balance with meta keys.
@@ -1267,17 +1234,16 @@ Grant Rettke
 
   ID: 60A17CE8-C905-4443-90A2-10D2C12F23AF
 
-  You operate within a cognitive landscape. Every moment you are in a
-  single `place'. While residing in each `place' you perform logically
-  related `activities'. Activities facilitate logical actions like
-  modification within that `place'. Modifications are performed objects.
-  Objects include things like the contents of a buffer, contents of
-  memory, or the file that backs a buffer. While performing those
-  `activities' there is a logical sense of "flow". That should never be
-  interrupted. Usually an interruption occurs when you are going to go
-  to a new `place'. The `distance' between `places' is measured in the
-  similarity between the `actions' that you find there. As you develop
-  these ides it will be obvious where key-bindings should go
+  You operate within a cognitive landscape. Every moment you are in a single
+  `place'. While residing in each `place' you perform logically related
+  `activities'. Activities facilitate logical actions like modification within
+  that `place'. Modifications are performed objects. Objects include things like
+  the contents of a buffer, contents of memory, or the file that backs a buffer.
+  While performing those `activities' there is a logical sense of "flow". That
+  should never be interrupted. Usually an interruption occurs when you are going
+  to go to a new `place'. The `distance' between `places' is measured in the
+  similarity between the `actions' that you find there. As you develop these
+  ides it will be obvious where key-bindings should go
 
 
 5.4.3 Key-Bindings Take You to Places to Perform Activities
@@ -1285,20 +1251,19 @@ Grant Rettke
 
   ID: E765C8BB-ECC3-4791-A287-83B6DED2F6C3
 
-  OOTB you wil be visiting many `places' and performing many
-  `activities'. EMACS comes with a good configuration that minimizes
-  `distance'. This isn't worth changing. You can use EMACS for a
-  lifetime without ever having to customize any of the key-bindings.
-  This is what lets anyone use your system. This is what lets you use
-  the system with `-Q' when you break it. You need to decide if you
-  every want to alter the default configuration. This system does not
-  want to. It wants to keep EMACS true to EMACS and your hands happy. To
-  satisfy those goals the following practices were defined.
+  OOTB you wil be visiting many `places' and performing many `activities'. EMACS
+  comes with a good configuration that minimizes `distance'. This isn't worth
+  changing. You can use EMACS for a lifetime without ever having to customize
+  any of the key-bindings. This is what lets anyone use your system. This is
+  what lets you use the system with `-Q' when you break it. You need to decide
+  if you every want to alter the default configuration. This system does not
+  want to. It wants to keep EMACS true to EMACS and your hands happy. To satisfy
+  those goals the following practices were defined.
 
   - 99.999% of the time never bind to the `C' or `M' name-space.
     - They are for system key-bindings. You can break them. Don't.
-    - In theory `C-c' is the "user name-space" but packages stomp on
-      this all of the time anyway so don't use it.
+    - In theory `C-c' is the "user name-space" but packages stomp on this all of
+      the time anyway so don't use it.
     - Some bindings are just too valuable to pass up:
       - `C-;'
         - Your hands are in the home position already.
@@ -1313,21 +1278,19 @@ Grant Rettke
     - Shift doubles every name-space in which you use it.
     - Use cautiously, not every name-space vehicle supports it.
   - About the `s' (super) name-space.
-    - In theory it is the best place for user-defined key-bindings
-      because EMACS OOTB uses `C' and `M' completely leaving `s' mostly
-      open.
-    - In practice `C' and `M' are running out of space because there are
-      a lot of new packages being added to EMACS. Most new packages are
-      binding key in the `s' name-space.
+    - In theory it is the best place for user-defined key-bindings because EMACS
+      OOTB uses `C' and `M' completely leaving `s' mostly open.
+    - In practice `C' and `M' are running out of space because there are a lot
+      of new packages being added to EMACS. Most new packages are binding key in
+      the `s' name-space.
     - This system reserves `s' completely for Sysop.
 
-  These practices say nothing about the `places' or `activities' that
-  you choose to peform. The practices only look at the key-binding
-  configuration. There are a limited number of keys on a keyboard and
-  there are physical limitations on your hands. Along with the previous
-  assuptions it may look like there are less. Fortunately it just looks
-  that way and it isn't true. There are a lot of powerful ways to "go
-  places" with EMACS. The next heading contains my attempt.
+  These practices say nothing about the `places' or `activities' that you choose
+  to peform. The practices only look at the key-binding configuration. There are
+  a limited number of keys on a keyboard and there are physical limitations on
+  your hands. Along with the previous assuptions it may look like there are
+  less. Fortunately it just looks that way and it isn't true. There are a lot of
+  powerful ways to "go places" with EMACS. The next heading contains my attempt.
 
 
 5.4.4 How to Get There Pleasantly and Quickly
@@ -1335,13 +1298,11 @@ Grant Rettke
 
   ID: 38026C1B-44D4-47EF-90D2-239876F7F31C
 
-  You need to learn how to use EMACS. You need to develop a personal
-  preference. You need to develop an idea of `places' and `activities'
-  and `distance'. The following headings are delineated by breaks in
-  flow.
+  You need to learn how to use EMACS. You need to develop a personal preference.
+  You need to develop an idea of `places' and `activities' and `distance'. The
+  following headings are delineated by breaks in flow.
 
-  The examples try to talk about doing those things and do it by
-  exploring:
+  The examples try to talk about doing those things and do it by exploring:
 
   - "going places to do things".
   - "how quickly I will get there and how long I will be there"
@@ -1350,14 +1311,13 @@ Grant Rettke
   They were initially described by the properties:
 
   Actions: The number of related actions in that place.
-  Expertise: The level of skill and speed with which you are performing
-             the activity.
-  Relationship: How closely those activities are related in the current
-                place.
+  Expertise: The level of skill and speed with which you are performing the
+             activity.
+  Relationship: How closely those activities are related in the current place.
   Frequency: How many times you perform these actions when you here.
 
-  The relationship between "doing those things" and those 4 properties
-  is still unclear and being explored.
+  The relationship between "doing those things" and those 4 properties is still
+  unclear and being explored.
 
 
 * 5.4.4.1 `s'
@@ -1368,25 +1328,22 @@ Grant Rettke
   Frequency: High
   ID: 0A491DA9-212E-4F01-8C08-EA09E9B6D82C
 
-  - `Actions' here are for the `place' inside of the buffer itself. They
-    are for immediate acting upon the contents of the buffer. They are
-    logically related, used frequently, and likely to be memorized.
-  - When you come here, you are likely to stay for some time before
-    getting out.
-  - Only use single key bindings; anything more may be a new logical
-    name-space and may use a Hydra.
+  - `Actions' here are for the `place' inside of the buffer itself. They are for
+    immediate acting upon the contents of the buffer. They are logically
+    related, used frequently, and likely to be memorized.
+  - When you come here, you are likely to stay for some time before getting out.
+  - Only use single key bindings; anything more may be a new logical name-space
+    and may use a Hydra.
   - Split the home sides of the keyboard in half.
-  - The left side of the keyboard should be use for operations common to
-    every mode.
+  - The left side of the keyboard should be use for operations common to every
+    mode.
     - For example `goto-line' and `ispell'.
-    - It has 15 bindings available; 20 if you use 1-5. 40 if you shift
+    - It has 15 bindings available; 20 if you use 1-5. 40 if you shift them.
+  - The right side of the keyboard should be used operations specific to the
+    current major mode.
+    - For example in Org-Mode navigating between source-blocks and evaluating
       them.
-  - The right side of the keyboard should be used operations specific to
-    the current major mode.
-    - For example in Org-Mode navigating between source-blocks and
-      evaluating them.
-    - It has 19 bindings available; 26 if you use 6-=. 52 if you shift
-      them.
+    - It has 19 bindings available; 26 if you use 6-=. 52 if you shift them.
 
   For example, in Org-Mode:
 
@@ -1395,29 +1352,27 @@ Grant Rettke
   - I execute source-blocks.
   - I edit source-blocks.
 
-  Every activity is related to reading, modifying, executing, and
-  tangling code.
+  Every activity is related to reading, modifying, executing, and tangling code.
 
 
 * 5.4.4.2 `Key-Chord'
 
   ID: 76C81A53-52BA-47C4-A8FF-651E10A4620F
 
-  Key-Chord is intriguing because it works on every keyboard. It is
-  powerful because it can you bring you to any `place' easily. It is
-  good for taking you places in two differnt kinds of scenarios.
+  Key-Chord is intriguing because it works on every keyboard. It is powerful
+  because it can you bring you to any `place' easily. It is good for taking you
+  places in two differnt kinds of scenarios.
 
-  One example is grammar-checking. There are a few ways to do that. I
-  don't remember them all. In a given mode I want to see a list of all
-  the ways. I really just want to see all of the stuff that I value for
-  a given mode and don't use frequently.
+  One example is grammar-checking. There are a few ways to do that. I don't
+  remember them all. In a given mode I want to see a list of all the ways. I
+  really just want to see all of the stuff that I value for a given mode and
+  don't use frequently.
 
-  Another example are things that I value for a mode and use a lot but
-  are not logically related to other activities in that place. For
-  example moving the mark around and going to lines are performed a lot
-  so they need to be done quickly and left. This is a place where
-  key-chords and the shift modifier are a fast and intuitive way to go
-  places.
+  Another example are things that I value for a mode and use a lot but are not
+  logically related to other activities in that place. For example moving the
+  mark around and going to lines are performed a lot so they need to be done
+  quickly and left. This is a place where key-chords and the shift modifier are
+  a fast and intuitive way to go places.
 
 
   + 5.4.4.2.1 Single-Key Key-Chord Name-Space.
@@ -1426,10 +1381,9 @@ Grant Rettke
     :Actions: High :Expertise: Low :Frequency: High :Relationship: Low
 
     - Nice if you don't mind hitting the same key twice.
-    - You will use come here often, perform your single `action', and be
-      done and leave very frequently and quickly.
-    - Using alphabetical characters always results in unpleasant
-      surprises.
+    - You will use come here often, perform your single `action', and be done
+      and leave very frequently and quickly.
+    - Using alphabetical characters always results in unpleasant surprises.
     - Harder for breakage but it still occurs.
       - `#FF' color code.
       - `cc' carbon copy.
@@ -1454,10 +1408,10 @@ Grant Rettke
     - Unexpected breakage very easy.
       - `cd' in `=eshell='.
     - Use sparingly.
-    - Not worth analyzing ideal combinations; just use it and see if it
-      doesn't break.
-    - Bringing over existing bindings. They are all for every mode so I
-      will keep it that way.
+    - Not worth analyzing ideal combinations; just use it and see if it doesn't
+      break.
+    - Bringing over existing bindings. They are all for every mode so I will
+      keep it that way.
 
 
 * 5.4.4.3 `Hydra'
@@ -1468,22 +1422,22 @@ Grant Rettke
   Relationship: High
   ID: 0410F66C-40F4-46A1-9E69-56658EA815A9
 
-  - Sometimes you want to do something in a `place' but you aren't sure
-    what and you aren't sure where you will go next from there. For
-    example you might want to perform an Org-Mode `action' that is
-    important but you don't really use much. For example exporting to
-    HTML might not be common for you but you value.
-  - `Hydras' can be used for very related actions too. The difference
-    between the `s' name-space is the distance between them and where
-    you are now. In the `s' namespace you go there very quickly. For
-    `Hydras' sometimes you can get the fast and sometimes more slowly.
-    They are complementary to every name-space.
+  - Sometimes you want to do something in a `place' but you aren't sure what and
+    you aren't sure where you will go next from there. For example you might
+    want to perform an Org-Mode `action' that is important but you don't really
+    use much. For example exporting to HTML might not be common for you but you
+    value.
+  - `Hydras' can be used for very related actions too. The difference between
+    the `s' name-space is the distance between them and where you are now. In
+    the `s' namespace you go there very quickly. For `Hydras' sometimes you can
+    get the fast and sometimes more slowly. They are complementary to every
+    name-space.
   - `SHIFT' doubles your key-space.
   - Use `C-g' to exit the Hydra.
 
-  For example, in Org-Mode I am still learning about functions and
-  haven't used them much and forget their names. It is faster to put
-  them in a Hydra. If they get used a lot, I will add them to `s'.
+  For example, in Org-Mode I am still learning about functions and haven't used
+  them much and forget their names. It is faster to put them in a Hydra. If they
+  get used a lot, I will add them to `s'.
 
 
 5.4.5 Building Your Own Keyboard
@@ -1491,29 +1445,27 @@ Grant Rettke
 
   ID: A4257881-BD92-4826-8B0F-74B9557442F9
 
-  As your mastery of EMACS grows so too will your desire to build your
-  own keyboard. It is natural. As you explore various dimensions of
-  expression you will have a lot of fun. You will act more quickly and
-  skillfully. Even with the goals of this system in place the desire
-  grows.
+  As your mastery of EMACS grows so too will your desire to build your own
+  keyboard. It is natural. As you explore various dimensions of expression you
+  will have a lot of fun. You will act more quickly and skillfully. Even with
+  the goals of this system in place the desire grows.
 
-  3D printing is one area worth exploring. A lot of EMACS users design
-  and print their own custom keyboards. That looks very fun. [Ukulele]
-  is softer way to explore your keyboard. Reading its user manual is
-  important. It contains ideas about stack-able-environments for
-  bindings. You may use Ukulele or Hydras to do the same thing.
-  [Karabiner] is a nice way to re-map your keys. It's easiest adjustment
-  is to make return act as return when pressed alone and as control when
-  pressed with another key. That introduces a symmetry to your keyboard
+  3D printing is one area worth exploring. A lot of EMACS users design and print
+  their own custom keyboards. That looks very fun. [Ukulele] is softer way to
+  explore your keyboard. Reading its user manual is important. It contains ideas
+  about stack-able-environments for bindings. You may use Ukulele or Hydras to
+  do the same thing. [Karabiner] is a nice way to re-map your keys. It's easiest
+  adjustment is to make return act as return when pressed alone and as control
+  when pressed with another key. That introduces a symmetry to your keyboard
   which can be helpful. All of those dimensions are worth exploring.
 
-  When I explored them I felt that they led me further away from the
-  majority of users. Every time explored a different key-mapping (not
-  key-binding) it reduced accessibility for new users. Each time I tried
-  to work around that hiccup. The last pursuit was `;' and space.
+  When I explored them I felt that they led me further away from the majority of
+  users. Every time explored a different key-mapping (not key-binding) it
+  reduced accessibility for new users. Each time I tried to work around that
+  hiccup. The last pursuit was `;' and space.
 
-  It would be great to set up your keyboard with the meta keys on the
-  bottom like this:
+  It would be great to set up your keyboard with the meta keys on the bottom
+  like this:
 
   ,----
   | +---------------------------------------+
@@ -1530,8 +1482,8 @@ Grant Rettke
   | +---------------------------------------+
   `----
 
-  Karabiner was too slow for my typing speed though. It [happens]. It
-  seemed like a minimal change to use Ukelele to:
+  Karabiner was too slow for my typing speed though. It [happens]. It seemed
+  like a minimal change to use Ukelele to:
 
   - Make space send `C'
   - Make `;' send space
@@ -1542,18 +1494,17 @@ Grant Rettke
       - `'' -> `''
       - `"' -> `"'
 
-  The trouble is that it violates the POLA. Therefore, I left it alone
-  and stuck with a simple "Get C on both sides".
+  The trouble is that it violates the POLA. Therefore, I left it alone and stuck
+  with a simple "Get C on both sides".
 
-  That has worked out very well. It is very easy to do on every
-  operating system. It holds true to the values of this system. When you
-  develop an idea of `places' and how often you go there the key-mapping
-  becomes more obvious. Make it easy to get to key-bindings that take
-  you to familiar places. For this system it is the home keys, `s', and
-  `key-chord'. Make those keys more easily accessible. `C' and `M' often
-  have symmetric-definitions. `s' and `SHIFT' also often have symmetric
-  definitions in this system (mostly through Key-Chords). Therefore
-  those key-mappings are kept close together
+  That has worked out very well. It is very easy to do on every operating
+  system. It holds true to the values of this system. When you develop an idea
+  of `places' and how often you go there the key-mapping becomes more obvious.
+  Make it easy to get to key-bindings that take you to familiar places. For this
+  system it is the home keys, `s', and `key-chord'. Make those keys more easily
+  accessible. `C' and `M' often have symmetric-definitions. `s' and `SHIFT' also
+  often have symmetric definitions in this system (mostly through Key-Chords).
+  Therefore those key-mappings are kept close together
 
   ,----
   | +---------------------------------------+
@@ -1636,7 +1587,7 @@ Grant Rettke
   | _1_ -font  _2_ +font _3_ ellipsis _4_ UUID _5_ bfr-cdng-systm _6_ grade-level _7_ reading-ease
   | _q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
   |                  _j_ back-char _k_ scrollDown _K_ nextLogLine _l_ forw-char _;_ toggle-lax-whitespace
-  | _x_ delete-indentation"
+  | _x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer"
   |   ("1" help/text-scale-decrease :exit nil)
   |   ("2" help/text-scale-increase :exit nil)
   |   ("3" help/insert-ellipsis)
@@ -1659,7 +1610,9 @@ Grant Rettke
   |   ("o" toggle-debug-on-error)
   |   ("p" anzu-query-replace)
   |   ("[" backward-page :exit nil)
-  |   ("]" forward-page :exit nil))
+  |   ("]" forward-page :exit nil)
+  |   ("c" fill-paragraph )
+  |   ("b" erase-buffer))
   `----
 
   ,----
@@ -1686,8 +1639,7 @@ Grant Rettke
   `----
 
 
-  [Attribution.]
-  https://github.com/abo-abo/hydra/blob/master/hydra-examples.el
+  [Attribution.] https://github.com/abo-abo/hydra/blob/master/hydra-examples.el
 
 
 * 5.5.1.4 Row 2
@@ -1752,8 +1704,8 @@ Grant Rettke
   | (key-chord-define-global "fv" #'help/safb-other-window)
   `----
 
-  Toggle utility buffers ("logical F" key, so left side; "logical J" key
-  on right).
+  Toggle utility buffers ("logical F" key, so left side; "logical J" key on
+  right).
 
   ,----
   | (key-chord-define-global "f9" #'help/util-cycle)
@@ -1873,10 +1825,10 @@ Grant Rettke
   noweb-ref: Special-Operating-Procedure
   ID: 97A95862-3213-4035-9FF6-E041796DAB5C
 
-  The following code and packages are special to this configuration.
-  They provide critical functionality for configuring the rest of the
-  system. They provide ideas that make the entire system usable,
-  productive, expressive, and fast.
+  The following code and packages are special to this configuration. They
+  provide critical functionality for configuring the rest of the system. They
+  provide ideas that make the entire system usable, productive, expressive, and
+  fast.
 
 
 6.1 Display
@@ -1884,8 +1836,8 @@ Grant Rettke
 
   ID: 1290DB2D-D05E-4DDD-B42F-6B11AE91F480
 
-  Make it easy to conditionally evaluate code when running with a
-  graphical display.
+  Make it easy to conditionally evaluate code when running with a graphical
+  display.
 
   ,----
   | (defmacro help/on-gui (statement &rest statements)
@@ -2004,8 +1956,7 @@ Grant Rettke
   |      ,@statements))
   `----
 
-  Pull in the `ENVIRONMENT' variables because the GUI version of EMACS
-  does not.
+  Pull in the `ENVIRONMENT' variables because the GUI version of EMACS does not.
 
   ,----
   | (help/on-osx
@@ -2509,10 +2460,10 @@ Grant Rettke
 
   ID: F3C9BDE1-C0E0-4BDF-B121-3CE2F0D16464
 
-  Maintain buffers across sessions. Desktop-Save-Mode persists very part
-  of the buffer. If you upgrade a package that uses buffer-variables
-  that have changed you may get unexpected behavior. Close all buffers
-  and open them again after making such breaking changes.
+  Maintain buffers across sessions. Desktop-Save-Mode persists very part of the
+  buffer. If you upgrade a package that uses buffer-variables that have changed
+  you may get unexpected behavior. Close all buffers and open them again after
+  making such breaking changes.
 
   ,----
   | (desktop-save-mode t)
@@ -2529,17 +2480,17 @@ Grant Rettke
   |   :diminish undo-tree-mode)
   `----
 
-  Ensure that buffers do not end with a new line. This is the decision
-  of Sysop. This is important to YASnippets and Source-Blocks. Doing so
-  would violate POLA.
+  Ensure that buffers do not end with a new line. This is the decision of Sysop.
+  This is important to YASnippets and Source-Blocks. Doing so would violate
+  POLA.
 
   ,----
   | (setq require-final-newline nil)
   `----
 
-  If you are on the end of a line, and go up or down, then go to the end
-  of line on that new line. Do not account for anything special about
-  the character there.
+  If you are on the end of a line, and go up or down, then go to the end of line
+  on that new line. Do not account for anything special about the character
+  there.
 
   ,----
   | (setq track-eol t)
@@ -2571,8 +2522,8 @@ Grant Rettke
   | (add-hook 'before-save-hook #'help/delete-trailing-whitespace)
   `----
 
-  Intelligently select the current char, then word, then object, then
-  block, then document.
+  Intelligently select the current char, then word, then object, then block,
+  then document.
 
   ,----
   | (use-package expand-region
@@ -2687,19 +2638,18 @@ Grant Rettke
 
   ID: B371A592-1251-4D88-A055-43CA3E33BC6D
 
-  Provide a cross-platform command line shell that is a first-class
-  EMACS citizen.
+  Provide a cross-platform command line shell that is a first-class EMACS
+  citizen.
 
-  Commands input in eshell are delegated in order to an alias, a built
-  in command, an Elisp function with the same name, and finally to a
-  system call. Semicolons separate commands. `which' tells you what
-  implementation will satisfy the call that you are going to make. The
-  flag `eshell-prefer-lisp-functions' does what it says. `$$' is the
-  result of the last command. Aliases live in `eshell-aliases-file'.
-  History is maintained and expandable. `eshell-source-file' will run
-  scripts. Since Eshell is not a terminal emulator, you need to
-  configure it for any commands that need to run using a terminal
-  emulator by adding it to to `eshell-visual-commands'.
+  Commands input in eshell are delegated in order to an alias, a built in
+  command, an Elisp function with the same name, and finally to a system call.
+  Semicolons separate commands. `which' tells you what implementation will
+  satisfy the call that you are going to make. The flag
+  `eshell-prefer-lisp-functions' does what it says. `$$' is the result of the
+  last command. Aliases live in `eshell-aliases-file'. History is maintained and
+  expandable. `eshell-source-file' will run scripts. Since Eshell is not a
+  terminal emulator, you need to configure it for any commands that need to run
+  using a terminal emulator by adding it to to `eshell-visual-commands'.
 
   ,----
   | (setq eshell-prefer-lisp-functions nil
@@ -2744,9 +2694,8 @@ Grant Rettke
 
   ID: E6F121F0-AC8E-45C7-9F11-0E7AB93E4B71
 
-  This system uses artifacts stored in files. It tries to persist
-  file-stores every chance it gets without interrupting the user's flow.
-  Flow is important.
+  This system uses artifacts stored in files. It tries to persist file-stores
+  every chance it gets without interrupting the user's flow. Flow is important.
 
   Don't create backup files. Instead Git for versioning
 
@@ -2772,8 +2721,8 @@ Grant Rettke
   | (global-auto-revert-mode 1)
   `----
 
-  Save all file befores before common activities. Functions are easier
-  to use than advice.
+  Save all file befores before common activities. Functions are easier to use
+  than advice.
 
   ,----
   | (defun help/safb-help/vc-next-action ()
@@ -2904,9 +2853,9 @@ Grant Rettke
   | (add-to-list 'find-file-not-found-functions #'help/create-non-existent-directory)
   `----
 
-  Be aware of files larger than 2MiB. Turn off Aggressive-Indent and
-  other expensive features in those buffers. NXML also seems to have a
-  difficult time with large files.
+  Be aware of files larger than 2MiB. Turn off Aggressive-Indent and other
+  expensive features in those buffers. NXML also seems to have a difficult time
+  with large files.
 
   ,----
   | (setq large-file-warning-threshold (* 1024 1024 2))
@@ -2918,34 +2867,31 @@ Grant Rettke
 
   ID: 067D598E-7FE6-4BC5-AEF7-872966390970
 
-  You can use the usual machinery to work with the files. Highlight a
-  region and operation selections occur for all files in that region.
-  Commands are scheduled, and then executed, upon your command. Files
-  can be viewed in modify or read-only mode, too. There is an idea of
-  `mark' in files, which is to select them and perform operations on the
-  marked files. There are helper methods for most things you can think
-  if like directories or modified-files or whatever, meaning you can use
-  regexen to mark whatever you like however you like. If that suits you,
-  then don't be afraid of using the regular expression builder that is
-  built into EMACS. Bulk marked file operations include additionally
-  copying, deleting, creating hard links to, renaming, modifying the
-  mode, owner, and group information, changing the time-stamp, listing
-  the marked files, compressing them, decrypting, verifying and signing,
-  loading or byte compiling them (Lisp files).
+  You can use the usual machinery to work with the files. Highlight a region and
+  operation selections occur for all files in that region. Commands are
+  scheduled, and then executed, upon your command. Files can be viewed in modify
+  or read-only mode, too. There is an idea of `mark' in files, which is to
+  select them and perform operations on the marked files. There are helper
+  methods for most things you can think if like directories or modified-files or
+  whatever, meaning you can use regexen to mark whatever you like however you
+  like. If that suits you, then don't be afraid of using the regular expression
+  builder that is built into EMACS. Bulk marked file operations include
+  additionally copying, deleting, creating hard links to, renaming, modifying
+  the mode, owner, and group information, changing the time-stamp, listing the
+  marked files, compressing them, decrypting, verifying and signing, loading or
+  byte compiling them (Lisp files).
 
-  `g' updates the current buffer; `s' orders the listing by alpha or
-  date-time.
+  `g' updates the current buffer; `s' orders the listing by alpha or date-time.
 
   `find-name-dired' beings the results back into Dired, which is nifty.
 
-  Wdired lets you modify files directly via the UI, which is
-  interesting. Image-Dired lets you do just that.
+  Wdired lets you modify files directly via the UI, which is interesting.
+  Image-Dired lets you do just that.
 
-  `+' creates a new directory. `dired-copy-filename-as-kill' stores the
-  list of files you have selected in the kill ring.
-  `dired-compare-directories' lets you perform all sorts of directory
-  comparisons, a handy tool that you need once in a while but definitely
-  do need.
+  `+' creates a new directory. `dired-copy-filename-as-kill' stores the list of
+  files you have selected in the kill ring. `dired-compare-directories' lets you
+  perform all sorts of directory comparisons, a handy tool that you need once in
+  a while but definitely do need.
   ,----
   | (defun help/dired-copy-filename ()
   |   "Push the path and filename of the file under the point to the kill ring.
@@ -2984,13 +2930,13 @@ Grant Rettke
   |  (use-package ls-lisp))
   `----
 
-  After dabbling, something happened that really changed my mind. These
-  three articles changed everything: [Dired Shell Command], [ Working
-  with multiple files in dired], and [WDired: Editable Dired Buffers]..
-  They just made the power of Dired so obvious, and so easy to use, that
-  it instantly because delightful to use. That was very, very cool. Even
-  though I was really, really happy with Finder and Explorer... suddenly
-  it just became so obvious and pleasant to use Dired. That is so wild.
+  After dabbling, something happened that really changed my mind. These three
+  articles changed everything: [Dired Shell Command], [ Working with multiple
+  files in dired], and [WDired: Editable Dired Buffers].. They just made the
+  power of Dired so obvious, and so easy to use, that it instantly because
+  delightful to use. That was very, very cool. Even though I was really, really
+  happy with Finder and Explorer... suddenly it just became so obvious and
+  pleasant to use Dired. That is so wild.
 
   Key notes when executing shell commands on file selection...
 
@@ -3006,14 +2952,13 @@ Grant Rettke
   `<cmd> ;': execute sequentially, asynchronously
   `<cmd> ;&': execute in parallel, asynchronously
 
-  Key notes on working with files in multiple directories... use the
-  following:
+  Key notes on working with files in multiple directories... use the following:
 
-  Use `find' just like you would at the command line and all of the
-  results show up in a single Dired buffer that you may work with just
-  like you would any other file appearing in a Dired buffer. The
-  abstraction here becomes so obvious, you may ask yourself why you
-  never considered such a thing /before/ now (as I did):
+  Use `find' just like you would at the command line and all of the results show
+  up in a single Dired buffer that you may work with just like you would any
+  other file appearing in a Dired buffer. The abstraction here becomes so
+  obvious, you may ask yourself why you never considered such a thing /before/
+  now (as I did):
   ,----
   | (use-package find-dired
   |   :ensure t
@@ -3025,23 +2970,20 @@ Grant Rettke
   `find-dired': is the general use case
   `find-name-dired': is for simple, single string cases
 
-  And if you want to use the faster Elisp version, that uses lisp regex,
-  use:
+  And if you want to use the faster Elisp version, that uses lisp regex, use:
   `find-lisp-find-dired': for anything
   `find-lisp-find-dired-subdirectories': for only directories
 
   Key notes on working with editable buffers...
 
-  As the author notes, you probably already instinctually knew what is
-  possible. After reading his brief and concise exposition, it would be
-  hard /not/ to intuit what is possible! The options are big if you make
-  a writable file buffer. Think about using multiple cursors. Done?
-  Well, that is a no-brainer. Once you grok multiple cursors just
-  `find-dired' what you need and then do what you need to do to it. Very
-  cool.
+  As the author notes, you probably already instinctually knew what is possible.
+  After reading his brief and concise exposition, it would be hard /not/ to
+  intuit what is possible! The options are big if you make a writable file
+  buffer. Think about using multiple cursors. Done? Well, that is a no-brainer.
+  Once you grok multiple cursors just `find-dired' what you need and then do
+  what you need to do to it. Very cool.
 
-  `dired-toggle-read-only, C-x C-q': cycle between dired-mode and
-                                     wdired-mode
+  `dired-toggle-read-only, C-x C-q': cycle between dired-mode and wdired-mode
   `wdired-finish-edit, C-c C-c': commit your changes
   `wdired-abort-changes, C-c ESC': revert your changes
 
@@ -3057,12 +2999,12 @@ Grant Rettke
   `----
 
   When you selected a bunch of files or directories, you /may/ want to
-  communicate somewhere your selection somehow. The simplest way to do
-  this is to utilize `dired-copy-filename-as-kill'. What a nice idea,
-  and its default binding is `w'.
+  communicate somewhere your selection somehow. The simplest way to do this is
+  to utilize `dired-copy-filename-as-kill'. What a nice idea, and its default
+  binding is `w'.
 
-  Since I started using a menu bar again, and wanting to get Imenu
-  really exercised, Dired in Imenu seems like an obvious choice.
+  Since I started using a menu bar again, and wanting to get Imenu really
+  exercised, Dired in Imenu seems like an obvious choice.
 
   ,----
   | (use-package dired-imenu
@@ -3109,8 +3051,8 @@ Grant Rettke
 
   Access nearly every object available in this system from one place.
 
-  These configurations are performed in the correct order. Any attempt
-  to refactor this Source-Block will break Ido in this system.
+  These configurations are performed in the correct order. Any attempt to
+  refactor this Source-Block will break Ido in this system.
 
   ,----
   | (use-package ido)
@@ -3167,8 +3109,8 @@ Grant Rettke
    [Quivira]      4.0  [.]      Amazing
    [Noto]           ?  [1] [2]  Has morse code, and more
 
-  To test it run `view-hello-file' and `M-x list-charset-chars RET
-  unicode-bmp RET'.
+  To test it run `view-hello-file' and `M-x list-charset-chars RET unicode-bmp
+  RET'.
 
   Perhaps educationally there is a character for bowel-movements: 💩.
 
@@ -3237,8 +3179,7 @@ Grant Rettke
 
   ID: 95A4EF33-F83D-49ED-AC74-A29DA19524BC
 
-  Warn of poor grammar immediately interrupting flow with a visual
-  indicator.
+  Warn of poor grammar immediately interrupting flow with a visual indicator.
 
   ,----
   | (use-package writegood-mode
@@ -3293,9 +3234,8 @@ Grant Rettke
 
   ID: E32B41C2-C761-42F0-A9AE-F89A2A18439F
 
-  The macro recorder and Multiple-Cursors provide two ways to do the
-  right thing in different situations. Be very thoughtful and allow
-  every function.
+  The macro recorder and Multiple-Cursors provide two ways to do the right thing
+  in different situations. Be very thoughtful and allow every function.
 
   ,----
   | (use-package multiple-cursors
@@ -3308,8 +3248,8 @@ Grant Rettke
 
   ID: A3C2AF94-B834-4FD2-9B23-F64F618B31C3
 
-  When you start typing and text is selected, replace it with what you
-  are typing, or pasting
+  When you start typing and text is selected, replace it with what you are
+  typing, or pasting
 
   ,----
   | (delete-selection-mode t)
@@ -3332,8 +3272,7 @@ Grant Rettke
   | (setq max-mini-window-height 0.33)
   `----
 
-  Allow recursive commands-in-commands and highlight the levels of
-  recursion.
+  Allow recursive commands-in-commands and highlight the levels of recursion.
   ,----
   | (setq enable-recursive-minibuffers t)
   | (minibuffer-depth-indicate-mode t)
@@ -3345,9 +3284,9 @@ Grant Rettke
 
   ID: F3E75BDE-F853-488C-AF46-03B54C0A0919
 
-  Scroll pleasantly with the mouse wheel. A slow turn moves the buffer
-  up and down one line at a time. So does a fast turn. Anything further
-  than 5-10 lines deserves a fast navigation vehicle.
+  Scroll pleasantly with the mouse wheel. A slow turn moves the buffer up and
+  down one line at a time. So does a fast turn. Anything further than 5-10 lines
+  deserves a fast navigation vehicle.
 
   ,----
   | (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
@@ -3397,8 +3336,8 @@ Grant Rettke
 
   ID: B35103E2-0FE9-466C-9AB9-39EA28FADEDB
 
-  Directories that have Git working copies are logically projects.
-  Manage them with Projectile.
+  Directories that have Git working copies are logically projects. Manage them
+  with Projectile.
 
   ,----
   | (use-package projectile
@@ -3471,8 +3410,8 @@ Grant Rettke
 
   ID: 31961F28-1913-4247-986A-273391C4A85D
 
-  It is nice to have commands and their history saved so that every time
-  you get back to work, you can just re-run stuff as you need it.
+  It is nice to have commands and their history saved so that every time you get
+  back to work, you can just re-run stuff as you need it.
 
   ,----
   | (setq savehist-save-minibuffer-history 1)
@@ -3489,8 +3428,7 @@ Grant Rettke
 
   ID: 960E2DE0-3F5A-40AB-A9BF-FF08A410EAB7
 
-  When searching don't use lax whitespace matching; and make it easy to
-  toggle.
+  When searching don't use lax whitespace matching; and make it easy to toggle.
 
   ,----
   | (setq isearch-lax-whitespace nil)
@@ -3536,9 +3474,8 @@ Grant Rettke
   | (add-to-list 'ispell-skip-region-alist (help/block-regex "SRC"))
   `----
 
-  Example-Blocks. This system often uses Source-Blocks to edit content
-  and Example-Blocks to make it easily renderable when it is not for
-  running.
+  Example-Blocks. This system often uses Source-Blocks to edit content and
+  Example-Blocks to make it easily renderable when it is not for running.
 
   ,----
   | (add-to-list 'ispell-skip-region-alist (help/block-regex "EXAMPLE"))
@@ -3658,8 +3595,8 @@ Grant Rettke
   | (setq-default indent-tabs-mode nil)
   `----
 
-  Remove TAB from all buffers before persisting to the backing file
-  unless it is configured to retain TAB. The use case is a Makefile.
+  Remove TAB from all buffers before persisting to the backing file unless it is
+  configured to retain TAB. The use case is a Makefile.
 
   ,----
   | (defun help/untabify-if-not-indent-tabs-mode ()
@@ -3673,8 +3610,7 @@ Grant Rettke
   | (add-hook 'before-save-hook #'help/untabify-if-not-indent-tabs-mode)
   `----
 
-  Most programing modes indent to 2 spaces. TABs should be the same
-  width.
+  Most programing modes indent to 2 spaces. TABs should be the same width.
 
   ,----
   | (setq-default tab-width 2)
@@ -3754,10 +3690,9 @@ Grant Rettke
 
   ID: 4D367462-1C7B-4110-B7D1-E973D386B4E1
 
-  The linum gutter should not "shift" as it transitions between line
-  numbers of different magnitudes. For example going from line 99 to 100
-  will shift the buffer contents by one character. That is distracting
-  and interrupts the flow.
+  The linum gutter should not "shift" as it transitions between line numbers of
+  different magnitudes. For example going from line 99 to 100 will shift the
+  buffer contents by one character. That is distracting and interrupts the flow.
 
   Most files will be less than 100,000 lines.
 
@@ -3771,8 +3706,8 @@ Grant Rettke
 
   ID: 61586A23-B774-4436-B916-348453EEA3DD
 
-  Never automatically convert the end of the line character. For most of
-  us this is between UNIX and DOS.
+  Never automatically convert the end of the line character. For most of us this
+  is between UNIX and DOS.
 
   ,----
   | (setq inhibit-eol-conversion t)
@@ -3801,9 +3736,8 @@ Grant Rettke
   | (setq show-paren-style 'expression)
   `----
 
-  The cursor should not blink and distract you. On a graphic display
-  make the cursor a box and stretch it as wide as the character below
-  it.
+  The cursor should not blink and distract you. On a graphic display make the
+  cursor a box and stretch it as wide as the character below it.
 
   ,----
   | (blink-cursor-mode 0)
@@ -3846,8 +3780,7 @@ Grant Rettke
   - 47,869 Downloads
 
   - A distinct fringe provides a definition of space.
-  - The modeline is always at the bottom and doesn't need
-    differentiation.
+  - The modeline is always at the bottom and doesn't need differentiation.
   - Minimize bold and italic faces.
   - Minimize fringe indicators.
 
@@ -3872,8 +3805,8 @@ Grant Rettke
 
   ID: B4E17CF5-5542-4526-ADEE-D5EC3DB9131F
 
-  `comint-mode' is only maybe the second most important thing for making
-  Emacs really, really special.
+  `comint-mode' is only maybe the second most important thing for making Emacs
+  really, really special.
 
   ,----
   | (setq comint-scroll-to-bottom-on-input 'this)
@@ -3884,13 +3817,12 @@ Grant Rettke
   | (setq comint-move-point-for-output t)
   `----
 
-  This configuration had been working fine for a long time. The intent
-  was for it to be crystal clear that the prompt line in comint buffers
-  would be read only. This turned out to be a mistake; though I am not
-  sure why, when, or how it became a mistake. Nonetheless, this should
-  be left alone. The way the issue here manifested was that all R
-  buffers opened by `ess' were 100% read only which obviously is a *big
-  issue* if you actually want to use! ROFL
+  This configuration had been working fine for a long time. The intent was for
+  it to be crystal clear that the prompt line in comint buffers would be read
+  only. This turned out to be a mistake; though I am not sure why, when, or how
+  it became a mistake. Nonetheless, this should be left alone. The way the issue
+  here manifested was that all R buffers opened by `ess' were 100% read only
+  which obviously is a *big issue* if you actually want to use! ROFL
 
   ,----
   | (setq comint-prompt-read-only nil)
@@ -3902,9 +3834,9 @@ Grant Rettke
 
   ID: EC675F88-89C0-4A5A-B910-843F28C0F90F
 
-  The best programming font is Deja Vu Sans Mono because it sans-serif
-  and support a lot of Unicode characters. Set it to a good default for
-  an 80 character wide buffer and make it easy to adjust it.
+  The best programming font is Deja Vu Sans Mono because it sans-serif and
+  support a lot of Unicode characters. Set it to a good default for an 80
+  character wide buffer and make it easy to adjust it.
 
   ,----
   | (help/on-gui
@@ -3994,15 +3926,15 @@ Grant Rettke
   | (menu-bar-mode t)
   `----
 
-  Easily return to previous configurations. 2-4 windows are easily
-  managed by hand.
+  Easily return to previous configurations. 2-4 windows are easily managed by
+  hand.
 
   ,----
   | (winner-mode t)
   `----
 
-  Frequently use between 1 and 3 windows. 1 and 2 are already managed.
-  Easily create 3.
+  Frequently use between 1 and 3 windows. 1 and 2 are already managed. Easily
+  create 3.
 
   ,----
   | (defun help/split-into-3-windows ()
@@ -4030,15 +3962,15 @@ Grant Rettke
 
   EMACS values lexical-scoping in the future.
 
-  There are pecuilar interactions between [lexically and dynamically
-  scope closures] and [special variables].
+  There are pecuilar interactions between [lexically and dynamically scope
+  closures] and [special variables].
 
   With the future in mind, make the switch now.
 
-  It is enabled with a non-nil buffer-local variable `lexical-binding'.
-  The variable is inserted into each of the Web definitions that this
-  system provides. Those definitions can't use Org-Mode comments so they
-  are defined individually in each Web.
+  It is enabled with a non-nil buffer-local variable `lexical-binding'. The
+  variable is inserted into each of the Web definitions that this system
+  provides. Those definitions can't use Org-Mode comments so they are defined
+  individually in each Web.
 
 
   [lexically and dynamically scope closures]
@@ -4053,40 +3985,37 @@ Grant Rettke
 
   ID: B1A48CB2-9295-466E-947F-EE24D57DB548
 
-  EMACS can load 3 different representations of a Emacs-Lisp source file
-  code OOTB. The name of source code file is the value before the file
-  extension. When you pass `load' a name it searches for an acceptable
-  representation. Representation types are indicated by their extension
-  name. `.el' is a human readable and uncompiled. `.elc' is not human
-  readable and compiled. `.gz' is Gzip compressed and contains `.el' or
-  `.elc' files.
+  EMACS can load 3 different representations of a Emacs-Lisp source file code
+  OOTB. The name of source code file is the value before the file extension.
+  When you pass `load' a name it searches for an acceptable representation.
+  Representation types are indicated by their extension name. `.el' is a human
+  readable and uncompiled. `.elc' is not human readable and compiled. `.gz' is
+  Gzip compressed and contains `.el' or `.elc' files.
 
-  The variable `load-suffixes' determines the order for which text and
-  byte-code representations are first searched by extension-name. The
-  variable `load-file-rep-suffixes' determines the order for all other
-  extension types.
+  The variable `load-suffixes' determines the order for which text and byte-code
+  representations are first searched by extension-name. The variable
+  `load-file-rep-suffixes' determines the order for all other extension types.
 
-  OOTB, EMACS combines the productivity of REPL style of development
-  with the speed of compiled code by `load''ing byte-code first, text
-  second, and compressed third. This workflow gives you the fastest code
-  at run-time and lets you experiment with new features stored in text.
-  When you are ready to use them every time, you compile them. There is
-  only one downside of this approach: when you forget that it works this
-  way it can be confusing.
+  OOTB, EMACS combines the productivity of REPL style of development with the
+  speed of compiled code by `load''ing byte-code first, text second, and
+  compressed third. This workflow gives you the fastest code at run-time and
+  lets you experiment with new features stored in text. When you are ready to
+  use them every time, you compile them. There is only one downside of this
+  approach: when you forget that it works this way it can be confusing.
 
   When you forget about that style of system you end up with surprising
-  behavior. The surprise comes when you forget to compile code and then
-  write new code that depends on the now old version of that code. After
-  the next build, your system can break in surprising ways. This
-  violates the Principle of Least Astonishment.
+  behavior. The surprise comes when you forget to compile code and then write
+  new code that depends on the now old version of that code. After the next
+  build, your system can break in surprising ways. This violates the Principle
+  of Least Astonishment.
 
-  This system values predictability so it does the simplest thing
-  possible: `load' searches for the newest representation of a file and
-  uses that one. It assumes that Sysop has total and complete control
-  over the management of file representations.
+  This system values predictability so it does the simplest thing possible:
+  `load' searches for the newest representation of a file and uses that one. It
+  assumes that Sysop has total and complete control over the management of file
+  representations.
 
-  This is the *first* thing that /ought/ to happen in the initialization
-  of *any* tangled system.
+  This is the *first* thing that /ought/ to happen in the initialization of
+  *any* tangled system.
 
   ,----
   | (setq load-prefer-newer t)
@@ -4101,10 +4030,9 @@ Grant Rettke
 
   *Code requiring package-management can only follow this block.*
 
-  Before ELPA, I used SVN to manage software packages for EMACS. After
-  ELPA, I used ELPA-packages. Now this system uses MELPA and GNU. MELPA
-  packages always have their issues fixed very quickly. GNU packages
-  rarely have issues.
+  Before ELPA, I used SVN to manage software packages for EMACS. After ELPA, I
+  used ELPA-packages. Now this system uses MELPA and GNU. MELPA packages always
+  have their issues fixed very quickly. GNU packages rarely have issues.
 
   Initialize Package.
 
@@ -4125,9 +4053,9 @@ Grant Rettke
   | (add-to-list 'load-path"~/src/use-package")
   `----
 
-  Load Use-Package and it's partner Diminish. Every package loaded
-  before this point uses `require'. Every package loaded after this
-  point uses `use-package'.
+  Load Use-Package and it's partner Diminish. Every package loaded before this
+  point uses `require'. Every package loaded after this point uses
+  `use-package'.
 
   ,----
   | (eval-when-compile
@@ -4151,18 +4079,16 @@ Grant Rettke
   This system configures `text-mode' and `prog-mode' very similarly:
 
   - EMACS *exists* to help you work with text.
-  - EMACS' entire configuration helps you work with text whether it is
-    in a specific mode or not.
+  - EMACS' entire configuration helps you work with text whether it is in a
+    specific mode or not.
   - Org-Mode's motto is "*Organize Your Life In Plain Text!*".
-  - From an EMACS and a LP perspective `text-mode' *is a* programming
-    mode.
+  - From an EMACS and a LP perspective `text-mode' *is a* programming mode.
   - In this system: *Text is the User-Interface*.
 
-  This system does not rely on `prog-mode' inheritance to configure it's
-  hacking modes:
+  This system does not rely on `prog-mode' inheritance to configure it's hacking
+  modes:
 
-  - The EMACS literature advises that modes extend `text-mode' or
-    `prog-mode'
+  - The EMACS literature advises that modes extend `text-mode' or `prog-mode'
   - That /would/ make it easier to configure nearly everything using
     `prog-mode-hook'.
   - In practice `prog-mode' is too new.
@@ -4170,14 +4096,14 @@ Grant Rettke
 
   With that in mind this system:
 
-  - Defines common configuration here for reuse in every desired mode
-    starting with `text-mode' and then all logical programming modes.
+  - Defines common configuration here for reuse in every desired mode starting
+    with `text-mode' and then all logical programming modes.
   - Explicitly utilizes it directly instead of using inheritance.
   - This system refers to this configuration of programming modes as
     `prog*-mode'.
   - The line between "configuring EMACS", "configuring `text-mode'", and
-    "configuring `prog*-mode'" is often blurred and sometimes confusing.
-    The lines become wavy and intertwined with mastery of EMACS and LP.
+    "configuring `prog*-mode'" is often blurred and sometimes confusing. The
+    lines become wavy and intertwined with mastery of EMACS and LP.
 
 
 11.1.1 Text-Mode
@@ -4248,18 +4174,17 @@ Grant Rettke
 
   ID: E2C7121E-2E56-4A77-8347-2E7DFB73E9B3
 
-  - Indent at every opportunity and automatically. Verify that it makes
-    sense for the mode. Explicitly define instead of relying on
-    `prog-mode' inheritance; use this documents logical `prog*-mode'
-    approach instead.
+  - Indent at every opportunity and automatically. Verify that it makes sense
+    for the mode. Explicitly define instead of relying on `prog-mode'
+    inheritance; use this documents logical `prog*-mode' approach instead.
     ,----
     | (use-package aggressive-indent
     |   :ensure t
     |   :config)
     `----
   - Always maintain balanced brackets. Easily wrap the selected region.
-    Auto-escape strings pasted into other strings. Smartparens provides
-    built-in correct behavior for most modes.
+    Auto-escape strings pasted into other strings. Smartparens provides built-in
+    correct behavior for most modes.
     ,----
     | (use-package smartparens-config
     |   :ensure smartparens
@@ -4317,7 +4242,7 @@ Grant Rettke
 
   ,----
   | (setq initial-scratch-message nil)
-  | (use-package lexbind-mode)
+  | ;; (use-package lexbind-mode)
   |
   | (defun help/elisp-eval-buffer ()
   |   "Intelligently evaluate an Elisp buffer."
@@ -4338,7 +4263,7 @@ Grant Rettke
   | (defun help/emacs-lisp-mode-hook-fn ()
   |   (interactive)
   |   (help/elisp-mode-local-bindings)
-  |   (lexbind-mode)
+  |   ;; (lexbind-mode)
   |   (eldoc-mode)
   |   (diminish 'eldoc-mode))
   |
@@ -4373,28 +4298,27 @@ Grant Rettke
   noweb-ref: Hacking-Literate-Programming-Org-Mode
   ID: EBDA3D1C-536F-4252-AE26-32A3FDF5326C
 
-  When source blocks are evaluated, their results get stored in a result
-  area, typically for display. If the results are small, they are
-  displayed with colons instead of an `example' block. Instead, *always*
-  place them in an example block. This makes exports more consistent and
-  other Org-Mode features seem to behave more predictably.
+  When source blocks are evaluated, their results get stored in a result area,
+  typically for display. If the results are small, they are displayed with
+  colons instead of an `example' block. Instead, *always* place them in an
+  example block. This makes exports more consistent and other Org-Mode features
+  seem to behave more predictably.
 
   ,----
   | (setq org-babel-min-lines-for-block-output 0)
   `----
 
-  Configure Org-Mode to manage it's Source-Block backed buffers the same
-  as the rest of this system.
+  Configure Org-Mode to manage it's Source-Block backed buffers the same as the
+  rest of this system.
 
   ,----
   | (setq org-edit-src-auto-save-idle-delay 0)
   | (setq org-edit-src-turn-on-auto-save nil)
   `----
 
-  Update in-buffer images after Source-Block execution. This is a
-  programming task. That is why it is under this heading and Evaluation.
-  This is a setting configuring how the results of evaluation are
-  refreshed in EMACS.
+  Update in-buffer images after Source-Block execution. This is a programming
+  task. That is why it is under this heading and Evaluation. This is a setting
+  configuring how the results of evaluation are refreshed in EMACS.
 
   ,----
   | (defun help/org-babel-after-execute-hook ()
@@ -4415,9 +4339,9 @@ Grant Rettke
   | (setq org-confirm-babel-evaluate nil)
   `----
 
-  Make it unpleasant for Sysop to modify source-block outside of a
-  source-block backed buffer. The next step is to write some code to
-  prevent modifying source-blocks outside of that place.
+  Make it unpleasant for Sysop to modify source-block outside of a source-block
+  backed buffer. The next step is to write some code to prevent modifying
+  source-blocks outside of that place.
 
   ,----
   | (setq org-src-tab-acts-natively nil)
@@ -4446,8 +4370,8 @@ Grant Rettke
   |          )))
   `----
 
-  When running in a GUI, I would like linked images to be displayed
-  inside of Emacs.
+  When running in a GUI, I would like linked images to be displayed inside of
+  Emacs.
 
   ,----
   | (setq org-startup-with-inline-images (display-graphic-p))
@@ -4461,15 +4385,15 @@ Grant Rettke
   | (setq org-completion-use-iswitchb nil)
   `----
 
-  Org-Mode lets you use single letter commands to do stuff on headers. I
-  like to use `c' for cycling the header expansion.
+  Org-Mode lets you use single letter commands to do stuff on headers. I like to
+  use `c' for cycling the header expansion.
 
   ,----
   | (setq org-use-speed-commands t)
   `----
 
-  Ask before execution of shell links. This might seem like an
-  Evaluation activity. It is. It is interactive.
+  Ask before execution of shell links. This might seem like an Evaluation
+  activity. It is. It is interactive.
 
   ,----
   | (setq org-confirm-shell-link-function 'y-or-n-p)
@@ -4481,33 +4405,40 @@ Grant Rettke
   | (setq org-confirm-elisp-link-function 'y-or-n-p)
   `----
 
-  Make sure that incomplete TODO entries prevent the enclosing parent
-  from ever turning to DONE.
+  Make sure that incomplete TODO entries prevent the enclosing parent from ever
+  turning to DONE.
 
   ,----
   | (setq org-enforce-todo-dependencies t)
   `----
 
-  Allow the mouse to do Org-Mode things like expand and collapse
-  headings.
+  Allow the mouse to do Org-Mode things like expand and collapse headings.
 
   ,----
   | (when (display-graphic-p)
   |   (use-package org-mouse))
   `----
 
-  Use a real ellipsis to render an ellipsis for Org-Mode stuff like
-  showing that a header is collapsed.
+  Use a real ellipsis to render an ellipsis for Org-Mode stuff like showing that
+  a header is collapsed.
 
   ,----
   | (setq org-ellipsis "…")
   `----
 
-  It is easy to see indentation of headlines without having to count
-  asterisks, so don't show them, only show the significant and last one.
+  It is easy to see indentation of headlines without having to count asterisks,
+  so don't show them, only show the significant and last one.
 
   ,----
   | (setq org-hide-leading-stars t)
+  `----
+
+  Maximize character space for writing. Do not indent according to the outline
+  node level because it would waste a lot of space. Ident the next body just
+  like any other text document.
+
+  ,----
+  | (setq org-adapt-indentation nil)
   `----
 
   Display emphasized text as you would in a WYSIWYG editor.
@@ -4516,9 +4447,9 @@ Grant Rettke
   | (setq org-fontify-emphasized-text t)
   `----
 
-  Use Unicode characters to visualize things like right arrow eg -> .
-  Most of those symbols are correctly exported to the destination
-  format. The most obvious is this example in LaTeX versus Text.
+  Use Unicode characters to visualize things like right arrow eg -> . Most of
+  those symbols are correctly exported to the destination format. The most
+  obvious is this example in LaTeX versus Text.
 
   ,----
   | (setq org-pretty-entities t)
@@ -4526,12 +4457,12 @@ Grant Rettke
 
   Highlight LaTeX and related markup.
 
-  Normally, I don't do any syntax highlighting, as I believe that should
-  be delegated to source buffers, thinking that to do otherwise is
-  distracting. However, I already do configure subscripts and Greek
-  letters to be displayed with syntax highlighting, because I want to
-  indicate to the human reader that they are special, and specifically
-  /not/-Unicode. Do the same thing for LaTeX and related markup.
+  Normally, I don't do any syntax highlighting, as I believe that should be
+  delegated to source buffers, thinking that to do otherwise is distracting.
+  However, I already do configure subscripts and Greek letters to be displayed
+  with syntax highlighting, because I want to indicate to the human reader that
+  they are special, and specifically /not/-Unicode. Do the same thing for LaTeX
+  and related markup.
 
   ,----
   | (setq org-highlight-latex-and-related '(latex script entities))
@@ -4546,32 +4477,32 @@ Grant Rettke
   | (setq org-footnote-section nil)
   `----
 
-  This is an amazingly easy way to screw up your document. The more you
-  edit org docs, the more you realize how you must truly protect it.
+  This is an amazingly easy way to screw up your document. The more you edit org
+  docs, the more you realize how you must truly protect it.
 
   ,----
   | (setq org-catch-invisible-edits 'error)
   `----
 
-  Though I am not delving deep, it is hard not to want to customize some
-  stuff and perhaps this is the start. Even though I enabled this, I
-  don't think that I ever used it.
+  Though I am not delving deep, it is hard not to want to customize some stuff
+  and perhaps this is the start. Even though I enabled this, I don't think that
+  I ever used it.
 
   ,----
   | (setq org-loop-over-headlines-in-active-region t)
   `----
 
-  It is /almost always/ faster to work with org documents when they are
-  fully expanded. Anyway, the structure cycling makes it really, really
-  easy to get an /outline view/ again.
+  It is /almost always/ faster to work with org documents when they are fully
+  expanded. Anyway, the structure cycling makes it really, really easy to get an
+  /outline view/ again.
 
   ,----
   | (setq org-startup-folded "nofold")
   `----
 
-  When images are displayed in the buffer, display them in their actual
-  size. As the operator, I want to know their true form. Any
-  modifications required for export will be stated explicitly.
+  When images are displayed in the buffer, display them in their actual size. As
+  the operator, I want to know their true form. Any modifications required for
+  export will be stated explicitly.
 
   ,----
   | (setq org-image-actual-width t)
@@ -4596,65 +4527,59 @@ Grant Rettke
   | (setq org-html-checkbox-type 'unicode)
   `----
 
-  You may display syntax highlighting for code in source blocks. I
-  don't.
+  You may display syntax highlighting for code in source blocks. I don't.
 
   ,----
   | (setq org-src-fontify-natively nil)
   `----
 
-  When edit mode is exited, the option exists to automatically remove
-  empty opening and closed lines for the source block. Never do this.
-  The thing is that I forgot why. When I was working on a recent
-  analysis with R there was a space appearing in the opening and closing
-  line of the source block that didn't appear in the source editing
-  buffer. That surprised me. I am sure that I've forgotten why this is
-  the case. I don't like it because you add a bunch of empty lines in
-  the source buffer for every source block. With that in mind I will
-  enable this feature and try it out again.
+  When edit mode is exited, the option exists to automatically remove empty
+  opening and closed lines for the source block. Never do this. The thing is
+  that I forgot why. When I was working on a recent analysis with R there was a
+  space appearing in the opening and closing line of the source block that
+  didn't appear in the source editing buffer. That surprised me. I am sure that
+  I've forgotten why this is the case. I don't like it because you add a bunch
+  of empty lines in the source buffer for every source block. With that in mind
+  I will enable this feature and try it out again.
 
   ,----
   | (setq org-src-strip-leading-and-trailing-blank-lines t)
   `----
 
-  The source block buffer may be configured to appear in a few different
-  places. For a while I really liked `reorganize-frame' because
-  sometimes you want to be able to see the code you are editing in
-  edition to the rest of the document. At least that is what I am
-  telling myself. Once I learned you could change it I realized that 1 I
-  should have asked if it could be changed and 2 I should have changed
-  it. The flow that I've got configured here is that you are either in
-  the source document where code blocks are not highlighted or you are
-  in the source block so you are editing in a buffer that is
-  full-fledged HELP. That is the best way so you can focus completely on
-  each task at hand in the ideal mode for that task. Anything else
-  results in distractions and errors.
+  The source block buffer may be configured to appear in a few different places.
+  For a while I really liked `reorganize-frame' because sometimes you want to be
+  able to see the code you are editing in edition to the rest of the document.
+  At least that is what I am telling myself. Once I learned you could change it
+  I realized that 1 I should have asked if it could be changed and 2 I should
+  have changed it. The flow that I've got configured here is that you are either
+  in the source document where code blocks are not highlighted or you are in the
+  source block so you are editing in a buffer that is full-fledged HELP. That is
+  the best way so you can focus completely on each task at hand in the ideal
+  mode for that task. Anything else results in distractions and errors.
 
   ,----
   | (setq org-src-window-setup 'current-window)
   `----
 
-  Org-Mode has a really nice feature that hitting `C-c C-c' will
-  generally just do the /right thing/. It is really nice. That feature
-  extends to source blocks of course. Ironically I had a typo here,
-  typing /of curse/ instead of /of course/. The thing is that you
-  really, really need to develop a personal workflow, and then configure
-  the tool to enable it. The more I learn about Org-Mode, the more leery
-  I am about making it really easy to evaluate code. I want it to be a
-  really, really specific and decided action to evaluate a code block,
-  so don't make it so easy as `C-c C-c'.
+  Org-Mode has a really nice feature that hitting `C-c C-c' will generally just
+  do the /right thing/. It is really nice. That feature extends to source blocks
+  of course. Ironically I had a typo here, typing /of curse/ instead of /of
+  course/. The thing is that you really, really need to develop a personal
+  workflow, and then configure the tool to enable it. The more I learn about
+  Org-Mode, the more leery I am about making it really easy to evaluate code. I
+  want it to be a really, really specific and decided action to evaluate a code
+  block, so don't make it so easy as `C-c C-c'.
 
   ,----
   | (setq org-babel-no-eval-on-ctrl-c-ctrl-c t)
   `----
 
-  Configure the system to successfully use `vc-next-action' while
-  editing a Source-Block. Before perfoming the edit, check if it is
-  Org-Mode and exit the Source-Block Buffer (SBB). If this system stays
-  in the SBB when calling `vc-next-action' the entire contents of the
-  buffer are escaped as Org-Mode source code upon returning to the
-  source buffer (this). Do the same thing before any version control
-  modes that would result in the same condition.
+  Configure the system to successfully use `vc-next-action' while editing a
+  Source-Block. Before perfoming the edit, check if it is Org-Mode and exit the
+  Source-Block Buffer (SBB). If this system stays in the SBB when calling
+  `vc-next-action' the entire contents of the buffer are escaped as Org-Mode
+  source code upon returning to the source buffer (this). Do the same thing
+  before any version control modes that would result in the same condition.
 
   ,----
   | (defun help/vc-next-action ()
@@ -4681,8 +4606,8 @@ Grant Rettke
   | (setq org-edit-src-code nil)
   `----
 
-  Easily wrap text in Org-Mode. This is not used by the rest of HELP
-  because Smartparens provides that functionality for programming modes.
+  Easily wrap text in Org-Mode. This is not used by the rest of HELP because
+  Smartparens provides that functionality for programming modes.
 
   ,----
   | (use-package wrap-region
@@ -4731,32 +4656,29 @@ Grant Rettke
 
   ID: 0AA3F69B-F5F1-48DA-B8F7-B7C92CD30DB1
 
-  Started questioning why after hitting RETURN while in lists I have to
-  hit TAB to get indented properly. Kind of a dead giveaway that I
-  should be return-and-indenting! Looked at `org-return' to find that it
-  has an argument about indenting and then saw that `org-return-indent'
-  passes it for you. With that in mind, RETURN is bound to that now. Now
-  HELP has four different kinds of "returns" in Org in order of
-  likelihood of usage:
+  Started questioning why after hitting RETURN while in lists I have to hit TAB
+  to get indented properly. Kind of a dead giveaway that I should be
+  return-and-indenting! Looked at `org-return' to find that it has an argument
+  about indenting and then saw that `org-return-indent' passes it for you. With
+  that in mind, RETURN is bound to that now. Now HELP has four different kinds
+  of "returns" in Org in order of likelihood of usage:
 
-  org-return-indent: Make it really easy to work in existing list items,
-                     headings, and tables
+  org-return-indent: Make it really easy to work in existing list items, headings,
+                     and tables
                      - This is listed first because I often go back to modify entries
                      - <return> because it is used the most
-  org-meta-return: Make it really easy to add new list items, headings,
-                   and table contents
+  org-meta-return: Make it really easy to add new list items, headings, and table
+                   contents
                    - M-<return> because the binding comes with Org
-  electric-indent-just-newline: For when I want to break out of the
-                                default Org indentation to start working
-                                at the beginning of the line for example
-                                when I'm done working in a list or have
-                                just created a new heading
+  electric-indent-just-newline: For when I want to break out of the default Org
+                                indentation to start working at the beginning of
+                                the line for example when I'm done working in a
+                                list or have just created a new heading
                                 - C-M-<return> because it is next step "lower" in the binding
-  help/smart-open-line: When I want to insert a new line between the
-                        current and next line then position the cursor
-                        correctly indented at the start of it.
-                        - s-<return> because it is that is the last place in the modifier
-                          key chain
+  help/smart-open-line: When I want to insert a new line between the current and
+                        next line then position the cursor correctly indented at
+                        the start of it.
+                        - s-<return> because it is that is the last place in the modifier key chain
 
   ,----
   | (help/not-on-gui
@@ -4922,8 +4844,8 @@ Grant Rettke
   | (setq ess-describe-at-point-method 'tooltip)
   `----
 
-  Always start `ess' within the curent `emacs' frame, it doesn't need to
-  be separate.
+  Always start `ess' within the curent `emacs' frame, it doesn't need to be
+  separate.
 
   ,----
   | (setq inferior-ess-same-window nil)
@@ -4936,25 +4858,24 @@ Grant Rettke
   | (setq ess-help-own-frame nil)
   `----
 
-  When commands are executed, display their output within the current
-  buffer, rather than to a new dedicated buffer for them.
+  When commands are executed, display their output within the current buffer,
+  rather than to a new dedicated buffer for them.
 
   ,----
   | (setq ess-execute-in-process-buffer t)
   `----
 
-  When you cycle between a the REPL buffer and the script, you get to
-  the process buffer, you will go to the end of the buffer. This setting
-  is specifically to handle a buffer that is scrolling when you want to
-  see the last result and will scroll back after the fact to see the
-  history.
+  When you cycle between a the REPL buffer and the script, you get to the
+  process buffer, you will go to the end of the buffer. This setting is
+  specifically to handle a buffer that is scrolling when you want to see the
+  last result and will scroll back after the fact to see the history.
 
   ,----
   | (setq ess-switch-to-end-of-proc-buffer t)
   `----
 
-  Use typical auto completion in buffers here, but don't do it when the
-  next char is a symbol or closed paren.
+  Use typical auto completion in buffers here, but don't do it when the next
+  char is a symbol or closed paren.
 
   ,----
   | (setq ess-tab-complete-in-script t)
@@ -4967,8 +4888,8 @@ Grant Rettke
   | (setq ess-use-ido t)
   `----
 
-  Use `eldoc' for this mode. Always show it when the point is on a
-  symbol. Try to keep help strings at 10 chars or less.
+  Use `eldoc' for this mode. Always show it when the point is on a symbol. Try
+  to keep help strings at 10 chars or less.
 
   ,----
   | (setq ess-use-eldoc t)
@@ -4976,68 +4897,66 @@ Grant Rettke
   | (setq ess-eldoc-abbreviation-style 'normal)
   `----
 
-  These functions are metioned, and I am not sure where or how to use
-  them yet, but Vitalie Spinu mentioned them as being useful:
+  These functions are metioned, and I am not sure where or how to use them yet,
+  but Vitalie Spinu mentioned them as being useful:
 
   - `comint-previous-matching-input-from-input'
   - `comint-history-isearch-backward-regexp'
 
   For a while I used `ess-eval-buffer-and-go', but now I know that it is
-  insanely faster to use `ess-eval-buffer' instead. Previously I've read
-  people saying that, and it is true.
+  insanely faster to use `ess-eval-buffer' instead. Previously I've read people
+  saying that, and it is true.
 
   *Philosophy*
 
   The current `ESS' maintainers philosophies about how to maintain an R
-  code-base make sense to me and are virtually the same as my own. Quite
-  simply, the rule is that the code artifacts are the single source of
-  system definition. Consequently, the system should be configured in
-  this manner:
+  code-base make sense to me and are virtually the same as my own. Quite simply,
+  the rule is that the code artifacts are the single source of system
+  definition. Consequently, the system should be configured in this manner:
 
-  We want to keep dump files after loading them; never delete them. The
-  idea is that if we use them, then they are a valid part of the system
-  definition and need to be kept.
+  We want to keep dump files after loading them; never delete them. The idea is
+  that if we use them, then they are a valid part of the system definition and
+  need to be kept.
 
   ,----
   | (setq ess-keep-dump-files +1)
   `----
 
-  `ESS' allows us to quite easily modify live R objects and functions.
-  It provides this functionality via `ess-dump-object-into-edit-buffer'.
-  These changes are considered to be experimental, and not part of the
-  master record according to our philosophy. As such, we don't care to
-  know that these new versions ever existed and their record will be
-  forgotten from history. In other words, that new, modified version of
-  the object or function, is never saved to a file for later reuse.
+  `ESS' allows us to quite easily modify live R objects and functions. It
+  provides this functionality via `ess-dump-object-into-edit-buffer'. These
+  changes are considered to be experimental, and not part of the master record
+  according to our philosophy. As such, we don't care to know that these new
+  versions ever existed and their record will be forgotten from history. In
+  other words, that new, modified version of the object or function, is never
+  saved to a file for later reuse.
 
   ,----
   | (setq ess-delete-dump-files nil)
   `----
 
-  Since our systems are entirely file-based, the entirety of the system
-  most likely lives in different files. Before loading any file for
-  sourcing, save any ESS source buffers. This approach is in addition to
-  two other things: (1) Emacs is auto-saving every file buffer quite
-  frequently and (2) there is advice before every manual `eval' call so
-  that the buffers and their files stay in sync. Yes, it is really that
-  important.
+  Since our systems are entirely file-based, the entirety of the system most
+  likely lives in different files. Before loading any file for sourcing, save
+  any ESS source buffers. This approach is in addition to two other things: (1)
+  Emacs is auto-saving every file buffer quite frequently and (2) there is
+  advice before every manual `eval' call so that the buffers and their files
+  stay in sync. Yes, it is really that important.
 
   ,----
   | (setq ess-mode-silently-save +1)
   `----
 
-  `ESS' executes code in another process. That is no secret. When
-  displaying output from that code running in another process though, it
-  can look like Emacs is locking up. That is not the case [1]. What is
-  happening that Emacs is waiting for the output. Configure this mode to
-  continue to accept user input, which is obviously critical, but don't
-  wait for the process to provide its output. Instead, all output is
-  printed after the last input lines. What we gain is perceived speed,
-  and what we lose is the nice sequential this/that/this/that we get
-  from a typical REPL interaction. As I write this, I'm not totally sure
-  how this will work, but the documentation and post are consistent and
-  describe what I had wanted here so I will give it a try and see how it
-  goes.
+  `ESS' executes code in another process. That is no secret. When displaying
+  output from that code running in another process though, it can look like
+  Emacs is locking up. That is not the case:
+  [https://stackoverflow.com/questions/2770523/how-can-i-background-the-r-process-in-ess-emacs].
+  What is happening that Emacs is waiting for the output. Configure this mode to
+  continue to accept user input, which is obviously critical, but don't wait for
+  the process to provide its output. Instead, all output is printed after the
+  last input lines. What we gain is perceived speed, and what we lose is the
+  nice sequential this/that/this/that we get from a typical REPL interaction. As
+  I write this, I'm not totally sure how this will work, but the documentation
+  and post are consistent and describe what I had wanted here so I will give it
+  a try and see how it goes.
 
   ,----
   | (setq ess-eval-visibly 'nowait)
@@ -5082,17 +5001,17 @@ Grant Rettke
   | (setq ess-watch-scale-amount -1)
   `----
 
-  When `ess' starts, or when R starts, it takes the current directory as
-  its working directory. This is totally fine; so don't ask what the
-  working directory should be.
+  When `ess' starts, or when R starts, it takes the current directory as its
+  working directory. This is totally fine; so don't ask what the working
+  directory should be.
 
   ,----
   | (setq ess-ask-for-ess-directory nil)
   `----
 
-  My preference is for ESS to quit and not ask me whether or not I am
-  sure. There is an intentional line-break after the closing round
-  bracket because that is the approach of the original value here.
+  My preference is for ESS to quit and not ask me whether or not I am sure.
+  There is an intentional line-break after the closing round bracket because
+  that is the approach of the original value here.
 
   ,----
   | (setq inferior-ess-exit-command "q('no')
@@ -5108,8 +5027,7 @@ Grant Rettke
 
   Rdired is another way to work with object:
   - `ess-rdired'
-  - View, delete, plot, and update buffer (ala /revert/) are single key
-    commands
+  - View, delete, plot, and update buffer (ala /revert/) are single key commands
 
   ,----
   | (autoload 'ess-rdired "ess-rdired")
@@ -5156,8 +5074,7 @@ Grant Rettke
   | (setq ess-source-directory help/r-dir)
   `----
 
-  Since I'm using R for everything, configure /everything/ to be using
-  R.
+  Since I'm using R for everything, configure /everything/ to be using R.
 
   ,----
   | (setq inferior-ess-program "R")
@@ -5186,9 +5103,8 @@ Grant Rettke
   |   (setq ess-rutils-keys t))
   `----
 
-  `r-autoyas' does argument completion. I had it working nice, and
-  didn't use it for a while, and now it doesn't work. This needs some
-  TLC.
+  `r-autoyas' does argument completion. I had it working nice, and didn't use it
+  for a while, and now it doesn't work. This needs some TLC.
 
   ,----
   | (use-package r-autoyas
@@ -5205,8 +5121,7 @@ Grant Rettke
   | (setq ess-R-argument-suffix "=")
   `----
 
-  Don't use the default assignment binding and allow underscores in
-  names.
+  Don't use the default assignment binding and allow underscores in names.
 
   ,----
   | (setq ess-S-assign-key (kbd "C-,"))
@@ -5214,9 +5129,8 @@ Grant Rettke
   | (ess-toggle-underscore nil)
   `----
 
-  Don't save the workspace when you quit R and don't restore *ANYTHING*
-  when you start it, either. This adheres to the philosopy that the
-  system is file based.
+  Don't save the workspace when you quit R and don't restore *ANYTHING* when you
+  start it, either. This adheres to the philosopy that the system is file based.
 
   ,----
   | (setq inferior-R-args "--no-save --no-restore")
@@ -5414,8 +5328,8 @@ Grant Rettke
   | (setq TeX-DVI-via-PDFTeX t)
   `----
 
-  Don't prompt every time you run `C-c C-c' about saving the file,
-  instead, just save it.
+  Don't prompt every time you run `C-c C-c' about saving the file, instead, just
+  save it.
 
   ,----
   | (setq TeX-save-query nil)
@@ -5477,17 +5391,17 @@ Grant Rettke
   noweb-ref: Hacking-Publishing-KOMA
   ID: BFF1402E-98D4-4F36-ACCB-B1E88A3EB2D9
 
-  I enjoy writing letters. I enjoy reading letters. LaTeX produces
-  letters that are easy to print and read. Org provides a [KOMA Script
-  exporter] for [KOMA-script]. The Org documentation mentions that the
-  user should read the [ox-koma-letter.el] header documentation.
+  I enjoy writing letters. I enjoy reading letters. LaTeX produces letters that
+  are easy to print and read. Org provides a [KOMA Script exporter] for
+  [KOMA-script]. The Org documentation mentions that the user should read the
+  [ox-koma-letter.el] header documentation.
 
-  The [babel] packages is mentioned in the Org documentation. The
-  package documentation explains that it should be used with LaTeX, but
-  not XeTeX. Some time ago I decided to stick with LaTeX. This decision
-  needs documentation. This system leans towards LuaTeX because of its
-  Unicode support and sticks with PDFLaTeX because of its broad
-  acceptance. Those two goals are at odds with each other.
+  The [babel] packages is mentioned in the Org documentation. The package
+  documentation explains that it should be used with LaTeX, but not XeTeX. Some
+  time ago I decided to stick with LaTeX. This decision needs documentation.
+  This system leans towards LuaTeX because of its Unicode support and sticks
+  with PDFLaTeX because of its broad acceptance. Those two goals are at odds
+  with each other.
 
   Load the KOMA exporter.
 
@@ -5496,58 +5410,53 @@ Grant Rettke
   `----
 
   - Understanding KOMA and how to use it
-    - There are 4 ways to set letter metadata, listed "from the most
-      specific to the most general" (not sure exactly what this
-      statement means, and the conclusion of my notes tries to make
-      sense of what is really going on here and what is the best way to
-      do things)
+    - There are 4 ways to set letter metadata, listed "from the most specific to
+      the most general" (not sure exactly what this statement means, and the
+      conclusion of my notes tries to make sense of what is really going on here
+      and what is the best way to do things)
       - Org option lines (ORG)
       - Separate Org latex classes (LTX)
       - Emacs Lisp variables (LISP)
       - Letter Class Option files (LCO)
   - Notes and thoughts on the ways to use it
     - LTX
-      - By following the setup directions, you do this, creating
-        "help-letter" class
+      - By following the setup directions, you do this, creating "help-letter"
+        class
       - Familiar and easy if you already know LaTeX
-        - At some point in your workflow, you *must* define a class to
-          use, anyway
+        - At some point in your workflow, you *must* define a class to use,
+          anyway
       - Very easy to do, just define the class template and set
         `org-koma-letter-default-class'
     - ORG
-      - Simple way that makes it very easy to just focus on the document
-        content
+      - Simple way that makes it very easy to just focus on the document content
       - This metadata takes highest priority in the workflow
-        - So you should set your typical defaults in LISP or LCO and
-          customize it here. This is exactly what I wanted to know.
-        - This lets you do your tweaking in each unique file while
-          relying on the most common defaults defined elsewhere
+        - So you should set your typical defaults in LISP or LCO and customize
+          it here. This is exactly what I wanted to know.
+        - This lets you do your tweaking in each unique file while relying on
+          the most common defaults defined elsewhere
     - LISP
       - Very familiar style of configuring things
     - LCO
       - LCO == Letter Class Option files
       - LCO files are TeX
-      - They are included in the generated TeX source code from the
-        letter
+      - They are included in the generated TeX source code from the letter
       - Gives *full* access to KOMA-Script
-        - Big deal, because not everything is exposed through ORG or
-          LISP
+        - Big deal, because not everything is exposed through ORG or LISP
         - Also gives full access to any and all TeX and LaTeX code
       - LCO files are a KOMA-Script thing, so they are a LaTeX thing
       -
-              Letter metadata set in LCO files overwrites letter
-              metadata set in Emacs variables but not letter
-              metadata set in the Org file.
-      - When you include multiple LCO files, they are evaluated LIFO.
-        Properties are set as they first appear, and are not set again.
-        Say you include "MyGeneralStuffForAnyLetter.lco" and then
-        include "MyStuffSpecificToThisLetter.lco". The specific stuff
-        will get set first. Then general stuff will get set last.
-        - Surely there is a better way to phrase this. I will work on
-          that.
+              Letter metadata set in LCO files overwrites letter metadata
+              set in Emacs variables but not letter metadata set in the Org
+              file.
+      - When you include multiple LCO files, they are evaluated LIFO. Properties
+        are set as they first appear, and are not set again. Say you include
+        "MyGeneralStuffForAnyLetter.lco" and then include
+        "MyStuffSpecificToThisLetter.lco". The specific stuff will get set
+        first. Then general stuff will get set last.
+        - Surely there is a better way to phrase this. I will work on that.
   - Recommendations
-    - What is the easiest way to start using KOMA-Script based on what
-      you know today?
+    - What is the easiest way to start using KOMA-Script based on what you know
+      today?
     - If you don't know any of the approaches
       - Then choose between learning LaTeX and Org
     - If you only know LaTeX
@@ -5555,15 +5464,15 @@ Grant Rettke
     - If you only know ORG
       - Then you will use the ORG metadata approach
     - If you only know ORG and LISP
-      - Then you will use the LISP approach for general metadata and the
-        ORG approach specific metadata
+      - Then you will use the LISP approach for general metadata and the ORG
+        approach specific metadata
     - If you know LTX/LCO, ORG, and LISP
       - Then you have total flexibility
       - The fact is that
         - ORG settings always trump LTX/LCO and LISP
         - LISP settings are a subset of all of the settings available in
-          KOMA-Script, so you will always have to fall back to LTX/LCO
-          if you want to use unexposed features
+          KOMA-Script, so you will always have to fall back to LTX/LCO if you
+          want to use unexposed features
         - LCO files are just plain old LaTeX, which you already know
       - So the best thing to do
         - Is to use ORG for letter-specific settings
@@ -5575,8 +5484,8 @@ Grant Rettke
 
   Configure the default class.
 
-  [This] post explains how to default the US letter size. That is the
-  likely default for my printed correspondence.
+  [This] post explains how to default the US letter size. That is the likely
+  default for my printed correspondence.
 
   ,----
   | (eval-after-load "ox-koma-letter"
@@ -5590,8 +5499,7 @@ Grant Rettke
   |      (setq org-koma-letter-default-class "help-letter")))
   `----
 
-  There are two formats for the letters: [heading-based] and
-  [property-based].
+  There are two formats for the letters: [heading-based] and [property-based].
 
   Set up my default LCO files.
 
@@ -5628,8 +5536,7 @@ Grant Rettke
   Perhaps the [first] document typeset with Org-Texinfo.
 
 
-  [first]
-  https://lists.gnu.org/archive/html/emacs-orgmode/2015-07/msg00042.html
+  [first] https://lists.gnu.org/archive/html/emacs-orgmode/2015-07/msg00042.html
 
 
 11.18 Pandoc
@@ -5688,11 +5595,11 @@ Grant Rettke
   | (require 'org2blog-autoloads)
   `----
 
-  Org2Blog depends on Org-Mode. This system loads Org-Mode from Git.
-  Enter the `ELPA' cache directory and delete it.
+  Org2Blog depends on Org-Mode. This system loads Org-Mode from Git. Enter the
+  `ELPA' cache directory and delete it.
 
-  This system works with WisdomAndWonder. It keeps its posts separate
-  giving focus to each Web.
+  This system works with WisdomAndWonder. It keeps its posts separate giving
+  focus to each Web.
 
   ,----
   | (setq org2blog/wp-track-posts nil)
@@ -5829,9 +5736,13 @@ Grant Rettke
 
   When a drop of water joins the ocean it becomes the ocean.
 
-  [file:./image/ditaa-drop_in_the_ocean.png]
+  ,----
+  | [[file:./image/ditaa-drop_in_the_ocean.png]]
+  `----
 
-  [file:./image/ditaa-not_a_sailboat.png]
+  ,----
+  | [[file:./image/ditaa-not_a_sailboat.png]]
+  `----
 
   ,----
   | (defconst help/ditaa-jar (concat (getenv "EELIB") "/ditaa.jar"))
@@ -5852,7 +5763,9 @@ Grant Rettke
   |   (setf (cdr (assoc "dot" org-src-lang-modes)) 'graphviz-dot))
   `----
 
-  [file:./image/graphviz-life_is_simple.png]
+  ,----
+  | [[file:./image/graphviz-life_is_simple.png]]
+  `----
 
 
 11.32 PlantUML
@@ -5877,12 +5790,16 @@ Grant Rettke
   - Feature rich.
   - Information rich.
 
-  [file:./image/plantuml-sequence_diagram.png]
+  ,----
+  | [[file:./image/plantuml-sequence_diagram.png]]
+  `----
 
   *Use Case Diagram*
 
   - Actor variable aliasing feature.
-  [file:./image/plantuml-use_case_diagram.png]
+  ,----
+  | [[file:./image/plantuml-use_case_diagram.png]]
+  `----
 
   *Class Diagram*
 
@@ -5895,7 +5812,9 @@ Grant Rettke
     - Packaging vs. namespaceing.
     - Good support for splitting large images among output pages.
 
-  [file:./image/plantuml-class_diagram.png]
+  ,----
+  | [[file:./image/plantuml-class_diagram.png]]
+  `----
 
   *Activity Diagram*
 
@@ -5906,7 +5825,9 @@ Grant Rettke
   - Partition construct.
   - [New syntax] with more examples.
 
-  [file:./image/plantuml-activity_diagram.png]
+  ,----
+  | [[file:./image/plantuml-activity_diagram.png]]
+  `----
 
   *Component Diagram*
 
@@ -5914,15 +5835,21 @@ Grant Rettke
   - Identify "Modern UML".
   - Good for summaries.
 
-  [file:./image/plantuml-component_diagram.png]
+  ,----
+  | [[file:./image/plantuml-component_diagram.png]]
+  `----
 
   *State Diagram*
 
-  [file:./image/plantuml-state_diagram.png]
+  ,----
+  | [[file:./image/plantuml-state_diagram.png]]
+  `----
 
   *Object Diagram*
 
-  [file:./image/plantuml-object_diagram.png]
+  ,----
+  | [[file:./image/plantuml-object_diagram.png]]
+  `----
 
   - Commands.
     - Header and footer values.
@@ -5949,11 +5876,3 @@ Grant Rettke
   [New syntax] http://plantuml.sourceforge.net/activity2.html
 
   [OpenIconic icons] https://useiconic.com/open
-
-
-
-Footnotes
-_________
-
-[1]
-[https://stackoverflow.com/questions/2770523/how-can-i-background-the-r-process-in-ess-emacs]
