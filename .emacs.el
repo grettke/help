@@ -1416,7 +1416,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 ;; EBACFD45-C2FF-47B3-B991-28591C112F28 ends here
 ;; [[file:~/src/help/help.org::*Emacs%20Lisp][BDF6F6E5-D219-4C49-BB3F-D414A9741B11]]
 (setq initial-scratch-message nil)
-;; (use-package lexbind-mode)
+(use-package lexbind-mode)
 
 (defun help/elisp-eval-buffer ()
   "Intelligently evaluate an Elisp buffer."
@@ -1437,7 +1437,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 (defun help/emacs-lisp-mode-hook-fn ()
   (interactive)
   (help/elisp-mode-local-bindings)
-  ;; (lexbind-mode)
+  (lexbind-mode)
   (eldoc-mode)
   (diminish 'eldoc-mode))
 
