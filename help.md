@@ -5448,9 +5448,15 @@ Load Beamer for creating presentations.
 
 When a drop of water joins the ocean it becomes the ocean.
 
-    [[file:./image/ditaa-drop_in_the_ocean.png]]
+<div class="RESULTS">
+![img](./image/ditaa-drop_in_the_ocean.png)
 
-    [[file:./image/ditaa-not_a_sailboat.png]]
+</div>
+
+<div class="RESULTS">
+![img](./image/ditaa-not_a_sailboat.png)
+
+</div>
 
 ```lisp
 (defconst help/ditaa-jar (concat (getenv "EELIB") "/ditaa.jar"))
@@ -5470,7 +5476,10 @@ When a drop of water joins the ocean it becomes the ocean.
   (setf (cdr (assoc "dot" org-src-lang-modes)) 'graphviz-dot))
 ```
 
-    [[file:./image/graphviz-life_is_simple.png]]
+<div class="RESULTS">
+![img](./image/graphviz-life_is_simple.png)
+
+</div>
 
 ## PlantUML
 
@@ -5494,13 +5503,19 @@ When a drop of water joins the ocean it becomes the ocean.
 -   Feature rich.
 -   Information rich.
 
-    [[file:./image/plantuml-sequence_diagram.png]]
+<div class="RESULTS">
+![img](./image/plantuml-sequence_diagram.png)
+
+</div>
 
 **Use Case Diagram**
 
 -   Actor variable aliasing feature.
 
-    [[file:./image/plantuml-use_case_diagram.png]]
+<div class="RESULTS">
+![img](./image/plantuml-use_case_diagram.png)
+
+</div>
 
 **Class Diagram**
 
@@ -5513,7 +5528,10 @@ When a drop of water joins the ocean it becomes the ocean.
     -   Packaging vs. namespaceing.
     -   Good support for splitting large images among output pages.
 
-    [[file:./image/plantuml-class_diagram.png]]
+<div class="RESULTS">
+![img](./image/plantuml-class_diagram.png)
+
+</div>
 
 **Activity Diagram**
 
@@ -5524,7 +5542,10 @@ When a drop of water joins the ocean it becomes the ocean.
 -   Partition construct.
 -   [New syntax](http://plantuml.sourceforge.net/activity2.html) with more examples.
 
-    [[file:./image/plantuml-activity_diagram.png]]
+<div class="RESULTS">
+![img](./image/plantuml-activity_diagram.png)
+
+</div>
 
 **Component Diagram**
 
@@ -5532,15 +5553,24 @@ When a drop of water joins the ocean it becomes the ocean.
 -   Identify &ldquo;Modern UML&rdquo;.
 -   Good for summaries.
 
-    [[file:./image/plantuml-component_diagram.png]]
+<div class="RESULTS">
+![img](./image/plantuml-component_diagram.png)
+
+</div>
 
 **State Diagram**
 
-    [[file:./image/plantuml-state_diagram.png]]
+<div class="RESULTS">
+![img](./image/plantuml-state_diagram.png)
+
+</div>
 
 **Object Diagram**
 
-    [[file:./image/plantuml-object_diagram.png]]
+<div class="RESULTS">
+![img](./image/plantuml-object_diagram.png)
+
+</div>
 
 -   Commands.
     -   Header and footer values.
