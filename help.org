@@ -4695,6 +4695,13 @@ Minimize Macro text.
 (setq org-hide-macro-markers t)
 #+END_SRC
 
+Follow links without using the mouse or more.
+
+#+NAME: 234B7922-3C6B-4F25-A2F6-E1073EB7FC83
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq org-return-follows-link t)
+#+END_SRC
+
 *** Keybindings
     :PROPERTIES:
     :ID:       0AA3F69B-F5F1-48DA-B8F7-B7C92CD30DB1

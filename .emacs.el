@@ -1620,6 +1620,9 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; [[file:~/src/help/help.org::*Org-Mode][6C80DBCA-AE28-4FE3-91E3-825E642735BA]]
 (setq org-hide-macro-markers t)
 ;; 6C80DBCA-AE28-4FE3-91E3-825E642735BA ends here
+;; [[file:~/src/help/help.org::*Org-Mode][234B7922-3C6B-4F25-A2F6-E1073EB7FC83]]
+(setq org-return-follows-link t)
+;; 234B7922-3C6B-4F25-A2F6-E1073EB7FC83 ends here
 ;; [[file:~/src/help/help.org::*Keybindings][8C7E90AC-C7EB-4A43-9377-C3C85CE51849]]
 (help/not-on-gui
  (define-key org-mode-map (kbd "RET") #'org-return-indent)
