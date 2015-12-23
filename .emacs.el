@@ -1669,8 +1669,8 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
   "
 _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ detangle _5_ id-create _6_ toggle-macro
 _q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ g2nms-b _t_ g2s-b/hd _y_ org-archive-subtree __u_ goto
-_a_ inshdrgs _s_ oblobigst            _h_ dksieb
-_c_ cksrcblk _b_ swtch2sessn _n_ n2sbtre"
+_a_ inshdrgs _s_ oblobigst            _h_ dksieb _k_ ob-check-src-blk
+_c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre"
   ;; Row 5
   ("1" org-babel-sha1-hash)
   ("2" org-display-inline-images)
@@ -1690,8 +1690,9 @@ _c_ cksrcblk _b_ swtch2sessn _n_ n2sbtre"
   ("a" org-babel-insert-header-arg)
   ("s" org-babel-lob-ingest)
   ("h" org-babel-do-key-sequence-in-edit-buffer)
+  ("k" org-babel-check-src-block)
   ;; Row 2
-  ("c" org-babel-check-src-block)
+  ("c" org-fill-paragraph)
   ("b" org-babel-switch-to-session)
   ("n" org-narrow-to-subtree))
 (key-chord-define-global "hh" #'help/hydra/right-side/org-mode/body)
