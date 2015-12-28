@@ -4,11 +4,7 @@
 
 #+STARTUP: showeverything
 
-<<<<<<< HEAD
-* AEADME
-=======
-* ZEADME
->>>>>>> 39baebefb19b7ec6dfbaba48df0e9a24ae62d276
+* README
   :PROPERTIES:
   :ID:       F651B86D-86C2-43A9-B0E6-CB94963BB502
   :END:
