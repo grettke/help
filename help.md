@@ -1855,6 +1855,7 @@ Pull in the `ENVIRONMENT` variables because the GUI version of EMACS does not.
  (use-package exec-path-from-shell
    :ensure t
    :config
+   (setq exec-path-from-shell-check-startup-files nil)
    (exec-path-from-shell-initialize)))
 ```
 
@@ -3068,7 +3069,7 @@ Warn of poor grammar immediately interrupting flow with a visual indicator.
 (use-package langtool
   :ensure t
   :init
-  (setq langtool-language-tool-jar (concat (getenv "EELIB") "/LanguageTool-2.8/languagetool-commandline.jar"))
+  (setq langtool-language-tool-jar (concat (getenv "EELIB") "/LanguageTool/languagetool-commandline.jar"))
   (setq langtool-mother-tongue "en")
   (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java")))
 ```
@@ -4026,7 +4027,7 @@ With that in mind this system:
 
 ```lisp
 (setq initial-scratch-message nil)
-;; (use-package lexbind-mode)
+(use-package lexbind-mode)
 
 (defun help/elisp-eval-buffer ()
   "Intelligently evaluate an Elisp buffer."
@@ -4047,7 +4048,7 @@ With that in mind this system:
 (defun help/emacs-lisp-mode-hook-fn ()
   (interactive)
   (help/elisp-mode-local-bindings)
-  ;; (lexbind-mode)
+  (lexbind-mode)
   (eldoc-mode)
   (diminish 'eldoc-mode))
 
@@ -4433,6 +4434,12 @@ Minimize Macro text.
 (setq org-hide-macro-markers t)
 ```
 
+Follow links without using the mouse or more.
+
+```lisp
+(setq org-return-follows-link t)
+```
+
 ### Keybindings
 
     ID: 0AA3F69B-F5F1-48DA-B8F7-B7C92CD30DB1
@@ -4530,8 +4537,8 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
       "
     _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ detangle _5_ id-create _6_ toggle-macro
     _q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ g2nms-b _t_ g2s-b/hd _y_ org-archive-subtree __u_ goto
-    _a_ inshdrgs _s_ oblobigst            _h_ dksieb
-    _c_ cksrcblk _b_ swtch2sessn _n_ n2sbtre"
+    _a_ inshdrgs _s_ oblobigst            _h_ dksieb _k_ ob-check-src-blk
+    _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre"
       ;; Row 5
       ("1" org-babel-sha1-hash)
       ("2" org-display-inline-images)
@@ -4551,8 +4558,9 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
       ("a" org-babel-insert-header-arg)
       ("s" org-babel-lob-ingest)
       ("h" org-babel-do-key-sequence-in-edit-buffer)
+      ("k" org-babel-check-src-block)
       ;; Row 2
-      ("c" org-babel-check-src-block)
+      ("c" org-fill-paragraph)
       ("b" org-babel-switch-to-session)
       ("n" org-narrow-to-subtree))
     (key-chord-define-global "hh" #'help/hydra/right-side/org-mode/body)
