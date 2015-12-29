@@ -1104,7 +1104,7 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
 (use-package langtool
   :ensure t
   :init
-  (setq langtool-language-tool-jar (concat (getenv "EELIB") "/LanguageTool-2.8/languagetool-commandline.jar"))
+  (setq langtool-language-tool-jar (concat (getenv "EELIB") "/LanguageTool/languagetool-commandline.jar"))
   (setq langtool-mother-tongue "en")
   (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java")))
 ;; 4FF40D35-DDA0-4E02-80C0-52962DCD449A ends here

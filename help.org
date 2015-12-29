@@ -3190,7 +3190,7 @@ Warn of poor grammar immediately interrupting flow with a visual indicator.
 (use-package langtool
   :ensure t
   :init
-  (setq langtool-language-tool-jar (concat (getenv "EELIB") "/LanguageTool-2.8/languagetool-commandline.jar"))
+  (setq langtool-language-tool-jar (concat (getenv "EELIB") "/LanguageTool/languagetool-commandline.jar"))
   (setq langtool-mother-tongue "en")
   (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java")))
 #+END_SRC
