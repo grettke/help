@@ -1970,6 +1970,7 @@ Pull in the =ENVIRONMENT= variables because the GUI version of EMACS does not.
  (use-package exec-path-from-shell
    :ensure t
    :config
+   (setq exec-path-from-shell-check-startup-files nil)
    (exec-path-from-shell-initialize)))
 #+END_SRC
 

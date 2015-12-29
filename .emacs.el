@@ -301,6 +301,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
  (use-package exec-path-from-shell
    :ensure t
    :config
+   (setq exec-path-from-shell-check-startup-files nil)
    (exec-path-from-shell-initialize)))
 ;; EA03614E-3B8C-4D07-A8E5-B03FFB120AE4 ends here
 ;; [[file:~/src/help/help.org::*OSX][98237FE5-5D02-4DCF-BCCB-082F90AE38D8]]
