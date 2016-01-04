@@ -301,6 +301,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
  (use-package exec-path-from-shell
    :ensure t
    :config
+   (setq exec-path-from-shell-check-startup-files nil)
    (exec-path-from-shell-initialize)))
 ;; EA03614E-3B8C-4D07-A8E5-B03FFB120AE4 ends here
 ;; [[file:~/src/help/help.org::*OSX][98237FE5-5D02-4DCF-BCCB-082F90AE38D8]]
@@ -1104,7 +1105,7 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
 (use-package langtool
   :ensure t
   :init
-  (setq langtool-language-tool-jar (concat (getenv "EELIB") "/LanguageTool-2.8/languagetool-commandline.jar"))
+  (setq langtool-language-tool-jar (concat (getenv "EELIB") "/LanguageTool/languagetool-commandline.jar"))
   (setq langtool-mother-tongue "en")
   (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java")))
 ;; 4FF40D35-DDA0-4E02-80C0-52962DCD449A ends here
