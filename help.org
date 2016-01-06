@@ -3700,15 +3700,20 @@ Configure EMACS to personal-taste for "noise" and "form".
    :ID:       4D367462-1C7B-4110-B7D1-E973D386B4E1
    :END:
 
-The linum gutter should not "shift" as it transitions between line numbers of
+The nlinum gutter should not "shift" as it transitions between line numbers of
 different magnitudes. For example going from line 99 to 100 will shift the
 buffer contents by one character. That is distracting and interrupts the flow.
+- Switched to ~nlinum~ from ~linum~ because of slowness with this file when headings
+  are collapsed
 
 Most files will be less than 100,000 lines.
 
 #+NAME: DC131133-BEC7-45D2-BA35-42E77FC3BB22
 #+BEGIN_SRC emacs-lisp :results output silent
-(defvar linum-format "%05d")
+(use-package nlinum
+  :ensure t
+  :config
+  (setq nlinum-format "%05d"))
 #+END_SRC
 
 ** Buffer
@@ -4124,6 +4129,10 @@ With that in mind this system:
   :config
   (setq-default fill-column help/column-width))
   #+END_SRC
+- Display line in file
+  #+NAME: 1A2B38F5-0C3E-4369-A059-B59C518A27FB
+  #+BEGIN_SRC emacs-lisp :results output silent
+  #+END_SRC
 
 #+NAME: 42D5F313-65F0-49E1-8759-9259D4020FA9
 #+BEGIN_SRC emacs-lisp :results output silent
@@ -4132,7 +4141,7 @@ With that in mind this system:
    programming."
   (interactive)
   (visual-line-mode)
-  (linum-mode)
+  (nlinum-mode)
   (fci-mode)
   (rainbow-mode)
   (help/try-to-add-imenu)

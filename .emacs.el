@@ -1356,13 +1356,16 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   :config
   (setq-default fill-column help/column-width))
 ;; 9288AC00-4B73-4E10-ABAE-F2E886981F97 ends here
+;; [[file:~/src/help/help.org::*Text-Mode][1A2B38F5-0C3E-4369-A059-B59C518A27FB]]
+
+;; 1A2B38F5-0C3E-4369-A059-B59C518A27FB ends here
 ;; [[file:~/src/help/help.org::*Text-Mode][42D5F313-65F0-49E1-8759-9259D4020FA9]]
 (defun help/text-prog*-setup ()
   "HELP's standard configuration for buffer's working with text, often for
    programming."
   (interactive)
   (visual-line-mode)
-  (linum-mode)
+  (nlinum-mode)
   (fci-mode)
   (rainbow-mode)
   (help/try-to-add-imenu)
@@ -2070,7 +2073,10 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
     (setq org-plantuml-jar-path help/plantuml-jar)))
 ;; 80EE7930-0025-4D06-96BB-24A70169CDEA ends here
 ;; [[file:~/src/help/help.org::*Line%20Number][DC131133-BEC7-45D2-BA35-42E77FC3BB22]]
-(defvar linum-format "%05d")
+(use-package nlinum
+  :ensure t
+  :config
+  (setq nlinum-format "%05d"))
 ;; DC131133-BEC7-45D2-BA35-42E77FC3BB22 ends here
 ;; [[file:~/src/help/help.org::*Buffer][61F1703A-48AA-4C2E-AE78-4C9766B6C8BC]]
 (setq inhibit-eol-conversion t)
