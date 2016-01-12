@@ -35,7 +35,7 @@
 -   Formatting
     -   Code Snippet.
         -   Programming language expressions.
-        -   Use `code style`.
+        -   Use `code style`
     -   Non-Code Snippet.
         -   Program names, file types
         -   Use `verbatim` style

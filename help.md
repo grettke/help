@@ -66,7 +66,7 @@
 -   Formatting
     -   Code Snippet.
         -   Programming language expressions.
-        -   Use `code style`.
+        -   Use `code style`
     -   Non-Code Snippet.
         -   Program names, file types
         -   Use `verbatim` style
@@ -3523,14 +3523,20 @@ Configure EMACS to personal-taste for &ldquo;noise&rdquo; and &ldquo;form&rdquo;
 
     ID: 4D367462-1C7B-4110-B7D1-E973D386B4E1
 
-The linum gutter should not &ldquo;shift&rdquo; as it transitions between line numbers of
+The nlinum gutter should not &ldquo;shift&rdquo; as it transitions between line numbers of
 different magnitudes. For example going from line 99 to 100 will shift the
 buffer contents by one character. That is distracting and interrupts the flow.
+
+-   Switched to `nlinum` from `linum` because of slowness with this file when headings
+    are collapsed
 
 Most files will be less than 100,000 lines.
 
 ```lisp
-(defvar linum-format "%05d")
+(use-package nlinum
+  :ensure t
+  :config
+  (setq nlinum-format "%05d"))
 ```
 
 ## Buffer
@@ -3911,6 +3917,10 @@ With that in mind this system:
       :config
       (setq-default fill-column help/column-width))
     ```
+-   Display line in file
+
+    ```lisp
+    ```
 
 ```lisp
 (defun help/text-prog*-setup ()
@@ -3918,7 +3928,7 @@ With that in mind this system:
    programming."
   (interactive)
   (visual-line-mode)
-  (linum-mode)
+  (nlinum-mode)
   (fci-mode)
   (rainbow-mode)
   (help/try-to-add-imenu)
@@ -4536,7 +4546,7 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
                                                      :hint nil)
       "
     _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ detangle _5_ id-create _6_ toggle-macro
-    _q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ g2nms-b _t_ g2s-b/hd _y_ org-archive-subtree __u_ goto
+    _q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ g2nms-b _t_ g2s-b/hd _y_ org-archive-subtree _u_ goto
     _a_ inshdrgs _s_ oblobigst            _h_ dksieb _k_ ob-check-src-blk
     _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre"
       ;; Row 5

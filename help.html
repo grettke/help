@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2015-12-28 Mon 23:39 -->
+<!-- 2016-01-11 Mon 19:45 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title></title>
@@ -257,7 +257,7 @@ configuration lives in the <code>use-package</code> block as possible.</li>
 <li>Code Snippet.
 <ul class="org-ul">
 <li>Programming language expressions.</li>
-<li>Use <code>code style</code>.</li>
+<li>Use <code>code style</code></li>
 </ul></li>
 <li>Non-Code Snippet.
 <ul class="org-ul">
@@ -5307,10 +5307,14 @@ ID: 4D367462-1C7B-4110-B7D1-E973D386B4E1
 </pre>
 
 <p>
-The linum gutter should not &ldquo;shift&rdquo; as it transitions between line numbers of
+The nlinum gutter should not &ldquo;shift&rdquo; as it transitions between line numbers of
 different magnitudes. For example going from line 99 to 100 will shift the
 buffer contents by one character. That is distracting and interrupts the flow.
 </p>
+<ul class="org-ul">
+<li>Switched to <code>nlinum</code> from <code>linum</code> because of slowness with this file when headings
+are collapsed</li>
+</ul>
 
 <p>
 Most files will be less than 100,000 lines.
@@ -5318,7 +5322,10 @@ Most files will be less than 100,000 lines.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock160">(<span class="org-keyword">defvar</span> <span class="org-variable-name">linum-format</span> <span class="org-string">"%05d"</span>)
+<pre class="src src-emacs-lisp" id="orgsrcblock160">(<span class="org-keyword">use-package</span> <span class="org-constant">nlinum</span>
+  <span class="org-builtin">:ensure</span> t
+  <span class="org-builtin">:config</span>
+  (setq nlinum-format <span class="org-string">"%05d"</span>))
 </pre>
 </div>
 </div>
@@ -5910,16 +5917,23 @@ Indicate that Text-Mode buffers ought to be 80 characters wide.
   (setq-default fill-column help/column-width))
 </pre>
 </div></li>
+<li><p>
+Display line in file
+</p>
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="orgsrcblock186"></pre>
+</div></li>
 </ul>
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock186">(<span class="org-keyword">defun</span> <span class="org-function-name">help/text-prog*-setup</span> ()
+<pre class="src src-emacs-lisp" id="orgsrcblock187">(<span class="org-keyword">defun</span> <span class="org-function-name">help/text-prog*-setup</span> ()
   <span class="org-doc">"HELP's standard configuration for buffer's working with text, often for</span>
 <span class="org-doc">   programming."</span>
   (interactive)
   (visual-line-mode)
-  (linum-mode)
+  (nlinum-mode)
   (fci-mode)
   (rainbow-mode)
   (help/try-to-add-imenu)
@@ -5950,7 +5964,7 @@ Configurations common to every hacking vehicle.
 </p>
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock187">(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook R-mode-hook SAS-mode-hook graphviz-dot-mode-hook c-mode-common-hook))
+<pre class="src src-emacs-lisp" id="orgsrcblock188">(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook R-mode-hook SAS-mode-hook graphviz-dot-mode-hook c-mode-common-hook))
 </pre>
 </div></li>
 <li>LISP mode hooks.
@@ -5960,7 +5974,7 @@ Are hacking modes.
 </p>
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock188">(setq help/hack-lisp-modes
+<pre class="src src-emacs-lisp" id="orgsrcblock189">(setq help/hack-lisp-modes
       '(emacs-lisp-mode-hook
         ielm-mode-hook
         lisp-interaction-mode-hook
@@ -5999,7 +6013,7 @@ use this documents logical <code>prog*-mode</code> approach instead.
 </p>
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock189">(<span class="org-keyword">use-package</span> <span class="org-constant">aggressive-indent</span>
+<pre class="src src-emacs-lisp" id="orgsrcblock190">(<span class="org-keyword">use-package</span> <span class="org-constant">aggressive-indent</span>
   <span class="org-builtin">:ensure</span> t
   <span class="org-builtin">:config</span>)
 </pre>
@@ -6011,7 +6025,7 @@ behavior for most modes.
 </p>
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock190">(<span class="org-keyword">use-package</span> <span class="org-constant">smartparens-config</span>
+<pre class="src src-emacs-lisp" id="orgsrcblock191">(<span class="org-keyword">use-package</span> <span class="org-constant">smartparens-config</span>
   <span class="org-builtin">:ensure</span> smartparens
   <span class="org-builtin">:config</span>
   (setq sp-show-pair-from-inside nil)
@@ -6028,7 +6042,7 @@ ID: 61A981CB-1311-4F51-A264-D748FA34F1D3
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock191">(<span class="org-keyword">defun</span> <span class="org-function-name">help/hack-prog*-mode-hook-fn</span> ()
+<pre class="src src-emacs-lisp" id="orgsrcblock192">(<span class="org-keyword">defun</span> <span class="org-function-name">help/hack-prog*-mode-hook-fn</span> ()
   (interactive)
   (help/text-prog*-setup)
   (smartparens-strict-mode)
@@ -6050,7 +6064,7 @@ ID: 50304E30-682C-4C9A-9615-D6E61DAE533B
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock192">(<span class="org-keyword">let</span> ()
+<pre class="src src-emacs-lisp" id="orgsrcblock193">(<span class="org-keyword">let</span> ()
   (<span class="org-keyword">--each</span> help/hack-modes
     (add-hook <span class="org-variable-name">it</span> #'help/hack-prog*-mode-hook-fn)))
 
@@ -6083,7 +6097,7 @@ ID: 3AD91697-42DE-4555-9F49-B7D9F5E502D3
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock193">(setq initial-scratch-message nil)
+<pre class="src src-emacs-lisp" id="orgsrcblock194">(setq initial-scratch-message nil)
 (<span class="org-keyword">use-package</span> <span class="org-constant">lexbind-mode</span>)
 
 (<span class="org-keyword">defun</span> <span class="org-function-name">help/elisp-eval-buffer</span> ()
@@ -6134,7 +6148,7 @@ ID: 3A6B16EC-870A-4EFE-935A-C03F8DFB67BF
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock194">(define-key emacs-lisp-mode-map (kbd <span class="org-string">"s-p"</span>) #'describe-thing-in-popup)
+<pre class="src src-emacs-lisp" id="orgsrcblock195">(define-key emacs-lisp-mode-map (kbd <span class="org-string">"s-p"</span>) #'describe-thing-in-popup)
 </pre>
 </div>
 </div>
@@ -6159,7 +6173,7 @@ to behave more predictably.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock195">(setq org-babel-min-lines-for-block-output 0)
+<pre class="src src-emacs-lisp" id="orgsrcblock196">(setq org-babel-min-lines-for-block-output 0)
 </pre>
 </div>
 
@@ -6170,7 +6184,7 @@ rest of this system.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock196">(setq org-edit-src-auto-save-idle-delay 0)
+<pre class="src src-emacs-lisp" id="orgsrcblock197">(setq org-edit-src-auto-save-idle-delay 0)
 (setq org-edit-src-turn-on-auto-save nil)
 </pre>
 </div>
@@ -6183,7 +6197,7 @@ how the results of evaluation are refreshed in EMACS.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock197">(<span class="org-keyword">defun</span> <span class="org-function-name">help/org-babel-after-execute-hook</span> ()
+<pre class="src src-emacs-lisp" id="orgsrcblock198">(<span class="org-keyword">defun</span> <span class="org-function-name">help/org-babel-after-execute-hook</span> ()
   <span class="org-doc">"HELP settings for the `</span><span class="org-constant"><span class="org-doc">org-babel-after-execute-hook</span></span><span class="org-doc">'.</span>
 
 <span class="org-doc">This does not interfere with exports.</span>
@@ -6202,7 +6216,7 @@ Never &ldquo;automatically&rdquo; evaluate a source block.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock198">(setq org-confirm-babel-evaluate nil)
+<pre class="src src-emacs-lisp" id="orgsrcblock199">(setq org-confirm-babel-evaluate nil)
 </pre>
 </div>
 
@@ -6214,7 +6228,7 @@ source-blocks outside of that place.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock199">(setq org-src-tab-acts-natively nil)
+<pre class="src src-emacs-lisp" id="orgsrcblock200">(setq org-src-tab-acts-natively nil)
 </pre>
 </div>
 
@@ -6234,7 +6248,7 @@ Personal workflow:
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock200">(setq org-todo-keywords
+<pre class="src src-emacs-lisp" id="orgsrcblock201">(setq org-todo-keywords
       '((sequence
          <span class="org-string">"TODO"</span>
          <span class="org-string">"PROGRESS"</span>
@@ -6254,7 +6268,7 @@ Emacs.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock201">(setq org-startup-with-inline-images (display-graphic-p))
+<pre class="src src-emacs-lisp" id="orgsrcblock202">(setq org-startup-with-inline-images (display-graphic-p))
 </pre>
 </div>
 
@@ -6264,7 +6278,7 @@ Use Ido completion in Org-Mode.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock202">(setq org-completion-use-ido t)
+<pre class="src src-emacs-lisp" id="orgsrcblock203">(setq org-completion-use-ido t)
 (setq org-outline-path-complete-in-steps nil)
 (setq org-completion-use-iswitchb nil)
 </pre>
@@ -6277,7 +6291,7 @@ use <code>c</code> for cycling the header expansion.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock203">(setq org-use-speed-commands t)
+<pre class="src src-emacs-lisp" id="orgsrcblock204">(setq org-use-speed-commands t)
 </pre>
 </div>
 
@@ -6288,7 +6302,7 @@ activity. It is. It is interactive.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock204">(setq org-confirm-shell-link-function 'y-or-n-p)
+<pre class="src src-emacs-lisp" id="orgsrcblock205">(setq org-confirm-shell-link-function 'y-or-n-p)
 </pre>
 </div>
 
@@ -6298,7 +6312,7 @@ Ask before execution of Emacs-Lisp.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock205">(setq org-confirm-elisp-link-function 'y-or-n-p)
+<pre class="src src-emacs-lisp" id="orgsrcblock206">(setq org-confirm-elisp-link-function 'y-or-n-p)
 </pre>
 </div>
 
@@ -6309,7 +6323,7 @@ turning to DONE.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock206">(setq org-enforce-todo-dependencies t)
+<pre class="src src-emacs-lisp" id="orgsrcblock207">(setq org-enforce-todo-dependencies t)
 </pre>
 </div>
 
@@ -6319,7 +6333,7 @@ Allow the mouse to do Org-Mode things like expand and collapse headings.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock207">(<span class="org-keyword">when</span> (display-graphic-p)
+<pre class="src src-emacs-lisp" id="orgsrcblock208">(<span class="org-keyword">when</span> (display-graphic-p)
   (<span class="org-keyword">use-package</span> <span class="org-constant">org-mouse</span>))
 </pre>
 </div>
@@ -6331,7 +6345,7 @@ header is collapsed.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock208">(setq org-ellipsis <span class="org-string">"&#8230;"</span>)
+<pre class="src src-emacs-lisp" id="orgsrcblock209">(setq org-ellipsis <span class="org-string">"&#8230;"</span>)
 </pre>
 </div>
 
@@ -6342,7 +6356,7 @@ don&rsquo;t show them, only show the significant and last one.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock209">(setq org-hide-leading-stars t)
+<pre class="src src-emacs-lisp" id="orgsrcblock210">(setq org-hide-leading-stars t)
 </pre>
 </div>
 
@@ -6354,7 +6368,7 @@ any other text document.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock210">(setq org-adapt-indentation nil)
+<pre class="src src-emacs-lisp" id="orgsrcblock211">(setq org-adapt-indentation nil)
 </pre>
 </div>
 
@@ -6364,7 +6378,7 @@ Display emphasized text as you would in a WYSIWYG editor.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock211">(setq org-fontify-emphasized-text t)
+<pre class="src src-emacs-lisp" id="orgsrcblock212">(setq org-fontify-emphasized-text t)
 </pre>
 </div>
 
@@ -6376,7 +6390,7 @@ this example in LaTeX versus Text.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock212">(setq org-pretty-entities t)
+<pre class="src src-emacs-lisp" id="orgsrcblock213">(setq org-pretty-entities t)
 </pre>
 </div>
 
@@ -6395,7 +6409,7 @@ and related markup.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock213">(setq org-highlight-latex-and-related '(latex script entities))
+<pre class="src src-emacs-lisp" id="orgsrcblock214">(setq org-highlight-latex-and-related '(latex script entities))
 </pre>
 </div>
 
@@ -6405,7 +6419,7 @@ Allow &ldquo;refactoring&rdquo; of Footnotes between documents.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock214">(setq org-footnote-define-inline t)
+<pre class="src src-emacs-lisp" id="orgsrcblock215">(setq org-footnote-define-inline t)
 (setq org-footnote-auto-label 'random)
 (setq org-footnote-auto-adjust nil)
 (setq org-footnote-section nil)
@@ -6419,7 +6433,7 @@ org docs, the more you realize how you must truly protect it.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock215">(setq org-catch-invisible-edits 'error)
+<pre class="src src-emacs-lisp" id="orgsrcblock216">(setq org-catch-invisible-edits 'error)
 </pre>
 </div>
 
@@ -6431,7 +6445,7 @@ ever used it.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock216">(setq org-loop-over-headlines-in-active-region t)
+<pre class="src src-emacs-lisp" id="orgsrcblock217">(setq org-loop-over-headlines-in-active-region t)
 </pre>
 </div>
 
@@ -6443,7 +6457,7 @@ expanded. Anyway, the structure cycling makes it really, really easy to get an
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock217">(setq org-startup-folded <span class="org-string">"nofold"</span>)
+<pre class="src src-emacs-lisp" id="orgsrcblock218">(setq org-startup-folded <span class="org-string">"nofold"</span>)
 </pre>
 </div>
 
@@ -6455,7 +6469,7 @@ export will be stated explicitly.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock218">(setq org-image-actual-width t)
+<pre class="src src-emacs-lisp" id="orgsrcblock219">(setq org-image-actual-width t)
 </pre>
 </div>
 
@@ -6466,7 +6480,7 @@ alignment.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock219">(setq org-hide-emphasis-markers t)
+<pre class="src src-emacs-lisp" id="orgsrcblock220">(setq org-hide-emphasis-markers t)
 </pre>
 </div>
 
@@ -6476,7 +6490,7 @@ Realign tables automatically.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock220">(setq org-startup-align-all-tables t)
+<pre class="src src-emacs-lisp" id="orgsrcblock221">(setq org-startup-align-all-tables t)
 </pre>
 </div>
 
@@ -6486,7 +6500,7 @@ Always use Unicode checkboxes.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock221">(setq org-html-checkbox-type 'unicode)
+<pre class="src src-emacs-lisp" id="orgsrcblock222">(setq org-html-checkbox-type 'unicode)
 </pre>
 </div>
 
@@ -6496,7 +6510,7 @@ You may display syntax highlighting for code in source blocks. I don&rsquo;t.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock222">(setq org-src-fontify-natively nil)
+<pre class="src src-emacs-lisp" id="orgsrcblock223">(setq org-src-fontify-natively nil)
 </pre>
 </div>
 
@@ -6513,7 +6527,7 @@ will enable this feature and try it out again.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock223">(setq org-src-strip-leading-and-trailing-blank-lines t)
+<pre class="src src-emacs-lisp" id="orgsrcblock224">(setq org-src-strip-leading-and-trailing-blank-lines t)
 </pre>
 </div>
 
@@ -6532,7 +6546,7 @@ task. Anything else results in distractions and errors.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock224">(setq org-src-window-setup 'current-window)
+<pre class="src src-emacs-lisp" id="orgsrcblock225">(setq org-src-window-setup 'current-window)
 </pre>
 </div>
 
@@ -6549,7 +6563,7 @@ make it so easy as <code>C-c C-c</code>.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock225">(setq org-babel-no-eval-on-ctrl-c-ctrl-c t)
+<pre class="src src-emacs-lisp" id="orgsrcblock226">(setq org-babel-no-eval-on-ctrl-c-ctrl-c t)
 </pre>
 </div>
 
@@ -6564,7 +6578,7 @@ thing before any version control modes that would result in the same condition.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock226">(<span class="org-keyword">defun</span> <span class="org-function-name">help/vc-next-action</span> ()
+<pre class="src src-emacs-lisp" id="orgsrcblock227">(<span class="org-keyword">defun</span> <span class="org-function-name">help/vc-next-action</span> ()
   <span class="org-doc">"If in org source block, exit it before `</span><span class="org-constant"><span class="org-doc">vc-next-action</span></span><span class="org-doc">'."</span>
   (interactive)
   (<span class="org-keyword">when</span> (<span class="org-keyword">condition-case</span> nil
@@ -6589,7 +6603,7 @@ Never use the original version.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock227">(setq org-edit-src-code nil)
+<pre class="src src-emacs-lisp" id="orgsrcblock228">(setq org-edit-src-code nil)
 </pre>
 </div>
 
@@ -6600,7 +6614,7 @@ Smartparens provides that functionality for programming modes.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock228">(<span class="org-keyword">use-package</span> <span class="org-constant">wrap-region</span>
+<pre class="src src-emacs-lisp" id="orgsrcblock229">(<span class="org-keyword">use-package</span> <span class="org-constant">wrap-region</span>
   <span class="org-builtin">:ensure</span> t
   <span class="org-builtin">:config</span>
   <span class="org-builtin">:diminish</span> wrap-region-mode)
@@ -6613,7 +6627,7 @@ Smartparens provides that functionality for programming modes.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock229">(wrap-region-add-wrapper <span class="org-string">"*"</span> <span class="org-string">"*"</span> nil 'org-mode)
+<pre class="src src-emacs-lisp" id="orgsrcblock230">(wrap-region-add-wrapper <span class="org-string">"*"</span> <span class="org-string">"*"</span> nil 'org-mode)
 </pre>
 </div>
 
@@ -6623,7 +6637,7 @@ Smartparens provides that functionality for programming modes.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock230">(wrap-region-add-wrapper <span class="org-string">"/"</span> <span class="org-string">"/"</span> nil 'org-mode)
+<pre class="src src-emacs-lisp" id="orgsrcblock231">(wrap-region-add-wrapper <span class="org-string">"/"</span> <span class="org-string">"/"</span> nil 'org-mode)
 </pre>
 </div>
 
@@ -6632,7 +6646,7 @@ Smartparens provides that functionality for programming modes.
 </p>
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock231">(wrap-region-add-wrapper <span class="org-string">"="</span> <span class="org-string">"="</span> nil 'org-mode)
+<pre class="src src-emacs-lisp" id="orgsrcblock232">(wrap-region-add-wrapper <span class="org-string">"="</span> <span class="org-string">"="</span> nil 'org-mode)
 </pre>
 </div>
 
@@ -6642,7 +6656,7 @@ Smartparens provides that functionality for programming modes.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock232">(wrap-region-add-wrapper <span class="org-string">"~"</span> <span class="org-string">"~"</span> nil 'org-mode)
+<pre class="src src-emacs-lisp" id="orgsrcblock233">(wrap-region-add-wrapper <span class="org-string">"~"</span> <span class="org-string">"~"</span> nil 'org-mode)
 </pre>
 </div>
 
@@ -6651,7 +6665,7 @@ Smartparens provides that functionality for programming modes.
 </p>
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock233">(wrap-region-add-wrapper <span class="org-string">"+"</span> <span class="org-string">"+"</span> nil 'org-mode)
+<pre class="src src-emacs-lisp" id="orgsrcblock234">(wrap-region-add-wrapper <span class="org-string">"+"</span> <span class="org-string">"+"</span> nil 'org-mode)
 </pre>
 </div>
 
@@ -6661,7 +6675,7 @@ Minimize Macro text.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock234">(setq org-hide-macro-markers t)
+<pre class="src src-emacs-lisp" id="orgsrcblock235">(setq org-hide-macro-markers t)
 </pre>
 </div>
 
@@ -6671,7 +6685,7 @@ Follow links without using the mouse or more.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock235">(setq org-return-follows-link t)
+<pre class="src src-emacs-lisp" id="orgsrcblock236">(setq org-return-follows-link t)
 </pre>
 </div>
 </div>
@@ -6719,7 +6733,7 @@ and next line then position the cursor correctly indented at the start of it.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock236">(help/not-on-gui
+<pre class="src src-emacs-lisp" id="orgsrcblock237">(help/not-on-gui
  (define-key org-mode-map (kbd <span class="org-string">"RET"</span>) #'org-return-indent)
  (define-key org-mode-map (kbd <span class="org-string">"C-M-RET"</span>) #'electric-indent-just-newline))
 (help/on-gui
@@ -6736,7 +6750,7 @@ ID: B09BE660-B5D5-40CA-8952-D2DEAE20E7BD
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock237">(define-key org-mode-map (kbd <span class="org-string">"s-6"</span>) #'org-babel-load-in-session)
+<pre class="src src-emacs-lisp" id="orgsrcblock238">(define-key org-mode-map (kbd <span class="org-string">"s-6"</span>) #'org-babel-load-in-session)
 (define-key org-mode-map (kbd <span class="org-string">"s-7"</span>) #'org-babel-switch-to-session)
 (define-key org-mode-map (kbd <span class="org-string">"s-8"</span>) #'org-babel-switch-to-session-with-code)
 (define-key org-mode-map (kbd <span class="org-string">"s-9"</span>) #'org-todo)
@@ -6751,7 +6765,7 @@ ID: 1E49694B-6350-45E2-BE58-21EAAF09D4A2
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock238">(define-key org-mode-map (kbd <span class="org-string">"s-y"</span>) #'help/safb-org-babel-execute-buffer)
+<pre class="src src-emacs-lisp" id="orgsrcblock239">(define-key org-mode-map (kbd <span class="org-string">"s-y"</span>) #'help/safb-org-babel-execute-buffer)
 (define-key org-mode-map (kbd <span class="org-string">"s-u"</span>) #'help/safb-org-babel-execute-subtree)
 (define-key org-mode-map (kbd <span class="org-string">"s-U"</span>) #'org-mark-ring-goto)
 (define-key org-mode-map (kbd <span class="org-string">"s-i"</span>) #'org-babel-execute-src-block)
@@ -6769,7 +6783,7 @@ ID: D11109EE-AD92-4E26-988F-AF3CC70A2F69
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock239">(define-key org-mode-map (kbd <span class="org-string">"s-h"</span>) #'help/safb-org-babel-tangle)
+<pre class="src src-emacs-lisp" id="orgsrcblock240">(define-key org-mode-map (kbd <span class="org-string">"s-h"</span>) #'help/safb-org-babel-tangle)
 (define-key org-mode-map (kbd <span class="org-string">"s-j"</span>) #'org-babel-next-src-block)
 (define-key org-mode-map (kbd <span class="org-string">"s-k"</span>) #'org-babel-previous-src-block)
 (define-key org-mode-map (kbd <span class="org-string">"s-l"</span>) #'help/safb-org-edit-src-code)
@@ -6789,7 +6803,7 @@ ID: CA925DDA-8EA8-47B0-AE9A-D73073CF51B7
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock240">(define-key org-mode-map (kbd <span class="org-string">"s-n"</span>) #'org-babel-view-src-block-info)
+<pre class="src src-emacs-lisp" id="orgsrcblock241">(define-key org-mode-map (kbd <span class="org-string">"s-n"</span>) #'org-babel-view-src-block-info)
 (define-key org-mode-map (kbd <span class="org-string">"s-m"</span>) #'org-babel-expand-src-block)
 (define-key org-mode-map (kbd <span class="org-string">"s-,"</span>) #'org-babel-open-src-block-result)
 (define-key org-mode-map (kbd <span class="org-string">"s-."</span>) #'org-time-stamp)
@@ -6804,11 +6818,11 @@ ID: 46BCE65B-B8C9-49A0-A687-30D1330DB07D
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock241">(defhydra help/hydra/right-side/org-mode (<span class="org-builtin">:color</span> <span class="ATTRLIST"><span class="ATTRLIST-1">blue</span></span>
+<pre class="src src-emacs-lisp" id="orgsrcblock242">(defhydra help/hydra/right-side/org-mode (<span class="org-builtin">:color</span> <span class="ATTRLIST"><span class="ATTRLIST-1">blue</span></span>
                                                  <span class="org-builtin">:hint</span> nil)
   <span class="org-string">"</span>
 <span class="org-string">_1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ detangle _5_ id-create _6_ toggle-macro</span>
-<span class="org-string">_q_ &#8592;/w-code _w_ tbletfld _e_ g2nmrst _r_ g2nms-b _t_ g2s-b/hd _y_ org-archive-subtree __u_ goto</span>
+<span class="org-string">_q_ &#8592;/w-code _w_ tbletfld _e_ g2nmrst _r_ g2nms-b _t_ g2s-b/hd _y_ org-archive-subtree _u_ goto</span>
 <span class="org-string">_a_ inshdrgs _s_ oblobigst            _h_ dksieb _k_ ob-check-src-blk</span>
 <span class="org-string">_c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre"</span>
   <span class="org-comment-delimiter">;; </span><span class="org-comment">Row 5</span>
@@ -6845,7 +6859,7 @@ Save all buffers before working with Exports.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock242">(define-key org-mode-map (kbd <span class="org-string">"C-</span><span class="org-writegood-duplicates"><span class="org-string">c C</span></span><span class="org-string">-e"</span>) #'help/safb-org-export-dispatch)
+<pre class="src src-emacs-lisp" id="orgsrcblock243">(define-key org-mode-map (kbd <span class="org-string">"C-</span><span class="org-writegood-duplicates"><span class="org-string">c C</span></span><span class="org-string">-e"</span>) #'help/safb-org-export-dispatch)
 </pre>
 </div>
 
@@ -6855,7 +6869,7 @@ Make <code>s-l</code> do the same thing to leave the Source-Block-Buffer.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock243">(define-key org-src-mode-map (kbd <span class="org-string">"s-l"</span>) #'org-edit-src-exit)
+<pre class="src src-emacs-lisp" id="orgsrcblock244">(define-key org-src-mode-map (kbd <span class="org-string">"s-l"</span>) #'org-edit-src-exit)
 </pre>
 </div>
 
@@ -6865,7 +6879,7 @@ Easily enter guillemots.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock244">(key-chord-define org-src-mode-map <span class="org-string">"&lt;&lt;"</span> (<span class="org-keyword">lambda</span> () (interactive) (insert <span class="org-string">"&#171;"</span>)))
+<pre class="src src-emacs-lisp" id="orgsrcblock245">(key-chord-define org-src-mode-map <span class="org-string">"&lt;&lt;"</span> (<span class="org-keyword">lambda</span> () (interactive) (insert <span class="org-string">"&#171;"</span>)))
 (key-chord-define org-src-mode-map <span class="org-string">"&gt;&gt;"</span> (<span class="org-keyword">lambda</span> () (interactive) (insert <span class="org-string">"&#187;"</span>)))
 </pre>
 </div>
@@ -6890,7 +6904,7 @@ ID: CB6305D8-DDBB-4865-8CAD-3648B31B76DB
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock245">(<span class="org-keyword">use-package</span> <span class="org-constant">ess</span>
+<pre class="src src-emacs-lisp" id="orgsrcblock246">(<span class="org-keyword">use-package</span> <span class="org-constant">ess</span>
   <span class="org-builtin">:ensure</span> t)
 </pre>
 </div>
@@ -6901,7 +6915,7 @@ Display object documentation.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock246">(setq ess-eldoc-show-on-symbol t)
+<pre class="src src-emacs-lisp" id="orgsrcblock247">(setq ess-eldoc-show-on-symbol t)
 </pre>
 </div>
 
@@ -6934,7 +6948,7 @@ Data viewing:
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock247">(setq ess-describe-at-point-method 'tooltip)
+<pre class="src src-emacs-lisp" id="orgsrcblock248">(setq ess-describe-at-point-method 'tooltip)
 </pre>
 </div>
 
@@ -6944,7 +6958,7 @@ Always start <code>ess</code> within the curent <code>emacs</code> frame, it doe
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock248">(setq inferior-ess-same-window nil)
+<pre class="src src-emacs-lisp" id="orgsrcblock249">(setq inferior-ess-same-window nil)
 (setq inferior-ess-own-frame nil)
 </pre>
 </div>
@@ -6955,7 +6969,7 @@ Help buffers all belong in the same frame.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock249">(setq ess-help-own-frame nil)
+<pre class="src src-emacs-lisp" id="orgsrcblock250">(setq ess-help-own-frame nil)
 </pre>
 </div>
 
@@ -6966,7 +6980,7 @@ rather than to a new dedicated buffer for them.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock250">(setq ess-execute-in-process-buffer t)
+<pre class="src src-emacs-lisp" id="orgsrcblock251">(setq ess-execute-in-process-buffer t)
 </pre>
 </div>
 
@@ -6979,7 +6993,7 @@ scroll back after the fact to see the history.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock251">(setq ess-switch-to-end-of-proc-buffer t)
+<pre class="src src-emacs-lisp" id="orgsrcblock252">(setq ess-switch-to-end-of-proc-buffer t)
 </pre>
 </div>
 
@@ -6990,7 +7004,7 @@ next char is a symbol or closed paren.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock252">(setq ess-tab-complete-in-script t)
+<pre class="src src-emacs-lisp" id="orgsrcblock253">(setq ess-tab-complete-in-script t)
 (setq ess-first-tab-never-complete 'symbol-or-paren-or-punct)
 </pre>
 </div>
@@ -7001,7 +7015,7 @@ Use <code>ido</code> completion whenever possible.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock253">(setq ess-use-ido t)
+<pre class="src src-emacs-lisp" id="orgsrcblock254">(setq ess-use-ido t)
 </pre>
 </div>
 
@@ -7012,7 +7026,7 @@ Try to keep help strings at 10 chars or less.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock254">(setq ess-use-eldoc t)
+<pre class="src src-emacs-lisp" id="orgsrcblock255">(setq ess-use-eldoc t)
 (setq ess-eldoc-show-on-symbol t)
 (setq ess-eldoc-abbreviation-style 'normal)
 </pre>
@@ -7053,7 +7067,7 @@ need to be kept.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock255">(setq ess-keep-dump-files +1)
+<pre class="src src-emacs-lisp" id="orgsrcblock256">(setq ess-keep-dump-files +1)
 </pre>
 </div>
 
@@ -7069,7 +7083,7 @@ later reuse.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock256">(setq ess-delete-dump-files nil)
+<pre class="src src-emacs-lisp" id="orgsrcblock257">(setq ess-delete-dump-files nil)
 </pre>
 </div>
 
@@ -7084,7 +7098,7 @@ in sync. Yes, it is really that important.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock257">(setq ess-mode-silently-save +1)
+<pre class="src src-emacs-lisp" id="orgsrcblock258">(setq ess-mode-silently-save +1)
 </pre>
 </div>
 
@@ -7104,7 +7118,7 @@ and see how it goes.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock258">(setq ess-eval-visibly 'nowait)
+<pre class="src src-emacs-lisp" id="orgsrcblock259">(setq ess-eval-visibly 'nowait)
 </pre>
 </div>
 </div>
@@ -7134,7 +7148,7 @@ Enable a debugger.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock259">(setq ess-use-tracebug t)
+<pre class="src src-emacs-lisp" id="orgsrcblock260">(setq ess-use-tracebug t)
 </pre>
 </div>
 
@@ -7144,7 +7158,7 @@ Configure debugger search path per-project.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock260">(setq ess-tracebug-search-path '())
+<pre class="src src-emacs-lisp" id="orgsrcblock261">(setq ess-tracebug-search-path '())
 </pre>
 </div>
 
@@ -7154,7 +7168,7 @@ Easily nevigate errors.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock261">(define-key compilation-minor-mode-map [(?n)] #'next-error-no-select)
+<pre class="src src-emacs-lisp" id="orgsrcblock262">(define-key compilation-minor-mode-map [(?n)] #'next-error-no-select)
 (define-key compilation-minor-mode-map [(?p)] #'previous-error-no-select)
 </pre>
 </div>
@@ -7165,7 +7179,7 @@ Diminish watched variable font-size.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock262">(setq ess-watch-scale-amount -1)
+<pre class="src src-emacs-lisp" id="orgsrcblock263">(setq ess-watch-scale-amount -1)
 </pre>
 </div>
 
@@ -7177,7 +7191,7 @@ should be.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock263">(setq ess-ask-for-ess-directory nil)
+<pre class="src src-emacs-lisp" id="orgsrcblock264">(setq ess-ask-for-ess-directory nil)
 </pre>
 </div>
 
@@ -7189,7 +7203,7 @@ approach of the original value here.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock264">(setq inferior-ess-exit-command <span class="org-string">"q('no')</span>
+<pre class="src src-emacs-lisp" id="orgsrcblock265">(setq inferior-ess-exit-command <span class="org-string">"q('no')</span>
 <span class="org-string">"</span>)
 </pre>
 </div>
@@ -7200,7 +7214,7 @@ Visualize just about anything with <code>ess-R-object-popup</code>.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock265">(<span class="org-keyword">use-package</span> <span class="org-constant">ess-R-object-popup</span>
+<pre class="src src-emacs-lisp" id="orgsrcblock266">(<span class="org-keyword">use-package</span> <span class="org-constant">ess-R-object-popup</span>
   <span class="org-builtin">:ensure</span> t)
 </pre>
 </div>
@@ -7215,7 +7229,7 @@ Rdired is another way to work with object:
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock266">(autoload 'ess-rdired <span class="org-string">"ess-rdired"</span>)
+<pre class="src src-emacs-lisp" id="orgsrcblock267">(autoload 'ess-rdired <span class="org-string">"ess-rdired"</span>)
 </pre>
 </div>
 
@@ -7229,7 +7243,7 @@ Visualize data frames better:
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock267">(<span class="org-keyword">use-package</span> <span class="org-constant">ess-R-data-view</span>
+<pre class="src src-emacs-lisp" id="orgsrcblock268">(<span class="org-keyword">use-package</span> <span class="org-constant">ess-R-data-view</span>
   <span class="org-builtin">:ensure</span> t)
 </pre>
 </div>
@@ -7244,7 +7258,7 @@ inlineR
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock268">(<span class="org-keyword">use-package</span> <span class="org-constant">inlineR</span>
+<pre class="src src-emacs-lisp" id="orgsrcblock269">(<span class="org-keyword">use-package</span> <span class="org-constant">inlineR</span>
   <span class="org-builtin">:ensure</span> t)
 </pre>
 </div>
@@ -7268,7 +7282,7 @@ doesn&rsquo;t exist, then make it.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock269">(setq help/r-dir <span class="org-string">"~/.R/"</span>)
+<pre class="src src-emacs-lisp" id="orgsrcblock270">(setq help/r-dir <span class="org-string">"~/.R/"</span>)
 (<span class="org-keyword">defun</span> <span class="org-function-name">help/make-warn-R-dir</span> ()
   <span class="org-doc">"Handle of R directory misconfiguration."</span>
   (interactive)
@@ -7288,7 +7302,7 @@ Since I&rsquo;m using R for everything, configure <i>everything</i> to be using 
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock270">(setq inferior-ess-program <span class="org-string">"R"</span>)
+<pre class="src src-emacs-lisp" id="orgsrcblock271">(setq inferior-ess-program <span class="org-string">"R"</span>)
 (setq inferior-R-program-name <span class="org-string">"R"</span>)
 (setq ess-local-process-name <span class="org-string">"R"</span>)
 </pre>
@@ -7300,7 +7314,7 @@ Handle rdoc and rmd files, though I have never used them&#x2026; yet.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock271">(add-to-list 'auto-mode-alist '(<span class="org-string">"\\.rd\\'"</span> . Rd-mode))
+<pre class="src src-emacs-lisp" id="orgsrcblock272">(add-to-list 'auto-mode-alist '(<span class="org-string">"\\.rd\\'"</span> . Rd-mode))
 (add-to-list 'auto-mode-alist '(<span class="org-string">"\\.Rmd$"</span> . r-mode))
 </pre>
 </div>
@@ -7311,7 +7325,7 @@ Make it really easy to search the R archives for anything.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock272">(local-set-key (kbd <span class="org-string">"C-</span><span class="org-writegood-duplicates"><span class="org-string">c C</span></span><span class="org-string">-. S"</span>) #'ess-rutils-rsitesearch)
+<pre class="src src-emacs-lisp" id="orgsrcblock273">(local-set-key (kbd <span class="org-string">"C-</span><span class="org-writegood-duplicates"><span class="org-string">c C</span></span><span class="org-string">-. S"</span>) #'ess-rutils-rsitesearch)
 </pre>
 </div>
 
@@ -7321,7 +7335,7 @@ Make it really easy to do common stuff for R with good keybindings.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock273">(<span class="org-keyword">use-package</span> <span class="org-constant">ess-rutils</span>
+<pre class="src src-emacs-lisp" id="orgsrcblock274">(<span class="org-keyword">use-package</span> <span class="org-constant">ess-rutils</span>
   <span class="org-builtin">:config</span>
   (setq ess-rutils-keys t))
 </pre>
@@ -7334,7 +7348,7 @@ a while, and now it doesn&rsquo;t work. This needs some TLC.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock274">(<span class="org-keyword">use-package</span> <span class="org-constant">r-autoyas</span>
+<pre class="src src-emacs-lisp" id="orgsrcblock275">(<span class="org-keyword">use-package</span> <span class="org-constant">r-autoyas</span>
   <span class="org-builtin">:ensure</span> t
   <span class="org-builtin">:config</span>
   (setq r-autoyas-debug t)
@@ -7349,7 +7363,7 @@ Save two spaces showing function information in the mini-buffer.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock275">(setq ess-R-argument-suffix <span class="org-string">"="</span>)
+<pre class="src src-emacs-lisp" id="orgsrcblock276">(setq ess-R-argument-suffix <span class="org-string">"="</span>)
 </pre>
 </div>
 
@@ -7359,7 +7373,7 @@ Don&rsquo;t use the default assignment binding and allow underscores in names.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock276">(setq ess-S-assign-key (kbd <span class="org-string">"C-,"</span>))
+<pre class="src src-emacs-lisp" id="orgsrcblock277">(setq ess-S-assign-key (kbd <span class="org-string">"C-,"</span>))
 (ess-toggle-S-assign-key t)
 (ess-toggle-underscore nil)
 </pre>
@@ -7372,7 +7386,7 @@ start it, either. This adheres to the philosopy that the system is file based.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock277">(setq inferior-R-args <span class="org-string">"--no-save --no-restore"</span>)
+<pre class="src src-emacs-lisp" id="orgsrcblock278">(setq inferior-R-args <span class="org-string">"--no-save --no-restore"</span>)
 </pre>
 </div>
 
@@ -7382,7 +7396,7 @@ R mode hook.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock278">(<span class="org-keyword">defun</span> <span class="org-function-name">help/R-mode-hook-fn</span> ()
+<pre class="src src-emacs-lisp" id="orgsrcblock279">(<span class="org-keyword">defun</span> <span class="org-function-name">help/R-mode-hook-fn</span> ()
   (local-set-key (kbd <span class="org-string">"s-6"</span>) #'ess-switch-to-end-of-ESS)
   (local-set-key (kbd <span class="org-string">"s-7"</span>) #'ess-rdired)
   (local-set-key (kbd <span class="org-string">"s-8"</span>) #'ess-R-dv-ctable)
@@ -7454,7 +7468,7 @@ Traditional.
 </p>
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock279">(add-to-list 'auto-mode-alist '(<span class="org-string">"\\.scm\\'"</span> . scheme-mode))
+<pre class="src src-emacs-lisp" id="orgsrcblock280">(add-to-list 'auto-mode-alist '(<span class="org-string">"\\.scm\\'"</span> . scheme-mode))
 (add-to-list 'auto-mode-alist '(<span class="org-string">"\\.ss\\'"</span> . scheme-mode))
 </pre>
 </div></li>
@@ -7463,7 +7477,7 @@ Racket.
 </p>
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock280">(add-to-list 'auto-mode-alist '(<span class="org-string">"\\.rkt\\'"</span> . scheme-mode))
+<pre class="src src-emacs-lisp" id="orgsrcblock281">(add-to-list 'auto-mode-alist '(<span class="org-string">"\\.rkt\\'"</span> . scheme-mode))
 </pre>
 </div></li>
 <li><p>
@@ -7471,7 +7485,7 @@ R6RS.
 </p>
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock281">(add-to-list 'auto-mode-alist '(<span class="org-string">"\\.sls\\'"</span> . scheme-mode))
+<pre class="src src-emacs-lisp" id="orgsrcblock282">(add-to-list 'auto-mode-alist '(<span class="org-string">"\\.sls\\'"</span> . scheme-mode))
 (add-to-list 'auto-mode-alist '(<span class="org-string">"\\.sps\\'"</span> . scheme-mode))
 </pre>
 </div></li>
@@ -7483,7 +7497,7 @@ Use Geiser for Racket and Guile
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock282">(<span class="org-keyword">use-package</span> <span class="org-constant">geiser</span>
+<pre class="src src-emacs-lisp" id="orgsrcblock283">(<span class="org-keyword">use-package</span> <span class="org-constant">geiser</span>
   <span class="org-builtin">:ensure</span> t)
 </pre>
 </div>
@@ -7494,7 +7508,7 @@ Enable Auto-Complete via Geiser.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock283">(<span class="org-keyword">use-package</span> <span class="org-constant">ac-geiser</span>
+<pre class="src src-emacs-lisp" id="orgsrcblock284">(<span class="org-keyword">use-package</span> <span class="org-constant">ac-geiser</span>
   <span class="org-builtin">:ensure</span> t
   <span class="org-builtin">:config</span>
   (add-hook 'geiser-mode-hook 'ac-geiser-setup)
@@ -7544,7 +7558,7 @@ ID: 5C48A01F-D522-4AC9-A523-F8EE2E9EB384
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock284">(<span class="org-keyword">use-package</span> <span class="org-constant">yasnippet</span>
+<pre class="src src-emacs-lisp" id="orgsrcblock285">(<span class="org-keyword">use-package</span> <span class="org-constant">yasnippet</span>
   <span class="org-builtin">:ensure</span> t
   <span class="org-builtin">:config</span>
   (yas-global-mode t)
@@ -7588,7 +7602,7 @@ ID: E2A1BFA2-0246-4376-9A33-E35A8DE2E5A3
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock285">(<span class="org-keyword">use-package</span> <span class="org-constant">tex-site</span>
+<pre class="src src-emacs-lisp" id="orgsrcblock286">(<span class="org-keyword">use-package</span> <span class="org-constant">tex-site</span>
   <span class="org-builtin">:ensure</span> auctex
   <span class="org-builtin">:config</span>
   (eval-after-load <span class="org-string">"tex"</span>
@@ -7602,7 +7616,7 @@ Save style info. This doesn&rsquo;t control the buffer save.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock286">(setq TeX-auto-save t)
+<pre class="src src-emacs-lisp" id="orgsrcblock287">(setq TeX-auto-save t)
 </pre>
 </div>
 
@@ -7612,7 +7626,7 @@ Parse on load.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock287">(setq TeX-parse-self t)
+<pre class="src src-emacs-lisp" id="orgsrcblock288">(setq TeX-parse-self t)
 </pre>
 </div>
 
@@ -7622,7 +7636,7 @@ Parse on save.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock288">(setq TeX-auto-save t)
+<pre class="src src-emacs-lisp" id="orgsrcblock289">(setq TeX-auto-save t)
 </pre>
 </div>
 
@@ -7632,7 +7646,7 @@ Use PDFTeX to generate both DVI and PDF files.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock289">(setq TeX-PDF-mode t)
+<pre class="src src-emacs-lisp" id="orgsrcblock290">(setq TeX-PDF-mode t)
 (setq TeX-DVI-via-PDFTeX t)
 </pre>
 </div>
@@ -7644,7 +7658,7 @@ save it.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock290">(setq TeX-save-query nil)
+<pre class="src src-emacs-lisp" id="orgsrcblock291">(setq TeX-save-query nil)
 </pre>
 </div>
 
@@ -7654,7 +7668,7 @@ Load LCO files with AucTeX.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock291">(add-to-list 'auto-mode-alist '(<span class="org-string">"\\.lco?\\'"</span> . TeX-latex-mode))
+<pre class="src src-emacs-lisp" id="orgsrcblock292">(add-to-list 'auto-mode-alist '(<span class="org-string">"\\.lco?\\'"</span> . TeX-latex-mode))
 </pre>
 </div>
 
@@ -7664,7 +7678,7 @@ Culture-dependent typographical results.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock292">(add-to-list 'org-latex-packages-alist '(<span class="org-string">"english"</span> <span class="org-string">"babel"</span> t))
+<pre class="src src-emacs-lisp" id="orgsrcblock293">(add-to-list 'org-latex-packages-alist '(<span class="org-string">"english"</span> <span class="org-string">"babel"</span> t))
 </pre>
 </div>
 
@@ -7674,7 +7688,7 @@ Palatino friendly mathematics fonts.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock293">(add-to-list 'org-latex-packages-alist '(<span class="org-string">"osf"</span> <span class="org-string">"mathpazo"</span> t))
+<pre class="src src-emacs-lisp" id="orgsrcblock294">(add-to-list 'org-latex-packages-alist '(<span class="org-string">"osf"</span> <span class="org-string">"mathpazo"</span> t))
 </pre>
 </div>
 
@@ -7684,7 +7698,7 @@ Small margins.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock294">(add-to-list 'org-latex-packages-alist '(<span class="org-string">"margin=0.5in"</span> <span class="org-string">"geometry"</span> nil))
+<pre class="src src-emacs-lisp" id="orgsrcblock295">(add-to-list 'org-latex-packages-alist '(<span class="org-string">"margin=0.5in"</span> <span class="org-string">"geometry"</span> nil))
 </pre>
 </div>
 
@@ -7694,7 +7708,7 @@ Standard LaTeX class options.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock295">(<span class="org-keyword">defvar</span> <span class="org-variable-name">help/ltx-cls-opt</span> <span class="org-string">"paper=letter, fontsize=10pt, parskip"</span>)
+<pre class="src src-emacs-lisp" id="orgsrcblock296">(<span class="org-keyword">defvar</span> <span class="org-variable-name">help/ltx-cls-opt</span> <span class="org-string">"paper=letter, fontsize=10pt, parskip"</span>)
 </pre>
 </div>
 
@@ -7704,7 +7718,7 @@ Standard article class.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock296">(eval-after-load <span class="org-string">"ox-latex"</span>
+<pre class="src src-emacs-lisp" id="orgsrcblock297">(eval-after-load <span class="org-string">"ox-latex"</span>
   '(add-to-list 'org-latex-classes
                 `(<span class="org-string">"help-article"</span>
                   ,(concat <span class="org-string">"\\documentclass["</span>
@@ -7721,7 +7735,7 @@ Use &ldquo;Smartquotes&rdquo;.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock297">(setq org-export-with-smart-quotes t)
+<pre class="src src-emacs-lisp" id="orgsrcblock298">(setq org-export-with-smart-quotes t)
 </pre>
 </div>
 </div>
@@ -7757,7 +7771,7 @@ Load the KOMA exporter.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock298">(eval-after-load <span class="org-string">"ox"</span> '(<span class="org-keyword">require</span> '<span class="org-constant">ox-koma-letter</span>))
+<pre class="src src-emacs-lisp" id="orgsrcblock299">(eval-after-load <span class="org-string">"ox"</span> '(<span class="org-keyword">require</span> '<span class="org-constant">ox-koma-letter</span>))
 </pre>
 </div>
 
@@ -7884,7 +7898,7 @@ for my printed correspondence.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock299">(eval-after-load <span class="org-string">"ox-koma-letter"</span>
+<pre class="src src-emacs-lisp" id="orgsrcblock300">(eval-after-load <span class="org-string">"ox-koma-letter"</span>
   '(<span class="org-keyword">progn</span>
      (add-to-list 'org-latex-classes
                   `(<span class="org-string">"help-letter"</span>
@@ -7906,7 +7920,7 @@ Set up my default LCO files.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock300">(setq org-koma-letter-class-option-file <span class="org-string">"UScommercial9 KomaDefault"</span>)
+<pre class="src src-emacs-lisp" id="orgsrcblock301">(setq org-koma-letter-class-option-file <span class="org-string">"UScommercial9 KomaDefault"</span>)
 </pre>
 </div>
 </div>
@@ -7948,7 +7962,7 @@ Provide Github Flavored Markdown (GFM).
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock301">(<span class="org-keyword">use-package</span> <span class="org-constant">ox-gfm</span>)
+<pre class="src src-emacs-lisp" id="orgsrcblock302">(<span class="org-keyword">use-package</span> <span class="org-constant">ox-gfm</span>)
 </pre>
 </div>
 
@@ -7958,7 +7972,7 @@ Program GFM.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock302">(<span class="org-keyword">use-package</span> <span class="org-constant">markdown-mode</span>
+<pre class="src src-emacs-lisp" id="orgsrcblock303">(<span class="org-keyword">use-package</span> <span class="org-constant">markdown-mode</span>
   <span class="org-builtin">:ensure</span> t
   <span class="org-builtin">:config</span>
   (add-to-list 'auto-mode-alist '(<span class="org-string">"\\.md\\'"</span> . gfm-mode))
@@ -7984,7 +7998,7 @@ An elisp implementation of clientside XML-RPC
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock303">(<span class="org-keyword">use-package</span> <span class="org-constant">xml-rpc</span>
+<pre class="src src-emacs-lisp" id="orgsrcblock304">(<span class="org-keyword">use-package</span> <span class="org-constant">xml-rpc</span>
   <span class="org-builtin">:ensure</span> t)
 </pre>
 </div>
@@ -7997,7 +8011,7 @@ Weblog maintenance via XML-RPC APIs
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock304">(<span class="org-keyword">use-package</span> <span class="org-constant">metaweblog</span>
+<pre class="src src-emacs-lisp" id="orgsrcblock305">(<span class="org-keyword">use-package</span> <span class="org-constant">metaweblog</span>
   <span class="org-builtin">:ensure</span> t)
 </pre>
 </div>
@@ -8010,7 +8024,7 @@ Blog from Org mode to wordpress
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock305">(add-to-list 'load-path <span class="org-string">"~/src/org2blog"</span>)
+<pre class="src src-emacs-lisp" id="orgsrcblock306">(add-to-list 'load-path <span class="org-string">"~/src/org2blog"</span>)
 (<span class="org-keyword">require</span> '<span class="org-constant">org2blog-autoloads</span>)
 </pre>
 </div>
@@ -8027,7 +8041,7 @@ to each Web.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock306">(setq org2blog/wp-track-posts nil)
+<pre class="src src-emacs-lisp" id="orgsrcblock307">(setq org2blog/wp-track-posts nil)
 </pre>
 </div>
 
@@ -8037,7 +8051,7 @@ Configure Org2Blog.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock307">(setq org2blog/wp-blog-alist
+<pre class="src src-emacs-lisp" id="orgsrcblock308">(setq org2blog/wp-blog-alist
       '((<span class="org-string">"wisdomandwonder"</span>
          <span class="org-builtin">:url</span> <span class="org-string">"http://www.wisdomandwonder.com/wordpress/xmlrpc.php"</span>
          <span class="org-builtin">:username</span> <span class="org-string">"admin"</span>
@@ -8059,7 +8073,7 @@ ID: 84F673DF-2E6F-4BAA-8095-4A7586BB73FC
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock308">(setq org-html-doctype <span class="org-string">"html5"</span>)
+<pre class="src src-emacs-lisp" id="orgsrcblock309">(setq org-html-doctype <span class="org-string">"html5"</span>)
 </pre>
 </div>
 
@@ -8069,7 +8083,7 @@ Load Htmlize for HTML export. Use in-line CSS.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock309">(<span class="org-keyword">use-package</span> <span class="org-constant">htmlize</span>
+<pre class="src src-emacs-lisp" id="orgsrcblock310">(<span class="org-keyword">use-package</span> <span class="org-constant">htmlize</span>
   <span class="org-builtin">:config</span>
   (setq org-html-htmlize-output-type htmlize-output-type)
   (setq htmlize-output-type 'inline-css)
@@ -8108,7 +8122,7 @@ ID: 1F20F4EC-1D8B-402A-A0A9-504E733AEFDC
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock310">(setq org-ascii-text-width 80)
+<pre class="src src-emacs-lisp" id="orgsrcblock311">(setq org-ascii-text-width 80)
 (setq org-ascii-global-margin 0)
 </pre>
 </div>
@@ -8129,7 +8143,7 @@ Load Beamer for creating presentations.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock311">(<span class="org-keyword">use-package</span> <span class="org-constant">ox-beamer</span>)
+<pre class="src src-emacs-lisp" id="orgsrcblock312">(<span class="org-keyword">use-package</span> <span class="org-constant">ox-beamer</span>)
 </pre>
 </div>
 </div>
@@ -8190,7 +8204,7 @@ ID: F920A833-60D7-41C2-9363-EA2A8BD19009
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock312">(add-to-list 'auto-mode-alist '(<span class="org-string">"\\.asc"</span> . artist-mode))
+<pre class="src src-emacs-lisp" id="orgsrcblock313">(add-to-list 'auto-mode-alist '(<span class="org-string">"\\.asc"</span> . artist-mode))
 (add-to-list 'auto-mode-alist '(<span class="org-string">"\\.art"</span> . artist-mode))
 (add-to-list 'auto-mode-alist '(<span class="org-string">"\\.asc"</span> . artist-mode))
 </pre>
@@ -8230,7 +8244,7 @@ When a drop of water joins the ocean it becomes the ocean.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock313">(<span class="org-keyword">defconst</span> <span class="org-variable-name">help/ditaa-jar</span> (concat (getenv <span class="org-string">"EELIB"</span>) <span class="org-string">"/ditaa.jar"</span>))
+<pre class="src src-emacs-lisp" id="orgsrcblock314">(<span class="org-keyword">defconst</span> <span class="org-variable-name">help/ditaa-jar</span> (concat (getenv <span class="org-string">"EELIB"</span>) <span class="org-string">"/ditaa.jar"</span>))
 (setq org-ditaa-jar-path help/ditaa-jar)
 </pre>
 </div>
@@ -8247,7 +8261,7 @@ ID: A84665A3-4A2D-4040-926A-17159A6D4647
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock314">(<span class="org-keyword">use-package</span> <span class="org-constant">graphviz-dot-mode</span>
+<pre class="src src-emacs-lisp" id="orgsrcblock315">(<span class="org-keyword">use-package</span> <span class="org-constant">graphviz-dot-mode</span>
   <span class="org-builtin">:ensure</span> t
   <span class="org-builtin">:config</span>
   (setf (cdr (assoc <span class="org-string">"dot"</span> org-src-lang-modes)) 'graphviz-dot))
@@ -8275,7 +8289,7 @@ ID: FCC259F8-0858-4778-B97F-07D2B21012F5
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp" id="orgsrcblock315">(<span class="org-keyword">use-package</span> <span class="org-constant">plantuml-mode</span>
+<pre class="src src-emacs-lisp" id="orgsrcblock316">(<span class="org-keyword">use-package</span> <span class="org-constant">plantuml-mode</span>
   <span class="org-builtin">:ensure</span> t
   <span class="org-builtin">:init</span>
   (<span class="org-keyword">defconst</span> <span class="org-variable-name">help/plantuml-jar</span> (concat (getenv <span class="org-string">"EELIB"</span>) <span class="org-string">"/plantuml.jar"</span>))
@@ -8451,7 +8465,7 @@ ID: FCC259F8-0858-4778-B97F-07D2B21012F5
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Grant Rettke</p>
-<p class="date">Created: 2015-12-28 Mon 23:39</p>
+<p class="date">Created: 2016-01-11 Mon 19:45</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
