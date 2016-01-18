@@ -1604,7 +1604,9 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (use-package wrap-region
   :ensure t
   :config
-  :diminish wrap-region-mode)
+  :diminish wrap-region-mode
+  :config
+  (add-hook 'org-mode-hook 'wrap-region-mode))
 ;; 593A037F-9615-47CA-9C13-5BC88074F24D ends here
 ;; [[file:~/src/help/help.org::*Org-Mode][8055DBFC-C839-4EED-BA59-E56D2E05F027]]
 (wrap-region-add-wrapper "*" "*" nil 'org-mode)

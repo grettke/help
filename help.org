@@ -4662,7 +4662,9 @@ Smartparens provides that functionality for programming modes.
 (use-package wrap-region
   :ensure t
   :config
-  :diminish wrap-region-mode)
+  :diminish wrap-region-mode
+  :config
+  (add-hook 'org-mode-hook 'wrap-region-mode))
 #+END_SRC
 
 *Bold*.
