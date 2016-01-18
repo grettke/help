@@ -1643,6 +1643,12 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (define-key org-mode-map (kbd "s-8") #'org-babel-switch-to-session-with-code)
 (define-key org-mode-map (kbd "s-9") #'org-todo)
 ;; E65CF1F6-F56C-4A1A-BB45-5E530FA93C04 ends here
+;; [[file:~/src/help/help.org::*Row%205][1BE349AF-620C-4AA4-8250-E1A20FEEFAE6]]
+(key-chord-define org-mode-map "U*" #'org-metaup)
+(key-chord-define org-mode-map "I(" #'org-metadown)
+(key-chord-define org-mode-map "u8" #'org-metaleft)
+(key-chord-define org-mode-map "i9" #'org-metaright)
+;; 1BE349AF-620C-4AA4-8250-E1A20FEEFAE6 ends here
 ;; [[file:~/src/help/help.org::*Row%204][9CB5CC76-4C1D-40CB-829C-A5AC98FE23FD]]
 (define-key org-mode-map (kbd "s-y") #'help/safb-org-babel-execute-buffer)
 (define-key org-mode-map (kbd "s-u") #'help/safb-org-babel-execute-subtree)
@@ -1658,10 +1664,6 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
 (define-key org-mode-map (kbd "s-l") #'help/safb-org-edit-src-code)
 (define-key org-mode-map (kbd "s-;") #'help/safb-help/org-babel-demarcate-block)
-(define-key org-mode-map (kbd "s-C-i") #'org-metaup)
-(define-key org-mode-map (kbd "s-C-k") #'org-metadown)
-(define-key org-mode-map (kbd "s-C-l") #'org-metaright)
-(define-key org-mode-map (kbd "s-C-j") #'org-metaleft)
 ;; 933B1A3A-A77A-4616-B9D8-9DACED018CC2 ends here
 ;; [[file:~/src/help/help.org::*Row%202][2F8DDC77-27C4-4E81-8913-28243C4A44B6]]
 (define-key org-mode-map (kbd "s-n") #'org-babel-view-src-block-info)

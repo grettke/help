@@ -4764,6 +4764,16 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
 (define-key org-mode-map (kbd "s-9") #'org-todo)
 #+END_SRC
 
+Easily manipulate lists and headlines staying close to home.
+
+#+NAME: 1BE349AF-620C-4AA4-8250-E1A20FEEFAE6
+#+BEGIN_SRC emacs-lisp :results output silent
+(key-chord-define org-mode-map "U*" #'org-metaup)
+(key-chord-define org-mode-map "I(" #'org-metadown)
+(key-chord-define org-mode-map "u8" #'org-metaleft)
+(key-chord-define org-mode-map "i9" #'org-metaright)
+#+END_SRC
+
 **** Row 4
      :PROPERTIES:
      :ID:       1E49694B-6350-45E2-BE58-21EAAF09D4A2
@@ -4792,10 +4802,6 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
 (define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
 (define-key org-mode-map (kbd "s-l") #'help/safb-org-edit-src-code)
 (define-key org-mode-map (kbd "s-;") #'help/safb-help/org-babel-demarcate-block)
-(define-key org-mode-map (kbd "s-C-i") #'org-metaup)
-(define-key org-mode-map (kbd "s-C-k") #'org-metadown)
-(define-key org-mode-map (kbd "s-C-l") #'org-metaright)
-(define-key org-mode-map (kbd "s-C-j") #'org-metaleft)
 #+END_SRC
 
 **** Row 2
