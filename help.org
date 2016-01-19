@@ -1009,7 +1009,9 @@ properties.
 (setq org-export-with-properties t)
 #+END_SRC
 
-Stop your flow to monitor the export for errors.
+- Stop your flow to monitor the export for errors
+  - <2016-01-19 Tue> Expect it to start weaves for all weavers asynchronously.
+    Does not do so; main thread is blocked until weaves complete.
 
 #+NAME: 49FDDABE-7999-4F51-BD93-969187A220D7
 #+BEGIN_SRC emacs-lisp :results output silent
