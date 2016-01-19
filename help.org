@@ -220,7 +220,7 @@ Sysop is likely to use this often.
 
 Start EMACS with this command:
 
-=open /Applications/Emacs.app --args --quick --load ~/src/help/.org-mode-ecm.emacs.el=
+=open /Applications/Emacs.app -n --args --quick --load ~/src/help/.org-mode-ecm.emacs.el=
 
 #+NAME: EE055B39-1C93-45AB-B9A6-2FCFD54D47A5
 #+BEGIN_SRC emacs-lisp :results output silent :comments no :noweb-ref ignore-ecm
@@ -246,7 +246,7 @@ Sysop is likely to use this periodically.
 
 Start EMACS with this command:
 
-=open /Applications/Emacs.app --args --quick --load ~/src/help/.org-mode-fundamentals.emacs.el=
+=open /Applications/Emacs.app -n --args --quick --load ~/src/help/.org-mode-fundamentals.emacs.el=
 
 #+NAME: BFE6C470-861B-4367-9735-DAA8E7C33C0A
 #+BEGIN_SRC emacs-lisp :results output silent :comments no :noweb-ref ignore-fundamentals
@@ -275,7 +275,7 @@ Sysop is likely to use this periodically.
 
 Start EMACS with this command:
 
-=open /Applications/Emacs.app --args --quick --load ~/src/help/.org-mode-org2blog.emacs.el=
+=open /Applications/Emacs.app -n --args --quick --load ~/src/help/.org-mode-org2blog.emacs.el=
 
 #+NAME: 414DD245-B282-4D95-910D-29F43DD90D9B
 #+BEGIN_SRC emacs-lisp :results output silent :comments no :noweb-ref ignore-org2blog
