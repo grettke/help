@@ -979,6 +979,9 @@ Attribution: URL `http://emacsredux.com/blog/2013/07/25/increment-and-decrement-
 ;; [[file:~/src/help/help.org::*File%20Based%20System][E99CAE8F-970F-4584-9B28-9C77D5B79356]]
 (setq large-file-warning-threshold (* 1024 1024 2))
 ;; E99CAE8F-970F-4584-9B28-9C77D5B79356 ends here
+;; [[file:~/src/help/help.org::*File%20Based%20System][584CF9A7-15E8-4F85-ABF2-3592759A7862]]
+(setq temporary-file-directory "/tmp")
+;; 584CF9A7-15E8-4F85-ABF2-3592759A7862 ends here
 ;; [[file:~/src/help/help.org::*File-system/directory%20management%20(Console)][26EA1235-E9EC-4DC0-9F7D-B3D14E1A27B7]]
 (defun help/dired-copy-filename ()
   "Push the path and filename of the file under the point to the kill ring.

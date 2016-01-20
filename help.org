@@ -2888,6 +2888,14 @@ with large files.
 (setq large-file-warning-threshold (* 1024 1024 2))
 #+END_SRC
 
+- Always use /tmp for temporary files
+  - Via the thread "[O] org-file using tramp + babel?"
+
+#+NAME: 584CF9A7-15E8-4F85-ABF2-3592759A7862
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq temporary-file-directory "/tmp")
+#+END_SRC
+
 ** File-system/directory management (Console)
    :PROPERTIES:
    :ID:       067D598E-7FE6-4BC5-AEF7-872966390970
