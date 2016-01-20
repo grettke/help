@@ -2303,8 +2303,8 @@ _v_ariable       _u_ser-option
 (global-set-key (kbd "s-b") #'hs-toggle-hiding)
 ;; 374B4284-8823-4E85-A469-F3985D48EC61 ends here
 ;; [[file:~/src/help/help.org::*Left%20&%20Right%20Side][779A4232-960E-4CE1-B6EC-018FC997F0DD]]
-(key-chord-define-global "d." #'describe-function)
-(key-chord-define-global "d," #'describe-variable)
+(key-chord-define-global "d8" #'describe-function)
+(key-chord-define-global "d9" #'describe-variable)
 ;; 779A4232-960E-4CE1-B6EC-018FC997F0DD ends here
 ;; [[file:~/src/help/help.org::*Left%20&%20Right%20Side][55D2A3E6-07B1-47B0-9ADD-54C966FA252B]]
 (global-set-key (kbd "s-`") #'help/comment-or-uncomment)
