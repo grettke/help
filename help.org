@@ -215,7 +215,7 @@ emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
 
 ** Org-Mode Exemple Complet Minimal
    :PROPERTIES:
-   :noweb-ref: Org-Mode-ECM-Web
+   :header-args: :noweb-ref Org-Mode-ECM-Web
    :tangle:  "./.org-mode-ecm.emacs.el"
    :ID:       83868A6E-76C2-48AE-8A5A-6A3C97492321
    :END:
@@ -241,7 +241,7 @@ Start EMACS with this command:
 
 ** Org-Mode Fundamentals
    :PROPERTIES:
-   :noweb-ref: Org-Mode-Fundamentals-Web
+   :header-args: :noweb-ref Org-Mode-Fundamentals-Web
    :tangle:  "./.org-mode-fundamentals.emacs.el"
    :ID:       7E71A009-4DD3-4296-9851-293BC71D2DFF
    :END:
@@ -270,7 +270,7 @@ Start EMACS with this command:
 
 ** Org2blog
    :PROPERTIES:
-   :noweb-ref: Hacking-Publishing-Org2blog-Web
+   :header-args: :noweb-ref Hacking-Publishing-Org2blog-Web
    :tangle:  "./.org-mode-org2blog.emacs.el"
    :ID:       BA37913C-D781-453B-B438-F6464B60CFDF
    :END:
@@ -401,7 +401,7 @@ another activity.
 
 ** Org-Mode Exemple Complet Minimal
    :PROPERTIES:
-   :noweb-ref: Org-Mode-ECM
+   :header-args: :noweb-ref Org-Mode-ECM
    :ID:       57C69AB7-A317-4823-ABBF-7DE8A5E2151C
    :END:
 
@@ -456,7 +456,7 @@ Load Org-Mode.
 
 ** Helper Functions
    :PROPERTIES:
-   :noweb-ref: Org-Mode-Helper-Functions
+   :header-args: :noweb-ref Org-Mode-Helper-Functions
    :ID:       B14776FD-6835-4D1D-BCD3-50D56555423C
    :END:
 
@@ -545,7 +545,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
 
 ** Tangling
    :PROPERTIES:
-   :noweb-ref: Org-Mode-Tangle
+   :header-args: :noweb-ref Org-Mode-Tangle
    :ID:       267EEDED-1367-405F-807C-B3C489045704
    :END:
 
@@ -729,7 +729,7 @@ Set permission of tangled files
 
 ** Evaluating
    :PROPERTIES:
-   :noweb-ref: Org-Mode-Execute
+   :header-args: :noweb-ref Org-Mode-Execute
    :ID:       ED23FF0B-1F90-435C-9B56-ACA06C1ACAE0
    :END:
 
@@ -1003,7 +1003,7 @@ Pass arguments to code blocks
 
 ** Weaving
    :PROPERTIES:
-   :noweb-ref: Org-Mode-Weave
+   :header-args: :noweb-ref Org-Mode-Weave
    :ID:       F71DD8BA-B853-4903-A348-400E13C0E6F8
    :END:
 
@@ -1130,7 +1130,7 @@ results need to be visibly noticeably different for the reader by making them
 
 * Piano Lessons
    :PROPERTIES:
-   :noweb-ref: Piano-Lessons
+   :header-args: :noweb-ref Piano-Lessons
    :ID:       31274432-4BA2-4B03-8DDB-E590C245244D
    :END:
 
@@ -1831,7 +1831,7 @@ Ansu.
 
 * Special Operating Procedure
    :PROPERTIES:
-   :noweb-ref: Special-Operating-Procedure
+   :header-args: :noweb-ref Special-Operating-Procedure
    :ID:       97A95862-3213-4035-9FF6-E041796DAB5C
    :END:
 
@@ -2045,7 +2045,7 @@ Enable the =super= key-space.
 
 * Standard Operating Procedure
    :PROPERTIES:
-   :noweb-ref: Standard-Operating-Procedure
+   :header-args: :noweb-ref Standard-Operating-Procedure
    :ID:       8302B38B-67EC-4C37-9B42-69E278FF1277
    :END:
 
@@ -3706,7 +3706,7 @@ Make control characters easily visible.
 
 * Quiet and Pleasant Appearance
    :PROPERTIES:
-   :noweb-ref: Quiet-and-Pleasant-Appearance
+   :header-args: :noweb-ref Quiet-and-Pleasant-Appearance
    :ID:       197B7B84-5090-47AE-9180-F8F606D0012F
    :END:
 
@@ -3989,7 +3989,7 @@ create 3.
 
 * Principle of Least Astonishment (POLA)
   :PROPERTIES:
-  :noweb-ref: Principle-of-Least-Astonishment
+  :header-args: :noweb-ref Principle-of-Least-Astonishment
   :ID:       43D9AB52-2157-4A1D-AD9C-D35996E91269
   :END:
 
@@ -4055,7 +4055,7 @@ tangled system.
 
 * Watch What You Eat
   :PROPERTIES:
-  :noweb-ref: Watch-What-You-Eat
+  :header-args: :noweb-ref Watch-What-You-Eat
   :ID:       59073E74-83D9-4218-917C-789A27D57E5A
   :END:
 
@@ -4101,7 +4101,7 @@ point uses ~require~. Every package loaded after this point uses ~use-package~.
   :END:
 ** Common Configurations
   :PROPERTIES:
-  :noweb-ref: Hacking-Common-Configurations
+  :header-args: :noweb-ref Hacking-Common-Configurations
   :ID:       BE02A401-AFF6-4B64-B7F3-589C69CA7099
   :END:
 
@@ -4268,7 +4268,7 @@ With that in mind this system:
    :END:
 ** Emacs Lisp
   :PROPERTIES:
-  :noweb-ref: Hacking-Literate-Programming-Emacs-Lisp
+  :header-args: :noweb-ref Hacking-Literate-Programming-Emacs-Lisp
   :ID:       3AD91697-42DE-4555-9F49-B7D9F5E502D3
   :END:
 
@@ -4326,7 +4326,7 @@ With that in mind this system:
 
 ** Org-Mode
   :PROPERTIES:
-  :noweb-ref: Hacking-Literate-Programming-Org-Mode
+  :header-args: :noweb-ref Hacking-Literate-Programming-Org-Mode
   :ID:       EBDA3D1C-536F-4252-AE26-32A3FDF5326C
   :END:
 
@@ -4902,7 +4902,7 @@ Easily enter guillemots.
    :END:
 ** Emacs Speaks Statistics (ESS)
   :PROPERTIES:
-  :noweb-ref: Hacking-Applied-Mathematics-ESS
+  :header-args: :noweb-ref Hacking-Applied-Mathematics-ESS
   :ID:       CB6305D8-DDBB-4865-8CAD-3648B31B76DB
   :END:
 
@@ -5066,13 +5066,13 @@ and see how it goes.
 
 ** SAS (ESS)
   :PROPERTIES:
-  :noweb-ref: Hacking-Applied-Mathematics-ESS-SAS
+  :header-args: :noweb-ref Hacking-Applied-Mathematics-ESS-SAS
   :ID:       2442E555-0F82-48E6-96EA-2ABB5C9CC666
   :END:
 
 ** R (ESS)
   :PROPERTIES:
-  :noweb-ref: Hacking-Applied-Mathematics-ESS-R
+  :header-args: :noweb-ref Hacking-Applied-Mathematics-ESS-R
   :ID:       1183D35B-77FC-4CFD-9BAA-4F7656AD8943
   :END:
 
@@ -5313,7 +5313,7 @@ R mode hook.
 
 ** Scheme (LISP)
   :PROPERTIES:
-  :noweb-ref: Hacking-Applied-Mathematics-LISP-Scheme
+  :header-args: :noweb-ref Hacking-Applied-Mathematics-LISP-Scheme
   :ID:       D68EC042-5CBA-4547-B28A-CF878FB080C1
   :END:
 
@@ -5369,7 +5369,7 @@ Enable Auto-Complete via Geiser.
    :END:
 ** YASnippet
   :PROPERTIES:
-  :noweb-ref: Hacking-Applied-Mathematics-YASnippet
+  :header-args: :noweb-ref Hacking-Applied-Mathematics-YASnippet
   :ID:       5C48A01F-D522-4AC9-A523-F8EE2E9EB384
   :END:
 
@@ -5406,7 +5406,7 @@ Enable Auto-Complete via Geiser.
    :END:
 ** TeX
   :PROPERTIES:
-  :noweb-ref: Hacking-Publishing-TeX
+  :header-args: :noweb-ref Hacking-Publishing-TeX
   :ID:       E2A1BFA2-0246-4376-9A33-E35A8DE2E5A3
   :END:
 
@@ -5514,7 +5514,7 @@ Use "Smartquotes".
 
 ** KOMA-Script
   :PROPERTIES:
-  :noweb-ref: Hacking-Publishing-KOMA
+  :header-args: :noweb-ref Hacking-Publishing-KOMA
   :ID:       BFF1402E-98D4-4F36-ACCB-B1E88A3EB2D9
   :END:
 
@@ -5647,7 +5647,7 @@ Perhaps the [[https://lists.gnu.org/archive/html/emacs-orgmode/2015-07/msg00042.
 
 ** Markdown
    :PROPERTIES:
-   :noweb-ref: Hacking-Publishing-Markdown
+   :header-args: :noweb-ref Hacking-Publishing-Markdown
    :ID:       748319ED-9F02-4A4D-BEE8-E71C462663FC
    :END:
 
@@ -5671,7 +5671,7 @@ Program GFM.
 
 ** Blog
    :PROPERTIES:
-   :noweb-ref: Hacking-Publishing-Org2blog
+   :header-args: :noweb-ref Hacking-Publishing-Org2blog
    :ID:       F5E33EB2-2E26-435C-85F6-26CB7CE7FC56
    :END:
 
@@ -5731,7 +5731,7 @@ Configure Org2Blog.
 
 ** HTML
   :PROPERTIES:
-  :noweb-ref: Hacking-Publishing-HTML
+  :header-args: :noweb-ref Hacking-Publishing-HTML
   :ID:       84F673DF-2E6F-4BAA-8095-4A7586BB73FC
   :END:
 
@@ -5784,7 +5784,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 
 ** Beamer
   :PROPERTIES:
-  :noweb-ref: Hacking-Publishing-Beamer
+  :header-args: :noweb-ref Hacking-Publishing-Beamer
   :ID:       6B86302E-D3EC-413A-A844-9ACCAA23A056
   :END:
 
@@ -5820,7 +5820,7 @@ Load Beamer for creating presentations.
    :END:
 ** Artist
   :PROPERTIES:
-  :noweb-ref: Hacking-Diagram-Artist
+  :header-args: :noweb-ref Hacking-Diagram-Artist
   :ID:       F920A833-60D7-41C2-9363-EA2A8BD19009
   :END:
 
@@ -5833,7 +5833,7 @@ Load Beamer for creating presentations.
 
 ** DITAA
   :PROPERTIES:
-  :noweb-ref: Hacking-Diagram-DITAA
+  :header-args: :noweb-ref Hacking-Diagram-DITAA
   :ID:       FCC8A8F8-A967-4981-9260-CFF60CC56494
   :END:
 
@@ -5881,7 +5881,7 @@ When a drop of water joins the ocean it becomes the ocean.
 
 ** Graphviz
   :PROPERTIES:
-  :noweb-ref: Hacking-Diagram-Graphviz
+  :header-args: :noweb-ref Hacking-Diagram-Graphviz
   :ID:       A84665A3-4A2D-4040-926A-17159A6D4647
   :END:
 
@@ -5917,7 +5917,7 @@ digraph graphviz {
 
 ** PlantUML
   :PROPERTIES:
-  :noweb-ref: Hacking-Diagram-PlantUML
+  :header-args: :noweb-ref Hacking-Diagram-PlantUML
   :ID:       FCC259F8-0858-4778-B97F-07D2B21012F5
   :END:
 
