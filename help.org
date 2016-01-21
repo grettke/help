@@ -215,8 +215,7 @@ emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
 
 ** Org-Mode Exemple Complet Minimal
    :PROPERTIES:
-   :header-args: :noweb-ref Org-Mode-ECM-Web
-   :tangle:  "./.org-mode-ecm.emacs.el"
+   :header-args: :noweb-ref Org-Mode-ECM-Web :tangle "./.org-mode-ecm.emacs.el"
    :ID:       83868A6E-76C2-48AE-8A5A-6A3C97492321
    :END:
 
@@ -241,8 +240,7 @@ Start EMACS with this command:
 
 ** Org-Mode Fundamentals
    :PROPERTIES:
-   :header-args: :noweb-ref Org-Mode-Fundamentals-Web
-   :tangle:  "./.org-mode-fundamentals.emacs.el"
+   :header-args: :noweb-ref Org-Mode-Fundamentals-Web :tangle "./.org-mode-fundamentals.emacs.el"
    :ID:       7E71A009-4DD3-4296-9851-293BC71D2DFF
    :END:
 
@@ -270,8 +268,7 @@ Start EMACS with this command:
 
 ** Org2blog
    :PROPERTIES:
-   :header-args: :noweb-ref Hacking-Publishing-Org2blog-Web
-   :tangle:  "./.org-mode-org2blog.emacs.el"
+   :header-args: :noweb-ref Hacking-Publishing-Org2blog-Web :tangle "./.org-mode-org2blog.emacs.el"
    :ID:       BA37913C-D781-453B-B438-F6464B60CFDF
    :END:
 
@@ -297,7 +294,7 @@ Start EMACS with this command:
 
 ** The Whole Enchilada
    :PROPERTIES:
-   :tangle:  "./.emacs.el"
+   :header-args: :tangle "./.emacs.el"
    :ID:       016FA25F-E70E-4BED-BA01-AEB808428791
    :END:
 
