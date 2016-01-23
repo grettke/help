@@ -20,11 +20,12 @@
    1) Without =Make=: [[http://orgmode.org/worg/org-hacks.html][Generating autoloads and Compiling Org without make]]
    2) As of <2016-01-19 Tue>
       #+NAME: B20AB3BC-6B45-4F2B-99EB-DFCC15E86D8D
-      #+BEGIN_SRC shell bash
+      #+BEGIN_SRC shell bash :results silent
 cd ~/src/org-mode
 git pull
 emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
       #+END_SRC
+
 2) [[https://github.com/punchagan/org2blog][Clone Org2Blog]] to =~/src/=.
 3) [[https://github.com/jwiegley/use-package][Clone Use-Package]] to =~/src/=.
 4) Create a folder for support libraries exporting it's location in a variable
