@@ -82,6 +82,7 @@ emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
 - Formatting
   - Code Snippet.
     - Programming language expressions.
+    - Shell commands
     - Use ~code style~
   - Non-Code Snippet.
     - Program names, file types
