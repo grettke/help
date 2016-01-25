@@ -173,7 +173,9 @@ emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
   - Be sure that every one has a =NAME= property with a =UUID= value.
     - YASnippet =sc= does this. So does code in Hacking/Org Mode/Utility.
   - Tell the story in speech, and then in code.
-  - Consider it another paragraph and indent appropriately.
+  - Communicate the intent in written language as one paragraph and realize that
+    intent in the next paragraph as a source block. Separate the two paragraphs
+    like you would any other paragraph.
   - When contained within a list:
     - Indent begin/end blocks with list content; this makes it clear to Org-Mode
       to export it as a code block.
