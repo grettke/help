@@ -11,17 +11,23 @@
 
 1.  [Clone Org-Mode](http://orgmode.org/) to `~/src/`.
     1.  Without `Make`: [Generating autoloads and Compiling Org without make](http://orgmode.org/worg/org-hacks.html)
+    2.  As of <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-19 Tue&gt;</span></span>
+
+        ```shell
+        cd ~/src/org-mode
+        git pull
+        emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
+        ```
+
 2.  [Clone Org2Blog](https://github.com/punchagan/org2blog) to `~/src/`.
 3.  [Clone Use-Package](https://github.com/jwiegley/use-package) to `~/src/`.
-4.  Create a folder for support libraries exporting it&rsquo;s location in a variable
-    named `EELIB`.
-    1.  Install [DITAA](http://ditaa.sourceforge.net/) renaming the JAR to `ditaa.jar`.
-    2.  Install [PlantUML](http://plantuml.com/) renaming the JAR to `plantuml.jar`.
-5.  Install supporting software adding their exectuable location to the `PATH`.
+4.  Install supporting software adding their exectuable location to the `PATH`.
     1.  Install [Oracle Java](https://www.oracle.com/java/index.html).
     2.  Install [LanguageTool](https://www.languagetool.org/) renaming it&rsquo;s folder to `LanguageTool`.
-    3.  Install [MacTeX](https://tug.org/mactex/).
-6.  Link:
+    3.  Install PlantUML.
+    4.  Install Ditaa.
+    5.  Install [MacTeX](https://tug.org/mactex/).
+5.  Link:
     -   The Eshell directory to HELP&rsquo;s.
         -   `ln -s ~/src/help/eshell/ ~/.emacs.d/eshell`
     -   The Initialization file to HELP&rsquo;s.
@@ -66,6 +72,7 @@
 -   Formatting
     -   Code Snippet.
         -   Programming language expressions.
+        -   Shell commands
         -   Use `code style`
     -   Non-Code Snippet.
         -   Program names, file types
@@ -156,7 +163,11 @@
     -   Be sure that every one has a `NAME` property with a `UUID` value.
         -   YASnippet `sc` does this. So does code in Hacking/Org Mode/Utility.
     -   Tell the story in speech, and then in code.
-    -   Consider it another paragraph and indent appropriately.
+    -   Communicate the intent in written language as one paragraph and realize that
+        intent in the next paragraph as a source block. Separate the two paragraphs
+        like you would any other paragraph.
+        -   The exporter will probably separate the two as you would expect whether
+            you separate the two entities with a space or not
     -   When contained within a list:
         -   Indent begin/end blocks with list content; this makes it clear to Org-Mode
             to export it as a code block.
@@ -200,9 +211,7 @@
 
 ## Org-Mode Exemple Complet Minimal
 
-    noweb-ref: Org-Mode-ECM-Web
-
-    tangle: "./.org-mode-ecm.emacs.el"
+    header-args: :noweb-ref Org-Mode-ECM-Web :tangle "./.org-mode-ecm.emacs.el"
 
     ID: 83868A6E-76C2-48AE-8A5A-6A3C97492321
 
@@ -212,7 +221,7 @@ Sysop is likely to use this often.
 
 Start EMACS with this command:
 
-`open /Applications/Emacs.app --args --quick --load ~/src/help/.org-mode-ecm.emacs.el`
+`open /Applications/Emacs.app -n --args --quick --load ~/src/help/.org-mode-ecm.emacs.el`
 
 ```lisp
 ;; -*- lexical-binding: t -*-
@@ -225,9 +234,7 @@ Start EMACS with this command:
 
 ## Org-Mode Fundamentals
 
-    noweb-ref: Org-Mode-Fundamentals-Web
-
-    tangle: "./.org-mode-fundamentals.emacs.el"
+    header-args: :noweb-ref Org-Mode-Fundamentals-Web :tangle "./.org-mode-fundamentals.emacs.el"
 
     ID: 7E71A009-4DD3-4296-9851-293BC71D2DFF
 
@@ -237,7 +244,7 @@ Sysop is likely to use this periodically.
 
 Start EMACS with this command:
 
-`open /Applications/Emacs.app --args --quick --load ~/src/help/.org-mode-fundamentals.emacs.el`
+`open /Applications/Emacs.app -n --args --quick --load ~/src/help/.org-mode-fundamentals.emacs.el`
 
 ```lisp
 ;; -*- lexical-binding: t -*-
@@ -253,9 +260,7 @@ Start EMACS with this command:
 
 ## Org2blog
 
-    noweb-ref: Hacking-Publishing-Org2blog-Web
-
-    tangle: "./.org-mode-org2blog.emacs.el"
+    header-args: :noweb-ref Hacking-Publishing-Org2blog-Web :tangle "./.org-mode-org2blog.emacs.el"
 
     ID: BA37913C-D781-453B-B438-F6464B60CFDF
 
@@ -265,7 +270,7 @@ Sysop is likely to use this periodically.
 
 Start EMACS with this command:
 
-`open /Applications/Emacs.app --args --quick --load ~/src/help/.org-mode-org2blog.emacs.el`
+`open /Applications/Emacs.app -n --args --quick --load ~/src/help/.org-mode-org2blog.emacs.el`
 
 ```lisp
 ;; -*- lexical-binding: t -*-
@@ -279,7 +284,7 @@ Start EMACS with this command:
 
 ## The Whole Enchilada
 
-    tangle: "./.emacs.el"
+    header-args: :tangle "./.emacs.el"
 
     ID: 016FA25F-E70E-4BED-BA01-AEB808428791
 
@@ -430,7 +435,7 @@ another activity.
 
 ## Org-Mode Exemple Complet Minimal
 
-    noweb-ref: Org-Mode-ECM
+    header-args: :noweb-ref Org-Mode-ECM
 
     ID: 57C69AB7-A317-4823-ABBF-7DE8A5E2151C
 
@@ -480,7 +485,7 @@ Load Org-Mode.
 
 ## Helper Functions
 
-    noweb-ref: Org-Mode-Helper-Functions
+    header-args: :noweb-ref Org-Mode-Helper-Functions
 
     ID: B14776FD-6835-4D1D-BCD3-50D56555423C
 
@@ -568,7 +573,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
 
 ## Tangling
 
-    noweb-ref: Org-Mode-Tangle
+    header-args: :noweb-ref Org-Mode-Tangle
 
     ID: 267EEDED-1367-405F-807C-B3C489045704
 
@@ -741,7 +746,7 @@ Configuration likely per Source-Block or System.
 
 ## Evaluating
 
-    noweb-ref: Org-Mode-Execute
+    header-args: :noweb-ref Org-Mode-Execute
 
     ID: ED23FF0B-1F90-435C-9B56-ACA06C1ACAE0
 
@@ -963,7 +968,7 @@ Configuration likely per Source-Block or System
 
 ## Weaving
 
-    noweb-ref: Org-Mode-Weave
+    header-args: :noweb-ref Org-Mode-Weave
 
     ID: F71DD8BA-B853-4903-A348-400E13C0E6F8
 
@@ -974,7 +979,9 @@ properties.
 (setq org-export-with-properties t)
 ```
 
-Stop your flow to monitor the export for errors.
+-   Stop your flow to monitor the export for errors
+    -   <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-19 Tue&gt; </span></span> Expect it to start weaves for all weavers asynchronously.
+        Does not do so; main thread is blocked until weaves complete.
 
 ```lisp
 (setq org-export-in-background nil)
@@ -1070,7 +1077,7 @@ results need to be visibly noticeably different for the reader by making them
 
 # Piano Lessons
 
-    noweb-ref: Piano-Lessons
+    header-args: :noweb-ref Piano-Lessons
 
     ID: 31274432-4BA2-4B03-8DDB-E590C245244D
 
@@ -1639,11 +1646,12 @@ close together
 
 Exploratory programming in EMACS.
 
-Don&rsquo;t use &ldquo;dn&rdquo; for &ldquo;describe-function&rdquo; because of &ldquo;and&rdquo;-words.
+-   Don&rsquo;t use &ldquo;dn&rdquo; for &ldquo;describe-function&rdquo; because of &ldquo;and&rdquo;-words
+-   `d.` typically ends sentences
 
 ```lisp
-(key-chord-define-global "d." #'describe-function)
-(key-chord-define-global "d," #'describe-variable)
+(key-chord-define-global "d8" #'describe-function)
+(key-chord-define-global "d9" #'describe-variable)
 ```
 
 Don&rsquo;t use &ldquo;qi&rdquo;; &ldquo;unique&rdquo;.
@@ -1726,7 +1734,7 @@ Ansu.
 
 # Special Operating Procedure
 
-    noweb-ref: Special-Operating-Procedure
+    header-args: :noweb-ref Special-Operating-Procedure
 
     ID: 97A95862-3213-4035-9FF6-E041796DAB5C
 
@@ -1915,7 +1923,7 @@ Enable the `super` key-space.
 
 # Standard Operating Procedure
 
-    noweb-ref: Standard-Operating-Procedure
+    header-args: :noweb-ref Standard-Operating-Procedure
 
     ID: 8302B38B-67EC-4C37-9B42-69E278FF1277
 
@@ -2729,6 +2737,13 @@ with large files.
 (setq large-file-warning-threshold (* 1024 1024 2))
 ```
 
+-   Always use /tmp for temporary files
+    -   Via the thread &ldquo;[O] org-file using tramp + babel?&rdquo;
+
+```lisp
+(setq temporary-file-directory "/tmp")
+```
+
 ## File-system/directory management (Console)
 
     ID: 067D598E-7FE6-4BC5-AEF7-872966390970
@@ -3069,7 +3084,7 @@ Warn of poor grammar immediately interrupting flow with a visual indicator.
 (use-package langtool
   :ensure t
   :init
-  (setq langtool-language-tool-jar (concat (getenv "EELIB") "/LanguageTool/languagetool-commandline.jar"))
+  (setq langtool-language-tool-jar "/usr/local/Cellar/languagetool/3.2/libexec/languagetool-commandline.jar")
   (setq langtool-mother-tongue "en")
   (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java")))
 ```
@@ -3513,7 +3528,7 @@ Make control characters easily visible.
 
 # Quiet and Pleasant Appearance
 
-    noweb-ref: Quiet-and-Pleasant-Appearance
+    header-args: :noweb-ref Quiet-and-Pleasant-Appearance
 
     ID: 197B7B84-5090-47AE-9180-F8F606D0012F
 
@@ -3767,7 +3782,7 @@ create 3.
 
 # Principle of Least Astonishment (POLA)
 
-    noweb-ref: Principle-of-Least-Astonishment
+    header-args: :noweb-ref Principle-of-Least-Astonishment
 
     ID: 43D9AB52-2157-4A1D-AD9C-D35996E91269
 
@@ -3830,7 +3845,7 @@ tangled system.
 
 # Watch What You Eat
 
-    noweb-ref: Watch-What-You-Eat
+    header-args: :noweb-ref Watch-What-You-Eat
 
     ID: 59073E74-83D9-4218-917C-789A27D57E5A
 
@@ -3873,7 +3888,7 @@ point uses `require`. Every package loaded after this point uses `use-package`.
 
 ## Common Configurations
 
-    noweb-ref: Hacking-Common-Configurations
+    header-args: :noweb-ref Hacking-Common-Configurations
 
     ID: BE02A401-AFF6-4B64-B7F3-589C69CA7099
 
@@ -4031,7 +4046,7 @@ With that in mind this system:
 
 ## Emacs Lisp
 
-    noweb-ref: Hacking-Literate-Programming-Emacs-Lisp
+    header-args: :noweb-ref Hacking-Literate-Programming-Emacs-Lisp
 
     ID: 3AD91697-42DE-4555-9F49-B7D9F5E502D3
 
@@ -4086,7 +4101,7 @@ With that in mind this system:
 
 ## Org-Mode
 
-    noweb-ref: Hacking-Literate-Programming-Org-Mode
+    header-args: :noweb-ref Hacking-Literate-Programming-Org-Mode
 
     ID: EBDA3D1C-536F-4252-AE26-32A3FDF5326C
 
@@ -4405,7 +4420,9 @@ Smartparens provides that functionality for programming modes.
 (use-package wrap-region
   :ensure t
   :config
-  :diminish wrap-region-mode)
+  :diminish wrap-region-mode
+  :config
+  (add-hook 'org-mode-hook 'wrap-region-mode))
 ```
 
 **Bold**.
@@ -4496,6 +4513,15 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
     (define-key org-mode-map (kbd "s-9") #'org-todo)
     ```
 
+    Easily manipulate lists and headlines staying close to home.
+
+    ```lisp
+    (key-chord-define org-mode-map "U*" #'org-metaup)
+    (key-chord-define org-mode-map "I(" #'org-metadown)
+    (key-chord-define org-mode-map "u8" #'org-metaleft)
+    (key-chord-define org-mode-map "i9" #'org-metaright)
+    ```
+
 2.  Row 4
 
         ID: 1E49694B-6350-45E2-BE58-21EAAF09D4A2
@@ -4520,10 +4546,6 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
     (define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
     (define-key org-mode-map (kbd "s-l") #'help/safb-org-edit-src-code)
     (define-key org-mode-map (kbd "s-;") #'help/safb-help/org-babel-demarcate-block)
-    (define-key org-mode-map (kbd "s-C-i") #'org-metaup)
-    (define-key org-mode-map (kbd "s-C-k") #'org-metadown)
-    (define-key org-mode-map (kbd "s-C-l") #'org-metaright)
-    (define-key org-mode-map (kbd "s-C-j") #'org-metaleft)
     ```
 
 4.  Row 2
@@ -4601,7 +4623,7 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
 
 ## Emacs Speaks Statistics (ESS)
 
-    noweb-ref: Hacking-Applied-Mathematics-ESS
+    header-args: :noweb-ref Hacking-Applied-Mathematics-ESS
 
     ID: CB6305D8-DDBB-4865-8CAD-3648B31B76DB
 
@@ -4752,13 +4774,13 @@ and see how it goes.
 
 ## SAS (ESS)
 
-    noweb-ref: Hacking-Applied-Mathematics-ESS-SAS
+    header-args: :noweb-ref Hacking-Applied-Mathematics-ESS-SAS
 
     ID: 2442E555-0F82-48E6-96EA-2ABB5C9CC666
 
 ## R (ESS)
 
-    noweb-ref: Hacking-Applied-Mathematics-ESS-R
+    header-args: :noweb-ref Hacking-Applied-Mathematics-ESS-R
 
     ID: 1183D35B-77FC-4CFD-9BAA-4F7656AD8943
 
@@ -4983,7 +5005,7 @@ R mode hook.
 
 ## Scheme (LISP)
 
-    noweb-ref: Hacking-Applied-Mathematics-LISP-Scheme
+    header-args: :noweb-ref Hacking-Applied-Mathematics-LISP-Scheme
 
     ID: D68EC042-5CBA-4547-B28A-CF878FB080C1
 
@@ -5038,7 +5060,7 @@ Enable Auto-Complete via Geiser.
 
 ## YASnippet
 
-    noweb-ref: Hacking-Applied-Mathematics-YASnippet
+    header-args: :noweb-ref Hacking-Applied-Mathematics-YASnippet
 
     ID: 5C48A01F-D522-4AC9-A523-F8EE2E9EB384
 
@@ -5074,7 +5096,7 @@ Enable Auto-Complete via Geiser.
 
 ## TeX
 
-    noweb-ref: Hacking-Publishing-TeX
+    header-args: :noweb-ref Hacking-Publishing-TeX
 
     ID: E2A1BFA2-0246-4376-9A33-E35A8DE2E5A3
 
@@ -5169,7 +5191,7 @@ Use &ldquo;Smartquotes&rdquo;.
 
 ## KOMA-Script
 
-    noweb-ref: Hacking-Publishing-KOMA
+    header-args: :noweb-ref Hacking-Publishing-KOMA
 
     ID: BFF1402E-98D4-4F36-ACCB-B1E88A3EB2D9
 
@@ -5294,7 +5316,7 @@ Perhaps the [first](https://lists.gnu.org/archive/html/emacs-orgmode/2015-07/msg
 
 ## Markdown
 
-    noweb-ref: Hacking-Publishing-Markdown
+    header-args: :noweb-ref Hacking-Publishing-Markdown
 
     ID: 748319ED-9F02-4A4D-BEE8-E71C462663FC
 
@@ -5316,7 +5338,7 @@ Program GFM.
 
 ## Blog
 
-    noweb-ref: Hacking-Publishing-Org2blog
+    header-args: :noweb-ref Hacking-Publishing-Org2blog
 
     ID: F5E33EB2-2E26-435C-85F6-26CB7CE7FC56
 
@@ -5365,7 +5387,7 @@ Configure Org2Blog.
 
 ## HTML
 
-    noweb-ref: Hacking-Publishing-HTML
+    header-args: :noweb-ref Hacking-Publishing-HTML
 
     ID: 84F673DF-2E6F-4BAA-8095-4A7586BB73FC
 
@@ -5414,7 +5436,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 
 ## Beamer
 
-    noweb-ref: Hacking-Publishing-Beamer
+    header-args: :noweb-ref Hacking-Publishing-Beamer
 
     ID: 6B86302E-D3EC-413A-A844-9ACCAA23A056
 
@@ -5448,7 +5470,7 @@ Load Beamer for creating presentations.
 
 ## Artist
 
-    noweb-ref: Hacking-Diagram-Artist
+    header-args: :noweb-ref Hacking-Diagram-Artist
 
     ID: F920A833-60D7-41C2-9363-EA2A8BD19009
 
@@ -5460,7 +5482,7 @@ Load Beamer for creating presentations.
 
 ## DITAA
 
-    noweb-ref: Hacking-Diagram-DITAA
+    header-args: :noweb-ref Hacking-Diagram-DITAA
 
     ID: FCC8A8F8-A967-4981-9260-CFF60CC56494
 
@@ -5477,13 +5499,13 @@ When a drop of water joins the ocean it becomes the ocean.
 </div>
 
 ```lisp
-(defconst help/ditaa-jar (concat (getenv "EELIB") "/ditaa.jar"))
+(defconst help/ditaa-jar "/usr/local/Cellar/ditaa/0.9/libexec/ditaa0_9.jar")
 (setq org-ditaa-jar-path help/ditaa-jar)
 ```
 
 ## Graphviz
 
-    noweb-ref: Hacking-Diagram-Graphviz
+    header-args: :noweb-ref Hacking-Diagram-Graphviz
 
     ID: A84665A3-4A2D-4040-926A-17159A6D4647
 
@@ -5501,7 +5523,7 @@ When a drop of water joins the ocean it becomes the ocean.
 
 ## PlantUML
 
-    noweb-ref: Hacking-Diagram-PlantUML
+    header-args: :noweb-ref Hacking-Diagram-PlantUML
 
     ID: FCC259F8-0858-4778-B97F-07D2B21012F5
 
@@ -5509,7 +5531,7 @@ When a drop of water joins the ocean it becomes the ocean.
 (use-package plantuml-mode
   :ensure t
   :init
-  (defconst help/plantuml-jar (concat (getenv "EELIB") "/plantuml.jar"))
+  (defconst help/plantuml-jar "/usr/local/Cellar/plantuml/8031/plantuml.8031.jar")
   (setq plantuml-jar-path help/plantuml-jar)
   :config
   (eval-after-load "ob-plantuml"
