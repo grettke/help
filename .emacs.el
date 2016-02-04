@@ -1108,7 +1108,7 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
 (use-package langtool
   :ensure t
   :init
-  (setq langtool-language-tool-jar (concat (getenv "EELIB") "/LanguageTool/languagetool-commandline.jar"))
+  (setq langtool-language-tool-jar "/usr/local/Cellar/languagetool/3.2/languagetool-commandline.jar")
   (setq langtool-mother-tongue "en")
   (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java")))
 ;; 4FF40D35-DDA0-4E02-80C0-52962DCD449A ends here
@@ -2060,7 +2060,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 (add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
 ;; 7592B1CF-CDA3-4ED1-99FA-205E41C74FFF ends here
 ;; [[file:~/src/help/help.org::*DITAA][6907A176-CCF4-4BDF-A242-BDBC4C67239F]]
-(defconst help/ditaa-jar (concat (getenv "EELIB") "/ditaa.jar"))
+(defconst help/ditaa-jar "/usr/local/Cellar/ditaa/0.9/libexec/ditaa0_9.jar")
 (setq org-ditaa-jar-path help/ditaa-jar)
 ;; 6907A176-CCF4-4BDF-A242-BDBC4C67239F ends here
 ;; [[file:~/src/help/help.org::*Graphviz][EAADBBCB-9054-4040-8579-1EC08FB97BDE]]
@@ -2073,7 +2073,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 (use-package plantuml-mode
   :ensure t
   :init
-  (defconst help/plantuml-jar (concat (getenv "EELIB") "/plantuml.jar"))
+  (defconst help/plantuml-jar "/usr/local/Cellar/plantuml/8031/plantuml.8031.jar")
   (setq plantuml-jar-path help/plantuml-jar)
   :config
   (eval-after-load "ob-plantuml"

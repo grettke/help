@@ -28,15 +28,13 @@ emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
 
 2) [[https://github.com/punchagan/org2blog][Clone Org2Blog]] to =~/src/=.
 3) [[https://github.com/jwiegley/use-package][Clone Use-Package]] to =~/src/=.
-4) Create a folder for support libraries exporting it's location in a variable
-   named =EELIB=.
-   1) Install [[http://ditaa.sourceforge.net/][DITAA]] renaming the JAR to =ditaa.jar=.
-   2) Install [[http://plantuml.com/][PlantUML]] renaming the JAR to =plantuml.jar=.
-5) Install supporting software adding their exectuable location to the =PATH=.
+4) Install supporting software adding their exectuable location to the =PATH=.
    1) Install [[https://www.oracle.com/java/index.html][Oracle Java]].
    2) Install [[https://www.languagetool.org/][LanguageTool]] renaming it's folder to =LanguageTool=.
-   3) Install [[https://tug.org/mactex/][MacTeX]].
-6) Link:
+   3) Install PlantUML.
+   4) Install Ditaa.
+   5) Install [[https://tug.org/mactex/][MacTeX]].
+5) Link:
    - The Eshell directory to HELP's.
      - =ln -s ~/src/help/eshell/ ~/.emacs.d/eshell=
    - The Initialization file to HELP's.
@@ -3212,7 +3210,7 @@ Warn of poor grammar immediately interrupting flow with a visual indicator.
 (use-package langtool
   :ensure t
   :init
-  (setq langtool-language-tool-jar (concat (getenv "EELIB") "/LanguageTool/languagetool-commandline.jar"))
+  (setq langtool-language-tool-jar "/usr/local/Cellar/languagetool/3.2/languagetool-commandline.jar")
   (setq langtool-mother-tongue "en")
   (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java")))
 #+END_SRC
@@ -5879,7 +5877,7 @@ When a drop of water joins the ocean it becomes the ocean.
 
 #+NAME: 6907A176-CCF4-4BDF-A242-BDBC4C67239F
 #+BEGIN_SRC emacs-lisp :results output silent :wrap "RESULTS"
-(defconst help/ditaa-jar (concat (getenv "EELIB") "/ditaa.jar"))
+(defconst help/ditaa-jar "/usr/local/Cellar/ditaa/0.9/libexec/ditaa0_9.jar")
 (setq org-ditaa-jar-path help/ditaa-jar)
 #+END_SRC
 
@@ -5919,6 +5917,7 @@ digraph graphviz {
 [[file:./image/graphviz-life_is_simple.png]]
 #+END_RESULTS
 
+
 ** PlantUML
   :PROPERTIES:
   :header-args: :noweb-ref Hacking-Diagram-PlantUML
@@ -5930,7 +5929,7 @@ digraph graphviz {
 (use-package plantuml-mode
   :ensure t
   :init
-  (defconst help/plantuml-jar (concat (getenv "EELIB") "/plantuml.jar"))
+  (defconst help/plantuml-jar "/usr/local/Cellar/plantuml/8031/plantuml.8031.jar")
   (setq plantuml-jar-path help/plantuml-jar)
   :config
   (eval-after-load "ob-plantuml"
