@@ -625,7 +625,7 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   "Increase font size"
   (interactive)
   (help/on-gui
-   (setq help/font-size (+ help/font-size 1))
+   (setq help/font-size-current (+ help/font-size-current 1))
    (help/update-font))
   (help/not-on-gui
    (message "Please resize the terminal emulator font.")))
@@ -633,8 +633,8 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   "Reduce font size."
   (interactive)
   (help/on-gui
-   (when (> help/font-size 1)
-     (setq help/font-size (- help/font-size 1))
+   (when (> help/font-size-current 1)
+     (setq help/font-size-current (- help/font-size-current 1))
      (help/update-font)))
   (help/not-on-gui
    (message "Please resize the terminal emulator font.")))
@@ -2145,9 +2145,9 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 ;; 346012D4-6861-458B-8352-3874D1F934E6 ends here
 ;; [[file:~/src/help/help.org::*Font][21687556-D79E-4734-86E6-52FF9EE107B5]]
 (help/on-gui
- (defvar help/font-size 10 "The preferred font size.")
- (help/on-osx (setq help/font-size 17))
- (help/on-windows (setq help/font-size 13))
+ (defvar help/font-size-current 10 "The preferred font size.")
+ (help/on-osx (setq help/font-size-current 17))
+ (help/on-windows (setq help/font-size-current 13))
  (defconst help/font-base "DejaVu Sans Mono" "The preferred font name.")
  (defun help/font-ok-p ()
    "Is the configured font valid?"
@@ -2156,7 +2156,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
  (defun help/font-name ()
    "Compute the font name and size string."
    (interactive)
-   (let* ((size (number-to-string help/font-size))
+   (let* ((size (number-to-string help/font-size-current))
           (name (concat help/font-base "-" size)))
      name))
  (defun help/update-font ()
