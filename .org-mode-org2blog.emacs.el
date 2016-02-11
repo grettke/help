@@ -229,7 +229,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
 ;; [[file:~/src/help/help.org::*Blog][BCA2FE29-930C-4E66-A662-17FF451D1591]]
 (setq org2blog/wp-blog-alist
       '(("wisdomandwonder"
-         :url "http://www.wisdomandwonder.com/wordpress/xmlrpc.php"
+         :url "https://www.wisdomandwonder.com/xmlrpc.php"
          :username "admin"
          :default-categories ("Article" "Link")
          :confirm t

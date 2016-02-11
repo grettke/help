@@ -5724,7 +5724,7 @@ Configure Org2Blog.
 #+BEGIN_SRC emacs-lisp :results output silent
 (setq org2blog/wp-blog-alist
       '(("wisdomandwonder"
-         :url "http://www.wisdomandwonder.com/wordpress/xmlrpc.php"
+         :url "https://www.wisdomandwonder.com/xmlrpc.php"
          :username "admin"
          :default-categories ("Article" "Link")
          :confirm t
