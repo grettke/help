@@ -2148,6 +2148,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
  (defvar help/font-size-current 10 "The preferred font size.")
  (help/on-osx (setq help/font-size-current 17))
  (help/on-windows (setq help/font-size-current 13))
+ (defconst help/font-size-ideal help/font-size-current "The ideal font for this system.")
  (defconst help/font-base "DejaVu Sans Mono" "The preferred font name.")
  (defun help/font-ok-p ()
    "Is the configured font valid?"
@@ -2164,9 +2165,14 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
    (interactive)
    (if (help/font-ok-p)
        (progn
-         (message "Setting font to: %s" (help/font-name))
+         (message "%s : Font Set" (help/font-name))
          (set-frame-font (help/font-name)))
      (message (concat "Your preferred font is not available: " help/font-base))))
+ (defun help/font-size-reset ()
+   "Restore the ideal font size."
+   (interactive)
+   (setq help/font-size-current help/font-size-ideal)
+   (help/update-font))
  (help/update-font))
 ;; 21687556-D79E-4734-86E6-52FF9EE107B5 ends here
 ;; [[file:~/src/help/help.org::*Frame][96EB14DD-CB63-46F3-B2E3-6F433D70DFAE]]
@@ -2221,17 +2227,18 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 (defhydra help/hydra/left-side/global (:color blue
                                               :hint nil)
   "
-_1_ -font  _2_ +font _3_ ellipsis _4_ UUID _5_ bfr-cdng-systm _6_ grade-level _7_ reading-ease
+_1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_ grade-level _8_ reading-ease
 _q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
                  _j_ back-char _k_ scrollDown _K_ nextLogLine _l_ forw-char _;_ toggle-lax-whitespace
 _x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer"
-  ("1" help/text-scale-decrease :exit nil)
-  ("2" help/text-scale-increase :exit nil)
-  ("3" help/insert-ellipsis)
-  ("4" help/uuid)
-  ("5" set-buffer-file-coding-system)
-  ("6" writegood-grade-level)
-  ("7" writegood-reading-ease)
+  ("1" help/font-size-reset :exit nil)
+  ("2" help/text-scale-decrease :exit nil)
+  ("3" help/text-scale-increase :exit nil)
+  ("4" help/insert-ellipsis)
+  ("5" help/uuid)
+  ("6" set-buffer-file-coding-system)
+  ("7" writegood-grade-level)
+  ("8" writegood-reading-ease)
   ("x" delete-indentation)
   ("q" hydra-apropos/body)
   ("w" widen)
