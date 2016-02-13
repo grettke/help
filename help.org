@@ -2270,11 +2270,11 @@ With that in mind this system:
 (add-hook 'ielm-mode-hook #'help/ielm-mode-hook-fn)
  #+END_SRC
 
-** (Literate Programming)
+** Literate Programming
    :PROPERTIES:
    :ID:       6B83373B-8898-4AC0-B7F6-C42418CCE5E4
    :END:
-** Emacs Lisp
+*** Emacs Lisp
   :PROPERTIES:
   :ID:       3AD91697-42DE-4555-9F49-B7D9F5E502D3
   :END:
@@ -2321,7 +2321,7 @@ With that in mind this system:
   (help/ielm-auto-complete))
 #+END_SRC
 
-*** Keybinding
+**** Keybinding
     :PROPERTIES:
     :ID:       3A6B16EC-870A-4EFE-935A-C03F8DFB67BF
     :END:
@@ -2331,7 +2331,7 @@ With that in mind this system:
 (define-key emacs-lisp-mode-map (kbd "s-p") #'describe-thing-in-popup)
 #+END_SRC
 
-** Org-Mode
+*** Org-Mode
   :PROPERTIES:
   :ID:       EBDA3D1C-536F-4252-AE26-32A3FDF5326C
   :END:
@@ -2737,7 +2737,7 @@ Follow links without using the mouse or more.
 (setq org-return-follows-link t)
 #+END_SRC
 
-*** Keybindings
+**** Keybindings
     :PROPERTIES:
     :ID:       0AA3F69B-F5F1-48DA-B8F7-B7C92CD30DB1
     :END:
@@ -2774,7 +2774,7 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
  (define-key org-mode-map (kbd "C-M-<return>") #'electric-indent-just-newline))
 #+END_SRC
 
-****  Row 5
+*****  Row 5
      :PROPERTIES:
      :ID:       B09BE660-B5D5-40CA-8952-D2DEAE20E7BD
      :END:
@@ -2797,7 +2797,7 @@ Easily manipulate lists and headlines staying close to home.
 (key-chord-define org-mode-map "i9" #'org-metaright)
 #+END_SRC
 
-**** Row 4
+***** Row 4
      :PROPERTIES:
      :ID:       1E49694B-6350-45E2-BE58-21EAAF09D4A2
      :END:
@@ -2813,7 +2813,7 @@ Easily manipulate lists and headlines staying close to home.
 (define-key org-mode-map (kbd "s-[") #'org-babel-remove-inline-result)
 #+END_SRC
 
-**** Row 3
+***** Row 3
      :PROPERTIES:
      :ID:       D11109EE-AD92-4E26-988F-AF3CC70A2F69
      :END:
@@ -2827,7 +2827,7 @@ Easily manipulate lists and headlines staying close to home.
 (define-key org-mode-map (kbd "s-;") #'help/safb-help/org-babel-demarcate-block)
 #+END_SRC
 
-**** Row 2
+***** Row 2
      :PROPERTIES:
      :ID:       CA925DDA-8EA8-47B0-AE9A-D73073CF51B7
      :END:
@@ -2840,7 +2840,7 @@ Easily manipulate lists and headlines staying close to home.
 (define-key org-mode-map (kbd "s-.") #'org-time-stamp)
 #+END_SRC
 
-**** Hydra
+***** Hydra
      :PROPERTIES:
      :ID:       46BCE65B-B8C9-49A0-A687-30D1330DB07D
      :END:
@@ -2902,11 +2902,11 @@ Easily enter guillemots.
 (key-chord-define org-src-mode-map "<<" (lambda () (interactive) (insert "«")))
 (key-chord-define org-src-mode-map ">>" (lambda () (interactive) (insert "»")))
 #+END_SRC
-** (Applied Mathematics)
+** Applied Mathematics
    :PROPERTIES:
    :ID:       BE2550C9-231A-4824-BE6C-14231A971FE9
    :END:
-** Emacs Speaks Statistics (ESS)
+*** Emacs Speaks Statistics (ESS)
   :PROPERTIES:
   :ID:       CB6305D8-DDBB-4865-8CAD-3648B31B76DB
   :END:
@@ -3069,12 +3069,12 @@ and see how it goes.
 (setq ess-eval-visibly 'nowait)
 #+END_SRC
 
-** SAS (ESS)
+*** SAS (ESS)
   :PROPERTIES:
   :ID:       2442E555-0F82-48E6-96EA-2ABB5C9CC666
   :END:
 
-** R (ESS)
+*** R (ESS)
   :PROPERTIES:
   :ID:       1183D35B-77FC-4CFD-9BAA-4F7656AD8943
   :END:
@@ -3314,7 +3314,7 @@ R mode hook.
 (add-hook 'ess-rdired-mode-hook #'help/ess-rdired-mode-hook-fn)
 #+END_SRC
 
-** Scheme (LISP)
+*** Scheme (LISP)
   :PROPERTIES:
   :ID:       D68EC042-5CBA-4547-B28A-CF878FB080C1
   :END:
@@ -3361,15 +3361,15 @@ Enable Auto-Complete via Geiser.
   (setq geiser-repl-history-no-dups-p t))
 #+END_SRC
 
-** C
+*** C
    :PROPERTIES:
    :ID:       6F4A6F8E-277C-45E2-B26E-51455C2CBC16
    :END:
-** Python
+*** Python
    :PROPERTIES:
    :ID:       F4577EEA-FB0F-4E7B-AF02-A4DEA74BB763
    :END:
-** YASnippet
+*** YASnippet
   :PROPERTIES:
   :ID:       5C48A01F-D522-4AC9-A523-F8EE2E9EB384
   :END:
@@ -3397,15 +3397,15 @@ Enable Auto-Complete via Geiser.
   :diminish yas-minor-mode)
 #+END_SRC
 
-** Structured Query Language (SQL)
+*** Structured Query Language (SQL)
    :PROPERTIES:
    :ID:       987C1C05-F880-4312-B902-5060208A3506
    :END:
-** (Publishing)
+** Publishing
    :PROPERTIES:
    :ID:       7D07C2F6-38B9-49BF-A584-B029CEED6141
    :END:
-** TeX
+*** TeX
   :PROPERTIES:
   :ID:       E2A1BFA2-0246-4376-9A33-E35A8DE2E5A3
   :END:
@@ -3512,7 +3512,7 @@ Use "Smartquotes".
 (setq org-export-with-smart-quotes t)
 #+END_SRC
 
-** KOMA-Script
+*** KOMA-Script
   :PROPERTIES:
   :ID:       BFF1402E-98D4-4F36-ACCB-B1E88A3EB2D9
   :END:
@@ -3632,19 +3632,19 @@ Set up my default LCO files.
 (setq org-koma-letter-class-option-file "UScommercial9 KomaDefault")
 #+END_SRC
 
-** Texinfo
+*** Texinfo
    :PROPERTIES:
    :ID:       F2C5CEB7-1252-4E6F-B192-C5D2D41A6D47
    :END:
 
 Perhaps the [[https://lists.gnu.org/archive/html/emacs-orgmode/2015-07/msg00042.html][first]] document typeset with Org-Texinfo.
 
-** Pandoc
+*** Pandoc
    :PROPERTIES:
    :ID:       1E4AB0D4-F92E-48E6-9313-278C27DED142
    :END:
 
-** Markdown
+*** Markdown
    :PROPERTIES:
    :ID:       748319ED-9F02-4A4D-BEE8-E71C462663FC
    :END:
@@ -3667,7 +3667,7 @@ Program GFM.
   (setq markdown-coding-system "utf-8"))
 #+END_SRC
 
-** HTML
+*** HTML
   :PROPERTIES:
   :ID:       84F673DF-2E6F-4BAA-8095-4A7586BB73FC
   :END:
@@ -3708,7 +3708,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
   (add-hook 'htmlize-after-hook #'help/htmlize-after-hook-fn))
 #+END_SRC
 
-** ASCII
+*** ASCII
    :PROPERTIES:
    :ID:       1F20F4EC-1D8B-402A-A0A9-504E733AEFDC
    :END:
@@ -3719,7 +3719,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 (setq org-ascii-global-margin 0)
 #+END_SRC
 
-** Beamer
+*** Beamer
   :PROPERTIES:
   :ID:       6B86302E-D3EC-413A-A844-9ACCAA23A056
   :END:
@@ -3731,30 +3731,30 @@ Load Beamer for creating presentations.
 (use-package ox-beamer)
 #+END_SRC
 
-** (DevOps)
+** DevOps
    :PROPERTIES:
    :ID:       8B78A8C3-E6B6-4722-9822-EF428E5DB823
    :END:
-** Shell Script
+*** Shell Script
    :PROPERTIES:
    :ID:       06D022B2-53ED-4042-8152-F383F5FE309E
    :END:
-** Make
+*** Make
    :PROPERTIES:
    :ID:       5F2B3343-631D-41C3-BE6B-D98548F77E07
    :END:
-** Vagrant
+*** Vagrant
    :PROPERTIES:
    :ID:       A1335FE5-6DA7-4FE2-A77C-60032C76B40D
    :END:
 
 ~ruby-mode~ supports =Vagrantfile= OOTB.
 
-** (Diagram)
+** Diagram
    :PROPERTIES:
    :ID:       FA47D423-05B3-4911-9CEC-28A534E49428
    :END:
-** Artist
+*** Artist
   :PROPERTIES:
   :ID:       F920A833-60D7-41C2-9363-EA2A8BD19009
   :END:
@@ -3766,7 +3766,7 @@ Load Beamer for creating presentations.
 (add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
 #+END_SRC
 
-** DITAA
+*** DITAA
   :PROPERTIES:
   :ID:       FCC8A8F8-A967-4981-9260-CFF60CC56494
   :END:
@@ -3777,7 +3777,7 @@ Load Beamer for creating presentations.
 (setq org-ditaa-jar-path help/ditaa-jar)
 #+END_SRC
 
-** Graphviz
+*** Graphviz
   :PROPERTIES:
   :ID:       A84665A3-4A2D-4040-926A-17159A6D4647
   :END:
@@ -3790,7 +3790,7 @@ Load Beamer for creating presentations.
   (setf (cdr (assoc "dot" org-src-lang-modes)) 'graphviz-dot))
 #+END_SRC
 
-** PlantUML
+*** PlantUML
   :PROPERTIES:
   :ID:       FCC259F8-0858-4778-B97F-07D2B21012F5
   :END:
@@ -4691,7 +4691,7 @@ Hide and show code blocks.
 (global-set-key (kbd "s-b") #'hs-toggle-hiding)
 #+END_SRC
 
-***  Left & Right Side
+*** Left & Right Side
     :PROPERTIES:
     :ID:       FA2BFDC9-5242-4547-A8A5-6DECC8ED1C1B
     :END:
