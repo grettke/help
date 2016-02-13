@@ -1,4 +1,4 @@
-# -*- lexical-binding: t -*-
+#+PROPERTY: header-args :tangle "./.emacs.el"
 
 #  LocalWords:  YASnippet UTF defun PlantUML LanguageTool HELP's Eshell showeverything
 
@@ -8,6 +8,24 @@
   :PROPERTIES:
   :ID:       F651B86D-86C2-43A9-B0E6-CB94963BB502
   :END:
+
+Configure EMACS to for everything defined within this monolithic system.
+
+Sysop is likely to use this constantly.
+
+Start EMACS with this command:
+
+=open /Applications/Emacs.app=
+
+#+NAME: 3EB2F596-DAE1-4083-B2B9-DB61A15AFDEF
+#+BEGIN_SRC emacs-lisp :results output silent :comments no
+;; -*- lexical-binding: t -*-
+#+END_SRC
+
+#+NAME: AD12BE48-B87B-4AB6-814D-4FA5E47597A0
+#+BEGIN_SRC emacs-lisp :results output silent
+(load-file "~/src/help/.org-mode-org2blog.emacs.el")
+#+END_SRC
 
 ** HELP Enables Literate Programming
    :PROPERTIES:
@@ -20,11 +38,11 @@
    1) Without =Make=: [[http://orgmode.org/worg/org-hacks.html][Generating autoloads and Compiling Org without make]]
    2) As of <2016-01-19 Tue>
       #+NAME: B20AB3BC-6B45-4F2B-99EB-DFCC15E86D8D
-      #+BEGIN_SRC shell bash :results silent
+      #+BEGIN_EXAMPLE
 cd ~/src/org-mode
 git pull
 emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
-      #+END_SRC
+      #+END_EXAMPLE
 
 2) [[https://github.com/punchagan/org2blog][Clone Org2Blog]] to =~/src/=.
 3) [[https://github.com/jwiegley/use-package][Clone Use-Package]] to =~/src/=.
@@ -40,7 +58,7 @@ emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
    - The Initialization file to HELP's.
      - =ln -s ~/src/help/.emacs.el ~/.emacs.el=
 
-* Style Guide
+** Style Guide
   :PROPERTIES:
   :ID:       STYLEGUIDE
   :END:
@@ -213,761 +231,8 @@ emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
   - Never describe something as "perfect" or "delightful". If it is part of this
     system then it is perfect and delightful.
 
-* Webs We Weave
-  :PROPERTIES:
-  :ID:       DB5CDB3F-DE18-48FB-B104-D3990304FA91
-  :END:
-
-** The Whole Enchilada
-   :PROPERTIES:
-   :header-args: :tangle "./.emacs.el"
-   :ID:       016FA25F-E70E-4BED-BA01-AEB808428791
-   :END:
-
-Configure EMACS to for everything defined within this monolithic system.
-
-Sysop is likely to use this constantly.
-
-Start EMACS with this command:
-
-=open /Applications/Emacs.app=
-
-#+NAME: 3EB2F596-DAE1-4083-B2B9-DB61A15AFDEF
-#+BEGIN_SRC emacs-lisp :results output silent :comments no :noweb-ref ignore-whole
-;; -*- lexical-binding: t -*-
-#+END_SRC
-
-#+NAME: AD12BE48-B87B-4AB6-814D-4FA5E47597A0
-#+BEGIN_SRC emacs-lisp :results output silent
-(load-file "~/src/help/.org-mode-org2blog.emacs.el")
-<<Special-Operating-Procedure>>
-<<Standard-Operating-Procedure>>
-<<Hacking-Common-Configurations>>
-<<Hacking-Literate-Programming-Emacs-Lisp>>
-<<Hacking-Literate-Programming-Org-Mode>>
-<<Hacking-Applied-Mathematics-ESS>>
-<<Hacking-Applied-Mathematics-ESS-SAS>>
-<<Hacking-Applied-Mathematics-ESS-R>>
-<<Hacking-Applied-Mathematics-LISP-Scheme>>
-<<Hacking-Applied-Mathematics-YASnippet>>
-<<Hacking-Publishing-TeX>>
-<<Hacking-Publishing-KOMA>>
-<<Hacking-Publishing-Markdown>>
-<<Hacking-Publishing-Beamer>>
-<<Hacking-Publishing-HTML>>
-<<Hacking-Diagram-Artist>>
-<<Hacking-Diagram-DITAA>>
-<<Hacking-Diagram-Graphviz>>
-<<Hacking-Diagram-PlantUML>>
-<<Quiet-and-Pleasant-Appearance>>
-<<Piano-Lessons>>
-#+END_SRC
-
-* Piano Lessons
-   :PROPERTIES:
-   :header-args: :noweb-ref Piano-Lessons
-   :ID:       31274432-4BA2-4B03-8DDB-E590C245244D
-   :END:
-
-** A Fine Cup of EMACS
-   :PROPERTIES:
-   :ID:       01EEEC32-91D4-4DDC-A100-52CE571558DC
-   :END:
-
-Every EMACS user ought to have a [[http://shop.fsf.org/product/gnu-emacs-reference-mugs/][Emacs Reference Mug]] at their desk. The mug
-invites other users to ask questions. Give the mug as a gift to every user you
-know who would benefit from learning EMACS. The mug reminds us all that EMACS is
-the perfect configuration of EMACS. It is available on every machine. When you
-break your system, you can always fall back to the good and reliable default
-EMACS configuration to get your system up and running again. The OOTB
-configuration of EMACS is one of the most important system configurations that
-you will every find. That is why it is important never to ruin it.
-
-This system wants to maximize accessibility for new users. It wants anyone to be
-able to download and use it without surprises. It wants the mug to serve as a
-fine reference for anyone to use. It wants to keep things simple and familiar so
-that anyone who has learned EMACS OOTB can use it pleasantly and productively.
-These goals are essential to configuring the keyboard for this system. This
-system will always respect the POLA.
-
-** A Keyboard on Every Desk
-   :PROPERTIES:
-   :ID:       A50A19BB-1DE7-48C1-AEE4-03D1E88E887C
-   :END:
-
-The configuration of the keyboard on an EMACS system can completely change the
-experience. No keyboard makes it impossible. A Kinesis Ergo makes it feel
-really good. Soft keys make it feel soft; hard keys make it feel faster. The
-[[http://xahlee.info/kbd/dvorak_and_all_keyboard_layouts.html][layout of letters]] is claimed to make you "more productive" using statistics.
-You may even study the statistics of your own writing and choose a layout
-optimized for you. The ways to configure your keyboard are limitless because
-everyone is unique. How to get the best configuration tips for your system? Do
-what works for everyone.
-
-Choose a keyboard that will satisfy 80% of EMACS users using 80% of the
-keyboards out there. Make this system easy to use on any one of those keyboards.
-Make this system easy to use in English. Make this system easy to use with
-average hand strength using two hands. These goals are essential to configuring
-the keyboard for this system.
-
-** A Display with Every Keyboard
-   :PROPERTIES:
-   :ID:       7E76A660-7828-4747-90DE-84BD293CD4E7
-   :END:
-
-Every system requires an output. You have two options. The first is a terminal
-that only displays characters. The second is a display that provides detailed
-graphics. "Display" is the EMACS term for a GUI.
-
-Some users prefer the former. Some users prefer the latter. Some users prefer to
-use a $4000USD machine to emulate the latter. Both are good options.
-
-This system is configured to work pleasantly for either type of output.
-
-** A Full Pot of EMACS on Every Desk
-   :PROPERTIES:
-   :ID:       D8ADD840-9E9E-4A2E-B085-245C7BFA5F48
-   :END:
-
-*** Keyboard Layout & Operation
-    :PROPERTIES:
-    :ID:       D8420B75-E4B9-4DB1-885E-D5290FE9A3EA
-    :END:
-
-- Use QWERTY layout.
-  - Everyone knows it.
-  - Easy to learn.
-  - Available on every keyboard.
-  - Inexpensive.
-  - When graduation time comes, plenty of great alternatives available like
-    DVORAK and Colemak.
-- Keep hands in home position as much as possible.
-  - Every finger is strong in the home position so RSI reduced.
-  - Single key presses are easy there.
-- Table-bang the shift, caps-lock and enter keys.
-  - Table-bang is a position of your hand. Make it by:
-    - Starting with your hands in the home position.
-    - Make a "high-five" with both of them parallel to the keyboard.
-    - Turn your left hand counter-clockwise and right hand clockwise to make
-      them perpendicular to the keyboard.
-    - Squeeze all of your fingers together.
-    - Push the keys using the side of your Pinky.
-    - In this position you are using the strength of all of your fingers.
-  - Never use those key using your Pinky alone.
-  - Practice depends 100% on user-discipline.
-- Try to achieve balance with meta keys.
-  - Provide same key of each side of the keyboard.
-- Be conscious of key operations [[http://ergoemacs.org/emacs/emacs_key_notation_return_vs_RET.html][on different outputs]].
-  - Always provide both.
-  - Note what is getting stomped on.
-  - For return bind to:
-    - =RET= in the terminal.
-    - =<return>= in the GUI.
-  - Also for tab =TAB= vs =C-i=.
-  - Also for escape =ESC= vs =C-[=
-
-*** Understanding Your Cognitive Landscape.
-    :PROPERTIES:
-    :ID:       60A17CE8-C905-4443-90A2-10D2C12F23AF
-    :END:
-
-You operate within a cognitive landscape. Every moment you are in a single
-=place=. While residing in each =place= you perform logically related =activities=.
-Activities facilitate logical actions like modification within that =place=.
-Modifications are performed objects. Objects include things like the contents of
-a buffer, contents of memory, or the file that backs a buffer. While performing
-those =activities= there is a logical sense of "flow". That should never be
-interrupted. Usually an interruption occurs when you are going to go to a new
-=place=. The =distance= between =places= is measured in the similarity between the
-=actions= that you find there. As you develop these ides it will be obvious where
-key-bindings should go
-
-*** Key-Bindings Take You to Places to Perform Activities
-    :PROPERTIES:
-    :ID:       E765C8BB-ECC3-4791-A287-83B6DED2F6C3
-    :END:
-
-OOTB you wil be visiting many =places= and performing many =activities=. EMACS comes
-with a good configuration that minimizes =distance=. This isn't worth changing.
-You can use EMACS for a lifetime without ever having to customize any of the
-key-bindings. This is what lets anyone use your system. This is what lets you
-use the system with =-Q= when you break it. You need to decide if you every want
-to alter the default configuration. This system does not want to. It wants to
-keep EMACS true to EMACS and your hands happy. To satisfy those goals the
-following practices were defined.
-
-- 99.999% of the time never bind to the =C= or =M= name-space.
-  - They are for system key-bindings. You can break them. Don't.
-  - In theory =C-c= is the "user name-space" but packages stomp on this all of the
-    time anyway so don't use it.
-  - Some bindings are just too valuable to pass up:
-    - =C-;=
-      - Your hands are in the home position already.
-    - Every modifier key with return.
-- Never bind to =F= keys.
-  - They are a painful stretch on most keyboards.
-  - Some require a lone Pinky with is worse.
-  - Most operating systems bind actions to them OOTB anyway.
-  - EMACS comes with key-bindings OOTB.
-- Don't try to set up a Hyper-key.
-- Use shift as a name-space expansion vehicle.
-  - Shift doubles every name-space in which you use it.
-  - Use cautiously, not every name-space vehicle supports it.
-- About the =s= (super) name-space.
-  - In theory it is the best place for user-defined key-bindings because
-    EMACS OOTB uses =C= and =M= completely leaving =s= mostly open.
-  - In practice =C= and =M= are running out of space because there are a lot of
-    new packages being added to EMACS. Most new packages are binding key
-    in the =s= name-space.
-  - This system reserves =s= completely for Sysop.
-
-These practices say nothing about the =places= or =activities= that you choose to
-peform. The practices only look at the key-binding configuration. There are a
-limited number of keys on a keyboard and there are physical limitations on your
-hands. Along with the previous assuptions it may look like there are less.
-Fortunately it just looks that way and it isn't true. There are a lot of
-powerful ways to "go places" with EMACS. The next heading contains my attempt.
-
-*** How to Get There Pleasantly and Quickly
-    :PROPERTIES:
-    :ID:       38026C1B-44D4-47EF-90D2-239876F7F31C
-    :END:
-
-You need to learn how to use EMACS. You need to develop a personal preference.
-You need to develop an idea of =places= and =activities= and =distance=. The following
-headings are delineated by breaks in flow.
-
-The examples try to talk about doing those things and do it by exploring:
-
-- "going places to do things".
-- "how quickly I will get there and how long I will be there"
-- "how quickly I want to go somewhere else".
-
-They were initially described by the properties:
-
-- Actions :: The number of related actions in that place.
-- Expertise :: The level of skill and speed with which you are performing the
-  activity.
-- Relationship :: How closely those activities are related in the current place.
-- Frequency :: How many times you perform these actions when you here.
-
-The relationship between "doing those things" and those 4 properties is still
-unclear and being explored.
-
-**** =s=
-      :PROPERTIES:
-      :Actions:          High
-      :Expertise:        High
-      :Relationship:     High
-      :Frequency:        High
-      :ID:       0A491DA9-212E-4F01-8C08-EA09E9B6D82C
-      :END:
-
-- =Actions= here are for the =place= inside of the buffer itself. They are for
-  immediate acting upon the contents of the buffer. They are logically
-  related, used frequently, and likely to be memorized.
-- When you come here, you are likely to stay for some time before getting
-  out.
-- Only use single key bindings; anything more may be a new logical
-  name-space and may use a Hydra.
-- Split the home sides of the keyboard in half.
-- The left side of the keyboard should be use for operations common to
-  every mode.
-  - For example ~goto-line~ and ~ispell~.
-  - It has 15 bindings available; 20 if you use 1-5. 40 if you shift them.
-- The right side of the keyboard should be used operations specific to the
-  current major mode.
-  - For example in Org-Mode navigating between source-blocks and
-    evaluating them.
-  - It has 19 bindings available; 26 if you use 6-=. 52 if you shift them.
-
-For example, in Org-Mode:
-
-- I traverse the entire document very quickly with
-  ~org-babel-previous-src-block~ and and ~org-babel-next-src-block.~
-- I execute source-blocks.
-- I edit source-blocks.
-
-Every activity is related to reading, modifying, executing, and tangling code.
-
-**** =Key-Chord=
-     :PROPERTIES:
-     :ID:       76C81A53-52BA-47C4-A8FF-651E10A4620F
-     :END:
-
-Key-Chord is intriguing because it works on every keyboard. It is powerful
-because it can you bring you to any =place= easily. It is good for taking you
-places in two differnt kinds of scenarios.
-
-One example is grammar-checking. There are a few ways to do that. I don't
-remember them all. In a given mode I want to see a list of all the ways.
-I really just want to see all of the stuff that I value for a given mode and
-don't use frequently.
-
-Another example are things that I value for a mode and use a lot but are not
-logically related to other activities in that place. For example moving the
-mark around and going to lines are performed a lot so they need to be done
-quickly and left. This is a place where key-chords and the shift modifier are
-a fast and intuitive way to go places.
-
-***** Single-Key Key-Chord Name-Space.
-      :PROPERTIES:
-      :ID:       B198918B-F8C8-4036-A41B-237BDA793EC0
-      :END:
-      :Actions:          High
-      :Expertise:        Low
-      :Frequency:        High
-      :Relationship:     Low
-
-- Nice if you don't mind hitting the same key twice.
-- You will use come here often, perform your single =action=, and be done
-  and leave very frequently and quickly.
-- Using alphabetical characters always results in unpleasant surprises.
-- Harder for breakage but it still occurs.
-  - =#FF= color code.
-  - =cc= carbon copy.
-  - =JJ= nick-name.
-  - =dd= add
-- Symbols are more likely to be safer bets.
-  - Only use the symbols.
-    - 8 if you use rows 3-4; 16 if you shift.
-    - Fifth row has 13; 26 with shift.
-- Good vehicle to reach a Hydra.
-
-***** Two-Key Key-Chord Name-Space.
-      :PROPERTIES:
-      :ID:       9CF95F30-5872-40F4-AF00-BDB82E3D7399
-      :END:
-      :Actions:          Low
-      :Expertise:        High
-      :Frequency:        High
-      :Relationship:     Low
-
-- Very attractive.
-- Nice if you don't like hitting the same key twice.
-- Easy to use all fingers.
-  - Finger strength is not an issue here; use any of them.
-- Unexpected breakage very easy.
-  - =cd= in ~=eshell=~.
-- Use sparingly.
-- Not worth analyzing ideal combinations; just use it and see if it
-  doesn't break.
-- Bringing over existing bindings. They are all for every mode so I will
-  keep it that way.
-
-**** =Hydra=
-      :PROPERTIES:
-      :Actions:          High
-      :Expertise:        Low
-      :Frequency:        Low
-      :Relationship:     High
-      :ID:       0410F66C-40F4-46A1-9E69-56658EA815A9
-      :END:
-
-- Sometimes you want to do something in a =place= but you aren't sure what
-  and you aren't sure where you will go next from there. For example you
-  might want to perform an Org-Mode =action= that is important but you don't
-  really use much. For example exporting to HTML might not be common for
-  you but you value.
-- =Hydras= can be used for very related actions too. The difference between
-  the =s= name-space is the distance between them and where you are now.
-  In the =s= namespace you go there very quickly. For =Hydras= sometimes you
-  can get the fast and sometimes more slowly. They are complementary to
-  every name-space.
-- =SHIFT= doubles your key-space.
-- Use =C-g= to exit the Hydra.
-
-For example, in Org-Mode I am still learning about functions and haven't used
-them much and forget their names. It is faster to put them in a Hydra. If they
-get used a lot, I will add them to =s=.
-
-*** Building Your Own Keyboard
-    :PROPERTIES:
-    :ID:       A4257881-BD92-4826-8B0F-74B9557442F9
-    :END:
-
-As your mastery of EMACS grows so too will your desire to build your own
-keyboard. It is natural. As you explore various dimensions of expression you
-will have a lot of fun. You will act more quickly and skillfully. Even with the
-goals of this system in place the desire grows.
-
-3D printing is one area worth exploring. A lot of EMACS users design and print
-their own custom keyboards. That looks very fun. [[http://scripts.sil.org/cms/scripts/page.php?site_id%3Dnrsi&id%3Dukelele][Ukulele]] is softer way to
-explore your keyboard. Reading its user manual is important. It contains ideas
-about stack-able-environments for bindings. You may use Ukulele or Hydras to do
-the same thing. [[https://pqrs.org/osx/karabiner/][Karabiner]] is a nice way to re-map your keys. It's easiest
-adjustment is to make return act as return when pressed alone and as control
-when pressed with another key. That introduces a symmetry to your keyboard which
-can be helpful. All of those dimensions are worth exploring.
-
-When I explored them I felt that they led me further away from the majority of
-users. Every time explored a different key-mapping (not key-binding) it reduced
-accessibility for new users. Each time I tried to work around that hiccup. The
-last pursuit was =;= and space.
-
-It would be great to set up your keyboard with the meta keys on the bottom
-like this:
-
-#+BEGIN_EXAMPLE
-+---------------------------------------+
-| +-----+                       +-----+ |
-| |RET  |                       |  RET| |
-| +-----+                       +-----+ |
-| +------+                     +------+ |
-| |SHIFT |                     | SHIFT| |
-| +------+                     +------+ |
-|        +-+ +-+ +-----+ +-+ +-+        |
-|        |s| |M| |C/spc| |M| |s|        |
-|        +-+ +-+ +-----+ +-+ +-+        |
-|                                       |
-+---------------------------------------+
-#+END_EXAMPLE
-
-Karabiner was too slow for my typing speed though. It [[https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/][happens]]. It seemed like a
-minimal change to use Ukelele to:
-
-- Make space send =C=
-- Make =;= send space
-- Make ='= a dead key
-  - In it's dead key state make
-    - =;= \rarr =;=
-    - =:= \rarr =:=
-    - ='= \rarr ='=
-    - ="= \rarr ="=
-
-The trouble is that it violates the POLA. Therefore, I left it alone and stuck
-with a simple "Get C on both sides".
-
-That has worked out very well. It is very easy to do on every operating system.
-It holds true to the values of this system. When you develop an idea of =places= and
-how often you go there the key-mapping becomes more obvious. Make it easy to get
-to key-bindings that take you to familiar places. For this system it is the home
-keys, =s=, and =key-chord=. Make those keys more easily accessible. =C= and =M= often
-have symmetric-definitions. =s= and =SHIFT= also often have symmetric definitions in
-this system (mostly through Key-Chords). Therefore those key-mappings are kept
-close together
-
-#+BEGIN_EXAMPLE
-+---------------------------------------+
-| +-----+                       +-----+ |
-| |s    |                       |s/ret| |
-| +-----+                       +-----+ |
-| +------+                     +------+ |
-| |SHIFT |                     | SHIFT| |
-| +------+                     +------+ |
-|        +-+ +-+ +-----+ +-+ +-+        |
-|        |M| |C| |spc  | |C| |M|        |
-|        +-+ +-+ +-----+ +-+ +-+        |
-|                                       |
-+---------------------------------------+
-#+END_EXAMPLE
-
-** Take a Sip
-   :PROPERTIES:
-   :ID:       F42A8A6B-C690-4715-90CB-2207C47C6808
-   :END:
-
-*** Left Side
-    :PROPERTIES:
-    :ID:       22246934-BE44-4D99-942C-A6DAB4506D65
-    :END:
-
-**** Row 5
-     :PROPERTIES:
-     :ID:       C00A4E41-0801-4696-86E6-5A1CE1EBB189
-     :END:
-
-#+NAME: E4B98196-FDFB-42B4-A52A-8CA7DC066E8E
-#+BEGIN_SRC emacs-lisp :results output silent
-(global-set-key (kbd "s-4") #'mc/mark-next-like-this)
-(global-set-key (kbd "s-3") #'mc/mark-previous-like-this)
-(global-set-key (kbd "s-2") #'mc/mark-all-like-this)
-(global-set-key (kbd "s-1") #'mc/edit-lines)
-(global-set-key (kbd "s--") #'decrement-integer-at-point)
-(global-set-key (kbd "s-+") #'increment-integer-at-point)
-(global-set-key (kbd "M-s-3") #'help/split-into-3-windows)
-#+END_SRC
-
-**** Row 4
-     :PROPERTIES:
-     :ID:       8F467832-8FC3-42B5-8978-8CF2C1454D5B
-     :END:
-
-#+NAME: 239A85C3-2CEB-4E40-975F-8B3584F7F450
-#+BEGIN_SRC emacs-lisp :results output silent
-(global-set-key (kbd "s-w") #'imenu)
-#+END_SRC
-
-**** Row 3
-     :PROPERTIES:
-     :ID:       6DCD321F-6FDA-4983-9C7C-265D23D1AC4F
-     :END:
-
-Easily kill buffers.
-
-#+NAME: E60EA15F-28A0-4E98-B62E-1F8BDE444BD8
-#+BEGIN_SRC emacs-lisp :results output silent
-(global-set-key (kbd "s-a") #'kill-buffer)
-(global-set-key (kbd "s-d") #'er/expand-region)
-(key-chord-define-global "df" #'avy-goto-word-1)
-(key-chord-define-global "DF" #'avy-pop-mark)
-#+END_SRC
-
-#+NAME: F6C7AAB7-DF69-4EBA-8116-15DC32022D49
-#+BEGIN_SRC emacs-lisp :results output silent
-(defhydra help/hydra/left-side/global (:color blue
-                                              :hint nil)
-  "
-_1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_ grade-level _8_ reading-ease
-_q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
-                 _j_ back-char _k_ scrollDown _K_ nextLogLine _l_ forw-char _;_ toggle-lax-whitespace
-_x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer"
-  ("1" help/font-size-reset :exit nil)
-  ("2" help/text-scale-decrease :exit nil)
-  ("3" help/text-scale-increase :exit nil)
-  ("4" help/insert-ellipsis)
-  ("5" help/uuid)
-  ("6" set-buffer-file-coding-system)
-  ("7" writegood-grade-level)
-  ("8" writegood-reading-ease)
-  ("x" delete-indentation)
-  ("q" hydra-apropos/body)
-  ("w" widen)
-  ("r" rgrep)
-  ("t" org-babel-tangle-jump-to-org)
-  ("i" scroll-down-command :exit nil)
-  ("k" scroll-up-command :exit nil)
-  ("I" previous-logical-line :exit nil)
-  ("K" next-logical-line :exit nil)
-  ("j" backward-char :exit nil)
-  ("l" forward-char :exit nil)
-  (";" isearch-toggle-lax-whitespace)
-  ("o" toggle-debug-on-error)
-  ("p" anzu-query-replace)
-  ("[" backward-page :exit nil)
-  ("]" forward-page :exit nil)
-  ("c" fill-paragraph )
-  ("b" erase-buffer))
-#+END_SRC
-
-#+NAME: EFFA5A5F-58A8-476D-A8D4-16F232231EC7
-#+BEGIN_SRC emacs-lisp :results output silent
-(key-chord-define-global "vv" #'help/hydra/left-side/global/body)
-#+END_SRC
-
-[[https://github.com/abo-abo/hydra/blob/master/hydra-examples.el][Attribution.]]
-
-#+NAME: 362686F6-B397-44D5-812F-BE24670F4204
-#+BEGIN_SRC emacs-lisp :results output silent
-(defhydra hydra-apropos (:color blue
-                                :hint nil)
-  "
-_a_propos        _c_ommand
-_d_ocumentation  _l_ibrary
-_v_ariable       _u_ser-option
-^ ^          valu_e_"
-  ("a" apropos)
-  ("d" apropos-documentation)
-  ("v" apropos-variable)
-  ("c" apropos-command)
-  ("l" apropos-library)
-  ("u" apropos-user-option)
-  ("e" apropos-value))
-#+END_SRC
-
-**** Row 2
-     :PROPERTIES:
-     :ID:       9E95D130-D1EC-445B-9028-24DFA5CCB28A
-     :END:
-
-#+NAME: 9224105B-2CDB-46F4-AF3F-312B3467C2B8
-#+BEGIN_SRC emacs-lisp :results output silent
-(global-set-key (kbd "s-v") #'smex)
-(global-set-key (kbd "C-x C-c") #'help/safb-save-buffers-kill-terminal)
-(global-set-key (kbd "s-x") #'ido-find-file)
-(global-set-key (kbd "s-c") #'ido-switch-buffer)
-#+END_SRC
-
-**** Row 1
-     :PROPERTIES:
-     :ID:       4CDDC2CE-646A-4D8B-B5D3-2588FBEFF650
-     :END:
-
-**** Unsorted
-     :PROPERTIES:
-     :ID:       AD2164B2-CB66-48AD-B367-4E0CC406B022
-     :END:
-
-VC activities.
-
-#+NAME: A45F49E2-E330-463B-82C6-907F138E8F2A
-#+BEGIN_SRC emacs-lisp :results output silent
-(define-prefix-command 'help/vc-map)
-(global-set-key (kbd "s-r") #'help/vc-map)
-(define-key help/vc-map "e" #'help/safb-vc-ediff)
-(define-key help/vc-map "d" #'help/safb-vc-diff)
-(define-key help/vc-map "u" #'help/safb-vc-revert)
-(global-set-key (kbd "s-f") #'help/safb-help/vc-next-action)
-#+END_SRC
-
-Go to a line.
-
-#+NAME: B05E89FC-9FCE-48D6-8112-9BF990A8A15D
-#+BEGIN_SRC emacs-lisp :results output silent
-(key-chord-define-global "fg" #'help/safb-help/goto-line)
-#+END_SRC
-
-Pop the mark back.
-
-#+NAME: F3708409-D807-4541-95AB-C6298540FD59
-#+BEGIN_SRC emacs-lisp :results output silent
-(key-chord-define-global "FG" #'pop-to-mark-command)
-#+END_SRC
-
-Do the /right thing/ for getting to the start of the line.
-
-#+NAME: C9521BF3-23E7-4952-846F-322D107E3EE3
-#+BEGIN_SRC emacs-lisp :results output silent
-(global-set-key (kbd "C-a") #'beginning-of-line-dwim)
-#+END_SRC
-
-Occur has 3 cases. I like to use it to explore the unknown.
-
-#+NAME: 2608E62D-62B4-4B82-BFE0-E1E04C0D6914
-#+BEGIN_SRC emacs-lisp :results output silent
-(global-set-key (kbd "M-s p") #'help/occur-dwim)
-#+END_SRC
-
-Simpler buffer movement.
-
-#+NAME: FD9CED46-8D84-495F-A413-90DA9EA52B8A
-#+BEGIN_SRC emacs-lisp :results output silent
-(key-chord-define-global "fv" #'help/safb-other-window)
-#+END_SRC
-
-Toggle utility buffers ("logical F" key, so left side; "logical J" key on
-right).
-
-#+NAME: 4E784CF7-8CB1-42D0-A8EB-6FF54E7B60E9
-#+BEGIN_SRC emacs-lisp :results output silent
-(key-chord-define-global "f9" #'help/util-cycle)
-#+END_SRC
-
-Hide and show code blocks.
-
-#+NAME: 374B4284-8823-4E85-A469-F3985D48EC61
-#+BEGIN_SRC emacs-lisp :results output silent
-(global-set-key (kbd "s-b") #'hs-toggle-hiding)
-#+END_SRC
-
-***  Left & Right Side
-    :PROPERTIES:
-    :ID:       FA2BFDC9-5242-4547-A8A5-6DECC8ED1C1B
-    :END:
-
-Exploratory programming in EMACS.
-
-- Don't use "dn" for "describe-function" because of "and"-words
-- =d.= typically ends sentences
-
-#+NAME: 779A4232-960E-4CE1-B6EC-018FC997F0DD
-#+BEGIN_SRC emacs-lisp :results output silent
-(key-chord-define-global "d8" #'describe-function)
-(key-chord-define-global "d9" #'describe-variable)
-#+END_SRC
-
-Don't use "qi"; "unique".
-
-#+NAME: 55D2A3E6-07B1-47B0-9ADD-54C966FA252B
-#+BEGIN_SRC emacs-lisp :results output silent
-(global-set-key (kbd "s-`") #'help/comment-or-uncomment)
-#+END_SRC
-
-Make =ispell= accessible.
-
-#+NAME: E167321A-E8E5-4C54-B570-241B465B2D4B
-#+BEGIN_SRC emacs-lisp :results output silent
-(key-chord-define-global "qp" #'ispell)
-(key-chord-define-global "qo" #'ispell-word)
-#+END_SRC
-
-Use the default Langtool bindings.
-
-#+NAME: 52E762F8-9A31-4FEC-859D-049BD658C6D9
-#+BEGIN_SRC emacs-lisp :results output silent
-(define-prefix-command 'help/langtool-map)
-(key-chord-define-global "qk" #'help/langtool-map)
-(define-key help/langtool-map "c" #'langtool-check-buffer)
-(define-key help/langtool-map "C" #'langtool-correct-buffer)
-(define-key help/langtool-map "j" #'langtool-goto-previous-error)
-(define-key help/langtool-map "k" #'langtool-show-message-at-point)
-(define-key help/langtool-map "l" #'langtool-goto-next-error)
-(define-key help/langtool-map "q" #'langtool-check-done)
-#+END_SRC
-
-Via [[http://endlessparentheses.com/fixing-double-capitals-as-you-type.html?source=rss][comments]]:
-
-#+NAME: 5C8D8A46-256B-4533-97AD-52968CC92C75
-#+BEGIN_SRC emacs-lisp :results output silent
-(key-chord-define-global "TH" (lambda () (interactive) (insert "Th")))
-#+END_SRC
-
-*** Right Side
-    :PROPERTIES:
-    :ID:       16040443-9099-42C1-A7FB-90C0DDC9F8EE
-    :END:
-
-Try to reserve the right side for mode-specific activities.
-
-*** Exceptions
-    :PROPERTIES:
-    :ID:       EBBB727C-6110-4F7B-A2DC-45E9833EBEFE
-    :END:
-
-Return.
-
-Do smart new line inside, indenting given the mode.
-
-#+NAME: 0410911F-2D84-4799-8F68-1F3173E318B6
-#+BEGIN_SRC emacs-lisp :results output silent
-(help/not-on-gui (global-set-key (kbd "s-RET") #'help/smart-open-line))
-(help/on-gui (global-set-key (kbd "s-<return>") #'help/smart-open-line))
-#+END_SRC
-
-Scroll the whole buffer by one line keeping the cursor with it.
-
-#+NAME: 7B79E6A3-90F2-4F3F-AA40-1231D0DDA684
-#+BEGIN_SRC emacs-lisp :results output silent
-(global-set-key (kbd "M-n") (kbd "C-u 1 C-v"))
-(global-set-key (kbd "M-p") (kbd "C-u 1 M-v"))
-#+END_SRC
-
-Use a nicer =eval-expression= approach.
-
-#+NAME: FA4DDBA3-494B-4062-B43F-5D17DB239AF5
-#+BEGIN_SRC emacs-lisp :results output silent
-(global-set-key (kbd "s-:") #'my-eval-expression)
-#+END_SRC
-
-#+NAME: 65D190DA-D23D-427D-B070-1C74053EDC4E
-#+BEGIN_SRC emacs-lisp :results output silent
-(global-set-key (kbd "s-C-n") #'next-line)
-(global-set-key (kbd "C-n") #'next-logical-line)
-(global-set-key (kbd "s-C-p") #'previous-line)
-(global-set-key (kbd "C-p") #'previous-logical-line)
-#+END_SRC
-
-Ansu.
-
-#+NAME: C8A58EDC-466A-493E-8709-2A241ED10808
-#+BEGIN_SRC emacs-lisp :results output silent
-(global-set-key (kbd "M-%") #'anzu-query-replace)
-(global-set-key (kbd "C-M-%") #'anzu-query-replace-regexp)
-#+END_SRC
-
 * Special Operating Procedure
    :PROPERTIES:
-   :header-args: :noweb-ref Special-Operating-Procedure
    :ID:       97A95862-3213-4035-9FF6-E041796DAB5C
    :END:
 
@@ -1181,7 +446,6 @@ Enable the =super= key-space.
 
 * Standard Operating Procedure
    :PROPERTIES:
-   :header-args: :noweb-ref Standard-Operating-Procedure
    :ID:       8302B38B-67EC-4C37-9B42-69E278FF1277
    :END:
 
@@ -2840,302 +2104,12 @@ Make control characters easily visible.
 (diminish 'visual-line-mode)
 #+END_SRC
 
-* Quiet and Pleasant Appearance
-   :PROPERTIES:
-   :header-args: :noweb-ref Quiet-and-Pleasant-Appearance
-   :ID:       197B7B84-5090-47AE-9180-F8F606D0012F
-   :END:
-
-Configure EMACS to personal-taste for "noise" and "form".
-
-** Line Number
-   :PROPERTIES:
-   :ID:       4D367462-1C7B-4110-B7D1-E973D386B4E1
-   :END:
-
-The nlinum gutter should not "shift" as it transitions between line numbers of
-different magnitudes. For example going from line 99 to 100 will shift the
-buffer contents by one character. That is distracting and interrupts the flow.
-- Switched to ~nlinum~ from ~linum~ because of slowness with this file when headings
-  are collapsed
-
-Most files will be less than 100,000 lines.
-
-#+NAME: DC131133-BEC7-45D2-BA35-42E77FC3BB22
-#+BEGIN_SRC emacs-lisp :results output silent
-(use-package nlinum
-  :ensure t
-  :config
-  (setq nlinum-format "%05d"))
-#+END_SRC
-
-** Buffer
-   :PROPERTIES:
-   :ID:       61586A23-B774-4436-B916-348453EEA3DD
-   :END:
-
-Never automatically convert the end of the line character. For most of us this
-is between UNIX and DOS.
-
-#+NAME: 61F1703A-48AA-4C2E-AE78-4C9766B6C8BC
-#+BEGIN_SRC emacs-lisp :results output silent
-(setq inhibit-eol-conversion t)
-#+END_SRC
-
-Give buffers backed by identically named files distinguishable names.
-
-#+NAME: A5438CB6-5228-4753-B2A7-BFEFC573F6B6
-#+BEGIN_SRC emacs-lisp :results output silent
-(use-package uniquify)
-(setq uniquify-buffer-name-style 'forward)
-#+END_SRC
-
-Don't use audible bells, use visual bells.
-
-#+NAME: 295C91F5-6CD4-41C8-A62C-600B11838B2B
-#+BEGIN_SRC emacs-lisp :results output silent
-(setq ring-bell-function 'ignore)
-(setq visible-bell t)
-#+END_SRC
-
-Highlight s-expressions.
-
-#+NAME: 59F87147-F8C3-49D0-BEC6-A8D19989001E
-#+BEGIN_SRC emacs-lisp :results output silent
-(setq blink-matching-paren nil)
-(show-paren-mode)
-(setq show-paren-delay 0)
-(setq show-paren-style 'expression)
-#+END_SRC
-
-The cursor should not blink and distract you. On a graphic display make the
-cursor a box and stretch it as wide as the character below it.
-
-#+NAME: CC0CDAEB-8460-43CE-BA7E-3A9D986A02BB
-#+BEGIN_SRC emacs-lisp :results output silent
-(blink-cursor-mode 0)
-(help/on-gui
- (setq-default cursor-type 'box)
- (setq x-stretch-cursor 1))
-#+END_SRC
-
-EMACS used UTF-8 by default. Make copying and pasting easier.
-
-#+NAME: BC706CBF-2B98-4FD7-9A5A-61F5483D0899
-#+BEGIN_SRC emacs-lisp :results output silent
-(prefer-coding-system 'utf-8)
-(help/on-gui
- (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
- (help/on-windows
-  (set-clipboard-coding-system 'utf-16le-dos)))
-#+END_SRC
-
-Make it very easy to see the line with the cursor.
-
-#+NAME: 6FD9F092-7062-4E7A-BB58-4B5F45AF0AD0
-#+BEGIN_SRC emacs-lisp :results output silent
-(global-hl-line-mode t)
-#+END_SRC
-
-Make it very easy to input special-characters using TeX coding.
-
-#+NAME: D0F5616F-1609-4E12-A4D7-7A1F46D34A2C
-#+BEGIN_SRC emacs-lisp :results output silent
-(setq default-input-method 'TeX)
-#+END_SRC
-
-** Color Theme
-   :PROPERTIES:
-   :ID:       057BBA77-4662-4F7B-B47A-CB1E79A1618B
-   :END:
-
-[[https://github.com/bbatsov/solarized-emacs][Solarized Theme]]
-
-- ~1,000 Faces Defined
-- 47,869 Downloads
-
-- A distinct fringe provides a definition of space.
-- The modeline is always at the bottom and doesn't need differentiation.
-- Minimize bold and italic faces.
-- Minimize fringe indicators.
-
-#+NAME: 021B7D3A-E696-43B9-BC08-C8BDABB33999
-#+BEGIN_SRC emacs-lisp :results output silent
-(use-package solarized-theme
-  :ensure t
-  :config
-  (setq solarized-distinct-fringe-background t)
-  (setq solarized-high-contrast-mode-line nil)
-  (setq solarized-use-less-bold t)
-  (setq solarized-use-more-italic nil)
-  (setq solarized-emphasize-indicators nil)
-  (load-theme 'solarized-dark t))
-#+END_SRC
-
-** Comint
-   :PROPERTIES:
-   :ID:       B4E17CF5-5542-4526-ADEE-D5EC3DB9131F
-   :END:
-
-=comint-mode= is only maybe the second most important thing for making Emacs
-really, really special.
-
-#+NAME: CDD7F353-867A-4E9C-A060-5C0F6A26866B
-#+begin_src emacs-lisp :results output silent
-(setq comint-scroll-to-bottom-on-input 'this)
-(setq comint-scroll-to-bottom-on-output 'others)
-(setq comint-move-point-for-output 'others)
-(setq comint-show-maximum-output t)
-(setq comint-scroll-show-maximum-output t)
-(setq comint-move-point-for-output t)
-#+end_src
-
-This configuration had been working fine for a long time. The intent was for it
-to be crystal clear that the prompt line in comint buffers would be read only.
-This turned out to be a mistake; though I am not sure why, when, or how it
-became a mistake. Nonetheless, this should be left alone. The way the issue here
-manifested was that all R buffers opened by =ess= were 100% read only which
-obviously is a *big issue* if you actually want to use! ROFL
-
-#+NAME: 346012D4-6861-458B-8352-3874D1F934E6
-#+BEGIN_SRC emacs-lisp :results output silent
-(setq comint-prompt-read-only nil)
-#+END_SRC
-
-** Font
-   :PROPERTIES:
-   :ID:       EC675F88-89C0-4A5A-B910-843F28C0F90F
-   :END:
-
-The best programming font is Deja Vu Sans Mono because it sans-serif and
-support a lot of Unicode characters. Set it to a good default for an 80
-character wide buffer and make it easy to adjust it.
-
-#+NAME: 21687556-D79E-4734-86E6-52FF9EE107B5
-#+BEGIN_SRC emacs-lisp :results output silent
-(help/on-gui
- (defvar help/font-size-current 10 "The preferred font size.")
- (help/on-osx (setq help/font-size-current 17))
- (help/on-windows (setq help/font-size-current 13))
- (defconst help/font-size-ideal help/font-size-current "The ideal font for this system.")
- (defconst help/font-base "DejaVu Sans Mono" "The preferred font name.")
- (defun help/font-ok-p ()
-   "Is the configured font valid?"
-   (interactive)
-   (member help/font-base (font-family-list)))
- (defun help/font-name ()
-   "Compute the font name and size string."
-   (interactive)
-   (let* ((size (number-to-string help/font-size-current))
-          (name (concat help/font-base "-" size)))
-     name))
- (defun help/update-font ()
-   "Updates the current font given configuration values."
-   (interactive)
-   (if (help/font-ok-p)
-       (progn
-         (message "%s : Font Set" (help/font-name))
-         (set-frame-font (help/font-name)))
-     (message (concat "Your preferred font is not available: " help/font-base))))
- (defun help/font-size-reset ()
-   "Restore the ideal font size."
-   (interactive)
-   (setq help/font-size-current help/font-size-ideal)
-   (help/update-font))
- (help/update-font))
-#+END_SRC
-
-** Frame
-   :PROPERTIES:
-   :ID:       B3F90439-D007-42EE-95FC-E93BBA827325
-   :END:
-
-The scroll-bars are helpful for new users.
-
-#+NAME: 96EB14DD-CB63-46F3-B2E3-6F433D70DFAE
-#+BEGIN_SRC emacs-lisp :results output silent
-(scroll-bar-mode 0)
-#+END_SRC
-
-The tool-bar is helpful for new users. Isn't the argument funny?
-
-#+NAME: 2063ECD7-C23B-4CDC-96E0-786361DFAA9C
-#+BEGIN_SRC emacs-lisp :results output silent
-(tool-bar-mode -1)
-#+END_SRC
-
-** Pointer
-   :PROPERTIES:
-   :ID:       2A437D32-2944-41B3-AD8F-438ABBD4E0CF
-   :END:
-
-Hide the pointer when typing.
-
-#+NAME: 9E122111-1074-42D5-A57D-855E3A888C8E
-#+BEGIN_SRC emacs-lisp :results output silent
-(setq make-pointer-invisible t)
-#+END_SRC
-
-** Version Control
-   :PROPERTIES:
-   :ID:       99337D9E-DBC9-4673-B814-EBC94C044E3E
-   :END:
-
-Provide VC file status indicators.
-
-#+NAME: 668C63F3-C52E-4BDF-929D-E2BF2E985304
-#+BEGIN_SRC emacs-lisp :results output silent
-(use-package diff-hl
-  :ensure t)
-#+END_SRC
-
-Ediff split frame horizontally.
-
-#+NAME: 5B8FCEDB-66BA-4912-8FC8-B6EFBF6EF34D
-#+BEGIN_SRC emacs-lisp :results output silent
-(setq ediff-split-window-function 'split-window-horizontally)
-#+END_SRC
-
-** Window
-   :PROPERTIES:
-   :ID:       9A848D65-DE56-4F95-A84D-CAE74781CD25
-   :END:
-
-Menu bars make EMACS more accessible to non-EMACS users.
-
-#+NAME: 00BC7BEE-F9FC-4B9D-AC1A-4B1A3FFA64A7
-#+BEGIN_SRC emacs-lisp :results output silent
-(menu-bar-mode t)
-#+END_SRC
-
-Easily return to previous configurations. 2-4 windows are easily managed by
-hand.
-
-#+NAME: 3FB7FA94-1A6B-4E3B-8EDE-7A4D1D86E50E
-#+BEGIN_SRC emacs-lisp :results output silent
-(winner-mode t)
-#+END_SRC
-
-Frequently use between 1 and 3 windows. 1 and 2 are already managed. Easily
-create 3.
-
-#+NAME: EA28235F-22B2-463F-AC06-EC79FA613F22
-#+BEGIN_SRC emacs-lisp :results output silent
-(defun help/split-into-3-windows ()
-  (interactive)
-  (delete-other-windows)
-  (split-window-vertically)
-  (split-window-vertically)
-  (balance-windows))
-#+END_SRC
-
 * Hacking
   :PROPERTIES:
   :ID:       B7CE60F5-5510-4358-8DD5-D42D9A2F4D9B
   :END:
 ** Common Configurations
   :PROPERTIES:
-  :header-args: :noweb-ref Hacking-Common-Configurations
   :ID:       BE02A401-AFF6-4B64-B7F3-589C69CA7099
   :END:
 
@@ -3302,7 +2276,6 @@ With that in mind this system:
    :END:
 ** Emacs Lisp
   :PROPERTIES:
-  :header-args: :noweb-ref Hacking-Literate-Programming-Emacs-Lisp
   :ID:       3AD91697-42DE-4555-9F49-B7D9F5E502D3
   :END:
 
@@ -3360,7 +2333,6 @@ With that in mind this system:
 
 ** Org-Mode
   :PROPERTIES:
-  :header-args: :noweb-ref Hacking-Literate-Programming-Org-Mode
   :ID:       EBDA3D1C-536F-4252-AE26-32A3FDF5326C
   :END:
 
@@ -3936,7 +2908,6 @@ Easily enter guillemots.
    :END:
 ** Emacs Speaks Statistics (ESS)
   :PROPERTIES:
-  :header-args: :noweb-ref Hacking-Applied-Mathematics-ESS
   :ID:       CB6305D8-DDBB-4865-8CAD-3648B31B76DB
   :END:
 
@@ -4100,13 +3071,11 @@ and see how it goes.
 
 ** SAS (ESS)
   :PROPERTIES:
-  :header-args: :noweb-ref Hacking-Applied-Mathematics-ESS-SAS
   :ID:       2442E555-0F82-48E6-96EA-2ABB5C9CC666
   :END:
 
 ** R (ESS)
   :PROPERTIES:
-  :header-args: :noweb-ref Hacking-Applied-Mathematics-ESS-R
   :ID:       1183D35B-77FC-4CFD-9BAA-4F7656AD8943
   :END:
 
@@ -4347,7 +3316,6 @@ R mode hook.
 
 ** Scheme (LISP)
   :PROPERTIES:
-  :header-args: :noweb-ref Hacking-Applied-Mathematics-LISP-Scheme
   :ID:       D68EC042-5CBA-4547-B28A-CF878FB080C1
   :END:
 
@@ -4403,7 +3371,6 @@ Enable Auto-Complete via Geiser.
    :END:
 ** YASnippet
   :PROPERTIES:
-  :header-args: :noweb-ref Hacking-Applied-Mathematics-YASnippet
   :ID:       5C48A01F-D522-4AC9-A523-F8EE2E9EB384
   :END:
 
@@ -4440,7 +3407,6 @@ Enable Auto-Complete via Geiser.
    :END:
 ** TeX
   :PROPERTIES:
-  :header-args: :noweb-ref Hacking-Publishing-TeX
   :ID:       E2A1BFA2-0246-4376-9A33-E35A8DE2E5A3
   :END:
 
@@ -4548,7 +3514,6 @@ Use "Smartquotes".
 
 ** KOMA-Script
   :PROPERTIES:
-  :header-args: :noweb-ref Hacking-Publishing-KOMA
   :ID:       BFF1402E-98D4-4F36-ACCB-B1E88A3EB2D9
   :END:
 
@@ -4681,7 +3646,6 @@ Perhaps the [[https://lists.gnu.org/archive/html/emacs-orgmode/2015-07/msg00042.
 
 ** Markdown
    :PROPERTIES:
-   :header-args: :noweb-ref Hacking-Publishing-Markdown
    :ID:       748319ED-9F02-4A4D-BEE8-E71C462663FC
    :END:
 
@@ -4705,7 +3669,6 @@ Program GFM.
 
 ** HTML
   :PROPERTIES:
-  :header-args: :noweb-ref Hacking-Publishing-HTML
   :ID:       84F673DF-2E6F-4BAA-8095-4A7586BB73FC
   :END:
 
@@ -4758,7 +3721,6 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 
 ** Beamer
   :PROPERTIES:
-  :header-args: :noweb-ref Hacking-Publishing-Beamer
   :ID:       6B86302E-D3EC-413A-A844-9ACCAA23A056
   :END:
 
@@ -4794,7 +3756,6 @@ Load Beamer for creating presentations.
    :END:
 ** Artist
   :PROPERTIES:
-  :header-args: :noweb-ref Hacking-Diagram-Artist
   :ID:       F920A833-60D7-41C2-9363-EA2A8BD19009
   :END:
 
@@ -4807,45 +3768,8 @@ Load Beamer for creating presentations.
 
 ** DITAA
   :PROPERTIES:
-  :header-args: :noweb-ref Hacking-Diagram-DITAA
   :ID:       FCC8A8F8-A967-4981-9260-CFF60CC56494
   :END:
-
-When a drop of water joins the ocean it becomes the ocean.
-
-#+NAME: ditaa-drop_in_the_ocean
-#+BEGIN_SRC ditaa :file "./image/ditaa-drop_in_the_ocean.png" :noweb-ref ignore :wrap "RESULTS"
-+---------+
-| cBLU    |
-|         |
-|    +----+
-|    |cBLU|
-|    |    |
-+----+----+
-#+END_SRC
-
-#+RESULTS: ditaa-drop_in_the_ocean
-#+BEGIN_RESULTS
-[[file:./image/ditaa-drop_in_the_ocean.png]]
-#+END_RESULTS
-
-#+NAME: ditaa-not_a_sailboat
-#+BEGIN_SRC ditaa :file "./image/ditaa-not_a_sailboat.png" :noweb-ref ignore :wrap "RESULTS"
-+----------+1       1…3+------+
-| Sailboat +◆----------+ Mast |
-+-----+----+           +------+
-      ◆1
-      |
-      |             1…2+------+
-      +----------------+ Hull |
-                       +------+
-      This is not a sailboat
-#+END_SRC
-
-#+RESULTS: ditaa-not_a_sailboat
-#+BEGIN_RESULTS
-[[file:./image/ditaa-not_a_sailboat.png]]
-#+END_RESULTS
 
 #+NAME: 6907A176-CCF4-4BDF-A242-BDBC4C67239F
 #+BEGIN_SRC emacs-lisp :results output silent :wrap "RESULTS"
@@ -4855,7 +3779,6 @@ When a drop of water joins the ocean it becomes the ocean.
 
 ** Graphviz
   :PROPERTIES:
-  :header-args: :noweb-ref Hacking-Diagram-Graphviz
   :ID:       A84665A3-4A2D-4040-926A-17159A6D4647
   :END:
 
@@ -4867,32 +3790,8 @@ When a drop of water joins the ocean it becomes the ocean.
   (setf (cdr (assoc "dot" org-src-lang-modes)) 'graphviz-dot))
 #+END_SRC
 
-#+NAME: graphviz-life_is_simple
-#+BEGIN_SRC dot :file "./image/graphviz-life_is_simple.png" :noweb-ref ignore :wrap "RESULTS"
-digraph graphviz {
-  subgraph cluster {
-    ayh [label="Happy with things?", shape=ellipse];
-    no [label="No.", shape=Mdiamond];
-    yes [label="Yes.", shape=Mdiamond];
-    ayh -> no;
-    ayh -> yes;
-    no -> ayh [label="Change them."];
-    yes -> ayh [label="Keep doing them."];
-  }
-  labelloc="t";
-  label="Life is simple:\nAttribution: @tgtext";
-}
-#+END_SRC
-
-#+RESULTS: graphviz-life_is_simple
-#+BEGIN_RESULTS
-[[file:./image/graphviz-life_is_simple.png]]
-#+END_RESULTS
-
-
 ** PlantUML
   :PROPERTIES:
-  :header-args: :noweb-ref Hacking-Diagram-PlantUML
   :ID:       FCC259F8-0858-4778-B97F-07D2B21012F5
   :END:
 
@@ -4908,164 +3807,991 @@ digraph graphviz {
     (setq org-plantuml-jar-path help/plantuml-jar)))
 #+END_SRC
 
-*Sequence Diagram*
+* Quiet and Pleasant Appearance
+   :PROPERTIES:
+   :ID:       197B7B84-5090-47AE-9180-F8F606D0012F
+   :END:
 
-- Feature rich.
-- Information rich.
+Configure EMACS to personal-taste for "noise" and "form".
 
-#+NAME: plantuml-sequence_diagram
-#+BEGIN_SRC plantuml :file "./image/plantuml-sequence_diagram.png" :noweb-ref ignore :wrap "RESULTS"
-Alice --> Bob: Authentication Request
-Bob --> Alice: Authentication Response
+** Line Number
+   :PROPERTIES:
+   :ID:       4D367462-1C7B-4110-B7D1-E973D386B4E1
+   :END:
 
-Alice --> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
+The nlinum gutter should not "shift" as it transitions between line numbers of
+different magnitudes. For example going from line 99 to 100 will shift the
+buffer contents by one character. That is distracting and interrupts the flow.
+- Switched to ~nlinum~ from ~linum~ because of slowness with this file when headings
+  are collapsed
+
+Most files will be less than 100,000 lines.
+
+#+NAME: DC131133-BEC7-45D2-BA35-42E77FC3BB22
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package nlinum
+  :ensure t
+  :config
+  (setq nlinum-format "%05d"))
 #+END_SRC
 
-#+RESULTS: plantuml-sequence_diagram
-#+BEGIN_RESULTS
-[[file:./image/plantuml-sequence_diagram.png]]
-#+END_RESULTS
+** Buffer
+   :PROPERTIES:
+   :ID:       61586A23-B774-4436-B916-348453EEA3DD
+   :END:
 
-*Use Case Diagram*
+Never automatically convert the end of the line character. For most of us this
+is between UNIX and DOS.
 
-- Actor variable aliasing feature.
-#+NAME: plantuml-use_case_diagram
-#+BEGIN_SRC plantuml :file "./image/plantuml-use_case_diagram.png" :noweb-ref ignore :wrap "RESULTS"
-left to right direction
-skinparam packageStyle rect
-actor customer
-actor clerk
-rectangle checkout {
-customer -- (checkout)
-(checkout) .> (payment) : include (help) .> (checkout) : extends (checkout) -- clerk
-}
+#+NAME: 61F1703A-48AA-4C2E-AE78-4C9766B6C8BC
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq inhibit-eol-conversion t)
 #+END_SRC
 
-#+RESULTS: plantuml-use_case_diagram
-#+BEGIN_RESULTS
-[[file:./image/plantuml-use_case_diagram.png]]
-#+END_RESULTS
+Give buffers backed by identically named files distinguishable names.
 
-*Class Diagram*
-
-- Valuable for all sorts of ideas in addition to classes.
-- =hide=, =show=, and =include= are mentioned.
-  - Could be a great reuse mechanism combined with noweb and tangling.
-- Spotted characters might be useful to indicating other things.
-  - Example is data which is clearly a first-class citizen.
-  - Six package visualization types.
-  - Packaging vs. namespaceing.
-  - Good support for splitting large images among output pages.
-
-#+NAME: plantuml-class_diagram
-#+BEGIN_SRC plantuml :file "./image/plantuml-class_diagram.png" :noweb-ref ignore :wrap "RESULTS"
-title This is not a sailboat
-scale 200 width
-Sailboat "1" *-- "1..3" Mast
-Sailboat "1" *-- "1..3" Hull
+#+NAME: A5438CB6-5228-4753-B2A7-BFEFC573F6B6
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package uniquify)
+(setq uniquify-buffer-name-style 'forward)
 #+END_SRC
 
-#+RESULTS: plantuml-class_diagram
-#+BEGIN_RESULTS
-[[file:./image/plantuml-class_diagram.png]]
-#+END_RESULTS
+Don't use audible bells, use visual bells.
 
-*Activity Diagram*
-
-- May indicate top to bottom flow using =top=.
-- May label arrows.
-- May force arrow direction.
-- if/else structure for branching.
-- Partition construct.
-- [[http://plantuml.sourceforge.net/activity2.html][New syntax]] with more examples.
-
-#+NAME: plantuml-activity_diagram
-#+BEGIN_SRC plantuml :file "./image/plantuml-activity_diagram.png" :noweb-ref ignore :wrap "RESULTS"
-start
-partition Initialization {
-:read config file;
-:init internal variable;
-}
-partition Running {
-:wait for user interaction;
-:print information;
-}
-
-stop
+#+NAME: 295C91F5-6CD4-41C8-A62C-600B11838B2B
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq ring-bell-function 'ignore)
+(setq visible-bell t)
 #+END_SRC
 
-#+RESULTS: plantuml-activity_diagram
-#+BEGIN_RESULTS
-[[file:./image/plantuml-activity_diagram.png]]
-#+END_RESULTS
+Highlight s-expressions.
 
-*Component Diagram*
-
-- The names to define all of the diagram entity types.
-- Identify "Modern UML".
-- Good for summaries.
-
-#+NAME: plantuml-component_diagram
-#+BEGIN_SRC plantuml :file "./image/plantuml-component_diagram.png" :noweb-ref ignore :wrap "RESULTS"
-[First component]
-[Another component]
-() "First Interface"
-() "Another interface" as Interf2
-DataAccess - [First Component]
-[First Component] ..> HTTP : use
+#+NAME: 59F87147-F8C3-49D0-BEC6-A8D19989001E
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq blink-matching-paren nil)
+(show-paren-mode)
+(setq show-paren-delay 0)
+(setq show-paren-style 'expression)
 #+END_SRC
 
-#+RESULTS: plantuml-component_diagram
-#+BEGIN_RESULTS
-[[file:./image/plantuml-component_diagram.png]]
-#+END_RESULTS
+The cursor should not blink and distract you. On a graphic display make the
+cursor a box and stretch it as wide as the character below it.
 
-*State Diagram*
-
-#+NAME: plantuml-state_diagram
-#+BEGIN_SRC plantuml :file "./image/plantuml-state_diagram.png" :noweb-ref ignore :wrap "RESULTS"
-[*] --> State1
-State1 --> [*]
-State1 : this is a string State1 : this is another string
+#+NAME: CC0CDAEB-8460-43CE-BA7E-3A9D986A02BB
+#+BEGIN_SRC emacs-lisp :results output silent
+(blink-cursor-mode 0)
+(help/on-gui
+ (setq-default cursor-type 'box)
+ (setq x-stretch-cursor 1))
 #+END_SRC
 
-#+RESULTS: plantuml-state_diagram
-#+BEGIN_RESULTS
-[[file:./image/plantuml-state_diagram.png]]
-#+END_RESULTS
+EMACS used UTF-8 by default. Make copying and pasting easier.
 
-*Object Diagram*
-
-#+NAME: plantuml-object_diagram
-#+BEGIN_SRC plantuml :file "./image/plantuml-object_diagram.png" :noweb-ref ignore :wrap "RESULTS"
-object Object01
-object Object02
-Object01 <|-- Object02
+#+NAME: BC706CBF-2B98-4FD7-9A5A-61F5483D0899
+#+BEGIN_SRC emacs-lisp :results output silent
+(prefer-coding-system 'utf-8)
+(help/on-gui
+ (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
+ (help/on-windows
+  (set-clipboard-coding-system 'utf-16le-dos)))
 #+END_SRC
 
-#+RESULTS: plantuml-object_diagram
-#+BEGIN_RESULTS
-[[file:./image/plantuml-object_diagram.png]]
-#+END_RESULTS
+Make it very easy to see the line with the cursor.
 
-- Commands.
-  - Header and footer values.
-  - Zoom level.
-  - Creole markup for most text elements.
-  - Lists and sub-lists.
-  - Horizontal lines. Will appear in most containers.
-  - Headings.
-  - Plain old HTML.
-  - Tables, LaTeX style.
-  - Use [[https://useiconic.com/open][OpenIconic icons]] anywhere.
+#+NAME: 6FD9F092-7062-4E7A-BB58-4B5F45AF0AD0
+#+BEGIN_SRC emacs-lisp :results output silent
+(global-hl-line-mode t)
+#+END_SRC
 
-- Fonts and colors.
-  - You can change just about everything.
-  - You may nest definitions.
-  - =monochrome true= option.
-    - If you are printing
-    - Or don't want color.
+Make it very easy to input special-characters using TeX coding.
 
-- Internationalization.
-  - Full Unicode character support.
+#+NAME: D0F5616F-1609-4E12-A4D7-7A1F46D34A2C
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq default-input-method 'TeX)
+#+END_SRC
+
+** Color Theme
+   :PROPERTIES:
+   :ID:       057BBA77-4662-4F7B-B47A-CB1E79A1618B
+   :END:
+
+[[https://github.com/bbatsov/solarized-emacs][Solarized Theme]]
+
+- ~1,000 Faces Defined
+- 47,869 Downloads
+
+- A distinct fringe provides a definition of space.
+- The modeline is always at the bottom and doesn't need differentiation.
+- Minimize bold and italic faces.
+- Minimize fringe indicators.
+
+#+NAME: 021B7D3A-E696-43B9-BC08-C8BDABB33999
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package solarized-theme
+  :ensure t
+  :config
+  (setq solarized-distinct-fringe-background t)
+  (setq solarized-high-contrast-mode-line nil)
+  (setq solarized-use-less-bold t)
+  (setq solarized-use-more-italic nil)
+  (setq solarized-emphasize-indicators nil)
+  (load-theme 'solarized-dark t))
+#+END_SRC
+
+** Comint
+   :PROPERTIES:
+   :ID:       B4E17CF5-5542-4526-ADEE-D5EC3DB9131F
+   :END:
+
+=comint-mode= is only maybe the second most important thing for making Emacs
+really, really special.
+
+#+NAME: CDD7F353-867A-4E9C-A060-5C0F6A26866B
+#+begin_src emacs-lisp :results output silent
+(setq comint-scroll-to-bottom-on-input 'this)
+(setq comint-scroll-to-bottom-on-output 'others)
+(setq comint-move-point-for-output 'others)
+(setq comint-show-maximum-output t)
+(setq comint-scroll-show-maximum-output t)
+(setq comint-move-point-for-output t)
+#+end_src
+
+This configuration had been working fine for a long time. The intent was for it
+to be crystal clear that the prompt line in comint buffers would be read only.
+This turned out to be a mistake; though I am not sure why, when, or how it
+became a mistake. Nonetheless, this should be left alone. The way the issue here
+manifested was that all R buffers opened by =ess= were 100% read only which
+obviously is a *big issue* if you actually want to use! ROFL
+
+#+NAME: 346012D4-6861-458B-8352-3874D1F934E6
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq comint-prompt-read-only nil)
+#+END_SRC
+
+** Font
+   :PROPERTIES:
+   :ID:       EC675F88-89C0-4A5A-B910-843F28C0F90F
+   :END:
+
+The best programming font is Deja Vu Sans Mono because it sans-serif and
+support a lot of Unicode characters. Set it to a good default for an 80
+character wide buffer and make it easy to adjust it.
+
+#+NAME: 21687556-D79E-4734-86E6-52FF9EE107B5
+#+BEGIN_SRC emacs-lisp :results output silent
+(help/on-gui
+ (defvar help/font-size-current 10 "The preferred font size.")
+ (help/on-osx (setq help/font-size-current 17))
+ (help/on-windows (setq help/font-size-current 13))
+ (defconst help/font-size-ideal help/font-size-current "The ideal font for this system.")
+ (defconst help/font-base "DejaVu Sans Mono" "The preferred font name.")
+ (defun help/font-ok-p ()
+   "Is the configured font valid?"
+   (interactive)
+   (member help/font-base (font-family-list)))
+ (defun help/font-name ()
+   "Compute the font name and size string."
+   (interactive)
+   (let* ((size (number-to-string help/font-size-current))
+          (name (concat help/font-base "-" size)))
+     name))
+ (defun help/update-font ()
+   "Updates the current font given configuration values."
+   (interactive)
+   (if (help/font-ok-p)
+       (progn
+         (message "%s : Font Set" (help/font-name))
+         (set-frame-font (help/font-name)))
+     (message (concat "Your preferred font is not available: " help/font-base))))
+ (defun help/font-size-reset ()
+   "Restore the ideal font size."
+   (interactive)
+   (setq help/font-size-current help/font-size-ideal)
+   (help/update-font))
+ (help/update-font))
+#+END_SRC
+
+** Frame
+   :PROPERTIES:
+   :ID:       B3F90439-D007-42EE-95FC-E93BBA827325
+   :END:
+
+The scroll-bars are helpful for new users.
+
+#+NAME: 96EB14DD-CB63-46F3-B2E3-6F433D70DFAE
+#+BEGIN_SRC emacs-lisp :results output silent
+(scroll-bar-mode 0)
+#+END_SRC
+
+The tool-bar is helpful for new users. Isn't the argument funny?
+
+#+NAME: 2063ECD7-C23B-4CDC-96E0-786361DFAA9C
+#+BEGIN_SRC emacs-lisp :results output silent
+(tool-bar-mode -1)
+#+END_SRC
+
+** Pointer
+   :PROPERTIES:
+   :ID:       2A437D32-2944-41B3-AD8F-438ABBD4E0CF
+   :END:
+
+Hide the pointer when typing.
+
+#+NAME: 9E122111-1074-42D5-A57D-855E3A888C8E
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq make-pointer-invisible t)
+#+END_SRC
+
+** Version Control
+   :PROPERTIES:
+   :ID:       99337D9E-DBC9-4673-B814-EBC94C044E3E
+   :END:
+
+Provide VC file status indicators.
+
+#+NAME: 668C63F3-C52E-4BDF-929D-E2BF2E985304
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package diff-hl
+  :ensure t)
+#+END_SRC
+
+Ediff split frame horizontally.
+
+#+NAME: 5B8FCEDB-66BA-4912-8FC8-B6EFBF6EF34D
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq ediff-split-window-function 'split-window-horizontally)
+#+END_SRC
+
+** Window
+   :PROPERTIES:
+   :ID:       9A848D65-DE56-4F95-A84D-CAE74781CD25
+   :END:
+
+Menu bars make EMACS more accessible to non-EMACS users.
+
+#+NAME: 00BC7BEE-F9FC-4B9D-AC1A-4B1A3FFA64A7
+#+BEGIN_SRC emacs-lisp :results output silent
+(menu-bar-mode t)
+#+END_SRC
+
+Easily return to previous configurations. 2-4 windows are easily managed by
+hand.
+
+#+NAME: 3FB7FA94-1A6B-4E3B-8EDE-7A4D1D86E50E
+#+BEGIN_SRC emacs-lisp :results output silent
+(winner-mode t)
+#+END_SRC
+
+Frequently use between 1 and 3 windows. 1 and 2 are already managed. Easily
+create 3.
+
+#+NAME: EA28235F-22B2-463F-AC06-EC79FA613F22
+#+BEGIN_SRC emacs-lisp :results output silent
+(defun help/split-into-3-windows ()
+  (interactive)
+  (delete-other-windows)
+  (split-window-vertically)
+  (split-window-vertically)
+  (balance-windows))
+#+END_SRC
+
+* Piano Lessons
+   :PROPERTIES:
+   :ID:       31274432-4BA2-4B03-8DDB-E590C245244D
+   :END:
+
+** A Fine Cup of EMACS
+   :PROPERTIES:
+   :ID:       01EEEC32-91D4-4DDC-A100-52CE571558DC
+   :END:
+
+Every EMACS user ought to have a [[http://shop.fsf.org/product/gnu-emacs-reference-mugs/][Emacs Reference Mug]] at their desk. The mug
+invites other users to ask questions. Give the mug as a gift to every user you
+know who would benefit from learning EMACS. The mug reminds us all that EMACS is
+the perfect configuration of EMACS. It is available on every machine. When you
+break your system, you can always fall back to the good and reliable default
+EMACS configuration to get your system up and running again. The OOTB
+configuration of EMACS is one of the most important system configurations that
+you will every find. That is why it is important never to ruin it.
+
+This system wants to maximize accessibility for new users. It wants anyone to be
+able to download and use it without surprises. It wants the mug to serve as a
+fine reference for anyone to use. It wants to keep things simple and familiar so
+that anyone who has learned EMACS OOTB can use it pleasantly and productively.
+These goals are essential to configuring the keyboard for this system. This
+system will always respect the POLA.
+
+** A Keyboard on Every Desk
+   :PROPERTIES:
+   :ID:       A50A19BB-1DE7-48C1-AEE4-03D1E88E887C
+   :END:
+
+The configuration of the keyboard on an EMACS system can completely change the
+experience. No keyboard makes it impossible. A Kinesis Ergo makes it feel
+really good. Soft keys make it feel soft; hard keys make it feel faster. The
+[[http://xahlee.info/kbd/dvorak_and_all_keyboard_layouts.html][layout of letters]] is claimed to make you "more productive" using statistics.
+You may even study the statistics of your own writing and choose a layout
+optimized for you. The ways to configure your keyboard are limitless because
+everyone is unique. How to get the best configuration tips for your system? Do
+what works for everyone.
+
+Choose a keyboard that will satisfy 80% of EMACS users using 80% of the
+keyboards out there. Make this system easy to use on any one of those keyboards.
+Make this system easy to use in English. Make this system easy to use with
+average hand strength using two hands. These goals are essential to configuring
+the keyboard for this system.
+
+** A Display with Every Keyboard
+   :PROPERTIES:
+   :ID:       7E76A660-7828-4747-90DE-84BD293CD4E7
+   :END:
+
+Every system requires an output. You have two options. The first is a terminal
+that only displays characters. The second is a display that provides detailed
+graphics. "Display" is the EMACS term for a GUI.
+
+Some users prefer the former. Some users prefer the latter. Some users prefer to
+use a $4000USD machine to emulate the latter. Both are good options.
+
+This system is configured to work pleasantly for either type of output.
+
+** A Full Pot of EMACS on Every Desk
+   :PROPERTIES:
+   :ID:       D8ADD840-9E9E-4A2E-B085-245C7BFA5F48
+   :END:
+
+*** Keyboard Layout & Operation
+    :PROPERTIES:
+    :ID:       D8420B75-E4B9-4DB1-885E-D5290FE9A3EA
+    :END:
+
+- Use QWERTY layout.
+  - Everyone knows it.
+  - Easy to learn.
+  - Available on every keyboard.
+  - Inexpensive.
+  - When graduation time comes, plenty of great alternatives available like
+    DVORAK and Colemak.
+- Keep hands in home position as much as possible.
+  - Every finger is strong in the home position so RSI reduced.
+  - Single key presses are easy there.
+- Table-bang the shift, caps-lock and enter keys.
+  - Table-bang is a position of your hand. Make it by:
+    - Starting with your hands in the home position.
+    - Make a "high-five" with both of them parallel to the keyboard.
+    - Turn your left hand counter-clockwise and right hand clockwise to make
+      them perpendicular to the keyboard.
+    - Squeeze all of your fingers together.
+    - Push the keys using the side of your Pinky.
+    - In this position you are using the strength of all of your fingers.
+  - Never use those key using your Pinky alone.
+  - Practice depends 100% on user-discipline.
+- Try to achieve balance with meta keys.
+  - Provide same key of each side of the keyboard.
+- Be conscious of key operations [[http://ergoemacs.org/emacs/emacs_key_notation_return_vs_RET.html][on different outputs]].
+  - Always provide both.
+  - Note what is getting stomped on.
+  - For return bind to:
+    - =RET= in the terminal.
+    - =<return>= in the GUI.
+  - Also for tab =TAB= vs =C-i=.
+  - Also for escape =ESC= vs =C-[=
+
+*** Understanding Your Cognitive Landscape.
+    :PROPERTIES:
+    :ID:       60A17CE8-C905-4443-90A2-10D2C12F23AF
+    :END:
+
+You operate within a cognitive landscape. Every moment you are in a single
+=place=. While residing in each =place= you perform logically related =activities=.
+Activities facilitate logical actions like modification within that =place=.
+Modifications are performed objects. Objects include things like the contents of
+a buffer, contents of memory, or the file that backs a buffer. While performing
+those =activities= there is a logical sense of "flow". That should never be
+interrupted. Usually an interruption occurs when you are going to go to a new
+=place=. The =distance= between =places= is measured in the similarity between the
+=actions= that you find there. As you develop these ides it will be obvious where
+key-bindings should go
+
+*** Key-Bindings Take You to Places to Perform Activities
+    :PROPERTIES:
+    :ID:       E765C8BB-ECC3-4791-A287-83B6DED2F6C3
+    :END:
+
+OOTB you wil be visiting many =places= and performing many =activities=. EMACS comes
+with a good configuration that minimizes =distance=. This isn't worth changing.
+You can use EMACS for a lifetime without ever having to customize any of the
+key-bindings. This is what lets anyone use your system. This is what lets you
+use the system with =-Q= when you break it. You need to decide if you every want
+to alter the default configuration. This system does not want to. It wants to
+keep EMACS true to EMACS and your hands happy. To satisfy those goals the
+following practices were defined.
+
+- 99.999% of the time never bind to the =C= or =M= name-space.
+  - They are for system key-bindings. You can break them. Don't.
+  - In theory =C-c= is the "user name-space" but packages stomp on this all of the
+    time anyway so don't use it.
+  - Some bindings are just too valuable to pass up:
+    - =C-;=
+      - Your hands are in the home position already.
+    - Every modifier key with return.
+- Never bind to =F= keys.
+  - They are a painful stretch on most keyboards.
+  - Some require a lone Pinky with is worse.
+  - Most operating systems bind actions to them OOTB anyway.
+  - EMACS comes with key-bindings OOTB.
+- Don't try to set up a Hyper-key.
+- Use shift as a name-space expansion vehicle.
+  - Shift doubles every name-space in which you use it.
+  - Use cautiously, not every name-space vehicle supports it.
+- About the =s= (super) name-space.
+  - In theory it is the best place for user-defined key-bindings because
+    EMACS OOTB uses =C= and =M= completely leaving =s= mostly open.
+  - In practice =C= and =M= are running out of space because there are a lot of
+    new packages being added to EMACS. Most new packages are binding key
+    in the =s= name-space.
+  - This system reserves =s= completely for Sysop.
+
+These practices say nothing about the =places= or =activities= that you choose to
+peform. The practices only look at the key-binding configuration. There are a
+limited number of keys on a keyboard and there are physical limitations on your
+hands. Along with the previous assuptions it may look like there are less.
+Fortunately it just looks that way and it isn't true. There are a lot of
+powerful ways to "go places" with EMACS. The next heading contains my attempt.
+
+*** How to Get There Pleasantly and Quickly
+    :PROPERTIES:
+    :ID:       38026C1B-44D4-47EF-90D2-239876F7F31C
+    :END:
+
+You need to learn how to use EMACS. You need to develop a personal preference.
+You need to develop an idea of =places= and =activities= and =distance=. The following
+headings are delineated by breaks in flow.
+
+The examples try to talk about doing those things and do it by exploring:
+
+- "going places to do things".
+- "how quickly I will get there and how long I will be there"
+- "how quickly I want to go somewhere else".
+
+They were initially described by the properties:
+
+- Actions :: The number of related actions in that place.
+- Expertise :: The level of skill and speed with which you are performing the
+  activity.
+- Relationship :: How closely those activities are related in the current place.
+- Frequency :: How many times you perform these actions when you here.
+
+The relationship between "doing those things" and those 4 properties is still
+unclear and being explored.
+
+**** =s=
+      :PROPERTIES:
+      :Actions:          High
+      :Expertise:        High
+      :Relationship:     High
+      :Frequency:        High
+      :ID:       0A491DA9-212E-4F01-8C08-EA09E9B6D82C
+      :END:
+
+- =Actions= here are for the =place= inside of the buffer itself. They are for
+  immediate acting upon the contents of the buffer. They are logically
+  related, used frequently, and likely to be memorized.
+- When you come here, you are likely to stay for some time before getting
+  out.
+- Only use single key bindings; anything more may be a new logical
+  name-space and may use a Hydra.
+- Split the home sides of the keyboard in half.
+- The left side of the keyboard should be use for operations common to
+  every mode.
+  - For example ~goto-line~ and ~ispell~.
+  - It has 15 bindings available; 20 if you use 1-5. 40 if you shift them.
+- The right side of the keyboard should be used operations specific to the
+  current major mode.
+  - For example in Org-Mode navigating between source-blocks and
+    evaluating them.
+  - It has 19 bindings available; 26 if you use 6-=. 52 if you shift them.
+
+For example, in Org-Mode:
+
+- I traverse the entire document very quickly with
+  ~org-babel-previous-src-block~ and and ~org-babel-next-src-block.~
+- I execute source-blocks.
+- I edit source-blocks.
+
+Every activity is related to reading, modifying, executing, and tangling code.
+
+**** =Key-Chord=
+     :PROPERTIES:
+     :ID:       76C81A53-52BA-47C4-A8FF-651E10A4620F
+     :END:
+
+Key-Chord is intriguing because it works on every keyboard. It is powerful
+because it can you bring you to any =place= easily. It is good for taking you
+places in two differnt kinds of scenarios.
+
+One example is grammar-checking. There are a few ways to do that. I don't
+remember them all. In a given mode I want to see a list of all the ways.
+I really just want to see all of the stuff that I value for a given mode and
+don't use frequently.
+
+Another example are things that I value for a mode and use a lot but are not
+logically related to other activities in that place. For example moving the
+mark around and going to lines are performed a lot so they need to be done
+quickly and left. This is a place where key-chords and the shift modifier are
+a fast and intuitive way to go places.
+
+***** Single-Key Key-Chord Name-Space.
+      :PROPERTIES:
+      :ID:       B198918B-F8C8-4036-A41B-237BDA793EC0
+      :END:
+      :Actions:          High
+      :Expertise:        Low
+      :Frequency:        High
+      :Relationship:     Low
+
+- Nice if you don't mind hitting the same key twice.
+- You will use come here often, perform your single =action=, and be done
+  and leave very frequently and quickly.
+- Using alphabetical characters always results in unpleasant surprises.
+- Harder for breakage but it still occurs.
+  - =#FF= color code.
+  - =cc= carbon copy.
+  - =JJ= nick-name.
+  - =dd= add
+- Symbols are more likely to be safer bets.
+  - Only use the symbols.
+    - 8 if you use rows 3-4; 16 if you shift.
+    - Fifth row has 13; 26 with shift.
+- Good vehicle to reach a Hydra.
+
+***** Two-Key Key-Chord Name-Space.
+      :PROPERTIES:
+      :ID:       9CF95F30-5872-40F4-AF00-BDB82E3D7399
+      :END:
+      :Actions:          Low
+      :Expertise:        High
+      :Frequency:        High
+      :Relationship:     Low
+
+- Very attractive.
+- Nice if you don't like hitting the same key twice.
+- Easy to use all fingers.
+  - Finger strength is not an issue here; use any of them.
+- Unexpected breakage very easy.
+  - =cd= in ~=eshell=~.
+- Use sparingly.
+- Not worth analyzing ideal combinations; just use it and see if it
+  doesn't break.
+- Bringing over existing bindings. They are all for every mode so I will
+  keep it that way.
+
+**** =Hydra=
+      :PROPERTIES:
+      :Actions:          High
+      :Expertise:        Low
+      :Frequency:        Low
+      :Relationship:     High
+      :ID:       0410F66C-40F4-46A1-9E69-56658EA815A9
+      :END:
+
+- Sometimes you want to do something in a =place= but you aren't sure what
+  and you aren't sure where you will go next from there. For example you
+  might want to perform an Org-Mode =action= that is important but you don't
+  really use much. For example exporting to HTML might not be common for
+  you but you value.
+- =Hydras= can be used for very related actions too. The difference between
+  the =s= name-space is the distance between them and where you are now.
+  In the =s= namespace you go there very quickly. For =Hydras= sometimes you
+  can get the fast and sometimes more slowly. They are complementary to
+  every name-space.
+- =SHIFT= doubles your key-space.
+- Use =C-g= to exit the Hydra.
+
+For example, in Org-Mode I am still learning about functions and haven't used
+them much and forget their names. It is faster to put them in a Hydra. If they
+get used a lot, I will add them to =s=.
+
+*** Building Your Own Keyboard
+    :PROPERTIES:
+    :ID:       A4257881-BD92-4826-8B0F-74B9557442F9
+    :END:
+
+As your mastery of EMACS grows so too will your desire to build your own
+keyboard. It is natural. As you explore various dimensions of expression you
+will have a lot of fun. You will act more quickly and skillfully. Even with the
+goals of this system in place the desire grows.
+
+3D printing is one area worth exploring. A lot of EMACS users design and print
+their own custom keyboards. That looks very fun. [[http://scripts.sil.org/cms/scripts/page.php?site_id%3Dnrsi&id%3Dukelele][Ukulele]] is softer way to
+explore your keyboard. Reading its user manual is important. It contains ideas
+about stack-able-environments for bindings. You may use Ukulele or Hydras to do
+the same thing. [[https://pqrs.org/osx/karabiner/][Karabiner]] is a nice way to re-map your keys. It's easiest
+adjustment is to make return act as return when pressed alone and as control
+when pressed with another key. That introduces a symmetry to your keyboard which
+can be helpful. All of those dimensions are worth exploring.
+
+When I explored them I felt that they led me further away from the majority of
+users. Every time explored a different key-mapping (not key-binding) it reduced
+accessibility for new users. Each time I tried to work around that hiccup. The
+last pursuit was =;= and space.
+
+It would be great to set up your keyboard with the meta keys on the bottom
+like this:
+
+#+BEGIN_EXAMPLE
++---------------------------------------+
+| +-----+                       +-----+ |
+| |RET  |                       |  RET| |
+| +-----+                       +-----+ |
+| +------+                     +------+ |
+| |SHIFT |                     | SHIFT| |
+| +------+                     +------+ |
+|        +-+ +-+ +-----+ +-+ +-+        |
+|        |s| |M| |C/spc| |M| |s|        |
+|        +-+ +-+ +-----+ +-+ +-+        |
+|                                       |
++---------------------------------------+
+#+END_EXAMPLE
+
+Karabiner was too slow for my typing speed though. It [[https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/][happens]]. It seemed like a
+minimal change to use Ukelele to:
+
+- Make space send =C=
+- Make =;= send space
+- Make ='= a dead key
+  - In it's dead key state make
+    - =;= \rarr =;=
+    - =:= \rarr =:=
+    - ='= \rarr ='=
+    - ="= \rarr ="=
+
+The trouble is that it violates the POLA. Therefore, I left it alone and stuck
+with a simple "Get C on both sides".
+
+That has worked out very well. It is very easy to do on every operating system.
+It holds true to the values of this system. When you develop an idea of =places= and
+how often you go there the key-mapping becomes more obvious. Make it easy to get
+to key-bindings that take you to familiar places. For this system it is the home
+keys, =s=, and =key-chord=. Make those keys more easily accessible. =C= and =M= often
+have symmetric-definitions. =s= and =SHIFT= also often have symmetric definitions in
+this system (mostly through Key-Chords). Therefore those key-mappings are kept
+close together
+
+#+BEGIN_EXAMPLE
++---------------------------------------+
+| +-----+                       +-----+ |
+| |s    |                       |s/ret| |
+| +-----+                       +-----+ |
+| +------+                     +------+ |
+| |SHIFT |                     | SHIFT| |
+| +------+                     +------+ |
+|        +-+ +-+ +-----+ +-+ +-+        |
+|        |M| |C| |spc  | |C| |M|        |
+|        +-+ +-+ +-----+ +-+ +-+        |
+|                                       |
++---------------------------------------+
+#+END_EXAMPLE
+
+** Take a Sip
+   :PROPERTIES:
+   :ID:       F42A8A6B-C690-4715-90CB-2207C47C6808
+   :END:
+
+*** Left Side
+    :PROPERTIES:
+    :ID:       22246934-BE44-4D99-942C-A6DAB4506D65
+    :END:
+
+**** Row 5
+     :PROPERTIES:
+     :ID:       C00A4E41-0801-4696-86E6-5A1CE1EBB189
+     :END:
+
+#+NAME: E4B98196-FDFB-42B4-A52A-8CA7DC066E8E
+#+BEGIN_SRC emacs-lisp :results output silent
+(global-set-key (kbd "s-4") #'mc/mark-next-like-this)
+(global-set-key (kbd "s-3") #'mc/mark-previous-like-this)
+(global-set-key (kbd "s-2") #'mc/mark-all-like-this)
+(global-set-key (kbd "s-1") #'mc/edit-lines)
+(global-set-key (kbd "s--") #'decrement-integer-at-point)
+(global-set-key (kbd "s-+") #'increment-integer-at-point)
+(global-set-key (kbd "M-s-3") #'help/split-into-3-windows)
+#+END_SRC
+
+**** Row 4
+     :PROPERTIES:
+     :ID:       8F467832-8FC3-42B5-8978-8CF2C1454D5B
+     :END:
+
+#+NAME: 239A85C3-2CEB-4E40-975F-8B3584F7F450
+#+BEGIN_SRC emacs-lisp :results output silent
+(global-set-key (kbd "s-w") #'imenu)
+#+END_SRC
+
+**** Row 3
+     :PROPERTIES:
+     :ID:       6DCD321F-6FDA-4983-9C7C-265D23D1AC4F
+     :END:
+
+Easily kill buffers.
+
+#+NAME: E60EA15F-28A0-4E98-B62E-1F8BDE444BD8
+#+BEGIN_SRC emacs-lisp :results output silent
+(global-set-key (kbd "s-a") #'kill-buffer)
+(global-set-key (kbd "s-d") #'er/expand-region)
+(key-chord-define-global "df" #'avy-goto-word-1)
+(key-chord-define-global "DF" #'avy-pop-mark)
+#+END_SRC
+
+#+NAME: F6C7AAB7-DF69-4EBA-8116-15DC32022D49
+#+BEGIN_SRC emacs-lisp :results output silent
+(defhydra help/hydra/left-side/global (:color blue
+                                              :hint nil)
+  "
+_1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_ grade-level _8_ reading-ease
+_q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
+                 _j_ back-char _k_ scrollDown _K_ nextLogLine _l_ forw-char _;_ toggle-lax-whitespace
+_x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer"
+  ("1" help/font-size-reset :exit nil)
+  ("2" help/text-scale-decrease :exit nil)
+  ("3" help/text-scale-increase :exit nil)
+  ("4" help/insert-ellipsis)
+  ("5" help/uuid)
+  ("6" set-buffer-file-coding-system)
+  ("7" writegood-grade-level)
+  ("8" writegood-reading-ease)
+  ("x" delete-indentation)
+  ("q" hydra-apropos/body)
+  ("w" widen)
+  ("r" rgrep)
+  ("t" org-babel-tangle-jump-to-org)
+  ("i" scroll-down-command :exit nil)
+  ("k" scroll-up-command :exit nil)
+  ("I" previous-logical-line :exit nil)
+  ("K" next-logical-line :exit nil)
+  ("j" backward-char :exit nil)
+  ("l" forward-char :exit nil)
+  (";" isearch-toggle-lax-whitespace)
+  ("o" toggle-debug-on-error)
+  ("p" anzu-query-replace)
+  ("[" backward-page :exit nil)
+  ("]" forward-page :exit nil)
+  ("c" fill-paragraph )
+  ("b" erase-buffer))
+#+END_SRC
+
+#+NAME: EFFA5A5F-58A8-476D-A8D4-16F232231EC7
+#+BEGIN_SRC emacs-lisp :results output silent
+(key-chord-define-global "vv" #'help/hydra/left-side/global/body)
+#+END_SRC
+
+[[https://github.com/abo-abo/hydra/blob/master/hydra-examples.el][Attribution.]]
+
+#+NAME: 362686F6-B397-44D5-812F-BE24670F4204
+#+BEGIN_SRC emacs-lisp :results output silent
+(defhydra hydra-apropos (:color blue
+                                :hint nil)
+  "
+_a_propos        _c_ommand
+_d_ocumentation  _l_ibrary
+_v_ariable       _u_ser-option
+^ ^          valu_e_"
+  ("a" apropos)
+  ("d" apropos-documentation)
+  ("v" apropos-variable)
+  ("c" apropos-command)
+  ("l" apropos-library)
+  ("u" apropos-user-option)
+  ("e" apropos-value))
+#+END_SRC
+
+**** Row 2
+     :PROPERTIES:
+     :ID:       9E95D130-D1EC-445B-9028-24DFA5CCB28A
+     :END:
+
+#+NAME: 9224105B-2CDB-46F4-AF3F-312B3467C2B8
+#+BEGIN_SRC emacs-lisp :results output silent
+(global-set-key (kbd "s-v") #'smex)
+(global-set-key (kbd "C-x C-c") #'help/safb-save-buffers-kill-terminal)
+(global-set-key (kbd "s-x") #'ido-find-file)
+(global-set-key (kbd "s-c") #'ido-switch-buffer)
+#+END_SRC
+
+**** Row 1
+     :PROPERTIES:
+     :ID:       4CDDC2CE-646A-4D8B-B5D3-2588FBEFF650
+     :END:
+
+**** Unsorted
+     :PROPERTIES:
+     :ID:       AD2164B2-CB66-48AD-B367-4E0CC406B022
+     :END:
+
+VC activities.
+
+#+NAME: A45F49E2-E330-463B-82C6-907F138E8F2A
+#+BEGIN_SRC emacs-lisp :results output silent
+(define-prefix-command 'help/vc-map)
+(global-set-key (kbd "s-r") #'help/vc-map)
+(define-key help/vc-map "e" #'help/safb-vc-ediff)
+(define-key help/vc-map "d" #'help/safb-vc-diff)
+(define-key help/vc-map "u" #'help/safb-vc-revert)
+(global-set-key (kbd "s-f") #'help/safb-help/vc-next-action)
+#+END_SRC
+
+Go to a line.
+
+#+NAME: B05E89FC-9FCE-48D6-8112-9BF990A8A15D
+#+BEGIN_SRC emacs-lisp :results output silent
+(key-chord-define-global "fg" #'help/safb-help/goto-line)
+#+END_SRC
+
+Pop the mark back.
+
+#+NAME: F3708409-D807-4541-95AB-C6298540FD59
+#+BEGIN_SRC emacs-lisp :results output silent
+(key-chord-define-global "FG" #'pop-to-mark-command)
+#+END_SRC
+
+Do the /right thing/ for getting to the start of the line.
+
+#+NAME: C9521BF3-23E7-4952-846F-322D107E3EE3
+#+BEGIN_SRC emacs-lisp :results output silent
+(global-set-key (kbd "C-a") #'beginning-of-line-dwim)
+#+END_SRC
+
+Occur has 3 cases. I like to use it to explore the unknown.
+
+#+NAME: 2608E62D-62B4-4B82-BFE0-E1E04C0D6914
+#+BEGIN_SRC emacs-lisp :results output silent
+(global-set-key (kbd "M-s p") #'help/occur-dwim)
+#+END_SRC
+
+Simpler buffer movement.
+
+#+NAME: FD9CED46-8D84-495F-A413-90DA9EA52B8A
+#+BEGIN_SRC emacs-lisp :results output silent
+(key-chord-define-global "fv" #'help/safb-other-window)
+#+END_SRC
+
+Toggle utility buffers ("logical F" key, so left side; "logical J" key on
+right).
+
+#+NAME: 4E784CF7-8CB1-42D0-A8EB-6FF54E7B60E9
+#+BEGIN_SRC emacs-lisp :results output silent
+(key-chord-define-global "f9" #'help/util-cycle)
+#+END_SRC
+
+Hide and show code blocks.
+
+#+NAME: 374B4284-8823-4E85-A469-F3985D48EC61
+#+BEGIN_SRC emacs-lisp :results output silent
+(global-set-key (kbd "s-b") #'hs-toggle-hiding)
+#+END_SRC
+
+***  Left & Right Side
+    :PROPERTIES:
+    :ID:       FA2BFDC9-5242-4547-A8A5-6DECC8ED1C1B
+    :END:
+
+Exploratory programming in EMACS.
+
+- Don't use "dn" for "describe-function" because of "and"-words
+- =d.= typically ends sentences
+
+#+NAME: 779A4232-960E-4CE1-B6EC-018FC997F0DD
+#+BEGIN_SRC emacs-lisp :results output silent
+(key-chord-define-global "d8" #'describe-function)
+(key-chord-define-global "d9" #'describe-variable)
+#+END_SRC
+
+Don't use "qi"; "unique".
+
+#+NAME: 55D2A3E6-07B1-47B0-9ADD-54C966FA252B
+#+BEGIN_SRC emacs-lisp :results output silent
+(global-set-key (kbd "s-`") #'help/comment-or-uncomment)
+#+END_SRC
+
+Make =ispell= accessible.
+
+#+NAME: E167321A-E8E5-4C54-B570-241B465B2D4B
+#+BEGIN_SRC emacs-lisp :results output silent
+(key-chord-define-global "qp" #'ispell)
+(key-chord-define-global "qo" #'ispell-word)
+#+END_SRC
+
+Use the default Langtool bindings.
+
+#+NAME: 52E762F8-9A31-4FEC-859D-049BD658C6D9
+#+BEGIN_SRC emacs-lisp :results output silent
+(define-prefix-command 'help/langtool-map)
+(key-chord-define-global "qk" #'help/langtool-map)
+(define-key help/langtool-map "c" #'langtool-check-buffer)
+(define-key help/langtool-map "C" #'langtool-correct-buffer)
+(define-key help/langtool-map "j" #'langtool-goto-previous-error)
+(define-key help/langtool-map "k" #'langtool-show-message-at-point)
+(define-key help/langtool-map "l" #'langtool-goto-next-error)
+(define-key help/langtool-map "q" #'langtool-check-done)
+#+END_SRC
+
+Via [[http://endlessparentheses.com/fixing-double-capitals-as-you-type.html?source=rss][comments]]:
+
+#+NAME: 5C8D8A46-256B-4533-97AD-52968CC92C75
+#+BEGIN_SRC emacs-lisp :results output silent
+(key-chord-define-global "TH" (lambda () (interactive) (insert "Th")))
+#+END_SRC
+
+*** Right Side
+    :PROPERTIES:
+    :ID:       16040443-9099-42C1-A7FB-90C0DDC9F8EE
+    :END:
+
+Try to reserve the right side for mode-specific activities.
+
+*** Exceptions
+    :PROPERTIES:
+    :ID:       EBBB727C-6110-4F7B-A2DC-45E9833EBEFE
+    :END:
+
+Return.
+
+Do smart new line inside, indenting given the mode.
+
+#+NAME: 0410911F-2D84-4799-8F68-1F3173E318B6
+#+BEGIN_SRC emacs-lisp :results output silent
+(help/not-on-gui (global-set-key (kbd "s-RET") #'help/smart-open-line))
+(help/on-gui (global-set-key (kbd "s-<return>") #'help/smart-open-line))
+#+END_SRC
+
+Scroll the whole buffer by one line keeping the cursor with it.
+
+#+NAME: 7B79E6A3-90F2-4F3F-AA40-1231D0DDA684
+#+BEGIN_SRC emacs-lisp :results output silent
+(global-set-key (kbd "M-n") (kbd "C-u 1 C-v"))
+(global-set-key (kbd "M-p") (kbd "C-u 1 M-v"))
+#+END_SRC
+
+Use a nicer =eval-expression= approach.
+
+#+NAME: FA4DDBA3-494B-4062-B43F-5D17DB239AF5
+#+BEGIN_SRC emacs-lisp :results output silent
+(global-set-key (kbd "s-:") #'my-eval-expression)
+#+END_SRC
+
+#+NAME: 65D190DA-D23D-427D-B070-1C74053EDC4E
+#+BEGIN_SRC emacs-lisp :results output silent
+(global-set-key (kbd "s-C-n") #'next-line)
+(global-set-key (kbd "C-n") #'next-logical-line)
+(global-set-key (kbd "s-C-p") #'previous-line)
+(global-set-key (kbd "C-p") #'previous-logical-line)
+#+END_SRC
+
+Ansu.
+
+#+NAME: C8A58EDC-466A-493E-8709-2A241ED10808
+#+BEGIN_SRC emacs-lisp :results output silent
+(global-set-key (kbd "M-%") #'anzu-query-replace)
+(global-set-key (kbd "C-M-%") #'anzu-query-replace-regexp)
+#+END_SRC
