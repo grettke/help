@@ -263,23 +263,6 @@ Start EMACS with this command:
 <<Piano-Lessons>>
 #+END_SRC
 
-** Eshell
-   :PROPERTIES:
-   :ID:       FAB2B8BA-ACE0-4F99-9583-C9A287CFB610
-   :END:
-
-#+NAME: 2C64B62C-606B-43B8-979C-355F92169D73
-#+BEGIN_SRC sh :tangle "./eshell/alias" :comments no :eval no
-alias clear recenter 0
-alias d 'dired $1'
-alias ff find-file $1
-alias gb git branch $*
-alias gpom git push origin master
-alias gst git status
-alias la ls -lha $*
-alias ll ls -lh $*
-#+END_SRC
-
 * Piano Lessons
    :PROPERTIES:
    :header-args: :noweb-ref Piano-Lessons
