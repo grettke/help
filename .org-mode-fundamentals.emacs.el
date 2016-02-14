@@ -31,6 +31,30 @@ This is a copy and paste. Additional languages would warrant a refactor."
         (cons (cons property value)
               (assq-delete-all property org-babel-default-header-args:R))))
 
+(defun help/set-org-babel-default-header-args:ditaa (property value)
+  "See `help/set-org-babel-default-header-args'; same but for ditaa.
+
+This is a copy and paste. Additional languages would warrant a refactor."
+  (setq org-babel-default-header-args:ditaa
+        (cons (cons property value)
+              (assq-delete-all property org-babel-default-header-args:ditaa))))
+
+(defun help/set-org-babel-default-header-args:dot (property value)
+  "See `help/set-org-babel-default-header-args'; same but for dot.
+
+This is a copy and paste. Additional languages would warrant a refactor."
+  (setq org-babel-default-header-args:dot
+        (cons (cons property value)
+              (assq-delete-all property org-babel-default-header-args:dot))))
+
+(defun help/set-org-babel-default-header-args:plantuml (property value)
+  "See `help/set-org-babel-default-header-args'; same but for plantuml.
+
+This is a copy and paste. Additional languages would warrant a refactor."
+  (setq org-babel-default-header-args:plantuml
+        (cons (cons property value)
+              (assq-delete-all property org-babel-default-header-args:plantuml))))
+
 (defun help/org-toggle-macro-markers ()
   (interactive)
   (setq org-hide-macro-markers (not org-hide-macro-markers)))
@@ -201,3 +225,9 @@ This is a copy and paste. Additional languages would warrant a refactor."
 ;; [[file:Org-Mode_Fundamentals.org::*wrap][7DA47704-25D2-4812-A838-7FE29E9F88FE]]
 (help/set-org-babel-default-header-args :wrap "EXAMPLE")
 ;; 7DA47704-25D2-4812-A838-7FE29E9F88FE ends here
+
+;; [[file:Org-Mode_Fundamentals.org::*wrap][0F18A334-A192-4DA5-A897-9D7F3E15C64B]]
+(help/set-org-babel-default-header-args:ditaa :wrap "RESULTS")
+(help/set-org-babel-default-header-args:dot :wrap "RESULTS")
+(help/set-org-babel-default-header-args:plantuml :wrap "RESULTS")
+;; 0F18A334-A192-4DA5-A897-9D7F3E15C64B ends here
