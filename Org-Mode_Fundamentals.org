@@ -300,14 +300,18 @@ String used to separate noweb references
 Control insertion of padding lines in tangled code files
 #+END_QUOTE
 
-~org-babel-tangle-jump-to-org~ requires padded lines. This configuration could
-arguably appear in the "Programming" heading because it impacts operation. It
-lives here because it *must* occur as part of the Tangling activity so that it
-can be used in the Programming activity.
+- ~org-babel-tangle-jump-to-org~ requires padded lines. This configuration could
+  arguably appear in the "Programming" heading because it impacts operation. It
+  lives here because it *must* occur as part of the Tangling activity so that it
+  can be used in the Programming activity.
+- After thoughtless changing this to =no= I found that it worked just fine
+  - Less space between the lines makes the generated code a little bit easier
+    for guests to swallow
+  - Can always add spaces when desired in key locations
 
 #+NAME: 0F3E7114-A63C-44F4-A9FD-577BAEE536ED
 #+BEGIN_SRC emacs-lisp :results output silent
-(help/set-org-babel-default-header-args :padline "yes")
+(help/set-org-babel-default-header-args :padline "no")
 #+END_SRC
 
 **** session
