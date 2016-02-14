@@ -130,6 +130,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
    ;;
    (makefile . t)
    (shell . t)
+   (sh . t)
    ;;
    (ditaa . t)
    (dot . t)
