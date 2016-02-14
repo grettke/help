@@ -533,10 +533,14 @@ Attribution: URL `http://emacsredux.com/blog/2013/07/25/increment-and-decrement-
 (defun help/reformat-file (file)
   "Reformat a file.
 
+Handle whether a buffer is attached to the file or not.
+
+Be sure that most revent version of file is loaded into buffer first.
+
 Attribution: URL `https://www.emacswiki.org/emacs/ElispCookbook#toc46'."
   (interactive)
   (with-current-buffer (find-file-noselect file)
-
+    (revert-buffer t t)
     (with-temp-message "Formatting file..."
       (indent-region (point-min) (point-max) nil))
     (message "Formatting file done")))
