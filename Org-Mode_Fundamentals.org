@@ -389,7 +389,6 @@ Org-Mode may evaluate all of the listed languages.
    ;;
    (makefile . t)
    (shell . t)
-   (sh . t)
    ;;
    (ditaa . t)
    (dot . t)
