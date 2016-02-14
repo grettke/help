@@ -868,6 +868,17 @@ With numeric prefix arg DEC, decrement the integer by DEC amount.
 Attribution: URL `http://emacsredux.com/blog/2013/07/25/increment-and-decrement-integer-at-point/'"
   (interactive "p")
   (increment-integer-at-point (- (or dec 1))))
+
+(defun help/reformat-file (file)
+  "Reformat a file.
+
+Attribution: URL `https://www.emacswiki.org/emacs/ElispCookbook#toc46'."
+  (interactive)
+  (with-current-buffer (find-file-noselect file)
+
+    (with-temp-message "Formatting file..."
+      (indent-region (point-min) (point-max) nil))
+    (message "Formatting file done")))
 #+END_SRC
 
 ** Buffer
