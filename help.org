@@ -1164,6 +1164,7 @@ Always keep buffers in-sync with changes in-file.
 #+NAME: B04C1388-6C2A-45D9-BFA6-7E21861FB9E3
 #+BEGIN_SRC emacs-lisp :results output silent
 (global-auto-revert-mode 1)
+(diminish 'auto-revert-mode)
 #+END_SRC
 
 Save all file befores before common activities. Functions are easier to

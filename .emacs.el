@@ -701,6 +701,7 @@ Attribution: URL `https://www.emacswiki.org/emacs/ElispCookbook#toc46'."
 
 ;; [[file:help.org::*File%20Based%20System][B04C1388-6C2A-45D9-BFA6-7E21861FB9E3]]
 (global-auto-revert-mode 1)
+(diminish 'auto-revert-mode)
 ;; B04C1388-6C2A-45D9-BFA6-7E21861FB9E3 ends here
 
 ;; [[file:help.org::*File%20Based%20System][5A0C3F05-0C41-4E50-944E-0ACC4C2F4A15]]
