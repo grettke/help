@@ -2,6 +2,7 @@
 /eshell/history
 /eshell/lastdir
 /auto/*
+/banner/auto/*
 *.tex
 *.aux
 *.log
