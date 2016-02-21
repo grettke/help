@@ -1,7 +1,7 @@
 /.emacs.desktop
 /eshell/history
 /eshell/lastdir
-/auto/*
+./auto/*
 /banner/auto/*
 *.tex
 *.aux
