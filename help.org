@@ -4550,14 +4550,14 @@ close together
      :ID:       6DCD321F-6FDA-4983-9C7C-265D23D1AC4F
      :END:
 
-Easily kill buffers.
+Easily kill buffers. Can't use "df" because of "PDF".
 
 #+NAME: E60EA15F-28A0-4E98-B62E-1F8BDE444BD8
 #+BEGIN_SRC emacs-lisp :results output silent
 (global-set-key (kbd "s-a") #'kill-buffer)
 (global-set-key (kbd "s-d") #'er/expand-region)
-(key-chord-define-global "df" #'avy-goto-word-1)
-(key-chord-define-global "DF" #'avy-pop-mark)
+(key-chord-define-global "rf" #'avy-goto-word-1)
+(key-chord-define-global "RF" #'avy-pop-mark)
 #+END_SRC
 
 #+NAME: F6C7AAB7-DF69-4EBA-8116-15DC32022D49
