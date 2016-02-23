@@ -6,6 +6,6 @@
 # expand-env: ((yas-indent-line 'fixed))
 # --
 #+NAME: ${1:`(org-id-new)`}
-#+BEGIN_SRC ${2:$$(yas-choose-value (sort (-map (lambda (x) (symbol-name (car x))) org-babel-load-languages) 'string<))}${2:$(when (-contains? '("ditaa" "dot" "plantuml") yas-text) (concat " :file \\"./image/" (yas-field-value 1) ".png\\""))} $3
+#+BEGIN_SRC ${2:$$(let ((langs (sort (-map (lambda (x) (symbol-name (car x))) org-babel-load-languages) 'string<))) (yas-choose-value (if (-contains? langs "shell") (-snoc langs "sh") langs)))}${2:$(when (-contains? '("ditaa" "dot" "plantuml") yas-text) (concat " :file \\"./image/" (yas-field-value 1) ".png\\""))} $3
 $0
 #+END_SRC
