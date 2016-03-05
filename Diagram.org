@@ -15,11 +15,10 @@ When a drop of water joins the ocean it becomes the ocean.
 +----+----+
 #+END_SRC
 
-#+RESULTS: ditaa-drop_in_the_ocean
-#+BEGIN_RESULTS
-[[file:./image/ditaa-drop_in_the_ocean.png]]
-#+END_RESULTS
+#+ATTR_LATEX: :width 2in
+[[file:image/ditaa-drop_in_the_ocean.png]]
 
+#+ATTR_LATEX: :width 6in
 #+NAME: ditaa-not_a_sailboat
 #+BEGIN_SRC ditaa :file "./image/ditaa-not_a_sailboat.png"
 +----------+1       1…3+------+
@@ -33,6 +32,7 @@ When a drop of water joins the ocean it becomes the ocean.
       This is not a sailboat
 #+END_SRC
 
+#+ATTR_LATEX: :width 6in
 #+RESULTS: ditaa-not_a_sailboat
 #+BEGIN_RESULTS
 [[file:./image/ditaa-not_a_sailboat.png]]
@@ -57,6 +57,7 @@ digraph graphviz {
 }
 #+END_SRC
 
+#+ATTR_LATEX: :width 6in
 #+RESULTS: graphviz-life_is_simple
 #+BEGIN_RESULTS
 [[file:./image/graphviz-life_is_simple.png]]
@@ -78,6 +79,7 @@ Alice --> Bob: Another authentication Request
 Alice <-- Bob: another authentication Response
 #+END_SRC
 
+#+ATTR_LATEX: :width 6in
 #+RESULTS: plantuml-sequence_diagram
 #+BEGIN_RESULTS
 [[file:./image/plantuml-sequence_diagram.png]]
@@ -98,6 +100,7 @@ customer -- (checkout)
 }
 #+END_SRC
 
+#+ATTR_LATEX: :width 6in
 #+RESULTS: plantuml-use_case_diagram
 #+BEGIN_RESULTS
 [[file:./image/plantuml-use_case_diagram.png]]
@@ -122,6 +125,7 @@ Sailboat "1" *-- "1..3" Mast
 Sailboat "1" *-- "1..3" Hull
 #+END_SRC
 
+#+ATTR_LATEX: :width 6in
 #+RESULTS: plantuml-class_diagram
 #+BEGIN_RESULTS
 [[file:./image/plantuml-class_diagram.png]]
@@ -151,6 +155,7 @@ partition Running {
 stop
 #+END_SRC
 
+#+ATTR_LATEX: :width 6in
 #+RESULTS: plantuml-activity_diagram
 #+BEGIN_RESULTS
 [[file:./image/plantuml-activity_diagram.png]]
@@ -172,6 +177,7 @@ DataAccess - [First Component]
 [First Component] ..> HTTP : use
 #+END_SRC
 
+#+ATTR_LATEX: :width 6in
 #+RESULTS: plantuml-component_diagram
 #+BEGIN_RESULTS
 [[file:./image/plantuml-component_diagram.png]]
@@ -186,6 +192,7 @@ State1 --> [*]
 State1 : this is a string State1 : this is another string
 #+END_SRC
 
+#+ATTR_LATEX: :width 6in
 #+RESULTS: plantuml-state_diagram
 #+BEGIN_RESULTS
 [[file:./image/plantuml-state_diagram.png]]
@@ -200,6 +207,7 @@ object Object02
 Object01 <|-- Object02
 #+END_SRC
 
+#+ATTR_LATEX: :width 6in
 #+RESULTS: plantuml-object_diagram
 #+BEGIN_RESULTS
 [[file:./image/plantuml-object_diagram.png]]
