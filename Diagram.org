@@ -32,12 +32,9 @@ When a drop of water joins the ocean it becomes the ocean.
       This is not a sailboat
 #+END_SRC
 
-#+ATTR_LATEX: :width 6in
-#+RESULTS: ditaa-not_a_sailboat
-#+BEGIN_RESULTS
-[[file:./image/ditaa-not_a_sailboat.png]]
-#+END_RESULTS
-
+#+ATTR_LATEX: :width 4in
+[[file:image/ditaa-not_a_sailboat.png]]
+l
 * Graphviz
 
 #+NAME: graphviz-life_is_simple
