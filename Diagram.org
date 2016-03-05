@@ -73,11 +73,8 @@ Alice --> Bob: Another authentication Request
 Alice <-- Bob: another authentication Response
 #+END_SRC
 
-#+ATTR_LATEX: :width 6in
-#+RESULTS: plantuml-sequence_diagram
-#+BEGIN_RESULTS
-[[file:./image/plantuml-sequence_diagram.png]]
-#+END_RESULTS
+#+ATTR_LATEX: :width 4in
+[[file:image/plantuml-sequence_diagram.png]]
 
 *Use Case Diagram*
 
@@ -94,11 +91,8 @@ customer -- (checkout)
 }
 #+END_SRC
 
-#+ATTR_LATEX: :width 6in
-#+RESULTS: plantuml-use_case_diagram
-#+BEGIN_RESULTS
-[[file:./image/plantuml-use_case_diagram.png]]
-#+END_RESULTS
+#+ATTR_LATEX: :width 3in
+[[file:image/plantuml-use_case_diagram.png]]
 
 *Class Diagram*
 
@@ -119,11 +113,8 @@ Sailboat "1" *-- "1..3" Mast
 Sailboat "1" *-- "1..3" Hull
 #+END_SRC
 
-#+ATTR_LATEX: :width 6in
-#+RESULTS: plantuml-class_diagram
-#+BEGIN_RESULTS
-[[file:./image/plantuml-class_diagram.png]]
-#+END_RESULTS
+#+ATTR_LATEX: :width 3in
+[[file:image/plantuml-class_diagram.png]]
 
 *Activity Diagram*
 
@@ -149,11 +140,8 @@ partition Running {
 stop
 #+END_SRC
 
-#+ATTR_LATEX: :width 6in
-#+RESULTS: plantuml-activity_diagram
-#+BEGIN_RESULTS
-[[file:./image/plantuml-activity_diagram.png]]
-#+END_RESULTS
+#+ATTR_LATEX: :width 2in
+[[file:image/plantuml-activity_diagram.png]]
 
 *Component Diagram*
 
@@ -172,10 +160,7 @@ DataAccess - [First Component]
 #+END_SRC
 
 #+ATTR_LATEX: :width 6in
-#+RESULTS: plantuml-component_diagram
-#+BEGIN_RESULTS
-[[file:./image/plantuml-component_diagram.png]]
-#+END_RESULTS
+[[file:image/plantuml-component_diagram.png]]
 
 *State Diagram*
 
@@ -186,11 +171,8 @@ State1 --> [*]
 State1 : this is a string State1 : this is another string
 #+END_SRC
 
-#+ATTR_LATEX: :width 6in
-#+RESULTS: plantuml-state_diagram
-#+BEGIN_RESULTS
-[[file:./image/plantuml-state_diagram.png]]
-#+END_RESULTS
+#+ATTR_LATEX: :width 3in
+[[file:image/plantuml-state_diagram.png]]
 
 *Object Diagram*
 
@@ -201,11 +183,8 @@ object Object02
 Object01 <|-- Object02
 #+END_SRC
 
-#+ATTR_LATEX: :width 6in
-#+RESULTS: plantuml-object_diagram
-#+BEGIN_RESULTS
-[[file:./image/plantuml-object_diagram.png]]
-#+END_RESULTS
+#+ATTR_LATEX: :width 1in
+[[file:image/plantuml-object_diagram.png]]
 
 - Commands.
   - Header and footer values.
