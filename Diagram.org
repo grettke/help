@@ -1,3 +1,5 @@
+#+PROPERTY: header-args :exports both
+
 * Ditaa
 
 When a drop of water joins the ocean it becomes the ocean.
