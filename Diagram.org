@@ -54,11 +54,8 @@ digraph graphviz {
 }
 #+END_SRC
 
-#+ATTR_LATEX: :width 6in
-#+RESULTS: graphviz-life_is_simple
-#+BEGIN_RESULTS
-[[file:./image/graphviz-life_is_simple.png]]
-#+END_RESULTS
+#+ATTR_LATEX: :width 4in
+[[file:image/graphviz-life_is_simple.png]]
 
 * PlantUML
 
