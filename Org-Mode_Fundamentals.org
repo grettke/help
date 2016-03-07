@@ -28,7 +28,7 @@ Start EMACS with this command:
   :ID:       8510C876-F644-4804-9F87-54A0B44DBA6A
   :END:
 
-#+MACRO: lp-configure-each-sb Configuration likely per Source-Block or System
+#+MACRO: lp-configure-each-sb Configuration likely per Source-Block or System.
 
 This system enables you to perform 3 Literate Document activities
 - Tangling
@@ -241,7 +241,7 @@ Toggle creation of parent directories of target files during tangling
 Turn off variable assignment and noweb expansion during tangling
 #+END_QUOTE
 
-{{{lp-configure-each-sb}}}.
+{{{lp-configure-each-sb}}}
 
 **** noweb
     :PROPERTIES:
@@ -278,7 +278,7 @@ ought to refer to the generated document.
 Specify block's noweb reference resolution target
 #+END_QUOTE
 
-{{{lp-configure-each-sb}}}.
+{{{lp-configure-each-sb}}}
 
 **** noweb-sep
     :PROPERTIES:
@@ -289,7 +289,7 @@ Specify block's noweb reference resolution target
 String used to separate noweb references
 #+END_QUOTE
 
-{{{lp-configure-each-sb}}}.
+{{{lp-configure-each-sb}}}
 
 **** padline
     :PROPERTIES:
@@ -322,7 +322,7 @@ Control insertion of padding lines in tangled code files
 Preserve the state of code evaluation
 #+END_QUOTE
 
-{{{lp-configure-each-sb}}}.
+{{{lp-configure-each-sb}}}
 
 For some situations, this may be the same for every source block for a
 particular language. R is a good example.
@@ -336,7 +336,7 @@ particular language. R is a good example.
 Make tangled files executable
 #+END_QUOTE
 
-{{{lp-configure-each-sb}}}.
+{{{lp-configure-each-sb}}}
 
 **** tangle
     :PROPERTIES:
@@ -361,7 +361,7 @@ Toggle tangling and specify file name
 Set permission of tangled files
 #+END_QUOTE
 
-{{{lp-configure-each-sb}}}.
+{{{lp-configure-each-sb}}}
 
 *** Evaluating
    :PROPERTIES:
@@ -531,7 +531,7 @@ files.
 Post processing of code block results
 #+END_QUOTE
 
-{{{lp-configure-each-sb}}}.
+{{{lp-configure-each-sb}}}
 
 **** prologue
     :PROPERTIES:
@@ -542,7 +542,7 @@ Post processing of code block results
 Text to prepend to code block body
 #+END_QUOTE
 
-{{{lp-configure-each-sb}}}.
+{{{lp-configure-each-sb}}}
 
 For some situations, this may be the same for every source block for a
 particular language. The user manual described ~gnuplot~, which often shows up on
@@ -605,7 +605,7 @@ when it is not.
 Handle row names in tables
 #+END_QUOTE
 
-{{{lp-configure-each-sb}}}..
+{{{lp-configure-each-sb}}}
 
 **** sep
     :PROPERTIES:
