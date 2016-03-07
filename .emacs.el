@@ -2228,11 +2228,24 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 ;; 3FB7FA94-1A6B-4E3B-8EDE-7A4D1D86E50E ends here
 
 ;; [[file:help.org::*Window][EA28235F-22B2-463F-AC06-EC79FA613F22]]
-(defun help/split-into-3-windows ()
+(defun help/1-window ()
+  "Work with this buffer in 1 window."
+  (interactive)
+  (delete-other-windows))
+
+(defun help/2-window ()
+  "Work with this buffer in 2 windows."
   (interactive)
   (delete-other-windows)
-  (split-window-vertically)
-  (split-window-vertically)
+  (split-window-below)
+  (balance-windows))
+
+(defun help/3-window ()
+  "Work with this buffer in 3 windows."
+  (interactive)
+  (delete-other-windows)
+  (split-window-below)
+  (split-window-below)
   (balance-windows))
 ;; EA28235F-22B2-463F-AC06-EC79FA613F22 ends here
 
@@ -2248,6 +2261,9 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 
 ;; [[file:help.org::*Row%204][239A85C3-2CEB-4E40-975F-8B3584F7F450]]
 (global-set-key (kbd "s-w") #'imenu)
+(key-chord-define-global "1o" #'help/1-window)
+(key-chord-define-global "2o" #'help/2-window)
+(key-chord-define-global "3o" #'help/3-window)
 ;; 239A85C3-2CEB-4E40-975F-8B3584F7F450 ends here
 
 ;; [[file:help.org::*Row%203][E60EA15F-28A0-4E98-B62E-1F8BDE444BD8]]

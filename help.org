@@ -46,7 +46,7 @@ emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
 
 2) [[https://github.com/punchagan/org2blog][Clone Org2Blog]] to =~/src/=.
 3) [[https://github.com/jwiegley/use-package][Clone Use-Package]] to =~/src/=.
-4) Install supporting software adding their exectuable location to the =PATH=.
+4) Install supporting software adding their exectuable location to the =PAqTH=.
    1) Install [[https://www.oracle.com/java/index.html][Oracle Java]].
    2) Install [[https://www.languagetool.org/][LanguageTool]] renaming it's folder to =LanguageTool=.
    3) Install PlantUML.
@@ -4098,16 +4098,28 @@ hand.
 (winner-mode t)
 #+END_SRC
 
-Frequently use between 1 and 3 windows. 1 and 2 are already managed. Easily
-create 3.
+Frequently use between 1 and 3 windows.
 
 #+NAME: EA28235F-22B2-463F-AC06-EC79FA613F22
 #+BEGIN_SRC emacs-lisp :results output silent
-(defun help/split-into-3-windows ()
+(defun help/1-window ()
+  "Work with this buffer in 1 window."
+  (interactive)
+  (delete-other-windows))
+
+(defun help/2-window ()
+  "Work with this buffer in 2 windows."
   (interactive)
   (delete-other-windows)
-  (split-window-vertically)
-  (split-window-vertically)
+  (split-window-below)
+  (balance-windows))
+
+(defun help/3-window ()
+  "Work with this buffer in 3 windows."
+  (interactive)
+  (delete-other-windows)
+  (split-window-below)
+  (split-window-below)
   (balance-windows))
 #+END_SRC
 
@@ -4543,6 +4555,9 @@ close together
 #+NAME: 239A85C3-2CEB-4E40-975F-8B3584F7F450
 #+BEGIN_SRC emacs-lisp :results output silent
 (global-set-key (kbd "s-w") #'imenu)
+(key-chord-define-global "1o" #'help/1-window)
+(key-chord-define-global "2o" #'help/2-window)
+(key-chord-define-global "3o" #'help/3-window)
 #+END_SRC
 
 **** Row 3
