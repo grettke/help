@@ -3747,6 +3747,18 @@ Load Beamer for creating presentations.
 (use-package ox-beamer)
 #+END_SRC
 
+*** Screenwriting
+:PROPERTIES:
+:ID:       504560F0-00BD-4E63-8617-A20EF74C6906
+:END:
+
+#+NAME: 3433DE3A-994E-4E4C-97E1-8C0A1831ABB3
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package fountain-mode
+  :config
+  (add-to-list 'auto-mode-alist '("\\.fountain$" . fountain-mode)))
+#+END_SRC
+
 ** DevOps
    :PROPERTIES:
    :ID:       8B78A8C3-E6B6-4722-9822-EF428E5DB823

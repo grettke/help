@@ -2060,6 +2060,12 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 (use-package ox-beamer)
 ;; B77E265B-EE1A-469D-BEFB-51360B7AB45E ends here
 
+;; [[file:help.org::*Screenwriting][3433DE3A-994E-4E4C-97E1-8C0A1831ABB3]]
+(use-package fountain-mode
+  :config
+  (add-to-list 'auto-mode-alist '("\\.fountain$" . fountain-mode)))
+;; 3433DE3A-994E-4E4C-97E1-8C0A1831ABB3 ends here
+
 ;; [[file:help.org::*Artist][7592B1CF-CDA3-4ED1-99FA-205E41C74FFF]]
 (add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
 (add-to-list 'auto-mode-alist '("\\.art" . artist-mode))
