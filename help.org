@@ -3756,7 +3756,18 @@ Load Beamer for creating presentations.
 #+BEGIN_SRC emacs-lisp :results output silent
 (use-package fountain-mode
   :config
-  (add-to-list 'auto-mode-alist '("\\.fountain$" . fountain-mode)))
+  (add-to-list 'auto-mode-alist '("\\.fountain$" . fountain-mode))
+  (let ((fountain-stx '(
+                        "CONT'D"
+                        "CROSSFADE"
+                        "FLASHCUTS"
+                        "FLASHFORWARD"
+                        "INTERCUT"
+                        "PRE"
+                        "PRELAP"
+                        )))
+    (mapc (lambda (stx) (add-to-list 'ispell-skip-region-alist (list stx)))
+          fountain-stx)))
 #+END_SRC
 
 ** DevOps

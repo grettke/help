@@ -2063,7 +2063,18 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 ;; [[file:help.org::*Screenwriting][3433DE3A-994E-4E4C-97E1-8C0A1831ABB3]]
 (use-package fountain-mode
   :config
-  (add-to-list 'auto-mode-alist '("\\.fountain$" . fountain-mode)))
+  (add-to-list 'auto-mode-alist '("\\.fountain$" . fountain-mode))
+  (let ((fountain-stx '(
+                        "CONT'D"
+                        "CROSSFADE"
+                        "FLASHCUTS"
+                        "FLASHFORWARD"
+                        "INTERCUT"
+                        "PRE"
+                        "PRELAP"
+                        )))
+    (mapc (lambda (stx) (add-to-list 'ispell-skip-region-alist (list stx)))
+          fountain-stx)))
 ;; 3433DE3A-994E-4E4C-97E1-8C0A1831ABB3 ends here
 
 ;; [[file:help.org::*Artist][7592B1CF-CDA3-4ED1-99FA-205E41C74FFF]]
