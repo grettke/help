@@ -883,6 +883,15 @@ Attribution: URL `https://www.emacswiki.org/emacs/ElispCookbook#toc46'."
     (with-temp-message "Formatting file..."
       (indent-region (point-min) (point-max) nil))
     (message "Formatting file done")))
+
+(defun switch-to-previous-buffer ()
+  "Switch to most recent buffer. Repeated calls toggle back and forth between the most recent two buffers.
+
+Attribution: URL `http://pragmaticemacs.com/emacs/toggle-between-most-recent-buffers/'
+
+Attribution: URL `https://www.emacswiki.org/emacs/SwitchingBuffers#toc5'"
+  (interactive)
+  (switch-to-buffer (other-buffer (current-buffer) 1)))
 #+END_SRC
 
 ** Buffer
@@ -4581,6 +4590,7 @@ close together
 (key-chord-define-global "1o" #'help/1-window)
 (key-chord-define-global "2o" #'help/2-window)
 (key-chord-define-global "3o" #'help/3-window)
+(global-set-key (kbd "s-q") #'kill-buffer)
 #+END_SRC
 
 **** Row 3
@@ -4592,7 +4602,7 @@ Easily kill buffers. Can't use "df" because of "PDF".
 
 #+NAME: E60EA15F-28A0-4E98-B62E-1F8BDE444BD8
 #+BEGIN_SRC emacs-lisp :results output silent
-(global-set-key (kbd "s-a") #'kill-buffer)
+(global-set-key (kbd "s-a") #'switch-to-previous-buffer)
 (global-set-key (kbd "s-d") #'er/expand-region)
 (key-chord-define-global "rf" #'avy-goto-word-1)
 (key-chord-define-global "RF" #'avy-pop-mark)

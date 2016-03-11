@@ -544,6 +544,15 @@ Attribution: URL `https://www.emacswiki.org/emacs/ElispCookbook#toc46'."
     (with-temp-message "Formatting file..."
       (indent-region (point-min) (point-max) nil))
     (message "Formatting file done")))
+
+(defun switch-to-previous-buffer ()
+  "Switch to most recent buffer. Repeated calls toggle back and forth between the most recent two buffers.
+
+Attribution: URL `http://pragmaticemacs.com/emacs/toggle-between-most-recent-buffers/'
+
+Attribution: URL `https://www.emacswiki.org/emacs/SwitchingBuffers#toc5'"
+  (interactive)
+  (switch-to-buffer (other-buffer (current-buffer) 1)))
 ;; D523CBF8-67C4-4C96-9298-A4A49FE54E61 ends here
 
 ;; [[file:help.org::*Buffer][0E6156C3-4259-4539-BDAC-899B0AF4E80F]]
@@ -2281,10 +2290,11 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 (key-chord-define-global "1o" #'help/1-window)
 (key-chord-define-global "2o" #'help/2-window)
 (key-chord-define-global "3o" #'help/3-window)
+(global-set-key (kbd "s-q") #'kill-buffer)
 ;; 239A85C3-2CEB-4E40-975F-8B3584F7F450 ends here
 
 ;; [[file:help.org::*Row%203][E60EA15F-28A0-4E98-B62E-1F8BDE444BD8]]
-(global-set-key (kbd "s-a") #'kill-buffer)
+(global-set-key (kbd "s-a") #'switch-to-previous-buffer)
 (global-set-key (kbd "s-d") #'er/expand-region)
 (key-chord-define-global "rf" #'avy-goto-word-1)
 (key-chord-define-global "RF" #'avy-pop-mark)
