@@ -2801,7 +2801,7 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
  (define-key org-mode-map (kbd "C-M-<return>") #'electric-indent-just-newline))
 #+END_SRC
 
-*****  Row 5
+***** Row 5
      :PROPERTIES:
      :ID:       B09BE660-B5D5-40CA-8952-D2DEAE20E7BD
      :END:
