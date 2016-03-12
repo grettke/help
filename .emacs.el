@@ -1437,9 +1437,9 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
   (use-package org-mouse))
 ;; BA1565BE-2BF1-4121-96BD-A3F7462676CC ends here
 
-;; [[file:help.org::*Org-Mode][42F9CE2D-591D-4BDD-998E-C85E0B7B5DF5]]
-(setq org-ellipsis "…")
-;; 42F9CE2D-591D-4BDD-998E-C85E0B7B5DF5 ends here
+;; [[file:help.org::*Org-Mode][42f9ce2d-591D-4BDD-998E-C85E0B7B5DF5]]
+(setq org-ellipsis "↷")
+;; 42f9ce2d-591D-4BDD-998E-C85E0B7B5DF5 ends here
 
 ;; [[file:help.org::*Org-Mode][A0FB5129-6EF9-4D5F-A35A-CB5505C8FD6F]]
 (setq org-hide-leading-stars t)

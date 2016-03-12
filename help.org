@@ -2496,11 +2496,13 @@ Allow the mouse to do Org-Mode things like expand and collapse headings.
 #+END_SRC
 
 Use a real ellipsis to render an ellipsis for Org-Mode stuff like showing that a
-header is collapsed.
+header is collapsed. [[http://endlessparentheses.com/changing-the-org-mode-ellipsis.html?source=rss][Artur]] Artur go me thinking that an arrow would be more
+expressive; in particular revealing that there is more content to be "unrolled"
+below the current line.
 
-#+NAME: 42F9CE2D-591D-4BDD-998E-C85E0B7B5DF5
+#+Name: 42f9ce2d-591D-4BDD-998E-C85E0B7B5DF5
 #+BEGIN_SRC emacs-lisp :results output silent
-(setq org-ellipsis "…")
+(setq org-ellipsis "↷")
 #+END_SRC
 
 It is easy to see indentation of headlines without having to count asterisks, so
