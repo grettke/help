@@ -2297,8 +2297,8 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 ;; [[file:help.org::*Row%203][E60EA15F-28A0-4E98-B62E-1F8BDE444BD8]]
 (global-set-key (kbd "s-a") #'switch-to-previous-buffer)
 (global-set-key (kbd "s-d") #'er/expand-region)
-(key-chord-define-global "rf" #'avy-goto-word-1)
-(key-chord-define-global "RF" #'avy-pop-mark)
+(key-chord-define-global "dc" #'avy-goto-word-1)
+(key-chord-define-global "DC" #'avy-pop-mark)
 ;; E60EA15F-28A0-4E98-B62E-1F8BDE444BD8 ends here
 
 ;; [[file:help.org::*Row%203][F6C7AAB7-DF69-4EBA-8116-15DC32022D49]]

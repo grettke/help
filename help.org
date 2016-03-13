@@ -4603,12 +4603,14 @@ close together
 
 Easily kill buffers. Can't use "df" because of "PDF".
 
+Can't use "fr" because of "fright" and "France".
+
 #+NAME: E60EA15F-28A0-4E98-B62E-1F8BDE444BD8
 #+BEGIN_SRC emacs-lisp :results output silent
 (global-set-key (kbd "s-a") #'switch-to-previous-buffer)
 (global-set-key (kbd "s-d") #'er/expand-region)
-(key-chord-define-global "rf" #'avy-goto-word-1)
-(key-chord-define-global "RF" #'avy-pop-mark)
+(key-chord-define-global "dc" #'avy-goto-word-1)
+(key-chord-define-global "DC" #'avy-pop-mark)
 #+END_SRC
 
 #+NAME: F6C7AAB7-DF69-4EBA-8116-15DC32022D49
