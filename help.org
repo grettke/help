@@ -4593,6 +4593,7 @@ close together
 (key-chord-define-global "2o" #'help/2-window)
 (key-chord-define-global "3o" #'help/3-window)
 (global-set-key (kbd "s-q") #'kill-buffer)
+(global-set-key (kbd "s-Q") #'kill-this-buffer)
 #+END_SRC
 
 **** Row 3

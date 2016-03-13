@@ -2291,6 +2291,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 (key-chord-define-global "2o" #'help/2-window)
 (key-chord-define-global "3o" #'help/3-window)
 (global-set-key (kbd "s-q") #'kill-buffer)
+(global-set-key (kbd "s-Q") #'kill-this-buffer)
 ;; 239A85C3-2CEB-4E40-975F-8B3584F7F450 ends here
 
 ;; [[file:help.org::*Row%203][E60EA15F-28A0-4E98-B62E-1F8BDE444BD8]]
