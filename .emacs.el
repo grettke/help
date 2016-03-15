@@ -2297,9 +2297,17 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 ;; [[file:help.org::*Row%203][E60EA15F-28A0-4E98-B62E-1F8BDE444BD8]]
 (global-set-key (kbd "s-a") #'switch-to-previous-buffer)
 (global-set-key (kbd "s-d") #'er/expand-region)
-(key-chord-define-global "dc" #'avy-goto-word-1)
-(key-chord-define-global "DC" #'avy-pop-mark)
+(key-chord-define-global "fg" #'avy-goto-word-1)
+(key-chord-define-global "FG" #'avy-pop-mark)
 ;; E60EA15F-28A0-4E98-B62E-1F8BDE444BD8 ends here
+
+;; [[file:help.org::*Row%203][B05E89FC-9FCE-48D6-8112-9BF990A8A15D]]
+(key-chord-define-global "gt" #'help/safb-help/goto-line)
+;; B05E89FC-9FCE-48D6-8112-9BF990A8A15D ends here
+
+;; [[file:help.org::*Row%203][F3708409-D807-4541-95AB-C6298540FD59]]
+(key-chord-define-global "GT" #'pop-to-mark-command)
+;; F3708409-D807-4541-95AB-C6298540FD59 ends here
 
 ;; [[file:help.org::*Row%203][F6C7AAB7-DF69-4EBA-8116-15DC32022D49]]
 (defhydra help/hydra/left-side/global (:color blue
@@ -2373,14 +2381,6 @@ _v_ariable       _u_ser-option
 (define-key help/vc-map "u" #'help/safb-vc-revert)
 (global-set-key (kbd "s-f") #'help/safb-help/vc-next-action)
 ;; A45F49E2-E330-463B-82C6-907F138E8F2A ends here
-
-;; [[file:help.org::*Unsorted][B05E89FC-9FCE-48D6-8112-9BF990A8A15D]]
-(key-chord-define-global "fg" #'help/safb-help/goto-line)
-;; B05E89FC-9FCE-48D6-8112-9BF990A8A15D ends here
-
-;; [[file:help.org::*Unsorted][F3708409-D807-4541-95AB-C6298540FD59]]
-(key-chord-define-global "FG" #'pop-to-mark-command)
-;; F3708409-D807-4541-95AB-C6298540FD59 ends here
 
 ;; [[file:help.org::*Unsorted][C9521BF3-23E7-4952-846F-322D107E3EE3]]
 (global-set-key (kbd "C-a") #'beginning-of-line-dwim)

@@ -4605,12 +4605,30 @@ Easily kill buffers. Can't use "df" because of "PDF".
 
 Can't use "fr" because of "fright" and "France".
 
+Can't use "dc" because of =cd (change directory)=.
+
+Can't use "gr" brecause of "Grant" and "Great.
+
 #+NAME: E60EA15F-28A0-4E98-B62E-1F8BDE444BD8
 #+BEGIN_SRC emacs-lisp :results output silent
 (global-set-key (kbd "s-a") #'switch-to-previous-buffer)
 (global-set-key (kbd "s-d") #'er/expand-region)
-(key-chord-define-global "dc" #'avy-goto-word-1)
-(key-chord-define-global "DC" #'avy-pop-mark)
+(key-chord-define-global "fg" #'avy-goto-word-1)
+(key-chord-define-global "FG" #'avy-pop-mark)
+#+END_SRC
+
+Go to a line.
+
+#+NAME: B05E89FC-9FCE-48D6-8112-9BF990A8A15D
+#+BEGIN_SRC emacs-lisp :results output silent
+(key-chord-define-global "gt" #'help/safb-help/goto-line)
+#+END_SRC
+
+Pop the mark back.
+
+#+NAME: F3708409-D807-4541-95AB-C6298540FD59
+#+BEGIN_SRC emacs-lisp :results output silent
+(key-chord-define-global "GT" #'pop-to-mark-command)
 #+END_SRC
 
 #+NAME: F6C7AAB7-DF69-4EBA-8116-15DC32022D49
@@ -4708,20 +4726,6 @@ VC activities.
 (define-key help/vc-map "d" #'help/safb-vc-diff)
 (define-key help/vc-map "u" #'help/safb-vc-revert)
 (global-set-key (kbd "s-f") #'help/safb-help/vc-next-action)
-#+END_SRC
-
-Go to a line.
-
-#+NAME: B05E89FC-9FCE-48D6-8112-9BF990A8A15D
-#+BEGIN_SRC emacs-lisp :results output silent
-(key-chord-define-global "fg" #'help/safb-help/goto-line)
-#+END_SRC
-
-Pop the mark back.
-
-#+NAME: F3708409-D807-4541-95AB-C6298540FD59
-#+BEGIN_SRC emacs-lisp :results output silent
-(key-chord-define-global "FG" #'pop-to-mark-command)
 #+END_SRC
 
 Do the /right thing/ for getting to the start of the line.
