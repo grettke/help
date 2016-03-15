@@ -2297,17 +2297,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 ;; [[file:help.org::*Row%203][E60EA15F-28A0-4E98-B62E-1F8BDE444BD8]]
 (global-set-key (kbd "s-a") #'switch-to-previous-buffer)
 (global-set-key (kbd "s-d") #'er/expand-region)
-(key-chord-define-global "fg" #'avy-goto-word-1)
-(key-chord-define-global "FG" #'avy-pop-mark)
 ;; E60EA15F-28A0-4E98-B62E-1F8BDE444BD8 ends here
-
-;; [[file:help.org::*Row%203][B05E89FC-9FCE-48D6-8112-9BF990A8A15D]]
-(key-chord-define-global "gt" #'help/safb-help/goto-line)
-;; B05E89FC-9FCE-48D6-8112-9BF990A8A15D ends here
-
-;; [[file:help.org::*Row%203][F3708409-D807-4541-95AB-C6298540FD59]]
-(key-chord-define-global "GT" #'pop-to-mark-command)
-;; F3708409-D807-4541-95AB-C6298540FD59 ends here
 
 ;; [[file:help.org::*Row%203][F6C7AAB7-DF69-4EBA-8116-15DC32022D49]]
 (defhydra help/hydra/left-side/global (:color blue
@@ -2430,6 +2420,19 @@ _v_ariable       _u_ser-option
 ;; [[file:help.org::*Left%20&%20Right%20Side][5C8D8A46-256B-4533-97AD-52968CC92C75]]
 (key-chord-define-global "TH" (lambda () (interactive) (insert "Th")))
 ;; 5C8D8A46-256B-4533-97AD-52968CC92C75 ends here
+
+;; [[file:help.org::*Left%20&%20Right%20Side][5F07753E-91BA-4B4F-B051-0C7C90B1F04A]]
+(key-chord-define-global "fj" #'avy-goto-word-1)
+(key-chord-define-global "FJ" #'avy-pop-mark)
+;; 5F07753E-91BA-4B4F-B051-0C7C90B1F04A ends here
+
+;; [[file:help.org::*Left%20&%20Right%20Side][B05E89FC-9FCE-48D6-8112-9BF990A8A15D]]
+(key-chord-define-global "fk" #'help/safb-help/goto-line)
+;; B05E89FC-9FCE-48D6-8112-9BF990A8A15D ends here
+
+;; [[file:help.org::*Left%20&%20Right%20Side][F3708409-D807-4541-95AB-C6298540FD59]]
+(key-chord-define-global "FK" #'pop-to-mark-command)
+;; F3708409-D807-4541-95AB-C6298540FD59 ends here
 
 ;; [[file:help.org::*Exceptions][0410911F-2D84-4799-8F68-1F3173E318B6]]
 (help/not-on-gui (global-set-key (kbd "s-RET") #'help/smart-open-line))

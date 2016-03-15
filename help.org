@@ -4601,34 +4601,10 @@ close together
      :ID:       6DCD321F-6FDA-4983-9C7C-265D23D1AC4F
      :END:
 
-Easily kill buffers. Can't use "df" because of "PDF".
-
-Can't use "fr" because of "fright" and "France".
-
-Can't use "dc" because of =cd (change directory)=.
-
-Can't use "gr" brecause of "Grant" and "Great.
-
 #+NAME: E60EA15F-28A0-4E98-B62E-1F8BDE444BD8
 #+BEGIN_SRC emacs-lisp :results output silent
 (global-set-key (kbd "s-a") #'switch-to-previous-buffer)
 (global-set-key (kbd "s-d") #'er/expand-region)
-(key-chord-define-global "fg" #'avy-goto-word-1)
-(key-chord-define-global "FG" #'avy-pop-mark)
-#+END_SRC
-
-Go to a line.
-
-#+NAME: B05E89FC-9FCE-48D6-8112-9BF990A8A15D
-#+BEGIN_SRC emacs-lisp :results output silent
-(key-chord-define-global "gt" #'help/safb-help/goto-line)
-#+END_SRC
-
-Pop the mark back.
-
-#+NAME: F3708409-D807-4541-95AB-C6298540FD59
-#+BEGIN_SRC emacs-lisp :results output silent
-(key-chord-define-global "GT" #'pop-to-mark-command)
 #+END_SRC
 
 #+NAME: F6C7AAB7-DF69-4EBA-8116-15DC32022D49
@@ -4814,6 +4790,37 @@ Via [[http://endlessparentheses.com/fixing-double-capitals-as-you-type.html?sour
 #+NAME: 5C8D8A46-256B-4533-97AD-52968CC92C75
 #+BEGIN_SRC emacs-lisp :results output silent
 (key-chord-define-global "TH" (lambda () (interactive) (insert "Th")))
+#+END_SRC
+
+
+Easily kill buffers. Can't use "df" because of "PDF".
+
+Can't use "fr" because of "fright" and "France".
+
+Can't use "dc" because of =cd (change directory)=.
+
+Can't use "gr" brecause of "Grant" and "Great.
+
+Go to a word.
+
+#+NAME: 5F07753E-91BA-4B4F-B051-0C7C90B1F04A
+#+BEGIN_SRC emacs-lisp :results output silent
+(key-chord-define-global "fj" #'avy-goto-word-1)
+(key-chord-define-global "FJ" #'avy-pop-mark)
+#+END_SRC
+
+Go to a line.
+
+#+NAME: B05E89FC-9FCE-48D6-8112-9BF990A8A15D
+#+BEGIN_SRC emacs-lisp :results output silent
+(key-chord-define-global "fk" #'help/safb-help/goto-line)
+#+END_SRC
+
+Pop the mark back.
+
+#+NAME: F3708409-D807-4541-95AB-C6298540FD59
+#+BEGIN_SRC emacs-lisp :results output silent
+(key-chord-define-global "FK" #'pop-to-mark-command)
 #+END_SRC
 
 *** Right Side
