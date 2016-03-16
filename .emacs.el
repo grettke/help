@@ -1932,6 +1932,15 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre"
   :diminish yas-minor-mode)
 ;; 1827B724-7BC0-4228-8389-2B06F308D6AF ends here
 
+;; [[file:help.org::*PHP][2B5F8650-B430-4E6B-B7B2-53A00CBB5C4A]]
+(use-package php-mode
+  :ensure t
+  :config
+  (add-hook 'php-mode-hook 'php-enable-wordpress-coding-style)
+  (setq php-template-compatibility nil)
+  (setq php-lineup-cascaded-calls t))
+;; 2B5F8650-B430-4E6B-B7B2-53A00CBB5C4A ends here
+
 ;; [[file:help.org::*TeX][B97EDF2E-0538-475A-AA0A-6C708DCCEC11]]
 (use-package tex-site
   :ensure auctex

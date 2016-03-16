@@ -3428,6 +3428,21 @@ Enable Auto-Complete via Geiser.
    :PROPERTIES:
    :ID:       987C1C05-F880-4312-B902-5060208A3506
    :END:
+*** PHP
+:PROPERTIES:
+:ID:       BCCEB47A-9C67-4FF0-BCF9-DACF7E280E10
+:END:
+
+#+NAME: 2B5F8650-B430-4E6B-B7B2-53A00CBB5C4A
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package php-mode
+  :ensure t
+  :config
+  (add-hook 'php-mode-hook 'php-enable-wordpress-coding-style)
+  (setq php-template-compatibility nil)
+  (setq php-lineup-cascaded-calls t))
+#+END_SRC
+
 ** Publishing
    :PROPERTIES:
    :ID:       7D07C2F6-38B9-49BF-A584-B029CEED6141
