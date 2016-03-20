@@ -889,6 +889,16 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
 (add-hook 'font-lock-mode-hook #'help/try-to-add-imenu)
 ;; D722C567-86BA-45AD-91AB-2536696312C8 ends here
 
+;; [[file:help.org::*IMenu][CDC23247-0399-4E7B-970A-AD70EA8354DB]]
+(use-package imenu-list
+  :ensure t
+  :config
+  (setq imenu-list-focus-after-activation t)
+  (setq imenu-list-auto-resize t)
+  (setq imenu-list-position 'left)
+  (setq imenu-list-size 40))
+;; CDC23247-0399-4E7B-970A-AD70EA8354DB ends here
+
 ;; [[file:help.org::*Interactively%20DO%20Things][CCCA7B51-6A71-41EF-906C-C1C3A6B0C927]]
 (use-package ido)
 (use-package flx-ido
@@ -1269,7 +1279,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 ;; 42D5F313-65F0-49E1-8759-9259D4020FA9 ends here
 
 ;; [[file:help.org::*Prog*-Mode%20Modes][B56D8E08-DF7C-4EBB-922E-EA215BD66C0D]]
-(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook R-mode-hook SAS-mode-hook graphviz-dot-mode-hook c-mode-common-hook))
+(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook R-mode-hook SAS-mode-hook graphviz-dot-mode-hook c-mode-common-hook php-mode-hook))
 ;; B56D8E08-DF7C-4EBB-922E-EA215BD66C0D ends here
 
 ;; [[file:help.org::*Prog*-Mode%20Modes][963C787F-BC23-4A6C-9637-3922541B26E2]]
@@ -2320,33 +2330,34 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_ grade-level _8_ reading-ease
 _q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
                  _j_ back-char _k_ scrollDown _K_ nextLogLine _l_ forw-char _;_ toggle-lax-whitespace
-_x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer"
-  ("1" help/font-size-reset :exit nil)
-  ("2" help/text-scale-decrease :exit nil)
-  ("3" help/text-scale-increase :exit nil)
-  ("4" help/insert-ellipsis)
-  ("5" help/uuid)
-  ("6" set-buffer-file-coding-system)
-  ("7" writegood-grade-level)
-  ("8" writegood-reading-ease)
-  ("x" delete-indentation)
-  ("q" hydra-apropos/body)
-  ("w" widen)
-  ("r" rgrep)
-  ("t" org-babel-tangle-jump-to-org)
-  ("i" scroll-down-command :exit nil)
-  ("k" scroll-up-command :exit nil)
-  ("I" previous-logical-line :exit nil)
-  ("K" next-logical-line :exit nil)
-  ("j" backward-char :exit nil)
-  ("l" forward-char :exit nil)
-  (";" isearch-toggle-lax-whitespace)
-  ("o" toggle-debug-on-error)
-  ("p" anzu-query-replace)
-  ("[" backward-page :exit nil)
-  ("]" forward-page :exit nil)
-  ("c" fill-paragraph )
-  ("b" erase-buffer))
+_x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list"
+("1" help/font-size-reset :exit nil)
+("2" help/text-scale-decrease :exit nil)
+("3" help/text-scale-increase :exit nil)
+("4" help/insert-ellipsis)
+("5" help/uuid)
+("6" set-buffer-file-coding-system)
+("7" writegood-grade-level)
+("8" writegood-reading-ease)
+("x" delete-indentation)
+("q" hydra-apropos/body)
+("w" widen)
+("r" rgrep)
+("t" org-babel-tangle-jump-to-org)
+("i" scroll-down-command :exit nil)
+("k" scroll-up-command :exit nil)
+("I" previous-logical-line :exit nil)
+("K" next-logical-line :exit nil)
+("j" backward-char :exit nil)
+("l" forward-char :exit nil)
+("m" imenu-list-minor-mode)
+(";" isearch-toggle-lax-whitespace)
+("o" toggle-debug-on-error)
+("p" anzu-query-replace)
+("[" backward-page :exit nil)
+("]" forward-page :exit nil)
+("c" fill-paragraph )
+("b" erase-buffer))
 ;; F6C7AAB7-DF69-4EBA-8116-15DC32022D49 ends here
 
 ;; [[file:help.org::*Row%203][EFFA5A5F-58A8-476D-A8D4-16F232231EC7]]

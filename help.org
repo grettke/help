@@ -1500,6 +1500,19 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
 (add-hook 'font-lock-mode-hook #'help/try-to-add-imenu)
 #+END_SRC
 
+Provide it in a buffer.
+
+#+NAME: CDC23247-0399-4E7B-970A-AD70EA8354DB
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package imenu-list
+  :ensure t
+  :config
+  (setq imenu-list-focus-after-activation t)
+  (setq imenu-list-auto-resize t)
+  (setq imenu-list-position 'left)
+  (setq imenu-list-size 40))
+#+END_SRC
+
 ** Interactively DO Things
    :PROPERTIES:
    :ID:       2DB9FDA1-9950-4FEA-A33C-E8DDFDA9420E
@@ -2213,7 +2226,7 @@ With that in mind this system:
   - Configurations common to every hacking vehicle.
     #+NAME: B56D8E08-DF7C-4EBB-922E-EA215BD66C0D
     #+BEGIN_SRC emacs-lisp :results output silent
-(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook R-mode-hook SAS-mode-hook graphviz-dot-mode-hook c-mode-common-hook))
+(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook R-mode-hook SAS-mode-hook graphviz-dot-mode-hook c-mode-common-hook php-mode-hook))
     #+END_SRC
   - LISP mode hooks.
     - Are hacking modes.
@@ -4641,33 +4654,34 @@ close together
 _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_ grade-level _8_ reading-ease
 _q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
                  _j_ back-char _k_ scrollDown _K_ nextLogLine _l_ forw-char _;_ toggle-lax-whitespace
-_x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer"
-  ("1" help/font-size-reset :exit nil)
-  ("2" help/text-scale-decrease :exit nil)
-  ("3" help/text-scale-increase :exit nil)
-  ("4" help/insert-ellipsis)
-  ("5" help/uuid)
-  ("6" set-buffer-file-coding-system)
-  ("7" writegood-grade-level)
-  ("8" writegood-reading-ease)
-  ("x" delete-indentation)
-  ("q" hydra-apropos/body)
-  ("w" widen)
-  ("r" rgrep)
-  ("t" org-babel-tangle-jump-to-org)
-  ("i" scroll-down-command :exit nil)
-  ("k" scroll-up-command :exit nil)
-  ("I" previous-logical-line :exit nil)
-  ("K" next-logical-line :exit nil)
-  ("j" backward-char :exit nil)
-  ("l" forward-char :exit nil)
-  (";" isearch-toggle-lax-whitespace)
-  ("o" toggle-debug-on-error)
-  ("p" anzu-query-replace)
-  ("[" backward-page :exit nil)
-  ("]" forward-page :exit nil)
-  ("c" fill-paragraph )
-  ("b" erase-buffer))
+_x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list"
+("1" help/font-size-reset :exit nil)
+("2" help/text-scale-decrease :exit nil)
+("3" help/text-scale-increase :exit nil)
+("4" help/insert-ellipsis)
+("5" help/uuid)
+("6" set-buffer-file-coding-system)
+("7" writegood-grade-level)
+("8" writegood-reading-ease)
+("x" delete-indentation)
+("q" hydra-apropos/body)
+("w" widen)
+("r" rgrep)
+("t" org-babel-tangle-jump-to-org)
+("i" scroll-down-command :exit nil)
+("k" scroll-up-command :exit nil)
+("I" previous-logical-line :exit nil)
+("K" next-logical-line :exit nil)
+("j" backward-char :exit nil)
+("l" forward-char :exit nil)
+("m" imenu-list-minor-mode)
+(";" isearch-toggle-lax-whitespace)
+("o" toggle-debug-on-error)
+("p" anzu-query-replace)
+("[" backward-page :exit nil)
+("]" forward-page :exit nil)
+("c" fill-paragraph )
+("b" erase-buffer))
 #+END_SRC
 
 #+NAME: EFFA5A5F-58A8-476D-A8D4-16F232231EC7
