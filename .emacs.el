@@ -572,7 +572,7 @@ Attribution: URL `https://www.emacswiki.org/emacs/SwitchingBuffers#toc5'"
 (use-package fill-column-indicator
   :ensure t
   :config
-  (setq fci-rule-column 81))
+  (setq fci-rule-column 80))
 ;; 9288AC00-4B73-4E10-ABAE-F2E886981F97 ends here
 
 ;; [[file:help.org::*Typography][1A2B38F5-0C3E-4369-A059-B59C518A27FB]]
