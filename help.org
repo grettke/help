@@ -916,7 +916,9 @@ Two spaces after a period end a sentence.
 (setq sentence-end-double-space t)
 #+END_SRC
 
-Two spaces follow a colon.
+Two spaces follow a colon
+
+Two spaces after a semi-colon.
 
 #+NAME: 7F3D6946-8A60-403A-A465-D209F95D7C74
 #+BEGIN_SRC emacs-lisp :results output silent
