@@ -1267,6 +1267,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   "HELP's standard configuration for buffer's working with text, often for
    programming."
   (interactive)
+  (auto-fill-mode)
   (visual-line-mode)
   (nlinum-mode)
   (fci-mode)
