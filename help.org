@@ -920,6 +920,8 @@ Two spaces follow a colon
 
 Two spaces after a semi-colon.
 
+One space after comma.
+
 #+NAME: 7F3D6946-8A60-403A-A465-D209F95D7C74
 #+BEGIN_SRC emacs-lisp :results output silent
 (setq colon-double-space t)
