@@ -600,7 +600,7 @@ Attribution: URL `https://www.emacswiki.org/emacs/SwitchingBuffers#toc5'"
 ;; DA9A04CF-ABF9-4BF4-A9FF-85E89DA740E1 ends here
 
 ;; [[file:help.org::*Buffer][9DB523BC-E21B-42B7-AEE2-31ED24C14D92]]
-(setq help/column-width 80)
+(setq help/column-width 78)
 ;; 9DB523BC-E21B-42B7-AEE2-31ED24C14D92 ends here
 
 ;; [[file:help.org::*Buffer][A1A8FE84-0A12-4C5F-9565-F4EACE3DB694]]
@@ -1255,7 +1255,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 (use-package fill-column-indicator
   :ensure t
   :config
-  (setq-default fill-column help/column-width))
+  (setq-default fill-column (+ help/column-width 2)))
 ;; 9288AC00-4B73-4E10-ABAE-F2E886981F97 ends here
 
 ;; [[file:help.org::*Text-Mode][1A2B38F5-0C3E-4369-A059-B59C518A27FB]]
