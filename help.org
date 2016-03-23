@@ -925,10 +925,17 @@ Two spaces follow a colon.
 
 
 - Easily see the fill-column (or close too it)
+  - If you want 80 characters on your screen then the first is at
+    position 0 and the last it as position 79. If you place a
+    character at position 79 then the FCI indicator gets pushed out by
+    one space and it is very distracting. Push it out 1 to 81 and rely
+    on the fill column preventing text from ever reaching it.
   #+NAME: 9288AC00-4B73-4E10-ABAE-F2E886981F97
   #+BEGIN_SRC emacs-lisp :results output silent
 (use-package fill-column-indicator
-  :ensure t)
+  :ensure t
+  :config
+  (setq fci-rule-column 81))
   #+END_SRC
 - Display line in file
   #+NAME: 1A2B38F5-0C3E-4369-A059-B59C518A27FB
