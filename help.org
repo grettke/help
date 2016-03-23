@@ -894,6 +894,65 @@ Attribution: URL `https://www.emacswiki.org/emacs/SwitchingBuffers#toc5'"
   (switch-to-buffer (other-buffer (current-buffer) 1)))
 #+END_SRC
 
+** Typography
+:PROPERTIES:
+:ID:       F355CA52-794D-474E-959B-D85C689B96AA
+:END:
+
+
+78 characters is wide enough for most documents and it leaves some space to
+make it more easily read.
+
+#+NAME: 9DB523BC-E21B-42B7-AEE2-31ED24C14D92
+#+BEGIN_SRC emacs-lisp :results output silent
+(defconst help/column-width 78)
+(setq fill-column help/column-width)
+#+END_SRC
+
+Two spaces after a period end a sentence.
+
+#+NAME: 44A54A0C-DA4F-4FBC-9E0A-83CEF28DD5BC
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq sentence-end-double-space t)
+#+END_SRC
+
+Two spaces follow a colon.
+
+#+NAME: 7F3D6946-8A60-403A-A465-D209F95D7C74
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq colon-double-space t)
+#+END_SRC
+
+
+- Easily see the fill-column (or close too it)
+  #+NAME: 9288AC00-4B73-4E10-ABAE-F2E886981F97
+  #+BEGIN_SRC emacs-lisp :results output silent
+(use-package fill-column-indicator
+  :ensure t)
+  #+END_SRC
+- Display line in file
+  #+NAME: 1A2B38F5-0C3E-4369-A059-B59C518A27FB
+  #+BEGIN_SRC emacs-lisp :results output silent
+  #+END_SRC
+
+#+NAME: 42D5F313-65F0-49E1-8759-9259D4020FA9
+#+BEGIN_SRC emacs-lisp :results output silent
+(defun help/text-prog*-setup ()
+  "HELP's standard configuration for buffer's working with text, often for
+   programming."
+  (interactive)
+  (auto-fill-mode)
+  (visual-line-mode)
+  (nlinum-mode)
+  (fci-mode)
+  (rainbow-mode)
+  (help/try-to-add-imenu)
+  (writegood-mode)
+  (turn-on-page-break-lines-mode))
+
+(add-hook 'text-mode-hook #'help/text-prog*-setup)
+#+END_SRC
+
 ** Buffer
    :PROPERTIES:
    :ID:       F3C9BDE1-C0E0-4BDF-B121-3CE2F0D16464
@@ -975,14 +1034,6 @@ then document.
 #+BEGIN_SRC emacs-lisp :results output silent
 (use-package expand-region
   :ensure t)
-#+END_SRC
-
-78 characters is wide enough for most documents and it leaves some space to
-make it more easily read.
-
-#+NAME: 9DB523BC-E21B-42B7-AEE2-31ED24C14D92
-#+BEGIN_SRC emacs-lisp :results output silent
-(setq help/column-width 78)
 #+END_SRC
 
 Visualize the formfeed character.
@@ -2183,38 +2234,6 @@ With that in mind this system:
     :PROPERTIES:
     :ID:       7CFD11FB-F3D4-4272-9DBC-2A420884097C
     :END:
-
-- Line numbers make documents easier to read.
-- Indicate that Text-Mode buffers ought to be 80 characters wide.
-  #+NAME: 9288AC00-4B73-4E10-ABAE-F2E886981F97
-  #+BEGIN_SRC emacs-lisp :results output silent
-(use-package fill-column-indicator
-  :ensure t
-  :config
-  (setq-default fill-column (+ help/column-width 2)))
-  #+END_SRC
-- Display line in file
-  #+NAME: 1A2B38F5-0C3E-4369-A059-B59C518A27FB
-  #+BEGIN_SRC emacs-lisp :results output silent
-  #+END_SRC
-
-#+NAME: 42D5F313-65F0-49E1-8759-9259D4020FA9
-#+BEGIN_SRC emacs-lisp :results output silent
-(defun help/text-prog*-setup ()
-  "HELP's standard configuration for buffer's working with text, often for
-   programming."
-  (interactive)
-  (auto-fill-mode)
-  (visual-line-mode)
-  (nlinum-mode)
-  (fci-mode)
-  (rainbow-mode)
-  (help/try-to-add-imenu)
-  (writegood-mode)
-  (turn-on-page-break-lines-mode))
-
-(add-hook 'text-mode-hook #'help/text-prog*-setup)
-#+END_SRC
 
 *** Prog*-Mode Modes
     :PROPERTIES:
@@ -3904,25 +3923,6 @@ Load Beamer for creating presentations.
    :END:
 
 Configure EMACS to personal-taste for "noise" and "form".
-
-** Typography
-:PROPERTIES:
-:ID:       F355CA52-794D-474E-959B-D85C689B96AA
-:END:
-
-Two spaces after a period end a sentence.
-
-#+NAME: 44A54A0C-DA4F-4FBC-9E0A-83CEF28DD5BC
-#+BEGIN_SRC emacs-lisp :results output silent
-(setq sentence-end-double-space t)
-#+END_SRC
-
-Two spaces follow a colon.
-
-#+NAME: 7F3D6946-8A60-403A-A465-D209F95D7C74
-#+BEGIN_SRC emacs-lisp :results output silent
-(setq colon-double-space t)
-#+END_SRC
 
 ** Line Number
    :PROPERTIES:

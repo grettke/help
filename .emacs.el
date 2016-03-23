@@ -555,6 +555,45 @@ Attribution: URL `https://www.emacswiki.org/emacs/SwitchingBuffers#toc5'"
   (switch-to-buffer (other-buffer (current-buffer) 1)))
 ;; D523CBF8-67C4-4C96-9298-A4A49FE54E61 ends here
 
+;; [[file:help.org::*Typography][9DB523BC-E21B-42B7-AEE2-31ED24C14D92]]
+(defconst help/column-width 78)
+(setq fill-column help/column-width)
+;; 9DB523BC-E21B-42B7-AEE2-31ED24C14D92 ends here
+
+;; [[file:help.org::*Typography][44A54A0C-DA4F-4FBC-9E0A-83CEF28DD5BC]]
+(setq sentence-end-double-space t)
+;; 44A54A0C-DA4F-4FBC-9E0A-83CEF28DD5BC ends here
+
+;; [[file:help.org::*Typography][7F3D6946-8A60-403A-A465-D209F95D7C74]]
+(setq colon-double-space t)
+;; 7F3D6946-8A60-403A-A465-D209F95D7C74 ends here
+
+;; [[file:help.org::*Typography][9288AC00-4B73-4E10-ABAE-F2E886981F97]]
+(use-package fill-column-indicator
+  :ensure t)
+;; 9288AC00-4B73-4E10-ABAE-F2E886981F97 ends here
+
+;; [[file:help.org::*Typography][1A2B38F5-0C3E-4369-A059-B59C518A27FB]]
+
+;; 1A2B38F5-0C3E-4369-A059-B59C518A27FB ends here
+
+;; [[file:help.org::*Typography][42D5F313-65F0-49E1-8759-9259D4020FA9]]
+(defun help/text-prog*-setup ()
+  "HELP's standard configuration for buffer's working with text, often for
+   programming."
+  (interactive)
+  (auto-fill-mode)
+  (visual-line-mode)
+  (nlinum-mode)
+  (fci-mode)
+  (rainbow-mode)
+  (help/try-to-add-imenu)
+  (writegood-mode)
+  (turn-on-page-break-lines-mode))
+
+(add-hook 'text-mode-hook #'help/text-prog*-setup)
+;; 42D5F313-65F0-49E1-8759-9259D4020FA9 ends here
+
 ;; [[file:help.org::*Buffer][0E6156C3-4259-4539-BDAC-899B0AF4E80F]]
 (desktop-save-mode t)
 (setq desktop-restore-eager 10)
@@ -598,10 +637,6 @@ Attribution: URL `https://www.emacswiki.org/emacs/SwitchingBuffers#toc5'"
 (use-package expand-region
   :ensure t)
 ;; DA9A04CF-ABF9-4BF4-A9FF-85E89DA740E1 ends here
-
-;; [[file:help.org::*Buffer][9DB523BC-E21B-42B7-AEE2-31ED24C14D92]]
-(setq help/column-width 78)
-;; 9DB523BC-E21B-42B7-AEE2-31ED24C14D92 ends here
 
 ;; [[file:help.org::*Buffer][A1A8FE84-0A12-4C5F-9565-F4EACE3DB694]]
 (use-package page-break-lines
@@ -1250,34 +1285,6 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 ;; [[file:help.org::*Word%20Wrap][EDD8ABBB-B76A-4B95-9367-211A765348CD]]
 (diminish 'visual-line-mode)
 ;; EDD8ABBB-B76A-4B95-9367-211A765348CD ends here
-
-;; [[file:help.org::*Text-Mode][9288AC00-4B73-4E10-ABAE-F2E886981F97]]
-(use-package fill-column-indicator
-  :ensure t
-  :config
-  (setq-default fill-column (+ help/column-width 2)))
-;; 9288AC00-4B73-4E10-ABAE-F2E886981F97 ends here
-
-;; [[file:help.org::*Text-Mode][1A2B38F5-0C3E-4369-A059-B59C518A27FB]]
-
-;; 1A2B38F5-0C3E-4369-A059-B59C518A27FB ends here
-
-;; [[file:help.org::*Text-Mode][42D5F313-65F0-49E1-8759-9259D4020FA9]]
-(defun help/text-prog*-setup ()
-  "HELP's standard configuration for buffer's working with text, often for
-   programming."
-  (interactive)
-  (auto-fill-mode)
-  (visual-line-mode)
-  (nlinum-mode)
-  (fci-mode)
-  (rainbow-mode)
-  (help/try-to-add-imenu)
-  (writegood-mode)
-  (turn-on-page-break-lines-mode))
-
-(add-hook 'text-mode-hook #'help/text-prog*-setup)
-;; 42D5F313-65F0-49E1-8759-9259D4020FA9 ends here
 
 ;; [[file:help.org::*Prog*-Mode%20Modes][B56D8E08-DF7C-4EBB-922E-EA215BD66C0D]]
 (setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook R-mode-hook SAS-mode-hook graphviz-dot-mode-hook c-mode-common-hook php-mode-hook))
@@ -2139,14 +2146,6 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
   (eval-after-load "ob-plantuml"
     (setq org-plantuml-jar-path help/plantuml-jar)))
 ;; 80EE7930-0025-4D06-96BB-24A70169CDEA ends here
-
-;; [[file:help.org::*Typography][44A54A0C-DA4F-4FBC-9E0A-83CEF28DD5BC]]
-(setq sentence-end-double-space t)
-;; 44A54A0C-DA4F-4FBC-9E0A-83CEF28DD5BC ends here
-
-;; [[file:help.org::*Typography][7F3D6946-8A60-403A-A465-D209F95D7C74]]
-(setq colon-double-space t)
-;; 7F3D6946-8A60-403A-A465-D209F95D7C74 ends here
 
 ;; [[file:help.org::*Line%20Number][DC131133-BEC7-45D2-BA35-42E77FC3BB22]]
 (use-package nlinum
