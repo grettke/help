@@ -899,10 +899,19 @@ Attribution: URL `https://www.emacswiki.org/emacs/SwitchingBuffers#toc5'"
 :ID:       F355CA52-794D-474E-959B-D85C689B96AA
 :END:
 
-
-78 characters is wide enough for most documents and it leaves some space to
-make it more easily read.
-
+- Use 78 characters for a text document
+  - Column 0 is the first possible character
+  - Column 77 is the last possible character
+  - Column 78 will always be empty
+    - This is the fill column
+    - This gives some spacing between the text body and the 80 column indicator
+  - Column 79 will always be the fill column indicator
+    - It *isn't* the fill column though
+    - I want it to indicate 80 chars, typically the maximum number of columns
+      for a line, to know how to size the window itself
+    - Fci-Mode supports this
+  - Store this as the fill column because all supporting functions will do the
+    right thing here
 #+NAME: 9DB523BC-E21B-42B7-AEE2-31ED24C14D92
 #+BEGIN_SRC emacs-lisp :results output silent
 (defconst help/column-width 78)
@@ -936,7 +945,7 @@ One space after comma.
 (use-package fill-column-indicator
   :ensure t
   :config
-  (setq fci-rule-column 80))
+  (setq fci-rule-column 79))
   #+END_SRC
 - Display line in file
   #+NAME: 1A2B38F5-0C3E-4369-A059-B59C518A27FB
