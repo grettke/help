@@ -3903,6 +3903,25 @@ Load Beamer for creating presentations.
 
 Configure EMACS to personal-taste for "noise" and "form".
 
+** Typography
+:PROPERTIES:
+:ID:       F355CA52-794D-474E-959B-D85C689B96AA
+:END:
+
+Two spaces after a period end a sentence.
+
+#+NAME: 44A54A0C-DA4F-4FBC-9E0A-83CEF28DD5BC
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq sentence-end-double-space t)
+#+END_SRC
+
+Two spaces follow a colon.
+
+#+NAME: 7F3D6946-8A60-403A-A465-D209F95D7C74
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq colon-double-space t)
+#+END_SRC
+
 ** Line Number
    :PROPERTIES:
    :ID:       4D367462-1C7B-4110-B7D1-E973D386B4E1

@@ -2139,6 +2139,14 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
     (setq org-plantuml-jar-path help/plantuml-jar)))
 ;; 80EE7930-0025-4D06-96BB-24A70169CDEA ends here
 
+;; [[file:help.org::*Typography][44A54A0C-DA4F-4FBC-9E0A-83CEF28DD5BC]]
+(setq sentence-end-double-space t)
+;; 44A54A0C-DA4F-4FBC-9E0A-83CEF28DD5BC ends here
+
+;; [[file:help.org::*Typography][7F3D6946-8A60-403A-A465-D209F95D7C74]]
+(setq colon-double-space t)
+;; 7F3D6946-8A60-403A-A465-D209F95D7C74 ends here
+
 ;; [[file:help.org::*Line%20Number][DC131133-BEC7-45D2-BA35-42E77FC3BB22]]
 (use-package nlinum
   :ensure t
