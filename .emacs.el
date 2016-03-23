@@ -557,7 +557,7 @@ Attribution: URL `https://www.emacswiki.org/emacs/SwitchingBuffers#toc5'"
 
 ;; [[file:help.org::*Typography][9DB523BC-E21B-42B7-AEE2-31ED24C14D92]]
 (defconst help/column-width 78)
-(setq fill-column help/column-width)
+(setq-default fill-column help/column-width)
 ;; 9DB523BC-E21B-42B7-AEE2-31ED24C14D92 ends here
 
 ;; [[file:help.org::*Typography][44A54A0C-DA4F-4FBC-9E0A-83CEF28DD5BC]]

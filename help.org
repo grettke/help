@@ -906,7 +906,7 @@ make it more easily read.
 #+NAME: 9DB523BC-E21B-42B7-AEE2-31ED24C14D92
 #+BEGIN_SRC emacs-lisp :results output silent
 (defconst help/column-width 78)
-(setq fill-column help/column-width)
+(setq-default fill-column help/column-width)
 #+END_SRC
 
 Two spaces after a period end a sentence.
