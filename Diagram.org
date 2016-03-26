@@ -35,6 +35,7 @@ When a drop of water joins the ocean it becomes the ocean.
 #+ATTR_LATEX: :width 4in
 [[file:image/ditaa-not_a_sailboat.png]]
 
+@@latex: \pagebreak@@
 * Graphviz
 
 #+NAME: graphviz-life_is_simple
@@ -57,9 +58,10 @@ digraph graphviz {
 #+ATTR_LATEX: :width 4in
 [[file:image/graphviz-life_is_simple.png]]
 
+@@latex: \pagebreak@@
 * PlantUML
 
-*Sequence Diagram*
+** *Sequence Diagram*
 
 - Feature rich.
 - Information rich.
@@ -76,7 +78,8 @@ Alice <-- Bob: another authentication Response
 #+ATTR_LATEX: :width 4in
 [[file:image/plantuml-sequence_diagram.png]]
 
-*Use Case Diagram*
+@@latex: \pagebreak@@
+** *Use Case Diagram*
 
 - Actor variable aliasing feature.
 #+NAME: plantuml-use_case_diagram
@@ -94,7 +97,8 @@ customer -- (checkout)
 #+ATTR_LATEX: :width 3in
 [[file:image/plantuml-use_case_diagram.png]]
 
-*Class Diagram*
+@@latex: \pagebreak@@
+** *Class Diagram*
 
 - Valuable for all sorts of ideas in addition to classes.
 - =hide=, =show=, and =include= are mentioned.
@@ -116,7 +120,8 @@ Sailboat "1" *-- "1..3" Hull
 #+ATTR_LATEX: :width 3in
 [[file:image/plantuml-class_diagram.png]]
 
-*Activity Diagram*
+@@latex: \pagebreak@@
+** *Activity Diagram*
 
 - May indicate top to bottom flow using =top=.
 - May label arrows.
@@ -143,7 +148,8 @@ stop
 #+ATTR_LATEX: :width 2in
 [[file:image/plantuml-activity_diagram.png]]
 
-*Component Diagram*
+@@latex: \pagebreak@@
+** *Component Diagram*
 
 - The names to define all of the diagram entity types.
 - Identify "Modern UML".
@@ -162,7 +168,8 @@ DataAccess - [First Component]
 #+ATTR_LATEX: :width 6in
 [[file:image/plantuml-component_diagram.png]]
 
-*State Diagram*
+@@latex: \pagebreak@@
+** *State Diagram*
 
 #+NAME: plantuml-state_diagram
 #+BEGIN_SRC plantuml :file "./image/plantuml-state_diagram.png"
@@ -174,7 +181,8 @@ State1 : this is a string State1 : this is another string
 #+ATTR_LATEX: :width 3in
 [[file:image/plantuml-state_diagram.png]]
 
-*Object Diagram*
+@@latex: \pagebreak@@
+** *Object Diagram*
 
 #+NAME: plantuml-object_diagram
 #+BEGIN_SRC plantuml :file "./image/plantuml-object_diagram.png"
@@ -185,6 +193,9 @@ Object01 <|-- Object02
 
 #+ATTR_LATEX: :width 1in
 [[file:image/plantuml-object_diagram.png]]
+
+@@latex: \pagebreak@@
+** *Options*
 
 - Commands.
   - Header and footer values.
