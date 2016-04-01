@@ -1145,6 +1145,10 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
 (setq-default case-fold-search t)
 ;; 4B9FE2A1-6A5F-42EF-AEEA-222B72170B64 ends here
 
+;; [[file:help.org::*Searching][61ACBD2A-D9CB-4C3E-B872-92C293B8FB64]]
+(setq search-default-regexp-mode nil)
+;; 61ACBD2A-D9CB-4C3E-B872-92C293B8FB64 ends here
+
 ;; [[file:help.org::*Org-Mode][62360083-1CE2-4EEF-BF61-AEA8F3FA9944]]
 (defun help/block-regex (special)
   "Make an ispell skip-region alist for a SPECIAL block."
