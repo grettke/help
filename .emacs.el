@@ -114,7 +114,9 @@
 
 ;; [[file:help.org::*Windows][B66E53C2-D90F-422E-BD67-250EB644C6BB]]
 (help/on-windows
+ (setq w32-pass-lwindow-to-system nil)
  (defvar w32-lwindow-modifier 'super)
+ (setq w32-pass-rwindow-to-system nil)
  (defvar w32-rwindow-modifier 'super))
 ;; B66E53C2-D90F-422E-BD67-250EB644C6BB ends here
 
