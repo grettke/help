@@ -2478,7 +2478,7 @@ source-blocks outside of that place.
 Personal workflow:
 
 - TODO :: Zero progress.
-- PROGRESS :: Forward movement.
+- IN-PROGRESS :: Forward movement.
 - HELD-BLOCKED :: Can't move forward until external agent completes.
 - HELD-FROZEN :: Won't move forward until I reinitialize it.
 - HELD-UNTIL :: Reinitialize when conditional.
@@ -2490,7 +2490,7 @@ Personal workflow:
 (setq org-todo-keywords
       '((sequence
          "TODO"
-         "PROGRESS"
+         "IN-PROGRESS"
          "HELD-BLOCKED"
          "HELD-FROZEN"
          "HELD-UNTIL"

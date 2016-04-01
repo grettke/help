@@ -1423,7 +1423,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (setq org-todo-keywords
       '((sequence
          "TODO"
-         "PROGRESS"
+         "IN-PROGRESS"
          "HELD-BLOCKED"
          "HELD-FROZEN"
          "HELD-UNTIL"
