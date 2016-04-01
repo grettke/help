@@ -2343,7 +2343,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
   "
 _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_ grade-level _8_ reading-ease
 _q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
-                 _j_ back-char _k_ scrollDown _K_ nextLogLine _l_ forw-char _;_ toggle-lax-whitespace
+                              _k_ scrollDown _K_ nextLogLine _;_ toggle-lax-whitespace
 _x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list"
 ("1" help/font-size-reset :exit nil)
 ("2" help/text-scale-decrease :exit nil)
@@ -2362,8 +2362,6 @@ _x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list"
 ("k" scroll-up-command :exit nil)
 ("I" previous-logical-line :exit nil)
 ("K" next-logical-line :exit nil)
-("j" backward-char :exit nil)
-("l" forward-char :exit nil)
 ("m" imenu-list-minor-mode)
 (";" isearch-toggle-lax-whitespace)
 ("o" toggle-debug-on-error)
