@@ -3950,6 +3950,19 @@ Load Beamer for creating presentations.
 
 Configure EMACS to personal-taste for "noise" and "form".
 
+** Key Press
+:PROPERTIES:
+:ID:       A2E555B7-678D-4F38-A42D-D2E72A056B8D
+:END:
+
+Make key-presses sound like the ground-breaking Selectric typewriter.
+
+#+NAME: 1B924EB9-5B03-4853-B99A-63984BA344B8
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package selectric-mode
+  :ensure t)
+#+END_SRC
+
 ** Line Number
    :PROPERTIES:
    :ID:       4D367462-1C7B-4110-B7D1-E973D386B4E1

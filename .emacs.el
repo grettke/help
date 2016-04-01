@@ -2155,6 +2155,11 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
     (setq org-plantuml-jar-path help/plantuml-jar)))
 ;; 80EE7930-0025-4D06-96BB-24A70169CDEA ends here
 
+;; [[file:help.org::*Key%20Press][1B924EB9-5B03-4853-B99A-63984BA344B8]]
+(use-package selectric-mode
+  :ensure t)
+;; 1B924EB9-5B03-4853-B99A-63984BA344B8 ends here
+
 ;; [[file:help.org::*Line%20Number][DC131133-BEC7-45D2-BA35-42E77FC3BB22]]
 (use-package nlinum
   :ensure t
