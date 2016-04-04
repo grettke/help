@@ -2273,7 +2273,7 @@ With that in mind this system:
   - Configurations common to every hacking vehicle.
     #+NAME: B56D8E08-DF7C-4EBB-922E-EA215BD66C0D
     #+BEGIN_SRC emacs-lisp :results output silent
-(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook R-mode-hook SAS-mode-hook graphviz-dot-mode-hook c-mode-common-hook php-mode-hook))
+(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook R-mode-hook SAS-mode-hook graphviz-dot-mode-hook c-mode-common-hook php-mode-hook scad-mode-hook))
     #+END_SRC
   - LISP mode hooks.
     - Are hacking modes.
@@ -3943,6 +3943,20 @@ Load Beamer for creating presentations.
     (setq org-plantuml-jar-path help/plantuml-jar)))
 #+END_SRC
 
+** Computer-aided design
+:PROPERTIES:
+:ID:       36EB1867-0EDB-4C22-871D-7D730CF4DF53
+:END:
+*** OpenSCAD
+:PROPERTIES:
+:ID:       090201D4-6799-4DC2-B353-C574F3C8B918
+:END:
+
+#+NAME: 6C53BC6D-012D-44A6-963B-610610933D4B
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package scad-mode
+  :ensure t)
+#+END_SRC
 * Quiet and Pleasant Appearance
    :PROPERTIES:
    :ID:       197B7B84-5090-47AE-9180-F8F606D0012F
