@@ -1694,6 +1694,11 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre"
 (key-chord-define org-src-mode-map ">>" (lambda () (interactive) (insert "»")))
 ;; 46FE856B-D5C6-45B0-95D5-891211AC295C ends here
 
+;; [[file:help.org::*Dash][C060E54C-9FB2-4E2C-BE67-3188E1BA0F22]]
+(use-package dash-at-point
+ :ensure t)
+;; C060E54C-9FB2-4E2C-BE67-3188E1BA0F22 ends here
+
 ;; [[file:help.org::*Emacs%20Speaks%20Statistics%20(ESS)][E7AE32C1-42CC-482F-92D2-43DBD703500C]]
 (use-package ess
   :ensure t)
@@ -2355,33 +2360,34 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
   "
 _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_ grade-level _8_ reading-ease
 _q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
-                              _k_ scrollDown _K_ nextLogLine _;_ toggle-lax-whitespace
+                      _d_ dash-at-point    _k_ scrollDown _K_ nextLogLine _;_ toggle-lax-whitespace
 _x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list"
-("1" help/font-size-reset :exit nil)
-("2" help/text-scale-decrease :exit nil)
-("3" help/text-scale-increase :exit nil)
-("4" help/insert-ellipsis)
-("5" help/uuid)
-("6" set-buffer-file-coding-system)
-("7" writegood-grade-level)
-("8" writegood-reading-ease)
-("x" delete-indentation)
-("q" hydra-apropos/body)
-("w" widen)
-("r" rgrep)
-("t" org-babel-tangle-jump-to-org)
-("i" scroll-down-command :exit nil)
-("k" scroll-up-command :exit nil)
-("I" previous-logical-line :exit nil)
-("K" next-logical-line :exit nil)
-("m" imenu-list-minor-mode)
-(";" isearch-toggle-lax-whitespace)
-("o" toggle-debug-on-error)
-("p" anzu-query-replace)
-("[" backward-page :exit nil)
-("]" forward-page :exit nil)
-("c" fill-paragraph )
-("b" erase-buffer))
+  ("1" help/font-size-reset :exit nil)
+  ("2" help/text-scale-decrease :exit nil)
+  ("3" help/text-scale-increase :exit nil)
+  ("4" help/insert-ellipsis)
+  ("5" help/uuid)
+  ("6" set-buffer-file-coding-system)
+  ("7" writegood-grade-level)
+  ("8" writegood-reading-ease)
+  ("x" delete-indentation)
+  ("q" hydra-apropos/body)
+  ("w" widen)
+  ("r" rgrep)
+  ("t" org-babel-tangle-jump-to-org)
+  ("i" scroll-down-command :exit nil)
+  ("d" dash-at-point)
+  ("k" scroll-up-command :exit nil)
+  ("I" previous-logical-line :exit nil)
+  ("K" next-logical-line :exit nil)
+  ("m" imenu-list-minor-mode)
+  (";" isearch-toggle-lax-whitespace)
+  ("o" toggle-debug-on-error)
+  ("p" anzu-query-replace)
+  ("[" backward-page :exit nil)
+  ("]" forward-page :exit nil)
+  ("c" fill-paragraph )
+  ("b" erase-buffer))
 ;; F6C7AAB7-DF69-4EBA-8116-15DC32022D49 ends here
 
 ;; [[file:help.org::*Row%203][EFFA5A5F-58A8-476D-A8D4-16F232231EC7]]

@@ -2989,6 +2989,16 @@ Easily enter guillemots.
 (key-chord-define org-src-mode-map "<<" (lambda () (interactive) (insert "«")))
 (key-chord-define org-src-mode-map ">>" (lambda () (interactive) (insert "»")))
 #+END_SRC
+*** Dash
+:PROPERTIES:
+:ID:       20393F2C-F619-4E12-B862-1A4CCB97B742
+:END:
+#+NAME: C060E54C-9FB2-4E2C-BE67-3188E1BA0F22
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package dash-at-point
+ :ensure t)
+#+END_SRC
+
 ** Applied Mathematics
    :PROPERTIES:
    :ID:       BE2550C9-231A-4824-BE6C-14231A971FE9
@@ -4727,33 +4737,34 @@ close together
   "
 _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_ grade-level _8_ reading-ease
 _q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
-                              _k_ scrollDown _K_ nextLogLine _;_ toggle-lax-whitespace
+                      _d_ dash-at-point    _k_ scrollDown _K_ nextLogLine _;_ toggle-lax-whitespace
 _x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list"
-("1" help/font-size-reset :exit nil)
-("2" help/text-scale-decrease :exit nil)
-("3" help/text-scale-increase :exit nil)
-("4" help/insert-ellipsis)
-("5" help/uuid)
-("6" set-buffer-file-coding-system)
-("7" writegood-grade-level)
-("8" writegood-reading-ease)
-("x" delete-indentation)
-("q" hydra-apropos/body)
-("w" widen)
-("r" rgrep)
-("t" org-babel-tangle-jump-to-org)
-("i" scroll-down-command :exit nil)
-("k" scroll-up-command :exit nil)
-("I" previous-logical-line :exit nil)
-("K" next-logical-line :exit nil)
-("m" imenu-list-minor-mode)
-(";" isearch-toggle-lax-whitespace)
-("o" toggle-debug-on-error)
-("p" anzu-query-replace)
-("[" backward-page :exit nil)
-("]" forward-page :exit nil)
-("c" fill-paragraph )
-("b" erase-buffer))
+  ("1" help/font-size-reset :exit nil)
+  ("2" help/text-scale-decrease :exit nil)
+  ("3" help/text-scale-increase :exit nil)
+  ("4" help/insert-ellipsis)
+  ("5" help/uuid)
+  ("6" set-buffer-file-coding-system)
+  ("7" writegood-grade-level)
+  ("8" writegood-reading-ease)
+  ("x" delete-indentation)
+  ("q" hydra-apropos/body)
+  ("w" widen)
+  ("r" rgrep)
+  ("t" org-babel-tangle-jump-to-org)
+  ("i" scroll-down-command :exit nil)
+  ("d" dash-at-point)
+  ("k" scroll-up-command :exit nil)
+  ("I" previous-logical-line :exit nil)
+  ("K" next-logical-line :exit nil)
+  ("m" imenu-list-minor-mode)
+  (";" isearch-toggle-lax-whitespace)
+  ("o" toggle-debug-on-error)
+  ("p" anzu-query-replace)
+  ("[" backward-page :exit nil)
+  ("]" forward-page :exit nil)
+  ("c" fill-paragraph )
+  ("b" erase-buffer))
 #+END_SRC
 
 #+NAME: EFFA5A5F-58A8-476D-A8D4-16F232231EC7
