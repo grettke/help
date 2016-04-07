@@ -1690,8 +1690,8 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre"
 ;; B489F70A-F1B0-41A9-BB98-A5861A867547 ends here
 
 ;; [[file:help.org::*Hydra][46FE856B-D5C6-45B0-95D5-891211AC295C]]
-(key-chord-define org-src-mode-map "<<" (lambda () (interactive) (insert "«")))
-(key-chord-define org-src-mode-map ">>" (lambda () (interactive) (insert "»")))
+(key-chord-define org-mode-map "<<" (lambda () (interactive) (insert "«")))
+(key-chord-define org-mode-map ">>" (lambda () (interactive) (insert "»")))
 ;; 46FE856B-D5C6-45B0-95D5-891211AC295C ends here
 
 ;; [[file:help.org::*Dash][C060E54C-9FB2-4E2C-BE67-3188E1BA0F22]]

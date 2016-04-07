@@ -2986,8 +2986,8 @@ Easily enter guillemots.
 
 #+NAME: 46FE856B-D5C6-45B0-95D5-891211AC295C
 #+BEGIN_SRC emacs-lisp :results output silent
-(key-chord-define org-src-mode-map "<<" (lambda () (interactive) (insert "«")))
-(key-chord-define org-src-mode-map ">>" (lambda () (interactive) (insert "»")))
+(key-chord-define org-mode-map "<<" (lambda () (interactive) (insert "«")))
+(key-chord-define org-mode-map ">>" (lambda () (interactive) (insert "»")))
 #+END_SRC
 *** Dash
 :PROPERTIES:
