@@ -555,6 +555,13 @@ Attribution: URL `http://pragmaticemacs.com/emacs/toggle-between-most-recent-buf
 Attribution: URL `https://www.emacswiki.org/emacs/SwitchingBuffers#toc5'"
   (interactive)
   (switch-to-buffer (other-buffer (current-buffer) 1)))
+
+(defun help/dos2unix ()
+  "Not exactly but it's easier to remember.
+
+Attribution: URL `https://www.emacswiki.org/emacs/DosToUnix'"
+  (interactive)
+  (set-buffer-file-coding-system 'unix 't) )
 ;; D523CBF8-67C4-4C96-9298-A4A49FE54E61 ends here
 
 ;; [[file:help.org::*Typography][9DB523BC-E21B-42B7-AEE2-31ED24C14D92]]
