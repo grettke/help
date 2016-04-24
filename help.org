@@ -1160,6 +1160,48 @@ Allow most commands.
 (put #'narrow-to-region 'disabled nil)
 #+END_SRC
 
+Easily send expressions to a REPL line by line by hitting =C-RET=.
+
+#+NAME: D2B05DD9-290E-40D2-A012-92A787C9C469
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package eval-in-repl
+  :ensure t
+  :configure
+  (setq eir-jump-after-eval nil)
+  (setq eir-always-split-script-window t)
+  (setq eir-delete-other-windows t)
+  (setq eir-repl-placement 'right)
+  ;; ielm support (for emacs lisp)
+  (require 'eval-in-repl-ielm)
+  ;; for .el files
+  (define-key emacs-lisp-mode-map (kbd "<C-return>") 'eir-eval-in-ielm)
+  ;; for *scratch*
+  (define-key lisp-interaction-mode-map (kbd "<C-return>") 'eir-eval-in-ielm)
+  ;; for M-x info
+  (define-key Info-mode-map (kbd "<C-return>") 'eir-eval-in-ielm)
+  ;; Shell support
+  (require 'eval-in-repl-shell)
+  (add-hook 'sh-mode-hook
+            '(lambda()
+               (local-set-key (kbd "C-<return>") 'eir-eval-in-shell)))
+  ;; Version with opposite behavior to eir-jump-after-eval configuration
+  (defun eir-eval-in-shell2 ()
+    "eval-in-repl for shell script (opposite behavior)
+
+This version has the opposite behavior to the eir-jump-after-eval
+configuration when invoked to evaluate a line."
+    (interactive)
+    (let ((eir-jump-after-eval (not eir-jump-after-eval)))
+      (eir-eval-in-shell)))
+  (add-hook 'sh-mode-hook
+            '(lambda()
+               (local-set-key (kbd "C-M-<return>") 'eir-eval-in-shell2)))
+  ;; racket-mode support (for Racket; if not using Geiser)
+  (require 'racket-mode) ; if not done elsewhere
+  (require 'eval-in-repl-racket)
+  (define-key racket-mode-map (kbd "<C-return>") 'eir-eval-in-racket))
+#+END_SRC
+
 ** Encryption
    :PROPERTIES:
    :ID:       9A41F9EE-36D5-452A-986B-70B567255D36
@@ -3458,6 +3500,14 @@ Use Geiser for Racket and Guile
 #+NAME: 8BF8587E-9227-4BA4-8693-E43971E5F9CB
 #+BEGIN_SRC emacs-lisp :results output silent
 (use-package geiser
+  :ensure t)
+#+END_SRC
+
+Use Racket.
+
+#+NAME: B8C71D71-D5C6-409C-A104-26CD6C540746
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package racket-mode
   :ensure t)
 #+END_SRC
 

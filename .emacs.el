@@ -713,6 +713,45 @@ Attribution: URL
 (put #'narrow-to-region 'disabled nil)
 ;; F082B76A-8371-43DE-8FF5-2D95F3FD687A ends here
 
+;; [[file:help.org::*Evaluation][D2B05DD9-290E-40D2-A012-92A787C9C469]]
+(use-package eval-in-repl
+  :ensure t
+  :configure
+  (setq eir-jump-after-eval nil)
+  (setq eir-always-split-script-window t)
+  (setq eir-delete-other-windows t)
+  (setq eir-repl-placement 'right)
+  ;; ielm support (for emacs lisp)
+  (require 'eval-in-repl-ielm)
+  ;; for .el files
+  (define-key emacs-lisp-mode-map (kbd "<C-return>") 'eir-eval-in-ielm)
+  ;; for *scratch*
+  (define-key lisp-interaction-mode-map (kbd "<C-return>") 'eir-eval-in-ielm)
+  ;; for M-x info
+  (define-key Info-mode-map (kbd "<C-return>") 'eir-eval-in-ielm)
+  ;; Shell support
+  (require 'eval-in-repl-shell)
+  (add-hook 'sh-mode-hook
+            '(lambda()
+               (local-set-key (kbd "C-<return>") 'eir-eval-in-shell)))
+  ;; Version with opposite behavior to eir-jump-after-eval configuration
+  (defun eir-eval-in-shell2 ()
+    "eval-in-repl for shell script (opposite behavior)
+
+This version has the opposite behavior to the eir-jump-after-eval
+configuration when invoked to evaluate a line."
+    (interactive)
+    (let ((eir-jump-after-eval (not eir-jump-after-eval)))
+      (eir-eval-in-shell)))
+  (add-hook 'sh-mode-hook
+            '(lambda()
+               (local-set-key (kbd "C-M-<return>") 'eir-eval-in-shell2)))
+  ;; racket-mode support (for Racket; if not using Geiser)
+  (require 'racket-mode) ; if not done elsewhere
+  (require 'eval-in-repl-racket)
+  (define-key racket-mode-map (kbd "<C-return>") 'eir-eval-in-racket))
+;; D2B05DD9-290E-40D2-A012-92A787C9C469 ends here
+
 ;; [[file:help.org::*Encryption][A7C4590E-53C4-4159-B627-178E367B0A12]]
 (add-to-list 'load-path (getenv "CCRYPT"))
 (use-package ps-ccrypt)
@@ -1952,6 +1991,11 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre"
 (use-package geiser
   :ensure t)
 ;; 8BF8587E-9227-4BA4-8693-E43971E5F9CB ends here
+
+;; [[file:help.org::*Scheme%20(LISP)][B8C71D71-D5C6-409C-A104-26CD6C540746]]
+(use-package racket-mode
+  :ensure t)
+;; B8C71D71-D5C6-409C-A104-26CD6C540746 ends here
 
 ;; [[file:help.org::*Scheme%20(LISP)][E0EBE05B-F57B-4F99-A791-E45634671737]]
 (use-package ac-geiser
