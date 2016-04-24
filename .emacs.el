@@ -562,6 +562,17 @@ Attribution: URL `https://www.emacswiki.org/emacs/SwitchingBuffers#toc5'"
 Attribution: URL `https://www.emacswiki.org/emacs/DosToUnix'"
   (interactive)
   (set-buffer-file-coding-system 'unix 't) )
+
+(defun help/preview-buffer-file-in-marked-2 ()
+  "View buffer file in Marked 2.
+
+Attribution: URL
+`https://github.com/kotfu/marked-bonus-pack/blob/master/Emacs/dot.emacs.txt'"
+  (interactive)
+  (help/on-osx
+   (shell-command
+    (format "open -a 'Marked 2.app' %s"
+            (shell-quote-argument (buffer-file-name))))))
 ;; D523CBF8-67C4-4C96-9298-A4A49FE54E61 ends here
 
 ;; [[file:help.org::*Typography][9DB523BC-E21B-42B7-AEE2-31ED24C14D92]]
@@ -2368,7 +2379,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_ grade-level _8_ reading-ease
 _q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
                       _d_ dash-at-point    _k_ scrollDown _K_ nextLogLine _;_ toggle-lax-whitespace
-_x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list"
+_x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list _M_ Marked 2 Viewer"
   ("1" help/font-size-reset :exit nil)
   ("2" help/text-scale-decrease :exit nil)
   ("3" help/text-scale-increase :exit nil)
@@ -2388,6 +2399,7 @@ _x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list"
   ("I" previous-logical-line :exit nil)
   ("K" next-logical-line :exit nil)
   ("m" imenu-list-minor-mode)
+  ("M" help/preview-buffer-file-in-marked-2)
   (";" isearch-toggle-lax-whitespace)
   ("o" toggle-debug-on-error)
   ("p" anzu-query-replace)
