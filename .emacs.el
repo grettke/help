@@ -1351,6 +1351,10 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 (diminish 'visual-line-mode)
 ;; EDD8ABBB-B76A-4B95-9367-211A765348CD ends here
 
+;; [[file:help.org::*Text-Mode][562D0238-DF23-44EB-9512-62EA99D6B6C1]]
+(setq-default comment-start "> ")
+;; 562D0238-DF23-44EB-9512-62EA99D6B6C1 ends here
+
 ;; [[file:help.org::*Prog*-Mode%20Modes][B56D8E08-DF7C-4EBB-922E-EA215BD66C0D]]
 (setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook R-mode-hook SAS-mode-hook graphviz-dot-mode-hook c-mode-common-hook php-mode-hook scad-mode-hook))
 ;; B56D8E08-DF7C-4EBB-922E-EA215BD66C0D ends here

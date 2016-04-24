@@ -2321,6 +2321,13 @@ With that in mind this system:
     :ID:       7CFD11FB-F3D4-4272-9DBC-2A420884097C
     :END:
 
+Set a default commenting prefix.
+
+#+NAME: 562D0238-DF23-44EB-9512-62EA99D6B6C1
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq-default comment-start "> ")
+#+END_SRC
+
 *** Prog*-Mode Modes
     :PROPERTIES:
     :ID:       6F71F8AF-4227-46D3-9BD8-2F86B5815B72
