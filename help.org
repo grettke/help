@@ -1166,7 +1166,7 @@ Easily send expressions to a REPL line by line by hitting =C-RET=.
 #+BEGIN_SRC emacs-lisp :results output silent
 (use-package eval-in-repl
   :ensure t
-  :configure
+  :config
   (setq eir-jump-after-eval nil)
   (setq eir-always-split-script-window t)
   (setq eir-delete-other-windows t)
