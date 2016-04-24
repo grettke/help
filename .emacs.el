@@ -716,7 +716,7 @@ Attribution: URL
 ;; [[file:help.org::*Evaluation][D2B05DD9-290E-40D2-A012-92A787C9C469]]
 (use-package eval-in-repl
   :ensure t
-  :configure
+  :config
   (setq eir-jump-after-eval nil)
   (setq eir-always-split-script-window t)
   (setq eir-delete-other-windows t)
