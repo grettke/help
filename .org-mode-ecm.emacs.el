@@ -20,6 +20,11 @@
 (setq org-enforce-todo-checkbox-dependencies t)
 ;; 5112469C-F95A-484B-9D56-90DDC863686A ends here
 
+;; [[file:Org-Mode_Exemple_Complet_Minimal.org::*Org-Mode%20Exemple%20Complet%20Minimal][3BBCDC21-9177-43D2-8423-0AC2253F590D]]
+(setq org-babel-noweb-wrap-start "«")
+(setq org-babel-noweb-wrap-end "»")
+;; 3BBCDC21-9177-43D2-8423-0AC2253F590D ends here
+
 ;; [[file:Org-Mode_Exemple_Complet_Minimal.org::*Org-Mode%20Exemple%20Complet%20Minimal][86CAEC4F-CFC4-4CAD-9993-E1DCEF3BFCD1]]
 (require 'org)
 ;; 86CAEC4F-CFC4-4CAD-9993-E1DCEF3BFCD1 ends here
