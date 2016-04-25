@@ -900,6 +900,11 @@ configuration when invoked to evaluate a line."
   (interactive)
   (help/save-all-file-buffers)
   (help/goto-line))
+
+(defun help/safb-switch-to-previous-buffer ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (switch-to-previous-buffer))
 ;; 5A0C3F05-0C41-4E50-944E-0ACC4C2F4A15 ends here
 
 ;; [[file:help.org::*File%20Based%20System][DA537B02-6E64-42FC-BE9D-E5A3408B6599]]
@@ -2416,7 +2421,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 ;; 239A85C3-2CEB-4E40-975F-8B3584F7F450 ends here
 
 ;; [[file:help.org::*Row%203][E60EA15F-28A0-4E98-B62E-1F8BDE444BD8]]
-(global-set-key (kbd "s-a") #'switch-to-previous-buffer)
+(global-set-key (kbd "s-a") #'help/safb-switch-to-previous-buffer)
 (global-set-key (kbd "s-d") #'er/expand-region)
 ;; E60EA15F-28A0-4E98-B62E-1F8BDE444BD8 ends here
 

@@ -1402,6 +1402,11 @@ use than advice.
   (interactive)
   (help/save-all-file-buffers)
   (help/goto-line))
+
+(defun help/safb-switch-to-previous-buffer ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (switch-to-previous-buffer))
 #+END_SRC
 
 Selection:
@@ -4801,7 +4806,7 @@ close together
 
 #+NAME: E60EA15F-28A0-4E98-B62E-1F8BDE444BD8
 #+BEGIN_SRC emacs-lisp :results output silent
-(global-set-key (kbd "s-a") #'switch-to-previous-buffer)
+(global-set-key (kbd "s-a") #'help/safb-switch-to-previous-buffer)
 (global-set-key (kbd "s-d") #'er/expand-region)
 #+END_SRC
 
