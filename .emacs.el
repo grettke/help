@@ -2019,7 +2019,7 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre"
   (setq geiser-repl-history-no-dups-p t))
 ;; E0EBE05B-F57B-4F99-A791-E45634671737 ends here
 
-;; [[file:help.org::*YASnippet][1827B724-7BC0-4228-8389-2B06F308D6AF]]
+;; [[file:help.org::*YASnippet%20&%20Abbrev][1827B724-7BC0-4228-8389-2B06F308D6AF]]
 (use-package yasnippet
   :ensure t
   :config
@@ -2034,6 +2034,11 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre"
   (setq yas-prompt-functions '(yas-ido-prompt))
   :diminish yas-minor-mode)
 ;; 1827B724-7BC0-4228-8389-2B06F308D6AF ends here
+
+;; [[file:help.org::*YASnippet%20&%20Abbrev][F91A42F6-ED96-4451-B5C0-EB2EFACB75FA]]
+(eval-after-load "abbrev"
+  '(diminish 'abbrev-mode))
+;; F91A42F6-ED96-4451-B5C0-EB2EFACB75FA ends here
 
 ;; [[file:help.org::*Structured%20Document%20Development][ABA05DE1-22EF-4BDB-935C-B842EBB843B5]]
 (use-package web-mode

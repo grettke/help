@@ -3547,7 +3547,7 @@ Enable Auto-Complete via Geiser.
    :PROPERTIES:
    :ID:       F4577EEA-FB0F-4E7B-AF02-A4DEA74BB763
    :END:
-*** YASnippet
+*** YASnippet & Abbrev
   :PROPERTIES:
   :ID:       5C48A01F-D522-4AC9-A523-F8EE2E9EB384
   :END:
@@ -3573,6 +3573,16 @@ Enable Auto-Complete via Geiser.
   (yas-reload-all)
   (setq yas-prompt-functions '(yas-ido-prompt))
   :diminish yas-minor-mode)
+#+END_SRC
+
+Some modes turn on =abbrev-mode=. Diminish it.
+
+Fails with ~(eval-after-load 'abbrev (diminish 'abbrev-mode))~.
+
+#+NAME: F91A42F6-ED96-4451-B5C0-EB2EFACB75FA
+#+BEGIN_SRC emacs-lisp :results output silent
+(eval-after-load "abbrev"
+  '(diminish 'abbrev-mode))
 #+END_SRC
 
 *** Structured Query Language (SQL)
