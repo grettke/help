@@ -3171,7 +3171,7 @@ Try to keep help strings at 10 chars or less.
 (setq ess-eldoc-abbreviation-style 'normal)
 #+END_SRC
 
-These functions are metioned, and I am not sure where or how to use them yet,
+These functions are mentioned, and I am not sure where or how to use them yet,
 but Vitalie Spinu mentioned them as being useful:
 
 - =comint-previous-matching-input-from-input=
