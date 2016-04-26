@@ -736,7 +736,7 @@ block.
 
 Use inline Source-Blocks to provide values read as part of the document. Their
 format will show that they are results. Don't show their source code. Allows
-inlinse Source-Blocks to function as /rich/ macros when combined with ~org-sbe~.
+inline Source-Blocks to function as /rich/ macros when combined with ~org-sbe~.
 
 #+NAME: 4EA406BB-7D8F-447A-BE18-48FE241A3930
 #+BEGIN_SRC emacs-lisp :results output silent
