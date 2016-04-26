@@ -1361,7 +1361,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 ;; 562D0238-DF23-44EB-9512-62EA99D6B6C1 ends here
 
 ;; [[file:help.org::*Prog*-Mode%20Modes][B56D8E08-DF7C-4EBB-922E-EA215BD66C0D]]
-(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook R-mode-hook SAS-mode-hook graphviz-dot-mode-hook c-mode-common-hook php-mode-hook scad-mode-hook))
+(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook R-mode-hook SAS-mode-hook graphviz-dot-mode-hook c-mode-common-hook php-mode-hook scad-mode-hook web-mode-hook))
 ;; B56D8E08-DF7C-4EBB-922E-EA215BD66C0D ends here
 
 ;; [[file:help.org::*Prog*-Mode%20Modes][963C787F-BC23-4A6C-9637-3922541B26E2]]
@@ -2034,14 +2034,56 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre"
   :diminish yas-minor-mode)
 ;; 1827B724-7BC0-4228-8389-2B06F308D6AF ends here
 
-;; [[file:help.org::*PHP][2B5F8650-B430-4E6B-B7B2-53A00CBB5C4A]]
-(use-package php-mode
+;; [[file:help.org::*Structured%20Document%20Development][ABA05DE1-22EF-4BDB-935C-B842EBB843B5]]
+(use-package web-mode
   :ensure t
+  :init
+  (setq web-mode-enable-current-element-highlight t)
   :config
-  (add-hook 'php-mode-hook 'php-enable-wordpress-coding-style)
-  (setq php-template-compatibility nil)
-  (setq php-lineup-cascaded-calls t))
-;; 2B5F8650-B430-4E6B-B7B2-53A00CBB5C4A ends here
+  (setf (cdr (rassoc 'php-mode auto-mode-alist)) 'web-mode)
+  (add-to-list 'auto-mode-alist '("\\.tpl'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.js?\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.css?\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.scss?\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.xml?\\'" . web-mode))
+  (setq web-mode-enable-engine-detection t)
+  (define-key web-mode-map (kbd "s-n") 'web-mode-tag-match))
+
+(defun help/web-mode-hook-fn ()
+  "HELP web-mode customizations."
+  (interactive)
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-style-padding 1)
+  (setq web-mode-script-padding 1)
+  (setq web-mode-block-padding 0)
+  (setq web-mode-comment-style 2)
+  (setq web-mode-extra-snippets
+        '( ("php" . (("dowhile" . ("<?php do { ?>\n\n<?php } while (|); ?>"))
+                     ("debug" . ("<?php error_log(__LINE__); ?>"))))))
+  (setq web-mode-enable-auto-pairing nil)
+  (defun sp-web-mode-is-code-context (id action context)
+    (and (eq action 'insert)
+       (not (or (get-text-property (point) 'part-side)
+             (get-text-property (point) 'block-side)))))
+
+  (sp-local-pair 'web-mode "<" nil :when '(sp-web-mode-is-code-context))
+  (setq web-mode-enable-css-colorization t)
+  (setq web-mode-enable-block-face t)
+  (setq web-mode-enable-part-face t)
+  (setq web-mode-enable-comment-keywords t)
+  (setq web-mode-enable-heredoc-fontification t))
+
+(add-hook 'web-mode-hook #'help/web-mode-hook-fn)
+;; ABA05DE1-22EF-4BDB-935C-B842EBB843B5 ends here
 
 ;; [[file:help.org::*TeX][B97EDF2E-0538-475A-AA0A-6C708DCCEC11]]
 (use-package tex-site
