@@ -605,6 +605,7 @@ Attribution: URL
    programming."
   (interactive)
   (auto-fill-mode)
+  (diminish 'auto-fill-function)
   (visual-line-mode)
   (nlinum-mode)
   (fci-mode)
