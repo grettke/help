@@ -172,10 +172,12 @@ This is a copy and paste. Additional languages would warrant a refactor."
 ;; [[file:Org-Mode_Fundamentals.org::BC84119C-6085-4B36-A2D9-0918A68D15C5][BC84119C-6085-4B36-A2D9-0918A68D15C5]]
 (defconst help/org-sb-results-cfg "value table drawer replace")
 (help/set-org-babel-default-header-args :results help/org-sb-results-cfg)
-(defconst help/org-isb-results-cfg
-  (replace-regexp-in-string "table" "scalar" help/org-sb-results-cfg))
-(help/set-org-babel-default-inline-header-args :results help/org-isb-results-cfg)
 ;; BC84119C-6085-4B36-A2D9-0918A68D15C5 ends here
+
+;; [[file:Org-Mode_Fundamentals.org::38A0B76B-EDEB-489C-9229-60E01438CCAD][38A0B76B-EDEB-489C-9229-60E01438CCAD]]
+(defconst help/org-isb-results-cfg "replace")
+(help/set-org-babel-default-inline-header-args :results help/org-isb-results-cfg)
+;; 38A0B76B-EDEB-489C-9229-60E01438CCAD ends here
 
 ;; [[file:Org-Mode_Fundamentals.org::71BFB4A2-DABD-4621-A6E0-C3CAECD34BC4][71BFB4A2-DABD-4621-A6E0-C3CAECD34BC4]]
 (setq org-export-with-properties t)

@@ -564,7 +564,7 @@ Epilgue works hand-in-hand with this.
 Specify the type of results and how they will be collected and handled
 #+END_QUOTE
 
-Ways to configure =:results=: src_emacs-lisp[:exports results]{(apply '* (-keep 'cdr '((Collection . 2) (Type . 4) (Format . 7) (Handling . 4))))} {{{results(224)}}}.
+Ways to configure =:results=: src_emacs-lisp{(apply '* (-keep 'cdr '((Collection . 2) (Type . 4) (Format . 7) (Handling . 4))))} {{{results(224)}}}.
 
 This system stores the results of evaluation in the source document. It believes
 that the results are critical to the research.
@@ -591,8 +591,18 @@ when it is not.
 #+BEGIN_SRC emacs-lisp :results output silent
 (defconst help/org-sb-results-cfg "value table drawer replace")
 (help/set-org-babel-default-header-args :results help/org-sb-results-cfg)
-(defconst help/org-isb-results-cfg
-  (replace-regexp-in-string "table" "scalar" help/org-sb-results-cfg))
+#+END_SRC
+
+
+Their format will show that they are results. Inline source blocks
+automatically get formatted as verbatim. For some reason, this only needs to
+be configured as =replace= to work unlike normal source blocks. Copying the
+configuration from normal source blocks here breaks the replacement
+functionality.
+
+#+NAME: 38A0B76B-EDEB-489C-9229-60E01438CCAD
+#+BEGIN_SRC emacs-lisp :results output silent
+(defconst help/org-isb-results-cfg "replace")
 (help/set-org-babel-default-inline-header-args :results help/org-isb-results-cfg)
 #+END_SRC
 
@@ -734,9 +744,9 @@ block.
 (help/set-org-babel-default-header-args :exports "both")
 #+END_SRC
 
-Use inline Source-Blocks to provide values read as part of the document. Their
-format will show that they are results. Don't show their source code. Allows
-inline Source-Blocks to function as /rich/ macros when combined with ~org-sbe~.
+Use inline Source-Blocks to provide values read as part of the document. Don't
+show their source code. Allows inline Source-Blocks to function as /rich/ macros
+when combined with ~org-sbe~.
 
 #+NAME: 4EA406BB-7D8F-447A-BE18-48FE241A3930
 #+BEGIN_SRC emacs-lisp :results output silent
