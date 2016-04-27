@@ -1,10 +1,10 @@
 ;; -*- lexical-binding: t -*-
 
-;; [[file:Org-Mode_Fundamentals.org::*Org-Mode%20Fundamentals][78D777D3-FA69-4361-874C-7262DE96F753]]
+;; [[file:Org-Mode_Fundamentals.org::78D777D3-FA69-4361-874C-7262DE96F753][78D777D3-FA69-4361-874C-7262DE96F753]]
 (load-file "~/src/help/.org-mode-ecm.emacs.el")
 ;; 78D777D3-FA69-4361-874C-7262DE96F753 ends here
 
-;; [[file:Org-Mode_Fundamentals.org::*Helper%20Functions][BB2E97AF-6364-401F-8063-8B5A0BE481E6]]
+;; [[file:Org-Mode_Fundamentals.org::BB2E97AF-6364-401F-8063-8B5A0BE481E6][BB2E97AF-6364-401F-8063-8B5A0BE481E6]]
 (defun help/set-org-babel-default-header-args (property value)
   "Easily set system header arguments in org mode.
 
@@ -108,36 +108,36 @@ This is a copy and paste. Additional languages would warrant a refactor."
   (insert "\n"))
 ;; BB2E97AF-6364-401F-8063-8B5A0BE481E6 ends here
 
-;; [[file:Org-Mode_Fundamentals.org::*Tangling][859E61A4-D910-4731-8328-A63F6B6ACD3F]]
+;; [[file:Org-Mode_Fundamentals.org::859E61A4-D910-4731-8328-A63F6B6ACD3F][859E61A4-D910-4731-8328-A63F6B6ACD3F]]
 (add-hook 'org-babel-pre-tangle-hook #'help/org-prp-hdln)
 (add-hook 'org-babel-pre-tangle-hook #'help/org-prp-src-blk)
 ;; 859E61A4-D910-4731-8328-A63F6B6ACD3F ends here
 
-;; [[file:Org-Mode_Fundamentals.org::*Tangling][F19C629B-E784-48CA-BC53-CCFB849CE9EC]]
+;; [[file:Org-Mode_Fundamentals.org::F19C629B-E784-48CA-BC53-CCFB849CE9EC][F19C629B-E784-48CA-BC53-CCFB849CE9EC]]
 (setq org-babel-use-quick-and-dirty-noweb-expansion nil)
 ;; F19C629B-E784-48CA-BC53-CCFB849CE9EC ends here
 
-;; [[file:Org-Mode_Fundamentals.org::*comments][AD42B561-29FA-4652-AD28-692CAD631E62]]
+;; [[file:Org-Mode_Fundamentals.org::AD42B561-29FA-4652-AD28-692CAD631E62][AD42B561-29FA-4652-AD28-692CAD631E62]]
 (help/set-org-babel-default-header-args :comments "noweb")
 ;; AD42B561-29FA-4652-AD28-692CAD631E62 ends here
 
-;; [[file:Org-Mode_Fundamentals.org::*mkdirp][F501D202-9F0B-4343-B257-E0DEB4483A0B]]
+;; [[file:Org-Mode_Fundamentals.org::F501D202-9F0B-4343-B257-E0DEB4483A0B][F501D202-9F0B-4343-B257-E0DEB4483A0B]]
 (help/set-org-babel-default-header-args :mkdirp "yes")
 ;; F501D202-9F0B-4343-B257-E0DEB4483A0B ends here
 
-;; [[file:Org-Mode_Fundamentals.org::*noweb][20BE9B4B-ED66-4935-A351-99D17B3A32D4]]
+;; [[file:Org-Mode_Fundamentals.org::20BE9B4B-ED66-4935-A351-99D17B3A32D4][20BE9B4B-ED66-4935-A351-99D17B3A32D4]]
 (help/set-org-babel-default-header-args :noweb "no-export")
 ;; 20BE9B4B-ED66-4935-A351-99D17B3A32D4 ends here
 
-;; [[file:Org-Mode_Fundamentals.org::*padline][0F3E7114-A63C-44F4-A9FD-577BAEE536ED]]
+;; [[file:Org-Mode_Fundamentals.org::0F3E7114-A63C-44F4-A9FD-577BAEE536ED][0F3E7114-A63C-44F4-A9FD-577BAEE536ED]]
 (help/set-org-babel-default-header-args :padline "yes")
 ;; 0F3E7114-A63C-44F4-A9FD-577BAEE536ED ends here
 
-;; [[file:Org-Mode_Fundamentals.org::*tangle][5E69E152-9921-4527-A2B2-24467EEF1BE9]]
+;; [[file:Org-Mode_Fundamentals.org::5E69E152-9921-4527-A2B2-24467EEF1BE9][5E69E152-9921-4527-A2B2-24467EEF1BE9]]
 (help/set-org-babel-default-header-args :tangle "no")
 ;; 5E69E152-9921-4527-A2B2-24467EEF1BE9 ends here
 
-;; [[file:Org-Mode_Fundamentals.org::*Evaluating][6309AF39-FCE4-43DE-BD46-BC7D0BA0971D]]
+;; [[file:Org-Mode_Fundamentals.org::6309AF39-FCE4-43DE-BD46-BC7D0BA0971D][6309AF39-FCE4-43DE-BD46-BC7D0BA0971D]]
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((emacs-lisp . t)
@@ -160,16 +160,16 @@ This is a copy and paste. Additional languages would warrant a refactor."
    (plantuml . t)))
 ;; 6309AF39-FCE4-43DE-BD46-BC7D0BA0971D ends here
 
-;; [[file:Org-Mode_Fundamentals.org::*eval][58541CA5-C633-4146-8E5D-15C7A3A2D1D7]]
+;; [[file:Org-Mode_Fundamentals.org::58541CA5-C633-4146-8E5D-15C7A3A2D1D7][58541CA5-C633-4146-8E5D-15C7A3A2D1D7]]
 (help/set-org-babel-default-header-args :eval "never-export")
 (help/set-org-babel-default-inline-header-args :eval "never-export")
 ;; 58541CA5-C633-4146-8E5D-15C7A3A2D1D7 ends here
 
-;; [[file:Org-Mode_Fundamentals.org::*eval][D9F32A22-B415-48EA-A189-D8EAF7C202D8]]
+;; [[file:Org-Mode_Fundamentals.org::D9F32A22-B415-48EA-A189-D8EAF7C202D8][D9F32A22-B415-48EA-A189-D8EAF7C202D8]]
 (setq org-export-babel-evaluate nil)
 ;; D9F32A22-B415-48EA-A189-D8EAF7C202D8 ends here
 
-;; [[file:Org-Mode_Fundamentals.org::*results][BC84119C-6085-4B36-A2D9-0918A68D15C5]]
+;; [[file:Org-Mode_Fundamentals.org::BC84119C-6085-4B36-A2D9-0918A68D15C5][BC84119C-6085-4B36-A2D9-0918A68D15C5]]
 (defconst help/org-sb-results-cfg "value table drawer replace")
 (help/set-org-babel-default-header-args :results help/org-sb-results-cfg)
 (defconst help/org-isb-results-cfg
@@ -177,55 +177,55 @@ This is a copy and paste. Additional languages would warrant a refactor."
 (help/set-org-babel-default-inline-header-args :results help/org-isb-results-cfg)
 ;; BC84119C-6085-4B36-A2D9-0918A68D15C5 ends here
 
-;; [[file:Org-Mode_Fundamentals.org::*Weaving][71BFB4A2-DABD-4621-A6E0-C3CAECD34BC4]]
+;; [[file:Org-Mode_Fundamentals.org::71BFB4A2-DABD-4621-A6E0-C3CAECD34BC4][71BFB4A2-DABD-4621-A6E0-C3CAECD34BC4]]
 (setq org-export-with-properties t)
 ;; 71BFB4A2-DABD-4621-A6E0-C3CAECD34BC4 ends here
 
-;; [[file:Org-Mode_Fundamentals.org::*Weaving][49FDDABE-7999-4F51-BD93-969187A220D7]]
+;; [[file:Org-Mode_Fundamentals.org::49FDDABE-7999-4F51-BD93-969187A220D7][49FDDABE-7999-4F51-BD93-969187A220D7]]
 (setq org-export-in-background nil)
 ;; 49FDDABE-7999-4F51-BD93-969187A220D7 ends here
 
-;; [[file:Org-Mode_Fundamentals.org::*Weaving][07E50259-E68C-465E-9387-9984220CEB69]]
+;; [[file:Org-Mode_Fundamentals.org::07E50259-E68C-465E-9387-9984220CEB69][07E50259-E68C-465E-9387-9984220CEB69]]
 (setq org-export-coding-system 'utf-8)
 ;; 07E50259-E68C-465E-9387-9984220CEB69 ends here
 
-;; [[file:Org-Mode_Fundamentals.org::*Weaving][18CD863D-F01D-44F8-9B4D-A9FC016EDC79]]
+;; [[file:Org-Mode_Fundamentals.org::18CD863D-F01D-44F8-9B4D-A9FC016EDC79][18CD863D-F01D-44F8-9B4D-A9FC016EDC79]]
 (setq org-export-preserve-breaks nil)
 ;; 18CD863D-F01D-44F8-9B4D-A9FC016EDC79 ends here
 
-;; [[file:Org-Mode_Fundamentals.org::*Weaving][F0703ECD-DB1D-47BF-BF1A-52336FE0C5D8]]
+;; [[file:Org-Mode_Fundamentals.org::F0703ECD-DB1D-47BF-BF1A-52336FE0C5D8][F0703ECD-DB1D-47BF-BF1A-52336FE0C5D8]]
 (setq org-export-copy-to-kill-ring nil)
 ;; F0703ECD-DB1D-47BF-BF1A-52336FE0C5D8 ends here
 
-;; [[file:Org-Mode_Fundamentals.org::*Weaving][5BCA100F-6AC1-454B-9F48-31B5A67CB587]]
+;; [[file:Org-Mode_Fundamentals.org::5BCA100F-6AC1-454B-9F48-31B5A67CB587][5BCA100F-6AC1-454B-9F48-31B5A67CB587]]
 (setq org-export-with-toc nil)
 ;; 5BCA100F-6AC1-454B-9F48-31B5A67CB587 ends here
 
-;; [[file:Org-Mode_Fundamentals.org::*Weaving][5ACDD0B0-2B6F-4F71-BFDF-2D2D1D91B573]]
+;; [[file:Org-Mode_Fundamentals.org::5ACDD0B0-2B6F-4F71-BFDF-2D2D1D91B573][5ACDD0B0-2B6F-4F71-BFDF-2D2D1D91B573]]
 (setq org-src-preserve-indentation t)
 ;; 5ACDD0B0-2B6F-4F71-BFDF-2D2D1D91B573 ends here
 
-;; [[file:Org-Mode_Fundamentals.org::*Weaving][A2FF8367-4A6A-444C-BB2E-F5AA494E33B5]]
+;; [[file:Org-Mode_Fundamentals.org::A2FF8367-4A6A-444C-BB2E-F5AA494E33B5][A2FF8367-4A6A-444C-BB2E-F5AA494E33B5]]
 (setq org-export-allow-bind-keywords t)
 ;; A2FF8367-4A6A-444C-BB2E-F5AA494E33B5 ends here
 
-;; [[file:Org-Mode_Fundamentals.org::*Weaving][E44782C1-A02D-4D4A-982C-9F0908773CF9]]
+;; [[file:Org-Mode_Fundamentals.org::E44782C1-A02D-4D4A-982C-9F0908773CF9][E44782C1-A02D-4D4A-982C-9F0908773CF9]]
 (setq org-element-use-cache nil)
 ;; E44782C1-A02D-4D4A-982C-9F0908773CF9 ends here
 
-;; [[file:Org-Mode_Fundamentals.org::*exports][72A5FF8F-6597-4523-A604-B499B439A103]]
+;; [[file:Org-Mode_Fundamentals.org::72A5FF8F-6597-4523-A604-B499B439A103][72A5FF8F-6597-4523-A604-B499B439A103]]
 (help/set-org-babel-default-header-args :exports "both")
 ;; 72A5FF8F-6597-4523-A604-B499B439A103 ends here
 
-;; [[file:Org-Mode_Fundamentals.org::*exports][4EA406BB-7D8F-447A-BE18-48FE241A3930]]
+;; [[file:Org-Mode_Fundamentals.org::4EA406BB-7D8F-447A-BE18-48FE241A3930][4EA406BB-7D8F-447A-BE18-48FE241A3930]]
 (help/set-org-babel-default-inline-header-args :exports "results")
 ;; 4EA406BB-7D8F-447A-BE18-48FE241A3930 ends here
 
-;; [[file:Org-Mode_Fundamentals.org::*wrap][7DA47704-25D2-4812-A838-7FE29E9F88FE]]
+;; [[file:Org-Mode_Fundamentals.org::7DA47704-25D2-4812-A838-7FE29E9F88FE][7DA47704-25D2-4812-A838-7FE29E9F88FE]]
 (help/set-org-babel-default-header-args :wrap "EXAMPLE")
 ;; 7DA47704-25D2-4812-A838-7FE29E9F88FE ends here
 
-;; [[file:Org-Mode_Fundamentals.org::*wrap][0F18A334-A192-4DA5-A897-9D7F3E15C64B]]
+;; [[file:Org-Mode_Fundamentals.org::0F18A334-A192-4DA5-A897-9D7F3E15C64B][0F18A334-A192-4DA5-A897-9D7F3E15C64B]]
 (help/set-org-babel-default-header-args:ditaa :wrap "RESULTS")
 (help/set-org-babel-default-header-args:dot :wrap "RESULTS")
 (help/set-org-babel-default-header-args:plantuml :wrap "RESULTS")
