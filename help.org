@@ -98,10 +98,13 @@ emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
 - Formatting
   - Code Snippet.
     - Programming language expressions.
-    - Shell commands
+    - Shell commands that are executable
     - Use ~code style~
   - Non-Code Snippet.
-    - Program names, file types
+    - File types
+    - Program names that aren't referring to the artifact itself
+      - Shell scripts and commands
+      - =Scheme= and =Java=
     - Use =verbatim= style
   - Package.
     - Same as Headline.
