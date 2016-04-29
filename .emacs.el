@@ -1214,6 +1214,15 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
 (setq search-default-regexp-mode nil)
 ;; 61ACBD2A-D9CB-4C3E-B872-92C293B8FB64 ends here
 
+;; [[file:help.org::B7EB4F42-9696-495C-98F5-427B03DA93EE][B7EB4F42-9696-495C-98F5-427B03DA93EE]]
+(use-package ag
+  :ensure t
+  :config
+  (setq ag-highlight-search t)
+  (setq ag-reuse-window nil)
+  (setq ag-reuse-buffers t))
+;; B7EB4F42-9696-495C-98F5-427B03DA93EE ends here
+
 ;; [[file:help.org::62360083-1CE2-4EEF-BF61-AEA8F3FA9944][62360083-1CE2-4EEF-BF61-AEA8F3FA9944]]
 (defun help/block-regex (special)
   "Make an ispell skip-region alist for a SPECIAL block."
@@ -2478,8 +2487,8 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
                                               :hint nil)
   "
 _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_ grade-level _8_ reading-ease
-_q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
-                      _d_ dash-at-point    _k_ scrollDown _K_ nextLogLine _;_ toggle-lax-whitespace
+_q_ apropos _w_ widen _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
+_a_ ag  _d_ dash-at-point    _k_ scrollDown _K_ nextLogLine _;_ toggle-lax-whitespace
 _x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list _M_ Marked 2 Viewer"
   ("1" help/font-size-reset :exit nil)
   ("2" help/text-scale-decrease :exit nil)
@@ -2489,10 +2498,10 @@ _x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list _M_ M
   ("6" set-buffer-file-coding-system)
   ("7" writegood-grade-level)
   ("8" writegood-reading-ease)
+  ("a" ag)
   ("x" delete-indentation)
   ("q" hydra-apropos/body)
   ("w" widen)
-  ("r" rgrep)
   ("t" org-babel-tangle-jump-to-org)
   ("i" scroll-down-command :exit nil)
   ("d" dash-at-point)

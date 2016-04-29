@@ -2046,6 +2046,18 @@ Other than ignoring case, search precisely for what was input.
 (setq search-default-regexp-mode nil)
 #+END_SRC
 
+Easily search the filesystem using =ag=.
+
+#+NAME: B7EB4F42-9696-495C-98F5-427B03DA93EE
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package ag
+  :ensure t
+  :config
+  (setq ag-highlight-search t)
+  (setq ag-reuse-window nil)
+  (setq ag-reuse-buffers t))
+#+END_SRC
+
 ** Spell Checking
    :PROPERTIES:
    :ID:       902EAA81-4FC0-40A0-AE6D-D31C474B87E0
@@ -4875,8 +4887,8 @@ close together
                                               :hint nil)
   "
 _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_ grade-level _8_ reading-ease
-_q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
-                      _d_ dash-at-point    _k_ scrollDown _K_ nextLogLine _;_ toggle-lax-whitespace
+_q_ apropos _w_ widen _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
+_a_ ag  _d_ dash-at-point    _k_ scrollDown _K_ nextLogLine _;_ toggle-lax-whitespace
 _x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list _M_ Marked 2 Viewer"
   ("1" help/font-size-reset :exit nil)
   ("2" help/text-scale-decrease :exit nil)
@@ -4886,10 +4898,10 @@ _x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list _M_ M
   ("6" set-buffer-file-coding-system)
   ("7" writegood-grade-level)
   ("8" writegood-reading-ease)
+  ("a" ag)
   ("x" delete-indentation)
   ("q" hydra-apropos/body)
   ("w" widen)
-  ("r" rgrep)
   ("t" org-babel-tangle-jump-to-org)
   ("i" scroll-down-command :exit nil)
   ("d" dash-at-point)
