@@ -4887,7 +4887,7 @@ close together
                                               :hint nil)
   "
 _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_ grade-level _8_ reading-ease
-_q_ apropos _w_ widen _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
+_q_ apropos _w_ widen _t_ obtj2o _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
 _a_ ag  _d_ dash-at-point    _k_ scrollDown _K_ nextLogLine _;_ toggle-lax-whitespace
 _x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list _M_ Marked 2 Viewer"
   ("1" help/font-size-reset :exit nil)
@@ -4903,6 +4903,7 @@ _x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list _M_ M
   ("q" hydra-apropos/body)
   ("w" widen)
   ("t" org-babel-tangle-jump-to-org)
+  ("u" ucs-insert)
   ("i" scroll-down-command :exit nil)
   ("d" dash-at-point)
   ("k" scroll-up-command :exit nil)
