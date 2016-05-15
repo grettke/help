@@ -2273,6 +2273,37 @@ Git ignore files are text files.
 (add-to-list 'auto-mode-alist '(".gitignore$" . text-mode))
 #+END_SRC
 
+** Video
+:PROPERTIES:
+:ID:       4AFA5B76-4C9E-4728-8556-9163DA3D3CE7
+:END:
+
+[[http://endlessparentheses.com/embedding-youtube-videos-with-org-mode-links.html][Embedding Youtube videos with org-mode links]].
+
+#+NAME: C6FF37A6-EC87-4918-BFC8-927157F890BF
+#+BEGIN_SRC emacs-lisp
+(defvar yt-iframe-format
+  ;; You may want to change your width and height.
+  (concat "<iframe width=\"440\""
+          " height=\"335\""
+          " src=\"https://www.youtube.com/embed/%s\""
+          " frameborder=\"0\""
+          " allowfullscreen>%s</iframe>"))
+
+(org-add-link-type
+ "yt"
+ (lambda (handle)
+   (browse-url
+    (concat "https://www.youtube.com/embed/"
+            handle)))
+ (lambda (path desc backend)
+   (cl-case backend
+     (html (format yt-iframe-format
+                   path (or desc "")))
+     (latex (format "\href{%s}{%s}"
+                    path (or desc "video"))))))
+#+END_SRC
+
 ** Whitespace Management
    :PROPERTIES:
    :ID:       5BBD948F-7239-457E-8BD9-710558C0E241

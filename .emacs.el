@@ -1352,6 +1352,29 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 (add-to-list 'auto-mode-alist '(".gitignore$" . text-mode))
 ;; 6FD11818-DB10-4AF4-A714-C32C04291AF2 ends here
 
+;; [[file:help.org::C6FF37A6-EC87-4918-BFC8-927157F890BF][C6FF37A6-EC87-4918-BFC8-927157F890BF]]
+(defvar yt-iframe-format
+  ;; You may want to change your width and height.
+  (concat "<iframe width=\"440\""
+          " height=\"335\""
+          " src=\"https://www.youtube.com/embed/%s\""
+          " frameborder=\"0\""
+          " allowfullscreen>%s</iframe>"))
+
+(org-add-link-type
+ "yt"
+ (lambda (handle)
+   (browse-url
+    (concat "https://www.youtube.com/embed/"
+            handle)))
+ (lambda (path desc backend)
+   (cl-case backend
+     (html (format yt-iframe-format
+                   path (or desc "")))
+     (latex (format "\href{%s}{%s}"
+                    path (or desc "video"))))))
+;; C6FF37A6-EC87-4918-BFC8-927157F890BF ends here
+
 ;; [[file:help.org::3327B4FF-82CF-42E7-AEF8-DCC968B97BDC][3327B4FF-82CF-42E7-AEF8-DCC968B97BDC]]
 (use-package whitespace
   :ensure t
