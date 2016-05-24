@@ -2489,6 +2489,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 (global-set-key (kbd "s--") #'decrement-integer-at-point)
 (global-set-key (kbd "s-+") #'increment-integer-at-point)
 (global-set-key (kbd "M-s-3") #'help/split-into-3-windows)
+(key-chord-define-global "3." #'help/insert-ellipsis)
 ;; E4B98196-FDFB-42B4-A52A-8CA7DC066E8E ends here
 
 ;; [[file:help.org::239A85C3-2CEB-4E40-975F-8B3584F7F450][239A85C3-2CEB-4E40-975F-8B3584F7F450]]
