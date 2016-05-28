@@ -3,6 +3,22 @@
 
     ID: F651B86D-86C2-43A9-B0E6-CB94963BB502
 
+Configure EMACS to for everything defined within this monolithic system.
+
+Sysop is likely to use this constantly.
+
+Start EMACS with this command:
+
+`open /Applications/Emacs.app`
+
+```lisp
+;; -*- lexical-binding: t -*-
+```
+
+```lisp
+(load-file "~/src/help/.org-mode-org2blog.emacs.el")
+```
+
 ## HELP Enables Literate Programming
 
     ID: README
@@ -13,15 +29,13 @@
     1.  Without `Make`: [Generating autoloads and Compiling Org without make](http://orgmode.org/worg/org-hacks.html)
     2.  As of <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-19 Tue&gt;</span></span>
 
-        ```shell
-        cd ~/src/org-mode
-        git pull
-        emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
-        ```
+            cd ~/src/org-mode
+            git pull
+            emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
 
 2.  [Clone Org2Blog](https://github.com/punchagan/org2blog) to `~/src/`.
 3.  [Clone Use-Package](https://github.com/jwiegley/use-package) to `~/src/`.
-4.  Install supporting software adding their exectuable location to the `PATH`.
+4.  Install supporting software adding their exectuable location to the `PAqTH`.
     1.  Install [Oracle Java](https://www.oracle.com/java/index.html).
     2.  Install [LanguageTool](https://www.languagetool.org/) renaming it&rsquo;s folder to `LanguageTool`.
     3.  Install PlantUML.
@@ -33,7 +47,7 @@
     -   The Initialization file to HELP&rsquo;s.
         -   `ln -s ~/src/help/.emacs.el ~/.emacs.el`
 
-# Style Guide
+## Style Guide
 
     ID: STYLEGUIDE
 
@@ -72,10 +86,13 @@
 -   Formatting
     -   Code Snippet.
         -   Programming language expressions.
-        -   Shell commands
+        -   Shell commands that are executable
         -   Use `code style`
     -   Non-Code Snippet.
-        -   Program names, file types
+        -   File types
+        -   Program names that aren&rsquo;t referring to the artifact itself
+            -   Shell scripts and commands
+            -   `Scheme` and `Java`
         -   Use `verbatim` style
     -   Package.
         -   Same as Headline.
@@ -205,167 +222,1412 @@
     -   Never describe something as &ldquo;perfect&rdquo; or &ldquo;delightful&rdquo;. If it is part of this
         system then it is perfect and delightful.
 
-# Webs We Weave
+# Special Operating Procedure
 
-    ID: DB5CDB3F-DE18-48FB-B104-D3990304FA91
+    ID: 97A95862-3213-4035-9FF6-E041796DAB5C
 
-## Org-Mode Exemple Complet Minimal
+The following code and packages are special to this configuration. They provide
+critical functionality for configuring the rest of the system. They provide
+ideas that make the entire system usable, productive, expressive, and fast.
 
-    header-args: :noweb-ref Org-Mode-ECM-Web :tangle "./.org-mode-ecm.emacs.el"
+## Display
 
-    ID: 83868A6E-76C2-48AE-8A5A-6A3C97492321
+    ID: 1290DB2D-D05E-4DDD-B42F-6B11AE91F480
 
-Configure EMACS to easily provide ECMs.
-
-Sysop is likely to use this often.
-
-Start EMACS with this command:
-
-`open /Applications/Emacs.app -n --args --quick --load ~/src/help/.org-mode-ecm.emacs.el`
+Make it easy to conditionally evaluate code when running with a graphical
+display.
 
 ```lisp
-;; -*- lexical-binding: t -*-
+(defmacro help/on-gui (statement &rest statements)
+  "Evaluate the enclosed body only when run on GUI."
+  `(when (display-graphic-p)
+     ,statement
+     ,@statements))
+
+(defmacro help/not-on-gui (statement &rest statements)
+  "Evaluate the enclosed body only when run on GUI."
+  `(when (not (display-graphic-p))
+     ,statement
+     ,@statements))
 ```
 
+## Hydra
+
+    ID: 9B78FBB7-6C6A-4BD6-A9CC-FB192D37F6C2
+
 ```lisp
-<<Principle-of-Least-Astonishment>>
-<<Org-Mode-ECM>>
+(use-package hydra
+  :ensure t)
 ```
 
-## Org-Mode Fundamentals
+## Keyboard
 
-    header-args: :noweb-ref Org-Mode-Fundamentals-Web :tangle "./.org-mode-fundamentals.emacs.el"
+    ID: 8A0E58DF-7C90-4781-AC12-94D2D76F47C7
 
-    ID: 7E71A009-4DD3-4296-9851-293BC71D2DFF
-
-Configure Org-Mode core functionality to compile this system.
-
-Sysop is likely to use this periodically.
-
-Start EMACS with this command:
-
-`open /Applications/Emacs.app -n --args --quick --load ~/src/help/.org-mode-fundamentals.emacs.el`
+Key-Chord mode is amazing. Piano-Lessons shows you how.
 
 ```lisp
-;; -*- lexical-binding: t -*-
+(use-package key-chord
+  :ensure t
+  :config
+  (key-chord-mode t))
 ```
 
+Echo keystrokes immediately.
+
 ```lisp
-<<Org-Mode-ECM-Web>>
-<<Org-Mode-Helper-Functions>>
-<<Org-Mode-Tangle>>
-<<Org-Mode-Execute>>
-<<Org-Mode-Weave>>
+(setq echo-keystrokes 0.02)
 ```
 
-## Org2blog
+## Libraries
 
-    header-args: :noweb-ref Hacking-Publishing-Org2blog-Web :tangle "./.org-mode-org2blog.emacs.el"
+    ID: 21919848-B720-4D30-880E-485C41250279
 
-    ID: BA37913C-D781-453B-B438-F6464B60CFDF
-
-Configure Org2blog for use, development, and support.
-
-Sysop is likely to use this periodically.
-
-Start EMACS with this command:
-
-`open /Applications/Emacs.app -n --args --quick --load ~/src/help/.org-mode-org2blog.emacs.el`
+Dash is nice to use.
 
 ```lisp
-;; -*- lexical-binding: t -*-
+(use-package dash
+  :ensure t
+  :config
+  (dash-enable-font-lock))
+(use-package dash-functional
+  :ensure t)
 ```
 
+F is nice to use.
+
 ```lisp
-<<Org-Mode-Fundamentals-Web>>
-<<Watch-What-You-Eat>>
-<<Hacking-Publishing-Org2blog>>
+(use-package f
+  :ensure t)
 ```
 
-## The Whole Enchilada
-
-    header-args: :tangle "./.emacs.el"
-
-    ID: 016FA25F-E70E-4BED-BA01-AEB808428791
-
-Configure EMACS to for everything defined within this monolithic system.
-
-Sysop is likely to use this constantly.
-
-Start EMACS with this command:
-
-`open /Applications/Emacs.app`
+S is nice to use.
 
 ```lisp
-;; -*- lexical-binding: t -*-
+(use-package s
+  :ensure t)
 ```
 
+## Modeline
+
+    ID: 798F14D1-EDC6-4306-8E82-0854980AEFBA
+
+Reduce information about modes in the Modeline.
+
 ```lisp
-<<Hacking-Publishing-Org2blog-Web>>
-<<Special-Operating-Procedure>>
-<<Standard-Operating-Procedure>>
-<<Hacking-Common-Configurations>>
-<<Hacking-Literate-Programming-Emacs-Lisp>>
-<<Hacking-Literate-Programming-Org-Mode>>
-<<Hacking-Applied-Mathematics-ESS>>
-<<Hacking-Applied-Mathematics-ESS-SAS>>
-<<Hacking-Applied-Mathematics-ESS-R>>
-<<Hacking-Applied-Mathematics-LISP-Scheme>>
-<<Hacking-Applied-Mathematics-YASnippet>>
-<<Hacking-Publishing-TeX>>
-<<Hacking-Publishing-KOMA>>
-<<Hacking-Publishing-Markdown>>
-<<Hacking-Publishing-Beamer>>
-<<Hacking-Publishing-HTML>>
-<<Hacking-Diagram-Artist>>
-<<Hacking-Diagram-DITAA>>
-<<Hacking-Diagram-Graphviz>>
-<<Hacking-Diagram-PlantUML>>
-<<Quiet-and-Pleasant-Appearance>>
-<<Piano-Lessons>>
+(use-package diminish)
+```
+
+Show the file size.
+
+```lisp
+(size-indication-mode)
+```
+
+Show the column number.
+
+```lisp
+(column-number-mode t)
+```
+
+## OSX
+
+    ID: 6556EACF-2F83-4B84-8456-5BEB981D290E
+
+Make it easy to evaluate code only when running on OSX.
+
+```lisp
+(defmacro help/on-osx (statement &rest statements)
+  "Evaluate the enclosed body only when run on OSX."
+  `(when (eq system-type 'darwin)
+     ,statement
+     ,@statements))
+```
+
+Pull in the `ENVIRONMENT` variables because the GUI version of EMACS does not.
+
+```lisp
+(help/on-osx
+ (use-package exec-path-from-shell
+   :ensure t
+   :config
+   (setq exec-path-from-shell-check-startup-files nil)
+   (exec-path-from-shell-initialize)))
+```
+
+Configure the meta keys.
+
+Enable the `super` key-space.
+
+```lisp
+(help/on-osx
+ (setq mac-control-modifier 'control)
+ (setq mac-command-modifier 'meta)
+ (setq mac-option-modifier 'super))
+```
+
+EMACS dialogues don&rsquo;t work OSX. They lock up EMACS.
+
+This is a known issue. [Here](https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-x) is the solution.
+
+```lisp
+(help/on-osx
+ (defun help/yes-or-no-p (orig-fun &rest args)
+   "Prevent yes-or-no-p from activating a dialog."
+   (let ((use-dialog-box nil))
+     (apply orig-fun args)))
+ (advice-add #'yes-or-no-p :around #'help/yes-or-no-p)
+ (advice-add #'y-or-n-p :around #'help/yes-or-no-p))
+```
+
+## Windows
+
+    ID: B21664CF-62AF-4ACC-A239-FE20672FF9E4
+
+Make it easy to evaluate code only when running on Windows.
+
+```lisp
+(defmacro help/on-windows (statement &rest statements)
+  "Evaluate the enclosed body only when run on Microsoft Windows."
+  `(when (eq system-type 'windows-nt)
+     ,statement
+     ,@statements))
+```
+
+Provide the proper shell.
+
+```lisp
+(help/on-windows
+ (setq shell-file-name "cmdproxy.exe"))
+```
+
+Enable the `super` key-space.
+
+```lisp
+(help/on-windows
+ (setq w32-pass-lwindow-to-system nil)
+ (defvar w32-lwindow-modifier 'super)
+ (setq w32-pass-rwindow-to-system nil)
+ (defvar w32-rwindow-modifier 'super))
+```
+
+# Standard Operating Procedure
+
+    ID: 8302B38B-67EC-4C37-9B42-69E278FF1277
+
+Configure EMACS to maximum utility.
+
+## Helper Functions
+
+    ID: B2257535-9891-48F1-B7CD-1B385F527C59
+
+```lisp
+(defun help/comment-or-uncomment ()
+  "Comment or uncomment the current line or selection."
+  (interactive)
+  (cond ((not mark-active) (comment-or-uncomment-region (line-beginning-position)
+                                                      (line-end-position)))
+        ((< (point) (mark)) (comment-or-uncomment-region (point) (mark)))
+        (t (comment-or-uncomment-region (mark) (point)))))
+
+(defun help/save-all-file-buffers ()
+  "Saves every buffer associated with a file."
+  (interactive)
+  (dolist (buf (buffer-list))
+    (with-current-buffer buf
+      (when (and (buffer-file-name) (buffer-modified-p))
+        (save-buffer)))))
+
+(defun describe-thing-in-popup ()
+  "Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html'."
+  (interactive)
+  (let* ((thing (symbol-at-point))
+         (help-xref-following t)
+         (description (with-temp-buffer
+                        (help-mode)
+                        (help-xref-interned thing)
+                        (buffer-string))))
+    (popup-tip description
+               :point (point)
+               :around t
+               :height 30
+               :scroll-bar t
+               :margin t)))
+
+(defun help/kill-other-buffers ()
+  "Kill all other buffers."
+  (interactive)
+  (mapc #'kill-buffer (delq (current-buffer) (buffer-list))))
+
+(defvar help/delete-trailing-whitespace-p t
+  "Should trailing whitespace be removed?")
+
+(defun help/delete-trailing-whitespace ()
+  "Delete trailing whitespace for everything but the current line.
+
+If `help/delete-trailing-whitespace-p' is non-nil, then delete the whitespace.
+This is useful for fringe cases where trailing whitespace is important."
+  (interactive)
+  (when help/delete-trailing-whitespace-p
+    (let ((first-part-start (point-min))
+          (first-part-end (point-at-bol))
+          (second-part-start (point-at-eol))
+          (second-part-end (point-max)))
+      (delete-trailing-whitespace first-part-start first-part-end)
+      (delete-trailing-whitespace second-part-start second-part-end))))
+
+(defun help/insert-timestamp ()
+  "Produces and inserts a full ISO 8601 format timestamp."
+  (interactive)
+  (insert (format-time-string "%Y-%m-%dT%T%z")))
+
+(defun help/insert-timestamp* ()
+  "Produces and inserts a near-full ISO 8601 format timestamp."
+  (interactive)
+  (insert (format-time-string "%Y-%m-%dT%T")))
+
+(defun help/insert-datestamp ()
+  "Produces and inserts a partial ISO 8601 format timestamp."
+  (interactive)
+  (insert (format-time-string "%Y-%m-%d")))
+
+(defun help/indent-curly-block (&rest _ignored)
+  "Open a new brace or bracket expression, with relevant newlines and indent. URL: `https://github.com/Fuco1/smartparens/issues/80'"
+  (interactive)
+  (newline)
+  (indent-according-to-mode)
+  (forward-line -1)
+  (indent-according-to-mode))
+
+(defun beginning-of-line-dwim ()
+  "Toggles between moving point to the first non-whitespace character, and
+    the start of the line. Src: http://www.wilfred.me.uk/"
+  (interactive)
+  (let ((start-position (point)))
+    ;; see if going to the beginning of the line changes our position
+    (move-beginning-of-line nil)
+
+    (when (= (point) start-position)
+      ;; we're already at the beginning of the line, so go to the
+      ;; first non-whitespace character
+      (back-to-indentation))))
+
+(defun help/lazy-new-open-line ()
+  "Insert a new line without breaking the current line."
+  (interactive)
+  (beginning-of-line)
+  (forward-line 1)
+  (newline)
+  (forward-line -1))
+
+(defun help/smart-open-line ()
+  "Insert a new line, indent it, and move the cursor there.
+
+This behavior is different then the typical function bound to return
+which may be `open-line' or `newline-and-indent'. When you call with
+the cursor between ^ and $, the contents of the line to the right of
+it will be moved to the newly inserted line. This function will not
+do that. The current line is left alone, a new line is inserted, indented,
+and the cursor is moved there.
+
+Attribution: URL `http://emacsredux.com/blog/2013/03/26/smarter-open-line/'"
+  (interactive)
+  (move-end-of-line nil)
+  (newline-and-indent))
+
+(defun help/insert-ellipsis ()
+  "Insert an ellipsis into the current buffer."
+  (interactive)
+  (insert "…"))
+
+(defun help/insert-noticeable-snip-comment-line ()
+  "Insert a noticeable snip comment line (NSCL)."
+  (interactive)
+  (if (not (bolp))
+      (message "I may only insert a NSCL at the beginning of a line.")
+    (let ((ncl (make-string 70 ?✂)))
+      (newline)
+      (forward-line -1)
+      (insert ncl)
+      (comment-or-uncomment-region (line-beginning-position) (line-end-position)))))
+
+(progn
+
+  (defvar my-read-expression-map
+    (let ((map (make-sparse-keymap)))
+      (set-keymap-parent map read-expression-map)
+      (define-key map [(control ?g)] #'minibuffer-keyboard-quit)
+      (define-key map [up]   nil)
+      (define-key map [down] nil)
+      map))
+
+  (defun my-read--expression (prompt &optional initial-contents)
+    (let ((minibuffer-completing-symbol t))
+      (minibuffer-with-setup-hook
+          (lambda ()
+            (emacs-lisp-mode)
+            (use-local-map my-read-expression-map)
+            (setq font-lock-mode t)
+            (funcall font-lock-function 1))
+        (read-from-minibuffer prompt initial-contents
+                              my-read-expression-map nil
+                              'read-expression-history))))
+
+  (defun my-eval-expression (expression &optional arg)
+    "Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2014-07/msg00135.html'."
+    (interactive (list (read (my-read--expression ""))
+                       current-prefix-arg))
+    (if arg
+        (insert (pp-to-string (eval expression lexical-binding)))
+      (pp-display-expression (eval expression lexical-binding)
+                             "*Pp Eval Output*"))))
+
+(defun help/util-ielm ()
+  "HELP buffer setup for ielm.
+
+Creates enough space for one other permanent buffer beneath it."
+  (interactive)
+  (split-window-below -20)
+  (help/safb-other-window)
+  (ielm)
+  (set-window-dedicated-p (selected-window) t))
+
+(defun help/util-eshell ()
+  "HELP buffer setup for eshell.
+
+Depends upon `help/util-ielm' being run first."
+  (interactive)
+  (split-window-below -10)
+  (help/safb-other-window)
+  (eshell)
+  (set-window-dedicated-p (selected-window) t))
+
+(defvar help/util-state nil "Track whether the util buffers are displayed or not.")
+
+(defun help/util-state-toggle ()
+  "Toggle the util state."
+  (interactive)
+  (setq help/util-state (not help/util-state)))
+
+(defun help/util-start ()
+  "Perhaps utility buffers."
+  (interactive)
+  (help/util-ielm)
+  (help/util-eshell)
+  (help/util-state-toggle))
+
+(defun help/util-stop ()
+  "Remove personal utility buffers."
+  (interactive)
+  (if (get-buffer "*ielm*") (kill-buffer "*ielm*"))
+  (if (get-buffer "*eshell*") (kill-buffer "*eshell*"))
+  (help/util-state-toggle))
+
+(defun help/ielm-auto-complete ()
+  "Enables `auto-complete' support in \\[ielm].
+
+Attribution: URL `http://www.masteringemacs.org/articles/2010/11/29/evaluating-elisp-emacs/'"
+  (setq ac-sources '(ac-source-functions
+                     ac-source-variables
+                     ac-source-features
+                     ac-source-symbols
+                     ac-source-words-in-same-mode-buffers))
+  (add-to-list 'ac-modes #'inferior-emacs-lisp-mode)
+  (auto-complete-mode 1))
+
+(defun help/uuid ()
+  "Insert a UUID."
+  (interactive)
+  (insert (org-id-new)))
+
+(defun endless/sharp ()
+  "Insert #' unless in a string or comment.
+
+SRC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.html?source=rss'"
+  (interactive)
+  (call-interactively #'self-insert-command)
+  (let ((ppss (syntax-ppss)))
+    (unless (or (elt ppss 3)
+                (elt ppss 4))
+      (insert "'"))))
+
+(defun help/chs ()
+  "Insert opening \"cut here start\" snippet."
+  (interactive)
+  (insert "--8<---------------cut here---------------start------------->8---"))
+
+(defun help/che ()
+  "Insert closing \"cut here end\" snippet."
+  (interactive)
+  (insert "--8<---------------cut here---------------end--------------->8---"))
+
+(defmacro help/measure-time (&rest body)
+  "Measure the time it takes to evaluate BODY.
+
+Attribution Nikolaj Schumacher: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2008-06/msg00087.html'"
+  `(let ((time (current-time)))
+     ,@body
+     (message "%.06f" (float-time (time-since time)))))
+
+(defun help/create-non-existent-directory ()
+  "Attribution URL: `https://iqbalansari.github.io/blog/2014/12/07/automatically-create-parent-directories-on-visiting-a-new-file-in-emacs/'"
+  (let ((parent-directory (file-name-directory buffer-file-name)))
+    (when (and (not (file-exists-p parent-directory))
+               (y-or-n-p (format "Directory `%s' does not exist. Create it?" parent-directory)))
+      (make-directory parent-directory t))))
+
+(defun help/occur-dwim ()
+  "Call `occur' with a mostly sane default.
+
+Attribution Oleh Krehel (abo-abo): URL `http://oremacs.com/2015/01/26/occur-dwim/'"
+  (interactive)
+  (push (if (region-active-p)
+            (buffer-substring-no-properties
+             (region-beginning)
+             (region-end))
+          (let ((sym (thing-at-point 'symbol)))
+            (when (stringp sym)
+              (regexp-quote sym))))
+        regexp-history)
+  (call-interactively 'occur))
+
+(defun help/util-cycle ()
+  "Display or hide the utility buffers."
+  (interactive)
+  (if help/util-state
+      (help/util-stop)
+    (help/util-start)))
+
+(defun sacha/unfill-paragraph (&optional region)
+  "Takes a multi-line paragraph and makes it into a single line of text.
+
+ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfill-paragraph"
+  (interactive (progn
+                 (barf-if-buffer-read-only)
+                 (list t)))
+  (let ((fill-column (point-max)))
+    (fill-paragraph nil region)))
+(defun help/text-scale-increase ()
+  "Increase font size"
+  (interactive)
+  (help/on-gui
+   (setq help/font-size-current (+ help/font-size-current 1))
+   (help/update-font))
+  (help/not-on-gui
+   (message "Please resize the terminal emulator font.")))
+(defun help/text-scale-decrease ()
+  "Reduce font size."
+  (interactive)
+  (help/on-gui
+   (when (> help/font-size-current 1)
+     (setq help/font-size-current (- help/font-size-current 1))
+     (help/update-font)))
+  (help/not-on-gui
+   (message "Please resize the terminal emulator font.")))
+
+(defun help/org-weave-subtree-gfm (id file)
+  "Export the subtree with ID to FILE in gfm."
+  (interactive)
+  (help/save-all-file-buffers)
+  (save-excursion
+    (let ((hidx (org-find-property "ID" id)))
+      (when hidx
+        (goto-char hidx)
+        (org-export-to-file 'gfm file nil t nil)))))
+
+(defun help/org-weave-readme ()
+  (interactive)
+  (help/org-weave-subtree-gfm
+   "README"
+   "README.md"))
+
+(defun help/org-weave-style-guide ()
+  (interactive)
+  (help/org-weave-subtree-gfm
+   "STYLEGUIDE"
+   "STYLEGUIDE.md"))
+
+(defun help/weave-everything-everywhere ()
+  "Export this entire document in configured weavers."
+  (interactive)
+  (save-excursion
+    (org-ascii-export-to-ascii)
+    (org-html-export-to-html)
+    (org-gfm-export-to-markdown)
+    (org-latex-export-to-pdf))
+  (help/org-weave-readme)
+  (help/org-weave-style-guide))
+
+(require 'thingatpt)
+
+(defun thing-at-point-goto-end-of-integer ()
+  "Go to end of integer at point.
+
+Attribution: URL `http://emacsredux.com/blog/2013/07/25/increment-and-decrement-integer-at-point/'"
+  (let ((inhibit-changing-match-data t))
+    ;; Skip over optional sign
+    (when (looking-at "[+-]")
+      (forward-char 1))
+    ;; Skip over digits
+    (skip-chars-forward "[[:digit:]]")
+    ;; Check for at least one digit
+    (unless (looking-back "[[:digit:]]")
+      (error "No integer here"))))
+(put 'integer 'beginning-op 'thing-at-point-goto-end-of-integer)
+
+(defun thing-at-point-goto-beginning-of-integer ()
+  "Go to end of integer at point.
+
+Attribution: URL `http://emacsredux.com/blog/2013/07/25/increment-and-decrement-integer-at-point/'"
+  (let ((inhibit-changing-match-data t))
+    ;; Skip backward over digits
+    (skip-chars-backward "[[:digit:]]")
+    ;; Check for digits and optional sign
+    (unless (looking-at "[+-]?[[:digit:]]")
+      (error "No integer here"))
+    ;; Skip backward over optional sign
+    (when (looking-back "[+-]")
+      (backward-char 1))))
+(put 'integer 'beginning-op 'thing-at-point-goto-beginning-of-integer)
+
+(defun thing-at-point-bounds-of-integer-at-point ()
+  "Get boundaries of integer at point.
+
+Attribution: URL `http://emacsredux.com/blog/2013/07/25/increment-and-decrement-integer-at-point/'"
+  (save-excursion
+    (let (beg end)
+      (thing-at-point-goto-beginning-of-integer)
+      (setq beg (point))
+      (thing-at-point-goto-end-of-integer)
+      (setq end (point))
+      (cons beg end))))
+(put 'integer 'bounds-of-thing-at-point 'thing-at-point-bounds-of-integer-at-point)
+
+(defun thing-at-point-integer-at-point ()
+  "Get integer at point.
+
+Attribution: URL `http://emacsredux.com/blog/2013/07/25/increment-and-decrement-integer-at-point/'"
+  (let ((bounds (bounds-of-thing-at-point 'integer)))
+    (string-to-number (buffer-substring (car bounds) (cdr bounds)))))
+(put 'integer 'thing-at-point 'thing-at-point-integer-at-point)
+
+(defun increment-integer-at-point (&optional inc)
+  "Increment integer at point by one.
+
+With numeric prefix arg INC, increment the integer by INC amount.
+
+Attribution: URL `http://emacsredux.com/blog/2013/07/25/increment-and-decrement-integer-at-point/'"
+  (interactive "p")
+  (let ((inc (or inc 1))
+        (n (thing-at-point 'integer))
+        (bounds (bounds-of-thing-at-point 'integer)))
+    (delete-region (car bounds) (cdr bounds))
+    (insert (int-to-string (+ n inc)))))
+
+(defun decrement-integer-at-point (&optional dec)
+  "Decrement integer at point by one.
+
+With numeric prefix arg DEC, decrement the integer by DEC amount.
+
+Attribution: URL `http://emacsredux.com/blog/2013/07/25/increment-and-decrement-integer-at-point/'"
+  (interactive "p")
+  (increment-integer-at-point (- (or dec 1))))
+
+(defun help/reformat-file (file)
+  "Reformat a file.
+
+Handle whether a buffer is attached to the file or not.
+
+Be sure that most revent version of file is loaded into buffer first.
+
+Attribution: URL `https://www.emacswiki.org/emacs/ElispCookbook#toc46'."
+  (interactive)
+  (with-current-buffer (find-file-noselect file)
+    (revert-buffer t t)
+    (with-temp-message "Formatting file..."
+      (indent-region (point-min) (point-max) nil))
+    (message "Formatting file done")))
+
+(defun switch-to-previous-buffer ()
+  "Switch to most recent buffer. Repeated calls toggle back and forth between the most recent two buffers.
+
+Attribution: URL `http://pragmaticemacs.com/emacs/toggle-between-most-recent-buffers/'
+
+Attribution: URL `https://www.emacswiki.org/emacs/SwitchingBuffers#toc5'"
+  (interactive)
+  (switch-to-buffer (other-buffer (current-buffer) 1)))
+
+(defun help/dos2unix ()
+  "Not exactly but it's easier to remember.
+
+Attribution: URL `https://www.emacswiki.org/emacs/DosToUnix'"
+  (interactive)
+  (set-buffer-file-coding-system 'unix 't) )
+
+(defun help/preview-buffer-file-in-marked-2 ()
+  "View buffer file in Marked 2.
+
+Attribution: URL
+`https://github.com/kotfu/marked-bonus-pack/blob/master/Emacs/dot.emacs.txt'"
+  (interactive)
+  (help/on-osx
+   (shell-command
+    (format "open -a 'Marked 2.app' %s"
+            (shell-quote-argument (buffer-file-name))))))
+```
+
+## Typography
+
+    ID: F355CA52-794D-474E-959B-D85C689B96AA
+
+-   Use 78 characters for a text document
+    -   Column 0 is the first possible character
+    -   Column 77 is the last possible character
+    -   Column 78 will always be empty
+        -   This is the fill column
+        -   This gives some spacing between the text body and the 80 column indicator
+    -   Column 79 will always be the fill column indicator
+        -   It **isn&rsquo;t** the fill column though
+        -   I want it to indicate 80 chars, typically the maximum number of columns
+            for a line, to know how to size the window itself
+        -   Fci-Mode supports this
+    -   Store this as the fill column because all supporting functions will do the
+        right thing here
+
+```lisp
+(defconst help/column-width 78)
+(setq-default fill-column help/column-width)
+```
+
+Two spaces after a period end a sentence.
+
+```lisp
+(setq sentence-end-double-space t)
+```
+
+Two spaces follow a colon
+
+Two spaces after a semi-colon.
+
+One space after comma.
+
+```lisp
+(setq colon-double-space t)
+```
+
+-   Easily see the fill-column (or close too it)
+
+    -   Sometimes I set the fci rule at 81 because a char at 79 pushes the fci
+        rule out one extra space. Sometimes it is not an issue.
+
+    ```lisp
+    (use-package fill-column-indicator
+      :ensure t
+      :config
+      (setq fci-rule-column 79))
+    ```
+-   Display line in file
+
+    ```lisp
+    ```
+
+```lisp
+(defun help/text-prog*-setup ()
+  "HELP's standard configuration for buffer's working with text, often for
+   programming."
+  (interactive)
+  (auto-fill-mode)
+  (diminish 'auto-fill-function)
+  (visual-line-mode)
+  (nlinum-mode)
+  (fci-mode)
+  (rainbow-mode)
+  (help/try-to-add-imenu)
+  (writegood-mode)
+  (turn-on-page-break-lines-mode))
+
+(add-hook 'text-mode-hook #'help/text-prog*-setup)
+```
+
+## Buffer
+
+    ID: F3C9BDE1-C0E0-4BDF-B121-3CE2F0D16464
+
+Maintain buffers across sessions. Desktop-Save-Mode persists very part of the
+buffer. If you upgrade a package that uses buffer-variables that have changed
+you may get unexpected behavior. Close all buffers and open them again after
+making such breaking changes.
+
+```lisp
+(desktop-save-mode t)
+(setq desktop-restore-eager 10)
+```
+
+Provide expected &ldquo;Undo&rdquo; functionality.
+
+```lisp
+(use-package undo-tree
+  :ensure t
+  :config
+  (global-undo-tree-mode 1)
+  :diminish undo-tree-mode)
+```
+
+Ensure that buffers do not end with a new line. This is the decision of Sysop.
+This is important to YASnippets and Source-Blocks. Doing so would violate POLA.
+
+```lisp
+(setq require-final-newline nil)
+```
+
+If you are on the end of a line, and go up or down, then go to the end of
+line on that new line. Do not account for anything special about the character
+there.
+
+```lisp
+(setq track-eol t)
+(setq line-move-visual nil)
+```
+
+Take the cursor with scroll activities.
+
+```lisp
+(setq scroll-preserve-screen-position t)
+```
+
+More easily visualize tabular data. Considered to non-subjective.
+
+```lisp
+(use-package stripe-buffer
+  :ensure t)
+```
+
+End sentences with a single space.
+
+```lisp
+(setq sentence-end-double-space nil)
+```
+
+Ban white-space at end of lines, globally.
+
+```lisp
+(add-hook 'before-save-hook #'help/delete-trailing-whitespace)
+```
+
+Intelligently select the current char, then word, then object, then block,
+then document.
+
+```lisp
+(use-package expand-region
+  :ensure t)
+```
+
+Visualize the formfeed character.
+
+```lisp
+(use-package page-break-lines
+  :ensure t)
+```
+
+Configure Page-Break-Lines-Mode.
+
+```lisp
+(use-package page-break-lines
+  :diminish page-break-lines-mode)
+```
+
+Center the buffer after navigating pages.
+
+```lisp
+(advice-add #'backward-page :after #'recenter)
+(advice-add #'forward-page :after #'recenter)
+```
+
+## Code Folding
+
+    ID: 3F70676D-C141-4093-9E40-F42B6C7B7232
+
+```lisp
+(use-package hideshow
+  :config
+  (setq hs-hide-comments-when-hiding-all t)
+  (setq hs-isearch-open t)
+  (defun display-code-line-counts (ov)
+    "Displaying overlay content in echo area or tooltip"
+    (when (eq 'code (overlay-get ov 'hs))
+      (overlay-put ov 'help-echo
+                   (buffer-substring (overlay-start ov)
+                                     (overlay-end ov)))))
+  (setq hs-set-up-overlay #'display-code-line-counts)
+  (defun help/goto-line ()
+    "How do I get it to expand upon a goto-line? hideshow-expand affected block
+    when using goto-line in a collapsed buffer."
+    (call-interactively #'goto-line)
+    (save-excursion
+      (hs-show-block)))
+  :diminish hs-minor-mode)
+```
+
+## Colors
+
+    ID: 7FA1B7C2-3C4B-4119-B9B7-4C0CC0EAA180
+
+Colorize color names.
+
+Rainbow-Mode handles most major modes color definitions as expected.
+
+```lisp
+(use-package rainbow-mode
+  :ensure t
+  :config
+  :diminish rainbow-mode)
+```
+
+## Evaluation
+
+    ID: 5E067457-9B99-459F-A660-323774C14BF5
+
+```lisp
+(setq-default eval-expression-print-level nil)
+```
+
+Allow most commands.
+
+```lisp
+(put #'upcase-region 'disabled nil)
+(put #'downcase-region 'disabled nil)
+(put #'narrow-to-region 'disabled nil)
+```
+
+Easily send expressions to a REPL line by line by hitting `C-RET`.
+
+```lisp
+(use-package eval-in-repl
+  :ensure t
+  :config
+  (setq eir-jump-after-eval nil)
+  (setq eir-always-split-script-window t)
+  (setq eir-delete-other-windows t)
+  (setq eir-repl-placement 'right)
+  ;; ielm support (for emacs lisp)
+  (require 'eval-in-repl-ielm)
+  ;; for .el files
+  (define-key emacs-lisp-mode-map (kbd "<C-return>") 'eir-eval-in-ielm)
+  ;; for *scratch*
+  (define-key lisp-interaction-mode-map (kbd "<C-return>") 'eir-eval-in-ielm)
+  ;; for M-x info
+  (define-key Info-mode-map (kbd "<C-return>") 'eir-eval-in-ielm)
+  ;; Shell support
+  (require 'eval-in-repl-shell)
+  (add-hook 'sh-mode-hook
+            '(lambda()
+               (local-set-key (kbd "C-<return>") 'eir-eval-in-shell)))
+  ;; Version with opposite behavior to eir-jump-after-eval configuration
+  (defun eir-eval-in-shell2 ()
+    "eval-in-repl for shell script (opposite behavior)
+
+This version has the opposite behavior to the eir-jump-after-eval
+configuration when invoked to evaluate a line."
+    (interactive)
+    (let ((eir-jump-after-eval (not eir-jump-after-eval)))
+      (eir-eval-in-shell)))
+  (add-hook 'sh-mode-hook
+            '(lambda()
+               (local-set-key (kbd "C-M-<return>") 'eir-eval-in-shell2)))
+  ;; racket-mode support (for Racket; if not using Geiser)
+  (require 'racket-mode) ; if not done elsewhere
+  (require 'eval-in-repl-racket)
+  (define-key racket-mode-map (kbd "<C-return>") 'eir-eval-in-racket))
+```
+
+## Encryption
+
+    ID: 9A41F9EE-36D5-452A-986B-70B567255D36
+
+Easy to use file-based AES encryption.
+
+```lisp
+(add-to-list 'load-path (getenv "CCRYPT"))
+(use-package ps-ccrypt)
 ```
 
 ## Eshell
 
-    ID: FAB2B8BA-ACE0-4F99-9583-C9A287CFB610
+    ID: B371A592-1251-4D88-A055-43CA3E33BC6D
 
-```sh
-alias clear recenter 0
-alias d 'dired $1'
-alias ff find-file $1
-alias gb git branch $*
-alias gpom git push origin master
-alias gst git status
-alias la ls -lha $*
-alias ll ls -lh $*
+Provide a cross-platform command line shell that is a first-class EMACS citizen.
+
+Commands input in eshell are delegated in order to an alias, a built in command,
+an Elisp function with the same name, and finally to a system call. Semicolons
+separate commands. `which` tells you what implementation will satisfy the call
+that you are going to make. The flag `eshell-prefer-lisp-functions` does what it
+says. `$$` is the result of the last command. Aliases live in
+`eshell-aliases-file`. History is maintained and expandable. `eshell-source-file`
+will run scripts. Since Eshell is not a terminal emulator, you need to configure
+it for any commands that need to run using a terminal emulator by adding it to
+to `eshell-visual-commands`.
+
+```lisp
+(setq eshell-prefer-lisp-functions nil
+      eshell-cmpl-cycle-completions nil
+      eshell-save-history-on-exit t
+      eshell-cmpl-dir-ignore "\\`\\(\\.\\.?\\|CVS\\|\\.svn\\|\\.git\\)/\\'")
+
+(eval-after-load "esh-opt"
+  '(progn
+     (use-package em-cmpl)
+     (use-package em-prompt)
+     (use-package em-term)
+     (setenv "PAGER" "cat")
+     (add-hook 'eshell-mode-hook
+               (lambda ()
+                 (message "Welcome to Eshell.")
+                 (setq pcomplete-cycle-completions nil)))
+     (add-to-list 'eshell-visual-commands "ssh")
+     (add-to-list 'eshell-visual-commands "tail")
+     (add-to-list 'eshell-command-completions-alist
+                  '("tar" "\\(\\.tar|\\.tgz\\|\\.tar\\.gz\\)\\'"))))
 ```
 
-# Literate Programming
+Configure a `PS1` like prompt.
 
-    ID: 8510C876-F644-4804-9F87-54A0B44DBA6A
+```lisp
+(setq eshell-prompt-regexp "^.+@.+:.+> ")
+(setq eshell-prompt-function
+      (lambda ()
+        (concat
+         (user-login-name)
+         "@"
+         (system-name)
+         ":"
+         (eshell/pwd)
+         "> ")))
+```
 
-This system enables you to perform 3 Literate Document activities
+## File Based System
 
--   Tangling
--   Evaluating
--   Weaving
+    ID: E6F121F0-AC8E-45C7-9F11-0E7AB93E4B71
 
-Combined they provide a rich Literate Programming environment.
+This system uses artifacts stored in files. It tries to persist file-stores
+every chance it gets without interrupting the user&rsquo;s flow. Flow is important.
 
-These activities are not performed interactively by the user. They are automatic
-operations that occur as a result of the configuration by the document itself.
+Don&rsquo;t create backup files. Instead Git for versioning
 
-The following is the guide for the default configuration of this system and how
-it behaves.
+Automatically back file-stores if no activity has occurred.
 
-Key:
+```lisp
+(setq auto-save-default t)
+(setq make-backup-files nil)
+(setq auto-save-visited-file-name t)
+(setq auto-save-interval 0)
+(setq auto-save-timeout (* 60 5))
+```
 
--   Columns
-    -   **S:** Source document modified?
-    -   **T:** Destination tangled-document modified?
-    -   **W:** Destination weaved-document modified?
-    -   **C:** Source-Block Evaluation occurred?
-    -   **O:** Org-Macro Expansion occurred?
+Backup file-stores when the frame loses focus.
+
+```lisp
+(add-hook 'focus-out-hook #'help/save-all-file-buffers)
+```
+
+Always keep buffers in-sync with changes in-file.
+
+```lisp
+(global-auto-revert-mode 1)
+(diminish 'auto-revert-mode)
+```
+
+Save all file befores before common activities. Functions are easier to
+use than advice.
+
+```lisp
+(defun help/safb-help/vc-next-action ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (help/vc-next-action))
+
+(defun help/safb-vc-ediff ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (vc-ediff nil))
+
+(defun help/safb-vc-diff ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (vc-diff nil))
+
+(defun help/safb-vc-revert ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (vc-revert))
+
+(defun help/safb-help/magit-status ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (help/magit-status))
+
+(defun help/safb-org-babel-tangle ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (let ((start (current-time)))
+    (message (concat "org-babel-tangle BEFORE: <"
+                     (format-time-string "%Y-%m-%dT%T%z")
+                     ">"))
+    (org-babel-tangle)
+    (let* ((dur (float-time (time-since start)))
+           (msg (format "Tangling complete after: %.06f seconds" dur)))
+      (message (concat "org-babel-tangle AFTER: <"
+                       (format-time-string "%Y-%m-%dT%T%z")
+                       ">"))
+      (message msg)
+      (help/on-gui (alert msg :title "org-mode")))))
+
+(defun help/safb-other-window ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (other-window 1))
+
+(defun help/safb-org-edit-src-code ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (org-edit-src-code))
+
+(defun help/safb-org-export-dispatch ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (org-export-dispatch))
+
+(defun help/safb-TeX-command-master (&optional arg)
+  (interactive)
+  (help/save-all-file-buffers)
+  (TeX-command-master arg))
+
+(defun help/safb-org-babel-execute-buffer ()
+  "Immediately save results."
+  (interactive)
+  (help/save-all-file-buffers)
+  (org-babel-execute-buffer)
+  (help/save-all-file-buffers))
+
+(defun help/safb-org-babel-execute-subtree ()
+  "Immediately save results."
+  (interactive)
+  (help/save-all-file-buffers)
+  (org-babel-execute-subtree)
+  (help/save-all-file-buffers))
+
+(defun help/safb-help/org-babel-demarcate-block ()
+  (interactive)
+  (help/org-babel-demarcate-block)
+  (help/save-all-file-buffers))
+
+(defun help/safb-save-buffers-kill-terminal ()
+  "Partially redundant; kept for consistency among `SAFB' functions."
+  (interactive)
+  (help/save-all-file-buffers)
+  (save-buffers-kill-terminal))
+
+(defun help/safb-help/goto-line ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (help/goto-line))
+
+(defun help/safb-switch-to-previous-buffer ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (switch-to-previous-buffer))
+```
+
+Selection:
+
+-   Don&rsquo;t perform on frequent keys like enter and line navigation.
+
+Future candidates:
+
+-   avy jump
+-   dired
+-   eshell
+-   ess-rdired
+-   eval-defun
+-   eval-region
+-   help/newline
+-   goto-line
+-   ido-switch-buffer
+-   ielm
+-   ispell
+-   ispell-word
+-   langtool-check-buffer
+-   newline-and-indent
+-   next-line
+-   org-edit-src-exit
+-   org-return
+-   pop-to-mark-command
+-   previous-line
+-   sp-newline
+-   with-current-buffer
+-   writegood-mode
+
+Try to visit a non-existent file and get prompted to create its parent
+directories.
+
+```lisp
+(add-to-list 'find-file-not-found-functions #'help/create-non-existent-directory)
+```
+
+Be aware of files larger than 2MiB. Turn off Aggressive-Indent and other
+expensive features in those buffers. NXML also seems to have a difficult time
+with large files.
+
+```lisp
+(setq large-file-warning-threshold (* 1024 1024 2))
+```
+
+-   Always use /tmp for temporary files
+    -   Via the thread &ldquo;[O] org-file using tramp + babel?&rdquo;
+
+```lisp
+(setq temporary-file-directory "/tmp")
+```
+
+## File-system/directory management (Console)
+
+    ID: 067D598E-7FE6-4BC5-AEF7-872966390970
+
+You can use the usual machinery to work with the files. Highlight a region
+and operation selections occur for all files in that region. Commands are
+scheduled, and then executed, upon your command. Files can be viewed in modify
+or read-only mode, too. There is an idea of `mark` in files, which is to select
+them and perform operations on the marked files. There are helper methods for
+most things you can think if like directories or modified-files or whatever,
+meaning you can use regexen to mark whatever you like however you like. If that
+suits you, then don&rsquo;t be afraid of using the regular expression builder
+that is built into EMACS. Bulk marked file operations include additionally
+copying, deleting, creating hard links to, renaming, modifying the mode,
+owner, and group information, changing the time-stamp, listing the marked
+files, compressing them, decrypting, verifying and signing, loading or byte
+compiling them (Lisp files).
+
+`g` updates the current buffer; `s` orders the listing by alpha or date-time.
+
+`find-name-dired` beings the results back into Dired, which is nifty.
+
+Wdired lets you modify files directly via the UI, which is interesting. Image-Dired
+lets you do just that.
+
+`+` creates a new directory. `dired-copy-filename-as-kill` stores the list of
+files you have selected in the kill ring. `dired-compare-directories` lets you
+perform all sorts of directory comparisons, a handy tool that you need once in
+a while but definitely do need.
+
+```lisp
+(defun help/dired-copy-filename ()
+  "Push the path and filename of the file under the point to the kill ring.
+  Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2002-10/msg00556.html'"
+  (interactive)
+  (message "Added %s to kill ring" (kill-new (dired-get-filename))))
+(defun help/dired-copy-path ()
+  "Push the path of the directory under the point to the kill ring."
+  (interactive)
+  (message "Added %s to kill ring" (kill-new default-directory)))
+(setq dired-listing-switches "-alh")
+(setq dired-recursive-deletes 'top)
+(use-package dired-details+
+  :ensure t)
+(setq-default dired-details-hidden-string "")
+(defun help/dired-mode-hook-fn ()
+  "HELP dired customizations."
+  (local-set-key "c" #'help/dired-copy-filename)
+  (local-set-key "]" #'help/dired-copy-path)
+  (diff-hl-dired-mode)
+  (load "dired-x")
+  (turn-on-stripe-buffer-mode)
+  (stripe-listify-buffer))
+(add-hook 'dired-mode-hook #'help/dired-mode-hook-fn)
+```
+
+Try to guess the target directory for operations.
+
+```lisp
+(setq dired-dwim-target t)
+```
+
+Use EMACS `ls`.
+
+```lisp
+(help/on-osx
+ (setq ls-lisp-use-insert-directory-program nil)
+ (use-package ls-lisp))
+```
+
+After dabbling, something happened that really changed my mind. These three
+articles changed everything: [Dired Shell Command](http://www.masteringemacs.org/articles/2014/04/10/dired-shell-commands-find-xargs-replacement/), [
+Working with multiple files in dired](https://www.masteringemacs.org/article/working-multiple-files-dired), and [WDired: Editable Dired Buffers](https://www.masteringemacs.org/article/wdired-editable-dired-buffers)..
+They just made the power of Dired so obvious, and so easy to use, that it
+instantly because delightful to use. That was very, very cool. Even though I
+was really, really happy with Finder and Explorer&#x2026; suddenly it just became so
+obvious and pleasant to use Dired. That is so wild.
+
+Key notes when executing shell commands on file selection&#x2026;
+
+Substitution:
+
+-   **`<cmd> ?`:** 1\* calls to cmd, each file a single argument
+-   **`<cmd> *`:** 1 call to `cmd`, selected list as argument
+-   **`<cmd> *""`:** have the shell expand the \* as a globbing wild-card
+    -   Not sure what this means
+
+Synchronicity:
+
+-   **`<cmd> ...`:** by default commands are called synchronously
+-   **`<cmd> &`:** execute in parallel
+-   **`<cmd> ;`:** execute sequentially, asynchronously
+-   **`<cmd> ;&`:** execute in parallel, asynchronously
+
+Key notes on working with files in multiple directories&#x2026; use the following:
+
+Use `find` just like you would at the command line and all of the results show
+up in a single Dired buffer that you may work with just like you would any other
+file appearing in a Dired buffer. The abstraction here becomes so obvious, you
+may ask yourself why you never considered such a thing *before* now (as I did):
+
+```lisp
+(use-package find-dired
+  :ensure t
+  :config
+  (setq find-ls-option '("-print0 | xargs -0 ls -ld" . "-ld")))
+```
+
+Noting that:
+
+-   **`find-dired`:** is the general use case
+-   **`find-name-dired`:** is for simple, single string cases
+
+And if you want to use the faster Elisp version, that uses lisp regex, use:
+
+-   **`find-lisp-find-dired`:** for anything
+-   **`find-lisp-find-dired-subdirectories`:** for only directories
+
+Key notes on working with editable buffers&#x2026;
+
+As the author notes, you probably already instinctually knew what is possible.
+After reading his brief and concise exposition, it would be hard *not* to
+intuit what is possible! The options are big if you make a writable file buffer.
+Think about using multiple cursors. Done? Well, that is a no-brainer. Once you
+grok multiple cursors just `find-dired` what you need and then do what you need
+to do to it. Very cool.
+
+-   **`dired-toggle-read-only, C-x C-q`:** cycle between dired-mode and wdired-mode
+-   **`wdired-finish-edit, C-c C-c`:** commit your changes
+-   **`wdired-abort-changes, C-c ESC`:** revert your changes
+
+```lisp
+(use-package wdired
+  :ensure t
+  :config
+  (setq wdired-allow-to-change-permissions t)
+  (setq wdired-allow-to-redirect-links t)
+  (setq wdired-use-interactive-rename t)
+  (setq wdired-confirm-overwrite t)
+  (setq wdired-use-dired-vertical-movement 'sometimes))
+```
+
+When you selected a bunch of files or directories, you *may* want to communicate
+somewhere your selection somehow. The simplest way to do this is to utilize
+`dired-copy-filename-as-kill`. What a nice idea, and its default binding is `w`.
+
+Since I started using a menu bar again, and wanting to get Imenu really
+exercised, Dired in Imenu seems like an obvious choice.
+
+```lisp
+(use-package dired-imenu
+  :ensure t)
+```
+
+## IMenu
+
+    ID: F748CAFD-0235-4E34-8546-A9EC515759BB
+
+Major productivity hack
+
+```lisp
+(use-package imenu
+  :config
+  (setq imenu-sort-function #'imenu--sort-by-name))
+(defun help/try-to-add-imenu ()
+  "Add Imenu to modes that have `font-lock-mode' activated.
+
+Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
+  (condition-case nil (imenu-add-to-menubar "Imenu") (error nil)))
+(add-hook 'font-lock-mode-hook #'help/try-to-add-imenu)
+```
+
+Provide it in a buffer.
+
+```lisp
+(use-package imenu-list
+  :ensure t
+  :config
+  (setq imenu-list-focus-after-activation t)
+  (setq imenu-list-auto-resize t)
+  (setq imenu-list-position 'left)
+  (setq imenu-list-size 40))
+```
+
+## Interactively DO Things
+
+    ID: 2DB9FDA1-9950-4FEA-A33C-E8DDFDA9420E
+
+IDO is used everywhere possible.
+
+Access nearly every object available in this system from one place.
+
+These configurations are performed in the correct order. Any attempt to refactor
+this Source-Block will break Ido in this system.
+
+```lisp
+(use-package ido)
+(use-package flx-ido
+  :ensure t
+  :config
+  (ido-mode t))
+(use-package ido-hacks
+  :ensure t)
+(use-package ido-ubiquitous
+  :ensure t
+  :config
+  (ido-ubiquitous-mode t)
+  (setq ido-create-new-buffer 'always)
+  (flx-ido-mode t)
+  (setq ido-use-faces nil))
+(use-package ido-vertical-mode
+  :ensure t
+  :config
+  (ido-vertical-mode t)
+  (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right))
+```
+
+Make functions search-able.
+
+```lisp
+(use-package smex
+  :ensure t
+  :config
+  (smex-initialize))
+```
+
+Make URLs a first-class object.
+
+```lisp
+(setq ido-use-url-at-point t)
+(setq ido-use-filename-at-point 'guess)
+```
+
+## Font
+
+    ID: 8F7A007E-5CBA-4651-84D8-5874FF393EA6
+
+Use Unicode-Font to provide as many Unicode fonts as possible.
+
+Here are the Unicode fonts that provide nearly everything.
 
 <table>
 
@@ -373,11 +1635,7 @@ Key:
 <colgroup>
 <col  class="org-left">
 
-<col  class="org-left">
-
-<col  class="org-left">
-
-<col  class="org-left">
+<col  class="org-right">
 
 <col  class="org-left">
 
@@ -385,699 +1643,2532 @@ Key:
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="org-left">Activity</th>
-<th scope="col" class="org-left">S</th>
-<th scope="col" class="org-left">T</th>
-<th scope="col" class="org-left">W</th>
-<th scope="col" class="org-left">C</th>
-<th scope="col" class="org-left">O</th>
+<th scope="col" class="org-left">Name</th>
+<th scope="col" class="org-right">Version</th>
+<th scope="col" class="org-left">URL</th>
+<th scope="col" class="org-left">Comments</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td class="org-left">Tangling</td>
-<td class="org-left">F</td>
-<td class="org-left">T</td>
-<td class="org-left">F</td>
-<td class="org-left">F</td>
-<td class="org-left">F</td>
+<td class="org-left">[DejaVu](http://sourceforge.net/projects/dejavu/files/dejavu/2.34/dejavu-fonts-ttf-2.34.tar.bz2)</td>
+<td class="org-right">2.43</td>
+<td class="org-left">[.](http://sourceforge.net/projects/dejavu/files/dejavu/2.34/dejavu-fonts-ttf-2.34.tar.bz2)</td>
+<td class="org-left">Modern classic</td>
 </tr>
 
 
 <tr>
-<td class="org-left">Evaluating</td>
-<td class="org-left">T</td>
-<td class="org-left">F</td>
-<td class="org-left">F</td>
-<td class="org-left">T</td>
-<td class="org-left">F</td>
+<td class="org-left">[Symbola](http://users.teilar.gr/~g1951d/)</td>
+<td class="org-right">7.17</td>
+<td class="org-left">[.](http://users.teilar.gr/~g1951d/Symbola.zip)</td>
+<td class="org-left">Neat</td>
 </tr>
 
 
 <tr>
-<td class="org-left">Weaving</td>
-<td class="org-left">F</td>
-<td class="org-left">F</td>
-<td class="org-left">T</td>
-<td class="org-left">F</td>
-<td class="org-left">T</td>
+<td class="org-left">[Quivira](http://www.quivira-font.com/)</td>
+<td class="org-right">4.0</td>
+<td class="org-left">[.](http://www.quivira-font.com/files/Quivira.otf)</td>
+<td class="org-left">Amazing</td>
+</tr>
+
+
+<tr>
+<td class="org-left">[Noto](https://code.google.com/p/noto/)</td>
+<td class="org-right">?</td>
+<td class="org-left">[1](http://noto.googlecode.com/git/fonts/individual/hinted/NotoSans-Regular.ttc) [2](http://noto.googlecode.com/git/fonts/individual/unhinted/NotoSansSymbols-Regular.ttf)</td>
+<td class="org-left">Has morse code, and more</td>
 </tr>
 </tbody>
 </table>
 
-They are separate and distinct operations.
+To test it run `view-hello-file` and `M-x list-charset-chars RET unicode-bmp RET`.
 
-&ldquo;Programming&rdquo; is logically an activity that is the combination of these 3
-activites. It is interactively performed by Sysop. It is not a distinct
-or isolated operation. Results of one activity exist here and serve as inputs to
-another activity.
-
-## Org-Mode Exemple Complet Minimal
-
-    header-args: :noweb-ref Org-Mode-ECM
-
-    ID: 57C69AB7-A317-4823-ABBF-7DE8A5E2151C
-
-Every new EMACS releases comes with the latest stable Org-Mode release. To get
-hot-fixes, cutting edge features, and easy patch creation though, you need to
-use the version from Git.
-
-These detailed and clear [directions](http://orgmode.org/manual/Installation.html) explain how ot run Org-Mode from Git. The only
-thing worth mentioning again is that in order to use **any** version of Org-Mode
-other than the one that comes OOTB you **must** load Org-Mode **before** anything else
-in your initialization file. It is easy to do! When you get
-unexpected Org-Mode behavior be sure to stop and investigate `org-version` and
-decide whether or not it is what you expect and prepare an ECM if necessary.
-
-Add the Org-Mode core distribution the load path.
+Perhaps educationally there is a character for bowel-movements: 💩.
 
 ```lisp
-(add-to-list 'load-path "~/src/org-mode/lisp")
+(use-package unicode-fonts
+  :ensure t
+  :config
+  (unicode-fonts-setup))
 ```
 
-Add the Org-Mode-Contributions distribution to the load path. The contributions
-are essential.
+Activate font locking everywhere possible.
 
 ```lisp
-(add-to-list 'load-path "~/src/org-mode/contrib/lisp")
+(global-font-lock-mode t)
 ```
 
-Allow single-character alphabetical bullet lists. This configuration must occur
-before loading Org-Mode. **Never** remove this from a submitted ECM.
+Visualize ASCII values as their most likely Unicode representation.
 
 ```lisp
-(setq org-list-allow-alphabetical t)
+(use-package pretty-mode
+  :ensure t
+  :config
+  (global-pretty-mode))
 ```
 
-Unchecked boxes prevent marking the parent as done. This configuration must
-occur before loading Org-Mode. **Never** remove this from a submitted ECM.
+## Going to Objects
+
+    ID: 835D3E9D-3044-4385-9AB1-F0DF17045565
+
+Go to any object in the frame quickly.
 
 ```lisp
-(setq org-enforce-todo-checkbox-dependencies t)
+(use-package avy
+  :ensure t
+  :config)
 ```
 
-Load Org-Mode.
+## Grammar
+
+    ID: 95A4EF33-F83D-49ED-AC74-A29DA19524BC
+
+Warn of poor grammar immediately interrupting flow with a visual indicator.
 
 ```lisp
-(require 'org)
+(use-package writegood-mode
+  :ensure t
+  :config
+  (eval-after-load "writegood-mode"
+    '(diminish 'writegood-mode)))
 ```
 
-## Helper Functions
+```lisp
+(use-package langtool
+  :ensure t
+  :init
+  (setq langtool-language-tool-jar "/usr/local/Cellar/languagetool/3.2/libexec/languagetool-commandline.jar")
+  (setq langtool-mother-tongue "en")
+  (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java")))
+```
 
-    header-args: :noweb-ref Org-Mode-Helper-Functions
+## Intellisense (Auto Completion)
 
-    ID: B14776FD-6835-4D1D-BCD3-50D56555423C
-
-Help configure Org-Mode.
+    ID: A7225C28-B8AE-4960-9E2A-64E6E8B58400
 
 ```lisp
-(defun help/set-org-babel-default-header-args (property value)
-  "Easily set system header arguments in org mode.
+(use-package fuzzy
+  :ensure t)
+(use-package auto-complete
+  :ensure t
+  :config
+  (use-package auto-complete-config)
+  (setq ac-quick-help-prefer-pos-tip nil)
+  (ac-config-default)
+  (setq ac-auto-start nil)
+  (help/not-on-gui (ac-set-trigger-key "TAB"))
+  (help/on-gui (ac-set-trigger-key "<tab>"))
+  :diminish auto-complete-mode)
+(use-package auto-complete-chunk
+  :ensure t)
+```
 
-PROPERTY is the system-wide value that you would like to modify.
+Auto-completion for `.`-separated words.
 
-VALUE is the new value you wish to store.
+```lisp
+(use-package auto-complete-chunk
+  :ensure t)
+```
 
-Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.html#System_002dwide-header-arguments'"
-  (setq org-babel-default-header-args
-        (cons (cons property value)
-              (assq-delete-all property org-babel-default-header-args))))
+## Macros
 
-(defun help/set-org-babel-default-inline-header-args (property value)
-  "See `help/set-org-babel-default-header-args'; same but for inline header args."
-  (setq org-babel-default-inline-header-args
-        (cons (cons property value)
-              (assq-delete-all property org-babel-default-inline-header-args))))
+    ID: E32B41C2-C761-42F0-A9AE-F89A2A18439F
 
-(defun help/set-org-babel-default-header-args:R (property value)
-  "See `help/set-org-babel-default-header-args'; same but for R.
+The macro recorder and Multiple-Cursors provide two ways to do the right thing
+in different situations. Be very thoughtful and allow every function.
 
-This is a copy and paste. Additional languages would warrant a refactor."
-  (setq org-babel-default-header-args:R
-        (cons (cons property value)
-              (assq-delete-all property org-babel-default-header-args:R))))
+```lisp
+(use-package multiple-cursors
+  :ensure t)
+```
 
-(defun help/org-toggle-macro-markers ()
+## Mark and Region
+
+    ID: A3C2AF94-B834-4FD2-9B23-F64F618B31C3
+
+When you start typing and text is selected, replace it with what you are typing,
+or pasting
+
+```lisp
+(delete-selection-mode t)
+```
+
+## Minibuffer
+
+    ID: 7A3C5EF1-BEF7-4007-86B1-78590CB62EB2
+
+Make it easier to answer questions.
+
+```lisp
+(fset #'yes-or-no-p #'y-or-n-p)
+```
+
+Comfortably display information.
+
+```lisp
+(setq resize-mini-windows t)
+(setq max-mini-window-height 0.33)
+```
+
+Allow recursive commands-in-commands and highlight the levels of recursion.
+
+```lisp
+(setq enable-recursive-minibuffers t)
+(minibuffer-depth-indicate-mode t)
+```
+
+## Mouse
+
+    ID: F3E75BDE-F853-488C-AF46-03B54C0A0919
+
+Scroll pleasantly with the mouse wheel. A slow turn moves the buffer up and down
+one line at a time. So does a fast turn. Anything further than 5-10 lines deserves
+a fast navigation vehicle.
+
+```lisp
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
+(setq mouse-wheel-progressive-speed nil)
+(setq mouse-wheel-follow-mouse t)
+```
+
+## Occur
+
+    ID: FA8195C5-30B7-44CF-8D0F-8FE2CE1CB3DA
+
+```lisp
+(defun help/occur-mode-hook-fn ()
+  "HELP customizations."
   (interactive)
-  (setq org-hide-macro-markers (not org-hide-macro-markers)))
+  (turn-on-stripe-buffer-mode)
+  (stripe-listify-buffer))
+(add-hook 'occur-mode-hook #'help/occur-mode-hook-fn)
+(define-key occur-mode-map (kbd "n") #'next-logical-line)
+(define-key occur-mode-map (kbd "p") #'previous-logical-line)
+```
 
-(defun help/org-prp-hdln ()
-  "Visit every Headline. If it doesn't have an ID property then add one and
-  assign it a UUID. Attribution: URL `http://article.gmane.org/gmane.emacs.orgmode/99738'"
+## Popups
+
+    ID: E1E4E20E-F789-422B-B0B3-706BD8A842DF
+
+Provide popup notifications.
+
+```lisp
+(use-package alert
+  :ensure t
+  :config
+  (setq alert-fade-time 10)
+  (help/on-gui
+   (help/on-osx
+    (setq alert-default-style 'growl)))
+  (setq alert-reveal-idle-time 120))
+```
+
+## Projects
+
+    ID: B35103E2-0FE9-466C-9AB9-39EA28FADEDB
+
+Directories that have Git working copies are logically projects. Manage them
+with Projectile.
+
+```lisp
+(use-package projectile
+  :ensure t
+  :config
+  (projectile-global-mode t)
+  (global-set-key (kbd "s-z") #'projectile-find-file)
+  (help/on-windows
+   (setq projectile-indexing-method 'alien))
+  :diminish projectile-mode)
+```
+
+Notify Magit about every working copy that Projectile knows about.
+
+```lisp
+(eval-after-load "projectile"
+  '(progn (setq magit-repository-directories (mapcar (lambda (dir)
+                                                       (substring dir 0 -1))
+                                                     (remove-if-not (lambda (project)
+                                                                      (file-directory-p (concat project "/.git/")))
+                                                                    (projectile-relevant-known-projects)))
+
+                magit-repository-directories-depth 1)))
+```
+
+## Printing
+
+    ID: C6230D9E-8331-4092-8846-DB244455C922
+
+```lisp
+(use-package pp
+  :commands (pp-display-expression))
+```
+
+## Register
+
+    ID: 34801113-5002-4502-821E-248C6406395C
+
+```lisp
+(setq register-preview-delay 2)
+(setq register-separator "\n\n")
+```
+
+## Replacing
+
+    ID: B10A2279-4F34-4DA2-BB1A-491B82F2F6EA
+
+Display information about search-and-or-replace operation.
+
+```lisp
+(use-package anzu
+  :ensure t
+  :config
+  (global-anzu-mode t)
+  (setq anzu-mode-lighter "")
+  (setq anzu-deactivate-region t)
+  (setq anzu-search-threshold 1000)
+  (setq anzu-replace-to-string-separator " ⇒ "))
+```
+
+## Save History of All Things
+
+    ID: 31961F28-1913-4247-986A-273391C4A85D
+
+It is nice to have commands and their history saved so that every time you get
+back to work, you can just re-run stuff as you need it.
+
+```lisp
+(setq savehist-save-minibuffer-history 1)
+(setq savehist-additional-variables
+      '(kill-ring
+        search-ring
+        regexp-search-ring))
+(savehist-mode t)
+```
+
+## Searching
+
+    ID: 960E2DE0-3F5A-40AB-A9BF-FF08A410EAB7
+
+When searching don&rsquo;t use lax whitespace matching; and make it easy to toggle.
+
+```lisp
+(setq isearch-lax-whitespace nil)
+(setq isearch-regexp-lax-whitespace nil)
+```
+
+Make searches case-insensitive.
+
+```lisp
+(setq-default case-fold-search t)
+```
+
+Other than ignoring case, search precisely for what was input.
+
+```lisp
+(setq search-default-regexp-mode nil)
+```
+
+Easily search the filesystem using `ag`.
+
+```lisp
+(use-package ag
+  :ensure t
+  :config
+  (setq ag-highlight-search t)
+  (setq ag-reuse-window nil)
+  (setq ag-reuse-buffers t))
+```
+
+## Spell Checking
+
+    ID: 902EAA81-4FC0-40A0-AE6D-D31C474B87E0
+
+Ispell is simple and powerful.
+
+### Org-Mode
+
+    ID: 72540881-8F99-4ED6-9FE4-7292A66B3089
+
+Never ispell the following objects.
+
+Block regex helper.
+
+```lisp
+(defun help/block-regex (special)
+  "Make an ispell skip-region alist for a SPECIAL block."
   (interactive)
-  (save-excursion
-    (goto-char (point-min))
-    (dolist (p (nreverse
-                (org-element-map (org-element-parse-buffer 'headline) 'headline
-                  (lambda (headline) (org-element-property :begin headline)))))
-      (goto-char p)
-      (org-id-get-create))
-    (save-buffer)))
+  `(,(concat help/org-special-pre "BEGIN_" special)
+    .
+    ,(concat help/org-special-pre "END_" special)))
+```
 
-(defun help/org-prp-src-blk ()
-  "If it doesn't have a NAME property then add one and
-   assign it a UUID. Attribution: URL `http://article.gmane.org/gmane.emacs.orgmode/99740'"
+Source-Blocks.
+
+```lisp
+(add-to-list 'ispell-skip-region-alist (help/block-regex "SRC"))
+```
+
+Example-Blocks. This system often uses Source-Blocks to edit content and
+Example-Blocks to make it easily renderable when it is not for running.
+
+```lisp
+(add-to-list 'ispell-skip-region-alist (help/block-regex "EXAMPLE"))
+```
+
+Properties.
+
+```lisp
+(add-to-list 'ispell-skip-region-alist '("^\s*:PROPERTIES\:$" . "^\s*:END\:$"))
+```
+
+Footnotes.
+
+```lisp
+(add-to-list 'ispell-skip-region-alist '("\\[fn:.+:" . "\\]"))
+```
+
+Footnotes with URLs that contain line-breaks.
+
+```lisp
+(add-to-list 'ispell-skip-region-alist '("^http" . "\\]"))
+```
+
+Bold text list items.
+
+```lisp
+(add-to-list 'ispell-skip-region-alist '("- \\*.+" . ".*\\*: "))
+```
+
+Check `SPECIAL LINE` definitions, ignoring their type.
+
+```lisp
+(let ()
+  (--each
+      '(("ATTR_LATEX" nil)
+        ("AUTHOR" nil)
+        ("BLOG" nil)
+        ("CREATOR" nil)
+        ("DATE" nil)
+        ("DESCRIPTION" nil)
+        ("EMAIL" nil)
+        ("EXCLUDE_TAGS" nil)
+        ("HTML_CONTAINER" nil)
+        ("HTML_DOCTYPE" nil)
+        ("HTML_HEAD" nil)
+        ("HTML_HEAD_EXTRA" nil)
+        ("HTML_LINK_HOME" nil)
+        ("HTML_LINK_UP" nil)
+        ("HTML_MATHJAX" nil)
+        ("INFOJS_OPT" nil)
+        ("KEYWORDS" nil)
+        ("LANGUAGE" nil)
+        ("LATEX_CLASS" nil)
+        ("LATEX_CLASS_OPTIONS" nil)
+        ("LATEX_HEADER" nil)
+        ("LATEX_HEADER_EXTRA" nil)
+        ("NAME" t)
+        ("OPTIONS" t)
+        ("POSTID" nil)
+        ("SELECT_TAGS" nil)
+        ("STARTUP" nil)
+        ("TITLE" nil))
+    (add-to-list
+     'ispell-skip-region-alist
+     (let ((special (concat "#[+]" (car it) ":")))
+       (if (cadr it)
+           (cons special "$")
+         (list special))))))
+```
+
+## Sudo
+
+    ID: 562F54F8-6E35-4DE1-9E9C-436B55CE83CE
+
+Configure Sudo with Ido.
+
+```lisp
+(help/on-osx
+ (defun help/ido-find-file ()
+   "Find file as root if necessary.
+
+Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
+   (unless (and buffer-file-name
+              (file-writable-p buffer-file-name))
+     (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
+
+ (advice-add #'ido-find-file :after #'help/ido-find-file))
+```
+
+## Syntax Checking
+
+    ID: B4A8362E-B218-4353-AC4B-7059A686EA89
+
+Perform syntactic analysis all the time.
+
+```lisp
+(use-package flycheck
+  :ensure t
+  :config
+  (add-hook 'after-init-hook #'global-flycheck-mode)
+  :diminish flycheck-mode)
+```
+
+## TAB
+
+    ID: 78E2BA2B-8289-422F-99DC-5E40DE928E68
+
+Most modes in this system will never use TAB.
+
+```lisp
+(setq-default indent-tabs-mode nil)
+```
+
+Remove TAB from all buffers before persisting to the backing file unless it is
+configured to retain TAB. The use case is a Makefile.
+
+```lisp
+(defun help/untabify-if-not-indent-tabs-mode ()
+  "Untabify if `indent-tabs-mode' is false.
+
+Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (interactive)
-  (help/org-2every-src-block
-   #'(lambda (element)
-       (if (not (org-element-property :name element))
-           (let ((i (org-get-indentation)))
-             (beginning-of-line)
-             (save-excursion (insert "#+NAME: " (org-id-new) "\n"))
-             (indent-to i)
-             (forward-line 2))))))
+  (when (not indent-tabs-mode)
+    (untabify (point-min) (point-max))))
 
-(defconst help/org-special-pre "^\s*#[+]")
+(add-hook 'before-save-hook #'help/untabify-if-not-indent-tabs-mode)
+```
 
-(defun help/org-2every-src-block (fn)
-  "Visit every Source-Block and evaluate `FN'."
+Most programing modes indent to 2 spaces. TABs should be the same width.
+
+```lisp
+(setq-default tab-width 2)
+```
+
+## Version Control
+
+    ID: F5E2718B-F54F-41C5-9CED-6E470CAC238D
+
+Use VC for single files and Magit for multiple files.
+
+The commit log editor uses With-Editor and Server modes. They are not diminished because they are infrequently used.
+
+```lisp
+(use-package magit
+  :ensure t
+  :config
+  (global-set-key (kbd "s-e") #'help/safb-help/magit-status))
+```
+
+Leave the VC message template empty.
+
+```lisp
+(eval-after-load "log-edit"
+  '(remove-hook 'log-edit-hook 'log-edit-insert-message-template))
+```
+
+Git ignore files are text files.
+
+```lisp
+(add-to-list 'auto-mode-alist '(".gitignore$" . text-mode))
+```
+
+## Video
+
+    ID: 4AFA5B76-4C9E-4728-8556-9163DA3D3CE7
+
+[Embedding Youtube videos with org-mode links](http://endlessparentheses.com/embedding-youtube-videos-with-org-mode-links.html).
+
+```lisp
+(defvar yt-iframe-format
+  ;; You may want to change your width and height.
+  (concat "<iframe width=\"440\""
+          " height=\"335\""
+          " src=\"https://www.youtube.com/embed/%s\""
+          " frameborder=\"0\""
+          " allowfullscreen>%s</iframe>"))
+
+(org-add-link-type
+ "yt"
+ (lambda (handle)
+   (browse-url
+    (concat "https://www.youtube.com/embed/"
+            handle)))
+ (lambda (path desc backend)
+   (cl-case backend
+     (html (format yt-iframe-format
+                   path (or desc "")))
+     (latex (format "\href{%s}{%s}"
+                    path (or desc "video"))))))
+```
+
+## Whitespace Management
+
+    ID: 5BBD948F-7239-457E-8BD9-710558C0E241
+
+Make control characters easily visible.
+
+```lisp
+(use-package whitespace
+  :ensure t
+  :config
+  (setq whitespace-style '(trailing lines tab-mark))
+  (setq whitespace-line-column help/column-width)
+  (global-whitespace-mode t)
+  :diminish whitespace-mode global-whitespace-mode)
+```
+
+## Word Wrap
+
+    ID: 2156A7CE-297E-478F-AFF2-13CE64B3C5C3
+
+```lisp
+(diminish 'visual-line-mode)
+```
+
+# Hacking
+
+    ID: B7CE60F5-5510-4358-8DD5-D42D9A2F4D9B
+
+## Common Configurations
+
+    ID: BE02A401-AFF6-4B64-B7F3-589C69CA7099
+
+This system configures `text-mode` and `prog-mode` very similarly:
+
+-   EMACS **exists** to help you work with text.
+-   EMACS&rsquo; entire configuration helps you work with text whether it is in a
+    specific mode or not.
+-   Org-Mode&rsquo;s motto is &ldquo;**Organize Your Life In Plain Text!**&rdquo;.
+-   From an EMACS and a LP perspective `text-mode` **is a** programming mode.
+-   In this system: **Text is the User-Interface**.
+
+This system does not rely on `prog-mode` inheritance to configure it&rsquo;s hacking
+modes:
+
+-   The EMACS literature advises that modes extend `text-mode` or `prog-mode`
+-   That *would* make it easier to configure nearly everything using `prog-mode-hook`.
+-   In practice `prog-mode` is too new.
+-   Not all programming modes inherit from it. Not even `IELM` is ready.
+
+With that in mind this system:
+
+-   Defines common configuration here for reuse in every desired mode starting
+    with `text-mode` and then all logical programming modes.
+-   Explicitly utilizes it directly instead of using inheritance.
+-   This system refers to this configuration of programming modes as `prog*-mode`.
+-   The line between &ldquo;configuring EMACS&rdquo;, &ldquo;configuring `text-mode`&rdquo;, and
+    &ldquo;configuring `prog*-mode`&rdquo; is often blurred and sometimes confusing. The lines
+    become wavy and intertwined with mastery of EMACS and LP.
+
+### Text-Mode
+
+    ID: 7CFD11FB-F3D4-4272-9DBC-2A420884097C
+
+Set a default commenting prefix.
+
+```lisp
+(setq-default comment-start "> ")
+```
+
+### Prog\*-Mode Modes
+
+    ID: 6F71F8AF-4227-46D3-9BD8-2F86B5815B72
+
+-   Mode inheritance is represented by list definition & indentation.
+-   Some modes are so simple that inheritance isn&rsquo;t defined.
+
+-   Hacking mode hooks.
+    -   Configurations common to every hacking vehicle.
+
+        ```lisp
+        (setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook R-mode-hook SAS-mode-hook graphviz-dot-mode-hook c-mode-common-hook php-mode-hook scad-mode-hook web-mode-hook))
+        ```
+    -   LISP mode hooks.
+        -   Are hacking modes.
+
+            ```lisp
+            (setq help/hack-lisp-modes
+                  '(emacs-lisp-mode-hook
+                    ielm-mode-hook
+                    lisp-interaction-mode-hook
+                    scheme-mode-hook))
+            (setq help/hack-modes (append help/hack-modes help/hack-lisp-modes))
+            ```
+        -   IELM mode hook.
+            -   Does one or two more things.
+
+### Prog\*-Mode Hook
+
+    ID: FF132B34-B61B-4DAE-A0B9-E37E39B9BFCE
+
+1.  Goal
+
+        ID: E2C7121E-2E56-4A77-8347-2E7DFB73E9B3
+
+    -   Indent at every opportunity and automatically. Verify that it makes sense
+        for the mode. Explicitly define instead of relying on `prog-mode` inheritance;
+        use this documents logical `prog*-mode` approach instead.
+
+        ```lisp
+        (use-package aggressive-indent
+          :ensure t
+          :config)
+        ```
+    -   Always maintain balanced brackets. Easily wrap the selected region. Auto-escape
+        strings pasted into other strings. Smartparens provides built-in correct
+        behavior for most modes.
+
+        ```lisp
+        (use-package smartparens-config
+          :ensure smartparens
+          :config
+          (setq sp-show-pair-from-inside nil)
+          :diminish smartparens-mode)
+        ```
+
+2.  Implementation.
+
+        ID: 61A981CB-1311-4F51-A264-D748FA34F1D3
+
+    ```lisp
+    (defun help/hack-prog*-mode-hook-fn ()
+      (interactive)
+      (help/text-prog*-setup)
+      (smartparens-strict-mode)
+      (aggressive-indent-mode)
+      (hs-minor-mode)
+      (help/not-on-gui (local-set-key (kbd "RET") #'newline-and-indent))
+      (help/on-gui (local-set-key (kbd "<return>") #'newline-and-indent)))
+    ```
+
+### Wiring
+
+    ID: 50304E30-682C-4C9A-9615-D6E61DAE533B
+
+```lisp
+(let ()
+  (--each help/hack-modes
+    (add-hook it #'help/hack-prog*-mode-hook-fn)))
+
+(let ()
+  (--each help/hack-lisp-modes
+    (add-hook it #'help/emacs-lisp-mode-hook-fn)))
+
+(add-hook 'ielm-mode-hook #'help/ielm-mode-hook-fn)
+```
+
+## Literate Programming
+
+    ID: 6B83373B-8898-4AC0-B7F6-C42418CCE5E4
+
+### Emacs Lisp
+
+    ID: 3AD91697-42DE-4555-9F49-B7D9F5E502D3
+
+```lisp
+(setq initial-scratch-message nil)
+(use-package lexbind-mode)
+
+(defun help/elisp-eval-buffer ()
+  "Intelligently evaluate an Elisp buffer."
   (interactive)
-  (save-excursion
-    (goto-char (point-min))
-    (let ((case-fold-search t))
-      (while (re-search-forward (concat help/org-special-pre "BEGIN_SRC") nil t)
-        (let ((element (org-element-at-point)))
-          (when (eq (org-element-type element) 'src-block)
-            (funcall fn element)))))
-    (save-buffer)))
+  (help/save-all-file-buffers)
+  (eval-buffer))
 
-(defun help/org-babel-demarcate-block ()
-  "Add a NAME property then assign it a UUID."
+(defun help/elisp-mode-local-bindings ()
+  "Helpful behavior for Elisp buffers."
+  (local-set-key (kbd "s-l eb") #'help/elisp-eval-buffer)
+  (local-set-key (kbd "s-l ep") #'eval-print-last-sexp)
+  (local-set-key (kbd "s-l td") #'toggle-debug-on-error)
+  (local-set-key (kbd "s-l mef") #'macroexpand)
+  (local-set-key (kbd "s-l mea") #'macroexpand-all)
+  (local-set-key (kbd "s-:") #'my-eval-expression)
+  (local-set-key (kbd "#") #'endless/sharp))
+
+(defun help/emacs-lisp-mode-hook-fn ()
   (interactive)
-  (org-babel-demarcate-block)
-  (insert "#+NAME: " (org-id-new))
-  (beginning-of-line)
-  (insert "\n"))
+  (help/elisp-mode-local-bindings)
+  (lexbind-mode)
+  (eldoc-mode)
+  (diminish 'eldoc-mode))
+
+(setq ielm-noisy nil)
+
+(setq ielm-prompt "𝔼LISP> ")
+
+(setq ielm-dynamic-return nil)
+
+(setq ielm-dynamic-multiline-inputs nil)
+
+(defun help/ielm-mode-hook-fn ()
+  "HELP customizations."
+  (interactive)
+  (help/ielm-auto-complete))
 ```
 
-## Tangling
+1.  Keybinding
 
-    header-args: :noweb-ref Org-Mode-Tangle
+        ID: 3A6B16EC-870A-4EFE-935A-C03F8DFB67BF
 
-    ID: 267EEDED-1367-405F-807C-B3C489045704
+    ```lisp
+    (define-key emacs-lisp-mode-map (kbd "s-p") #'describe-thing-in-popup)
+    ```
 
-`ID` and `NAME` are essential for successful `LP` using `org-babel-tangle-jump-to-org`.
+### Org-Mode
+
+    ID: EBDA3D1C-536F-4252-AE26-32A3FDF5326C
+
+When source blocks are evaluated, their results get stored in a result area,
+typically for display. If the results are small, they are displayed with colons
+instead of an `example` block. Instead, **always** place them in an
+example block. This makes exports more consistent and other Org-Mode features seem
+to behave more predictably.
 
 ```lisp
-(add-hook 'org-babel-pre-tangle-hook #'help/org-prp-hdln)
-(add-hook 'org-babel-pre-tangle-hook #'help/org-prp-src-blk)
+(setq org-babel-min-lines-for-block-output 0)
 ```
 
-There is a way to disable property inheritance that speeds up tangling a lot.
-This is only for user-defined properties; **not** Org-Mode properties.
-
-The problem is that you lose property inheritance which is unacceptable. Never,
-never allow that. Its inconsistent with how Org-Mode works.
+Configure Org-Mode to manage it&rsquo;s Source-Block backed buffers the same as the
+rest of this system.
 
 ```lisp
-(setq org-babel-use-quick-and-dirty-noweb-expansion nil)
+(setq org-edit-src-auto-save-idle-delay 0)
+(setq org-edit-src-turn-on-auto-save nil)
 ```
 
-### comments
-
-    ID: 49787FC5-CAA7-466B-B742-0F38973E070B
-
-> Toggle insertion of comments in tangled code files
-
-Provide as much information as possible in the tangled artifact about the
-origin artifact.
+Update in-buffer images after Source-Block execution. This is a programming task.
+That is why it is under this heading and Evaluation. This is a setting configuring
+how the results of evaluation are refreshed in EMACS.
 
 ```lisp
-(help/set-org-babel-default-header-args :comments "noweb")
+(defun help/org-babel-after-execute-hook ()
+  "HELP settings for the `org-babel-after-execute-hook'.
+
+This does not interfere with exports.
+
+Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00534.html'"
+  (interactive)
+  (org-redisplay-inline-images))
+
+(add-hook 'org-babel-after-execute-hook #'help/org-babel-after-execute-hook)
 ```
 
-### mkdirp
-
-    ID: B0F9A321-3B69-46BB-B512-0AF3C663A4C0
-
-> Toggle creation of parent directories of target files during tangling
+Never &ldquo;automatically&rdquo; evaluate a source block.
 
 ```lisp
-(help/set-org-babel-default-header-args :mkdirp "yes")
+(setq org-confirm-babel-evaluate nil)
 ```
 
-### no-expand
-
-    ID: 90170E6A-AA1A-44EA-9BF8-1A6AA38FD224
-
-> Turn off variable assignment and noweb expansion during tangling
-
-Configuration likely per Source-Block or System.
-
-### noweb
-
-    ID: E12B48AB-68E8-4515-89E3-30A16FB6FD22
-
-> Toggle expansion of noweb references
-
-Expand noweb references in source-blocks before:
-
-<table>
-
-
-<colgroup>
-<col  class="org-left">
-
-<col  class="org-left">
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left">Activity</th>
-<th scope="col" class="org-left">Expand</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td class="org-left">Tangling</td>
-<td class="org-left">T</td>
-</tr>
-
-
-<tr>
-<td class="org-left">Evaluating</td>
-<td class="org-left">T</td>
-</tr>
-
-
-<tr>
-<td class="org-left">Weaving</td>
-<td class="org-left">F</td>
-</tr>
-</tbody>
-</table>
-
-This embraces the notion that you are telling the right thing to the
-computer and the right thing to the human. By the time you get to exporting, you
-ought to refer to the generated document.
+Make it unpleasant for Sysop to modify source-block outside of a source-block
+backed buffer. The next step is to write some code to prevent modifying
+source-blocks outside of that place.
 
 ```lisp
-(help/set-org-babel-default-header-args :noweb "no-export")
+(setq org-src-tab-acts-natively nil)
 ```
 
-### noweb-ref
+Personal workflow:
 
-    ID: 2836D0AA-5DBA-48AC-A338-B47002DE8D7F
-
-> Specify block&rsquo;s noweb reference resolution target
-
-Configuration likely per Source-Block or System.
-
-### noweb-sep
-
-    ID: B1A57D15-6BBF-4E78-A0D9-0B02C283C6B0
-
-> String used to separate noweb references
-
-Configuration likely per Source-Block or System.
-
-### padline
-
-    ID: DDE727A6-DDF7-4B61-9063-549614B135F0
-
-> Control insertion of padding lines in tangled code files
-
-`org-babel-tangle-jump-to-org` requires padded lines. This configuration could
-arguably appear in the &ldquo;Programming&rdquo; heading because it impacts operation. It
-lives here because it **must** occur as part of the Tangling activity so that it
-can be used in the Programming activity.
+-   **TODO:** Zero progress.
+-   **IN-PROGRESS:** Forward movement.
+-   **HELD-BLOCKED:** Can&rsquo;t move forward until external agent completes.
+-   **HELD-FROZEN:** Won&rsquo;t move forward until I reinitialize it.
+-   **HELD-UNTIL:** Reinitialize when conditional.
+-   **REVIEW:** Work is complete and needs to be evaluated.
+-   **DONE:** Progress stops.
 
 ```lisp
-(help/set-org-babel-default-header-args :padline "yes")
+(setq org-todo-keywords
+      '((sequence
+         "TODO"
+         "IN-PROGRESS"
+         "HELD-BLOCKED"
+         "HELD-FROZEN"
+         "HELD-UNTIL"
+         "REVIEW"
+         "DONE"
+         )))
 ```
 
-### session
-
-    ID: 8219A42A-E90F-418A-8EF0-EB150CF6D730
-
-> Preserve the state of code evaluation
-
-Configuration likely per Source-Block or System.
-
-For some situations, this may be the same for every source block for a
-particular language. R is a good example.
-
-### shebang
-
-    ID: 542185DD-4FD6-459A-B422-DA7B546FB292
-
-> Make tangled files executable
-
-Configuration likely per Source-Block or System.
-
-### tangle
-
-    ID: EA716FC9-4A90-4F3E-ABD0-31FEA575C969
-
-> Toggle tangling and specify file name
+When running in a GUI, I would like linked images to be displayed inside of
+Emacs.
 
 ```lisp
-(help/set-org-babel-default-header-args :tangle "no")
+(setq org-startup-with-inline-images (display-graphic-p))
 ```
 
-### tangle-mode
-
-    ID: 5F0B7157-2DC8-4AFD-8F26-4B21025A5ECE
-
-> Set permission of tangled files
-
-Configuration likely per Source-Block or System.
-
-## Evaluating
-
-    header-args: :noweb-ref Org-Mode-Execute
-
-    ID: ED23FF0B-1F90-435C-9B56-ACA06C1ACAE0
-
-Org-Mode may evaluate all of the listed languages.
+Use Ido completion in Org-Mode.
 
 ```lisp
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((emacs-lisp . t)
-   (org . t)
-   ;;
-   (C . t)
-   (R . t)
-   (python . t)
-   (sass . t)
-   (scheme . t)
-   (sql . t)
-   ;;
-   (latex . t)
-   ;;
-   (makefile . t)
-   (shell . t)
-   ;;
-   (ditaa . t)
-   (dot . t)
-   (plantuml . t)))
+(setq org-completion-use-ido t)
+(setq org-outline-path-complete-in-steps nil)
+(setq org-completion-use-iswitchb nil)
 ```
 
-### cache
-
-    ID: 49B8BFE9-643B-450F-A8A1-20CE3079E215
-
-> Avoid re-evaluating unchanged code blocks
-
-Configuration likely per Source-Block or System
-
-Default `no` is correct for nearly every scenario.
-
-### colnames
-
-    ID: 4D683007-14AE-4A7D-A506-E2301FD32E82
-
-> Handle column names in tables
-
-Configuration likely per Source-Block or System
-
-### dir
-
-    ID: CD1494F1-0A2A-44D0-9955-0D0501AF1539
-
-> Specify the default (possibly remote) directory for code block execution
-
-Configuration likely per Source-Block or System
-
-### epilogue
-
-    ID: CA7F5086-9D4B-4847-9449-3231CE027804
-
-> Text to append to code block body
-
-See Prologue.
-
-### eval
-
-    ID: 0329BACE-2C99-4BB3-A7A5-7C800EF53FAD
-
-> Limit evaluation of specific code blocks
-
-Never evaluate source-blocks or in-line-source-blocks **on export**.
+Org-Mode lets you use single letter commands to do stuff on headers. I like to
+use `c` for cycling the header expansion.
 
 ```lisp
-(help/set-org-babel-default-header-args :eval "never-export")
-(help/set-org-babel-default-inline-header-args :eval "never-export")
+(setq org-use-speed-commands t)
 ```
 
-Never evaluate in-line-source-blocks **on export**.
+Ask before execution of shell links. This might seem like an Evaluation
+activity. It is. It is interactive.
 
 ```lisp
-(setq org-export-babel-evaluate nil)
+(setq org-confirm-shell-link-function 'y-or-n-p)
 ```
 
-### file
-
-    ID: 80824708-62AF-4337-A517-828DA22D1FCA
-
-> Specify a path for file output
-
-Configuration likely per Source-Block or System
-
-### file-desc
-
-    ID: 6F9A2745-7118-469E-9FDB-4B327C02E5FA
-
-> Specify a description for file results
-
-Configuration likely per Source-Block or System
-
-### file-ext
-
-    ID: 0716A48E-9227-44FD-B1FA-185DF6545E91
-
-> Specify an extension for file output
-
-Configuration likely per Source-Block or System
-
-### hlines
-
-    ID: 721F4E5E-A343-4D7C-A3A3-12A544B3A273
-
-> Handle horizontal lines in tables
-
-Configuration likely per Source-Block or System
-
-### output-dir
-
-    ID: D0DDFE88-1B41-4A67-A5F4-88B1B35A7513
-
-> Specify a directory to write file output to
-
-Configuration likely per Source-Block or System
-
-One example is a System where **all** intermediate results are stored to individual
-files.
-
-### post
-
-    ID: 1A4DEC98-C735-4D88-8261-6AD13C495EF2
-
-> Post processing of code block results
-
-Configuration likely per Source-Block or System.
-
-### prologue
-
-    ID: 3D1780E0-2E6D-428C-916D-BFB10E79C76F
-
-> Text to prepend to code block body
-
-Configuration likely per Source-Block or System.
-
-For some situations, this may be the same for every source block for a
-particular language. The user manual described `gnuplot`, which often shows up on
-the list and the solution is to `reset` the session.
-
-Another example, say that you&rsquo;ve got a bunch of R Source-Blocks and you want to
-be able to rearrange them as you please. You want to be sure that there are no
-dependencies between them on bindings created in the workspace. Set `prologue`
-to `rm(list = ls())`.
-
-Epilgue works hand-in-hand with this.
-
-### results
-
-    ID: 2755571E-113B-436E-9EEC-26618A55A27E
-
-> Specify the type of results and how they will be collected and handled
-
-Ways to configure `:results`: 224.
-
-This system stores the results of evaluation in the source document. It believes
-that the results are critical to the research.
-
-Keep the document as close to being executable as possible; make it very visible
-when it is not.
-
--   Collection
-    -   `value`: Functions have a single result. So do Source-Blocks.
--   Type
-    -   `table`:
-    -   Tables are the best type because
-        -   Dimensions make them human-readable in text.
-        -   Work with Babel LP.
-        -   Appear as lists to programming languages.
-        -   Weaves well.
-        -   Inline Source-Blocks disallow tables so use scalars instead.
--   Format
-    -   `drawer`: Enable results replacement
--   Handling
-    -   `replace`: Replace theme each time you evaluate the block.
+Ask before execution of Emacs-Lisp.
 
 ```lisp
-(defconst help/org-sb-results-cfg "value table drawer replace")
-(help/set-org-babel-default-header-args :results help/org-sb-results-cfg)
-(defconst help/org-isb-results-cfg
-  (replace-regexp-in-string "table" "scalar" help/org-sb-results-cfg))
-(help/set-org-babel-default-inline-header-args :results help/org-isb-results-cfg)
+(setq org-confirm-elisp-link-function 'y-or-n-p)
 ```
 
-### rownames
-
-    ID: B184A507-1B03-4096-A4D8-E50A1DA047DB
-
-> Handle row names in tables
-
-Configuration likely per Source-Block or System..
-
-### sep
-
-    ID: F1336AAA-68EF-4E87-B253-458103B6FF2F
-
-> Delimiter for writing tabular results outside Org
-
-Configuration likely per Source-Block or System
-
-### var
-
-    ID: 3B4D638C-82EE-47F3-835C-52B2F03620A0
-
-> Pass arguments to code blocks
-
--   **The** most revealing of the power of Org-Mode&rsquo;s LP offering
--   Values-by-reference
-    -   Table
-    -   List
-    -   Source-Block without and with parameters
-    -   Literal-Block
--   Idexable variable values
--   Emacs Lisp evaluation of variables
-
-## Weaving
-
-    header-args: :noweb-ref Org-Mode-Weave
-
-    ID: F71DD8BA-B853-4903-A348-400E13C0E6F8
-
-Help the reader make sense of the document by displaying it&rsquo;s internal
-properties.
+Make sure that incomplete TODO entries prevent the enclosing parent from ever
+turning to DONE.
 
 ```lisp
-(setq org-export-with-properties t)
+(setq org-enforce-todo-dependencies t)
 ```
 
--   Stop your flow to monitor the export for errors
-    -   <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-19 Tue&gt; </span></span> Expect it to start weaves for all weavers asynchronously.
-        Does not do so; main thread is blocked until weaves complete.
+Allow the mouse to do Org-Mode things like expand and collapse headings.
 
 ```lisp
-(setq org-export-in-background nil)
+(when (display-graphic-p)
+  (use-package org-mouse))
 ```
 
-Make sure that exported files are Unicode UTF-8.
+Use a real ellipsis to render an ellipsis for Org-Mode stuff like showing that a
+header is collapsed. [Artur](http://endlessparentheses.com/changing-the-org-mode-ellipsis.html?source=rss) Artur go me thinking that an arrow would be more
+expressive; in particular revealing that there is more content to be &ldquo;unrolled&rdquo;
+below the current line.
 
 ```lisp
-(setq org-export-coding-system 'utf-8)
+(setq org-ellipsis "↷")
 ```
 
-Do not preserve line-breaks when exporting instead let the destination
-format handle it as it sees fit. This doesn&rsquo;t work like I had expected and makes
-me wonder what I am confused about here. When I export to HTML text containing
-linebreaks no longer has linebreaks. This is what I expect. When I export that
-same text to a buffer though, the line breaks are included. Currently I use
-`sacha/unfill-paragraph` on that code.
+It is easy to see indentation of headlines without having to count asterisks, so
+don&rsquo;t show them, only show the significant and last one.
 
 ```lisp
-(setq org-export-preserve-breaks nil)
+(setq org-hide-leading-stars t)
 ```
 
-When exporting anything, do not insert the exported content into the kill ring.
+Maximize character space for writing. Do not indent according to the outline
+node level because it would waste a lot of space. Ident the next body just like
+any other text document.
 
 ```lisp
-(setq org-export-copy-to-kill-ring nil)
+(setq org-adapt-indentation nil)
 ```
 
-By default I never want a table of contents generated. It is so easy to enable
-it with a property, it will be fine to turn it off.
+Display emphasized text as you would in a WYSIWYG editor.
 
 ```lisp
-(setq org-export-with-toc nil)
+(setq org-fontify-emphasized-text t)
 ```
 
-On export, maintain the literal spacing as found in the source block. Obviously
-this is important for make-files. It is really important everywhere because
-anything else would violate the law of least surprise.
+Use Unicode characters to visualize things like right arrow eg &rarr; . Most of those
+symbols are correctly exported to the destination format. The most obvious is
+this example in LaTeX versus Text.
 
 ```lisp
-(setq org-src-preserve-indentation t)
+(setq org-pretty-entities t)
 ```
 
-Maximize flexibility for weaving operations during export.
+Highlight LaTeX and related markup.
+
+Normally, I don&rsquo;t do any syntax highlighting, as I believe that should be
+delegated to source buffers, thinking that to do otherwise is distracting.
+However, I already do configure subscripts and Greek letters to be displayed
+with syntax highlighting, because I want to indicate to the human reader that
+they are special, and specifically *not*-Unicode. Do the same thing for LaTeX
+and related markup.
 
 ```lisp
-(setq org-export-allow-bind-keywords t)
+(setq org-highlight-latex-and-related '(latex script entities))
 ```
 
-Disable element caching because it might break weaves via [this thread](https://lists.gnu.org/archive/html/emacs-orgmode/2015-09/msg00646.html).
+Allow &ldquo;refactoring&rdquo; of Footnotes between documents.
 
 ```lisp
-(setq org-element-use-cache nil)
+(setq org-footnote-define-inline t)
+(setq org-footnote-auto-label 'random)
+(setq org-footnote-auto-adjust nil)
+(setq org-footnote-section nil)
 ```
 
-### exports
-
-    ID: 57B3786B-017F-4F6E-89F9-05642304F3B6
-
-> Export code and/or results
-
-Always share source blocks and their results. Whether or not to generate a
-result for a particular source block is configured per-block. If you don&rsquo;t want
-to share a result for a source block then disable storage of results on that
-block.
+This is an amazingly easy way to screw up your document. The more you edit
+org docs, the more you realize how you must truly protect it.
 
 ```lisp
-(help/set-org-babel-default-header-args :exports "both")
+(setq org-catch-invisible-edits 'error)
 ```
 
-Use inline Source-Blocks to provide values read as part of the document. Their
-format will show that they are results. Don&rsquo;t show their source code. Allows
-inlinse Source-Blocks to function as *rich* macros when combined with `org-sbe`.
+Though I am not delving deep, it is hard not to want to customize some stuff
+and perhaps this is the start. Even though I enabled this, I don&rsquo;t think that I
+ever used it.
 
 ```lisp
-(help/set-org-babel-default-inline-header-args :exports "results")
+(setq org-loop-over-headlines-in-active-region t)
 ```
 
-### wrap
-
-    ID: 94D6B3BE-5DA1-499A-B5C7-A6B71710A1EA
-
-> Mark source block evaluation results
-
-Inline-Source-Blocks are recognizable by their `verbatim` font. They do not
-interrupt the flow. Source-Blocks are their own entities. They stand out. Their
-results need to be visibly noticeably different for the reader by making them
-`EXAMPLE` special blocks.
+It is *almost always* faster to work with org documents when they are fully
+expanded. Anyway, the structure cycling makes it really, really easy to get an
+*outline view* again.
 
 ```lisp
-(help/set-org-babel-default-header-args :wrap "EXAMPLE")
+(setq org-startup-folded "nofold")
+```
+
+When images are displayed in the buffer, display them in their actual size. As
+the operator, I want to know their true form. Any modifications required for
+export will be stated explicitly.
+
+```lisp
+(setq org-image-actual-width t)
+```
+
+Hide the delimeter for emphasized text. Unicode characters break table
+alignment.
+
+```lisp
+(setq org-hide-emphasis-markers t)
+```
+
+Realign tables automatically.
+
+```lisp
+(setq org-startup-align-all-tables t)
+```
+
+Always use Unicode checkboxes.
+
+```lisp
+(setq org-html-checkbox-type 'unicode)
+```
+
+You may display syntax highlighting for code in source blocks. I don&rsquo;t.
+
+```lisp
+(setq org-src-fontify-natively nil)
+```
+
+When edit mode is exited, the option exists to automatically remove empty
+opening and closed lines for the source block. Never do this. The thing is that
+I forgot why. When I was working on a recent analysis with R there was a
+space appearing in the opening and closing line of the source block that didn&rsquo;t
+appear in the source editing buffer. That surprised me. I am sure that I&rsquo;ve
+forgotten why this is the case. I don&rsquo;t like it because you add a bunch of
+empty lines in the source buffer for every source block. With that in mind I
+will enable this feature and try it out again.
+
+```lisp
+(setq org-src-strip-leading-and-trailing-blank-lines t)
+```
+
+The source block buffer may be configured to appear in a few different places.
+For a while I really liked `reorganize-frame` because sometimes you want to be
+able to see the code you are editing in edition to the rest of the document. At
+least that is what I am telling myself. Once I learned you could change it I
+realized that 1 I should have asked if it could be changed and 2 I should have
+changed it. The flow that I&rsquo;ve got configured here is that you are either in the
+source document where code blocks are not highlighted or you are in the source
+block so you are editing in a buffer that is full-fledged HELP. That is the best
+way so you can focus completely on each task at hand in the ideal mode for that
+task. Anything else results in distractions and errors.
+
+```lisp
+(setq org-src-window-setup 'current-window)
+```
+
+Org-Mode has a really nice feature that hitting `C-c C-c` will generally just do
+the *right thing*. It is really nice. That feature extends to source blocks of
+course. Ironically I had a typo here, typing *of curse* instead of *of course*.
+The thing is that you really, really need to develop a personal workflow, and
+then configure the tool to enable it. The more I learn about Org-Mode, the more
+leery I am about making it really easy to evaluate code. I want it to be a
+really, really specific and decided action to evaluate a code block, so don&rsquo;t
+make it so easy as `C-c C-c`.
+
+```lisp
+(setq org-babel-no-eval-on-ctrl-c-ctrl-c t)
+```
+
+Configure the system to successfully use `vc-next-action` while editing a
+Source-Block. Before perfoming the edit, check if it is Org-Mode and
+exit the Source-Block Buffer (SBB). If this system stays in the SBB
+when calling `vc-next-action` the entire contents of the buffer are escaped
+as Org-Mode source code upon returning to the source buffer (this). Do the same
+thing before any version control modes that would result in the same condition.
+
+```lisp
+(defun help/vc-next-action ()
+  "If in org source block, exit it before `vc-next-action'."
+  (interactive)
+  (when (condition-case nil
+            (org-src-edit-buffer-p)
+          (error nil))
+    (org-edit-src-exit))
+  (vc-next-action nil))
+(defun help/magit-status ()
+  "If in org source block, exit it before `magit-status'."
+  (interactive)
+  (when (condition-case nil
+            (org-src-edit-buffer-p)
+          (error nil))
+    (org-edit-src-exit))
+  (magit-status))
+```
+
+Never use the original version.
+
+```lisp
+(setq org-edit-src-code nil)
+```
+
+Easily wrap text in Org-Mode. This is not used by the rest of HELP because
+Smartparens provides that functionality for programming modes.
+
+```lisp
+(use-package wrap-region
+  :ensure t
+  :config
+  :diminish wrap-region-mode
+  :config
+  (add-hook 'org-mode-hook 'wrap-region-mode))
+```
+
+**Bold**.
+
+```lisp
+(wrap-region-add-wrapper "*" "*" nil 'org-mode)
+```
+
+*Italic*.
+
+```lisp
+(wrap-region-add-wrapper "/" "/" nil 'org-mode)
+```
+
+`Verbatim`.
+
+```lisp
+(wrap-region-add-wrapper "=" "=" nil 'org-mode)
+```
+
+`Code`.
+
+```lisp
+(wrap-region-add-wrapper "~" "~" nil 'org-mode)
+```
+
+.
+
+```lisp
+(wrap-region-add-wrapper "+" "+" nil 'org-mode)
+```
+
+Minimize Macro text.
+
+```lisp
+(setq org-hide-macro-markers t)
+```
+
+Follow links without using the mouse or more.
+
+```lisp
+(setq org-return-follows-link t)
+```
+
+1.  Keybindings
+
+        ID: 0AA3F69B-F5F1-48DA-B8F7-B7C92CD30DB1
+
+    Started questioning why after hitting RETURN while in lists I have to hit TAB to
+    get indented properly. Kind of a dead giveaway that I should be
+    return-and-indenting! Looked at `org-return` to find that it has an argument
+    about indenting and then saw that `org-return-indent` passes it for you. With that
+    in mind, RETURN is bound to that now. Now HELP has four different kinds of
+    &ldquo;returns&rdquo; in Org in order of likelihood of usage:
+
+    -   **org-return-indent:** Make it really easy to work in existing list items,
+        headings, and tables
+        -   This is listed first because I often go back to modify entries
+        -   <return> because it is used the most
+    -   **org-meta-return:** Make it really easy to add new list items, headings, and
+        table contents
+        -   M-<return> because the binding comes with Org
+    -   **electric-indent-just-newline:** For when I want to break out of the default
+        Org indentation to start working at the beginning of the line for example when
+        I&rsquo;m done working in a list or have just created a new heading
+        -   C-M-<return> because it is next step &ldquo;lower&rdquo; in the binding
+    -   **help/smart-open-line:** When I want to insert a new line between the current
+        and next line then position the cursor correctly indented at the start of it.
+        -   s-<return> because it is that is the last place in the modifier key chain
+
+    ```lisp
+    (help/not-on-gui
+     (define-key org-mode-map (kbd "RET") #'org-return-indent)
+     (define-key org-mode-map (kbd "C-M-RET") #'electric-indent-just-newline))
+    (help/on-gui
+     (define-key org-mode-map (kbd "<return>") #'org-return-indent)
+     (define-key org-mode-map (kbd "C-M-<return>") #'electric-indent-just-newline))
+    ```
+
+    1.  Row 5
+
+            ID: B09BE660-B5D5-40CA-8952-D2DEAE20E7BD
+
+        ```lisp
+        (define-key org-mode-map (kbd "s-6") #'org-babel-load-in-session)
+        (define-key org-mode-map (kbd "s-7") #'org-babel-switch-to-session)
+        (define-key org-mode-map (kbd "s-8") #'org-babel-switch-to-session-with-code)
+        (define-key org-mode-map (kbd "s-9") #'org-todo)
+        ```
+
+        Easily manipulate lists and headlines staying close to home.
+
+        ```lisp
+        (key-chord-define org-mode-map "U*" #'org-metaup)
+        (key-chord-define org-mode-map "I(" #'org-metadown)
+        (key-chord-define org-mode-map "u8" #'org-metaleft)
+        (key-chord-define org-mode-map "i9" #'org-metaright)
+        ```
+
+    2.  Row 4
+
+            ID: 1E49694B-6350-45E2-BE58-21EAAF09D4A2
+
+        ```lisp
+        (define-key org-mode-map (kbd "s-y") #'help/safb-org-babel-execute-buffer)
+        (define-key org-mode-map (kbd "s-u") #'help/safb-org-babel-execute-subtree)
+        (define-key org-mode-map (kbd "s-U") #'org-mark-ring-goto)
+        (define-key org-mode-map (kbd "s-i") #'org-babel-execute-src-block)
+        (define-key org-mode-map (kbd "s-o") #'org-babel-remove-result)
+        (define-key org-mode-map (kbd "s-p") #'org-babel-execute-maybe)
+        (define-key org-mode-map (kbd "s-[") #'org-babel-remove-inline-result)
+        ```
+
+    3.  Row 3
+
+            ID: D11109EE-AD92-4E26-988F-AF3CC70A2F69
+
+        ```lisp
+        (define-key org-mode-map (kbd "s-h") #'help/safb-org-babel-tangle)
+        (define-key org-mode-map (kbd "s-j") #'org-babel-next-src-block)
+        (define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
+        (define-key org-mode-map (kbd "s-l") #'help/safb-org-edit-src-code)
+        (define-key org-mode-map (kbd "s-;") #'help/safb-help/org-babel-demarcate-block)
+        ```
+
+    4.  Row 2
+
+            ID: CA925DDA-8EA8-47B0-AE9A-D73073CF51B7
+
+        ```lisp
+        (define-key org-mode-map (kbd "s-n") #'org-babel-view-src-block-info)
+        (define-key org-mode-map (kbd "s-m") #'org-babel-expand-src-block)
+        (define-key org-mode-map (kbd "s-,") #'org-babel-open-src-block-result)
+        (define-key org-mode-map (kbd "s-.") #'org-time-stamp)
+        ```
+
+    5.  Hydra
+
+            ID: 46BCE65B-B8C9-49A0-A687-30D1330DB07D
+
+        ```lisp
+        (defhydra help/hydra/right-side/org-mode (:color blue
+                                                         :hint nil)
+          "
+        _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ detangle _5_ id-create _6_ toggle-macro
+        _q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ g2nms-b _t_ g2s-b/hd _y_ org-archive-subtree _u_ goto
+        _a_ inshdrgs _s_ oblobigst            _h_ dksieb _k_ ob-check-src-blk
+        _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre"
+          ;; Row 5
+          ("1" org-babel-sha1-hash)
+          ("2" org-display-inline-images)
+          ("3" org-remove-inline-images)
+          ("4" org-babel-detangle)
+          ("5" org-id-get-create)
+          ("6" help/org-toggle-macro-markers)
+          ;; Row 4
+          ("q" org-babel-switch-to-session-with-code)
+          ("w" org-table-edit-field)
+          ("e" org-babel-goto-named-result)
+          ("r" org-babel-goto-named-src-block)
+          ("t" org-babel-goto-src-block-head)
+          ("y" org-archive-subtree)
+          ("u" org-goto)
+          ;; Row 3
+          ("a" org-babel-insert-header-arg)
+          ("s" org-babel-lob-ingest)
+          ("h" org-babel-do-key-sequence-in-edit-buffer)
+          ("k" org-babel-check-src-block)
+          ;; Row 2
+          ("c" org-fill-paragraph)
+          ("b" org-babel-switch-to-session)
+          ("n" org-narrow-to-subtree))
+        (key-chord-define-global "hh" #'help/hydra/right-side/org-mode/body)
+        ```
+
+        Save all buffers before working with Exports.
+
+        ```lisp
+        (define-key org-mode-map (kbd "C-c C-e") #'help/safb-org-export-dispatch)
+        ```
+
+        Make `s-l` do the same thing to leave the Source-Block-Buffer.
+
+        ```lisp
+        (define-key org-src-mode-map (kbd "s-l") #'org-edit-src-exit)
+        ```
+
+        Easily enter guillemots.
+
+        ```lisp
+        (key-chord-define org-mode-map "<<" (lambda () (interactive) (insert "«")))
+        (key-chord-define org-mode-map ">>" (lambda () (interactive) (insert "»")))
+        ```
+
+### Dash
+
+    ID: 20393F2C-F619-4E12-B862-1A4CCB97B742
+
+```lisp
+(use-package dash-at-point
+ :ensure t)
+```
+
+## Applied Mathematics
+
+    ID: BE2550C9-231A-4824-BE6C-14231A971FE9
+
+### Emacs Speaks Statistics (ESS)
+
+    ID: CB6305D8-DDBB-4865-8CAD-3648B31B76DB
+
+```lisp
+(use-package ess
+  :ensure t)
+```
+
+Display object documentation.
+
+```lisp
+(setq ess-eldoc-show-on-symbol t)
+```
+
+Data viewing:
+
+-   **Never** rely upon on the REPL for data viewing
+    -   Will mix up exploratory code with data
+        -   Can&rsquo;t easily distinguish between code and data
+        -   Distracting you
+        -   Breaking your flow
+-   Sometimes
+    -   You end up somewhere
+        -   And the `ess` buffer cursor is at the top!
+        -   No problem, call `ess-switch-to-end-of-ESS`
+-   Make it easier to know what object values are.
+    -   `ess-describe-object-at-point`
+
+```lisp
+(setq ess-describe-at-point-method 'tooltip)
+```
+
+Always start `ess` within the curent `emacs` frame, it doesn&rsquo;t need to be separate.
+
+```lisp
+(setq inferior-ess-same-window nil)
+(setq inferior-ess-own-frame nil)
+```
+
+Help buffers all belong in the same frame.
+
+```lisp
+(setq ess-help-own-frame nil)
+```
+
+When commands are executed, display their output within the current buffer,
+rather than to a new dedicated buffer for them.
+
+```lisp
+(setq ess-execute-in-process-buffer t)
+```
+
+When you cycle between a the REPL buffer and the script, you get to the process
+buffer, you will go to the end of the buffer. This setting is specifically to
+handle a buffer that is scrolling when you want to see the last result and will
+scroll back after the fact to see the history.
+
+```lisp
+(setq ess-switch-to-end-of-proc-buffer t)
+```
+
+Use typical auto completion in buffers here, but don&rsquo;t do it when the
+next char is a symbol or closed paren.
+
+```lisp
+(setq ess-tab-complete-in-script t)
+(setq ess-first-tab-never-complete 'symbol-or-paren-or-punct)
+```
+
+Use `ido` completion whenever possible.
+
+```lisp
+(setq ess-use-ido t)
+```
+
+Use `eldoc` for this mode. Always show it when the point is on a symbol.
+Try to keep help strings at 10 chars or less.
+
+```lisp
+(setq ess-use-eldoc t)
+(setq ess-eldoc-show-on-symbol t)
+(setq ess-eldoc-abbreviation-style 'normal)
+```
+
+These functions are mentioned, and I am not sure where or how to use them yet,
+but Vitalie Spinu mentioned them as being useful:
+
+-   `comint-previous-matching-input-from-input`
+-   `comint-history-isearch-backward-regexp`
+
+For a while I used `ess-eval-buffer-and-go`, but now I know that it is insanely
+faster to use `ess-eval-buffer` instead. Previously I&rsquo;ve read people saying that,
+and it is true.
+
+**Philosophy**
+
+The current `ESS` maintainers philosophies about how to maintain an R code-base
+make sense to me and are virtually the same as my own. Quite simply, the rule is
+that the code artifacts are the single source of system definition. Consequently,
+the system should be configured in this manner:
+
+We want to keep dump files after loading them; never delete them. The idea
+is that if we use them, then they are a valid part of the system definition and
+need to be kept.
+
+```lisp
+(setq ess-keep-dump-files +1)
+```
+
+`ESS` allows us to quite easily modify live R objects and functions. It provides
+this functionality via `ess-dump-object-into-edit-buffer`. These changes are
+considered to be experimental, and not part of the master record according to
+our philosophy. As such, we don&rsquo;t care to know that these new versions ever
+existed and their record will be forgotten from history. In other words, that
+new, modified version of the object or function, is never saved to a file for
+later reuse.
+
+```lisp
+(setq ess-delete-dump-files nil)
+```
+
+Since our systems are entirely file-based, the entirety of the system most
+likely lives in different files. Before loading any file for sourcing, save
+any ESS source buffers. This approach is in addition to two other things:
+(1) Emacs is auto-saving every file buffer quite frequently and (2) there is
+advice before every manual `eval` call so that the buffers and their files stay
+in sync. Yes, it is really that important.
+
+```lisp
+(setq ess-mode-silently-save +1)
+```
+
+`ESS` executes code in another process. That is no secret. When displaying output
+from that code running in another process though, it can look like Emacs is
+locking up. That is not the case: <https://stackoverflow.com/questions/2770523/how-can-i-background-the-r-process-in-ess-emacs>.
+What is happening that Emacs is waiting for the output. Configure this mode to
+continue to accept user input, which is obviously critical, but don&rsquo;t wait for
+the process to provide its output. Instead, all output is printed after the last
+input lines. What we gain is perceived speed, and what we lose is the nice
+sequential this/that/this/that we get from a typical REPL interaction. As I
+write this, I&rsquo;m not totally sure how this will work, but the documentation and
+post are consistent and describe what I had wanted here so I will give it a try
+and see how it goes.
+
+```lisp
+(setq ess-eval-visibly 'nowait)
+```
+
+### SAS (ESS)
+
+    ID: 2442E555-0F82-48E6-96EA-2ABB5C9CC666
+
+### R (ESS)
+
+    ID: 1183D35B-77FC-4CFD-9BAA-4F7656AD8943
+
+Enable a debugger.
+
+```lisp
+(setq ess-use-tracebug t)
+```
+
+Configure debugger search path per-project.
+
+```lisp
+(setq ess-tracebug-search-path '())
+```
+
+Easily nevigate errors.
+
+```lisp
+(define-key compilation-minor-mode-map [(?n)] #'next-error-no-select)
+(define-key compilation-minor-mode-map [(?p)] #'previous-error-no-select)
+```
+
+Diminish watched variable font-size.
+
+```lisp
+(setq ess-watch-scale-amount -1)
+```
+
+When `ess` starts, or when R starts, it takes the current directory as its
+working directory. This is totally fine; so don&rsquo;t ask what the working directory
+should be.
+
+```lisp
+(setq ess-ask-for-ess-directory nil)
+```
+
+My preference is for ESS to quit and not ask me whether or not I am sure. There
+is an intentional line-break after the closing round bracket because that is the
+approach of the original value here.
+
+```lisp
+(setq inferior-ess-exit-command "q('no')
+")
+```
+
+Visualize just about anything with `ess-R-object-popup`.
+
+```lisp
+(use-package ess-R-object-popup
+  :ensure t)
+```
+
+Rdired is another way to work with object:
+
+-   `ess-rdired`
+-   View, delete, plot, and update buffer (ala *revert*) are single key commands
+
+```lisp
+(autoload 'ess-rdired "ess-rdired")
+```
+
+Visualize data frames better:
+
+-   `ess-R-dv-ctable`
+-   `ess-R-dv-pprint`
+
+```lisp
+(use-package ess-R-data-view
+  :ensure t)
+```
+
+inlineR
+
+-   *Not* a competitor to `org-mode`
+-   Ultra lightweight LP, really
+
+```lisp
+(use-package inlineR
+  :ensure t)
+```
+
+Documentation:
+
+-   Whole section on native documentation; I&rsquo;ll re-visit as needed.
+-   Roxygen, too.
+
+`ess-developer` helps you to easily work within specific name-spaces.
+
+Store history files and dump files in a single known location. If that location
+doesn&rsquo;t exist, then make it.
+
+```lisp
+(setq help/r-dir "~/.R/")
+(defun help/make-warn-R-dir ()
+  "Handle of R directory misconfiguration."
+  (interactive)
+  (unless (f-directory? help/r-dir)
+    (progn
+      (message "Couldn't find %S… creating it." help/r-dir)
+      (f-mkdir help/r-dir))))
+(help/make-warn-R-dir)
+(setq ess-history-directory help/r-dir)
+(setq ess-source-directory help/r-dir)
+```
+
+Since I&rsquo;m using R for everything, configure *everything* to be using R.
+
+```lisp
+(setq inferior-ess-program "R")
+(setq inferior-R-program-name "R")
+(setq ess-local-process-name "R")
+```
+
+Handle rdoc and rmd files, though I have never used them&#x2026; yet.
+
+```lisp
+(add-to-list 'auto-mode-alist '("\\.rd\\'" . Rd-mode))
+(add-to-list 'auto-mode-alist '("\\.Rmd$" . r-mode))
+```
+
+Make it really easy to search the R archives for anything.
+
+```lisp
+(local-set-key (kbd "C-c C-. S") #'ess-rutils-rsitesearch)
+```
+
+Make it really easy to do common stuff for R with good keybindings.
+
+```lisp
+(use-package ess-rutils
+  :config
+  (setq ess-rutils-keys t))
+```
+
+`r-autoyas` does argument completion. I had it working nice, and didn&rsquo;t use it for
+a while, and now it doesn&rsquo;t work. This needs some TLC.
+
+```lisp
+(use-package r-autoyas
+  :ensure t
+  :config
+  (setq r-autoyas-debug t)
+  (setq r-autoyas-expand-package-functions-only nil)
+  (setq r-autoyas-remove-explicit-assignments nil))
+```
+
+Save two spaces showing function information in the mini-buffer.
+
+```lisp
+(setq ess-R-argument-suffix "=")
+```
+
+Don&rsquo;t use the default assignment binding and allow underscores in names.
+
+```lisp
+(setq ess-S-assign-key (kbd "C-,"))
+(ess-toggle-S-assign-key t)
+(ess-toggle-underscore nil)
+```
+
+Don&rsquo;t save the workspace when you quit R and don&rsquo;t restore **ANYTHING** when you
+start it, either. This adheres to the philosopy that the system is file based.
+
+```lisp
+(setq inferior-R-args "--no-save --no-restore")
+```
+
+R mode hook.
+
+```lisp
+(defun help/R-mode-hook-fn ()
+  (local-set-key (kbd "s-6") #'ess-switch-to-end-of-ESS)
+  (local-set-key (kbd "s-7") #'ess-rdired)
+  (local-set-key (kbd "s-8") #'ess-R-dv-ctable)
+  (local-set-key (kbd "s-9") #'ess-R-dv-pprint)
+  (local-set-key (kbd "s-y") #'r-autoyas-expand)
+  (local-set-key (kbd "s-o") #'ess-describe-object-at-point)
+  (local-set-key (kbd "s-p") #'ess-R-object-popup)
+  (local-set-key (kbd "C-.") #'(lambda () (interactive) (insert " -> ")))
+  (key-chord-define-local "<<" #'(lambda () (interactive) (insert " <<- ")))
+  (key-chord-define-local ">>" #'(lambda () (interactive) (insert " ->> ")))
+  (key-chord-define-local "<>" #'(lambda () (interactive) (insert " %<>% ")))
+  (local-set-key (kbd "C->") #'(lambda () (interactive) (insert " %>% ")))
+  (r-autoyas-ess-activate)
+  (help/turn-on-r-hide-show)
+  (lambda () (add-hook 'ess-presend-filter-functions
+                  (lambda ()
+                    (warn
+                     "ESS now supports a standard pre-send filter hook. Please update your configuration to use it instead of using advice."))))
+  (ess-set-style 'RRR))
+
+(add-hook 'R-mode-hook #'help/R-mode-hook-fn)
+
+(defun help/turn-on-r-hide-show ()
+  "Attribution: SRC https://github.com/mlf176f2/EmacsMate/blob/master/EmacsMate-ess.org"
+  (when (string= "S" ess-language)
+    (set (make-local-variable 'hs-special-modes-alist) #'((ess-mode "{" "}" "#" nil nil)))
+    (hs-minor-mode 1)
+    (when (fboundp 'foldit-mode)
+      (foldit-mode 1))
+    (when (fboundp 'fold-dwim-org/minor-mode)
+      (fold-dwim-org/minor-mode))))
+
+(defun help/Rd-mode-hook-fn ()
+  (help/R-mode-hook-fn))
+
+(add-hook 'Rd-mode-hook #'help/Rd-mode-hook-fn)
+
+(defun help/inferior-ess-mode-hook-fn ()
+  (help/R-mode-hook-fn))
+
+(add-hook 'inferior-ess-mode-hook #'help/inferior-ess-mode-hook-fn)
+
+(defun help/ess-rdired-mode-hook-fn ()
+  "Personal customizations."
+  (interactive)
+  (turn-on-stripe-buffer-mode)
+  (stripe-listify-buffer))
+
+(add-hook 'ess-rdired-mode-hook #'help/ess-rdired-mode-hook-fn)
+```
+
+### Scheme (LISP)
+
+    ID: D68EC042-5CBA-4547-B28A-CF878FB080C1
+
+Handle all file extensions:
+
+-   Traditional.
+
+    ```lisp
+      (add-to-list 'auto-mode-alist '("\\.scm\\'" . scheme-mode))
+      (add-to-list 'auto-mode-alist '("\\.ss\\'" . scheme-mode))
+    ```
+-   Racket.
+
+    ```lisp
+      (add-to-list 'auto-mode-alist '("\\.rkt\\'" . scheme-mode))
+    ```
+-   R6RS.
+
+    ```lisp
+      (add-to-list 'auto-mode-alist '("\\.sls\\'" . scheme-mode))
+      (add-to-list 'auto-mode-alist '("\\.sps\\'" . scheme-mode))
+    ```
+
+Use Geiser for Racket and Guile
+
+```lisp
+(use-package geiser
+  :ensure t)
+```
+
+Use Racket.
+
+```lisp
+(use-package racket-mode
+  :ensure t)
+```
+
+Enable Auto-Complete via Geiser.
+
+```lisp
+(use-package ac-geiser
+  :ensure t
+  :config
+  (add-hook 'geiser-mode-hook 'ac-geiser-setup)
+  (add-hook 'geiser-repl-mode-hook 'ac-geiser-setup)
+  (eval-after-load "auto-complete"
+    '(add-to-list 'ac-modes 'geiser-repl-mode))
+  (setq geiser-active-implementations '(racket guile))
+  (setq geiser-repl-history-no-dups-p t))
+```
+
+### C
+
+    ID: 6F4A6F8E-277C-45E2-B26E-51455C2CBC16
+
+### Python
+
+    ID: F4577EEA-FB0F-4E7B-AF02-A4DEA74BB763
+
+### YASnippet & Abbrev
+
+    ID: 5C48A01F-D522-4AC9-A523-F8EE2E9EB384
+
+-   Enable everywhere.
+-   Never expand with `TAB` **anywhere**.
+    -   Allow expansion to occur within fields.
+-   Load HELP snippets.
+-   Use Ido to handle user decisions.
+
+```lisp
+(use-package yasnippet
+  :ensure t
+  :config
+  (yas-global-mode t)
+  (help/not-on-gui (define-key yas-minor-mode-map (kbd "TAB") nil))
+  (help/on-gui (define-key yas-minor-mode-map (kbd "<tab>") nil))
+  (define-key yas-minor-mode-map (kbd "s-t") #'yas-expand)
+  (help/not-on-gui (define-key yas-keymap (kbd "TAB") #'yas-next-field))
+  (help/on-gui (define-key yas-keymap (kbd "<tab>") #'yas-next-field))
+  (add-to-list #'yas-snippet-dirs "~/src/help/yasnippet")
+  (yas-reload-all)
+  (setq yas-prompt-functions '(yas-ido-prompt))
+  :diminish yas-minor-mode)
+```
+
+Some modes turn on `abbrev-mode`. Diminish it.
+
+Fails with `(eval-after-load 'abbrev (diminish 'abbrev-mode))`.
+
+```lisp
+(eval-after-load "abbrev"
+  '(diminish 'abbrev-mode))
+```
+
+### Structured Query Language (SQL)
+
+    ID: 987C1C05-F880-4312-B902-5060208A3506
+
+### Structured Document Development
+
+    ID: 206F4363-F4D6-4DDE-BB46-174D0F68FBB4
+
+`web-mode` works great for `AngularJS` and now I see a whole lot more.
+
+```lisp
+(use-package web-mode
+  :ensure t
+  :init
+  (setq web-mode-enable-current-element-highlight t)
+  :config
+  (setf (cdr (rassoc 'php-mode auto-mode-alist)) 'web-mode)
+  (add-to-list 'auto-mode-alist '("\\.tpl'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.js?\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.css?\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.scss?\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.xml?\\'" . web-mode))
+  (setq web-mode-enable-engine-detection t)
+  (define-key web-mode-map (kbd "s-n") 'web-mode-tag-match))
+
+(defun help/web-mode-hook-fn ()
+  "HELP web-mode customizations."
+  (interactive)
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-style-padding 1)
+  (setq web-mode-script-padding 1)
+  (setq web-mode-block-padding 0)
+  (setq web-mode-comment-style 2)
+  (setq web-mode-extra-snippets
+        '( ("php" . (("dowhile" . ("<?php do { ?>\n\n<?php } while (|); ?>"))
+                     ("debug" . ("<?php error_log(__LINE__); ?>"))))))
+  (setq web-mode-enable-auto-pairing nil)
+  (defun sp-web-mode-is-code-context (id action context)
+    (and (eq action 'insert)
+       (not (or (get-text-property (point) 'part-side)
+             (get-text-property (point) 'block-side)))))
+
+  (sp-local-pair 'web-mode "<" nil :when '(sp-web-mode-is-code-context))
+  (setq web-mode-enable-css-colorization t)
+  (setq web-mode-enable-block-face t)
+  (setq web-mode-enable-part-face t)
+  (setq web-mode-enable-comment-keywords t)
+  (setq web-mode-enable-heredoc-fontification t))
+
+(add-hook 'web-mode-hook #'help/web-mode-hook-fn)
+```
+
+## Publishing
+
+    ID: 7D07C2F6-38B9-49BF-A584-B029CEED6141
+
+### TeX
+
+    ID: E2A1BFA2-0246-4376-9A33-E35A8DE2E5A3
+
+```lisp
+(use-package tex-site
+  :ensure auctex
+  :config
+  (eval-after-load "tex"
+    '(define-key TeX-mode-map (kbd "C-c C-c") #'help/safb-TeX-command-master)))
+```
+
+Save style info. This doesn&rsquo;t control the buffer save.
+
+```lisp
+(setq TeX-auto-save t)
+```
+
+Parse on load.
+
+```lisp
+(setq TeX-parse-self t)
+```
+
+Parse on save.
+
+```lisp
+(setq TeX-auto-save t)
+```
+
+Use PDFTeX to generate both DVI and PDF files.
+
+```lisp
+(setq TeX-PDF-mode t)
+(setq TeX-DVI-via-PDFTeX t)
+```
+
+Don&rsquo;t prompt every time you run `C-c C-c` about saving the file, instead, just
+save it.
+
+```lisp
+(setq TeX-save-query nil)
+```
+
+Load LCO files with AucTeX.
+
+```lisp
+(add-to-list 'auto-mode-alist '("\\.lco?\\'" . TeX-latex-mode))
+```
+
+Culture-dependent typographical results.
+
+```lisp
+(add-to-list 'org-latex-packages-alist '("english" "babel" t))
+```
+
+Palatino friendly mathematics fonts.
+
+```lisp
+(add-to-list 'org-latex-packages-alist '("osf" "mathpazo" t))
+```
+
+Small margins.
+
+```lisp
+(add-to-list 'org-latex-packages-alist '("margin=0.5in" "geometry" nil))
+```
+
+Standard LaTeX class options.
+
+```lisp
+(defvar help/ltx-cls-opt "paper=letter, fontsize=10pt, parskip")
+```
+
+Standard article class.
+
+```lisp
+(eval-after-load "ox-latex"
+  '(add-to-list 'org-latex-classes
+                `("help-article"
+                  ,(concat "\\documentclass["
+                           help/ltx-cls-opt
+                           "]{article}"))))
+
+(setq org-latex-default-class "help-article")
+```
+
+Use &ldquo;Smartquotes&rdquo;.
+
+```lisp
+(setq org-export-with-smart-quotes t)
+```
+
+### KOMA-Script
+
+    ID: BFF1402E-98D4-4F36-ACCB-B1E88A3EB2D9
+
+I enjoy writing letters. I enjoy reading letters. LaTeX produces letters that
+are easy to print and read. Org provides a [KOMA Script exporter](http://orgmode.org/worg/exporters/koma-letter-export.html) for [KOMA-script](https://www.ctan.org/pkg/koma-script?lang%3Den).
+The Org documentation mentions that the user should read the [ox-koma-letter.el](http://orgmode.org/cgit.cgi/org-mode.git/plain/contrib/lisp/ox-koma-letter.el)
+header documentation.
+
+The [babel](https://www.ctan.org/pkg/babel?lang%3Den) packages is mentioned in the Org documentation. The package
+documentation explains that it should be used with LaTeX, but not XeTeX. Some
+time ago I decided to stick with LaTeX. This decision needs documentation. This
+system leans towards LuaTeX because of its Unicode support and sticks with
+PDFLaTeX because of its broad acceptance. Those two goals are at odds with each
+other.
+
+Load the KOMA exporter.
+
+```lisp
+(eval-after-load "ox" '(require 'ox-koma-letter))
+```
+
+-   Understanding KOMA and how to use it
+    -   There are 4 ways to set letter metadata, listed &ldquo;from the most specific to
+        the most general&rdquo; (not sure exactly what this statement means, and the conclusion of my notes tries to make sense of what is really going on here and what is the best way to do things)
+        -   Org option lines (ORG)
+        -   Separate Org latex classes (LTX)
+        -   Emacs Lisp variables (LISP)
+        -   Letter Class Option files (LCO)
+-   Notes and thoughts on the ways to use it
+    -   LTX
+        -   By following the setup directions, you do this, creating &ldquo;help-letter&rdquo; class
+        -   Familiar and easy if you already know LaTeX
+            -   At some point in your workflow, you **must** define a class to use, anyway
+        -   Very easy to do, just define the class template and set `org-koma-letter-default-class`
+    -   ORG
+        -   Simple way that makes it very easy to just focus on the document content
+        -   This metadata takes highest priority in the workflow
+            -   So you should set your typical defaults in LISP or LCO and customize it
+                here. This is exactly what I wanted to know.
+            -   This lets you do your tweaking in each unique file while relying on the
+                most common defaults defined elsewhere
+    -   LISP
+        -   Very familiar style of configuring things
+    -   LCO
+        -   LCO == Letter Class Option files
+        -   LCO files are TeX
+        -   They are included in the generated TeX source code from the letter
+        -   Gives **full** access to KOMA-Script
+            -   Big deal, because not everything is exposed through ORG or LISP
+            -   Also gives full access to any and all TeX and LaTeX code
+        -   LCO files are a KOMA-Script thing, so they are a LaTeX thing
+        -   > Letter metadata set in LCO files overwrites letter metadata set in Emacs
+            > variables but not letter metadata set in the Org file.
+        -   When you include multiple LCO files, they are evaluated LIFO. Properties
+            are set as they first appear, and are not set again. Say you include
+            &ldquo;MyGeneralStuffForAnyLetter.lco&rdquo; and then include
+            &ldquo;MyStuffSpecificToThisLetter.lco&rdquo;. The specific stuff will get set first.
+            Then general stuff will get set last.
+            -   Surely there is a better way to phrase this. I will work on that.
+-   Recommendations
+    -   What is the easiest way to start using KOMA-Script based on what you know
+        today?
+    -   If you don&rsquo;t know any of the approaches
+        -   Then choose between learning LaTeX and Org
+    -   If you only know LaTeX
+        -   Then you will use the LTX/LCO metadata approach
+    -   If you only know ORG
+        -   Then you will use the ORG metadata approach
+    -   If you only know ORG and LISP
+        -   Then you will use the LISP approach for general metadata and the ORG
+            approach specific metadata
+    -   If you know LTX/LCO, ORG, and LISP
+        -   Then you have total flexibility
+        -   The fact is that
+            -   ORG settings always trump LTX/LCO and LISP
+            -   LISP settings are a subset of all of the settings available in
+                KOMA-Script, so you will always have to fall back to LTX/LCO if you want
+                to use unexposed features
+            -   LCO files are just plain old LaTeX, which you already know
+        -   So the best thing to do
+            -   Is to use ORG for letter-specific settings
+            -   And LTX for general settings
+            -   Everything is a lot simpler this way because
+                -   One less metadata approach to keep track of
+                -   All KOMA-Script features are present
+                -   Need to learn details of KOMA-Script package anyway
+
+Configure the default class.
+
+[This](https://tex.stackexchange.com/questions/102922/how-can-i-get-us-letter-output-from-koma-scripts-scrlttr2-class) post explains how to default the US letter size. That is the likely default
+for my printed correspondence.
+
+```lisp
+(eval-after-load "ox-koma-letter"
+  '(progn
+     (add-to-list 'org-latex-classes
+                  `("help-letter"
+                    ,(concat "\\documentclass["
+                             help/ltx-cls-opt
+                             "]{scrlttr2}")))
+
+     (setq org-koma-letter-default-class "help-letter")))
+```
+
+There are two formats for the letters: [heading-based](http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-new-example.org%3Bh%3D180a9a0e10dd8f7483a67946daf36732c316f821%3Bhb%3D180a9a0e10dd8f7483a67946daf36732c316f821) and [property-based](http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-example.org%3Bh%3De21b8b00c3e895be9dd573d02ea84b08796296a3%3Bhb%3De21b8b00c3e895be9dd573d02ea84b08796296a3).
+
+Set up my default LCO files.
+
+```lisp
+(setq org-koma-letter-class-option-file "UScommercial9 KomaDefault")
+```
+
+### Texinfo
+
+    ID: F2C5CEB7-1252-4E6F-B192-C5D2D41A6D47
+
+Perhaps the [first](https://lists.gnu.org/archive/html/emacs-orgmode/2015-07/msg00042.html) document typeset with Org-Texinfo.
+
+### Pandoc
+
+    ID: 1E4AB0D4-F92E-48E6-9313-278C27DED142
+
+### Markdown
+
+    ID: 748319ED-9F02-4A4D-BEE8-E71C462663FC
+
+Provide Github Flavored Markdown (GFM).
+
+```lisp
+(use-package ox-gfm)
+```
+
+Program GFM.
+
+```lisp
+(use-package markdown-mode
+  :ensure t
+  :config
+  (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
+  (setq markdown-coding-system "utf-8"))
+```
+
+### HTML
+
+    ID: 84F673DF-2E6F-4BAA-8095-4A7586BB73FC
+
+```lisp
+(setq org-html-doctype "html5")
+```
+
+Load Htmlize for HTML export. Use in-line CSS.
+
+```lisp
+(use-package htmlize
+  :config
+  (setq org-html-htmlize-output-type htmlize-output-type)
+  (setq htmlize-output-type 'inline-css)
+  (defvar help/htmlize-initial-fci-state nil
+    "Variable to store the state of `fci-mode' upon calling `htmlize-buffer'.
+
+Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
+  (defvar help/htmlize-initial-flyspell-state nil
+    "Variable to store the state of `flyspell-mode' upon calling `htmlize-buffer'.
+
+Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
+
+  (defun help/htmlize-before-hook-fn ()
+    (when (fboundp 'fci-mode)
+      (setq help/htmlize-initial-fci-state fci-mode)
+      (when fci-mode
+        (fci-mode -1))))
+  (add-hook 'htmlize-before-hook #'help/htmlize-before-hook-fn)
+
+  (defun help/htmlize-after-hook-fn ()
+    (when (fboundp 'fci-mode)
+      (when help/htmlize-initial-fci-state
+        (fci-mode t))))
+  (add-hook 'htmlize-after-hook #'help/htmlize-after-hook-fn))
+```
+
+### ASCII
+
+    ID: 1F20F4EC-1D8B-402A-A0A9-504E733AEFDC
+
+```lisp
+(setq org-ascii-text-width 80)
+(setq org-ascii-global-margin 0)
+```
+
+### Beamer
+
+    ID: 6B86302E-D3EC-413A-A844-9ACCAA23A056
+
+Load Beamer for creating presentations.
+
+```lisp
+(use-package ox-beamer)
+```
+
+### Screenwriting
+
+    ID: 504560F0-00BD-4E63-8617-A20EF74C6906
+
+```lisp
+(use-package fountain-mode
+  :config
+  (add-to-list 'auto-mode-alist '("\\.fountain$" . fountain-mode))
+  (let ((fountain-stx '(
+                        "CONT'D"
+                        "CROSSFADE"
+                        "FLASHCUTS"
+                        "FLASHFORWARD"
+                        "INTERCUT"
+                        "PRE"
+                        "PRELAP"
+                        )))
+    (mapc (lambda (stx) (add-to-list 'ispell-skip-region-alist (list stx)))
+          fountain-stx)))
+```
+
+## DevOps
+
+    ID: 8B78A8C3-E6B6-4722-9822-EF428E5DB823
+
+### Shell Script
+
+    ID: 06D022B2-53ED-4042-8152-F383F5FE309E
+
+### Make
+
+    ID: 5F2B3343-631D-41C3-BE6B-D98548F77E07
+
+### Vagrant
+
+    ID: A1335FE5-6DA7-4FE2-A77C-60032C76B40D
+
+`ruby-mode` supports `Vagrantfile` OOTB.
+
+### Apache
+
+    ID: 885C43F5-1716-4547-8F62-03348E553E5E
+
+```lisp
+(use-package apache-mode
+  :ensure t)
+```
+
+## Diagram
+
+    ID: FA47D423-05B3-4911-9CEC-28A534E49428
+
+### Artist
+
+    ID: F920A833-60D7-41C2-9363-EA2A8BD19009
+
+```lisp
+(add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
+(add-to-list 'auto-mode-alist '("\\.art" . artist-mode))
+(add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
+```
+
+### DITAA
+
+    ID: FCC8A8F8-A967-4981-9260-CFF60CC56494
+
+```lisp
+(defconst help/ditaa-jar "/usr/local/Cellar/ditaa/0.9/libexec/ditaa0_9.jar")
+(setq org-ditaa-jar-path help/ditaa-jar)
+```
+
+### Graphviz
+
+    ID: A84665A3-4A2D-4040-926A-17159A6D4647
+
+```lisp
+(use-package graphviz-dot-mode
+  :ensure t
+  :config
+  (setf (cdr (assoc "dot" org-src-lang-modes)) 'graphviz-dot))
+```
+
+### PlantUML
+
+    ID: FCC259F8-0858-4778-B97F-07D2B21012F5
+
+```lisp
+(use-package plantuml-mode
+  :ensure t
+  :init
+  (defconst help/plantuml-jar "/usr/local/Cellar/plantuml/8031/plantuml.8031.jar")
+  (setq plantuml-jar-path help/plantuml-jar)
+  :config
+  (eval-after-load "ob-plantuml"
+    (setq org-plantuml-jar-path help/plantuml-jar)))
+```
+
+## Computer-aided design
+
+    ID: 36EB1867-0EDB-4C22-871D-7D730CF4DF53
+
+### OpenSCAD
+
+    ID: 090201D4-6799-4DC2-B353-C574F3C8B918
+
+```lisp
+(use-package scad-mode
+  :ensure t)
+```
+
+# Quiet and Pleasant Appearance
+
+    ID: 197B7B84-5090-47AE-9180-F8F606D0012F
+
+Configure EMACS to personal-taste for &ldquo;noise&rdquo; and &ldquo;form&rdquo;.
+
+## Key Press
+
+    ID: A2E555B7-678D-4F38-A42D-D2E72A056B8D
+
+Make key-presses sound like the ground-breaking Selectric typewriter.
+
+```lisp
+(use-package selectric-mode
+  :ensure t)
+```
+
+## Line Number
+
+    ID: 4D367462-1C7B-4110-B7D1-E973D386B4E1
+
+The nlinum gutter should not &ldquo;shift&rdquo; as it transitions between line numbers of
+different magnitudes. For example going from line 99 to 100 will shift the
+buffer contents by one character. That is distracting and interrupts the flow.
+
+-   Switched to `nlinum` from `linum` because of slowness with this file when headings
+    are collapsed
+
+Most files will be less than 100,000 lines.
+
+```lisp
+(use-package nlinum
+  :ensure t
+  :config
+  (setq nlinum-format "%05d"))
+```
+
+## Buffer
+
+    ID: 61586A23-B774-4436-B916-348453EEA3DD
+
+Never automatically convert the end of the line character. For most of us this
+is between UNIX and DOS.
+
+```lisp
+(setq inhibit-eol-conversion t)
+```
+
+Give buffers backed by identically named files distinguishable names.
+
+```lisp
+(use-package uniquify)
+(setq uniquify-buffer-name-style 'forward)
+```
+
+Don&rsquo;t use audible bells, use visual bells.
+
+```lisp
+(setq ring-bell-function 'ignore)
+(setq visible-bell t)
+```
+
+Highlight s-expressions.
+
+```lisp
+(setq blink-matching-paren nil)
+(show-paren-mode)
+(setq show-paren-delay 0)
+(setq show-paren-style 'expression)
+```
+
+The cursor should not blink and distract you. On a graphic display make the
+cursor a box and stretch it as wide as the character below it.
+
+```lisp
+(blink-cursor-mode 0)
+(help/on-gui
+ (setq-default cursor-type 'box)
+ (setq x-stretch-cursor 1))
+```
+
+EMACS used UTF-8 by default. Make copying and pasting easier.
+
+```lisp
+(prefer-coding-system 'utf-8)
+(help/on-gui
+ (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
+ (help/on-windows
+  (set-clipboard-coding-system 'utf-16le-dos)))
+```
+
+Make it very easy to see the line with the cursor.
+
+```lisp
+(global-hl-line-mode t)
+```
+
+Make it very easy to input special-characters using TeX coding.
+
+```lisp
+(setq default-input-method 'TeX)
+```
+
+## Color Theme
+
+    ID: 057BBA77-4662-4F7B-B47A-CB1E79A1618B
+
+[Solarized Theme](https://github.com/bbatsov/solarized-emacs)
+
+-   ~1,000 Faces Defined
+-   47,869 Downloads
+
+-   A distinct fringe provides a definition of space.
+-   The modeline is always at the bottom and doesn&rsquo;t need differentiation.
+-   Minimize bold and italic faces.
+-   Minimize fringe indicators.
+
+```lisp
+(use-package solarized-theme
+  :ensure t
+  :config
+  (setq solarized-distinct-fringe-background t)
+  (setq solarized-high-contrast-mode-line nil)
+  (setq solarized-use-less-bold t)
+  (setq solarized-use-more-italic nil)
+  (setq solarized-emphasize-indicators nil)
+  (load-theme 'solarized-dark t))
+```
+
+## Comint
+
+    ID: B4E17CF5-5542-4526-ADEE-D5EC3DB9131F
+
+`comint-mode` is only maybe the second most important thing for making Emacs
+really, really special.
+
+```lisp
+(setq comint-scroll-to-bottom-on-input 'this)
+(setq comint-scroll-to-bottom-on-output 'others)
+(setq comint-move-point-for-output 'others)
+(setq comint-show-maximum-output t)
+(setq comint-scroll-show-maximum-output t)
+(setq comint-move-point-for-output t)
+```
+
+This configuration had been working fine for a long time. The intent was for it
+to be crystal clear that the prompt line in comint buffers would be read only.
+This turned out to be a mistake; though I am not sure why, when, or how it
+became a mistake. Nonetheless, this should be left alone. The way the issue here
+manifested was that all R buffers opened by `ess` were 100% read only which
+obviously is a **big issue** if you actually want to use! ROFL
+
+```lisp
+(setq comint-prompt-read-only nil)
+```
+
+## Font
+
+    ID: EC675F88-89C0-4A5A-B910-843F28C0F90F
+
+The best programming font is Deja Vu Sans Mono because it sans-serif and
+support a lot of Unicode characters. Set it to a good default for an 80
+character wide buffer and make it easy to adjust it.
+
+```lisp
+(help/on-gui
+ (defvar help/font-size-current 10 "The preferred font size.")
+ (help/on-osx (setq help/font-size-current 17))
+ (help/on-windows (setq help/font-size-current 13))
+ (defconst help/font-size-ideal help/font-size-current "The ideal font for this system.")
+ (defconst help/font-base "DejaVu Sans Mono" "The preferred font name.")
+ (defun help/font-ok-p ()
+   "Is the configured font valid?"
+   (interactive)
+   (member help/font-base (font-family-list)))
+ (defun help/font-name ()
+   "Compute the font name and size string."
+   (interactive)
+   (let* ((size (number-to-string help/font-size-current))
+          (name (concat help/font-base "-" size)))
+     name))
+ (defun help/update-font ()
+   "Updates the current font given configuration values."
+   (interactive)
+   (if (help/font-ok-p)
+       (progn
+         (message "%s : Font Set" (help/font-name))
+         (set-frame-font (help/font-name)))
+     (message (concat "Your preferred font is not available: " help/font-base))))
+ (defun help/font-size-reset ()
+   "Restore the ideal font size."
+   (interactive)
+   (setq help/font-size-current help/font-size-ideal)
+   (help/update-font))
+ (help/update-font))
+```
+
+## Frame
+
+    ID: B3F90439-D007-42EE-95FC-E93BBA827325
+
+The scroll-bars are helpful for new users.
+
+```lisp
+(scroll-bar-mode 0)
+```
+
+The tool-bar is helpful for new users. Isn&rsquo;t the argument funny?
+
+```lisp
+(tool-bar-mode -1)
+```
+
+## Pointer
+
+    ID: 2A437D32-2944-41B3-AD8F-438ABBD4E0CF
+
+Hide the pointer when typing.
+
+```lisp
+(setq make-pointer-invisible t)
+```
+
+## Version Control
+
+    ID: 99337D9E-DBC9-4673-B814-EBC94C044E3E
+
+Provide VC file status indicators.
+
+```lisp
+(use-package diff-hl
+  :ensure t)
+```
+
+Ediff split frame horizontally.
+
+```lisp
+(setq ediff-split-window-function 'split-window-horizontally)
+```
+
+## Window
+
+    ID: 9A848D65-DE56-4F95-A84D-CAE74781CD25
+
+Menu bars make EMACS more accessible to non-EMACS users.
+
+```lisp
+(menu-bar-mode t)
+```
+
+Easily return to previous configurations. 2-4 windows are easily managed by
+hand.
+
+```lisp
+(winner-mode t)
+```
+
+Frequently use between 1 and 3 windows.
+
+```lisp
+(defun help/1-window ()
+  "Work with this buffer in 1 window."
+  (interactive)
+  (delete-other-windows))
+
+(defun help/2-window ()
+  "Work with this buffer in 2 windows."
+  (interactive)
+  (delete-other-windows)
+  (split-window-below)
+  (balance-windows))
+
+(defun help/3-window ()
+  "Work with this buffer in 3 windows."
+  (interactive)
+  (delete-other-windows)
+  (split-window-below)
+  (split-window-below)
+  (balance-windows))
 ```
 
 # Piano Lessons
-
-    header-args: :noweb-ref Piano-Lessons
 
     ID: 31274432-4BA2-4B03-8DDB-E590C245244D
 
@@ -1486,6 +4577,7 @@ close together
     (global-set-key (kbd "s--") #'decrement-integer-at-point)
     (global-set-key (kbd "s-+") #'increment-integer-at-point)
     (global-set-key (kbd "M-s-3") #'help/split-into-3-windows)
+    (key-chord-define-global "3." #'help/insert-ellipsis)
     ```
 
 2.  Row 4
@@ -1494,47 +4586,51 @@ close together
 
     ```lisp
     (global-set-key (kbd "s-w") #'imenu)
+    (key-chord-define-global "1o" #'help/1-window)
+    (key-chord-define-global "2o" #'help/2-window)
+    (key-chord-define-global "3o" #'help/3-window)
+    (global-set-key (kbd "s-q") #'kill-buffer)
+    (global-set-key (kbd "s-Q") #'kill-this-buffer)
     ```
 
 3.  Row 3
 
         ID: 6DCD321F-6FDA-4983-9C7C-265D23D1AC4F
 
-    Easily kill buffers.
-
     ```lisp
-    (global-set-key (kbd "s-a") #'kill-buffer)
+    (global-set-key (kbd "s-a") #'help/safb-switch-to-previous-buffer)
     (global-set-key (kbd "s-d") #'er/expand-region)
-    (key-chord-define-global "df" #'avy-goto-word-1)
-    (key-chord-define-global "DF" #'avy-pop-mark)
     ```
 
     ```lisp
     (defhydra help/hydra/left-side/global (:color blue
                                                   :hint nil)
       "
-    _1_ -font  _2_ +font _3_ ellipsis _4_ UUID _5_ bfr-cdng-systm _6_ grade-level _7_ reading-ease
-    _q_ apropos _w_ widen _r_ rgrep _t_ obtj2o     _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
-                     _j_ back-char _k_ scrollDown _K_ nextLogLine _l_ forw-char _;_ toggle-lax-whitespace
-    _x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer"
-      ("1" help/text-scale-decrease :exit nil)
-      ("2" help/text-scale-increase :exit nil)
-      ("3" help/insert-ellipsis)
-      ("4" help/uuid)
-      ("5" set-buffer-file-coding-system)
-      ("6" writegood-grade-level)
-      ("7" writegood-reading-ease)
+    _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_ grade-level _8_ reading-ease
+    _q_ apropos _w_ widen _t_ obtj2o _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
+    _a_ ag  _d_ dash-at-point    _k_ scrollDown _K_ nextLogLine _;_ toggle-lax-whitespace
+    _x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list _M_ Marked 2 Viewer"
+      ("1" help/font-size-reset :exit nil)
+      ("2" help/text-scale-decrease :exit nil)
+      ("3" help/text-scale-increase :exit nil)
+      ("4" help/insert-ellipsis)
+      ("5" help/uuid)
+      ("6" set-buffer-file-coding-system)
+      ("7" writegood-grade-level)
+      ("8" writegood-reading-ease)
+      ("a" ag)
       ("x" delete-indentation)
       ("q" hydra-apropos/body)
       ("w" widen)
-      ("r" rgrep)
       ("t" org-babel-tangle-jump-to-org)
+      ("u" ucs-insert)
       ("i" scroll-down-command :exit nil)
+      ("d" dash-at-point)
       ("k" scroll-up-command :exit nil)
       ("I" previous-logical-line :exit nil)
       ("K" next-logical-line :exit nil)
-      ("j" backward-char :exit nil)
-      ("l" forward-char :exit nil)
+      ("m" imenu-list-minor-mode)
+      ("M" help/preview-buffer-file-in-marked-2)
       (";" isearch-toggle-lax-whitespace)
       ("o" toggle-debug-on-error)
       ("p" anzu-query-replace)
@@ -1595,18 +4691,6 @@ close together
     (define-key help/vc-map "d" #'help/safb-vc-diff)
     (define-key help/vc-map "u" #'help/safb-vc-revert)
     (global-set-key (kbd "s-f") #'help/safb-help/vc-next-action)
-    ```
-
-    Go to a line.
-
-    ```lisp
-    (key-chord-define-global "fg" #'help/safb-help/goto-line)
-    ```
-
-    Pop the mark back.
-
-    ```lisp
-    (key-chord-define-global "FG" #'pop-to-mark-command)
     ```
 
     Do the *right thing* for getting to the start of the line.
@@ -1686,6 +4770,33 @@ Via [comments](http://endlessparentheses.com/fixing-double-capitals-as-you-type.
 (key-chord-define-global "TH" (lambda () (interactive) (insert "Th")))
 ```
 
+Easily kill buffers. Can&rsquo;t use &ldquo;df&rdquo; because of &ldquo;PDF&rdquo;.
+
+Can&rsquo;t use &ldquo;fr&rdquo; because of &ldquo;fright&rdquo; and &ldquo;France&rdquo;.
+
+Can&rsquo;t use &ldquo;dc&rdquo; because of `cd (change directory)`.
+
+Can&rsquo;t use &ldquo;gr&rdquo; brecause of &ldquo;Grant&rdquo; and &ldquo;Great.
+
+Go to a word.
+
+```lisp
+(key-chord-define-global "fj" #'avy-goto-word-1)
+(key-chord-define-global "FJ" #'avy-pop-mark)
+```
+
+Go to a line.
+
+```lisp
+(key-chord-define-global "fk" #'help/safb-help/goto-line)
+```
+
+Pop the mark back.
+
+```lisp
+(key-chord-define-global "FK" #'pop-to-mark-command)
+```
+
 ### Right Side
 
     ID: 16040443-9099-42C1-A7FB-90C0DDC9F8EE
@@ -1731,3904 +4842,3 @@ Ansu.
 (global-set-key (kbd "M-%") #'anzu-query-replace)
 (global-set-key (kbd "C-M-%") #'anzu-query-replace-regexp)
 ```
-
-# Special Operating Procedure
-
-    header-args: :noweb-ref Special-Operating-Procedure
-
-    ID: 97A95862-3213-4035-9FF6-E041796DAB5C
-
-The following code and packages are special to this configuration. They provide
-critical functionality for configuring the rest of the system. They provide
-ideas that make the entire system usable, productive, expressive, and fast.
-
-## Display
-
-    ID: 1290DB2D-D05E-4DDD-B42F-6B11AE91F480
-
-Make it easy to conditionally evaluate code when running with a graphical
-display.
-
-```lisp
-(defmacro help/on-gui (statement &rest statements)
-  "Evaluate the enclosed body only when run on GUI."
-  `(when (display-graphic-p)
-     ,statement
-     ,@statements))
-
-(defmacro help/not-on-gui (statement &rest statements)
-  "Evaluate the enclosed body only when run on GUI."
-  `(when (not (display-graphic-p))
-     ,statement
-     ,@statements))
-```
-
-## Hydra
-
-    ID: 9B78FBB7-6C6A-4BD6-A9CC-FB192D37F6C2
-
-```lisp
-(use-package hydra
-  :ensure t)
-```
-
-## Keyboard
-
-    ID: 8A0E58DF-7C90-4781-AC12-94D2D76F47C7
-
-Key-Chord mode is amazing. Piano-Lessons shows you how.
-
-```lisp
-(use-package key-chord
-  :ensure t
-  :config
-  (key-chord-mode t))
-```
-
-Echo keystrokes immediately.
-
-```lisp
-(setq echo-keystrokes 0.02)
-```
-
-## Libraries
-
-    ID: 21919848-B720-4D30-880E-485C41250279
-
-Dash is nice to use.
-
-```lisp
-(use-package dash
-  :ensure t
-  :config
-  (dash-enable-font-lock))
-(use-package dash-functional
-  :ensure t)
-```
-
-F is nice to use.
-
-```lisp
-(use-package f
-  :ensure t)
-```
-
-S is nice to use.
-
-```lisp
-(use-package s
-  :ensure t)
-```
-
-## Modeline
-
-    ID: 798F14D1-EDC6-4306-8E82-0854980AEFBA
-
-Reduce information about modes in the Modeline.
-
-```lisp
-(use-package diminish)
-```
-
-Show the file size.
-
-```lisp
-(size-indication-mode)
-```
-
-Show the column number.
-
-```lisp
-(column-number-mode t)
-```
-
-## OSX
-
-    ID: 6556EACF-2F83-4B84-8456-5BEB981D290E
-
-Make it easy to evaluate code only when running on OSX.
-
-```lisp
-(defmacro help/on-osx (statement &rest statements)
-  "Evaluate the enclosed body only when run on OSX."
-  `(when (eq system-type 'darwin)
-     ,statement
-     ,@statements))
-```
-
-Pull in the `ENVIRONMENT` variables because the GUI version of EMACS does not.
-
-```lisp
-(help/on-osx
- (use-package exec-path-from-shell
-   :ensure t
-   :config
-   (setq exec-path-from-shell-check-startup-files nil)
-   (exec-path-from-shell-initialize)))
-```
-
-Configure the meta keys.
-
-Enable the `super` key-space.
-
-```lisp
-(help/on-osx
- (setq mac-control-modifier 'control)
- (setq mac-command-modifier 'meta)
- (setq mac-option-modifier 'super))
-```
-
-EMACS dialogues don&rsquo;t work OSX. They lock up EMACS.
-
-This is a known issue. [Here](https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-x) is the solution.
-
-```lisp
-(help/on-osx
- (defun help/yes-or-no-p (orig-fun &rest args)
-   "Prevent yes-or-no-p from activating a dialog."
-   (let ((use-dialog-box nil))
-     (apply orig-fun args)))
- (advice-add #'yes-or-no-p :around #'help/yes-or-no-p)
- (advice-add #'y-or-n-p :around #'help/yes-or-no-p))
-```
-
-## Windows
-
-    ID: B21664CF-62AF-4ACC-A239-FE20672FF9E4
-
-Make it easy to evaluate code only when running on Windows.
-
-```lisp
-(defmacro help/on-windows (statement &rest statements)
-  "Evaluate the enclosed body only when run on Microsoft Windows."
-  `(when (eq system-type 'windows-nt)
-     ,statement
-     ,@statements))
-```
-
-Provide the proper shell.
-
-```lisp
-(help/on-windows
- (setq shell-file-name "cmdproxy.exe"))
-```
-
-Enable the `super` key-space.
-
-```lisp
-(help/on-windows
- (defvar w32-lwindow-modifier 'super)
- (defvar w32-rwindow-modifier 'super))
-```
-
-# Standard Operating Procedure
-
-    header-args: :noweb-ref Standard-Operating-Procedure
-
-    ID: 8302B38B-67EC-4C37-9B42-69E278FF1277
-
-Configure EMACS to maximum utility.
-
-## Helper Functions
-
-    ID: B2257535-9891-48F1-B7CD-1B385F527C59
-
-```lisp
-(defun help/comment-or-uncomment ()
-  "Comment or uncomment the current line or selection."
-  (interactive)
-  (cond ((not mark-active) (comment-or-uncomment-region (line-beginning-position)
-                                                      (line-end-position)))
-        ((< (point) (mark)) (comment-or-uncomment-region (point) (mark)))
-        (t (comment-or-uncomment-region (mark) (point)))))
-
-(defun help/save-all-file-buffers ()
-  "Saves every buffer associated with a file."
-  (interactive)
-  (dolist (buf (buffer-list))
-    (with-current-buffer buf
-      (when (and (buffer-file-name) (buffer-modified-p))
-        (save-buffer)))))
-
-(defun describe-thing-in-popup ()
-  "Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html'."
-  (interactive)
-  (let* ((thing (symbol-at-point))
-         (help-xref-following t)
-         (description (with-temp-buffer
-                        (help-mode)
-                        (help-xref-interned thing)
-                        (buffer-string))))
-    (popup-tip description
-               :point (point)
-               :around t
-               :height 30
-               :scroll-bar t
-               :margin t)))
-
-(defun help/kill-other-buffers ()
-  "Kill all other buffers."
-  (interactive)
-  (mapc #'kill-buffer (delq (current-buffer) (buffer-list))))
-
-(defvar help/delete-trailing-whitespace-p t
-  "Should trailing whitespace be removed?")
-
-(defun help/delete-trailing-whitespace ()
-  "Delete trailing whitespace for everything but the current line.
-
-If `help/delete-trailing-whitespace-p' is non-nil, then delete the whitespace.
-This is useful for fringe cases where trailing whitespace is important."
-  (interactive)
-  (when help/delete-trailing-whitespace-p
-    (let ((first-part-start (point-min))
-          (first-part-end (point-at-bol))
-          (second-part-start (point-at-eol))
-          (second-part-end (point-max)))
-      (delete-trailing-whitespace first-part-start first-part-end)
-      (delete-trailing-whitespace second-part-start second-part-end))))
-
-(defun help/insert-timestamp ()
-  "Produces and inserts a full ISO 8601 format timestamp."
-  (interactive)
-  (insert (format-time-string "%Y-%m-%dT%T%z")))
-
-(defun help/insert-timestamp* ()
-  "Produces and inserts a near-full ISO 8601 format timestamp."
-  (interactive)
-  (insert (format-time-string "%Y-%m-%dT%T")))
-
-(defun help/insert-datestamp ()
-  "Produces and inserts a partial ISO 8601 format timestamp."
-  (interactive)
-  (insert (format-time-string "%Y-%m-%d")))
-
-(defun help/indent-curly-block (&rest _ignored)
-  "Open a new brace or bracket expression, with relevant newlines and indent. URL: `https://github.com/Fuco1/smartparens/issues/80'"
-  (interactive)
-  (newline)
-  (indent-according-to-mode)
-  (forward-line -1)
-  (indent-according-to-mode))
-
-(defun beginning-of-line-dwim ()
-  "Toggles between moving point to the first non-whitespace character, and
-    the start of the line. Src: http://www.wilfred.me.uk/"
-  (interactive)
-  (let ((start-position (point)))
-    ;; see if going to the beginning of the line changes our position
-    (move-beginning-of-line nil)
-
-    (when (= (point) start-position)
-      ;; we're already at the beginning of the line, so go to the
-      ;; first non-whitespace character
-      (back-to-indentation))))
-
-(defun help/lazy-new-open-line ()
-  "Insert a new line without breaking the current line."
-  (interactive)
-  (beginning-of-line)
-  (forward-line 1)
-  (newline)
-  (forward-line -1))
-
-(defun help/smart-open-line ()
-  "Insert a new line, indent it, and move the cursor there.
-
-This behavior is different then the typical function bound to return
-which may be `open-line' or `newline-and-indent'. When you call with
-the cursor between ^ and $, the contents of the line to the right of
-it will be moved to the newly inserted line. This function will not
-do that. The current line is left alone, a new line is inserted, indented,
-and the cursor is moved there.
-
-Attribution: URL `http://emacsredux.com/blog/2013/03/26/smarter-open-line/'"
-  (interactive)
-  (move-end-of-line nil)
-  (newline-and-indent))
-
-(defun help/insert-ellipsis ()
-  "Insert an ellipsis into the current buffer."
-  (interactive)
-  (insert "…"))
-
-(defun help/insert-noticeable-snip-comment-line ()
-  "Insert a noticeable snip comment line (NSCL)."
-  (interactive)
-  (if (not (bolp))
-      (message "I may only insert a NSCL at the beginning of a line.")
-    (let ((ncl (make-string 70 ?✂)))
-      (newline)
-      (forward-line -1)
-      (insert ncl)
-      (comment-or-uncomment-region (line-beginning-position) (line-end-position)))))
-
-(progn
-
-  (defvar my-read-expression-map
-    (let ((map (make-sparse-keymap)))
-      (set-keymap-parent map read-expression-map)
-      (define-key map [(control ?g)] #'minibuffer-keyboard-quit)
-      (define-key map [up]   nil)
-      (define-key map [down] nil)
-      map))
-
-  (defun my-read--expression (prompt &optional initial-contents)
-    (let ((minibuffer-completing-symbol t))
-      (minibuffer-with-setup-hook
-          (lambda ()
-            (emacs-lisp-mode)
-            (use-local-map my-read-expression-map)
-            (setq font-lock-mode t)
-            (funcall font-lock-function 1))
-        (read-from-minibuffer prompt initial-contents
-                              my-read-expression-map nil
-                              'read-expression-history))))
-
-  (defun my-eval-expression (expression &optional arg)
-    "Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2014-07/msg00135.html'."
-    (interactive (list (read (my-read--expression ""))
-                       current-prefix-arg))
-    (if arg
-        (insert (pp-to-string (eval expression lexical-binding)))
-      (pp-display-expression (eval expression lexical-binding)
-                             "*Pp Eval Output*"))))
-
-(defun help/util-ielm ()
-  "HELP buffer setup for ielm.
-
-Creates enough space for one other permanent buffer beneath it."
-  (interactive)
-  (split-window-below -20)
-  (help/safb-other-window)
-  (ielm)
-  (set-window-dedicated-p (selected-window) t))
-
-(defun help/util-eshell ()
-  "HELP buffer setup for eshell.
-
-Depends upon `help/util-ielm' being run first."
-  (interactive)
-  (split-window-below -10)
-  (help/safb-other-window)
-  (eshell)
-  (set-window-dedicated-p (selected-window) t))
-
-(defvar help/util-state nil "Track whether the util buffers are displayed or not.")
-
-(defun help/util-state-toggle ()
-  "Toggle the util state."
-  (interactive)
-  (setq help/util-state (not help/util-state)))
-
-(defun help/util-start ()
-  "Perhaps utility buffers."
-  (interactive)
-  (help/util-ielm)
-  (help/util-eshell)
-  (help/util-state-toggle))
-
-(defun help/util-stop ()
-  "Remove personal utility buffers."
-  (interactive)
-  (if (get-buffer "*ielm*") (kill-buffer "*ielm*"))
-  (if (get-buffer "*eshell*") (kill-buffer "*eshell*"))
-  (help/util-state-toggle))
-
-(defun help/ielm-auto-complete ()
-  "Enables `auto-complete' support in \\[ielm].
-
-Attribution: URL `http://www.masteringemacs.org/articles/2010/11/29/evaluating-elisp-emacs/'"
-  (setq ac-sources '(ac-source-functions
-                     ac-source-variables
-                     ac-source-features
-                     ac-source-symbols
-                     ac-source-words-in-same-mode-buffers))
-  (add-to-list 'ac-modes #'inferior-emacs-lisp-mode)
-  (auto-complete-mode 1))
-
-(defun help/uuid ()
-  "Insert a UUID."
-  (interactive)
-  (insert (org-id-new)))
-
-(defun endless/sharp ()
-  "Insert #' unless in a string or comment.
-
-SRC: URL `http://endlessparentheses.com/get-in-the-habit-of-using-sharp-quote.html?source=rss'"
-  (interactive)
-  (call-interactively #'self-insert-command)
-  (let ((ppss (syntax-ppss)))
-    (unless (or (elt ppss 3)
-                (elt ppss 4))
-      (insert "'"))))
-
-(defun help/chs ()
-  "Insert opening \"cut here start\" snippet."
-  (interactive)
-  (insert "--8<---------------cut here---------------start------------->8---"))
-
-(defun help/che ()
-  "Insert closing \"cut here end\" snippet."
-  (interactive)
-  (insert "--8<---------------cut here---------------end--------------->8---"))
-
-(defmacro help/measure-time (&rest body)
-  "Measure the time it takes to evaluate BODY.
-
-Attribution Nikolaj Schumacher: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2008-06/msg00087.html'"
-  `(let ((time (current-time)))
-     ,@body
-     (message "%.06f" (float-time (time-since time)))))
-
-(defun help/create-non-existent-directory ()
-  "Attribution URL: `https://iqbalansari.github.io/blog/2014/12/07/automatically-create-parent-directories-on-visiting-a-new-file-in-emacs/'"
-  (let ((parent-directory (file-name-directory buffer-file-name)))
-    (when (and (not (file-exists-p parent-directory))
-               (y-or-n-p (format "Directory `%s' does not exist. Create it?" parent-directory)))
-      (make-directory parent-directory t))))
-
-(defun help/occur-dwim ()
-  "Call `occur' with a mostly sane default.
-
-Attribution Oleh Krehel (abo-abo): URL `http://oremacs.com/2015/01/26/occur-dwim/'"
-  (interactive)
-  (push (if (region-active-p)
-            (buffer-substring-no-properties
-             (region-beginning)
-             (region-end))
-          (let ((sym (thing-at-point 'symbol)))
-            (when (stringp sym)
-              (regexp-quote sym))))
-        regexp-history)
-  (call-interactively 'occur))
-
-(defun help/util-cycle ()
-  "Display or hide the utility buffers."
-  (interactive)
-  (if help/util-state
-      (help/util-stop)
-    (help/util-start)))
-
-(defun sacha/unfill-paragraph (&optional region)
-  "Takes a multi-line paragraph and makes it into a single line of text.
-
-ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfill-paragraph"
-  (interactive (progn
-                 (barf-if-buffer-read-only)
-                 (list t)))
-  (let ((fill-column (point-max)))
-    (fill-paragraph nil region)))
-(defun help/text-scale-increase ()
-  "Increase font size"
-  (interactive)
-  (help/on-gui
-   (setq help/font-size (+ help/font-size 1))
-   (help/update-font))
-  (help/not-on-gui
-   (message "Please resize the terminal emulator font.")))
-(defun help/text-scale-decrease ()
-  "Reduce font size."
-  (interactive)
-  (help/on-gui
-   (when (> help/font-size 1)
-     (setq help/font-size (- help/font-size 1))
-     (help/update-font)))
-  (help/not-on-gui
-   (message "Please resize the terminal emulator font.")))
-
-(defun help/org-weave-subtree-gfm (id file)
-  "Export the subtree with ID to FILE in gfm."
-  (interactive)
-  (help/save-all-file-buffers)
-  (save-excursion
-    (let ((hidx (org-find-property "ID" id)))
-      (when hidx
-        (goto-char hidx)
-        (org-export-to-file 'gfm file nil t nil)))))
-
-(defun help/org-weave-readme ()
-  (interactive)
-  (help/org-weave-subtree-gfm
-   "README"
-   "README.md"))
-
-(defun help/org-weave-style-guide ()
-  (interactive)
-  (help/org-weave-subtree-gfm
-   "STYLEGUIDE"
-   "STYLEGUIDE.md"))
-
-(defun help/weave-everything-everywhere ()
-  "Export this entire document in configured weavers."
-  (interactive)
-  (save-excursion
-    (org-ascii-export-to-ascii)
-    (org-html-export-to-html)
-    (org-gfm-export-to-markdown)
-    (org-latex-export-to-pdf))
-  (help/org-weave-readme)
-  (help/org-weave-style-guide))
-
-(require 'thingatpt)
-
-(defun thing-at-point-goto-end-of-integer ()
-  "Go to end of integer at point.
-
-Attribution: URL `http://emacsredux.com/blog/2013/07/25/increment-and-decrement-integer-at-point/'"
-  (let ((inhibit-changing-match-data t))
-    ;; Skip over optional sign
-    (when (looking-at "[+-]")
-      (forward-char 1))
-    ;; Skip over digits
-    (skip-chars-forward "[[:digit:]]")
-    ;; Check for at least one digit
-    (unless (looking-back "[[:digit:]]")
-      (error "No integer here"))))
-(put 'integer 'beginning-op 'thing-at-point-goto-end-of-integer)
-
-(defun thing-at-point-goto-beginning-of-integer ()
-  "Go to end of integer at point.
-
-Attribution: URL `http://emacsredux.com/blog/2013/07/25/increment-and-decrement-integer-at-point/'"
-  (let ((inhibit-changing-match-data t))
-    ;; Skip backward over digits
-    (skip-chars-backward "[[:digit:]]")
-    ;; Check for digits and optional sign
-    (unless (looking-at "[+-]?[[:digit:]]")
-      (error "No integer here"))
-    ;; Skip backward over optional sign
-    (when (looking-back "[+-]")
-      (backward-char 1))))
-(put 'integer 'beginning-op 'thing-at-point-goto-beginning-of-integer)
-
-(defun thing-at-point-bounds-of-integer-at-point ()
-  "Get boundaries of integer at point.
-
-Attribution: URL `http://emacsredux.com/blog/2013/07/25/increment-and-decrement-integer-at-point/'"
-  (save-excursion
-    (let (beg end)
-      (thing-at-point-goto-beginning-of-integer)
-      (setq beg (point))
-      (thing-at-point-goto-end-of-integer)
-      (setq end (point))
-      (cons beg end))))
-(put 'integer 'bounds-of-thing-at-point 'thing-at-point-bounds-of-integer-at-point)
-
-(defun thing-at-point-integer-at-point ()
-  "Get integer at point.
-
-Attribution: URL `http://emacsredux.com/blog/2013/07/25/increment-and-decrement-integer-at-point/'"
-  (let ((bounds (bounds-of-thing-at-point 'integer)))
-    (string-to-number (buffer-substring (car bounds) (cdr bounds)))))
-(put 'integer 'thing-at-point 'thing-at-point-integer-at-point)
-
-(defun increment-integer-at-point (&optional inc)
-  "Increment integer at point by one.
-
-With numeric prefix arg INC, increment the integer by INC amount.
-
-Attribution: URL `http://emacsredux.com/blog/2013/07/25/increment-and-decrement-integer-at-point/'"
-  (interactive "p")
-  (let ((inc (or inc 1))
-        (n (thing-at-point 'integer))
-        (bounds (bounds-of-thing-at-point 'integer)))
-    (delete-region (car bounds) (cdr bounds))
-    (insert (int-to-string (+ n inc)))))
-
-(defun decrement-integer-at-point (&optional dec)
-  "Decrement integer at point by one.
-
-With numeric prefix arg DEC, decrement the integer by DEC amount.
-
-Attribution: URL `http://emacsredux.com/blog/2013/07/25/increment-and-decrement-integer-at-point/'"
-  (interactive "p")
-  (increment-integer-at-point (- (or dec 1))))
-```
-
-## Buffer
-
-    ID: F3C9BDE1-C0E0-4BDF-B121-3CE2F0D16464
-
-Maintain buffers across sessions. Desktop-Save-Mode persists very part of the
-buffer. If you upgrade a package that uses buffer-variables that have changed
-you may get unexpected behavior. Close all buffers and open them again after
-making such breaking changes.
-
-```lisp
-(desktop-save-mode t)
-(setq desktop-restore-eager 10)
-```
-
-Provide expected &ldquo;Undo&rdquo; functionality.
-
-```lisp
-(use-package undo-tree
-  :ensure t
-  :config
-  (global-undo-tree-mode 1)
-  :diminish undo-tree-mode)
-```
-
-Ensure that buffers do not end with a new line. This is the decision of Sysop.
-This is important to YASnippets and Source-Blocks. Doing so would violate POLA.
-
-```lisp
-(setq require-final-newline nil)
-```
-
-If you are on the end of a line, and go up or down, then go to the end of
-line on that new line. Do not account for anything special about the character
-there.
-
-```lisp
-(setq track-eol t)
-(setq line-move-visual nil)
-```
-
-Take the cursor with scroll activities.
-
-```lisp
-(setq scroll-preserve-screen-position t)
-```
-
-More easily visualize tabular data. Considered to non-subjective.
-
-```lisp
-(use-package stripe-buffer
-  :ensure t)
-```
-
-End sentences with a single space.
-
-```lisp
-(setq sentence-end-double-space nil)
-```
-
-Ban white-space at end of lines, globally.
-
-```lisp
-(add-hook 'before-save-hook #'help/delete-trailing-whitespace)
-```
-
-Intelligently select the current char, then word, then object, then block,
-then document.
-
-```lisp
-(use-package expand-region
-  :ensure t)
-```
-
-80 characters is wide enough for most documents.
-
-```lisp
-(setq help/column-width 80)
-```
-
-Visualize the formfeed character.
-
-```lisp
-(use-package page-break-lines
-  :ensure t)
-```
-
-Configure Page-Break-Lines-Mode.
-
-```lisp
-(use-package page-break-lines
-  :diminish page-break-lines-mode)
-```
-
-Center the buffer after navigating pages.
-
-```lisp
-(advice-add #'backward-page :after #'recenter)
-(advice-add #'forward-page :after #'recenter)
-```
-
-## Code Folding
-
-    ID: 3F70676D-C141-4093-9E40-F42B6C7B7232
-
-```lisp
-(use-package hideshow
-  :config
-  (setq hs-hide-comments-when-hiding-all t)
-  (setq hs-isearch-open t)
-  (defun display-code-line-counts (ov)
-    "Displaying overlay content in echo area or tooltip"
-    (when (eq 'code (overlay-get ov 'hs))
-      (overlay-put ov 'help-echo
-                   (buffer-substring (overlay-start ov)
-                                     (overlay-end ov)))))
-  (setq hs-set-up-overlay #'display-code-line-counts)
-  (defun help/goto-line ()
-    "How do I get it to expand upon a goto-line? hideshow-expand affected block
-    when using goto-line in a collapsed buffer."
-    (call-interactively #'goto-line)
-    (save-excursion
-      (hs-show-block)))
-  :diminish hs-minor-mode)
-```
-
-## Colors
-
-    ID: 7FA1B7C2-3C4B-4119-B9B7-4C0CC0EAA180
-
-Colorize color names.
-
-Rainbow-Mode handles most major modes color definitions as expected.
-
-```lisp
-(use-package rainbow-mode
-  :ensure t
-  :config
-  :diminish rainbow-mode)
-```
-
-## Evaluation
-
-    ID: 5E067457-9B99-459F-A660-323774C14BF5
-
-```lisp
-(setq-default eval-expression-print-level nil)
-```
-
-Allow most commands.
-
-```lisp
-(put #'upcase-region 'disabled nil)
-(put #'downcase-region 'disabled nil)
-(put #'narrow-to-region 'disabled nil)
-```
-
-## Encryption
-
-    ID: 9A41F9EE-36D5-452A-986B-70B567255D36
-
-Easy to use file-based AES encryption.
-
-```lisp
-(add-to-list 'load-path (getenv "CCRYPT"))
-(use-package ps-ccrypt)
-```
-
-## Eshell
-
-    ID: B371A592-1251-4D88-A055-43CA3E33BC6D
-
-Provide a cross-platform command line shell that is a first-class EMACS citizen.
-
-Commands input in eshell are delegated in order to an alias, a built in command,
-an Elisp function with the same name, and finally to a system call. Semicolons
-separate commands. `which` tells you what implementation will satisfy the call
-that you are going to make. The flag `eshell-prefer-lisp-functions` does what it
-says. `$$` is the result of the last command. Aliases live in
-`eshell-aliases-file`. History is maintained and expandable. `eshell-source-file`
-will run scripts. Since Eshell is not a terminal emulator, you need to configure
-it for any commands that need to run using a terminal emulator by adding it to
-to `eshell-visual-commands`.
-
-```lisp
-(setq eshell-prefer-lisp-functions nil
-      eshell-cmpl-cycle-completions nil
-      eshell-save-history-on-exit t
-      eshell-cmpl-dir-ignore "\\`\\(\\.\\.?\\|CVS\\|\\.svn\\|\\.git\\)/\\'")
-
-(eval-after-load "esh-opt"
-  '(progn
-     (use-package em-cmpl)
-     (use-package em-prompt)
-     (use-package em-term)
-     (setenv "PAGER" "cat")
-     (add-hook 'eshell-mode-hook
-               (lambda ()
-                 (message "Welcome to Eshell.")
-                 (setq pcomplete-cycle-completions nil)))
-     (add-to-list 'eshell-visual-commands "ssh")
-     (add-to-list 'eshell-visual-commands "tail")
-     (add-to-list 'eshell-command-completions-alist
-                  '("tar" "\\(\\.tar|\\.tgz\\|\\.tar\\.gz\\)\\'"))))
-```
-
-Configure a `PS1` like prompt.
-
-```lisp
-(setq eshell-prompt-regexp "^.+@.+:.+> ")
-(setq eshell-prompt-function
-      (lambda ()
-        (concat
-         (user-login-name)
-         "@"
-         (system-name)
-         ":"
-         (eshell/pwd)
-         "> ")))
-```
-
-## File Based System
-
-    ID: E6F121F0-AC8E-45C7-9F11-0E7AB93E4B71
-
-This system uses artifacts stored in files. It tries to persist file-stores
-every chance it gets without interrupting the user&rsquo;s flow. Flow is important.
-
-Don&rsquo;t create backup files. Instead Git for versioning
-
-Automatically back file-stores if no activity has occurred.
-
-```lisp
-(setq auto-save-default t)
-(setq make-backup-files nil)
-(setq auto-save-visited-file-name t)
-(setq auto-save-interval 0)
-(setq auto-save-timeout (* 60 5))
-```
-
-Backup file-stores when the frame loses focus.
-
-```lisp
-(add-hook 'focus-out-hook #'help/save-all-file-buffers)
-```
-
-Always keep buffers in-sync with changes in-file.
-
-```lisp
-(global-auto-revert-mode 1)
-```
-
-Save all file befores before common activities. Functions are easier to
-use than advice.
-
-```lisp
-(defun help/safb-help/vc-next-action ()
-  (interactive)
-  (help/save-all-file-buffers)
-  (help/vc-next-action))
-
-(defun help/safb-vc-ediff ()
-  (interactive)
-  (help/save-all-file-buffers)
-  (vc-ediff nil))
-
-(defun help/safb-vc-diff ()
-  (interactive)
-  (help/save-all-file-buffers)
-  (vc-diff nil))
-
-(defun help/safb-vc-revert ()
-  (interactive)
-  (help/save-all-file-buffers)
-  (vc-revert))
-
-(defun help/safb-help/magit-status ()
-  (interactive)
-  (help/save-all-file-buffers)
-  (help/magit-status))
-
-(defun help/safb-org-babel-tangle ()
-  (interactive)
-  (help/save-all-file-buffers)
-  (let ((start (current-time)))
-    (message (concat "org-babel-tangle BEFORE: <"
-                     (format-time-string "%Y-%m-%dT%T%z")
-                     ">"))
-    (org-babel-tangle)
-    (let* ((dur (float-time (time-since start)))
-           (msg (format "Tangling complete after: %.06f seconds" dur)))
-      (message (concat "org-babel-tangle AFTER: <"
-                       (format-time-string "%Y-%m-%dT%T%z")
-                       ">"))
-      (message msg)
-      (help/on-gui (alert msg :title "org-mode")))))
-
-(defun help/safb-other-window ()
-  (interactive)
-  (help/save-all-file-buffers)
-  (other-window 1))
-
-(defun help/safb-org-edit-src-code ()
-  (interactive)
-  (help/save-all-file-buffers)
-  (org-edit-src-code))
-
-(defun help/safb-org-export-dispatch ()
-  (interactive)
-  (help/save-all-file-buffers)
-  (org-export-dispatch))
-
-(defun help/safb-TeX-command-master (&optional arg)
-  (interactive)
-  (help/save-all-file-buffers)
-  (TeX-command-master arg))
-
-(defun help/safb-org-babel-execute-buffer ()
-  "Immediately save results."
-  (interactive)
-  (help/save-all-file-buffers)
-  (org-babel-execute-buffer)
-  (help/save-all-file-buffers))
-
-(defun help/safb-org-babel-execute-subtree ()
-  "Immediately save results."
-  (interactive)
-  (help/save-all-file-buffers)
-  (org-babel-execute-subtree)
-  (help/save-all-file-buffers))
-
-(defun help/safb-help/org-babel-demarcate-block ()
-  (interactive)
-  (help/org-babel-demarcate-block)
-  (help/save-all-file-buffers))
-
-(defun help/safb-save-buffers-kill-terminal ()
-  "Partially redundant; kept for consistency among `SAFB' functions."
-  (interactive)
-  (help/save-all-file-buffers)
-  (save-buffers-kill-terminal))
-
-(defun help/safb-help/goto-line ()
-  (interactive)
-  (help/save-all-file-buffers)
-  (help/goto-line))
-```
-
-Selection:
-
--   Don&rsquo;t perform on frequent keys like enter and line navigation.
-
-Future candidates:
-
--   avy jump
--   dired
--   eshell
--   ess-rdired
--   eval-defun
--   eval-region
--   help/newline
--   goto-line
--   ido-switch-buffer
--   ielm
--   ispell
--   ispell-word
--   langtool-check-buffer
--   newline-and-indent
--   next-line
--   org-edit-src-exit
--   org-return
--   pop-to-mark-command
--   previous-line
--   sp-newline
--   with-current-buffer
--   writegood-mode
-
-Try to visit a non-existent file and get prompted to create its parent
-directories.
-
-```lisp
-(add-to-list 'find-file-not-found-functions #'help/create-non-existent-directory)
-```
-
-Be aware of files larger than 2MiB. Turn off Aggressive-Indent and other
-expensive features in those buffers. NXML also seems to have a difficult time
-with large files.
-
-```lisp
-(setq large-file-warning-threshold (* 1024 1024 2))
-```
-
--   Always use /tmp for temporary files
-    -   Via the thread &ldquo;[O] org-file using tramp + babel?&rdquo;
-
-```lisp
-(setq temporary-file-directory "/tmp")
-```
-
-## File-system/directory management (Console)
-
-    ID: 067D598E-7FE6-4BC5-AEF7-872966390970
-
-You can use the usual machinery to work with the files. Highlight a region
-and operation selections occur for all files in that region. Commands are
-scheduled, and then executed, upon your command. Files can be viewed in modify
-or read-only mode, too. There is an idea of `mark` in files, which is to select
-them and perform operations on the marked files. There are helper methods for
-most things you can think if like directories or modified-files or whatever,
-meaning you can use regexen to mark whatever you like however you like. If that
-suits you, then don&rsquo;t be afraid of using the regular expression builder
-that is built into EMACS. Bulk marked file operations include additionally
-copying, deleting, creating hard links to, renaming, modifying the mode,
-owner, and group information, changing the time-stamp, listing the marked
-files, compressing them, decrypting, verifying and signing, loading or byte
-compiling them (Lisp files).
-
-`g` updates the current buffer; `s` orders the listing by alpha or date-time.
-
-`find-name-dired` beings the results back into Dired, which is nifty.
-
-Wdired lets you modify files directly via the UI, which is interesting. Image-Dired
-lets you do just that.
-
-`+` creates a new directory. `dired-copy-filename-as-kill` stores the list of
-files you have selected in the kill ring. `dired-compare-directories` lets you
-perform all sorts of directory comparisons, a handy tool that you need once in
-a while but definitely do need.
-
-```lisp
-(defun help/dired-copy-filename ()
-  "Push the path and filename of the file under the point to the kill ring.
-  Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2002-10/msg00556.html'"
-  (interactive)
-  (message "Added %s to kill ring" (kill-new (dired-get-filename))))
-(defun help/dired-copy-path ()
-  "Push the path of the directory under the point to the kill ring."
-  (interactive)
-  (message "Added %s to kill ring" (kill-new default-directory)))
-(setq dired-listing-switches "-alh")
-(setq dired-recursive-deletes 'top)
-(use-package dired-details+
-  :ensure t)
-(setq-default dired-details-hidden-string "")
-(defun help/dired-mode-hook-fn ()
-  "HELP dired customizations."
-  (local-set-key "c" #'help/dired-copy-filename)
-  (local-set-key "]" #'help/dired-copy-path)
-  (diff-hl-dired-mode)
-  (load "dired-x")
-  (turn-on-stripe-buffer-mode)
-  (stripe-listify-buffer))
-(add-hook 'dired-mode-hook #'help/dired-mode-hook-fn)
-```
-
-Try to guess the target directory for operations.
-
-```lisp
-(setq dired-dwim-target t)
-```
-
-Use EMACS `ls`.
-
-```lisp
-(help/on-osx
- (setq ls-lisp-use-insert-directory-program nil)
- (use-package ls-lisp))
-```
-
-After dabbling, something happened that really changed my mind. These three
-articles changed everything: [Dired Shell Command](http://www.masteringemacs.org/articles/2014/04/10/dired-shell-commands-find-xargs-replacement/), [
-Working with multiple files in dired](https://www.masteringemacs.org/article/working-multiple-files-dired), and [WDired: Editable Dired Buffers](https://www.masteringemacs.org/article/wdired-editable-dired-buffers)..
-They just made the power of Dired so obvious, and so easy to use, that it
-instantly because delightful to use. That was very, very cool. Even though I
-was really, really happy with Finder and Explorer&#x2026; suddenly it just became so
-obvious and pleasant to use Dired. That is so wild.
-
-Key notes when executing shell commands on file selection&#x2026;
-
-Substitution:
-
--   **`<cmd> ?`:** 1\* calls to cmd, each file a single argument
--   **`<cmd> *`:** 1 call to `cmd`, selected list as argument
--   **`<cmd> *""`:** have the shell expand the \* as a globbing wild-card
-    -   Not sure what this means
-
-Synchronicity:
-
--   **`<cmd> ...`:** by default commands are called synchronously
--   **`<cmd> &`:** execute in parallel
--   **`<cmd> ;`:** execute sequentially, asynchronously
--   **`<cmd> ;&`:** execute in parallel, asynchronously
-
-Key notes on working with files in multiple directories&#x2026; use the following:
-
-Use `find` just like you would at the command line and all of the results show
-up in a single Dired buffer that you may work with just like you would any other
-file appearing in a Dired buffer. The abstraction here becomes so obvious, you
-may ask yourself why you never considered such a thing *before* now (as I did):
-
-```lisp
-(use-package find-dired
-  :ensure t
-  :config
-  (setq find-ls-option '("-print0 | xargs -0 ls -ld" . "-ld")))
-```
-
-Noting that:
-
--   **`find-dired`:** is the general use case
--   **`find-name-dired`:** is for simple, single string cases
-
-And if you want to use the faster Elisp version, that uses lisp regex, use:
-
--   **`find-lisp-find-dired`:** for anything
--   **`find-lisp-find-dired-subdirectories`:** for only directories
-
-Key notes on working with editable buffers&#x2026;
-
-As the author notes, you probably already instinctually knew what is possible.
-After reading his brief and concise exposition, it would be hard *not* to
-intuit what is possible! The options are big if you make a writable file buffer.
-Think about using multiple cursors. Done? Well, that is a no-brainer. Once you
-grok multiple cursors just `find-dired` what you need and then do what you need
-to do to it. Very cool.
-
--   **`dired-toggle-read-only, C-x C-q`:** cycle between dired-mode and wdired-mode
--   **`wdired-finish-edit, C-c C-c`:** commit your changes
--   **`wdired-abort-changes, C-c ESC`:** revert your changes
-
-```lisp
-(use-package wdired
-  :ensure t
-  :config
-  (setq wdired-allow-to-change-permissions t)
-  (setq wdired-allow-to-redirect-links t)
-  (setq wdired-use-interactive-rename t)
-  (setq wdired-confirm-overwrite t)
-  (setq wdired-use-dired-vertical-movement 'sometimes))
-```
-
-When you selected a bunch of files or directories, you *may* want to communicate
-somewhere your selection somehow. The simplest way to do this is to utilize
-`dired-copy-filename-as-kill`. What a nice idea, and its default binding is `w`.
-
-Since I started using a menu bar again, and wanting to get Imenu really
-exercised, Dired in Imenu seems like an obvious choice.
-
-```lisp
-(use-package dired-imenu
-  :ensure t)
-```
-
-## IMenu
-
-    ID: F748CAFD-0235-4E34-8546-A9EC515759BB
-
-Major productivity hack
-
-```lisp
-(use-package imenu
-  :config
-  (setq imenu-sort-function #'imenu--sort-by-name))
-(defun help/try-to-add-imenu ()
-  "Add Imenu to modes that have `font-lock-mode' activated.
-
-Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
-  (condition-case nil (imenu-add-to-menubar "Imenu") (error nil)))
-(add-hook 'font-lock-mode-hook #'help/try-to-add-imenu)
-```
-
-## Interactively DO Things
-
-    ID: 2DB9FDA1-9950-4FEA-A33C-E8DDFDA9420E
-
-IDO is used everywhere possible.
-
-Access nearly every object available in this system from one place.
-
-These configurations are performed in the correct order. Any attempt to refactor
-this Source-Block will break Ido in this system.
-
-```lisp
-(use-package ido)
-(use-package flx-ido
-  :ensure t
-  :config
-  (ido-mode t))
-(use-package ido-hacks
-  :ensure t)
-(use-package ido-ubiquitous
-  :ensure t
-  :config
-  (ido-ubiquitous-mode t)
-  (setq ido-create-new-buffer 'always)
-  (flx-ido-mode t)
-  (setq ido-use-faces nil))
-(use-package ido-vertical-mode
-  :ensure t
-  :config
-  (ido-vertical-mode t)
-  (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right))
-```
-
-Make functions search-able.
-
-```lisp
-(use-package smex
-  :ensure t
-  :config
-  (smex-initialize))
-```
-
-Make URLs a first-class object.
-
-```lisp
-(setq ido-use-url-at-point t)
-(setq ido-use-filename-at-point 'guess)
-```
-
-## Font
-
-    ID: 8F7A007E-5CBA-4651-84D8-5874FF393EA6
-
-Use Unicode-Font to provide as many Unicode fonts as possible.
-
-Here are the Unicode fonts that provide nearly everything.
-
-<table>
-
-
-<colgroup>
-<col  class="org-left">
-
-<col  class="org-right">
-
-<col  class="org-left">
-
-<col  class="org-left">
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left">Name</th>
-<th scope="col" class="org-right">Version</th>
-<th scope="col" class="org-left">URL</th>
-<th scope="col" class="org-left">Comments</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td class="org-left">[DejaVu](http://sourceforge.net/projects/dejavu/files/dejavu/2.34/dejavu-fonts-ttf-2.34.tar.bz2)</td>
-<td class="org-right">2.43</td>
-<td class="org-left">[.](http://sourceforge.net/projects/dejavu/files/dejavu/2.34/dejavu-fonts-ttf-2.34.tar.bz2)</td>
-<td class="org-left">Modern classic</td>
-</tr>
-
-
-<tr>
-<td class="org-left">[Symbola](http://users.teilar.gr/~g1951d/)</td>
-<td class="org-right">7.17</td>
-<td class="org-left">[.](http://users.teilar.gr/~g1951d/Symbola.zip)</td>
-<td class="org-left">Neat</td>
-</tr>
-
-
-<tr>
-<td class="org-left">[Quivira](http://www.quivira-font.com/)</td>
-<td class="org-right">4.0</td>
-<td class="org-left">[.](http://www.quivira-font.com/files/Quivira.otf)</td>
-<td class="org-left">Amazing</td>
-</tr>
-
-
-<tr>
-<td class="org-left">[Noto](https://code.google.com/p/noto/)</td>
-<td class="org-right">?</td>
-<td class="org-left">[1](http://noto.googlecode.com/git/fonts/individual/hinted/NotoSans-Regular.ttc) [2](http://noto.googlecode.com/git/fonts/individual/unhinted/NotoSansSymbols-Regular.ttf)</td>
-<td class="org-left">Has morse code, and more</td>
-</tr>
-</tbody>
-</table>
-
-To test it run `view-hello-file` and `M-x list-charset-chars RET unicode-bmp RET`.
-
-Perhaps educationally there is a character for bowel-movements: 💩.
-
-```lisp
-(use-package unicode-fonts
-  :ensure t
-  :config
-  (unicode-fonts-setup))
-```
-
-Activate font locking everywhere possible.
-
-```lisp
-(global-font-lock-mode t)
-```
-
-Visualize ASCII values as their most likely Unicode representation.
-
-```lisp
-(use-package pretty-mode
-  :ensure t
-  :config
-  (global-pretty-mode))
-```
-
-## Going to Objects
-
-    ID: 835D3E9D-3044-4385-9AB1-F0DF17045565
-
-Go to any object in the frame quickly.
-
-```lisp
-(use-package avy
-  :ensure t
-  :config)
-```
-
-## Grammar
-
-    ID: 95A4EF33-F83D-49ED-AC74-A29DA19524BC
-
-Warn of poor grammar immediately interrupting flow with a visual indicator.
-
-```lisp
-(use-package writegood-mode
-  :ensure t
-  :config
-  (eval-after-load "writegood-mode"
-    '(diminish 'writegood-mode)))
-```
-
-```lisp
-(use-package langtool
-  :ensure t
-  :init
-  (setq langtool-language-tool-jar "/usr/local/Cellar/languagetool/3.2/libexec/languagetool-commandline.jar")
-  (setq langtool-mother-tongue "en")
-  (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java")))
-```
-
-## Intellisense (Auto Completion)
-
-    ID: A7225C28-B8AE-4960-9E2A-64E6E8B58400
-
-```lisp
-(use-package fuzzy
-  :ensure t)
-(use-package auto-complete
-  :ensure t
-  :config
-  (use-package auto-complete-config)
-  (setq ac-quick-help-prefer-pos-tip nil)
-  (ac-config-default)
-  (setq ac-auto-start nil)
-  (help/not-on-gui (ac-set-trigger-key "TAB"))
-  (help/on-gui (ac-set-trigger-key "<tab>"))
-  :diminish auto-complete-mode)
-(use-package auto-complete-chunk
-  :ensure t)
-```
-
-Auto-completion for `.`-separated words.
-
-```lisp
-(use-package auto-complete-chunk
-  :ensure t)
-```
-
-## Macros
-
-    ID: E32B41C2-C761-42F0-A9AE-F89A2A18439F
-
-The macro recorder and Multiple-Cursors provide two ways to do the right thing
-in different situations. Be very thoughtful and allow every function.
-
-```lisp
-(use-package multiple-cursors
-  :ensure t)
-```
-
-## Mark and Region
-
-    ID: A3C2AF94-B834-4FD2-9B23-F64F618B31C3
-
-When you start typing and text is selected, replace it with what you are typing,
-or pasting
-
-```lisp
-(delete-selection-mode t)
-```
-
-## Minibuffer
-
-    ID: 7A3C5EF1-BEF7-4007-86B1-78590CB62EB2
-
-Make it easier to answer questions.
-
-```lisp
-(fset #'yes-or-no-p #'y-or-n-p)
-```
-
-Comfortably display information.
-
-```lisp
-(setq resize-mini-windows t)
-(setq max-mini-window-height 0.33)
-```
-
-Allow recursive commands-in-commands and highlight the levels of recursion.
-
-```lisp
-(setq enable-recursive-minibuffers t)
-(minibuffer-depth-indicate-mode t)
-```
-
-## Mouse
-
-    ID: F3E75BDE-F853-488C-AF46-03B54C0A0919
-
-Scroll pleasantly with the mouse wheel. A slow turn moves the buffer up and down
-one line at a time. So does a fast turn. Anything further than 5-10 lines deserves
-a fast navigation vehicle.
-
-```lisp
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
-(setq mouse-wheel-progressive-speed nil)
-(setq mouse-wheel-follow-mouse t)
-```
-
-## Occur
-
-    ID: FA8195C5-30B7-44CF-8D0F-8FE2CE1CB3DA
-
-```lisp
-(defun help/occur-mode-hook-fn ()
-  "HELP customizations."
-  (interactive)
-  (turn-on-stripe-buffer-mode)
-  (stripe-listify-buffer))
-(add-hook 'occur-mode-hook #'help/occur-mode-hook-fn)
-(define-key occur-mode-map (kbd "n") #'next-logical-line)
-(define-key occur-mode-map (kbd "p") #'previous-logical-line)
-```
-
-## Popups
-
-    ID: E1E4E20E-F789-422B-B0B3-706BD8A842DF
-
-Provide popup notifications.
-
-```lisp
-(use-package alert
-  :ensure t
-  :config
-  (setq alert-fade-time 10)
-  (help/on-gui
-   (help/on-osx
-    (setq alert-default-style 'growl)))
-  (setq alert-reveal-idle-time 120))
-```
-
-## Projects
-
-    ID: B35103E2-0FE9-466C-9AB9-39EA28FADEDB
-
-Directories that have Git working copies are logically projects. Manage them
-with Projectile.
-
-```lisp
-(use-package projectile
-  :ensure t
-  :config
-  (projectile-global-mode t)
-  (global-set-key (kbd "s-z") #'projectile-find-file)
-  (help/on-windows
-   (setq projectile-indexing-method 'alien))
-  :diminish projectile-mode)
-```
-
-Notify Magit about every working copy that Projectile knows about.
-
-```lisp
-(eval-after-load "projectile"
-  '(progn (setq magit-repository-directories (mapcar (lambda (dir)
-                                                       (substring dir 0 -1))
-                                                     (remove-if-not (lambda (project)
-                                                                      (file-directory-p (concat project "/.git/")))
-                                                                    (projectile-relevant-known-projects)))
-
-                magit-repository-directories-depth 1)))
-```
-
-## Printing
-
-    ID: C6230D9E-8331-4092-8846-DB244455C922
-
-```lisp
-(use-package pp
-  :commands (pp-display-expression))
-```
-
-## Register
-
-    ID: 34801113-5002-4502-821E-248C6406395C
-
-```lisp
-(setq register-preview-delay 2)
-(setq register-separator "\n\n")
-```
-
-## Replacing
-
-    ID: B10A2279-4F34-4DA2-BB1A-491B82F2F6EA
-
-Display information about search-and-or-replace operation.
-
-```lisp
-(use-package anzu
-  :ensure t
-  :config
-  (global-anzu-mode t)
-  (setq anzu-mode-lighter "")
-  (setq anzu-deactivate-region t)
-  (setq anzu-search-threshold 1000)
-  (setq anzu-replace-to-string-separator " ⇒ "))
-```
-
-## Save History of All Things
-
-    ID: 31961F28-1913-4247-986A-273391C4A85D
-
-It is nice to have commands and their history saved so that every time you get
-back to work, you can just re-run stuff as you need it.
-
-```lisp
-(setq savehist-save-minibuffer-history 1)
-(setq savehist-additional-variables
-      '(kill-ring
-        search-ring
-        regexp-search-ring))
-(savehist-mode t)
-```
-
-## Searching
-
-    ID: 960E2DE0-3F5A-40AB-A9BF-FF08A410EAB7
-
-When searching don&rsquo;t use lax whitespace matching; and make it easy to toggle.
-
-```lisp
-(setq isearch-lax-whitespace nil)
-(setq isearch-regexp-lax-whitespace nil)
-```
-
-Make searches case-insensitive.
-
-```lisp
-(setq-default case-fold-search t)
-```
-
-## Spell Checking
-
-    ID: 902EAA81-4FC0-40A0-AE6D-D31C474B87E0
-
-Ispell is simple and powerful.
-
-### Org-Mode
-
-    ID: 72540881-8F99-4ED6-9FE4-7292A66B3089
-
-Never ispell the following objects.
-
-Block regex helper.
-
-```lisp
-(defun help/block-regex (special)
-  "Make an ispell skip-region alist for a SPECIAL block."
-  (interactive)
-  `(,(concat help/org-special-pre "BEGIN_" special)
-    .
-    ,(concat help/org-special-pre "END_" special)))
-```
-
-Source-Blocks.
-
-```lisp
-(add-to-list 'ispell-skip-region-alist (help/block-regex "SRC"))
-```
-
-Example-Blocks. This system often uses Source-Blocks to edit content and
-Example-Blocks to make it easily renderable when it is not for running.
-
-```lisp
-(add-to-list 'ispell-skip-region-alist (help/block-regex "EXAMPLE"))
-```
-
-Properties.
-
-```lisp
-(add-to-list 'ispell-skip-region-alist '("^\s*:PROPERTIES\:$" . "^\s*:END\:$"))
-```
-
-Footnotes.
-
-```lisp
-(add-to-list 'ispell-skip-region-alist '("\\[fn:.+:" . "\\]"))
-```
-
-Footnotes with URLs that contain line-breaks.
-
-```lisp
-(add-to-list 'ispell-skip-region-alist '("^http" . "\\]"))
-```
-
-Bold text list items.
-
-```lisp
-(add-to-list 'ispell-skip-region-alist '("- \\*.+" . ".*\\*: "))
-```
-
-Check `SPECIAL LINE` definitions, ignoring their type.
-
-```lisp
-(let ()
-  (--each
-      '(("ATTR_LATEX" nil)
-        ("AUTHOR" nil)
-        ("BLOG" nil)
-        ("CREATOR" nil)
-        ("DATE" nil)
-        ("DESCRIPTION" nil)
-        ("EMAIL" nil)
-        ("EXCLUDE_TAGS" nil)
-        ("HTML_CONTAINER" nil)
-        ("HTML_DOCTYPE" nil)
-        ("HTML_HEAD" nil)
-        ("HTML_HEAD_EXTRA" nil)
-        ("HTML_LINK_HOME" nil)
-        ("HTML_LINK_UP" nil)
-        ("HTML_MATHJAX" nil)
-        ("INFOJS_OPT" nil)
-        ("KEYWORDS" nil)
-        ("LANGUAGE" nil)
-        ("LATEX_CLASS" nil)
-        ("LATEX_CLASS_OPTIONS" nil)
-        ("LATEX_HEADER" nil)
-        ("LATEX_HEADER_EXTRA" nil)
-        ("NAME" t)
-        ("OPTIONS" t)
-        ("POSTID" nil)
-        ("SELECT_TAGS" nil)
-        ("STARTUP" nil)
-        ("TITLE" nil))
-    (add-to-list
-     'ispell-skip-region-alist
-     (let ((special (concat "#[+]" (car it) ":")))
-       (if (cadr it)
-           (cons special "$")
-         (list special))))))
-```
-
-## Sudo
-
-    ID: 562F54F8-6E35-4DE1-9E9C-436B55CE83CE
-
-Configure Sudo with Ido.
-
-```lisp
-(help/on-osx
- (defun help/ido-find-file ()
-   "Find file as root if necessary.
-
-Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
-   (unless (and buffer-file-name
-              (file-writable-p buffer-file-name))
-     (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
-
- (advice-add #'ido-find-file :after #'help/ido-find-file))
-```
-
-## Syntax Checking
-
-    ID: B4A8362E-B218-4353-AC4B-7059A686EA89
-
-Perform syntactic analysis all the time.
-
-```lisp
-(use-package flycheck
-  :ensure t
-  :config
-  (add-hook 'after-init-hook #'global-flycheck-mode)
-  :diminish flycheck-mode)
-```
-
-## TAB
-
-    ID: 78E2BA2B-8289-422F-99DC-5E40DE928E68
-
-Most modes in this system will never use TAB.
-
-```lisp
-(setq-default indent-tabs-mode nil)
-```
-
-Remove TAB from all buffers before persisting to the backing file unless it is
-configured to retain TAB. The use case is a Makefile.
-
-```lisp
-(defun help/untabify-if-not-indent-tabs-mode ()
-  "Untabify if `indent-tabs-mode' is false.
-
-Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
-  (interactive)
-  (when (not indent-tabs-mode)
-    (untabify (point-min) (point-max))))
-
-(add-hook 'before-save-hook #'help/untabify-if-not-indent-tabs-mode)
-```
-
-Most programing modes indent to 2 spaces. TABs should be the same width.
-
-```lisp
-(setq-default tab-width 2)
-```
-
-## Version Control
-
-    ID: F5E2718B-F54F-41C5-9CED-6E470CAC238D
-
-Use VC for single files and Magit for multiple files.
-
-The commit log editor uses With-Editor and Server modes. They are not diminished because they are infrequently used.
-
-```lisp
-(use-package magit
-  :ensure t
-  :config
-  (global-set-key (kbd "s-e") #'help/safb-help/magit-status))
-```
-
-Leave the VC message template empty.
-
-```lisp
-(eval-after-load "log-edit"
-  '(remove-hook 'log-edit-hook 'log-edit-insert-message-template))
-```
-
-Git ignore files are text files.
-
-```lisp
-(add-to-list 'auto-mode-alist '(".gitignore$" . text-mode))
-```
-
-## Whitespace Management
-
-    ID: 5BBD948F-7239-457E-8BD9-710558C0E241
-
-Make control characters easily visible.
-
-```lisp
-(use-package whitespace
-  :ensure t
-  :config
-  (setq whitespace-style '(trailing lines tab-mark))
-  (setq whitespace-line-column help/column-width)
-  (global-whitespace-mode t)
-  :diminish whitespace-mode global-whitespace-mode)
-```
-
-## Word Wrap
-
-    ID: 2156A7CE-297E-478F-AFF2-13CE64B3C5C3
-
-```lisp
-(diminish 'visual-line-mode)
-```
-
-# Quiet and Pleasant Appearance
-
-    header-args: :noweb-ref Quiet-and-Pleasant-Appearance
-
-    ID: 197B7B84-5090-47AE-9180-F8F606D0012F
-
-Configure EMACS to personal-taste for &ldquo;noise&rdquo; and &ldquo;form&rdquo;.
-
-## Line Number
-
-    ID: 4D367462-1C7B-4110-B7D1-E973D386B4E1
-
-The nlinum gutter should not &ldquo;shift&rdquo; as it transitions between line numbers of
-different magnitudes. For example going from line 99 to 100 will shift the
-buffer contents by one character. That is distracting and interrupts the flow.
-
--   Switched to `nlinum` from `linum` because of slowness with this file when headings
-    are collapsed
-
-Most files will be less than 100,000 lines.
-
-```lisp
-(use-package nlinum
-  :ensure t
-  :config
-  (setq nlinum-format "%05d"))
-```
-
-## Buffer
-
-    ID: 61586A23-B774-4436-B916-348453EEA3DD
-
-Never automatically convert the end of the line character. For most of us this
-is between UNIX and DOS.
-
-```lisp
-(setq inhibit-eol-conversion t)
-```
-
-Give buffers backed by identically named files distinguishable names.
-
-```lisp
-(use-package uniquify)
-(setq uniquify-buffer-name-style 'forward)
-```
-
-Don&rsquo;t use audible bells, use visual bells.
-
-```lisp
-(setq ring-bell-function 'ignore)
-(setq visible-bell t)
-```
-
-Highlight s-expressions.
-
-```lisp
-(setq blink-matching-paren nil)
-(show-paren-mode)
-(setq show-paren-delay 0)
-(setq show-paren-style 'expression)
-```
-
-The cursor should not blink and distract you. On a graphic display make the
-cursor a box and stretch it as wide as the character below it.
-
-```lisp
-(blink-cursor-mode 0)
-(help/on-gui
- (setq-default cursor-type 'box)
- (setq x-stretch-cursor 1))
-```
-
-EMACS used UTF-8 by default. Make copying and pasting easier.
-
-```lisp
-(prefer-coding-system 'utf-8)
-(help/on-gui
- (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
- (help/on-windows
-  (set-clipboard-coding-system 'utf-16le-dos)))
-```
-
-Make it very easy to see the line with the cursor.
-
-```lisp
-(global-hl-line-mode t)
-```
-
-Make it very easy to input special-characters using TeX coding.
-
-```lisp
-(setq default-input-method 'TeX)
-```
-
-## Color Theme
-
-    ID: 057BBA77-4662-4F7B-B47A-CB1E79A1618B
-
-[Solarized Theme](https://github.com/bbatsov/solarized-emacs)
-
--   ~1,000 Faces Defined
--   47,869 Downloads
-
--   A distinct fringe provides a definition of space.
--   The modeline is always at the bottom and doesn&rsquo;t need differentiation.
--   Minimize bold and italic faces.
--   Minimize fringe indicators.
-
-```lisp
-(use-package solarized-theme
-  :ensure t
-  :config
-  (setq solarized-distinct-fringe-background t)
-  (setq solarized-high-contrast-mode-line nil)
-  (setq solarized-use-less-bold t)
-  (setq solarized-use-more-italic nil)
-  (setq solarized-emphasize-indicators nil)
-  (load-theme 'solarized-dark t))
-```
-
-## Comint
-
-    ID: B4E17CF5-5542-4526-ADEE-D5EC3DB9131F
-
-`comint-mode` is only maybe the second most important thing for making Emacs
-really, really special.
-
-```lisp
-(setq comint-scroll-to-bottom-on-input 'this)
-(setq comint-scroll-to-bottom-on-output 'others)
-(setq comint-move-point-for-output 'others)
-(setq comint-show-maximum-output t)
-(setq comint-scroll-show-maximum-output t)
-(setq comint-move-point-for-output t)
-```
-
-This configuration had been working fine for a long time. The intent was for it
-to be crystal clear that the prompt line in comint buffers would be read only.
-This turned out to be a mistake; though I am not sure why, when, or how it
-became a mistake. Nonetheless, this should be left alone. The way the issue here
-manifested was that all R buffers opened by `ess` were 100% read only which
-obviously is a **big issue** if you actually want to use! ROFL
-
-```lisp
-(setq comint-prompt-read-only nil)
-```
-
-## Font
-
-    ID: EC675F88-89C0-4A5A-B910-843F28C0F90F
-
-The best programming font is Deja Vu Sans Mono because it sans-serif and
-support a lot of Unicode characters. Set it to a good default for an 80
-character wide buffer and make it easy to adjust it.
-
-```lisp
-(help/on-gui
- (defvar help/font-size 10 "The preferred font size.")
- (help/on-osx (setq help/font-size 17))
- (help/on-windows (setq help/font-size 13))
- (defconst help/font-base "DejaVu Sans Mono" "The preferred font name.")
- (defun help/font-ok-p ()
-   "Is the configured font valid?"
-   (interactive)
-   (member help/font-base (font-family-list)))
- (defun help/font-name ()
-   "Compute the font name and size string."
-   (interactive)
-   (let* ((size (number-to-string help/font-size))
-          (name (concat help/font-base "-" size)))
-     name))
- (defun help/update-font ()
-   "Updates the current font given configuration values."
-   (interactive)
-   (if (help/font-ok-p)
-       (progn
-         (message "Setting font to: %s" (help/font-name))
-         (set-frame-font (help/font-name)))
-     (message (concat "Your preferred font is not available: " help/font-base))))
- (help/update-font))
-```
-
-## Frame
-
-    ID: B3F90439-D007-42EE-95FC-E93BBA827325
-
-The scroll-bars are helpful for new users.
-
-```lisp
-(scroll-bar-mode 0)
-```
-
-The tool-bar is helpful for new users. Isn&rsquo;t the argument funny?
-
-```lisp
-(tool-bar-mode -1)
-```
-
-## Pointer
-
-    ID: 2A437D32-2944-41B3-AD8F-438ABBD4E0CF
-
-Hide the pointer when typing.
-
-```lisp
-(setq make-pointer-invisible t)
-```
-
-## Version Control
-
-    ID: 99337D9E-DBC9-4673-B814-EBC94C044E3E
-
-Provide VC file status indicators.
-
-```lisp
-(use-package diff-hl
-  :ensure t)
-```
-
-Ediff split frame horizontally.
-
-```lisp
-(setq ediff-split-window-function 'split-window-horizontally)
-```
-
-## Window
-
-    ID: 9A848D65-DE56-4F95-A84D-CAE74781CD25
-
-Menu bars make EMACS more accessible to non-EMACS users.
-
-```lisp
-(menu-bar-mode t)
-```
-
-Easily return to previous configurations. 2-4 windows are easily managed by
-hand.
-
-```lisp
-(winner-mode t)
-```
-
-Frequently use between 1 and 3 windows. 1 and 2 are already managed. Easily
-create 3.
-
-```lisp
-(defun help/split-into-3-windows ()
-  (interactive)
-  (delete-other-windows)
-  (split-window-vertically)
-  (split-window-vertically)
-  (balance-windows))
-```
-
-# Principle of Least Astonishment (POLA)
-
-    header-args: :noweb-ref Principle-of-Least-Astonishment
-
-    ID: 43D9AB52-2157-4A1D-AD9C-D35996E91269
-
-## Scoping Behavior
-
-    ID: C0F8DDC4-C2B7-4578-B9B4-FA13E3BF0EBD
-
-EMACS values dynamic-scoping for now and in the future.
-
-EMACS values lexical-scoping in the future.
-
-There are pecuilar interactions between [lexically and dynamically scope closures](https://yoo2080.wordpress.com/2011/12/31/lexical-scoping-and-dynamic-scoping-in-emacs-lisp/)
-and [special variables](https://yoo2080.wordpress.com/2013/08/14/invasion-of-special-variables-in-emacs-lisp/).
-
-With the future in mind, make the switch now.
-
-It is enabled with a non-nil buffer-local variable `lexical-binding`. The variable
-is inserted into each of the Web definitions that this system provides. Those
-definitions can&rsquo;t use Org-Mode comments so they are defined individually in each
-Web.
-
-## Load Behavior
-
-    ID: B1A48CB2-9295-466E-947F-EE24D57DB548
-
-EMACS can load 3 different representations of a Emacs-Lisp source file code
-OOTB. The name of source code file is the value before the file extension. When
-you pass `load` a name it searches for an acceptable representation. Representation
-types are indicated by their extension name. `.el` is a human readable and
-uncompiled. `.elc` is not human readable and compiled. `.gz` is Gzip compressed and
-contains `.el` or `.elc` files.
-
-The variable `load-suffixes` determines the order for which text and byte-code
-representations are first searched by extension-name. The variable
-`load-file-rep-suffixes` determines the order for all other extension types.
-
-OOTB, EMACS combines the productivity of REPL style of development with the
-speed of compiled code by `load`&rsquo;ing byte-code first, text second, and compressed
-third. This workflow gives you the fastest code at run-time and lets you
-experiment with new features stored in text. When you are ready to use them
-every time, you compile them. There is only one downside of this approach: when
-you forget that it works this way it can be confusing.
-
-When you forget about that style of system you end up with surprising behavior.
-The surprise comes when you forget to compile code and then write new code that
-depends on the now old version of that code. After the next build, your system
-can break in surprising ways. This violates the Principle of Least Astonishment.
-
-This system values predictability so it does the simplest thing possible: `load`
-searches for the newest representation of a file and uses that one. It assumes
-that Sysop has total and complete control over the management of file
-representations.
-
-This is the **first** thing that *ought* to happen in the initialization of **any**
-tangled system.
-
-```lisp
-(setq load-prefer-newer t)
-```
-
-# Watch What You Eat
-
-    header-args: :noweb-ref Watch-What-You-Eat
-
-    ID: 59073E74-83D9-4218-917C-789A27D57E5A
-
-**Code requiring package-management can only follow this block.**
-
-Before ELPA, I used SVN to manage software packages for EMACS. After ELPA,
-I used ELPA-packages. Now this system uses MELPA and GNU. MELPA packages always
-have their issues fixed very quickly. GNU packages rarely have issues.
-
-Initialize Package.
-
-```lisp
-(package-initialize)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/") t)
-(add-to-list 'package-archives
-             '("gnu" . "http://elpa.gnu.org/packages/") t)
-```
-
-Use-Package is the most configurable and performant way to manage ELPA packages.
-
-Add the Use-Package distribution the load path.
-
-```lisp
-(add-to-list 'load-path"~/src/use-package")
-```
-
-Load Use-Package and it&rsquo;s partner Diminish. Every package loaded before this
-point uses `require`. Every package loaded after this point uses `use-package`.
-
-```lisp
-(eval-when-compile
-  (require 'use-package))
-(use-package diminish)
-```
-
-# Hacking
-
-    ID: B7CE60F5-5510-4358-8DD5-D42D9A2F4D9B
-
-## Common Configurations
-
-    header-args: :noweb-ref Hacking-Common-Configurations
-
-    ID: BE02A401-AFF6-4B64-B7F3-589C69CA7099
-
-This system configures `text-mode` and `prog-mode` very similarly:
-
--   EMACS **exists** to help you work with text.
--   EMACS&rsquo; entire configuration helps you work with text whether it is in a
-    specific mode or not.
--   Org-Mode&rsquo;s motto is &ldquo;**Organize Your Life In Plain Text!**&rdquo;.
--   From an EMACS and a LP perspective `text-mode` **is a** programming mode.
--   In this system: **Text is the User-Interface**.
-
-This system does not rely on `prog-mode` inheritance to configure it&rsquo;s hacking
-modes:
-
--   The EMACS literature advises that modes extend `text-mode` or `prog-mode`
--   That *would* make it easier to configure nearly everything using `prog-mode-hook`.
--   In practice `prog-mode` is too new.
--   Not all programming modes inherit from it. Not even `IELM` is ready.
-
-With that in mind this system:
-
--   Defines common configuration here for reuse in every desired mode starting
-    with `text-mode` and then all logical programming modes.
--   Explicitly utilizes it directly instead of using inheritance.
--   This system refers to this configuration of programming modes as `prog*-mode`.
--   The line between &ldquo;configuring EMACS&rdquo;, &ldquo;configuring `text-mode`&rdquo;, and
-    &ldquo;configuring `prog*-mode`&rdquo; is often blurred and sometimes confusing. The lines
-    become wavy and intertwined with mastery of EMACS and LP.
-
-### Text-Mode
-
-    ID: 7CFD11FB-F3D4-4272-9DBC-2A420884097C
-
--   Line numbers make documents easier to read.
--   Indicate that Text-Mode buffers ought to be 80 characters wide.
-
-    ```lisp
-    (use-package fill-column-indicator
-      :ensure t
-      :config
-      (setq-default fill-column help/column-width))
-    ```
--   Display line in file
-
-    ```lisp
-    ```
-
-```lisp
-(defun help/text-prog*-setup ()
-  "HELP's standard configuration for buffer's working with text, often for
-   programming."
-  (interactive)
-  (visual-line-mode)
-  (nlinum-mode)
-  (fci-mode)
-  (rainbow-mode)
-  (help/try-to-add-imenu)
-  (writegood-mode)
-  (turn-on-page-break-lines-mode))
-
-(add-hook 'text-mode-hook #'help/text-prog*-setup)
-```
-
-### Prog\*-Mode Modes
-
-    ID: 6F71F8AF-4227-46D3-9BD8-2F86B5815B72
-
--   Mode inheritance is represented by list definition & indentation.
--   Some modes are so simple that inheritance isn&rsquo;t defined.
-
--   Hacking mode hooks.
-    -   Configurations common to every hacking vehicle.
-
-        ```lisp
-        (setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook R-mode-hook SAS-mode-hook graphviz-dot-mode-hook c-mode-common-hook))
-        ```
-    -   LISP mode hooks.
-        -   Are hacking modes.
-
-            ```lisp
-            (setq help/hack-lisp-modes
-                  '(emacs-lisp-mode-hook
-                    ielm-mode-hook
-                    lisp-interaction-mode-hook
-                    scheme-mode-hook))
-            (setq help/hack-modes (append help/hack-modes help/hack-lisp-modes))
-            ```
-        -   IELM mode hook.
-            -   Does one or two more things.
-
-### Prog\*-Mode Hook
-
-    ID: FF132B34-B61B-4DAE-A0B9-E37E39B9BFCE
-
-1.  Goal
-
-        ID: E2C7121E-2E56-4A77-8347-2E7DFB73E9B3
-
-    -   Indent at every opportunity and automatically. Verify that it makes sense
-        for the mode. Explicitly define instead of relying on `prog-mode` inheritance;
-        use this documents logical `prog*-mode` approach instead.
-
-        ```lisp
-        (use-package aggressive-indent
-          :ensure t
-          :config)
-        ```
-    -   Always maintain balanced brackets. Easily wrap the selected region. Auto-escape
-        strings pasted into other strings. Smartparens provides built-in correct
-        behavior for most modes.
-
-        ```lisp
-        (use-package smartparens-config
-          :ensure smartparens
-          :config
-          (setq sp-show-pair-from-inside nil)
-          :diminish smartparens-mode)
-        ```
-
-2.  Implementation.
-
-        ID: 61A981CB-1311-4F51-A264-D748FA34F1D3
-
-    ```lisp
-    (defun help/hack-prog*-mode-hook-fn ()
-      (interactive)
-      (help/text-prog*-setup)
-      (smartparens-strict-mode)
-      (aggressive-indent-mode)
-      (hs-minor-mode)
-      (help/not-on-gui (local-set-key (kbd "RET") #'newline-and-indent))
-      (help/on-gui (local-set-key (kbd "<return>") #'newline-and-indent)))
-    ```
-
-### Wiring
-
-    ID: 50304E30-682C-4C9A-9615-D6E61DAE533B
-
-```lisp
-(let ()
-  (--each help/hack-modes
-    (add-hook it #'help/hack-prog*-mode-hook-fn)))
-
-(let ()
-  (--each help/hack-lisp-modes
-    (add-hook it #'help/emacs-lisp-mode-hook-fn)))
-
-(add-hook 'ielm-mode-hook #'help/ielm-mode-hook-fn)
-```
-
-## (Literate Programming)
-
-    ID: 6B83373B-8898-4AC0-B7F6-C42418CCE5E4
-
-## Emacs Lisp
-
-    header-args: :noweb-ref Hacking-Literate-Programming-Emacs-Lisp
-
-    ID: 3AD91697-42DE-4555-9F49-B7D9F5E502D3
-
-```lisp
-(setq initial-scratch-message nil)
-(use-package lexbind-mode)
-
-(defun help/elisp-eval-buffer ()
-  "Intelligently evaluate an Elisp buffer."
-  (interactive)
-  (help/save-all-file-buffers)
-  (eval-buffer))
-
-(defun help/elisp-mode-local-bindings ()
-  "Helpful behavior for Elisp buffers."
-  (local-set-key (kbd "s-l eb") #'help/elisp-eval-buffer)
-  (local-set-key (kbd "s-l ep") #'eval-print-last-sexp)
-  (local-set-key (kbd "s-l td") #'toggle-debug-on-error)
-  (local-set-key (kbd "s-l mef") #'macroexpand)
-  (local-set-key (kbd "s-l mea") #'macroexpand-all)
-  (local-set-key (kbd "s-:") #'my-eval-expression)
-  (local-set-key (kbd "#") #'endless/sharp))
-
-(defun help/emacs-lisp-mode-hook-fn ()
-  (interactive)
-  (help/elisp-mode-local-bindings)
-  (lexbind-mode)
-  (eldoc-mode)
-  (diminish 'eldoc-mode))
-
-(setq ielm-noisy nil)
-
-(setq ielm-prompt "𝔼LISP> ")
-
-(setq ielm-dynamic-return nil)
-
-(setq ielm-dynamic-multiline-inputs nil)
-
-(defun help/ielm-mode-hook-fn ()
-  "HELP customizations."
-  (interactive)
-  (help/ielm-auto-complete))
-```
-
-### Keybinding
-
-    ID: 3A6B16EC-870A-4EFE-935A-C03F8DFB67BF
-
-```lisp
-(define-key emacs-lisp-mode-map (kbd "s-p") #'describe-thing-in-popup)
-```
-
-## Org-Mode
-
-    header-args: :noweb-ref Hacking-Literate-Programming-Org-Mode
-
-    ID: EBDA3D1C-536F-4252-AE26-32A3FDF5326C
-
-When source blocks are evaluated, their results get stored in a result area,
-typically for display. If the results are small, they are displayed with colons
-instead of an `example` block. Instead, **always** place them in an
-example block. This makes exports more consistent and other Org-Mode features seem
-to behave more predictably.
-
-```lisp
-(setq org-babel-min-lines-for-block-output 0)
-```
-
-Configure Org-Mode to manage it&rsquo;s Source-Block backed buffers the same as the
-rest of this system.
-
-```lisp
-(setq org-edit-src-auto-save-idle-delay 0)
-(setq org-edit-src-turn-on-auto-save nil)
-```
-
-Update in-buffer images after Source-Block execution. This is a programming task.
-That is why it is under this heading and Evaluation. This is a setting configuring
-how the results of evaluation are refreshed in EMACS.
-
-```lisp
-(defun help/org-babel-after-execute-hook ()
-  "HELP settings for the `org-babel-after-execute-hook'.
-
-This does not interfere with exports.
-
-Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00534.html'"
-  (interactive)
-  (org-redisplay-inline-images))
-
-(add-hook 'org-babel-after-execute-hook #'help/org-babel-after-execute-hook)
-```
-
-Never &ldquo;automatically&rdquo; evaluate a source block.
-
-```lisp
-(setq org-confirm-babel-evaluate nil)
-```
-
-Make it unpleasant for Sysop to modify source-block outside of a source-block
-backed buffer. The next step is to write some code to prevent modifying
-source-blocks outside of that place.
-
-```lisp
-(setq org-src-tab-acts-natively nil)
-```
-
-Personal workflow:
-
--   **TODO:** Zero progress.
--   **PROGRESS:** Forward movement.
--   **HELD-BLOCKED:** Can&rsquo;t move forward until external agent completes.
--   **HELD-FROZEN:** Won&rsquo;t move forward until I reinitialize it.
--   **HELD-UNTIL:** Reinitialize when conditional.
--   **REVIEW:** Work is complete and needs to be evaluated.
--   **DONE:** Progress stops.
-
-```lisp
-(setq org-todo-keywords
-      '((sequence
-         "TODO"
-         "PROGRESS"
-         "HELD-BLOCKED"
-         "HELD-FROZEN"
-         "HELD-UNTIL"
-         "REVIEW"
-         "DONE"
-         )))
-```
-
-When running in a GUI, I would like linked images to be displayed inside of
-Emacs.
-
-```lisp
-(setq org-startup-with-inline-images (display-graphic-p))
-```
-
-Use Ido completion in Org-Mode.
-
-```lisp
-(setq org-completion-use-ido t)
-(setq org-outline-path-complete-in-steps nil)
-(setq org-completion-use-iswitchb nil)
-```
-
-Org-Mode lets you use single letter commands to do stuff on headers. I like to
-use `c` for cycling the header expansion.
-
-```lisp
-(setq org-use-speed-commands t)
-```
-
-Ask before execution of shell links. This might seem like an Evaluation
-activity. It is. It is interactive.
-
-```lisp
-(setq org-confirm-shell-link-function 'y-or-n-p)
-```
-
-Ask before execution of Emacs-Lisp.
-
-```lisp
-(setq org-confirm-elisp-link-function 'y-or-n-p)
-```
-
-Make sure that incomplete TODO entries prevent the enclosing parent from ever
-turning to DONE.
-
-```lisp
-(setq org-enforce-todo-dependencies t)
-```
-
-Allow the mouse to do Org-Mode things like expand and collapse headings.
-
-```lisp
-(when (display-graphic-p)
-  (use-package org-mouse))
-```
-
-Use a real ellipsis to render an ellipsis for Org-Mode stuff like showing that a
-header is collapsed.
-
-```lisp
-(setq org-ellipsis "…")
-```
-
-It is easy to see indentation of headlines without having to count asterisks, so
-don&rsquo;t show them, only show the significant and last one.
-
-```lisp
-(setq org-hide-leading-stars t)
-```
-
-Maximize character space for writing. Do not indent according to the outline
-node level because it would waste a lot of space. Ident the next body just like
-any other text document.
-
-```lisp
-(setq org-adapt-indentation nil)
-```
-
-Display emphasized text as you would in a WYSIWYG editor.
-
-```lisp
-(setq org-fontify-emphasized-text t)
-```
-
-Use Unicode characters to visualize things like right arrow eg &rarr; . Most of those
-symbols are correctly exported to the destination format. The most obvious is
-this example in LaTeX versus Text.
-
-```lisp
-(setq org-pretty-entities t)
-```
-
-Highlight LaTeX and related markup.
-
-Normally, I don&rsquo;t do any syntax highlighting, as I believe that should be
-delegated to source buffers, thinking that to do otherwise is distracting.
-However, I already do configure subscripts and Greek letters to be displayed
-with syntax highlighting, because I want to indicate to the human reader that
-they are special, and specifically *not*-Unicode. Do the same thing for LaTeX
-and related markup.
-
-```lisp
-(setq org-highlight-latex-and-related '(latex script entities))
-```
-
-Allow &ldquo;refactoring&rdquo; of Footnotes between documents.
-
-```lisp
-(setq org-footnote-define-inline t)
-(setq org-footnote-auto-label 'random)
-(setq org-footnote-auto-adjust nil)
-(setq org-footnote-section nil)
-```
-
-This is an amazingly easy way to screw up your document. The more you edit
-org docs, the more you realize how you must truly protect it.
-
-```lisp
-(setq org-catch-invisible-edits 'error)
-```
-
-Though I am not delving deep, it is hard not to want to customize some stuff
-and perhaps this is the start. Even though I enabled this, I don&rsquo;t think that I
-ever used it.
-
-```lisp
-(setq org-loop-over-headlines-in-active-region t)
-```
-
-It is *almost always* faster to work with org documents when they are fully
-expanded. Anyway, the structure cycling makes it really, really easy to get an
-*outline view* again.
-
-```lisp
-(setq org-startup-folded "nofold")
-```
-
-When images are displayed in the buffer, display them in their actual size. As
-the operator, I want to know their true form. Any modifications required for
-export will be stated explicitly.
-
-```lisp
-(setq org-image-actual-width t)
-```
-
-Hide the delimeter for emphasized text. Unicode characters break table
-alignment.
-
-```lisp
-(setq org-hide-emphasis-markers t)
-```
-
-Realign tables automatically.
-
-```lisp
-(setq org-startup-align-all-tables t)
-```
-
-Always use Unicode checkboxes.
-
-```lisp
-(setq org-html-checkbox-type 'unicode)
-```
-
-You may display syntax highlighting for code in source blocks. I don&rsquo;t.
-
-```lisp
-(setq org-src-fontify-natively nil)
-```
-
-When edit mode is exited, the option exists to automatically remove empty
-opening and closed lines for the source block. Never do this. The thing is that
-I forgot why. When I was working on a recent analysis with R there was a
-space appearing in the opening and closing line of the source block that didn&rsquo;t
-appear in the source editing buffer. That surprised me. I am sure that I&rsquo;ve
-forgotten why this is the case. I don&rsquo;t like it because you add a bunch of
-empty lines in the source buffer for every source block. With that in mind I
-will enable this feature and try it out again.
-
-```lisp
-(setq org-src-strip-leading-and-trailing-blank-lines t)
-```
-
-The source block buffer may be configured to appear in a few different places.
-For a while I really liked `reorganize-frame` because sometimes you want to be
-able to see the code you are editing in edition to the rest of the document. At
-least that is what I am telling myself. Once I learned you could change it I
-realized that 1 I should have asked if it could be changed and 2 I should have
-changed it. The flow that I&rsquo;ve got configured here is that you are either in the
-source document where code blocks are not highlighted or you are in the source
-block so you are editing in a buffer that is full-fledged HELP. That is the best
-way so you can focus completely on each task at hand in the ideal mode for that
-task. Anything else results in distractions and errors.
-
-```lisp
-(setq org-src-window-setup 'current-window)
-```
-
-Org-Mode has a really nice feature that hitting `C-c C-c` will generally just do
-the *right thing*. It is really nice. That feature extends to source blocks of
-course. Ironically I had a typo here, typing *of curse* instead of *of course*.
-The thing is that you really, really need to develop a personal workflow, and
-then configure the tool to enable it. The more I learn about Org-Mode, the more
-leery I am about making it really easy to evaluate code. I want it to be a
-really, really specific and decided action to evaluate a code block, so don&rsquo;t
-make it so easy as `C-c C-c`.
-
-```lisp
-(setq org-babel-no-eval-on-ctrl-c-ctrl-c t)
-```
-
-Configure the system to successfully use `vc-next-action` while editing a
-Source-Block. Before perfoming the edit, check if it is Org-Mode and
-exit the Source-Block Buffer (SBB). If this system stays in the SBB
-when calling `vc-next-action` the entire contents of the buffer are escaped
-as Org-Mode source code upon returning to the source buffer (this). Do the same
-thing before any version control modes that would result in the same condition.
-
-```lisp
-(defun help/vc-next-action ()
-  "If in org source block, exit it before `vc-next-action'."
-  (interactive)
-  (when (condition-case nil
-            (org-src-edit-buffer-p)
-          (error nil))
-    (org-edit-src-exit))
-  (vc-next-action nil))
-(defun help/magit-status ()
-  "If in org source block, exit it before `magit-status'."
-  (interactive)
-  (when (condition-case nil
-            (org-src-edit-buffer-p)
-          (error nil))
-    (org-edit-src-exit))
-  (magit-status))
-```
-
-Never use the original version.
-
-```lisp
-(setq org-edit-src-code nil)
-```
-
-Easily wrap text in Org-Mode. This is not used by the rest of HELP because
-Smartparens provides that functionality for programming modes.
-
-```lisp
-(use-package wrap-region
-  :ensure t
-  :config
-  :diminish wrap-region-mode
-  :config
-  (add-hook 'org-mode-hook 'wrap-region-mode))
-```
-
-**Bold**.
-
-```lisp
-(wrap-region-add-wrapper "*" "*" nil 'org-mode)
-```
-
-*Italic*.
-
-```lisp
-(wrap-region-add-wrapper "/" "/" nil 'org-mode)
-```
-
-`Verbatim`.
-
-```lisp
-(wrap-region-add-wrapper "=" "=" nil 'org-mode)
-```
-
-`Code`.
-
-```lisp
-(wrap-region-add-wrapper "~" "~" nil 'org-mode)
-```
-
-.
-
-```lisp
-(wrap-region-add-wrapper "+" "+" nil 'org-mode)
-```
-
-Minimize Macro text.
-
-```lisp
-(setq org-hide-macro-markers t)
-```
-
-Follow links without using the mouse or more.
-
-```lisp
-(setq org-return-follows-link t)
-```
-
-### Keybindings
-
-    ID: 0AA3F69B-F5F1-48DA-B8F7-B7C92CD30DB1
-
-Started questioning why after hitting RETURN while in lists I have to hit TAB to
-get indented properly. Kind of a dead giveaway that I should be
-return-and-indenting! Looked at `org-return` to find that it has an argument
-about indenting and then saw that `org-return-indent` passes it for you. With that
-in mind, RETURN is bound to that now. Now HELP has four different kinds of
-&ldquo;returns&rdquo; in Org in order of likelihood of usage:
-
--   **org-return-indent:** Make it really easy to work in existing list items,
-    headings, and tables
-    -   This is listed first because I often go back to modify entries
-    -   <return> because it is used the most
--   **org-meta-return:** Make it really easy to add new list items, headings, and
-    table contents
-    -   M-<return> because the binding comes with Org
--   **electric-indent-just-newline:** For when I want to break out of the default
-    Org indentation to start working at the beginning of the line for example when
-    I&rsquo;m done working in a list or have just created a new heading
-    -   C-M-<return> because it is next step &ldquo;lower&rdquo; in the binding
--   **help/smart-open-line:** When I want to insert a new line between the current
-    and next line then position the cursor correctly indented at the start of it.
-    -   s-<return> because it is that is the last place in the modifier key chain
-
-```lisp
-(help/not-on-gui
- (define-key org-mode-map (kbd "RET") #'org-return-indent)
- (define-key org-mode-map (kbd "C-M-RET") #'electric-indent-just-newline))
-(help/on-gui
- (define-key org-mode-map (kbd "<return>") #'org-return-indent)
- (define-key org-mode-map (kbd "C-M-<return>") #'electric-indent-just-newline))
-```
-
-1.  Row 5
-
-        ID: B09BE660-B5D5-40CA-8952-D2DEAE20E7BD
-
-    ```lisp
-    (define-key org-mode-map (kbd "s-6") #'org-babel-load-in-session)
-    (define-key org-mode-map (kbd "s-7") #'org-babel-switch-to-session)
-    (define-key org-mode-map (kbd "s-8") #'org-babel-switch-to-session-with-code)
-    (define-key org-mode-map (kbd "s-9") #'org-todo)
-    ```
-
-    Easily manipulate lists and headlines staying close to home.
-
-    ```lisp
-    (key-chord-define org-mode-map "U*" #'org-metaup)
-    (key-chord-define org-mode-map "I(" #'org-metadown)
-    (key-chord-define org-mode-map "u8" #'org-metaleft)
-    (key-chord-define org-mode-map "i9" #'org-metaright)
-    ```
-
-2.  Row 4
-
-        ID: 1E49694B-6350-45E2-BE58-21EAAF09D4A2
-
-    ```lisp
-    (define-key org-mode-map (kbd "s-y") #'help/safb-org-babel-execute-buffer)
-    (define-key org-mode-map (kbd "s-u") #'help/safb-org-babel-execute-subtree)
-    (define-key org-mode-map (kbd "s-U") #'org-mark-ring-goto)
-    (define-key org-mode-map (kbd "s-i") #'org-babel-execute-src-block)
-    (define-key org-mode-map (kbd "s-o") #'org-babel-remove-result)
-    (define-key org-mode-map (kbd "s-p") #'org-babel-execute-maybe)
-    (define-key org-mode-map (kbd "s-[") #'org-babel-remove-inline-result)
-    ```
-
-3.  Row 3
-
-        ID: D11109EE-AD92-4E26-988F-AF3CC70A2F69
-
-    ```lisp
-    (define-key org-mode-map (kbd "s-h") #'help/safb-org-babel-tangle)
-    (define-key org-mode-map (kbd "s-j") #'org-babel-next-src-block)
-    (define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
-    (define-key org-mode-map (kbd "s-l") #'help/safb-org-edit-src-code)
-    (define-key org-mode-map (kbd "s-;") #'help/safb-help/org-babel-demarcate-block)
-    ```
-
-4.  Row 2
-
-        ID: CA925DDA-8EA8-47B0-AE9A-D73073CF51B7
-
-    ```lisp
-    (define-key org-mode-map (kbd "s-n") #'org-babel-view-src-block-info)
-    (define-key org-mode-map (kbd "s-m") #'org-babel-expand-src-block)
-    (define-key org-mode-map (kbd "s-,") #'org-babel-open-src-block-result)
-    (define-key org-mode-map (kbd "s-.") #'org-time-stamp)
-    ```
-
-5.  Hydra
-
-        ID: 46BCE65B-B8C9-49A0-A687-30D1330DB07D
-
-    ```lisp
-    (defhydra help/hydra/right-side/org-mode (:color blue
-                                                     :hint nil)
-      "
-    _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ detangle _5_ id-create _6_ toggle-macro
-    _q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ g2nms-b _t_ g2s-b/hd _y_ org-archive-subtree _u_ goto
-    _a_ inshdrgs _s_ oblobigst            _h_ dksieb _k_ ob-check-src-blk
-    _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre"
-      ;; Row 5
-      ("1" org-babel-sha1-hash)
-      ("2" org-display-inline-images)
-      ("3" org-remove-inline-images)
-      ("4" org-babel-detangle)
-      ("5" org-id-get-create)
-      ("6" help/org-toggle-macro-markers)
-      ;; Row 4
-      ("q" org-babel-switch-to-session-with-code)
-      ("w" org-table-edit-field)
-      ("e" org-babel-goto-named-result)
-      ("r" org-babel-goto-named-src-block)
-      ("t" org-babel-goto-src-block-head)
-      ("y" org-archive-subtree)
-      ("u" org-goto)
-      ;; Row 3
-      ("a" org-babel-insert-header-arg)
-      ("s" org-babel-lob-ingest)
-      ("h" org-babel-do-key-sequence-in-edit-buffer)
-      ("k" org-babel-check-src-block)
-      ;; Row 2
-      ("c" org-fill-paragraph)
-      ("b" org-babel-switch-to-session)
-      ("n" org-narrow-to-subtree))
-    (key-chord-define-global "hh" #'help/hydra/right-side/org-mode/body)
-    ```
-
-    Save all buffers before working with Exports.
-
-    ```lisp
-    (define-key org-mode-map (kbd "C-c C-e") #'help/safb-org-export-dispatch)
-    ```
-
-    Make `s-l` do the same thing to leave the Source-Block-Buffer.
-
-    ```lisp
-    (define-key org-src-mode-map (kbd "s-l") #'org-edit-src-exit)
-    ```
-
-    Easily enter guillemots.
-
-    ```lisp
-    (key-chord-define org-src-mode-map "<<" (lambda () (interactive) (insert "«")))
-    (key-chord-define org-src-mode-map ">>" (lambda () (interactive) (insert "»")))
-    ```
-
-## (Applied Mathematics)
-
-    ID: BE2550C9-231A-4824-BE6C-14231A971FE9
-
-## Emacs Speaks Statistics (ESS)
-
-    header-args: :noweb-ref Hacking-Applied-Mathematics-ESS
-
-    ID: CB6305D8-DDBB-4865-8CAD-3648B31B76DB
-
-```lisp
-(use-package ess
-  :ensure t)
-```
-
-Display object documentation.
-
-```lisp
-(setq ess-eldoc-show-on-symbol t)
-```
-
-Data viewing:
-
--   **Never** rely upon on the REPL for data viewing
-    -   Will mix up exploratory code with data
-        -   Can&rsquo;t easily distinguish between code and data
-        -   Distracting you
-        -   Breaking your flow
--   Sometimes
-    -   You end up somewhere
-        -   And the `ess` buffer cursor is at the top!
-        -   No problem, call `ess-switch-to-end-of-ESS`
--   Make it easier to know what object values are.
-    -   `ess-describe-object-at-point`
-
-```lisp
-(setq ess-describe-at-point-method 'tooltip)
-```
-
-Always start `ess` within the curent `emacs` frame, it doesn&rsquo;t need to be separate.
-
-```lisp
-(setq inferior-ess-same-window nil)
-(setq inferior-ess-own-frame nil)
-```
-
-Help buffers all belong in the same frame.
-
-```lisp
-(setq ess-help-own-frame nil)
-```
-
-When commands are executed, display their output within the current buffer,
-rather than to a new dedicated buffer for them.
-
-```lisp
-(setq ess-execute-in-process-buffer t)
-```
-
-When you cycle between a the REPL buffer and the script, you get to the process
-buffer, you will go to the end of the buffer. This setting is specifically to
-handle a buffer that is scrolling when you want to see the last result and will
-scroll back after the fact to see the history.
-
-```lisp
-(setq ess-switch-to-end-of-proc-buffer t)
-```
-
-Use typical auto completion in buffers here, but don&rsquo;t do it when the
-next char is a symbol or closed paren.
-
-```lisp
-(setq ess-tab-complete-in-script t)
-(setq ess-first-tab-never-complete 'symbol-or-paren-or-punct)
-```
-
-Use `ido` completion whenever possible.
-
-```lisp
-(setq ess-use-ido t)
-```
-
-Use `eldoc` for this mode. Always show it when the point is on a symbol.
-Try to keep help strings at 10 chars or less.
-
-```lisp
-(setq ess-use-eldoc t)
-(setq ess-eldoc-show-on-symbol t)
-(setq ess-eldoc-abbreviation-style 'normal)
-```
-
-These functions are metioned, and I am not sure where or how to use them yet,
-but Vitalie Spinu mentioned them as being useful:
-
--   `comint-previous-matching-input-from-input`
--   `comint-history-isearch-backward-regexp`
-
-For a while I used `ess-eval-buffer-and-go`, but now I know that it is insanely
-faster to use `ess-eval-buffer` instead. Previously I&rsquo;ve read people saying that,
-and it is true.
-
-**Philosophy**
-
-The current `ESS` maintainers philosophies about how to maintain an R code-base
-make sense to me and are virtually the same as my own. Quite simply, the rule is
-that the code artifacts are the single source of system definition. Consequently,
-the system should be configured in this manner:
-
-We want to keep dump files after loading them; never delete them. The idea
-is that if we use them, then they are a valid part of the system definition and
-need to be kept.
-
-```lisp
-(setq ess-keep-dump-files +1)
-```
-
-`ESS` allows us to quite easily modify live R objects and functions. It provides
-this functionality via `ess-dump-object-into-edit-buffer`. These changes are
-considered to be experimental, and not part of the master record according to
-our philosophy. As such, we don&rsquo;t care to know that these new versions ever
-existed and their record will be forgotten from history. In other words, that
-new, modified version of the object or function, is never saved to a file for
-later reuse.
-
-```lisp
-(setq ess-delete-dump-files nil)
-```
-
-Since our systems are entirely file-based, the entirety of the system most
-likely lives in different files. Before loading any file for sourcing, save
-any ESS source buffers. This approach is in addition to two other things:
-(1) Emacs is auto-saving every file buffer quite frequently and (2) there is
-advice before every manual `eval` call so that the buffers and their files stay
-in sync. Yes, it is really that important.
-
-```lisp
-(setq ess-mode-silently-save +1)
-```
-
-`ESS` executes code in another process. That is no secret. When displaying output
-from that code running in another process though, it can look like Emacs is
-locking up. That is not the case: <https://stackoverflow.com/questions/2770523/how-can-i-background-the-r-process-in-ess-emacs>.
-What is happening that Emacs is waiting for the output. Configure this mode to
-continue to accept user input, which is obviously critical, but don&rsquo;t wait for
-the process to provide its output. Instead, all output is printed after the last
-input lines. What we gain is perceived speed, and what we lose is the nice
-sequential this/that/this/that we get from a typical REPL interaction. As I
-write this, I&rsquo;m not totally sure how this will work, but the documentation and
-post are consistent and describe what I had wanted here so I will give it a try
-and see how it goes.
-
-```lisp
-(setq ess-eval-visibly 'nowait)
-```
-
-## SAS (ESS)
-
-    header-args: :noweb-ref Hacking-Applied-Mathematics-ESS-SAS
-
-    ID: 2442E555-0F82-48E6-96EA-2ABB5C9CC666
-
-## R (ESS)
-
-    header-args: :noweb-ref Hacking-Applied-Mathematics-ESS-R
-
-    ID: 1183D35B-77FC-4CFD-9BAA-4F7656AD8943
-
-Enable a debugger.
-
-```lisp
-(setq ess-use-tracebug t)
-```
-
-Configure debugger search path per-project.
-
-```lisp
-(setq ess-tracebug-search-path '())
-```
-
-Easily nevigate errors.
-
-```lisp
-(define-key compilation-minor-mode-map [(?n)] #'next-error-no-select)
-(define-key compilation-minor-mode-map [(?p)] #'previous-error-no-select)
-```
-
-Diminish watched variable font-size.
-
-```lisp
-(setq ess-watch-scale-amount -1)
-```
-
-When `ess` starts, or when R starts, it takes the current directory as its
-working directory. This is totally fine; so don&rsquo;t ask what the working directory
-should be.
-
-```lisp
-(setq ess-ask-for-ess-directory nil)
-```
-
-My preference is for ESS to quit and not ask me whether or not I am sure. There
-is an intentional line-break after the closing round bracket because that is the
-approach of the original value here.
-
-```lisp
-(setq inferior-ess-exit-command "q('no')
-")
-```
-
-Visualize just about anything with `ess-R-object-popup`.
-
-```lisp
-(use-package ess-R-object-popup
-  :ensure t)
-```
-
-Rdired is another way to work with object:
-
--   `ess-rdired`
--   View, delete, plot, and update buffer (ala *revert*) are single key commands
-
-```lisp
-(autoload 'ess-rdired "ess-rdired")
-```
-
-Visualize data frames better:
-
--   `ess-R-dv-ctable`
--   `ess-R-dv-pprint`
-
-```lisp
-(use-package ess-R-data-view
-  :ensure t)
-```
-
-inlineR
-
--   *Not* a competitor to `org-mode`
--   Ultra lightweight LP, really
-
-```lisp
-(use-package inlineR
-  :ensure t)
-```
-
-Documentation:
-
--   Whole section on native documentation; I&rsquo;ll re-visit as needed.
--   Roxygen, too.
-
-`ess-developer` helps you to easily work within specific name-spaces.
-
-Store history files and dump files in a single known location. If that location
-doesn&rsquo;t exist, then make it.
-
-```lisp
-(setq help/r-dir "~/.R/")
-(defun help/make-warn-R-dir ()
-  "Handle of R directory misconfiguration."
-  (interactive)
-  (unless (f-directory? help/r-dir)
-    (progn
-      (message "Couldn't find %S… creating it." help/r-dir)
-      (f-mkdir help/r-dir))))
-(help/make-warn-R-dir)
-(setq ess-history-directory help/r-dir)
-(setq ess-source-directory help/r-dir)
-```
-
-Since I&rsquo;m using R for everything, configure *everything* to be using R.
-
-```lisp
-(setq inferior-ess-program "R")
-(setq inferior-R-program-name "R")
-(setq ess-local-process-name "R")
-```
-
-Handle rdoc and rmd files, though I have never used them&#x2026; yet.
-
-```lisp
-(add-to-list 'auto-mode-alist '("\\.rd\\'" . Rd-mode))
-(add-to-list 'auto-mode-alist '("\\.Rmd$" . r-mode))
-```
-
-Make it really easy to search the R archives for anything.
-
-```lisp
-(local-set-key (kbd "C-c C-. S") #'ess-rutils-rsitesearch)
-```
-
-Make it really easy to do common stuff for R with good keybindings.
-
-```lisp
-(use-package ess-rutils
-  :config
-  (setq ess-rutils-keys t))
-```
-
-`r-autoyas` does argument completion. I had it working nice, and didn&rsquo;t use it for
-a while, and now it doesn&rsquo;t work. This needs some TLC.
-
-```lisp
-(use-package r-autoyas
-  :ensure t
-  :config
-  (setq r-autoyas-debug t)
-  (setq r-autoyas-expand-package-functions-only nil)
-  (setq r-autoyas-remove-explicit-assignments nil))
-```
-
-Save two spaces showing function information in the mini-buffer.
-
-```lisp
-(setq ess-R-argument-suffix "=")
-```
-
-Don&rsquo;t use the default assignment binding and allow underscores in names.
-
-```lisp
-(setq ess-S-assign-key (kbd "C-,"))
-(ess-toggle-S-assign-key t)
-(ess-toggle-underscore nil)
-```
-
-Don&rsquo;t save the workspace when you quit R and don&rsquo;t restore **ANYTHING** when you
-start it, either. This adheres to the philosopy that the system is file based.
-
-```lisp
-(setq inferior-R-args "--no-save --no-restore")
-```
-
-R mode hook.
-
-```lisp
-(defun help/R-mode-hook-fn ()
-  (local-set-key (kbd "s-6") #'ess-switch-to-end-of-ESS)
-  (local-set-key (kbd "s-7") #'ess-rdired)
-  (local-set-key (kbd "s-8") #'ess-R-dv-ctable)
-  (local-set-key (kbd "s-9") #'ess-R-dv-pprint)
-  (local-set-key (kbd "s-y") #'r-autoyas-expand)
-  (local-set-key (kbd "s-o") #'ess-describe-object-at-point)
-  (local-set-key (kbd "s-p") #'ess-R-object-popup)
-  (local-set-key (kbd "C-.") #'(lambda () (interactive) (insert " -> ")))
-  (key-chord-define-local "<<" #'(lambda () (interactive) (insert " <<- ")))
-  (key-chord-define-local ">>" #'(lambda () (interactive) (insert " ->> ")))
-  (key-chord-define-local "<>" #'(lambda () (interactive) (insert " %<>% ")))
-  (local-set-key (kbd "C->") #'(lambda () (interactive) (insert " %>% ")))
-  (r-autoyas-ess-activate)
-  (help/turn-on-r-hide-show)
-  (lambda () (add-hook 'ess-presend-filter-functions
-                  (lambda ()
-                    (warn
-                     "ESS now supports a standard pre-send filter hook. Please update your configuration to use it instead of using advice."))))
-  (ess-set-style 'RRR))
-
-(add-hook 'R-mode-hook #'help/R-mode-hook-fn)
-
-(defun help/turn-on-r-hide-show ()
-  "Attribution: SRC https://github.com/mlf176f2/EmacsMate/blob/master/EmacsMate-ess.org"
-  (when (string= "S" ess-language)
-    (set (make-local-variable 'hs-special-modes-alist) #'((ess-mode "{" "}" "#" nil nil)))
-    (hs-minor-mode 1)
-    (when (fboundp 'foldit-mode)
-      (foldit-mode 1))
-    (when (fboundp 'fold-dwim-org/minor-mode)
-      (fold-dwim-org/minor-mode))))
-
-(defun help/Rd-mode-hook-fn ()
-  (help/R-mode-hook-fn))
-
-(add-hook 'Rd-mode-hook #'help/Rd-mode-hook-fn)
-
-(defun help/inferior-ess-mode-hook-fn ()
-  (help/R-mode-hook-fn))
-
-(add-hook 'inferior-ess-mode-hook #'help/inferior-ess-mode-hook-fn)
-
-(defun help/ess-rdired-mode-hook-fn ()
-  "Personal customizations."
-  (interactive)
-  (turn-on-stripe-buffer-mode)
-  (stripe-listify-buffer))
-
-(add-hook 'ess-rdired-mode-hook #'help/ess-rdired-mode-hook-fn)
-```
-
-## Scheme (LISP)
-
-    header-args: :noweb-ref Hacking-Applied-Mathematics-LISP-Scheme
-
-    ID: D68EC042-5CBA-4547-B28A-CF878FB080C1
-
-Handle all file extensions:
-
--   Traditional.
-
-    ```lisp
-    (add-to-list 'auto-mode-alist '("\\.scm\\'" . scheme-mode))
-    (add-to-list 'auto-mode-alist '("\\.ss\\'" . scheme-mode))
-    ```
--   Racket.
-
-    ```lisp
-    (add-to-list 'auto-mode-alist '("\\.rkt\\'" . scheme-mode))
-    ```
--   R6RS.
-
-    ```lisp
-    (add-to-list 'auto-mode-alist '("\\.sls\\'" . scheme-mode))
-    (add-to-list 'auto-mode-alist '("\\.sps\\'" . scheme-mode))
-    ```
-
-Use Geiser for Racket and Guile
-
-```lisp
-(use-package geiser
-  :ensure t)
-```
-
-Enable Auto-Complete via Geiser.
-
-```lisp
-(use-package ac-geiser
-  :ensure t
-  :config
-  (add-hook 'geiser-mode-hook 'ac-geiser-setup)
-  (add-hook 'geiser-repl-mode-hook 'ac-geiser-setup)
-  (eval-after-load "auto-complete"
-    '(add-to-list 'ac-modes 'geiser-repl-mode))
-  (setq geiser-active-implementations '(racket guile))
-  (setq geiser-repl-history-no-dups-p t))
-```
-
-## C
-
-    ID: 6F4A6F8E-277C-45E2-B26E-51455C2CBC16
-
-## Python
-
-    ID: F4577EEA-FB0F-4E7B-AF02-A4DEA74BB763
-
-## YASnippet
-
-    header-args: :noweb-ref Hacking-Applied-Mathematics-YASnippet
-
-    ID: 5C48A01F-D522-4AC9-A523-F8EE2E9EB384
-
--   Enable everywhere.
--   Never expand with `TAB` **anywhere**.
-    -   Allow expansion to occur within fields.
--   Load HELP snippets.
--   Use Ido to handle user decisions.
-
-```lisp
-(use-package yasnippet
-  :ensure t
-  :config
-  (yas-global-mode t)
-  (help/not-on-gui (define-key yas-minor-mode-map (kbd "TAB") nil))
-  (help/on-gui (define-key yas-minor-mode-map (kbd "<tab>") nil))
-  (define-key yas-minor-mode-map (kbd "s-t") #'yas-expand)
-  (help/not-on-gui (define-key yas-keymap (kbd "TAB") #'yas-next-field))
-  (help/on-gui (define-key yas-keymap (kbd "<tab>") #'yas-next-field))
-  (add-to-list #'yas-snippet-dirs "~/src/help/yasnippet")
-  (yas-reload-all)
-  (setq yas-prompt-functions '(yas-ido-prompt))
-  :diminish yas-minor-mode)
-```
-
-## Structured Query Language (SQL)
-
-    ID: 987C1C05-F880-4312-B902-5060208A3506
-
-## (Publishing)
-
-    ID: 7D07C2F6-38B9-49BF-A584-B029CEED6141
-
-## TeX
-
-    header-args: :noweb-ref Hacking-Publishing-TeX
-
-    ID: E2A1BFA2-0246-4376-9A33-E35A8DE2E5A3
-
-```lisp
-(use-package tex-site
-  :ensure auctex
-  :config
-  (eval-after-load "tex"
-    '(define-key TeX-mode-map (kbd "C-c C-c") #'help/safb-TeX-command-master)))
-```
-
-Save style info. This doesn&rsquo;t control the buffer save.
-
-```lisp
-(setq TeX-auto-save t)
-```
-
-Parse on load.
-
-```lisp
-(setq TeX-parse-self t)
-```
-
-Parse on save.
-
-```lisp
-(setq TeX-auto-save t)
-```
-
-Use PDFTeX to generate both DVI and PDF files.
-
-```lisp
-(setq TeX-PDF-mode t)
-(setq TeX-DVI-via-PDFTeX t)
-```
-
-Don&rsquo;t prompt every time you run `C-c C-c` about saving the file, instead, just
-save it.
-
-```lisp
-(setq TeX-save-query nil)
-```
-
-Load LCO files with AucTeX.
-
-```lisp
-(add-to-list 'auto-mode-alist '("\\.lco?\\'" . TeX-latex-mode))
-```
-
-Culture-dependent typographical results.
-
-```lisp
-(add-to-list 'org-latex-packages-alist '("english" "babel" t))
-```
-
-Palatino friendly mathematics fonts.
-
-```lisp
-(add-to-list 'org-latex-packages-alist '("osf" "mathpazo" t))
-```
-
-Small margins.
-
-```lisp
-(add-to-list 'org-latex-packages-alist '("margin=0.5in" "geometry" nil))
-```
-
-Standard LaTeX class options.
-
-```lisp
-(defvar help/ltx-cls-opt "paper=letter, fontsize=10pt, parskip")
-```
-
-Standard article class.
-
-```lisp
-(eval-after-load "ox-latex"
-  '(add-to-list 'org-latex-classes
-                `("help-article"
-                  ,(concat "\\documentclass["
-                           help/ltx-cls-opt
-                           "]{article}"))))
-
-(setq org-latex-default-class "help-article")
-```
-
-Use &ldquo;Smartquotes&rdquo;.
-
-```lisp
-(setq org-export-with-smart-quotes t)
-```
-
-## KOMA-Script
-
-    header-args: :noweb-ref Hacking-Publishing-KOMA
-
-    ID: BFF1402E-98D4-4F36-ACCB-B1E88A3EB2D9
-
-I enjoy writing letters. I enjoy reading letters. LaTeX produces letters that
-are easy to print and read. Org provides a [KOMA Script exporter](http://orgmode.org/worg/exporters/koma-letter-export.html) for [KOMA-script](https://www.ctan.org/pkg/koma-script?lang%3Den).
-The Org documentation mentions that the user should read the [ox-koma-letter.el](http://orgmode.org/cgit.cgi/org-mode.git/plain/contrib/lisp/ox-koma-letter.el)
-header documentation.
-
-The [babel](https://www.ctan.org/pkg/babel?lang%3Den) packages is mentioned in the Org documentation. The package
-documentation explains that it should be used with LaTeX, but not XeTeX. Some
-time ago I decided to stick with LaTeX. This decision needs documentation. This
-system leans towards LuaTeX because of its Unicode support and sticks with
-PDFLaTeX because of its broad acceptance. Those two goals are at odds with each
-other.
-
-Load the KOMA exporter.
-
-```lisp
-(eval-after-load "ox" '(require 'ox-koma-letter))
-```
-
--   Understanding KOMA and how to use it
-    -   There are 4 ways to set letter metadata, listed &ldquo;from the most specific to
-        the most general&rdquo; (not sure exactly what this statement means, and the conclusion of my notes tries to make sense of what is really going on here and what is the best way to do things)
-        -   Org option lines (ORG)
-        -   Separate Org latex classes (LTX)
-        -   Emacs Lisp variables (LISP)
-        -   Letter Class Option files (LCO)
--   Notes and thoughts on the ways to use it
-    -   LTX
-        -   By following the setup directions, you do this, creating &ldquo;help-letter&rdquo; class
-        -   Familiar and easy if you already know LaTeX
-            -   At some point in your workflow, you **must** define a class to use, anyway
-        -   Very easy to do, just define the class template and set `org-koma-letter-default-class`
-    -   ORG
-        -   Simple way that makes it very easy to just focus on the document content
-        -   This metadata takes highest priority in the workflow
-            -   So you should set your typical defaults in LISP or LCO and customize it
-                here. This is exactly what I wanted to know.
-            -   This lets you do your tweaking in each unique file while relying on the
-                most common defaults defined elsewhere
-    -   LISP
-        -   Very familiar style of configuring things
-    -   LCO
-        -   LCO == Letter Class Option files
-        -   LCO files are TeX
-        -   They are included in the generated TeX source code from the letter
-        -   Gives **full** access to KOMA-Script
-            -   Big deal, because not everything is exposed through ORG or LISP
-            -   Also gives full access to any and all TeX and LaTeX code
-        -   LCO files are a KOMA-Script thing, so they are a LaTeX thing
-        -   > Letter metadata set in LCO files overwrites letter metadata set in Emacs
-            > variables but not letter metadata set in the Org file.
-        -   When you include multiple LCO files, they are evaluated LIFO. Properties
-            are set as they first appear, and are not set again. Say you include
-            &ldquo;MyGeneralStuffForAnyLetter.lco&rdquo; and then include
-            &ldquo;MyStuffSpecificToThisLetter.lco&rdquo;. The specific stuff will get set first.
-            Then general stuff will get set last.
-            -   Surely there is a better way to phrase this. I will work on that.
--   Recommendations
-    -   What is the easiest way to start using KOMA-Script based on what you know
-        today?
-    -   If you don&rsquo;t know any of the approaches
-        -   Then choose between learning LaTeX and Org
-    -   If you only know LaTeX
-        -   Then you will use the LTX/LCO metadata approach
-    -   If you only know ORG
-        -   Then you will use the ORG metadata approach
-    -   If you only know ORG and LISP
-        -   Then you will use the LISP approach for general metadata and the ORG
-            approach specific metadata
-    -   If you know LTX/LCO, ORG, and LISP
-        -   Then you have total flexibility
-        -   The fact is that
-            -   ORG settings always trump LTX/LCO and LISP
-            -   LISP settings are a subset of all of the settings available in
-                KOMA-Script, so you will always have to fall back to LTX/LCO if you want
-                to use unexposed features
-            -   LCO files are just plain old LaTeX, which you already know
-        -   So the best thing to do
-            -   Is to use ORG for letter-specific settings
-            -   And LTX for general settings
-            -   Everything is a lot simpler this way because
-                -   One less metadata approach to keep track of
-                -   All KOMA-Script features are present
-                -   Need to learn details of KOMA-Script package anyway
-
-Configure the default class.
-
-[This](https://tex.stackexchange.com/questions/102922/how-can-i-get-us-letter-output-from-koma-scripts-scrlttr2-class) post explains how to default the US letter size. That is the likely default
-for my printed correspondence.
-
-```lisp
-(eval-after-load "ox-koma-letter"
-  '(progn
-     (add-to-list 'org-latex-classes
-                  `("help-letter"
-                    ,(concat "\\documentclass["
-                             help/ltx-cls-opt
-                             "]{scrlttr2}")))
-
-     (setq org-koma-letter-default-class "help-letter")))
-```
-
-There are two formats for the letters: [heading-based](http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-new-example.org%3Bh%3D180a9a0e10dd8f7483a67946daf36732c316f821%3Bhb%3D180a9a0e10dd8f7483a67946daf36732c316f821) and [property-based](http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-example.org%3Bh%3De21b8b00c3e895be9dd573d02ea84b08796296a3%3Bhb%3De21b8b00c3e895be9dd573d02ea84b08796296a3).
-
-Set up my default LCO files.
-
-```lisp
-(setq org-koma-letter-class-option-file "UScommercial9 KomaDefault")
-```
-
-## Texinfo
-
-    ID: F2C5CEB7-1252-4E6F-B192-C5D2D41A6D47
-
-Perhaps the [first](https://lists.gnu.org/archive/html/emacs-orgmode/2015-07/msg00042.html) document typeset with Org-Texinfo.
-
-## Pandoc
-
-    ID: 1E4AB0D4-F92E-48E6-9313-278C27DED142
-
-## Markdown
-
-    header-args: :noweb-ref Hacking-Publishing-Markdown
-
-    ID: 748319ED-9F02-4A4D-BEE8-E71C462663FC
-
-Provide Github Flavored Markdown (GFM).
-
-```lisp
-(use-package ox-gfm)
-```
-
-Program GFM.
-
-```lisp
-(use-package markdown-mode
-  :ensure t
-  :config
-  (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
-  (setq markdown-coding-system "utf-8"))
-```
-
-## Blog
-
-    header-args: :noweb-ref Hacking-Publishing-Org2blog
-
-    ID: F5E33EB2-2E26-435C-85F6-26CB7CE7FC56
-
-> An elisp implementation of clientside XML-RPC
-
-```lisp
-(use-package xml-rpc
-  :ensure t)
-```
-
-> Weblog maintenance via XML-RPC APIs
-
-```lisp
-(use-package metaweblog
-  :ensure t)
-```
-
-> Blog from Org mode to wordpress
-
-```lisp
-(add-to-list 'load-path "~/src/org2blog")
-(require 'org2blog-autoloads)
-```
-
-Org2Blog depends on Org-Mode. This system loads Org-Mode from Git. Enter the
-`ELPA` cache directory and delete it.
-
-This system works with WisdomAndWonder. It keeps its posts separate giving focus
-to each Web.
-
-```lisp
-(setq org2blog/wp-track-posts nil)
-```
-
-Configure Org2Blog.
-
-```lisp
-(setq org2blog/wp-blog-alist
-      '(("wisdomandwonder"
-         :url "http://www.wisdomandwonder.com/wordpress/xmlrpc.php"
-         :username "admin"
-         :default-categories ("Article" "Link")
-         :confirm t
-         :show 'show)))
-```
-
-## HTML
-
-    header-args: :noweb-ref Hacking-Publishing-HTML
-
-    ID: 84F673DF-2E6F-4BAA-8095-4A7586BB73FC
-
-```lisp
-(setq org-html-doctype "html5")
-```
-
-Load Htmlize for HTML export. Use in-line CSS.
-
-```lisp
-(use-package htmlize
-  :config
-  (setq org-html-htmlize-output-type htmlize-output-type)
-  (setq htmlize-output-type 'inline-css)
-  (defvar help/htmlize-initial-fci-state nil
-    "Variable to store the state of `fci-mode' upon calling `htmlize-buffer'.
-
-Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
-  (defvar help/htmlize-initial-flyspell-state nil
-    "Variable to store the state of `flyspell-mode' upon calling `htmlize-buffer'.
-
-Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
-
-  (defun help/htmlize-before-hook-fn ()
-    (when (fboundp 'fci-mode)
-      (setq help/htmlize-initial-fci-state fci-mode)
-      (when fci-mode
-        (fci-mode -1))))
-  (add-hook 'htmlize-before-hook #'help/htmlize-before-hook-fn)
-
-  (defun help/htmlize-after-hook-fn ()
-    (when (fboundp 'fci-mode)
-      (when help/htmlize-initial-fci-state
-        (fci-mode t))))
-  (add-hook 'htmlize-after-hook #'help/htmlize-after-hook-fn))
-```
-
-## ASCII
-
-    ID: 1F20F4EC-1D8B-402A-A0A9-504E733AEFDC
-
-```lisp
-(setq org-ascii-text-width 80)
-(setq org-ascii-global-margin 0)
-```
-
-## Beamer
-
-    header-args: :noweb-ref Hacking-Publishing-Beamer
-
-    ID: 6B86302E-D3EC-413A-A844-9ACCAA23A056
-
-Load Beamer for creating presentations.
-
-```lisp
-(use-package ox-beamer)
-```
-
-## (DevOps)
-
-    ID: 8B78A8C3-E6B6-4722-9822-EF428E5DB823
-
-## Shell Script
-
-    ID: 06D022B2-53ED-4042-8152-F383F5FE309E
-
-## Make
-
-    ID: 5F2B3343-631D-41C3-BE6B-D98548F77E07
-
-## Vagrant
-
-    ID: A1335FE5-6DA7-4FE2-A77C-60032C76B40D
-
-`ruby-mode` supports `Vagrantfile` OOTB.
-
-## (Diagram)
-
-    ID: FA47D423-05B3-4911-9CEC-28A534E49428
-
-## Artist
-
-    header-args: :noweb-ref Hacking-Diagram-Artist
-
-    ID: F920A833-60D7-41C2-9363-EA2A8BD19009
-
-```lisp
-(add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
-(add-to-list 'auto-mode-alist '("\\.art" . artist-mode))
-(add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
-```
-
-## DITAA
-
-    header-args: :noweb-ref Hacking-Diagram-DITAA
-
-    ID: FCC8A8F8-A967-4981-9260-CFF60CC56494
-
-When a drop of water joins the ocean it becomes the ocean.
-
-<div class="RESULTS">
-![img](./image/ditaa-drop_in_the_ocean.png)
-
-</div>
-
-<div class="RESULTS">
-![img](./image/ditaa-not_a_sailboat.png)
-
-</div>
-
-```lisp
-(defconst help/ditaa-jar "/usr/local/Cellar/ditaa/0.9/libexec/ditaa0_9.jar")
-(setq org-ditaa-jar-path help/ditaa-jar)
-```
-
-## Graphviz
-
-    header-args: :noweb-ref Hacking-Diagram-Graphviz
-
-    ID: A84665A3-4A2D-4040-926A-17159A6D4647
-
-```lisp
-(use-package graphviz-dot-mode
-  :ensure t
-  :config
-  (setf (cdr (assoc "dot" org-src-lang-modes)) 'graphviz-dot))
-```
-
-<div class="RESULTS">
-![img](./image/graphviz-life_is_simple.png)
-
-</div>
-
-## PlantUML
-
-    header-args: :noweb-ref Hacking-Diagram-PlantUML
-
-    ID: FCC259F8-0858-4778-B97F-07D2B21012F5
-
-```lisp
-(use-package plantuml-mode
-  :ensure t
-  :init
-  (defconst help/plantuml-jar "/usr/local/Cellar/plantuml/8031/plantuml.8031.jar")
-  (setq plantuml-jar-path help/plantuml-jar)
-  :config
-  (eval-after-load "ob-plantuml"
-    (setq org-plantuml-jar-path help/plantuml-jar)))
-```
-
-**Sequence Diagram**
-
--   Feature rich.
--   Information rich.
-
-<div class="RESULTS">
-![img](./image/plantuml-sequence_diagram.png)
-
-</div>
-
-**Use Case Diagram**
-
--   Actor variable aliasing feature.
-
-<div class="RESULTS">
-![img](./image/plantuml-use_case_diagram.png)
-
-</div>
-
-**Class Diagram**
-
--   Valuable for all sorts of ideas in addition to classes.
--   `hide`, `show`, and `include` are mentioned.
-    -   Could be a great reuse mechanism combined with noweb and tangling.
--   Spotted characters might be useful to indicating other things.
-    -   Example is data which is clearly a first-class citizen.
-    -   Six package visualization types.
-    -   Packaging vs. namespaceing.
-    -   Good support for splitting large images among output pages.
-
-<div class="RESULTS">
-![img](./image/plantuml-class_diagram.png)
-
-</div>
-
-**Activity Diagram**
-
--   May indicate top to bottom flow using `top`.
--   May label arrows.
--   May force arrow direction.
--   if/else structure for branching.
--   Partition construct.
--   [New syntax](http://plantuml.sourceforge.net/activity2.html) with more examples.
-
-<div class="RESULTS">
-![img](./image/plantuml-activity_diagram.png)
-
-</div>
-
-**Component Diagram**
-
--   The names to define all of the diagram entity types.
--   Identify &ldquo;Modern UML&rdquo;.
--   Good for summaries.
-
-<div class="RESULTS">
-![img](./image/plantuml-component_diagram.png)
-
-</div>
-
-**State Diagram**
-
-<div class="RESULTS">
-![img](./image/plantuml-state_diagram.png)
-
-</div>
-
-**Object Diagram**
-
-<div class="RESULTS">
-![img](./image/plantuml-object_diagram.png)
-
-</div>
-
--   Commands.
-    -   Header and footer values.
-    -   Zoom level.
-    -   Creole markup for most text elements.
-    -   Lists and sub-lists.
-    -   Horizontal lines. Will appear in most containers.
-    -   Headings.
-    -   Plain old HTML.
-    -   Tables, LaTeX style.
-    -   Use [OpenIconic icons](https://useiconic.com/open) anywhere.
-
--   Fonts and colors.
-    -   You can change just about everything.
-    -   You may nest definitions.
-    -   `monochrome true` option.
-        -   If you are printing
-        -   Or don&rsquo;t want color.
-
--   Internationalization.
-    -   Full Unicode character support.
