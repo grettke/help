@@ -359,7 +359,7 @@ Show the column number.
 (column-number-mode t)
 #+END_SRC
 
-** OSX
+** OS X
    :PROPERTIES:
    :ID:       6556EACF-2F83-4B84-8456-5BEB981D290E
    :END:
