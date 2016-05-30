@@ -86,7 +86,19 @@
 (help/on-osx
  (setq mac-control-modifier 'control)
  (setq mac-command-modifier 'meta)
- (setq mac-option-modifier 'super))
+ (setq mac-option-modifier 'super)
+ (setq mac-right-option-modifier 'super)
+ (defun help/toggle-mac-right-option-modifier ()
+   "Toggle between passing option modifier either to Emacs or OS X."
+   (interactive)
+   (let ((old-ropt mac-right-option-modifier))
+     (setq mac-right-option-modifier
+           (if (eq mac-right-option-modifier 'super)
+               'none
+             'super))
+     (message "Toggled `mac-right-command-modifier' from %s to %s."
+              old-ropt
+              mac-right-option-modifier))))
 ;; 98237FE5-5D02-4DCF-BCCB-082F90AE38D8 ends here
 
 ;; [[file:help.org::8764885C-9AFD-49DD-9E4B-F21AA0ED0D2F][8764885C-9AFD-49DD-9E4B-F21AA0ED0D2F]]
@@ -2512,7 +2524,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
   "
 _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_ grade-level _8_ reading-ease
 _q_ apropos _w_ widen _t_ obtj2o _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
-_a_ ag  _d_ dash-at-point    _k_ scrollDown _K_ nextLogLine _;_ toggle-lax-whitespace
+_a_ ag  _s_ help/toggle-mac-right-option-modifier _d_ dash-at-point    _k_ scrollDown _K_ nextLogLine _;_ toggle-lax-whitespace
 _x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list _M_ Marked 2 Viewer"
   ("1" help/font-size-reset :exit nil)
   ("2" help/text-scale-decrease :exit nil)
@@ -2523,6 +2535,7 @@ _x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list _M_ M
   ("7" writegood-grade-level)
   ("8" writegood-reading-ease)
   ("a" ag)
+  ("s" help/toggle-mac-right-option-modifier)
   ("x" delete-indentation)
   ("q" hydra-apropos/body)
   ("w" widen)
