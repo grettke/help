@@ -389,7 +389,7 @@ Pull in the =ENVIRONMENT= variables because the GUI version of EMACS does not.
 
 Configure the meta keys.
 
-Enable the =super= key-space.
+Use the OS X modifiers as Emacs meta keys. Don't pass them through to OS X.
 
 #+NAME: 98237FE5-5D02-4DCF-BCCB-082F90AE38D8
 #+BEGIN_SRC emacs-lisp :results output silent
