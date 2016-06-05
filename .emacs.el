@@ -85,20 +85,34 @@
 ;; [[file:help.org::98237FE5-5D02-4DCF-BCCB-082F90AE38D8][98237FE5-5D02-4DCF-BCCB-082F90AE38D8]]
 (help/on-osx
  (setq mac-control-modifier 'control)
+ (setq mac-right-control-modifier 'left)
  (setq mac-command-modifier 'meta)
+ (setq mac-right-command-modifier 'left)
  (setq mac-option-modifier 'super)
- (setq mac-right-option-modifier 'super)
+ (setq mac-right-option-modifier 'left)
+ (setq mac-function-modifier 'hyper)
  (defun help/toggle-mac-right-option-modifier ()
    "Toggle between passing option modifier either to Emacs or OS X."
    (interactive)
    (let ((old-ropt mac-right-option-modifier))
      (setq mac-right-option-modifier
-           (if (eq mac-right-option-modifier 'super)
+           (if (eq mac-right-option-modifier 'left)
                'none
-             'super))
-     (message "Toggled `mac-right-command-modifier' from %s to %s."
+             'left))
+     (message "Toggled `mac-right-option-modifier' from %s to %s."
               old-ropt
-              mac-right-option-modifier))))
+              mac-right-option-modifier)))
+ (defun help/toggle-mac-function-modifier ()
+   "Toggle between passing function modifier either to Emacs or OS X."
+   (interactive)
+   (let ((old-func mac-function-modifier))
+     (setq mac-function-modifier
+           (if (eq mac-function-modifier 'hyper)
+               'none
+             'hyper))
+     (message "Toggled `mac-function-modifier' from %s to %s."
+              old-func
+              mac-function-modifier))))
 ;; 98237FE5-5D02-4DCF-BCCB-082F90AE38D8 ends here
 
 ;; [[file:help.org::8764885C-9AFD-49DD-9E4B-F21AA0ED0D2F][8764885C-9AFD-49DD-9E4B-F21AA0ED0D2F]]
@@ -990,6 +1004,10 @@ configuration when invoked to evaluate a line."
 (use-package dired-imenu
   :ensure t)
 ;; 41A96AA5-4736-40CF-BECD-5AE7C43DCEFF ends here
+
+;; [[file:help.org::35EA0EB6-A64A-49D3-B4DE-7AB0AAA2A9FC][35EA0EB6-A64A-49D3-B4DE-7AB0AAA2A9FC]]
+(setq ido-show-dot-for-dired t)
+;; 35EA0EB6-A64A-49D3-B4DE-7AB0AAA2A9FC ends here
 
 ;; [[file:help.org::D722C567-86BA-45AD-91AB-2536696312C8][D722C567-86BA-45AD-91AB-2536696312C8]]
 (use-package imenu
@@ -2524,7 +2542,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
   "
 _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_ grade-level _8_ reading-ease
 _q_ apropos _w_ widen _t_ obtj2o _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
-_a_ ag  _s_ help/toggle-mac-right-option-modifier _d_ dash-at-point    _k_ scrollDown _K_ nextLogLine _;_ toggle-lax-whitespace
+_a_ ag  _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point    _k_ scrollDown _K_ nextLogLine _;_ toggle-lax-whitespace
 _x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list _M_ Marked 2 Viewer"
   ("1" help/font-size-reset :exit nil)
   ("2" help/text-scale-decrease :exit nil)
@@ -2536,6 +2554,7 @@ _x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list _M_ M
   ("8" writegood-reading-ease)
   ("a" ag)
   ("s" help/toggle-mac-right-option-modifier)
+  ("S" help/toggle-mac-function-modifier)
   ("x" delete-indentation)
   ("q" hydra-apropos/body)
   ("w" widen)
