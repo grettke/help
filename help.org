@@ -758,7 +758,8 @@ Attribution Oleh Krehel (abo-abo): URL `http://oremacs.com/2015/01/26/occur-dwim
             (when (stringp sym)
               (regexp-quote sym))))
         regexp-history)
-  (call-interactively 'occur))
+  (call-interactively 'occur)
+  (other-window 1))
 
 (defun help/util-cycle ()
   "Display or hide the utility buffers."
