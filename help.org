@@ -5060,7 +5060,7 @@ Occur has 3 cases. I like to use it to explore the unknown.
 
 #+NAME: 2608E62D-62B4-4B82-BFE0-E1E04C0D6914
 #+BEGIN_SRC emacs-lisp :results output silent
-(global-set-key (kbd "M-s p") #'help/occur-dwim)
+(global-set-key (kbd "H-o") #'help/occur-dwim)
 #+END_SRC
 
 Simpler buffer movement.

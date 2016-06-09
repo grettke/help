@@ -2618,7 +2618,7 @@ _v_ariable       _u_ser-option
 ;; C9521BF3-23E7-4952-846F-322D107E3EE3 ends here
 
 ;; [[file:help.org::2608E62D-62B4-4B82-BFE0-E1E04C0D6914][2608E62D-62B4-4B82-BFE0-E1E04C0D6914]]
-(global-set-key (kbd "M-s p") #'help/occur-dwim)
+(global-set-key (kbd "H-o") #'help/occur-dwim)
 ;; 2608E62D-62B4-4B82-BFE0-E1E04C0D6914 ends here
 
 ;; [[file:help.org::FD9CED46-8D84-495F-A413-90DA9EA52B8A][FD9CED46-8D84-495F-A413-90DA9EA52B8A]]
