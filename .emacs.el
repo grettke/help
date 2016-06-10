@@ -1613,6 +1613,10 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (setq org-pretty-entities t)
 ;; D2453829-D976-4FE0-B517-7CCD8C3C1A2C ends here
 
+;; [[file:help.org::93A7C08F-762D-43E9-8E56-4F875BF47464][93A7C08F-762D-43E9-8E56-4F875BF47464]]
+(setq org-use-sub-superscripts '{})
+;; 93A7C08F-762D-43E9-8E56-4F875BF47464 ends here
+
 ;; [[file:help.org::B5A535CA-E024-4592-A787-734032E48860][B5A535CA-E024-4592-A787-734032E48860]]
 (setq org-highlight-latex-and-related '(latex script entities))
 ;; B5A535CA-E024-4592-A787-734032E48860 ends here

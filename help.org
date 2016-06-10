@@ -2753,6 +2753,13 @@ this example in LaTeX versus Text.
 (setq org-pretty-entities t)
 #+END_SRC
 
+Enable sub and super scripts *only* when wrapped in squiggly brackets.
+
+#+NAME: 93A7C08F-762D-43E9-8E56-4F875BF47464
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq org-use-sub-superscripts '{})
+#+END_SRC
+
 Highlight LaTeX and related markup.
 
 Normally, I don't do any syntax highlighting, as I believe that should be
@@ -4050,6 +4057,9 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 #+END_SRC
 
 *** Unicode
+:PROPERTIES:
+:ID:       BF8F326E-1B81-49AD-AD90-74E42E4611DB
+:END:
 
 
 
