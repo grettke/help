@@ -2291,6 +2291,11 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 (setq org-ascii-global-margin 0)
 ;; B7F010D3-4A47-4E4A-9E00-D54E4D0F9D63 ends here
 
+;; [[file:help.org::1ADEB461-7766-437F-80B3-677D3DF6AF1E][1ADEB461-7766-437F-80B3-677D3DF6AF1E]]
+(use-package unicode-troll-stopper
+  :ensure t)
+;; 1ADEB461-7766-437F-80B3-677D3DF6AF1E ends here
+
 ;; [[file:help.org::B77E265B-EE1A-469D-BEFB-51360B7AB45E][B77E265B-EE1A-469D-BEFB-51360B7AB45E]]
 (use-package ox-beamer)
 ;; B77E265B-EE1A-469D-BEFB-51360B7AB45E ends here
@@ -2546,8 +2551,8 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
                                               :hint nil)
   "
 _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_ grade-level _8_ reading-ease
-_q_ apropos _w_ widen _t_ obtj2o _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
-_a_ ag  _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point    _k_ scrollDown _K_ nextLogLine _;_ toggle-lax-whitespace
+_q_ apropos _w_ widen _t_ unicode-troll-stopper-mode _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
+_a_ ag  _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point _j_ obtj2o _k_ scrollDown _K_ nextLogLine _;_ toggle-lax-whitespace
 _x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list _M_ Marked 2 Viewer"
   ("1" help/font-size-reset :exit nil)
   ("2" help/text-scale-decrease :exit nil)
@@ -2563,7 +2568,8 @@ _x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list _M_ M
   ("x" delete-indentation)
   ("q" hydra-apropos/body)
   ("w" widen)
-  ("t" org-babel-tangle-jump-to-org)
+  ("t" unicode-troll-stopper-mode)
+  ("j" org-babel-tangle-jump-to-org)
   ("u" ucs-insert)
   ("i" scroll-down-command :exit nil)
   ("d" dash-at-point)
