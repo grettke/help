@@ -2291,6 +2291,15 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 (setq org-ascii-global-margin 0)
 ;; B7F010D3-4A47-4E4A-9E00-D54E4D0F9D63 ends here
 
+;; [[file:help.org::A71F1A03-34C0-4F7F-99BE-3E1F1B469AB0][A71F1A03-34C0-4F7F-99BE-3E1F1B469AB0]]
+(defun help/describe-char ()
+  "Evaluate `describe-char' and then `other-window'."
+  (interactive)
+  (call-interactively #'describe-char)
+  (call-interactively #'other-window))
+(global-set-key (kbd "H-d") #'help/describe-char)
+;; A71F1A03-34C0-4F7F-99BE-3E1F1B469AB0 ends here
+
 ;; [[file:help.org::1ADEB461-7766-437F-80B3-677D3DF6AF1E][1ADEB461-7766-437F-80B3-677D3DF6AF1E]]
 (use-package unicode-troll-stopper
   :ensure t)

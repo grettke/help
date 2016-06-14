@@ -4061,6 +4061,18 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 :ID:       BF8F326E-1B81-49AD-AD90-74E42E4611DB
 :END:
 
+Easily understand the current character.
+
+#+NAME: A71F1A03-34C0-4F7F-99BE-3E1F1B469AB0
+#+BEGIN_SRC emacs-lisp :results output silent
+(defun help/describe-char ()
+  "Evaluate `describe-char' and then `other-window'."
+  (interactive)
+  (call-interactively #'describe-char)
+  (call-interactively #'other-window))
+(global-set-key (kbd "H-d") #'help/describe-char)
+#+END_SRC
+
 Easily identify Unicode homoglyphs most often utilized by pranksters.
 
 Good reference for Unicode character study and exploration.
