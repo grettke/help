@@ -4056,7 +4056,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 (setq org-ascii-global-margin 0)
 #+END_SRC
 
-*** Unicode
+*** Grapheme
 :PROPERTIES:
 :ID:       BF8F326E-1B81-49AD-AD90-74E42E4611DB
 :END:
