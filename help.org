@@ -3165,6 +3165,20 @@ Easily enter guillemots.
    :PROPERTIES:
    :ID:       BE2550C9-231A-4824-BE6C-14231A971FE9
    :END:
+
+*** APL
+:PROPERTIES:
+:ID:       D150E5D5-BAFB-4C96-AD1E-C687C0216790
+:END:
+
+#+NAME: 845637D6-CAEF-43FF-AFAB-166EC0E21FC4
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq gnu-apl-mode-map-prefix "H-")
+(setq gnu-apl-interactive-mode-map-prefix "H-")
+(add-to-list 'load-path "~/git/github/gnu-apl-mode")
+(require 'gnu-apl-mode)
+#+END_SRC
+
 *** Emacs Speaks Statistics (ESS)
   :PROPERTIES:
   :ID:       CB6305D8-DDBB-4865-8CAD-3648B31B76DB

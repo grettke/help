@@ -1833,6 +1833,13 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre"
  :ensure t)
 ;; C060E54C-9FB2-4E2C-BE67-3188E1BA0F22 ends here
 
+;; [[file:help.org::845637D6-CAEF-43FF-AFAB-166EC0E21FC4][845637D6-CAEF-43FF-AFAB-166EC0E21FC4]]
+(setq gnu-apl-mode-map-prefix "H-")
+(setq gnu-apl-interactive-mode-map-prefix "H-")
+(add-to-list 'load-path "~/git/github/gnu-apl-mode")
+(require 'gnu-apl-mode)
+;; 845637D6-CAEF-43FF-AFAB-166EC0E21FC4 ends here
+
 ;; [[file:help.org::E7AE32C1-42CC-482F-92D2-43DBD703500C][E7AE32C1-42CC-482F-92D2-43DBD703500C]]
 (use-package ess
   :ensure t)
