@@ -2556,6 +2556,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 (global-set-key (kbd "s-q") #'kill-buffer)
 (global-set-key (kbd "s-Q") #'kill-this-buffer)
 (global-set-key (kbd "H-p") #'help/insert-datestamp)
+(global-set-key (kbd "H-P") #'help/insert-timestamp)
 ;; 239A85C3-2CEB-4E40-975F-8B3584F7F450 ends here
 
 ;; [[file:help.org::E60EA15F-28A0-4E98-B62E-1F8BDE444BD8][E60EA15F-28A0-4E98-B62E-1F8BDE444BD8]]

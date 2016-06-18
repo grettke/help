@@ -4987,6 +4987,7 @@ close together
 (global-set-key (kbd "s-q") #'kill-buffer)
 (global-set-key (kbd "s-Q") #'kill-this-buffer)
 (global-set-key (kbd "H-p") #'help/insert-datestamp)
+(global-set-key (kbd "H-P") #'help/insert-timestamp)
 #+END_SRC
 
 **** Row 3
