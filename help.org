@@ -2638,7 +2638,7 @@ Personal workflow:
 - HELD-FROZEN :: Won't move forward until I reinitialize it.
 - HELD-UNTIL :: Reinitialize when conditional.
 - REVIEW :: Work is complete and needs to be evaluated.
-- DONE :: Progress stops.
+- DONE :: Completion.
 
 #+NAME: BB8A752F-713B-4450-98DC-CE04957577EF
 #+BEGIN_SRC emacs-lisp :results output silent
