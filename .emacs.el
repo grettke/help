@@ -1251,7 +1251,8 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
   :config
   (setq ag-highlight-search t)
   (setq ag-reuse-window nil)
-  (setq ag-reuse-buffers t))
+  (setq ag-reuse-buffers t)
+  (setq ag-arguments (-insert-at (- (length ag-arguments) 1) '"-i" ag-arguments)))
 ;; B7EB4F42-9696-495C-98F5-427B03DA93EE ends here
 
 ;; [[file:help.org::62360083-1CE2-4EEF-BF61-AEA8F3FA9944][62360083-1CE2-4EEF-BF61-AEA8F3FA9944]]
