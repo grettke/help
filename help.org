@@ -3177,8 +3177,8 @@ Easily enter guillemots.
 #+BEGIN_SRC emacs-lisp :results output silent
 (setq gnu-apl-mode-map-prefix "H-")
 (setq gnu-apl-interactive-mode-map-prefix "H-")
-(add-to-list 'load-path "~/git/github/gnu-apl-mode")
-(require 'gnu-apl-mode)
+(use-package gnu-apl-mode
+  :ensure t)
 #+END_SRC
 
 *** Emacs Speaks Statistics (ESS)
