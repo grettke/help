@@ -1475,20 +1475,6 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 (add-hook 'ielm-mode-hook #'help/ielm-mode-hook-fn)
 ;; EBACFD45-C2FF-47B3-B991-28591C112F28 ends here
 
-;; [[file:help.org::A71F1A03-34C0-4F7F-99BE-3E1F1B469AB0][A71F1A03-34C0-4F7F-99BE-3E1F1B469AB0]]
-(defun help/describe-char ()
-  "Evaluate `describe-char' and then `other-window'."
-  (interactive)
-  (call-interactively #'describe-char)
-  (call-interactively #'other-window))
-(global-set-key (kbd "H-d") #'help/describe-char)
-;; A71F1A03-34C0-4F7F-99BE-3E1F1B469AB0 ends here
-
-;; [[file:help.org::1ADEB461-7766-437F-80B3-677D3DF6AF1E][1ADEB461-7766-437F-80B3-677D3DF6AF1E]]
-(use-package unicode-troll-stopper
-  :ensure t)
-;; 1ADEB461-7766-437F-80B3-677D3DF6AF1E ends here
-
 ;; [[file:help.org::BDF6F6E5-D219-4C49-BB3F-D414A9741B11][BDF6F6E5-D219-4C49-BB3F-D414A9741B11]]
 (setq initial-scratch-message nil)
 (use-package lexbind-mode)
@@ -1843,6 +1829,19 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre"
 (key-chord-define org-mode-map ">>" (lambda () (interactive) (insert "»")))
 ;; 46FE856B-D5C6-45B0-95D5-891211AC295C ends here
 
+;; [[file:help.org::A71F1A03-34C0-4F7F-99BE-3E1F1B469AB0][A71F1A03-34C0-4F7F-99BE-3E1F1B469AB0]]
+(defun help/describe-char ()
+  "Evaluate `describe-char' and then `other-window'."
+  (interactive)
+  (call-interactively #'describe-char)
+  (call-interactively #'other-window))
+(global-set-key (kbd "H-d") #'help/describe-char)
+;; A71F1A03-34C0-4F7F-99BE-3E1F1B469AB0 ends here
+
+;; [[file:help.org::1ADEB461-7766-437F-80B3-677D3DF6AF1E][1ADEB461-7766-437F-80B3-677D3DF6AF1E]]
+(use-package unicode-troll-stopper
+  :ensure t)
+;; 1ADEB461-7766-437F-80B3-677D3DF6AF1E ends here
 ;; [[file:help.org::C060E54C-9FB2-4E2C-BE67-3188E1BA0F22][C060E54C-9FB2-4E2C-BE67-3188E1BA0F22]]
 (use-package dash-at-point
  :ensure t)
