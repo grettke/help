@@ -3181,6 +3181,18 @@ Used intermittently so don't diminish it.
 (use-package unicode-troll-stopper
   :ensure t)
 #+END_SRC
+
+Easily escape and un-escape Unicode hex notation.
+
+#+NAME: 7458C43B-A605-4D97-B435-A71E2883C566
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package unicode-escape
+  :ensure t
+  :config
+  (global-set-key (kbd "H-e") #'unicode-escape-region )
+  (global-set-key (kbd "H-u") #'unicode-unescape-region))
+#+END_SRC
+
 *** Dash
 :PROPERTIES:
 :ID:       20393F2C-F619-4E12-B862-1A4CCB97B742

@@ -1842,6 +1842,15 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre"
 (use-package unicode-troll-stopper
   :ensure t)
 ;; 1ADEB461-7766-437F-80B3-677D3DF6AF1E ends here
+
+;; [[file:help.org::7458C43B-A605-4D97-B435-A71E2883C566][7458C43B-A605-4D97-B435-A71E2883C566]]
+(use-package unicode-escape
+  :ensure t
+  :config
+  (global-set-key (kbd "H-e") #'unicode-escape-region )
+  (global-set-key (kbd "H-u") #'unicode-unescape-region))
+;; 7458C43B-A605-4D97-B435-A71E2883C566 ends here
+
 ;; [[file:help.org::C060E54C-9FB2-4E2C-BE67-3188E1BA0F22][C060E54C-9FB2-4E2C-BE67-3188E1BA0F22]]
 (use-package dash-at-point
  :ensure t)
