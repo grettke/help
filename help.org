@@ -2515,6 +2515,35 @@ Set a default commenting prefix.
    :PROPERTIES:
    :ID:       6B83373B-8898-4AC0-B7F6-C42418CCE5E4
    :END:
+***  Grapheme 
+:PROPERTIES:
+:ID:       BF8F326E-1B81-49AD-AD90-74E42E4611DB
+:END:
+
+Easily understand the current character.
+
+#+NAME: A71F1A03-34C0-4F7F-99BE-3E1F1B469AB0
+#+BEGIN_SRC emacs-lisp :results output silent
+(defun help/describe-char ()
+  "Evaluate `describe-char' and then `other-window'."
+  (interactive)
+  (call-interactively #'describe-char)
+  (call-interactively #'other-window))
+(global-set-key (kbd "H-d") #'help/describe-char)
+#+END_SRC
+
+Easily identify Unicode homoglyphs most often utilized by pranksters.
+
+Good reference for Unicode character study and exploration.
+
+Used intermittently so don't diminish it.
+
+#+NAME: 1ADEB461-7766-437F-80B3-677D3DF6AF1E
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package unicode-troll-stopper
+  :ensure t)
+#+END_SRC
+
 *** Emacs Lisp
   :PROPERTIES:
   :ID:       3AD91697-42DE-4555-9F49-B7D9F5E502D3
@@ -4070,35 +4099,6 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 #+BEGIN_SRC emacs-lisp :results output silent
 (setq org-ascii-text-width 80)
 (setq org-ascii-global-margin 0)
-#+END_SRC
-
-*** Grapheme
-:PROPERTIES:
-:ID:       BF8F326E-1B81-49AD-AD90-74E42E4611DB
-:END:
-
-Easily understand the current character.
-
-#+NAME: A71F1A03-34C0-4F7F-99BE-3E1F1B469AB0
-#+BEGIN_SRC emacs-lisp :results output silent
-(defun help/describe-char ()
-  "Evaluate `describe-char' and then `other-window'."
-  (interactive)
-  (call-interactively #'describe-char)
-  (call-interactively #'other-window))
-(global-set-key (kbd "H-d") #'help/describe-char)
-#+END_SRC
-
-Easily identify Unicode homoglyphs most often utilized by pranksters.
-
-Good reference for Unicode character study and exploration.
-
-Used intermittently so don't diminish it.
-
-#+NAME: 1ADEB461-7766-437F-80B3-677D3DF6AF1E
-#+BEGIN_SRC emacs-lisp :results output silent
-(use-package unicode-troll-stopper
-  :ensure t)
 #+END_SRC
 
 *** Beamer
