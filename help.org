@@ -2515,7 +2515,7 @@ Set a default commenting prefix.
    :PROPERTIES:
    :ID:       6B83373B-8898-4AC0-B7F6-C42418CCE5E4
    :END:
-***  Grapheme 
+*** Unicode
 :PROPERTIES:
 :ID:       BF8F326E-1B81-49AD-AD90-74E42E4611DB
 :END:
