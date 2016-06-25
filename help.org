@@ -4982,8 +4982,6 @@ close together
 (global-set-key (kbd "s-1") #'mc/edit-lines)
 (global-set-key (kbd "s--") #'decrement-integer-at-point)
 (global-set-key (kbd "s-+") #'increment-integer-at-point)
-(global-set-key (kbd "M-s-3") #'help/split-into-3-windows)
-(key-chord-define-global "3." #'help/insert-ellipsis)
 #+END_SRC
 
 **** Row 4
