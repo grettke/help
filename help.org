@@ -609,6 +609,11 @@ Attribution: URL `http://emacsredux.com/blog/2013/03/26/smarter-open-line/'"
   (interactive)
   (insert "…"))
 
+(defun help/insert-checkmark ()
+  "Insert a checkmark into the current buffer."
+  (interactive)
+  (insert "✓"))
+
 (defun help/insert-noticeable-snip-comment-line ()
   "Insert a noticeable snip comment line (NSCL)."
   (interactive)
@@ -5029,6 +5034,7 @@ _x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list _M_ M
   ("6" set-buffer-file-coding-system)
   ("7" writegood-grade-level)
   ("8" writegood-reading-ease)
+  ("9" help/insert-checkmark)
   ("a" ag)
   ("s" help/toggle-mac-right-option-modifier)
   ("S" help/toggle-mac-function-modifier)
