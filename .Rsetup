@@ -1,3 +1,7 @@
 # -*- mode: sh; -*-
 rm -rf ~/.Rpackages
 mkdir ~/.Rpackages
+ln -sfn ~/.Rsetup ~/src/help/.Rsetup
+ln -sfn ~/.Rprofile ~/src/help/.Rprofile
+ln -sfn ~/.Renviron ~/src/help/.Renviron
+ln -sfn ~/.Rinstall ~/src/help/.Rinstall
