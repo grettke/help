@@ -32,8 +32,7 @@ configuration files.
 
 *.Rsetup*
 #+NAME: 5EF49EC7-E305-4173-9008-AB3969D9CB23
-#+begin_src sh :tangle .Rsetup :comments no
-# -*- mode: sh; -*-
+#+begin_src sh :tangle .Rsetup.sh :comments no
 «rsetup-defs»
 #+end_src
 
@@ -59,8 +58,7 @@ fortune()
 
 *.Rinstall*
 #+NAME: B695C2B8-9DD8-4612-ADA3-9330812F1111
-#+begin_src sh :tangle .Rinstall :comments no
-# -*- mode: R; -*-
+#+begin_src sh :tangle .Rinstall.r :comments no
 «rinstall-def»
 #+end_src
 

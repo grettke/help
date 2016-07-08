@@ -1,4 +1,3 @@
-# -*- mode: sh; -*-
 rm -rf ~/.Rpackages
 mkdir ~/.Rpackages
 ln -sfn ~/.Rsetup ~/src/help/.Rsetup

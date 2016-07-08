@@ -1,4 +1,3 @@
-# -*- mode: R; -*-
 if(! require(assertthat)){
     install.packages("assertthat")
 }
