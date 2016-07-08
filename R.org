@@ -33,6 +33,12 @@ mentioned here:
 My old config started R without the init-file. That was dumb. It created a lot
 of needless hassle without any significant benefit.
 
+*.Rsetup*
+#+NAME: 5EF49EC7-E305-4173-9008-AB3969D9CB23
+#+begin_src sh :tangle .Rsetup :comments no
+# -*- mode: sh; -*-
+#+end_src
+
 *.Rprofile*
 #+NAME: FE1A7E06-FF50-4F5D-BE02-762CC92AF434
 #+begin_src R :tangle .Rprofile :comments no
@@ -66,11 +72,6 @@ fortune()
 :END:
 
 Prepare the operating system to host R.
-
-#+NAME: 76393796-9DA7-47BE-9775-414326E6703D
-#+begin_src sh :tangle .Rsetup :comments no
-# -*- mode: sh; -*-
-#+end_src
 
 ** .Rprofile [fn:89a51cf1: https://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile]
       :PROPERTIES:
