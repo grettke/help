@@ -17,6 +17,7 @@ configuration files.
   - Review =.Renviron= to verify it is what you expect
   - Review =.Rprofile= to recall how you set it up
   - Review and Source =Rinstall= to install required packages
+    - Verify the lib path is in the home directory =.libPaths()=
     - When R starts, it won't find any of the required packages. It will
       complain a lot. That is OK. Just keep running the install script until
       it is happy: =source("~/.Rinstall.r")=. Then restart R and everything should
