@@ -83,9 +83,12 @@ Symbolically link all of the control files.
 
 #+NAME: 2A4A1DF1-C77E-40B8-8F65-0ECE9F07AFC3
 #+BEGIN_SRC sh
-ln -sfn ~/.Rprofile ~/src/help/.Rprofile
-ln -sfn ~/.Renviron ~/src/help/.Renviron
-ln -sfn ~/.Rinstall.r ~/src/help/.Rinstall.r
+rm ~/.Rprofile
+ln -sfn ~/src/help/.Rprofile ~/.Rprofile
+rm ~/.Renviron
+ln -sfn ~/src/help/.Renviron ~/.Renviron
+rm ~/.Rintall.r
+ln -sfn ~/src/help/.Rinstall.r ~/.Rinstall.r
 #+END_SRC
 
 ** .Rprofile [fn:89a51cf1: https://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile]

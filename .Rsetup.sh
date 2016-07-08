@@ -1,5 +1,8 @@
 rm -rf ~/.Rpackages
 mkdir ~/.Rpackages
-ln -sfn ~/.Rprofile ~/src/help/.Rprofile
-ln -sfn ~/.Renviron ~/src/help/.Renviron
-ln -sfn ~/.Rinstall.r ~/src/help/.Rinstall.r
+rm ~/.Rprofile
+ln -sfn ~/src/help/.Rprofile ~/.Rprofile
+rm ~/.Renviron
+ln -sfn ~/src/help/.Renviron ~/.Renviron
+rm ~/.Rintall.r
+ln -sfn ~/src/help/.Rinstall.r ~/.Rinstall.r
