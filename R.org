@@ -12,22 +12,23 @@ The goal here is to get R set up thoughtfully and quickly. The profile
 and environ set it up correctly. Always remember this and run R using those
 configuration files.
 
-When R starts, it won't find any of the required packages. It will complain a
-lot. That is OK. Just keep running the install script until it is happy:
-=source("~/.Rinstall")=. Then restart R and everything should be fine.
-
-Many things happen during this package installation process. Some are R specific
-and some have to do with the machine that you are running on. Both are
-mentioned here:
-
-- Run the installation script 3-5 times, each time
-  - Check the version that is running
-  - Go back and read the transcript and make sure that it looks right
-  - Eventually that script will fail, for example
-    - there is no package called ‘devtools’
-      - Called =install.packages("devtools")= manually
-      - Install order error
-  - After running it a couple of times, it is finished
+- Steps
+  - Review and Source =.Rsetup= prepare the OS for R and R for your configuration
+  - Review =.Renviron= to verify it is what you expect
+  - Review =.Rprofile= to recall how you set it up
+  - Review and Source =Rinstall= to install required packages
+    - When R starts, it won't find any of the required packages. It will
+      complain a lot. That is OK. Just keep running the install script until
+      it is happy: =source("~/.Rinstall")=. Then restart R and everything should
+      be fine.
+    - Run the installation script 3-5 times, each time
+      - Check the version that is running
+      - Go back and read the transcript and make sure that it looks right
+      - Eventually that script will fail, for example
+        - there is no package called ‘devtools’
+          - Called =install.packages("devtools")= manually
+          - Install order error
+      - After running it a couple of times, it is finished
 
 *.Rsetup*
 #+NAME: 5EF49EC7-E305-4173-9008-AB3969D9CB23
