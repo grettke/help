@@ -37,6 +37,7 @@ of needless hassle without any significant benefit.
 #+NAME: 5EF49EC7-E305-4173-9008-AB3969D9CB23
 #+begin_src sh :tangle .Rsetup :comments no
 # -*- mode: sh; -*-
+«rsetup-defs»
 #+end_src
 
 *.Rprofile*
@@ -68,6 +69,7 @@ fortune()
 
 ** .Rsetup
 :PROPERTIES:
+:noweb-ref: rsetup-defs
 :ID:       BDE6AFC6-C6E9-44B8-8B37-35A5E59B14D5
 :END:
 
