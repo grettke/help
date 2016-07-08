@@ -528,6 +528,13 @@ SQLite, SQL As Understood By SQLite:
 - [[https://www.sqlite.org/lang_datefunc.html][Date And Time Functions]]
 - These previous are all provided by [[http://cran.r-project.org/web/packages/RSQLite.extfuns/index.html][RSQLite.extfuns]]
 
+=proto= wouldn't load, so first configure =sqldf= via [[https://stackoverflow.com/questions/17128260/r-stuck-in-loading-sqldf-package][this solution]].
+
+#+NAME: E88E9BD2-47F6-471A-9E8E-C4EBE1EEC2AE
+#+BEGIN_SRC R
+options(gsubfn.engine="R")
+#+END_SRC
+
 #+NAME: 34909267-A92F-4624-A72F-B1B0E3BAEE97
 #+begin_src R
 library(sqldf)
