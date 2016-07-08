@@ -1,6 +1,6 @@
 rm -rf ~/.Rpackages
 mkdir ~/.Rpackages
-ln -sfn ~/.Rsetup ~/src/help/.Rsetup
+ln -sfn ~/.Rsetup.sh ~/src/help/.Rsetup.sh
 ln -sfn ~/.Rprofile ~/src/help/.Rprofile
 ln -sfn ~/.Renviron ~/src/help/.Renviron
-ln -sfn ~/.Rinstall ~/src/help/.Rinstall
+ln -sfn ~/.Rinstall.r ~/src/help/.Rinstall.r

@@ -19,7 +19,7 @@ configuration files.
   - Review and Source =Rinstall= to install required packages
     - When R starts, it won't find any of the required packages. It will
       complain a lot. That is OK. Just keep running the install script until
-      it is happy: =source("~/.Rinstall")=. Then restart R and everything should
+      it is happy: =source("~/.Rinstall.r")=. Then restart R and everything should
       be fine.
     - Run the installation script 3-5 times, each time
       - Check the version that is running
@@ -82,10 +82,10 @@ Symbolically link all of the control files.
 
 #+NAME: 2A4A1DF1-C77E-40B8-8F65-0ECE9F07AFC3
 #+BEGIN_SRC sh
-ln -sfn ~/.Rsetup ~/src/help/.Rsetup
+ln -sfn ~/.Rsetup.sh ~/src/help/.Rsetup.sh
 ln -sfn ~/.Rprofile ~/src/help/.Rprofile
 ln -sfn ~/.Renviron ~/src/help/.Renviron
-ln -sfn ~/.Rinstall ~/src/help/.Rinstall
+ln -sfn ~/.Rinstall.r ~/src/help/.Rinstall.r
 #+END_SRC
 
 ** .Rprofile [fn:89a51cf1: https://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile]
