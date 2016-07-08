@@ -1,5 +1,7 @@
 * Control Files
 
+** Configuration
+
 Remember to link these from =~/= to here. Automate it.
 
 The goal here is to get R set up thoughtfully and quickly. The profile
