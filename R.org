@@ -1,6 +1,12 @@
 * Control Files
+:PROPERTIES:
+:ID:       B98C6FFA-E22E-4B35-96EB-54D48A89A9DE
+:END:
 
 ** Configuration
+:PROPERTIES:
+:ID:       59F738BE-D479-4BB2-A41C-918616832571
+:END:
 
 Remember to link these from =~/= to here. Automate it.
 
@@ -28,6 +34,7 @@ My old config started R without the init-file. That was dumb. It created a lot
 of needless hassle without any significant benefit.
 
 *.Rprofile*
+#+NAME: FE1A7E06-FF50-4F5D-BE02-762CC92AF434
 #+begin_src R :tangle .Rprofile :comments no
 ## -*- mode: R; -*-
 «rprofile-def»
@@ -40,20 +47,35 @@ fortune()
 #+end_src
 
 *.Renviron*
+#+NAME: 12B3286A-5077-429B-A0AE-85BE7DD6C35C
 #+begin_src sh :tangle .Renviron :comments no
 # -*- mode: sh; -*-
 «renviron-def»
 #+end_src
 
 *.Rinstall*
+#+NAME: B695C2B8-9DD8-4612-ADA3-9330812F1111
 #+begin_src sh :tangle .Rinstall :comments no
 # -*- mode: R; -*-
 «rinstall-def»
 #+end_src
 
+** .Rsetup
+:PROPERTIES:
+:ID:       BDE6AFC6-C6E9-44B8-8B37-35A5E59B14D5
+:END:
+
+Prepare the operating system to host R.
+
+#+NAME: 76393796-9DA7-47BE-9775-414326E6703D
+#+begin_src sh :tangle .Rsetup :comments no
+# -*- mode: sh; -*-
+#+end_src
+
 ** .Rprofile [fn:89a51cf1: https://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile]
       :PROPERTIES:
       :noweb-ref: rprofile-def
+      :ID:       FDD6A2C4-B9B1-45EB-996B-3AB20FB2BE89
       :END:
 
 - When you install packages, R needs to know which repository it should use. If
@@ -62,6 +84,7 @@ fortune()
   - Via [fn:41269bb7: http://www.r-bloggers.com/installing-r-packages/]
   - Built-in docs explain that =local= should be used here
   - This could also be a one-liner: ~options("repos" = c(CRAN = "http://cran.r-project.org/"))~
+#+NAME: DFCB2BE3-8170-4759-BCD9-F1B581474F84
 #+begin_src R
 local({
     r = getOption("repos")
@@ -75,11 +98,13 @@ local({
   - It is too easy to hit enter when you didn't mean it
   - It just /feels/ imprecise
   - Never let this happen, disable that feature
+#+NAME: 8F82DD61-AFAF-4F6E-B816-D435033A14C6
 #+begin_src R
 options(browserNLdisabled = TRUE)
 #+end_src
 
 Show timestamps to 3 sub-seconds:
+#+NAME: 9A3D9DFB-2522-4977-AC9F-753433C578D2
 #+begin_src R
 options("digits.secs"=3)
 #+end_src
@@ -90,12 +115,14 @@ alone globally and always do it by hand though. hwickam commented that it is
 bad, bad idea to make this option global not because of your code, but because
 of everyone else's that you are using which relies on the option being set to
 =TRUE=.
+#+NAME: 91B891B7-6DEF-4212-8C15-A59D5EDE71B5
 #+begin_src R
 options(stringsAsFactors=TRUE)
 #+end_src
 
 This might be /too much/, but always show a call stack when *any* warnings or
 errors occur
+#+NAME: E78F8DC2-7129-4F35-88DF-FCDF9F91E012
 #+begin_src R
 options(showWarnCalls=TRUE)
 options(showErrorCalls=TRUE)
@@ -108,6 +135,7 @@ this approach is only to handle /my/ issues. Imagine of the whole work just
 handled their own issues! Anway, the safe values are set here, leave them alone.
 Making them more aggressive will break your startup. When you are ready to set
 things to be more aggressive, turn it on yourself
+#+NAME: DD5A8E14-CAB4-4C63-8E27-96F70E7D1800
 #+begin_src R
 options(error=NULL)
 options(warn=0)
@@ -115,6 +143,7 @@ options(warn=0)
 
 Don't print more than 500 lines. If you can grok more than 500 lines then please
 teach me. Be at ease, there is a helper to remove that restriction, just in case.
+#+NAME: 1BF9ABF2-29F7-4FF4-B288-0BD8D60764ED
 #+begin_src R
 options(max.print=500)
 #+end_src
@@ -123,6 +152,7 @@ Partial matching is a neat and flexible feature for objects. In theory, it is
 quite powerful and convenient. In practice it seems like a really bad idea to
 me. It is a /personal preference/. It only makes sense from that perspective.
 This could bork 3rd party code.
+#+NAME: C29C1EFC-03A3-4C9B-A3C6-C1BFA1103B50
 #+begin_src R
 options(warnPartialMatchDollar = TRUE)
 #+end_src
@@ -143,6 +173,7 @@ Locale:
     until I wanted to be able to easily clear out all of the top-level bindngs to
     "reset" it with a =rm(ls())= kind of thing. For that reason, I just use the
     manifest strings here.
+#+NAME: 834161D5-1065-4C4B-8821-FAC01E8C1DCD
 #+begin_src R
 Sys.setenv(LANG = "en_US.UTF-8")
 Sys.setlocale("LC_COLLATE", "en_US.UTF-8")
@@ -150,6 +181,9 @@ Sys.setlocale("LC_MESSAGES", "en_US.UTF-8")
 #+end_src
 
 *** Packages
+:PROPERTIES:
+:ID:       0B04A7FB-2AC9-4BE8-882D-76C196396116
+:END:
 
 <2014-11-14 Fri>
 Below is a try to auto-install packages if they are not available, and, it seems
@@ -157,6 +191,9 @@ to have failed. Perhaps there is a better way, and I do need to find it. Until
 then I will install as-needed. As such, I suppose that I've found it.
 
 **** assertthat
+:PROPERTIES:
+:ID:       F43738D7-5E0F-4567-8C08-8EC8850683E2
+:END:
 
 Design-by-contract  [fn:bc0c6d68: http://cran.r-project.org/web/packages/assertthat/index.html
 ] is a great, great thing. Make it much easier with valuable
@@ -179,10 +216,12 @@ Cheatsheet:
     - =is.writeable= and =is.readable=
     - =has_extension=
 
+#+NAME: 50FF5CA7-0549-48F5-8938-BACF4AA46C73
 #+begin_src R
 library(assertthat)
 #+end_src
 
+#+NAME: B5BD4CCA-8560-4232-9066-B92307722630
 #+begin_src R :noweb-ref rinstall-def
 if(! require(assertthat)){
     install.packages("assertthat")
@@ -190,6 +229,9 @@ if(! require(assertthat)){
 #+end_src
 
 **** testthat
+:PROPERTIES:
+:ID:       007E49F2-44A1-4AB7-AE4F-72534211F4DE
+:END:
 
 Design-by-contract and unit-tests [fn:d61c81a6: http://cran.r-project.org/web/packages/testthat/index.html]
 go hand-in-hand.
@@ -228,10 +270,12 @@ Expectations:
   - "Each test is run in its own environment so it is self-contained."
     - Plain old code so you can modify the global environment FYI
 
+#+NAME: 9E31BF52-BB47-4E9D-8BB0-F1E94E7924FF
 #+begin_src R
 library(testthat)
 #+end_src
 
+#+NAME: 1357C970-BF9A-4A1F-B221-CE344A19674B
 #+begin_src R :noweb-ref rinstall-def
 if(! require(testthat)) {
     install.packages("testthat")
@@ -239,14 +283,19 @@ if(! require(testthat)) {
 #+end_src
 
 **** stringr
+:PROPERTIES:
+:ID:       BB8CF291-A9BF-4E3B-9E02-3A41EDAF8424
+:END:
 
 Make it really easy to work with strings [fn:bb2c9d86: http://cran.r-project.org/web/packages/stringr/index.html]. That is indeed a good goal, and
 the reason that I installed this initially was because =testthat= mentions that
 it is used.
+#+NAME: A4ACDB85-4606-4B9E-AE04-93E9D0F872FB
 #+begin_src R
 library(stringr)
 #+end_src
 
+#+NAME: 81868312-F754-4181-8A6A-8744BA2939AC
 #+begin_src R :noweb-ref rinstall-def
 if(! require(stringr)) {
     install.packages("stringr")
@@ -254,6 +303,9 @@ if(! require(stringr)) {
 #+end_src
 
 **** sqldf
+:PROPERTIES:
+:ID:       3B199A0E-DE1E-4FBD-95A0-6F4D981B021D
+:END:
 
 How you extract data from a dataframe is flexible and everyone can and may do it
 differently. One option available is to use =SQL= [fn:2e49b888: http://cran.r-project.org/web/packages/sqldf/index.html], so make it available.
@@ -457,10 +509,12 @@ SQLite, SQL As Understood By SQLite:
 - [[https://www.sqlite.org/lang_datefunc.html][Date And Time Functions]]
 - These previous are all provided by [[http://cran.r-project.org/web/packages/RSQLite.extfuns/index.html][RSQLite.extfuns]]
 
+#+NAME: 34909267-A92F-4624-A72F-B1B0E3BAEE97
 #+begin_src R
 library(sqldf)
 #+end_src
 
+#+NAME: BC0A0BF8-A7A1-42BF-82E2-6D46D48B8F7E
 #+begin_src R :noweb-ref rinstall-def
 if(! require(sqldf)) {
     install.packages("sqldf")
@@ -468,15 +522,20 @@ if(! require(sqldf)) {
 #+end_src
 
 **** MASS
+:PROPERTIES:
+:ID:       0C3E7D6C-68F9-43D0-9F1A-DD9BBB06029C
+:END:
 
 "Functions and datasets to support Venables and Ripley, 'Modern Applied
 Statistics with S' (4th edition, 2002)." Also, =sqldf= recommended it be
 installed, so it is the right time. [fn:4d284c54: http://cran.r-project.org/web/packages/MASS/index.html]
 
+#+NAME: 3417AE70-97DA-4615-B721-747B4EDA379E
 #+begin_src R
 library(MASS)
 #+end_src
 
+#+NAME: 9AC4855A-F125-4B6D-BB97-5F8DA3FB0F89
 #+begin_src R :noweb-ref rinstall-def
 if(! require(MASS)) {
     install.packages("MASS")
@@ -484,14 +543,19 @@ if(! require(MASS)) {
 #+end_src
 
 **** jsonlite
+:PROPERTIES:
+:ID:       C4806332-3925-4CD3-BDA2-68A9291C245B
+:END:
 
 Make it easy to work with JSON [37138455: http://cran.r-project.org/web/packages/jsonlite/index.html].
 Reading the vignette's, it does a lot more, for example =rbind.pages=.
 
+#+NAME: 113B7F36-8DE1-4BCE-8721-8633DB450A16
 #+begin_src R
 library(jsonlite)
 #+end_src
 
+#+NAME: F820314F-DA9F-4D46-9DE3-FF32D76E119B
 #+begin_src R :noweb-ref rinstall-def
 if(! require(jsonlite)) {
     install.packages("jsonlite")
@@ -499,14 +563,19 @@ if(! require(jsonlite)) {
 #+end_src
 
 **** data.table
+:PROPERTIES:
+:ID:       6FB35637-B75D-47D6-A552-225B2EE36D38
+:END:
 
 =data.table= [fn:de30b846: http://cran.r-project.org/web/packages/data.table/index.html ]
 is quite nice.
 
+#+NAME: 077FB8D1-785B-4445-9A70-137A6165C421
 #+begin_src R
 library(data.table)
 #+end_src
 
+#+NAME: EBD717EC-A697-4424-BE96-C30A324FDE94
 #+begin_src R :noweb-ref rinstall-def
 if(! require(data.table)) {
     install.packages("data.table")
@@ -514,13 +583,18 @@ if(! require(data.table)) {
 #+end_src
 
 **** xlsx
+:PROPERTIES:
+:ID:       51FF40DD-6B00-48BD-A946-53666E9BE40F
+:END:
 
 Read and write Excel files [fn:ed7756d2: http://cran.r-project.org/web/packages/xlsx/index.html].
 
+#+NAME: 6351DA30-6CAA-4EE1-8760-8EFF48F39EAF
 #+begin_src R
 library(xlsx)
 #+end_src
 
+#+NAME: 9FA90522-A853-4E2D-B982-8C0729B72732
 #+begin_src R :noweb-ref rinstall-def
 if(! require(xlsx)) {
     install.packages("xlsx")
@@ -528,13 +602,18 @@ if(! require(xlsx)) {
 #+end_src
 
 **** XML
+:PROPERTIES:
+:ID:       1C5D86C3-F971-4A4A-B3ED-CFA7814B6B6B
+:END:
 
 Make ℝ truly enterprise [fn:bf8a1f82: http://cran.r-project.org/web/packages/XML/index.html].
 
+#+NAME: 6FDB5B36-774C-4A12-AC2D-23E59C18BE5F
 #+begin_src R
 library(XML)
 #+end_src
 
+#+NAME: 32E87A8D-6853-444B-8309-9C2AABB2C6C4
 #+begin_src R :noweb-ref rinstall-def
 if(! require(XML)) {
     install.packages("XML")
@@ -542,6 +621,9 @@ if(! require(XML)) {
 #+end_src
 
 **** devtools
+:PROPERTIES:
+:ID:       CC5F0CF1-4067-4269-BA81-4779DD30E1D1
+:END:
 
 =devtools=: Tools to make developing ℝ code easier
 
@@ -562,10 +644,12 @@ Excellent.
 At the very least, just /know of/ this package, as you will be installing it if
 you want to us =tidyr=.
 
+#+NAME: 0B6C1ED4-CE0F-4125-B0DE-24C08E42C253
 #+begin_src R
 library(devtools)
 #+end_src
 
+#+NAME: FBD625EF-C6F8-4D9B-9E9A-ADAE2004D186
 #+begin_src R :noweb-ref rinstall-def
 if(! require(devtools)) {
     install.packages("devtools")
@@ -575,16 +659,21 @@ if(! require(devtools)) {
 #+end_src
 
 **** magrittr
+:PROPERTIES:
+:ID:       7714BB94-5E3C-4E15-B22B-9CFD03634520
+:END:
 
 This is a add from the /most understated package definition/ of the year
 department. =magrittr= [fn:73ee53da: http://cran.r-project.org/web/packages/magrittr/index.html]
 is, much like every Scheme library ever, deceptively simple in its power and
 ease of use that it provides.
 
+#+NAME: 0168A344-5F8A-480B-BFFB-22493D5F173D
 #+begin_src R
 library(magrittr)
 #+end_src
 
+#+NAME: 26DD147E-0E6A-4322-B53D-8CC0FB727024
 #+begin_src R :noweb-ref rinstall-def
 if(! require(magrittr)) {
     devtools::install_github("smbache/magrittr")
@@ -592,6 +681,9 @@ if(! require(magrittr)) {
 #+end_src
 
 **** reshape2
+:PROPERTIES:
+:ID:       11B7E671-6D90-4C37-B13F-1CB21904C304
+:END:
 
 =reshape2=: Flexibly reshape data: a reboot of the =reshape= package
 
@@ -603,10 +695,12 @@ Reshape lets you flexibly restructure and aggregate data using just two function
 
 This seems to be a defacto standard.
 
+#+NAME: 45CDE8F1-2144-43CA-A4DD-77932C165805
 #+begin_src R
 library(reshape2)
 #+end_src
 
+#+NAME: 75CFE76D-7C00-49CA-80EB-7811053CC5BB
 #+begin_src R :noweb-ref rinstall-def
 if(! require(reshape2)) {
     install.packages("reshape2")
@@ -614,6 +708,9 @@ if(! require(reshape2)) {
 #+end_src
 
 **** tidyr
+:PROPERTIES:
+:ID:       EAB265C6-121F-4CC9-A745-AEA8AECA2D63
+:END:
 
 =tidyr=: Easily tidy data with spread and gather functions for ℝ
 
@@ -625,10 +722,12 @@ if(! require(reshape2)) {
 
 Not on CRAN yet so install via
 
+#+NAME: 2F704227-46DA-43F7-82E0-909AEFD22BD7
 #+begin_src R
 library(tidyr)
 #+end_src
 
+#+NAME: 495BF16A-88C6-4169-BFBE-BA25578D8BA5
 #+begin_src R :noweb-ref rinstall-def
 if(! require(tidyr)) {
     devtools::install_github("hadley/tidyr")
@@ -637,6 +736,9 @@ if(! require(tidyr)) {
 #+end_src
 
 **** lubridate
+:PROPERTIES:
+:ID:       BDFEC2C3-DAC1-4ED2-BC66-C8A793F9EC1C
+:END:
 
 lubridate: Make dealing with dates a little easier in ℝ
 
@@ -646,10 +748,12 @@ lubridate: Make dealing with dates a little easier in ℝ
 
 [[http://cran.r-project.org/web/packages/lubridate/lubridate.pdf][Manual]]. [[http://cran.r-project.org/web/packages/lubridate/vignettes/lubridate.html][Vignette]].
 
+#+NAME: 44351B15-04C0-43FA-B244-B3BD40C1F19B
 #+begin_src R
 library(lubridate)
 #+end_src
 
+#+NAME: F1A7CFF9-1694-4DFF-9D2C-1E74A23BA4A1
 #+begin_src R :noweb-ref rinstall-def
 if(! require(lubridate)) {
     install.packages("lubridate")
@@ -660,6 +764,9 @@ Perhaps in some /time/ there will be a unified approach to time-management among
 all programming languages.
 
 **** plyr
+:PROPERTIES:
+:ID:       AFBD3D2E-E8CA-4872-9A19-BA77DB28BAE9
+:END:
 
 plyr: Tools for splitting, applying and combining data in R
 
@@ -669,10 +776,12 @@ plyr: Tools for splitting, applying and combining data in R
 
 [[http://cran.r-project.org/web/packages/plyr/README.html][Readme]]. [[http://cran.r-project.org/web/packages/plyr/plyr.pdf][Manual]]. [[http://plyr.had.co.nz/][Home page]]. [[https://github.com/hadley/plyr][Github]].
 
+#+NAME: E99EABEA-ACCF-447C-9AE5-6E868EC7E500
 #+begin_src R
 library(plyr)
 #+end_src
 
+#+NAME: 8949CA25-852C-4CDF-9058-88DE9114A580
 #+begin_src R :noweb-ref rinstall-def
 if(! require(plyr)) {
     install.packages("plyr")
@@ -680,6 +789,9 @@ if(! require(plyr)) {
 #+end_src
 
 **** dplyr
+:PROPERTIES:
+:ID:       17A5C886-CEC5-466A-885E-6E00FF6AD7F1
+:END:
 
 dplyr: a grammar of data manipulation in R
 
@@ -694,10 +806,12 @@ implications, and they are usually never good.
 
 [[http://cran.r-project.org/web/packages/dplyr/README.html][Readme]]. [[http://cran.r-project.org/web/packages/dplyr/dplyr.pdf][Manual]]. [[http://cran.r-project.org/web/packages/dplyr/vignettes/introduction.html][Introduction to dplyr]].
 
+#+NAME: C7B5947C-8E50-46FA-B737-19900584106F
 #+begin_src R
 library(dplyr)
 #+end_src
 
+#+NAME: 030BF270-E38C-4E15-B8C0-0E28E081DAE5
 #+begin_src R :noweb-ref rinstall-def
 if(! require(dplyr)) {
     install.packages("dplyr")
@@ -705,6 +819,9 @@ if(! require(dplyr)) {
 #+end_src
 
 **** testit
+:PROPERTIES:
+:ID:       EBACD267-84B2-4FF2-ABE3-4DC6070D247D
+:END:
 
 testit: A simple package for testing R packages
 
@@ -712,10 +829,12 @@ testit: A simple package for testing R packages
 
 Gives you =assert= and =test_pkg=. Save characters.
 
+#+NAME: 965B8003-F502-4EF8-9E21-03A47F90267A
 #+begin_src R
 library(testit)
 #+end_src
 
+#+NAME: 93462E3C-B83F-45C5-B02B-589E961E3E45
 #+begin_src R :noweb-ref rinstall-def
 if(! require(testit)) {
     install.packages("testit")
@@ -723,6 +842,9 @@ if(! require(testit)) {
 #+end_src
 
 **** markdown
+:PROPERTIES:
+:ID:       43DA96C6-5440-4BA7-A537-F37BA5B739C1
+:END:
 
 - [[http://cran.r-project.org/web/packages/markdown/index.html][CRAN]]
   - [[http://cran.r-project.org/web/packages/markdown/markdown.pdf][reference]]
@@ -730,10 +852,12 @@ if(! require(testit)) {
   - [[http://cran.r-project.org/web/packages/markdown/vignettes/markdown-output.html][vignettes: markdown-output]]
 - [[https://github.com/rstudio/markdown][GitHub]]
 
+#+NAME: AB45CA2B-3CEB-40F4-B9CA-E04BB082AC28
 #+begin_src R
 library(markdown)
 #+end_src
 
+#+NAME: 25C814BD-CF77-441B-AD2F-122F6C854DA3
 #+begin_src R :noweb-ref rinstall-def
 if(! require(markdown)) {
     install.packages("markdown")
@@ -745,6 +869,9 @@ This package is referred to as R Markdown v1 when combined with knitr. The prima
 #+end_quote
 
 **** knitr
+:PROPERTIES:
+:ID:       3544C2CF-9531-4A1C-95D1-83D423FC5B2E
+:END:
 
 knitr: A general-purpose package for dynamic report generation in R
 
@@ -778,10 +905,12 @@ Somehow missed the [[http://cran.r-project.org/web/packages/knitr/vignettes/knit
 
 [[http://yihui.name/knitr/demo/vignette/][How to build package vignettes with knitr]].
 
+#+NAME: C2032063-FF74-47CE-B75D-23876B518305
 #+begin_src R
 library(knitr)
 #+end_src
 
+#+NAME: 84ADA1D8-C61B-4054-BEEB-A22342A0DB17
 #+begin_src R :noweb-ref rinstall-def
 if(! require(knitr)) {
     install.packages("knitr")
@@ -789,15 +918,20 @@ if(! require(knitr)) {
 #+end_src
 
 **** slidify
+:PROPERTIES:
+:ID:       102D9D02-8FEA-4114-B4C6-BC5FEFD84FDB
+:END:
 
 - [[http://slidify.org/][HomePage]]
 - No CRAN
 - [[https://github.com/ramnathv/slidify][GitHub]]
 
+#+NAME: 2B84393C-49E7-4433-807A-80ED95E0E493
 #+begin_src R
 library(slidify)
 #+end_src
 
+#+NAME: 61AE1440-B8BD-47F8-B835-BD4AF3CA9C8C
 #+begin_src R :noweb-ref rinstall-def
 if(! require(slidify)) {
     install_github("ramnathv/slidify")
@@ -806,15 +940,20 @@ if(! require(slidify)) {
 #+end_src
 
 **** fortunes
+:PROPERTIES:
+:ID:       E7C0C8C1-8835-45D3-B7C2-F3D687034CFA
+:END:
 
 R Fortunes.
 
 [[http://cran.r-project.org/web/packages/fortunes/index.html][CRAN]].
 
+#+NAME: DFBE1752-4641-4181-A21A-098610904EEB
 #+begin_src R
 library(fortunes)
 #+end_src
 
+#+NAME: 399E1D92-BC6A-40F2-9A08-0F8913A661D2
 #+begin_src R :noweb-ref rinstall-def
 if(! require(fortunes)) {
     install.packages("fortunes")
@@ -822,6 +961,9 @@ if(! require(fortunes)) {
 #+end_src
 
 **** ggplot2
+:PROPERTIES:
+:ID:       E51FEB93-89A9-4C5F-BC67-B737D6A853D7
+:END:
 
 - [[http://cran.r-project.org/web/packages/ggplot2/index.html][CRAN]]
   - [[http://cran.r-project.org/web/packages/ggplot2/ggplot2.pdf][reference]]
@@ -838,10 +980,12 @@ if(! require(fortunes)) {
 - [[http://ggplot2.org/][Homepage]]
   - [[http://docs.ggplot2.org/current/][Documentation]]
 
+#+NAME: EEA6CD82-563E-4195-AA06-8B68CE630170
 #+begin_src R
 library(ggplot2)
 #+end_src
 
+#+NAME: 875D9D97-919D-4766-A98F-9D88760CBA0B
 #+begin_src R :noweb-ref rinstall-def
 if(! require(ggplot2)) {
     install.packages("ggplot2")
@@ -849,16 +993,21 @@ if(! require(ggplot2)) {
 #+end_src
 
 **** tikzDevice
+:PROPERTIES:
+:ID:       C024D10E-40E2-4192-A953-3EBEC23B25BC
+:END:
 
 - [[http://cran.r-project.org/web/packages/tikzDevice/index.html][CRAN]]
   - [[http://cran.r-project.org/web/packages/tikzDevice/tikzDevice.pdf][reference]]
   - [[http://cran.r-project.org/web/packages/tikzDevice/vignettes/tikzDevice.pdf][vignettes: tikzDevice]]
 - [[https://github.com/yihui/tikzDevice][GitHub]]
 
+#+NAME: EC288E1A-B3F9-499C-8170-371D44516029
 #+begin_src R
 library(tikzDevice)
 #+end_src
 
+#+NAME: 7E6366CC-6A0E-48D1-AF62-EA099A53576C
 #+begin_src R :noweb-ref rinstall-def
 if(! require(tikzDevice)) {
     install.packages("tikzDevice")
@@ -866,15 +1015,20 @@ if(! require(tikzDevice)) {
 #+end_src
 
 **** ascii
+:PROPERTIES:
+:ID:       6237DF5B-5219-403D-BB41-5D0684E75B32
+:END:
 
 - [[http://cran.r-project.org/web/packages/ascii/index.html][CRAN]]
   - [[http://cran.r-project.org/web/packages/ascii/ascii.pdf][reference]]
 - [[https://github.com/eusebe/ascii/][GitHub]]
 
+#+NAME: 28BEF788-5A4D-4F78-81AC-23D22A5BAC56
 #+begin_src R
 library(ascii)
 #+end_src
 
+#+NAME: CD8BC540-6B96-4CC8-BB6C-3070823DBB2B
 #+begin_src R :noweb-ref rinstall-def
 if(! require(ascii)) {
     install.packages("ascii")
@@ -884,11 +1038,15 @@ if(! require(ascii)) {
 Always display =org= representations; I'm assuming that it will be /the/ dominant
 vehicle for analysis.
 
+#+NAME: 0964975F-F813-450A-A628-DD28A199DB7C
 #+begin_src R
 options(asciiType="org")
 #+end_src
 
 **** xtable
+:PROPERTIES:
+:ID:       AE66A34F-A6AF-4578-8617-A7D2363AF81C
+:END:
 
 - [[http://cran.r-project.org/web/packages/xtable/index.html][CRAN]]
   - [[http://cran.r-project.org/web/packages/xtable/xtable.pdf][reference]]
@@ -896,10 +1054,12 @@ options(asciiType="org")
   - [[http://cran.r-project.org/web/packages/xtable/vignettes/xtableGallery.pdf][vignettes: xtableGallery]]
 - [[http://xtable.r-forge.r-project.org/][R-Forge]]
 
+#+NAME: 557D70EA-DB5C-49E9-9755-F6E3172038D8
 #+begin_src R
 library(xtable)
 #+end_src
 
+#+NAME: C162AAE1-0A15-433F-8E9A-D65D47D17BF3
 #+begin_src R :noweb-ref rinstall-def
 if(! require(xtable)) {
     install.packages("xtable")
@@ -907,15 +1067,20 @@ if(! require(xtable)) {
 #+end_src
 
 **** Hmisc
+:PROPERTIES:
+:ID:       72F1D963-42B8-43C5-87C3-44AEAFCEC91C
+:END:
 
 - [[http://cran.r-project.org/web/packages/Hmisc/index.html][CRAN]]
   - [[http://cran.r-project.org/web/packages/Hmisc/Hmisc.pdf][reference]]
 - [[https://github.com/harrelfe/Hmisc][GitHub]]
 
+#+NAME: F9C27D39-49FD-461A-945D-6B2D2BF6CDD9
 #+begin_src R
 library(Hmisc)
 #+end_src
 
+#+NAME: ACF6C5AC-E6B3-4EA4-B500-A5C61546D59D
 #+begin_src R :noweb-ref rinstall-def
 if(! require(Hmisc)) {
     install.packages("Hmisc")
@@ -923,15 +1088,20 @@ if(! require(Hmisc)) {
 #+end_src
 
 **** log4r
+:PROPERTIES:
+:ID:       E343FE37-79D9-4856-AFF1-1BFF49513E10
+:END:
 
 - [[http://cran.r-project.org/web/packages/log4r/index.html][CRAN]]
   - [[http://cran.r-project.org/web/packages/log4r/log4r.pdf][reference]]
 - [[https://github.com/johnmyleswhite/log4r][GitHub]]
 
+#+NAME: 0F32E4F9-A380-491F-9296-F2BB68FA97A5
 #+begin_src R
 library(log4r)
 #+end_src
 
+#+NAME: 3F3ADA7F-1CD2-4645-93B2-7E860E0FA86D
 #+begin_src R :noweb-ref rinstall-def
 if(! require(log4r)) {
     install.packages("log4r")
@@ -939,14 +1109,19 @@ if(! require(log4r)) {
 #+end_src
 
 **** boot
+:PROPERTIES:
+:ID:       9D4A4744-FDF4-49C5-9B66-08863FCAABC4
+:END:
 
 - [[http://cran.r-project.org/web/packages/boot/index.html][CRAN]]
   - [[http://cran.r-project.org/web/packages/boot/boot.pdf][reference]]
 
+#+NAME: 9DD22C76-FE94-4193-86C4-94EA9A64B859
 #+begin_src R
 library(boot)
 #+end_src
 
+#+NAME: 80437472-ADF6-4394-B7BA-C3DF725D3BAD
 #+begin_src R :noweb-ref rinstall-def
 if(! require(boot)) {
     install.packages("boot")
@@ -954,16 +1129,21 @@ if(! require(boot)) {
 #+end_src
 
 **** kernlab
+:PROPERTIES:
+:ID:       24A2C62F-9EC0-4E51-B21D-364DF4679938
+:END:
 
 - [[http://cran.r-project.org/web/packages/kernlab/index.html][CRAN]]
   - [[http://cran.r-project.org/web/packages/kernlab/kernlab.pdf][reference]]
   - [[http://cran.r-project.org/web/packages/kernlab/vignettes/kernlab.pdf][vignettes: kernlab]]
 - GitHub
 
+#+NAME: 98E55DA9-C5AD-485F-8A3D-543B5AA4BD48
 #+begin_src R
 library(kernlab)
 #+end_src
 
+#+NAME: 65691806-DBC4-411B-98C3-BD73D8ACE50F
 #+begin_src R :noweb-ref rinstall-def
 if(! require(kernlab)) {
     install.packages("kernlab")
@@ -971,6 +1151,9 @@ if(! require(kernlab)) {
 #+end_src
 
 **** Not explicitly loaded, but interesting packages
+:PROPERTIES:
+:ID:       1F011148-DBD2-4944-B458-771333F10FB7
+:END:
 
 - [[http://projecttemplate.net/index.html][ProjectTemplate]]
 - [[http://cran.r-project.org/web/packages/evaluate/index.html][evaluate]]
@@ -1035,6 +1218,7 @@ if(! require(kernlab)) {
 ** .First
       :PROPERTIES:
       :noweb-ref: rfirst-defs
+      :ID:       10CD604F-503C-46DE-AB32-97884C070344
       :END:
 
 Reading:
@@ -1047,6 +1231,7 @@ Reading:
   not be used much, and if you do need to use it, the it should be really really
   obvious.
   - Eg: [fn:7ce54638: http://www.r-bloggers.com/to-attach-or-not-attach-that-is-the-question/]
+#+NAME: C16F5A58-7869-4A3E-8651-B243CDE77E54
 #+begin_src R
 gcr$attach.unsafe <- attach
 gcr$attach <- function(...) {
@@ -1059,6 +1244,7 @@ gcr$attach <- function(...) {
   the useR that they /may/ want the former not the latter
   - Via [fn:84031d95: http://www.r-bloggers.com/library-vs-require-in-r/]
   - Just like everything else here, this is a /personal preference/ thing!
+#+NAME: FD2B4209-4312-4CD2-968F-84C66702E0A4
 #+begin_src R
 gcr$require <- function(...) {
     warning("Are you sure you wanted `require` instead of `library`?")
@@ -1067,6 +1253,7 @@ gcr$require <- function(...) {
 #+end_src
 
 Sometimes you only want to list everything *but* functions [fn:7b11c35d: https://stackoverflow.com/questions/13094324/hiding-function-names-from-ls-results-to-find-a-variable-name-more-quickly]:
+#+NAME: 9354CA61-92CC-4614-B80B-F84C7F414926
 #+begin_src R
 gcr$lsnofun <- function(name = parent.frame()) {
     obj <- ls(name = name)
@@ -1075,6 +1262,7 @@ gcr$lsnofun <- function(name = parent.frame()) {
 #+end_src
 
 Make it really simple to specify how to handle errors in a given session:
+#+NAME: 70131925-FAE5-4780-A949-6E6F3879561F
 #+begin_src R
 gcr$recoveronerror <- function() {
     options(error=recover)
@@ -1086,6 +1274,7 @@ gcr$recoveronerroroff <- function() {
 #+end_src
 
 Make it really simple to specify how to handle warnings in a given session:
+#+NAME: BC7DAB81-7147-4239-BB7F-3AF6C2288B80
 #+begin_src R
 gcr$erroronwarn <- function() {
     options(warn=2)
@@ -1098,12 +1287,14 @@ gcr$erroronwarnoff <- function() {
 
 =sqldf= should always use =SQLite=.
 
+#+NAME: D5C8CB56-C0C2-4524-8B86-9C0549F9D727
 #+begin_src R
 options(sqldf.driver = "SQLite")
 #+end_src
 
 Save your fingers from having to type =head= the next =n= thousand times [fn:f9fcc455: https://stackoverflow.com/questions/13024167/how-to-make-head-be-applied-automatically-to-output] because I can't. =ess-rdired= and friends use the dataframe print function,
 so I didn't make dataframes print using it.
+#+NAME: 2C3CDAF3-8D92-44CD-9D00-513E05D53621
 #+begin_src R
 gcr$printdf <- function(df) {
     if (nrow(df) > 10) {
@@ -1119,6 +1310,7 @@ gcr$printdf <- function(df) {
 Sometimes you want to see all of the data in a dataframe, and sometimes you
 don't. Make it really easy to change whenever you feel like it.
 
+#+NAME: 32B3BE7D-6BF6-480C-AFFD-255CA71BE24B
 #+begin_src R
 gcr$printlen <- function(len=500) {
     options("max.print" = len)
@@ -1128,6 +1320,7 @@ gcr$printlen <- function(len=500) {
 When you've got =n=-thousand rows of data, make it easier to get a sample from it,
 just make it specific and keep it simple.
 
+#+NAME: C211CA1E-7322-41CA-A82C-ABA5FCD7C34E
 #+begin_src R
 gcr$hundred <- function(df, idx=0) {
     df[idx:(idx+100),]
@@ -1137,6 +1330,7 @@ gcr$hundred <- function(df, idx=0) {
 ** .Renviron
       :PROPERTIES:
       :noweb-ref: renviron-def
+      :ID:       ADDE28AF-505F-46DF-BF67-C61E435D6981
       :END:
 
 Install all packages to my home directory [fn:daab690d: http://www.r-bloggers.com/installing-r-packages/]
@@ -1145,6 +1339,7 @@ Install all packages to my home directory [fn:daab690d: http://www.r-bloggers.co
   - Solution:
     - Manual for now
     - Unsure of best way to generalize it
+#+NAME: 0116C775-DD1B-4DB6-8D3F-EA6763810738
 #+begin_src sh
 R_LIBS=~/.Rpackages
 #+end_src
@@ -1167,6 +1362,7 @@ When I us =ggplot= and quarts on this system, it blows up.
 <2014-11-25 Tue>
 Switched to the official CRAN R build, which works fine on OSX.
 
+#+NAME: 1F5E546C-D5C8-482E-BFAB-066494CA8D4E
 #+begin_src sh
 R_INTERACTIVE_DEVICE=quartz
 #+end_src
@@ -1177,6 +1373,7 @@ I will put it here. Perhaps this should get set via =Sys.setenv= instead? I'll
 leave it for now and fix it later if necessary. I did test this out with a call
 to =Sys.time()= and it worked correctly.
 
+#+NAME: 93FAA2B4-6A03-4FFE-88BF-02981B522F66
 #+begin_src sh
 TZ=America/Chicago
 #+end_src
