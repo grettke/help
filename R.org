@@ -82,7 +82,7 @@ Symbolically link all of the control files.
 
 #+NAME: 2A4A1DF1-C77E-40B8-8F65-0ECE9F07AFC3
 #+BEGIN_SRC sh
-ln -sfn ~/.Rsetup.sh ~/src/help/.Rsetup.sh
+ln -sfn ~/.RSetup.sh ~/src/help/.Rsetup.sh
 ln -sfn ~/.Rprofile ~/src/help/.Rprofile
 ln -sfn ~/.Renviron ~/src/help/.Renviron
 ln -sfn ~/.Rinstall.r ~/src/help/.Rinstall.r
