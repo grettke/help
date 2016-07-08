@@ -4,5 +4,5 @@ rm ~/.Rprofile
 ln -sfn ~/src/help/.Rprofile ~/.Rprofile
 rm ~/.Renviron
 ln -sfn ~/src/help/.Renviron ~/.Renviron
-rm ~/.Rintall.r
+rm ~/.Rinstall.r
 ln -sfn ~/src/help/.Rinstall.r ~/.Rinstall.r
