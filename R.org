@@ -13,7 +13,7 @@ and environ set it up correctly. Always remember this and run R using those
 configuration files.
 
 - Steps
-  - Review and Source =.Rsetup= prepare the OS for R and R for your configuration
+  - Review and Run =.Rsetup= prepare the OS for R and R for your configuration
   - Review =.Renviron= to verify it is what you expect
   - Review =.Rprofile= to recall how you set it up
   - Review and Source =Rinstall= to install required packages
