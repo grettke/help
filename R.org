@@ -25,6 +25,32 @@ configuration files.
     - Run the installation script 3-5 times, each time
       - Check the version that is running
       - Go back and read the transcript and make sure that it looks right
+        - Build warnings
+        - Configuration errors
+        - Mask warnings
+        - Package notifications
+          - For example
+            #+BEGIN_EXAMPLE
+data.table 1.9.6  For help type ?data.table or https://github.com/Rdatatable/data.table/wiki
+The fastest way to learn (by data.table authors): https://www.datacamp.com/courses/data-analysis-the-data-table-way
+            #+END_EXAMPLE
+          - …
+            #+BEGIN_EXAMPLE
+Attaching package: ‘magrittr’
+
+The following objects are masked from ‘package:testthat’:
+
+    equals, is_less_than, not
+
+            #+END_EXAMPLE
+          - …
+            #+BEGIN_EXAMPLE
+------------------------------------------------------------------------------
+data.table + dplyr code now lives in dtplyr.
+Please library(dtplyr)!
+------------------------------------------------------------------------------
+            #+END_EXAMPLE
+
       - Eventually that script will fail, for example
         - there is no package called ‘devtools’
           - Called =install.packages("devtools")= manually
