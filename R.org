@@ -32,7 +32,7 @@ configuration files.
 
 *.Rsetup*
 #+NAME: 5EF49EC7-E305-4173-9008-AB3969D9CB23
-#+begin_src sh :tangle .Rsetup.sh :comments no
+#+begin_src sh :tangle .Rsetup.sh :comments no :tangle-mode (identity #o755)
 «rsetup-defs»
 #+end_src
 
@@ -82,7 +82,6 @@ Symbolically link all of the control files.
 
 #+NAME: 2A4A1DF1-C77E-40B8-8F65-0ECE9F07AFC3
 #+BEGIN_SRC sh
-ln -sfn ~/.RSetup.sh ~/src/help/.Rsetup.sh
 ln -sfn ~/.Rprofile ~/src/help/.Rprofile
 ln -sfn ~/.Renviron ~/src/help/.Renviron
 ln -sfn ~/.Rinstall.r ~/src/help/.Rinstall.r
