@@ -75,6 +75,14 @@ fortune()
 
 Prepare the operating system to host R.
 
+Recreate the packages directory.
+
+#+NAME: CAA4C1F3-97AC-484B-A95C-0338CC7557D1
+#+BEGIN_SRC sh
+rm -rf ~/.Rpackages
+mkdir ~/.Rpackages
+#+END_SRC
+
 ** .Rprofile [fn:89a51cf1: https://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile]
       :PROPERTIES:
       :noweb-ref: rprofile-def
