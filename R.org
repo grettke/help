@@ -8,30 +8,26 @@
 :ID:       59F738BE-D479-4BB2-A41C-918616832571
 :END:
 
-Remember to link these from =~/= to here. Automate it.
-
 The goal here is to get R set up thoughtfully and quickly. The profile
 and environ set it up correctly. Always remember this and run R using those
 configuration files.
 
 When R starts, it won't find any of the required packages. It will complain a
-lot. That is OK. Just keep running the install script until it is happy
+lot. That is OK. Just keep running the install script until it is happy:
 =source("~/.Rinstall")=. Then restart R and everything should be fine.
 
 Many things happen during this package installation process. Some are R specific
 and some have to do with the machine that you are running on. Both are
 mentioned here:
 
-- Check the version that is running
-- Go back and read the transcript and make sure that it looks right
-- Eventually that script will fail, for example
-  - there is no package called ‘devtools’
-    - Called =install.packages("devtools")= manually
-    - Install order error
-- After running it a couple of times, it is finished
-
-My old config started R without the init-file. That was dumb. It created a lot
-of needless hassle without any significant benefit.
+- Run the installation script 3-5 times, each time
+  - Check the version that is running
+  - Go back and read the transcript and make sure that it looks right
+  - Eventually that script will fail, for example
+    - there is no package called ‘devtools’
+      - Called =install.packages("devtools")= manually
+      - Install order error
+  - After running it a couple of times, it is finished
 
 *.Rsetup*
 #+NAME: 5EF49EC7-E305-4173-9008-AB3969D9CB23
