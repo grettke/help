@@ -69,7 +69,7 @@ fortune()
 
 ** .Rsetup
 :PROPERTIES:
-:noweb-ref: rsetup-defs
+:header-args: :noweb-ref rsetup-defs
 :ID:       BDE6AFC6-C6E9-44B8-8B37-35A5E59B14D5
 :END:
 
@@ -85,7 +85,7 @@ mkdir ~/.Rpackages
 
 ** .Rprofile [fn:89a51cf1: https://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile]
       :PROPERTIES:
-      :noweb-ref: rprofile-def
+      :header-args: :noweb-ref rprofile-def
       :ID:       FDD6A2C4-B9B1-45EB-996B-3AB20FB2BE89
       :END:
 
@@ -1228,7 +1228,7 @@ if(! require(kernlab)) {
 
 ** .First
       :PROPERTIES:
-      :noweb-ref: rfirst-defs
+      :header-args: :noweb-ref rfirst-defs
       :ID:       10CD604F-503C-46DE-AB32-97884C070344
       :END:
 
@@ -1340,7 +1340,7 @@ gcr$hundred <- function(df, idx=0) {
 
 ** .Renviron
       :PROPERTIES:
-      :noweb-ref: renviron-def
+      :header-args: :noweb-ref renviron-def
       :ID:       ADDE28AF-505F-46DF-BF67-C61E435D6981
       :END:
 
