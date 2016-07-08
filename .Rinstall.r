@@ -49,6 +49,9 @@ if(! require(plyr)) {
 if(! require(dplyr)) {
     install.packages("dplyr")
 }
+if(! require(dtplyr)) {
+    install.packages("dtplyr")
+}
 if(! require(testit)) {
     install.packages("testit")
 }

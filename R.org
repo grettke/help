@@ -839,7 +839,7 @@ if(! require(plyr)) {
 }
 #+end_src
 
-**** dplyr
+**** dplyr & dtplyr
 :PROPERTIES:
 :ID:       17A5C886-CEC5-466A-885E-6E00FF6AD7F1
 :END:
@@ -862,10 +862,22 @@ implications, and they are usually never good.
 library(dplyr)
 #+end_src
 
+#+NAME: CF63E555-28B8-4BC2-B8B5-8B3EA0ABCF55
+#+begin_src R
+library(dtplyr)
+#+end_src
+
 #+NAME: 030BF270-E38C-4E15-B8C0-0E28E081DAE5
 #+begin_src R :noweb-ref rinstall-def
 if(! require(dplyr)) {
     install.packages("dplyr")
+}
+#+end_src
+
+#+NAME: 7F4C5DA8-35E1-40DA-9DC2-0527794E1C2B
+#+begin_src R :noweb-ref rinstall-def
+if(! require(dtplyr)) {
+    install.packages("dtplyr")
 }
 #+end_src
 
