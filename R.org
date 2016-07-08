@@ -50,7 +50,6 @@ data.table + dplyr code now lives in dtplyr.
 Please library(dtplyr)!
 ------------------------------------------------------------------------------
             #+END_EXAMPLE
-
       - Eventually that script will fail, for example
         - there is no package called ‘devtools’
           - Called =install.packages("devtools")= manually
