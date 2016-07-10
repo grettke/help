@@ -1,6 +1,3 @@
-if(! require(mime)){
-    install.packages("mime")
-}
 if(! require(assertthat)){
     install.packages("assertthat")
 }
@@ -63,10 +60,6 @@ if(! require(markdown)) {
 }
 if(! require(knitr)) {
     install.packages("knitr")
-}
-if(! require(slidify)) {
-    install_github("ramnathv/slidify")
-    install_github("ramnathv/slidifyLibraries")
 }
 if(! require(fortunes)) {
     install.packages("fortunes")
