@@ -132,7 +132,7 @@ ln -sfn ~/src/help/.Rinstall.r ~/.Rinstall.r
 #+begin_src R
 local({
     r = getOption("repos")
-    r["CRAN"] = "http://cran.r-project.org/"
+    r["CRAN"] = "https://cran.r-project.org/"
     options(repos = r)
 })
 #+end_src
