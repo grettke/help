@@ -234,6 +234,23 @@ Below is a try to auto-install packages if they are not available, and, it seems
 to have failed. Perhaps there is a better way, and I do need to find it. Until
 then I will install as-needed. As such, I suppose that I've found it.
 
+**** mime
+:PROPERTIES:
+:ID:       E661EB92-A8DF-451C-AB54-5C6ED0D8EDAA
+:END:
+
+#+NAME: 67B3DEA1-A973-45BE-AA37-079BCCD83AE1
+#+begin_src R
+library(mime)
+#+end_src
+
+#+NAME: 3FA07BC4-7D12-46CE-A3A1-D85791194E76
+#+begin_src R :noweb-ref rinstall-def
+if(! require(mime)){
+    install.packages("mime")
+}
+#+end_src
+
 **** assertthat
 :PROPERTIES:
 :ID:       F43738D7-5E0F-4567-8C08-8EC8850683E2

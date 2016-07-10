@@ -1,3 +1,6 @@
+if(! require(mime)){
+    install.packages("mime")
+}
 if(! require(assertthat)){
     install.packages("assertthat")
 }
