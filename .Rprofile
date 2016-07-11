@@ -47,6 +47,7 @@ library(Hmisc)
 library(log4r)
 library(boot)
 library(kernlab)
+library(R.utils)
 .First <- function() {
     gcr <- new.env()
     gcr$attach.unsafe <- attach

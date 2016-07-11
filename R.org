@@ -1191,13 +1191,33 @@ if(! require(kernlab)) {
 }
 #+end_src
 
+**** R Utils
+:PROPERTIES:
+:ID:       954DBB37-DD0D-4363-BB3A-6E7787914C1C
+:END:
+
+Programatically extract BZ2 files. Helpful for making decompression a
+separarate task from loading.
+
+#+NAME: 7C7248A2-3A74-4E24-905A-D97C69E934E0
+#+begin_src R
+library(R.utils)
+#+end_src
+
+#+NAME: CEA9BA53-21DE-454B-9127-278E0C058E2B
+#+begin_src R :noweb-ref rinstall-def
+if(! require(R.utils)) {
+    install.packages("R.utils")
+}
+#+end_src
+
 **** Not explicitly loaded, but interesting packages
 :PROPERTIES:
 :ID:       1F011148-DBD2-4944-B458-771333F10FB7
 :END:
 
 - [[http://projecttemplate.net/index.html][ProjectTemplate]]
-- [[http://cran.r-project.org/web/packages/evaluate/index.html][evaluate]]
+- [[http://cran.r-project.org/web/packages/evaluate/index.html][evaluate]].utils
 - [[http://cran.r-project.org/web/packages/yaml/index.html][yaml]]
 - [[http://cran.r-project.org/web/packages/whisker/index.html][whisker]]
 - [[http://cran.r-project.org/web/packages/formatR/index.html][formatR]]

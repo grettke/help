@@ -88,3 +88,6 @@ if(! require(boot)) {
 if(! require(kernlab)) {
     install.packages("kernlab")
 }
+if(! require(R.utils)) {
+    install.packages("R.utils")
+}
