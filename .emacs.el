@@ -2664,7 +2664,7 @@ _v_ariable       _u_ser-option
 ;; 2608E62D-62B4-4B82-BFE0-E1E04C0D6914 ends here
 
 ;; [[file:help.org::FD9CED46-8D84-495F-A413-90DA9EA52B8A][FD9CED46-8D84-495F-A413-90DA9EA52B8A]]
-(global-set-key (kbd "s-r") #'help/safb-other-window)
+(global-set-key (kbd "M-r") #'help/safb-other-window)
 ;; FD9CED46-8D84-495F-A413-90DA9EA52B8A ends here
 
 ;; [[file:help.org::4E784CF7-8CB1-42D0-A8EB-6FF54E7B60E9][4E784CF7-8CB1-42D0-A8EB-6FF54E7B60E9]]

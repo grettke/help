@@ -5138,7 +5138,7 @@ Simpler buffer movement.
 
 #+NAME: FD9CED46-8D84-495F-A413-90DA9EA52B8A
 #+BEGIN_SRC emacs-lisp :results output silent
-(global-set-key (kbd "s-r") #'help/safb-other-window)
+(global-set-key (kbd "M-r") #'help/safb-other-window)
 #+END_SRC
 
 Toggle utility buffers ("logical F" key, so left side; "logical J" key on
