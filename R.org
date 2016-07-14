@@ -224,6 +224,13 @@ Sys.setlocale("LC_COLLATE", "en_US.UTF-8")
 Sys.setlocale("LC_MESSAGES", "en_US.UTF-8")
 #+end_src
 
+Set the same random seed.
+
+#+NAME: 70C5FBA3-9B87-4A5F-A52A-559CA0677C76
+#+begin_src R
+set.seed(970396220)
+#+END_SRC
+
 *** Packages
 :PROPERTIES:
 :ID:       0B04A7FB-2AC9-4BE8-882D-76C196396116
