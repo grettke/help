@@ -3198,6 +3198,27 @@ Easily escape and un-escape Unicode hex notation.
   (global-set-key (kbd "H-u") #'unicode-unescape-region))
 #+END_SRC
 
+Warn of UTF [[https://en.wikipedia.org/wiki/Byte_order_mark][BOM]] bytes via [[https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_warning_if_i_open_a_file_with_utf8/d5kszsh][skeeto]].
+
+#+BEGIN_QUOTE
+The UTF-8 representation of the BOM is the byte sequence 0xEF,0xBB,0xBF.
+#+END_QUOTE
+
+Test using [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.html][Hexl mode]].
+
+#+NAME: 451FC9F3-2517-4979-A9EC-DE34086E4198
+#+BEGIN_SRC emacs-lisp :results output silent
+(defun warn-if-utf-8-bom ()
+  "Warn if UTF-8 BOM bytes are present.
+
+Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_warning_if_i_open_a_file_with_utf8/d5kszsh'"
+  (let ((name (symbol-name buffer-file-coding-system)))
+    (when (string-match-p "utf-8-with-signature" name)
+      (message "Call the BOM squad! This UTF-8 file has a BOM!"))))
+
+(add-hook 'find-file-hook #'warn-if-utf-8-bom)
+#+END_SRC
+
 *** Dash
 :PROPERTIES:
 :ID:       20393F2C-F619-4E12-B862-1A4CCB97B742

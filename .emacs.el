@@ -1856,6 +1856,18 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre"
   (global-set-key (kbd "H-u") #'unicode-unescape-region))
 ;; 7458C43B-A605-4D97-B435-A71E2883C566 ends here
 
+;; [[file:help.org::451FC9F3-2517-4979-A9EC-DE34086E4198][451FC9F3-2517-4979-A9EC-DE34086E4198]]
+(defun warn-if-utf-8-bom ()
+  "Warn if UTF-8 BOM bytes are present.
+
+Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_warning_if_i_open_a_file_with_utf8/d5kszsh'"
+  (let ((name (symbol-name buffer-file-coding-system)))
+    (when (string-match-p "utf-8-with-signature" name)
+      (message "Call the BOM squad! This UTF-8 file has a BOM!"))))
+
+(add-hook 'find-file-hook #'warn-if-utf-8-bom)
+;; 451FC9F3-2517-4979-A9EC-DE34086E4198 ends here
+
 ;; [[file:help.org::C060E54C-9FB2-4E2C-BE67-3188E1BA0F22][C060E54C-9FB2-4E2C-BE67-3188E1BA0F22]]
 (use-package dash-at-point
  :ensure t)
