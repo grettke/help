@@ -19,6 +19,12 @@ if(! require(jsonlite)) {
 if(! require(data.table)) {
     install.packages("data.table")
 }
+if(! require(dplyr)) {
+    install.packages("dplyr")
+}
+if(! require(dtplyr)) {
+    install.packages("dtplyr")
+}
 if(! require(xlsx)) {
     install.packages("xlsx")
 }
@@ -42,15 +48,6 @@ if(! require(tidyr)) {
 
 if(! require(lubridate)) {
     install.packages("lubridate")
-}
-if(! require(plyr)) {
-    install.packages("plyr")
-}
-if(! require(dplyr)) {
-    install.packages("dplyr")
-}
-if(! require(dtplyr)) {
-    install.packages("dtplyr")
 }
 if(! require(testit)) {
     install.packages("testit")

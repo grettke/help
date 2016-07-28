@@ -625,6 +625,29 @@ if(! require(jsonlite)) {
 }
 #+end_src
 
+**** dplyr
+:PROPERTIES:
+:ID:       17A5C886-CEC5-466A-885E-6E00FF6AD7F1
+:END:
+
+dplyr: a grammar of data manipulation in R
+
+The fact that I am loading both =plyr= and =dplyr= is something that I am
+questioning. I do so because I learned them in that order, so left it that way.
+However, this just results in *more* binding shadowing, and I am not sure of the
+implications, and they are usually never good.
+
+#+begin_quote
+[[http://cran.r-project.org/web/packages/dplyr/index.html][A fast, consistent tool]] for working with data frame like objects, both in memory and out of memory.
+#+end_quote
+
+[[http://cran.r-project.org/web/packages/dplyr/README.html][Readme]]. [[http://cran.r-project.org/web/packages/dplyr/dplyr.pdf][Manual]]. [[http://cran.r-project.org/web/packages/dplyr/vignettes/introduction.html][Introduction to dplyr]].
+
+#+NAME: C7B5947C-8E50-46FA-B737-19900584106F
+#+begin_src R
+library(dplyr)
+#+end_src
+
 **** data.table
 :PROPERTIES:
 :ID:       6FB35637-B75D-47D6-A552-225B2EE36D38
@@ -642,6 +665,30 @@ library(data.table)
 #+begin_src R :noweb-ref rinstall-def
 if(! require(data.table)) {
     install.packages("data.table")
+}
+#+end_src
+
+***** dtplyr
+:PROPERTIES:
+:ID:       9FB51AFC-A77E-4440-AF3E-4AA34AB86DA0
+:END:
+
+#+NAME: CF63E555-28B8-4BC2-B8B5-8B3EA0ABCF55
+#+begin_src R
+library(dtplyr)
+#+end_src
+
+#+NAME: 030BF270-E38C-4E15-B8C0-0E28E081DAE5
+#+begin_src R :noweb-ref rinstall-def
+if(! require(dplyr)) {
+    install.packages("dplyr")
+}
+#+end_src
+
+#+NAME: 7F4C5DA8-35E1-40DA-9DC2-0527794E1C2B
+#+begin_src R :noweb-ref rinstall-def
+if(! require(dtplyr)) {
+    install.packages("dtplyr")
 }
 #+end_src
 
@@ -825,73 +872,6 @@ if(! require(lubridate)) {
 
 Perhaps in some /time/ there will be a unified approach to time-management among
 all programming languages.
-
-**** plyr
-:PROPERTIES:
-:ID:       AFBD3D2E-E8CA-4872-9A19-BA77DB28BAE9
-:END:
-
-plyr: Tools for splitting, applying and combining data in R
-
-#+begin_quote
-[[http://cran.r-project.org/web/packages/plyr/index.html][plyr]] is a set of tools that solves a common set of problems: you need to break a big problem down into manageable pieces, operate on each pieces and then put all the pieces back together. For example, you might want to fit a model to each spatial location or time point in your study, summarise data by panels or collapse high-dimensional arrays to simpler summary statistics. The development of plyr has been generously supported by BD (Becton Dickinson).
-#+end_quote
-
-[[http://cran.r-project.org/web/packages/plyr/README.html][Readme]]. [[http://cran.r-project.org/web/packages/plyr/plyr.pdf][Manual]]. [[http://plyr.had.co.nz/][Home page]]. [[https://github.com/hadley/plyr][Github]].
-
-#+NAME: E99EABEA-ACCF-447C-9AE5-6E868EC7E500
-#+begin_src R
-library(plyr)
-#+end_src
-
-#+NAME: 8949CA25-852C-4CDF-9058-88DE9114A580
-#+begin_src R :noweb-ref rinstall-def
-if(! require(plyr)) {
-    install.packages("plyr")
-}
-#+end_src
-
-**** dplyr & dtplyr
-:PROPERTIES:
-:ID:       17A5C886-CEC5-466A-885E-6E00FF6AD7F1
-:END:
-
-dplyr: a grammar of data manipulation in R
-
-The fact that I am loading both =plyr= and =dplyr= is something that I am
-questioning. I do so because I learned them in that order, so left it that way.
-However, this just results in *more* binding shadowing, and I am not sure of the
-implications, and they are usually never good.
-
-#+begin_quote
-[[http://cran.r-project.org/web/packages/dplyr/index.html][A fast, consistent tool]] for working with data frame like objects, both in memory and out of memory.
-#+end_quote
-
-[[http://cran.r-project.org/web/packages/dplyr/README.html][Readme]]. [[http://cran.r-project.org/web/packages/dplyr/dplyr.pdf][Manual]]. [[http://cran.r-project.org/web/packages/dplyr/vignettes/introduction.html][Introduction to dplyr]].
-
-#+NAME: C7B5947C-8E50-46FA-B737-19900584106F
-#+begin_src R
-library(dplyr)
-#+end_src
-
-#+NAME: CF63E555-28B8-4BC2-B8B5-8B3EA0ABCF55
-#+begin_src R
-library(dtplyr)
-#+end_src
-
-#+NAME: 030BF270-E38C-4E15-B8C0-0E28E081DAE5
-#+begin_src R :noweb-ref rinstall-def
-if(! require(dplyr)) {
-    install.packages("dplyr")
-}
-#+end_src
-
-#+NAME: 7F4C5DA8-35E1-40DA-9DC2-0527794E1C2B
-#+begin_src R :noweb-ref rinstall-def
-if(! require(dtplyr)) {
-    install.packages("dtplyr")
-}
-#+end_src
 
 **** testit
 :PROPERTIES:
