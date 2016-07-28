@@ -2057,7 +2057,7 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
   (key-chord-define-local "<<" #'(lambda () (interactive) (insert " <<- ")))
   (key-chord-define-local ">>" #'(lambda () (interactive) (insert " ->> ")))
   (key-chord-define-local "<>" #'(lambda () (interactive) (insert " %<>% ")))
-  (local-set-key (kbd "C->") #'(lambda () (interactive) (insert " %>% ")))
+  (local-set-key (kbd "s-.") #'(lambda () (interactive) (insert " %>% ")))
   (r-autoyas-ess-activate)
   (help/turn-on-r-hide-show)
   (lambda () (add-hook 'ess-presend-filter-functions
