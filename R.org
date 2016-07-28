@@ -158,7 +158,12 @@ by argument to make it /real/ obvious. Looks like the best way is to leave it
 alone globally and always do it by hand though. hwickam commented that it is
 bad, bad idea to make this option global not because of your code, but because
 of everyone else's that you are using which relies on the option being set to
-=TRUE=.
+=TRUE=. Learning more about this, before this was an option, it was the default
+behavior (being true) because statisticians rarely dealth with character
+arrays. As the popularity of R skyrocketed, suddently people wanted to work
+with them a lot. It isn't custom code that expects it to be true, rather, it
+is library code that expects it to true. Definitely something that you don't
+want to mess with.
 #+NAME: 91B891B7-6DEF-4212-8C15-A59D5EDE71B5
 #+begin_src R
 options(stringsAsFactors=TRUE)
