@@ -253,7 +253,7 @@ then I will install as-needed. As such, I suppose that I've found it.
 
 Design-by-contract  [fn:bc0c6d68: http://cran.r-project.org/web/packages/assertthat/index.html
 ] is a great, great thing. Make it much easier with valuable
-functionsand useful messages!
+functions and useful messages!
 
 Cheatsheet:
 - Always use ~assert_that~
