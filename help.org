@@ -4587,6 +4587,15 @@ Frequently use between 1 and 3 windows.
   (balance-windows))
 #+END_SRC
 
+Most of the time when opening other buffers, go to them. This configuration
+appears for different modes in this system. Modes distributed with Emacs are
+configured here.
+
+#+NAME: 2DB2EB2C-74AA-4121-A2BE-4974DCB5638E
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq help-window-select t)
+#+END_SRC
+
 * Piano Lessons
    :PROPERTIES:
    :ID:       31274432-4BA2-4B03-8DDB-E590C245244D

@@ -2563,6 +2563,10 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
   (balance-windows))
 ;; EA28235F-22B2-463F-AC06-EC79FA613F22 ends here
 
+;; [[file:help.org::2DB2EB2C-74AA-4121-A2BE-4974DCB5638E][2DB2EB2C-74AA-4121-A2BE-4974DCB5638E]]
+(setq help-window-select t)
+;; 2DB2EB2C-74AA-4121-A2BE-4974DCB5638E ends here
+
 ;; [[file:help.org::E4B98196-FDFB-42B4-A52A-8CA7DC066E8E][E4B98196-FDFB-42B4-A52A-8CA7DC066E8E]]
 (global-set-key (kbd "s-4") #'mc/mark-next-like-this)
 (global-set-key (kbd "s-3") #'mc/mark-previous-like-this)
