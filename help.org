@@ -993,7 +993,6 @@ One space after comma.
 (setq colon-double-space t)
 #+END_SRC
 
-
 - Easily see the fill-column (or close too it)
   - Sometimes I set the fci rule at 81 because a char at 79 pushes the fci
     rule out one extra space. Sometimes it is not an issue.
