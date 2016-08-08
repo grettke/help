@@ -736,6 +736,11 @@ Attribution: URL
   :diminish rainbow-mode)
 ;; 5CDF03F0-974F-4AFC-9F63-EA9B5D7C6923 ends here
 
+;; [[file:help.org::87818F95-F0F0-4538-8103-BBCCFABB8975][87818F95-F0F0-4538-8103-BBCCFABB8975]]
+(use-package bug-hunter
+  :ensure t)
+;; 87818F95-F0F0-4538-8103-BBCCFABB8975 ends here
+
 ;; [[file:help.org::96387299-8865-4DF8-8B98-8EF290A319B8][96387299-8865-4DF8-8B98-8EF290A319B8]]
 (setq-default eval-expression-print-level nil)
 ;; 96387299-8865-4DF8-8B98-8EF290A319B8 ends here
