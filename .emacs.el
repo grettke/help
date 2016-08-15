@@ -2588,7 +2588,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 (key-chord-define-global "3o" #'help/3-window)
 (global-set-key (kbd "s-q") #'kill-buffer)
 (global-set-key (kbd "s-Q") #'kill-this-buffer)
-(global-set-key (kbd "H-i") #'ucs-insert)
+(global-set-key (kbd "H-i") #'insert-char)
 (global-set-key (kbd "H-p") #'help/insert-datestamp)
 (global-set-key (kbd "H-P") #'help/insert-timestamp)
 ;; 239A85C3-2CEB-4E40-975F-8B3584F7F450 ends here
