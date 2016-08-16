@@ -333,6 +333,14 @@ S is nice to use.
   :ensure t)
 #+END_SRC
 
+Caching.
+
+#+NAME: E83B75A1-E27D-42BA-8D46-A6B332E0CAF1
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package persistent-soft
+  :ensure t)
+#+END_SRC
+
 ** Modeline
    :PROPERTIES:
    :ID:       798F14D1-EDC6-4306-8E82-0854980AEFBA
