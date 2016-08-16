@@ -4224,6 +4224,23 @@ Load Beamer for creating presentations.
   :ensure t)
 #+END_SRC
 
+*** SSH
+:PROPERTIES:
+:ID:       8F551D6F-5F17-4D82-BBA1-D71CABA92742
+:END:
+
+#+NAME: 43157E0F-7B49-4594-B41C-3B3805B8D6EF
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package ssh-config-mode
+  :ensure t
+  :init
+  (add-to-list 'auto-mode-alist '("/\\.ssh/config\\'"     . ssh-config-mode))
+  (add-to-list 'auto-mode-alist '("/sshd?_config\\'"      . ssh-config-mode))
+  (add-to-list 'auto-mode-alist '("/known_hosts\\'"       . ssh-known-hosts-mode))
+  (add-to-list 'auto-mode-alist '("/authorized_keys2?\\'" . ssh-authorized-keys-mode))
+  (add-hook 'ssh-config-mode-hook 'turn-on-font-lock))
+#+END_SRC
+
 ** Diagram
    :PROPERTIES:
    :ID:       FA47D423-05B3-4911-9CEC-28A534E49428

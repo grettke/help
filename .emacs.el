@@ -2374,6 +2374,17 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
   :ensure t)
 ;; 63E64A4A-FC5E-4663-BC58-205F5EF130D3 ends here
 
+;; [[file:help.org::43157E0F-7B49-4594-B41C-3B3805B8D6EF][43157E0F-7B49-4594-B41C-3B3805B8D6EF]]
+(use-package ssh-config-mode
+  :ensure t
+  :init
+  (add-to-list 'auto-mode-alist '("/\\.ssh/config\\'"     . ssh-config-mode))
+  (add-to-list 'auto-mode-alist '("/sshd?_config\\'"      . ssh-config-mode))
+  (add-to-list 'auto-mode-alist '("/known_hosts\\'"       . ssh-known-hosts-mode))
+  (add-to-list 'auto-mode-alist '("/authorized_keys2?\\'" . ssh-authorized-keys-mode))
+  (add-hook 'ssh-config-mode-hook 'turn-on-font-lock))
+;; 43157E0F-7B49-4594-B41C-3B3805B8D6EF ends here
+
 ;; [[file:help.org::7592B1CF-CDA3-4ED1-99FA-205E41C74FFF][7592B1CF-CDA3-4ED1-99FA-205E41C74FFF]]
 (add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
 (add-to-list 'auto-mode-alist '("\\.art" . artist-mode))
