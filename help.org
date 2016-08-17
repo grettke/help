@@ -1774,10 +1774,8 @@ Make URLs a first-class object.
    :END:
 
 =unicode-fonts= configured the fallback as Symbola. [[https://github.com/rolandwalker/unicode-fonts/issues/15][On my box]] it isn't working
-though. Until then I'm using the [[http://endlessparentheses.com/manually-choose-a-fallback-font-for-unicode.html][manual configuration of a fallback]]. The pro
-with this manual approach is that you don't have missing fonts and the con is
-that 1 it doesn't address the =unicode-fonts= configuration question and 2 it
-results in mixed-unicode-fonts which looks odd.
+though. Until then I'm using the [[http://endlessparentheses.com/manually-choose-a-fallback-font-for-unicode.html][manual configuration of a fallback]] and
+excluding the entire =unicode-fonts= source block.
 
 #+NAME: 881B532E-F141-431C-8CDE-287C59F775C2
 #+BEGIN_SRC emacs-lisp :results output silent
