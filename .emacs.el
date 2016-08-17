@@ -1088,6 +1088,11 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
   (unicode-fonts-setup))
 ;; 6CE3010A-0F52-4050-89FF-C3DB72794822 ends here
 
+;; [[file:help.org::881B532E-F141-431C-8CDE-287C59F775C2][881B532E-F141-431C-8CDE-287C59F775C2]]
+(set-fontset-font "fontset-default" nil
+                  (font-spec :size 20 :name "Symbola"))
+;; 881B532E-F141-431C-8CDE-287C59F775C2 ends here
+
 ;; [[file:help.org::54E78DF3-0C8E-4ABE-8CD8-36C0AF24DD26][54E78DF3-0C8E-4ABE-8CD8-36C0AF24DD26]]
 (global-font-lock-mode t)
 ;; 54E78DF3-0C8E-4ABE-8CD8-36C0AF24DD26 ends here
