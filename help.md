@@ -35,7 +35,7 @@ Start EMACS with this command:
 
 2.  [Clone Org2Blog](https://github.com/punchagan/org2blog) to `~/src/`.
 3.  [Clone Use-Package](https://github.com/jwiegley/use-package) to `~/src/`.
-4.  Install supporting software adding their exectuable location to the `PAqTH`.
+4.  Install supporting software adding their exectuable location to the `PATH`.
     1.  Install [Oracle Java](https://www.oracle.com/java/index.html).
     2.  Install [LanguageTool](https://www.languagetool.org/) renaming it&rsquo;s folder to `LanguageTool`.
     3.  Install PlantUML.
@@ -308,6 +308,13 @@ S is nice to use.
   :ensure t)
 ```
 
+Caching.
+
+```lisp
+(use-package persistent-soft
+  :ensure t)
+```
+
 ## Modeline
 
     ID: 798F14D1-EDC6-4306-8E82-0854980AEFBA
@@ -330,7 +337,7 @@ Show the column number.
 (column-number-mode t)
 ```
 
-## OSX
+## OS X
 
     ID: 6556EACF-2F83-4B84-8456-5BEB981D290E
 
@@ -357,13 +364,41 @@ Pull in the `ENVIRONMENT` variables because the GUI version of EMACS does not.
 
 Configure the meta keys.
 
-Enable the `super` key-space.
+Use the OS X modifiers as Emacs meta keys. Don&rsquo;t pass them through to OS X.
+
+Easily allow option pass through for alternate input methods.
 
 ```lisp
 (help/on-osx
  (setq mac-control-modifier 'control)
+ (setq mac-right-control-modifier 'left)
  (setq mac-command-modifier 'meta)
- (setq mac-option-modifier 'super))
+ (setq mac-right-command-modifier 'left)
+ (setq mac-option-modifier 'super)
+ (setq mac-right-option-modifier 'left)
+ (setq mac-function-modifier 'hyper)
+ (defun help/toggle-mac-right-option-modifier ()
+   "Toggle between passing option modifier either to Emacs or OS X."
+   (interactive)
+   (let ((old-ropt mac-right-option-modifier))
+     (setq mac-right-option-modifier
+           (if (eq mac-right-option-modifier 'left)
+               'none
+             'left))
+     (message "Toggled `mac-right-option-modifier' from %s to %s."
+              old-ropt
+              mac-right-option-modifier)))
+ (defun help/toggle-mac-function-modifier ()
+   "Toggle between passing function modifier either to Emacs or OS X."
+   (interactive)
+   (let ((old-func mac-function-modifier))
+     (setq mac-function-modifier
+           (if (eq mac-function-modifier 'hyper)
+               'none
+             'hyper))
+     (message "Toggled `mac-function-modifier' from %s to %s."
+              old-func
+              mac-function-modifier))))
 ```
 
 EMACS dialogues don&rsquo;t work OSX. They lock up EMACS.
@@ -540,6 +575,11 @@ Attribution: URL `http://emacsredux.com/blog/2013/03/26/smarter-open-line/'"
   (interactive)
   (insert "…"))
 
+(defun help/insert-checkmark ()
+  "Insert a checkmark into the current buffer."
+  (interactive)
+  (insert "✓"))
+
 (defun help/insert-noticeable-snip-comment-line ()
   "Insert a noticeable snip comment line (NSCL)."
   (interactive)
@@ -689,7 +729,8 @@ Attribution Oleh Krehel (abo-abo): URL `http://oremacs.com/2015/01/26/occur-dwim
             (when (stringp sym)
               (regexp-quote sym))))
         regexp-history)
-  (call-interactively 'occur))
+  (call-interactively 'occur)
+  (other-window 1))
 
 (defun help/util-cycle ()
   "Display or hide the utility buffers."
@@ -1081,6 +1122,18 @@ Rainbow-Mode handles most major modes color definitions as expected.
   :ensure t
   :config
   :diminish rainbow-mode)
+```
+
+## Debugging
+
+    ID: 59CAB0A5-9F2E-498C-B005-F87BBE974A35
+
+Sometimes the judicious use of Git and git bisect can obviate the need for
+manual bisections. Othertimes not. For the latter, use `elisp-bug-hunter`.
+
+```lisp
+(use-package bug-hunter
+  :ensure t)
 ```
 
 ## Evaluation
@@ -1542,6 +1595,12 @@ exercised, Dired in Imenu seems like an obvious choice.
   :ensure t)
 ```
 
+Use Ido with Dired.
+
+```lisp
+(setq ido-show-dot-for-dired t)
+```
+
 ## IMenu
 
     ID: F748CAFD-0235-4E34-8546-A9EC515759BB
@@ -1624,6 +1683,15 @@ Make URLs a first-class object.
 ## Font
 
     ID: 8F7A007E-5CBA-4651-84D8-5874FF393EA6
+
+`unicode-fonts` configured the fallback as Symbola. [On my box](https://github.com/rolandwalker/unicode-fonts/issues/15) it isn&rsquo;t working
+though. Until then I&rsquo;m using the [manual configuration of a fallback](http://endlessparentheses.com/manually-choose-a-fallback-font-for-unicode.html) and
+excluding the entire `unicode-fonts` source block.
+
+```lisp
+(set-fontset-font "fontset-default" nil
+                  (font-spec :size 20 :name "Symbola"))
+```
 
 Use Unicode-Font to provide as many Unicode fonts as possible.
 
@@ -1979,7 +2047,8 @@ Easily search the filesystem using `ag`.
   :config
   (setq ag-highlight-search t)
   (setq ag-reuse-window nil)
-  (setq ag-reuse-buffers t))
+  (setq ag-reuse-buffers t)
+  (setq ag-arguments (-insert-at (- (length ag-arguments) 1) '"-i" ag-arguments)))
 ```
 
 ## Spell Checking
@@ -2478,7 +2547,8 @@ Personal workflow:
 -   **HELD-FROZEN:** Won&rsquo;t move forward until I reinitialize it.
 -   **HELD-UNTIL:** Reinitialize when conditional.
 -   **REVIEW:** Work is complete and needs to be evaluated.
--   **DONE:** Progress stops.
+-   **DONE:** Completed.
+    -   Retire using `org-archive-subtree`.
 
 ```lisp
 (setq org-todo-keywords
@@ -2578,6 +2648,12 @@ this example in LaTeX versus Text.
 
 ```lisp
 (setq org-pretty-entities t)
+```
+
+Enable sub and super scripts **only** when wrapped in squiggly brackets.
+
+```lisp
+(setq org-use-sub-superscripts '{})
 ```
 
 Highlight LaTeX and related markup.
@@ -2935,6 +3011,60 @@ Follow links without using the mouse or more.
         (key-chord-define org-mode-map ">>" (lambda () (interactive) (insert "»")))
         ```
 
+### Unicode
+
+    ID: BF8F326E-1B81-49AD-AD90-74E42E4611DB
+
+Easily understand the current character.
+
+```lisp
+(defun help/describe-char ()
+  "Evaluate `describe-char' and then `other-window'."
+  (interactive)
+  (call-interactively #'describe-char)
+  (call-interactively #'other-window))
+(global-set-key (kbd "H-d") #'help/describe-char)
+```
+
+Easily identify Unicode homoglyphs most often utilized by pranksters.
+
+Good reference for Unicode character study and exploration.
+
+Used intermittently so don&rsquo;t diminish it.
+
+```lisp
+(use-package unicode-troll-stopper
+  :ensure t)
+```
+
+Easily escape and un-escape Unicode hex notation.
+
+```lisp
+(use-package unicode-escape
+  :ensure t
+  :config
+  (global-set-key (kbd "H-e") #'unicode-escape-region )
+  (global-set-key (kbd "H-u") #'unicode-unescape-region))
+```
+
+Warn of UTF [BOM](https://en.wikipedia.org/wiki/Byte_order_mark) bytes via [skeeto](https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_warning_if_i_open_a_file_with_utf8/d5kszsh).
+
+> The UTF-8 representation of the BOM is the byte sequence 0xEF,0xBB,0xBF.
+
+Test using [Hexl mode](https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.html).
+
+```lisp
+(defun warn-if-utf-8-bom ()
+  "Warn if UTF-8 BOM bytes are present.
+
+Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_warning_if_i_open_a_file_with_utf8/d5kszsh'"
+  (let ((name (symbol-name buffer-file-coding-system)))
+    (when (string-match-p "utf-8-with-signature" name)
+      (message "Call the BOM squad! This UTF-8 file has a BOM!"))))
+
+(add-hook 'find-file-hook #'warn-if-utf-8-bom)
+```
+
 ### Dash
 
     ID: 20393F2C-F619-4E12-B862-1A4CCB97B742
@@ -2947,6 +3077,17 @@ Follow links without using the mouse or more.
 ## Applied Mathematics
 
     ID: BE2550C9-231A-4824-BE6C-14231A971FE9
+
+### APL
+
+    ID: D150E5D5-BAFB-4C96-AD1E-C687C0216790
+
+```lisp
+(setq gnu-apl-mode-map-prefix "H-")
+(setq gnu-apl-interactive-mode-map-prefix "H-")
+(use-package gnu-apl-mode
+  :ensure t)
+```
 
 ### Emacs Speaks Statistics (ESS)
 
@@ -3284,7 +3425,7 @@ R mode hook.
   (key-chord-define-local "<<" #'(lambda () (interactive) (insert " <<- ")))
   (key-chord-define-local ">>" #'(lambda () (interactive) (insert " ->> ")))
   (key-chord-define-local "<>" #'(lambda () (interactive) (insert " %<>% ")))
-  (local-set-key (kbd "C->") #'(lambda () (interactive) (insert " %>% ")))
+  (local-set-key (kbd "s-.") #'(lambda () (interactive) (insert " %>% ")))
   (r-autoyas-ess-activate)
   (help/turn-on-r-hide-show)
   (lambda () (add-hook 'ess-presend-filter-functions
@@ -3825,6 +3966,21 @@ Load Beamer for creating presentations.
   :ensure t)
 ```
 
+### SSH
+
+    ID: 8F551D6F-5F17-4D82-BBA1-D71CABA92742
+
+```lisp
+(use-package ssh-config-mode
+  :ensure t
+  :init
+  (add-to-list 'auto-mode-alist '("/\\.ssh/config\\'"     . ssh-config-mode))
+  (add-to-list 'auto-mode-alist '("/sshd?_config\\'"      . ssh-config-mode))
+  (add-to-list 'auto-mode-alist '("/known_hosts\\'"       . ssh-known-hosts-mode))
+  (add-to-list 'auto-mode-alist '("/authorized_keys2?\\'" . ssh-authorized-keys-mode))
+  (add-hook 'ssh-config-mode-hook 'turn-on-font-lock))
+```
+
 ## Diagram
 
     ID: FA47D423-05B3-4911-9CEC-28A534E49428
@@ -4166,6 +4322,14 @@ Frequently use between 1 and 3 windows.
   (split-window-below)
   (split-window-below)
   (balance-windows))
+```
+
+Most of the time when opening other buffers, go to them. This configuration
+appears for different modes in this system. Modes distributed with Emacs are
+configured here.
+
+```lisp
+(setq help-window-select t)
 ```
 
 # Piano Lessons
@@ -4576,8 +4740,6 @@ close together
     (global-set-key (kbd "s-1") #'mc/edit-lines)
     (global-set-key (kbd "s--") #'decrement-integer-at-point)
     (global-set-key (kbd "s-+") #'increment-integer-at-point)
-    (global-set-key (kbd "M-s-3") #'help/split-into-3-windows)
-    (key-chord-define-global "3." #'help/insert-ellipsis)
     ```
 
 2.  Row 4
@@ -4591,6 +4753,9 @@ close together
     (key-chord-define-global "3o" #'help/3-window)
     (global-set-key (kbd "s-q") #'kill-buffer)
     (global-set-key (kbd "s-Q") #'kill-this-buffer)
+    (global-set-key (kbd "H-i") #'insert-char)
+    (global-set-key (kbd "H-p") #'help/insert-datestamp)
+    (global-set-key (kbd "H-P") #'help/insert-timestamp)
     ```
 
 3.  Row 3
@@ -4607,8 +4772,8 @@ close together
                                                   :hint nil)
       "
     _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_ grade-level _8_ reading-ease
-    _q_ apropos _w_ widen _t_ obtj2o _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
-    _a_ ag  _d_ dash-at-point    _k_ scrollDown _K_ nextLogLine _;_ toggle-lax-whitespace
+    _q_ apropos _w_ widen _t_ unicode-troll-stopper-mode _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
+    _a_ ag  _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point _j_ obtj2o _k_ scrollDown _K_ nextLogLine _;_ toggle-lax-whitespace
     _x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list _M_ Marked 2 Viewer"
       ("1" help/font-size-reset :exit nil)
       ("2" help/text-scale-decrease :exit nil)
@@ -4618,11 +4783,15 @@ close together
       ("6" set-buffer-file-coding-system)
       ("7" writegood-grade-level)
       ("8" writegood-reading-ease)
+      ("9" help/insert-checkmark)
       ("a" ag)
+      ("s" help/toggle-mac-right-option-modifier)
+      ("S" help/toggle-mac-function-modifier)
       ("x" delete-indentation)
       ("q" hydra-apropos/body)
       ("w" widen)
-      ("t" org-babel-tangle-jump-to-org)
+      ("t" unicode-troll-stopper-mode)
+      ("j" org-babel-tangle-jump-to-org)
       ("u" ucs-insert)
       ("i" scroll-down-command :exit nil)
       ("d" dash-at-point)
@@ -4702,13 +4871,13 @@ close together
     Occur has 3 cases. I like to use it to explore the unknown.
 
     ```lisp
-    (global-set-key (kbd "M-s p") #'help/occur-dwim)
+    (global-set-key (kbd "H-o") #'help/occur-dwim)
     ```
 
     Simpler buffer movement.
 
     ```lisp
-    (key-chord-define-global "fv" #'help/safb-other-window)
+    (global-set-key (kbd "s-g") #'help/safb-other-window)
     ```
 
     Toggle utility buffers (&ldquo;logical F&rdquo; key, so left side; &ldquo;logical J&rdquo; key on

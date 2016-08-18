@@ -35,9 +35,13 @@
 -   Formatting
     -   Code Snippet.
         -   Programming language expressions.
+        -   Shell commands that are executable
         -   Use `code style`
     -   Non-Code Snippet.
-        -   Program names, file types
+        -   File types
+        -   Program names that aren&rsquo;t referring to the artifact itself
+            -   Shell scripts and commands
+            -   `Scheme` and `Java`
         -   Use `verbatim` style
     -   Package.
         -   Same as Headline.
@@ -125,7 +129,11 @@
     -   Be sure that every one has a `NAME` property with a `UUID` value.
         -   YASnippet `sc` does this. So does code in Hacking/Org Mode/Utility.
     -   Tell the story in speech, and then in code.
-    -   Consider it another paragraph and indent appropriately.
+    -   Communicate the intent in written language as one paragraph and realize that
+        intent in the next paragraph as a source block. Separate the two paragraphs
+        like you would any other paragraph.
+        -   The exporter will probably separate the two as you would expect whether
+            you separate the two entities with a space or not
     -   When contained within a list:
         -   Indent begin/end blocks with list content; this makes it clear to Org-Mode
             to export it as a code block.

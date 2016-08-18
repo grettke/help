@@ -46,7 +46,7 @@ emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
 
 2) [[https://github.com/punchagan/org2blog][Clone Org2Blog]] to =~/src/=.
 3) [[https://github.com/jwiegley/use-package][Clone Use-Package]] to =~/src/=.
-4) Install supporting software adding their exectuable location to the =PAqTH=.
+4) Install supporting software adding their exectuable location to the =PATH=.
    1) Install [[https://www.oracle.com/java/index.html][Oracle Java]].
    2) Install [[https://www.languagetool.org/][LanguageTool]] renaming it's folder to =LanguageTool=.
    3) Install PlantUML.
