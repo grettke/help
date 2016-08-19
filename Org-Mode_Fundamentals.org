@@ -178,6 +178,10 @@ This is a copy and paste. Additional languages would warrant a refactor."
 #+END_SRC
 
 *** Identity
+
+A Headline's primary key is =ID=. Make sure that it is always unique and highly
+portable.
+
 *** Tangling
    :PROPERTIES:
    :ID:       267EEDED-1367-405F-807C-B3C489045704
