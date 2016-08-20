@@ -108,6 +108,19 @@ This is a copy and paste. Additional languages would warrant a refactor."
   (insert "\n"))
 ;; BB2E97AF-6364-401F-8063-8B5A0BE481E6 ends here
 
+;; [[file:Org-Mode_Fundamentals.org::orgmode:gcr:vela:659CE55F-3CEA-4940-9D5E-5C66258BFE8F][orgmode:gcr:vela:659CE55F-3CEA-4940-9D5E-5C66258BFE8F]]
+(require 'org-id)
+;; orgmode:gcr:vela:659CE55F-3CEA-4940-9D5E-5C66258BFE8F ends here
+
+;; [[file:Org-Mode_Fundamentals.org::751D537A-EE89-4B1D-91E5-99D3A4F8B52E][751D537A-EE89-4B1D-91E5-99D3A4F8B52E]]
+(setq org-id-link-to-org-use-id 'nil)
+;; 751D537A-EE89-4B1D-91E5-99D3A4F8B52E ends here
+
+;; [[file:Org-Mode_Fundamentals.org::885C8386-AC68-4DB7-8D04-537E28ED950B][885C8386-AC68-4DB7-8D04-537E28ED950B]]
+(setq org-id-prefix (concat "orgmode:" (user-real-login-name) ":" (system-name)))
+(setq org-id-method 'uuid)
+;; 885C8386-AC68-4DB7-8D04-537E28ED950B ends here
+
 ;; [[file:Org-Mode_Fundamentals.org::859E61A4-D910-4731-8328-A63F6B6ACD3F][859E61A4-D910-4731-8328-A63F6B6ACD3F]]
 (add-hook 'org-babel-pre-tangle-hook #'help/org-prp-hdln)
 (add-hook 'org-babel-pre-tangle-hook #'help/org-prp-src-blk)

@@ -720,7 +720,8 @@ Attribution: URL `http://www.masteringemacs.org/articles/2010/11/29/evaluating-e
 (defun help/uuid ()
   "Insert a UUID."
   (interactive)
-  (insert (org-id-new)))
+  (let ((org-id-prefix nil))
+    (insert (org-id-new))))
 
 (defun endless/sharp ()
   "Insert #' unless in a string or comment.
