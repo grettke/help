@@ -178,9 +178,37 @@ This is a copy and paste. Additional languages would warrant a refactor."
 #+END_SRC
 
 *** Identity
+:PROPERTIES:
+:ID:       25F4226F-2EB2-48EC-A4D5-56DD5CCC753E
+:END:
 
-A Headline's primary key is =ID=. Make sure that it is always unique and highly
-portable.
+A Headline's primary key is =ID=. Use =org-id= to manage it.
+
+#+NAME: orgmode:gcr:vela:659CE55F-3CEA-4940-9D5E-5C66258BFE8F
+#+BEGIN_SRC emacs-lisp :results output silent
+(require 'org-id)
+#+END_SRC
+
+In Links: Never use =ID= or =CUSTOM_ID=; always use the file name and text to make
+it accessible aoutside of Emacs.
+
+#+NAME: 751D537A-EE89-4B1D-91E5-99D3A4F8B52E
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq org-id-link-to-org-use-id 'nil)
+#+END_SRC
+
+Make sure that =ID= is always unique, portable, and easy to maintain by
+- Using a memorable prefix
+  - Must be both LaTeX label and XHTML identifier compliant
+- Include the current login
+- Include the current domain
+- Use a UUID
+
+#+NAME: 885C8386-AC68-4DB7-8D04-537E28ED950B
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq org-id-prefix (concat "orgmode:" (user-real-login-name) ":" (system-name)))
+(setq org-id-method 'uuid)
+#+END_SRC
 
 *** Tangling
    :PROPERTIES:
