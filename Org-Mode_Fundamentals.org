@@ -2,7 +2,7 @@
 
 * Org-Mode Fundamentals
    :PROPERTIES:
-   :ID:       7E71A009-4DD3-4296-9851-293BC71D2DFF
+   :ID:       orgmode:gcr:vela:7E71A009-4DD3-4296-9851-293BC71D2DFF
    :END:
 
 Configure Org-Mode core functionality to compile this system.
@@ -25,7 +25,7 @@ Start EMACS with this command:
 
 ** Literate Programming
   :PROPERTIES:
-  :ID:       8510C876-F644-4804-9F87-54A0B44DBA6A
+  :ID:       orgmode:gcr:vela:8510C876-F644-4804-9F87-54A0B44DBA6A
   :END:
 
 #+MACRO: lp-configure-each-sb Configuration likely per Source-Block or System.
@@ -67,7 +67,7 @@ another activity.
 
 *** Helper Functions
    :PROPERTIES:
-   :ID:       B14776FD-6835-4D1D-BCD3-50D56555423C
+   :ID:       orgmode:gcr:vela:B14776FD-6835-4D1D-BCD3-50D56555423C
    :END:
 
 Help configure Org-Mode.
@@ -179,7 +179,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
 
 *** Identity
 :PROPERTIES:
-:ID:       25F4226F-2EB2-48EC-A4D5-56DD5CCC753E
+:ID:       orgmode:gcr:vela:25F4226F-2EB2-48EC-A4D5-56DD5CCC753E
 :END:
 
 A Headline's primary key is =ID=. Use =org-id= to manage it.
@@ -212,7 +212,7 @@ Make sure that =ID= is always unique, portable, and easy to maintain by
 
 *** Tangling
    :PROPERTIES:
-   :ID:       267EEDED-1367-405F-807C-B3C489045704
+   :ID:       orgmode:gcr:vela:267EEDED-1367-405F-807C-B3C489045704
    :END:
 
 =ID= and =NAME= are essential for successful =LP= using ~org-babel-tangle-jump-to-org~.
@@ -236,7 +236,7 @@ never allow that. Its inconsistent with how Org-Mode works.
 
 **** comments
     :PROPERTIES:
-    :ID:       49787FC5-CAA7-466B-B742-0F38973E070B
+    :ID:       orgmode:gcr:vela:49787FC5-CAA7-466B-B742-0F38973E070B
     :END:
 
 #+BEGIN_QUOTE
@@ -253,7 +253,7 @@ origin artifact.
 
 **** mkdirp
     :PROPERTIES:
-    :ID:       B0F9A321-3B69-46BB-B512-0AF3C663A4C0
+    :ID:       orgmode:gcr:vela:B0F9A321-3B69-46BB-B512-0AF3C663A4C0
     :END:
 
 #+BEGIN_QUOTE
@@ -267,7 +267,7 @@ Toggle creation of parent directories of target files during tangling
 
 **** no-expand
     :PROPERTIES:
-    :ID:       90170E6A-AA1A-44EA-9BF8-1A6AA38FD224
+    :ID:       orgmode:gcr:vela:90170E6A-AA1A-44EA-9BF8-1A6AA38FD224
     :END:
 
 #+BEGIN_QUOTE
@@ -278,7 +278,7 @@ Turn off variable assignment and noweb expansion during tangling
 
 **** noweb
     :PROPERTIES:
-    :ID:       E12B48AB-68E8-4515-89E3-30A16FB6FD22
+    :ID:       orgmode:gcr:vela:E12B48AB-68E8-4515-89E3-30A16FB6FD22
     :END:
 
 #+BEGIN_QUOTE
@@ -304,7 +304,7 @@ ought to refer to the generated document.
 
 **** noweb-ref
     :PROPERTIES:
-    :ID:       2836D0AA-5DBA-48AC-A338-B47002DE8D7F
+    :ID:       orgmode:gcr:vela:2836D0AA-5DBA-48AC-A338-B47002DE8D7F
     :END:
 
 #+BEGIN_QUOTE
@@ -315,7 +315,7 @@ Specify block's noweb reference resolution target
 
 **** noweb-sep
     :PROPERTIES:
-    :ID:       B1A57D15-6BBF-4E78-A0D9-0B02C283C6B0
+    :ID:       orgmode:gcr:vela:B1A57D15-6BBF-4E78-A0D9-0B02C283C6B0
     :END:
 
 #+BEGIN_QUOTE
@@ -326,7 +326,7 @@ String used to separate noweb references
 
 **** padline
     :PROPERTIES:
-    :ID:       DDE727A6-DDF7-4B61-9063-549614B135F0
+    :ID:       orgmode:gcr:vela:DDE727A6-DDF7-4B61-9063-549614B135F0
     :END:
 
 #+BEGIN_QUOTE
@@ -348,7 +348,7 @@ Control insertion of padding lines in tangled code files
 
 **** session
     :PROPERTIES:
-    :ID:       8219A42A-E90F-418A-8EF0-EB150CF6D730
+    :ID:       orgmode:gcr:vela:8219A42A-E90F-418A-8EF0-EB150CF6D730
     :END:
 
 #+BEGIN_QUOTE
@@ -362,7 +362,7 @@ particular language. R is a good example.
 
 **** shebang
     :PROPERTIES:
-    :ID:       542185DD-4FD6-459A-B422-DA7B546FB292
+    :ID:       orgmode:gcr:vela:542185DD-4FD6-459A-B422-DA7B546FB292
     :END:
 
 #+BEGIN_QUOTE
@@ -373,7 +373,7 @@ Make tangled files executable
 
 **** tangle
     :PROPERTIES:
-    :ID:       EA716FC9-4A90-4F3E-ABD0-31FEA575C969
+    :ID:       orgmode:gcr:vela:EA716FC9-4A90-4F3E-ABD0-31FEA575C969
     :END:
 
 #+BEGIN_QUOTE
@@ -387,7 +387,7 @@ Toggle tangling and specify file name
 
 **** tangle-mode
     :PROPERTIES:
-    :ID:       5F0B7157-2DC8-4AFD-8F26-4B21025A5ECE
+    :ID:       orgmode:gcr:vela:5F0B7157-2DC8-4AFD-8F26-4B21025A5ECE
     :END:
 
 #+BEGIN_QUOTE
@@ -398,7 +398,7 @@ Set permission of tangled files
 
 *** Evaluating
    :PROPERTIES:
-   :ID:       ED23FF0B-1F90-435C-9B56-ACA06C1ACAE0
+   :ID:       orgmode:gcr:vela:ED23FF0B-1F90-435C-9B56-ACA06C1ACAE0
    :END:
 
 Org-Mode may evaluate all of the listed languages.
@@ -429,7 +429,7 @@ Org-Mode may evaluate all of the listed languages.
 
 **** cache
     :PROPERTIES:
-    :ID:       49B8BFE9-643B-450F-A8A1-20CE3079E215
+    :ID:       orgmode:gcr:vela:49B8BFE9-643B-450F-A8A1-20CE3079E215
     :END:
 
 #+BEGIN_QUOTE
@@ -442,7 +442,7 @@ Default =no= is correct for nearly every scenario.
 
 **** colnames
     :PROPERTIES:
-    :ID:       4D683007-14AE-4A7D-A506-E2301FD32E82
+    :ID:       orgmode:gcr:vela:4D683007-14AE-4A7D-A506-E2301FD32E82
     :END:
 
 #+BEGIN_QUOTE
@@ -453,7 +453,7 @@ Handle column names in tables
 
 **** dir
     :PROPERTIES:
-    :ID:       CD1494F1-0A2A-44D0-9955-0D0501AF1539
+    :ID:       orgmode:gcr:vela:CD1494F1-0A2A-44D0-9955-0D0501AF1539
     :END:
 
 #+BEGIN_QUOTE
@@ -464,7 +464,7 @@ Specify the default (possibly remote) directory for code block execution
 
 **** epilogue
     :PROPERTIES:
-    :ID:       CA7F5086-9D4B-4847-9449-3231CE027804
+    :ID:       orgmode:gcr:vela:CA7F5086-9D4B-4847-9449-3231CE027804
     :END:
 
 #+BEGIN_QUOTE
@@ -475,7 +475,7 @@ See Prologue.
 
 **** eval
     :PROPERTIES:
-    :ID:       0329BACE-2C99-4BB3-A7A5-7C800EF53FAD
+    :ID:       orgmode:gcr:vela:0329BACE-2C99-4BB3-A7A5-7C800EF53FAD
     :END:
 
 #+BEGIN_QUOTE
@@ -499,7 +499,7 @@ Never evaluate in-line-source-blocks *on export*.
 
 **** file
     :PROPERTIES:
-    :ID:       80824708-62AF-4337-A517-828DA22D1FCA
+    :ID:       orgmode:gcr:vela:80824708-62AF-4337-A517-828DA22D1FCA
     :END:
 
 #+BEGIN_QUOTE
@@ -510,7 +510,7 @@ Specify a path for file output
 
 **** file-desc
     :PROPERTIES:
-    :ID:       6F9A2745-7118-469E-9FDB-4B327C02E5FA
+    :ID:       orgmode:gcr:vela:6F9A2745-7118-469E-9FDB-4B327C02E5FA
     :END:
 
 #+BEGIN_QUOTE
@@ -521,7 +521,7 @@ Specify a description for file results
 
 **** file-ext
     :PROPERTIES:
-    :ID:       0716A48E-9227-44FD-B1FA-185DF6545E91
+    :ID:       orgmode:gcr:vela:0716A48E-9227-44FD-B1FA-185DF6545E91
     :END:
 
 #+BEGIN_QUOTE
@@ -532,7 +532,7 @@ Specify an extension for file output
 
 **** hlines
     :PROPERTIES:
-    :ID:       721F4E5E-A343-4D7C-A3A3-12A544B3A273
+    :ID:       orgmode:gcr:vela:721F4E5E-A343-4D7C-A3A3-12A544B3A273
     :END:
 
 #+BEGIN_QUOTE
@@ -543,7 +543,7 @@ Handle horizontal lines in tables
 
 **** output-dir
     :PROPERTIES:
-    :ID:       D0DDFE88-1B41-4A67-A5F4-88B1B35A7513
+    :ID:       orgmode:gcr:vela:D0DDFE88-1B41-4A67-A5F4-88B1B35A7513
     :END:
 
 #+BEGIN_QUOTE
@@ -557,7 +557,7 @@ files.
 
 **** post
     :PROPERTIES:
-    :ID:       1A4DEC98-C735-4D88-8261-6AD13C495EF2
+    :ID:       orgmode:gcr:vela:1A4DEC98-C735-4D88-8261-6AD13C495EF2
     :END:
 
 #+BEGIN_QUOTE
@@ -568,7 +568,7 @@ Post processing of code block results
 
 **** prologue
     :PROPERTIES:
-    :ID:       3D1780E0-2E6D-428C-916D-BFB10E79C76F
+    :ID:       orgmode:gcr:vela:3D1780E0-2E6D-428C-916D-BFB10E79C76F
     :END:
 
 #+BEGIN_QUOTE
@@ -590,7 +590,7 @@ Epilgue works hand-in-hand with this.
 
 **** results
     :PROPERTIES:
-    :ID:       2755571E-113B-436E-9EEC-26618A55A27E
+    :ID:       orgmode:gcr:vela:2755571E-113B-436E-9EEC-26618A55A27E
     :END:
 
 #+BEGIN_QUOTE
@@ -641,7 +641,7 @@ functionality.
 
 **** rownames
     :PROPERTIES:
-    :ID:       B184A507-1B03-4096-A4D8-E50A1DA047DB
+    :ID:       orgmode:gcr:vela:B184A507-1B03-4096-A4D8-E50A1DA047DB
     :END:
 
 #+BEGIN_QUOTE
@@ -652,7 +652,7 @@ Handle row names in tables
 
 **** sep
     :PROPERTIES:
-    :ID:       F1336AAA-68EF-4E87-B253-458103B6FF2F
+    :ID:       orgmode:gcr:vela:F1336AAA-68EF-4E87-B253-458103B6FF2F
     :END:
 
 #+BEGIN_QUOTE
@@ -663,7 +663,7 @@ Delimiter for writing tabular results outside Org
 
 **** var
     :PROPERTIES:
-    :ID:       3B4D638C-82EE-47F3-835C-52B2F03620A0
+    :ID:       orgmode:gcr:vela:3B4D638C-82EE-47F3-835C-52B2F03620A0
     :END:
 
 #+BEGIN_QUOTE
@@ -681,7 +681,7 @@ Pass arguments to code blocks
 
 *** Weaving
    :PROPERTIES:
-   :ID:       F71DD8BA-B853-4903-A348-400E13C0E6F8
+   :ID:       orgmode:gcr:vela:F71DD8BA-B853-4903-A348-400E13C0E6F8
    :END:
 
 Help the reader make sense of the document by displaying it's internal
@@ -760,7 +760,7 @@ Disable element caching because it might break weaves via [[https://lists.gnu.or
 
 **** exports
     :PROPERTIES:
-    :ID:       57B3786B-017F-4F6E-89F9-05642304F3B6
+    :ID:       orgmode:gcr:vela:57B3786B-017F-4F6E-89F9-05642304F3B6
     :END:
 
 #+BEGIN_QUOTE
@@ -788,7 +788,7 @@ when combined with ~org-sbe~.
 
 **** wrap
     :PROPERTIES:
-    :ID:       94D6B3BE-5DA1-499A-B5C7-A6B71710A1EA
+    :ID:       orgmode:gcr:vela:94D6B3BE-5DA1-499A-B5C7-A6B71710A1EA
     :END:
 
 #+BEGIN_QUOTE

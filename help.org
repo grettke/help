@@ -6,7 +6,7 @@
 
 * README
   :PROPERTIES:
-  :ID:       F651B86D-86C2-43A9-B0E6-CB94963BB502
+  :ID:       orgmode:gcr:vela:F651B86D-86C2-43A9-B0E6-CB94963BB502
   :END:
 
 Configure EMACS to for everything defined within this monolithic system.
@@ -29,7 +29,7 @@ Start EMACS with this command:
 
 ** HELP Enables Literate Programming
    :PROPERTIES:
-   :ID:       README
+   :ID:       orgmode:gcr:vela:README
    :END:
 
 *Setup*
@@ -60,7 +60,7 @@ emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
 
 ** Style Guide
   :PROPERTIES:
-  :ID:       STYLEGUIDE
+  :ID:       orgmode:gcr:vela:STYLEGUIDE
   :END:
 
 - Appearance.
@@ -236,7 +236,7 @@ emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
 
 * Special Operating Procedure
    :PROPERTIES:
-   :ID:       97A95862-3213-4035-9FF6-E041796DAB5C
+   :ID:       orgmode:gcr:vela:97A95862-3213-4035-9FF6-E041796DAB5C
    :END:
 
 The following code and packages are special to this configuration. They provide
@@ -245,7 +245,7 @@ ideas that make the entire system usable, productive, expressive, and fast.
 
 ** Display
    :PROPERTIES:
-   :ID:       1290DB2D-D05E-4DDD-B42F-6B11AE91F480
+   :ID:       orgmode:gcr:vela:1290DB2D-D05E-4DDD-B42F-6B11AE91F480
    :END:
 
 Make it easy to conditionally evaluate code when running with a graphical
@@ -269,7 +269,7 @@ display.
 
 ** Hydra
    :PROPERTIES:
-   :ID:       9B78FBB7-6C6A-4BD6-A9CC-FB192D37F6C2
+   :ID:       orgmode:gcr:vela:9B78FBB7-6C6A-4BD6-A9CC-FB192D37F6C2
    :END:
 
 #+NAME: 2652BC97-28FA-41DC-9E0F-4B107292D78D
@@ -280,7 +280,7 @@ display.
 
 ** Keyboard
    :PROPERTIES:
-   :ID:       8A0E58DF-7C90-4781-AC12-94D2D76F47C7
+   :ID:       orgmode:gcr:vela:8A0E58DF-7C90-4781-AC12-94D2D76F47C7
    :END:
 
 Key-Chord mode is amazing. Piano-Lessons shows you how.
@@ -302,7 +302,7 @@ Echo keystrokes immediately.
 
 ** Libraries
    :PROPERTIES:
-   :ID:       21919848-B720-4D30-880E-485C41250279
+   :ID:       orgmode:gcr:vela:21919848-B720-4D30-880E-485C41250279
    :END:
 
 Dash is nice to use.
@@ -343,7 +343,7 @@ Caching.
 
 ** Modeline
    :PROPERTIES:
-   :ID:       798F14D1-EDC6-4306-8E82-0854980AEFBA
+   :ID:       orgmode:gcr:vela:798F14D1-EDC6-4306-8E82-0854980AEFBA
    :END:
 
 Reduce information about modes in the Modeline.
@@ -369,7 +369,7 @@ Show the column number.
 
 ** OS X
    :PROPERTIES:
-   :ID:       6556EACF-2F83-4B84-8456-5BEB981D290E
+   :ID:       orgmode:gcr:vela:6556EACF-2F83-4B84-8456-5BEB981D290E
    :END:
 
 Make it easy to evaluate code only when running on OSX.
@@ -452,7 +452,7 @@ This is a known issue. [[https://superuser.com/questions/125569/how-to-fix-emacs
 
 ** Windows
    :PROPERTIES:
-   :ID:       B21664CF-62AF-4ACC-A239-FE20672FF9E4
+   :ID:       orgmode:gcr:vela:B21664CF-62AF-4ACC-A239-FE20672FF9E4
    :END:
 
 Make it easy to evaluate code only when running on Windows.
@@ -487,14 +487,14 @@ Enable the =super= key-space.
 
 * Standard Operating Procedure
    :PROPERTIES:
-   :ID:       8302B38B-67EC-4C37-9B42-69E278FF1277
+   :ID:       orgmode:gcr:vela:8302B38B-67EC-4C37-9B42-69E278FF1277
    :END:
 
 Configure EMACS to maximum utility.
 
 ** Helper Functions
    :PROPERTIES:
-   :ID:       B2257535-9891-48F1-B7CD-1B385F527C59
+   :ID:       orgmode:gcr:vela:B2257535-9891-48F1-B7CD-1B385F527C59
    :END:
 
 #+NAME: D523CBF8-67C4-4C96-9298-A4A49FE54E61
@@ -962,7 +962,7 @@ Attribution: URL
 
 ** Typography
 :PROPERTIES:
-:ID:       F355CA52-794D-474E-959B-D85C689B96AA
+:ID:       orgmode:gcr:vela:F355CA52-794D-474E-959B-D85C689B96AA
 :END:
 
 - Use 78 characters for a text document
@@ -1038,7 +1038,7 @@ One space after comma.
 
 ** Buffer
    :PROPERTIES:
-   :ID:       F3C9BDE1-C0E0-4BDF-B121-3CE2F0D16464
+   :ID:       orgmode:gcr:vela:F3C9BDE1-C0E0-4BDF-B121-3CE2F0D16464
    :END:
 
 Maintain buffers across sessions. Desktop-Save-Mode persists very part of the
@@ -1145,7 +1145,7 @@ Center the buffer after navigating pages.
 
 ** Code Folding
    :PROPERTIES:
-   :ID:       3F70676D-C141-4093-9E40-F42B6C7B7232
+   :ID:       orgmode:gcr:vela:3F70676D-C141-4093-9E40-F42B6C7B7232
    :END:
 
 #+NAME: 2D731158-FCE7-4BDA-AE78-383EAAD1FE4B
@@ -1172,7 +1172,7 @@ Center the buffer after navigating pages.
 
 ** Colors
    :PROPERTIES:
-   :ID:       7FA1B7C2-3C4B-4119-B9B7-4C0CC0EAA180
+   :ID:       orgmode:gcr:vela:7FA1B7C2-3C4B-4119-B9B7-4C0CC0EAA180
    :END:
 
 Colorize color names.
@@ -1189,7 +1189,7 @@ Rainbow-Mode handles most major modes color definitions as expected.
 
 ** Debugging
 :PROPERTIES:
-:ID:       59CAB0A5-9F2E-498C-B005-F87BBE974A35
+:ID:       orgmode:gcr:vela:59CAB0A5-9F2E-498C-B005-F87BBE974A35
 :END:
 
 Sometimes the judicious use of Git and git bisect can obviate the need for
@@ -1203,7 +1203,7 @@ manual bisections. Othertimes not. For the latter, use =elisp-bug-hunter=.
 
 ** Evaluation
    :PROPERTIES:
-   :ID:       5E067457-9B99-459F-A660-323774C14BF5
+   :ID:       orgmode:gcr:vela:5E067457-9B99-459F-A660-323774C14BF5
    :END:
 
 #+NAME: 96387299-8865-4DF8-8B98-8EF290A319B8
@@ -1264,7 +1264,7 @@ configuration when invoked to evaluate a line."
 
 ** Encryption
    :PROPERTIES:
-   :ID:       9A41F9EE-36D5-452A-986B-70B567255D36
+   :ID:       orgmode:gcr:vela:9A41F9EE-36D5-452A-986B-70B567255D36
    :END:
 
 Easy to use file-based AES encryption.
@@ -1277,7 +1277,7 @@ Easy to use file-based AES encryption.
 
 ** Eshell
    :PROPERTIES:
-   :ID:       B371A592-1251-4D88-A055-43CA3E33BC6D
+   :ID:       orgmode:gcr:vela:B371A592-1251-4D88-A055-43CA3E33BC6D
    :END:
 
 Provide a cross-platform command line shell that is a first-class EMACS citizen.
@@ -1333,7 +1333,7 @@ Configure a =PS1= like prompt.
 
 ** File Based System
    :PROPERTIES:
-   :ID:       E6F121F0-AC8E-45C7-9F11-0E7AB93E4B71
+   :ID:       orgmode:gcr:vela:E6F121F0-AC8E-45C7-9F11-0E7AB93E4B71
    :END:
 
 This system uses artifacts stored in files. It tries to persist file-stores
@@ -1525,7 +1525,7 @@ with large files.
 
 ** File-system/directory management (Console)
    :PROPERTIES:
-   :ID:       067D598E-7FE6-4BC5-AEF7-872966390970
+   :ID:       orgmode:gcr:vela:067D598E-7FE6-4BC5-AEF7-872966390970
    :END:
 
 You can use the usual machinery to work with the files. Highlight a region
@@ -1685,7 +1685,7 @@ Use Ido with Dired.
 
 ** IMenu
    :PROPERTIES:
-   :ID:       F748CAFD-0235-4E34-8546-A9EC515759BB
+   :ID:       orgmode:gcr:vela:F748CAFD-0235-4E34-8546-A9EC515759BB
    :END:
 
 Major productivity hack
@@ -1718,7 +1718,7 @@ Provide it in a buffer.
 
 ** Interactively DO Things
    :PROPERTIES:
-   :ID:       2DB9FDA1-9950-4FEA-A33C-E8DDFDA9420E
+   :ID:       orgmode:gcr:vela:2DB9FDA1-9950-4FEA-A33C-E8DDFDA9420E
    :END:
 
 IDO is used everywhere possible.
@@ -1771,7 +1771,7 @@ Make URLs a first-class object.
 
 ** Font
    :PROPERTIES:
-   :ID:       8F7A007E-5CBA-4651-84D8-5874FF393EA6
+   :ID:       orgmode:gcr:vela:8F7A007E-5CBA-4651-84D8-5874FF393EA6
    :END:
 
 =unicode-fonts= configured the fallback as Symbola. [[https://github.com/rolandwalker/unicode-fonts/issues/15][On my box]] it isn't working
@@ -1826,7 +1826,7 @@ Visualize ASCII values as their most likely Unicode representation.
 
 ** Going to Objects
    :PROPERTIES:
-   :ID:       835D3E9D-3044-4385-9AB1-F0DF17045565
+   :ID:       orgmode:gcr:vela:835D3E9D-3044-4385-9AB1-F0DF17045565
    :END:
 
 Go to any object in the frame quickly.
@@ -1840,7 +1840,7 @@ Go to any object in the frame quickly.
 
 ** Grammar
    :PROPERTIES:
-   :ID:       95A4EF33-F83D-49ED-AC74-A29DA19524BC
+   :ID:       orgmode:gcr:vela:95A4EF33-F83D-49ED-AC74-A29DA19524BC
    :END:
 
 Warn of poor grammar immediately interrupting flow with a visual indicator.
@@ -1866,7 +1866,7 @@ Warn of poor grammar immediately interrupting flow with a visual indicator.
 
 ** Intellisense (Auto Completion)
    :PROPERTIES:
-   :ID:       A7225C28-B8AE-4960-9E2A-64E6E8B58400
+   :ID:       orgmode:gcr:vela:A7225C28-B8AE-4960-9E2A-64E6E8B58400
    :END:
 
 #+NAME: 487B46D5-C025-4114-A1B4-BAAF5FAFE430
@@ -1897,7 +1897,7 @@ Auto-completion for =.=-separated words.
 
 ** Macros
    :PROPERTIES:
-   :ID:       E32B41C2-C761-42F0-A9AE-F89A2A18439F
+   :ID:       orgmode:gcr:vela:E32B41C2-C761-42F0-A9AE-F89A2A18439F
    :END:
 
 The macro recorder and Multiple-Cursors provide two ways to do the right thing
@@ -1911,7 +1911,7 @@ in different situations. Be very thoughtful and allow every function.
 
 ** Mark and Region
    :PROPERTIES:
-   :ID:       A3C2AF94-B834-4FD2-9B23-F64F618B31C3
+   :ID:       orgmode:gcr:vela:A3C2AF94-B834-4FD2-9B23-F64F618B31C3
    :END:
 
 When you start typing and text is selected, replace it with what you are typing,
@@ -1924,7 +1924,7 @@ or pasting
 
 ** Minibuffer
    :PROPERTIES:
-   :ID:       7A3C5EF1-BEF7-4007-86B1-78590CB62EB2
+   :ID:       orgmode:gcr:vela:7A3C5EF1-BEF7-4007-86B1-78590CB62EB2
    :END:
 
 Make it easier to answer questions.
@@ -1949,7 +1949,7 @@ Allow recursive commands-in-commands and highlight the levels of recursion.
 
 ** Mouse
    :PROPERTIES:
-   :ID:       F3E75BDE-F853-488C-AF46-03B54C0A0919
+   :ID:       orgmode:gcr:vela:F3E75BDE-F853-488C-AF46-03B54C0A0919
    :END:
 
 Scroll pleasantly with the mouse wheel. A slow turn moves the buffer up and down
@@ -1965,7 +1965,7 @@ a fast navigation vehicle.
 
 ** Occur
    :PROPERTIES:
-   :ID:       FA8195C5-30B7-44CF-8D0F-8FE2CE1CB3DA
+   :ID:       orgmode:gcr:vela:FA8195C5-30B7-44CF-8D0F-8FE2CE1CB3DA
    :END:
 
 #+NAME: 00A4417A-8BE6-4417-B054-2F9D8287FAFD
@@ -1982,7 +1982,7 @@ a fast navigation vehicle.
 
 ** Popups
    :PROPERTIES:
-   :ID:       E1E4E20E-F789-422B-B0B3-706BD8A842DF
+   :ID:       orgmode:gcr:vela:E1E4E20E-F789-422B-B0B3-706BD8A842DF
    :END:
 
 Provide popup notifications.
@@ -2001,7 +2001,7 @@ Provide popup notifications.
 
 ** Projects
    :PROPERTIES:
-   :ID:       B35103E2-0FE9-466C-9AB9-39EA28FADEDB
+   :ID:       orgmode:gcr:vela:B35103E2-0FE9-466C-9AB9-39EA28FADEDB
    :END:
 
 Directories that have Git working copies are logically projects. Manage them
@@ -2035,7 +2035,7 @@ Notify Magit about every working copy that Projectile knows about.
 
 ** Printing
    :PROPERTIES:
-   :ID:       C6230D9E-8331-4092-8846-DB244455C922
+   :ID:       orgmode:gcr:vela:C6230D9E-8331-4092-8846-DB244455C922
    :END:
 
 #+NAME: BD085F97-3BDA-43A5-A5BC-A17DD446E36B
@@ -2046,7 +2046,7 @@ Notify Magit about every working copy that Projectile knows about.
 
 ** Register
    :PROPERTIES:
-   :ID:       34801113-5002-4502-821E-248C6406395C
+   :ID:       orgmode:gcr:vela:34801113-5002-4502-821E-248C6406395C
    :END:
 
 #+NAME: 3E6EFC3D-E8FA-4C27-B58B-DFAA640DD405
@@ -2057,7 +2057,7 @@ Notify Magit about every working copy that Projectile knows about.
 
 ** Replacing
    :PROPERTIES:
-   :ID:       B10A2279-4F34-4DA2-BB1A-491B82F2F6EA
+   :ID:       orgmode:gcr:vela:B10A2279-4F34-4DA2-BB1A-491B82F2F6EA
    :END:
 
 Display information about search-and-or-replace operation.
@@ -2076,7 +2076,7 @@ Display information about search-and-or-replace operation.
 
 ** Save History of All Things
    :PROPERTIES:
-   :ID:       31961F28-1913-4247-986A-273391C4A85D
+   :ID:       orgmode:gcr:vela:31961F28-1913-4247-986A-273391C4A85D
    :END:
 
 It is nice to have commands and their history saved so that every time you get
@@ -2094,7 +2094,7 @@ back to work, you can just re-run stuff as you need it.
 
 ** Searching
    :PROPERTIES:
-   :ID:       960E2DE0-3F5A-40AB-A9BF-FF08A410EAB7
+   :ID:       orgmode:gcr:vela:960E2DE0-3F5A-40AB-A9BF-FF08A410EAB7
    :END:
 
 When searching don't use lax whitespace matching; and make it easy to toggle.
@@ -2134,14 +2134,14 @@ Easily search the filesystem using =ag=.
 
 ** Spell Checking
    :PROPERTIES:
-   :ID:       902EAA81-4FC0-40A0-AE6D-D31C474B87E0
+   :ID:       orgmode:gcr:vela:902EAA81-4FC0-40A0-AE6D-D31C474B87E0
    :END:
 
 Ispell is simple and powerful.
 
 *** Org-Mode
     :PROPERTIES:
-    :ID:       72540881-8F99-4ED6-9FE4-7292A66B3089
+    :ID:       orgmode:gcr:vela:72540881-8F99-4ED6-9FE4-7292A66B3089
     :END:
 
 Never ispell the following objects.
@@ -2245,7 +2245,7 @@ Check =SPECIAL LINE= definitions, ignoring their type.
 
 ** Sudo
    :PROPERTIES:
-   :ID:       562F54F8-6E35-4DE1-9E9C-436B55CE83CE
+   :ID:       orgmode:gcr:vela:562F54F8-6E35-4DE1-9E9C-436B55CE83CE
    :END:
 
 Configure Sudo with Ido.
@@ -2266,7 +2266,7 @@ Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
 
 ** Syntax Checking
    :PROPERTIES:
-   :ID:       B4A8362E-B218-4353-AC4B-7059A686EA89
+   :ID:       orgmode:gcr:vela:B4A8362E-B218-4353-AC4B-7059A686EA89
    :END:
 
 Perform syntactic analysis all the time.
@@ -2282,7 +2282,7 @@ Perform syntactic analysis all the time.
 
 ** TAB
    :PROPERTIES:
-   :ID:       78E2BA2B-8289-422F-99DC-5E40DE928E68
+   :ID:       orgmode:gcr:vela:78E2BA2B-8289-422F-99DC-5E40DE928E68
    :END:
 
 Most modes in this system will never use TAB.
@@ -2317,7 +2317,7 @@ Most programing modes indent to 2 spaces. TABs should be the same width.
 
 ** Version Control
    :PROPERTIES:
-   :ID:       F5E2718B-F54F-41C5-9CED-6E470CAC238D
+   :ID:       orgmode:gcr:vela:F5E2718B-F54F-41C5-9CED-6E470CAC238D
    :END:
 
 Use VC for single files and Magit for multiple files.
@@ -2349,7 +2349,7 @@ Git ignore files are text files.
 
 ** Video
 :PROPERTIES:
-:ID:       4AFA5B76-4C9E-4728-8556-9163DA3D3CE7
+:ID:       orgmode:gcr:vela:4AFA5B76-4C9E-4728-8556-9163DA3D3CE7
 :END:
 
 [[http://endlessparentheses.com/embedding-youtube-videos-with-org-mode-links.html][Embedding Youtube videos with org-mode links]].
@@ -2380,7 +2380,7 @@ Git ignore files are text files.
 
 ** Whitespace Management
    :PROPERTIES:
-   :ID:       5BBD948F-7239-457E-8BD9-710558C0E241
+   :ID:       orgmode:gcr:vela:5BBD948F-7239-457E-8BD9-710558C0E241
    :END:
 
 Make control characters easily visible.
@@ -2398,7 +2398,7 @@ Make control characters easily visible.
 
 ** Word Wrap
    :PROPERTIES:
-   :ID:       2156A7CE-297E-478F-AFF2-13CE64B3C5C3
+   :ID:       orgmode:gcr:vela:2156A7CE-297E-478F-AFF2-13CE64B3C5C3
    :END:
 
 #+NAME: EDD8ABBB-B76A-4B95-9367-211A765348CD
@@ -2408,11 +2408,11 @@ Make control characters easily visible.
 
 * Hacking
   :PROPERTIES:
-  :ID:       B7CE60F5-5510-4358-8DD5-D42D9A2F4D9B
+  :ID:       orgmode:gcr:vela:B7CE60F5-5510-4358-8DD5-D42D9A2F4D9B
   :END:
 ** Common Configurations
   :PROPERTIES:
-  :ID:       BE02A401-AFF6-4B64-B7F3-589C69CA7099
+  :ID:       orgmode:gcr:vela:BE02A401-AFF6-4B64-B7F3-589C69CA7099
   :END:
 
 This system configures ~text-mode~ and ~prog-mode~ very similarly:
@@ -2444,7 +2444,7 @@ With that in mind this system:
 
 *** Text-Mode
     :PROPERTIES:
-    :ID:       7CFD11FB-F3D4-4272-9DBC-2A420884097C
+    :ID:       orgmode:gcr:vela:7CFD11FB-F3D4-4272-9DBC-2A420884097C
     :END:
 
 Set a default commenting prefix.
@@ -2456,7 +2456,7 @@ Set a default commenting prefix.
 
 *** Prog*-Mode Modes
     :PROPERTIES:
-    :ID:       6F71F8AF-4227-46D3-9BD8-2F86B5815B72
+    :ID:       orgmode:gcr:vela:6F71F8AF-4227-46D3-9BD8-2F86B5815B72
     :END:
 
 - Mode inheritance is represented by list definition & indentation.
@@ -2484,12 +2484,12 @@ Set a default commenting prefix.
 
 *** Prog*-Mode Hook
     :PROPERTIES:
-    :ID:       FF132B34-B61B-4DAE-A0B9-E37E39B9BFCE
+    :ID:       orgmode:gcr:vela:FF132B34-B61B-4DAE-A0B9-E37E39B9BFCE
     :END:
 
 **** Goal
      :PROPERTIES:
-     :ID:       E2C7121E-2E56-4A77-8347-2E7DFB73E9B3
+     :ID:       orgmode:gcr:vela:E2C7121E-2E56-4A77-8347-2E7DFB73E9B3
      :END:
 
 - Indent at every opportunity and automatically. Verify that it makes sense
@@ -2515,7 +2515,7 @@ Set a default commenting prefix.
 
 **** Implementation.
      :PROPERTIES:
-     :ID:       61A981CB-1311-4F51-A264-D748FA34F1D3
+     :ID:       orgmode:gcr:vela:61A981CB-1311-4F51-A264-D748FA34F1D3
      :END:
 
 #+NAME: A0515707-4727-4A01-82E3-01A41CAA841F
@@ -2532,7 +2532,7 @@ Set a default commenting prefix.
 
 *** Wiring
     :PROPERTIES:
-    :ID:       50304E30-682C-4C9A-9615-D6E61DAE533B
+    :ID:       orgmode:gcr:vela:50304E30-682C-4C9A-9615-D6E61DAE533B
     :END:
 
  #+NAME: EBACFD45-C2FF-47B3-B991-28591C112F28
@@ -2550,11 +2550,11 @@ Set a default commenting prefix.
 
 ** Literate Programming
    :PROPERTIES:
-   :ID:       6B83373B-8898-4AC0-B7F6-C42418CCE5E4
+   :ID:       orgmode:gcr:vela:6B83373B-8898-4AC0-B7F6-C42418CCE5E4
    :END:
 *** Emacs Lisp
   :PROPERTIES:
-  :ID:       3AD91697-42DE-4555-9F49-B7D9F5E502D3
+  :ID:       orgmode:gcr:vela:3AD91697-42DE-4555-9F49-B7D9F5E502D3
   :END:
 
 #+NAME: BDF6F6E5-D219-4C49-BB3F-D414A9741B11
@@ -2601,7 +2601,7 @@ Set a default commenting prefix.
 
 **** Keybinding
     :PROPERTIES:
-    :ID:       3A6B16EC-870A-4EFE-935A-C03F8DFB67BF
+    :ID:       orgmode:gcr:vela:3A6B16EC-870A-4EFE-935A-C03F8DFB67BF
     :END:
 
 #+NAME: 7CEA216B-6A18-47F6-B1DE-327CFA8A591A
@@ -2611,7 +2611,7 @@ Set a default commenting prefix.
 
 *** Org-Mode
   :PROPERTIES:
-  :ID:       EBDA3D1C-536F-4252-AE26-32A3FDF5326C
+  :ID:       orgmode:gcr:vela:EBDA3D1C-536F-4252-AE26-32A3FDF5326C
   :END:
 
 When source blocks are evaluated, their results get stored in a result area,
@@ -3027,7 +3027,7 @@ Follow links without using the mouse or more.
 
 **** Keybindings
     :PROPERTIES:
-    :ID:       0AA3F69B-F5F1-48DA-B8F7-B7C92CD30DB1
+    :ID:       orgmode:gcr:vela:0AA3F69B-F5F1-48DA-B8F7-B7C92CD30DB1
     :END:
 
 Started questioning why after hitting RETURN while in lists I have to hit TAB to
@@ -3064,7 +3064,7 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
 
 ***** Row 5
      :PROPERTIES:
-     :ID:       B09BE660-B5D5-40CA-8952-D2DEAE20E7BD
+     :ID:       orgmode:gcr:vela:B09BE660-B5D5-40CA-8952-D2DEAE20E7BD
      :END:
 
 #+NAME: E65CF1F6-F56C-4A1A-BB45-5E530FA93C04
@@ -3087,7 +3087,7 @@ Easily manipulate lists and headlines staying close to home.
 
 ***** Row 4
      :PROPERTIES:
-     :ID:       1E49694B-6350-45E2-BE58-21EAAF09D4A2
+     :ID:       orgmode:gcr:vela:1E49694B-6350-45E2-BE58-21EAAF09D4A2
      :END:
 
 #+NAME: 9CB5CC76-4C1D-40CB-829C-A5AC98FE23FD
@@ -3103,7 +3103,7 @@ Easily manipulate lists and headlines staying close to home.
 
 ***** Row 3
      :PROPERTIES:
-     :ID:       D11109EE-AD92-4E26-988F-AF3CC70A2F69
+     :ID:       orgmode:gcr:vela:D11109EE-AD92-4E26-988F-AF3CC70A2F69
      :END:
 
 #+NAME: 933B1A3A-A77A-4616-B9D8-9DACED018CC2
@@ -3117,7 +3117,7 @@ Easily manipulate lists and headlines staying close to home.
 
 ***** Row 2
      :PROPERTIES:
-     :ID:       CA925DDA-8EA8-47B0-AE9A-D73073CF51B7
+     :ID:       orgmode:gcr:vela:CA925DDA-8EA8-47B0-AE9A-D73073CF51B7
      :END:
 
 #+NAME: 2F8DDC77-27C4-4E81-8913-28243C4A44B6
@@ -3130,7 +3130,7 @@ Easily manipulate lists and headlines staying close to home.
 
 ***** Hydra
      :PROPERTIES:
-     :ID:       46BCE65B-B8C9-49A0-A687-30D1330DB07D
+     :ID:       orgmode:gcr:vela:46BCE65B-B8C9-49A0-A687-30D1330DB07D
      :END:
 
 #+NAME: 5186DD50-F693-4297-A164-192BEA685C6D
@@ -3192,7 +3192,7 @@ Easily enter guillemots.
 #+END_SRC
 *** Unicode
 :PROPERTIES:
-:ID:       BF8F326E-1B81-49AD-AD90-74E42E4611DB
+:ID:       orgmode:gcr:vela:BF8F326E-1B81-49AD-AD90-74E42E4611DB
 :END:
 
 Easily understand the current character.
@@ -3253,7 +3253,7 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 
 *** Dash
 :PROPERTIES:
-:ID:       20393F2C-F619-4E12-B862-1A4CCB97B742
+:ID:       orgmode:gcr:vela:20393F2C-F619-4E12-B862-1A4CCB97B742
 :END:
 #+NAME: C060E54C-9FB2-4E2C-BE67-3188E1BA0F22
 #+BEGIN_SRC emacs-lisp :results output silent
@@ -3263,12 +3263,12 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 
 ** Applied Mathematics
    :PROPERTIES:
-   :ID:       BE2550C9-231A-4824-BE6C-14231A971FE9
+   :ID:       orgmode:gcr:vela:BE2550C9-231A-4824-BE6C-14231A971FE9
    :END:
 
 *** APL
 :PROPERTIES:
-:ID:       D150E5D5-BAFB-4C96-AD1E-C687C0216790
+:ID:       orgmode:gcr:vela:D150E5D5-BAFB-4C96-AD1E-C687C0216790
 :END:
 
 #+NAME: 845637D6-CAEF-43FF-AFAB-166EC0E21FC4
@@ -3281,7 +3281,7 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 
 *** Emacs Speaks Statistics (ESS)
   :PROPERTIES:
-  :ID:       CB6305D8-DDBB-4865-8CAD-3648B31B76DB
+  :ID:       orgmode:gcr:vela:CB6305D8-DDBB-4865-8CAD-3648B31B76DB
   :END:
 
 #+NAME: E7AE32C1-42CC-482F-92D2-43DBD703500C
@@ -3444,12 +3444,12 @@ and see how it goes.
 
 *** SAS (ESS)
   :PROPERTIES:
-  :ID:       2442E555-0F82-48E6-96EA-2ABB5C9CC666
+  :ID:       orgmode:gcr:vela:2442E555-0F82-48E6-96EA-2ABB5C9CC666
   :END:
 
 *** R (ESS)
   :PROPERTIES:
-  :ID:       1183D35B-77FC-4CFD-9BAA-4F7656AD8943
+  :ID:       orgmode:gcr:vela:1183D35B-77FC-4CFD-9BAA-4F7656AD8943
   :END:
 
 Enable a debugger.
@@ -3689,7 +3689,7 @@ R mode hook.
 
 *** Scheme (LISP)
   :PROPERTIES:
-  :ID:       D68EC042-5CBA-4547-B28A-CF878FB080C1
+  :ID:       orgmode:gcr:vela:D68EC042-5CBA-4547-B28A-CF878FB080C1
   :END:
 
 Handle all file extensions:
@@ -3744,15 +3744,15 @@ Enable Auto-Complete via Geiser.
 
 *** C
    :PROPERTIES:
-   :ID:       6F4A6F8E-277C-45E2-B26E-51455C2CBC16
+   :ID:       orgmode:gcr:vela:6F4A6F8E-277C-45E2-B26E-51455C2CBC16
    :END:
 *** Python
    :PROPERTIES:
-   :ID:       F4577EEA-FB0F-4E7B-AF02-A4DEA74BB763
+   :ID:       orgmode:gcr:vela:F4577EEA-FB0F-4E7B-AF02-A4DEA74BB763
    :END:
 *** YASnippet & Abbrev
   :PROPERTIES:
-  :ID:       5C48A01F-D522-4AC9-A523-F8EE2E9EB384
+  :ID:       orgmode:gcr:vela:5C48A01F-D522-4AC9-A523-F8EE2E9EB384
   :END:
 
 - Enable everywhere.
@@ -3790,12 +3790,12 @@ Fails with ~(eval-after-load 'abbrev (diminish 'abbrev-mode))~.
 
 *** Structured Query Language (SQL)
    :PROPERTIES:
-   :ID:       987C1C05-F880-4312-B902-5060208A3506
+   :ID:       orgmode:gcr:vela:987C1C05-F880-4312-B902-5060208A3506
    :END:
 
 *** Structured Document Development
 :PROPERTIES:
-:ID:       206F4363-F4D6-4DDE-BB46-174D0F68FBB4
+:ID:       orgmode:gcr:vela:206F4363-F4D6-4DDE-BB46-174D0F68FBB4
 :END:
 
 =web-mode= works great for =AngularJS= and now I see a whole lot more.
@@ -3854,11 +3854,11 @@ Fails with ~(eval-after-load 'abbrev (diminish 'abbrev-mode))~.
 
 ** Publishing
    :PROPERTIES:
-   :ID:       7D07C2F6-38B9-49BF-A584-B029CEED6141
+   :ID:       orgmode:gcr:vela:7D07C2F6-38B9-49BF-A584-B029CEED6141
    :END:
 *** TeX
   :PROPERTIES:
-  :ID:       E2A1BFA2-0246-4376-9A33-E35A8DE2E5A3
+  :ID:       orgmode:gcr:vela:E2A1BFA2-0246-4376-9A33-E35A8DE2E5A3
   :END:
 
 #+NAME: B97EDF2E-0538-475A-AA0A-6C708DCCEC11
@@ -3965,7 +3965,7 @@ Use "Smartquotes".
 
 *** KOMA-Script
   :PROPERTIES:
-  :ID:       BFF1402E-98D4-4F36-ACCB-B1E88A3EB2D9
+  :ID:       orgmode:gcr:vela:BFF1402E-98D4-4F36-ACCB-B1E88A3EB2D9
   :END:
 
 I enjoy writing letters. I enjoy reading letters. LaTeX produces letters that
@@ -4085,19 +4085,19 @@ Set up my default LCO files.
 
 *** Texinfo
    :PROPERTIES:
-   :ID:       F2C5CEB7-1252-4E6F-B192-C5D2D41A6D47
+   :ID:       orgmode:gcr:vela:F2C5CEB7-1252-4E6F-B192-C5D2D41A6D47
    :END:
 
 Perhaps the [[https://lists.gnu.org/archive/html/emacs-orgmode/2015-07/msg00042.html][first]] document typeset with Org-Texinfo.
 
 *** Pandoc
    :PROPERTIES:
-   :ID:       1E4AB0D4-F92E-48E6-9313-278C27DED142
+   :ID:       orgmode:gcr:vela:1E4AB0D4-F92E-48E6-9313-278C27DED142
    :END:
 
 *** Markdown
    :PROPERTIES:
-   :ID:       748319ED-9F02-4A4D-BEE8-E71C462663FC
+   :ID:       orgmode:gcr:vela:748319ED-9F02-4A4D-BEE8-E71C462663FC
    :END:
 
 Provide Github Flavored Markdown (GFM).
@@ -4120,7 +4120,7 @@ Program GFM.
 
 *** HTML
   :PROPERTIES:
-  :ID:       84F673DF-2E6F-4BAA-8095-4A7586BB73FC
+  :ID:       orgmode:gcr:vela:84F673DF-2E6F-4BAA-8095-4A7586BB73FC
   :END:
 
 #+NAME: 080472B8-EC76-4318-876A-A4A65547B056
@@ -4161,7 +4161,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 
 *** ASCII
    :PROPERTIES:
-   :ID:       1F20F4EC-1D8B-402A-A0A9-504E733AEFDC
+   :ID:       orgmode:gcr:vela:1F20F4EC-1D8B-402A-A0A9-504E733AEFDC
    :END:
 
 #+NAME: B7F010D3-4A47-4E4A-9E00-D54E4D0F9D63
@@ -4172,7 +4172,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 
 *** Beamer
   :PROPERTIES:
-  :ID:       6B86302E-D3EC-413A-A844-9ACCAA23A056
+  :ID:       orgmode:gcr:vela:6B86302E-D3EC-413A-A844-9ACCAA23A056
   :END:
 
 Load Beamer for creating presentations.
@@ -4184,7 +4184,7 @@ Load Beamer for creating presentations.
 
 *** Screenwriting
 :PROPERTIES:
-:ID:       504560F0-00BD-4E63-8617-A20EF74C6906
+:ID:       orgmode:gcr:vela:504560F0-00BD-4E63-8617-A20EF74C6906
 :END:
 
 #+NAME: 3433DE3A-994E-4E4C-97E1-8C0A1831ABB3
@@ -4207,26 +4207,26 @@ Load Beamer for creating presentations.
 
 ** DevOps
    :PROPERTIES:
-   :ID:       8B78A8C3-E6B6-4722-9822-EF428E5DB823
+   :ID:       orgmode:gcr:vela:8B78A8C3-E6B6-4722-9822-EF428E5DB823
    :END:
 *** Shell Script
    :PROPERTIES:
-   :ID:       06D022B2-53ED-4042-8152-F383F5FE309E
+   :ID:       orgmode:gcr:vela:06D022B2-53ED-4042-8152-F383F5FE309E
    :END:
 *** Make
    :PROPERTIES:
-   :ID:       5F2B3343-631D-41C3-BE6B-D98548F77E07
+   :ID:       orgmode:gcr:vela:5F2B3343-631D-41C3-BE6B-D98548F77E07
    :END:
 *** Vagrant
    :PROPERTIES:
-   :ID:       A1335FE5-6DA7-4FE2-A77C-60032C76B40D
+   :ID:       orgmode:gcr:vela:A1335FE5-6DA7-4FE2-A77C-60032C76B40D
    :END:
 
 ~ruby-mode~ supports =Vagrantfile= OOTB.
 
 *** Apache
 :PROPERTIES:
-:ID:       885C43F5-1716-4547-8F62-03348E553E5E
+:ID:       orgmode:gcr:vela:885C43F5-1716-4547-8F62-03348E553E5E
 :END:
 
 #+NAME: 63E64A4A-FC5E-4663-BC58-205F5EF130D3
@@ -4237,7 +4237,7 @@ Load Beamer for creating presentations.
 
 *** SSH
 :PROPERTIES:
-:ID:       8F551D6F-5F17-4D82-BBA1-D71CABA92742
+:ID:       orgmode:gcr:vela:8F551D6F-5F17-4D82-BBA1-D71CABA92742
 :END:
 
 #+NAME: 43157E0F-7B49-4594-B41C-3B3805B8D6EF
@@ -4254,11 +4254,11 @@ Load Beamer for creating presentations.
 
 ** Diagram
    :PROPERTIES:
-   :ID:       FA47D423-05B3-4911-9CEC-28A534E49428
+   :ID:       orgmode:gcr:vela:FA47D423-05B3-4911-9CEC-28A534E49428
    :END:
 *** Artist
   :PROPERTIES:
-  :ID:       F920A833-60D7-41C2-9363-EA2A8BD19009
+  :ID:       orgmode:gcr:vela:F920A833-60D7-41C2-9363-EA2A8BD19009
   :END:
 
 #+NAME: 7592B1CF-CDA3-4ED1-99FA-205E41C74FFF
@@ -4270,7 +4270,7 @@ Load Beamer for creating presentations.
 
 *** DITAA
   :PROPERTIES:
-  :ID:       FCC8A8F8-A967-4981-9260-CFF60CC56494
+  :ID:       orgmode:gcr:vela:FCC8A8F8-A967-4981-9260-CFF60CC56494
   :END:
 
 #+NAME: 6907A176-CCF4-4BDF-A242-BDBC4C67239F
@@ -4281,7 +4281,7 @@ Load Beamer for creating presentations.
 
 *** Graphviz
   :PROPERTIES:
-  :ID:       A84665A3-4A2D-4040-926A-17159A6D4647
+  :ID:       orgmode:gcr:vela:A84665A3-4A2D-4040-926A-17159A6D4647
   :END:
 
 #+NAME: EAADBBCB-9054-4040-8579-1EC08FB97BDE
@@ -4294,7 +4294,7 @@ Load Beamer for creating presentations.
 
 *** PlantUML
   :PROPERTIES:
-  :ID:       FCC259F8-0858-4778-B97F-07D2B21012F5
+  :ID:       orgmode:gcr:vela:FCC259F8-0858-4778-B97F-07D2B21012F5
   :END:
 
 #+NAME: 80EE7930-0025-4D06-96BB-24A70169CDEA
@@ -4311,11 +4311,11 @@ Load Beamer for creating presentations.
 
 ** Computer-aided design
 :PROPERTIES:
-:ID:       36EB1867-0EDB-4C22-871D-7D730CF4DF53
+:ID:       orgmode:gcr:vela:36EB1867-0EDB-4C22-871D-7D730CF4DF53
 :END:
 *** OpenSCAD
 :PROPERTIES:
-:ID:       090201D4-6799-4DC2-B353-C574F3C8B918
+:ID:       orgmode:gcr:vela:090201D4-6799-4DC2-B353-C574F3C8B918
 :END:
 
 #+NAME: 6C53BC6D-012D-44A6-963B-610610933D4B
@@ -4325,14 +4325,14 @@ Load Beamer for creating presentations.
 #+END_SRC
 * Quiet and Pleasant Appearance
    :PROPERTIES:
-   :ID:       197B7B84-5090-47AE-9180-F8F606D0012F
+   :ID:       orgmode:gcr:vela:197B7B84-5090-47AE-9180-F8F606D0012F
    :END:
 
 Configure EMACS to personal-taste for "noise" and "form".
 
 ** Key Press
 :PROPERTIES:
-:ID:       A2E555B7-678D-4F38-A42D-D2E72A056B8D
+:ID:       orgmode:gcr:vela:A2E555B7-678D-4F38-A42D-D2E72A056B8D
 :END:
 
 Make key-presses sound like the ground-breaking Selectric typewriter.
@@ -4345,7 +4345,7 @@ Make key-presses sound like the ground-breaking Selectric typewriter.
 
 ** Line Number
    :PROPERTIES:
-   :ID:       4D367462-1C7B-4110-B7D1-E973D386B4E1
+   :ID:       orgmode:gcr:vela:4D367462-1C7B-4110-B7D1-E973D386B4E1
    :END:
 
 The nlinum gutter should not "shift" as it transitions between line numbers of
@@ -4366,7 +4366,7 @@ Most files will be less than 100,000 lines.
 
 ** Buffer
    :PROPERTIES:
-   :ID:       61586A23-B774-4436-B916-348453EEA3DD
+   :ID:       orgmode:gcr:vela:61586A23-B774-4436-B916-348453EEA3DD
    :END:
 
 Never automatically convert the end of the line character. For most of us this
@@ -4441,7 +4441,7 @@ Make it very easy to input special-characters using TeX coding.
 
 ** Color Theme
    :PROPERTIES:
-   :ID:       057BBA77-4662-4F7B-B47A-CB1E79A1618B
+   :ID:       orgmode:gcr:vela:057BBA77-4662-4F7B-B47A-CB1E79A1618B
    :END:
 
 [[https://github.com/bbatsov/solarized-emacs][Solarized Theme]]
@@ -4469,7 +4469,7 @@ Make it very easy to input special-characters using TeX coding.
 
 ** Comint
    :PROPERTIES:
-   :ID:       B4E17CF5-5542-4526-ADEE-D5EC3DB9131F
+   :ID:       orgmode:gcr:vela:B4E17CF5-5542-4526-ADEE-D5EC3DB9131F
    :END:
 
 =comint-mode= is only maybe the second most important thing for making Emacs
@@ -4499,7 +4499,7 @@ obviously is a *big issue* if you actually want to use! ROFL
 
 ** Font
    :PROPERTIES:
-   :ID:       EC675F88-89C0-4A5A-B910-843F28C0F90F
+   :ID:       orgmode:gcr:vela:EC675F88-89C0-4A5A-B910-843F28C0F90F
    :END:
 
 The best programming font is Deja Vu Sans Mono because it sans-serif and
@@ -4542,7 +4542,7 @@ character wide buffer and make it easy to adjust it.
 
 ** Frame
    :PROPERTIES:
-   :ID:       B3F90439-D007-42EE-95FC-E93BBA827325
+   :ID:       orgmode:gcr:vela:B3F90439-D007-42EE-95FC-E93BBA827325
    :END:
 
 The scroll-bars are helpful for new users.
@@ -4561,7 +4561,7 @@ The tool-bar is helpful for new users. Isn't the argument funny?
 
 ** Pointer
    :PROPERTIES:
-   :ID:       2A437D32-2944-41B3-AD8F-438ABBD4E0CF
+   :ID:       orgmode:gcr:vela:2A437D32-2944-41B3-AD8F-438ABBD4E0CF
    :END:
 
 Hide the pointer when typing.
@@ -4573,7 +4573,7 @@ Hide the pointer when typing.
 
 ** Version Control
    :PROPERTIES:
-   :ID:       99337D9E-DBC9-4673-B814-EBC94C044E3E
+   :ID:       orgmode:gcr:vela:99337D9E-DBC9-4673-B814-EBC94C044E3E
    :END:
 
 Provide VC file status indicators.
@@ -4593,7 +4593,7 @@ Ediff split frame horizontally.
 
 ** Window
    :PROPERTIES:
-   :ID:       9A848D65-DE56-4F95-A84D-CAE74781CD25
+   :ID:       orgmode:gcr:vela:9A848D65-DE56-4F95-A84D-CAE74781CD25
    :END:
 
 Menu bars make EMACS more accessible to non-EMACS users.
@@ -4647,12 +4647,12 @@ configured here.
 
 * Piano Lessons
    :PROPERTIES:
-   :ID:       31274432-4BA2-4B03-8DDB-E590C245244D
+   :ID:       orgmode:gcr:vela:31274432-4BA2-4B03-8DDB-E590C245244D
    :END:
 
 ** A Fine Cup of EMACS
    :PROPERTIES:
-   :ID:       01EEEC32-91D4-4DDC-A100-52CE571558DC
+   :ID:       orgmode:gcr:vela:01EEEC32-91D4-4DDC-A100-52CE571558DC
    :END:
 
 Every EMACS user ought to have a [[http://shop.fsf.org/product/gnu-emacs-reference-mugs/][Emacs Reference Mug]] at their desk. The mug
@@ -4673,7 +4673,7 @@ system will always respect the POLA.
 
 ** A Keyboard on Every Desk
    :PROPERTIES:
-   :ID:       A50A19BB-1DE7-48C1-AEE4-03D1E88E887C
+   :ID:       orgmode:gcr:vela:A50A19BB-1DE7-48C1-AEE4-03D1E88E887C
    :END:
 
 The configuration of the keyboard on an EMACS system can completely change the
@@ -4693,7 +4693,7 @@ the keyboard for this system.
 
 ** A Display with Every Keyboard
    :PROPERTIES:
-   :ID:       7E76A660-7828-4747-90DE-84BD293CD4E7
+   :ID:       orgmode:gcr:vela:7E76A660-7828-4747-90DE-84BD293CD4E7
    :END:
 
 Every system requires an output. You have two options. The first is a terminal
@@ -4707,12 +4707,12 @@ This system is configured to work pleasantly for either type of output.
 
 ** A Full Pot of EMACS on Every Desk
    :PROPERTIES:
-   :ID:       D8ADD840-9E9E-4A2E-B085-245C7BFA5F48
+   :ID:       orgmode:gcr:vela:D8ADD840-9E9E-4A2E-B085-245C7BFA5F48
    :END:
 
 *** Keyboard Layout & Operation
     :PROPERTIES:
-    :ID:       D8420B75-E4B9-4DB1-885E-D5290FE9A3EA
+    :ID:       orgmode:gcr:vela:D8420B75-E4B9-4DB1-885E-D5290FE9A3EA
     :END:
 
 - Use QWERTY layout.
@@ -4749,7 +4749,7 @@ This system is configured to work pleasantly for either type of output.
 
 *** Understanding Your Cognitive Landscape.
     :PROPERTIES:
-    :ID:       60A17CE8-C905-4443-90A2-10D2C12F23AF
+    :ID:       orgmode:gcr:vela:60A17CE8-C905-4443-90A2-10D2C12F23AF
     :END:
 
 You operate within a cognitive landscape. Every moment you are in a single
@@ -4765,7 +4765,7 @@ key-bindings should go
 
 *** Key-Bindings Take You to Places to Perform Activities
     :PROPERTIES:
-    :ID:       E765C8BB-ECC3-4791-A287-83B6DED2F6C3
+    :ID:       orgmode:gcr:vela:E765C8BB-ECC3-4791-A287-83B6DED2F6C3
     :END:
 
 OOTB you wil be visiting many =places= and performing many =activities=. EMACS comes
@@ -4811,7 +4811,7 @@ powerful ways to "go places" with EMACS. The next heading contains my attempt.
 
 *** How to Get There Pleasantly and Quickly
     :PROPERTIES:
-    :ID:       38026C1B-44D4-47EF-90D2-239876F7F31C
+    :ID:       orgmode:gcr:vela:38026C1B-44D4-47EF-90D2-239876F7F31C
     :END:
 
 You need to learn how to use EMACS. You need to develop a personal preference.
@@ -4841,7 +4841,7 @@ unclear and being explored.
       :Expertise:        High
       :Relationship:     High
       :Frequency:        High
-      :ID:       0A491DA9-212E-4F01-8C08-EA09E9B6D82C
+      :ID:       orgmode:gcr:vela:0A491DA9-212E-4F01-8C08-EA09E9B6D82C
       :END:
 
 - =Actions= here are for the =place= inside of the buffer itself. They are for
@@ -4873,7 +4873,7 @@ Every activity is related to reading, modifying, executing, and tangling code.
 
 **** =Key-Chord=
      :PROPERTIES:
-     :ID:       76C81A53-52BA-47C4-A8FF-651E10A4620F
+     :ID:       orgmode:gcr:vela:76C81A53-52BA-47C4-A8FF-651E10A4620F
      :END:
 
 Key-Chord is intriguing because it works on every keyboard. It is powerful
@@ -4893,7 +4893,7 @@ a fast and intuitive way to go places.
 
 ***** Single-Key Key-Chord Name-Space.
       :PROPERTIES:
-      :ID:       B198918B-F8C8-4036-A41B-237BDA793EC0
+      :ID:       orgmode:gcr:vela:B198918B-F8C8-4036-A41B-237BDA793EC0
       :END:
       :Actions:          High
       :Expertise:        Low
@@ -4917,7 +4917,7 @@ a fast and intuitive way to go places.
 
 ***** Two-Key Key-Chord Name-Space.
       :PROPERTIES:
-      :ID:       9CF95F30-5872-40F4-AF00-BDB82E3D7399
+      :ID:       orgmode:gcr:vela:9CF95F30-5872-40F4-AF00-BDB82E3D7399
       :END:
       :Actions:          Low
       :Expertise:        High
@@ -4942,7 +4942,7 @@ a fast and intuitive way to go places.
       :Expertise:        Low
       :Frequency:        Low
       :Relationship:     High
-      :ID:       0410F66C-40F4-46A1-9E69-56658EA815A9
+      :ID:       orgmode:gcr:vela:0410F66C-40F4-46A1-9E69-56658EA815A9
       :END:
 
 - Sometimes you want to do something in a =place= but you aren't sure what
@@ -4964,7 +4964,7 @@ get used a lot, I will add them to =s=.
 
 *** Building Your Own Keyboard
     :PROPERTIES:
-    :ID:       A4257881-BD92-4826-8B0F-74B9557442F9
+    :ID:       orgmode:gcr:vela:A4257881-BD92-4826-8B0F-74B9557442F9
     :END:
 
 As your mastery of EMACS grows so too will your desire to build your own
@@ -5045,17 +5045,17 @@ close together
 
 ** Take a Sip
    :PROPERTIES:
-   :ID:       F42A8A6B-C690-4715-90CB-2207C47C6808
+   :ID:       orgmode:gcr:vela:F42A8A6B-C690-4715-90CB-2207C47C6808
    :END:
 
 *** Left Side
     :PROPERTIES:
-    :ID:       22246934-BE44-4D99-942C-A6DAB4506D65
+    :ID:       orgmode:gcr:vela:22246934-BE44-4D99-942C-A6DAB4506D65
     :END:
 
 **** Row 5
      :PROPERTIES:
-     :ID:       C00A4E41-0801-4696-86E6-5A1CE1EBB189
+     :ID:       orgmode:gcr:vela:C00A4E41-0801-4696-86E6-5A1CE1EBB189
      :END:
 
 #+NAME: E4B98196-FDFB-42B4-A52A-8CA7DC066E8E
@@ -5070,7 +5070,7 @@ close together
 
 **** Row 4
      :PROPERTIES:
-     :ID:       8F467832-8FC3-42B5-8978-8CF2C1454D5B
+     :ID:       orgmode:gcr:vela:8F467832-8FC3-42B5-8978-8CF2C1454D5B
      :END:
 
 #+NAME: 239A85C3-2CEB-4E40-975F-8B3584F7F450
@@ -5088,7 +5088,7 @@ close together
 
 **** Row 3
      :PROPERTIES:
-     :ID:       6DCD321F-6FDA-4983-9C7C-265D23D1AC4F
+     :ID:       orgmode:gcr:vela:6DCD321F-6FDA-4983-9C7C-265D23D1AC4F
      :END:
 
 #+NAME: E60EA15F-28A0-4E98-B62E-1F8BDE444BD8
@@ -5167,7 +5167,7 @@ _v_ariable       _u_ser-option
 
 **** Row 2
      :PROPERTIES:
-     :ID:       9E95D130-D1EC-445B-9028-24DFA5CCB28A
+     :ID:       orgmode:gcr:vela:9E95D130-D1EC-445B-9028-24DFA5CCB28A
      :END:
 
 #+NAME: 9224105B-2CDB-46F4-AF3F-312B3467C2B8
@@ -5180,12 +5180,12 @@ _v_ariable       _u_ser-option
 
 **** Row 1
      :PROPERTIES:
-     :ID:       4CDDC2CE-646A-4D8B-B5D3-2588FBEFF650
+     :ID:       orgmode:gcr:vela:4CDDC2CE-646A-4D8B-B5D3-2588FBEFF650
      :END:
 
 **** Unsorted
      :PROPERTIES:
-     :ID:       AD2164B2-CB66-48AD-B367-4E0CC406B022
+     :ID:       orgmode:gcr:vela:AD2164B2-CB66-48AD-B367-4E0CC406B022
      :END:
 
 VC activities.
@@ -5238,7 +5238,7 @@ Hide and show code blocks.
 
 *** Left & Right Side
     :PROPERTIES:
-    :ID:       FA2BFDC9-5242-4547-A8A5-6DECC8ED1C1B
+    :ID:       orgmode:gcr:vela:FA2BFDC9-5242-4547-A8A5-6DECC8ED1C1B
     :END:
 
 Exploratory programming in EMACS.
@@ -5321,14 +5321,14 @@ Pop the mark back.
 
 *** Right Side
     :PROPERTIES:
-    :ID:       16040443-9099-42C1-A7FB-90C0DDC9F8EE
+    :ID:       orgmode:gcr:vela:16040443-9099-42C1-A7FB-90C0DDC9F8EE
     :END:
 
 Try to reserve the right side for mode-specific activities.
 
 *** Exceptions
     :PROPERTIES:
-    :ID:       EBBB727C-6110-4F7B-A2DC-45E9833EBEFE
+    :ID:       orgmode:gcr:vela:EBBB727C-6110-4F7B-A2DC-45E9833EBEFE
     :END:
 
 Return.
