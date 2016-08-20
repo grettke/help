@@ -2617,15 +2617,22 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 (defhydra help/hydra/left-side/global (:color blue
                                               :hint nil)
   "
-_1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_ grade-level _8_ reading-ease
+_1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm  _7_ grade-level _8_ reading-ease
 _q_ apropos _w_ widen _t_ unicode-troll-stopper-mode _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
+_Q_ _W_ _E_ _R_ _T_
 _a_ ag  _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point _j_ obtj2o _k_ scrollDown _K_ nextLogLine _;_ toggle-lax-whitespace
-_x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list _M_ Marked 2 Viewer"
+_x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list _M_ Marked 2 Viewer
+_<_ _>_ _?_"
   ("1" help/font-size-reset :exit nil)
+  ("Q" (lambda () (interactive) (insert "✓")) :exit nil)
   ("2" help/text-scale-decrease :exit nil)
+  ("W" (lambda () (interactive) (insert "✗")) :exit nil)
   ("3" help/text-scale-increase :exit nil)
+  ("E" (lambda () (interactive) (insert "☐")) :exit nil)
   ("4" help/insert-ellipsis)
+  ("R" (lambda () (interactive) (insert "☑")) :exit nil)
   ("5" help/uuid)
+  ("T" (lambda () (interactive) (insert "☒")) :exit nil)
   ("6" set-buffer-file-coding-system)
   ("7" writegood-grade-level)
   ("8" writegood-reading-ease)
@@ -2646,6 +2653,9 @@ _x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list _M_ M
   ("K" next-logical-line :exit nil)
   ("m" imenu-list-minor-mode)
   ("M" help/preview-buffer-file-in-marked-2)
+  ("<" help/chs)
+  (">" help/che)
+  ("?" help/insert-noticeable-snip-comment-line)
   (";" isearch-toggle-lax-whitespace)
   ("o" toggle-debug-on-error)
   ("p" anzu-query-replace)
