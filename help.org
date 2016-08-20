@@ -1774,17 +1774,13 @@ Make URLs a first-class object.
    :ID:       orgmode:gcr:vela:8F7A007E-5CBA-4651-84D8-5874FF393EA6
    :END:
 
-=unicode-fonts= configured the fallback as Symbola. [[https://github.com/rolandwalker/unicode-fonts/issues/15][On my box]] it isn't working
-though. Until then I'm using the [[http://endlessparentheses.com/manually-choose-a-fallback-font-for-unicode.html][manual configuration of a fallback]] and
-excluding the entire =unicode-fonts= source block.
+Configure the [[http://endlessparentheses.com/manually-choose-a-fallback-font-for-unicode.html][manual configuration of a fallback]] Unicode font.
 
 #+NAME: 881B532E-F141-431C-8CDE-287C59F775C2
 #+BEGIN_SRC emacs-lisp :results output silent
 (set-fontset-font "fontset-default" nil
                   (font-spec :size 20 :name "Symbola"))
 #+END_SRC
-
-Use Unicode-Font to provide as many Unicode fonts as possible.
 
 Here are the Unicode fonts that provide nearly everything.
 
@@ -1798,14 +1794,6 @@ Here are the Unicode fonts that provide nearly everything.
 To test it run =view-hello-file= and =M-x list-charset-chars RET unicode-bmp RET=.
 
 Perhaps educationally there is a character for bowel-movements: 💩.
-
-#+NAME: 6CE3010A-0F52-4050-89FF-C3DB72794822
-#+BEGIN_SRC emacs-lisp :results output silent :tangle no
-(use-package unicode-fonts
-  :ensure t
-  :config
-  (unicode-fonts-setup))
-#+END_SRC
 
 Activate font locking everywhere possible.
 
