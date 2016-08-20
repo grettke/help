@@ -190,7 +190,7 @@ A Headline's primary key is =ID=. Use =org-id= to manage it.
 #+END_SRC
 
 In Links: Never use =ID= or =CUSTOM_ID=; always use the file name and text to make
-it accessible aoutside of Emacs.
+it accessible outside of Emacs.
 
 #+NAME: 751D537A-EE89-4B1D-91E5-99D3A4F8B52E
 #+BEGIN_SRC emacs-lisp :results output silent
