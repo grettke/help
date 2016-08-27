@@ -2839,7 +2839,8 @@ expanded. Anyway, the structure cycling makes it really, really easy to get an
 
 When images are displayed in the buffer, display them in their actual size. As
 the operator, I want to know their true form. Any modifications required for
-export will be stated explicitly.
+export will be stated explicitly. Override this by setting
+=#+ATTR_ORG: :width N= in the file.
 
 #+NAME: 862CCD19-46D8-47E9-85CF-43F0EE9E8404
 #+BEGIN_SRC emacs-lisp :results output silent
