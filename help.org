@@ -1842,6 +1842,8 @@ Warn of poor grammar immediately interrupting flow with a visual indicator.
     '(diminish 'writegood-mode)))
 #+END_SRC
 
+Integrate Langtool.
+
 #+NAME: orgmode:gcr:vela:4FF40D35-DDA0-4E02-80C0-52962DCD449A
 #+BEGIN_SRC emacs-lisp :results output silent
 (use-package langtool
