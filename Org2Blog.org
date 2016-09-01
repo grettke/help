@@ -13,12 +13,12 @@ Start EMACS with this command:
 
 =open /Applications/Emacs.app -n --args --quick --load ~/src/help/.org-mode-org2blog.emacs.el=
 
-#+NAME: 414DD245-B282-4D95-910D-29F43DD90D9B
+#+NAME: orgmode:gcr:vela:414DD245-B282-4D95-910D-29F43DD90D9B
 #+BEGIN_SRC emacs-lisp :results output silent :comments no
 ;; -*- lexical-binding: t -*-
 #+END_SRC
 
-#+NAME: E32697AE-784E-458F-A042-D9B559908721
+#+NAME: orgmode:gcr:vela:E32697AE-784E-458F-A042-D9B559908721
 #+BEGIN_SRC emacs-lisp :results output silent
 (load-file "~/src/help/.org-mode-fundamentals.emacs.el")
 #+END_SRC
@@ -36,7 +36,7 @@ have their issues fixed very quickly. GNU packages rarely have issues.
 
 Initialize Package.
 
-#+NAME: 804FD197-8B2A-49F5-A4CB-48F6036FBCEC
+#+NAME: orgmode:gcr:vela:804FD197-8B2A-49F5-A4CB-48F6036FBCEC
 #+BEGIN_SRC emacs-lisp :results output silent
 (package-initialize)
 (add-to-list 'package-archives
@@ -49,7 +49,7 @@ Use-Package is the most configurable and performant way to manage ELPA packages.
 
 Add the Use-Package distribution the load path.
 
-#+NAME: FAB22F99-AB0C-4A75-AFEF-9E680A5EE95D
+#+NAME: orgmode:gcr:vela:FAB22F99-AB0C-4A75-AFEF-9E680A5EE95D
 #+BEGIN_SRC emacs-lisp :results output silent
 (add-to-list 'load-path"~/src/use-package")
 #+END_SRC
@@ -57,7 +57,7 @@ Add the Use-Package distribution the load path.
 Load Use-Package and it's partner Diminish. Every package loaded before this
 point uses ~require~. Every package loaded after this point uses ~use-package~.
 
-#+NAME: 54841CA9-6491-46E8-8F40-4DCF7182CCD7
+#+NAME: orgmode:gcr:vela:54841CA9-6491-46E8-8F40-4DCF7182CCD7
 #+BEGIN_SRC emacs-lisp :results output silent
 (eval-when-compile
   (require 'use-package))
@@ -73,7 +73,7 @@ point uses ~require~. Every package loaded after this point uses ~use-package~.
 An elisp implementation of clientside XML-RPC
 #+END_QUOTE
 
-#+NAME: E99598C8-D394-484B-A7FB-333FA2544CB0
+#+NAME: orgmode:gcr:vela:E99598C8-D394-484B-A7FB-333FA2544CB0
 #+BEGIN_SRC emacs-lisp :results output silent
 (use-package xml-rpc
   :ensure t)
@@ -83,7 +83,7 @@ An elisp implementation of clientside XML-RPC
 Weblog maintenance via XML-RPC APIs
 #+END_QUOTE
 
-#+NAME: 79F63BAD-0CD7-4A97-8A7D-CBAA51BB48E1
+#+NAME: orgmode:gcr:vela:79F63BAD-0CD7-4A97-8A7D-CBAA51BB48E1
 #+BEGIN_SRC emacs-lisp :results output silent
 (use-package metaweblog
   :ensure t)
@@ -93,7 +93,7 @@ Weblog maintenance via XML-RPC APIs
 Blog from Org mode to wordpress
 #+END_QUOTE
 
-#+NAME: DF522DDF-4A71-4D8B-B6F9-9BD6F11EB832
+#+NAME: orgmode:gcr:vela:DF522DDF-4A71-4D8B-B6F9-9BD6F11EB832
 #+BEGIN_SRC emacs-lisp :results output silent
 (add-to-list 'load-path "~/src/org2blog")
 (require 'org2blog-autoloads)
@@ -105,14 +105,14 @@ Org2Blog depends on Org-Mode. This system loads Org-Mode from Git. Enter the
 This system works with WisdomAndWonder. It keeps its posts separate giving focus
 to each Web.
 
-#+NAME: 9C1EAE6B-9D05-43FB-AC35-7FBFE6CB4F7E
+#+NAME: orgmode:gcr:vela:9C1EAE6B-9D05-43FB-AC35-7FBFE6CB4F7E
 #+BEGIN_SRC emacs-lisp :results output silent
 (setq org2blog/wp-track-posts nil)
 #+END_SRC
 
 Configure Org2Blog.
 
-#+NAME: BCA2FE29-930C-4E66-A662-17FF451D1591
+#+NAME: orgmode:gcr:vela:BCA2FE29-930C-4E66-A662-17FF451D1591
 #+BEGIN_SRC emacs-lisp :results output silent
 (setq org2blog/wp-blog-alist
       '(("wisdomandwonder"

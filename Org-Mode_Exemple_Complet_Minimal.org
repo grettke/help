@@ -13,7 +13,7 @@ Start EMACS with this command:
 
 =open /Applications/Emacs.app -n --args --quick --load ~/src/help/.org-mode-ecm.emacs.el=
 
-#+NAME: EE055B39-1C93-45AB-B9A6-2FCFD54D47A5
+#+NAME: orgmode:gcr:vela:EE055B39-1C93-45AB-B9A6-2FCFD54D47A5
 #+BEGIN_SRC emacs-lisp :results output silent :comments no
 ;; -*- lexical-binding: t -*-
 #+END_SRC
@@ -78,7 +78,7 @@ representations.
 This is the *first* thing that /ought/ to happen in the initialization of *any*
 tangled system.
 
-#+NAME: 87B0CAB9-E6E5-4C68-B389-9289E65FCA7F
+#+NAME: orgmode:gcr:vela:87B0CAB9-E6E5-4C68-B389-9289E65FCA7F
 #+BEGIN_SRC emacs-lisp :results output silent
 (setq load-prefer-newer t)
 #+END_SRC
@@ -101,7 +101,7 @@ decide whether or not it is what you expect and prepare an ECM if necessary.
 
 Add the Org-Mode core distribution the load path.
 
-#+NAME: D5D4EECF-00C5-4B2F-B9F9-988591C70852
+#+NAME: orgmode:gcr:vela:D5D4EECF-00C5-4B2F-B9F9-988591C70852
 #+BEGIN_SRC emacs-lisp :results output silent
 (add-to-list 'load-path "~/src/org-mode/lisp")
 #+END_SRC
@@ -109,7 +109,7 @@ Add the Org-Mode core distribution the load path.
 Add the Org-Mode-Contributions distribution to the load path. The contributions
 are essential.
 
-#+NAME: 4D4E921E-7B99-43B2-AD1F-30D2593F05D7
+#+NAME: orgmode:gcr:vela:4D4E921E-7B99-43B2-AD1F-30D2593F05D7
 #+BEGIN_SRC emacs-lisp :results output silent
 (add-to-list 'load-path "~/src/org-mode/contrib/lisp")
 #+END_SRC
@@ -117,7 +117,7 @@ are essential.
 Allow single-character alphabetical bullet lists. This configuration must occur
 before loading Org-Mode. *Never* remove this from a submitted ECM.
 
-#+NAME: 28776245-A6BB-4294-AC72-30F03F902DF7
+#+NAME: orgmode:gcr:vela:28776245-A6BB-4294-AC72-30F03F902DF7
 #+BEGIN_SRC emacs-lisp :results output silent
 (setq org-list-allow-alphabetical t)
 #+END_SRC
@@ -125,14 +125,14 @@ before loading Org-Mode. *Never* remove this from a submitted ECM.
 Unchecked boxes prevent marking the parent as done. This configuration must
 occur before loading Org-Mode. *Never* remove this from a submitted ECM.
 
-#+NAME: 5112469C-F95A-484B-9D56-90DDC863686A
+#+NAME: orgmode:gcr:vela:5112469C-F95A-484B-9D56-90DDC863686A
 #+BEGIN_SRC emacs-lisp :results output silent
 (setq org-enforce-todo-checkbox-dependencies t)
 #+END_SRC
 
 Use the Guillemet to demarcate source blocks. Reconfigure this yearly.
 
-#+NAME: 3BBCDC21-9177-43D2-8423-0AC2253F590D
+#+NAME: orgmode:gcr:vela:3BBCDC21-9177-43D2-8423-0AC2253F590D
 #+BEGIN_SRC emacs-lisp :results output silent
 (setq org-babel-noweb-wrap-start "«")
 (setq org-babel-noweb-wrap-end "»")
@@ -140,7 +140,7 @@ Use the Guillemet to demarcate source blocks. Reconfigure this yearly.
 
 Load Org-Mode.
 
-#+NAME: 86CAEC4F-CFC4-4CAD-9993-E1DCEF3BFCD1
+#+NAME: orgmode:gcr:vela:86CAEC4F-CFC4-4CAD-9993-E1DCEF3BFCD1
 #+BEGIN_SRC emacs-lisp :results output silent
 (require 'org)
 #+END_SRC
