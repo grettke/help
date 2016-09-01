@@ -1116,7 +1116,7 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
 (use-package langtool
   :ensure t
   :init
-  (setq langtool-language-tool-jar "/usr/local/Cellar/languagetool/3.2/libexec/languagetool-commandline.jar")
+  (setq langtool-language-tool-jar (getenv "LANGTOOL"))
   (setq langtool-mother-tongue "en")
   (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java")))
 ;; orgmode:gcr:vela:4FF40D35-DDA0-4E02-80C0-52962DCD449A ends here

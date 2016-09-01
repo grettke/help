@@ -1849,7 +1849,7 @@ Integrate Langtool.
 (use-package langtool
   :ensure t
   :init
-  (setq langtool-language-tool-jar "/usr/local/Cellar/languagetool/3.2/libexec/languagetool-commandline.jar")
+  (setq langtool-language-tool-jar (getenv "LANGTOOL"))
   (setq langtool-mother-tongue "en")
   (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java")))
 #+END_SRC
