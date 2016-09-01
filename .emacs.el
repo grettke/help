@@ -1124,7 +1124,7 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
 ;; [[file:help.org::orgmode:gcr:vela:2A5BAD60-DF45-4BD1-AA01-E430E495C62D][orgmode:gcr:vela:2A5BAD60-DF45-4BD1-AA01-E430E495C62D]]
 (flycheck-define-checker proselint
   "A linter for prose."
-  :command ("proselint" source-inplace)
+  :command ((getenv "PROSELINT") source-inplace)
   :error-patterns
   ((warning line-start (file-name) ":" line ":" column ": "
             (id (one-or-more (not (any " "))))
