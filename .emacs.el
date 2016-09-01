@@ -1121,6 +1121,20 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
   (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java")))
 ;; orgmode:gcr:vela:4FF40D35-DDA0-4E02-80C0-52962DCD449A ends here
 
+;; [[file:help.org::orgmode:gcr:vela:2A5BAD60-DF45-4BD1-AA01-E430E495C62D][orgmode:gcr:vela:2A5BAD60-DF45-4BD1-AA01-E430E495C62D]]
+(flycheck-define-checker proselint
+  "A linter for prose."
+  :command ("proselint" source-inplace)
+  :error-patterns
+  ((warning line-start (file-name) ":" line ":" column ": "
+            (id (one-or-more (not (any " "))))
+            (message (one-or-more not-newline)
+                     (zero-or-more "\n" (any " ") (one-or-more not-newline)))
+            line-end))
+  :modes (text-mode markdown-mode gfm-mode))
+(add-to-list 'flycheck-checkers 'proselint)
+;; orgmode:gcr:vela:2A5BAD60-DF45-4BD1-AA01-E430E495C62D ends here
+
 ;; [[file:help.org::orgmode:gcr:vela:487B46D5-C025-4114-A1B4-BAAF5FAFE430][orgmode:gcr:vela:487B46D5-C025-4114-A1B4-BAAF5FAFE430]]
 (use-package fuzzy
   :ensure t)
