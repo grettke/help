@@ -234,6 +234,14 @@ never allow that. Its inconsistent with how Org-Mode works.
 (setq org-babel-use-quick-and-dirty-noweb-expansion nil)
 #+END_SRC
 
+Assume that tangled document always live within the same directory structure
+as their origin document.
+
+#+NAME: orgmode:gcr:vela:F7F35A40-EE63-48B1-8D5D-F745525D9996
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq org-babel-tangle-use-relative-file-links t)
+#+END_SRC
+
 **** comments
     :PROPERTIES:
     :ID:       orgmode:gcr:vela:49787FC5-CAA7-466B-B742-0F38973E070B

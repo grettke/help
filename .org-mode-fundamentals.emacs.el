@@ -130,6 +130,10 @@ This is a copy and paste. Additional languages would warrant a refactor."
 (setq org-babel-use-quick-and-dirty-noweb-expansion nil)
 ;; F19C629B-E784-48CA-BC53-CCFB849CE9EC ends here
 
+;; [[file:Org-Mode_Fundamentals.org::orgmode:gcr:vela:F7F35A40-EE63-48B1-8D5D-F745525D9996][orgmode:gcr:vela:F7F35A40-EE63-48B1-8D5D-F745525D9996]]
+(setq org-babel-tangle-use-relative-file-links t)
+;; orgmode:gcr:vela:F7F35A40-EE63-48B1-8D5D-F745525D9996 ends here
+
 ;; [[file:Org-Mode_Fundamentals.org::AD42B561-29FA-4652-AD28-692CAD631E62][AD42B561-29FA-4652-AD28-692CAD631E62]]
 (help/set-org-babel-default-header-args :comments "noweb")
 ;; AD42B561-29FA-4652-AD28-692CAD631E62 ends here
