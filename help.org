@@ -1867,7 +1867,7 @@ Integrate Proselint.
             (message (one-or-more not-newline)
                      (zero-or-more "\n" (any " ") (one-or-more not-newline)))
             line-end))
-  :modes (text-mode markdown-mode gfm-mode))
+  :modes (text-mode org-mode latex-mode markdown-mode gfm-mode))
 (add-to-list 'flycheck-checkers 'proselint)
 #+END_SRC
 
