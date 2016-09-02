@@ -1,7 +1,7 @@
 
 # Org2blog
 
-    ID: BA37913C-D781-453B-B438-F6464B60CFDF
+    ID: orgmode:gcr:vela:BA37913C-D781-453B-B438-F6464B60CFDF
 
 Configure Org2blog for use, development, and support.
 
@@ -21,7 +21,7 @@ Start EMACS with this command:
 
 ## Watch What You Eat
 
-    ID: 59073E74-83D9-4218-917C-789A27D57E5A
+    ID: orgmode:gcr:vela:59073E74-83D9-4218-917C-789A27D57E5A
 
 **Code requiring package-management can only follow this block.**
 
@@ -58,7 +58,7 @@ point uses `require`. Every package loaded after this point uses `use-package`.
 
 ## Blog
 
-    ID: F5E33EB2-2E26-435C-85F6-26CB7CE7FC56
+    ID: orgmode:gcr:vela:F5E33EB2-2E26-435C-85F6-26CB7CE7FC56
 
 > An elisp implementation of clientside XML-RPC
 

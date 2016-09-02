@@ -1,7 +1,7 @@
 
 # Org-Mode Exemple Complet Minimal
 
-    ID: 83868A6E-76C2-48AE-8A5A-6A3C97492321
+    ID: orgmode:gcr:vela:83868A6E-76C2-48AE-8A5A-6A3C97492321
 
 Configure EMACS to easily provide ECMs.
 
@@ -17,11 +17,11 @@ Start EMACS with this command:
 
 ## Principle of Least Astonishment (POLA)
 
-    ID: 43D9AB52-2157-4A1D-AD9C-D35996E91269
+    ID: orgmode:gcr:vela:43D9AB52-2157-4A1D-AD9C-D35996E91269
 
 ### Scoping Behavior
 
-    ID: C0F8DDC4-C2B7-4578-B9B4-FA13E3BF0EBD
+    ID: orgmode:gcr:vela:C0F8DDC4-C2B7-4578-B9B4-FA13E3BF0EBD
 
 EMACS values dynamic-scoping for now and in the future.
 
@@ -39,7 +39,7 @@ Web.
 
 ### Load Behavior
 
-    ID: B1A48CB2-9295-466E-947F-EE24D57DB548
+    ID: orgmode:gcr:vela:B1A48CB2-9295-466E-947F-EE24D57DB548
 
 EMACS can load 3 different representations of a Emacs-Lisp source file code
 OOTB. The name of source code file is the value before the file extension. When
@@ -78,7 +78,7 @@ tangled system.
 
 ## Org-Mode Exemple Complet Minimal
 
-    ID: 57C69AB7-A317-4823-ABBF-7DE8A5E2151C
+    ID: orgmode:gcr:vela:57C69AB7-A317-4823-ABBF-7DE8A5E2151C
 
 Every new EMACS releases comes with the latest stable Org-Mode release. To get
 hot-fixes, cutting edge features, and easy patch creation though, you need to

@@ -1,0 +1,2307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2016-09-01 Thu 19:23 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+<meta name="generator" content="Org-mode">
+<meta name="author" content="Grant Rettke">
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="outline-container-orge63f270" class="outline-2">
+<h2 id="orge63f270"><a id="ID-B98C6FFA-E22E-4B35-96EB-54D48A89A9DE"></a><span class="section-number-2">1</span> Control Files</h2>
+<div class="outline-text-2" id="text-1">
+<pre class="example">
+ID: B98C6FFA-E22E-4B35-96EB-54D48A89A9DE
+</pre>
+</div>
+
+<div id="outline-container-org55b882d" class="outline-3">
+<h3 id="org55b882d"><a id="ID-59F738BE-D479-4BB2-A41C-918616832571"></a><span class="section-number-3">1.1</span> Configuration</h3>
+<div class="outline-text-3" id="text-1-1">
+<pre class="example">
+ID: 59F738BE-D479-4BB2-A41C-918616832571
+</pre>
+
+<p>
+The goal here is to get R set up thoughtfully and quickly. The profile
+and environ set it up correctly. Always remember this and run R using those
+configuration files.
+</p>
+
+<ul class="org-ul">
+<li>Steps
+<ul class="org-ul">
+<li>Review and Run <code>.Rsetup.sh</code> prepare the OS for R and R for your configuration</li>
+<li>Review <code>.Renviron</code> to verify it is what you expect</li>
+<li>Review <code>.Rprofile</code> to recall how you set it up</li>
+<li>Review and Source <code>Rinstall</code> to install required packages
+<ul class="org-ul">
+<li>Verify the lib path is in the home directory <code>.libPaths()</code></li>
+<li>When R starts, it won&rsquo;t find any of the required packages. It will
+complain a lot. That is OK. Just keep running the install script until
+it is happy: <code>source("~/.Rinstall.r")</code>. Then restart R and everything should
+be fine.</li>
+<li>Run the installation script 3-5 times, each time
+<ul class="org-ul">
+<li>Check the version that is running</li>
+<li>Go back and read the transcript and make sure that it looks right
+<ul class="org-ul">
+<li>Build warnings</li>
+<li>Configuration errors</li>
+<li>Mask warnings</li>
+<li>Package notifications
+<ul class="org-ul">
+<li><p>
+For example
+</p>
+<pre class="example">
+data.table 1.9.6  For help type ?data.table or https://github.com/Rdatatable/data.table/wiki
+The fastest way to learn (by data.table authors): https://www.datacamp.com/courses/data-analysis-the-data-table-way
+</pre></li>
+<li><p>
+…
+</p>
+<pre class="example">
+Attaching package: ‘magrittr’
+
+The following objects are masked from ‘package:testthat’:
+
+    equals, is_less_than, not
+</pre></li>
+<li><p>
+…
+</p>
+<pre class="example">
+------------------------------------------------------------------------------
+data.table + dplyr code now lives in dtplyr.
+Please library(dtplyr)!
+------------------------------------------------------------------------------
+</pre></li>
+</ul></li>
+</ul></li>
+<li>Eventually that script will fail, for example
+<ul class="org-ul">
+<li>there is no package called ‘devtools’
+<ul class="org-ul">
+<li>Called <code>install.packages("devtools")</code> manually</li>
+<li>Install order error</li>
+</ul></li>
+</ul></li>
+<li>After running it a couple of times, it is finished</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>
+<b>.Rsetup</b>
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh" id="orgb7efe59">&#171;rsetup-defs&#187;
+</pre>
+</div>
+
+<p>
+<b>.Rprofile</b>
+</p>
+<div class="org-src-container">
+
+<pre class="src src-R" id="org7a93681"><span class="org-comment-delimiter">## </span><span class="org-comment">-*- mode: R; -*-</span>
+&#171;rprofile-def&#187;
+<span class="org-function-name">.First</span> <span class="org-constant">&lt;-</span> <span class="org-keyword">function</span>() {
+    gcr <span class="org-constant">&lt;-</span> new.env()
+    &#171;rfirst-defs&#187;
+    base::<span class="org-constant">attach</span>(gcr, name=<span class="org-string">"gcr"</span>, warn.conflicts=<span class="org-type">FALSE</span>)
+}
+fortune()
+</pre>
+</div>
+
+<p>
+<b>.Renviron</b>
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh" id="org7027a93"><span class="org-comment-delimiter"># </span><span class="org-comment">-*- mode: sh; -*-</span>
+&#171;renviron-def&#187;
+</pre>
+</div>
+
+<p>
+<b>.Rinstall</b>
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh" id="orgabd4bf5">&#171;rinstall-def&#187;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8f5d176" class="outline-3">
+<h3 id="org8f5d176"><a id="ID-BDE6AFC6-C6E9-44B8-8B37-35A5E59B14D5"></a><span class="section-number-3">1.2</span> .Rsetup</h3>
+<div class="outline-text-3" id="text-1-2">
+<pre class="example">
+header-args: :noweb-ref rsetup-defs
+ID: BDE6AFC6-C6E9-44B8-8B37-35A5E59B14D5
+</pre>
+
+<p>
+Prepare the operating system to host R.
+</p>
+
+<p>
+Recreate the packages directory.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh" id="orgd32c6d1">rm -rf ~/.Rpackages
+mkdir ~/.Rpackages
+</pre>
+</div>
+
+<p>
+Symbolically link all of the control files.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh" id="orgabbb036">rm ~/.Rprofile
+ln -sfn ~/src/help/.Rprofile ~/.Rprofile
+rm ~/.Renviron
+ln -sfn ~/src/help/.Renviron ~/.Renviron
+rm ~/.Rinstall.r
+ln -sfn ~/src/help/.Rinstall.r ~/.Rinstall.r
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2b3db01" class="outline-3">
+<h3 id="org2b3db01"><a id="ID-FDD6A2C4-B9B1-45EB-996B-3AB20FB2BE89"></a><span class="section-number-3">1.3</span> .Rprofile <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h3>
+<div class="outline-text-3" id="text-1-3">
+<pre class="example">
+header-args: :noweb-ref rprofile-def
+ID: FDD6A2C4-B9B1-45EB-996B-3AB20FB2BE89
+</pre>
+
+<ul class="org-ul">
+<li>When you install packages, R needs to know which repository it should use. If
+you don&rsquo;t tell it, then it will ask you every time. It is just doing its job.
+Make it easier for yourself and specify a repo for once and for all.
+<ul class="org-ul">
+<li>Via <sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup></li>
+<li>Built-in docs explain that <code>local</code> should be used here</li>
+<li>This could also be a one-liner: <code>options("repos" = c(CRAN = "http://cran.r-project.org/"))</code></li>
+</ul></li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-R" id="orgfa7a70d">local({
+    r = getOption(<span class="org-string">"repos"</span>)
+    r[<span class="org-string">"CRAN"</span>] = <span class="org-string">"https://cran.r-project.org/"</span>
+    options(repos = r)
+})
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>By default, hitting enter in the <code>browser</code> will submit a <code>c</code> for &ldquo;continue
+execution at the next statement&rdquo;
+<ul class="org-ul">
+<li>It is too easy to hit enter when you didn&rsquo;t mean it</li>
+<li>It just <i>feels</i> imprecise</li>
+<li>Never let this happen, disable that feature</li>
+</ul></li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-R" id="org91cacd9">options(browserNLdisabled = <span class="org-type">TRUE</span>)
+</pre>
+</div>
+
+<p>
+Show timestamps to 3 sub-seconds:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-R" id="org2d0dee6">options(<span class="org-string">"digits.secs"</span>=3)
+</pre>
+</div>
+
+<p>
+Do not allow automatic coercion of strings into factors, as you can specify this
+by argument to make it <i>real</i> obvious. Looks like the best way is to leave it
+alone globally and always do it by hand though. hwickam commented that it is
+bad, bad idea to make this option global not because of your code, but because
+of everyone else&rsquo;s that you are using which relies on the option being set to
+<code>TRUE</code>. Learning more about this, before this was an option, it was the default
+behavior (being true) because statisticians rarely dealth with character
+arrays. As the popularity of R skyrocketed, suddently people wanted to work
+with them a lot. It isn&rsquo;t custom code that expects it to be true, rather, it
+is library code that expects it to true. Definitely something that you don&rsquo;t
+want to mess with.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-R" id="orgb40acbb">options(stringsAsFactors=<span class="org-type">TRUE</span>)
+</pre>
+</div>
+
+<p>
+This might be <i>too much</i>, but always show a call stack when <b>any</b> warnings or
+errors occur
+</p>
+<div class="org-src-container">
+
+<pre class="src src-R" id="org1f83b36">options(showWarnCalls=<span class="org-type">TRUE</span>)
+options(showErrorCalls=<span class="org-type">TRUE</span>)
+</pre>
+</div>
+
+<p>
+Be highly conservative about errors and warnings: handle the former immediately
+and cause the latter to be errors. However, only do this after your workspace
+has initialized correctly. Do so too soon and most things won&rsquo;t work because
+this approach is only to handle <i>my</i> issues. Imagine of the whole work just
+handled their own issues! Anway, the safe values are set here, leave them alone.
+Making them more aggressive will break your startup. When you are ready to set
+things to be more aggressive, turn it on yourself
+</p>
+<div class="org-src-container">
+
+<pre class="src src-R" id="orgb8684c8">options(error=<span class="org-type">NULL</span>)
+options(warn=0)
+</pre>
+</div>
+
+<p>
+Don&rsquo;t print more than 500 lines. If you can grok more than 500 lines then please
+teach me. Be at ease, there is a helper to remove that restriction, just in case.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-R" id="orgdda76ef">options(max.print=500)
+</pre>
+</div>
+
+<p>
+Partial matching is a neat and flexible feature for objects. In theory, it is
+quite powerful and convenient. In practice it seems like a really bad idea to
+me. It is a <i>personal preference</i>. It only makes sense from that perspective.
+This could bork 3rd party code.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-R" id="orgb56aa7a">options(warnPartialMatchDollar = <span class="org-type">TRUE</span>)
+</pre>
+</div>
+
+<p>
+Locale:
+</p>
+<ul class="org-ul">
+<li>Make sure that the language is set correctly. I couldn&rsquo;t find anything specific
+about setting it this way other than various posts. In practice you would really
+put all of this in your system environment configuration, but I&rsquo;m wanting to be
+a little more particular here because it affects operations on data structures,
+in particular sorting.</li>
+<li>Error messages are mostly useful when they are displayed in English, so make
+sure that the locale is always English <sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>.
+&ldquo;Note that the LANGUAGE environment variable has precedence over <code>LC_MESSAGES</code> in
+selecting the language for message translation on most R platforms.&rdquo; <sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup></li>
+<li>Note:
+<ul class="org-ul">
+<li>My previous approach was to define a top level binding for the locale string
+and pass that reference to bind each of the following settings. That was fine
+until I wanted to be able to easily clear out all of the top-level bindngs to
+&ldquo;reset&rdquo; it with a <code>rm(ls())</code> kind of thing. For that reason, I just use the
+manifest strings here.</li>
+</ul></li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-R" id="orgc0f1ffb">Sys.setenv(LANG = <span class="org-string">"en_US.UTF-8"</span>)
+Sys.setlocale(<span class="org-string">"LC_COLLATE"</span>, <span class="org-string">"en_US.UTF-8"</span>)
+Sys.setlocale(<span class="org-string">"LC_MESSAGES"</span>, <span class="org-string">"en_US.UTF-8"</span>)
+</pre>
+</div>
+
+<p>
+Set the same random seed.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org62c0a61">set.seed(970396220)
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org67288c6" class="outline-4">
+<h4 id="org67288c6"><a id="ID-0B04A7FB-2AC9-4BE8-882D-76C196396116"></a><span class="section-number-4">1.3.1</span> Packages</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<pre class="example">
+ID: 0B04A7FB-2AC9-4BE8-882D-76C196396116
+</pre>
+
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2014-11-14 Fri&gt;</span></span>
+Below is a try to auto-install packages if they are not available, and, it seems
+to have failed. Perhaps there is a better way, and I do need to find it. Until
+then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
+</p>
+</div>
+
+<ol class="org-ol"><li><a id="org7a4c449"></a><a id="ID-F43738D7-5E0F-4567-8C08-8EC8850683E2"></a>assertthat<br ><div class="outline-text-5" id="text-1-3-1-1">
+<pre class="example">
+ID: F43738D7-5E0F-4567-8C08-8EC8850683E2
+</pre>
+
+<p>
+Design-by-contract  <sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup> is a great, great thing. Make it much easier with valuable
+functions and useful messages!
+</p>
+
+<p>
+Cheatsheet:
+</p>
+<ul class="org-ul">
+<li>Always use <code>assert_that</code></li>
+<li>Use
+<ul class="org-ul">
+<li>ℝ built ins to check tests</li>
+<li>Additionally via <code>assertthat</code>:
+<ul class="org-ul">
+<li><code>is.flag</code></li>
+<li><code>is.string</code></li>
+<li><code>has_name</code></li>
+<li><code>has_attr</code></li>
+<li><code>is.count</code></li>
+<li><code>are_equal</code></li>
+<li><code>not_empty</code></li>
+<li><code>noNA</code></li>
+<li><code>is.dir</code></li>
+<li><code>is.writeable</code> and <code>is.readable</code></li>
+<li><code>has_extension</code></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org89a2206"><span class="org-constant">library</span>(assertthat)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org20ac7c6"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(assertthat)){
+    install.packages(<span class="org-string">"assertthat"</span>)
+}
+</pre>
+</div>
+</div></li>
+
+<li><a id="org1f54fe5"></a><a id="ID-007E49F2-44A1-4AB7-AE4F-72534211F4DE"></a>testthat<br ><div class="outline-text-5" id="text-1-3-1-2">
+<pre class="example">
+ID: 007E49F2-44A1-4AB7-AE4F-72534211F4DE
+</pre>
+
+<p>
+Design-by-contract and unit-tests <sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup>
+go hand-in-hand.
+</p>
+
+<p>
+Expectations:
+</p>
+<ul class="org-ul">
+<li><code>equals() :</code>: uses <code>all.equal()</code> to check for equality with numerical tolerance
+<ul class="org-ul">
+<li>Shorthand: <code>expect_equal(x, y)</code></li>
+</ul></li>
+<li id="<code>is_identical_to()</code>">uses <code>identical()</code> to check for exact equality
+<ul class="org-ul">
+<li>Shorthand: <code>expect_identical(x, y)</code></li>
+</ul></li>
+<li id="<code>is_equivalent_to()</code>">is a more relaxed version of <code>equals()</code> that ignores attributes
+<ul class="org-ul">
+<li>Shorthand: <code>expect_equivalent(x, y)</code></li>
+</ul></li>
+<li id="<code>is_a()</code>">checks that an object <code>inherit()</code>&rsquo;s from a specified class
+<ul class="org-ul">
+<li>Shorthand: <code>expect_is(x, y)</code></li>
+</ul></li>
+<li id="<code>matches()</code>">matches a character vector against a regular expression.
+<ul class="org-ul">
+<li>The optional all argument controls where all elements or just one element
+need to match.</li>
+<li>Shorthand: <code>expect_matches(x, y)</code></li>
+</ul></li>
+<li id="<code>prints_text()</code>">matches the printed output from an expression against a
+regular expression
+<ul class="org-ul">
+<li>Shorthand: <code>expect_output(x, y)</code></li>
+</ul></li>
+<li id="<code>shows_message()</code>">checks that an expression shows a message
+<ul class="org-ul">
+<li>Shorthand: <code>expect_message(x, y)</code></li>
+</ul></li>
+<li id="<code>gives_warning()</code>">expects that you get a warning
+<ul class="org-ul">
+<li>Shorthand: <code>expect_warning(x, y)</code></li>
+</ul></li>
+<li id="<code>throws_error()</code>">verifies that the expression throws an error.
+<ul class="org-ul">
+<li>You can also supply a regular expression which is applied to the text of the
+error</li>
+<li>Shorthand: <code>expect_error(x, y)</code></li>
+</ul></li>
+<li id="<code>is_true()</code>">is a useful catchall if none of the other expectations do what
+you want - it checks that an expression is true
+<ul class="org-ul">
+<li><code>is_false()</code> is the complement of <code>is_true()</code></li>
+<li>Shorthand: <code>expect_true(x)</code></li>
+<li>Shorthand: <code>expect_false(x)</code></li>
+</ul></li>
+
+<li>Notes
+<ul class="org-ul">
+<li>&ldquo;Each test is run in its own environment so it is self-contained.&rdquo;
+<ul class="org-ul">
+<li>Plain old code so you can modify the global environment FYI</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org7316b09"><span class="org-constant">library</span>(testthat)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="orge3e1dbd"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(testthat)) {
+    install.packages(<span class="org-string">"testthat"</span>)
+}
+</pre>
+</div>
+</div></li>
+
+<li><a id="org267022b"></a><a id="ID-BB8CF291-A9BF-4E3B-9E02-3A41EDAF8424"></a>stringr<br ><div class="outline-text-5" id="text-1-3-1-3">
+<pre class="example">
+ID: BB8CF291-A9BF-4E3B-9E02-3A41EDAF8424
+</pre>
+
+<p>
+Make it really easy to work with strings <sup><a id="fnr.7" class="footref" href="#fn.7">7</a></sup>. That is indeed a good goal, and
+the reason that I installed this initially was because <code>testthat</code> mentions that
+it is used.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-R" id="org5638617"><span class="org-constant">library</span>(stringr)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="orgfe1b08e"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(stringr)) {
+    install.packages(<span class="org-string">"stringr"</span>)
+}
+</pre>
+</div>
+</div></li>
+
+<li><a id="orgad8f934"></a><a id="ID-3B199A0E-DE1E-4FBD-95A0-6F4D981B021D"></a>sqldf<br ><div class="outline-text-5" id="text-1-3-1-4">
+<pre class="example">
+ID: 3B199A0E-DE1E-4FBD-95A0-6F4D981B021D
+</pre>
+
+<p>
+How you extract data from a dataframe is flexible and everyone can and may do it
+differently. One option available is to use <code>SQL</code> <sup><a id="fnr.8" class="footref" href="#fn.8">8</a></sup>, so make it available.
+</p>
+
+<p>
+Comments taken from <sup><a id="fnr.9" class="footref" href="#fn.9">9</a></sup>
+</p>
+<ul class="org-ul">
+<li>&ldquo;This [using SQL] is a skill that every analyst should possess&rdquo;</li>
+<li>&ldquo;Being able to write SQL will save you time and provide you with a way of
+getting repeatable results so that you don&rsquo;t have to focus on doing the
+calculations all the time and worrying about errors in Excel&rdquo;</li>
+<li>&ldquo;[instead] You can focus on the task of actually analyzing your data&rdquo;</li>
+</ul>
+
+<p>
+Notes from the user manual <sup><a id="fnr.10" class="footref" href="#fn.10">10</a></sup>
+</p>
+<ul class="org-ul">
+<li>Interesting package info
+<ul class="org-ul">
+<li>&ldquo;Title Perform SQL Selects on R Data Frames&rdquo;</li>
+<li>&ldquo;Author G. Grothendieck &lt;ggrothendieck@gmail.com&gt;&rdquo;</li>
+<li>&ldquo;Description Description: Manipulate R data frames using SQL.&rdquo;</li>
+<li>&ldquo;Depends R (&gt;= 2.14.0), gsubfn (&gt;= 0.6), proto, RSQLite (&gt;= 0.8-0),RSQLite.extfuns&rdquo;</li>
+</ul></li>
+<li>Google group mentioned <sup><a id="fnr.11" class="footref" href="#fn.11">11</a></sup>, joined it</li>
+<li>Official site mentioned and it has good docs</li>
+<li>Seems to uses SQLLite</li>
+<li><code>read.csv.sql</code>
+<ul class="org-ul">
+<li>&ldquo;Read a file into R filtering it with an sql statement. Only the filtered
+portion is processed by R so that files larger than R can otherwise handle
+can be accommodated.&rdquo;</li>
+<li>Parms
+<ul class="org-ul">
+<li>Handles <code>http</code> and <code>ftp</code> <code>URLs</code></li>
+<li><code>filter</code>
+<ul class="org-ul">
+<li>&ldquo;If specified, this should be a shell/batch command that the input file is
+piped through. For read.csv2.sql it is by default the following on
+non-Windows systems: tr , .. This translates all commas in the file to
+dots.&rdquo;
+<ul class="org-ul">
+<li>Why is that specific example mentioned?</li>
+</ul></li>
+</ul></li>
+<li><code>field.types</code>
+<ul class="org-ul">
+<li>State the SQLite types for the column names</li>
+<li>Rarely needed</li>
+</ul></li>
+<li><code>dbname</code>
+<ul class="org-ul">
+<li>&ldquo;As in <code>sqldf</code> except that the default is <code>tempfile()</code>. Specifying <code>NULL</code> will
+put the database in memory which may improve speed but will limit the size
+of the database by the available memory.&rdquo;</li>
+</ul></li>
+</ul></li>
+<li>Details
+<ul class="org-ul">
+<li>&ldquo;Reads the indicated file into an sql database creating the database if it
+does not already exist. Then it applies the sql statement returning the
+result as a data frame. If the database did not exist prior to this
+statement it is removed.&rdquo;</li>
+<li>&ldquo;Note that it uses facilities of SQLite to read the file which are
+intended for speed and therefore not as flexible as in R. For example, it
+does not recognize quoted fields as special but will regard the quotes as
+part of the field. See the sqldf help for more information.&rdquo;</li>
+<li>&ldquo;<code>read.csv2.sql</code> is like <code>read.csv.sql</code> except the default sep is &rdquo;;&ldquo; and the
+default filter translates all commas in the file to decimal points (i.e.
+to dots).&rdquo;</li>
+</ul></li>
+<li>Value
+<ul class="org-ul">
+<li>&ldquo;If the sql statement is a select statement then a data frame is returned.&rdquo;</li>
+</ul></li>
+</ul></li>
+<li><code>sqldf</code>
+<dl class="org-dl">
+<dt>Description</dt><dd>SQL select on data frames</dd>
+<dt>(no term)</dt><dd>Arguments
+<ul class="org-ul">
+<li>=stringsAsFactors does what you think</li>
+<li><code>row.names</code> could be useful</li>
+<li><code>envir</code> could make it safer</li>
+<li><code>method</code> determines how to type the data from the database into a dataframe
+<ul class="org-ul">
+<li>Looks like a <b>powerhouse</b> feature</li>
+<li>Could greatly simplify data brokering</li>
+</ul></li>
+<li><code>file.format</code>
+<ul class="org-ul">
+<li><code>eol</code> handling mentioned across platforms</li>
+<li>Ran into this with the built-in reader</li>
+</ul></li>
+<li><code>dbname</code>
+<ul class="org-ul">
+<li>SQLite creates an in-memory database!</li>
+</ul></li>
+</ul></dd>
+<dt>(no term)</dt><dd>Details
+<ul class="org-ul">
+<li>The typical action of sqldf is to</li>
+<li id="create a database">in memory</li>
+<li id="read in the data frames and files">used in the select statement. This is
+done by scanning the select statement to see which words in the select
+statement are of class &ldquo;data.frame&rdquo; or &ldquo;file&rdquo; in the parent frame, or the
+specified environment if envir is used, and for each object found by
+reading it into the database if it is a data frame. Note that this
+heuristic usually reads in the wanted data frames and files but on
+occasion may harmlessly reads in extra ones too.</li>
+<li id="run the select statement">getting the result as a data frame</li>
+<li id="assign the classes">of the returned data frame’s columns if
+method = &ldquo;auto&rdquo;. This is done by checking all the column names in the
+read-in data frames and if any are the same as a column output from the
+data base then that column is coerced to the class of the column whose
+name matched. If the class of the column is &ldquo;factor&rdquo; or &ldquo;ordered&rdquo; or if
+the column is not matched then the column is returned as is. If
+method = &ldquo;auto.factor&rdquo; then processing is similar except that &ldquo;factor&rdquo;
+and &ldquo;ordered&rdquo; classes and their levels will be assigned as well. The
+&ldquo;auto.factor&rdquo; heuristic is less reliable than the &ldquo;auto&rdquo; heuristic. If
+method = &ldquo;raw&rdquo; then the classes are returned as is from the database.</li>
+<li id="cleanup">If the database was created by sqldf then it is deleted;
+otherwise, all tables that were created are dropped in order to leave the
+database in the same state that it was before. The database connection is
+terminated.</li>
+<li id="Warning">Although sqldf is usually used with on-the-fly databases which
+it automatically sets up and destroys if you wish to use it with existing
+databases be sure to back up your database prior to using it since
+incorrect operation could destroy the entire database.</li>
+</ul></dd>
+<dt>(no term)</dt><dd>Value
+<ul class="org-ul">
+<li>The result of the specified select statement is output as a data frame.</li>
+<li>If a vector of sql statements is given as x then the result of the last
+one is returned.</li>
+<li>If the x and connection arguments are missing then it returns a new
+connection and also places this connection in the option sqldf.connection.
+<ul class="org-ul">
+<li>Great to know that the connection is cached!</li>
+</ul></li>
+</ul></dd>
+<dt>(no term)</dt><dd>Notes
+<ul class="org-ul">
+<li>Big FYI: Commas in columns will be parsed as column separators!
+<ul class="org-ul">
+<li>Recommends using <code>read.table</code> if this matter</li>
+</ul></li>
+</ul></dd>
+<dt>(no term)</dt><dd>Examples
+<ul class="org-ul">
+<li>They all demonstrate how to do it in R and then again with SQL</li>
+<li>Super helpful</li>
+<li>You seem to be able to do everything that you would expect possible</li>
+</ul></dd>
+<dt>(no term)</dt><dd>Thoughts
+<ul class="org-ul">
+<li>Need to grok both R and SQL to use this safely</li>
+<li>Using temp tables is kind of huge</li>
+<li>Via <sup><a id="fnr.12" class="footref" href="#fn.12">12</a></sup>
+<ul class="org-ul">
+<li>Use <code>_</code> instead lf <code>.</code> in column names from a R call
+<ul class="org-ul">
+<li>Where is this in the documentation?</li>
+</ul></li>
+</ul></li>
+</ul></dd>
+</dl></li>
+</ul>
+
+<p>
+Notes from the official site <sup><a id="fnr.13" class="footref" href="#fn.13">13</a></sup>
+</p>
+<ul class="org-ul">
+<li>Opening
+<ul class="org-ul">
+<li>How it works
+<ul class="org-ul">
+<li>The user simply specifies an SQL statement</li>
+<li>in R using data frame names in place of table names</li>
+<li>and a database with appropriate table layouts/schema is automatically
+created,</li>
+<li>the data frames are automatically loaded into the database,</li>
+<li>the specified SQL statement is performed,</li>
+<li>the result is read back into R</li>
+<li>and the database is deleted all automatically behind the scenes making the
+database&rsquo;s existence transparent to the user who only specifies the SQL
+statement.</li>
+</ul></li>
+<li>Supports
+<ul class="org-ul">
+<li>SQLite</li>
+<li>H2</li>
+<li>PostgreSQL</li>
+<li>MySQL</li>
+</ul></li>
+<li>The FAQ mostly talks about SQLite</li>
+</ul></li>
+<li>Overview
+<ul class="org-ul">
+<li>with sqldf the user is freed from having to do the following, all of which
+are automatically done:
+<ul class="org-ul">
+<li>database setup</li>
+<li>writing the create table statement which defines each table</li>
+<li>importing and exporting to and from the database</li>
+<li>coercing of the returned columns to the appropriate class in common cases</li>
+</ul></li>
+<li>It an be used for
+<ul class="org-ul">
+<li>learning R if you know SQL</li>
+<li>Doing it faster than R</li>
+<li>Load portions of a really large file</li>
+</ul></li>
+</ul></li>
+<li>Troubleshooting
+<ul class="org-ul">
+<li>Set the driver expicitly</li>
+<li>&ldquo;error messages regarding a data frame that has a dot in its name. The dot
+is an SQL operator. Either quote the name appropriately or change the name
+of the data frame to one without a dot.&rdquo;</li>
+</ul></li>
+<li>FAQ
+<ul class="org-ul">
+<li>Column class conversion touched upon</li>
+<li>Dots in names
+<ul class="org-ul">
+<li>Dots are SQL operators so can&rsquo;t use them
+<ul class="org-ul">
+<li>See <code>?SQL92Keywords</code></li>
+</ul></li>
+<li>For columns
+<ul class="org-ul">
+<li>Either use underscore</li>
+<li>Or simply remove them</li>
+</ul></li>
+<li>For tables
+<ul class="org-ul">
+<li>Double quote the name</li>
+</ul></li>
+</ul></li>
+<li>H2 supports date types, which seems quite helpful</li>
+<li>Name a column ending with two underscores and a type and the library will
+convert the type to R correctly
+<ul class="org-ul">
+<li>Mentioned in the docs</li>
+</ul></li>
+<li>SQL is case <b>insensitive</b>
+<ul class="org-ul">
+<li>Don&rsquo;t rely on casing to differentiate column names</li>
+</ul></li>
+<li>We may examine the in-memory database table structure</li>
+<li>Be quite careful about CSV data that contains commas again as this lib
+won&rsquo;t handle it</li>
+<li>Good examples of cleaning data gettig int into a R friendly format</li>
+<li>Be sure to specify numeric values as integers or doubles so you get expected
+results from division</li>
+</ul></li>
+<li>Examples
+<ul class="org-ul">
+<li>Example 1. Ordering and Limiting</li>
+<li>Example 2. Averaging and Grouping</li>
+<li>Example 3. Nested Select</li>
+<li>Example 4. Join</li>
+<li>Example 5. Insert Variables
+<ul class="org-ul">
+<li>Hugely convenient</li>
+</ul></li>
+<li>Example 6. File Input</li>
+<li>Example 7. Nested Select</li>
+<li>Example 8. Specifying File Format</li>
+<li>Example 9. Working with Databases</li>
+<li>Example 10. Persistent Connections</li>
+<li>Example 11. Between and Alternatives</li>
+<li>Example 12. Combine two files in permanent database</li>
+<li>Example 13. read.csv.sql and read.csv2.sql
+<ul class="org-ul">
+<li>Uses SQLite&rsquo;s import facility to create an in-memory database</li>
+<li>Then it reads the results of the query into R</li>
+<li>The import does not involve R so it can handle larger files than R can
+assuming that the query results in a size that does fit</li>
+</ul></li>
+<li>Example 14. Use of spatialite library functions</li>
+<li>Example 15. Use of RSQLite.extfuns library functions</li>
+<li>Example 16. Moving Average</li>
+</ul></li>
+</ul>
+
+<p>
+SQLite, SQL As Understood By SQLite:
+</p>
+<ul class="org-ul">
+<li><a href="https://www.sqlite.org/lang_corefunc.html">Core Functions</a></li>
+<li><a href="https://www.sqlite.org/lang_aggfunc.html">Aggregate Functions</a></li>
+<li><a href="https://www.sqlite.org/lang_datefunc.html">Date And Time Functions</a></li>
+<li>These previous are all provided by <a href="http://cran.r-project.org/web/packages/RSQLite.extfuns/index.html">RSQLite.extfuns</a></li>
+</ul>
+
+<p>
+<code>proto</code> wouldn&rsquo;t load, so first configure <code>sqldf</code> via <a href="https://stackoverflow.com/questions/17128260/r-stuck-in-loading-sqldf-package">this solution</a>.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org4b9496b">options(gsubfn.engine=<span class="org-string">"R"</span>)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="orgce17dff"><span class="org-constant">library</span>(sqldf)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="orgdacf4f6"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(sqldf)) {
+    install.packages(<span class="org-string">"sqldf"</span>)
+}
+</pre>
+</div>
+</div></li>
+
+<li><a id="orgdcb2a3f"></a><a id="ID-0C3E7D6C-68F9-43D0-9F1A-DD9BBB06029C"></a>MASS<br ><div class="outline-text-5" id="text-1-3-1-5">
+<pre class="example">
+ID: 0C3E7D6C-68F9-43D0-9F1A-DD9BBB06029C
+</pre>
+
+<p>
+&ldquo;Functions and datasets to support Venables and Ripley, &lsquo;Modern Applied
+Statistics with S&rsquo; (4th edition, 2002).&rdquo; Also, <code>sqldf</code> recommended it be
+installed, so it is the right time. <sup><a id="fnr.14" class="footref" href="#fn.14">14</a></sup>
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org8efcaef"><span class="org-constant">library</span>(MASS)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org372f37e"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(MASS)) {
+    install.packages(<span class="org-string">"MASS"</span>)
+}
+</pre>
+</div>
+</div></li>
+
+<li><a id="org7591633"></a><a id="ID-C4806332-3925-4CD3-BDA2-68A9291C245B"></a>jsonlite<br ><div class="outline-text-5" id="text-1-3-1-6">
+<pre class="example">
+ID: C4806332-3925-4CD3-BDA2-68A9291C245B
+</pre>
+
+<p>
+Make it easy to work with JSON [37138455: <a href="http://cran.r-project.org/web/packages/jsonlite/index.html">http://cran.r-project.org/web/packages/jsonlite/index.html</a>].
+Reading the vignette&rsquo;s, it does a lot more, for example <code>rbind.pages</code>.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org9f44fad"><span class="org-constant">library</span>(jsonlite)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org891bf87"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(jsonlite)) {
+    install.packages(<span class="org-string">"jsonlite"</span>)
+}
+</pre>
+</div>
+</div></li>
+
+<li><a id="org18c7395"></a><a id="ID-17A5C886-CEC5-466A-885E-6E00FF6AD7F1"></a>dplyr<br ><div class="outline-text-5" id="text-1-3-1-7">
+<pre class="example">
+ID: 17A5C886-CEC5-466A-885E-6E00FF6AD7F1
+</pre>
+
+<p>
+dplyr: a grammar of data manipulation in R
+</p>
+
+<p>
+The fact that I am loading both <code>plyr</code> and <code>dplyr</code> is something that I am
+questioning. I do so because I learned them in that order, so left it that way.
+However, this just results in <b>more</b> binding shadowing, and I am not sure of the
+implications, and they are usually never good.
+</p>
+
+<blockquote>
+<p>
+<a href="http://cran.r-project.org/web/packages/dplyr/index.html">A fast, consistent tool</a> for working with data frame like objects, both in memory and out of memory.
+</p>
+</blockquote>
+
+<p>
+<a href="http://cran.r-project.org/web/packages/dplyr/README.html">Readme</a>. <a href="http://cran.r-project.org/web/packages/dplyr/dplyr.pdf">Manual</a>. <a href="http://cran.r-project.org/web/packages/dplyr/vignettes/introduction.html">Introduction to dplyr</a>.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org33f94fd"><span class="org-constant">library</span>(dplyr)
+</pre>
+</div>
+</div></li>
+
+<li><a id="org5b6aac1"></a><a id="ID-6FB35637-B75D-47D6-A552-225B2EE36D38"></a>data.table<br ><div class="outline-text-5" id="text-1-3-1-8">
+<pre class="example">
+ID: 6FB35637-B75D-47D6-A552-225B2EE36D38
+</pre>
+
+<p>
+<code>data.table</code> <sup><a id="fnr.15" class="footref" href="#fn.15">15</a></sup>
+is quite nice.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org33fe04e"><span class="org-constant">library</span>(data.table)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="orge6e5e7e"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(data.table)) {
+    install.packages(<span class="org-string">"data.table"</span>)
+}
+</pre>
+</div>
+</div>
+
+<ol class="org-ol"><li><a id="orgafa36c5"></a><a id="ID-9FB51AFC-A77E-4440-AF3E-4AA34AB86DA0"></a>dtplyr<br ><div class="outline-text-6" id="text-1-3-1-8-1">
+<pre class="example">
+ID: 9FB51AFC-A77E-4440-AF3E-4AA34AB86DA0
+</pre>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="orgb4d2744"><span class="org-constant">library</span>(dtplyr)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org24293a2"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(dplyr)) {
+    install.packages(<span class="org-string">"dplyr"</span>)
+}
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="orgb6178c2"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(dtplyr)) {
+    install.packages(<span class="org-string">"dtplyr"</span>)
+}
+</pre>
+</div>
+</div></li></ol></li>
+
+<li><a id="org4eb47bb"></a><a id="ID-51FF40DD-6B00-48BD-A946-53666E9BE40F"></a>xlsx<br ><div class="outline-text-5" id="text-1-3-1-9">
+<pre class="example">
+ID: 51FF40DD-6B00-48BD-A946-53666E9BE40F
+</pre>
+
+<p>
+Read and write Excel files <sup><a id="fnr.16" class="footref" href="#fn.16">16</a></sup>.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org3c238a2"><span class="org-constant">library</span>(xlsx)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="orga2b0135"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(xlsx)) {
+    install.packages(<span class="org-string">"xlsx"</span>)
+}
+</pre>
+</div>
+</div></li>
+
+<li><a id="org38bf4bc"></a><a id="ID-1C5D86C3-F971-4A4A-B3ED-CFA7814B6B6B"></a>XML<br ><div class="outline-text-5" id="text-1-3-1-10">
+<pre class="example">
+ID: 1C5D86C3-F971-4A4A-B3ED-CFA7814B6B6B
+</pre>
+
+<p>
+Make ℝ truly enterprise <sup><a id="fnr.17" class="footref" href="#fn.17">17</a></sup>.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org62c2948"><span class="org-constant">library</span>(XML)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org79a8e99"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(XML)) {
+    install.packages(<span class="org-string">"XML"</span>)
+}
+</pre>
+</div>
+</div></li>
+
+<li><a id="org57b0791"></a><a id="ID-CC5F0CF1-4067-4269-BA81-4779DD30E1D1"></a>devtools<br ><div class="outline-text-5" id="text-1-3-1-11">
+<pre class="example">
+ID: CC5F0CF1-4067-4269-BA81-4779DD30E1D1
+</pre>
+
+<p>
+<code>devtools</code>: Tools to make developing ℝ code easier
+</p>
+
+<blockquote>
+<p>
+<a href="http://cran.r-project.org/web/packages/devtools/index.html">Collection of package development tools</a>
+</p>
+</blockquote>
+
+<p>
+That is a bit too terse. Intro to the README follows
+</p>
+
+<blockquote>
+<p>
+The aim of devtools is to make your life as a package developer easier by providing R functions that simplify many common tasks. R packages are actually really simple, and with the right tools it should be easier to use the package structure than not. Package development in R can feel intimidating, but devtools does every thing it can to make it as welcoming as possible. devtools comes with a small guarantee: if because of a bug in devtools a member of R-core gets angry with you, I will send you a handwritten apology note. Just forward me the email and your address, and I&rsquo;ll get a card in the mail.
+</p>
+</blockquote>
+
+<p>
+Excellent.
+</p>
+
+<p>
+<a href="http://cran.r-project.org/web/packages/devtools/README.html">Readme</a>. <a href="http://cran.r-project.org/web/packages/devtools/devtools.pdf">Manual</a>. <a href="https://github.com/hadley/devtools">Github</a>.
+</p>
+
+<p>
+At the very least, just <i>know of</i> this package, as you will be installing it if
+you want to us <code>tidyr</code>.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org02440fb"><span class="org-constant">library</span>(devtools)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org52f7983"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(devtools)) {
+    install.packages(<span class="org-string">"devtools"</span>)
+    devtools::install_github(<span class="org-string">"hadley/devtools"</span>)
+}
+</pre>
+</div>
+</div></li>
+
+<li><a id="org336a00b"></a><a id="ID-7714BB94-5E3C-4E15-B22B-9CFD03634520"></a>magrittr<br ><div class="outline-text-5" id="text-1-3-1-12">
+<pre class="example">
+ID: 7714BB94-5E3C-4E15-B22B-9CFD03634520
+</pre>
+
+<p>
+This is a add from the <i>most understated package definition</i> of the year
+department. <code>magrittr</code> <sup><a id="fnr.18" class="footref" href="#fn.18">18</a></sup>
+is, much like every Scheme library ever, deceptively simple in its power and
+ease of use that it provides.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="orge037ea4"><span class="org-constant">library</span>(magrittr)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org696dcb4"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(magrittr)) {
+    devtools::install_github(<span class="org-string">"smbache/magrittr"</span>)
+}
+</pre>
+</div>
+</div></li>
+
+<li><a id="org03858d9"></a><a id="ID-11B7E671-6D90-4C37-B13F-1CB21904C304"></a>reshape2<br ><div class="outline-text-5" id="text-1-3-1-13">
+<pre class="example">
+ID: 11B7E671-6D90-4C37-B13F-1CB21904C304
+</pre>
+
+<p>
+<code>reshape2</code>: Flexibly reshape data: a reboot of the <code>reshape</code> package
+</p>
+
+<blockquote>
+<p>
+Reshape lets you flexibly restructure and aggregate data using just two functions: melt and cast.
+</p>
+</blockquote>
+
+<p>
+<a href="http://cran.r-project.org/web/packages/reshape2/index.html">CRAN</a>. <a href="http://cran.r-project.org/web/packages/reshape2/reshape2.pdf">Manual</a>. <a href="https://github.com/hadley/reshape/blob/master/README.md">Github</a>.
+</p>
+
+<p>
+This seems to be a defacto standard.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org2bee32d"><span class="org-constant">library</span>(reshape2)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="orge725567"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(reshape2)) {
+    install.packages(<span class="org-string">"reshape2"</span>)
+}
+</pre>
+</div>
+</div></li>
+
+<li><a id="org2f02380"></a><a id="ID-EAB265C6-121F-4CC9-A745-AEA8AECA2D63"></a>tidyr<br ><div class="outline-text-5" id="text-1-3-1-14">
+<pre class="example">
+ID: EAB265C6-121F-4CC9-A745-AEA8AECA2D63
+</pre>
+
+<p>
+<code>tidyr</code>: Easily tidy data with spread and gather functions for ℝ
+</p>
+
+<blockquote>
+<p>
+<a href="http://cran.r-project.org/web/packages/tidyr/index.html">tidyr</a> is an evolution of reshape2. It&rsquo;s design specifically for data tidying (not general reshaping or aggregating) and works well with dplyr data pipelines.
+</p>
+</blockquote>
+
+<p>
+<a href="http://cran.r-project.org/web/packages/tidyr/README.html">Readme</a>. <a href="http://cran.r-project.org/web/packages/tidyr/tidyr.pdf">Manual</a>. <a href="https://github.com/hadley/tidyr">Github</a>.
+</p>
+
+<p>
+Not on CRAN yet so install via
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org56c7b49"><span class="org-constant">library</span>(tidyr)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org0f4020a"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(tidyr)) {
+    devtools::install_github(<span class="org-string">"hadley/tidyr"</span>)
+}
+</pre>
+</div>
+</div></li>
+
+<li><a id="org68f1904"></a><a id="ID-BDFEC2C3-DAC1-4ED2-BC66-C8A793F9EC1C"></a>lubridate<br ><div class="outline-text-5" id="text-1-3-1-15">
+<pre class="example">
+ID: BDFEC2C3-DAC1-4ED2-BC66-C8A793F9EC1C
+</pre>
+
+<p>
+lubridate: Make dealing with dates a little easier in ℝ
+</p>
+
+<blockquote>
+<p>
+<a href="http://cran.r-project.org/web/packages/lubridate/index.html">Lubridate</a> makes it easier to work with dates and times by providing functions to identify and parse date-time data, extract and modify components of a date-time (years, months, days, hours, minutes, and seconds), perform accurate math on date-times, handle time zones and Daylight Savings Time. Lubridate has a consistent, memorable syntax, that makes working with dates fun instead of frustrating.
+</p>
+</blockquote>
+
+<p>
+<a href="http://cran.r-project.org/web/packages/lubridate/lubridate.pdf">Manual</a>. <a href="http://cran.r-project.org/web/packages/lubridate/vignettes/lubridate.html">Vignette</a>.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org38d3e7c"><span class="org-constant">library</span>(lubridate)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org6f1f310"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(lubridate)) {
+    install.packages(<span class="org-string">"lubridate"</span>)
+}
+</pre>
+</div>
+
+<p>
+Perhaps in some <i>time</i> there will be a unified approach to time-management among
+all programming languages.
+</p>
+</div></li>
+
+<li><a id="org296c3b6"></a><a id="ID-EBACD267-84B2-4FF2-ABE3-4DC6070D247D"></a>testit<br ><div class="outline-text-5" id="text-1-3-1-16">
+<pre class="example">
+ID: EBACD267-84B2-4FF2-ABE3-4DC6070D247D
+</pre>
+
+<p>
+testit: A simple package for testing R packages
+</p>
+
+<p>
+<a href="https://github.com/yihui/testit">GitHub</a>. <a href="http://cran.rstudio.com/web/packages/testit/index.html">CRAN</a>. <a href="http://cran.rstudio.com/web/packages/testit/testit.pdf">Manual</a>.
+</p>
+
+<p>
+Gives you <code>assert</code> and <code>test_pkg</code>. Save characters.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="orge924b3c"><span class="org-constant">library</span>(testit)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org4d32306"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(testit)) {
+    install.packages(<span class="org-string">"testit"</span>)
+}
+</pre>
+</div>
+</div></li>
+
+<li><a id="orgb9cb7e6"></a><a id="ID-43DA96C6-5440-4BA7-A537-F37BA5B739C1"></a>markdown<br ><div class="outline-text-5" id="text-1-3-1-17">
+<pre class="example">
+ID: 43DA96C6-5440-4BA7-A537-F37BA5B739C1
+</pre>
+
+<ul class="org-ul">
+<li><a href="http://cran.r-project.org/web/packages/markdown/index.html">CRAN</a>
+<ul class="org-ul">
+<li><a href="http://cran.r-project.org/web/packages/markdown/markdown.pdf">reference</a></li>
+<li><a href="http://cran.r-project.org/web/packages/markdown/vignettes/markdown-examples.html">vignettes: markdown-examples</a></li>
+<li><a href="http://cran.r-project.org/web/packages/markdown/vignettes/markdown-output.html">vignettes: markdown-output</a></li>
+</ul></li>
+<li><a href="https://github.com/rstudio/markdown">GitHub</a></li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org805f875"><span class="org-constant">library</span>(markdown)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org29c8a16"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(markdown)) {
+    install.packages(<span class="org-string">"markdown"</span>)
+}
+</pre>
+</div>
+
+<blockquote>
+<p>
+This package is referred to as R Markdown v1 when combined with knitr. The primary output format is HTML. Now we have introduced R Markdown v2, which is based on Pandoc and knitr, and supports much more types of output formats.
+</p>
+</blockquote>
+</div></li>
+
+<li><a id="org6b73953"></a><a id="ID-3544C2CF-9531-4A1C-95D1-83D423FC5B2E"></a>knitr<br ><div class="outline-text-5" id="text-1-3-1-18">
+<pre class="example">
+ID: 3544C2CF-9531-4A1C-95D1-83D423FC5B2E
+</pre>
+
+<p>
+knitr: A general-purpose package for dynamic report generation in R
+</p>
+
+<p>
+Read the <a href="http://yihui.name/knitr/">home page</a>. It has great resources.
+</p>
+
+<p>
+Watched <a href="https://www.screenr.com/qcv8">the video</a>. Very nice to see; comfortable and familiar. Need to set up
+RStudio for it. Clearly a critical tool. Cites Knuth.
+</p>
+
+<p>
+Features are amazingly understated. If you&rsquo;ve worked with all of these tools,
+you will appreciate the importance of the author&rsquo;s effort!
+</p>
+
+<p>
+<code>Objects</code>, <code>Options</code>, <code>Hooks</code>, and <code>Patterns</code> … what is this, Emacs?
+</p>
+
+<p>
+There are demo <a href="http://yihui.name/knitr/demos">links</a>. There is a <a href="https://github.com/yihui/knitr-examples">project for examples</a>. This <a href="http://yihui.name/knitr/demo/showcase/">showcase</a> has links
+to websites, book reviews, solutions, R packages, courses, workshops and
+presentations, books, papers and reports, wrappers, and blog posts on <code>knitr</code>.
+</p>
+
+<p>
+<a href="https://github.com/yihui/knitr">Here</a> is the GitHub project. Read the motivations and see the hours and days and
+weeks that you have had spared! Uses <code>testit</code>, so read up on that and added it.
+</p>
+
+<p>
+Read the <a href="https://github.com/yihui/knitr/blob/master/FAQ.md">Frequently Asked Questions</a>. Joined the <a href="https://groups.google.com/forum/#!forum/knitr">mailing list</a>. <code>ess</code> supports it.
+Sure that I can configure the custom prompt. Great <code>README</code>.
+</p>
+
+<p>
+<a href="http://cran.r-project.org/web/packages/knitr/index.html">CRAN</a> as expected. Much better summary eg HTML, Makrdown, reStructuredText, and
+AsciiDoc are mentioned. Curious about the cacheing, and how I would do it in
+<code>org</code>. Custom code to run before and after a hunk are another thoughtful touch one
+would expect coming from <code>org</code>. Also support Python and shell. The LaTeX and LyX
+support is also pretty neat. Same <a href="http://cran.r-project.org/web/packages/knitr/README.html">READM</a>E. <a href="http://cran.r-project.org/web/packages/knitr/knitr.pdf">Reference</a>.
+</p>
+
+<p>
+Somehow missed the <a href="http://cran.r-project.org/web/packages/knitr/vignettes/knitr-refcard.pdf">reference card</a> initially.
+</p>
+
+<p>
+<a href="http://yihui.name/knitr/demo/vignette/">How to build package vignettes with knitr</a>.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org9c2a438"><span class="org-constant">library</span>(knitr)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org7925595"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(knitr)) {
+    install.packages(<span class="org-string">"knitr"</span>)
+}
+</pre>
+</div>
+</div></li>
+
+<li><a id="org8763947"></a><a id="ID-E7C0C8C1-8835-45D3-B7C2-F3D687034CFA"></a>fortunes<br ><div class="outline-text-5" id="text-1-3-1-19">
+<pre class="example">
+ID: E7C0C8C1-8835-45D3-B7C2-F3D687034CFA
+</pre>
+
+<p>
+R Fortunes.
+</p>
+
+<p>
+<a href="http://cran.r-project.org/web/packages/fortunes/index.html">CRAN</a>.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="orgc98a3ef"><span class="org-constant">library</span>(fortunes)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org4714453"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(fortunes)) {
+    install.packages(<span class="org-string">"fortunes"</span>)
+}
+</pre>
+</div>
+</div></li>
+
+<li><a id="org4cab573"></a><a id="ID-E51FEB93-89A9-4C5F-BC67-B737D6A853D7"></a>ggplot2<br ><div class="outline-text-5" id="text-1-3-1-20">
+<pre class="example">
+ID: E51FEB93-89A9-4C5F-BC67-B737D6A853D7
+</pre>
+
+<ul class="org-ul">
+<li><a href="http://cran.r-project.org/web/packages/ggplot2/index.html">CRAN</a>
+<ul class="org-ul">
+<li><a href="http://cran.r-project.org/web/packages/ggplot2/ggplot2.pdf">reference</a></li>
+</ul></li>
+<li><a href="https://github.com/hadley/ggplot2">Github</a>
+<ul class="org-ul">
+<li><a href="https://github.com/hadley/ggplot2/wiki">wiki</a>
+<ul class="org-ul">
+<li>Lots of great resources
+<ul class="org-ul">
+<li>Whyu use it, how to support it, improvide i</li>
+<li>Publications using it, around the web</li>
+<li>FAQ, roadmap</li>
+</ul></li>
+<li>Case studies</li>
+<li>Tips and tricks</li>
+<li>Enhancements</li>
+</ul></li>
+</ul></li>
+<li><a href="https://groups.google.com/forum/#!forum/ggplot2">Mail list</a></li>
+<li><a href="http://ggplot2.org/">Homepage</a>
+<ul class="org-ul">
+<li><a href="http://docs.ggplot2.org/current/">Documentation</a></li>
+</ul></li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org406da11"><span class="org-constant">library</span>(ggplot2)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org239ed95"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(ggplot2)) {
+    install.packages(<span class="org-string">"ggplot2"</span>)
+}
+</pre>
+</div>
+</div></li>
+
+<li><a id="orga3f5531"></a><a id="ID-C024D10E-40E2-4192-A953-3EBEC23B25BC"></a>tikzDevice<br ><div class="outline-text-5" id="text-1-3-1-21">
+<pre class="example">
+ID: C024D10E-40E2-4192-A953-3EBEC23B25BC
+</pre>
+
+<ul class="org-ul">
+<li><a href="http://cran.r-project.org/web/packages/tikzDevice/index.html">CRAN</a>
+<ul class="org-ul">
+<li><a href="http://cran.r-project.org/web/packages/tikzDevice/tikzDevice.pdf">reference</a></li>
+<li><a href="http://cran.r-project.org/web/packages/tikzDevice/vignettes/tikzDevice.pdf">vignettes: tikzDevice</a></li>
+</ul></li>
+<li><a href="https://github.com/yihui/tikzDevice">GitHub</a></li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="orgc9ecaae"><span class="org-constant">library</span>(tikzDevice)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="orga713401"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(tikzDevice)) {
+    install.packages(<span class="org-string">"tikzDevice"</span>)
+}
+</pre>
+</div>
+</div></li>
+
+<li><a id="org0d88ca4"></a><a id="ID-6237DF5B-5219-403D-BB41-5D0684E75B32"></a>ascii<br ><div class="outline-text-5" id="text-1-3-1-22">
+<pre class="example">
+ID: 6237DF5B-5219-403D-BB41-5D0684E75B32
+</pre>
+
+<ul class="org-ul">
+<li><a href="http://cran.r-project.org/web/packages/ascii/index.html">CRAN</a>
+<ul class="org-ul">
+<li><a href="http://cran.r-project.org/web/packages/ascii/ascii.pdf">reference</a></li>
+</ul></li>
+<li><a href="https://github.com/eusebe/ascii/">GitHub</a></li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org5159838"><span class="org-constant">library</span>(ascii)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org682cef5"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(ascii)) {
+    install.packages(<span class="org-string">"ascii"</span>)
+}
+</pre>
+</div>
+
+<p>
+Always display <code>org</code> representations; I&rsquo;m assuming that it will be <i>the</i> dominant
+vehicle for analysis.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org78439af">options(asciiType=<span class="org-string">"org"</span>)
+</pre>
+</div>
+</div></li>
+
+<li><a id="orgcd88a05"></a><a id="ID-AE66A34F-A6AF-4578-8617-A7D2363AF81C"></a>xtable<br ><div class="outline-text-5" id="text-1-3-1-23">
+<pre class="example">
+ID: AE66A34F-A6AF-4578-8617-A7D2363AF81C
+</pre>
+
+<ul class="org-ul">
+<li><a href="http://cran.r-project.org/web/packages/xtable/index.html">CRAN</a>
+<ul class="org-ul">
+<li><a href="http://cran.r-project.org/web/packages/xtable/xtable.pdf">reference</a></li>
+<li><a href="http://cran.r-project.org/web/packages/xtable/vignettes/margintable.pdf">vignettes: margintable</a></li>
+<li><a href="http://cran.r-project.org/web/packages/xtable/vignettes/xtableGallery.pdf">vignettes: xtableGallery</a></li>
+</ul></li>
+<li><a href="http://xtable.r-forge.r-project.org/">R-Forge</a></li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="orgecf0068"><span class="org-constant">library</span>(xtable)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="orga70508f"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(xtable)) {
+    install.packages(<span class="org-string">"xtable"</span>)
+}
+</pre>
+</div>
+</div></li>
+
+<li><a id="org0bdf11e"></a><a id="ID-72F1D963-42B8-43C5-87C3-44AEAFCEC91C"></a>Hmisc<br ><div class="outline-text-5" id="text-1-3-1-24">
+<pre class="example">
+ID: 72F1D963-42B8-43C5-87C3-44AEAFCEC91C
+</pre>
+
+<ul class="org-ul">
+<li><a href="http://cran.r-project.org/web/packages/Hmisc/index.html">CRAN</a>
+<ul class="org-ul">
+<li><a href="http://cran.r-project.org/web/packages/Hmisc/Hmisc.pdf">reference</a></li>
+</ul></li>
+<li><a href="https://github.com/harrelfe/Hmisc">GitHub</a></li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org7de8921"><span class="org-constant">library</span>(Hmisc)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="orgdc2bbe3"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(Hmisc)) {
+    install.packages(<span class="org-string">"Hmisc"</span>)
+}
+</pre>
+</div>
+</div></li>
+
+<li><a id="org0c2a4fe"></a><a id="ID-E343FE37-79D9-4856-AFF1-1BFF49513E10"></a>log4r<br ><div class="outline-text-5" id="text-1-3-1-25">
+<pre class="example">
+ID: E343FE37-79D9-4856-AFF1-1BFF49513E10
+</pre>
+
+<ul class="org-ul">
+<li><a href="http://cran.r-project.org/web/packages/log4r/index.html">CRAN</a>
+<ul class="org-ul">
+<li><a href="http://cran.r-project.org/web/packages/log4r/log4r.pdf">reference</a></li>
+</ul></li>
+<li><a href="https://github.com/johnmyleswhite/log4r">GitHub</a></li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org3885e56"><span class="org-constant">library</span>(log4r)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org8e7ff9b"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(log4r)) {
+    install.packages(<span class="org-string">"log4r"</span>)
+}
+</pre>
+</div>
+</div></li>
+
+<li><a id="orgbc17647"></a><a id="ID-9D4A4744-FDF4-49C5-9B66-08863FCAABC4"></a>boot<br ><div class="outline-text-5" id="text-1-3-1-26">
+<pre class="example">
+ID: 9D4A4744-FDF4-49C5-9B66-08863FCAABC4
+</pre>
+
+<ul class="org-ul">
+<li><a href="http://cran.r-project.org/web/packages/boot/index.html">CRAN</a>
+<ul class="org-ul">
+<li><a href="http://cran.r-project.org/web/packages/boot/boot.pdf">reference</a></li>
+</ul></li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="orga71277a"><span class="org-constant">library</span>(boot)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="orge2aed61"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(boot)) {
+    install.packages(<span class="org-string">"boot"</span>)
+}
+</pre>
+</div>
+</div></li>
+
+<li><a id="org7b77cf2"></a><a id="ID-24A2C62F-9EC0-4E51-B21D-364DF4679938"></a>kernlab<br ><div class="outline-text-5" id="text-1-3-1-27">
+<pre class="example">
+ID: 24A2C62F-9EC0-4E51-B21D-364DF4679938
+</pre>
+
+<ul class="org-ul">
+<li><a href="http://cran.r-project.org/web/packages/kernlab/index.html">CRAN</a>
+<ul class="org-ul">
+<li><a href="http://cran.r-project.org/web/packages/kernlab/kernlab.pdf">reference</a></li>
+<li><a href="http://cran.r-project.org/web/packages/kernlab/vignettes/kernlab.pdf">vignettes: kernlab</a></li>
+</ul></li>
+<li>GitHub</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org2761740"><span class="org-constant">library</span>(kernlab)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org9c38f8d"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(kernlab)) {
+    install.packages(<span class="org-string">"kernlab"</span>)
+}
+</pre>
+</div>
+</div></li>
+
+<li><a id="orgb7904aa"></a><a id="ID-954DBB37-DD0D-4363-BB3A-6E7787914C1C"></a>R Utils<br ><div class="outline-text-5" id="text-1-3-1-28">
+<pre class="example">
+ID: 954DBB37-DD0D-4363-BB3A-6E7787914C1C
+</pre>
+
+<p>
+Programatically extract BZ2 files. Helpful for making decompression a
+separarate task from loading.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org3765c08"><span class="org-constant">library</span>(R.utils)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="orgf039521"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(R.utils)) {
+    install.packages(<span class="org-string">"R.utils"</span>)
+}
+</pre>
+</div>
+</div></li>
+
+<li><a id="org0754821"></a><a id="ID-1F011148-DBD2-4944-B458-771333F10FB7"></a>Not explicitly loaded, but interesting packages<br ><div class="outline-text-5" id="text-1-3-1-29">
+<pre class="example">
+ID: 1F011148-DBD2-4944-B458-771333F10FB7
+</pre>
+
+<ul class="org-ul">
+<li><a href="http://projecttemplate.net/index.html">ProjectTemplate</a></li>
+<li><a href="http://cran.r-project.org/web/packages/evaluate/index.html">evaluate</a>.utils</li>
+<li><a href="http://cran.r-project.org/web/packages/yaml/index.html">yaml</a></li>
+<li><a href="http://cran.r-project.org/web/packages/whisker/index.html">whisker</a></li>
+<li><a href="http://cran.r-project.org/web/packages/formatR/index.html">formatR</a></li>
+<li>General caching <sup><a id="fnr.19" class="footref" href="#fn.19">19</a></sup></li>
+<li><a href="http://cran.r-project.org/web/packages/stringi/index.html">stringi</a>
+<ul class="org-ul">
+<li><a href="http://www.r-bloggers.com/faster-easier-and-more-reliable-character-string-processing-with-stringi-0-3-1/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+RBloggers+%28R+bloggers%29">Via</a></li>
+<li>Seems focused on Unicode details</li>
+<li>Why this instead of <code>stringr</code>?</li>
+</ul></li>
+<li><a href="http://cran.r-project.org/web/packages/futile.options/index.html">futile.options: Futile options management</a>
+<ul class="org-ul">
+<li>Referenced by the <code>settings</code> article</li>
+</ul></li>
+<li><a href="http://cran.r-project.org/web/packages/settings/">settings: Software Option Settings Manager for R</a>
+<ul class="org-ul">
+<li><a href="http://www.r-bloggers.com/easy-to-use-option-settings-management-with-the-settings-package/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+RBloggers+%28R+bloggers%29">Via</a></li>
+</ul></li>
+<li><a href="https://github.com/craigcitro/r-travis">r-travis</a>
+<ul class="org-ul">
+<li><a href="http://www.r-bloggers.com/travis-ci-to-github-pages/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+RBloggers+%28R+bloggers%29">Via</a></li>
+</ul></li>
+<li><a href="https://github.com/MangoTheCat/testCoverage">testCoverage</a>
+<ul class="org-ul">
+<li><a href="http://www.r-statistics.com/2014/11/analyzing-coverage-of-r-unit-tests-in-packages-the-testcoverage-package/">Via</a></li>
+</ul></li>
+<li><a href="http://cran.r-project.org/web/packages/xkcd/index.html">xkcd</a>
+<ul class="org-ul">
+<li><a href="http://www.exegetic.biz/blog/2014/11/creating-more-effective-graphs/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=creating-more-effective-graphs">Via</a></li>
+</ul></li>
+<li><a href="https://github.com/EconometricsBySimulation/Ninja/blob/master/2014/11/circ.graph.R">circ.graph.R</a>
+<ul class="org-ul">
+<li><a href="http://www.r-bloggers.com/make-your-own-hotly-criticised-circle-graph/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+RBloggers+%28R+bloggers%29">Via</a></li>
+</ul></li>
+<li><a href="https://github.com/yhat/pandasql">pandasql</a>
+<ul class="org-ul">
+<li><a href="http://www.r-bloggers.com/query-pandas-dataframe-with-sql/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+RBloggers+%28R+bloggers%29">Via</a></li>
+</ul></li>
+<li><a href="http://cran.r-project.org/web/packages/qdap/index.html">qdap: Bridging the Gap Between Qualitative Data and Quantitative Analysis</a>
+<ul class="org-ul">
+<li>Glad to find this</li>
+<li><a href="http://www.r-bloggers.com/exploration-of-letter-make-up-of-english-words/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+RBloggers+%28R+bloggers%29">Via</a></li>
+</ul></li>
+<li><a href="https://github.com/environmentalinformatics-marburg/Rsenal">Rsenal</a>
+<ul class="org-ul">
+<li><a href="http://www.r-bloggers.com/introducing-rsenal-magic-r-functions-for-things-various/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+RBloggers+%28R+bloggers%29">Via</a></li>
+<li>Wished I had this the ohther day</li>
+</ul></li>
+<li><a href="https://rapporter.github.io/pander/">pander</a>
+<ul class="org-ul">
+<li><a href="http://www.r-bloggers.com/pander-0-5-0-the-next-generation-of-markdown-tables-in-r/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+RBloggers+%28R+bloggers%29">Via</a></li>
+</ul></li>
+<li><a href="http://deployr.revolutionanalytics.com/">DeployR</a>
+<ul class="org-ul">
+<li><a href="http://www.r-bloggers.com/integrate-r-into-applications-with-deployr-open/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+RBloggers+%28R+bloggers%29">Via</a></li>
+</ul></li>
+<li><a href="http://cran.r-project.org/web/packages/openssl/">openssl: Bindings to OpenSSL</a>
+<ul class="org-ul">
+<li><a href="http://www.r-bloggers.com/generating-secure-random-numbers-with-openssl/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+RBloggers+%28R+bloggers%29">Via</a></li>
+</ul></li>
+<li><a href="https://github.com/Bart6114/simmer">simmer</a>
+<ul class="org-ul">
+<li>Again I would have had to have written this myself</li>
+<li><a href="http://www.r-bloggers.com/simmer-2-0-a-performance-boost-revised-syntax/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+RBloggers+%28R+bloggers%29">Via</a></li>
+</ul></li>
+<li><a href="http://cran.r-project.org/web/packages/checkpoint/index.html">checkpoint: Install Packages from Snapshots on the Checkpoint Server for Reproducibility</a>
+<ul class="org-ul">
+<li><a href="http://www.r-bloggers.com/introducing-the-reproducible-r-toolkit-and-the-checkpoint-package/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+RBloggers+%28R+bloggers%29">Via</a></li>
+</ul></li>
+<li><a href="http://cran.r-project.org/web/packages/miniCRAN/index.html">miniCRAN: Tools to create an internally consistent, mini version of CRAN with selected packages only</a>
+<ul class="org-ul">
+<li><a href="http://www.r-bloggers.com/introducing-minicran-an-r-package-to-create-a-private-cran-repository/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+RBloggers+%28R+bloggers%29">Via</a></li>
+</ul></li>
+<li><a href="http://reaktanz.de/?c=hacking&amp;s=roxyPackage">roxyPackage</a>
+<ul class="org-ul">
+<li><a href="http://www.r-bloggers.com/managing-r-package-dependencies/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+RBloggers+%28R+bloggers%29">Via</a></li>
+</ul></li>
+<li><a href="http://cran.r-project.org/web/packages/roxygen2/index.html">roxygen2: In-source documentation for R</a>
+<ul class="org-ul">
+<li><code>roxypackage</code> mentioend it</li>
+</ul></li>
+<li><a href="http://cran.r-project.org/web/packages/archivist/index.html">archivist: Tools for storing, restoring and searching for R objects</a>
+<ul class="org-ul">
+<li><a href="http://www.r-bloggers.com/lazy-load-with-archivist/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+RBloggers+%28R+bloggers%29">Via</a></li>
+</ul></li>
+<li><a href="http://dirk.eddelbuettel.com/code/pkgkitten.html">pkgKitten</a>
+<ul class="org-ul">
+<li><a href="http://www.r-bloggers.com/pkgkitten-0-1-1-still-creating-r-packages-that-purr/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+RBloggers+%28R+bloggers%29">Via</a></li>
+</ul></li>
+<li><a href="https://ramnathv.github.io/rCharts/">rCharts</a>
+<ul class="org-ul">
+<li><a href="http://www.r-bloggers.com/interactive-visualizations-from-r-using-rcharts/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+RBloggers+%28R+bloggers%29">Via</a></li>
+</ul></li>
+<li><a href="https://github.com/dgrtwo/broom">broom: Convert statistical analysis objects from R into tidy format</a>
+<ul class="org-ul">
+<li><a href="http://www.r-bloggers.com/r-package-to-convert-statistical-analysis-objects-to-tidy-data-frames/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+RBloggers+%28R+bloggers%29">Via</a></li>
+</ul></li>
+<li><a href="http://mran.revolutionanalytics.com/packages/info/?igraph">igraph: Network analysis and visualization</a>
+<ul class="org-ul">
+<li>Why did they link to MRAN?</li>
+<li>Looks like a great tool for learning about graphcs</li>
+<li><a href="http://www.r-bloggers.com/a-look-at-the-igraph-package/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+RBloggers+%28R+bloggers%29">Via</a></li>
+</ul></li>
+</ul>
+</div></li></ol>
+</div>
+</div>
+
+<div id="outline-container-org7446dd4" class="outline-3">
+<h3 id="org7446dd4"><a id="ID-10CD604F-503C-46DE-AB32-97884C070344"></a><span class="section-number-3">1.4</span> .First</h3>
+<div class="outline-text-3" id="text-1-4">
+<pre class="example">
+header-args: :noweb-ref rfirst-defs
+ID: 10CD604F-503C-46DE-AB32-97884C070344
+</pre>
+
+<p>
+Reading:
+</p>
+<dl class="org-dl">
+<dt><a href="http://stat.ethz.ch/R-manual/R-devel/library/base/html/Startup.html">Startup</a></dt><dd>mandatory reading, the definitive source</dd>
+<dt><a href="http://cran.r-project.org/doc/contrib/Lemon-kickstart/kr_first.html">Kickstarting R</a></dt><dd>I just like this tutorial</dd>
+
+<dt>(no term)</dt><dd><code>attach</code> is a powerfuly convenient function. Sure, it can make you and your
+program go bonkers, but you know, it is worth it for the convenience. Joking
+aside, it has its place, so it should not go away completely. However, it ought
+not be used much, and if you do need to use it, the it should be really really
+obvious.
+<ul class="org-ul">
+<li>Eg: <sup><a id="fnr.20" class="footref" href="#fn.20">20</a></sup></li>
+</ul></dd>
+</dl>
+<div class="org-src-container">
+
+<pre class="src src-R" id="org7465327">gcr$attach.unsafe <span class="org-constant">&lt;-</span> <span class="org-constant">attach</span>
+gcr$<span class="org-function-name">attach</span> <span class="org-constant">&lt;-</span> <span class="org-keyword">function</span>(...) {
+    <span class="org-keyword">warning</span>(<span class="org-string">"NEVER USE ATTACH! Use `unsafe.attach` if you must."</span>)
+    attach.unsafe(...)
+}
+</pre>
+</div>
+
+<ul class="org-ul">
+<li><code>library</code> reports issues immediately, and by design, <code>require</code> does not… remind
+the useR that they <i>may</i> want the former not the latter
+<ul class="org-ul">
+<li>Via <sup><a id="fnr.21" class="footref" href="#fn.21">21</a></sup></li>
+<li>Just like everything else here, this is a <i>personal preference</i> thing!</li>
+</ul></li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-R" id="orgb6180a4">gcr$<span class="org-function-name">require</span> <span class="org-constant">&lt;-</span> <span class="org-keyword">function</span>(...) {
+    <span class="org-keyword">warning</span>(<span class="org-string">"Are you sure you wanted `require` instead of `library`?"</span>)
+    base::<span class="org-constant">require</span>(...)
+}
+</pre>
+</div>
+
+<p>
+Sometimes you only want to list everything <b>but</b> functions <sup><a id="fnr.22" class="footref" href="#fn.22">22</a></sup>:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-R" id="org249779c">gcr$<span class="org-function-name">lsnofun</span> <span class="org-constant">&lt;-</span> <span class="org-keyword">function</span>(name = parent.frame()) {
+    obj <span class="org-constant">&lt;-</span> ls(name = name)
+    obj[!sapply(obj, <span class="org-keyword">function</span>(x) is.function(get(x)))]
+}
+</pre>
+</div>
+
+<p>
+Make it really simple to specify how to handle errors in a given session:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-R" id="org1facc93">gcr$<span class="org-function-name">recoveronerror</span> <span class="org-constant">&lt;-</span> <span class="org-keyword">function</span>() {
+    options(error=recover)
+}
+
+gcr$<span class="org-function-name">recoveronerroroff</span> <span class="org-constant">&lt;-</span> <span class="org-keyword">function</span>() {
+    options(error=<span class="org-type">NULL</span>)
+}
+</pre>
+</div>
+
+<p>
+Make it really simple to specify how to handle warnings in a given session:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-R" id="orga7640bb">gcr$<span class="org-function-name">erroronwarn</span> <span class="org-constant">&lt;-</span> <span class="org-keyword">function</span>() {
+    options(warn=2)
+}
+
+gcr$<span class="org-function-name">erroronwarnoff</span> <span class="org-constant">&lt;-</span> <span class="org-keyword">function</span>() {
+    options(warn=0)
+}
+</pre>
+</div>
+
+<p>
+<code>sqldf</code> should always use <code>SQLite</code>.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="orgc3f5ab4">options(sqldf.driver = <span class="org-string">"SQLite"</span>)
+</pre>
+</div>
+
+<p>
+Save your fingers from having to type <code>head</code> the next <code>n</code> thousand times <sup><a id="fnr.23" class="footref" href="#fn.23">23</a></sup> because I can&rsquo;t. <code>ess-rdired</code> and friends use the dataframe print function,
+so I didn&rsquo;t make dataframes print using it.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-R" id="orgb4261d1">gcr$<span class="org-function-name">printdf</span> <span class="org-constant">&lt;-</span> <span class="org-keyword">function</span>(df) {
+    <span class="org-keyword">if</span> (nrow(df) &gt; 10) {
+        print(head(df, 5))
+        cat(<span class="org-string">"---\n"</span>)
+        print(tail(df, 5))
+    } <span class="org-keyword">else</span> {
+        print(df)
+    }
+}
+</pre>
+</div>
+
+<p>
+Sometimes you want to see all of the data in a dataframe, and sometimes you
+don&rsquo;t. Make it really easy to change whenever you feel like it.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org6615973">gcr$<span class="org-function-name">printlen</span> <span class="org-constant">&lt;-</span> <span class="org-keyword">function</span>(len=500) {
+    options(<span class="org-string">"max.print"</span> = len)
+}
+</pre>
+</div>
+
+<p>
+When you&rsquo;ve got <code>n</code>-thousand rows of data, make it easier to get a sample from it,
+just make it specific and keep it simple.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-R" id="org7780bec">gcr$<span class="org-function-name">hundred</span> <span class="org-constant">&lt;-</span> <span class="org-keyword">function</span>(df, idx=0) {
+    df[idx:(idx+100),]
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga0d9daf" class="outline-3">
+<h3 id="orga0d9daf"><a id="ID-ADDE28AF-505F-46DF-BF67-C61E435D6981"></a><span class="section-number-3">1.5</span> .Renviron</h3>
+<div class="outline-text-3" id="text-1-5">
+<pre class="example">
+header-args: :noweb-ref renviron-def
+ID: ADDE28AF-505F-46DF-BF67-C61E435D6981
+</pre>
+
+<p>
+Install all packages to my home directory <sup><a id="fnr.24" class="footref" href="#fn.24">24</a></sup>
+</p>
+<ul class="org-ul">
+<li>Call <code>.libPaths()</code> to verify</li>
+<li>The directory must exist otherwise ℝ will ignore it
+<ul class="org-ul">
+<li>Solution:
+<ul class="org-ul">
+<li>Manual for now</li>
+<li>Unsure of best way to generalize it</li>
+</ul></li>
+</ul></li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sh" id="org61de392"><span class="org-variable-name">R_LIBS</span>=~/.Rpackages
+</pre>
+</div>
+
+<p>
+For the time being, GUI work will only be performed on OSX so utilize OSX&rsquo;s
+renderer [91578029: <a href="http://emacs.1067599.n5.nabble.com/unable-to-start-device-X11-td330804.html">http://emacs.1067599.n5.nabble.com/unable-to-start-device-X11-td330804.html</a>].
+</p>
+
+<p>
+That worked fine until I actually starting using that graphics device!
+</p>
+
+<p>
+Then even though I was on OSX I <b>had</b> to switch to <code>X11</code>.
+</p>
+
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2014-11-05 Wed&gt;</span></span>
+That was probably a mistake. The folks on-list said that <code>quartz</code> should be super.
+Perhaps the error was between the keyboard and the chair, so I am switching
+back.
+</p>
+
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2014-11-08 Sat&gt;</span></span>
+When I us <code>ggplot</code> and quarts on this system, it blows up.
+</p>
+
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2014-11-25 Tue&gt;</span></span>
+Switched to the official CRAN R build, which works fine on OSX.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh" id="orgdf65808"><span class="org-variable-name">R_INTERACTIVE_DEVICE</span>=quartz
+</pre>
+</div>
+
+<p>
+Explicitly state the timezone. This could be done either here or in the <code>.profile</code>.
+I&rsquo;m not totally sure where to put it. Because I am trying to do <b>everything</b> with,
+I will put it here. Perhaps this should get set via <code>Sys.setenv</code> instead? I&rsquo;ll
+leave it for now and fix it later if necessary. I did test this out with a call
+to <code>Sys.time()</code> and it worked correctly.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh" id="org673c5be"><span class="org-variable-name">TZ</span>=America/Chicago
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><a href="https://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile">https://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile</a></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><a href="http://www.r-bloggers.com/installing-r-packages/">http://www.r-bloggers.com/installing-r-packages/</a></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><a href="http://cran.r-project.org/doc/manuals/r-patched/R-admin.html#Localization-of-messages">http://cran.r-project.org/doc/manuals/r-patched/R-admin.html#Localization-of-messages</a></div></div>
+
+<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <div class="footpara"><a href="http://stat.ethz.ch/R-manual/R-devel/library/base/html/locales.html">http://stat.ethz.ch/R-manual/R-devel/library/base/html/locales.html</a></div></div>
+
+<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <div class="footpara"><a href="http://cran.r-project.org/web/packages/assertthat/index.html">http://cran.r-project.org/web/packages/assertthat/index.html</a></div></div>
+
+<div class="footdef"><sup><a id="fn.6" class="footnum" href="#fnr.6">6</a></sup> <div class="footpara"><a href="http://cran.r-project.org/web/packages/testthat/index.html">http://cran.r-project.org/web/packages/testthat/index.html</a></div></div>
+
+<div class="footdef"><sup><a id="fn.7" class="footnum" href="#fnr.7">7</a></sup> <div class="footpara"><a href="http://cran.r-project.org/web/packages/stringr/index.html">http://cran.r-project.org/web/packages/stringr/index.html</a></div></div>
+
+<div class="footdef"><sup><a id="fn.8" class="footnum" href="#fnr.8">8</a></sup> <div class="footpara"><a href="http://cran.r-project.org/web/packages/sqldf/index.html">http://cran.r-project.org/web/packages/sqldf/index.html</a></div></div>
+
+<div class="footdef"><sup><a id="fn.9" class="footnum" href="#fnr.9">9</a></sup> <div class="footpara"><a href="http://randyzwitch.com/sqldf-package-r/">http://randyzwitch.com/sqldf-package-r/</a></div></div>
+
+<div class="footdef"><sup><a id="fn.10" class="footnum" href="#fnr.10">10</a></sup> <div class="footpara"><a href="http://cran.r-project.org/web/packages/sqldf/index.html">http://cran.r-project.org/web/packages/sqldf/index.html</a></div></div>
+
+<div class="footdef"><sup><a id="fn.11" class="footnum" href="#fnr.11">11</a></sup> <div class="footpara"><a href="https://groups.google.com/forum/#!forum/sqldf">https://groups.google.com/forum/#!forum/sqldf</a></div></div>
+
+<div class="footdef"><sup><a id="fn.12" class="footnum" href="#fnr.12">12</a></sup> <div class="footpara"><a href="https://stackoverflow.com/questions/19019883/how-to-handle-column-names-not-supported-by-sqldf-in-r">https://stackoverflow.com/questions/19019883/how-to-handle-column-names-not-supported-by-sqldf-in-r</a></div></div>
+
+<div class="footdef"><sup><a id="fn.13" class="footnum" href="#fnr.13">13</a></sup> <div class="footpara"><a href="https://code.google.com/p/sqldf/">https://code.google.com/p/sqldf/</a></div></div>
+
+<div class="footdef"><sup><a id="fn.14" class="footnum" href="#fnr.14">14</a></sup> <div class="footpara"><a href="http://cran.r-project.org/web/packages/MASS/index.html">http://cran.r-project.org/web/packages/MASS/index.html</a></div></div>
+
+<div class="footdef"><sup><a id="fn.15" class="footnum" href="#fnr.15">15</a></sup> <div class="footpara"><a href="http://cran.r-project.org/web/packages/data.table/index.html">http://cran.r-project.org/web/packages/data.table/index.html</a></div></div>
+
+<div class="footdef"><sup><a id="fn.16" class="footnum" href="#fnr.16">16</a></sup> <div class="footpara"><a href="http://cran.r-project.org/web/packages/xlsx/index.html">http://cran.r-project.org/web/packages/xlsx/index.html</a></div></div>
+
+<div class="footdef"><sup><a id="fn.17" class="footnum" href="#fnr.17">17</a></sup> <div class="footpara"><a href="http://cran.r-project.org/web/packages/XML/index.html">http://cran.r-project.org/web/packages/XML/index.html</a></div></div>
+
+<div class="footdef"><sup><a id="fn.18" class="footnum" href="#fnr.18">18</a></sup> <div class="footpara"><a href="http://cran.r-project.org/web/packages/magrittr/index.html">http://cran.r-project.org/web/packages/magrittr/index.html</a></div></div>
+
+<div class="footdef"><sup><a id="fn.19" class="footnum" href="#fnr.19">19</a></sup> <div class="footpara"><a href="https://stackoverflow.com/questions/7262485/options-for-caching-memoization-hashing-in-r">https://stackoverflow.com/questions/7262485/options-for-caching-memoization-hashing-in-r</a></div></div>
+
+<div class="footdef"><sup><a id="fn.20" class="footnum" href="#fnr.20">20</a></sup> <div class="footpara"><a href="http://www.r-bloggers.com/to-attach-or-not-attach-that-is-the-question/">http://www.r-bloggers.com/to-attach-or-not-attach-that-is-the-question/</a></div></div>
+
+<div class="footdef"><sup><a id="fn.21" class="footnum" href="#fnr.21">21</a></sup> <div class="footpara"><a href="http://www.r-bloggers.com/library-vs-require-in-r/">http://www.r-bloggers.com/library-vs-require-in-r/</a></div></div>
+
+<div class="footdef"><sup><a id="fn.22" class="footnum" href="#fnr.22">22</a></sup> <div class="footpara"><a href="https://stackoverflow.com/questions/13094324/hiding-function-names-from-ls-results-to-find-a-variable-name-more-quickly">https://stackoverflow.com/questions/13094324/hiding-function-names-from-ls-results-to-find-a-variable-name-more-quickly</a></div></div>
+
+<div class="footdef"><sup><a id="fn.23" class="footnum" href="#fnr.23">23</a></sup> <div class="footpara"><a href="https://stackoverflow.com/questions/13024167/how-to-make-head-be-applied-automatically-to-output">https://stackoverflow.com/questions/13024167/how-to-make-head-be-applied-automatically-to-output</a></div></div>
+
+<div class="footdef"><sup><a id="fn.24" class="footnum" href="#fnr.24">24</a></sup> <div class="footpara"><a href="http://www.r-bloggers.com/installing-r-packages/">http://www.r-bloggers.com/installing-r-packages/</a></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="author">Author: Grant Rettke</p>
+<p class="date">Created: 2016-09-01 Thu 19:23</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

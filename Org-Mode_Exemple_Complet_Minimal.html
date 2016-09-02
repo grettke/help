@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2016-09-01 Thu 19:23 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+<meta name="generator" content="Org-mode">
+<meta name="author" content="Grant Rettke">
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+
+<div id="outline-container-orged3574d" class="outline-2">
+<h2 id="orged3574d"><a id="orgmode:gcr:vela:83868A6E-76C2-48AE-8A5A-6A3C97492321"></a><span class="section-number-2">1</span> Org-Mode Exemple Complet Minimal</h2>
+<div class="outline-text-2" id="text-1">
+<pre class="example">
+ID: orgmode:gcr:vela:83868A6E-76C2-48AE-8A5A-6A3C97492321
+</pre>
+
+<p>
+Configure EMACS to easily provide ECMs.
+</p>
+
+<p>
+Sysop is likely to use this often.
+</p>
+
+<p>
+Start EMACS with this command:
+</p>
+
+<p>
+<code>open /Applications/Emacs.app -n --args --quick --load ~/src/help/.org-mode-ecm.emacs.el</code>
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="orgf4b9289"><span class="org-comment-delimiter">;; </span><span class="org-comment">-*- lexical-binding: t -*-</span>
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orga46b677" class="outline-3">
+<h3 id="orga46b677"><a id="orgmode:gcr:vela:43D9AB52-2157-4A1D-AD9C-D35996E91269"></a><span class="section-number-3">1.1</span> Principle of Least Astonishment (POLA)</h3>
+<div class="outline-text-3" id="text-1-1">
+<pre class="example">
+ID: orgmode:gcr:vela:43D9AB52-2157-4A1D-AD9C-D35996E91269
+</pre>
+</div>
+
+<div id="outline-container-org4136755" class="outline-4">
+<h4 id="org4136755"><a id="orgmode:gcr:vela:C0F8DDC4-C2B7-4578-B9B4-FA13E3BF0EBD"></a><span class="section-number-4">1.1.1</span> Scoping Behavior</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<pre class="example">
+ID: orgmode:gcr:vela:C0F8DDC4-C2B7-4578-B9B4-FA13E3BF0EBD
+</pre>
+
+<p>
+EMACS values dynamic-scoping for now and in the future.
+</p>
+
+<p>
+EMACS values lexical-scoping in the future.
+</p>
+
+<p>
+There are pecuilar interactions between <a href="https://yoo2080.wordpress.com/2011/12/31/lexical-scoping-and-dynamic-scoping-in-emacs-lisp/">lexically and dynamically scope closures</a>
+and <a href="https://yoo2080.wordpress.com/2013/08/14/invasion-of-special-variables-in-emacs-lisp/">special variables</a>.
+</p>
+
+<p>
+With the future in mind, make the switch now.
+</p>
+
+<p>
+It is enabled with a non-nil buffer-local variable <code>lexical-binding</code>. The variable
+is inserted into each of the Web definitions that this system provides. Those
+definitions can&rsquo;t use Org-Mode comments so they are defined individually in each
+Web.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf9415cc" class="outline-4">
+<h4 id="orgf9415cc"><a id="orgmode:gcr:vela:B1A48CB2-9295-466E-947F-EE24D57DB548"></a><span class="section-number-4">1.1.2</span> Load Behavior</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<pre class="example">
+ID: orgmode:gcr:vela:B1A48CB2-9295-466E-947F-EE24D57DB548
+</pre>
+
+<p>
+EMACS can load 3 different representations of a Emacs-Lisp source file code
+OOTB. The name of source code file is the value before the file extension. When
+you pass <code>load</code> a name it searches for an acceptable representation. Representation
+types are indicated by their extension name. <code>.el</code> is a human readable and
+uncompiled. <code>.elc</code> is not human readable and compiled. <code>.gz</code> is Gzip compressed and
+contains <code>.el</code> or <code>.elc</code> files.
+</p>
+
+<p>
+The variable <code>load-suffixes</code> determines the order for which text and byte-code
+representations are first searched by extension-name. The variable
+<code>load-file-rep-suffixes</code> determines the order for all other extension types.
+</p>
+
+<p>
+OOTB, EMACS combines the productivity of REPL style of development with the
+speed of compiled code by <code>load</code>&rsquo;ing byte-code first, text second, and compressed
+third. This workflow gives you the fastest code at run-time and lets you
+experiment with new features stored in text. When you are ready to use them
+every time, you compile them. There is only one downside of this approach: when
+you forget that it works this way it can be confusing.
+</p>
+
+<p>
+When you forget about that style of system you end up with surprising behavior.
+The surprise comes when you forget to compile code and then write new code that
+depends on the now old version of that code. After the next build, your system
+can break in surprising ways. This violates the Principle of Least Astonishment.
+</p>
+
+<p>
+This system values predictability so it does the simplest thing possible: <code>load</code>
+searches for the newest representation of a file and uses that one. It assumes
+that Sysop has total and complete control over the management of file
+representations.
+</p>
+
+<p>
+This is the <b>first</b> thing that <i>ought</i> to happen in the initialization of <b>any</b>
+tangled system.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="org157ab8b">(setq load-prefer-newer t)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf3c3a6d" class="outline-3">
+<h3 id="orgf3c3a6d"><a id="orgmode:gcr:vela:57C69AB7-A317-4823-ABBF-7DE8A5E2151C"></a><span class="section-number-3">1.2</span> Org-Mode Exemple Complet Minimal</h3>
+<div class="outline-text-3" id="text-1-2">
+<pre class="example">
+ID: orgmode:gcr:vela:57C69AB7-A317-4823-ABBF-7DE8A5E2151C
+</pre>
+
+<p>
+Every new EMACS releases comes with the latest stable Org-Mode release. To get
+hot-fixes, cutting edge features, and easy patch creation though, you need to
+use the version from Git.
+</p>
+
+<p>
+These detailed and clear <a href="http://orgmode.org/manual/Installation.html">directions</a> explain how ot run Org-Mode from Git. The only
+thing worth mentioning again is that in order to use <b>any</b> version of Org-Mode
+other than the one that comes OOTB you <b>must</b> load Org-Mode <b>before</b> anything else
+in your initialization file. It is easy to do! When you get
+unexpected Org-Mode behavior be sure to stop and investigate <code>org-version</code> and
+decide whether or not it is what you expect and prepare an ECM if necessary.
+</p>
+
+<p>
+Add the Org-Mode core distribution the load path.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="org3374e8d">(add-to-list 'load-path <span class="org-string">"~/src/org-mode/lisp"</span>)
+</pre>
+</div>
+
+<p>
+Add the Org-Mode-Contributions distribution to the load path. The contributions
+are essential.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="org3a0927d">(add-to-list 'load-path <span class="org-string">"~/src/org-mode/contrib/lisp"</span>)
+</pre>
+</div>
+
+<p>
+Allow single-character alphabetical bullet lists. This configuration must occur
+before loading Org-Mode. <b>Never</b> remove this from a submitted ECM.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="org6f2833f">(setq org-list-allow-alphabetical t)
+</pre>
+</div>
+
+<p>
+Unchecked boxes prevent marking the parent as done. This configuration must
+occur before loading Org-Mode. <b>Never</b> remove this from a submitted ECM.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="orgb19bdbe">(setq org-enforce-todo-checkbox-dependencies t)
+</pre>
+</div>
+
+<p>
+Use the Guillemet to demarcate source blocks. Reconfigure this yearly.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="org589b707">(setq org-babel-noweb-wrap-start <span class="org-string">"&#171;"</span>)
+(setq org-babel-noweb-wrap-end <span class="org-string">"&#187;"</span>)
+</pre>
+</div>
+
+<p>
+Load Org-Mode.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="orgbfa708a">(<span class="org-keyword">require</span> '<span class="org-constant">org</span>)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Grant Rettke</p>
+<p class="date">Created: 2016-09-01 Thu 19:23</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

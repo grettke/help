@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2016-09-01 Thu 19:23 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+<meta name="generator" content="Org-mode">
+<meta name="author" content="Grant Rettke">
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+
+<div id="outline-container-org2494334" class="outline-2">
+<h2 id="org2494334"><a id="orgmode:gcr:vela:7E71A009-4DD3-4296-9851-293BC71D2DFF"></a><span class="section-number-2">1</span> Org-Mode Fundamentals</h2>
+<div class="outline-text-2" id="text-1">
+<pre class="example">
+ID: orgmode:gcr:vela:7E71A009-4DD3-4296-9851-293BC71D2DFF
+</pre>
+
+<p>
+Configure Org-Mode core functionality to compile this system.
+</p>
+
+<p>
+Sysop is likely to use this periodically.
+</p>
+
+<p>
+Start EMACS with this command:
+</p>
+
+<p>
+<code>open /Applications/Emacs.app -n --args --quick --load ~/src/help/.org-mode-fundamentals.emacs.el</code>
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="org862a456"><span class="org-comment-delimiter">;; </span><span class="org-comment">-*- lexical-binding: t -*-</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="org545952a">(load-file <span class="org-string">"~/src/help/.org-mode-ecm.emacs.el"</span>)
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgebf3de2" class="outline-3">
+<h3 id="orgebf3de2"><a id="orgmode:gcr:vela:8510C876-F644-4804-9F87-54A0B44DBA6A"></a><span class="section-number-3">1.1</span> Literate Programming</h3>
+<div class="outline-text-3" id="text-1-1">
+<pre class="example">
+ID: orgmode:gcr:vela:8510C876-F644-4804-9F87-54A0B44DBA6A
+</pre>
+
+<p>
+This system enables you to perform 3 Literate Document activities
+</p>
+<ul class="org-ul">
+<li>Tangling</li>
+<li>Evaluating</li>
+<li>Weaving</li>
+</ul>
+
+<p>
+Combined they provide a rich Literate Programming environment.
+</p>
+
+<p>
+These activities are not performed interactively by the user. They are automatic
+operations that occur as a result of the configuration by the document itself.
+</p>
+
+<p>
+The following is the guide for the default configuration of this system and how
+it behaves.
+</p>
+
+<p>
+Key:
+</p>
+
+<ul class="org-ul">
+<li>Columns
+<dl class="org-dl">
+<dt>S</dt><dd>Source document modified?</dd>
+<dt>T</dt><dd>Destination tangled-document modified?</dd>
+<dt>W</dt><dd>Destination weaved-document modified?</dd>
+<dt>C</dt><dd>Source-Block Evaluation occurred?</dd>
+<dt>O</dt><dd>Org-Macro Expansion occurred?</dd>
+</dl></li>
+</ul>
+
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Activity</th>
+<th scope="col" class="org-left">S</th>
+<th scope="col" class="org-left">T</th>
+<th scope="col" class="org-left">W</th>
+<th scope="col" class="org-left">C</th>
+<th scope="col" class="org-left">O</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Tangling</td>
+<td class="org-left">F</td>
+<td class="org-left">T</td>
+<td class="org-left">F</td>
+<td class="org-left">F</td>
+<td class="org-left">F</td>
+</tr>
+
+<tr>
+<td class="org-left">Evaluating</td>
+<td class="org-left">T</td>
+<td class="org-left">F</td>
+<td class="org-left">F</td>
+<td class="org-left">T</td>
+<td class="org-left">F</td>
+</tr>
+
+<tr>
+<td class="org-left">Weaving</td>
+<td class="org-left">F</td>
+<td class="org-left">F</td>
+<td class="org-left">T</td>
+<td class="org-left">F</td>
+<td class="org-left">T</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+They are separate and distinct operations.
+</p>
+
+<p>
+&ldquo;Programming&rdquo; is logically an activity that is the combination of these 3
+activites. It is interactively performed by Sysop. It is not a distinct
+or isolated operation. Results of one activity exist here and serve as inputs to
+another activity.
+</p>
+</div>
+
+<div id="outline-container-orgeb38830" class="outline-4">
+<h4 id="orgeb38830"><a id="orgmode:gcr:vela:B14776FD-6835-4D1D-BCD3-50D56555423C"></a><span class="section-number-4">1.1.1</span> Helper Functions</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<pre class="example">
+ID: orgmode:gcr:vela:B14776FD-6835-4D1D-BCD3-50D56555423C
+</pre>
+
+<p>
+Help configure Org-Mode.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="org04ed9ee">(<span class="org-keyword">defun</span> <span class="org-function-name">help/set-org-babel-default-header-args</span> (property value)
+  <span class="org-doc">"Easily set system header arguments in org mode.</span>
+
+<span class="org-doc">PROPERTY is the system-wide value that you would like to modify.</span>
+
+<span class="org-doc">VALUE is the new value you wish to store.</span>
+
+<span class="org-doc">Attribution: URL `http://orgmode.org/manual/System_002dwide-header-arguments.html#System_002dwide-header-arguments'"</span>
+  (setq org-babel-default-header-args
+        (cons (cons property value)
+              (assq-delete-all property org-babel-default-header-args))))
+
+(<span class="org-keyword">defun</span> <span class="org-function-name">help/set-org-babel-default-inline-header-args</span> (property value)
+  <span class="org-doc">"See `</span><span class="org-doc"><span class="org-constant">help/set-org-babel-default-header-args</span></span><span class="org-doc">'; same but for inline header args."</span>
+  (setq org-babel-default-inline-header-args
+        (cons (cons property value)
+              (assq-delete-all property org-babel-default-inline-header-args))))
+
+(<span class="org-keyword">defun</span> <span class="org-function-name">help/set-org-babel-default-header-args:R</span> (property value)
+  <span class="org-doc">"See `</span><span class="org-doc"><span class="org-constant">help/set-org-babel-default-header-args</span></span><span class="org-doc">'; same but for R.</span>
+
+<span class="org-doc">This is a copy and paste. Additional languages would warrant a refactor."</span>
+  (setq org-babel-default-header-args:R
+        (cons (cons property value)
+              (assq-delete-all property org-babel-default-header-args:R))))
+
+(<span class="org-keyword">defun</span> <span class="org-function-name">help/set-org-babel-default-header-args:ditaa</span> (property value)
+  <span class="org-doc">"See `</span><span class="org-doc"><span class="org-constant">help/set-org-babel-default-header-args</span></span><span class="org-doc">'; same but for ditaa.</span>
+
+<span class="org-doc">This is a copy and paste. Additional languages would warrant a refactor."</span>
+  (setq org-babel-default-header-args:ditaa
+        (cons (cons property value)
+              (assq-delete-all property org-babel-default-header-args:ditaa))))
+
+(<span class="org-keyword">defun</span> <span class="org-function-name">help/set-org-babel-default-header-args:dot</span> (property value)
+  <span class="org-doc">"See `</span><span class="org-doc"><span class="org-constant">help/set-org-babel-default-header-args</span></span><span class="org-doc">'; same but for dot.</span>
+
+<span class="org-doc">This is a copy and paste. Additional languages would warrant a refactor."</span>
+  (setq org-babel-default-header-args:dot
+        (cons (cons property value)
+              (assq-delete-all property org-babel-default-header-args:dot))))
+
+(<span class="org-keyword">defun</span> <span class="org-function-name">help/set-org-babel-default-header-args:plantuml</span> (property value)
+  <span class="org-doc">"See `</span><span class="org-doc"><span class="org-constant">help/set-org-babel-default-header-args</span></span><span class="org-doc">'; same but for plantuml.</span>
+
+<span class="org-doc">This is a copy and paste. Additional languages would warrant a refactor."</span>
+  (setq org-babel-default-header-args:plantuml
+        (cons (cons property value)
+              (assq-delete-all property org-babel-default-header-args:plantuml))))
+
+(<span class="org-keyword">defun</span> <span class="org-function-name">help/org-toggle-macro-markers</span> ()
+  (interactive)
+  (setq org-hide-macro-markers (not org-hide-macro-markers)))
+
+(<span class="org-keyword">defun</span> <span class="org-function-name">help/org-prp-hdln</span> ()
+  <span class="org-doc">"Visit every Headline. If it doesn't have an ID property then add one and</span>
+<span class="org-doc">  assign it a UUID. Attribution: URL `</span><span class="org-doc"><span class="org-constant">http://article.gmane.org/gmane.emacs.orgmode/99738</span></span><span class="org-doc">'"</span>
+  (interactive)
+  (<span class="org-keyword">save-excursion</span>
+    (goto-char (point-min))
+    (<span class="org-keyword">dolist</span> (p (nreverse
+                (org-element-map (org-element-parse-buffer 'headline) 'headline
+                  (<span class="org-keyword">lambda</span> (headline) (org-element-property <span class="org-builtin">:begin</span> headline)))))
+      (goto-char p)
+      (org-id-get-create))
+    (save-buffer)))
+
+(<span class="org-keyword">defun</span> <span class="org-function-name">help/org-prp-src-blk</span> ()
+  <span class="org-doc">"If it doesn't have a NAME property then add one and</span>
+<span class="org-doc">   assign it a UUID. Attribution: URL `</span><span class="org-doc"><span class="org-constant">http://article.gmane.org/gmane.emacs.orgmode/99740</span></span><span class="org-doc">'"</span>
+  (interactive)
+  (help/org-2every-src-block
+   #'(<span class="org-keyword">lambda</span> (element)
+       (<span class="org-keyword">if</span> (not (org-element-property <span class="org-builtin">:name</span> element))
+           (<span class="org-keyword">let</span> ((i (org-get-indentation)))
+             (beginning-of-line)
+             (<span class="org-keyword">save-excursion</span> (insert <span class="org-string">"#+NAME: orgmode:gcr:vela:"</span> (org-id-new) <span class="org-string">"\n"</span>))
+             (indent-to i)
+             (forward-line 2))))))
+
+(<span class="org-keyword">defconst</span> <span class="org-variable-name">help/org-special-pre</span> <span class="org-string">"^\s*#[+]"</span>)
+
+(<span class="org-keyword">defun</span> <span class="org-function-name">help/org-2every-src-block</span> (fn)
+  <span class="org-doc">"Visit every Source-Block and evaluate `</span><span class="org-doc"><span class="org-constant">FN</span></span><span class="org-doc">'."</span>
+  (interactive)
+  (<span class="org-keyword">save-excursion</span>
+    (goto-char (point-min))
+    (<span class="org-keyword">let</span> ((case-fold-search t))
+      (<span class="org-keyword">while</span> (re-search-forward (concat help/org-special-pre <span class="org-string">"BEGIN_SRC"</span>) nil t)
+        (<span class="org-keyword">let</span> ((element (org-element-at-point)))
+          (<span class="org-keyword">when</span> (eq (org-element-type element) 'src-block)
+            (funcall fn element)))))
+    (save-buffer)))
+
+(<span class="org-keyword">defun</span> <span class="org-function-name">help/org-babel-demarcate-block</span> ()
+  <span class="org-doc">"Add a NAME property then assign it a UUID."</span>
+  (interactive)
+  (org-babel-demarcate-block)
+  (insert <span class="org-string">"#+NAME: orgmode:gcr:vela:"</span> (org-id-new))
+  (beginning-of-line)
+  (insert <span class="org-string">"\n"</span>))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc81bb8e" class="outline-4">
+<h4 id="orgc81bb8e"><a id="orgmode:gcr:vela:25F4226F-2EB2-48EC-A4D5-56DD5CCC753E"></a><span class="section-number-4">1.1.2</span> Identity</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<pre class="example">
+ID: orgmode:gcr:vela:25F4226F-2EB2-48EC-A4D5-56DD5CCC753E
+</pre>
+
+<p>
+A Headline&rsquo;s primary key is <code>ID</code>. Use <code>org-id</code> to manage it.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="orgdfa74f0">(<span class="org-keyword">require</span> '<span class="org-constant">org-id</span>)
+</pre>
+</div>
+
+<p>
+In Links: Never use <code>ID</code> or <code>CUSTOM_ID</code>; always use the file name and text to make
+it accessible outside of Emacs.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="orga238d43">(setq org-id-link-to-org-use-id 'nil)
+</pre>
+</div>
+
+<p>
+Make sure that <code>ID</code> is always unique, portable, and easy to maintain by
+</p>
+<ul class="org-ul">
+<li>Using a memorable prefix
+<ul class="org-ul">
+<li>Must be both LaTeX label and XHTML identifier compliant</li>
+</ul></li>
+<li>Include the current login</li>
+<li>Include the current domain</li>
+<li>Use a UUID</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="orge5f2d33">(setq org-id-prefix (concat <span class="org-string">"orgmode:"</span> (user-real-login-name) <span class="org-string">":"</span> (system-name)))
+(setq org-id-method 'uuid)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org127fab5" class="outline-4">
+<h4 id="org127fab5"><a id="orgmode:gcr:vela:267EEDED-1367-405F-807C-B3C489045704"></a><span class="section-number-4">1.1.3</span> Tangling</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<pre class="example">
+ID: orgmode:gcr:vela:267EEDED-1367-405F-807C-B3C489045704
+</pre>
+
+<p>
+<code>ID</code> and <code>NAME</code> are essential for successful <code>LP</code> using <code>org-babel-tangle-jump-to-org</code>.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="org950c539">(add-hook 'org-babel-pre-tangle-hook #'help/org-prp-hdln)
+(add-hook 'org-babel-pre-tangle-hook #'help/org-prp-src-blk)
+</pre>
+</div>
+
+<p>
+There is a way to disable property inheritance that speeds up tangling a lot.
+This is only for user-defined properties; <b>not</b> Org-Mode properties.
+</p>
+
+<p>
+The problem is that you lose property inheritance which is unacceptable. Never,
+never allow that. Its inconsistent with how Org-Mode works.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="org9525a79">(setq org-babel-use-quick-and-dirty-noweb-expansion nil)
+</pre>
+</div>
+
+<p>
+Assume that tangled document always live within the same directory structure
+as their origin document.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="org910e37a">(setq org-babel-tangle-use-relative-file-links t)
+</pre>
+</div>
+</div>
+
+<ol class="org-ol"><li><a id="org661dd2f"></a><a id="orgmode:gcr:vela:49787FC5-CAA7-466B-B742-0F38973E070B"></a>comments<br ><div class="outline-text-5" id="text-1-1-3-1">
+<pre class="example">
+ID: orgmode:gcr:vela:49787FC5-CAA7-466B-B742-0F38973E070B
+</pre>
+
+<blockquote>
+<p>
+Toggle insertion of comments in tangled code files
+</p>
+</blockquote>
+
+<p>
+Provide as much information as possible in the tangled artifact about the
+origin artifact.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="org836b87b">(help/set-org-babel-default-header-args <span class="org-builtin">:comments</span> <span class="org-string">"noweb"</span>)
+</pre>
+</div>
+</div></li>
+
+<li><a id="org23efaec"></a><a id="orgmode:gcr:vela:B0F9A321-3B69-46BB-B512-0AF3C663A4C0"></a>mkdirp<br ><div class="outline-text-5" id="text-1-1-3-2">
+<pre class="example">
+ID: orgmode:gcr:vela:B0F9A321-3B69-46BB-B512-0AF3C663A4C0
+</pre>
+
+<blockquote>
+<p>
+Toggle creation of parent directories of target files during tangling
+</p>
+</blockquote>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="org04a1440">(help/set-org-babel-default-header-args <span class="org-builtin">:mkdirp</span> <span class="org-string">"yes"</span>)
+</pre>
+</div>
+</div></li>
+
+<li><a id="orgf4984b0"></a><a id="orgmode:gcr:vela:90170E6A-AA1A-44EA-9BF8-1A6AA38FD224"></a>no-expand<br ><div class="outline-text-5" id="text-1-1-3-3">
+<pre class="example">
+ID: orgmode:gcr:vela:90170E6A-AA1A-44EA-9BF8-1A6AA38FD224
+</pre>
+
+<blockquote>
+<p>
+Turn off variable assignment and noweb expansion during tangling
+</p>
+</blockquote>
+
+<p>
+Configuration likely per Source-Block or System.
+</p>
+</div></li>
+
+<li><a id="org5413e78"></a><a id="orgmode:gcr:vela:E12B48AB-68E8-4515-89E3-30A16FB6FD22"></a>noweb<br ><div class="outline-text-5" id="text-1-1-3-4">
+<pre class="example">
+ID: orgmode:gcr:vela:E12B48AB-68E8-4515-89E3-30A16FB6FD22
+</pre>
+
+<blockquote>
+<p>
+Toggle expansion of noweb references
+</p>
+</blockquote>
+
+<p>
+Expand noweb references in source-blocks before:
+</p>
+
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Activity</th>
+<th scope="col" class="org-left">Expand</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Tangling</td>
+<td class="org-left">T</td>
+</tr>
+
+<tr>
+<td class="org-left">Evaluating</td>
+<td class="org-left">T</td>
+</tr>
+
+<tr>
+<td class="org-left">Weaving</td>
+<td class="org-left">F</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+This embraces the notion that you are telling the right thing to the
+computer and the right thing to the human. By the time you get to exporting, you
+ought to refer to the generated document.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="orgb5941f4">(help/set-org-babel-default-header-args <span class="org-builtin">:noweb</span> <span class="org-string">"no-export"</span>)
+</pre>
+</div>
+</div></li>
+
+<li><a id="org3b10bd5"></a><a id="orgmode:gcr:vela:2836D0AA-5DBA-48AC-A338-B47002DE8D7F"></a>noweb-ref<br ><div class="outline-text-5" id="text-1-1-3-5">
+<pre class="example">
+ID: orgmode:gcr:vela:2836D0AA-5DBA-48AC-A338-B47002DE8D7F
+</pre>
+
+<blockquote>
+<p>
+Specify block&rsquo;s noweb reference resolution target
+</p>
+</blockquote>
+
+<p>
+Configuration likely per Source-Block or System.
+</p>
+</div></li>
+
+<li><a id="org0be7322"></a><a id="orgmode:gcr:vela:B1A57D15-6BBF-4E78-A0D9-0B02C283C6B0"></a>noweb-sep<br ><div class="outline-text-5" id="text-1-1-3-6">
+<pre class="example">
+ID: orgmode:gcr:vela:B1A57D15-6BBF-4E78-A0D9-0B02C283C6B0
+</pre>
+
+<blockquote>
+<p>
+String used to separate noweb references
+</p>
+</blockquote>
+
+<p>
+Configuration likely per Source-Block or System.
+</p>
+</div></li>
+
+<li><a id="org21452f6"></a><a id="orgmode:gcr:vela:DDE727A6-DDF7-4B61-9063-549614B135F0"></a>padline<br ><div class="outline-text-5" id="text-1-1-3-7">
+<pre class="example">
+ID: orgmode:gcr:vela:DDE727A6-DDF7-4B61-9063-549614B135F0
+</pre>
+
+<blockquote>
+<p>
+Control insertion of padding lines in tangled code files
+</p>
+</blockquote>
+
+<ul class="org-ul">
+<li><code>org-babel-tangle-jump-to-org</code> requires padded lines. This configuration could
+arguably appear in the &ldquo;Programming&rdquo; heading because it impacts operation. It
+lives here because it <b>must</b> occur as part of the Tangling activity so that it
+can be used in the Programming activity.</li>
+<li>Often I go back and for on this one. Sometimes it is nicer to have less spaces
+in generated code when guests are viewing it. When no one else is reading it
+I love the spaces. Defaulting to what I like.</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="orgca11036">(help/set-org-babel-default-header-args <span class="org-builtin">:padline</span> <span class="org-string">"yes"</span>)
+</pre>
+</div>
+</div></li>
+
+<li><a id="org5907574"></a><a id="orgmode:gcr:vela:8219A42A-E90F-418A-8EF0-EB150CF6D730"></a>session<br ><div class="outline-text-5" id="text-1-1-3-8">
+<pre class="example">
+ID: orgmode:gcr:vela:8219A42A-E90F-418A-8EF0-EB150CF6D730
+</pre>
+
+<blockquote>
+<p>
+Preserve the state of code evaluation
+</p>
+</blockquote>
+
+<p>
+Configuration likely per Source-Block or System.
+</p>
+
+<p>
+For some situations, this may be the same for every source block for a
+particular language. R is a good example.
+</p>
+</div></li>
+
+<li><a id="orga148a09"></a><a id="orgmode:gcr:vela:542185DD-4FD6-459A-B422-DA7B546FB292"></a>shebang<br ><div class="outline-text-5" id="text-1-1-3-9">
+<pre class="example">
+ID: orgmode:gcr:vela:542185DD-4FD6-459A-B422-DA7B546FB292
+</pre>
+
+<blockquote>
+<p>
+Make tangled files executable
+</p>
+</blockquote>
+
+<p>
+Configuration likely per Source-Block or System.
+</p>
+</div></li>
+
+<li><a id="orgcfbf812"></a><a id="orgmode:gcr:vela:EA716FC9-4A90-4F3E-ABD0-31FEA575C969"></a>tangle<br ><div class="outline-text-5" id="text-1-1-3-10">
+<pre class="example">
+ID: orgmode:gcr:vela:EA716FC9-4A90-4F3E-ABD0-31FEA575C969
+</pre>
+
+<blockquote>
+<p>
+Toggle tangling and specify file name
+</p>
+</blockquote>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="orgd8e5c9e">(help/set-org-babel-default-header-args <span class="org-builtin">:tangle</span> <span class="org-string">"no"</span>)
+</pre>
+</div>
+</div></li>
+
+<li><a id="org230ebaa"></a><a id="orgmode:gcr:vela:5F0B7157-2DC8-4AFD-8F26-4B21025A5ECE"></a>tangle-mode<br ><div class="outline-text-5" id="text-1-1-3-11">
+<pre class="example">
+ID: orgmode:gcr:vela:5F0B7157-2DC8-4AFD-8F26-4B21025A5ECE
+</pre>
+
+<blockquote>
+<p>
+Set permission of tangled files
+</p>
+</blockquote>
+
+<p>
+Configuration likely per Source-Block or System.
+</p>
+</div></li></ol>
+</div>
+
+<div id="outline-container-orgb74480a" class="outline-4">
+<h4 id="orgb74480a"><a id="orgmode:gcr:vela:ED23FF0B-1F90-435C-9B56-ACA06C1ACAE0"></a><span class="section-number-4">1.1.4</span> Evaluating</h4>
+<div class="outline-text-4" id="text-1-1-4">
+<pre class="example">
+ID: orgmode:gcr:vela:ED23FF0B-1F90-435C-9B56-ACA06C1ACAE0
+</pre>
+
+<p>
+Org-Mode may evaluate all of the listed languages.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="orge7617f9">(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (org . t)
+   <span class="org-comment-delimiter">;;</span>
+   (C . t)
+   (R . t)
+   (python . t)
+   (sass . t)
+   (scheme . t)
+   (sql . t)
+   <span class="org-comment-delimiter">;;</span>
+   (latex . t)
+   <span class="org-comment-delimiter">;;</span>
+   (makefile . t)
+   (shell . t)
+   <span class="org-comment-delimiter">;;</span>
+   (ditaa . t)
+   (dot . t)
+   (plantuml . t)))
+</pre>
+</div>
+</div>
+
+<ol class="org-ol"><li><a id="org8627abe"></a><a id="orgmode:gcr:vela:49B8BFE9-643B-450F-A8A1-20CE3079E215"></a>cache<br ><div class="outline-text-5" id="text-1-1-4-1">
+<pre class="example">
+ID: orgmode:gcr:vela:49B8BFE9-643B-450F-A8A1-20CE3079E215
+</pre>
+
+<blockquote>
+<p>
+Avoid re-evaluating unchanged code blocks
+</p>
+</blockquote>
+
+<p>
+Configuration likely per Source-Block or System.
+</p>
+
+<p>
+Default <code>no</code> is correct for nearly every scenario.
+</p>
+</div></li>
+
+<li><a id="org27a1791"></a><a id="orgmode:gcr:vela:4D683007-14AE-4A7D-A506-E2301FD32E82"></a>colnames<br ><div class="outline-text-5" id="text-1-1-4-2">
+<pre class="example">
+ID: orgmode:gcr:vela:4D683007-14AE-4A7D-A506-E2301FD32E82
+</pre>
+
+<blockquote>
+<p>
+Handle column names in tables
+</p>
+</blockquote>
+
+<p>
+Configuration likely per Source-Block or System.
+</p>
+</div></li>
+
+<li><a id="org504fea4"></a><a id="orgmode:gcr:vela:CD1494F1-0A2A-44D0-9955-0D0501AF1539"></a>dir<br ><div class="outline-text-5" id="text-1-1-4-3">
+<pre class="example">
+ID: orgmode:gcr:vela:CD1494F1-0A2A-44D0-9955-0D0501AF1539
+</pre>
+
+<blockquote>
+<p>
+Specify the default (possibly remote) directory for code block execution
+</p>
+</blockquote>
+
+<p>
+Configuration likely per Source-Block or System.
+</p>
+</div></li>
+
+<li><a id="org3878c50"></a><a id="orgmode:gcr:vela:CA7F5086-9D4B-4847-9449-3231CE027804"></a>epilogue<br ><div class="outline-text-5" id="text-1-1-4-4">
+<pre class="example">
+ID: orgmode:gcr:vela:CA7F5086-9D4B-4847-9449-3231CE027804
+</pre>
+
+<blockquote>
+<p>
+Text to append to code block body
+</p>
+</blockquote>
+
+<p>
+See Prologue.
+</p>
+</div></li>
+
+<li><a id="org8bc348d"></a><a id="orgmode:gcr:vela:0329BACE-2C99-4BB3-A7A5-7C800EF53FAD"></a>eval<br ><div class="outline-text-5" id="text-1-1-4-5">
+<pre class="example">
+ID: orgmode:gcr:vela:0329BACE-2C99-4BB3-A7A5-7C800EF53FAD
+</pre>
+
+<blockquote>
+<p>
+Limit evaluation of specific code blocks
+</p>
+</blockquote>
+
+<p>
+Never evaluate source-blocks or in-line-source-blocks <b>on export</b>.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="orgd3aa79c">(help/set-org-babel-default-header-args <span class="org-builtin">:eval</span> <span class="org-string">"never-export"</span>)
+(help/set-org-babel-default-inline-header-args <span class="org-builtin">:eval</span> <span class="org-string">"never-export"</span>)
+</pre>
+</div>
+
+<p>
+Never evaluate in-line-source-blocks <b>on export</b>.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="orgccc0841">(setq org-export-babel-evaluate nil)
+</pre>
+</div>
+</div></li>
+
+<li><a id="org3ebc2b7"></a><a id="orgmode:gcr:vela:80824708-62AF-4337-A517-828DA22D1FCA"></a>file<br ><div class="outline-text-5" id="text-1-1-4-6">
+<pre class="example">
+ID: orgmode:gcr:vela:80824708-62AF-4337-A517-828DA22D1FCA
+</pre>
+
+<blockquote>
+<p>
+Specify a path for file output
+</p>
+</blockquote>
+
+<p>
+Configuration likely per Source-Block or System.
+</p>
+</div></li>
+
+<li><a id="org30e84fe"></a><a id="orgmode:gcr:vela:6F9A2745-7118-469E-9FDB-4B327C02E5FA"></a>file-desc<br ><div class="outline-text-5" id="text-1-1-4-7">
+<pre class="example">
+ID: orgmode:gcr:vela:6F9A2745-7118-469E-9FDB-4B327C02E5FA
+</pre>
+
+<blockquote>
+<p>
+Specify a description for file results
+</p>
+</blockquote>
+
+<p>
+Configuration likely per Source-Block or System.
+</p>
+</div></li>
+
+<li><a id="orge4799a0"></a><a id="orgmode:gcr:vela:0716A48E-9227-44FD-B1FA-185DF6545E91"></a>file-ext<br ><div class="outline-text-5" id="text-1-1-4-8">
+<pre class="example">
+ID: orgmode:gcr:vela:0716A48E-9227-44FD-B1FA-185DF6545E91
+</pre>
+
+<blockquote>
+<p>
+Specify an extension for file output
+</p>
+</blockquote>
+
+<p>
+Configuration likely per Source-Block or System.
+</p>
+</div></li>
+
+<li><a id="orgaa5186b"></a><a id="orgmode:gcr:vela:721F4E5E-A343-4D7C-A3A3-12A544B3A273"></a>hlines<br ><div class="outline-text-5" id="text-1-1-4-9">
+<pre class="example">
+ID: orgmode:gcr:vela:721F4E5E-A343-4D7C-A3A3-12A544B3A273
+</pre>
+
+<blockquote>
+<p>
+Handle horizontal lines in tables
+</p>
+</blockquote>
+
+<p>
+Configuration likely per Source-Block or System.
+</p>
+</div></li>
+
+<li><a id="org66cd762"></a><a id="orgmode:gcr:vela:D0DDFE88-1B41-4A67-A5F4-88B1B35A7513"></a>output-dir<br ><div class="outline-text-5" id="text-1-1-4-10">
+<pre class="example">
+ID: orgmode:gcr:vela:D0DDFE88-1B41-4A67-A5F4-88B1B35A7513
+</pre>
+
+<blockquote>
+<p>
+Specify a directory to write file output to
+</p>
+</blockquote>
+
+<p>
+Configuration likely per Source-Block or System.
+</p>
+
+<p>
+One example is a System where <b>all</b> intermediate results are stored to individual
+files.
+</p>
+</div></li>
+
+<li><a id="org6eab526"></a><a id="orgmode:gcr:vela:1A4DEC98-C735-4D88-8261-6AD13C495EF2"></a>post<br ><div class="outline-text-5" id="text-1-1-4-11">
+<pre class="example">
+ID: orgmode:gcr:vela:1A4DEC98-C735-4D88-8261-6AD13C495EF2
+</pre>
+
+<blockquote>
+<p>
+Post processing of code block results
+</p>
+</blockquote>
+
+<p>
+Configuration likely per Source-Block or System.
+</p>
+</div></li>
+
+<li><a id="org77be306"></a><a id="orgmode:gcr:vela:3D1780E0-2E6D-428C-916D-BFB10E79C76F"></a>prologue<br ><div class="outline-text-5" id="text-1-1-4-12">
+<pre class="example">
+ID: orgmode:gcr:vela:3D1780E0-2E6D-428C-916D-BFB10E79C76F
+</pre>
+
+<blockquote>
+<p>
+Text to prepend to code block body
+</p>
+</blockquote>
+
+<p>
+Configuration likely per Source-Block or System.
+</p>
+
+<p>
+For some situations, this may be the same for every source block for a
+particular language. The user manual described <code>gnuplot</code>, which often shows up on
+the list and the solution is to <code>reset</code> the session.
+</p>
+
+<p>
+Another example, say that you&rsquo;ve got a bunch of R Source-Blocks and you want to
+be able to rearrange them as you please. You want to be sure that there are no
+dependencies between them on bindings created in the workspace. Set <code>prologue</code>
+to <code>rm(list = ls())</code>.
+</p>
+
+<p>
+Epilgue works hand-in-hand with this.
+</p>
+</div></li>
+
+<li><a id="org9d75784"></a><a id="orgmode:gcr:vela:2755571E-113B-436E-9EEC-26618A55A27E"></a>results<br ><div class="outline-text-5" id="text-1-1-4-13">
+<pre class="example">
+ID: orgmode:gcr:vela:2755571E-113B-436E-9EEC-26618A55A27E
+</pre>
+
+<blockquote>
+<p>
+Specify the type of results and how they will be collected and handled
+</p>
+</blockquote>
+
+<p>
+Ways to configure <code>:results</code>: <code class="src src-emacs-lisp">(apply '* (<span class="org-keyword">-keep</span> 'cdr '((Collection . 2) (Type . 4) (Format . 7) (Handling . 4))))
+</code> 224.
+</p>
+
+<p>
+This system stores the results of evaluation in the source document. It believes
+that the results are critical to the research.
+</p>
+
+<p>
+Keep the document as close to being executable as possible; make it very visible
+when it is not.
+</p>
+
+<ul class="org-ul">
+<li>Collection
+<ul class="org-ul">
+<li><code>value</code>: Functions have a single result. So do Source-Blocks.</li>
+</ul></li>
+<li>Type
+<ul class="org-ul">
+<li><code>table</code>:</li>
+<li>Tables are the best type because
+<ul class="org-ul">
+<li>Dimensions make them human-readable in text.</li>
+<li>Work with Babel LP.</li>
+<li>Appear as lists to programming languages.</li>
+<li>Weaves well.</li>
+<li>Inline Source-Blocks disallow tables so use scalars instead.</li>
+</ul></li>
+</ul></li>
+<li>Format
+<ul class="org-ul">
+<li><code>drawer</code>: Enable results replacement</li>
+</ul></li>
+<li>Handling
+<ul class="org-ul">
+<li><code>replace</code>: Replace theme each time you evaluate the block.</li>
+</ul></li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="org8314f0d">(<span class="org-keyword">defconst</span> <span class="org-variable-name">help/org-sb-results-cfg</span> <span class="org-string">"value table drawer replace"</span>)
+(help/set-org-babel-default-header-args <span class="org-builtin">:results</span> help/org-sb-results-cfg)
+</pre>
+</div>
+
+
+<p>
+Their format will show that they are results. Inline source blocks
+automatically get formatted as verbatim. For some reason, this only needs to
+be configured as <code>replace</code> to work unlike normal source blocks. Copying the
+configuration from normal source blocks here breaks the replacement
+functionality.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="org6919fed">(<span class="org-keyword">defconst</span> <span class="org-variable-name">help/org-isb-results-cfg</span> <span class="org-string">"replace"</span>)
+(help/set-org-babel-default-inline-header-args <span class="org-builtin">:results</span> help/org-isb-results-cfg)
+</pre>
+</div>
+</div></li>
+
+<li><a id="orge627c91"></a><a id="orgmode:gcr:vela:B184A507-1B03-4096-A4D8-E50A1DA047DB"></a>rownames<br ><div class="outline-text-5" id="text-1-1-4-14">
+<pre class="example">
+ID: orgmode:gcr:vela:B184A507-1B03-4096-A4D8-E50A1DA047DB
+</pre>
+
+<blockquote>
+<p>
+Handle row names in tables
+</p>
+</blockquote>
+
+<p>
+Configuration likely per Source-Block or System.
+</p>
+</div></li>
+
+<li><a id="orge3e5e03"></a><a id="orgmode:gcr:vela:F1336AAA-68EF-4E87-B253-458103B6FF2F"></a>sep<br ><div class="outline-text-5" id="text-1-1-4-15">
+<pre class="example">
+ID: orgmode:gcr:vela:F1336AAA-68EF-4E87-B253-458103B6FF2F
+</pre>
+
+<blockquote>
+<p>
+Delimiter for writing tabular results outside Org
+</p>
+</blockquote>
+
+<p>
+Configuration likely per Source-Block or System.
+</p>
+</div></li>
+
+<li><a id="org30a9767"></a><a id="orgmode:gcr:vela:3B4D638C-82EE-47F3-835C-52B2F03620A0"></a>var<br ><div class="outline-text-5" id="text-1-1-4-16">
+<pre class="example">
+ID: orgmode:gcr:vela:3B4D638C-82EE-47F3-835C-52B2F03620A0
+</pre>
+
+<blockquote>
+<p>
+Pass arguments to code blocks
+</p>
+</blockquote>
+
+<ul class="org-ul">
+<li><b>The</b> most revealing of the power of Org-Mode&rsquo;s LP offering</li>
+<li>Values-by-reference
+<ul class="org-ul">
+<li>Table</li>
+<li>List</li>
+<li>Source-Block without and with parameters</li>
+<li>Literal-Block</li>
+</ul></li>
+<li>Idexable variable values</li>
+<li>Emacs Lisp evaluation of variables</li>
+</ul>
+</div></li></ol>
+</div>
+
+<div id="outline-container-org1ed25d7" class="outline-4">
+<h4 id="org1ed25d7"><a id="orgmode:gcr:vela:F71DD8BA-B853-4903-A348-400E13C0E6F8"></a><span class="section-number-4">1.1.5</span> Weaving</h4>
+<div class="outline-text-4" id="text-1-1-5">
+<pre class="example">
+ID: orgmode:gcr:vela:F71DD8BA-B853-4903-A348-400E13C0E6F8
+</pre>
+
+<p>
+Help the reader make sense of the document by displaying it&rsquo;s internal
+properties.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="org112c53a">(setq org-export-with-properties t)
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>Stop your flow to monitor the export for errors
+<ul class="org-ul">
+<li><span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-19 Tue&gt; </span></span> Expect it to start weaves for all weavers asynchronously.
+Does not do so; main thread is blocked until weaves complete.</li>
+</ul></li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="orgf5cc8f6">(setq org-export-in-background nil)
+</pre>
+</div>
+
+<p>
+Make sure that exported files are Unicode UTF-8.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="orge452c98">(setq org-export-coding-system 'utf-8)
+</pre>
+</div>
+
+<p>
+Do not preserve line-breaks when exporting instead let the destination
+format handle it as it sees fit. This doesn&rsquo;t work like I had expected and makes
+me wonder what I am confused about here. When I export to HTML text containing
+linebreaks no longer has linebreaks. This is what I expect. When I export that
+same text to a buffer though, the line breaks are included. Currently I use
+<code>sacha/unfill-paragraph</code> on that code.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="org3831a1f">(setq org-export-preserve-breaks nil)
+</pre>
+</div>
+
+<p>
+When exporting anything, do not insert the exported content into the kill ring.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="org88fac10">(setq org-export-copy-to-kill-ring nil)
+</pre>
+</div>
+
+<p>
+By default I never want a table of contents generated. It is so easy to enable
+it with a property, it will be fine to turn it off.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="orga0470a1">(setq org-export-with-toc nil)
+</pre>
+</div>
+
+<p>
+On export, maintain the literal spacing as found in the source block. Obviously
+this is important for make-files. It is really important everywhere because
+anything else would violate the law of least surprise.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="org92ef96b">(setq org-src-preserve-indentation t)
+</pre>
+</div>
+
+<p>
+Maximize flexibility for weaving operations during export.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="orgba9b00d">(setq org-export-allow-bind-keywords t)
+</pre>
+</div>
+
+<p>
+Disable element caching because it might break weaves via <a href="https://lists.gnu.org/archive/html/emacs-orgmode/2015-09/msg00646.html">this thread</a>.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="orgbdf696f">(setq org-element-use-cache nil)
+</pre>
+</div>
+</div>
+
+<ol class="org-ol"><li><a id="orgf8e079f"></a><a id="orgmode:gcr:vela:57B3786B-017F-4F6E-89F9-05642304F3B6"></a>exports<br ><div class="outline-text-5" id="text-1-1-5-1">
+<pre class="example">
+ID: orgmode:gcr:vela:57B3786B-017F-4F6E-89F9-05642304F3B6
+</pre>
+
+<blockquote>
+<p>
+Export code and/or results
+</p>
+</blockquote>
+
+<p>
+Always share source blocks and their results. Whether or not to generate a
+result for a particular source block is configured per-block. If you don&rsquo;t want
+to share a result for a source block then disable storage of results on that
+block.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="org21aef00">(help/set-org-babel-default-header-args <span class="org-builtin">:exports</span> <span class="org-string">"both"</span>)
+</pre>
+</div>
+
+<p>
+Use inline Source-Blocks to provide values read as part of the document. Don&rsquo;t
+show their source code. Allows inline Source-Blocks to function as <i>rich</i> macros
+when combined with <code>org-sbe</code>.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="orgbd6967d">(help/set-org-babel-default-inline-header-args <span class="org-builtin">:exports</span> <span class="org-string">"results"</span>)
+</pre>
+</div>
+</div></li>
+
+<li><a id="orgf924c23"></a><a id="orgmode:gcr:vela:94D6B3BE-5DA1-499A-B5C7-A6B71710A1EA"></a>wrap<br ><div class="outline-text-5" id="text-1-1-5-2">
+<pre class="example">
+ID: orgmode:gcr:vela:94D6B3BE-5DA1-499A-B5C7-A6B71710A1EA
+</pre>
+
+<blockquote>
+<p>
+Mark source block evaluation results
+</p>
+</blockquote>
+
+<p>
+Inline-Source-Blocks are recognizable by their <code>verbatim</code> font. They do not
+interrupt the flow. Source-Blocks are their own entities. They stand out. Their
+results need to be visibly noticeably different for the reader by making them
+<code>EXAMPLE</code> special blocks.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="org78946e2">(help/set-org-babel-default-header-args <span class="org-builtin">:wrap</span> <span class="org-string">"EXAMPLE"</span>)
+</pre>
+</div>
+
+<p>
+Diagramming languages require <code>RESULTS</code> output for exporting.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp" id="org25627de">(help/set-org-babel-default-header-args:ditaa <span class="org-builtin">:wrap</span> <span class="org-string">"RESULTS"</span>)
+(help/set-org-babel-default-header-args:dot <span class="org-builtin">:wrap</span> <span class="org-string">"RESULTS"</span>)
+(help/set-org-babel-default-header-args:plantuml <span class="org-builtin">:wrap</span> <span class="org-string">"RESULTS"</span>)
+</pre>
+</div>
+</div></li></ol>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Grant Rettke</p>
+<p class="date">Created: 2016-09-01 Thu 19:23</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

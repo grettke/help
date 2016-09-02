@@ -1,7 +1,7 @@
 
 # Org-Mode Fundamentals
 
-    ID: 7E71A009-4DD3-4296-9851-293BC71D2DFF
+    ID: orgmode:gcr:vela:7E71A009-4DD3-4296-9851-293BC71D2DFF
 
 Configure Org-Mode core functionality to compile this system.
 
@@ -21,7 +21,7 @@ Start EMACS with this command:
 
 ## Literate Programming
 
-    ID: 8510C876-F644-4804-9F87-54A0B44DBA6A
+    ID: orgmode:gcr:vela:8510C876-F644-4804-9F87-54A0B44DBA6A
 
 This system enables you to perform 3 Literate Document activities
 
@@ -114,7 +114,7 @@ another activity.
 
 ### Helper Functions
 
-    ID: B14776FD-6835-4D1D-BCD3-50D56555423C
+    ID: orgmode:gcr:vela:B14776FD-6835-4D1D-BCD3-50D56555423C
 
 Help configure Org-Mode.
 
@@ -195,7 +195,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
        (if (not (org-element-property :name element))
            (let ((i (org-get-indentation)))
              (beginning-of-line)
-             (save-excursion (insert "#+NAME: " (org-id-new) "\n"))
+             (save-excursion (insert "#+NAME: orgmode:gcr:vela:" (org-id-new) "\n"))
              (indent-to i)
              (forward-line 2))))))
 
@@ -217,14 +217,44 @@ This is a copy and paste. Additional languages would warrant a refactor."
   "Add a NAME property then assign it a UUID."
   (interactive)
   (org-babel-demarcate-block)
-  (insert "#+NAME: " (org-id-new))
+  (insert "#+NAME: orgmode:gcr:vela:" (org-id-new))
   (beginning-of-line)
   (insert "\n"))
 ```
 
+### Identity
+
+    ID: orgmode:gcr:vela:25F4226F-2EB2-48EC-A4D5-56DD5CCC753E
+
+A Headline&rsquo;s primary key is `ID`. Use `org-id` to manage it.
+
+```lisp
+(require 'org-id)
+```
+
+In Links: Never use `ID` or `CUSTOM_ID`; always use the file name and text to make
+it accessible outside of Emacs.
+
+```lisp
+(setq org-id-link-to-org-use-id 'nil)
+```
+
+Make sure that `ID` is always unique, portable, and easy to maintain by
+
+-   Using a memorable prefix
+    -   Must be both LaTeX label and XHTML identifier compliant
+-   Include the current login
+-   Include the current domain
+-   Use a UUID
+
+```lisp
+(setq org-id-prefix (concat "orgmode:" (user-real-login-name) ":" (system-name)))
+(setq org-id-method 'uuid)
+```
+
 ### Tangling
 
-    ID: 267EEDED-1367-405F-807C-B3C489045704
+    ID: orgmode:gcr:vela:267EEDED-1367-405F-807C-B3C489045704
 
 `ID` and `NAME` are essential for successful `LP` using `org-babel-tangle-jump-to-org`.
 
@@ -243,9 +273,16 @@ never allow that. Its inconsistent with how Org-Mode works.
 (setq org-babel-use-quick-and-dirty-noweb-expansion nil)
 ```
 
+Assume that tangled document always live within the same directory structure
+as their origin document.
+
+```lisp
+(setq org-babel-tangle-use-relative-file-links t)
+```
+
 1.  comments
 
-        ID: 49787FC5-CAA7-466B-B742-0F38973E070B
+        ID: orgmode:gcr:vela:49787FC5-CAA7-466B-B742-0F38973E070B
 
     > Toggle insertion of comments in tangled code files
 
@@ -258,7 +295,7 @@ never allow that. Its inconsistent with how Org-Mode works.
 
 2.  mkdirp
 
-        ID: B0F9A321-3B69-46BB-B512-0AF3C663A4C0
+        ID: orgmode:gcr:vela:B0F9A321-3B69-46BB-B512-0AF3C663A4C0
 
     > Toggle creation of parent directories of target files during tangling
 
@@ -268,7 +305,7 @@ never allow that. Its inconsistent with how Org-Mode works.
 
 3.  no-expand
 
-        ID: 90170E6A-AA1A-44EA-9BF8-1A6AA38FD224
+        ID: orgmode:gcr:vela:90170E6A-AA1A-44EA-9BF8-1A6AA38FD224
 
     > Turn off variable assignment and noweb expansion during tangling
 
@@ -276,7 +313,7 @@ never allow that. Its inconsistent with how Org-Mode works.
 
 4.  noweb
 
-        ID: E12B48AB-68E8-4515-89E3-30A16FB6FD22
+        ID: orgmode:gcr:vela:E12B48AB-68E8-4515-89E3-30A16FB6FD22
 
     > Toggle expansion of noweb references
 
@@ -327,7 +364,7 @@ never allow that. Its inconsistent with how Org-Mode works.
 
 5.  noweb-ref
 
-        ID: 2836D0AA-5DBA-48AC-A338-B47002DE8D7F
+        ID: orgmode:gcr:vela:2836D0AA-5DBA-48AC-A338-B47002DE8D7F
 
     > Specify block&rsquo;s noweb reference resolution target
 
@@ -335,7 +372,7 @@ never allow that. Its inconsistent with how Org-Mode works.
 
 6.  noweb-sep
 
-        ID: B1A57D15-6BBF-4E78-A0D9-0B02C283C6B0
+        ID: orgmode:gcr:vela:B1A57D15-6BBF-4E78-A0D9-0B02C283C6B0
 
     > String used to separate noweb references
 
@@ -343,7 +380,7 @@ never allow that. Its inconsistent with how Org-Mode works.
 
 7.  padline
 
-        ID: DDE727A6-DDF7-4B61-9063-549614B135F0
+        ID: orgmode:gcr:vela:DDE727A6-DDF7-4B61-9063-549614B135F0
 
     > Control insertion of padding lines in tangled code files
 
@@ -361,7 +398,7 @@ never allow that. Its inconsistent with how Org-Mode works.
 
 8.  session
 
-        ID: 8219A42A-E90F-418A-8EF0-EB150CF6D730
+        ID: orgmode:gcr:vela:8219A42A-E90F-418A-8EF0-EB150CF6D730
 
     > Preserve the state of code evaluation
 
@@ -372,7 +409,7 @@ never allow that. Its inconsistent with how Org-Mode works.
 
 9.  shebang
 
-        ID: 542185DD-4FD6-459A-B422-DA7B546FB292
+        ID: orgmode:gcr:vela:542185DD-4FD6-459A-B422-DA7B546FB292
 
     > Make tangled files executable
 
@@ -380,7 +417,7 @@ never allow that. Its inconsistent with how Org-Mode works.
 
 10. tangle
 
-        ID: EA716FC9-4A90-4F3E-ABD0-31FEA575C969
+        ID: orgmode:gcr:vela:EA716FC9-4A90-4F3E-ABD0-31FEA575C969
 
     > Toggle tangling and specify file name
 
@@ -390,7 +427,7 @@ never allow that. Its inconsistent with how Org-Mode works.
 
 11. tangle-mode
 
-        ID: 5F0B7157-2DC8-4AFD-8F26-4B21025A5ECE
+        ID: orgmode:gcr:vela:5F0B7157-2DC8-4AFD-8F26-4B21025A5ECE
 
     > Set permission of tangled files
 
@@ -398,7 +435,7 @@ never allow that. Its inconsistent with how Org-Mode works.
 
 ### Evaluating
 
-    ID: ED23FF0B-1F90-435C-9B56-ACA06C1ACAE0
+    ID: orgmode:gcr:vela:ED23FF0B-1F90-435C-9B56-ACA06C1ACAE0
 
 Org-Mode may evaluate all of the listed languages.
 
@@ -427,7 +464,7 @@ Org-Mode may evaluate all of the listed languages.
 
 1.  cache
 
-        ID: 49B8BFE9-643B-450F-A8A1-20CE3079E215
+        ID: orgmode:gcr:vela:49B8BFE9-643B-450F-A8A1-20CE3079E215
 
     > Avoid re-evaluating unchanged code blocks
 
@@ -437,7 +474,7 @@ Org-Mode may evaluate all of the listed languages.
 
 2.  colnames
 
-        ID: 4D683007-14AE-4A7D-A506-E2301FD32E82
+        ID: orgmode:gcr:vela:4D683007-14AE-4A7D-A506-E2301FD32E82
 
     > Handle column names in tables
 
@@ -445,7 +482,7 @@ Org-Mode may evaluate all of the listed languages.
 
 3.  dir
 
-        ID: CD1494F1-0A2A-44D0-9955-0D0501AF1539
+        ID: orgmode:gcr:vela:CD1494F1-0A2A-44D0-9955-0D0501AF1539
 
     > Specify the default (possibly remote) directory for code block execution
 
@@ -453,7 +490,7 @@ Org-Mode may evaluate all of the listed languages.
 
 4.  epilogue
 
-        ID: CA7F5086-9D4B-4847-9449-3231CE027804
+        ID: orgmode:gcr:vela:CA7F5086-9D4B-4847-9449-3231CE027804
 
     > Text to append to code block body
 
@@ -461,7 +498,7 @@ Org-Mode may evaluate all of the listed languages.
 
 5.  eval
 
-        ID: 0329BACE-2C99-4BB3-A7A5-7C800EF53FAD
+        ID: orgmode:gcr:vela:0329BACE-2C99-4BB3-A7A5-7C800EF53FAD
 
     > Limit evaluation of specific code blocks
 
@@ -480,7 +517,7 @@ Org-Mode may evaluate all of the listed languages.
 
 6.  file
 
-        ID: 80824708-62AF-4337-A517-828DA22D1FCA
+        ID: orgmode:gcr:vela:80824708-62AF-4337-A517-828DA22D1FCA
 
     > Specify a path for file output
 
@@ -488,7 +525,7 @@ Org-Mode may evaluate all of the listed languages.
 
 7.  file-desc
 
-        ID: 6F9A2745-7118-469E-9FDB-4B327C02E5FA
+        ID: orgmode:gcr:vela:6F9A2745-7118-469E-9FDB-4B327C02E5FA
 
     > Specify a description for file results
 
@@ -496,7 +533,7 @@ Org-Mode may evaluate all of the listed languages.
 
 8.  file-ext
 
-        ID: 0716A48E-9227-44FD-B1FA-185DF6545E91
+        ID: orgmode:gcr:vela:0716A48E-9227-44FD-B1FA-185DF6545E91
 
     > Specify an extension for file output
 
@@ -504,7 +541,7 @@ Org-Mode may evaluate all of the listed languages.
 
 9.  hlines
 
-        ID: 721F4E5E-A343-4D7C-A3A3-12A544B3A273
+        ID: orgmode:gcr:vela:721F4E5E-A343-4D7C-A3A3-12A544B3A273
 
     > Handle horizontal lines in tables
 
@@ -512,7 +549,7 @@ Org-Mode may evaluate all of the listed languages.
 
 10. output-dir
 
-        ID: D0DDFE88-1B41-4A67-A5F4-88B1B35A7513
+        ID: orgmode:gcr:vela:D0DDFE88-1B41-4A67-A5F4-88B1B35A7513
 
     > Specify a directory to write file output to
 
@@ -523,7 +560,7 @@ Org-Mode may evaluate all of the listed languages.
 
 11. post
 
-        ID: 1A4DEC98-C735-4D88-8261-6AD13C495EF2
+        ID: orgmode:gcr:vela:1A4DEC98-C735-4D88-8261-6AD13C495EF2
 
     > Post processing of code block results
 
@@ -531,7 +568,7 @@ Org-Mode may evaluate all of the listed languages.
 
 12. prologue
 
-        ID: 3D1780E0-2E6D-428C-916D-BFB10E79C76F
+        ID: orgmode:gcr:vela:3D1780E0-2E6D-428C-916D-BFB10E79C76F
 
     > Text to prepend to code block body
 
@@ -550,11 +587,11 @@ Org-Mode may evaluate all of the listed languages.
 
 13. results
 
-        ID: 2755571E-113B-436E-9EEC-26618A55A27E
+        ID: orgmode:gcr:vela:2755571E-113B-436E-9EEC-26618A55A27E
 
     > Specify the type of results and how they will be collected and handled
 
-    Ways to configure `:results`: 224.
+    Ways to configure `:results`: `(apply '* (-keep 'cdr '((Collection . 2) (Type . 4) (Format . 7) (Handling . 4))))` 224.
 
     This system stores the results of evaluation in the source document. It believes
     that the results are critical to the research.
@@ -595,7 +632,7 @@ Org-Mode may evaluate all of the listed languages.
 
 14. rownames
 
-        ID: B184A507-1B03-4096-A4D8-E50A1DA047DB
+        ID: orgmode:gcr:vela:B184A507-1B03-4096-A4D8-E50A1DA047DB
 
     > Handle row names in tables
 
@@ -603,7 +640,7 @@ Org-Mode may evaluate all of the listed languages.
 
 15. sep
 
-        ID: F1336AAA-68EF-4E87-B253-458103B6FF2F
+        ID: orgmode:gcr:vela:F1336AAA-68EF-4E87-B253-458103B6FF2F
 
     > Delimiter for writing tabular results outside Org
 
@@ -611,7 +648,7 @@ Org-Mode may evaluate all of the listed languages.
 
 16. var
 
-        ID: 3B4D638C-82EE-47F3-835C-52B2F03620A0
+        ID: orgmode:gcr:vela:3B4D638C-82EE-47F3-835C-52B2F03620A0
 
     > Pass arguments to code blocks
 
@@ -626,7 +663,7 @@ Org-Mode may evaluate all of the listed languages.
 
 ### Weaving
 
-    ID: F71DD8BA-B853-4903-A348-400E13C0E6F8
+    ID: orgmode:gcr:vela:F71DD8BA-B853-4903-A348-400E13C0E6F8
 
 Help the reader make sense of the document by displaying it&rsquo;s internal
 properties.
@@ -695,7 +732,7 @@ Disable element caching because it might break weaves via [this thread](https://
 
 1.  exports
 
-        ID: 57B3786B-017F-4F6E-89F9-05642304F3B6
+        ID: orgmode:gcr:vela:57B3786B-017F-4F6E-89F9-05642304F3B6
 
     > Export code and/or results
 
@@ -718,7 +755,7 @@ Disable element caching because it might break weaves via [this thread](https://
 
 2.  wrap
 
-        ID: 94D6B3BE-5DA1-499A-B5C7-A6B71710A1EA
+        ID: orgmode:gcr:vela:94D6B3BE-5DA1-499A-B5C7-A6B71710A1EA
 
     > Mark source block evaluation results
 
