@@ -1685,16 +1685,12 @@ Make URLs a first-class object.
 
     ID: orgmode:gcr:vela:8F7A007E-5CBA-4651-84D8-5874FF393EA6
 
-`unicode-fonts` configured the fallback as Symbola. [On my box](https://github.com/rolandwalker/unicode-fonts/issues/15) it isn&rsquo;t working
-though. Until then I&rsquo;m using the [manual configuration of a fallback](http://endlessparentheses.com/manually-choose-a-fallback-font-for-unicode.html) and
-excluding the entire `unicode-fonts` source block.
+Configure the [manual configuration of a fallback](http://endlessparentheses.com/manually-choose-a-fallback-font-for-unicode.html) Unicode font.
 
 ```lisp
 (set-fontset-font "fontset-default" nil
                   (font-spec :size 20 :name "Symbola"))
 ```
-
-Use Unicode-Font to provide as many Unicode fonts as possible.
 
 Here are the Unicode fonts that provide nearly everything.
 
@@ -1757,13 +1753,6 @@ To test it run `view-hello-file` and `M-x list-charset-chars RET unicode-bmp RET
 
 Perhaps educationally there is a character for bowel-movements: 💩.
 
-```lisp
-(use-package unicode-fonts
-  :ensure t
-  :config
-  (unicode-fonts-setup))
-```
-
 Activate font locking everywhere possible.
 
 ```lisp
@@ -1805,13 +1794,35 @@ Warn of poor grammar immediately interrupting flow with a visual indicator.
     '(diminish 'writegood-mode)))
 ```
 
+Integrate Langtool.
+
 ```lisp
 (use-package langtool
   :ensure t
   :init
-  (setq langtool-language-tool-jar "/usr/local/Cellar/languagetool/3.2/libexec/languagetool-commandline.jar")
+  (setq langtool-language-tool-jar (getenv "LANGTOOL"))
   (setq langtool-mother-tongue "en")
   (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java")))
+```
+
+Integrate Proselint.
+
+```lisp
+(defmacro help/proselint-cfg ()
+  (let ((proselintpath (getenv "PROSELINT")))
+    `(progn
+       (flycheck-define-checker proselint
+         "A linter for prose."
+         :command (,proselintpath source-inplace)
+         :error-patterns
+         ((warning line-start (file-name) ":" line ":" column ": "
+                   (id (one-or-more (not (any " "))))
+                   (message (one-or-more not-newline)
+                            (zero-or-more "\n" (any " ") (one-or-more not-newline)))
+                   line-end))
+         :modes (text-mode org-mode latex-mode markdown-mode gfm-mode))
+       (add-to-list 'flycheck-checkers 'proselint))))
+(help/proselint-cfg)
 ```
 
 ## Intellisense (Auto Completion)
@@ -2704,7 +2715,8 @@ expanded. Anyway, the structure cycling makes it really, really easy to get an
 
 When images are displayed in the buffer, display them in their actual size. As
 the operator, I want to know their true form. Any modifications required for
-export will be stated explicitly.
+export will be stated explicitly. Override this by setting
+`#+ATTR_ORG: :width N` in the file.
 
 ```lisp
 (setq org-image-actual-width t)
@@ -4772,15 +4784,22 @@ close together
     (defhydra help/hydra/left-side/global (:color blue
                                                   :hint nil)
       "
-    _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_ grade-level _8_ reading-ease
+    _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm  _7_ grade-level _8_ reading-ease
     _q_ apropos _w_ widen _t_ unicode-troll-stopper-mode _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
+    _Q_ _W_ _E_ _R_ _T_
     _a_ ag  _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point _j_ obtj2o _k_ scrollDown _K_ nextLogLine _;_ toggle-lax-whitespace
-    _x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list _M_ Marked 2 Viewer"
+    _x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list _M_ Marked 2 Viewer
+    _<_ _>_ _?_"
       ("1" help/font-size-reset :exit nil)
+      ("Q" (lambda () (interactive) (insert "✓")) :exit nil)
       ("2" help/text-scale-decrease :exit nil)
+      ("W" (lambda () (interactive) (insert "✗")) :exit nil)
       ("3" help/text-scale-increase :exit nil)
+      ("E" (lambda () (interactive) (insert "☐")) :exit nil)
       ("4" help/insert-ellipsis)
+      ("R" (lambda () (interactive) (insert "☑")) :exit nil)
       ("5" help/uuid)
+      ("T" (lambda () (interactive) (insert "☒")) :exit nil)
       ("6" set-buffer-file-coding-system)
       ("7" writegood-grade-level)
       ("8" writegood-reading-ease)
@@ -4801,6 +4820,9 @@ close together
       ("K" next-logical-line :exit nil)
       ("m" imenu-list-minor-mode)
       ("M" help/preview-buffer-file-in-marked-2)
+      ("<" help/chs)
+      (">" help/che)
+      ("?" help/insert-noticeable-snip-comment-line)
       (";" isearch-toggle-lax-whitespace)
       ("o" toggle-debug-on-error)
       ("p" anzu-query-replace)
