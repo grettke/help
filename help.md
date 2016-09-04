@@ -9,7 +9,7 @@ Sysop is likely to use this constantly.
 
 Start EMACS with this command:
 
-`open /Applications/Emacs.app`
+`open /Applications/Emacs.app -n`
 
 ```lisp
 ;; -*- lexical-binding: t -*-
@@ -2153,6 +2153,7 @@ Check `SPECIAL LINE` definitions, ignoring their type.
         ("NAME" t)
         ("OPTIONS" t)
         ("POSTID" nil)
+        ("RESULTS" t)
         ("SELECT_TAGS" nil)
         ("STARTUP" nil)
         ("TITLE" nil))
