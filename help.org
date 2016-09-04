@@ -1413,6 +1413,11 @@ use than advice.
       (message msg)
       (help/on-gui (alert msg :title "org-mode")))))
 
+(defun help/safb-org-babel-detangle ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (org-babel-detangle))
+
 (defun help/safb-other-window ()
   (interactive)
   (help/save-all-file-buffers)
