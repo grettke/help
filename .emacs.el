@@ -1348,6 +1348,7 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
         ("NAME" t)
         ("OPTIONS" t)
         ("POSTID" nil)
+        ("RESULTS" t)
         ("SELECT_TAGS" nil)
         ("STARTUP" nil)
         ("TITLE" nil))
