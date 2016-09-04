@@ -2644,7 +2644,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm  _7_ grade-level _8_ reading-ease
 _q_ apropos _w_ widen _t_ unicode-troll-stopper-mode _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
 _Q_ _W_ _E_ _R_ _T_
-_a_ ag  _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point _j_ obtj2o _k_ scrollDown _K_ nextLogLine _;_ toggle-lax-whitespace
+_a_ ag  _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point _D_ detangle _j_ obtj2o _k_ scrollDown _K_ nextLogLine _;_ toggle-lax-whitespace
 _x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list _M_ Marked 2 Viewer
 _<_ _>_ _?_"
   ("1" help/font-size-reset :exit nil)
