@@ -2672,6 +2672,7 @@ _<_ _>_ _?_"
   ("u" ucs-insert)
   ("i" scroll-down-command :exit nil)
   ("d" dash-at-point)
+  ("D" help/safb-org-babel-detangle)
   ("k" scroll-up-command :exit nil)
   ("I" previous-logical-line :exit nil)
   ("K" next-logical-line :exit nil)
