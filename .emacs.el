@@ -2612,7 +2612,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 ;; orgmode:gcr:vela:2DB2EB2C-74AA-4121-A2BE-4974DCB5638E ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:8D9EC2AC-FCF0-4A64-9C84-7EF272BC802F][orgmode:gcr:vela:8D9EC2AC-FCF0-4A64-9C84-7EF272BC802F]]
-(global-set-key (kbd "<F9>") #'org2blog/wp-new-entry)
+(global-set-key (kbd "<f9>") #'org2blog/wp-new-entry)
 ;; orgmode:gcr:vela:8D9EC2AC-FCF0-4A64-9C84-7EF272BC802F ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:E4B98196-FDFB-42B4-A52A-8CA7DC066E8E][orgmode:gcr:vela:E4B98196-FDFB-42B4-A52A-8CA7DC066E8E]]

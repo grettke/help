@@ -5078,7 +5078,7 @@ close together
 
 #+NAME: orgmode:gcr:vela:8D9EC2AC-FCF0-4A64-9C84-7EF272BC802F
 #+BEGIN_SRC emacs-lisp :results output silent
-(global-set-key (kbd "<F9>") #'org2blog/wp-new-entry)
+(global-set-key (kbd "<f9>") #'org2blog/wp-new-entry)
 #+END_SRC
 
 **** Row 5
