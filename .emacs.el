@@ -1129,16 +1129,16 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
 ;; [[file:help.org::orgmode:gcr:vela:2A5BAD60-DF45-4BD1-AA01-E430E495C62D][orgmode:gcr:vela:2A5BAD60-DF45-4BD1-AA01-E430E495C62D]]
 (with-eval-after-load "flycheck"
   (flycheck-define-checker proselint
-  "A linter for prose."
-  :command ("/Users/gcr/util/proselint/env/bin/proselint" source-inplace)
-  :error-patterns
-  ((warning line-start (file-name) ":" line ":" column ": "
-            (id (one-or-more (not (any " "))))
-            (message (one-or-more not-newline)
-                     (zero-or-more "\n" (any " ") (one-or-more not-newline)))
-            line-end))
-  :modes (text-mode org-mode markdown-mode gfm-mode))
-(add-to-list 'flycheck-checkers 'proselint))
+    "A linter for prose."
+    :command ("/Users/gcr/util/proselint/env/bin/proselint" source-inplace)
+    :error-patterns
+    ((warning line-start (file-name) ":" line ":" column ": "
+              (id (one-or-more (not (any " "))))
+              (message (one-or-more not-newline)
+                       (zero-or-more "\n" (any " ") (one-or-more not-newline)))
+              line-end))
+    :modes (text-mode org-mode markdown-mode gfm-mode))
+  (add-to-list 'flycheck-checkers 'proselint))
 ;; orgmode:gcr:vela:2A5BAD60-DF45-4BD1-AA01-E430E495C62D ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:487B46D5-C025-4114-A1B4-BAAF5FAFE430][orgmode:gcr:vela:487B46D5-C025-4114-A1B4-BAAF5FAFE430]]
