@@ -5071,6 +5071,16 @@ close together
     :ID:       orgmode:gcr:vela:22246934-BE44-4D99-942C-A6DAB4506D65
     :END:
 
+**** Row 6
+:PROPERTIES:
+:ID:       orgmode:gcr:vela:0CA71D0C-4F70-4E5F-A5AA-E5A9770F9A62
+:END:
+
+#+NAME: orgmode:gcr:vela:8D9EC2AC-FCF0-4A64-9C84-7EF272BC802F
+#+BEGIN_SRC emacs-lisp :results output silent
+(global-set-key (kbd "<F9>") #'org2blog/wp-new-entry)
+#+END_SRC
+
 **** Row 5
      :PROPERTIES:
      :ID:       orgmode:gcr:vela:C00A4E41-0801-4696-86E6-5A1CE1EBB189
