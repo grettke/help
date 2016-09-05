@@ -1127,7 +1127,8 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
 ;; orgmode:gcr:vela:4FF40D35-DDA0-4E02-80C0-52962DCD449A ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:2A5BAD60-DF45-4BD1-AA01-E430E495C62D][orgmode:gcr:vela:2A5BAD60-DF45-4BD1-AA01-E430E495C62D]]
-(flycheck-define-checker proselint
+(with-eval-after-load "flycheck"
+  (flycheck-define-checker proselint
   "A linter for prose."
   :command ("/Users/gcr/util/proselint/env/bin/proselint" source-inplace)
   :error-patterns
@@ -1137,7 +1138,7 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
                      (zero-or-more "\n" (any " ") (one-or-more not-newline)))
             line-end))
   :modes (text-mode org-mode markdown-mode gfm-mode))
-(add-to-list 'flycheck-checkers 'proselint)
+(add-to-list 'flycheck-checkers 'proselint))
 ;; orgmode:gcr:vela:2A5BAD60-DF45-4BD1-AA01-E430E495C62D ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:487B46D5-C025-4114-A1B4-BAAF5FAFE430][orgmode:gcr:vela:487B46D5-C025-4114-A1B4-BAAF5FAFE430]]
@@ -2642,9 +2643,9 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
                                               :hint nil)
   "
 _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm  _7_ grade-level _8_ reading-ease
-_q_ apropos _w_ widen _t_ unicode-troll-stopper-mode _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
+_q_ apropos _w_ widen _e_ flycheck-list-errors _t_ unicode-troll-stopper-mode _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
 _Q_ ✓ _W_ ✗ _E_ ☐ _R_ ☑ _T_ ☒_
-_a_ ag  _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point _D_ detangle _j_ obtj2o _k_ scrollDown _K_ nextLogLine _;_ toggle-lax-whitespace
+_a_ ag  _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point _D_ detangle _j_ obtj2o _k_ scrollDown _K_ nextLogLine  _;_ toggle-lax-whitespace
 _x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list _M_ Marked 2 Viewer
 _<_ cmtIn _>_ cmtOut _?_ snp"
   ("1" help/font-size-reset :exit nil)
@@ -2652,6 +2653,7 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("2" help/text-scale-decrease :exit nil)
   ("W" (lambda () (interactive) (insert "✗")) :exit nil)
   ("3" help/text-scale-increase :exit nil)
+  ("e" flycheck-list-errors)
   ("E" (lambda () (interactive) (insert "☐")) :exit nil)
   ("4" help/insert-ellipsis)
   ("R" (lambda () (interactive) (insert "☑")) :exit nil)
