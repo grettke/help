@@ -1136,7 +1136,7 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
             (message (one-or-more not-newline)
                      (zero-or-more "\n" (any " ") (one-or-more not-newline)))
             line-end))
-  :modes (text-mode markdown-mode gfm-mode))
+  :modes (text-mode org-mode markdown-mode gfm-mode))
 (add-to-list 'flycheck-checkers 'proselint)
 ;; orgmode:gcr:vela:2A5BAD60-DF45-4BD1-AA01-E430E495C62D ends here
 
