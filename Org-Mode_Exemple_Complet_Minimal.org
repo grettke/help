@@ -11,7 +11,7 @@ Sysop is likely to use this often.
 
 Start EMACS with this command:
 
-=open /Applications/Emacs.app -n --args --quick --load ~/src/help/.org-mode-ecm.emacs.el=
+=open /Applications/Emacs.app -n --args --debug-init --quick --load ~/src/help/.org-mode-ecm.emacs.el=
 
 #+NAME: orgmode:gcr:vela:EE055B39-1C93-45AB-B9A6-2FCFD54D47A5
 #+BEGIN_SRC emacs-lisp :results output silent :comments no

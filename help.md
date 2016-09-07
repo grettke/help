@@ -9,7 +9,7 @@ Sysop is likely to use this constantly.
 
 Start EMACS with this command:
 
-`open /Applications/Emacs.app -n`
+`open /Applications/Emacs.app -n --args --debug-init`
 
 ```lisp
 ;; -*- lexical-binding: t -*-
@@ -916,6 +916,13 @@ Attribution: URL
    (shell-command
     (format "open -a 'Marked 2.app' %s"
             (shell-quote-argument (buffer-file-name))))))
+
+(defun help/safb-flycheck-list-errors ()
+  "Save all file buffers and switch to flycheck error list"
+  (interactive)
+  (help/save-all-file-buffers)
+  (flycheck-list-errors)
+  (other-window 1))
 ```
 
 ## Typography
@@ -1334,6 +1341,11 @@ use than advice.
                        ">"))
       (message msg)
       (help/on-gui (alert msg :title "org-mode")))))
+
+(defun help/safb-org-babel-detangle ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (org-babel-detangle))
 
 (defun help/safb-other-window ()
   (interactive)
@@ -1808,21 +1820,18 @@ Integrate Langtool.
 Integrate Proselint.
 
 ```lisp
-(defmacro help/proselint-cfg ()
-  (let ((proselintpath (getenv "PROSELINT")))
-    `(progn
-       (flycheck-define-checker proselint
-         "A linter for prose."
-         :command (,proselintpath source-inplace)
-         :error-patterns
-         ((warning line-start (file-name) ":" line ":" column ": "
-                   (id (one-or-more (not (any " "))))
-                   (message (one-or-more not-newline)
-                            (zero-or-more "\n" (any " ") (one-or-more not-newline)))
-                   line-end))
-         :modes (text-mode org-mode latex-mode markdown-mode gfm-mode))
-       (add-to-list 'flycheck-checkers 'proselint))))
-(help/proselint-cfg)
+(with-eval-after-load "flycheck"
+  (flycheck-define-checker proselint
+    "A linter for prose."
+    :command ("/Users/gcr/util/proselint/env/bin/proselint" source-inplace)
+    :error-patterns
+    ((warning line-start (file-name) ":" line ":" column ": "
+              (id (one-or-more (not (any " "))))
+              (message (one-or-more not-newline)
+                       (zero-or-more "\n" (any " ") (one-or-more not-newline)))
+              line-end))
+    :modes (text-mode org-mode markdown-mode gfm-mode))
+  (add-to-list 'flycheck-checkers 'proselint))
 ```
 
 ## Intellisense (Auto Completion)
@@ -2975,7 +2984,7 @@ Follow links without using the mouse or more.
         (defhydra help/hydra/right-side/org-mode (:color blue
                                                          :hint nil)
           "
-        _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ detangle _5_ id-create _6_ toggle-macro
+        _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ id-create _5_ toggle-macro
         _q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ g2nms-b _t_ g2s-b/hd _y_ org-archive-subtree _u_ goto
         _a_ inshdrgs _s_ oblobigst            _h_ dksieb _k_ ob-check-src-blk
         _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre"
@@ -2983,9 +2992,8 @@ Follow links without using the mouse or more.
           ("1" org-babel-sha1-hash)
           ("2" org-display-inline-images)
           ("3" org-remove-inline-images)
-          ("4" org-babel-detangle)
-          ("5" org-id-get-create)
-          ("6" help/org-toggle-macro-markers)
+          ("4" org-id-get-create)
+          ("5" help/org-toggle-macro-markers)
           ;; Row 4
           ("q" org-babel-switch-to-session-with-code)
           ("w" org-table-edit-field)
@@ -4743,7 +4751,16 @@ close together
 
     ID: orgmode:gcr:vela:22246934-BE44-4D99-942C-A6DAB4506D65
 
-1.  Row 5
+1.  Row 6
+
+        ID: orgmode:gcr:vela:0CA71D0C-4F70-4E5F-A5AA-E5A9770F9A62
+
+    ```lisp
+    (global-set-key (kbd "<f9>") #'org2blog/wp-new-entry)
+    (global-set-key (kbd "<f8>") #'org2blog/wp-post-buffer-and-publish)
+    ```
+
+2.  Row 5
 
         ID: orgmode:gcr:vela:C00A4E41-0801-4696-86E6-5A1CE1EBB189
 
@@ -4756,7 +4773,7 @@ close together
     (global-set-key (kbd "s-+") #'increment-integer-at-point)
     ```
 
-2.  Row 4
+3.  Row 4
 
         ID: orgmode:gcr:vela:8F467832-8FC3-42B5-8978-8CF2C1454D5B
 
@@ -4772,7 +4789,7 @@ close together
     (global-set-key (kbd "H-P") #'help/insert-timestamp)
     ```
 
-3.  Row 3
+4.  Row 3
 
         ID: orgmode:gcr:vela:6DCD321F-6FDA-4983-9C7C-265D23D1AC4F
 
@@ -4786,16 +4803,17 @@ close together
                                                   :hint nil)
       "
     _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm  _7_ grade-level _8_ reading-ease
-    _q_ apropos _w_ widen _t_ unicode-troll-stopper-mode _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
-    _Q_ _W_ _E_ _R_ _T_
-    _a_ ag  _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point _j_ obtj2o _k_ scrollDown _K_ nextLogLine _;_ toggle-lax-whitespace
+    _q_ apropos _w_ widen _e_ flycheck _t_ unicode-troll-stopper-mode _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
+    _Q_ ✓ _W_ ✗ _E_ ☐ _R_ ☑ _T_ ☒_
+    _a_ ag  _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point _D_ detangle _j_ obtj2o _k_ scrollDown _K_ nextLogLine  _;_ toggle-lax-whitespace
     _x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list _M_ Marked 2 Viewer
-    _<_ _>_ _?_"
+    _<_ cmtIn _>_ cmtOut _?_ snp"
       ("1" help/font-size-reset :exit nil)
       ("Q" (lambda () (interactive) (insert "✓")) :exit nil)
       ("2" help/text-scale-decrease :exit nil)
       ("W" (lambda () (interactive) (insert "✗")) :exit nil)
       ("3" help/text-scale-increase :exit nil)
+      ("e" help/safb-flycheck-list-errors)
       ("E" (lambda () (interactive) (insert "☐")) :exit nil)
       ("4" help/insert-ellipsis)
       ("R" (lambda () (interactive) (insert "☑")) :exit nil)
@@ -4816,6 +4834,7 @@ close together
       ("u" ucs-insert)
       ("i" scroll-down-command :exit nil)
       ("d" dash-at-point)
+      ("D" help/safb-org-babel-detangle)
       ("k" scroll-up-command :exit nil)
       ("I" previous-logical-line :exit nil)
       ("K" next-logical-line :exit nil)
@@ -4856,7 +4875,7 @@ close together
       ("e" apropos-value))
     ```
 
-4.  Row 2
+5.  Row 2
 
         ID: orgmode:gcr:vela:9E95D130-D1EC-445B-9028-24DFA5CCB28A
 
@@ -4867,11 +4886,11 @@ close together
     (global-set-key (kbd "s-c") #'ido-switch-buffer)
     ```
 
-5.  Row 1
+6.  Row 1
 
         ID: orgmode:gcr:vela:4CDDC2CE-646A-4D8B-B5D3-2588FBEFF650
 
-6.  Unsorted
+7.  Unsorted
 
         ID: orgmode:gcr:vela:AD2164B2-CB66-48AD-B367-4E0CC406B022
 

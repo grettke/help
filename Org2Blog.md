@@ -9,7 +9,7 @@ Sysop is likely to use this periodically.
 
 Start EMACS with this command:
 
-`open /Applications/Emacs.app -n --args --quick --load ~/src/help/.org-mode-org2blog.emacs.el`
+`open /Applications/Emacs.app -n --args --debug-init --quick --load ~/src/help/.org-mode-org2blog.emacs.el`
 
 ```lisp
 ;; -*- lexical-binding: t -*-
