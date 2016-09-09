@@ -2501,6 +2501,10 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 (setq default-input-method 'TeX)
 ;; orgmode:gcr:vela:D0F5616F-1609-4E12-A4D7-7A1F46D34A2C ends here
 
+;; [[file:help.org::orgmode:gcr:vela:22652727-D070-49FE-804F-72FA4C86B770][orgmode:gcr:vela:22652727-D070-49FE-804F-72FA4C86B770]]
+(setq mouse-drag-copy-region t)
+;; orgmode:gcr:vela:22652727-D070-49FE-804F-72FA4C86B770 ends here
+
 ;; [[file:help.org::orgmode:gcr:vela:021B7D3A-E696-43B9-BC08-C8BDABB33999][orgmode:gcr:vela:021B7D3A-E696-43B9-BC08-C8BDABB33999]]
 (use-package solarized-theme
   :ensure t

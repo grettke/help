@@ -4460,6 +4460,13 @@ Make it very easy to input special-characters using TeX coding.
 (setq default-input-method 'TeX)
 #+END_SRC
 
+Automatically Copy Text Selected With The Mouse [[http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/][via]].
+
+#+NAME: orgmode:gcr:vela:22652727-D070-49FE-804F-72FA4C86B770
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq mouse-drag-copy-region t)
+#+END_SRC
+
 ** Color Theme
    :PROPERTIES:
    :ID:       orgmode:gcr:vela:057BBA77-4662-4F7B-B47A-CB1E79A1618B
