@@ -5090,6 +5090,7 @@ close together
 #+BEGIN_SRC emacs-lisp :results output silent
 (global-set-key (kbd "<f9>") #'org2blog/wp-new-entry)
 (global-set-key (kbd "<f8>") #'org2blog/wp-post-buffer-and-publish)
+(global-set-key (kbd "<f7>") #'org2blog/wp-login)
 #+END_SRC
 
 **** Row 5
