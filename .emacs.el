@@ -688,6 +688,10 @@ Attribution: URL
 (setq scroll-preserve-screen-position t)
 ;; orgmode:gcr:vela:CDBC5A4D-F67C-412C-A1DE-69EB52287E2C ends here
 
+;; [[file:help.org::orgmode:gcr:vela:AA25E45E-3FF2-483A-9361-FD44DE6E1C18][orgmode:gcr:vela:AA25E45E-3FF2-483A-9361-FD44DE6E1C18]]
+(setq scroll-conservatively 101)
+;; orgmode:gcr:vela:AA25E45E-3FF2-483A-9361-FD44DE6E1C18 ends here
+
 ;; [[file:help.org::orgmode:gcr:vela:4B565992-E3BA-4355-AD8F-061E6A1736D9][orgmode:gcr:vela:4B565992-E3BA-4355-AD8F-061E6A1736D9]]
 (use-package stripe-buffer
   :ensure t)

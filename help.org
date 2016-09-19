@@ -1095,6 +1095,13 @@ Take the cursor with scroll activities.
 (setq scroll-preserve-screen-position t)
 #+END_SRC
 
+Scroll text line-by-line as the cursor scrolls off of the screen
+
+#+NAME: orgmode:gcr:vela:AA25E45E-3FF2-483A-9361-FD44DE6E1C18
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq scroll-conservatively 101)
+#+END_SRC
+
 More easily visualize tabular data. Considered to non-subjective.
 
 #+NAME: orgmode:gcr:vela:4B565992-E3BA-4355-AD8F-061E6A1736D9
