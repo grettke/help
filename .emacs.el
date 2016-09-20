@@ -618,6 +618,27 @@ Attribution: URL
   (help/save-all-file-buffers)
   (flycheck-list-errors)
   (other-window 1))
+
+(defmacro help/profile-org (times &rest body)
+  "Makes profiling Org-Mode easy by automatically instrumenting the desired
+  functions, running the code you want to test, removing the instrumentation,
+  and presenting the results.
+
+  Attribution: Adam Porter <adam@alphapapa.net>"
+  `(let (output)
+     (dolist (p '("org-"))  ; symbol prefixes to instrument
+       (elp-instrument-package p))
+     (dotimes (x ,times)
+       ,@body)
+     (elp-results)
+     (elp-restore-all)
+     (point-min)
+     (forward-line 20)
+     (delete-region (point) (point-max))
+     (setq output (buffer-substring-no-properties (point-min) (point-max)))
+     (kill-buffer)
+     (delete-window)
+     output))
 ;; orgmode:gcr:vela:D523CBF8-67C4-4C96-9298-A4A49FE54E61 ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:9DB523BC-E21B-42B7-AEE2-31ED24C14D92][orgmode:gcr:vela:9DB523BC-E21B-42B7-AEE2-31ED24C14D92]]
