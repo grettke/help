@@ -5127,6 +5127,14 @@ but not from Karabiner. It makes sense, Emacs expects to be told at a lower
 level than Karabiner runs. Long story short I had to change the layout to get
 the toggling behavior that I wanted.
 
+For simplicity I added a Hydra to toggle both the option and the function key
+between being sent to the OS or swallowed by Emacs.
+
+Function started making a place in my config as Hyper after I got tired of
+searching for combinations of Hydras for common actions.
+
+These changes helped guide the custom keyboard design.
+
 #+BEGIN_EXAMPLE
 +---------------------------------------+
 | +-----+                       +-----+ |
@@ -5141,14 +5149,6 @@ the toggling behavior that I wanted.
 |                                       |
 +---------------------------------------+
 #+END_EXAMPLE
-
-For simplicity I added a Hydra to toggle both the option and the function key
-between being sent to the OS or swallowed by Emacs.
-
-Function started making a place in my config as Hyper after I got tired of
-searching for combinations of Hydras for common actions.
-
-These changes helped guide the custom keyboard design.
 
 ** Take a Sip
    :PROPERTIES:
