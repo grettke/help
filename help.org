@@ -5135,15 +5135,19 @@ the toggling behavior that I wanted.
 | +------+                     +------+ |
 | |SHIFT |                     | SHIFT| |
 | +------+                     +------+ |
-|        +-+ +-+ +-----+ +-+ +-+        |
-|        |s| |M| |spc  | |M| |s|        |
-|        +-+ +-+ +-----+ +-+ +-+        |
+| +-+    +-+ +-+ +-----+ +-+ +-+        |
+| |H|    |s| |M| |spc  | |M| |s|        |
+| +-+    +-+ +-+ +-----+ +-+ +-+        |
 |                                       |
 +---------------------------------------+
 #+END_EXAMPLE
 
-For simplicity I added a Hydra to toggle both the option and the function keys
-between being sent to the OS or swallowed by Emacs.
+For simplicity I added a Hydra to toggle both the option and the function key
+between being sent to the OS or swallowed by Emacs. Function started making a
+place in my config as Hyper after I got tired of searching for combinations of
+Hydras for common actions.
+
+These changes helped guide the custom keyboard design.
 
 ** Take a Sip
    :PROPERTIES:
