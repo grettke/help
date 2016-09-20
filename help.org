@@ -5099,6 +5099,52 @@ close together
 +---------------------------------------+
 #+END_EXAMPLE
 
+On OS X Dyalog uses an input source for entering APL symbols. Enable its input
+source, press option-i, and you get the symbol ⍳ (APL FUNCTIONAL SYMBOL IOTA).
+It should work in every OS X application. When I tried to use it in Emacs
+though it didn't work. This configuration swallows the option key and
+translates it to the Emacs Super key. Any option chords are never sent to
+OS X. This had worked fine because I'd never used command. Most of the time I
+want Emacs to work this way, but some of the time I want to pass command
+through to OS X. How can I do this?
+
+When I read the Emacs documentation they explained that you can choose whether
+or not you want ALT or GUI (option and command on OS X) to be swallowed by
+Emacs or passed through to the OS. Most of us already have this in our config.
+How can we switch it back and forth then?
+
+Elisp is of course the solution so I wrote some code to toggle this behavior.
+It didn't work! Didn't look like a bug in my code so I dug a little further
+into the documentation. Around the same time I was reading the USB HID
+specification. The spec explains that for every modifier there is both a left
+and a right code. When I got to the relevant document for Emacs it all started
+to make sense: the toggling modifier keys in Emacs only works for the right
+keys!
+
+It is exciting to learn that Emacs makes this distinction. What I found next
+though was that it only works when the OS tells Emacs which modifier it is,
+but not from Karabiner. It makes sense, Emacs expects to be told at a lower
+level than Karabiner runs. Long story short I had to change the layout to get
+the toggling behavior that I wanted.
+
+#+BEGIN_EXAMPLE
++---------------------------------------+
+| +-----+                       +-----+ |
+| |C    |                       |C/ret| |
+| +-----+                       +-----+ |
+| +------+                     +------+ |
+| |SHIFT |                     | SHIFT| |
+| +------+                     +------+ |
+|        +-+ +-+ +-----+ +-+ +-+        |
+|        |s| |M| |spc  | |M| |s|        |
+|        +-+ +-+ +-----+ +-+ +-+        |
+|                                       |
++---------------------------------------+
+#+END_EXAMPLE
+
+For simplicity I added a Hydra to toggle both the option and the function keys
+between being sent to the OS or swallowed by Emacs.
+
 ** Take a Sip
    :PROPERTIES:
    :ID:       orgmode:gcr:vela:F42A8A6B-C690-4715-90CB-2207C47C6808
