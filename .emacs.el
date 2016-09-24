@@ -771,6 +771,13 @@ Attribution: URL
     (call-interactively #'goto-line)
     (save-excursion
       (hs-show-block)))
+  (defvar help/my-hs-hide nil "Current state of hideshow for toggling all.")
+  (defun help/my-toggle-hideshow-all () "Toggle hideshow all."
+         (interactive)
+         (setq help/my-hs-hide (not help/my-hs-hide))
+         (if help/my-hs-hide
+             (hs-hide-all)
+           (hs-show-all)))
   :diminish hs-minor-mode)
 ;; orgmode:gcr:vela:2D731158-FCE7-4BDA-AE78-383EAAD1FE4B ends here
 
@@ -2789,6 +2796,7 @@ _v_ariable       _u_ser-option
 
 ;; [[file:help.org::orgmode:gcr:vela:374B4284-8823-4E85-A469-F3985D48EC61][orgmode:gcr:vela:374B4284-8823-4E85-A469-F3985D48EC61]]
 (global-set-key (kbd "s-b") #'hs-toggle-hiding)
+(global-set-key (kbd "s-M-b") #'help/my-toggle-hideshow-all)
 ;; orgmode:gcr:vela:374B4284-8823-4E85-A469-F3985D48EC61 ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:779A4232-960E-4CE1-B6EC-018FC997F0DD][orgmode:gcr:vela:779A4232-960E-4CE1-B6EC-018FC997F0DD]]
