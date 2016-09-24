@@ -746,6 +746,13 @@ Attribution: URL
 (advice-add #'forward-page :after #'recenter)
 ;; orgmode:gcr:vela:240E646E-D7F6-40A1-AA60-F6D0CD83DDD7 ends here
 
+;; [[file:help.org::orgmode:gcr:vela:C9521BF3-23E7-4952-846F-322D107E3EE3][orgmode:gcr:vela:C9521BF3-23E7-4952-846F-322D107E3EE3]]
+(use-package mwim
+  :ensure t
+  :config
+  (global-set-key (kbd "C-a") 'mwim-beginning-of-code-or-line))
+;; orgmode:gcr:vela:C9521BF3-23E7-4952-846F-322D107E3EE3 ends here
+
 ;; [[file:help.org::orgmode:gcr:vela:2D731158-FCE7-4BDA-AE78-383EAAD1FE4B][orgmode:gcr:vela:2D731158-FCE7-4BDA-AE78-383EAAD1FE4B]]
 (use-package hideshow
   :config
@@ -2767,10 +2774,6 @@ _v_ariable       _u_ser-option
 (define-key help/vc-map "u" #'help/safb-vc-revert)
 (global-set-key (kbd "s-f") #'help/safb-help/vc-next-action)
 ;; orgmode:gcr:vela:A45F49E2-E330-463B-82C6-907F138E8F2A ends here
-
-;; [[file:help.org::orgmode:gcr:vela:C9521BF3-23E7-4952-846F-322D107E3EE3][orgmode:gcr:vela:C9521BF3-23E7-4952-846F-322D107E3EE3]]
-(global-set-key (kbd "C-a") #'beginning-of-line-dwim)
-;; orgmode:gcr:vela:C9521BF3-23E7-4952-846F-322D107E3EE3 ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:2608E62D-62B4-4B82-BFE0-E1E04C0D6914][orgmode:gcr:vela:2608E62D-62B4-4B82-BFE0-E1E04C0D6914]]
 (global-set-key (kbd "H-o") #'help/occur-dwim)

@@ -1178,6 +1178,16 @@ Center the buffer after navigating pages.
 (advice-add #'forward-page :after #'recenter)
 #+END_SRC
 
+Do the /right thing/ for getting to the start of the line.
+
+#+NAME: orgmode:gcr:vela:C9521BF3-23E7-4952-846F-322D107E3EE3
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package mwim
+  :ensure t
+  :config
+  (global-set-key (kbd "C-a") 'mwim-beginning-of-code-or-line))
+#+END_SRC
+
 ** Code Folding
    :PROPERTIES:
    :ID:       orgmode:gcr:vela:3F70676D-C141-4093-9E40-F42B6C7B7232
@@ -4495,6 +4505,8 @@ Automatically Copy Text Selected With The Mouse [[http://pragmaticemacs.com/emac
 (setq mouse-drag-copy-region t)
 #+END_SRC
 
+
+
 ** Color Theme
    :PROPERTIES:
    :ID:       orgmode:gcr:vela:057BBA77-4662-4F7B-B47A-CB1E79A1618B
@@ -5331,13 +5343,6 @@ VC activities.
 (define-key help/vc-map "d" #'help/safb-vc-diff)
 (define-key help/vc-map "u" #'help/safb-vc-revert)
 (global-set-key (kbd "s-f") #'help/safb-help/vc-next-action)
-#+END_SRC
-
-Do the /right thing/ for getting to the start of the line.
-
-#+NAME: orgmode:gcr:vela:C9521BF3-23E7-4952-846F-322D107E3EE3
-#+BEGIN_SRC emacs-lisp :results output silent
-(global-set-key (kbd "C-a") #'beginning-of-line-dwim)
 #+END_SRC
 
 Occur has 3 cases. I like to use it to explore the unknown.
