@@ -639,6 +639,12 @@ Attribution: URL
      (kill-buffer)
      (delete-window)
      output))
+
+(defun help/open-projects ()
+  "Switch to the buffer backed by `projects.org'."
+  (interactive)
+  (if (get-buffer "projects.org")
+      (switch-to-buffer "projects.org")))
 ;; orgmode:gcr:vela:D523CBF8-67C4-4C96-9298-A4A49FE54E61 ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:9DB523BC-E21B-42B7-AEE2-31ED24C14D92][orgmode:gcr:vela:9DB523BC-E21B-42B7-AEE2-31ED24C14D92]]
@@ -2840,6 +2846,10 @@ _v_ariable       _u_ser-option
 ;; [[file:help.org::orgmode:gcr:vela:F3708409-D807-4541-95AB-C6298540FD59][orgmode:gcr:vela:F3708409-D807-4541-95AB-C6298540FD59]]
 (key-chord-define-global "FK" #'pop-to-mark-command)
 ;; orgmode:gcr:vela:F3708409-D807-4541-95AB-C6298540FD59 ends here
+
+;; [[file:help.org::orgmode:gcr:vela:88A77813-1BAF-4927-AA5B-DECCA8763AA0][orgmode:gcr:vela:88A77813-1BAF-4927-AA5B-DECCA8763AA0]]
+(key-chord-define-global "fh" #'help/open-projects)
+;; orgmode:gcr:vela:88A77813-1BAF-4927-AA5B-DECCA8763AA0 ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:0410911F-2D84-4799-8F68-1F3173E318B6][orgmode:gcr:vela:0410911F-2D84-4799-8F68-1F3173E318B6]]
 (help/not-on-gui (global-set-key (kbd "s-RET") #'help/smart-open-line))
