@@ -640,6 +640,12 @@ Attribution: URL
      (delete-window)
      output))
 
+(defun help/open-help ()
+  "Switch to the buffer backed by `help.org'."
+  (interactive)
+  (if (get-buffer "help.org")
+      (switch-to-buffer "help.org")))
+
 (defun help/open-projects ()
   "Switch to the buffer backed by `projects.org'."
   (interactive)
@@ -2849,7 +2855,8 @@ _v_ariable       _u_ser-option
 ;; orgmode:gcr:vela:F3708409-D807-4541-95AB-C6298540FD59 ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:88A77813-1BAF-4927-AA5B-DECCA8763AA0][orgmode:gcr:vela:88A77813-1BAF-4927-AA5B-DECCA8763AA0]]
-(key-chord-define-global "fh" #'help/open-projects)
+(key-chord-define-global "fh" #'help/open-help)
+(key-chord-define-global "fp" #'help/open-projects)
 ;; orgmode:gcr:vela:88A77813-1BAF-4927-AA5B-DECCA8763AA0 ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:0410911F-2D84-4799-8F68-1F3173E318B6][orgmode:gcr:vela:0410911F-2D84-4799-8F68-1F3173E318B6]]

@@ -987,6 +987,12 @@ Attribution: URL
      (delete-window)
      output))
 
+(defun help/open-help ()
+  "Switch to the buffer backed by `help.org'."
+  (interactive)
+  (if (get-buffer "help.org")
+      (switch-to-buffer "help.org")))
+
 (defun help/open-projects ()
   "Switch to the buffer backed by `projects.org'."
   (interactive)
@@ -5472,11 +5478,12 @@ Pop the mark back.
 (key-chord-define-global "FK" #'pop-to-mark-command)
 #+END_SRC
 
-Go to the projects file.
+Go to the most important files.
 
 #+NAME: orgmode:gcr:vela:88A77813-1BAF-4927-AA5B-DECCA8763AA0
 #+BEGIN_SRC emacs-lisp :results output silent
-(key-chord-define-global "fh" #'help/open-projects)
+(key-chord-define-global "fh" #'help/open-help)
+(key-chord-define-global "fp" #'help/open-projects)
 #+END_SRC
 
 *** Right Side
