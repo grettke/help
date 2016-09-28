@@ -2723,6 +2723,7 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("9" help/insert-checkmark)
   ("a" ag)
   ("s" help/toggle-mac-right-option-modifier)
+  ("h" hack-local-variable)
   ("S" help/toggle-mac-function-modifier)
   ("x" delete-indentation)
   ("v" view-mode)
