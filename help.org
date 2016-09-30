@@ -5486,6 +5486,13 @@ Go to the most important files.
 (key-chord-define-global "fp" #'help/open-projects)
 #+END_SRC
 
+Count words.
+
+#+NAME: orgmode:gcr:vela:73C1697E-966A-4129-840B-2B34A70FF531
+#+BEGIN_SRC emacs-lisp :results output silent
+(key-chord-define-global "wc" #'count-words)
+#+END_SRC
+
 *** Right Side
     :PROPERTIES:
     :ID:       orgmode:gcr:vela:16040443-9099-42C1-A7FB-90C0DDC9F8EE

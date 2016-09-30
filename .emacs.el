@@ -2859,6 +2859,10 @@ _v_ariable       _u_ser-option
 (key-chord-define-global "fp" #'help/open-projects)
 ;; orgmode:gcr:vela:88A77813-1BAF-4927-AA5B-DECCA8763AA0 ends here
 
+;; [[file:help.org::orgmode:gcr:vela:73C1697E-966A-4129-840B-2B34A70FF531][orgmode:gcr:vela:73C1697E-966A-4129-840B-2B34A70FF531]]
+(key-chord-define-global "wc" #'count-words)
+;; orgmode:gcr:vela:73C1697E-966A-4129-840B-2B34A70FF531 ends here
+
 ;; [[file:help.org::orgmode:gcr:vela:0410911F-2D84-4799-8F68-1F3173E318B6][orgmode:gcr:vela:0410911F-2D84-4799-8F68-1F3173E318B6]]
 (help/not-on-gui (global-set-key (kbd "s-RET") #'help/smart-open-line))
 (help/on-gui (global-set-key (kbd "s-<return>") #'help/smart-open-line))
