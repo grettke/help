@@ -2677,6 +2677,14 @@ Set a default commenting prefix.
   (help/ielm-auto-complete))
 #+END_SRC
 
+"find callers of elisp functions or macros".
+
+#+NAME: orgmode:gcr:vela:332AF8C9-6442-4C8D-9750-09C648A4AAD4
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package elisp-refs
+  :ensure t)
+#+END_SRC
+
 **** Keybinding
     :PROPERTIES:
     :ID:       orgmode:gcr:vela:3A6B16EC-870A-4EFE-935A-C03F8DFB67BF

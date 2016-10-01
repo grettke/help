@@ -1609,6 +1609,11 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (help/ielm-auto-complete))
 ;; orgmode:gcr:vela:BDF6F6E5-D219-4C49-BB3F-D414A9741B11 ends here
 
+;; [[file:help.org::orgmode:gcr:vela:332AF8C9-6442-4C8D-9750-09C648A4AAD4][orgmode:gcr:vela:332AF8C9-6442-4C8D-9750-09C648A4AAD4]]
+(use-package elisp-refs
+  :ensure t)
+;; orgmode:gcr:vela:332AF8C9-6442-4C8D-9750-09C648A4AAD4 ends here
+
 ;; [[file:help.org::orgmode:gcr:vela:7CEA216B-6A18-47F6-B1DE-327CFA8A591A][orgmode:gcr:vela:7CEA216B-6A18-47F6-B1DE-327CFA8A591A]]
 (define-key emacs-lisp-mode-map (kbd "s-p") #'describe-thing-in-popup)
 ;; orgmode:gcr:vela:7CEA216B-6A18-47F6-B1DE-327CFA8A591A ends here
