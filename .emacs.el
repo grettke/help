@@ -647,10 +647,16 @@ Attribution: URL
       (switch-to-buffer "help.org")))
 
 (defun help/open-projects ()
-  "Switch to the buffer backed by `projects.org'."
+  "Switch to the buffer backed by `bitbucket/projects.org'."
   (interactive)
-  (if (get-buffer "projects.org")
-      (switch-to-buffer "projects.org")))
+  (if (get-buffer "bitbucket/projects.org")
+      (switch-to-buffer "bitbucket/projects.org")))
+
+(defun help/open-si-projects ()
+  "Switch to the buffer backed by `bitbucket-gcrstoneisle/projects.org'."
+  (interactive)
+  (if (get-buffer "bitbucket-gcrstoneisle/projects.org")
+      (switch-to-buffer "bitbucket-gcrstoneisle/projects.org")))
 ;; orgmode:gcr:vela:D523CBF8-67C4-4C96-9298-A4A49FE54E61 ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:9DB523BC-E21B-42B7-AEE2-31ED24C14D92][orgmode:gcr:vela:9DB523BC-E21B-42B7-AEE2-31ED24C14D92]]
@@ -2677,8 +2683,6 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 
 ;; [[file:help.org::orgmode:gcr:vela:8D9EC2AC-FCF0-4A64-9C84-7EF272BC802F][orgmode:gcr:vela:8D9EC2AC-FCF0-4A64-9C84-7EF272BC802F]]
 (global-set-key (kbd "<f9>") #'org2blog/wp-new-entry)
-(global-set-key (kbd "<f8>") #'org2blog/wp-post-buffer-and-publish)
-(global-set-key (kbd "<f7>") #'org2blog/wp-login)
 ;; orgmode:gcr:vela:8D9EC2AC-FCF0-4A64-9C84-7EF272BC802F ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:E4B98196-FDFB-42B4-A52A-8CA7DC066E8E][orgmode:gcr:vela:E4B98196-FDFB-42B4-A52A-8CA7DC066E8E]]
@@ -2863,6 +2867,7 @@ _v_ariable       _u_ser-option
 ;; [[file:help.org::orgmode:gcr:vela:88A77813-1BAF-4927-AA5B-DECCA8763AA0][orgmode:gcr:vela:88A77813-1BAF-4927-AA5B-DECCA8763AA0]]
 (key-chord-define-global "fh" #'help/open-help)
 (key-chord-define-global "fp" #'help/open-projects)
+(global-set-key (kbd "<f9>") #'help/open-si-projects)
 ;; orgmode:gcr:vela:88A77813-1BAF-4927-AA5B-DECCA8763AA0 ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:73C1697E-966A-4129-840B-2B34A70FF531][orgmode:gcr:vela:73C1697E-966A-4129-840B-2B34A70FF531]]

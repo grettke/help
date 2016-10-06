@@ -994,10 +994,16 @@ Attribution: URL
       (switch-to-buffer "help.org")))
 
 (defun help/open-projects ()
-  "Switch to the buffer backed by `projects.org'."
+  "Switch to the buffer backed by `bitbucket/projects.org'."
   (interactive)
-  (if (get-buffer "projects.org")
-      (switch-to-buffer "projects.org")))
+  (if (get-buffer "bitbucket/projects.org")
+      (switch-to-buffer "bitbucket/projects.org")))
+
+(defun help/open-si-projects ()
+  "Switch to the buffer backed by `bitbucket-gcrstoneisle/projects.org'."
+  (interactive)
+  (if (get-buffer "bitbucket-gcrstoneisle/projects.org")
+      (switch-to-buffer "bitbucket-gcrstoneisle/projects.org")))
 #+END_SRC
 
 ** Typography
@@ -5208,8 +5214,6 @@ These changes helped guide the custom keyboard design.
 #+NAME: orgmode:gcr:vela:8D9EC2AC-FCF0-4A64-9C84-7EF272BC802F
 #+BEGIN_SRC emacs-lisp :results output silent
 (global-set-key (kbd "<f9>") #'org2blog/wp-new-entry)
-(global-set-key (kbd "<f8>") #'org2blog/wp-post-buffer-and-publish)
-(global-set-key (kbd "<f7>") #'org2blog/wp-login)
 #+END_SRC
 
 **** Row 5
@@ -5493,6 +5497,7 @@ Go to the most important files.
 #+BEGIN_SRC emacs-lisp :results output silent
 (key-chord-define-global "fh" #'help/open-help)
 (key-chord-define-global "fp" #'help/open-projects)
+(global-set-key (kbd "<f9>") #'help/open-si-projects)
 #+END_SRC
 
 Count words.
