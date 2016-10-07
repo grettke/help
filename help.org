@@ -988,10 +988,10 @@ Attribution: URL
      output))
 
 (defun help/open-help ()
-  "Switch to the buffer backed by `help.org'."
+  "Switch to the buffer backed by `help/help.org'."
   (interactive)
-  (if (get-buffer "help.org")
-      (switch-to-buffer "help.org")))
+  (if (get-buffer "help/help.org")
+      (switch-to-buffer "help/help.org")))
 
 (defun help/open-projects ()
   "Switch to the buffer backed by `bitbucket/projects.org'."
