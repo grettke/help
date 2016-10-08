@@ -243,6 +243,23 @@ The following code and packages are special to this configuration. They provide
 critical functionality for configuring the rest of the system. They provide
 ideas that make the entire system usable, productive, expressive, and fast.
 
+** Customize
+:PROPERTIES:
+:ID:       orgmode:gcr:vela:348D4376-4547-40A2-BF7A-CA72A099922C
+:END:
+
+Easy Customization is great. Though most of the time I move the settings into
+hand-coded Elisp, I still love it.
+
+Store Customizations in another file. Avoids the
+[[https://www.reddit.com/r/emacs/comments/53zpv9/how_do_i_get_emacs_to_stop_adding_custom_fields/][package-selected-packages]] portability issue.
+
+#+NAME: orgmode:gcr:vela:A66501E1-BB81-405F-8BCE-D752AAC4C719
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq custom-file "~/src/help/custom.el")
+(load custom-file :noerror)
+#+END_SRC
+
 ** Display
    :PROPERTIES:
    :ID:       orgmode:gcr:vela:1290DB2D-D05E-4DDD-B42F-6B11AE91F480
