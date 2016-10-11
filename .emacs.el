@@ -716,6 +716,7 @@ Attribution: URL
   :ensure t
   :config
   (global-undo-tree-mode 1)
+  (global-set-key (kbd "H-u") #'undo-tree-visualize))
   :diminish undo-tree-mode)
 ;; orgmode:gcr:vela:170E0633-2AA6-47AD-9234-4C1F0978C058 ends here
 
@@ -1956,8 +1957,6 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre"
 (use-package unicode-escape
   :ensure t
   :config
-  (global-set-key (kbd "H-e") #'unicode-escape-region )
-  (global-set-key (kbd "H-u") #'unicode-unescape-region))
 ;; orgmode:gcr:vela:7458C43B-A605-4D97-B435-A71E2883C566 ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:451FC9F3-2517-4979-A9EC-DE34086E4198][orgmode:gcr:vela:451FC9F3-2517-4979-A9EC-DE34086E4198]]
