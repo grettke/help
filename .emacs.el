@@ -1883,6 +1883,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (define-key org-mode-map (kbd "s-l") #'help/safb-org-edit-src-code)
 (define-key org-mode-map (kbd "s-;") #'help/safb-help/org-babel-demarcate-block)
 (define-key org-mode-map (kbd "C-.") #'(lambda () (interactive) (insert " \\rarr ")))
+(define-key org-mode-map (kbd "H-m") #'org-mark-element)
 ;; orgmode:gcr:vela:933B1A3A-A77A-4616-B9D8-9DACED018CC2 ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:2F8DDC77-27C4-4E81-8913-28243C4A44B6][orgmode:gcr:vela:2F8DDC77-27C4-4E81-8913-28243C4A44B6]]
