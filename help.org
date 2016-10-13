@@ -1123,7 +1123,7 @@ Provide expected "Undo" functionality.
   :ensure t
   :config
   (global-undo-tree-mode 1)
-  (global-set-key (kbd "H-u") #'undo-tree-visualize))
+  (global-set-key (kbd "H-u") #'undo-tree-visualize)
   :diminish undo-tree-mode)
 #+END_SRC
 
@@ -3336,7 +3336,7 @@ Easily escape and un-escape Unicode hex notation.
 #+BEGIN_SRC emacs-lisp :results output silent
 (use-package unicode-escape
   :ensure t
-  :config
+  :config)
 #+END_SRC
 
 Warn of UTF [[https://en.wikipedia.org/wiki/Byte_order_mark][BOM]] bytes via [[https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_warning_if_i_open_a_file_with_utf8/d5kszsh][skeeto]].
