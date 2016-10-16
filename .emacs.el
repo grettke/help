@@ -1392,6 +1392,10 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
 (add-to-list 'ispell-skip-region-alist '("- \\*.+" . ".*\\*: "))
 ;; orgmode:gcr:vela:D1A2D129-9299-4349-AFF3-8F65F7D0CF95 ends here
 
+;; [[file:help.org::orgmode:gcr:vela:A1C03CEB-5FC4-435A-853A-5A0D98A5ED08][orgmode:gcr:vela:A1C03CEB-5FC4-435A-853A-5A0D98A5ED08]]
+(add-to-list 'ispell-skip-region-alist '("\\rarr"))
+;; orgmode:gcr:vela:A1C03CEB-5FC4-435A-853A-5A0D98A5ED08 ends here
+
 ;; [[file:help.org::orgmode:gcr:vela:3745D1E1-33D3-4D2F-B527-BBBCA619D455][orgmode:gcr:vela:3745D1E1-33D3-4D2F-B527-BBBCA619D455]]
 (let ()
   (--each

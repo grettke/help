@@ -2302,6 +2302,13 @@ Bold text list items.
 (add-to-list 'ispell-skip-region-alist '("- \\*.+" . ".*\\*: "))
 #+END_SRC
 
+Right arrows.
+
+#+NAME: orgmode:gcr:vela:A1C03CEB-5FC4-435A-853A-5A0D98A5ED08
+#+BEGIN_SRC emacs-lisp :results output silent
+(add-to-list 'ispell-skip-region-alist '("\\rarr"))
+#+END_SRC
+
 Check =SPECIAL LINE= definitions, ignoring their type.
 
 #+NAME: orgmode:gcr:vela:3745D1E1-33D3-4D2F-B527-BBBCA619D455
