@@ -2726,7 +2726,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
                                               :hint nil)
   "
 _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm  _7_ grade-level _8_ reading-ease
-_q_ apropos _w_ widen _e_ flycheck _t_ unicode-troll-stopper-mode _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
+_q_ apropos _w_ widen _e_ flycheck _r_ reposition-window_t_ unicode-troll-stopper-mode _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
 _Q_ ✓ _W_ ✗ _E_ ☐ _R_ ☑ _T_ ☒_
 _a_ ag  _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point _D_ detangle _j_ obtj2o _k_ scrollDown _K_ nextLogLine  _;_ toggle-lax-whitespace
 _x_ delete-indentation _c_ fill-paragraph _v_ view-mode _b_ erase-buffer  _m_ imenu-list _M_ Marked 2 Viewer
@@ -2740,6 +2740,7 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("E" (lambda () (interactive) (insert "☐")) :exit nil)
   ("4" help/insert-ellipsis)
   ("R" (lambda () (interactive) (insert "☑")) :exit nil)
+  ("r" reposition-window)
   ("5" help/uuid)
   ("T" (lambda () (interactive) (insert "☒")) :exit nil)
   ("6" set-buffer-file-coding-system)
