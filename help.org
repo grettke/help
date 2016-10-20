@@ -5290,6 +5290,7 @@ These changes helped guide the custom keyboard design.
 (defhydra help/hydra/left-side/global (:color blue
                                               :hint nil)
   "
+_o_ base64-encode-region _p_ base64-decode-region
 _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm  _7_ grade-level _8_ reading-ease
 _q_ apropos _w_ widen _e_ flycheck _r_ reposition-window_t_ unicode-troll-stopper-mode _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
 _Q_ ✓ _W_ ✗ _E_ ☐ _R_ ☑ _T_ ☒_
@@ -5337,6 +5338,8 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   (";" isearch-toggle-lax-whitespace)
   ("o" toggle-debug-on-error)
   ("p" anzu-query-replace)
+  ("O" base64-encode-region)
+  ("P" base64-decode-region)
   ("[" backward-page :exit nil)
   ("]" forward-page :exit nil)
   ("c" fill-paragraph )
