@@ -2725,7 +2725,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 (defhydra help/hydra/left-side/global (:color blue
                                               :hint nil)
   "
-_o_ base64-encode-region _p_ base64-decode-region
+_O_ base64-encode-region _P_ base64-decode-region
 _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm  _7_ grade-level _8_ reading-ease
 _q_ apropos _w_ widen _e_ flycheck _r_ reposition-window_t_ unicode-troll-stopper-mode _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
 _Q_ ✓ _W_ ✗ _E_ ☐ _R_ ☑ _T_ ☒_
