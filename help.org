@@ -3910,7 +3910,7 @@ Fails with ~(eval-after-load 'abbrev (diminish 'abbrev-mode))~.
    :ID:       orgmode:gcr:vela:987C1C05-F880-4312-B902-5060208A3506
    :END:
 
-*** Structured Document Development
+*** Web Development
 :PROPERTIES:
 :ID:       orgmode:gcr:vela:206F4363-F4D6-4DDE-BB46-174D0F68FBB4
 :END:
