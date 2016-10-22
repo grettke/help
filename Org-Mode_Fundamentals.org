@@ -424,6 +424,7 @@ Org-Mode may evaluate all of the listed languages.
    (sass . t)
    (scheme . t)
    (sql . t)
+   (js . t)
    ;;
    (latex . t)
    ;;

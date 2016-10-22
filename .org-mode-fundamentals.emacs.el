@@ -166,6 +166,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
    (sass . t)
    (scheme . t)
    (sql . t)
+   (js . t)
    ;;
    (latex . t)
    ;;
