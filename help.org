@@ -3972,6 +3972,19 @@ Fails with ~(eval-after-load 'abbrev (diminish 'abbrev-mode))~.
 (add-hook 'web-mode-hook #'help/web-mode-hook-fn)
 #+END_SRC
 
+*** JavaScript
+:PROPERTIES:
+:ID:       orgmode:gcr:vela:8565DDAF-42FB-464C-8704-B8E62AE4CD7D
+:END:
+
+#+NAME: orgmode:gcr:vela:A0D6BBAD-943E-496D-876C-7B452A2CC581
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package js2-mode
+  :ensure t
+  :mode (("\\.js$" . js2-mode))
+  :interpreter ("node" . js2-mode))
+#+END_SRC
+
 ** Publishing
    :PROPERTIES:
    :ID:       orgmode:gcr:vela:7D07C2F6-38B9-49BF-A584-B029CEED6141

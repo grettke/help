@@ -2313,6 +2313,13 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 (add-hook 'web-mode-hook #'help/web-mode-hook-fn)
 ;; orgmode:gcr:vela:ABA05DE1-22EF-4BDB-935C-B842EBB843B5 ends here
 
+;; [[file:help.org::orgmode:gcr:vela:A0D6BBAD-943E-496D-876C-7B452A2CC581][orgmode:gcr:vela:A0D6BBAD-943E-496D-876C-7B452A2CC581]]
+(use-package js2-mode
+  :ensure t
+  :mode (("\\.js$" . js2-mode))
+  :interpreter ("node" . js2-mode))
+;; orgmode:gcr:vela:A0D6BBAD-943E-496D-876C-7B452A2CC581 ends here
+
 ;; [[file:help.org::orgmode:gcr:vela:B97EDF2E-0538-475A-AA0A-6C708DCCEC11][orgmode:gcr:vela:B97EDF2E-0538-475A-AA0A-6C708DCCEC11]]
 (use-package tex-site
   :ensure auctex
