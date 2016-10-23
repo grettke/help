@@ -104,10 +104,10 @@ emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
   - Non-Code Snippet.
     - File types
     - Program names that aren't referring to the artifact itself
-      - Shell scripts and commands
+      - =Bash=, =Perl=
       - =Scheme= and =Java=
     - Concepts like =Object Oriented Programming= or a =Immediately-invoked
-      function expression= 
+      function expression=
     - Use =verbatim= style
   - Package.
     - Same as Headline.
