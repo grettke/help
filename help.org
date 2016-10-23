@@ -106,6 +106,8 @@ emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
     - Program names that aren't referring to the artifact itself
       - Shell scripts and commands
       - =Scheme= and =Java=
+    - Concepts like =Object Oriented Programming= or a =Immediately-invoked
+      function expression= 
     - Use =verbatim= style
   - Package.
     - Same as Headline.
