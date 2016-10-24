@@ -1,3 +1,4 @@
+// [[file:lint.org::orgmode:gcr:vela:8F15E82F-1561-4169-A366-2A7D9BBB1AFB][orgmode:gcr:vela:8F15E82F-1561-4169-A366-2A7D9BBB1AFB]]
 {
     "bitwise": true,
     "browser": true,
@@ -34,3 +35,4 @@
     "undef": true,
     "unused": true
 }
+// orgmode:gcr:vela:8F15E82F-1561-4169-A366-2A7D9BBB1AFB ends here
