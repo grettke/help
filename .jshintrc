@@ -29,7 +29,7 @@
     "noempty": true,
     "nonew": true,
     "plusplus": true,
-    "quotmark": "single",
+    "quotmark": "double",
     "regexp": true,
     "smarttabs": true,
     "strict": true,
