@@ -1,8 +1,15 @@
 * Linters
+:PROPERTIES:
+:ID:       orgmode:gcr:vela:334F2C0C-9A68-412B-A990-A264EC3ADCF0
+:END:
 ** JavaScript
+:PROPERTIES:
+:ID:       orgmode:gcr:vela:F1931C82-A694-462F-B5E2-AA231D3221ED
+:END:
 *** JSHint
 :PROPERTIES:
 :header-args: :tangle .jshintrc
+:ID:       orgmode:gcr:vela:C5D4A067-AAEF-4D63-8AC2-4C126B4876F8
 :END:
 
 #+NAME: orgmode:gcr:vela:8F15E82F-1561-4169-A366-2A7D9BBB1AFB
