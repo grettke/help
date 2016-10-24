@@ -1568,6 +1568,12 @@ use than advice.
   (interactive)
   (help/save-all-file-buffers)
   (switch-to-previous-buffer))
+
+(defun help/safb-normal-mode ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (normal-mode)
+  (help/save-all-file-buffers))
 #+END_SRC
 
 Selection:
