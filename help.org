@@ -4010,7 +4010,8 @@ Fails with ~(eval-after-load 'abbrev (diminish 'abbrev-mode))~.
 
 (use-package json-mode
   :ensure t
-  :diminish json-mode)
+  :diminish json-mode
+  :mode (("\\.jshintrc$" . json-mode)))
 #+END_SRC
 
 ** Publishing
