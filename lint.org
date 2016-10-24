@@ -12,11 +12,6 @@
 :ID:       orgmode:gcr:vela:C5D4A067-AAEF-4D63-8AC2-4C126B4876F8
 :END:
 
-#+NAME: orgmode:gcr:vela:C4768BAC-E61D-40C8-B5CC-A6C60D02C1A2
-#+BEGIN_SRC js :comments no
-// -*- mode: js2; -*-
-#+END_SRC
-
 #+NAME: orgmode:gcr:vela:8F15E82F-1561-4169-A366-2A7D9BBB1AFB
 #+BEGIN_SRC js :prologue "{" :epilogue "}"
 "bitwise": true,
