@@ -2318,7 +2318,10 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
   :ensure t
   :mode (("\\.js$" . js2-mode)
          ("\\.jsx$" . js2-mode))
-  :interpreter ("node" . js2-mode))
+  :interpreter ("node" . js2-mode)
+  :config
+  (progn
+    (add-hook 'js2-mode-hook #'js2-imenu-extras-mode)))
 ;; orgmode:gcr:vela:A0D6BBAD-943E-496D-876C-7B452A2CC581 ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:B97EDF2E-0538-475A-AA0A-6C708DCCEC11][orgmode:gcr:vela:B97EDF2E-0538-475A-AA0A-6C708DCCEC11]]

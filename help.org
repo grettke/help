@@ -3983,7 +3983,10 @@ Fails with ~(eval-after-load 'abbrev (diminish 'abbrev-mode))~.
   :ensure t
   :mode (("\\.js$" . js2-mode)
          ("\\.jsx$" . js2-mode))
-  :interpreter ("node" . js2-mode))
+  :interpreter ("node" . js2-mode)
+  :config
+  (progn
+    (add-hook 'js2-mode-hook #'js2-imenu-extras-mode)))
 #+END_SRC
 
 ** Publishing
