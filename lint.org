@@ -54,3 +54,7 @@
 "undef": true,
 "unused": true
 #+END_SRC
+
+;; Local Variables:
+;; eval: (add-hook 'org-babel-post-tangle-hook (lambda () (help/reformat-file "~/.jshintrc")))
+;; End:
