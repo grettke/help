@@ -409,7 +409,7 @@ Set permission of tangled files
    :ID:       orgmode:gcr:vela:ED23FF0B-1F90-435C-9B56-ACA06C1ACAE0
    :END:
 
-Org-Mode may evaluate all of the listed languages.
+Org-Mode may use all of the listed languages.
 
 #+NAME: orgmode:gcr:vela:6309AF39-FCE4-43DE-BD46-BC7D0BA0971D
 #+BEGIN_SRC emacs-lisp :results output silent
