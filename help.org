@@ -100,11 +100,16 @@ emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
     - Programming language expressions.
     - Class and Object names
     - Shell commands that are executable
+    - Executables for programming language compilers and interpereters
+      - ~gcc~ and ~python~
+      - ~bash~ and ~perl~
+      - ~scheme~ and ~java~
     - Use ~code style~ of tildaes
   - Non-Code Snippet.
     - File types
     - Program names that aren't referring to the artifact itself
-      - =Bash=, =Perl= versus ~bash~ and ~perl~
+      - =GCC= and =Pyton=
+      - =Bash= and =Perl=
       - =Scheme= and =Java=
     - Concepts like =Object Oriented Programming= or a =Immediately-invoked
       function expression=
