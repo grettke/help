@@ -2799,6 +2799,7 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("k" scroll-up-command :exit nil)
   ("I" previous-logical-line :exit nil)
   ("K" next-logical-line :exit nil)
+  ("n" help/safb-normal-mode)
   ("m" imenu-list-minor-mode)
   ("M" help/preview-buffer-file-in-marked-2)
   ("<" help/chs)
