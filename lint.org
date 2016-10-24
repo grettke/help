@@ -13,8 +13,7 @@
 :END:
 
 #+NAME: orgmode:gcr:vela:8F15E82F-1561-4169-A366-2A7D9BBB1AFB
-#+BEGIN_SRC js
-{
+#+BEGIN_SRC js :prologue "{" :epilogue "}"
     "bitwise": true,
     "browser": true,
     "camelcase": true,
@@ -49,5 +48,4 @@
     "trailing": true,
     "undef": true,
     "unused": true
-}
 #+END_SRC
