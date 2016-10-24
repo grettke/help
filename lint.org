@@ -1,3 +1,6 @@
 * Linters
 ** JavaScript
 *** JSHint
+:PROPERTIES:
+:header-args: :tangle .jshintrc
+:END:
