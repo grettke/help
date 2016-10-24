@@ -4011,7 +4011,11 @@ Fails with ~(eval-after-load 'abbrev (diminish 'abbrev-mode))~.
 (use-package json-mode
   :ensure t
   :diminish json-mode
-  :mode (("\\.jshintrc$" . json-mode)))
+  :mode (("\\.jshintrc$" . json-mode))
+  :config
+  (progn
+    (setq json-reformat:indent-width 2)
+    (setq json-reformat:pretty-string? t)))
 #+END_SRC
 
 ** Publishing
