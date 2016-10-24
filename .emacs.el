@@ -1535,7 +1535,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 ;; orgmode:gcr:vela:562D0238-DF23-44EB-9512-62EA99D6B6C1 ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:B56D8E08-DF7C-4EBB-922E-EA215BD66C0D][orgmode:gcr:vela:B56D8E08-DF7C-4EBB-922E-EA215BD66C0D]]
-(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook R-mode-hook SAS-mode-hook graphviz-dot-mode-hook c-mode-common-hook php-mode-hook scad-mode-hook web-mode-hook js2-mode-hook))
+(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook R-mode-hook SAS-mode-hook graphviz-dot-mode-hook c-mode-common-hook php-mode-hook scad-mode-hook web-mode-hook js2-mode-hook json-mode))
 ;; orgmode:gcr:vela:B56D8E08-DF7C-4EBB-922E-EA215BD66C0D ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:963C787F-BC23-4A6C-9637-3922541B26E2][orgmode:gcr:vela:963C787F-BC23-4A6C-9637-3922541B26E2]]
@@ -2331,6 +2331,10 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
   (progn
     (add-hook 'js2-mode-hook #'js2-refactor-mode)
     (js2r-add-keybindings-with-prefix "C-c C-m")))
+
+(use-package json-mode
+  :ensure t
+  :diminish json-mode)
 ;; orgmode:gcr:vela:A0D6BBAD-943E-496D-876C-7B452A2CC581 ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:B97EDF2E-0538-475A-AA0A-6C708DCCEC11][orgmode:gcr:vela:B97EDF2E-0538-475A-AA0A-6C708DCCEC11]]
