@@ -98,6 +98,7 @@ emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
 - Formatting
   - Code Snippet.
     - Programming language expressions.
+    - Emacs mode name
     - Class and Object names
     - Shell commands that are executable
     - Executables for programming language compilers and interpereters
@@ -4008,6 +4009,12 @@ Fails with ~(eval-after-load 'abbrev (diminish 'abbrev-mode))~.
     (add-hook 'js2-mode-hook #'js2-refactor-mode)
     (js2r-add-keybindings-with-prefix "C-c C-m")))
 
+#+END_SRC
+
+
+
+#+NAME: orgmode:gcr:vela:orgmode:gcr:vela:A68BD655-443A-40CD-916E-D4C3146F2EB9
+#+BEGIN_SRC emacs-lisp :results output silent
 (use-package json-mode
   :ensure t
   :diminish json-mode
@@ -4015,7 +4022,7 @@ Fails with ~(eval-after-load 'abbrev (diminish 'abbrev-mode))~.
   :config
   (progn
     (setq json-reformat:indent-width 2)
-    (setq json-reformat:pretty-string? t)))
+    (setq json-reformat:pretty-string\? t)))
 #+END_SRC
 
 ** Publishing
