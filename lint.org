@@ -8,7 +8,7 @@
 :END:
 *** JSHint
 :PROPERTIES:
-:header-args: :tangle .jshintrc
+:header-args: :tangle .jshintrc :eval no
 :ID:       orgmode:gcr:vela:C5D4A067-AAEF-4D63-8AC2-4C126B4876F8
 :END:
 
