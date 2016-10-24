@@ -2316,7 +2316,8 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 ;; [[file:help.org::orgmode:gcr:vela:A0D6BBAD-943E-496D-876C-7B452A2CC581][orgmode:gcr:vela:A0D6BBAD-943E-496D-876C-7B452A2CC581]]
 (use-package js2-mode
   :ensure t
-  :mode (("\\.js$" . js2-mode))
+  :mode (("\\.js$" . js2-mode)
+         ("\\.jsx$" . js2-mode))
   :interpreter ("node" . js2-mode))
 ;; orgmode:gcr:vela:A0D6BBAD-943E-496D-876C-7B452A2CC581 ends here
 
