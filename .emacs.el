@@ -1024,6 +1024,12 @@ configuration when invoked to evaluate a line."
   (interactive)
   (help/save-all-file-buffers)
   (switch-to-previous-buffer))
+
+(defun help/safb-normal-mode ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (call-interactively #'normal-mode)
+  (help/save-all-file-buffers))
 ;; orgmode:gcr:vela:5A0C3F05-0C41-4E50-944E-0ACC4C2F4A15 ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:DA537B02-6E64-42FC-BE9D-E5A3408B6599][orgmode:gcr:vela:DA537B02-6E64-42FC-BE9D-E5A3408B6599]]
@@ -2758,7 +2764,7 @@ _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm  _7
 _q_ apropos _w_ widen _e_ flycheck _r_ reposition-window_t_ unicode-troll-stopper-mode _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
 _Q_ ✓ _W_ ✗ _E_ ☐ _R_ ☑ _T_ ☒_
 _a_ ag  _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point _D_ detangle _j_ obtj2o _k_ scrollDown _K_ nextLogLine  _;_ toggle-lax-whitespace
-_x_ delete-indentation _c_ fill-paragraph _v_ view-mode _b_ erase-buffer  _m_ imenu-list _M_ Marked 2 Viewer
+_x_ delete-indentation _c_ fill-paragraph _v_ view-mode _b_ erase-buffer _n_ normal _m_ imenu-list _M_ Marked 2 Viewer
 _<_ cmtIn _>_ cmtOut _?_ snp"
   ("1" help/font-size-reset :exit nil)
   ("Q" (lambda () (interactive) (insert "✓")) :exit nil)
