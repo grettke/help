@@ -3994,8 +3994,8 @@ Fails with ~(eval-after-load 'abbrev (diminish 'abbrev-mode))~.
   :diminish js2-refactor-mode
   :config
   (progn
-    (add-hook 'js2-mode-hook #'js2-refactor-mode)))
-#+END_SRC
+    (add-hook 'js2-mode-hook #'js2-refactor-mode)
+    (js2r-add-keybindings-with-prefix "C-c C-m")))_SRC
 
 ** Publishing
    :PROPERTIES:
