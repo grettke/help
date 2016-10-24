@@ -3987,6 +3987,14 @@ Fails with ~(eval-after-load 'abbrev (diminish 'abbrev-mode))~.
   :config
   (progn
     (add-hook 'js2-mode-hook #'js2-imenu-extras-mode)))
+
+(use-package js2-refactor
+  :after (js2-mode)
+  :ensure t
+  :diminish js2-refactor-mode
+  :config
+  (progn
+    (add-hook 'js2-mode-hook #'js2-refactor-mode)))
 #+END_SRC
 
 ** Publishing
