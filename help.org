@@ -4011,7 +4011,8 @@ Fails with ~(eval-after-load 'abbrev (diminish 'abbrev-mode))~.
 
 #+END_SRC
 
-
+~json-mode~ is derived from ~javascript-mode~ so configure the latter's indent to
+two.
 
 #+NAME: orgmode:gcr:vela:orgmode:gcr:vela:A68BD655-443A-40CD-916E-D4C3146F2EB9
 #+BEGIN_SRC emacs-lisp :results output silent
@@ -4021,6 +4022,7 @@ Fails with ~(eval-after-load 'abbrev (diminish 'abbrev-mode))~.
   :mode (("\\.jshintrc$" . json-mode))
   :config
   (progn
+    (setq js-indent-level 2)
     (setq json-reformat:indent-width 2)
     (setq json-reformat:pretty-string\? t)))
 #+END_SRC

@@ -2337,16 +2337,19 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
   (progn
     (add-hook 'js2-mode-hook #'js2-refactor-mode)
     (js2r-add-keybindings-with-prefix "C-c C-m")))
+;; orgmode:gcr:vela:A0D6BBAD-943E-496D-876C-7B452A2CC581 ends here
 
+;; [[file:help.org::orgmode:gcr:vela:orgmode:gcr:vela:A68BD655-443A-40CD-916E-D4C3146F2EB9][orgmode:gcr:vela:orgmode:gcr:vela:A68BD655-443A-40CD-916E-D4C3146F2EB9]]
 (use-package json-mode
   :ensure t
   :diminish json-mode
   :mode (("\\.jshintrc$" . json-mode))
   :config
   (progn
+    (setq js-indent-level 2)
     (setq json-reformat:indent-width 2)
-    (setq json-reformat:pretty-string? t)))
-;; orgmode:gcr:vela:A0D6BBAD-943E-496D-876C-7B452A2CC581 ends here
+    (setq json-reformat:pretty-string\? t)))
+;; orgmode:gcr:vela:orgmode:gcr:vela:A68BD655-443A-40CD-916E-D4C3146F2EB9 ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:B97EDF2E-0538-475A-AA0A-6C708DCCEC11][orgmode:gcr:vela:B97EDF2E-0538-475A-AA0A-6C708DCCEC11]]
 (use-package tex-site
