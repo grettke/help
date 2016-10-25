@@ -441,7 +441,7 @@ use ~js2-mode~.
 
 #+NAME: orgmode:gcr:vela:95CAC7B0-5566-4831-A13A-CE225A286F3D
 #+BEGIN_SRC emacs-lisp :results output silent
-(add-to-list 'org-src-lang-modes '("javascript" . "js2"))
+(add-to-list 'org-src-lang-modes '("javascript" . js2))
 #+END_SRC
 
 **** cache
