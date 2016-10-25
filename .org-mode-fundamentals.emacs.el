@@ -178,6 +178,10 @@ This is a copy and paste. Additional languages would warrant a refactor."
    (plantuml . t)))
 ;; orgmode:gcr:vela:6309AF39-FCE4-43DE-BD46-BC7D0BA0971D ends here
 
+;; [[file:Org-Mode_Fundamentals.org::orgmode:gcr:vela:95CAC7B0-5566-4831-A13A-CE225A286F3D][orgmode:gcr:vela:95CAC7B0-5566-4831-A13A-CE225A286F3D]]
+(add-to-list 'org-src-lang-modes '("javascript" . "js2"))
+;; orgmode:gcr:vela:95CAC7B0-5566-4831-A13A-CE225A286F3D ends here
+
 ;; [[file:Org-Mode_Fundamentals.org::orgmode:gcr:vela:58541CA5-C633-4146-8E5D-15C7A3A2D1D7][orgmode:gcr:vela:58541CA5-C633-4146-8E5D-15C7A3A2D1D7]]
 (help/set-org-babel-default-header-args :eval "never-export")
 (help/set-org-babel-default-inline-header-args :eval "never-export")

@@ -436,6 +436,14 @@ Org-Mode may use all of the listed languages.
    (plantuml . t)))
 #+END_SRC
 
+Out of the box Emacs supports =js= with ~js-mode~. Define language =javascript= to
+use ~js2-mode~.
+
+#+NAME: orgmode:gcr:vela:95CAC7B0-5566-4831-A13A-CE225A286F3D
+#+BEGIN_SRC emacs-lisp :results output silent
+(add-to-list 'org-src-lang-modes '("javascript" . "js2"))
+#+END_SRC
+
 **** cache
     :PROPERTIES:
     :ID:       orgmode:gcr:vela:49B8BFE9-643B-450F-A8A1-20CE3079E215
@@ -606,7 +614,7 @@ Epilgue works hand-in-hand with this.
 Specify the type of results and how they will be collected and handled
 #+END_QUOTE
 
-Ways to configure =:results=: src_emacs-lisp{(apply '* (-keep 'cdr '((Collection . 2) (Type . 4) (Format . 7) (Handling . 4))))} {{{results(224)}}}.
+Ways to configure =:results=: src_emacs-lisp{(apply '* (-keep 'cdr '((Collection . 2) (Type . 4) (Format . 7) (Handling . 4))))} {{{results(=224=)}}}.
 
 This system stores the results of evaluation in the source document. It believes
 that the results are critical to the research.
@@ -822,3 +830,9 @@ Diagramming languages require =RESULTS= output for exporting.
 (help/set-org-babel-default-header-args:dot :wrap "RESULTS")
 (help/set-org-babel-default-header-args:plantuml :wrap "RESULTS")
 #+END_SRC
+
+#+RESULTS: orgmode:gcr:vela:0F18A334-A192-4DA5-A897-9D7F3E15C64B
+#+BEGIN_EXAMPLE
+((:wrap . RESULTS) (:results . file) (:exports . results))
+#+END_EXAMPLE
+
