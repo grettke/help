@@ -2327,8 +2327,7 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
   :interpreter ("node" . js2-mode)
   :config
   (progn
-    (add-hook 'js2-mode-hook #'js2-imenu-extras-mode)
-    (add-to-list 'org-src-lang-modes '("javascript" . "js2"))))
+    (add-hook 'js2-mode-hook #'js2-imenu-extras-mode)))
 
 (use-package js2-refactor
   :after (js2-mode)
