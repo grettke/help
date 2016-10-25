@@ -8,12 +8,12 @@
 :END:
 *** JSHint
 :PROPERTIES:
-:header-args: :tangle .jshintrc :eval no
+:header-args: :tangle .jshintrc :eval no :comments no
 :ID:       orgmode:gcr:vela:C5D4A067-AAEF-4D63-8AC2-4C126B4876F8
 :END:
 
 #+NAME: orgmode:gcr:vela:8F15E82F-1561-4169-A366-2A7D9BBB1AFB
-#+BEGIN_SRC javascript :prologue "{" :epilogue "}" :comments no
+#+BEGIN_SRC javascript :prologue "{" :epilogue "}"
 "bitwise": true,
 "browser": true,
 "camelcase": true,
