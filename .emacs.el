@@ -2758,6 +2758,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 ;; [[file:help.org::orgmode:gcr:vela:E60EA15F-28A0-4E98-B62E-1F8BDE444BD8][orgmode:gcr:vela:E60EA15F-28A0-4E98-B62E-1F8BDE444BD8]]
 (global-set-key (kbd "s-a") #'help/safb-switch-to-previous-buffer)
 (global-set-key (kbd "s-d") #'er/expand-region)
+(global-set-key (kbd "H-l") #'flycheck-list-errors)
 ;; orgmode:gcr:vela:E60EA15F-28A0-4E98-B62E-1F8BDE444BD8 ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:F6C7AAB7-DF69-4EBA-8116-15DC32022D49][orgmode:gcr:vela:F6C7AAB7-DF69-4EBA-8116-15DC32022D49]]
