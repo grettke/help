@@ -1910,7 +1910,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ id-create _5_ toggle-macro
 _q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ g2nms-b _t_ g2s-b/hd _y_ org-archive-subtree _u_ goto
 _a_ inshdrgs _s_ oblobigst            _h_ dksieb _k_ ob-check-src-blk
-_c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre"
+_c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
   ;; Row 5
   ("1" org-babel-sha1-hash)
   ("2" org-display-inline-images)
@@ -1933,7 +1933,8 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre"
   ;; Row 2
   ("c" org-fill-paragraph)
   ("b" org-babel-switch-to-session)
-  ("n" org-narrow-to-subtree))
+  ("n" org-narrow-to-subtree)
+  ("m" org-mark-subtree))
 (key-chord-define-global "hh" #'help/hydra/right-side/org-mode/body)
 ;; orgmode:gcr:vela:5186DD50-F693-4297-A164-192BEA685C6D ends here
 
