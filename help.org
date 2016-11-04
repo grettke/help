@@ -2800,7 +2800,7 @@ source-blocks outside of that place.
 (setq org-src-tab-acts-natively nil)
 #+END_SRC
 
-- Custom TODO states requirements each answered the following questions:
+- Custom TODO states requirements, each answering the following questions:
   - Version 01
     - What needs to be done?
     - What is being done right now?
