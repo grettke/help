@@ -2809,6 +2809,29 @@ source-blocks outside of that place.
     - What is waiting until another date? (although I'm not using the Agenda) HELD-UNTIL
     - What is complete and needs to be reviewed? REVIEW
     - What is complete? DONE
+  - Version 02
+    - Questions about every state
+      - When was it created?
+        - The purpose of its creation is contained within its Headline and its
+          contents "when?" and "why?" aren't required
+      - When was it changed and why?
+        - The reason for the change is probably in the body of the Headline so
+          why bother keeping a note here? Bother because it makes it easier to
+          review the state-change of a task because
+          - It probably isn't worth keeping in the task long-term (it is
+            transient)
+            - But it still matters and I want to know about it
+          - If it is worth keeping in the task long-term then it will be there
+            but
+            - It makes it easier to review the modification of a task without
+              - Having to re-read the entire task to understand the context
+              - Track down the why it modified
+      - When did it complete and why?
+        - The goals for completion are probably in the body of the Headline
+          itself so why keeping a note here? Bother because it makes it easier
+          to review the completion of a task without
+          - Having to re-read the entire task to understand the context
+          - Track down the why it completed
 
 Personal workflow:
 
