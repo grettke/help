@@ -2802,13 +2802,20 @@ source-blocks outside of that place.
 
 Personal workflow:
 
-- TODO :: Zero progress.
-- IN-PROGRESS :: Forward movement.
-- HELD-BLOCKED :: Can't move forward until external agent completes.
-- HELD-FROZEN :: Won't move forward until I reinitialize it.
-- HELD-UNTIL :: Reinitialize when conditional.
-- REVIEW :: Work is complete and needs to be evaluated.
-- DONE :: Completed.
+- TODO
+  - Zero progress.
+- IN-PROGRESS
+  - Forward movement.
+- HELD-BLOCKED
+  - Can't move forward until external agent completes.
+- HELD-FROZEN
+  - Won't move forward until I reinitialize it.
+- HELD-UNTIL
+  - Reinitialize when conditional.
+- REVIEW
+  - Work is complete and needs to be evaluated.
+- DONE
+  - Completed.
   - Retire using =org-archive-subtree=.
 
 #+NAME: orgmode:gcr:vela:BB8A752F-713B-4450-98DC-CE04957577EF
