@@ -2818,6 +2818,11 @@ Personal workflow:
   - Completed.
   - Retire using =org-archive-subtree=.
 
+- Reference
+  - [[http://stackoverflow.com/questions/12262220/add-created-date-property-to-todos-in-org-mode][StackOverflow: Add CREATED date property to TODOs in org-mode]]
+  - [[http://orgmode.org/org.html#Workflow-states][Org: 5.2.1 TODO keywords as workflow states]]
+  - [[http://orgmode.org/org.html#Tracking-TODO-state-changes][5.3.2 Tracking TODO state changes]]
+
 #+NAME: orgmode:gcr:vela:BB8A752F-713B-4450-98DC-CE04957577EF
 #+BEGIN_SRC emacs-lisp :results output silent
 (setq org-todo-keywords
