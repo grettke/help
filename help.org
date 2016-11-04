@@ -2800,6 +2800,16 @@ source-blocks outside of that place.
 (setq org-src-tab-acts-natively nil)
 #+END_SRC
 
+- Custom TODO states requirements each answered the following questions:
+  - Version 01
+    - What needs to be done?
+    - What is being done right now?
+    - What is waiting because an external agent?
+    - What is waiting because I have put it on hold?
+    - What is waiting until another date? (although I'm not using the Agenda)
+    - What is complete and needs to be reviewed?
+    - What is complete?
+
 Personal workflow:
 
 - TODO
