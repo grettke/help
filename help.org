@@ -2802,13 +2802,13 @@ source-blocks outside of that place.
 
 - Custom TODO states requirements, each answering the following questions:
   - Version 01
-    - What needs to be done?
-    - What is being done right now?
-    - What is waiting because an external agent?
-    - What is waiting because I have put it on hold?
-    - What is waiting until another date? (although I'm not using the Agenda)
-    - What is complete and needs to be reviewed?
-    - What is complete?
+    - What needs to be done? TODO
+    - What is being done right now? IN-PROGRESS
+    - What is waiting because an external agent? HELD-BLOCKED
+    - What is waiting because I have put it on hold? HELD-FROZEN
+    - What is waiting until another date? (although I'm not using the Agenda) HELD-UNTIL
+    - What is complete and needs to be reviewed? REVIEW
+    - What is complete? DONE
 
 Personal workflow:
 
