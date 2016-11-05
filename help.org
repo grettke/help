@@ -2832,24 +2832,14 @@ source-blocks outside of that place.
           to review the completion of a task without
           - Having to re-read the entire task to understand the context
           - Track down the why it completed
-
-Personal workflow:
-
-- TODO
-  - Zero progress.
-- IN-PROGRESS
-  - Forward movement.
-- HELD-BLOCKED
-  - Can't move forward until external agent completes.
-- HELD-FROZEN
-  - Won't move forward until I reinitialize it.
-- HELD-UNTIL
-  - Reinitialize when conditional.
-- REVIEW
-  - Work is complete and needs to be evaluated.
-- DONE
-  - Completed.
-  - Retire using =org-archive-subtree=.
+      - Migration from Version 01
+        - TODO \rarr no change (timestamp)
+        - IN-PROGRESS \rarr DO (timestamp)
+        - HELD-BLOCKED \rarr WAIT with note (timestamp, explanation)
+        - HELD-FROZEN \rarr WAIT with note (timestamp, explanation)
+        - HELD-UNTIL \rarr WAIT with note (timestamp, explanation)
+        - REVIEW \rarr no change (timestamp)
+        - DONE \rarr no change (timestamp, explanation)
 
 - Reference
   - [[http://stackoverflow.com/questions/12262220/add-created-date-property-to-todos-in-org-mode][StackOverflow: Add CREATED date property to TODOs in org-mode]]
