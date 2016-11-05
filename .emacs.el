@@ -1670,6 +1670,10 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (setq org-src-tab-acts-natively nil)
 ;; orgmode:gcr:vela:6CE707AD-A340-4B63-B747-8692E0DFF41C ends here
 
+;; [[file:help.org::orgmode:gcr:vela:4D8598C9-9732-4D76-97F5-3A3F88930741][orgmode:gcr:vela:4D8598C9-9732-4D76-97F5-3A3F88930741]]
+(setq org-log-states-order-reversed nil)
+;; orgmode:gcr:vela:4D8598C9-9732-4D76-97F5-3A3F88930741 ends here
+
 ;; [[file:help.org::orgmode:gcr:vela:BB8A752F-713B-4450-98DC-CE04957577EF][orgmode:gcr:vela:BB8A752F-713B-4450-98DC-CE04957577EF]]
 (setq org-todo-keywords
       '((sequence
