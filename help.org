@@ -2834,7 +2834,7 @@ source-blocks outside of that place.
           - Track down the why it completed
     - Migration from Version 01
       - TODO \rarr no change (timestamp)
-      - IN-PROGRESS \rarr DO (timestamp)
+      - IN-PROGRESS \rarr GO (timestamp) (not DO because of DONE fastkey)
       - HELD-BLOCKED \rarr WAIT with note (timestamp, explanation)
       - HELD-FROZEN \rarr WAIT with note (timestamp, explanation)
       - HELD-UNTIL \rarr WAIT with note (timestamp, explanation)
