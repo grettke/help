@@ -2857,13 +2857,13 @@ source-blocks outside of that place.
 #+BEGIN_SRC emacs-lisp :results output silent
 (setq org-todo-keywords
       '((sequence
-         "TODO"
-         "IN-PROGRESS"
-         "HELD-BLOCKED"
-         "HELD-FROZEN"
-         "HELD-UNTIL"
-         "REVIEW"
-         "DONE"
+         "TODO(t!)"
+         "GO(g@)"
+         "WAIT(w@)"
+         "REVIEW(r!)"
+         "|"
+         "DONE(d@)"
+         "CANCELED(c@)"
          )))
 #+END_SRC
 

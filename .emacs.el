@@ -1673,13 +1673,13 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; [[file:help.org::orgmode:gcr:vela:BB8A752F-713B-4450-98DC-CE04957577EF][orgmode:gcr:vela:BB8A752F-713B-4450-98DC-CE04957577EF]]
 (setq org-todo-keywords
       '((sequence
-         "TODO"
-         "IN-PROGRESS"
-         "HELD-BLOCKED"
-         "HELD-FROZEN"
-         "HELD-UNTIL"
-         "REVIEW"
-         "DONE"
+         "TODO(t!)"
+         "GO(g@)"
+         "WAIT(w@)"
+         "REVIEW(r!)"
+         "|"
+         "DONE(d@)"
+         "CANCELED(c@)"
          )))
 ;; orgmode:gcr:vela:BB8A752F-713B-4450-98DC-CE04957577EF ends here
 
