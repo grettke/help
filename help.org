@@ -2826,7 +2826,7 @@ source-blocks outside of that place.
             - It makes it easier to review the modification of a task without
               - Having to re-read the entire task to understand the context
               - Track down the why it modified
-      - When did it complete and why?
+      - When did it complete (done or not) and why?
         - The goals for completion are probably in the body of the Headline
           itself so why keeping a note here? Bother because it makes it easier
           to review the completion of a task without
