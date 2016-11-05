@@ -2853,6 +2853,20 @@ source-blocks outside of that place.
       - Access related
         - =char= defines a fast-access key for the state name
 
+#+NAME: orgmode:gcr:vela:BB8A752F-713B-4450-98DC-CE04957577EF
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq org-todo-keywords
+      '((sequence
+         "TODO"
+         "IN-PROGRESS"
+         "HELD-BLOCKED"
+         "HELD-FROZEN"
+         "HELD-UNTIL"
+         "REVIEW"
+         "DONE"
+         )))
+#+END_SRC
+
 - Reference
   - [[http://stackoverflow.com/questions/12262220/add-created-date-property-to-todos-in-org-mode][StackOverflow: Add CREATED date property to TODOs in org-mode]]
   - [[http://orgmode.org/org.html#Workflow-states][Org: 5.2.1 TODO keywords as workflow states]]
@@ -2871,20 +2885,6 @@ Make it easy to hide the state changes until I want to see them with a Drawer.
 #+NAME: orgmode:gcr:vela:D2641303-A028-4760-9838-60A2E1F39A85
 #+BEGIN_SRC emacs-lisp :results output silent
 (setq org-log-into-drawer t)
-#+END_SRC
-
-#+NAME: orgmode:gcr:vela:BB8A752F-713B-4450-98DC-CE04957577EF
-#+BEGIN_SRC emacs-lisp :results output silent
-(setq org-todo-keywords
-      '((sequence
-         "TODO"
-         "IN-PROGRESS"
-         "HELD-BLOCKED"
-         "HELD-FROZEN"
-         "HELD-UNTIL"
-         "REVIEW"
-         "DONE"
-         )))
 #+END_SRC
 
 When running in a GUI, I would like linked images to be displayed inside of

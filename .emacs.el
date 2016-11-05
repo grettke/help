@@ -1670,14 +1670,6 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (setq org-src-tab-acts-natively nil)
 ;; orgmode:gcr:vela:6CE707AD-A340-4B63-B747-8692E0DFF41C ends here
 
-;; [[file:help.org::orgmode:gcr:vela:4D8598C9-9732-4D76-97F5-3A3F88930741][orgmode:gcr:vela:4D8598C9-9732-4D76-97F5-3A3F88930741]]
-(setq org-log-states-order-reversed nil)
-;; orgmode:gcr:vela:4D8598C9-9732-4D76-97F5-3A3F88930741 ends here
-
-;; [[file:help.org::orgmode:gcr:vela:D2641303-A028-4760-9838-60A2E1F39A85][orgmode:gcr:vela:D2641303-A028-4760-9838-60A2E1F39A85]]
-(setq org-log-into-drawer t)
-;; orgmode:gcr:vela:D2641303-A028-4760-9838-60A2E1F39A85 ends here
-
 ;; [[file:help.org::orgmode:gcr:vela:BB8A752F-713B-4450-98DC-CE04957577EF][orgmode:gcr:vela:BB8A752F-713B-4450-98DC-CE04957577EF]]
 (setq org-todo-keywords
       '((sequence
@@ -1690,6 +1682,14 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
          "DONE"
          )))
 ;; orgmode:gcr:vela:BB8A752F-713B-4450-98DC-CE04957577EF ends here
+
+;; [[file:help.org::orgmode:gcr:vela:4D8598C9-9732-4D76-97F5-3A3F88930741][orgmode:gcr:vela:4D8598C9-9732-4D76-97F5-3A3F88930741]]
+(setq org-log-states-order-reversed nil)
+;; orgmode:gcr:vela:4D8598C9-9732-4D76-97F5-3A3F88930741 ends here
+
+;; [[file:help.org::orgmode:gcr:vela:D2641303-A028-4760-9838-60A2E1F39A85][orgmode:gcr:vela:D2641303-A028-4760-9838-60A2E1F39A85]]
+(setq org-log-into-drawer t)
+;; orgmode:gcr:vela:D2641303-A028-4760-9838-60A2E1F39A85 ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:548D2D49-98E0-456B-91BC-37D0C0BC3557][orgmode:gcr:vela:548D2D49-98E0-456B-91BC-37D0C0BC3557]]
 (setq org-startup-with-inline-images (display-graphic-p))
