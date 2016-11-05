@@ -2846,7 +2846,7 @@ source-blocks outside of that place.
         - =@= store a timestamp with a note when *entered*
           - =C-c C-c= provides an empty note
       - Exit related
-        - =/!= *in addition* the states entry configuration
+        - =/!= *in addition* to the states entry configuration
           - record a timestamp when *leaving*
           - /if and only if/
             - the target state not already configure logging when entering it
