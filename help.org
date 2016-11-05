@@ -2840,7 +2840,18 @@ source-blocks outside of that place.
       - HELD-UNTIL \rarr WAIT with note (timestamp, explanation)
       - REVIEW \rarr no change (timestamp)
       - DONE \rarr no change (timestamp, explanation)
-    - 
+    - Workflow cheatsheet for every state change
+      - Entry related
+        - =!= store a timestamp when *entered*
+        - =@= store a timestamp with a note when *entered*
+          - =C-c C-c= provides an empty note
+      - Exit related
+        - =/!= *in addition* the states entry configuration
+          - record a timestamp when *leaving*
+          - /if and only if/
+            - the target state not already configure logging when entering it
+      - Access related
+        - =char= defines a fast-access key for the state name
 
 - Reference
   - [[http://stackoverflow.com/questions/12262220/add-created-date-property-to-todos-in-org-mode][StackOverflow: Add CREATED date property to TODOs in org-mode]]
