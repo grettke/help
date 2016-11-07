@@ -1959,6 +1959,25 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
 (key-chord-define org-mode-map ">>" (lambda () (interactive) (insert "»")))
 ;; orgmode:gcr:vela:46FE856B-D5C6-45B0-95D5-891211AC295C ends here
 
+;; [[file:help.org::orgmode:gcr:vela:FB7C19BC-D532-4061-A6B6-F51DC34DC73D][orgmode:gcr:vela:FB7C19BC-D532-4061-A6B6-F51DC34DC73D]]
+(use-package blackboard-bold-mode
+  :ensure t)
+;; orgmode:gcr:vela:FB7C19BC-D532-4061-A6B6-F51DC34DC73D ends here
+
+;; [[file:help.org::orgmode:gcr:vela:C6CA4298-456E-4563-B870-D599ECF2DBF2][orgmode:gcr:vela:C6CA4298-456E-4563-B870-D599ECF2DBF2]]
+(use-package fraktur-mode
+  :ensure t)
+;; orgmode:gcr:vela:C6CA4298-456E-4563-B870-D599ECF2DBF2 ends here
+
+;; [[file:help.org::orgmode:gcr:vela:FBBCA655-1B6C-47D2-AF7B-614E74C8B6F6][orgmode:gcr:vela:FBBCA655-1B6C-47D2-AF7B-614E74C8B6F6]]
+(defhydra help/hydra/transliterate (:color blue :hint nil)
+  "
+_b_ black-board-bold _f_ fraktur
+"
+  ("b" blackboard-bold-mode)
+  ("f" fraktur-mode))
+;; orgmode:gcr:vela:FBBCA655-1B6C-47D2-AF7B-614E74C8B6F6 ends here
+
 ;; [[file:help.org::orgmode:gcr:vela:A71F1A03-34C0-4F7F-99BE-3E1F1B469AB0][orgmode:gcr:vela:A71F1A03-34C0-4F7F-99BE-3E1F1B469AB0]]
 (defun help/describe-char ()
   "Evaluate `describe-char' and then `other-window'."
@@ -2775,7 +2794,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
   "
 _O_ base64-encode-region _P_ base64-decode-region
 _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm  _7_ grade-level _8_ reading-ease
-_q_ apropos _w_ widen _e_ flycheck _r_ reposition-window_t_ unicode-troll-stopper-mode _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
+_q_ apropos _w_ widen _e_ flycheck _r_ reposition-window_t_ unicode-troll-stopper-mode _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page _}_ transliterate
 _Q_ ✓ _W_ ✗ _E_ ☐ _R_ ☑ _T_ ☒_
 _a_ ag  _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point _D_ detangle _j_ obtj2o _k_ scrollDown _K_ nextLogLine  _;_ toggle-lax-whitespace
 _x_ delete-indentation _c_ fill-paragraph _v_ view-mode _b_ erase-buffer _n_ normal _m_ imenu-list _M_ Marked 2 Viewer
@@ -2826,6 +2845,7 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("P" base64-decode-region)
   ("[" backward-page :exit nil)
   ("]" forward-page :exit nil)
+  ("}" help/hydra/transliterate/body)
   ("c" fill-paragraph )
   ("b" erase-buffer))
 ;; orgmode:gcr:vela:F6C7AAB7-DF69-4EBA-8116-15DC32022D49 ends here
