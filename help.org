@@ -105,6 +105,7 @@ emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
       - ~gcc~ and ~python~
       - ~bash~ and ~perl~
       - ~scheme~ and ~java~
+    - Anything that you would read program or text
     - Use ~code style~ of tildaes
   - Non-Code Snippet.
     - File types
