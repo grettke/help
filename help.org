@@ -2732,6 +2732,18 @@ Set a default commenting prefix.
   :ensure t)
 #+END_SRC
 
+Package lint.
+
+#+NAME: orgmode:gcr:vela:D05FDD04-0A20-4CB0-BFF6-CA02FFB0F39F
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package package-lint
+  :ensure t)
+
+(use-package flycheck-package
+  :ensure t
+  :after (package-lint))
+#+END_SRC
+
 **** Keybinding
     :PROPERTIES:
     :ID:       orgmode:gcr:vela:3A6B16EC-870A-4EFE-935A-C03F8DFB67BF
@@ -3407,6 +3419,14 @@ Fraktur characters.
 #+NAME: orgmode:gcr:vela:C6CA4298-456E-4563-B870-D599ECF2DBF2
 #+BEGIN_SRC emacs-lisp :results output silent
 (use-package fraktur-mode
+  :ensure t)
+#+END_SRC
+
+Devanagari characters.
+
+#+NAME: orgmode:gcr:vela:863F36E0-3553-4A95-9671-BA785EBC40AF
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package transliterate-devanagari
   :ensure t)
 #+END_SRC
 

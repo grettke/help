@@ -1636,6 +1636,15 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   :ensure t)
 ;; orgmode:gcr:vela:332AF8C9-6442-4C8D-9750-09C648A4AAD4 ends here
 
+;; [[file:help.org::orgmode:gcr:vela:D05FDD04-0A20-4CB0-BFF6-CA02FFB0F39F][orgmode:gcr:vela:D05FDD04-0A20-4CB0-BFF6-CA02FFB0F39F]]
+(use-package package-lint
+  :ensure t)
+
+(use-package flycheck-package
+  :ensure t
+  :after (package-lint))
+;; orgmode:gcr:vela:D05FDD04-0A20-4CB0-BFF6-CA02FFB0F39F ends here
+
 ;; [[file:help.org::orgmode:gcr:vela:7CEA216B-6A18-47F6-B1DE-327CFA8A591A][orgmode:gcr:vela:7CEA216B-6A18-47F6-B1DE-327CFA8A591A]]
 (define-key emacs-lisp-mode-map (kbd "s-p") #'describe-thing-in-popup)
 ;; orgmode:gcr:vela:7CEA216B-6A18-47F6-B1DE-327CFA8A591A ends here
@@ -1968,6 +1977,11 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
 (use-package fraktur-mode
   :ensure t)
 ;; orgmode:gcr:vela:C6CA4298-456E-4563-B870-D599ECF2DBF2 ends here
+
+;; [[file:help.org::orgmode:gcr:vela:863F36E0-3553-4A95-9671-BA785EBC40AF][orgmode:gcr:vela:863F36E0-3553-4A95-9671-BA785EBC40AF]]
+(use-package transliterate-devanagari
+  :ensure t)
+;; orgmode:gcr:vela:863F36E0-3553-4A95-9671-BA785EBC40AF ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:FBBCA655-1B6C-47D2-AF7B-614E74C8B6F6][orgmode:gcr:vela:FBBCA655-1B6C-47D2-AF7B-614E74C8B6F6]]
 (defhydra help/hydra/transliterate (:color blue :hint nil)
