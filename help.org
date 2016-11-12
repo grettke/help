@@ -105,14 +105,13 @@ emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
       - ~gcc~ and ~python~
       - ~bash~ and ~perl~
       - ~scheme~ and ~java~
+      - =GCC= and =Pyton=
+      - =Bash= and =Perl=
+      - =Scheme= and =Java=
     - Anything that you would read program or text
     - Use ~code style~ of tildaes
   - Non-Code Snippet.
     - File types
-    - Program names that aren't referring to the artifact itself
-      - =GCC= and =Pyton=
-      - =Bash= and =Perl=
-      - =Scheme= and =Java=
     - Concepts like =Object Oriented Programming= or a =Immediately-invoked
       function expression=
     - Use =verbatim= style of equal sign
