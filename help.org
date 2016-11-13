@@ -2031,6 +2031,18 @@ in different situations. Be very thoughtful and allow every function.
    :ID:       orgmode:gcr:vela:A3C2AF94-B834-4FD2-9B23-F64F618B31C3
    :END:
 
+#+NAME: orgmode:gcr:vela:B35D9582-C338-4A9B-A22E-752FCC27831F
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package browse-kill-ring
+  :ensure t
+  :config
+  (browse-kill-ring-default-keybindings)
+  (setq browse-kill-ring-highlight-current-entry t)
+  (setq browse-kill-ring-highlight-inserted-item t)
+  (setq browse-kill-ring-show-preview nil)
+  (setq browse-kill-ring-separator "⎀┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅"))
+#+END_SRC
+
 When you start typing and text is selected, replace it with what you are typing,
 or pasting
 
