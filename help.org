@@ -2061,6 +2061,22 @@ or pasting
 (delete-selection-mode t)
 #+END_SRC
 
+Automatically save data copied from the system clipboard into the kill ring
+before killing Emacs data.
+
+Via Ben Maughan:
+
+#+BEGIN_QUOTE
+;; Save whatever’s in the current (system) clipboard before
+;; replacing it with the Emacs’ text.
+;; https://github.com/dakrone/eos/blob/master/eos.org
+#+END_QUOTE
+
+#+NAME: orgmode:gcr:vela:63C4F1FC-00C6-4EC5-86CE-070D90C5164E
+#+BEGIN_SRC emacs-lisp
+(setq save-interprogram-paste-before-kill t)
+#+END_SRC
+
 ** Minibuffer
    :PROPERTIES:
    :ID:       orgmode:gcr:vela:7A3C5EF1-BEF7-4007-86B1-78590CB62EB2

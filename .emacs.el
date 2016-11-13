@@ -1267,6 +1267,10 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
 (delete-selection-mode t)
 ;; orgmode:gcr:vela:0B6E0831-FE6F-442F-918F-48488A6FCD2D ends here
 
+;; [[file:help.org::orgmode:gcr:vela:63C4F1FC-00C6-4EC5-86CE-070D90C5164E][orgmode:gcr:vela:63C4F1FC-00C6-4EC5-86CE-070D90C5164E]]
+(setq save-interprogram-paste-before-kill t)
+;; orgmode:gcr:vela:63C4F1FC-00C6-4EC5-86CE-070D90C5164E ends here
+
 ;; [[file:help.org::orgmode:gcr:vela:2D2A8781-9A67-4D3A-B0E4-B09EEBBC65D8][orgmode:gcr:vela:2D2A8781-9A67-4D3A-B0E4-B09EEBBC65D8]]
 (fset #'yes-or-no-p #'y-or-n-p)
 ;; orgmode:gcr:vela:2D2A8781-9A67-4D3A-B0E4-B09EEBBC65D8 ends here
