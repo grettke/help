@@ -2077,6 +2077,13 @@ Via Ben Maughan:
 (setq save-interprogram-paste-before-kill t)
 #+END_SRC
 
+[[http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/][Via]]: copy selected text to the clip board.
+
+#+NAME: orgmode:gcr:vela:2D385F1C-718A-41CC-899E-DDE9675C36B7
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq mouse-drag-copy-region t)
+#+END_SRC
+
 ** Minibuffer
    :PROPERTIES:
    :ID:       orgmode:gcr:vela:7A3C5EF1-BEF7-4007-86B1-78590CB62EB2
