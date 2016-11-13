@@ -2026,7 +2026,7 @@ in different situations. Be very thoughtful and allow every function.
   :ensure t)
 #+END_SRC
 
-** Mark and Region
+** Mark, Kill  and Region
    :PROPERTIES:
    :ID:       orgmode:gcr:vela:A3C2AF94-B834-4FD2-9B23-F64F618B31C3
    :END:
