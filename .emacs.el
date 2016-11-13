@@ -1251,8 +1251,16 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
   (browse-kill-ring-default-keybindings)
   (setq browse-kill-ring-highlight-current-entry t)
   (setq browse-kill-ring-highlight-inserted-item t)
-  (setq browse-kill-ring-show-preview t)
-  (setq browse-kill-ring-separator "\n--separator------------------------------"))
+  (setq browse-kill-ring-show-preview nil)
+  (setq browse-kill-ring-separator
+        "⎀┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅")
+  (defun help/browse-kill-ring ()
+    "Disable `fci-mode' before entering `browse-kill-ring'."
+    (interactive)
+    (fci-mode)
+    (browse-kill-ring)
+    (fci-mode))
+  (global-set-key (kbd "M-y") #'help/browse-kill-ring))
 ;; orgmode:gcr:vela:B35D9582-C338-4A9B-A22E-752FCC27831F ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:0B6E0831-FE6F-442F-918F-48488A6FCD2D][orgmode:gcr:vela:0B6E0831-FE6F-442F-918F-48488A6FCD2D]]

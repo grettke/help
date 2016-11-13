@@ -2040,7 +2040,15 @@ in different situations. Be very thoughtful and allow every function.
   (setq browse-kill-ring-highlight-current-entry t)
   (setq browse-kill-ring-highlight-inserted-item t)
   (setq browse-kill-ring-show-preview nil)
-  (setq browse-kill-ring-separator "⎀┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅"))
+  (setq browse-kill-ring-separator
+        "⎀┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅")
+  (defun help/browse-kill-ring ()
+    "Disable `fci-mode' before entering `browse-kill-ring'."
+    (interactive)
+    (fci-mode)
+    (browse-kill-ring)
+    (fci-mode))
+  (global-set-key (kbd "M-y") #'help/browse-kill-ring))
 #+END_SRC
 
 When you start typing and text is selected, replace it with what you are typing,
