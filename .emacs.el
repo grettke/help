@@ -1738,7 +1738,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; [[file:help.org::orgmode:gcr:vela:BEAFFB12-0BFE-45EE-A018-D1217275A79C][orgmode:gcr:vela:BEAFFB12-0BFE-45EE-A018-D1217275A79C]]
 (setq org-refile-targets '((nil . (:maxlevel . 10))))
 (setq org-outline-path-complete-in-steps nil)
-(setq org-refile-use-outline-path 'file)
+(setq org-refile-use-outline-path t)
 ;; orgmode:gcr:vela:BEAFFB12-0BFE-45EE-A018-D1217275A79C ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:548D2D49-98E0-456B-91BC-37D0C0BC3557][orgmode:gcr:vela:548D2D49-98E0-456B-91BC-37D0C0BC3557]]

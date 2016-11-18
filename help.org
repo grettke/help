@@ -2965,12 +2965,15 @@ When refiling
 - Select with full path immediately
 - Destination
   - As a path
-  - To a file
-    - Default this one
-  - With full path qualification
-    - Make it obvious where it is going, even here
-    - Selecting a file without heading refiles to the top level heading
-    - Like ~full-file-path~ but it is too much info
+  - To:
+    - +To a qualified file+
+      - Liked: Easier to read
+      - Disliked: Too long with no benefits
+    - +To a file+
+      - Liked: Easy to read
+      - Disliked: I never define refile targets so it will only ever be the
+        current file
+    - To this file
 - References
   - [[http://orgmode.org/manual/Refile-and-copy.html][9.5 Refile and copy]]
   - [[https://www.reddit.com/r/emacs/comments/4366f9/how_do_orgrefiletargets_work/][How do org-refile-targets work?]]
@@ -2979,7 +2982,7 @@ When refiling
 #+BEGIN_SRC emacs-lisp :results output silent
 (setq org-refile-targets '((nil . (:maxlevel . 10))))
 (setq org-outline-path-complete-in-steps nil)
-(setq org-refile-use-outline-path 'file)
+(setq org-refile-use-outline-path t)
 #+END_SRC
 
 When running in a GUI, I would like linked images to be displayed inside of
