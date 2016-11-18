@@ -1747,6 +1747,10 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (setq org-outline-path-complete-in-steps nil)
 ;; orgmode:gcr:vela:orgmode:gcr:vela:17D0BD24-8C36-4371-91CC-380176017D86 ends here
 
+;; [[file:help.org::orgmode:gcr:vela:C1A56043-04E5-4C41-A7E3-7E1C5E5301F9][orgmode:gcr:vela:C1A56043-04E5-4C41-A7E3-7E1C5E5301F9]]
+(setq org-refile-allow-creating-parent-nodes nil)
+;; orgmode:gcr:vela:C1A56043-04E5-4C41-A7E3-7E1C5E5301F9 ends here
+
 ;; [[file:help.org::orgmode:gcr:vela:548D2D49-98E0-456B-91BC-37D0C0BC3557][orgmode:gcr:vela:548D2D49-98E0-456B-91BC-37D0C0BC3557]]
 (setq org-startup-with-inline-images (display-graphic-p))
 ;; orgmode:gcr:vela:548D2D49-98E0-456B-91BC-37D0C0BC3557 ends here

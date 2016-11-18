@@ -2978,6 +2978,12 @@ Maintain state when archiving a heading.
     #+BEGIN_SRC emacs-lisp :results output silent
 (setq org-outline-path-complete-in-steps nil)
     #+END_SRC
+  - Create a new parent heading destination first instead of using this GUI to
+    do it because it is error prone despite the available confirmation message
+    #+NAME: orgmode:gcr:vela:C1A56043-04E5-4C41-A7E3-7E1C5E5301F9
+    #+BEGIN_SRC emacs-lisp :results output silent
+(setq org-refile-allow-creating-parent-nodes nil)    
+    #+END_SRC
 
 When running in a GUI, I would like linked images to be displayed inside of
 Emacs.
