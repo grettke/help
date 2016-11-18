@@ -2945,6 +2945,13 @@ Make it easy to hide the state changes until I want to see them with a Drawer.
 (setq org-log-into-drawer t)
 #+END_SRC
 
+Maintain state when archiving a heading.
+
+#+NAME: orgmode:gcr:vela:EF4EC62D-3DF8-476F-B30B-C76125A95940
+#+BEGIN_SRC emacs-lisp
+(setq org-archive-mark-done nil)
+#+END_SRC
+
 When running in a GUI, I would like linked images to be displayed inside of
 Emacs.
 
