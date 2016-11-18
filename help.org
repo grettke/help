@@ -2962,7 +2962,7 @@ Maintain state when archiving a heading.
     #+BEGIN_SRC emacs-lisp :results output silent
 (setq org-reverse-note-order t)
     #+END_SRC
-  - Include all headings (rarely go deeper than ten) only in this file
+  - Destination is only this file to any depth
     #+NAME: orgmode:gcr:vela:BEAFFB12-0BFE-45EE-A018-D1217275A79C
     #+BEGIN_SRC emacs-lisp :results output silent
 (setq org-refile-targets '((nil . (:maxlevel . 10))))
