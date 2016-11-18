@@ -2962,7 +2962,7 @@ Maintain state when archiving a heading.
     #+BEGIN_SRC emacs-lisp :results output silent
 (setq org-reverse-note-order t)
     #+END_SRC
-  - Inculde all headings (rarely go deeper than ten)
+  - Include all headings (rarely go deeper than ten) only in this file
     #+NAME: orgmode:gcr:vela:BEAFFB12-0BFE-45EE-A018-D1217275A79C
     #+BEGIN_SRC emacs-lisp :results output silent
 (setq org-refile-targets '((nil . (:maxlevel . 10))))
@@ -2987,7 +2987,7 @@ Maintain state when archiving a heading.
   - Track refile operations
     #+NAME: orgmode:gcr:vela:5969E83F-EC85-4F36-81F9-0F74BD197075
     #+BEGIN_SRC emacs-lisp :results output silent
-(setq org-log-refile 'note)    
+(setq org-log-refile 'note)
     #+END_SRC
 
 When running in a GUI, I would like linked images to be displayed inside of
