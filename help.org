@@ -2952,38 +2952,32 @@ Maintain state when archiving a heading.
 (setq org-archive-mark-done nil)
 #+END_SRC
 
-Make it easy to see refiled headlines by listing them as the first
-sub-heading.
-
-#+NAME: orgmode:gcr:vela:8FA9026B-ACAF-496C-B5F6-1F98ABA4FA28
-#+BEGIN_SRC emacs-lisp :results output silent
+- Refiling
+  - References
+    - [[http://orgmode.org/manual/Refile-and-copy.html][9.5 Refile and copy]]
+    - [[https://www.reddit.com/r/emacs/comments/4366f9/how_do_orgrefiletargets_work/][How do org-refile-targets work?]]
+  - Make it easy to see refiled headlines by listing them as the first
+    sub-heading (harder to disappear)
+    #+NAME: orgmode:gcr:vela:8FA9026B-ACAF-496C-B5F6-1F98ABA4FA28
+    #+BEGIN_SRC emacs-lisp :results output silent
 (setq org-reverse-note-order t)
-#+END_SRC
-
-When refiling
-- List headings up to ten deep (rarely go deeper)
-- Select with full path immediately
-- Destination
-  - As a path
-  - To:
-    - +To a qualified file+
-      - Liked: Easier to read
-      - Disliked: Too long with no benefits
-    - +To a file+
-      - Liked: Easy to read
-      - Disliked: I never define refile targets so it will only ever be the
-        current file
-    - To this file
-- References
-  - [[http://orgmode.org/manual/Refile-and-copy.html][9.5 Refile and copy]]
-  - [[https://www.reddit.com/r/emacs/comments/4366f9/how_do_orgrefiletargets_work/][How do org-refile-targets work?]]
-
-#+NAME: orgmode:gcr:vela:BEAFFB12-0BFE-45EE-A018-D1217275A79C
-#+BEGIN_SRC emacs-lisp :results output silent
+    #+END_SRC
+  - Inculde all headings (rarely go deeper than ten)
+    #+NAME: orgmode:gcr:vela:BEAFFB12-0BFE-45EE-A018-D1217275A79C
+    #+BEGIN_SRC emacs-lisp :results output silent
 (setq org-refile-targets '((nil . (:maxlevel . 10))))
-(setq org-outline-path-complete-in-steps nil)
+    #+END_SRC
+  - Select target as a path within the current file
+    #+NAME: orgmode:gcr:vela:orgmode:gcr:vela:559FC9FA-CFEC-45D7-A6D7-E29937D4341D
+    #+BEGIN_SRC emacs-lisp :results output silent
 (setq org-refile-use-outline-path t)
-#+END_SRC
+    #+END_SRC
+    - Multiple destionations are not part of my workflow so don't include more
+  - Select with full path immediately instead of depth-first navigation
+    #+NAME: orgmode:gcr:vela:orgmode:gcr:vela:17D0BD24-8C36-4371-91CC-380176017D86
+    #+BEGIN_SRC emacs-lisp :results output silent
+(setq org-outline-path-complete-in-steps nil)
+    #+END_SRC
 
 When running in a GUI, I would like linked images to be displayed inside of
 Emacs.
