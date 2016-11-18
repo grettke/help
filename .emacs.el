@@ -1735,13 +1735,18 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (setq org-reverse-note-order t)
 ;; orgmode:gcr:vela:8FA9026B-ACAF-496C-B5F6-1F98ABA4FA28 ends here
 
+;; [[file:help.org::orgmode:gcr:vela:BEAFFB12-0BFE-45EE-A018-D1217275A79C][orgmode:gcr:vela:BEAFFB12-0BFE-45EE-A018-D1217275A79C]]
+(setq org-refile-targets '((nil . (:maxlevel . 10))))
+(setq org-outline-path-complete-in-steps nil)
+(setq org-refile-use-outline-path 'file)
+;; orgmode:gcr:vela:BEAFFB12-0BFE-45EE-A018-D1217275A79C ends here
+
 ;; [[file:help.org::orgmode:gcr:vela:548D2D49-98E0-456B-91BC-37D0C0BC3557][orgmode:gcr:vela:548D2D49-98E0-456B-91BC-37D0C0BC3557]]
 (setq org-startup-with-inline-images (display-graphic-p))
 ;; orgmode:gcr:vela:548D2D49-98E0-456B-91BC-37D0C0BC3557 ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:CE97A1D8-07E2-4445-80B9-3C91ACFE7FB8][orgmode:gcr:vela:CE97A1D8-07E2-4445-80B9-3C91ACFE7FB8]]
 (setq org-completion-use-ido t)
-(setq org-outline-path-complete-in-steps nil)
 (setq org-completion-use-iswitchb nil)
 ;; orgmode:gcr:vela:CE97A1D8-07E2-4445-80B9-3C91ACFE7FB8 ends here
 
