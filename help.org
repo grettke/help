@@ -2952,6 +2952,14 @@ Maintain state when archiving a heading.
 (setq org-archive-mark-done nil)
 #+END_SRC
 
+Make it easy to see refiled headlines by listing them as the first
+sub-heading.
+
+#+NAME: orgmode:gcr:vela:8FA9026B-ACAF-496C-B5F6-1F98ABA4FA28
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq org-reverse-note-order t)
+#+END_SRC
+
 When running in a GUI, I would like linked images to be displayed inside of
 Emacs.
 
