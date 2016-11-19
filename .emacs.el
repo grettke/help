@@ -1742,11 +1742,15 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
   (interactive "P")
   (cond
    ((not (null arg))
-    (let ((val (car current-prefix-arg)))
+    (let ((val (car current-prefix-arg))
+          (current-prefix-arg nil)
+          (org-refile-use-outline-path 'file)
+          (org-reverse-note-order nil))
       (cond ((= val 4)
-             (let ((current-prefix-arg nil)
-                   (org-refile-use-outline-path 'file)
-                   (org-reverse-note-order nil))
+             (call-interactively 'org-refile))
+            ((= val 16)
+             (let ((org-refile-targets
+                    '(("~/tmp/migrate.org" :maxlevel . 10))))
                (call-interactively 'org-refile))))))
    (t
     (call-interactively 'org-refile))))

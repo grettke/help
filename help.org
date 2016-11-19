@@ -3086,11 +3086,15 @@ Because <00.09% of the time I am moving headings into a new file
   (interactive "P")
   (cond
    ((not (null arg))
-    (let ((val (car current-prefix-arg)))
+    (let ((val (car current-prefix-arg))
+          (current-prefix-arg nil)
+          (org-refile-use-outline-path 'file)
+          (org-reverse-note-order nil))
       (cond ((= val 4)
-             (let ((current-prefix-arg nil)
-                   (org-refile-use-outline-path 'file)
-                   (org-reverse-note-order nil))
+             (call-interactively 'org-refile))
+            ((= val 16)
+             (let ((org-refile-targets
+                    '(("~/tmp/migrate.org" :maxlevel . 10))))
                (call-interactively 'org-refile))))))
    (t
     (call-interactively 'org-refile))))
