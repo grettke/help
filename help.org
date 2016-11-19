@@ -2958,6 +2958,57 @@ Maintain state when archiving a heading.
 
 **** Refile
 
+***** Context
+
+I wrote my first to-do list on a funeral home notepad. It was either that or it
+was from the furniture store. My dad worked at both. The National Selected
+Morticians logo sat somewhere on its pages. There wasn't much for me to note
+back then and the notepad worked fine. When I got a little older I graduated
+to a Mead spiral notebook. I wasn't organized and wasted space. When you tore
+out the pages they made a mess. At home we had two computers over the years an
+Apple 2E and then a IBM PC compatible. Mom used PFS Write on the 2E and I used
+Notepad once in a while but my usage on both games. They were at home but they
+were not my home. The mad was my home until college where I made two new
+friends: Composition Book (CB) and Bill Joy's ~vi~. CB seemed like an elegant
+upgrade from the Mead spiral but it didn't last. CB's lines were too tall and
+the pages were too short, the worst of both worlds. The speckled black and
+white covers were its most useful part which was it's beauty as no one would
+ever have guessed. Compared to the Mead, the CB's were downright elegant. That
+leaves ~vi~. Mrs. Marian Manyo prepared a handout to help us learn ~vi~. It was a
+single page. ~SunOS~ was at a whopping version of 5.7 yet the handout left ink
+on your finger suggesting that it a mimeograph instead of a Xerox that
+deposited it into our awaiting writing fingers. It has seven commands that I
+learned: open, close, save, close and save, insert and command mode. That
+worked to store my todo list for years. This as before CVS usurped RCS so
+backups were basic. My workflow had two states: existence and non-existence.
+Simple. This well for another nineteen years. Until I followed the GTD
+approach but in a simpler ad-hock form. Emacs was never part of my life
+even when it lived next door to vi. Growing up on the cusp of beefy IDEs
+living on puny desktops most schools weren't rooted in the tradition of LISP
+and Emacs and I never joined it. Scheme got my attention though and it sucked
+me into Emacs, but it didn't keep me. Twice I tried. Nope. Three times I tried
+and at the end I liked Emacs a little bit worse. Then something funny happened:
+I wanted to learn OCaml. Emacs was the only good editor for it, so I dug up
+Emacs. Then I wanted to learn SML and go figure: Emacs was the only good
+editor for it. The same story was retold ten or fifteen times. The proverbial
+lotus kept expanding every time you touched because not only did satisfy your
+ideas but it gave you new ones. Totally hooked, I am still keeping my todo
+lists in ASCII text files. Then three years I heard about Org-Mode. My first
+Org file had you guessed it: lists converted into headings. Oops, that wasn't
+right so I converted them all to lists. That worked well for years. Then I got
+interested in publishing and spent another year with headings and lists. A
+year or so ago I got tired of my ad-hock workflow I checked if Org had a way
+to deal with workflow. Of course it did! Then I got interested in tracking
+state changes, and of course it had that. Beautiful. This whole story lives
+here to introduce refile. When I moved headings I moved them by selecting the
+whole subtree, killing it, and pasting it somewhere else. Fifteen or twenty
+times I lost the heading. Sure VCS saved it but it was a hassle and a mess, a
+total frustration. My error was not marking the entire subtree. Oops. When I
+searched for a solution I ended up on the refile page. Of course that is how
+you do it. Now /what/ was the /it/ that I wanted to do?
+
+***** Desire and Implementation
+
 - Refiling
   - References
     - [[http://orgmode.org/manual/Refile-and-copy.html][9.5 Refile and copy]]
@@ -2976,7 +3027,7 @@ Maintain state when archiving a heading.
   - Select target as a path within the current file
     #+NAME: orgmode:gcr:vela:orgmode:gcr:vela:559FC9FA-CFEC-45D7-A6D7-E29937D4341D
     #+BEGIN_SRC emacs-lisp :results output silent
-(setq org-refile-use-outline-path t)
+(setq org-refile-use-outline-path 'file)
     #+END_SRC
     - Multiple destionations are not part of my workflow so don't include more
   - Select with full path immediately instead of depth-first navigation
