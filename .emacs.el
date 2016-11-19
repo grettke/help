@@ -1731,17 +1731,14 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (setq org-archive-mark-done nil)
 ;; orgmode:gcr:vela:EF4EC62D-3DF8-476F-B30B-C76125A95940 ends here
 
+;; [[file:help.org::orgmode:gcr:vela:orgmode:gcr:vela:440C909C-88FA-48D4-8158-EF32FF1B21FB][orgmode:gcr:vela:orgmode:gcr:vela:440C909C-88FA-48D4-8158-EF32FF1B21FB]]
+(setq org-refile-targets '((nil . (:maxlevel . 10))))
+(setq org-refile-use-outline-path t)
+;; orgmode:gcr:vela:orgmode:gcr:vela:440C909C-88FA-48D4-8158-EF32FF1B21FB ends here
+
 ;; [[file:help.org::orgmode:gcr:vela:8FA9026B-ACAF-496C-B5F6-1F98ABA4FA28][orgmode:gcr:vela:8FA9026B-ACAF-496C-B5F6-1F98ABA4FA28]]
 (setq org-reverse-note-order t)
 ;; orgmode:gcr:vela:8FA9026B-ACAF-496C-B5F6-1F98ABA4FA28 ends here
-
-;; [[file:help.org::orgmode:gcr:vela:BEAFFB12-0BFE-45EE-A018-D1217275A79C][orgmode:gcr:vela:BEAFFB12-0BFE-45EE-A018-D1217275A79C]]
-(setq org-refile-targets '((nil . (:maxlevel . 10))))
-;; orgmode:gcr:vela:BEAFFB12-0BFE-45EE-A018-D1217275A79C ends here
-
-;; [[file:help.org::orgmode:gcr:vela:orgmode:gcr:vela:559FC9FA-CFEC-45D7-A6D7-E29937D4341D][orgmode:gcr:vela:orgmode:gcr:vela:559FC9FA-CFEC-45D7-A6D7-E29937D4341D]]
-(setq org-refile-use-outline-path t)
-;; orgmode:gcr:vela:orgmode:gcr:vela:559FC9FA-CFEC-45D7-A6D7-E29937D4341D ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:orgmode:gcr:vela:17D0BD24-8C36-4371-91CC-380176017D86][orgmode:gcr:vela:orgmode:gcr:vela:17D0BD24-8C36-4371-91CC-380176017D86]]
 (setq org-outline-path-complete-in-steps nil)

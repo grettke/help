@@ -2806,6 +2806,9 @@ Package lint.
   :END:
 
 **** Literate Programming
+:PROPERTIES:
+:ID:       orgmode:gcr:vela:DBC93FC7-54AA-42AC-95BE-FEAA01FACA89
+:END:
 
 When source blocks are evaluated, their results get stored in a result area,
 typically for display. If the results are small, they are displayed with colons
@@ -2862,6 +2865,9 @@ source-blocks outside of that place.
 #+END_SRC
 
 **** Workflow
+:PROPERTIES:
+:ID:       orgmode:gcr:vela:8341F15B-6D47-4D84-9DAA-D411FA588AA5
+:END:
 
 - Custom TODO workflow states requirements, each answering the following questions:
   - Version 01
@@ -2958,8 +2964,14 @@ Maintain state when archiving a heading.
 #+END_SRC
 
 **** Refile
+:PROPERTIES:
+:ID:       orgmode:gcr:vela:D0E22D45-6317-4B23-A245-B92ADD71F014
+:END:
 
 ***** Context
+:PROPERTIES:
+:ID:       orgmode:gcr:vela:43D6F529-7EA6-4931-8408-03B0F562282E
+:END:
 
 I wrote my first to-do list on a funeral home notepad. It was either that or
 it was from the furniture store. My dad worked at both. The National Selected
@@ -3009,6 +3021,9 @@ searched for a solution I ended up on the refile page. Of course that is how
 you do it. Now /what/ was the /it/ that I wanted to do?
 
 ***** Desire and Implementation
+:PROPERTIES:
+:ID:       orgmode:gcr:vela:8ADB34FD-53E3-40C4-B126-2A4980D069BB
+:END:
 
 Three or four Org-Mode files sit open in buffers for the entire year. Once in
 a while there are new ones added but they usually replace one of the original
@@ -3021,50 +3036,70 @@ closed only a single heading.
 Here is how my usage looks to me:
 - 99.00% of the time I am working in the same three files
   - Refiling across subtrees at level two
-- <01.00% of the time I am moving headings to level zero, or the top level of the
+- <00.90% of the time I am moving headings to level zero, or the top level of the
   document
-- <00.01% of the time I am moving headings into a new file
+- <00.09% of the time I am moving headings into a new file
 
 My predictable and small usage makes for an easy system configuration goal
 below.
 
 ***** Implementation
+:PROPERTIES:
+:ID:       orgmode:gcr:vela:ACF83728-2E66-437F-AFC9-D307A1BA8986
+:END:
 
-  - Make it easy to see refiled headlines by listing them as the first
-    sub-heading (harder to disappear)
-    #+NAME: orgmode:gcr:vela:8FA9026B-ACAF-496C-B5F6-1F98ABA4FA28
-    #+BEGIN_SRC emacs-lisp :results output silent
-(setq org-reverse-note-order t)
-    #+END_SRC
-  - Destination is only this file to any depth
-    #+NAME: orgmode:gcr:vela:BEAFFB12-0BFE-45EE-A018-D1217275A79C
-    #+BEGIN_SRC emacs-lisp :results output silent
+****** Core
+:PROPERTIES:
+:ID:       orgmode:gcr:vela:E0860CFC-8BBA-444C-86FA-D7043735D81B
+:END:
+
+Because 99% of the time I will refile headings as sub-headings within the same
+file I never need to configure =Refile= file targets in ~org-refile-targets~.
+Refiling at any depth makes
+
+#+NAME: orgmode:gcr:vela:orgmode:gcr:vela:440C909C-88FA-48D4-8158-EF32FF1B21FB
+#+BEGIN_SRC emacs-lisp :results output silent
 (setq org-refile-targets '((nil . (:maxlevel . 10))))
-    #+END_SRC
-  - Select target as a path within the current file
-    #+NAME: orgmode:gcr:vela:orgmode:gcr:vela:559FC9FA-CFEC-45D7-A6D7-E29937D4341D
-    #+BEGIN_SRC emacs-lisp :results output silent
-(setq org-refile-use-outline-path 'file)
-    #+END_SRC
-    - Multiple destionations are not part of my workflow so don't include more
-  - Select with full path immediately instead of depth-first navigation
-    #+NAME: orgmode:gcr:vela:orgmode:gcr:vela:17D0BD24-8C36-4371-91CC-380176017D86
-    #+BEGIN_SRC emacs-lisp :results output silent
+(setq org-refile-use-outline-path t)
+#+END_SRC
+
+doing so natural, flexible and efficient
+
+****** General Operation
+:PROPERTIES:
+:ID:       orgmode:gcr:vela:B22BE013-FFE3-4147-AD1B-53E1CFF48306
+:END:
+
+- Make it easy to see refiled headlines by listing them as the first
+  sub-heading (harder to disappear)
+  #+NAME: orgmode:gcr:vela:8FA9026B-ACAF-496C-B5F6-1F98ABA4FA28
+  #+BEGIN_SRC emacs-lisp :results output silent
+(setq org-reverse-note-order t)
+  #+END_SRC
+- Select headings with the full path immediately instead of with clunky
+  depth-first navigation
+  #+NAME: orgmode:gcr:vela:orgmode:gcr:vela:17D0BD24-8C36-4371-91CC-380176017D86
+  #+BEGIN_SRC emacs-lisp :results output silent
 (setq org-outline-path-complete-in-steps nil)
-    #+END_SRC
-  - Create a new parent heading destination first instead of using this GUI to
-    do it because it is error prone despite the available confirmation message
-    #+NAME: orgmode:gcr:vela:C1A56043-04E5-4C41-A7E3-7E1C5E5301F9
-    #+BEGIN_SRC emacs-lisp :results output silent
+  #+END_SRC
+- Create a new parent heading destination first instead of using this GUI to
+  do it because it is error prone to do it in the naviation GUI despite the
+  available confirmation message
+  #+NAME: orgmode:gcr:vela:C1A56043-04E5-4C41-A7E3-7E1C5E5301F9
+  #+BEGIN_SRC emacs-lisp :results output silent
 (setq org-refile-allow-creating-parent-nodes nil)
-    #+END_SRC
-  - Track refile operations
-    #+NAME: orgmode:gcr:vela:5969E83F-EC85-4F36-81F9-0F74BD197075
-    #+BEGIN_SRC emacs-lisp :results output silent
+  #+END_SRC
+- Track refile operations to make sense of why the =Refile= occurred in the same
+  spirit of how the workflow state changes are recorded
+  #+NAME: orgmode:gcr:vela:5969E83F-EC85-4F36-81F9-0F74BD197075
+  #+BEGIN_SRC emacs-lisp :results output silent
 (setq org-log-refile 'note)
-    #+END_SRC
+  #+END_SRC
 
 **** Unclassified
+:PROPERTIES:
+:ID:       orgmode:gcr:vela:825C088D-CAA0-43D5-A005-00EF973A6D4C
+:END:
 
 When running in a GUI, I would like linked images to be displayed inside of
 Emacs.
