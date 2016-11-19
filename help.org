@@ -2804,6 +2804,8 @@ Package lint.
   :ID:       orgmode:gcr:vela:EBDA3D1C-536F-4252-AE26-32A3FDF5326C
   :END:
 
+**** Literate Programming
+
 When source blocks are evaluated, their results get stored in a result area,
 typically for display. If the results are small, they are displayed with colons
 instead of an =example= block. Instead, *always* place them in an
@@ -2857,6 +2859,8 @@ source-blocks outside of that place.
 #+BEGIN_SRC emacs-lisp :results output silent
 (setq org-src-tab-acts-natively nil)
 #+END_SRC
+
+**** Workflow
 
 - Custom TODO workflow states requirements, each answering the following questions:
   - Version 01
@@ -2952,6 +2956,8 @@ Maintain state when archiving a heading.
 (setq org-archive-mark-done nil)
 #+END_SRC
 
+**** Refile
+
 - Refiling
   - References
     - [[http://orgmode.org/manual/Refile-and-copy.html][9.5 Refile and copy]]
@@ -2989,6 +2995,8 @@ Maintain state when archiving a heading.
     #+BEGIN_SRC emacs-lisp :results output silent
 (setq org-log-refile 'note)
     #+END_SRC
+
+**** Unclassified
 
 When running in a GUI, I would like linked images to be displayed inside of
 Emacs.
