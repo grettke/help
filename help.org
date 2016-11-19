@@ -2960,7 +2960,7 @@ Maintain state when archiving a heading.
 
 ***** Context
 
-Emacsrote my first to-do list on a funeral home notepad. It was either that or
+I wrote my first to-do list on a funeral home notepad. It was either that or
 it was from the furniture store. My dad worked at both. The National Selected
 Morticians logo sat somewhere on its pages. There wasn't much for me to note
 back then and the notepad worked fine. When I got a little older I graduated
