@@ -3075,7 +3075,7 @@ Because <00.90% I'm moving headings to level zero I want to
 Because <00.09% of the time I am moving headings into a new file
 - Make it as easy and a difficult as moving to the top-level
 - Prompt for the file name
-- If it is new create it
+  - If it does not exist ~Org~ will transparently create it
 - Perform the move
 - Single previx argument (16)
 
