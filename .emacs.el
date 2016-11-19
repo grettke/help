@@ -1738,7 +1738,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 
 ;; [[file:help.org::orgmode:gcr:vela:A5D38FFE-32B1-4691-BFC8-02725D112F2E][orgmode:gcr:vela:A5D38FFE-32B1-4691-BFC8-02725D112F2E]]
 (defun help/org-refile (arg)
-  "Refile to /levels/ in /file/ by using use /prefix args/: 2+/this/0 or 1+/this/1."
+  "Refile to /levels/ in /file/ by using use /prefix args/: 2+/this/0, 1+/this/1 or 1/choice/2"
   (interactive "P")
   (cond
    ((not (null arg))
@@ -1749,8 +1749,12 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
       (cond ((= val 4)
              (call-interactively 'org-refile))
             ((= val 16)
-             (let ((org-refile-targets
-                    '(("~/tmp/migrate.org" :maxlevel . 10))))
+             (let* ((fil (read-file-name "Enter destination file: "))
+                    (xfil (expand-file-name fil))
+                    (_ (when (not (file-exists-p xfil))
+                         (with-temp-file xfil (insert))))
+                    (org-refile-targets
+                     `((,xfil :maxlevel . 10))))
                (call-interactively 'org-refile))))))
    (t
     (call-interactively 'org-refile))))
