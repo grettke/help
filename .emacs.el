@@ -1736,6 +1736,23 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (setq org-refile-use-outline-path t)
 ;; orgmode:gcr:vela:orgmode:gcr:vela:440C909C-88FA-48D4-8158-EF32FF1B21FB ends here
 
+;; [[file:help.org::orgmode:gcr:vela:A5D38FFE-32B1-4691-BFC8-02725D112F2E][orgmode:gcr:vela:A5D38FFE-32B1-4691-BFC8-02725D112F2E]]
+(defun help/org-refile (arg)
+  "Refile to /levels/ in /file/ by using use /prefix args/: 2+/this/0 or 1+/this/1."
+  (interactive "P")
+  (message "raw prefix arg is %S" arg)
+  (cond
+   ((not (null arg))
+    (let ((val (car current-prefix-arg)))
+      (cond ((= val 4)
+             (let ((current-prefix-arg nil)
+                   (org-refile-use-outline-path 'file)
+                   (org-reverse-note-order nil))
+               (call-interactively 'org-refile))))))
+   (t
+    (call-interactively 'org-refile))))
+;; orgmode:gcr:vela:A5D38FFE-32B1-4691-BFC8-02725D112F2E ends here
+
 ;; [[file:help.org::orgmode:gcr:vela:8FA9026B-ACAF-496C-B5F6-1F98ABA4FA28][orgmode:gcr:vela:8FA9026B-ACAF-496C-B5F6-1F98ABA4FA28]]
 (setq org-reverse-note-order t)
 ;; orgmode:gcr:vela:8FA9026B-ACAF-496C-B5F6-1F98ABA4FA28 ends here
@@ -1976,7 +1993,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
                                                  :hint nil)
   "
 _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ id-create _5_ toggle-macro
-_q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ org-refile _R_ g2nms-b _t_ g2s-b/hd _y_ archive-subtree _u_ goto
+_q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ help/org-refile _R_ g2nms-b _t_ g2s-b/hd _y_ archive-subtree _u_ goto
 _a_ inshdrgs _s_ oblobigst            _h_ dksieb _k_ ob-check-src-blk
 _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
   ;; Row 5
@@ -1989,7 +2006,7 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
   ("q" org-babel-switch-to-session-with-code)
   ("w" org-table-edit-field)
   ("e" org-babel-goto-named-result)
-  ("r" org-refile)
+  ("r" help/org-refile)
   ("R" org-babel-goto-named-src-block)
   ("t" org-babel-goto-src-block-head)
   ("y" org-archive-subtree-default)

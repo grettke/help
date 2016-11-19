@@ -3020,7 +3020,7 @@ total frustration. My error was not marking the entire subtree. Oops. When I
 searched for a solution I ended up on the refile page. Of course that is how
 you do it. Now /what/ was the /it/ that I wanted to do?
 
-***** Desire and Implementation
+***** Desire
 :PROPERTIES:
 :ID:       orgmode:gcr:vela:8ADB34FD-53E3-40C4-B126-2A4980D069BB
 :END:
@@ -3070,12 +3070,32 @@ Because <00.90% I'm moving headings to level zero I want to
 - Make it difficult the rest of the time because I don't want to accidentally
   move headings there. It isn't the end of the world I just don't want to do
   it accidentally because I will be /rarely/ doing so in the first place.
+- Single previx argument (4)
 
 Because <00.09% of the time I am moving headings into a new file
 - Make it as easy and a difficult as moving to the top-level
 - Prompt for the file name
 - If it is new create it
 - Perform the move
+- Single previx argument (16)  
+
+#+NAME: orgmode:gcr:vela:A5D38FFE-32B1-4691-BFC8-02725D112F2E
+#+BEGIN_SRC emacs-lisp :results output silent
+(defun help/org-refile (arg)
+  "Refile to /levels/ in /file/ by using use /prefix args/: 2+/this/0 or 1+/this/1."
+  (interactive "P")
+  (message "raw prefix arg is %S" arg)
+  (cond
+   ((not (null arg))
+    (let ((val (car current-prefix-arg)))
+      (cond ((= val 4)
+             (let ((current-prefix-arg nil)
+                   (org-refile-use-outline-path 'file)
+                   (org-reverse-note-order nil))
+               (call-interactively 'org-refile))))))
+   (t
+    (call-interactively 'org-refile))))
+#+END_SRC
 
 ****** General Operation
 :PROPERTIES:
@@ -3561,7 +3581,7 @@ Easily manipulate lists and headlines staying close to home.
                                                  :hint nil)
   "
 _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ id-create _5_ toggle-macro
-_q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ org-refile _R_ g2nms-b _t_ g2s-b/hd _y_ archive-subtree _u_ goto
+_q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ help/org-refile _R_ g2nms-b _t_ g2s-b/hd _y_ archive-subtree _u_ goto
 _a_ inshdrgs _s_ oblobigst            _h_ dksieb _k_ ob-check-src-blk
 _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
   ;; Row 5
@@ -3574,7 +3594,7 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
   ("q" org-babel-switch-to-session-with-code)
   ("w" org-table-edit-field)
   ("e" org-babel-goto-named-result)
-  ("r" org-refile)
+  ("r" help/org-refile)
   ("R" org-babel-goto-named-src-block)
   ("t" org-babel-goto-src-block-head)
   ("y" org-archive-subtree-default)
