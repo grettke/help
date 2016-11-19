@@ -3009,12 +3009,26 @@ you do it. Now /what/ was the /it/ that I wanted to do?
 
 ***** Desire and Implementation
 
+Three or four Org-Mode files sit open in buffers for the entire year. Once in
+a while there are new ones added but they usually replace one of the original
+four. Exceptions are one-offs like provisioning scripts for my systems at work
+or at home. Rarely a heading grows so large that it graduates to its own file.
+This is by design: I refuse to pre-optimize and grow a menagerie files to
+house every ever taxonomy conceivable only to end up retiring the file having
+closed only a single heading.
 
+Here is how my usage looks to me:
+- 99.00% of the time I am working in the same three files
+  - Refiling across subtrees at level two
+- <01.00% of the time I am moving headings to level zero, or the top level of the
+  document
+- <00.01% of the time I am moving headings into a new file
 
-- Refiling
-  - References
-    - [[http://orgmode.org/manual/Refile-and-copy.html][9.5 Refile and copy]]
-    - [[https://www.reddit.com/r/emacs/comments/4366f9/how_do_orgrefiletargets_work/][How do org-refile-targets work?]]
+My predictable and small usage makes for an easy system configuration goal
+below.
+
+***** Implementation
+
   - Make it easy to see refiled headlines by listing them as the first
     sub-heading (harder to disappear)
     #+NAME: orgmode:gcr:vela:8FA9026B-ACAF-496C-B5F6-1F98ABA4FA28
