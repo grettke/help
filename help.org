@@ -2958,8 +2958,10 @@ Maintain state when archiving a heading.
 
 **** Refile
 
-***** ContextEmacsrote my first to-do list on a funeral home notepad. It was either that or it
-was from the furniture store. My dad worked at both. The National Selected
+***** Context
+
+Emacsrote my first to-do list on a funeral home notepad. It was either that or
+it was from the furniture store. My dad worked at both. The National Selected
 Morticians logo sat somewhere on its pages. There wasn't much for me to note
 back then and the notepad worked fine. When I got a little older I graduated
 to a Mead spiral notebook. I wasn't organized and wasted space. When you tore
@@ -3006,6 +3008,8 @@ searched for a solution I ended up on the refile page. Of course that is how
 you do it. Now /what/ was the /it/ that I wanted to do?
 
 ***** Desire and Implementation
+
+
 
 - Refiling
   - References
