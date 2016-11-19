@@ -1740,7 +1740,6 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (defun help/org-refile (arg)
   "Refile to /levels/ in /file/ by using use /prefix args/: 2+/this/0 or 1+/this/1."
   (interactive "P")
-  (message "raw prefix arg is %S" arg)
   (cond
    ((not (null arg))
     (let ((val (car current-prefix-arg)))
