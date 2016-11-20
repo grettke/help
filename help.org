@@ -4235,6 +4235,15 @@ Enable Auto-Complete via Geiser.
    :PROPERTIES:
    :ID:       orgmode:gcr:vela:6F4A6F8E-277C-45E2-B26E-51455C2CBC16
    :END:
+
+#+NAME: orgmode:gcr:vela:CC58FC52-804F-4837-A3C4-C295C8F8E81D
+#+BEGIN_SRC emacs-lisp :results output silent
+(defun help/c-mode-common-hook-fn ()
+  "HELP c-mode-common customizations."
+  (interactive)
+  (rainbow-mode))
+(add-hook 'c-mode-common-hook #'help/c-mode-common-hook-fn)
+#+END_SRC
 *** Python
    :PROPERTIES:
    :ID:       orgmode:gcr:vela:F4577EEA-FB0F-4E7B-AF02-A4DEA74BB763
