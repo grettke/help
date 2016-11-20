@@ -2366,6 +2366,14 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
   (setq geiser-repl-history-no-dups-p t))
 ;; orgmode:gcr:vela:E0EBE05B-F57B-4F99-A791-E45634671737 ends here
 
+;; [[file:help.org::orgmode:gcr:vela:CC58FC52-804F-4837-A3C4-C295C8F8E81D][orgmode:gcr:vela:CC58FC52-804F-4837-A3C4-C295C8F8E81D]]
+(defun help/c-mode-common-hook-fn ()
+  "HELP c-mode-common customizations."
+  (interactive)
+  (rainbow-mode))
+(add-hook 'c-mode-common-hook #'help/c-mode-common-hook-fn)
+;; orgmode:gcr:vela:CC58FC52-804F-4837-A3C4-C295C8F8E81D ends here
+
 ;; [[file:help.org::orgmode:gcr:vela:1827B724-7BC0-4228-8389-2B06F308D6AF][orgmode:gcr:vela:1827B724-7BC0-4228-8389-2B06F308D6AF]]
 (use-package yasnippet
   :ensure t
