@@ -1755,7 +1755,8 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
                          (with-temp-file xfil (insert))))
                     (org-refile-targets
                      `((,xfil :maxlevel . 10))))
-               (call-interactively 'org-refile))))))
+               (progn (call-interactively 'org-refile)
+                      (find-file xfil)))))))
    (t
     (call-interactively 'org-refile))))
 ;; orgmode:gcr:vela:A5D38FFE-32B1-4691-BFC8-02725D112F2E ends here
