@@ -3100,6 +3100,8 @@ Because <00.09% of the time I am moving headings into a new file
                     (org-refile-targets
                      `((,xfil :maxlevel . 10))))
                (call-interactively 'org-refile))))))
+               (progn (call-interactively 'org-refile)
+                      (find-file xfil)))))))
    (t
     (call-interactively 'org-refile))))
 #+END_SRC
