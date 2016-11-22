@@ -3605,12 +3605,12 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
   ("r" help/org-refile)
   ("R" org-babel-goto-named-src-block)
   ("t" org-babel-goto-src-block-head)
-  ("y" org-archive-subtree-default)
   ("u" org-goto)
   ;; Row 3
-  ("a" org-babel-insert-header-arg)
+  ("a" org-archive-subtree-default)
   ("s" org-babel-lob-ingest)
   ("h" org-babel-do-key-sequence-in-edit-buffer)
+  ("H" org-babel-insert-header-arg)
   ("k" org-babel-check-src-block)
   ;; Row 2
   ("c" org-fill-paragraph)
