@@ -5923,6 +5923,7 @@ Go to a word.
 #+NAME: orgmode:gcr:vela:5F07753E-91BA-4B4F-B051-0C7C90B1F04A
 #+BEGIN_SRC emacs-lisp :results output silent
 (key-chord-define-global "fj" #'avy-goto-word-1)
+(key-chord-define-global "fh" #'avy-goto-char)
 (key-chord-define-global "FJ" #'avy-pop-mark)
 #+END_SRC
 
@@ -5938,15 +5939,6 @@ Pop the mark back.
 #+NAME: orgmode:gcr:vela:F3708409-D807-4541-95AB-C6298540FD59
 #+BEGIN_SRC emacs-lisp :results output silent
 (key-chord-define-global "FK" #'pop-to-mark-command)
-#+END_SRC
-
-Go to the most important files.
-
-#+NAME: orgmode:gcr:vela:88A77813-1BAF-4927-AA5B-DECCA8763AA0
-#+BEGIN_SRC emacs-lisp :results output silent
-(key-chord-define-global "fh" #'help/open-help)
-(key-chord-define-global "fp" #'help/open-projects)
-(global-set-key (kbd "<f9>") #'help/open-si-projects)
 #+END_SRC
 
 Count words.

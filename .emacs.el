@@ -3033,6 +3033,7 @@ _v_ariable       _u_ser-option
 
 ;; [[file:help.org::orgmode:gcr:vela:5F07753E-91BA-4B4F-B051-0C7C90B1F04A][orgmode:gcr:vela:5F07753E-91BA-4B4F-B051-0C7C90B1F04A]]
 (key-chord-define-global "fj" #'avy-goto-word-1)
+(key-chord-define-global "fh" #'avy-goto-char)
 (key-chord-define-global "FJ" #'avy-pop-mark)
 ;; orgmode:gcr:vela:5F07753E-91BA-4B4F-B051-0C7C90B1F04A ends here
 
@@ -3043,12 +3044,6 @@ _v_ariable       _u_ser-option
 ;; [[file:help.org::orgmode:gcr:vela:F3708409-D807-4541-95AB-C6298540FD59][orgmode:gcr:vela:F3708409-D807-4541-95AB-C6298540FD59]]
 (key-chord-define-global "FK" #'pop-to-mark-command)
 ;; orgmode:gcr:vela:F3708409-D807-4541-95AB-C6298540FD59 ends here
-
-;; [[file:help.org::orgmode:gcr:vela:88A77813-1BAF-4927-AA5B-DECCA8763AA0][orgmode:gcr:vela:88A77813-1BAF-4927-AA5B-DECCA8763AA0]]
-(key-chord-define-global "fh" #'help/open-help)
-(key-chord-define-global "fp" #'help/open-projects)
-(global-set-key (kbd "<f9>") #'help/open-si-projects)
-;; orgmode:gcr:vela:88A77813-1BAF-4927-AA5B-DECCA8763AA0 ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:73C1697E-966A-4129-840B-2B34A70FF531][orgmode:gcr:vela:73C1697E-966A-4129-840B-2B34A70FF531]]
 (key-chord-define-global "wc" #'count-words)
