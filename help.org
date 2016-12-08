@@ -1032,6 +1032,25 @@ Attribution: URL
   (interactive)
   (if (get-buffer "bitbucket-gcrstoneisle/projects.org")
       (switch-to-buffer "bitbucket-gcrstoneisle/projects.org")))
+
+(defun help/move-file (new-location)
+  "Write this file to NEW-LOCATION, and delete the old one.
+
+Attribution: URL`http://zck.me/emacs-move-file'"
+  (interactive (list (if buffer-file-name
+                         (read-file-name "Move file to: ")
+                       (read-file-name "Move file to: "
+                                       default-directory
+                                       (expand-file-name (file-name-nondirectory (buffer-name))
+                                                         default-directory)))))
+  (when (file-exists-p new-location)
+    (delete-file new-location))
+  (let ((old-location (buffer-file-name)))
+    (write-file new-location t)
+    (when (and old-location
+             (file-exists-p new-location)
+             (not (string-equal old-location new-location)))
+      (delete-file old-location))))
 #+END_SRC
 
 ** Typography
@@ -3562,7 +3581,6 @@ Easily manipulate lists and headlines staying close to home.
 (define-key org-mode-map (kbd "s-l") #'help/safb-org-edit-src-code)
 (define-key org-mode-map (kbd "s-;") #'help/safb-help/org-babel-demarcate-block)
 (define-key org-mode-map (kbd "C-.") #'(lambda () (interactive) (insert " \\rarr ")))
-(define-key org-mode-map (kbd "H-m") #'org-mark-element)
 #+END_SRC
 
 ***** Row 2
@@ -5864,6 +5882,13 @@ Hide and show code blocks.
 #+BEGIN_SRC emacs-lisp :results output silent
 (global-set-key (kbd "s-b") #'hs-toggle-hiding)
 (global-set-key (kbd "s-M-b") #'help/my-toggle-hideshow-all)
+#+END_SRC
+
+Move a file.
+
+#+NAME: orgmode:gcr:vela:9E65B9F9-30D6-452F-B7A2-DB02E7E3FCDB
+#+BEGIN_SRC emacs-lisp :results output silent
+(global-set-key (kbd "H-m") #'help/move-file)
 #+END_SRC
 
 *** Left & Right Side

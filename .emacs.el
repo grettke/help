@@ -662,6 +662,25 @@ Attribution: URL
   (interactive)
   (if (get-buffer "bitbucket-gcrstoneisle/projects.org")
       (switch-to-buffer "bitbucket-gcrstoneisle/projects.org")))
+
+(defun help/move-file (new-location)
+  "Write this file to NEW-LOCATION, and delete the old one.
+
+Attribution: URL`http://zck.me/emacs-move-file'"
+  (interactive (list (if buffer-file-name
+                         (read-file-name "Move file to: ")
+                       (read-file-name "Move file to: "
+                                       default-directory
+                                       (expand-file-name (file-name-nondirectory (buffer-name))
+                                                         default-directory)))))
+  (when (file-exists-p new-location)
+    (delete-file new-location))
+  (let ((old-location (buffer-file-name)))
+    (write-file new-location t)
+    (when (and old-location
+             (file-exists-p new-location)
+             (not (string-equal old-location new-location)))
+      (delete-file old-location))))
 ;; orgmode:gcr:vela:D523CBF8-67C4-4C96-9298-A4A49FE54E61 ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:9DB523BC-E21B-42B7-AEE2-31ED24C14D92][orgmode:gcr:vela:9DB523BC-E21B-42B7-AEE2-31ED24C14D92]]
@@ -1986,7 +2005,6 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (define-key org-mode-map (kbd "s-l") #'help/safb-org-edit-src-code)
 (define-key org-mode-map (kbd "s-;") #'help/safb-help/org-babel-demarcate-block)
 (define-key org-mode-map (kbd "C-.") #'(lambda () (interactive) (insert " \\rarr ")))
-(define-key org-mode-map (kbd "H-m") #'org-mark-element)
 ;; orgmode:gcr:vela:933B1A3A-A77A-4616-B9D8-9DACED018CC2 ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:2F8DDC77-27C4-4E81-8913-28243C4A44B6][orgmode:gcr:vela:2F8DDC77-27C4-4E81-8913-28243C4A44B6]]
@@ -3006,6 +3024,10 @@ _v_ariable       _u_ser-option
 (global-set-key (kbd "s-b") #'hs-toggle-hiding)
 (global-set-key (kbd "s-M-b") #'help/my-toggle-hideshow-all)
 ;; orgmode:gcr:vela:374B4284-8823-4E85-A469-F3985D48EC61 ends here
+
+;; [[file:help.org::orgmode:gcr:vela:9E65B9F9-30D6-452F-B7A2-DB02E7E3FCDB][orgmode:gcr:vela:9E65B9F9-30D6-452F-B7A2-DB02E7E3FCDB]]
+(global-set-key (kbd "H-m") #'help/move-file)
+;; orgmode:gcr:vela:9E65B9F9-30D6-452F-B7A2-DB02E7E3FCDB ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:55D2A3E6-07B1-47B0-9ADD-54C966FA252B][orgmode:gcr:vela:55D2A3E6-07B1-47B0-9ADD-54C966FA252B]]
 (global-set-key (kbd "s-`") #'help/comment-or-uncomment)
