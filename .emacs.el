@@ -1639,6 +1639,12 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (emacs-lock-mode 'kill))
 ;; orgmode:gcr:vela:635E416C-A589-4EA9-83C9-E5512E5632AF ends here
 
+;; [[file:help.org::orgmode:gcr:vela:1879B1A3-AD2D-4743-B4E7-94CDFA57E47A][orgmode:gcr:vela:1879B1A3-AD2D-4743-B4E7-94CDFA57E47A]]
+(use-package persistent-scratch
+  :config
+  (persistent-scratch-setup-default))
+;; orgmode:gcr:vela:1879B1A3-AD2D-4743-B4E7-94CDFA57E47A ends here
+
 ;; [[file:help.org::orgmode:gcr:vela:orgmode:gcr:vela:12985341-6F04-4A94-A41B-4BF3BA5E5C9D][orgmode:gcr:vela:orgmode:gcr:vela:12985341-6F04-4A94-A41B-4BF3BA5E5C9D]]
 (use-package lexbind-mode)
 ;; orgmode:gcr:vela:orgmode:gcr:vela:12985341-6F04-4A94-A41B-4BF3BA5E5C9D ends here

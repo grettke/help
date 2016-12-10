@@ -2760,6 +2760,15 @@ Immortal scratch [[https://www.reddit.com/r/emacs/comments/4cmfwp/scratch_buffer
   (emacs-lock-mode 'kill))
 #+END_SRC
 
+Persistent scratch.
+
+#+NAME: orgmode:gcr:vela:1879B1A3-AD2D-4743-B4E7-94CDFA57E47A
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package persistent-scratch
+  :config
+  (persistent-scratch-setup-default))
+#+END_SRC
+
 Broadcast scoping mode.
 
 #+NAME: orgmode:gcr:vela:orgmode:gcr:vela:12985341-6F04-4A94-A41B-4BF3BA5E5C9D
