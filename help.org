@@ -2752,6 +2752,13 @@ Have fun with scratch.
 (setq initial-scratch-message ";; Happy Hacking 🖖\n\n")
 #+END_SRC
 
+Use ~emacs-lisp~ in scratch.
+
+#+NAME: orgmode:gcr:vela:3A3302AF-D60F-4BA8-BD05-1BAA1496F497
+#+BEGIN_SRC emacs-lisp
+(setq initial-major-mode 'emacs-lisp-mode)
+#+END_SRC
+
 Immortal scratch [[https://www.reddit.com/r/emacs/comments/4cmfwp/scratch_buffer_hacks_to_increase_its_utility/][via]].
 
 #+NAME: orgmode:gcr:vela:635E416C-A589-4EA9-83C9-E5512E5632AF

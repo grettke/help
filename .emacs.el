@@ -1634,6 +1634,10 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 (setq initial-scratch-message ";; Happy Hacking 🖖\n\n")
 ;; orgmode:gcr:vela:BDF6F6E5-D219-4C49-BB3F-D414A9741B11 ends here
 
+;; [[file:help.org::orgmode:gcr:vela:3A3302AF-D60F-4BA8-BD05-1BAA1496F497][orgmode:gcr:vela:3A3302AF-D60F-4BA8-BD05-1BAA1496F497]]
+(setq initial-major-mode 'emacs-lisp-mode)
+;; orgmode:gcr:vela:3A3302AF-D60F-4BA8-BD05-1BAA1496F497 ends here
+
 ;; [[file:help.org::orgmode:gcr:vela:635E416C-A589-4EA9-83C9-E5512E5632AF][orgmode:gcr:vela:635E416C-A589-4EA9-83C9-E5512E5632AF]]
 (with-current-buffer "*scratch*"
   (emacs-lock-mode 'kill))
