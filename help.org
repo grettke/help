@@ -2745,7 +2745,7 @@ Set a default commenting prefix.
   :ID:       orgmode:gcr:vela:3AD91697-42DE-4555-9F49-B7D9F5E502D3
   :END:
 
-Promote scratch.
+Have fun with scratch.
 
 #+NAME: orgmode:gcr:vela:BDF6F6E5-D219-4C49-BB3F-D414A9741B11
 #+BEGIN_SRC emacs-lisp :results output silent
