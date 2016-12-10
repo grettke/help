@@ -1624,19 +1624,11 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (hs-minor-mode)
   (help/not-on-gui (local-set-key (kbd "RET") #'newline-and-indent))
   (help/on-gui (local-set-key (kbd "<return>") #'newline-and-indent)))
-;; orgmode:gcr:vela:A0515707-4727-4A01-82E3-01A41CAA841F ends here
 
-;; [[file:help.org::orgmode:gcr:vela:EBACFD45-C2FF-47B3-B991-28591C112F28][orgmode:gcr:vela:EBACFD45-C2FF-47B3-B991-28591C112F28]]
 (let ()
   (--each help/hack-modes
     (add-hook it #'help/hack-prog*-mode-hook-fn)))
-
-(let ()
-  (--each help/hack-lisp-modes
-    (add-hook it #'help/emacs-lisp-mode-hook-fn)))
-
-(add-hook 'ielm-mode-hook #'help/ielm-mode-hook-fn)
-;; orgmode:gcr:vela:EBACFD45-C2FF-47B3-B991-28591C112F28 ends here
+;; orgmode:gcr:vela:A0515707-4727-4A01-82E3-01A41CAA841F ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:BDF6F6E5-D219-4C49-BB3F-D414A9741B11][orgmode:gcr:vela:BDF6F6E5-D219-4C49-BB3F-D414A9741B11]]
 (setq initial-scratch-message ";; Happy Hacking 🖖\n\n")
@@ -1695,6 +1687,12 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (interactive)
   (help/ielm-auto-complete)
   (turn-on-elisp-slime-nav-mode))
+
+(let ()
+  (--each help/hack-lisp-modes
+    (add-hook it #'help/emacs-lisp-mode-hook-fn)))
+
+(add-hook 'ielm-mode-hook #'help/ielm-mode-hook-fn)
 ;; orgmode:gcr:vela:orgmode:gcr:vela:FF124A1E-2344-472F-AB1D-B5093C610102 ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:332AF8C9-6442-4C8D-9750-09C648A4AAD4][orgmode:gcr:vela:332AF8C9-6442-4C8D-9750-09C648A4AAD4]]

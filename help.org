@@ -2730,25 +2730,11 @@ Set a default commenting prefix.
   (hs-minor-mode)
   (help/not-on-gui (local-set-key (kbd "RET") #'newline-and-indent))
   (help/on-gui (local-set-key (kbd "<return>") #'newline-and-indent)))
-#+END_SRC
 
-*** Wiring
-    :PROPERTIES:
-    :ID:       orgmode:gcr:vela:50304E30-682C-4C9A-9615-D6E61DAE533B
-    :END:
-
- #+NAME: orgmode:gcr:vela:EBACFD45-C2FF-47B3-B991-28591C112F28
- #+BEGIN_SRC emacs-lisp :results output silent
 (let ()
   (--each help/hack-modes
     (add-hook it #'help/hack-prog*-mode-hook-fn)))
-
-(let ()
-  (--each help/hack-lisp-modes
-    (add-hook it #'help/emacs-lisp-mode-hook-fn)))
-
-(add-hook 'ielm-mode-hook #'help/ielm-mode-hook-fn)
- #+END_SRC
+#+END_SRC
 
 ** Literate Programming
    :PROPERTIES:
@@ -2832,6 +2818,12 @@ Slime navigation:
   (interactive)
   (help/ielm-auto-complete)
   (turn-on-elisp-slime-nav-mode))
+
+(let ()
+  (--each help/hack-lisp-modes
+    (add-hook it #'help/emacs-lisp-mode-hook-fn)))
+
+(add-hook 'ielm-mode-hook #'help/ielm-mode-hook-fn)
 #+END_SRC
 
 "find callers of elisp functions or macros".
