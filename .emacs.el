@@ -1649,6 +1649,11 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 (use-package lexbind-mode)
 ;; orgmode:gcr:vela:orgmode:gcr:vela:12985341-6F04-4A94-A41B-4BF3BA5E5C9D ends here
 
+;; [[file:help.org::orgmode:gcr:vela:13D25F47-7634-4B2B-A3C6-EF335DFC215F][orgmode:gcr:vela:13D25F47-7634-4B2B-A3C6-EF335DFC215F]]
+(use-package elisp-slime-nav
+  :ensure t)
+;; orgmode:gcr:vela:13D25F47-7634-4B2B-A3C6-EF335DFC215F ends here
+
 ;; [[file:help.org::orgmode:gcr:vela:orgmode:gcr:vela:FF124A1E-2344-472F-AB1D-B5093C610102][orgmode:gcr:vela:orgmode:gcr:vela:FF124A1E-2344-472F-AB1D-B5093C610102]]
 (defun help/elisp-eval-buffer ()
   "Intelligently evaluate an Elisp buffer."
@@ -1671,7 +1676,8 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (help/elisp-mode-local-bindings)
   (lexbind-mode)
   (eldoc-mode)
-  (diminish 'eldoc-mode))
+  (diminish 'eldoc-mode)
+  (turn-on-elisp-slime-nav-mode))
 
 (setq ielm-noisy nil)
 
@@ -1684,7 +1690,8 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 (defun help/ielm-mode-hook-fn ()
   "HELP customizations."
   (interactive)
-  (help/ielm-auto-complete))
+  (help/ielm-auto-complete)
+  (turn-on-elisp-slime-nav-mode))
 ;; orgmode:gcr:vela:orgmode:gcr:vela:FF124A1E-2344-472F-AB1D-B5093C610102 ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:332AF8C9-6442-4C8D-9750-09C648A4AAD4][orgmode:gcr:vela:332AF8C9-6442-4C8D-9750-09C648A4AAD4]]
