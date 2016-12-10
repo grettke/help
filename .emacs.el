@@ -1637,7 +1637,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 ;; orgmode:gcr:vela:EBACFD45-C2FF-47B3-B991-28591C112F28 ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:BDF6F6E5-D219-4C49-BB3F-D414A9741B11][orgmode:gcr:vela:BDF6F6E5-D219-4C49-BB3F-D414A9741B11]]
-(setq initial-scratch-message nil)
+(setq initial-scratch-message ";; Happy Hacking 🖖\n\n")
 (use-package lexbind-mode)
 
 (defun help/elisp-eval-buffer ()

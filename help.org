@@ -2749,7 +2749,7 @@ Set a default commenting prefix.
 
 #+NAME: orgmode:gcr:vela:BDF6F6E5-D219-4C49-BB3F-D414A9741B11
 #+BEGIN_SRC emacs-lisp :results output silent
-(setq initial-scratch-message nil)
+(setq initial-scratch-message ";; Happy Hacking 🖖\n\n")
 (use-package lexbind-mode)
 
 (defun help/elisp-eval-buffer ()
