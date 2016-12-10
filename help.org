@@ -97,6 +97,7 @@ emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
     configuration lives in the =use-package= block as possible.
 - Formatting
   - Code Snippet.
+    - Key bindings
     - Programming language expressions
       - Variable names
     - Emacs mode name
