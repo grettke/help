@@ -1655,7 +1655,8 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 
 ;; [[file:help.org::orgmode:gcr:vela:13D25F47-7634-4B2B-A3C6-EF335DFC215F][orgmode:gcr:vela:13D25F47-7634-4B2B-A3C6-EF335DFC215F]]
 (use-package elisp-slime-nav
-  :ensure t)
+  :ensure t
+  :diminish t)
 ;; orgmode:gcr:vela:13D25F47-7634-4B2B-A3C6-EF335DFC215F ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:orgmode:gcr:vela:FF124A1E-2344-472F-AB1D-B5093C610102][orgmode:gcr:vela:orgmode:gcr:vela:FF124A1E-2344-472F-AB1D-B5093C610102]]
