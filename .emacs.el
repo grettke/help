@@ -1638,8 +1638,13 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 
 ;; [[file:help.org::orgmode:gcr:vela:BDF6F6E5-D219-4C49-BB3F-D414A9741B11][orgmode:gcr:vela:BDF6F6E5-D219-4C49-BB3F-D414A9741B11]]
 (setq initial-scratch-message ";; Happy Hacking 🖖\n\n")
-(use-package lexbind-mode)
+;; orgmode:gcr:vela:BDF6F6E5-D219-4C49-BB3F-D414A9741B11 ends here
 
+;; [[file:help.org::orgmode:gcr:vela:orgmode:gcr:vela:12985341-6F04-4A94-A41B-4BF3BA5E5C9D][orgmode:gcr:vela:orgmode:gcr:vela:12985341-6F04-4A94-A41B-4BF3BA5E5C9D]]
+(use-package lexbind-mode)
+;; orgmode:gcr:vela:orgmode:gcr:vela:12985341-6F04-4A94-A41B-4BF3BA5E5C9D ends here
+
+;; [[file:help.org::orgmode:gcr:vela:orgmode:gcr:vela:FF124A1E-2344-472F-AB1D-B5093C610102][orgmode:gcr:vela:orgmode:gcr:vela:FF124A1E-2344-472F-AB1D-B5093C610102]]
 (defun help/elisp-eval-buffer ()
   "Intelligently evaluate an Elisp buffer."
   (interactive)
@@ -1675,7 +1680,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   "HELP customizations."
   (interactive)
   (help/ielm-auto-complete))
-;; orgmode:gcr:vela:BDF6F6E5-D219-4C49-BB3F-D414A9741B11 ends here
+;; orgmode:gcr:vela:orgmode:gcr:vela:FF124A1E-2344-472F-AB1D-B5093C610102 ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:332AF8C9-6442-4C8D-9750-09C648A4AAD4][orgmode:gcr:vela:332AF8C9-6442-4C8D-9750-09C648A4AAD4]]
 (use-package elisp-refs
