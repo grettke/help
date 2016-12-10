@@ -1084,8 +1084,7 @@ configuration when invoked to evaluate a line."
   (local-set-key "]" #'help/dired-copy-path)
   (diff-hl-dired-mode)
   (load "dired-x")
-  (turn-on-stripe-buffer-mode)
-  (stripe-listify-buffer))
+  (turn-on-stripe-buffer-mode))
 (add-hook 'dired-mode-hook #'help/dired-mode-hook-fn)
 ;; orgmode:gcr:vela:26EA1235-E9EC-4DC0-9F7D-B3D14E1A27B7 ends here
 
@@ -1320,8 +1319,7 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
 (defun help/occur-mode-hook-fn ()
   "HELP customizations."
   (interactive)
-  (turn-on-stripe-buffer-mode)
-  (stripe-listify-buffer))
+  (turn-on-stripe-buffer-mode))
 (add-hook 'occur-mode-hook #'help/occur-mode-hook-fn)
 (define-key occur-mode-map (kbd "n") #'next-logical-line)
 (define-key occur-mode-map (kbd "p") #'previous-logical-line)
