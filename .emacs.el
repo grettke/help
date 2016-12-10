@@ -1258,6 +1258,13 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
   :ensure t)
 ;; orgmode:gcr:vela:36899F5A-7606-461A-A17C-622B0B807E8E ends here
 
+;; [[file:help.org::orgmode:gcr:vela:EE9C450C-14DE-4FC0-8580-BBE89F4BFE9F][orgmode:gcr:vela:EE9C450C-14DE-4FC0-8580-BBE89F4BFE9F]]
+(use-package macrostep
+  :ensure t
+  :config
+  (define-key emacs-lisp-mode-map (kbd "C-c e") #'macrostep-expand))
+;; orgmode:gcr:vela:EE9C450C-14DE-4FC0-8580-BBE89F4BFE9F ends here
+
 ;; [[file:help.org::orgmode:gcr:vela:B35D9582-C338-4A9B-A22E-752FCC27831F][orgmode:gcr:vela:B35D9582-C338-4A9B-A22E-752FCC27831F]]
 (use-package browse-kill-ring
   :ensure t
@@ -1664,7 +1671,8 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (local-set-key (kbd "s-l mef") #'macroexpand)
   (local-set-key (kbd "s-l mea") #'macroexpand-all)
   (local-set-key (kbd "s-:") #'my-eval-expression)
-  (local-set-key (kbd "#") #'endless/sharp))
+  (local-set-key (kbd "#") #'endless/sharp)
+  (local-set-key (kbd "C-c e") #'macrostep-expand))
 
 (defun help/emacs-lisp-mode-hook-fn ()
   (interactive)

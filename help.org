@@ -2038,6 +2038,25 @@ Auto-completion for =.=-separated words.
    :ID:       orgmode:gcr:vela:E32B41C2-C761-42F0-A9AE-F89A2A18439F
    :END:
 
+Macro expander:
+- ~e~, ~=~, ~RET~
+  - expand the macro form following point one step
+- ~c~, ~u~, ~DEL~
+  - collapse the form following point
+- ~q~, ~C-c~ ~C-c~
+  - collapse all expanded forms and exit macrostep-mode
+- ~n~, ~TAB~
+  - jump to the next macro form in the expansion
+- ~p~, ~M-TAB~
+  - jump to the previous macro form in the expansion
+
+#+NAME: orgmode:gcr:vela:EE9C450C-14DE-4FC0-8580-BBE89F4BFE9F
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package macrostep
+  :ensure t
+  :config
+  (define-key emacs-lisp-mode-map (kbd "C-c e") #'macrostep-expand))
+#+END_SRC
 
 ** Mark, Kill  and Region
    :PROPERTIES:
@@ -2789,7 +2808,8 @@ Slime navigation:
   (local-set-key (kbd "s-l mef") #'macroexpand)
   (local-set-key (kbd "s-l mea") #'macroexpand-all)
   (local-set-key (kbd "s-:") #'my-eval-expression)
-  (local-set-key (kbd "#") #'endless/sharp))
+  (local-set-key (kbd "#") #'endless/sharp)
+  (local-set-key (kbd "C-c e") #'macrostep-expand))
 
 (defun help/emacs-lisp-mode-hook-fn ()
   (interactive)
