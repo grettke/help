@@ -1258,11 +1258,6 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
   :ensure t)
 ;; orgmode:gcr:vela:36899F5A-7606-461A-A17C-622B0B807E8E ends here
 
-;; [[file:help.org::orgmode:gcr:vela:989C4727-473A-4DAB-8446-5077F3042587][orgmode:gcr:vela:989C4727-473A-4DAB-8446-5077F3042587]]
-(use-package multiple-cursors
-  :ensure t)
-;; orgmode:gcr:vela:989C4727-473A-4DAB-8446-5077F3042587 ends here
-
 ;; [[file:help.org::orgmode:gcr:vela:B35D9582-C338-4A9B-A22E-752FCC27831F][orgmode:gcr:vela:B35D9582-C338-4A9B-A22E-752FCC27831F]]
 (use-package browse-kill-ring
   :ensure t
@@ -2776,6 +2771,11 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 ;; [[file:help.org::orgmode:gcr:vela:22652727-D070-49FE-804F-72FA4C86B770][orgmode:gcr:vela:22652727-D070-49FE-804F-72FA4C86B770]]
 (setq mouse-drag-copy-region t)
 ;; orgmode:gcr:vela:22652727-D070-49FE-804F-72FA4C86B770 ends here
+
+;; [[file:help.org::orgmode:gcr:vela:989C4727-473A-4DAB-8446-5077F3042587][orgmode:gcr:vela:989C4727-473A-4DAB-8446-5077F3042587]]
+(use-package multiple-cursors
+  :ensure t)
+;; orgmode:gcr:vela:989C4727-473A-4DAB-8446-5077F3042587 ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:021B7D3A-E696-43B9-BC08-C8BDABB33999][orgmode:gcr:vela:021B7D3A-E696-43B9-BC08-C8BDABB33999]]
 (use-package solarized-theme

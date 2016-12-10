@@ -2038,14 +2038,6 @@ Auto-completion for =.=-separated words.
    :ID:       orgmode:gcr:vela:E32B41C2-C761-42F0-A9AE-F89A2A18439F
    :END:
 
-The macro recorder and Multiple-Cursors provide two ways to do the right thing
-in different situations. Be very thoughtful and allow every function.
-
-#+NAME: orgmode:gcr:vela:989C4727-473A-4DAB-8446-5077F3042587
-#+BEGIN_SRC emacs-lisp :results output silent
-(use-package multiple-cursors
-  :ensure t)
-#+END_SRC
 
 ** Mark, Kill  and Region
    :PROPERTIES:
@@ -5037,7 +5029,14 @@ Automatically Copy Text Selected With The Mouse [[http://pragmaticemacs.com/emac
 (setq mouse-drag-copy-region t)
 #+END_SRC
 
+The macro recorder and Multiple-Cursors provide two ways to do the right thing
+in different situations. Be very thoughtful and allow every function.
 
+#+NAME: orgmode:gcr:vela:989C4727-473A-4DAB-8446-5077F3042587
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package multiple-cursors
+  :ensure t)
+#+END_SRC
 
 ** Color Theme
    :PROPERTIES:
