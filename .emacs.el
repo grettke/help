@@ -2608,7 +2608,8 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 ;; orgmode:gcr:vela:EFFC0DFD-168F-42F5-9405-BAECD7EC5CB4 ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:02005BF5-AADC-45B1-AC64-67ECB028352A][orgmode:gcr:vela:02005BF5-AADC-45B1-AC64-67ECB028352A]]
-(use-package ox-gfm)
+(use-package ox-gfm
+  :ensure t)
 ;; orgmode:gcr:vela:02005BF5-AADC-45B1-AC64-67ECB028352A ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:8A4DB408-7888-4705-AB2B-C7EED9262DF2][orgmode:gcr:vela:8A4DB408-7888-4705-AB2B-C7EED9262DF2]]
