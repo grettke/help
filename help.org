@@ -114,6 +114,7 @@ emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
     - Use ~code style~ of tildaes
   - Non-Code Snippet.
     - File types
+    - File names
     - Concepts like =Object Oriented Programming= or a =Immediately-invoked
       function expression=
     - Use =verbatim= style of equal sign
