@@ -36,13 +36,13 @@ Start EMACS with this command:
 
 1) [[http://orgmode.org/][Clone Org-Mode]] to =~/src/=.
    1) Without =Make=: [[http://orgmode.org/worg/org-hacks.html][Generating autoloads and Compiling Org without make]]
-   2) As of <2016-01-19 Tue>
-      #+NAME: orgmode:gcr:vela:B20AB3BC-6B45-4F2B-99EB-DFCC15E86D8D
-      #+BEGIN_EXAMPLE
+     2) As of <2016-01-19 Tue>
+        #+NAME: orgmode:gcr:vela:B20AB3BC-6B45-4F2B-99EB-DFCC15E86D8D
+        #+BEGIN_EXAMPLE
 cd ~/src/org-mode
 git pull
 emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
-      #+END_EXAMPLE
+        #+END_EXAMPLE
 
 2) [[https://github.com/punchagan/org2blog][Clone Org2Blog]] to =~/src/=.
 3) [[https://github.com/jwiegley/use-package][Clone Use-Package]] to =~/src/=.
@@ -853,12 +853,6 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   "Select an ID to export to the same name as Github Flavored Markdown.."
   (interactive "sEnter the ID to export: ")
   (help/org-weave-subtree-gfm id (s-prepend id ".md")))
-
-(defun help/org-weave-readme ()
-  (interactive)
-  (help/org-weave-subtree-gfm
-   "README"
-   "README.md"))
 
 (defun help/org-weave-style-guide ()
   (interactive)
