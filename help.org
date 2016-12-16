@@ -854,13 +854,18 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
   (interactive "sEnter the ID to export: ")
   (help/org-weave-subtree-gfm id (s-prepend id ".md")))
 
+(defun help/org-weave-readme ()
+  (interactive)
+  (help/org-weave-subtree-gfm
+   "orgmode:gcr:vela:README"
+   "README.md"))
+
 (defun help/org-weave-style-guide ()
   (interactive)
   (help/org-weave-subtree-gfm
-   "STYLEGUIDE"
+   "orgmode:gcr:vela:STYLEGUIDE"
    "STYLEGUIDE.md"))
 
-orgmode:gcr:vela:README
 (defun help/weave-everything-everywhere ()
   "Export this entire document in configured weavers."
   (interactive)

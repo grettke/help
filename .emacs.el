@@ -485,13 +485,13 @@ ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfi
 (defun help/org-weave-readme ()
   (interactive)
   (help/org-weave-subtree-gfm
-   "README"
+   "orgmode:gcr:vela:README"
    "README.md"))
 
 (defun help/org-weave-style-guide ()
   (interactive)
   (help/org-weave-subtree-gfm
-   "STYLEGUIDE"
+   "orgmode:gcr:vela:STYLEGUIDE"
    "STYLEGUIDE.md"))
 
 (defun help/weave-everything-everywhere ()
