@@ -34,29 +34,29 @@ Start EMACS with this command:
 
 *Setup*
 
-1) [[http://orgmode.org/][Clone Org-Mode]] to =~/src/= and build it.
+1) [[http://orgmode.org/][Clone Org-Mode]] to =~/src/=
 2) Go there.
    #+NAME: orgmode:gcr:vela:F001C8C6-387B-4EB9-A72B-E509EA0E22EB
    #+BEGIN_SRC sh
  cd ~/src/org-mode
    #+END_SRC
-2) Without =Make=: [[http://orgmode.org/worg/org-hacks.html][Generating autoloads and Compiling Org without make]]
-   1) As of <2016-01-19 Tue> this means doing this:
-      #+NAME: orgmode:gcr:vela:B20AB3BC-6B45-4F2B-99EB-DFCC15E86D8D
-      #+BEGIN_EXAMPLE
- emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
-      #+END_EXAMPLE
-3) With ~Make~ use ~make~.
-
-2) [[https://github.com/punchagan/org2blog][Clone Org2Blog]] to =~/src/=.
-3) [[https://github.com/jwiegley/use-package][Clone Use-Package]] to =~/src/=.
-4) Install supporting software adding their exectuable location to the =PATH=.
+3) Build it
+   1) Without =Make=: [[http://orgmode.org/worg/org-hacks.html][Generating autoloads and Compiling Org without make]]
+      1) As of <2016-01-19 Tue> this means doing this:
+         #+NAME: orgmode:gcr:vela:B20AB3BC-6B45-4F2B-99EB-DFCC15E86D8D
+         #+BEGIN_EXAMPLE
+  emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
+       #+END_EXAMPLE
+   2) With ~Make~ use ~make~.
+4) [[https://github.com/punchagan/org2blog][Clone Org2Blog]] to =~/src/=.
+5) [[https://github.com/jwiegley/use-package][Clone Use-Package]] to =~/src/=.
+6) Install supporting software adding their exectuable location to the =PATH=.
    1) Install [[https://www.oracle.com/java/index.html][Oracle Java]].
    2) Install [[https://www.languagetool.org/][LanguageTool]] renaming it's folder to =LanguageTool=.
    3) Install PlantUML.
    4) Install Ditaa.
    5) Install [[https://tug.org/mactex/][MacTeX]].
-5) Link:
+7) Link:
    - The Eshell directory to HELP's.
      - =ln -s ~/src/help/eshell/ ~/.emacs.d/eshell=
    - The Initialization file to HELP's.
