@@ -35,14 +35,18 @@ Start EMACS with this command:
 *Setup*
 
 1) [[http://orgmode.org/][Clone Org-Mode]] to =~/src/= and build it.
-   1) Without =Make=: [[http://orgmode.org/worg/org-hacks.html][Generating autoloads and Compiling Org without make]]
-     2) As of <2016-01-19 Tue> this means doing this:
-        #+NAME: orgmode:gcr:vela:B20AB3BC-6B45-4F2B-99EB-DFCC15E86D8D
-        #+BEGIN_EXAMPLE
-cd ~/src/org-mode
-git pull
-emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
-        #+END_EXAMPLE
+   1) Go there.
+      #+NAME: orgmode:gcr:vela:F001C8C6-387B-4EB9-A72B-E509EA0E22EB
+      #+BEGIN_SRC sh
+ cd ~/src/org-mode
+      #+END_SRC
+   2) Without =Make=: [[http://orgmode.org/worg/org-hacks.html][Generating autoloads and Compiling Org without make]]
+      1) As of <2016-01-19 Tue> this means doing this:
+         #+NAME: orgmode:gcr:vela:B20AB3BC-6B45-4F2B-99EB-DFCC15E86D8D
+         #+BEGIN_EXAMPLE
+ emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
+         #+END_EXAMPLE
+   3) With ~Make~ use ~make~.
 
 2) [[https://github.com/punchagan/org2blog][Clone Org2Blog]] to =~/src/=.
 3) [[https://github.com/jwiegley/use-package][Clone Use-Package]] to =~/src/=.
