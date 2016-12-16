@@ -1,12 +1,16 @@
 **Setup**
 
-1.  [Clone Org-Mode](http://orgmode.org/) to `~/src/`.
-    1.  Without `Make`: [Generating autoloads and Compiling Org without make](http://orgmode.org/worg/org-hacks.html)
-        1.  As of <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-19 Tue&gt;</span></span>
+1.  [Clone Org-Mode](http://orgmode.org/) to `~/src/` and build it.
+    1.  Go there.
 
-                cd ~/src/org-mode
-                git pull
+        ```sh
+         cd ~/src/org-mode
+        ```
+    2.  Without `Make`: [Generating autoloads and Compiling Org without make](http://orgmode.org/worg/org-hacks.html)
+        1.  As of <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-19 Tue&gt; </span></span> this means doing this:
+
                 emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
+    3.  With `Make` use `make`.
 
 2.  [Clone Org2Blog](https://github.com/punchagan/org2blog) to `~/src/`.
 3.  [Clone Use-Package](https://github.com/jwiegley/use-package) to `~/src/`.
