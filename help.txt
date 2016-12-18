@@ -15,7 +15,7 @@ Grant Rettke
 
   Start EMACS with this command:
 
-  `open /Applications/Emacs.app'
+  `open /Applications/Emacs.app -n --args --debug-init'
 
   ,----
   | ;; -*- lexical-binding: t -*-
@@ -33,24 +33,27 @@ Grant Rettke
 
   *Setup*
 
-  1) [Clone Org-Mode] to `~/src/'.
+  1) [Clone Org-Mode] to `~/src/'
+  2) Go there.
+     ,----
+     | cd ~/src/org-mode
+     `----
+  3) Build it
      1) Without `Make': [Generating autoloads and Compiling Org without make]
-     2) As of <2016-01-19 Tue>
-        ,----
-        | cd ~/src/org-mode
-        | git pull
-        | emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
-        `----
-
-  2) [Clone Org2Blog] to `~/src/'.
-  3) [Clone Use-Package] to `~/src/'.
-  4) Install supporting software adding their exectuable location to the `PATH'.
+        1) As of <2016-01-19 Tue> this means doing this:
+           ,----
+           |   emacs -batch -Q -L lisp -l ../mk/org-fixup -f org-make-autoloads
+           `----
+     2) With `Make' use `make'.
+  4) [Clone Org2Blog] to `~/src/'.
+  5) [Clone Use-Package] to `~/src/'.
+  6) Install supporting software adding their exectuable location to the `PATH'.
      1) Install [Oracle Java].
      2) Install [LanguageTool] renaming it's folder to `LanguageTool'.
      3) Install PlantUML.
      4) Install Ditaa.
      5) Install [MacTeX].
-  5) Link:
+  7) Link:
      - The Eshell directory to HELP's.
        - `ln -s ~/src/help/eshell/ ~/.emacs.d/eshell'
      - The Initialization file to HELP's.
@@ -112,15 +115,27 @@ http://orgmode.org/worg/org-hacks.html
       configuration lives in the `use-package' block as possible.
   - Formatting
     - Code Snippet.
-      - Programming language expressions.
+      - Key bindings
+      - Programming language expressions
+        - Variable names
+      - Emacs mode name
+      - Class and Object names
       - Shell commands that are executable
-      - Use `code style'
+      - Executables for programming language compilers and interpereters
+        - `gcc' and `python'
+        - `bash' and `perl'
+        - `scheme' and `java'
+        - `GCC' and `Pyton'
+        - `Bash' and `Perl'
+        - `Scheme' and `Java'
+      - Anything that you would read program or text
+      - Use `code style' of tildaes
     - Non-Code Snippet.
       - File types
-      - Program names that aren't referring to the artifact itself
-        - Shell scripts and commands
-        - `Scheme' and `Java'
-      - Use `verbatim' style
+      - File names
+      - Concepts like `Object Oriented Programming' or a `Immediately-invoked
+              function expression'
+      - Use `verbatim' style of equal sign
     - Package.
       - Same as Headline.
       - Dashes separate definition.
@@ -267,7 +282,28 @@ https://www.gnu.org/software/emacs/manual/html_node/elisp/Using-Lexical-Binding.
   fast.
 
 
-2.1 Display
+2.1 Customize
+~~~~~~~~~~~~~
+
+  ID: orgmode:gcr:vela:348D4376-4547-40A2-BF7A-CA72A099922C
+
+  Easy Customization is great. Though most of the time I move the settings into
+  hand-coded Elisp, I still love it.
+
+  Store Customizations in another file. Avoids the [package-selected-packages]
+  portability issue.
+
+  ,----
+  | (setq custom-file "~/src/help/custom.el")
+  | (load custom-file :noerror)
+  `----
+
+
+[package-selected-packages]
+https://www.reddit.com/r/emacs/comments/53zpv9/how_do_i_get_emacs_to_stop_adding_custom_fields/
+
+
+2.2 Display
 ~~~~~~~~~~~
 
   ID: orgmode:gcr:vela:1290DB2D-D05E-4DDD-B42F-6B11AE91F480
@@ -290,7 +326,7 @@ https://www.gnu.org/software/emacs/manual/html_node/elisp/Using-Lexical-Binding.
   `----
 
 
-2.2 Hydra
+2.3 Hydra
 ~~~~~~~~~
 
   ID: orgmode:gcr:vela:9B78FBB7-6C6A-4BD6-A9CC-FB192D37F6C2
@@ -301,7 +337,7 @@ https://www.gnu.org/software/emacs/manual/html_node/elisp/Using-Lexical-Binding.
   `----
 
 
-2.3 Keyboard
+2.4 Keyboard
 ~~~~~~~~~~~~
 
   ID: orgmode:gcr:vela:8A0E58DF-7C90-4781-AC12-94D2D76F47C7
@@ -322,7 +358,7 @@ https://www.gnu.org/software/emacs/manual/html_node/elisp/Using-Lexical-Binding.
   `----
 
 
-2.4 Libraries
+2.5 Libraries
 ~~~~~~~~~~~~~
 
   ID: orgmode:gcr:vela:21919848-B720-4D30-880E-485C41250279
@@ -359,8 +395,15 @@ https://www.gnu.org/software/emacs/manual/html_node/elisp/Using-Lexical-Binding.
   |   :ensure t)
   `----
 
+  Namespacing without language support.
 
-2.5 Modeline
+  ,----
+  | (use-package names
+  |   :ensure t)
+  `----
+
+
+2.6 Modeline
 ~~~~~~~~~~~~
 
   ID: orgmode:gcr:vela:798F14D1-EDC6-4306-8E82-0854980AEFBA
@@ -384,7 +427,7 @@ https://www.gnu.org/software/emacs/manual/html_node/elisp/Using-Lexical-Binding.
   `----
 
 
-2.6 OS X
+2.7 OS X
 ~~~~~~~~
 
   ID: orgmode:gcr:vela:6556EACF-2F83-4B84-8456-5BEB981D290E
@@ -468,7 +511,7 @@ https://www.gnu.org/software/emacs/manual/html_node/elisp/Using-Lexical-Binding.
 https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-x
 
 
-2.7 Windows
+2.8 Windows
 ~~~~~~~~~~~
 
   ID: orgmode:gcr:vela:B21664CF-62AF-4ACC-A239-FE20672FF9E4
@@ -835,16 +878,21 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   |         (goto-char hidx)
   |         (org-export-to-file 'gfm file nil t nil)))))
   |
+  | (defun help/org-weave-gfm (id)
+  |   "Select an ID to export to the same name as Github Flavored Markdown.."
+  |   (interactive "sEnter the ID to export: ")
+  |   (help/org-weave-subtree-gfm id (s-prepend id ".md")))
+  |
   | (defun help/org-weave-readme ()
   |   (interactive)
   |   (help/org-weave-subtree-gfm
-  |    "README"
+  |    "orgmode:gcr:vela:README"
   |    "README.md"))
   |
   | (defun help/org-weave-style-guide ()
   |   (interactive)
   |   (help/org-weave-subtree-gfm
-  |    "STYLEGUIDE"
+  |    "orgmode:gcr:vela:STYLEGUIDE"
   |    "STYLEGUIDE.md"))
   |
   | (defun help/weave-everything-everywhere ()
@@ -974,6 +1022,71 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   |    (shell-command
   |     (format "open -a 'Marked 2.app' %s"
   |             (shell-quote-argument (buffer-file-name))))))
+  |
+  | (defun help/safb-flycheck-list-errors ()
+  |   "Save all file buffers and switch to flycheck error list"
+  |   (interactive)
+  |   (help/save-all-file-buffers)
+  |   (flycheck-list-errors)
+  |   (other-window 1))
+  |
+  | (defmacro help/profile-org (times &rest body)
+  |   "Makes profiling Org-Mode easy by automatically instrumenting the desired
+  |   functions, running the code you want to test, removing the instrumentation,
+  |   and presenting the results.
+  |
+  |   Attribution: Adam Porter <adam@alphapapa.net>"
+  |   `(let (output)
+  |      (dolist (p '("org-"))  ; symbol prefixes to instrument
+  |        (elp-instrument-package p))
+  |      (dotimes (x ,times)
+  |        ,@body)
+  |      (elp-results)
+  |      (elp-restore-all)
+  |      (point-min)
+  |      (forward-line 20)
+  |      (delete-region (point) (point-max))
+  |      (setq output (buffer-substring-no-properties (point-min) (point-max)))
+  |      (kill-buffer)
+  |      (delete-window)
+  |      output))
+  |
+  | (defun help/open-help ()
+  |   "Switch to the buffer backed by `help/help.org'."
+  |   (interactive)
+  |   (if (get-buffer "help/help.org")
+  |       (switch-to-buffer "help/help.org")))
+  |
+  | (defun help/open-projects ()
+  |   "Switch to the buffer backed by `bitbucket/projects.org'."
+  |   (interactive)
+  |   (if (get-buffer "bitbucket/projects.org")
+  |       (switch-to-buffer "bitbucket/projects.org")))
+  |
+  | (defun help/open-si-projects ()
+  |   "Switch to the buffer backed by `bitbucket-gcrstoneisle/projects.org'."
+  |   (interactive)
+  |   (if (get-buffer "bitbucket-gcrstoneisle/projects.org")
+  |       (switch-to-buffer "bitbucket-gcrstoneisle/projects.org")))
+  |
+  | (defun help/move-file (new-location)
+  |   "Write this file to NEW-LOCATION, and delete the old one.
+  |
+  | Attribution: URL`http://zck.me/emacs-move-file'"
+  |   (interactive (list (if buffer-file-name
+  |                          (read-file-name "Move file to: ")
+  |                        (read-file-name "Move file to: "
+  |                                        default-directory
+  |                                        (expand-file-name (file-name-nondirectory (buffer-name))
+  |                                                          default-directory)))))
+  |   (when (file-exists-p new-location)
+  |     (delete-file new-location))
+  |   (let ((old-location (buffer-file-name)))
+  |     (write-file new-location t)
+  |     (when (and old-location
+  |              (file-exists-p new-location)
+  |              (not (string-equal old-location new-location)))
+  |       (delete-file old-location))))
   `----
 
 
@@ -1040,7 +1153,6 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   |   (fci-mode)
   |   (rainbow-mode)
   |   (help/try-to-add-imenu)
-  |   (writegood-mode)
   |   (turn-on-page-break-lines-mode))
   |
   | (add-hook 'text-mode-hook #'help/text-prog*-setup)
@@ -1069,6 +1181,7 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   |   :ensure t
   |   :config
   |   (global-undo-tree-mode 1)
+  |   (global-set-key (kbd "H-u") #'undo-tree-visualize)
   |   :diminish undo-tree-mode)
   `----
 
@@ -1093,6 +1206,12 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
 
   ,----
   | (setq scroll-preserve-screen-position t)
+  `----
+
+  Scroll text line-by-line as the cursor scrolls off of the screen
+
+  ,----
+  | (setq scroll-conservatively 101)
   `----
 
   More easily visualize tabular data. Considered to non-subjective.
@@ -1143,6 +1262,15 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   | (advice-add #'forward-page :after #'recenter)
   `----
 
+  Do the /right thing/ for getting to the start of the line.
+
+  ,----
+  | (use-package mwim
+  |   :ensure t
+  |   :config
+  |   (global-set-key (kbd "C-a") 'mwim-beginning-of-code-or-line))
+  `----
+
 
 3.4 Code Folding
 ~~~~~~~~~~~~~~~~
@@ -1167,6 +1295,13 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   |     (call-interactively #'goto-line)
   |     (save-excursion
   |       (hs-show-block)))
+  |   (defvar help/my-hs-hide nil "Current state of hideshow for toggling all.")
+  |   (defun help/my-toggle-hideshow-all () "Toggle hideshow all."
+  |          (interactive)
+  |          (setq help/my-hs-hide (not help/my-hs-hide))
+  |          (if help/my-hs-hide
+  |              (hs-hide-all)
+  |            (hs-show-all)))
   |   :diminish hs-minor-mode)
   `----
 
@@ -1408,6 +1543,11 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   |       (message msg)
   |       (help/on-gui (alert msg :title "org-mode")))))
   |
+  | (defun help/safb-org-babel-detangle ()
+  |   (interactive)
+  |   (help/save-all-file-buffers)
+  |   (org-babel-detangle))
+  |
   | (defun help/safb-other-window ()
   |   (interactive)
   |   (help/save-all-file-buffers)
@@ -1462,6 +1602,12 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   |   (interactive)
   |   (help/save-all-file-buffers)
   |   (switch-to-previous-buffer))
+  |
+  | (defun help/safb-normal-mode ()
+  |   (interactive)
+  |   (help/save-all-file-buffers)
+  |   (call-interactively #'normal-mode)
+  |   (help/save-all-file-buffers))
   `----
 
   Selection:
@@ -1567,8 +1713,7 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   |   (local-set-key "]" #'help/dired-copy-path)
   |   (diff-hl-dired-mode)
   |   (load "dired-x")
-  |   (turn-on-stripe-buffer-mode)
-  |   (stripe-listify-buffer))
+  |   (turn-on-stripe-buffer-mode))
   | (add-hook 'dired-mode-hook #'help/dired-mode-hook-fn)
   `----
 
@@ -1875,21 +2020,18 @@ http://noto.googlecode.com/git/fonts/individual/unhinted/NotoSansSymbols-Regular
   Integrate Proselint.
 
   ,----
-  | (defmacro help/proselint-cfg ()
-  |   (let ((proselintpath (getenv "PROSELINT")))
-  |     `(progn
-  |        (flycheck-define-checker proselint
-  |          "A linter for prose."
-  |          :command (,proselintpath source-inplace)
-  |          :error-patterns
-  |          ((warning line-start (file-name) ":" line ":" column ": "
-  |                    (id (one-or-more (not (any " "))))
-  |                    (message (one-or-more not-newline)
-  |                             (zero-or-more "\n" (any " ") (one-or-more not-newline)))
-  |                    line-end))
-  |          :modes (text-mode org-mode latex-mode markdown-mode gfm-mode))
-  |        (add-to-list 'flycheck-checkers 'proselint))))
-  | (help/proselint-cfg)
+  | (with-eval-after-load "flycheck"
+  |   (flycheck-define-checker proselint
+  |     "A linter for prose."
+  |     :command ("/Users/gcr/util/proselint/env/bin/proselint" source-inplace)
+  |     :error-patterns
+  |     ((warning line-start (file-name) ":" line ":" column ": "
+  |               (id (one-or-more (not (any " "))))
+  |               (message (one-or-more not-newline)
+  |                        (zero-or-more "\n" (any " ") (one-or-more not-newline)))
+  |               line-end))
+  |     :modes (text-mode org-mode markdown-mode gfm-mode))
+  |   (add-to-list 'flycheck-checkers 'proselint))
   `----
 
 
@@ -1928,19 +2070,51 @@ http://noto.googlecode.com/git/fonts/individual/unhinted/NotoSansSymbols-Regular
 
   ID: orgmode:gcr:vela:E32B41C2-C761-42F0-A9AE-F89A2A18439F
 
-  The macro recorder and Multiple-Cursors provide two ways to do the right thing
-  in different situations. Be very thoughtful and allow every function.
+  Macro expander:
+  - `e', `=', `RET'
+    - expand the macro form following point one step
+  - `c', `u', `DEL'
+    - collapse the form following point
+  - `q', `C-c' `C-c'
+    - collapse all expanded forms and exit macrostep-mode
+  - `n', `TAB'
+    - jump to the next macro form in the expansion
+  - `p', `M-TAB'
+    - jump to the previous macro form in the expansion
 
   ,----
-  | (use-package multiple-cursors
-  |   :ensure t)
+  | (use-package macrostep
+  |   :ensure t
+  |   :config
+  |   (define-key emacs-lisp-mode-map (kbd "C-c e") #'macrostep-expand))
   `----
 
 
-3.19 Mark and Region
-~~~~~~~~~~~~~~~~~~~~
+3.19 Mark, Kill  and Region
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   ID: orgmode:gcr:vela:A3C2AF94-B834-4FD2-9B23-F64F618B31C3
+
+  Easy kill ring access.
+
+  ,----
+  | (use-package browse-kill-ring
+  |   :ensure t
+  |   :config
+  |   (browse-kill-ring-default-keybindings)
+  |   (setq browse-kill-ring-highlight-current-entry t)
+  |   (setq browse-kill-ring-highlight-inserted-item t)
+  |   (setq browse-kill-ring-show-preview nil)
+  |   (setq browse-kill-ring-separator
+  |         "⎀┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅")
+  |   (defun help/browse-kill-ring ()
+  |     "Disable `fci-mode' before entering `browse-kill-ring'."
+  |     (interactive)
+  |     (fci-mode)
+  |     (browse-kill-ring)
+  |     (fci-mode))
+  |   (global-set-key (kbd "M-y") #'help/browse-kill-ring))
+  `----
 
   When you start typing and text is selected, replace it with what you are
   typing, or pasting
@@ -1948,6 +2122,29 @@ http://noto.googlecode.com/git/fonts/individual/unhinted/NotoSansSymbols-Regular
   ,----
   | (delete-selection-mode t)
   `----
+
+  Automatically save data copied from the system clipboard into the kill ring
+  before killing Emacs data.
+
+  Via Ben Maughan:
+
+        ;; Save whatever’s in the current (system) clipboard before
+        ;; replacing it with the Emacs’ text.
+        ;; [https://github.com/dakrone/eos/blob/master/eos.org]
+
+  ,----
+  | (setq save-interprogram-paste-before-kill t)
+  `----
+
+  [Via]: copy selected text to the clip board.
+
+  ,----
+  | (setq mouse-drag-copy-region t)
+  `----
+
+
+[Via]
+http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/
 
 
 3.20 Minibuffer
@@ -1998,8 +2195,7 @@ http://noto.googlecode.com/git/fonts/individual/unhinted/NotoSansSymbols-Regular
   | (defun help/occur-mode-hook-fn ()
   |   "HELP customizations."
   |   (interactive)
-  |   (turn-on-stripe-buffer-mode)
-  |   (stripe-listify-buffer))
+  |   (turn-on-stripe-buffer-mode))
   | (add-hook 'occur-mode-hook #'help/occur-mode-hook-fn)
   | (define-key occur-mode-map (kbd "n") #'next-logical-line)
   | (define-key occur-mode-map (kbd "p") #'previous-logical-line)
@@ -2217,6 +2413,12 @@ http://noto.googlecode.com/git/fonts/individual/unhinted/NotoSansSymbols-Regular
   | (add-to-list 'ispell-skip-region-alist '("- \\*.+" . ".*\\*: "))
   `----
 
+  Right arrows.
+
+  ,----
+  | (add-to-list 'ispell-skip-region-alist '("\\rarr"))
+  `----
+
   Check `SPECIAL LINE' definitions, ignoring their type.
 
   ,----
@@ -2247,6 +2449,7 @@ http://noto.googlecode.com/git/fonts/individual/unhinted/NotoSansSymbols-Regular
   |         ("NAME" t)
   |         ("OPTIONS" t)
   |         ("POSTID" nil)
+  |         ("RESULTS" t)
   |         ("SELECT_TAGS" nil)
   |         ("STARTUP" nil)
   |         ("TITLE" nil))
@@ -2487,7 +2690,7 @@ http://endlessparentheses.com/embedding-youtube-videos-with-org-mode-links.html
   - Hacking mode hooks.
     - Configurations common to every hacking vehicle.
       ,----
-      | (setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook R-mode-hook SAS-mode-hook graphviz-dot-mode-hook c-mode-common-hook php-mode-hook scad-mode-hook web-mode-hook))
+      | (setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook R-mode-hook SAS-mode-hook graphviz-dot-mode-hook c-mode-common-hook php-mode-hook scad-mode-hook web-mode-hook js2-mode-hook json-mode-hook))
       `----
     - LISP mode hooks.
       - Are hacking modes.
@@ -2546,24 +2749,10 @@ http://endlessparentheses.com/embedding-youtube-videos-with-org-mode-links.html
   |   (hs-minor-mode)
   |   (help/not-on-gui (local-set-key (kbd "RET") #'newline-and-indent))
   |   (help/on-gui (local-set-key (kbd "<return>") #'newline-and-indent)))
-  `----
-
-
-4.1.4 Wiring
-------------
-
-  ID: orgmode:gcr:vela:50304E30-682C-4C9A-9615-D6E61DAE533B
-
-  ,----
+  |
   | (let ()
   |   (--each help/hack-modes
   |     (add-hook it #'help/hack-prog*-mode-hook-fn)))
-  |
-  | (let ()
-  |   (--each help/hack-lisp-modes
-  |     (add-hook it #'help/emacs-lisp-mode-hook-fn)))
-  |
-  | (add-hook 'ielm-mode-hook #'help/ielm-mode-hook-fn)
   `----
 
 
@@ -2578,10 +2767,51 @@ http://endlessparentheses.com/embedding-youtube-videos-with-org-mode-links.html
 
   ID: orgmode:gcr:vela:3AD91697-42DE-4555-9F49-B7D9F5E502D3
 
+  Have fun with scratch.
+
   ,----
-  | (setq initial-scratch-message nil)
+  | (setq initial-scratch-message ";; Happy Hacking 🖖\n\n")
+  `----
+
+  Use `emacs-lisp' in scratch.
+
+  ,----
+  | (setq initial-major-mode 'emacs-lisp-mode)
+  `----
+
+  Immortal scratch [via].
+
+  ,----
+  | (with-current-buffer "*scratch*"
+  |   (emacs-lock-mode 'kill))
+  `----
+
+  Persistent scratch.
+
+  ,----
+  | (use-package persistent-scratch
+  |   :config
+  |   (persistent-scratch-setup-default))
+  `----
+
+  Broadcast scoping mode.
+
+  ,----
   | (use-package lexbind-mode)
-  |
+  `----
+
+  Slime navigation:
+  - "navigation to the symbol at point": `M-.'
+  - "pop back to previous marks": `M-,'
+  - "describe the symbol at point": `C-c C-d C-d'
+
+  ,----
+  | (use-package elisp-slime-nav
+  |   :ensure t
+  |   :diminish t)
+  `----
+
+  ,----
   | (defun help/elisp-eval-buffer ()
   |   "Intelligently evaluate an Elisp buffer."
   |   (interactive)
@@ -2596,14 +2826,16 @@ http://endlessparentheses.com/embedding-youtube-videos-with-org-mode-links.html
   |   (local-set-key (kbd "s-l mef") #'macroexpand)
   |   (local-set-key (kbd "s-l mea") #'macroexpand-all)
   |   (local-set-key (kbd "s-:") #'my-eval-expression)
-  |   (local-set-key (kbd "#") #'endless/sharp))
+  |   (local-set-key (kbd "#") #'endless/sharp)
+  |   (local-set-key (kbd "C-c e") #'macrostep-expand))
   |
   | (defun help/emacs-lisp-mode-hook-fn ()
   |   (interactive)
   |   (help/elisp-mode-local-bindings)
   |   (lexbind-mode)
   |   (eldoc-mode)
-  |   (diminish 'eldoc-mode))
+  |   (diminish 'eldoc-mode)
+  |   (turn-on-elisp-slime-nav-mode))
   |
   | (setq ielm-noisy nil)
   |
@@ -2616,9 +2848,37 @@ http://endlessparentheses.com/embedding-youtube-videos-with-org-mode-links.html
   | (defun help/ielm-mode-hook-fn ()
   |   "HELP customizations."
   |   (interactive)
-  |   (help/ielm-auto-complete))
+  |   (help/ielm-auto-complete)
+  |   (turn-on-elisp-slime-nav-mode))
+  |
+  | (let ()
+  |   (--each help/hack-lisp-modes
+  |     (add-hook it #'help/emacs-lisp-mode-hook-fn)))
+  |
+  | (add-hook 'ielm-mode-hook #'help/ielm-mode-hook-fn)
   `----
 
+  "find callers of elisp functions or macros".
+
+  ,----
+  | (use-package elisp-refs
+  |   :ensure t)
+  `----
+
+  Package lint.
+
+  ,----
+  | (use-package package-lint
+  |   :ensure t)
+  |
+  | (use-package flycheck-package
+  |   :ensure t
+  |   :after (package-lint))
+  `----
+
+
+[via]
+https://www.reddit.com/r/emacs/comments/4cmfwp/scratch_buffer_hacks_to_increase_its_utility/
 
 * 4.2.1.1 Keybinding
 
@@ -2633,6 +2893,11 @@ http://endlessparentheses.com/embedding-youtube-videos-with-org-mode-links.html
 --------------
 
   ID: orgmode:gcr:vela:EBDA3D1C-536F-4252-AE26-32A3FDF5326C
+
+
+* 4.2.2.1 Literate Programming
+
+  ID: orgmode:gcr:vela:DBC93FC7-54AA-42AC-95BE-FEAA01FACA89
 
   When source blocks are evaluated, their results get stored in a result area,
   typically for display. If the results are small, they are displayed with
@@ -2683,29 +2948,287 @@ http://endlessparentheses.com/embedding-youtube-videos-with-org-mode-links.html
   | (setq org-src-tab-acts-natively nil)
   `----
 
-  Personal workflow:
 
-  TODO: Zero progress.
-  IN-PROGRESS: Forward movement.
-  HELD-BLOCKED: Can't move forward until external agent completes.
-  HELD-FROZEN: Won't move forward until I reinitialize it.
-  HELD-UNTIL: Reinitialize when conditional.
-  REVIEW: Work is complete and needs to be evaluated.
-  DONE: Completed.
-        - Retire using `org-archive-subtree'.
+* 4.2.2.2 Workflow
+
+  ID: orgmode:gcr:vela:8341F15B-6D47-4D84-9DAA-D411FA588AA5
+
+  - Custom TODO workflow states requirements, each answering the following
+    questions:
+    - Version 01
+      - What needs to be done? TODO
+      - What is being done right now? IN-PROGRESS
+      - What is waiting because an external agent? HELD-BLOCKED
+      - What is waiting because I have put it on hold? HELD-FROZEN
+      - What is waiting until another date? (although I'm not using the Agenda)
+        HELD-UNTIL
+      - What is complete and needs to be reviewed? REVIEW
+      - What is complete? DONE
+    - Version 02
+      - Questions about every state
+        - When was it created?
+          - The purpose of its creation is contained within its Headline and its
+            contents "when?" and "why?" aren't required
+        - When was it changed and why?
+          - The reason for the change is probably in the body of the Headline so
+            why bother keeping a note here? Bother because it makes it easier to
+            review the state-change of a task because
+            - It probably isn't worth keeping in the task long-term (it is
+              transient)
+              - But it still matters and I want to know about it
+            - If it is worth keeping in the task long-term then it will be there
+              but
+              - It makes it easier to review the modification of a task without
+                - Having to re-read the entire task to understand the context
+                - Track down the why it modified
+        - When did it complete (done or not) and why?
+          - The goals for completion are probably in the body of the Headline
+            itself so why keeping a note here? Bother because it makes it easier
+            to review the completion of a task without
+            - Having to re-read the entire task to understand the context
+            - Track down the why it completed
+      - Migration from Version 01
+        - TODO -> no change (timestamp)
+        - IN-PROGRESS -> GO (timestamp) (not DO because of DONE fastkey)
+        - HELD-BLOCKED -> WAIT with note (timestamp, explanation)
+        - HELD-FROZEN -> WAIT with note (timestamp, explanation)
+        - HELD-UNTIL -> WAIT with note (timestamp, explanation)
+        - REVIEW -> no change (timestamp)
+        - DONE -> no change (timestamp, explanation)
+      - Workflow cheatsheet for every state change
+        - Entry related
+          - `!' store a timestamp when *entered*
+          - `@' store a timestamp with a note when *entered*
+            - `C-c C-c' provides an empty note
+        - Exit related
+          - `/!' *in addition* to the state's entry configuration
+            - record a timestamp when *leaving*
+            - /if and only if/
+              - the target state not already configure logging when entering it
+        - Access related
+          - `char' defines a fast-access key for the state name
 
   ,----
   | (setq org-todo-keywords
   |       '((sequence
-  |          "TODO"
-  |          "IN-PROGRESS"
-  |          "HELD-BLOCKED"
-  |          "HELD-FROZEN"
-  |          "HELD-UNTIL"
-  |          "REVIEW"
-  |          "DONE"
+  |          "TODO(t!)"
+  |          "GO(g@)"
+  |          "WAIT(w@)"
+  |          "REVIEW(r!)"
+  |          "|"
+  |          "DONE(d@)"
+  |          "CANCELED(c@)"
   |          )))
   `----
+
+  - Reference
+    - [StackOverflow: Add CREATED date property to TODOs in org-mode]
+    - [Org: 5.2.1 TODO keywords as workflow states]
+    - [5.3.2 Tracking TODO state changes]
+
+  It is easier to understand the history of a task by reading it in
+  chronological order.
+
+  ,----
+  | (setq org-log-states-order-reversed nil)
+  `----
+
+  Make it easy to hide the state changes until I want to see them with a Drawer.
+
+  ,----
+  | (setq org-log-into-drawer t)
+  `----
+
+  Maintain state when archiving a heading.
+
+  ,----
+  | (setq org-archive-mark-done nil)
+  `----
+
+
+  [StackOverflow: Add CREATED date property to TODOs in org-mode]
+  http://stackoverflow.com/questions/12262220/add-created-date-property-to-todos-in-org-mode
+
+  [Org: 5.2.1 TODO keywords as workflow states]
+  http://orgmode.org/org.html#Workflow-states
+
+  [5.3.2 Tracking TODO state changes]
+  http://orgmode.org/org.html#Tracking-TODO-state-changes
+
+
+* 4.2.2.3 Refile
+
+  ID: orgmode:gcr:vela:D0E22D45-6317-4B23-A245-B92ADD71F014
+
+
+  + 4.2.2.3.1 Context
+
+    ID: orgmode:gcr:vela:43D6F529-7EA6-4931-8408-03B0F562282E
+
+    I wrote my first to-do list on a funeral home notepad. It was either that or
+    it was from the furniture store. My dad worked at both. The National
+    Selected Morticians logo sat somewhere on its pages. There wasn't much for
+    me to note back then and the notepad worked fine. When I got a little older
+    I graduated to a Mead spiral notebook. I wasn't organized and wasted space.
+    When you tore out the pages they made a mess. At home we had two computers
+    over the years an Apple 2E and then a IBM PC compatible. Mom used PFS Write
+    on the 2E and I used Notepad once in a while but my usage on both games.
+    They were at home but they were not my home. The mad was my home until
+    college where I made two new friends: Composition Book (CB) and Bill Joy's
+    `vi'. CB seemed like an elegant upgrade from the Mead spiral but it didn't
+    last. CB's lines were too tall and the pages were too short, the worst of
+    both worlds. The speckled black and white covers were its most useful part
+    which was it's beauty as no one would ever have guessed. Compared to the
+    Mead, the CB's were downright elegant. That leaves `vi'. Mrs. Marian Manyo
+    prepared a handout to help us learn `vi'. It was a single page. `SunOS' was
+    at a whopping version of 5.7 yet the handout left ink on your finger
+    suggesting that it a mimeograph instead of a Xerox that deposited it into
+    our awaiting writing fingers. It has seven commands that I learned: open,
+    close, save, close and save, insert and command mode. That worked to store
+    my todo list for years. This as before CVS usurped RCS so backups were
+    basic. My workflow had two states: existence and non-existence. Simple. This
+    well for another nineteen years. Until I followed the GTD approach but in a
+    simpler ad-hock form. Emacs was never part of my life even when it lived
+    next door to vi. Growing up on the cusp of beefy IDEs living on puny
+    desktops most schools weren't rooted in the tradition of LISP and Emacs and
+    I never joined it. Scheme got my attention though and it sucked me into
+    Emacs, but it didn't keep me. Twice I tried. Nope. Three times I tried and
+    at the end I liked Emacs a little bit worse. Then something funny happened:
+    I wanted to learn OCaml. Emacs was the only good editor for it, so I dug up
+    Emacs. Then I wanted to learn SML and go figure: Emacs was the only good
+    editor for it. The same story was retold ten or fifteen times. The
+    proverbial lotus kept expanding every time you touched because not only did
+    satisfy your ideas but it gave you new ones. Totally hooked, I am still
+    keeping my todo lists in ASCII text files. Then three years I heard about
+    Org-Mode. My first Org file had you guessed it: lists converted into
+    headings. Oops, that wasn't right so I converted them all to lists. That
+    worked well for years. Then I got interested in publishing and spent another
+    year with headings and lists. A year or so ago I got tired of my ad-hock
+    workflow I checked if Org had a way to deal with workflow. Of course it did!
+    Then I got interested in tracking state changes, and of course it had that.
+    Beautiful. This whole story lives here to introduce refile. When I moved
+    headings I moved them by selecting the whole subtree, killing it, and
+    pasting it somewhere else. Fifteen or twenty times I lost the heading. Sure
+    VCS saved it but it was a hassle and a mess, a total frustration. My error
+    was not marking the entire subtree. Oops. When I searched for a solution I
+    ended up on the refile page. Of course that is how you do it. Now /what/ was
+    the /it/ that I wanted to do?
+
+
+  + 4.2.2.3.2 Desire
+
+    ID: orgmode:gcr:vela:8ADB34FD-53E3-40C4-B126-2A4980D069BB
+
+    Three or four Org-Mode files sit open in buffers for the entire year. Once
+    in a while there are new ones added but they usually replace one of the
+    original four. Exceptions are one-offs like provisioning scripts for my
+    systems at work or at home. Rarely a heading grows so large that it
+    graduates to its own file. This is by design: I refuse to pre-optimize and
+    grow a menagerie files to house every ever taxonomy conceivable only to end
+    up retiring the file having closed only a single heading.
+
+    Here is how my usage looks to me:
+    - 99.00% of the time I am working in the same three files
+      - Refiling across subtrees at level two
+    - <00.90% of the time I am moving headings to level zero, or the top level
+      of the document
+    - <00.09% of the time I am moving headings into a different file
+
+    My predictable and small usage makes for an easy system configuration goal
+    below.
+
+
+  + 4.2.2.3.3 Implementation
+
+    ID: orgmode:gcr:vela:ACF83728-2E66-437F-AFC9-D307A1BA8986
+
+
+    - 4.2.2.3.3.1 Core
+
+      ID: orgmode:gcr:vela:E0860CFC-8BBA-444C-86FA-D7043735D81B
+
+      Because 99% of the time I will refile headings as sub-headings within the
+      same file I never need to configure `Refile' file targets in
+      `org-refile-targets'. Refiling at any depth makes
+
+      ,----
+      | (setq org-refile-targets '((nil . (:maxlevel . 10))))
+      | (setq org-refile-use-outline-path t)
+      `----
+
+      doing so natural, flexible and efficient
+
+      Because <00.90% I'm moving headings to level zero I want to
+      - Make it easy when I need it which is not often
+      - Make it difficult the rest of the time because I don't want to
+        accidentally move headings there. It isn't the end of the world I just
+        don't want to do it accidentally because I will be /rarely/ doing so in
+        the first place.
+      - Single previx argument (4)
+
+      Because <00.09% of the time I am moving headings into a new file
+      - Make it as easy and a difficult as moving to the top-level
+      - Prompt for the file name
+        - If it does not exist `Org' will transparently create it
+      - Perform the move
+      - Single previx argument (16)
+
+      ,----
+      | (defun help/org-refile (arg)
+      |   "Refile to /levels/ in /file/ by using use /prefix args/: 2+/this/0, 1+/this/1 or 1/choice/2"
+      |   (interactive "P")
+      |   (cond
+      |    ((not (null arg))
+      |     (let ((val (car current-prefix-arg))
+      |           (current-prefix-arg nil)
+      |           (org-refile-use-outline-path 'file)
+      |           (org-reverse-note-order nil))
+      |       (cond ((= val 4)
+      |              (call-interactively 'org-refile))
+      |             ((= val 16)
+      |              (let* ((fil (read-file-name "Enter destination file: "))
+      |                     (xfil (expand-file-name fil))
+      |                     (_ (when (not (file-exists-p xfil))
+      |                          (with-temp-file xfil (insert))))
+      |                     (org-refile-targets
+      |                      `((,xfil :maxlevel . 10))))
+      |                (progn (call-interactively 'org-refile)
+      |                       (find-file xfil)))))))
+      |    (t
+      |     (call-interactively 'org-refile))))
+      `----
+
+
+    - 4.2.2.3.3.2 General Operation
+
+      ID: orgmode:gcr:vela:B22BE013-FFE3-4147-AD1B-53E1CFF48306
+
+      - Make it easy to see refiled headlines by listing them as the first
+        sub-heading (harder to disappear)
+        ,----
+        | (setq org-reverse-note-order t)
+        `----
+      - Select headings with the full path immediately instead of with clunky
+        depth-first navigation
+        ,----
+        | (setq org-outline-path-complete-in-steps nil)
+        `----
+      - Create a new parent heading destination first instead of using this GUI
+        to do it because it is error prone to do it in the naviation GUI despite
+        the available confirmation message
+        ,----
+        | (setq org-refile-allow-creating-parent-nodes nil)
+        `----
+      - Track refile operations to make sense of why the `Refile' occurred in
+        the same spirit of how the workflow state changes are recorded
+        ,----
+        | (setq org-log-refile 'note)
+        `----
+
+
+* 4.2.2.4 Unclassified
+
+  ID: orgmode:gcr:vela:825C088D-CAA0-43D5-A005-00EF973A6D4C
 
   When running in a GUI, I would like linked images to be displayed inside of
   Emacs.
@@ -2718,7 +3241,6 @@ http://endlessparentheses.com/embedding-youtube-videos-with-org-mode-links.html
 
   ,----
   | (setq org-completion-use-ido t)
-  | (setq org-outline-path-complete-in-steps nil)
   | (setq org-completion-use-iswitchb nil)
   `----
 
@@ -3005,10 +3527,11 @@ http://endlessparentheses.com/embedding-youtube-videos-with-org-mode-links.html
   `----
 
 
-[Artur]
-http://endlessparentheses.com/changing-the-org-mode-ellipsis.html?source=rss
+  [Artur]
+  http://endlessparentheses.com/changing-the-org-mode-ellipsis.html?source=rss
 
-* 4.2.2.1 Keybindings
+
+* 4.2.2.5 Keybindings
 
   ID: orgmode:gcr:vela:0AA3F69B-F5F1-48DA-B8F7-B7C92CD30DB1
 
@@ -3046,7 +3569,7 @@ http://endlessparentheses.com/changing-the-org-mode-ellipsis.html?source=rss
   `----
 
 
-  + 4.2.2.1.1 Row 5
+  + 4.2.2.5.1 Row 5
 
     ID: orgmode:gcr:vela:B09BE660-B5D5-40CA-8952-D2DEAE20E7BD
 
@@ -3067,7 +3590,7 @@ http://endlessparentheses.com/changing-the-org-mode-ellipsis.html?source=rss
     `----
 
 
-  + 4.2.2.1.2 Row 4
+  + 4.2.2.5.2 Row 4
 
     ID: orgmode:gcr:vela:1E49694B-6350-45E2-BE58-21EAAF09D4A2
 
@@ -3082,7 +3605,7 @@ http://endlessparentheses.com/changing-the-org-mode-ellipsis.html?source=rss
     `----
 
 
-  + 4.2.2.1.3 Row 3
+  + 4.2.2.5.3 Row 3
 
     ID: orgmode:gcr:vela:D11109EE-AD92-4E26-988F-AF3CC70A2F69
 
@@ -3092,10 +3615,11 @@ http://endlessparentheses.com/changing-the-org-mode-ellipsis.html?source=rss
     | (define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
     | (define-key org-mode-map (kbd "s-l") #'help/safb-org-edit-src-code)
     | (define-key org-mode-map (kbd "s-;") #'help/safb-help/org-babel-demarcate-block)
+    | (define-key org-mode-map (kbd "C-.") #'(lambda () (interactive) (insert " \\rarr ")))
     `----
 
 
-  + 4.2.2.1.4 Row 2
+  + 4.2.2.5.4 Row 2
 
     ID: orgmode:gcr:vela:CA925DDA-8EA8-47B0-AE9A-D73073CF51B7
 
@@ -3107,7 +3631,7 @@ http://endlessparentheses.com/changing-the-org-mode-ellipsis.html?source=rss
     `----
 
 
-  + 4.2.2.1.5 Hydra
+  + 4.2.2.5.5 Hydra
 
     ID: orgmode:gcr:vela:46BCE65B-B8C9-49A0-A687-30D1330DB07D
 
@@ -3115,34 +3639,35 @@ http://endlessparentheses.com/changing-the-org-mode-ellipsis.html?source=rss
     | (defhydra help/hydra/right-side/org-mode (:color blue
     |                                                  :hint nil)
     |   "
-    | _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ detangle _5_ id-create _6_ toggle-macro
-    | _q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ g2nms-b _t_ g2s-b/hd _y_ org-archive-subtree _u_ goto
+    | _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ id-create _5_ toggle-macro
+    | _q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ help/org-refile _R_ g2nms-b _t_ g2s-b/hd _a_ archive-subtree _u_ goto
     | _a_ inshdrgs _s_ oblobigst            _h_ dksieb _k_ ob-check-src-blk
-    | _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre"
+    | _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
     |   ;; Row 5
     |   ("1" org-babel-sha1-hash)
     |   ("2" org-display-inline-images)
     |   ("3" org-remove-inline-images)
-    |   ("4" org-babel-detangle)
-    |   ("5" org-id-get-create)
-    |   ("6" help/org-toggle-macro-markers)
+    |   ("4" org-id-get-create)
+    |   ("5" help/org-toggle-macro-markers)
     |   ;; Row 4
     |   ("q" org-babel-switch-to-session-with-code)
     |   ("w" org-table-edit-field)
     |   ("e" org-babel-goto-named-result)
-    |   ("r" org-babel-goto-named-src-block)
+    |   ("r" help/org-refile)
+    |   ("R" org-babel-goto-named-src-block)
     |   ("t" org-babel-goto-src-block-head)
-    |   ("y" org-archive-subtree)
     |   ("u" org-goto)
     |   ;; Row 3
-    |   ("a" org-babel-insert-header-arg)
+    |   ("a" org-archive-subtree-default)
     |   ("s" org-babel-lob-ingest)
     |   ("h" org-babel-do-key-sequence-in-edit-buffer)
+    |   ("H" org-babel-insert-header-arg)
     |   ("k" org-babel-check-src-block)
     |   ;; Row 2
     |   ("c" org-fill-paragraph)
     |   ("b" org-babel-switch-to-session)
-    |   ("n" org-narrow-to-subtree))
+    |   ("n" org-narrow-to-subtree)
+    |   ("m" org-mark-subtree))
     | (key-chord-define-global "hh" #'help/hydra/right-side/org-mode/body)
     `----
 
@@ -3166,7 +3691,36 @@ http://endlessparentheses.com/changing-the-org-mode-ellipsis.html?source=rss
     `----
 
 
-4.2.3 Unicode
+4.2.3 Transliteration
+---------------------
+
+  ID: orgmode:gcr:vela:50B2CCED-D730-4764-85CA-8C46EE6CB356
+
+  Black board bold characters.
+
+  ,----
+  | (use-package blackboard-bold-mode
+  |   :ensure t)
+  `----
+
+  Fraktur characters.
+
+  ,----
+  | (use-package fraktur-mode
+  |   :ensure t)
+  `----
+
+  ,----
+  | (defhydra help/hydra/transliterate (:color blue :hint nil)
+  |   "
+  | _b_ black-board-bold _f_ fraktur
+  | "
+  |   ("b" blackboard-bold-mode)
+  |   ("f" fraktur-mode))
+  `----
+
+
+4.2.4 Unicode
 -------------
 
   ID: orgmode:gcr:vela:BF8F326E-1B81-49AD-AD90-74E42E4611DB
@@ -3198,9 +3752,7 @@ http://endlessparentheses.com/changing-the-org-mode-ellipsis.html?source=rss
   ,----
   | (use-package unicode-escape
   |   :ensure t
-  |   :config
-  |   (global-set-key (kbd "H-e") #'unicode-escape-region )
-  |   (global-set-key (kbd "H-u") #'unicode-unescape-region))
+  |   :config)
   `----
 
   Warn of UTF [BOM] bytes via [skeeto].
@@ -3232,7 +3784,7 @@ https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_warning_if_i_open_a_
 https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.html
 
 
-4.2.4 Dash
+4.2.5 Dash
 ----------
 
   ID: orgmode:gcr:vela:20393F2C-F619-4E12-B862-1A4CCB97B742
@@ -3695,6 +4247,14 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.h
 
   ID: orgmode:gcr:vela:6F4A6F8E-277C-45E2-B26E-51455C2CBC16
 
+  ,----
+  | (defun help/c-mode-common-hook-fn ()
+  |   "HELP c-mode-common customizations."
+  |   (interactive)
+  |   (rainbow-mode))
+  | (add-hook 'c-mode-common-hook #'help/c-mode-common-hook-fn)
+  `----
+
 
 4.3.7 Python
 ------------
@@ -3745,8 +4305,8 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.h
   ID: orgmode:gcr:vela:987C1C05-F880-4312-B902-5060208A3506
 
 
-4.3.10 Structured Document Development
---------------------------------------
+4.3.10 Web Development
+----------------------
 
   ID: orgmode:gcr:vela:206F4363-F4D6-4DDE-BB46-174D0F68FBB4
 
@@ -3758,7 +4318,6 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.h
   |   :init
   |   (setq web-mode-enable-current-element-highlight t)
   |   :config
-  |   (setf (cdr (rassoc 'php-mode auto-mode-alist)) 'web-mode)
   |   (add-to-list 'auto-mode-alist '("\\.tpl'" . web-mode))
   |   (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
   |   (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
@@ -3801,6 +4360,47 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.h
   |   (setq web-mode-enable-heredoc-fontification t))
   |
   | (add-hook 'web-mode-hook #'help/web-mode-hook-fn)
+  `----
+
+
+4.3.11 JavaScript
+-----------------
+
+  ID: orgmode:gcr:vela:8565DDAF-42FB-464C-8704-B8E62AE4CD7D
+
+  ,----
+  | (use-package js2-mode
+  |   :ensure t
+  |   :mode (("\\.js$" . js2-mode)
+  |          ("\\.jsx$" . js2-mode))
+  |   :interpreter ("node" . js2-mode)
+  |   :config
+  |   (progn
+  |     (add-hook 'js2-mode-hook #'js2-imenu-extras-mode)))
+  |
+  | (use-package js2-refactor
+  |   :after (js2-mode)
+  |   :ensure t
+  |   :diminish js2-refactor-mode
+  |   :config
+  |   (progn
+  |     (add-hook 'js2-mode-hook #'js2-refactor-mode)
+  |     (js2r-add-keybindings-with-prefix "C-c C-m")))
+  `----
+
+  `json-mode' is derived from `javascript-mode' so configure the latter's indent
+  to two.
+
+  ,----
+  | (use-package json-mode
+  |   :ensure t
+  |   :diminish json-mode
+  |   :mode (("\\.jshintrc$" . json-mode))
+  |   :config
+  |   (progn
+  |     (setq js-indent-level 2)
+  |     (setq json-reformat:indent-width 2)
+  |     (setq json-reformat:pretty-string\? t)))
   `----
 
 
@@ -4071,7 +4671,8 @@ http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-exampl
   Provide Github Flavored Markdown (GFM).
 
   ,----
-  | (use-package ox-gfm)
+  | (use-package ox-gfm
+  |   :ensure t)
   `----
 
   Program GFM.
@@ -4249,7 +4850,7 @@ http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-exampl
   ID: orgmode:gcr:vela:FCC8A8F8-A967-4981-9260-CFF60CC56494
 
   ,----
-  | (defconst help/ditaa-jar "/usr/local/Cellar/ditaa/0.9/libexec/ditaa0_9.jar")
+  | (defconst help/ditaa-jar (getenv "DITAA"))
   | (setq org-ditaa-jar-path help/ditaa-jar)
   `----
 
@@ -4276,7 +4877,7 @@ http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-exampl
   | (use-package plantuml-mode
   |   :ensure t
   |   :init
-  |   (defconst help/plantuml-jar "/usr/local/Cellar/plantuml/8031/plantuml.8031.jar")
+  |   (defconst help/plantuml-jar (getenv "PLANTUML"))
   |   (setq plantuml-jar-path help/plantuml-jar)
   |   :config
   |   (eval-after-load "ob-plantuml"
@@ -4409,6 +5010,24 @@ http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-exampl
   ,----
   | (setq default-input-method 'TeX)
   `----
+
+  Automatically Copy Text Selected With The Mouse [via].
+
+  ,----
+  | (setq mouse-drag-copy-region t)
+  `----
+
+  The macro recorder and Multiple-Cursors provide two ways to do the right thing
+  in different situations. Be very thoughtful and allow every function.
+
+  ,----
+  | (use-package multiple-cursors
+  |   :ensure t)
+  `----
+
+
+[via]
+http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/
 
 
 5.4 Color Theme
@@ -5024,6 +5643,57 @@ http://ergoemacs.org/emacs/emacs_key_notation_return_vs_RET.html
   | +---------------------------------------+
   `----
 
+  On OS X Dyalog uses an input source for entering APL symbols. Enable its input
+  source, press option-i, and you get the symbol ⍳ (APL FUNCTIONAL SYMBOL IOTA).
+  It should work in every OS X application. When I tried to use it in Emacs
+  though it didn't work. This configuration swallows the option key and
+  translates it to the Emacs Super key. Any option chords are never sent to OS
+  X. This had worked fine because I'd never used command. Most of the time I
+  want Emacs to work this way, but some of the time I want to pass command
+  through to OS X. How can I do this?
+
+  When I read the Emacs documentation they explained that you can choose whether
+  or not you want ALT or GUI (option and command on OS X) to be swallowed by
+  Emacs or passed through to the OS. Most of us already have this in our config.
+  How can we switch it back and forth then?
+
+  Elisp is of course the solution so I wrote some code to toggle this behavior.
+  It didn't work! Didn't look like a bug in my code so I dug a little further
+  into the documentation. Around the same time I was reading the USB HID
+  specification. The spec explains that for every modifier there is both a left
+  and a right code. When I got to the relevant document for Emacs it all started
+  to make sense: the toggling modifier keys in Emacs only works for the right
+  keys!
+
+  It is exciting to learn that Emacs makes this distinction. What I found next
+  though was that it only works when the OS tells Emacs which modifier it is,
+  but not from Karabiner. It makes sense, Emacs expects to be told at a lower
+  level than Karabiner runs. Long story short I had to change the layout to get
+  the toggling behavior that I wanted.
+
+  For simplicity I added a Hydra to toggle both the option and the function key
+  between being sent to the OS or swallowed by Emacs.
+
+  Function started making a place in my config as Hyper after I got tired of
+  searching for combinations of Hydras for common actions.
+
+  These changes helped guide the custom keyboard design.
+
+  ,----
+  | +---------------------------------------+
+  | | +-----+                       +-----+ |
+  | | |C    |                       |C/ret| |
+  | | +-----+                       +-----+ |
+  | | +------+                     +------+ |
+  | | |SHIFT |                     | SHIFT| |
+  | | +------+                     +------+ |
+  | | +-+    +-+ +-+ +-----+ +-+ +-+        |
+  | | |H|    |s| |M| |spc  | |M| |s|        |
+  | | +-+    +-+ +-+ +-----+ +-+ +-+        |
+  | |                                       |
+  | +---------------------------------------+
+  `----
+
 
 [Ukulele]
 http://scripts.sil.org/cms/scripts/page.php?site_id%3Dnrsi&id%3Dukelele
@@ -5046,11 +5716,21 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
   ID: orgmode:gcr:vela:22246934-BE44-4D99-942C-A6DAB4506D65
 
 
-* 6.5.1.1 Row 5
+* 6.5.1.1 Row 6
+
+  ID: orgmode:gcr:vela:0CA71D0C-4F70-4E5F-A5AA-E5A9770F9A62
+
+  ,----
+  | (global-set-key (kbd "<f9>") #'org2blog/wp-new-entry)
+  `----
+
+
+* 6.5.1.2 Row 5
 
   ID: orgmode:gcr:vela:C00A4E41-0801-4696-86E6-5A1CE1EBB189
 
   ,----
+  | (global-set-key (kbd "s-5") #'kill-this-buffer)
   | (global-set-key (kbd "s-4") #'mc/mark-next-like-this)
   | (global-set-key (kbd "s-3") #'mc/mark-previous-like-this)
   | (global-set-key (kbd "s-2") #'mc/mark-all-like-this)
@@ -5060,7 +5740,7 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
   `----
 
 
-* 6.5.1.2 Row 4
+* 6.5.1.3 Row 4
 
   ID: orgmode:gcr:vela:8F467832-8FC3-42B5-8978-8CF2C1454D5B
 
@@ -5077,43 +5757,54 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
   `----
 
 
-* 6.5.1.3 Row 3
+* 6.5.1.4 Row 3
 
   ID: orgmode:gcr:vela:6DCD321F-6FDA-4983-9C7C-265D23D1AC4F
 
   ,----
   | (global-set-key (kbd "s-a") #'help/safb-switch-to-previous-buffer)
   | (global-set-key (kbd "s-d") #'er/expand-region)
+  | (global-set-key (kbd "H-l") #'flycheck-list-errors)
   `----
 
   ,----
   | (defhydra help/hydra/left-side/global (:color blue
   |                                               :hint nil)
   |   "
-  | _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm  _7_ grade-level _8_ reading-ease
-  | _q_ apropos _w_ widen _t_ unicode-troll-stopper-mode _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page
-  | _Q_ _W_ _E_ _R_ _T_
-  | _a_ ag  _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point _j_ obtj2o _k_ scrollDown _K_ nextLogLine _;_ toggle-lax-whitespace
-  | _x_ delete-indentation _c_ fill-paragraph _b_ erase-buffer  _m_ imenu-list _M_ Marked 2 Viewer
-  | _<_ _>_ _?_"
+  | _O_ base64-encode-region _P_ base64-decode-region _|_ split-window-horizontally _-_ split-window-vertically
+  | _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_ flyck/buf _&_ flyck/lst _8_ grade-level _9_ reading-ease _0_ writegood _q_ apropos _w_ widen _e_ flycheck _r_ reposition-window_t_ unicode-troll-stopper-mode _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page _}_ transliterate
+  | _Q_ ✓ _W_ ✗ _E_ ☐ _R_ ☑ _T_ ☒_
+  | _a_ ag  _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point _f_ desc-fun _D_ detangle _j_ obtj2o _k_ scrollDown _K_ nextLogLine  _;_ toggle-lax-whitespace
+  | _x_ delete-indentation _c_ fill-paragraph _v_ desc-var _V_ view-mode _b_ erase-buffer _n_ normal _m_ imenu-list _M_ Marked 2 Viewer
+  | _<_ cmtIn _>_ cmtOut _?_ snp"
+  |   ("|" split-window-horizontally)
+  |   ("-" split-window-vertically)
   |   ("1" help/font-size-reset :exit nil)
   |   ("Q" (lambda () (interactive) (insert "✓")) :exit nil)
   |   ("2" help/text-scale-decrease :exit nil)
   |   ("W" (lambda () (interactive) (insert "✗")) :exit nil)
   |   ("3" help/text-scale-increase :exit nil)
+  |   ("e" help/safb-flycheck-list-errors)
   |   ("E" (lambda () (interactive) (insert "☐")) :exit nil)
   |   ("4" help/insert-ellipsis)
   |   ("R" (lambda () (interactive) (insert "☑")) :exit nil)
+  |   ("r" reposition-window)
   |   ("5" help/uuid)
   |   ("T" (lambda () (interactive) (insert "☒")) :exit nil)
   |   ("6" set-buffer-file-coding-system)
-  |   ("7" writegood-grade-level)
-  |   ("8" writegood-reading-ease)
-  |   ("9" help/insert-checkmark)
+  |   ("7" flycheck-buffer)
+  |   ("&" flycheck-list-errors)
+  |   ("8" writegood-grade-level)
+  |   ("9" writegood-reading-ease)
+  |   ("0" writegood-mode)
   |   ("a" ag)
   |   ("s" help/toggle-mac-right-option-modifier)
+  |   ("h" hack-local-variable)
   |   ("S" help/toggle-mac-function-modifier)
+  |   ("f" describe-function)
   |   ("x" delete-indentation)
+  |   ("v" describe-variable)
+  |   ("V" view-mode)
   |   ("q" hydra-apropos/body)
   |   ("w" widen)
   |   ("t" unicode-troll-stopper-mode)
@@ -5121,9 +5812,11 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
   |   ("u" ucs-insert)
   |   ("i" scroll-down-command :exit nil)
   |   ("d" dash-at-point)
+  |   ("D" help/safb-org-babel-detangle)
   |   ("k" scroll-up-command :exit nil)
   |   ("I" previous-logical-line :exit nil)
   |   ("K" next-logical-line :exit nil)
+  |   ("n" help/safb-normal-mode)
   |   ("m" imenu-list-minor-mode)
   |   ("M" help/preview-buffer-file-in-marked-2)
   |   ("<" help/chs)
@@ -5132,8 +5825,11 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
   |   (";" isearch-toggle-lax-whitespace)
   |   ("o" toggle-debug-on-error)
   |   ("p" anzu-query-replace)
+  |   ("O" base64-encode-region)
+  |   ("P" base64-decode-region)
   |   ("[" backward-page :exit nil)
   |   ("]" forward-page :exit nil)
+  |   ("}" help/hydra/transliterate/body)
   |   ("c" fill-paragraph )
   |   ("b" erase-buffer))
   `----
@@ -5165,7 +5861,7 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
   [Attribution.] https://github.com/abo-abo/hydra/blob/master/hydra-examples.el
 
 
-* 6.5.1.4 Row 2
+* 6.5.1.5 Row 2
 
   ID: orgmode:gcr:vela:9E95D130-D1EC-445B-9028-24DFA5CCB28A
 
@@ -5177,12 +5873,12 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
   `----
 
 
-* 6.5.1.5 Row 1
+* 6.5.1.6 Row 1
 
   ID: orgmode:gcr:vela:4CDDC2CE-646A-4D8B-B5D3-2588FBEFF650
 
 
-* 6.5.1.6 Unsorted
+* 6.5.1.7 Unsorted
 
   ID: orgmode:gcr:vela:AD2164B2-CB66-48AD-B367-4E0CC406B022
 
@@ -5195,12 +5891,6 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
   | (define-key help/vc-map "d" #'help/safb-vc-diff)
   | (define-key help/vc-map "u" #'help/safb-vc-revert)
   | (global-set-key (kbd "s-f") #'help/safb-help/vc-next-action)
-  `----
-
-  Do the /right thing/ for getting to the start of the line.
-
-  ,----
-  | (global-set-key (kbd "C-a") #'beginning-of-line-dwim)
   `----
 
   Occur has 3 cases. I like to use it to explore the unknown.
@@ -5226,6 +5916,13 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
 
   ,----
   | (global-set-key (kbd "s-b") #'hs-toggle-hiding)
+  | (global-set-key (kbd "s-M-b") #'help/my-toggle-hideshow-all)
+  `----
+
+  Move a file.
+
+  ,----
+  | (global-set-key (kbd "H-m") #'help/move-file)
   `----
 
 
@@ -5235,14 +5932,6 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
   ID: orgmode:gcr:vela:FA2BFDC9-5242-4547-A8A5-6DECC8ED1C1B
 
   Exploratory programming in EMACS.
-
-  - Don't use "dn" for "describe-function" because of "and"-words
-  - `d.' typically ends sentences
-
-  ,----
-  | (key-chord-define-global "d8" #'describe-function)
-  | (key-chord-define-global "d9" #'describe-variable)
-  `----
 
   Don't use "qi"; "unique".
 
@@ -5289,6 +5978,7 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
 
   ,----
   | (key-chord-define-global "fj" #'avy-goto-word-1)
+  | (key-chord-define-global "fh" #'avy-goto-char)
   | (key-chord-define-global "FJ" #'avy-pop-mark)
   `----
 
@@ -5302,6 +5992,12 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
 
   ,----
   | (key-chord-define-global "FK" #'pop-to-mark-command)
+  `----
+
+  Count words.
+
+  ,----
+  | (key-chord-define-global "wc" #'count-words)
   `----
 
 

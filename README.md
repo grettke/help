@@ -3,9 +3,7 @@
 1.  [Clone Org-Mode](http://orgmode.org/) to `~/src/`
 2.  Go there.
 
-    ```sh
-     cd ~/src/org-mode
-    ```
+        cd ~/src/org-mode
 3.  Build it
     1.  Without `Make`: [Generating autoloads and Compiling Org without make](http://orgmode.org/worg/org-hacks.html)
         1.  As of <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-19 Tue&gt; </span></span> this means doing this:
