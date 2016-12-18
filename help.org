@@ -375,6 +375,14 @@ Caching.
   :ensure t)
 #+END_SRC
 
+Namespacing without language support.
+
+#+NAME: orgmode:gcr:vela:D94EE9AF-B0E4-4585-BF4A-0E78ABDE81FD
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package names
+  :ensure t)
+#+END_SRC
+
 ** Modeline
    :PROPERTIES:
    :ID:       orgmode:gcr:vela:798F14D1-EDC6-4306-8E82-0854980AEFBA

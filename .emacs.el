@@ -63,6 +63,11 @@
   :ensure t)
 ;; orgmode:gcr:vela:E83B75A1-E27D-42BA-8D46-A6B332E0CAF1 ends here
 
+;; [[file:help.org::orgmode:gcr:vela:D94EE9AF-B0E4-4585-BF4A-0E78ABDE81FD][orgmode:gcr:vela:D94EE9AF-B0E4-4585-BF4A-0E78ABDE81FD]]
+(use-package names
+  :ensure t)
+;; orgmode:gcr:vela:D94EE9AF-B0E4-4585-BF4A-0E78ABDE81FD ends here
+
 ;; [[file:help.org::orgmode:gcr:vela:1F5BD72D-2E4B-4298-B4BF-DD52BD26FC3E][orgmode:gcr:vela:1F5BD72D-2E4B-4298-B4BF-DD52BD26FC3E]]
 (use-package diminish)
 ;; orgmode:gcr:vela:1F5BD72D-2E4B-4298-B4BF-DD52BD26FC3E ends here
