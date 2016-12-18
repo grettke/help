@@ -2705,7 +2705,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 ;; orgmode:gcr:vela:7592B1CF-CDA3-4ED1-99FA-205E41C74FFF ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:6907A176-CCF4-4BDF-A242-BDBC4C67239F][orgmode:gcr:vela:6907A176-CCF4-4BDF-A242-BDBC4C67239F]]
-(defconst help/ditaa-jar "/usr/local/Cellar/ditaa/0.9/libexec/ditaa0_9.jar")
+(defconst help/ditaa-jar (getenv "DITAA"))
 (setq org-ditaa-jar-path help/ditaa-jar)
 ;; orgmode:gcr:vela:6907A176-CCF4-4BDF-A242-BDBC4C67239F ends here
 
@@ -2720,7 +2720,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 (use-package plantuml-mode
   :ensure t
   :init
-  (defconst help/plantuml-jar "/usr/local/Cellar/plantuml/8031/plantuml.8031.jar")
+  (defconst help/plantuml-jar (getenv "PLANTUML"))
   (setq plantuml-jar-path help/plantuml-jar)
   :config
   (eval-after-load "ob-plantuml"

@@ -4895,7 +4895,7 @@ Load Beamer for creating presentations.
 
 #+NAME: orgmode:gcr:vela:6907A176-CCF4-4BDF-A242-BDBC4C67239F
 #+BEGIN_SRC emacs-lisp :results output silent :wrap "RESULTS"
-(defconst help/ditaa-jar "/usr/local/Cellar/ditaa/0.9/libexec/ditaa0_9.jar")
+(defconst help/ditaa-jar (getenv "DITAA"))
 (setq org-ditaa-jar-path help/ditaa-jar)
 #+END_SRC
 
@@ -4922,7 +4922,7 @@ Load Beamer for creating presentations.
 (use-package plantuml-mode
   :ensure t
   :init
-  (defconst help/plantuml-jar "/usr/local/Cellar/plantuml/8031/plantuml.8031.jar")
+  (defconst help/plantuml-jar (getenv "PLANTUML"))
   (setq plantuml-jar-path help/plantuml-jar)
   :config
   (eval-after-load "ob-plantuml"
