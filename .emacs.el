@@ -1,6 +1,13 @@
 ;; -*- lexical-binding: t -*-
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:AD12BE48-B87B-4AB6-814D-4FA5E47597A0][orgmode:gcr:vela:AD12BE48-B87B-4AB6-814D-4FA5E47597A0]]
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (load-file "~/src/help/.org-mode-org2blog.emacs.el")
 ;; orgmode:gcr:vela:AD12BE48-B87B-4AB6-814D-4FA5E47597A0 ends here
 
@@ -729,7 +736,6 @@ Attribution: URL`http://zck.me/emacs-move-file'"
   (fci-mode)
   (rainbow-mode)
   (help/try-to-add-imenu)
-  (writegood-mode)
   (turn-on-page-break-lines-mode))
 
 (add-hook 'text-mode-hook #'help/text-prog*-setup)
@@ -2704,7 +2710,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 (add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
 ;; orgmode:gcr:vela:7592B1CF-CDA3-4ED1-99FA-205E41C74FFF ends here
 
-;; [[file:help.org::orgmode:gcr:vela:6907A176-CCF4-4BDF-A242-BDBC4C67239F][orgmode:gcr:vela:6907A176-CCF4-4BDF-A242-BDBC4C67239F]]
+;; [[file:~/src/help/help.org::orgmode:gcr:vela:6907A176-CCF4-4BDF-A242-BDBC4C67239F][orgmode:gcr:vela:6907A176-CCF4-4BDF-A242-BDBC4C67239F]]
 (defconst help/ditaa-jar (getenv "DITAA"))
 (setq org-ditaa-jar-path help/ditaa-jar)
 ;; orgmode:gcr:vela:6907A176-CCF4-4BDF-A242-BDBC4C67239F ends here
@@ -2947,8 +2953,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
                                               :hint nil)
   "
 _O_ base64-encode-region _P_ base64-decode-region _|_ split-window-horizontally _-_ split-window-vertically
-_1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm  _7_ grade-level _8_ reading-ease
-_q_ apropos _w_ widen _e_ flycheck _r_ reposition-window_t_ unicode-troll-stopper-mode _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page _}_ transliterate
+_1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm  _8_ grade-level _9_ reading-ease _0_ writegood _q_ apropos _w_ widen _e_ flycheck _r_ reposition-window_t_ unicode-troll-stopper-mode _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page _}_ transliterate
 _Q_ ✓ _W_ ✗ _E_ ☐ _R_ ☑ _T_ ☒_
 _a_ ag  _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point _f_ desc-fun _D_ detangle _j_ obtj2o _k_ scrollDown _K_ nextLogLine  _;_ toggle-lax-whitespace
 _x_ delete-indentation _c_ fill-paragraph _v_ desc-var _V_ view-mode _b_ erase-buffer _n_ normal _m_ imenu-list _M_ Marked 2 Viewer
@@ -2968,9 +2973,9 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("5" help/uuid)
   ("T" (lambda () (interactive) (insert "☒")) :exit nil)
   ("6" set-buffer-file-coding-system)
-  ("7" writegood-grade-level)
-  ("8" writegood-reading-ease)
-  ("9" help/insert-checkmark)
+  ("8" writegood-grade-level)
+  ("9" writegood-reading-ease)
+  ("0" writegood-mode)
   ("a" ag)
   ("s" help/toggle-mac-right-option-modifier)
   ("h" hack-local-variable)
