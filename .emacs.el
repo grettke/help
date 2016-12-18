@@ -1,7 +1,3 @@
-# [[file:help.org::orgmode:gcr:vela:F001C8C6-387B-4EB9-A72B-E509EA0E22EB][orgmode:gcr:vela:F001C8C6-387B-4EB9-A72B-E509EA0E22EB]]
- cd ~/src/org-mode
-# orgmode:gcr:vela:F001C8C6-387B-4EB9-A72B-E509EA0E22EB ends here
-
 ;; -*- lexical-binding: t -*-
 
 ;; [[file:help.org::orgmode:gcr:vela:AD12BE48-B87B-4AB6-814D-4FA5E47597A0][orgmode:gcr:vela:AD12BE48-B87B-4AB6-814D-4FA5E47597A0]]

@@ -37,9 +37,9 @@ Start EMACS with this command:
 1) [[http://orgmode.org/][Clone Org-Mode]] to =~/src/=
 2) Go there.
    #+NAME: orgmode:gcr:vela:F001C8C6-387B-4EB9-A72B-E509EA0E22EB
-   #+BEGIN_SRC sh
- cd ~/src/org-mode
-   #+END_SRC
+   #+BEGIN_EXAMPLE
+cd ~/src/org-mode
+   #+END_EXAMPLE
 3) Build it
    1) Without =Make=: [[http://orgmode.org/worg/org-hacks.html][Generating autoloads and Compiling Org without make]]
       1) As of <2016-01-19 Tue> this means doing this:
