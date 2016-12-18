@@ -2451,7 +2451,6 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
   :init
   (setq web-mode-enable-current-element-highlight t)
   :config
-  (setf (cdr (rassoc 'php-mode auto-mode-alist)) 'web-mode)
   (add-to-list 'auto-mode-alist '("\\.tpl'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
