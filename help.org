@@ -3743,14 +3743,6 @@ Fraktur characters.
   :ensure t)
 #+END_SRC
 
-Devanagari characters.
-
-#+NAME: orgmode:gcr:vela:863F36E0-3553-4A95-9671-BA785EBC40AF
-#+BEGIN_SRC emacs-lisp :results output silent
-(use-package transliterate-devanagari
-  :ensure t)
-#+END_SRC
-
 #+NAME: orgmode:gcr:vela:FBBCA655-1B6C-47D2-AF7B-614E74C8B6F6
 #+BEGIN_SRC emacs-lisp :results output silent
 (defhydra help/hydra/transliterate (:color blue :hint nil)

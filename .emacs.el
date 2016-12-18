@@ -1,3 +1,7 @@
+# [[file:help.org::orgmode:gcr:vela:F001C8C6-387B-4EB9-A72B-E509EA0E22EB][orgmode:gcr:vela:F001C8C6-387B-4EB9-A72B-E509EA0E22EB]]
+ cd ~/src/org-mode
+# orgmode:gcr:vela:F001C8C6-387B-4EB9-A72B-E509EA0E22EB ends here
+
 ;; -*- lexical-binding: t -*-
 
 ;; [[file:help.org::orgmode:gcr:vela:AD12BE48-B87B-4AB6-814D-4FA5E47597A0][orgmode:gcr:vela:AD12BE48-B87B-4AB6-814D-4FA5E47597A0]]
@@ -2104,11 +2108,6 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
 (use-package fraktur-mode
   :ensure t)
 ;; orgmode:gcr:vela:C6CA4298-456E-4563-B870-D599ECF2DBF2 ends here
-
-;; [[file:help.org::orgmode:gcr:vela:863F36E0-3553-4A95-9671-BA785EBC40AF][orgmode:gcr:vela:863F36E0-3553-4A95-9671-BA785EBC40AF]]
-(use-package transliterate-devanagari
-  :ensure t)
-;; orgmode:gcr:vela:863F36E0-3553-4A95-9671-BA785EBC40AF ends here
 
 ;; [[file:help.org::orgmode:gcr:vela:FBBCA655-1B6C-47D2-AF7B-614E74C8B6F6][orgmode:gcr:vela:FBBCA655-1B6C-47D2-AF7B-614E74C8B6F6]]
 (defhydra help/hydra/transliterate (:color blue :hint nil)
