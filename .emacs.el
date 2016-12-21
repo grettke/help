@@ -1,13 +1,6 @@
 ;; -*- lexical-binding: t -*-
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:AD12BE48-B87B-4AB6-814D-4FA5E47597A0][orgmode:gcr:vela:AD12BE48-B87B-4AB6-814D-4FA5E47597A0]]
-
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-(package-initialize)
-
 (load-file "~/src/help/.org-mode-org2blog.emacs.el")
 ;; orgmode:gcr:vela:AD12BE48-B87B-4AB6-814D-4FA5E47597A0 ends here
 
@@ -1800,7 +1793,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:A5D38FFE-32B1-4691-BFC8-02725D112F2E][orgmode:gcr:vela:A5D38FFE-32B1-4691-BFC8-02725D112F2E]]
 (defun help/org-refile (arg)
-  "Refile to /levels/ in /file/ by using use /prefix args/: 2+/this/0, 1+/this/1 or 1/choice/2"
+  "Refile to /level/ in /file/ by using use /prefix args/: 2+/this/[none], 1+/this/1, 1/choose-file/2"
   (interactive "P")
   (cond
    ((not (null arg))
@@ -1824,7 +1817,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; orgmode:gcr:vela:A5D38FFE-32B1-4691-BFC8-02725D112F2E ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:8FA9026B-ACAF-496C-B5F6-1F98ABA4FA28][orgmode:gcr:vela:8FA9026B-ACAF-496C-B5F6-1F98ABA4FA28]]
-(setq org-reverse-note-order t)
+(setq org-reverse-note-order nil)
 ;; orgmode:gcr:vela:8FA9026B-ACAF-496C-B5F6-1F98ABA4FA28 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:orgmode:gcr:vela:17D0BD24-8C36-4371-91CC-380176017D86][orgmode:gcr:vela:orgmode:gcr:vela:17D0BD24-8C36-4371-91CC-380176017D86]]
