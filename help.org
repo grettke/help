@@ -3170,7 +3170,7 @@ Because <09% of the time I am moving headings into a new file
 #+NAME: orgmode:gcr:vela:A5D38FFE-32B1-4691-BFC8-02725D112F2E
 #+BEGIN_SRC emacs-lisp :results output silent
 (defun help/org-refile (arg)
-  "Refile to /level/ in /file/ by using use /prefix args/: 2+/this/[none], 1+/this/1, 1/choice/2"
+  "Refile to /level/ in /file/ by using use /prefix args/: 2+/this/[none], 1+/this/1, 1/choose-file/2"
   (interactive "P")
   (cond
    ((not (null arg))
