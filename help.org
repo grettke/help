@@ -3153,14 +3153,14 @@ Refiling at any depth makes
 
 doing so natural, flexible and efficient
 
-Because <00.90% I'm moving headings to level zero I want to
+Because <90% I'm moving headings to level zero I want to
 - Make it easy when I need it which is not often
 - Make it difficult the rest of the time because I don't want to accidentally
   move headings there. It isn't the end of the world I just don't want to do
   it accidentally because I will be /rarely/ doing so in the first place.
 - Single previx argument (4)
 
-Because <00.09% of the time I am moving headings into a new file
+Because <09% of the time I am moving headings into a new file
 - Make it as easy and a difficult as moving to the top-level
 - Prompt for the file name
   - If it does not exist ~Org~ will transparently create it
