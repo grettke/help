@@ -2568,7 +2568,7 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 ;; orgmode:gcr:vela:6C50239B-2D5D-4022-8645-+BEGIN_SRC ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:AA859065-4868-4A02-882E-AD5840B74349][orgmode:gcr:vela:AA859065-4868-4A02-882E-AD5840B74349]]
-(add-to-list 'org-latex-packages-alist '("margin=0.5in" "geometry" nil))
+(add-to-list 'org-latex-packages-alist '("margin=1.5in" "geometry" nil))
 ;; orgmode:gcr:vela:AA859065-4868-4A02-882E-AD5840B74349 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:E6559423-7FC3-4924-A38B-FE4C9CA8CD91][orgmode:gcr:vela:E6559423-7FC3-4924-A38B-FE4C9CA8CD91]]

@@ -4549,7 +4549,7 @@ Small margins.
 
 #+NAME: orgmode:gcr:vela:AA859065-4868-4A02-882E-AD5840B74349
 #+BEGIN_SRC emacs-lisp :results output silent
-(add-to-list 'org-latex-packages-alist '("margin=0.5in" "geometry" nil))
+(add-to-list 'org-latex-packages-alist '("margin=1.5in" "geometry" nil))
 #+END_SRC
 
 Standard LaTeX class options.
