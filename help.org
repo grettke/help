@@ -4556,7 +4556,7 @@ Standard LaTeX class options.
 
 #+NAME: orgmode:gcr:vela:E6559423-7FC3-4924-A38B-FE4C9CA8CD91
 #+BEGIN_SRC emacs-lisp :results output silent
-(defvar help/ltx-cls-opt "paper=letter, fontsize=10pt, parskip")
+(defvar help/ltx-cls-opt "paper=letter, fontsize=12pt, parskip")
 #+END_SRC
 
 Standard article class.
