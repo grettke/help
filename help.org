@@ -4538,11 +4538,11 @@ Culture-dependent typographical results.
 (add-to-list 'org-latex-packages-alist '("english" "babel" t))
 #+END_SRC
 
-Palatino friendly mathematics fonts.
+Use the closest thing to Times New Roman.
 
 #+NAME: orgmode:gcr:vela:6C50239B-2D5D-4022-8645-+BEGIN_SRC
 #+BEGIN_SRC emacs-lisp :results output silent
-(add-to-list 'org-latex-packages-alist '("osf" "mathpazo" t))
+(add-to-list 'org-latex-packages-alist '("" "mathptmx" t))
 #+END_SRC
 
 Small margins.

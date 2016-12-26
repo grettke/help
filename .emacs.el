@@ -2564,7 +2564,7 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 ;; orgmode:gcr:vela:9FA4E728-0AB8-4A18-9EE8-DC4387E6DD08 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:6C50239B-2D5D-4022-8645-+BEGIN_SRC][orgmode:gcr:vela:6C50239B-2D5D-4022-8645-+BEGIN_SRC]]
-(add-to-list 'org-latex-packages-alist '("osf" "mathpazo" t))
+(add-to-list 'org-latex-packages-alist '("" "mathptmx" t))
 ;; orgmode:gcr:vela:6C50239B-2D5D-4022-8645-+BEGIN_SRC ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:AA859065-4868-4A02-882E-AD5840B74349][orgmode:gcr:vela:AA859065-4868-4A02-882E-AD5840B74349]]
