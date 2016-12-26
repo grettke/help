@@ -1,6 +1,12 @@
 ;; -*- lexical-binding: t -*-
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:AD12BE48-B87B-4AB6-814D-4FA5E47597A0][orgmode:gcr:vela:AD12BE48-B87B-4AB6-814D-4FA5E47597A0]]
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+;(package-initialize)
+
 (load-file "~/src/help/.org-mode-org2blog.emacs.el")
 ;; orgmode:gcr:vela:AD12BE48-B87B-4AB6-814D-4FA5E47597A0 ends here
 

@@ -24,6 +24,12 @@ Start EMACS with this command:
 
 #+NAME: orgmode:gcr:vela:AD12BE48-B87B-4AB6-814D-4FA5E47597A0
 #+BEGIN_SRC emacs-lisp :results output silent
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+;(package-initialize)
+
 (load-file "~/src/help/.org-mode-org2blog.emacs.el")
 #+END_SRC
 
