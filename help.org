@@ -4692,7 +4692,7 @@ for my printed correspondence.
                   `("help-letter"
                     ,(concat "\\documentclass["
                              help/ltx-cls-opt
-                             ", pagesize]{scrlttr2}")))
+                             ", pagesize, UScommercial9]{scrlttr2}")))
 
      (setq org-koma-letter-default-class "help-letter")))
 #+END_SRC
@@ -4703,7 +4703,7 @@ Set up my default LCO files.
 
 #+NAME: orgmode:gcr:vela:EFFC0DFD-168F-42F5-9405-BAECD7EC5CB4
 #+BEGIN_SRC emacs-lisp :results output silent
-(setq org-koma-letter-class-option-file "UScommercial9 KomaDefault")
+(setq org-koma-letter-class-option-file "KomaDefault")
 #+END_SRC
 
 *** Texinfo

@@ -2607,13 +2607,13 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
                   `("help-letter"
                     ,(concat "\\documentclass["
                              help/ltx-cls-opt
-                             ", pagesize]{scrlttr2}")))
+                             ", pagesize, UScommercial9]{scrlttr2}")))
 
      (setq org-koma-letter-default-class "help-letter")))
 ;; orgmode:gcr:vela:05968019-B83F-4F5B-ACF7-4CFF10CB8690 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:EFFC0DFD-168F-42F5-9405-BAECD7EC5CB4][orgmode:gcr:vela:EFFC0DFD-168F-42F5-9405-BAECD7EC5CB4]]
-(setq org-koma-letter-class-option-file "UScommercial9 KomaDefault")
+(setq org-koma-letter-class-option-file "KomaDefault")
 ;; orgmode:gcr:vela:EFFC0DFD-168F-42F5-9405-BAECD7EC5CB4 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:02005BF5-AADC-45B1-AC64-67ECB028352A][orgmode:gcr:vela:02005BF5-AADC-45B1-AC64-67ECB028352A]]
