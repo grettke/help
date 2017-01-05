@@ -5841,6 +5841,7 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("e" help/safb-flycheck-list-errors)
   ("E" (lambda () (interactive) (insert "☐")) :exit nil)
   ("4" help/insert-ellipsis)
+  ("r" help/rename-current-buffer-file)
   ("R" (lambda () (interactive) (insert "☑")) :exit nil)
   ("=" reposition-window)
   ("5" help/uuid)
