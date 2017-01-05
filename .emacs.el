@@ -697,6 +697,25 @@ Attribution: URL`http://zck.me/emacs-move-file'"
              (file-exists-p new-location)
              (not (string-equal old-location new-location)))
       (delete-file old-location))))
+
+(defun help/rename-current-buffer-file ()
+  "Renames current buffer and file it is visiting.
+
+Attribution: `http://stackoverflow.com/a/25212377'"
+  (interactive)
+  (let ((name (buffer-name))
+        (filename (buffer-file-name)))
+    (if (not (and filename (file-exists-p filename)))
+        (error "Buffer '%s' is not visiting a file!" name)
+      (let ((new-name (read-file-name "New name: " filename)))
+        (if (get-buffer new-name)
+            (error "A buffer named '%s' already exists!" new-name)
+          (rename-file filename new-name 1)
+          (rename-buffer new-name)
+          (set-visited-file-name new-name)
+          (set-buffer-modified-p nil)
+          (message "File '%s' successfully renamed to '%s'"
+                   name (file-name-nondirectory new-name)))))))
 ;; orgmode:gcr:vela:D523CBF8-67C4-4C96-9298-A4A49FE54E61 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:9DB523BC-E21B-42B7-AEE2-31ED24C14D92][orgmode:gcr:vela:9DB523BC-E21B-42B7-AEE2-31ED24C14D92]]
