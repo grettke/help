@@ -2057,6 +2057,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (define-key org-mode-map (kbd "s-o") #'org-babel-remove-result)
 (define-key org-mode-map (kbd "s-p") #'org-babel-execute-maybe)
 (define-key org-mode-map (kbd "s-[") #'org-babel-remove-inline-result)
+(define-key org-mode-map (kbd "M-{") (lambda () (interactive) (insert "- [ ] ")))
 ;; orgmode:gcr:vela:9CB5CC76-4C1D-40CB-829C-A5AC98FE23FD ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:933B1A3A-A77A-4616-B9D8-9DACED018CC2][orgmode:gcr:vela:933B1A3A-A77A-4616-B9D8-9DACED018CC2]]

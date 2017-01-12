@@ -3659,6 +3659,7 @@ Easily manipulate lists and headlines staying close to home.
 (define-key org-mode-map (kbd "s-o") #'org-babel-remove-result)
 (define-key org-mode-map (kbd "s-p") #'org-babel-execute-maybe)
 (define-key org-mode-map (kbd "s-[") #'org-babel-remove-inline-result)
+(define-key org-mode-map (kbd "M-{") (lambda () (interactive) (insert "- [ ] ")))
 #+END_SRC
 
 ***** Row 3
