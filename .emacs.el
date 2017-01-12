@@ -2108,7 +2108,8 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
   ("c" org-fill-paragraph)
   ("b" org-babel-switch-to-session)
   ("n" org-narrow-to-subtree)
-  ("m" org-mark-subtree))
+  ("m" org-mark-subtree)
+  ("M" org-mark-element))
 (key-chord-define-global "hh" #'help/hydra/right-side/org-mode/body)
 ;; orgmode:gcr:vela:5186DD50-F693-4297-A164-192BEA685C6D ends here
 
