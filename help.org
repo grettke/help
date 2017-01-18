@@ -3315,7 +3315,7 @@ below the current line.
 
 #+Name: 42f9ce2d-591D-4BDD-998E-C85E0B7B5DF5
 #+BEGIN_SRC emacs-lisp :results output silent
-(setq org-ellipsis "↷")
+(setq org-ellipsis "…")
 #+END_SRC
 
 It is easy to see indentation of headlines without having to count asterisks, so

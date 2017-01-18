@@ -1888,7 +1888,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; orgmode:gcr:vela:BA1565BE-2BF1-4121-96BD-A3F7462676CC ends here
 
 ;; [[file:~/src/help/help.org::42f9ce2d-591D-4BDD-998E-C85E0B7B5DF5][42f9ce2d-591D-4BDD-998E-C85E0B7B5DF5]]
-(setq org-ellipsis "↷")
+(setq org-ellipsis "…")
 ;; 42f9ce2d-591D-4BDD-998E-C85E0B7B5DF5 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:A0FB5129-6EF9-4D5F-A35A-CB5505C8FD6F][orgmode:gcr:vela:A0FB5129-6EF9-4D5F-A35A-CB5505C8FD6F]]
