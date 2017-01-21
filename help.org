@@ -5921,7 +5921,7 @@ _v_ariable       _u_ser-option
 
 Trademark.
 
-#+NAME: orgmode:gcr:2017-01-21:mara:5CFDECE8-B6E2-497B-8EEB-8274DA79E345
+#+NAME: orgmode:gcr:vela:orgmode:gcr:2017-01-21:mara:2ECB9A12-D860-48B6-B182-3352532B538B
 #+BEGIN_SRC emacs-lisp :results output silent
 (defhydra help/trademark (:color blue :hint nil)
   "
@@ -5931,8 +5931,8 @@ American _S_ervice Mark
 _J_apanese Industrial Standard
 _K_orean Standard
 "
-  ("R" (lambda () (interactive) (insert "™")))
-  ("U" (lambda () (interactive) (insert "®")))
+  ("R" (lambda () (interactive) (insert "®")))
+  ("U" (lambda () (interactive) (insert "™")))
   ("S" (lambda () (interactive) (insert "℠")))
   ("J" (lambda () (interactive) (insert "〄")))
   ("K" (lambda () (interactive) (insert "㉿"))))

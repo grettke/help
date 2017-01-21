@@ -3061,7 +3061,7 @@ _v_ariable       _u_ser-option
   ("e" apropos-value))
 ;; orgmode:gcr:vela:362686F6-B397-44D5-812F-BE24670F4204 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:2017-01-21:mara:5CFDECE8-B6E2-497B-8EEB-8274DA79E345][orgmode:gcr:2017-01-21:mara:5CFDECE8-B6E2-497B-8EEB-8274DA79E345]]
+;; [[file:~/src/help/help.org::orgmode:gcr:vela:orgmode:gcr:2017-01-21:mara:2ECB9A12-D860-48B6-B182-3352532B538B][orgmode:gcr:vela:orgmode:gcr:2017-01-21:mara:2ECB9A12-D860-48B6-B182-3352532B538B]]
 (defhydra help/trademark (:color blue :hint nil)
   "
 American _R_egistered Trademark
@@ -3070,12 +3070,12 @@ American _S_ervice Mark
 _J_apanese Industrial Standard
 _K_orean Standard
 "
-  ("R" (lambda () (interactive) (insert "™")))
-  ("U" (lambda () (interactive) (insert "®")))
+  ("R" (lambda () (interactive) (insert "®")))
+  ("U" (lambda () (interactive) (insert "™")))
   ("S" (lambda () (interactive) (insert "℠")))
   ("J" (lambda () (interactive) (insert "〄")))
   ("K" (lambda () (interactive) (insert "㉿"))))
-;; orgmode:gcr:2017-01-21:mara:5CFDECE8-B6E2-497B-8EEB-8274DA79E345 ends here
+;; orgmode:gcr:vela:orgmode:gcr:2017-01-21:mara:2ECB9A12-D860-48B6-B182-3352532B538B ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:2017-01-21:mara:C92235D1-35C7-41EA-B4ED-9727C8531810][orgmode:gcr:2017-01-21:mara:C92235D1-35C7-41EA-B4ED-9727C8531810]]
 (global-set-key (kbd "s-v") #'smex)
