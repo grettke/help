@@ -5890,7 +5890,8 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("]" forward-page :exit nil)
   ("}" help/hydra/transliterate/body)
   ("c" fill-paragraph )
-  ("b" erase-buffer))
+  ("b" erase-buffer)
+  ("B" help/trademark/body))
 #+END_SRC
 
 #+NAME: orgmode:gcr:vela:EFFA5A5F-58A8-476D-A8D4-16F232231EC7
@@ -5916,6 +5917,25 @@ _v_ariable       _u_ser-option
   ("l" apropos-library)
   ("u" apropos-user-option)
   ("e" apropos-value))
+#+END_SRC
+
+Trademark.
+
+#+NAME: orgmode:gcr:2017-01-21:mara:5CFDECE8-B6E2-497B-8EEB-8274DA79E345
+#+BEGIN_SRC emacs-lisp :results output silent
+(defhydra help/trademark (:color blue :hint nil)
+  "
+American _R_egistered Trademark
+American _U_nregistered Trademark
+American _S_ervice Mark
+_J_apanese Industrial Standard
+_K_orean Standard
+"
+  ("R" (lambda () (interactive) (insert "™")))
+  ("U" (lambda () (interactive) (insert "®")))
+  ("S" (lambda () (interactive) (insert "℠")))
+  ("J" (lambda () (interactive) (insert "〄")))
+  ("K" (lambda () (interactive) (insert "㉿"))))
 #+END_SRC
 
 **** Row 2

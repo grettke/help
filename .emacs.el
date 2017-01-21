@@ -3036,7 +3036,8 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("]" forward-page :exit nil)
   ("}" help/hydra/transliterate/body)
   ("c" fill-paragraph )
-  ("b" erase-buffer))
+  ("b" erase-buffer)
+  ("B" help/trademark/body))
 ;; orgmode:gcr:vela:F6C7AAB7-DF69-4EBA-8116-15DC32022D49 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:EFFA5A5F-58A8-476D-A8D4-16F232231EC7][orgmode:gcr:vela:EFFA5A5F-58A8-476D-A8D4-16F232231EC7]]
@@ -3059,6 +3060,22 @@ _v_ariable       _u_ser-option
   ("u" apropos-user-option)
   ("e" apropos-value))
 ;; orgmode:gcr:vela:362686F6-B397-44D5-812F-BE24670F4204 ends here
+
+;; [[file:~/src/help/help.org::orgmode:gcr:2017-01-21:mara:5CFDECE8-B6E2-497B-8EEB-8274DA79E345][orgmode:gcr:2017-01-21:mara:5CFDECE8-B6E2-497B-8EEB-8274DA79E345]]
+(defhydra help/trademark (:color blue :hint nil)
+  "
+American _R_egistered Trademark
+American _U_nregistered Trademark
+American _S_ervice Mark
+_J_apanese Industrial Standard
+_K_orean Standard
+"
+  ("R" (lambda () (interactive) (insert "™")))
+  ("U" (lambda () (interactive) (insert "®")))
+  ("S" (lambda () (interactive) (insert "℠")))
+  ("J" (lambda () (interactive) (insert "〄")))
+  ("K" (lambda () (interactive) (insert "㉿"))))
+;; orgmode:gcr:2017-01-21:mara:5CFDECE8-B6E2-497B-8EEB-8274DA79E345 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:2017-01-21:mara:C92235D1-35C7-41EA-B4ED-9727C8531810][orgmode:gcr:2017-01-21:mara:C92235D1-35C7-41EA-B4ED-9727C8531810]]
 (global-set-key (kbd "s-v") #'smex)
