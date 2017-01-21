@@ -206,7 +206,7 @@ Make sure that =ID= is always unique, portable, and easy to maintain by
 
 #+NAME: orgmode:gcr:vela:885C8386-AC68-4DB7-8D04-537E28ED950B
 #+BEGIN_SRC emacs-lisp :results output silent
-(setq org-id-prefix (concat "orgmode:" (user-real-login-name) ":" (system-name)))
+(setq org-id-prefix (concat "orgmode:" (user-real-login-name) ":" (format-time-string "%Y-%m-%d") ":" (system-name)))
 (setq org-id-method 'uuid)
 #+END_SRC
 

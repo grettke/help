@@ -117,7 +117,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
 ;; orgmode:gcr:vela:751D537A-EE89-4B1D-91E5-99D3A4F8B52E ends here
 
 ;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:885C8386-AC68-4DB7-8D04-537E28ED950B][orgmode:gcr:vela:885C8386-AC68-4DB7-8D04-537E28ED950B]]
-(setq org-id-prefix (concat "orgmode:" (user-real-login-name) ":" (system-name)))
+(setq org-id-prefix (concat "orgmode:" (user-real-login-name) ":" (format-time-string "%Y-%m-%d") ":" (system-name)))
 (setq org-id-method 'uuid)
 ;; orgmode:gcr:vela:885C8386-AC68-4DB7-8D04-537E28ED950B ends here
 

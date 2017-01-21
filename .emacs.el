@@ -3060,12 +3060,12 @@ _v_ariable       _u_ser-option
   ("e" apropos-value))
 ;; orgmode:gcr:vela:362686F6-B397-44D5-812F-BE24670F4204 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:9224105B-2CDB-46F4-AF3F-312B3467C2B8][orgmode:gcr:vela:9224105B-2CDB-46F4-AF3F-312B3467C2B8]]
+;; [[file:~/src/help/help.org::orgmode:gcr:2017-01-21:mara:C92235D1-35C7-41EA-B4ED-9727C8531810][orgmode:gcr:2017-01-21:mara:C92235D1-35C7-41EA-B4ED-9727C8531810]]
 (global-set-key (kbd "s-v") #'smex)
 (global-set-key (kbd "C-x C-c") #'help/safb-save-buffers-kill-terminal)
 (global-set-key (kbd "s-x") #'ido-find-file)
 (global-set-key (kbd "s-c") #'ido-switch-buffer)
-;; orgmode:gcr:vela:9224105B-2CDB-46F4-AF3F-312B3467C2B8 ends here
+;; orgmode:gcr:2017-01-21:mara:C92235D1-35C7-41EA-B4ED-9727C8531810 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:A45F49E2-E330-463B-82C6-907F138E8F2A][orgmode:gcr:vela:A45F49E2-E330-463B-82C6-907F138E8F2A]]
 (define-prefix-command 'help/vc-map)
