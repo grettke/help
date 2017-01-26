@@ -3682,6 +3682,13 @@ Easily manipulate lists and headlines staying close to home.
       (message "Nothing to insert")
     (insert "_{" arg "} ")))
 (define-key org-mode-map (kbd "s-s") #'help/org-insert-subscript)
+(defun help/org-insert-superscript (arg)
+  "Maybe insert a super with the postfix space."
+  (interactive "MSuperscript: ")
+  (if (s-blank? arg)
+      (message "Nothing to insert")
+    (insert "^{" arg "} ")))
+(define-key org-mode-map (kbd "s-S") #'help/org-insert-superscript)
 #+END_SRC
 
 ***** Row 2

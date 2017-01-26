@@ -2074,6 +2074,13 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
       (message "Nothing to insert")
     (insert "_{" arg "} ")))
 (define-key org-mode-map (kbd "s-s") #'help/org-insert-subscript)
+(defun help/org-insert-superscript (arg)
+  "Maybe insert a super with the postfix space."
+  (interactive "MSuperscript: ")
+  (if (s-blank? arg)
+      (message "Nothing to insert")
+    (insert "^{" arg "} ")))
+(define-key org-mode-map (kbd "s-S") #'help/org-insert-superscript)
 ;; orgmode:gcr:vela:933B1A3A-A77A-4616-B9D8-9DACED018CC2 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:2F8DDC77-27C4-4E81-8913-28243C4A44B6][orgmode:gcr:vela:2F8DDC77-27C4-4E81-8913-28243C4A44B6]]
