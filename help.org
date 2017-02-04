@@ -3042,6 +3042,7 @@ source-blocks outside of that place.
          "TODO(t!)"
          "GO(g@)"
          "WAIT(w@)"
+         "BLOCKED(@b)"
          "REVIEW(r!)"
          "|"
          "DONE(d@)"
