@@ -1792,7 +1792,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
          "TODO(t!)"
          "GO(g@)"
          "WAIT(w@)"
-         "BLOCKED(@b)"
+         "BLOCKED(b@)"
          "REVIEW(r!)"
          "|"
          "DONE(d@)"
