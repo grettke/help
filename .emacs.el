@@ -454,7 +454,7 @@ Attribution Oleh Krehel (abo-abo): URL `http://oremacs.com/2015/01/26/occur-dwim
 (defun sacha/unfill-paragraph (&optional region)
   "Takes a multi-line paragraph and makes it into a single line of text.
 
-ATTRIBUTION: SRC https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfill-paragraph"
+Attribuation: URL https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unfill-paragraph"
   (interactive (progn
                  (barf-if-buffer-read-only)
                  (list t)))
@@ -645,7 +645,7 @@ Attribution: URL
   functions, running the code you want to test, removing the instrumentation,
   and presenting the results.
 
-  Attribution: Adam Porter <adam@alphapapa.net>"
+Attribution: Adam Porter <adam@alphapapa.net>"
   `(let (output)
      (dolist (p '("org-"))  ; symbol prefixes to instrument
        (elp-instrument-package p))
@@ -682,7 +682,7 @@ Attribution: URL
 (defun help/move-file (new-location)
   "Write this file to NEW-LOCATION, and delete the old one.
 
-Attribution: URL`http://zck.me/emacs-move-file'"
+Attribution: URL `http://zck.me/emacs-move-file'"
   (interactive (list (if buffer-file-name
                          (read-file-name "Move file to: ")
                        (read-file-name "Move file to: "
@@ -1100,7 +1100,7 @@ configuration when invoked to evaluate a line."
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:26EA1235-E9EC-4DC0-9F7D-B3D14E1A27B7][orgmode:gcr:vela:26EA1235-E9EC-4DC0-9F7D-B3D14E1A27B7]]
 (defun help/dired-copy-filename ()
   "Push the path and filename of the file under the point to the kill ring.
-  Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2002-10/msg00556.html'"
+Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2002-10/msg00556.html'"
   (interactive)
   (message "Added %s to kill ring" (kill-new (dired-get-filename))))
 (defun help/dired-copy-path ()
@@ -1166,7 +1166,7 @@ configuration when invoked to evaluate a line."
 (defun help/try-to-add-imenu ()
   "Add Imenu to modes that have `font-lock-mode' activated.
 
-Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
+Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (condition-case nil (imenu-add-to-menubar "Imenu") (error nil)))
 (add-hook 'font-lock-mode-hook #'help/try-to-add-imenu)
 ;; orgmode:gcr:vela:D722C567-86BA-45AD-91AB-2536696312C8 ends here
@@ -1527,7 +1527,7 @@ Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
  (defun help/ido-find-file ()
    "Find file as root if necessary.
 
-Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
+Attribution: URL `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
    (unless (and buffer-file-name
               (file-writable-p buffer-file-name))
      (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
@@ -1857,6 +1857,39 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:5969E83F-EC85-4F36-81F9-0F74BD197075][orgmode:gcr:vela:5969E83F-EC85-4F36-81F9-0F74BD197075]]
 (setq org-log-refile 'note)
 ;; orgmode:gcr:vela:5969E83F-EC85-4F36-81F9-0F74BD197075 ends here
+
+;; [[file:~/src/help/help.org::orgmode:gcr:2017-02-05:mara:6F6B518A-9605-4E4D-8A9C-851A0A51E4E7][orgmode:gcr:2017-02-05:mara:6F6B518A-9605-4E4D-8A9C-851A0A51E4E7]]
+(defun org-read-entry-property-name ()
+  "Read a property name from the current entry."
+  (let ((completion-ignore-case t)
+        (default-prop (or (and (org-at-property-p)
+                            (org-match-string-no-properties 2))
+                         org-last-set-property)))
+    (org-completing-read
+     (format "Property [%s]: " (if default-prop default-prop ""))
+     (org-entry-properties nil nil)
+     nil nil nil nil default-prop)))
+
+(defun my-org-region-to-property (&optional property)
+  "Copies the region as value to an Org-mode property"
+  (interactive)
+  ;; if no region is defined, do nothing
+  (if (use-region-p)
+      ;; if a region string is found, ask for a property and set property to
+      ;; the string in the region
+      (let ((val (replace-regexp-in-string
+                  "\\`[ \t\n]*" ""
+                  (replace-regexp-in-string "[ \t\n]*\\'" ""
+                                            (substring (buffer-string)
+                                                       (- (region-beginning) 1)
+                                                       (region-end))))
+                 )
+            ;; if none was stated by user, read property from user
+            (prop (or property
+                     (org-read-entry-property-name))))
+        ;; set property
+        (org-set-property prop val))))
+;; orgmode:gcr:2017-02-05:mara:6F6B518A-9605-4E4D-8A9C-851A0A51E4E7 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:548D2D49-98E0-456B-91BC-37D0C0BC3557][orgmode:gcr:vela:548D2D49-98E0-456B-91BC-37D0C0BC3557]]
 (setq org-startup-with-inline-images (display-graphic-p))
@@ -2394,7 +2427,7 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 (add-hook 'R-mode-hook #'help/R-mode-hook-fn)
 
 (defun help/turn-on-r-hide-show ()
-  "Attribution: SRC https://github.com/mlf176f2/EmacsMate/blob/master/EmacsMate-ess.org"
+"Attribution: URL https://github.com/mlf176f2/EmacsMate/blob/master/EmacsMate-ess.org"
   (when (string= "S" ess-language)
     (set (make-local-variable 'hs-special-modes-alist) #'((ess-mode "{" "}" "#" nil nil)))
     (hs-minor-mode 1)

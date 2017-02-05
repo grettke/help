@@ -3251,6 +3251,9 @@ Because <09% of the time I am moving headings into a new file
   #+END_SRC
 
 **** Properties
+:PROPERTIES:
+:ID:       orgmode:gcr:2017-02-05:mara:5656D65E-8EC9-4794-801B-997E8F9A8018
+:END:
 
 Select a region, kill it, maybe choose a property under the current headline
 and set it's value to the killed text.
