@@ -1024,7 +1024,7 @@ Attribution: URL
   functions, running the code you want to test, removing the instrumentation,
   and presenting the results.
 
-  Attribution: Adam Porter <adam@alphapapa.net>"
+Attribution: Adam Porter <adam@alphapapa.net>"
   `(let (output)
      (dolist (p '("org-"))  ; symbol prefixes to instrument
        (elp-instrument-package p))
