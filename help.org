@@ -1900,7 +1900,7 @@ Major productivity hack
 (defun help/try-to-add-imenu ()
   "Add Imenu to modes that have `font-lock-mode' activated.
 
-Attribution: SRC http://www.emacswiki.org/emacs/ImenuMode"
+Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (condition-case nil (imenu-add-to-menubar "Imenu") (error nil)))
 (add-hook 'font-lock-mode-hook #'help/try-to-add-imenu)
 #+END_SRC
@@ -2529,7 +2529,7 @@ Configure Sudo with Ido.
  (defun help/ido-find-file ()
    "Find file as root if necessary.
 
-Attribution: SRC `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
+Attribution: URL `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
    (unless (and buffer-file-name
               (file-writable-p buffer-file-name))
      (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
@@ -4300,7 +4300,7 @@ R mode hook.
 (add-hook 'R-mode-hook #'help/R-mode-hook-fn)
 
 (defun help/turn-on-r-hide-show ()
-  "Attribution: SRC https://github.com/mlf176f2/EmacsMate/blob/master/EmacsMate-ess.org"
+"Attribution: URL https://github.com/mlf176f2/EmacsMate/blob/master/EmacsMate-ess.org"
   (when (string= "S" ess-language)
     (set (make-local-variable 'hs-special-modes-alist) #'((ess-mode "{" "}" "#" nil nil)))
     (hs-minor-mode 1)
