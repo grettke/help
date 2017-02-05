@@ -3252,6 +3252,9 @@ Because <09% of the time I am moving headings into a new file
 
 **** Properties
 
+Select a region, kill it, maybe choose a property under the current headline
+and set it's value to the killed text.
+
 #+NAME: orgmode:gcr:2017-02-05:mara:6F6B518A-9605-4E4D-8A9C-851A0A51E4E7
 #+BEGIN_SRC emacs-lisp :results output silent
 (defun org-read-entry-property-name ()
