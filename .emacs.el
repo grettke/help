@@ -2940,9 +2940,9 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 ;; orgmode:gcr:vela:2063ECD7-C23B-4CDC-96E0-786361DFAA9C ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:2017-02-05:mara:72643BF5-0810-4188-A39B-302BA06A6182][orgmode:gcr:2017-02-05:mara:72643BF5-0810-4188-A39B-302BA06A6182]]
+;; Attribution: URL `https://www.reddit.com/r/emacs/comments/5rnpsm/nice_hydra_to_set_frame_transparency/'
 (defun my--set-transparency (inc)
-  "Increase or decrease the selected frame transparency.
-Attribution: URL `https://www.reddit.com/r/emacs/comments/5rnpsm/nice_hydra_to_set_frame_transparency/'"
+  "Increase or decrease the selected frame transparency."
   (let* ((alpha (frame-parameter (selected-frame) 'alpha))
          (next-alpha (cond ((not alpha) 100)
                            ((> (- alpha inc) 100) 100)
