@@ -3280,6 +3280,8 @@ Because <09% of the time I am moving headings into a new file
 (setq org-log-refile 'note)
   #+END_SRC
 
+**** Properties
+
 **** Unclassified
 :PROPERTIES:
 :ID:       orgmode:gcr:vela:825C088D-CAA0-43D5-A005-00EF973A6D4C
