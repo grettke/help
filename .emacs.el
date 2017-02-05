@@ -2939,6 +2939,30 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 (tool-bar-mode -1)
 ;; orgmode:gcr:vela:2063ECD7-C23B-4CDC-96E0-786361DFAA9C ends here
 
+;; [[file:~/src/help/help.org::orgmode:gcr:2017-02-05:mara:72643BF5-0810-4188-A39B-302BA06A6182][orgmode:gcr:2017-02-05:mara:72643BF5-0810-4188-A39B-302BA06A6182]]
+(defun my--set-transparency (inc)
+  "Increase or decrease the selected frame transparency.
+Attribution: URL `https://www.reddit.com/r/emacs/comments/5rnpsm/nice_hydra_to_set_frame_transparency/'"
+  (let* ((alpha (frame-parameter (selected-frame) 'alpha))
+         (next-alpha (cond ((not alpha) 100)
+                           ((> (- alpha inc) 100) 100)
+                           ((< (- alpha inc) 0) 0)
+                           (t (- alpha inc)))))
+    (set-frame-parameter (selected-frame) 'alpha next-alpha)))
+
+(defhydra hydra-transparency (:columns 2)
+  "
+ALPHA : [ %(frame-parameter nil 'alpha) ].
+Attribution: URL `https://www.reddit.com/r/emacs/comments/5rnpsm/nice_hydra_to_set_frame_transparency/'
+"
+  ("j" (lambda () (interactive) (my--set-transparency +1)) "+ more")
+  ("k" (lambda () (interactive) (my--set-transparency -1)) "- less")
+  ("J" (lambda () (interactive) (my--set-transparency +10)) "++ more")
+  ("K" (lambda () (interactive) (my--set-transparency -10)) "-- less")
+  ("=" (lambda (value) (interactive "nTransparency Value 0 - 100 opaque:")
+         (set-frame-parameter (selected-frame) 'alpha value)) "Set to ?" :color blue))
+;; orgmode:gcr:2017-02-05:mara:72643BF5-0810-4188-A39B-302BA06A6182 ends here
+
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:9E122111-1074-42D5-A57D-855E3A888C8E][orgmode:gcr:vela:9E122111-1074-42D5-A57D-855E3A888C8E]]
 (setq make-pointer-invisible t)
 ;; orgmode:gcr:vela:9E122111-1074-42D5-A57D-855E3A888C8E ends here
@@ -3023,7 +3047,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
                                               :hint nil)
   "
 _O_ base64-encode-region _P_ base64-decode-region _|_ split-window-horizontally _-_ split-window-vertically
-_1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_ flyck/buf _&_ flyck/lst _8_ grade-level _9_ reading-ease _0_ writegood _q_ apropos _w_ widen _e_ flycheck _=_ reposition-window_t_ unicode-troll-stopper-mode _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page _}_ transliterate
+_1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_ flyck/buf _&_ flyck/lst _8_ grade-level _9_ reading-ease _0_ writegood _q_ apropos _w_ widen _e_ flycheck _=_ reposition-window _t_ unicode-troll-stopper-mode _y_ transparency _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page _}_ transliterate
 _Q_ ✓ _W_ ✗ _E_ ☐ _R_ ☑ _T_ ☒_
 _a_ ag  _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point _f_ desc-fun _D_ detangle _j_ obtj2o _k_ scrollDown _K_ nextLogLine  _;_ toggle-lax-whitespace
 _l_ visual-line-mode _L_ aggressive-indent-mode
@@ -3063,6 +3087,7 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("q" hydra-apropos/body)
   ("w" widen)
   ("t" unicode-troll-stopper-mode)
+  ("y" hydra-transparency/body)
   ("j" org-babel-tangle-jump-to-org)
   ("u" ucs-insert)
   ("i" scroll-down-command :exit nil)
