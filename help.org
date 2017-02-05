@@ -1061,7 +1061,7 @@ Attribution: URL
 (defun help/move-file (new-location)
   "Write this file to NEW-LOCATION, and delete the old one.
 
-Attribution: URL`http://zck.me/emacs-move-file'"
+Attribution: URL `http://zck.me/emacs-move-file'"
   (interactive (list (if buffer-file-name
                          (read-file-name "Move file to: ")
                        (read-file-name "Move file to: "
@@ -1125,7 +1125,7 @@ Attribution: `http://stackoverflow.com/a/25212377'"
             (prop (or property
                      (org-read-entry-property-name))))
         ;; set property
-        (org-set-property prop val))))    
+        (org-set-property prop val))))
 #+END_SRC
 
 ** Typography
