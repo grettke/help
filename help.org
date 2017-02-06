@@ -5323,7 +5323,9 @@ Hide the pointer when typing.
    :ID:       orgmode:gcr:vela:99337D9E-DBC9-4673-B814-EBC94C044E3E
    :END:
 
-Provide VC file status indicators.
+Selectively provide VC file status indicators.
+
+Sometimes it is worth interrupting the flow.
 
 #+NAME: orgmode:gcr:vela:668C63F3-C52E-4BDF-929D-E2BF2E985304
 #+BEGIN_SRC emacs-lisp :results output silent
