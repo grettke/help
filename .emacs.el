@@ -1428,7 +1428,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
 ;; orgmode:gcr:vela:B5DDBCA8-42F2-49DF-9E7F-71E776A99946 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:4B9FE2A1-6A5F-42EF-AEEA-222B72170B64][orgmode:gcr:vela:4B9FE2A1-6A5F-42EF-AEEA-222B72170B64]]
-(setq-default case-fold-search t)
+(setq-default case-fold-search nil)
 ;; orgmode:gcr:vela:4B9FE2A1-6A5F-42EF-AEEA-222B72170B64 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:61ACBD2A-D9CB-4C3E-B872-92C293B8FB64][orgmode:gcr:vela:61ACBD2A-D9CB-4C3E-B872-92C293B8FB64]]

@@ -2350,7 +2350,7 @@ me.
 
 #+NAME: orgmode:gcr:vela:4B9FE2A1-6A5F-42EF-AEEA-222B72170B64
 #+BEGIN_SRC emacs-lisp :results output silent
-(setq-default case-fold-search t)
+(setq-default case-fold-search nil)
 #+END_SRC
 
 Other than ignoring case, search precisely for what was input.
