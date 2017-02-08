@@ -4875,6 +4875,16 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 (setq org-ascii-global-margin 0)
 #+END_SRC
 
+Show non-ascii characters
+
+#+NAME: orgmode:gcr:2017-02-05:mara:D9FC3B3A-FAC5-4DC6-A582-9583974C4A8C
+#+BEGIN_SRC emacs-lisp
+(defun occur-non-ascii ()
+  "Find any non-ascii characters in the current buffer."
+  (interactive)
+  (occur "[^[:ascii:]]"))
+#+END_SRC
+
 *** Beamer
   :PROPERTIES:
   :ID:       orgmode:gcr:vela:6B86302E-D3EC-413A-A844-9ACCAA23A056
