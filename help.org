@@ -2332,12 +2332,14 @@ back to work, you can just re-run stuff as you need it.
    :ID:       orgmode:gcr:vela:960E2DE0-3F5A-40AB-A9BF-FF08A410EAB7
    :END:
 
+*** Internal
+
 It is *important* to understand how Emacs performs searching.
 
 Copied and pasted Emacs literature from
 - src_emacs-lisp{(info "(info) Searching Case")}
 - [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Search-Case.html][Searching and Case]]
-follows…  
+follows…
 
 #+BEGIN_EXAMPLE
 Searches in Emacs normally ignore the case of the text they are searching
@@ -2390,6 +2392,8 @@ Other than ignoring case, search precisely for what was input.
 #+BEGIN_SRC emacs-lisp :results output silent
 (setq search-default-regexp-mode nil)
 #+END_SRC
+
+*** External
 
 Easily search the filesystem using =ag=.
 
