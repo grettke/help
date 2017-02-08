@@ -2337,7 +2337,6 @@ It is *important* to understand how Emacs performs searching.
 Copied and pasted Emacs literature from
 - src_emacs-lisp{(info "(info) Searching Case")}
 - [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Search-Case.html][Searching and Case]]
-
 follows…  
 
 #+BEGIN_EXAMPLE
