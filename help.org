@@ -2365,33 +2365,16 @@ the next one, but it does override the effect of adding or removing an
 upper-case letter in the current search.
 #+END_EXAMPLE
 
-   When searching match on the exact number of white-space characters entered.
-For human-use it can be a nice feature to easily search non multiple
-white-space chars in a row. But for programmatic use it is unpredictable.
-Perhaps some code should make both easier for me.
+So let Emacs search how it was built to search instead of attempting to make
+it case-sensitive everywhere. Emacs already makes it easy to perform
+case-sensitive searches when you want. It is simple and predictable.
 
-#+NAME: orgmode:gcr:vela:B5DDBCA8-42F2-49DF-9E7F-71E776A99946
-#+BEGIN_SRC emacs-lisp :results output silent
-(setq isearch-lax-whitespace nil)
-(setq isearch-regexp-lax-whitespace nil)
-#+END_SRC
+When you don't want to do that interactively type M-c in the search input area
+to toggle case sensitivity.
 
-When searching match on case. For human-use it can be a nice feature to easily
-search /ignoring/ case. But for programmatic use it is unpredictable.
-Make searches case-insensitive. Perhaps some code should make both easier for
-me.
-
-#+NAME: orgmode:gcr:vela:4B9FE2A1-6A5F-42EF-AEEA-222B72170B64
-#+BEGIN_SRC emacs-lisp :results output silent
-(setq-default case-fold-search nil)
-#+END_SRC
-
-Other than ignoring case, search precisely for what was input.
-
-#+NAME: orgmode:gcr:vela:61ACBD2A-D9CB-4C3E-B872-92C293B8FB64
-#+BEGIN_SRC emacs-lisp :results output silent
-(setq search-default-regexp-mode nil)
-#+END_SRC
+When you don't want to do that non-interactively then search for that command
+or activities toggling variable ~M-x apropos-variable RET case-fold-search RET~
+and bind it during the search.
 
 *** External
 
