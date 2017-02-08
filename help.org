@@ -2335,6 +2335,7 @@ back to work, you can just re-run stuff as you need it.
 When searching match on the exact number of white-space characters entered.
 For human-use it can be a nice feature to easily search non multiple
 white-space chars in a row. But for programmatic use it is unpredictable.
+Perhaps some code should make both easier for me.
 
 #+NAME: orgmode:gcr:vela:B5DDBCA8-42F2-49DF-9E7F-71E776A99946
 #+BEGIN_SRC emacs-lisp :results output silent
@@ -2344,7 +2345,8 @@ white-space chars in a row. But for programmatic use it is unpredictable.
 
 When searching match on case. For human-use it can be a nice feature to easily
 search /ignoring/ case. But for programmatic use it is unpredictable.
-Make searches case-insensitive.
+Make searches case-insensitive. Perhaps some code should make both easier for
+me.
 
 #+NAME: orgmode:gcr:vela:4B9FE2A1-6A5F-42EF-AEEA-222B72170B64
 #+BEGIN_SRC emacs-lisp :results output silent
