@@ -4878,9 +4878,10 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 Show non-ascii characters
 
 #+NAME: orgmode:gcr:2017-02-05:mara:D9FC3B3A-FAC5-4DC6-A582-9583974C4A8C
-#+BEGIN_SRC emacs-lisp
-(defun occur-non-ascii ()
-  "Find any non-ascii characters in the current buffer."
+#+BEGIN_SRC emacs-lisp :results output silent
+(defun help/occur-non-ascii ()
+  "Find any non-ascii characters in the current buffer.
+Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
   (interactive)
   (occur "[^[:ascii:]]"))
 #+END_SRC

@@ -2737,6 +2737,14 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 (setq org-ascii-global-margin 0)
 ;; orgmode:gcr:vela:B7F010D3-4A47-4E4A-9E00-D54E4D0F9D63 ends here
 
+;; [[file:~/src/help/help.org::orgmode:gcr:2017-02-05:mara:D9FC3B3A-FAC5-4DC6-A582-9583974C4A8C][orgmode:gcr:2017-02-05:mara:D9FC3B3A-FAC5-4DC6-A582-9583974C4A8C]]
+(defun help/occur-non-ascii ()
+  "Find any non-ascii characters in the current buffer.
+Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
+  (interactive)
+  (occur "[^[:ascii:]]"))
+;; orgmode:gcr:2017-02-05:mara:D9FC3B3A-FAC5-4DC6-A582-9583974C4A8C ends here
+
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:B77E265B-EE1A-469D-BEFB-51360B7AB45E][orgmode:gcr:vela:B77E265B-EE1A-469D-BEFB-51360B7AB45E]]
 (use-package ox-beamer)
 ;; orgmode:gcr:vela:B77E265B-EE1A-469D-BEFB-51360B7AB45E ends here
