@@ -2333,6 +2333,9 @@ back to work, you can just re-run stuff as you need it.
    :END:
 
 *** Internal
+:PROPERTIES:
+:ID:       orgmode:gcr:2017-02-08:mara:D99332B4-D6CD-4C71-9F8B-CD78E843B0A0
+:END:
 
 It is *important* to understand how Emacs performs searching.
 
@@ -2377,6 +2380,9 @@ or activities toggling variable ~M-x apropos-variable RET case-fold-search RET~
 and bind it during the search.
 
 *** External
+:PROPERTIES:
+:ID:       orgmode:gcr:2017-02-08:mara:0DBA44CA-8A19-4D51-8C2A-A8760534D80F
+:END:
 
 Easily search the filesystem using =ag=.
 
