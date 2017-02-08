@@ -2356,8 +2356,6 @@ Typing M-c within an incremental search toggles the case sensitivity of that
 search. The effect does not extend beyond the current incremental search to
 the next one, but it does override the effect of adding or removing an
 upper-case letter in the current search.
-
-
 #+END_EXAMPLE
 
    When searching match on the exact number of white-space characters entered.
