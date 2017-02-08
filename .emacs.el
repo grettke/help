@@ -3044,7 +3044,7 @@ ALPHA : [ %(frame-parameter nil 'alpha) ].'
 _O_ base64-encode-region _P_ base64-decode-region _|_ split-window-horizontally _-_ split-window-vertically
 _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_ flyck/buf _&_ flyck/lst _8_ grade-level _9_ reading-ease _0_ writegood _w_ widen _e_ flycheck _=_ reposition-window _t_ unicode-troll-stopper-mode _y_ transparency _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page _}_ transliterate
 _Q_ ✓ _W_ ✗ _E_ ☐ _R_ ☑ _T_ ☒_
-_a_ ag  _A_ apropos _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point _f_ desc-fun _D_ detangle _j_ obtj2o _k_ scrollDown _K_ nextLogLine  _;_ toggle-lax-whitespace
+_a_ ag  _A_ apropo'ish _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point _f_ desc-fun _D_ detangle _j_ obtj2o _k_ scrollDown _K_ nextLogLine  _;_ toggle-lax-whitespace
 _l_ visual-line-mode _L_ aggressive-indent-mode
 _x_ delete-indentation _c_ fill-paragraph _v_ desc-var _V_ view-mode _b_ erase-buffer _n_ normal _m_ imenu-list _M_ Marked 2 Viewer
 _<_ cmtIn _>_ cmtOut _?_ snp"
@@ -3070,7 +3070,7 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("9" writegood-reading-ease)
   ("0" writegood-mode)
   ("a" ag)
-  ("A" hydra-apropos/body)
+  ("A" hydra-apropos-ish/body)
   ("s" help/toggle-mac-right-option-modifier)
   ("h" hack-local-variable)
   ("l" visual-line-mode)
@@ -3115,20 +3115,24 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
 ;; orgmode:gcr:vela:EFFA5A5F-58A8-476D-A8D4-16F232231EC7 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:362686F6-B397-44D5-812F-BE24670F4204][orgmode:gcr:vela:362686F6-B397-44D5-812F-BE24670F4204]]
-(defhydra hydra-apropos (:color blue
-                                :hint nil)
+(defhydra hydra-apropos-ish (:color blue
+                                    :hint nil)
   "
 _a_propos        _c_ommand
 _d_ocumentation  _l_ibrary
 _v_ariable       _u_ser-option
-^ ^          valu_e_"
+valu_e_
+e_m_acs          elis_p_
+"
   ("a" apropos)
   ("d" apropos-documentation)
   ("v" apropos-variable)
   ("c" apropos-command)
   ("l" apropos-library)
   ("u" apropos-user-option)
-  ("e" apropos-value))
+  ("e" apropos-value)
+  ("m" emacs-index-search)
+  ("p" elisp-index-search))
 ;; orgmode:gcr:vela:362686F6-B397-44D5-812F-BE24670F4204 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:orgmode:gcr:2017-01-21:mara:2ECB9A12-D860-48B6-B182-3352532B538B][orgmode:gcr:vela:orgmode:gcr:2017-01-21:mara:2ECB9A12-D860-48B6-B182-3352532B538B]]
