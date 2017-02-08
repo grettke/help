@@ -2342,6 +2342,8 @@ white-space chars in a row. But for programmatic use it is unpredictable.
 (setq isearch-regexp-lax-whitespace nil)
 #+END_SRC
 
+When searching match on case. For human-use it can be a nice feature to easily
+search /ignoring/ case. But for programmatic use it is unpredictable.
 Make searches case-insensitive.
 
 #+NAME: orgmode:gcr:vela:4B9FE2A1-6A5F-42EF-AEEA-222B72170B64
