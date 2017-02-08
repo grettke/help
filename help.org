@@ -2333,8 +2333,8 @@ back to work, you can just re-run stuff as you need it.
    :END:
 
 When searching match on the exact number of white-space characters entered.
-These options can make it easier than writing the regex to do the same thing.
-For interactive use that is great. For automated use it is unpredictable.
+For human-use it can be a nice feature to easily search non multiple
+white-space chars in a row. But for programmatic use it is unpredictable.
 
 #+NAME: orgmode:gcr:vela:B5DDBCA8-42F2-49DF-9E7F-71E776A99946
 #+BEGIN_SRC emacs-lisp :results output silent
