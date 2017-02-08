@@ -2332,7 +2332,13 @@ back to work, you can just re-run stuff as you need it.
    :ID:       orgmode:gcr:vela:960E2DE0-3F5A-40AB-A9BF-FF08A410EAB7
    :END:
 
-Emacs literature on [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Search-Case.html][Searching and Case]] (or see) explains that:
+It is *important* to understand how Emacs performs searching.
+
+Copied and pasted Emacs literature from
+- src_emacs-lisp{(info "(info) Searching Case")}
+- [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Search-Case.html][Searching and Case]]
+
+follows…  
 
 #+BEGIN_EXAMPLE
 Searches in Emacs normally ignore the case of the text they are searching
