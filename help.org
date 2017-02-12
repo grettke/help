@@ -1226,7 +1226,10 @@ Take the cursor with scroll activities.
 (setq scroll-preserve-screen-position t)
 #+END_SRC
 
-Scroll text line-by-line as the cursor scrolls off of the screen
+Scroll text line-by-line as the cursor scrolls off of the screen. Nice to keep
+the document from jumping around. Not nice for scrolling when you want to
+quickly see the next ten or twenty lines. But ~recenter-top-bottom~ give you
+that so you can have both features easily.
 
 #+NAME: orgmode:gcr:vela:AA25E45E-3FF2-483A-9361-FD44DE6E1C18
 #+BEGIN_SRC emacs-lisp :results output silent
