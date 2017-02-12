@@ -1532,8 +1532,8 @@ Always keep buffers in-sync with changes in-file.
 (diminish 'auto-revert-mode)
 #+END_SRC
 
-Save all file befores before common activities. Functions are easier to
-use than advice.
+Save all files before common activities. Functions are easier to use than
+advice.
 
 #+NAME: orgmode:gcr:vela:5A0C3F05-0C41-4E50-944E-0ACC4C2F4A15
 #+BEGIN_SRC emacs-lisp :results output silent
