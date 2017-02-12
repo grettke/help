@@ -1603,6 +1603,10 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 (diminish 'visual-line-mode)
 ;; orgmode:gcr:vela:EDD8ABBB-B76A-4B95-9367-211A765348CD ends here
 
+;; [[file:~/src/help/help.org::orgmode:gcr:2017-02-11:mara:E94F5A5F-72C0-4E05-9A2E-687951D63E7E][orgmode:gcr:2017-02-11:mara:E94F5A5F-72C0-4E05-9A2E-687951D63E7E]]
+(setq visual-line-fringe-indicators '(nil right-curly-arrow))
+;; orgmode:gcr:2017-02-11:mara:E94F5A5F-72C0-4E05-9A2E-687951D63E7E ends here
+
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:562D0238-DF23-44EB-9512-62EA99D6B6C1][orgmode:gcr:vela:562D0238-DF23-44EB-9512-62EA99D6B6C1]]
 (setq-default comment-start "> ")
 ;; orgmode:gcr:vela:562D0238-DF23-44EB-9512-62EA99D6B6C1 ends here

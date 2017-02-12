@@ -2679,6 +2679,14 @@ Make control characters easily visible.
 (diminish 'visual-line-mode)
 #+END_SRC
 
+Remind me that VLM is turned on so I pay attention to the wrap. There is a
+Hydra that makes it easy to remember to turn it off.
+
+#+NAME: orgmode:gcr:2017-02-11:mara:E94F5A5F-72C0-4E05-9A2E-687951D63E7E
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq visual-line-fringe-indicators '(nil right-curly-arrow))
+#+END_SRC
+
 * Hacking
   :PROPERTIES:
   :ID:       orgmode:gcr:vela:B7CE60F5-5510-4358-8DD5-D42D9A2F4D9B
