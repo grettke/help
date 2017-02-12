@@ -6089,8 +6089,14 @@ BibTeX stuff.
 #+BEGIN_SRC emacs-lisp :results output silent
 (defhydra help/bibtex (:color blue :hint nil)
   "
+_c_ Clean Entry _C_ Clean Entry & Create New Reference
+_f_ Reindent Field _F_ Reindent Buffer/Region
 _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 "
+  ("c" bibtex-clean-entry)
+  ("C" (lambda () (interactive) (bibtex-clean-entry 't)))
+  ("f" #'bibtex-fill-entry)
+  ("F" #'bibtex-reformat)
   ;; Disable them
   ("m" (lambda () (interactive)
          (progn (aggressive-indent-mode 'toggle)

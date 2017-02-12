@@ -3162,8 +3162,14 @@ _q_ ✓ _w_ ✗ _e_ ☐ _r_ ☑ _t_ ☒_
 ;; [[file:~/src/help/help.org::orgmode:gcr:2017-02-11:mara:EECC4207-5A0D-426A-89CF-86494E6B8667][orgmode:gcr:2017-02-11:mara:EECC4207-5A0D-426A-89CF-86494E6B8667]]
 (defhydra help/bibtex (:color blue :hint nil)
   "
+_c_ Clean Entry _C_ Clean Entry & Create New Reference
+_f_ Reindent Field _F_ Reindent Buffer/Region
 _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 "
+  ("c" bibtex-clean-entry)
+  ("C" (lambda () (interactive) (bibtex-clean-entry 't)))
+  ("f" #'bibtex-fill-entry)
+  ("F" #'bibtex-reformat)
   ;; Disable them
   ("m" (lambda () (interactive)
          (progn (aggressive-indent-mode 'toggle)
