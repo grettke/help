@@ -3043,26 +3043,22 @@ ALPHA : [ %(frame-parameter nil 'alpha) ].'
   "
 _O_ base64-encode-region _P_ base64-decode-region _|_ split-window-horizontally _-_ split-window-vertically
 _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_ flyck/buf _&_ flyck/lst _8_ grade-level _9_ reading-ease _0_ writegood _w_ widen _e_ flycheck _=_ reposition-window _t_ unicode-troll-stopper-mode _y_ transparency _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page _}_ transliterate
-_Q_ ✓ _W_ ✗ _E_ ☐ _R_ ☑ _T_ ☒_
+_T_ trademarks
 _a_ ag  _A_ apropo'ish _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point _f_ desc-fun _D_ detangle _j_ obtj2o _k_ scrollDown _K_ nextLogLine  _;_ toggle-lax-whitespace
 _l_ visual-line-mode _L_ aggressive-indent-mode
-_x_ delete-indentation _c_ fill-paragraph _v_ desc-var _V_ view-mode _b_ erase-buffer _n_ normal _m_ imenu-list _M_ Marked 2 Viewer
+_x_ delete-indentation _c_ fill-paragraph _v_ desc-var _V_ view-mode _b_ erase-buffer _B_ibtex _n_ normal _m_ imenu-list _M_ checks
 _<_ cmtIn _>_ cmtOut _?_ snp"
   ("|" split-window-horizontally)
   ("-" split-window-vertically)
   ("1" help/font-size-reset :exit nil)
-  ("Q" (lambda () (interactive) (insert "✓")) :exit nil)
   ("2" help/text-scale-decrease :exit nil)
-  ("W" (lambda () (interactive) (insert "✗")) :exit nil)
   ("3" help/text-scale-increase :exit nil)
   ("e" help/safb-flycheck-list-errors)
-  ("E" (lambda () (interactive) (insert "☐")) :exit nil)
   ("4" help/insert-ellipsis)
   ("r" help/rename-current-buffer-file)
-  ("R" (lambda () (interactive) (insert "☑")) :exit nil)
+  ("T" help/trademark/body)
   ("=" reposition-window)
   ("5" help/uuid)
-  ("T" (lambda () (interactive) (insert "☒")) :exit nil)
   ("6" set-buffer-file-coding-system)
   ("7" flycheck-buffer)
   ("&" flycheck-list-errors)
@@ -3093,7 +3089,7 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("K" next-logical-line :exit nil)
   ("n" help/safb-normal-mode)
   ("m" imenu-list-minor-mode)
-  ("M" help/preview-buffer-file-in-marked-2)
+  ("M" help/checks/body)
   ("<" help/chs)
   (">" help/che)
   ("?" help/insert-noticeable-snip-comment-line)
@@ -3107,7 +3103,7 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("}" help/hydra/transliterate/body)
   ("c" fill-paragraph )
   ("b" erase-buffer)
-  ("B" help/trademark/body))
+  ("B" help/bibtex/body))
 ;; orgmode:gcr:vela:F6C7AAB7-DF69-4EBA-8116-15DC32022D49 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:EFFA5A5F-58A8-476D-A8D4-16F232231EC7][orgmode:gcr:vela:EFFA5A5F-58A8-476D-A8D4-16F232231EC7]]
@@ -3150,6 +3146,33 @@ _K_orean Standard
   ("J" (lambda () (interactive) (insert "〄")))
   ("K" (lambda () (interactive) (insert "㉿"))))
 ;; orgmode:gcr:vela:orgmode:gcr:2017-01-21:mara:2ECB9A12-D860-48B6-B182-3352532B538B ends here
+
+;; [[file:~/src/help/help.org::orgmode:gcr:2017-02-11:mara:45BE9495-8AEE-42C4-BA90-4CC37A4741D6][orgmode:gcr:2017-02-11:mara:45BE9495-8AEE-42C4-BA90-4CC37A4741D6]]
+(defhydra help/checks (:color blue :hint nil)
+  "
+_q_ ✓ _w_ ✗ _e_ ☐ _r_ ☑ _t_ ☒_
+"
+  ("q" (lambda () (interactive) (insert "✓")) :exit nil)
+  ("w" (lambda () (interactive) (insert "✗")) :exit nil)
+  ("e" (lambda () (interactive) (insert "☐")) :exit nil)
+  ("r" (lambda () (interactive) (insert "☑")) :exit nil)
+  ("t" (lambda () (interactive) (insert "☒")) :exit nil))
+;; orgmode:gcr:2017-02-11:mara:45BE9495-8AEE-42C4-BA90-4CC37A4741D6 ends here
+
+;; [[file:~/src/help/help.org::orgmode:gcr:2017-02-11:mara:EECC4207-5A0D-426A-89CF-86494E6B8667][orgmode:gcr:2017-02-11:mara:EECC4207-5A0D-426A-89CF-86494E6B8667]]
+(defhydra help/bibtex (:color blue :hint nil)
+  "
+_m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
+"
+  ;; Disable them
+  ("m" (lambda () (interactive)
+         (progn (aggressive-indent-mode 'toggle)
+                (visual-line-mode 't))))
+  ;; Enable them
+  ("M" (lambda () (interactive)
+         (progn (aggressive-indent-mode nil)
+                (visual-line-mode nil)))))
+;; orgmode:gcr:2017-02-11:mara:EECC4207-5A0D-426A-89CF-86494E6B8667 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:2017-01-21:mara:C92235D1-35C7-41EA-B4ED-9727C8531810][orgmode:gcr:2017-01-21:mara:C92235D1-35C7-41EA-B4ED-9727C8531810]]
 (global-set-key (kbd "s-v") #'smex)

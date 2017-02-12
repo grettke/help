@@ -5957,9 +5957,10 @@ These changes helped guide the custom keyboard design.
   "
 _O_ base64-encode-region _P_ base64-decode-region _|_ split-window-horizontally _-_ split-window-vertically
 _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_ flyck/buf _&_ flyck/lst _8_ grade-level _9_ reading-ease _0_ writegood _w_ widen _e_ flycheck _=_ reposition-window _t_ unicode-troll-stopper-mode _y_ transparency _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page _}_ transliterate
+_T_ trademarks
 _a_ ag  _A_ apropo'ish _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point _f_ desc-fun _D_ detangle _j_ obtj2o _k_ scrollDown _K_ nextLogLine  _;_ toggle-lax-whitespace
 _l_ visual-line-mode _L_ aggressive-indent-mode
-_x_ delete-indentation _c_ fill-paragraph _v_ desc-var _V_ view-mode _b_ erase-buffer _n_ normal _m_ imenu-list _M_ Marked 2 Viewer
+_x_ delete-indentation _c_ fill-paragraph _v_ desc-var _V_ view-mode _b_ erase-buffer _B_ibtex _n_ normal _m_ imenu-list _M_ checks
 _<_ cmtIn _>_ cmtOut _?_ snp"
   ("|" split-window-horizontally)
   ("-" split-window-vertically)
@@ -6015,7 +6016,8 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("]" forward-page :exit nil)
   ("}" help/hydra/transliterate/body)
   ("c" fill-paragraph )
-  ("b" erase-buffer))
+  ("b" erase-buffer)
+  ("B" help/bibtex/body))
 #+END_SRC
 
 #+NAME: orgmode:gcr:vela:EFFA5A5F-58A8-476D-A8D4-16F232231EC7
@@ -6079,6 +6081,24 @@ _q_ ✓ _w_ ✗ _e_ ☐ _r_ ☑ _t_ ☒_
   ("e" (lambda () (interactive) (insert "☐")) :exit nil)
   ("r" (lambda () (interactive) (insert "☑")) :exit nil)
   ("t" (lambda () (interactive) (insert "☒")) :exit nil))
+#+END_SRC
+
+BibTeX stuff.
+
+#+NAME: orgmode:gcr:2017-02-11:mara:EECC4207-5A0D-426A-89CF-86494E6B8667
+#+BEGIN_SRC emacs-lisp :results output silent
+(defhydra help/bibtex (:color blue :hint nil)
+  "
+_m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
+"
+  ;; Disable them
+  ("m" (lambda () (interactive)
+         (progn (aggressive-indent-mode 'toggle)
+                (visual-line-mode 't))))
+  ;; Enable them
+  ("M" (lambda () (interactive)
+         (progn (aggressive-indent-mode nil)
+                (visual-line-mode nil)))))
 #+END_SRC
 
 **** Row 2
