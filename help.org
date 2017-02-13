@@ -2339,6 +2339,8 @@ https://www.emacswiki.org/emacs/SavePlace
 It is nice to have commands and their history saved so that every time you get
 back to work, you can just re-run stuff as you need it.
 
+https://www.emacswiki.org/emacs/SaveHist
+
 #+NAME: orgmode:gcr:vela:FDA728C0-CBE2-4B1B-A30F-CC8EA3E810DB
 #+BEGIN_SRC emacs-lisp :results output silent
 (setq savehist-save-minibuffer-history 1)
