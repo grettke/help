@@ -2317,7 +2317,24 @@ Display information about search-and-or-replace operation.
    :ID:       orgmode:gcr:vela:31961F28-1913-4247-986A-273391C4A85D
    :END:
 
+*** Mark
+:PROPERTIES:
+:ID:       orgmode:gcr:2017-02-12:mara:DB8B841D-4EDB-4CAC-9A88-4BF5A082E325
+:END:
+
+When you re-open a file return the mark to its last position
+
+https://www.emacswiki.org/emacs/SavePlace
+
+#+NAME: orgmode:gcr:2017-02-12:mara:C17BCB36-D890-400B-B0AD-5CA1240E59C1
+#+BEGIN_SRC emacs-lisp :results output silent
+(save-place-mode 1)
+#+END_SRC
+
 *** Minibuffer
+:PROPERTIES:
+:ID:       orgmode:gcr:2017-02-12:mara:31AB6122-877C-4D6C-9C95-71264582AA85
+:END:
 
 It is nice to have commands and their history saved so that every time you get
 back to work, you can just re-run stuff as you need it.

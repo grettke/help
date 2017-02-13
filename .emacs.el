@@ -1413,6 +1413,10 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (setq anzu-replace-to-string-separator " ⇒ "))
 ;; orgmode:gcr:vela:D9A8B6E9-E328-47C1-9B75-863B640BEAB7 ends here
 
+;; [[file:~/src/help/help.org::orgmode:gcr:2017-02-12:mara:C17BCB36-D890-400B-B0AD-5CA1240E59C1][orgmode:gcr:2017-02-12:mara:C17BCB36-D890-400B-B0AD-5CA1240E59C1]]
+(save-place-mode 1)
+;; orgmode:gcr:2017-02-12:mara:C17BCB36-D890-400B-B0AD-5CA1240E59C1 ends here
+
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:FDA728C0-CBE2-4B1B-A30F-CC8EA3E810DB][orgmode:gcr:vela:FDA728C0-CBE2-4B1B-A30F-CC8EA3E810DB]]
 (setq savehist-save-minibuffer-history 1)
 (setq savehist-additional-variables
