@@ -2312,7 +2312,7 @@ Display information about search-and-or-replace operation.
   (setq anzu-replace-to-string-separator " ⇒ "))
 #+END_SRC
 
-** Save History of All Things
+** Save and Restore Operating State
    :PROPERTIES:
    :ID:       orgmode:gcr:vela:31961F28-1913-4247-986A-273391C4A85D
    :END:
