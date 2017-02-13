@@ -2317,6 +2317,8 @@ Display information about search-and-or-replace operation.
    :ID:       orgmode:gcr:vela:31961F28-1913-4247-986A-273391C4A85D
    :END:
 
+*** Minibuffer
+
 It is nice to have commands and their history saved so that every time you get
 back to work, you can just re-run stuff as you need it.
 
