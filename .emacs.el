@@ -995,8 +995,10 @@ configuration when invoked to evaluate a line."
 (defun help/safb-vc-revert ()
   (interactive)
   (help/save-all-file-buffers)
-  (vc-revert))
-
+  (unless (bound-and-true-p diff-hl-mode) (diff-hl-mode))
+  (vc-revert)
+  (when (bound-and-true-p diff-hl-mode) (call-interactively 'diff-hl-mode nil)))
+  
 (defun help/safb-help/magit-status ()
   (interactive)
   (help/save-all-file-buffers)
@@ -3014,6 +3016,7 @@ ALPHA : [ %(frame-parameter nil 'alpha) ].'
 ;; orgmode:gcr:vela:2DB2EB2C-74AA-4121-A2BE-4974DCB5638E ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:E4B98196-FDFB-42B4-A52A-8CA7DC066E8E][orgmode:gcr:vela:E4B98196-FDFB-42B4-A52A-8CA7DC066E8E]]
+(global-set-key (kbd "C-9") #'help/safb-vc-revert)
 (global-set-key (kbd "s-5") #'kill-this-buffer)
 (global-set-key (kbd "s-4") #'mc/mark-next-like-this)
 (global-set-key (kbd "s-3") #'mc/mark-previous-like-this)
