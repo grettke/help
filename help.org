@@ -1178,7 +1178,7 @@ One space after comma.
    :ID:       orgmode:gcr:vela:F3C9BDE1-C0E0-4BDF-B121-3CE2F0D16464
    :END:
 
-Maintain buffers across sessions. Desktop-Save-Mode persists very part of the
+Maintain buffers across sessions. Desktop-Save-Mode persists every part of the
 buffer. If you upgrade a package that uses buffer-variables that have changed
 you may get unexpected behavior. Close all buffers and open them again after
 making such breaking changes.
@@ -1558,7 +1558,7 @@ advice.
   (unless (bound-and-true-p diff-hl-mode) (diff-hl-mode))
   (vc-revert)
   (when (bound-and-true-p diff-hl-mode) (call-interactively 'diff-hl-mode nil)))
-  
+
 (defun help/safb-help/magit-status ()
   (interactive)
   (help/save-all-file-buffers)
