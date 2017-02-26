@@ -1267,7 +1267,7 @@ then document.
   :ensure t)
 #+END_SRC
 
-Visualize the formfeed character.
+Visualize the formfeed character: ~C-q C-l~.
 
 #+NAME: orgmode:gcr:vela:A1A8FE84-0A12-4C5F-9565-F4EACE3DB694
 #+BEGIN_SRC emacs-lisp :results output silent
