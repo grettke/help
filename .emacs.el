@@ -3016,7 +3016,7 @@ ALPHA : [ %(frame-parameter nil 'alpha) ].'
 ;; orgmode:gcr:vela:2DB2EB2C-74AA-4121-A2BE-4974DCB5638E ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:E4B98196-FDFB-42B4-A52A-8CA7DC066E8E][orgmode:gcr:vela:E4B98196-FDFB-42B4-A52A-8CA7DC066E8E]]
-(global-set-key (kbd "C-5") #'kill-this-buffers)
+(global-set-key (kbd "C-5") #'kill-this-buffer)
 (global-set-key (kbd "C-9") #'help/safb-vc-revert)
 (global-set-key (kbd "s-5") #'mc/mark-previous-like-this)
 (global-set-key (kbd "s-4") #'mc/mark-next-like-this)
