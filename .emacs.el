@@ -2883,7 +2883,7 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
   :ensure t
   :config
   (setq solarized-distinct-fringe-background t)
-  (setq solarized-high-contrast-mode-line nil)
+  (setq solarized-high-contrast-mode-line t)
   (setq solarized-use-less-bold t)
   (setq solarized-use-more-italic nil)
   (setq solarized-emphasize-indicators nil)
