@@ -3009,6 +3009,19 @@ ALPHA : [ %(frame-parameter nil 'alpha) ].'
   (split-window-below)
   (split-window-below)
   (balance-windows))
+
+(defun help/4-window ()
+  "Work with this buffer in 4 windows."
+  (interactive)
+  (delete-other-windows)
+  (split-window-right)
+  (split-window-below)
+  (call-interactively #'other-window)
+  (call-interactively #'other-window)
+  (split-window-below)
+  (call-interactively #'other-window)
+  (call-interactively #'other-window)
+  (balance-windows))
 ;; orgmode:gcr:vela:EA28235F-22B2-463F-AC06-EC79FA613F22 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:2DB2EB2C-74AA-4121-A2BE-4974DCB5638E][orgmode:gcr:vela:2DB2EB2C-74AA-4121-A2BE-4974DCB5638E]]
@@ -3032,6 +3045,7 @@ ALPHA : [ %(frame-parameter nil 'alpha) ].'
 (key-chord-define-global "1o" #'help/1-window)
 (key-chord-define-global "2o" #'help/2-window)
 (key-chord-define-global "3o" #'help/3-window)
+(key-chord-define-global "4o" #'help/4-window)
 (global-set-key (kbd "s-q") #'kill-buffer)
 (global-set-key (kbd "s-Q") #'kill-this-buffer)
 (global-set-key (kbd "H-i") #'insert-char)
