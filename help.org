@@ -2152,7 +2152,7 @@ Via Ben Maughan:
 #+END_QUOTE
 
 #+NAME: orgmode:gcr:vela:63C4F1FC-00C6-4EC5-86CE-070D90C5164E
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :results output silent
 (setq save-interprogram-paste-before-kill t)
 #+END_SRC
 
@@ -2674,7 +2674,7 @@ Git ignore files are text files.
 [[http://endlessparentheses.com/embedding-youtube-videos-with-org-mode-links.html][Embedding Youtube videos with org-mode links]].
 
 #+NAME: orgmode:gcr:vela:C6FF37A6-EC87-4918-BFC8-927157F890BF
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :results output silent
 (defvar yt-iframe-format
   ;; You may want to change your width and height.
   (concat "<iframe width=\"440\""
@@ -2880,7 +2880,7 @@ Have fun with scratch.
 Use ~emacs-lisp~ in scratch.
 
 #+NAME: orgmode:gcr:vela:3A3302AF-D60F-4BA8-BD05-1BAA1496F497
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :results output silent
 (setq initial-major-mode 'emacs-lisp-mode)
 #+END_SRC
 
@@ -3158,7 +3158,7 @@ Make it easy to hide the state changes until I want to see them with a Drawer.
 Maintain state when archiving a heading.
 
 #+NAME: orgmode:gcr:vela:EF4EC62D-3DF8-476F-B30B-C76125A95940
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :results output silent
 (setq org-archive-mark-done nil)
 #+END_SRC
 
@@ -6229,7 +6229,7 @@ Move a file.
 Run imenu.
 
 #+NAME: orgmode:gcr:2017-03-03:mara:17028F30-2195-48D3-A5E4-D84F79908123
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :results output silent
 (global-set-key (kbd "H-m") #'imenu)
 #+END_SRC
 
