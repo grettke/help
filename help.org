@@ -5978,7 +5978,6 @@ These changes helped guide the custom keyboard design.
 
 #+NAME: orgmode:gcr:vela:239A85C3-2CEB-4E40-975F-8B3584F7F450
 #+BEGIN_SRC emacs-lisp :results output silent
-(global-set-key (kbd "s-w") #'imenu)
 (key-chord-define-global "1o" #'help/1-window)
 (key-chord-define-global "2o" #'help/2-window)
 (key-chord-define-global "3o" #'help/3-window)
@@ -6216,7 +6215,14 @@ Move a file.
 
 #+NAME: orgmode:gcr:vela:9E65B9F9-30D6-452F-B7A2-DB02E7E3FCDB
 #+BEGIN_SRC emacs-lisp :results output silent
-(global-set-key (kbd "H-m") #'help/move-file)
+(global-set-key (kbd "H-M") #'help/move-file)
+#+END_SRC
+
+Run imenu.
+
+#+NAME: orgmode:gcr:2017-03-03:mara:17028F30-2195-48D3-A5E4-D84F79908123
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "H-m") #'imenu)
 #+END_SRC
 
 *** Left & Right Side

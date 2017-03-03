@@ -3049,7 +3049,6 @@ ALPHA : [ %(frame-parameter nil 'alpha) ].'
 ;; orgmode:gcr:vela:E4B98196-FDFB-42B4-A52A-8CA7DC066E8E ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:239A85C3-2CEB-4E40-975F-8B3584F7F450][orgmode:gcr:vela:239A85C3-2CEB-4E40-975F-8B3584F7F450]]
-(global-set-key (kbd "s-w") #'imenu)
 (key-chord-define-global "1o" #'help/1-window)
 (key-chord-define-global "2o" #'help/2-window)
 (key-chord-define-global "3o" #'help/3-window)
@@ -3217,7 +3216,6 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (global-set-key (kbd "s-c") #'ido-switch-buffer)
 ;; orgmode:gcr:2017-01-21:mara:C92235D1-35C7-41EA-B4ED-9727C8531810 ends here
 
-
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:2608E62D-62B4-4B82-BFE0-E1E04C0D6914][orgmode:gcr:vela:2608E62D-62B4-4B82-BFE0-E1E04C0D6914]]
 (global-set-key (kbd "H-o") #'help/occur-dwim)
 ;; orgmode:gcr:vela:2608E62D-62B4-4B82-BFE0-E1E04C0D6914 ends here
@@ -3236,8 +3234,12 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 ;; orgmode:gcr:vela:374B4284-8823-4E85-A469-F3985D48EC61 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:9E65B9F9-30D6-452F-B7A2-DB02E7E3FCDB][orgmode:gcr:vela:9E65B9F9-30D6-452F-B7A2-DB02E7E3FCDB]]
-(global-set-key (kbd "H-m") #'help/move-file)
+(global-set-key (kbd "H-M") #'help/move-file)
 ;; orgmode:gcr:vela:9E65B9F9-30D6-452F-B7A2-DB02E7E3FCDB ends here
+
+;; [[file:~/src/help/help.org::orgmode:gcr:2017-03-03:mara:17028F30-2195-48D3-A5E4-D84F79908123][orgmode:gcr:2017-03-03:mara:17028F30-2195-48D3-A5E4-D84F79908123]]
+(global-set-key (kbd "H-m") #'imenu)
+;; orgmode:gcr:2017-03-03:mara:17028F30-2195-48D3-A5E4-D84F79908123 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:55D2A3E6-07B1-47B0-9ADD-54C966FA252B][orgmode:gcr:vela:55D2A3E6-07B1-47B0-9ADD-54C966FA252B]]
 (global-set-key (kbd "s-`") #'help/comment-or-uncomment)
