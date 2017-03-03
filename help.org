@@ -2626,9 +2626,7 @@ The commit log editor uses With-Editor and Server modes. They are not diminished
 #+NAME: orgmode:gcr:vela:14B95634-E6E8-46A0-9698-2C9B847DD404
 #+BEGIN_SRC emacs-lisp :results output silent
 (use-package magit
-  :ensure t
-  :config
-  (global-set-key (kbd "s-e") #'help/safb-help/magit-status))
+  :ensure t)
 #+END_SRC
 
 Leave the VC message template empty.
@@ -2637,6 +2635,20 @@ Leave the VC message template empty.
 #+BEGIN_SRC emacs-lisp :results output silent
 (eval-after-load "log-edit"
   '(remove-hook 'log-edit-hook 'log-edit-insert-message-template))
+#+END_SRC
+
+
+VC activity keybindings.
+
+#+NAME: orgmode:gcr:vela:A45F49E2-E330-463B-82C6-907F138E8F2A
+#+BEGIN_SRC emacs-lisp :results output silent
+(global-set-key (kbd "s-e") #'help/safb-help/magit-status)
+(define-prefix-command 'help/vc-map)
+(global-set-key (kbd "s-r") #'help/vc-map)
+(define-key help/vc-map "e" #'help/safb-vc-ediff)
+(define-key help/vc-map "d" #'help/safb-vc-diff)
+(define-key help/vc-map "u" #'help/safb-vc-revert)
+(global-set-key (kbd "s-f") #'help/safb-help/vc-next-action)
 #+END_SRC
 
 Git ignore files are text files.
@@ -6169,18 +6181,6 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
      :PROPERTIES:
      :ID:       orgmode:gcr:vela:AD2164B2-CB66-48AD-B367-4E0CC406B022
      :END:
-
-VC activities.
-
-#+NAME: orgmode:gcr:vela:A45F49E2-E330-463B-82C6-907F138E8F2A
-#+BEGIN_SRC emacs-lisp :results output silent
-(define-prefix-command 'help/vc-map)
-(global-set-key (kbd "s-r") #'help/vc-map)
-(define-key help/vc-map "e" #'help/safb-vc-ediff)
-(define-key help/vc-map "d" #'help/safb-vc-diff)
-(define-key help/vc-map "u" #'help/safb-vc-revert)
-(global-set-key (kbd "s-f") #'help/safb-help/vc-next-action)
-#+END_SRC
 
 Occur has 3 cases. I like to use it to explore the unknown.
 

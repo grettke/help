@@ -1558,15 +1558,23 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:14B95634-E6E8-46A0-9698-2C9B847DD404][orgmode:gcr:vela:14B95634-E6E8-46A0-9698-2C9B847DD404]]
 (use-package magit
-  :ensure t
-  :config
-  (global-set-key (kbd "s-e") #'help/safb-help/magit-status))
+  :ensure t)
 ;; orgmode:gcr:vela:14B95634-E6E8-46A0-9698-2C9B847DD404 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:27D5DC40-DD13-4E08-9EF9-D962DD08A7D5][orgmode:gcr:vela:27D5DC40-DD13-4E08-9EF9-D962DD08A7D5]]
 (eval-after-load "log-edit"
   '(remove-hook 'log-edit-hook 'log-edit-insert-message-template))
 ;; orgmode:gcr:vela:27D5DC40-DD13-4E08-9EF9-D962DD08A7D5 ends here
+
+;; [[file:~/src/help/help.org::orgmode:gcr:vela:A45F49E2-E330-463B-82C6-907F138E8F2A][orgmode:gcr:vela:A45F49E2-E330-463B-82C6-907F138E8F2A]]
+(global-set-key (kbd "s-e") #'help/safb-help/magit-status)
+(define-prefix-command 'help/vc-map)
+(global-set-key (kbd "s-r") #'help/vc-map)
+(define-key help/vc-map "e" #'help/safb-vc-ediff)
+(define-key help/vc-map "d" #'help/safb-vc-diff)
+(define-key help/vc-map "u" #'help/safb-vc-revert)
+(global-set-key (kbd "s-f") #'help/safb-help/vc-next-action)
+;; orgmode:gcr:vela:A45F49E2-E330-463B-82C6-907F138E8F2A ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:6FD11818-DB10-4AF4-A714-C32C04291AF2][orgmode:gcr:vela:6FD11818-DB10-4AF4-A714-C32C04291AF2]]
 (add-to-list 'auto-mode-alist '(".gitignore$" . text-mode))
@@ -3209,14 +3217,6 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (global-set-key (kbd "s-c") #'ido-switch-buffer)
 ;; orgmode:gcr:2017-01-21:mara:C92235D1-35C7-41EA-B4ED-9727C8531810 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:A45F49E2-E330-463B-82C6-907F138E8F2A][orgmode:gcr:vela:A45F49E2-E330-463B-82C6-907F138E8F2A]]
-(define-prefix-command 'help/vc-map)
-(global-set-key (kbd "s-r") #'help/vc-map)
-(define-key help/vc-map "e" #'help/safb-vc-ediff)
-(define-key help/vc-map "d" #'help/safb-vc-diff)
-(define-key help/vc-map "u" #'help/safb-vc-revert)
-(global-set-key (kbd "s-f") #'help/safb-help/vc-next-action)
-;; orgmode:gcr:vela:A45F49E2-E330-463B-82C6-907F138E8F2A ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:2608E62D-62B4-4B82-BFE0-E1E04C0D6914][orgmode:gcr:vela:2608E62D-62B4-4B82-BFE0-E1E04C0D6914]]
 (global-set-key (kbd "H-o") #'help/occur-dwim)
