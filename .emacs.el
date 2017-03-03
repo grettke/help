@@ -1566,7 +1566,13 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   '(remove-hook 'log-edit-hook 'log-edit-insert-message-template))
 ;; orgmode:gcr:vela:27D5DC40-DD13-4E08-9EF9-D962DD08A7D5 ends here
 
+;; [[file:~/src/help/help.org::orgmode:gcr:2017-03-03:mara:DBF9CBC3-79F8-40C8-BB57-80773FA636FA][orgmode:gcr:2017-03-03:mara:DBF9CBC3-79F8-40C8-BB57-80773FA636FA]]
+(use-package git-timemachine
+  :ensure t)
+;; orgmode:gcr:2017-03-03:mara:DBF9CBC3-79F8-40C8-BB57-80773FA636FA ends here
+
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:A45F49E2-E330-463B-82C6-907F138E8F2A][orgmode:gcr:vela:A45F49E2-E330-463B-82C6-907F138E8F2A]]
+(global-set-key (kbd "s-w") #'git-timemachine)
 (global-set-key (kbd "s-e") #'help/safb-help/magit-status)
 (define-prefix-command 'help/vc-map)
 (global-set-key (kbd "s-r") #'help/vc-map)

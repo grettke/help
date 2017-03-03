@@ -2637,11 +2637,19 @@ Leave the VC message template empty.
   '(remove-hook 'log-edit-hook 'log-edit-insert-message-template))
 #+END_SRC
 
+Change browsing.
+
+#+NAME: orgmode:gcr:2017-03-03:mara:DBF9CBC3-79F8-40C8-BB57-80773FA636FA
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package git-timemachine
+  :ensure t)
+#+END_SRC
 
 VC activity keybindings.
 
 #+NAME: orgmode:gcr:vela:A45F49E2-E330-463B-82C6-907F138E8F2A
 #+BEGIN_SRC emacs-lisp :results output silent
+(global-set-key (kbd "s-w") #'git-timemachine)
 (global-set-key (kbd "s-e") #'help/safb-help/magit-status)
 (define-prefix-command 'help/vc-map)
 (global-set-key (kbd "s-r") #'help/vc-map)
