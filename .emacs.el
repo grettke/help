@@ -870,6 +870,13 @@ Attribution: `http://stackoverflow.com/a/25212377'"
   :ensure t)
 ;; orgmode:gcr:vela:87818F95-F0F0-4538-8103-BBCCFABB8975 ends here
 
+;; [[file:~/src/help/help.org::orgmode:gcr:vela:EE9C450C-14DE-4FC0-8580-BBE89F4BFE9F][orgmode:gcr:vela:EE9C450C-14DE-4FC0-8580-BBE89F4BFE9F]]
+(use-package macrostep
+  :ensure t
+  :config
+  (define-key emacs-lisp-mode-map (kbd "C-c e") #'macrostep-expand))
+;; orgmode:gcr:vela:EE9C450C-14DE-4FC0-8580-BBE89F4BFE9F ends here
+
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:96387299-8865-4DF8-8B98-8EF290A319B8][orgmode:gcr:vela:96387299-8865-4DF8-8B98-8EF290A319B8]]
 (setq-default eval-expression-print-level nil)
 ;; orgmode:gcr:vela:96387299-8865-4DF8-8B98-8EF290A319B8 ends here
@@ -1292,13 +1299,6 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
 (use-package auto-complete-chunk
   :ensure t)
 ;; orgmode:gcr:vela:36899F5A-7606-461A-A17C-622B0B807E8E ends here
-
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:EE9C450C-14DE-4FC0-8580-BBE89F4BFE9F][orgmode:gcr:vela:EE9C450C-14DE-4FC0-8580-BBE89F4BFE9F]]
-(use-package macrostep
-  :ensure t
-  :config
-  (define-key emacs-lisp-mode-map (kbd "C-c e") #'macrostep-expand))
-;; orgmode:gcr:vela:EE9C450C-14DE-4FC0-8580-BBE89F4BFE9F ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:B35D9582-C338-4A9B-A22E-752FCC27831F][orgmode:gcr:vela:B35D9582-C338-4A9B-A22E-752FCC27831F]]
 (use-package browse-kill-ring
