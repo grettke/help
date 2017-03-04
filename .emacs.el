@@ -1278,6 +1278,10 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (add-to-list 'flycheck-checkers 'proselint))
 ;; orgmode:gcr:vela:2A5BAD60-DF45-4BD1-AA01-E430E495C62D ends here
 
+;; [[file:~/src/help/help.org::orgmode:gcr:2017-03-03:mara:AEE70341-1450-4B46-9690-8F6215B8DCBF][orgmode:gcr:2017-03-03:mara:AEE70341-1450-4B46-9690-8F6215B8DCBF]]
+(setq kmacro-ring-max 32)
+;; orgmode:gcr:2017-03-03:mara:AEE70341-1450-4B46-9690-8F6215B8DCBF ends here
+
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:487B46D5-C025-4114-A1B4-BAAF5FAFE430][orgmode:gcr:vela:487B46D5-C025-4114-A1B4-BAAF5FAFE430]]
 (use-package fuzzy
   :ensure t)

@@ -2074,6 +2074,18 @@ Integrate Proselint.
   (add-to-list 'flycheck-checkers 'proselint))
 #+END_SRC
 
+** Keyboard Macros
+:PROPERTIES:
+:ID:       orgmode:gcr:2017-03-03:mara:14B87D88-A5FB-4644-9EEB-221A7DA37DB9
+:END:
+
+Keep many keyboard macros.
+
+#+NAME: orgmode:gcr:2017-03-03:mara:AEE70341-1450-4B46-9690-8F6215B8DCBF
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq kmacro-ring-max 32)
+#+END_SRC
+
 ** Intellisense (Auto Completion)
    :PROPERTIES:
    :ID:       orgmode:gcr:vela:A7225C28-B8AE-4960-9E2A-64E6E8B58400
