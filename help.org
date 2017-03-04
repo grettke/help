@@ -2353,6 +2353,13 @@ https://www.emacswiki.org/emacs/SaveHist
 (savehist-mode t)
 #+END_SRC
 
+Use the history as a lookup instead of a log.
+
+#+NAME: orgmode:gcr:2017-03-03:mara:0B35AE1F-8BFC-4E24-A161-3416323D46B9
+#+BEGIN_SRC emacs-lisp :results output silent
+(setq history-delete-duplicates t)
+#+END_SRC
+
 ** Searching
    :PROPERTIES:
    :ID:       orgmode:gcr:vela:960E2DE0-3F5A-40AB-A9BF-FF08A410EAB7

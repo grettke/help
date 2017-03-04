@@ -1428,6 +1428,10 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
 (savehist-mode t)
 ;; orgmode:gcr:vela:FDA728C0-CBE2-4B1B-A30F-CC8EA3E810DB ends here
 
+;; [[file:~/src/help/help.org::orgmode:gcr:2017-03-03:mara:0B35AE1F-8BFC-4E24-A161-3416323D46B9][orgmode:gcr:2017-03-03:mara:0B35AE1F-8BFC-4E24-A161-3416323D46B9]]
+(setq history-delete-duplicates t)
+;; orgmode:gcr:2017-03-03:mara:0B35AE1F-8BFC-4E24-A161-3416323D46B9 ends here
+
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:B7EB4F42-9696-495C-98F5-427B03DA93EE][orgmode:gcr:vela:B7EB4F42-9696-495C-98F5-427B03DA93EE]]
 (use-package ag
   :ensure t
