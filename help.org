@@ -1301,6 +1301,19 @@ Do the /right thing/ for getting to the start of the line.
   (global-set-key (kbd "C-a") 'mwim-beginning-of-code-or-line))
 #+END_SRC
 
+Shift buffers around.
+
+#+NAME: orgmode:gcr:2017-03-04:mara:1DAE1BB3-4BD8-46CB-AE5A-7BC0F0DA02EA
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package buffer-move
+  :ensure t
+  :config
+  (global-set-key (kbd "<s-up>")     'buf-move-up)
+  (global-set-key (kbd "<s-down>")   'buf-move-down)
+  (global-set-key (kbd "<s-left>")   'buf-move-left)
+  (global-set-key (kbd "<s-right>")  'buf-move-right))
+#+END_SRC
+
 ** Code Folding
    :PROPERTIES:
    :ID:       orgmode:gcr:vela:3F70676D-C141-4093-9E40-F42B6C7B7232

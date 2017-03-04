@@ -830,6 +830,16 @@ Attribution: `http://stackoverflow.com/a/25212377'"
   (global-set-key (kbd "C-a") 'mwim-beginning-of-code-or-line))
 ;; orgmode:gcr:vela:C9521BF3-23E7-4952-846F-322D107E3EE3 ends here
 
+;; [[file:~/src/help/help.org::orgmode:gcr:2017-03-04:mara:1DAE1BB3-4BD8-46CB-AE5A-7BC0F0DA02EA][orgmode:gcr:2017-03-04:mara:1DAE1BB3-4BD8-46CB-AE5A-7BC0F0DA02EA]]
+(use-package buffer-move
+  :ensure t
+  :config
+  (global-set-key (kbd "<s-up>")     'buf-move-up)
+  (global-set-key (kbd "<s-down>")   'buf-move-down)
+  (global-set-key (kbd "<s-left>")   'buf-move-left)
+  (global-set-key (kbd "<s-right>")  'buf-move-right))
+;; orgmode:gcr:2017-03-04:mara:1DAE1BB3-4BD8-46CB-AE5A-7BC0F0DA02EA ends here
+
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:2D731158-FCE7-4BDA-AE78-383EAAD1FE4B][orgmode:gcr:vela:2D731158-FCE7-4BDA-AE78-383EAAD1FE4B]]
 (use-package hideshow
   :config
