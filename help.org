@@ -1301,17 +1301,16 @@ Do the /right thing/ for getting to the start of the line.
   (global-set-key (kbd "C-a") 'mwim-beginning-of-code-or-line))
 #+END_SRC
 
-Shift windows around.
+Select windows.
 
-#+NAME: orgmode:gcr:2017-03-04:mara:1DAE1BB3-4BD8-46CB-AE5A-7BC0F0DA02EA
+#+NAME: orgmode:gcr:2017-03-04:mara:66C289E4-0535-47DF-9A31-64B373E7C433
 #+BEGIN_SRC emacs-lisp :results output silent
-(use-package buffer-move
+(use-package ace-window
   :ensure t
   :config
-  (global-set-key (kbd "<s-up>")     'buf-move-up)
-  (global-set-key (kbd "<s-down>")   'buf-move-down)
-  (global-set-key (kbd "<s-left>")   'buf-move-left)
-  (global-set-key (kbd "<s-right>")  'buf-move-right))
+  (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+  (setq aw-scope 'frame)
+  (setq aw-background nil))
 #+END_SRC
 
 ** Code Folding
@@ -6251,11 +6250,11 @@ Occur has 3 cases. I like to use it to explore the unknown.
 (global-set-key (kbd "H-o") #'help/occur-dwim)
 #+END_SRC
 
-Simpler buffer movement.
+Powerful buffer movement.
 
 #+NAME: orgmode:gcr:vela:FD9CED46-8D84-495F-A413-90DA9EA52B8A
 #+BEGIN_SRC emacs-lisp :results output silent
-(global-set-key (kbd "s-g") #'help/safb-other-window)
+(global-set-key (kbd "s-g") #'ace-window)
 #+END_SRC
 
 Toggle utility buffers ("logical F" key, so left side; "logical J" key on

@@ -830,15 +830,14 @@ Attribution: `http://stackoverflow.com/a/25212377'"
   (global-set-key (kbd "C-a") 'mwim-beginning-of-code-or-line))
 ;; orgmode:gcr:vela:C9521BF3-23E7-4952-846F-322D107E3EE3 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:2017-03-04:mara:1DAE1BB3-4BD8-46CB-AE5A-7BC0F0DA02EA][orgmode:gcr:2017-03-04:mara:1DAE1BB3-4BD8-46CB-AE5A-7BC0F0DA02EA]]
-(use-package buffer-move
+;; [[file:~/src/help/help.org::orgmode:gcr:2017-03-04:mara:66C289E4-0535-47DF-9A31-64B373E7C433][orgmode:gcr:2017-03-04:mara:66C289E4-0535-47DF-9A31-64B373E7C433]]
+(use-package ace-window
   :ensure t
   :config
-  (global-set-key (kbd "<s-up>")     'buf-move-up)
-  (global-set-key (kbd "<s-down>")   'buf-move-down)
-  (global-set-key (kbd "<s-left>")   'buf-move-left)
-  (global-set-key (kbd "<s-right>")  'buf-move-right))
-;; orgmode:gcr:2017-03-04:mara:1DAE1BB3-4BD8-46CB-AE5A-7BC0F0DA02EA ends here
+  (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+  (setq aw-scope 'frame)
+  (setq aw-background nil))
+;; orgmode:gcr:2017-03-04:mara:66C289E4-0535-47DF-9A31-64B373E7C433 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:2D731158-FCE7-4BDA-AE78-383EAAD1FE4B][orgmode:gcr:vela:2D731158-FCE7-4BDA-AE78-383EAAD1FE4B]]
 (use-package hideshow
@@ -3261,7 +3260,7 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 ;; orgmode:gcr:vela:2608E62D-62B4-4B82-BFE0-E1E04C0D6914 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:FD9CED46-8D84-495F-A413-90DA9EA52B8A][orgmode:gcr:vela:FD9CED46-8D84-495F-A413-90DA9EA52B8A]]
-(global-set-key (kbd "s-g") #'help/safb-other-window)
+(global-set-key (kbd "s-g") #'ace-window)
 ;; orgmode:gcr:vela:FD9CED46-8D84-495F-A413-90DA9EA52B8A ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:4E784CF7-8CB1-42D0-A8EB-6FF54E7B60E9][orgmode:gcr:vela:4E784CF7-8CB1-42D0-A8EB-6FF54E7B60E9]]
