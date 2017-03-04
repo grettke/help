@@ -2086,6 +2086,16 @@ Keep many keyboard macros.
 (setq kmacro-ring-max 32)
 #+END_SRC
 
+Persist keyboard macros in Emacs Lisp alternative to ~insert-kbd-macro~.
+
+#+NAME: orgmode:gcr:2017-03-03:mara:3DD2F7F0-285C-408C-A620-57420CCCE51D
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package elmacro
+  :ensure t
+  :config
+  (elmacro-mode))
+#+END_SRC
+
 ** Intellisense (Auto Completion)
    :PROPERTIES:
    :ID:       orgmode:gcr:vela:A7225C28-B8AE-4960-9E2A-64E6E8B58400
@@ -3779,6 +3789,9 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
 
 #+NAME: orgmode:gcr:vela:E65CF1F6-F56C-4A1A-BB45-5E530FA93C04
 #+BEGIN_SRC emacs-lisp :results output silent
+(global-set-key [(shift f6)] #'kmacro-name-last-macro)
+(global-set-key [(f6)] #'insert-kbd-macro)
+(global-set-key [(f5)] #'elmacro-show-last-macro)
 (define-key org-mode-map (kbd "s-6") #'org-babel-load-in-session)
 (define-key org-mode-map (kbd "s-7") #'org-babel-switch-to-session)
 (define-key org-mode-map (kbd "s-8") #'org-babel-switch-to-session-with-code)

@@ -1282,6 +1282,13 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
 (setq kmacro-ring-max 32)
 ;; orgmode:gcr:2017-03-03:mara:AEE70341-1450-4B46-9690-8F6215B8DCBF ends here
 
+;; [[file:~/src/help/help.org::orgmode:gcr:2017-03-03:mara:3DD2F7F0-285C-408C-A620-57420CCCE51D][orgmode:gcr:2017-03-03:mara:3DD2F7F0-285C-408C-A620-57420CCCE51D]]
+(use-package elmacro
+  :ensure t
+  :config
+  (elmacro-mode))
+;; orgmode:gcr:2017-03-03:mara:3DD2F7F0-285C-408C-A620-57420CCCE51D ends here
+
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:487B46D5-C025-4114-A1B4-BAAF5FAFE430][orgmode:gcr:vela:487B46D5-C025-4114-A1B4-BAAF5FAFE430]]
 (use-package fuzzy
   :ensure t)
@@ -2092,6 +2099,9 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; orgmode:gcr:vela:8C7E90AC-C7EB-4A43-9377-C3C85CE51849 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:E65CF1F6-F56C-4A1A-BB45-5E530FA93C04][orgmode:gcr:vela:E65CF1F6-F56C-4A1A-BB45-5E530FA93C04]]
+(global-set-key [(shift f6)] #'kmacro-name-last-macro)
+(global-set-key [(f6)] #'insert-kbd-macro)
+(global-set-key [(f5)] #'elmacro-show-last-macro)
 (define-key org-mode-map (kbd "s-6") #'org-babel-load-in-session)
 (define-key org-mode-map (kbd "s-7") #'org-babel-switch-to-session)
 (define-key org-mode-map (kbd "s-8") #'org-babel-switch-to-session-with-code)
