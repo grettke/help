@@ -3102,7 +3102,7 @@ _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_
 _T_ trademarks
 _a_ ag  _A_ apropo'ish _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point _f_ desc-fun _D_ detangle _j_ obtj2o _k_ scrollDown _K_ nextLogLine  _;_ toggle-lax-whitespace
 _l_ visual-line-mode _L_ aggressive-indent-mode
-_x_ delete-indentation _c_ fill-paragraph _v_ desc-var _V_ view-mode _b_ erase-buffer _B_ibtex _n_ normal _m_ imenu-list _M_ checks
+_x_ delete-indentation _c_ fill-paragraph _v_ desc-var _V_ view-mode _b_ erase-buffer _B_ibtex _n_ normal _M_ checks
 _<_ cmtIn _>_ cmtOut _?_ snp"
   ("|" split-window-horizontally)
   ("-" split-window-vertically)
@@ -3144,7 +3144,6 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("I" previous-logical-line :exit nil)
   ("K" next-logical-line :exit nil)
   ("n" help/safb-normal-mode)
-  ("m" imenu-list-minor-mode)
   ("M" help/checks/body)
   ("<" help/chs)
   (">" help/che)
@@ -3269,7 +3268,7 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 ;; orgmode:gcr:vela:9E65B9F9-30D6-452F-B7A2-DB02E7E3FCDB ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:2017-03-03:mara:17028F30-2195-48D3-A5E4-D84F79908123][orgmode:gcr:2017-03-03:mara:17028F30-2195-48D3-A5E4-D84F79908123]]
-(global-set-key (kbd "H-m") #'imenu)
+(global-set-key (kbd "H-m") #'imenu-list-minor-mode)
 ;; orgmode:gcr:2017-03-03:mara:17028F30-2195-48D3-A5E4-D84F79908123 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:55D2A3E6-07B1-47B0-9ADD-54C966FA252B][orgmode:gcr:vela:55D2A3E6-07B1-47B0-9ADD-54C966FA252B]]
