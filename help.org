@@ -2345,7 +2345,7 @@ https://www.emacswiki.org/emacs/SaveHist
 
 #+NAME: orgmode:gcr:vela:FDA728C0-CBE2-4B1B-A30F-CC8EA3E810DB
 #+BEGIN_SRC emacs-lisp :results output silent
-(setq savehist-save-minibuffer-history 1)
+(setq savehist-save-minibuffer-history t)
 (setq savehist-additional-variables
       '(kill-ring
         search-ring

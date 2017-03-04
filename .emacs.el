@@ -1420,7 +1420,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
 ;; orgmode:gcr:2017-02-12:mara:C17BCB36-D890-400B-B0AD-5CA1240E59C1 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:FDA728C0-CBE2-4B1B-A30F-CC8EA3E810DB][orgmode:gcr:vela:FDA728C0-CBE2-4B1B-A30F-CC8EA3E810DB]]
-(setq savehist-save-minibuffer-history 1)
+(setq savehist-save-minibuffer-history t)
 (setq savehist-additional-variables
       '(kill-ring
         search-ring
