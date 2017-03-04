@@ -2361,7 +2361,10 @@ https://www.emacswiki.org/emacs/SaveHist
 (setq savehist-additional-variables
       '(kill-ring
         search-ring
-        regexp-search-ring))
+        regexp-search-ring
+        last-kbd-macro
+        kmacro-ring
+        shell-command-history))
 (savehist-mode t)
 #+END_SRC
 

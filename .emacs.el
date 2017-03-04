@@ -1428,7 +1428,10 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
 (setq savehist-additional-variables
       '(kill-ring
         search-ring
-        regexp-search-ring))
+        regexp-search-ring
+        last-kbd-macro
+        kmacro-ring
+        shell-command-history))
 (savehist-mode t)
 ;; orgmode:gcr:vela:FDA728C0-CBE2-4B1B-A30F-CC8EA3E810DB ends here
 
