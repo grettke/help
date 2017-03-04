@@ -1301,7 +1301,7 @@ Do the /right thing/ for getting to the start of the line.
   (global-set-key (kbd "C-a") 'mwim-beginning-of-code-or-line))
 #+END_SRC
 
-Shift buffers around.
+Shift windows around.
 
 #+NAME: orgmode:gcr:2017-03-04:mara:1DAE1BB3-4BD8-46CB-AE5A-7BC0F0DA02EA
 #+BEGIN_SRC emacs-lisp :results output silent
