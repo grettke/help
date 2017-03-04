@@ -6184,6 +6184,14 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
      :ID:       orgmode:gcr:vela:4CDDC2CE-646A-4D8B-B5D3-2588FBEFF650
      :END:
 
+Cycle through common options for removing space between characters. Thank you
+[[http://pragmaticemacs.com/emacs/cycle-spacing/][Pragmatic Emacs]].
+
+#+NAME: orgmode:gcr:2017-03-03:mara:B4E3B76E-94CA-482C-BE70-7413A62BB152
+#+BEGIN_SRC emacs-lisp :results output silent
+(global-set-key (kbd "s-SPC") #'cycle-spacing)
+#+END_SRC
+
 **** Unsorted
      :PROPERTIES:
      :ID:       orgmode:gcr:vela:AD2164B2-CB66-48AD-B367-4E0CC406B022
