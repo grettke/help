@@ -2104,6 +2104,7 @@ Persist keyboard macros in Emacs Lisp alternative to ~insert-kbd-macro~.
 #+BEGIN_SRC emacs-lisp :results output silent
 (use-package elmacro
   :ensure t
+  :diminish (elmacro-mode)
   :config
   (elmacro-mode))
 #+END_SRC

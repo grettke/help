@@ -1294,6 +1294,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
 ;; [[file:~/src/help/help.org::orgmode:gcr:2017-03-03:mara:3DD2F7F0-285C-408C-A620-57420CCCE51D][orgmode:gcr:2017-03-03:mara:3DD2F7F0-285C-408C-A620-57420CCCE51D]]
 (use-package elmacro
   :ensure t
+  :diminish (elmacro-mode)
   :config
   (elmacro-mode))
 ;; orgmode:gcr:2017-03-03:mara:3DD2F7F0-285C-408C-A620-57420CCCE51D ends here
