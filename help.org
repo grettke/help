@@ -2711,6 +2711,20 @@ Git ignore files are text files.
 (add-to-list 'auto-mode-alist '(".gitignore$" . text-mode))
 #+END_SRC
 
+Git config files.
+
+#+NAME: orgmode:gcr:2017-03-04:mara:91E38B17-EDBF-4071-8CB3-0DE4E7670931
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package gitignore-mode
+  :ensure t)
+
+(use-package gitconfig-mode
+  :ensure t)
+
+(use-package gitattributes-mode
+  :ensure t)
+#+END_SRC
+
 ** Video
 :PROPERTIES:
 :ID:       orgmode:gcr:vela:4AFA5B76-4C9E-4728-8556-9163DA3D3CE7

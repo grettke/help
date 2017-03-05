@@ -1614,6 +1614,17 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 (add-to-list 'auto-mode-alist '(".gitignore$" . text-mode))
 ;; orgmode:gcr:vela:6FD11818-DB10-4AF4-A714-C32C04291AF2 ends here
 
+;; [[file:~/src/help/help.org::orgmode:gcr:2017-03-04:mara:91E38B17-EDBF-4071-8CB3-0DE4E7670931][orgmode:gcr:2017-03-04:mara:91E38B17-EDBF-4071-8CB3-0DE4E7670931]]
+(use-package gitignore-mode
+  :ensure t)
+
+(use-package gitconfig-mode
+  :ensure t)
+
+(use-package gitattributes-mode
+  :ensure t)
+;; orgmode:gcr:2017-03-04:mara:91E38B17-EDBF-4071-8CB3-0DE4E7670931 ends here
+
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:C6FF37A6-EC87-4918-BFC8-927157F890BF][orgmode:gcr:vela:C6FF37A6-EC87-4918-BFC8-927157F890BF]]
 (defvar yt-iframe-format
   ;; You may want to change your width and height.
