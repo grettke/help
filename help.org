@@ -5343,6 +5343,7 @@ in different situations. Be very thoughtful and allow every function.
   (setq solarized-use-less-bold t)
   (setq solarized-use-more-italic nil)
   (setq solarized-emphasize-indicators nil)
+  (setq solarized-scale-org-headlines nil)
   (load-theme 'solarized-dark t))
 #+END_SRC
 
