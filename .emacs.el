@@ -2944,7 +2944,7 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
   (setq solarized-use-less-bold t)
   (setq solarized-use-more-italic nil)
   (setq solarized-emphasize-indicators nil)
-  (setq solarized-scale-org-headlines nil)
+  (setq solarized-scale-org-headlines t)
   (setq solarized-height-minus-1 1.0)
   (setq solarized-height-plus-1 1.0)
   (setq solarized-height-plus-2 1.0)
