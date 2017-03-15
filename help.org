@@ -5437,6 +5437,13 @@ character wide buffer and make it easy to adjust it.
    :ID:       orgmode:gcr:vela:B3F90439-D007-42EE-95FC-E93BBA827325
    :END:
 
+Menu bars make EMACS more accessible to non-EMACS users.
+
+#+NAME: orgmode:gcr:vela:00BC7BEE-F9FC-4B9D-AC1A-4B1A3FFA64A7
+#+BEGIN_SRC emacs-lisp :results output silent
+(menu-bar-mode t)
+#+END_SRC
+   
 The scroll-bars are helpful for new users.
 
 #+NAME: orgmode:gcr:vela:96EB14DD-CB63-46F3-B2E3-6F433D70DFAE
@@ -5515,13 +5522,6 @@ Ediff split frame horizontally.
    :PROPERTIES:
    :ID:       orgmode:gcr:vela:9A848D65-DE56-4F95-A84D-CAE74781CD25
    :END:
-
-Menu bars make EMACS more accessible to non-EMACS users.
-
-#+NAME: orgmode:gcr:vela:00BC7BEE-F9FC-4B9D-AC1A-4B1A3FFA64A7
-#+BEGIN_SRC emacs-lisp :results output silent
-(menu-bar-mode t)
-#+END_SRC
 
 Easily return to previous configurations. 2-4 windows are easily managed by
 hand.

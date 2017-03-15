@@ -3001,6 +3001,10 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
  (help/update-font))
 ;; orgmode:gcr:vela:21687556-D79E-4734-86E6-52FF9EE107B5 ends here
 
+;; [[file:~/src/help/help.org::orgmode:gcr:vela:00BC7BEE-F9FC-4B9D-AC1A-4B1A3FFA64A7][orgmode:gcr:vela:00BC7BEE-F9FC-4B9D-AC1A-4B1A3FFA64A7]]
+(menu-bar-mode t)
+;; orgmode:gcr:vela:00BC7BEE-F9FC-4B9D-AC1A-4B1A3FFA64A7 ends here
+
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:96EB14DD-CB63-46F3-B2E3-6F433D70DFAE][orgmode:gcr:vela:96EB14DD-CB63-46F3-B2E3-6F433D70DFAE]]
 (scroll-bar-mode 0)
 ;; orgmode:gcr:vela:96EB14DD-CB63-46F3-B2E3-6F433D70DFAE ends here
@@ -3045,10 +3049,6 @@ ALPHA : [ %(frame-parameter nil 'alpha) ].'
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:5B8FCEDB-66BA-4912-8FC8-B6EFBF6EF34D][orgmode:gcr:vela:5B8FCEDB-66BA-4912-8FC8-B6EFBF6EF34D]]
 (setq ediff-split-window-function 'split-window-horizontally)
 ;; orgmode:gcr:vela:5B8FCEDB-66BA-4912-8FC8-B6EFBF6EF34D ends here
-
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:00BC7BEE-F9FC-4B9D-AC1A-4B1A3FFA64A7][orgmode:gcr:vela:00BC7BEE-F9FC-4B9D-AC1A-4B1A3FFA64A7]]
-(menu-bar-mode t)
-;; orgmode:gcr:vela:00BC7BEE-F9FC-4B9D-AC1A-4B1A3FFA64A7 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:3FB7FA94-1A6B-4E3B-8EDE-7A4D1D86E50E][orgmode:gcr:vela:3FB7FA94-1A6B-4E3B-8EDE-7A4D1D86E50E]]
 (winner-mode t)
