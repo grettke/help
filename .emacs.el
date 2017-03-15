@@ -1941,6 +1941,13 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
         (org-set-property prop val))))
 ;; orgmode:gcr:2017-02-05:mara:6F6B518A-9605-4E4D-8A9C-851A0A51E4E7 ends here
 
+;; [[file:~/src/help/help.org::orgmode:gcr:2017-03-11:mara:5DA439B7-55B1-4C3F-82FF-F2D4A9889DCC][orgmode:gcr:2017-03-11:mara:5DA439B7-55B1-4C3F-82FF-F2D4A9889DCC]]
+(use-package org-table-sticky-header
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook #'org-table-sticky-header-mode))
+;; orgmode:gcr:2017-03-11:mara:5DA439B7-55B1-4C3F-82FF-F2D4A9889DCC ends here
+
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:548D2D49-98E0-456B-91BC-37D0C0BC3557][orgmode:gcr:vela:548D2D49-98E0-456B-91BC-37D0C0BC3557]]
 (setq org-startup-with-inline-images (display-graphic-p))
 ;; orgmode:gcr:vela:548D2D49-98E0-456B-91BC-37D0C0BC3557 ends here

@@ -3436,6 +3436,17 @@ and set it's value to the killed text.
 
 #+END_SRC
 **** Tables
+:PROPERTIES:
+:ID:       orgmode:gcr:2017-03-11:mara:4C43EA5C-09A8-4D4C-81FF-2A4EC8C1F85C
+:END:
+Essential for using tables with split windows.
+#+NAME: orgmode:gcr:2017-03-11:mara:5DA439B7-55B1-4C3F-82FF-F2D4A9889DCC
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package org-table-sticky-header
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook #'org-table-sticky-header-mode))
+#+END_SRC
 **** Unclassified
 :PROPERTIES:
 :ID:       orgmode:gcr:vela:825C088D-CAA0-43D5-A005-00EF973A6D4C
