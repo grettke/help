@@ -3444,6 +3444,7 @@ Essential for using tables with split windows.
 #+BEGIN_SRC emacs-lisp :results output silent
 (use-package org-table-sticky-header
   :ensure t
+  :diminish org-table-sticky-header-mode
   :config
   (add-hook 'org-mode-hook #'org-table-sticky-header-mode))
 #+END_SRC
@@ -5443,7 +5444,7 @@ Menu bars make EMACS more accessible to non-EMACS users.
 #+BEGIN_SRC emacs-lisp :results output silent
 (menu-bar-mode t)
 #+END_SRC
-   
+
 The scroll-bars are helpful for new users.
 
 #+NAME: orgmode:gcr:vela:96EB14DD-CB63-46F3-B2E3-6F433D70DFAE

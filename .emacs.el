@@ -1944,6 +1944,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; [[file:~/src/help/help.org::orgmode:gcr:2017-03-11:mara:5DA439B7-55B1-4C3F-82FF-F2D4A9889DCC][orgmode:gcr:2017-03-11:mara:5DA439B7-55B1-4C3F-82FF-F2D4A9889DCC]]
 (use-package org-table-sticky-header
   :ensure t
+  :diminish org-table-sticky-header-mode
   :config
   (add-hook 'org-mode-hook #'org-table-sticky-header-mode))
 ;; orgmode:gcr:2017-03-11:mara:5DA439B7-55B1-4C3F-82FF-F2D4A9889DCC ends here
