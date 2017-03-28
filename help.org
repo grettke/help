@@ -3970,8 +3970,8 @@ Easily enter guillemots.
 
 #+NAME: orgmode:gcr:vela:46FE856B-D5C6-45B0-95D5-891211AC295C
 #+BEGIN_SRC emacs-lisp :results output silent
-(key-chord-define org-mode-map "<<" (lambda () (interactive) (insert "«")))
-(key-chord-define org-mode-map ">>" (lambda () (interactive) (insert "»")))
+(key-chord-define org-mode-map "<<" (lambda () (interactive) (insert "\\laquo")))
+(key-chord-define org-mode-map ">>" (lambda () (interactive) (insert "\\raquo")))
 #+END_SRC
 
 *** Transliteration

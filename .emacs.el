@@ -2233,8 +2233,8 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
 ;; orgmode:gcr:vela:B489F70A-F1B0-41A9-BB98-A5861A867547 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:46FE856B-D5C6-45B0-95D5-891211AC295C][orgmode:gcr:vela:46FE856B-D5C6-45B0-95D5-891211AC295C]]
-(key-chord-define org-mode-map "<<" (lambda () (interactive) (insert "«")))
-(key-chord-define org-mode-map ">>" (lambda () (interactive) (insert "»")))
+(key-chord-define org-mode-map "<<" (lambda () (interactive) (insert "\\laquo")))
+(key-chord-define org-mode-map ">>" (lambda () (interactive) (insert "\\raquo")))
 ;; orgmode:gcr:vela:46FE856B-D5C6-45B0-95D5-891211AC295C ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:FB7C19BC-D532-4061-A6B6-F51DC34DC73D][orgmode:gcr:vela:FB7C19BC-D532-4061-A6B6-F51DC34DC73D]]
