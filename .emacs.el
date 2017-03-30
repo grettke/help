@@ -3131,9 +3131,9 @@ ALPHA : [ %(frame-parameter nil 'alpha) ].'
 _O_ base64-encode-region _P_ base64-decode-region _|_ split-window-horizontally _-_ split-window-vertically
 _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_ flyck/buf _&_ flyck/lst _8_ grade-level _9_ reading-ease _0_ writegood _w_ widen _e_ flycheck _=_ reposition-window _t_ rectangle-mark _y_ transparency _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page _}_ transliterate
 _T_ trademarks
-_a_ ag  _A_ apropo'ish _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point  _D_ detangle _j_ obtj2o _k_ scrollDown _K_ nextLogLine  _;_ toggle-lax-whitespace
+_a_ ag  _A_ apropo'ish _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point _f_ desc-fun _D_ detangle _j_ obtj2o _k_ scrollDown _K_ nextLogLine  _;_ toggle-lax-whitespace
 _l_ visual-line-mode _L_ aggressive-indent-mode
-_x_ delete-indentation _c_ fill-paragraph _v_ desc-symbol _V_ view-mode _b_ erase-buffer _B_ibtex _n_ normal _M_ checks
+_x_ delete-indentation _c_ fill-paragraph _v_ desc-var _V_ view-mode _b_ erase-buffer _B_ibtex _n_ normal _M_ checks
 _<_ cmtIn _>_ cmtOut _?_ snp"
   ("|" split-window-horizontally)
   ("-" split-window-vertically)
@@ -3159,8 +3159,9 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("l" visual-line-mode)
   ("L" aggressive-indent-mode)
   ("S" help/toggle-mac-function-modifier)
+  ("f" describe-function)
   ("x" delete-indentation)
-  ("v" describe-symbol)
+  ("v" describe-variable)
   ("V" view-mode)
   ("w" widen)
   ("t" rectangle-mark-mode)
