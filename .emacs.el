@@ -2596,6 +2596,7 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
   (add-to-list 'auto-mode-alist '("\\.css?\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.scss?\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.xml?\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.php?\\'" . web-mode))
   (setq web-mode-enable-engine-detection t)
   (define-key web-mode-map (kbd "s-n") 'web-mode-tag-match))
 
