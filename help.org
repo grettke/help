@@ -1301,18 +1301,6 @@ Do the /right thing/ for getting to the start of the line.
   (global-set-key (kbd "C-a") 'mwim-beginning-of-code-or-line))
 #+END_SRC
 
-Select windows.
-
-#+NAME: orgmode:gcr:2017-03-04:mara:66C289E4-0535-47DF-9A31-64B373E7C433
-#+BEGIN_SRC emacs-lisp :results output silent
-(use-package ace-window
-  :ensure t
-  :config
-  (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
-  (setq aw-scope 'frame)
-  (setq aw-background nil))
-#+END_SRC
-
 ** Code Folding
    :PROPERTIES:
    :ID:       orgmode:gcr:vela:3F70676D-C141-4093-9E40-F42B6C7B7232
@@ -5582,6 +5570,18 @@ configured here.
 #+NAME: orgmode:gcr:vela:2DB2EB2C-74AA-4121-A2BE-4974DCB5638E
 #+BEGIN_SRC emacs-lisp :results output silent
 (setq help-window-select t)
+#+END_SRC
+
+Select windows.
+
+#+NAME: orgmode:gcr:2017-03-04:mara:66C289E4-0535-47DF-9A31-64B373E7C433
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package ace-window
+  :ensure t
+  :config
+  (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+  (setq aw-scope 'frame)
+  (setq aw-background nil))
 #+END_SRC
 
 * Piano Lessons
