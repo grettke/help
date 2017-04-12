@@ -3286,7 +3286,7 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 ;; orgmode:gcr:vela:2608E62D-62B4-4B82-BFE0-E1E04C0D6914 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:FD9CED46-8D84-495F-A413-90DA9EA52B8A][orgmode:gcr:vela:FD9CED46-8D84-495F-A413-90DA9EA52B8A]]
-(key-chord-define-global "vn" #'ace-window)
+(key-chord-define-global "vn" #'help/ace-window)
 ;; orgmode:gcr:vela:FD9CED46-8D84-495F-A413-90DA9EA52B8A ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:4E784CF7-8CB1-42D0-A8EB-6FF54E7B60E9][orgmode:gcr:vela:4E784CF7-8CB1-42D0-A8EB-6FF54E7B60E9]]
