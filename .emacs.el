@@ -1046,6 +1046,11 @@ configuration when invoked to evaluate a line."
   (help/save-all-file-buffers)
   (other-window 1))
 
+(defun help/ace-window ()
+  (interactive)
+  (help/save-all-file-buffers)
+  (call-interactively #'ace-window))
+
 (defun help/safb-org-edit-src-code ()
   (interactive)
   (help/save-all-file-buffers)
