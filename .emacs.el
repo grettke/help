@@ -3333,7 +3333,7 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:5F07753E-91BA-4B4F-B051-0C7C90B1F04A][orgmode:gcr:vela:5F07753E-91BA-4B4F-B051-0C7C90B1F04A]]
 (key-chord-define-global "fj" #'avy-goto-word-1)
-(key-chord-define-global "fh" #'avy-goto-char)
+(key-chord-define-global "fm" #'avy-goto-char)
 (key-chord-define-global "FJ" #'avy-pop-mark)
 ;; orgmode:gcr:vela:5F07753E-91BA-4B4F-B051-0C7C90B1F04A ends here
 

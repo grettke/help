@@ -6391,7 +6391,7 @@ Go to a word.
 #+NAME: orgmode:gcr:vela:5F07753E-91BA-4B4F-B051-0C7C90B1F04A
 #+BEGIN_SRC emacs-lisp :results output silent
 (key-chord-define-global "fj" #'avy-goto-word-1)
-(key-chord-define-global "fh" #'avy-goto-char)
+(key-chord-define-global "fm" #'avy-goto-char)
 (key-chord-define-global "FJ" #'avy-pop-mark)
 #+END_SRC
 
