@@ -3355,8 +3355,8 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 ;; orgmode:gcr:vela:0410911F-2D84-4799-8F68-1F3173E318B6 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:7B79E6A3-90F2-4F3F-AA40-1231D0DDA684][orgmode:gcr:vela:7B79E6A3-90F2-4F3F-AA40-1231D0DDA684]]
-(global-set-key (kbd "M-n") (kbd "C-u 1 C-v"))
-(global-set-key (kbd "M-p") (kbd "C-u 1 M-v"))
+(global-set-key (kbd "M-p") (kbd "C-u 1 C-v"))
+(global-set-key (kbd "M-n") (kbd "C-u 1 M-v"))
 ;; orgmode:gcr:vela:7B79E6A3-90F2-4F3F-AA40-1231D0DDA684 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:FA4DDBA3-494B-4062-B43F-5D17DB239AF5][orgmode:gcr:vela:FA4DDBA3-494B-4062-B43F-5D17DB239AF5]]
