@@ -5317,7 +5317,9 @@ Automatically Copy Text Selected With The Mouse [[http://pragmaticemacs.com/emac
 #+END_SRC
 
 The macro recorder and Multiple-Cursors provide two ways to do the right thing
-in different situations. Be very thoughtful and allow every function.
+in different situations. Be very thoughtful and allow every function. My
+configuration /barely/ utilizes MC because I use all that I can handle right
+now.
 
 #+NAME: orgmode:gcr:vela:989C4727-473A-4DAB-8446-5077F3042587
 #+BEGIN_SRC emacs-lisp :results output silent
