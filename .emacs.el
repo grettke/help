@@ -2937,7 +2937,9 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:989C4727-473A-4DAB-8446-5077F3042587][orgmode:gcr:vela:989C4727-473A-4DAB-8446-5077F3042587]]
 (use-package multiple-cursors
-  :ensure t)
+  :ensure t
+  :config
+  (setq mc/always-run-for-all t))
 ;; orgmode:gcr:vela:989C4727-473A-4DAB-8446-5077F3042587 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:021B7D3A-E696-43B9-BC08-C8BDABB33999][orgmode:gcr:vela:021B7D3A-E696-43B9-BC08-C8BDABB33999]]

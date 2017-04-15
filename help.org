@@ -5324,7 +5324,9 @@ now.
 #+NAME: orgmode:gcr:vela:989C4727-473A-4DAB-8446-5077F3042587
 #+BEGIN_SRC emacs-lisp :results output silent
 (use-package multiple-cursors
-  :ensure t)
+  :ensure t
+  :config
+  (setq mc/always-run-for-all t))
 #+END_SRC
 
 ** Color Theme
