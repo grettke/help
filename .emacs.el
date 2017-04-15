@@ -902,7 +902,8 @@ Attribution: `http://stackoverflow.com/a/25212377'"
   ;; for *scratch*
   (define-key lisp-interaction-mode-map (kbd "<C-return>") 'eir-eval-in-ielm)
   ;; for M-x info
-  (define-key Info-mode-map (kbd "<C-return>") 'eir-eval-in-ielm)
+  (eval-after-load "info"
+    '(define-key Info-mode-map (kbd "<C-return>") 'eir-eval-in-ielm))
   ;; Shell support
   (require 'eval-in-repl-shell)
   (add-hook 'sh-mode-hook
