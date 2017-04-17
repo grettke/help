@@ -3362,10 +3362,12 @@ Because <09% of the time I am moving headings into a new file
 :ID:       orgmode:gcr:vela:B22BE013-FFE3-4147-AD1B-53E1CFF48306
 :END:
 
-- Most refiles are for waiting projects so put them at the end of the list.
+- Refiles are always coming from another headline to this headline. They are
+  new and need to be prioritized. When they are in front it is easy to notice
+  because your eyes go there first (even know you /are/ the one refiling)
   #+NAME: orgmode:gcr:vela:8FA9026B-ACAF-496C-B5F6-1F98ABA4FA28
   #+BEGIN_SRC emacs-lisp :results output silent
-(setq org-reverse-note-order nil)
+(setq org-reverse-note-order t)
   #+END_SRC
 - Select headings with the full path immediately instead of with clunky
   depth-first navigation

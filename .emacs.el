@@ -1890,7 +1890,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; orgmode:gcr:vela:A5D38FFE-32B1-4691-BFC8-02725D112F2E ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:8FA9026B-ACAF-496C-B5F6-1F98ABA4FA28][orgmode:gcr:vela:8FA9026B-ACAF-496C-B5F6-1F98ABA4FA28]]
-(setq org-reverse-note-order nil)
+(setq org-reverse-note-order t)
 ;; orgmode:gcr:vela:8FA9026B-ACAF-496C-B5F6-1F98ABA4FA28 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:orgmode:gcr:vela:17D0BD24-8C36-4371-91CC-380176017D86][orgmode:gcr:vela:orgmode:gcr:vela:17D0BD24-8C36-4371-91CC-380176017D86]]
