@@ -232,6 +232,15 @@ This is useful for fringe cases where trailing whitespace is important."
   (interactive)
   (insert (format-time-string "%Y-%m-%dT%T")))
 
+(defun help/insert-timestamp*-no-colons ()
+  "Produces and inserts a near-full ISO 8601-like format timestamp."
+  (interactive)
+  (let* ((str (format-time-string "%Y-%m-%dT%T"))
+         (fnl (s-replace ":" "-" str)))
+    (insert fnl)))
+
+  'help/insert-timestamp*-no-colons
+
 (defun help/insert-datestamp ()
   "Produces and inserts a partial ISO 8601 format timestamp."
   (interactive)
@@ -3124,7 +3133,7 @@ ALPHA : [ %(frame-parameter nil 'alpha) ].'
 (global-set-key (kbd "s-Q") #'kill-this-buffer)
 (global-set-key (kbd "H-i") #'insert-char)
 (global-set-key (kbd "H-p") #'help/insert-datestamp)
-(global-set-key (kbd "H-P") #'help/insert-timestamp)
+(global-set-key (kbd "H-P") #'help/insert-timestamp*-no-colons)
 ;; orgmode:gcr:vela:239A85C3-2CEB-4E40-975F-8B3584F7F450 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:E60EA15F-28A0-4E98-B62E-1F8BDE444BD8][orgmode:gcr:vela:E60EA15F-28A0-4E98-B62E-1F8BDE444BD8]]
