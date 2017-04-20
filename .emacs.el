@@ -2613,6 +2613,7 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 (defun help/web-mode-hook-fn ()
   "HELP web-mode customizations."
   (interactive)
+  (setq web-mode-enable-auto-indentation nil)
   (setq web-mode-markup-indent-offset 2)
   (setq web-mode-css-indent-offset 2)
   (setq web-mode-code-indent-offset 2)
