@@ -2635,7 +2635,8 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
   (setq web-mode-enable-block-face t)
   (setq web-mode-enable-part-face t)
   (setq web-mode-enable-comment-keywords t)
-  (setq web-mode-enable-heredoc-fontification t))
+  (setq web-mode-enable-heredoc-fontification t)
+  (turn-off-fci-mode))
 
 (add-hook 'web-mode-hook #'help/web-mode-hook-fn)
 ;; orgmode:gcr:vela:ABA05DE1-22EF-4BDB-935C-B842EBB843B5 ends here
