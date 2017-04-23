@@ -5450,25 +5450,27 @@ character wide buffer and make it easy to adjust it.
    :ID:       orgmode:gcr:vela:B3F90439-D007-42EE-95FC-E93BBA827325
    :END:
 
-Menu bars make EMACS more accessible to non-EMACS users.
+Invite any user with familiar GUI features
+
+Menus bar.
 
 #+NAME: orgmode:gcr:vela:00BC7BEE-F9FC-4B9D-AC1A-4B1A3FFA64A7
 #+BEGIN_SRC emacs-lisp :results output silent
-(menu-bar-mode t)
+(menu-bar-mode nil)
 #+END_SRC
 
-The scroll-bars are helpful for new users.
-
-#+NAME: orgmode:gcr:vela:96EB14DD-CB63-46F3-B2E3-6F433D70DFAE
-#+BEGIN_SRC emacs-lisp :results output silent
-(scroll-bar-mode 0)
-#+END_SRC
-
-The tool-bar is helpful for new users. Isn't the argument funny?
+Tool bar.
 
 #+NAME: orgmode:gcr:vela:2063ECD7-C23B-4CDC-96E0-786361DFAA9C
 #+BEGIN_SRC emacs-lisp :results output silent
-(tool-bar-mode -1)
+(tool-bar-mode nil)
+#+END_SRC
+
+Scroll bar.
+
+#+NAME: orgmode:gcr:vela:96EB14DD-CB63-46F3-B2E3-6F433D70DFAE
+#+BEGIN_SRC emacs-lisp :results output silent
+(scroll-bar-mode nil)
 #+END_SRC
 
 Adjust frame transparency.

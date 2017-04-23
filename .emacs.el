@@ -3014,16 +3014,16 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
 ;; orgmode:gcr:vela:21687556-D79E-4734-86E6-52FF9EE107B5 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:00BC7BEE-F9FC-4B9D-AC1A-4B1A3FFA64A7][orgmode:gcr:vela:00BC7BEE-F9FC-4B9D-AC1A-4B1A3FFA64A7]]
-(menu-bar-mode t)
+(menu-bar-mode nil)
 ;; orgmode:gcr:vela:00BC7BEE-F9FC-4B9D-AC1A-4B1A3FFA64A7 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:96EB14DD-CB63-46F3-B2E3-6F433D70DFAE][orgmode:gcr:vela:96EB14DD-CB63-46F3-B2E3-6F433D70DFAE]]
-(scroll-bar-mode 0)
-;; orgmode:gcr:vela:96EB14DD-CB63-46F3-B2E3-6F433D70DFAE ends here
-
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:2063ECD7-C23B-4CDC-96E0-786361DFAA9C][orgmode:gcr:vela:2063ECD7-C23B-4CDC-96E0-786361DFAA9C]]
-(tool-bar-mode -1)
+(tool-bar-mode nil)
 ;; orgmode:gcr:vela:2063ECD7-C23B-4CDC-96E0-786361DFAA9C ends here
+
+;; [[file:~/src/help/help.org::orgmode:gcr:vela:96EB14DD-CB63-46F3-B2E3-6F433D70DFAE][orgmode:gcr:vela:96EB14DD-CB63-46F3-B2E3-6F433D70DFAE]]
+(scroll-bar-mode nil)
+;; orgmode:gcr:vela:96EB14DD-CB63-46F3-B2E3-6F433D70DFAE ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:2017-02-05:mara:72643BF5-0810-4188-A39B-302BA06A6182][orgmode:gcr:2017-02-05:mara:72643BF5-0810-4188-A39B-302BA06A6182]]
 (defun my--set-transparency (inc)
