@@ -389,6 +389,14 @@ Namespacing without language support.
   :ensure t)
 #+END_SRC
 
+Child process handling specifically for Magit.
+
+#+NAME: orgmode:gcr:2017-04-25:mara:B6AAB439-C389-4BF7-9A35-6EFC95CAB937
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package with-editor
+  :ensure t)
+#+END_SRC
+
 ** Modeline
    :PROPERTIES:
    :ID:       orgmode:gcr:vela:798F14D1-EDC6-4306-8E82-0854980AEFBA

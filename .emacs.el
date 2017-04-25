@@ -74,6 +74,11 @@
   :ensure t)
 ;; orgmode:gcr:vela:D94EE9AF-B0E4-4585-BF4A-0E78ABDE81FD ends here
 
+;; [[file:~/src/help/help.org::orgmode:gcr:2017-04-25:mara:B6AAB439-C389-4BF7-9A35-6EFC95CAB937][orgmode:gcr:2017-04-25:mara:B6AAB439-C389-4BF7-9A35-6EFC95CAB937]]
+(use-package with-editor
+  :ensure t)
+;; orgmode:gcr:2017-04-25:mara:B6AAB439-C389-4BF7-9A35-6EFC95CAB937 ends here
+
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:1F5BD72D-2E4B-4298-B4BF-DD52BD26FC3E][orgmode:gcr:vela:1F5BD72D-2E4B-4298-B4BF-DD52BD26FC3E]]
 (use-package diminish)
 ;; orgmode:gcr:vela:1F5BD72D-2E4B-4298-B4BF-DD52BD26FC3E ends here
