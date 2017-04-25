@@ -2677,12 +2677,18 @@ Most programing modes indent to 2 spaces. TABs should be the same width.
 
 Use VC for single files and Magit for multiple files.
 
-The commit log editor uses With-Editor and Server modes. They are not diminished because they are infrequently used.
+The commit log editor uses With-Editor and Server modes. They are not
+diminished because they are infrequently used.
 
 #+NAME: orgmode:gcr:vela:14B95634-E6E8-46A0-9698-2C9B847DD404
 #+BEGIN_SRC emacs-lisp :results output silent
-(use-package magit
-  :ensure t)
+(add-to-list 'load-path "~/src/magit/lisp")
+(require 'magit)
+
+(with-eval-after-load 'info
+  (info-initialize)
+  (add-to-list 'Info-directory-list
+               "~/src/magit/Documentation/"))
 #+END_SRC
 
 Leave the VC message template empty.

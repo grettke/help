@@ -1596,8 +1596,13 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 ;; orgmode:gcr:vela:1AB838F7-4C9B-4C35-97B5-35390871A22D ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:14B95634-E6E8-46A0-9698-2C9B847DD404][orgmode:gcr:vela:14B95634-E6E8-46A0-9698-2C9B847DD404]]
-(use-package magit
-  :ensure t)
+(add-to-list 'load-path "~/src/magit/lisp")
+(require 'magit)
+
+(with-eval-after-load 'info
+  (info-initialize)
+  (add-to-list 'Info-directory-list
+               "~/src/magit/Documentation/"))
 ;; orgmode:gcr:vela:14B95634-E6E8-46A0-9698-2C9B847DD404 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:27D5DC40-DD13-4E08-9EF9-D962DD08A7D5][orgmode:gcr:vela:27D5DC40-DD13-4E08-9EF9-D962DD08A7D5]]
