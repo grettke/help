@@ -2780,10 +2780,6 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
   (setq markdown-coding-system "utf-8"))
 ;; orgmode:gcr:vela:8A4DB408-7888-4705-AB2B-C7EED9262DF2 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:080472B8-EC76-4318-876A-A4A65547B056][orgmode:gcr:vela:080472B8-EC76-4318-876A-A4A65547B056]]
-(setq org-html-doctype "html5")
-;; orgmode:gcr:vela:080472B8-EC76-4318-876A-A4A65547B056 ends here
-
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:E26F69F8-ED1F-4F10-A291-6F9CB958FD18][orgmode:gcr:vela:E26F69F8-ED1F-4F10-A291-6F9CB958FD18]]
 (use-package htmlize
   :config
@@ -2811,6 +2807,10 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
         (fci-mode t))))
   (add-hook 'htmlize-after-hook #'help/htmlize-after-hook-fn))
 ;; orgmode:gcr:vela:E26F69F8-ED1F-4F10-A291-6F9CB958FD18 ends here
+
+;; [[file:~/src/help/help.org::orgmode:gcr:vela:080472B8-EC76-4318-876A-A4A65547B056][orgmode:gcr:vela:080472B8-EC76-4318-876A-A4A65547B056]]
+(setq org-html-doctype "html5")
+;; orgmode:gcr:vela:080472B8-EC76-4318-876A-A4A65547B056 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:B7F010D3-4A47-4E4A-9E00-D54E4D0F9D63][orgmode:gcr:vela:B7F010D3-4A47-4E4A-9E00-D54E4D0F9D63]]
 (setq org-ascii-text-width 80)
