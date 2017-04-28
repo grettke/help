@@ -3059,6 +3059,10 @@ ALPHA : [ %(frame-parameter nil 'alpha) ].'
          (set-frame-parameter (selected-frame) 'alpha value)) "Set to ?" :color blue))
 ;; orgmode:gcr:2017-02-05:mara:72643BF5-0810-4188-A39B-302BA06A6182 ends here
 
+;; [[file:~/src/help/help.org::orgmode:gcr:2017-04-28:mara:6783EA5C-D136-4032-AB98-1BE7942C2ACA][orgmode:gcr:2017-04-28:mara:6783EA5C-D136-4032-AB98-1BE7942C2ACA]]
+(define-key global-map (kbd "s-m") nil)
+;; orgmode:gcr:2017-04-28:mara:6783EA5C-D136-4032-AB98-1BE7942C2ACA ends here
+
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:9E122111-1074-42D5-A57D-855E3A888C8E][orgmode:gcr:vela:9E122111-1074-42D5-A57D-855E3A888C8E]]
 (setq make-pointer-invisible t)
 ;; orgmode:gcr:vela:9E122111-1074-42D5-A57D-855E3A888C8E ends here

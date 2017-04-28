@@ -5515,6 +5515,15 @@ ALPHA : [ %(frame-parameter nil 'alpha) ].'
   ("=" (lambda (value) (interactive "nTransparency Value 0 - 100 opaque:")
          (set-frame-parameter (selected-frame) 'alpha value)) "Set to ?" :color blue))
 #+END_SRC
+
+The default keybinding for frame iconification doesn't work for my Org-Mode
+Literate Programming setup.
+
+#+NAME: orgmode:gcr:2017-04-28:mara:6783EA5C-D136-4032-AB98-1BE7942C2ACA
+#+BEGIN_SRC emacs-lisp :results output silent
+(define-key global-map (kbd "s-m") nil)
+#+END_SRC
+
 ** Pointer
    :PROPERTIES:
    :ID:       orgmode:gcr:vela:2A437D32-2944-41B3-AD8F-438ABBD4E0CF
