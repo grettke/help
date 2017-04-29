@@ -2777,14 +2777,15 @@ Git config files.
    :ID:       orgmode:gcr:vela:5BBD948F-7239-457E-8BD9-710558C0E241
    :END:
 
-Make control characters easily visible.
+- Visible Whitespace
+  - Tabs
 
 #+NAME: orgmode:gcr:vela:3327B4FF-82CF-42E7-AEF8-DCC968B97BDC
 #+BEGIN_SRC emacs-lisp :results output silent
 (use-package whitespace
   :ensure t
   :config
-  (setq whitespace-style '(trailing lines tab-mark))
+  (setq whitespace-style '(tab-mark))
   (setq whitespace-line-column help/column-width)
   (global-whitespace-mode t)
   :diminish whitespace-mode global-whitespace-mode)

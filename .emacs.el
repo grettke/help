@@ -1666,7 +1666,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 (use-package whitespace
   :ensure t
   :config
-  (setq whitespace-style '(trailing lines tab-mark))
+  (setq whitespace-style '(tab-mark))
   (setq whitespace-line-column help/column-width)
   (global-whitespace-mode t)
   :diminish whitespace-mode global-whitespace-mode)
