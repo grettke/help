@@ -692,25 +692,6 @@ if(! require(dtplyr)) {
 }
 #+end_src
 
-**** xlsx
-:PROPERTIES:
-:ID:       51FF40DD-6B00-48BD-A946-53666E9BE40F
-:END:
-
-Read and write Excel files [fn:ed7756d2: http://cran.r-project.org/web/packages/xlsx/index.html].
-
-#+NAME: 6351DA30-6CAA-4EE1-8760-8EFF48F39EAF
-#+begin_src R
-library(xlsx)
-#+end_src
-
-#+NAME: 9FA90522-A853-4E2D-B982-8C0729B72732
-#+begin_src R :noweb-ref rinstall-def
-if(! require(xlsx)) {
-    install.packages("xlsx")
-}
-#+end_src
-
 **** XML
 :PROPERTIES:
 :ID:       1C5D86C3-F971-4A4A-B3ED-CFA7814B6B6B

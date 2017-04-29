@@ -25,9 +25,6 @@ if(! require(dplyr)) {
 if(! require(dtplyr)) {
     install.packages("dtplyr")
 }
-if(! require(xlsx)) {
-    install.packages("xlsx")
-}
 if(! require(XML)) {
     install.packages("XML")
 }
