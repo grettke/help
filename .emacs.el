@@ -3304,6 +3304,8 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (global-set-key (kbd "C-x C-c") #'help/safb-save-buffers-kill-terminal)
 (global-set-key (kbd "s-x") #'ido-find-file)
 (global-set-key (kbd "s-c") #'ido-switch-buffer)
+(key-chord-define-global "<<" (lambda () (interactive) (insert "«")))
+(key-chord-define-global ">>" (lambda () (interactive) (insert "»")))
 ;; orgmode:gcr:2017-01-21:mara:C92235D1-35C7-41EA-B4ED-9727C8531810 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:2017-03-03:mara:B4E3B76E-94CA-482C-BE70-7413A62BB152][orgmode:gcr:2017-03-03:mara:B4E3B76E-94CA-482C-BE70-7413A62BB152]]

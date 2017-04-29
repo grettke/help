@@ -6303,6 +6303,8 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (global-set-key (kbd "C-x C-c") #'help/safb-save-buffers-kill-terminal)
 (global-set-key (kbd "s-x") #'ido-find-file)
 (global-set-key (kbd "s-c") #'ido-switch-buffer)
+(key-chord-define-global "<<" (lambda () (interactive) (insert "«")))
+(key-chord-define-global ">>" (lambda () (interactive) (insert "»")))
 #+END_SRC
 
 **** Row 1
