@@ -1570,8 +1570,6 @@ Attribution: URL `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:33473D12-CA77-453B-8115-FE060E033ED4][orgmode:gcr:vela:33473D12-CA77-453B-8115-FE060E033ED4]]
 (use-package flycheck
   :ensure t
-  :config
-  (add-hook 'after-init-hook #'global-flycheck-mode)
   :diminish flycheck-mode)
 ;; orgmode:gcr:vela:33473D12-CA77-453B-8115-FE060E033ED4 ends here
 
@@ -3156,7 +3154,8 @@ ALPHA : [ %(frame-parameter nil 'alpha) ].'
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:E60EA15F-28A0-4E98-B62E-1F8BDE444BD8][orgmode:gcr:vela:E60EA15F-28A0-4E98-B62E-1F8BDE444BD8]]
 (global-set-key (kbd "s-a") #'help/safb-switch-to-previous-buffer)
 (global-set-key (kbd "s-d") #'er/expand-region)
-(global-set-key (kbd "H-l") #'flycheck-list-errors)
+(global-set-key (kbd "H-l") #'help/safb-flycheck-list-errors)
+(global-set-key (kbd "H-L") #'flycheck-mode)
 ;; orgmode:gcr:vela:E60EA15F-28A0-4E98-B62E-1F8BDE444BD8 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:F6C7AAB7-DF69-4EBA-8116-15DC32022D49][orgmode:gcr:vela:F6C7AAB7-DF69-4EBA-8116-15DC32022D49]]
@@ -3164,7 +3163,7 @@ ALPHA : [ %(frame-parameter nil 'alpha) ].'
                                               :hint nil)
   "
 _O_ base64-encode-region _P_ base64-decode-region _|_ split-window-horizontally _-_ split-window-vertically
-_1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_ flyck/buf _&_ flyck/lst _8_ grade-level _9_ reading-ease _0_ writegood _w_ widen _e_ flycheck _=_ reposition-window _t_ rectangle-mark _y_ transparency _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page _}_ transliterate
+_1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_ flyck/buf _&_ flyck/lst _8_ grade-level _9_ reading-ease _0_ writegood _w_ widen _=_ reposition-window _t_ rectangle-mark _y_ transparency _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page _}_ transliterate
 _T_ trademarks
 _a_ ag  _A_ apropo'ish _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point  _D_ detangle _j_ obtj2o _k_ scrollDown _K_ nextLogLine  _;_ toggle-lax-whitespace
 _l_ visual-line-mode _L_ aggressive-indent-mode
@@ -3175,15 +3174,12 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("1" help/font-size-reset :exit nil)
   ("2" help/text-scale-decrease :exit nil)
   ("3" help/text-scale-increase :exit nil)
-  ("e" help/safb-flycheck-list-errors)
   ("4" help/insert-ellipsis)
   ("r" help/rename-current-buffer-file)
   ("T" help/trademark/body)
   ("=" reposition-window)
   ("5" help/uuid)
   ("6" set-buffer-file-coding-system)
-  ("7" flycheck-buffer)
-  ("&" flycheck-list-errors)
   ("8" writegood-grade-level)
   ("9" writegood-reading-ease)
   ("0" writegood-mode)
