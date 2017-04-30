@@ -1409,7 +1409,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   :ensure t
   :config
   (projectile-global-mode t)
-  (global-set-key (kbd "s-z") #'projectile-find-file)
+  (global-set-key (kbd "s-x") #'projectile-find-file)
   (help/on-windows
    (setq projectile-indexing-method 'alien))
   :diminish projectile-mode)
@@ -3301,7 +3301,7 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 ;; [[file:~/src/help/help.org::orgmode:gcr:2017-01-21:mara:C92235D1-35C7-41EA-B4ED-9727C8531810][orgmode:gcr:2017-01-21:mara:C92235D1-35C7-41EA-B4ED-9727C8531810]]
 (global-set-key (kbd "s-v") #'smex)
 (global-set-key (kbd "C-x C-c") #'help/safb-save-buffers-kill-terminal)
-(global-set-key (kbd "s-x") #'ido-find-file)
+(global-set-key (kbd "s-z") #'ido-find-file)
 (global-set-key (kbd "s-c") #'ido-switch-buffer)
 (key-chord-define-global "<<" (lambda () (interactive) (insert "«")))
 (key-chord-define-global ">>" (lambda () (interactive) (insert "»")))
