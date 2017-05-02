@@ -4822,11 +4822,18 @@ Small margins.
 (add-to-list 'org-latex-packages-alist '("margin=1.5in" "geometry" nil))
 #+END_SRC
 
+One empty line between paragraphs.
+
+#+NAME: orgmode:gcr:2017-05-02:mara:906E5D8D-60CB-4E75-873C-59D4AD0E9321
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'org-latex-packages-alist '("" "parskip" nil))
+#+END_SRC
+
 Standard LaTeX class options.
 
 #+NAME: orgmode:gcr:vela:E6559423-7FC3-4924-A38B-FE4C9CA8CD91
 #+BEGIN_SRC emacs-lisp :results output silent
-(defvar help/ltx-cls-opt "paper=letter, fontsize=12pt, parskip")
+(defvar help/ltx-cls-opt "paper=letter, fontsize=12pt")
 #+END_SRC
 
 Standard article class.

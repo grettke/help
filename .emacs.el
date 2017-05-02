@@ -2728,8 +2728,12 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 (add-to-list 'org-latex-packages-alist '("margin=1.5in" "geometry" nil))
 ;; orgmode:gcr:vela:AA859065-4868-4A02-882E-AD5840B74349 ends here
 
+;; [[file:~/src/help/help.org::orgmode:gcr:2017-05-02:mara:906E5D8D-60CB-4E75-873C-59D4AD0E9321][orgmode:gcr:2017-05-02:mara:906E5D8D-60CB-4E75-873C-59D4AD0E9321]]
+(add-to-list 'org-latex-packages-alist '("" "parskip" nil))
+;; orgmode:gcr:2017-05-02:mara:906E5D8D-60CB-4E75-873C-59D4AD0E9321 ends here
+
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:E6559423-7FC3-4924-A38B-FE4C9CA8CD91][orgmode:gcr:vela:E6559423-7FC3-4924-A38B-FE4C9CA8CD91]]
-(defvar help/ltx-cls-opt "paper=letter, fontsize=12pt, parskip")
+(defvar help/ltx-cls-opt "paper=letter, fontsize=12pt")
 ;; orgmode:gcr:vela:E6559423-7FC3-4924-A38B-FE4C9CA8CD91 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:6C864008-5602-4E73-A8DE-6DDE5DFA1EE0][orgmode:gcr:vela:6C864008-5602-4E73-A8DE-6DDE5DFA1EE0]]
