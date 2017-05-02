@@ -2732,6 +2732,10 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 (add-to-list 'org-latex-packages-alist '("" "parskip" nil))
 ;; orgmode:gcr:2017-05-02:mara:906E5D8D-60CB-4E75-873C-59D4AD0E9321 ends here
 
+;; [[file:~/src/help/help.org::orgmode:gcr:2017-05-02:mara:CE0F6981-2604-4C89-997D-22C4EE82E0A1][orgmode:gcr:2017-05-02:mara:CE0F6981-2604-4C89-997D-22C4EE82E0A1]]
+(add-to-list 'org-latex-packages-alist '("" "lettrine" nil))
+;; orgmode:gcr:2017-05-02:mara:CE0F6981-2604-4C89-997D-22C4EE82E0A1 ends here
+
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:E6559423-7FC3-4924-A38B-FE4C9CA8CD91][orgmode:gcr:vela:E6559423-7FC3-4924-A38B-FE4C9CA8CD91]]
 (defvar help/ltx-cls-opt "paper=letter, fontsize=12pt")
 ;; orgmode:gcr:vela:E6559423-7FC3-4924-A38B-FE4C9CA8CD91 ends here

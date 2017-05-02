@@ -4829,6 +4829,13 @@ One empty line between paragraphs.
 (add-to-list 'org-latex-packages-alist '("" "parskip" nil))
 #+END_SRC
 
+Dropped capitals.
+
+#+NAME: orgmode:gcr:2017-05-02:mara:CE0F6981-2604-4C89-997D-22C4EE82E0A1
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'org-latex-packages-alist '("" "lettrine" nil))
+#+END_SRC
+
 Standard LaTeX class options.
 
 #+NAME: orgmode:gcr:vela:E6559423-7FC3-4924-A38B-FE4C9CA8CD91
