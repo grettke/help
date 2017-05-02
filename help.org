@@ -2299,7 +2299,7 @@ with Projectile.
   :ensure t
   :config
   (projectile-global-mode t)
-  (global-set-key (kbd "s-x") #'projectile-find-file)
+  (global-set-key (kbd "s-c") #'projectile-find-file)
   (help/on-windows
    (setq projectile-indexing-method 'alien))
   :diminish projectile-mode)
@@ -6137,7 +6137,10 @@ These changes helped guide the custom keyboard design.
 
 #+NAME: orgmode:gcr:vela:FD9CED46-8D84-495F-A413-90DA9EA52B8A
 #+BEGIN_SRC emacs-lisp :results output silent
-(global-set-key (kbd "C-g") #'ace-window)
+(global-set-key (kbd "C-g") #'smex)
+(global-set-key (kbd "C-h") nil)
+(global-set-key (kbd "C-h") #'ace-window)
+(global-set-key (kbd "C-;") #'ido-switch-buffer)
 #+END_SRC
 
 #+NAME: orgmode:gcr:vela:E60EA15F-28A0-4E98-B62E-1F8BDE444BD8
@@ -6302,16 +6305,14 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 #+END_SRC
 
 **** Row 2
-     :PROPERTIES:
-     :ID:       orgmode:gcr:vela:9E95D130-D1EC-445B-9028-24DFA5CCB28A
-     :END:
+:PROPERTIES:
+:ID:       orgmode:gcr:vela:9E95D130-D1EC-445B-9028-24DFA5CCB28A
+:END:
 
 #+NAME: orgmode:gcr:2017-01-21:mara:C92235D1-35C7-41EA-B4ED-9727C8531810
 #+BEGIN_SRC emacs-lisp :results output silent
-(global-set-key (kbd "s-v") #'smex)
+(global-set-key (kbd "s-v") #'ido-find-file)
 (global-set-key (kbd "C-x C-c") #'help/safb-save-buffers-kill-terminal)
-(global-set-key (kbd "s-z") #'ido-find-file)
-(global-set-key (kbd "s-c") #'ido-switch-buffer)
 (key-chord-define-global "<<" (lambda () (interactive) (insert "«")))
 (key-chord-define-global ">>" (lambda () (interactive) (insert "»")))
 #+END_SRC

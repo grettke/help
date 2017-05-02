@@ -1409,7 +1409,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   :ensure t
   :config
   (projectile-global-mode t)
-  (global-set-key (kbd "s-x") #'projectile-find-file)
+  (global-set-key (kbd "s-c") #'projectile-find-file)
   (help/on-windows
    (setq projectile-indexing-method 'alien))
   :diminish projectile-mode)
@@ -3155,7 +3155,10 @@ ALPHA : [ %(frame-parameter nil 'alpha) ].'
 ;; orgmode:gcr:vela:239A85C3-2CEB-4E40-975F-8B3584F7F450 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:FD9CED46-8D84-495F-A413-90DA9EA52B8A][orgmode:gcr:vela:FD9CED46-8D84-495F-A413-90DA9EA52B8A]]
-(global-set-key (kbd "C-g") #'ace-window)
+(global-set-key (kbd "C-g") #'smex)
+(global-set-key (kbd "C-h") nil)
+(global-set-key (kbd "C-h") #'ace-window)
+(global-set-key (kbd "C-;") #'ido-switch-buffer)
 ;; orgmode:gcr:vela:FD9CED46-8D84-495F-A413-90DA9EA52B8A ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:E60EA15F-28A0-4E98-B62E-1F8BDE444BD8][orgmode:gcr:vela:E60EA15F-28A0-4E98-B62E-1F8BDE444BD8]]
@@ -3305,10 +3308,8 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 ;; orgmode:gcr:2017-02-11:mara:EECC4207-5A0D-426A-89CF-86494E6B8667 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:2017-01-21:mara:C92235D1-35C7-41EA-B4ED-9727C8531810][orgmode:gcr:2017-01-21:mara:C92235D1-35C7-41EA-B4ED-9727C8531810]]
-(global-set-key (kbd "s-v") #'smex)
+(global-set-key (kbd "s-v") #'ido-find-file)
 (global-set-key (kbd "C-x C-c") #'help/safb-save-buffers-kill-terminal)
-(global-set-key (kbd "s-z") #'ido-find-file)
-(global-set-key (kbd "s-c") #'ido-switch-buffer)
 (key-chord-define-global "<<" (lambda () (interactive) (insert "«")))
 (key-chord-define-global ">>" (lambda () (interactive) (insert "»")))
 ;; orgmode:gcr:2017-01-21:mara:C92235D1-35C7-41EA-B4ED-9727C8531810 ends here
