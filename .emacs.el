@@ -3151,7 +3151,12 @@ ALPHA : [ %(frame-parameter nil 'alpha) ].'
 (global-set-key (kbd "H-i") #'insert-char)
 (global-set-key (kbd "H-p") #'help/insert-datestamp)
 (global-set-key (kbd "H-P") #'help/insert-timestamp*-no-colons)
+(global-set-key (kbd "C-\\") #'keyboard-quit)
 ;; orgmode:gcr:vela:239A85C3-2CEB-4E40-975F-8B3584F7F450 ends here
+
+;; [[file:~/src/help/help.org::orgmode:gcr:vela:FD9CED46-8D84-495F-A413-90DA9EA52B8A][orgmode:gcr:vela:FD9CED46-8D84-495F-A413-90DA9EA52B8A]]
+(global-set-key (kbd "C-g") #'ace-window)
+;; orgmode:gcr:vela:FD9CED46-8D84-495F-A413-90DA9EA52B8A ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:E60EA15F-28A0-4E98-B62E-1F8BDE444BD8][orgmode:gcr:vela:E60EA15F-28A0-4E98-B62E-1F8BDE444BD8]]
 (global-set-key (kbd "s-a") #'help/safb-switch-to-previous-buffer)
@@ -3315,10 +3320,6 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:2608E62D-62B4-4B82-BFE0-E1E04C0D6914][orgmode:gcr:vela:2608E62D-62B4-4B82-BFE0-E1E04C0D6914]]
 (global-set-key (kbd "H-o") #'help/occur-dwim)
 ;; orgmode:gcr:vela:2608E62D-62B4-4B82-BFE0-E1E04C0D6914 ends here
-
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:FD9CED46-8D84-495F-A413-90DA9EA52B8A][orgmode:gcr:vela:FD9CED46-8D84-495F-A413-90DA9EA52B8A]]
-(key-chord-define-global "vn" #'help/ace-window)
-;; orgmode:gcr:vela:FD9CED46-8D84-495F-A413-90DA9EA52B8A ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:4E784CF7-8CB1-42D0-A8EB-6FF54E7B60E9][orgmode:gcr:vela:4E784CF7-8CB1-42D0-A8EB-6FF54E7B60E9]]
 (key-chord-define-global "f9" #'help/util-cycle)

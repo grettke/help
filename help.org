@@ -6127,12 +6127,18 @@ These changes helped guide the custom keyboard design.
 (global-set-key (kbd "H-i") #'insert-char)
 (global-set-key (kbd "H-p") #'help/insert-datestamp)
 (global-set-key (kbd "H-P") #'help/insert-timestamp*-no-colons)
+(global-set-key (kbd "C-\\") #'keyboard-quit)
 #+END_SRC
 
 **** Row 3
      :PROPERTIES:
      :ID:       orgmode:gcr:vela:6DCD321F-6FDA-4983-9C7C-265D23D1AC4F
      :END:
+
+#+NAME: orgmode:gcr:vela:FD9CED46-8D84-495F-A413-90DA9EA52B8A
+#+BEGIN_SRC emacs-lisp :results output silent
+(global-set-key (kbd "C-g") #'ace-window)
+#+END_SRC
 
 #+NAME: orgmode:gcr:vela:E60EA15F-28A0-4E98-B62E-1F8BDE444BD8
 #+BEGIN_SRC emacs-lisp :results output silent
@@ -6348,11 +6354,6 @@ Can't use ~nv~ because of:
 - Inverse
 
 There are a lot. [[http://www.wordfind.com/ends-with/nv/][Ways]] to [[https://www.morewords.com/contains/nv/][find]] [[https://www.morewords.com/pair/nv/][them]] [[http://www.thefreedictionary.com/words-containing-nv][and]] [[http://www.wordhippo.com/what-is/containing/6-letter-words-nv.html][where]]
-
-#+NAME: orgmode:gcr:vela:FD9CED46-8D84-495F-A413-90DA9EA52B8A
-#+BEGIN_SRC emacs-lisp :results output silent
-(key-chord-define-global "vn" #'help/ace-window)
-#+END_SRC
 
 Toggle utility buffers ("logical F" key, so left side; "logical J" key on
 right).
