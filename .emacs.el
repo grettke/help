@@ -3208,6 +3208,7 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("L" aggressive-indent-mode)
   ("S" help/toggle-mac-function-modifier)
   ("x" delete-indentation)
+  ("f" describe-function)
   ("v" describe-symbol)
   ("V" view-mode)
   ("w" widen)
