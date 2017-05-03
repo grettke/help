@@ -6191,7 +6191,7 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("2" help/text-scale-decrease :exit nil)
   ("3" help/text-scale-increase :exit nil)
   ("4" help/insert-ellipsis)
-  ("r" count-words-region)
+  ("r" count-words)
   ("R" help/rename-current-buffer-file)
   ("T" help/trademark/body)
   ("=" reposition-window)
@@ -6483,13 +6483,6 @@ Pop the mark back.
 #+NAME: orgmode:gcr:vela:F3708409-D807-4541-95AB-C6298540FD59
 #+BEGIN_SRC emacs-lisp :results output silent
 (key-chord-define-global "FK" #'pop-to-mark-command)
-#+END_SRC
-
-Count words.
-
-#+NAME: orgmode:gcr:vela:73C1697E-966A-4129-840B-2B34A70FF531
-#+BEGIN_SRC emacs-lisp :results output silent
-(key-chord-define-global "wc" #'count-words)
 #+END_SRC
 
 *** Right Side

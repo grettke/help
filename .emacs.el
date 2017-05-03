@@ -3197,7 +3197,7 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("2" help/text-scale-decrease :exit nil)
   ("3" help/text-scale-increase :exit nil)
   ("4" help/insert-ellipsis)
-  ("r" count-words-region)
+  ("r" count-words)
   ("R" help/rename-current-buffer-file)
   ("T" help/trademark/body)
   ("=" reposition-window)
@@ -3390,10 +3390,6 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:F3708409-D807-4541-95AB-C6298540FD59][orgmode:gcr:vela:F3708409-D807-4541-95AB-C6298540FD59]]
 (key-chord-define-global "FK" #'pop-to-mark-command)
 ;; orgmode:gcr:vela:F3708409-D807-4541-95AB-C6298540FD59 ends here
-
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:73C1697E-966A-4129-840B-2B34A70FF531][orgmode:gcr:vela:73C1697E-966A-4129-840B-2B34A70FF531]]
-(key-chord-define-global "wc" #'count-words)
-;; orgmode:gcr:vela:73C1697E-966A-4129-840B-2B34A70FF531 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:0410911F-2D84-4799-8F68-1F3173E318B6][orgmode:gcr:vela:0410911F-2D84-4799-8F68-1F3173E318B6]]
 (help/not-on-gui (global-set-key (kbd "s-RET") #'help/smart-open-line))
