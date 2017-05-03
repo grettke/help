@@ -2639,7 +2639,7 @@ global-mode puke and kill Emacs every so often.
    :ID:       orgmode:gcr:vela:78E2BA2B-8289-422F-99DC-5E40DE928E68
    :END:
 
-Most modes in this system will never use TAB.
+Most modes in this system will never use TAB stops.
 
 #+NAME: orgmode:gcr:vela:6A9C209F-8228-4D10-B23D-6A8376FD7FB3
 #+BEGIN_SRC emacs-lisp :results output silent
