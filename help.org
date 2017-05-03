@@ -3898,6 +3898,7 @@ Easily manipulate lists and headlines staying close to home.
 (define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
 (define-key org-mode-map (kbd "s-l") #'help/safb-org-edit-src-code)
 (define-key org-mode-map (kbd "s-;") #'help/safb-help/org-babel-demarcate-block)
+(define-key org-mode-map (kbd "C-,") nil)
 (define-key org-mode-map (kbd "C-.") #'(lambda () (interactive) (insert " \\rarr ")))
 (defun help/org-insert-subscript (arg)
   "Maybe insert a subscript with the postfix space."
@@ -6161,7 +6162,7 @@ to make the minibuffer, ~eval-*~ and ~smex~ become confused \rarr quit working.
 #+BEGIN_SRC emacs-lisp :results output silent
 (global-set-key (kbd "C-h") nil)
 (global-set-key (kbd "C-h") #'ace-window)
-(global-set-key (kbd "C-;") #'ido-switch-buffer)
+(global-set-key (kbd "C-;") #'smex)
 #+END_SRC
 
 #+NAME: orgmode:gcr:vela:E60EA15F-28A0-4E98-B62E-1F8BDE444BD8
@@ -6337,6 +6338,7 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (global-set-key (kbd "C-x C-c") #'help/safb-save-buffers-kill-terminal)
 (key-chord-define-global "<<" (lambda () (interactive) (insert "«")))
 (key-chord-define-global ">>" (lambda () (interactive) (insert "»")))
+(global-set-key (kbd "C-,") #'ido-switch-buffer)
 #+END_SRC
 
 **** Row 1

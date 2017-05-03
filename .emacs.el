@@ -2176,7 +2176,9 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (define-key org-mode-map (kbd "s-j") #'org-babel-next-src-block)
 (define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
 (define-key org-mode-map (kbd "s-l") #'help/safb-org-edit-src-code)
-(define-key org-mode-map (kbd "s-;") #'help/safb-help/org-babel-demarcate-block)
+(define-key org-mode-map (kbd "s-;")
+  #'help/safb-help/org-babel-demarcate-block)
+(define-key org-mode-map (kbd "C-,") nil)
 (define-key org-mode-map (kbd "C-.") #'(lambda () (interactive) (insert " \\rarr ")))
 (defun help/org-insert-subscript (arg)
   "Maybe insert a subscript with the postfix space."
@@ -3168,7 +3170,7 @@ ALPHA : [ %(frame-parameter nil 'alpha) ].'
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:FD9CED46-8D84-495F-A413-90DA9EA52B8A][orgmode:gcr:vela:FD9CED46-8D84-495F-A413-90DA9EA52B8A]]
 (global-set-key (kbd "C-h") nil)
 (global-set-key (kbd "C-h") #'ace-window)
-(global-set-key (kbd "C-;") #'ido-switch-buffer)
+(global-set-key (kbd "C-;") #'smex)
 ;; orgmode:gcr:vela:FD9CED46-8D84-495F-A413-90DA9EA52B8A ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:E60EA15F-28A0-4E98-B62E-1F8BDE444BD8][orgmode:gcr:vela:E60EA15F-28A0-4E98-B62E-1F8BDE444BD8]]
@@ -3323,6 +3325,7 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (global-set-key (kbd "C-x C-c") #'help/safb-save-buffers-kill-terminal)
 (key-chord-define-global "<<" (lambda () (interactive) (insert "«")))
 (key-chord-define-global ">>" (lambda () (interactive) (insert "»")))
+(global-set-key (kbd "C-,") #'ido-switch-buffer)
 ;; orgmode:gcr:2017-01-21:mara:C92235D1-35C7-41EA-B4ED-9727C8531810 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:2017-03-03:mara:B4E3B76E-94CA-482C-BE70-7413A62BB152][orgmode:gcr:2017-03-03:mara:B4E3B76E-94CA-482C-BE70-7413A62BB152]]
