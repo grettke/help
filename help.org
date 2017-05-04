@@ -2279,9 +2279,10 @@ Provide popup notifications.
   :ensure t
   :config
   (setq alert-fade-time 10)
+  (setq alert-default-style 'message)
   (help/on-gui
    (help/on-osx
-    (setq alert-default-style 'growl)))
+    (setq alert-default-style 'notifier)))
   (setq alert-reveal-idle-time 120))
 #+END_SRC
 

@@ -1398,9 +1398,10 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   :ensure t
   :config
   (setq alert-fade-time 10)
+  (setq alert-default-style 'message)
   (help/on-gui
    (help/on-osx
-    (setq alert-default-style 'growl)))
+    (setq alert-default-style 'notifier)))
   (setq alert-reveal-idle-time 120))
 ;; orgmode:gcr:vela:2DE86EF6-3E4B-42FD-AA11-1914A83029BE ends here
 
