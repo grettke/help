@@ -2255,15 +2255,22 @@ a fast navigation vehicle.
    :ID:       orgmode:gcr:vela:FA8195C5-30B7-44CF-8D0F-8FE2CE1CB3DA
    :END:
 
+- Alternate search result background color
+- Multiple Occur buffers
+- ~n~ and ~p~ navigate search results
+- Jump near buffer top
+
 #+NAME: orgmode:gcr:vela:00A4417A-8BE6-4417-B054-2F9D8287FAFD
 #+BEGIN_SRC emacs-lisp :results output silent
 (defun help/occur-mode-hook-fn ()
   "HELP customizations."
   (interactive)
-  (turn-on-stripe-buffer-mode))
+  (turn-on-stripe-buffer-mode)
+  (occur-rename-buffer))
 (add-hook 'occur-mode-hook #'help/occur-mode-hook-fn)
 (define-key occur-mode-map (kbd "n") #'next-logical-line)
 (define-key occur-mode-map (kbd "p") #'previous-logical-line)
+(add-hook 'occur-mode-find-occurrence-hook #'help/recenter-line-near-top-fn)
 #+END_SRC
 
 ** Popups
@@ -5374,6 +5381,17 @@ now.
   :ensure t
   :config
   (setq mc/always-run-for-all t))
+#+END_SRC
+
+Recenter near top of screen.
+
+#+NAME: orgmode:gcr:2017-05-03:mara:DDC85815-EA88-407A-A160-782A5BB0F5E4
+#+BEGIN_SRC emacs-lisp
+(defun help/recenter-line-near-top-fn ()
+  "Move current line near top"
+  (interactive)
+  (let ((recenter-positions '(5)))
+    (recenter-top-bottom)))
 #+END_SRC
 
 ** Color Theme

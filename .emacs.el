@@ -1387,10 +1387,12 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
 (defun help/occur-mode-hook-fn ()
   "HELP customizations."
   (interactive)
-  (turn-on-stripe-buffer-mode))
+  (turn-on-stripe-buffer-mode)
+  (occur-rename-buffer))
 (add-hook 'occur-mode-hook #'help/occur-mode-hook-fn)
 (define-key occur-mode-map (kbd "n") #'next-logical-line)
 (define-key occur-mode-map (kbd "p") #'previous-logical-line)
+(add-hook 'occur-mode-find-occurrence-hook #'help/recenter-line-near-top-fn)
 ;; orgmode:gcr:vela:00A4417A-8BE6-4417-B054-2F9D8287FAFD ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:2DE86EF6-3E4B-42FD-AA11-1914A83029BE][orgmode:gcr:vela:2DE86EF6-3E4B-42FD-AA11-1914A83029BE]]
@@ -2972,6 +2974,14 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
   :config
   (setq mc/always-run-for-all t))
 ;; orgmode:gcr:vela:989C4727-473A-4DAB-8446-5077F3042587 ends here
+
+;; [[file:~/src/help/help.org::orgmode:gcr:2017-05-03:mara:DDC85815-EA88-407A-A160-782A5BB0F5E4][orgmode:gcr:2017-05-03:mara:DDC85815-EA88-407A-A160-782A5BB0F5E4]]
+(defun help/recenter-line-near-top-fn ()
+  "Move current line near top"
+  (interactive)
+  (let ((recenter-positions '(5)))
+    (recenter-top-bottom)))
+;; orgmode:gcr:2017-05-03:mara:DDC85815-EA88-407A-A160-782A5BB0F5E4 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:021B7D3A-E696-43B9-BC08-C8BDABB33999][orgmode:gcr:vela:021B7D3A-E696-43B9-BC08-C8BDABB33999]]
 (use-package solarized-theme
