@@ -2995,7 +2995,7 @@ Slime navigation:
 #+BEGIN_SRC emacs-lisp :results output silent
 (use-package elisp-slime-nav
   :ensure t
-  :diminish t)
+  :diminish elisp-slime-nav-mode)
 #+END_SRC
 
 #+NAME: orgmode:gcr:vela:orgmode:gcr:vela:FF124A1E-2344-472F-AB1D-B5093C610102
