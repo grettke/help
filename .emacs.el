@@ -3186,7 +3186,7 @@ _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_
 _T_ trademarks
 _a_ ag  _A_ apropo'ish _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point  _D_ detangle _j_ obtj2o _k_ scrollDown _K_ nextLogLine  _;_ toggle-lax-whitespace
 _l_ visual-line-mode _L_ aggressive-indent-mode
-_x_ delete-indentation _c_ fill-paragraph _v_ desc-symbol _V_ view-mode _b_ erase-buffer _B_ibtex _n_ normal _M_ checks
+_x_ delete-indentation _c_ fill-paragraph _v_ desc-symbol _V_ view-mode _b_ erase-buffer _B_ibtex _n_ normal _m_ desc/mode _M_ checks
 _<_ cmtIn _>_ cmtOut _?_ snp"
   ("|" split-window-horizontally)
   ("-" split-window-vertically)
@@ -3229,6 +3229,7 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("I" previous-logical-line :exit nil)
   ("K" next-logical-line :exit nil)
   ("n" help/safb-normal-mode)
+  ("m" describe-mode)
   ("M" help/checks/body)
   ("<" help/chs)
   (">" help/che)
