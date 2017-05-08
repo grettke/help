@@ -1,4 +1,4 @@
-#+PROPERTY: header-args :tangle "./.org-mode-ecm.emacs.el"
+#+PROPERTY: header-args :tangle "./.org-mode-ecm.emacs.el" :comments "no" :padline "no"
 
 * Org-Mode Exemple Complet Minimal
    :PROPERTIES:
