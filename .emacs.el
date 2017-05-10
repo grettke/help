@@ -3385,10 +3385,6 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (define-key help/langtool-map "q" #'langtool-check-done)
 ;; orgmode:gcr:vela:52E762F8-9A31-4FEC-859D-049BD658C6D9 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:5C8D8A46-256B-4533-97AD-52968CC92C75][orgmode:gcr:vela:5C8D8A46-256B-4533-97AD-52968CC92C75]]
-(key-chord-define-global "TH" (lambda () (interactive) (insert "Th")))
-;; orgmode:gcr:vela:5C8D8A46-256B-4533-97AD-52968CC92C75 ends here
-
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:5F07753E-91BA-4B4F-B051-0C7C90B1F04A][orgmode:gcr:vela:5F07753E-91BA-4B4F-B051-0C7C90B1F04A]]
 (key-chord-define-global "fj" #'avy-goto-word-1)
 (key-chord-define-global "fm" #'avy-goto-char)

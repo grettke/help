@@ -6467,14 +6467,6 @@ Use the default Langtool bindings.
 (define-key help/langtool-map "q" #'langtool-check-done)
 #+END_SRC
 
-Via [[http://endlessparentheses.com/fixing-double-capitals-as-you-type.html?source=rss][comments]]:
-
-#+NAME: orgmode:gcr:vela:5C8D8A46-256B-4533-97AD-52968CC92C75
-#+BEGIN_SRC emacs-lisp :results output silent
-(key-chord-define-global "TH" (lambda () (interactive) (insert "Th")))
-#+END_SRC
-
-
 Easily kill buffers. Can't use "df" because of "PDF".
 
 Can't use "fr" because of "fright" and "France".
