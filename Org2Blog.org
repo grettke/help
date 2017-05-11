@@ -13,11 +13,6 @@ Start EMACS with this command:
 
 =open /Applications/Emacs.app -n --args --debug-init --quick --load ~/src/help/.org-mode-org2blog.emacs.el=
 
-#+NAME: orgmode:gcr:vela:414DD245-B282-4D95-910D-29F43DD90D9B
-#+BEGIN_SRC emacs-lisp :results output silent :comments no
-;; -*- lexical-binding: t -*-
-#+END_SRC
-
 #+NAME: orgmode:gcr:vela:E32697AE-784E-458F-A042-D9B559908721
 #+BEGIN_SRC emacs-lisp :results output silent
 (load-file "~/src/help/.org-mode-fundamentals.emacs.el")

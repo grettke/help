@@ -17,6 +17,19 @@ Start EMACS with this command:
 
 =open /Applications/Emacs.app -n --args --debug-init=
 
+EMACS values dynamic-scoping for now and in the future.
+
+EMACS values lexical-scoping in the future.
+
+There are pecuilar interactions between [[https://yoo2080.wordpress.com/2011/12/31/lexical-scoping-and-dynamic-scoping-in-emacs-lisp/][lexically and dynamically scope closures]]
+and [[https://yoo2080.wordpress.com/2013/08/14/invasion-of-special-variables-in-emacs-lisp/][special variables]].
+
+With the future in mind, make the switch now.
+
+It is enabled with a non-nil buffer-local variable ~lexical-binding~. The variable
+is inserted only here because it loads each of the child configurations.
+Web.
+
 #+NAME: orgmode:gcr:vela:3EB2F596-DAE1-4083-B2B9-DB61A15AFDEF
 #+BEGIN_SRC emacs-lisp :results output silent :comments no
 ;; -*- lexical-binding: t -*-

@@ -1,5 +1,3 @@
-;; -*- lexical-binding: t -*-
-
 ;; [[file:~/src/help/Org2Blog.org::orgmode:gcr:vela:E32697AE-784E-458F-A042-D9B559908721][orgmode:gcr:vela:E32697AE-784E-458F-A042-D9B559908721]]
 (load-file "~/src/help/.org-mode-fundamentals.emacs.el")
 ;; orgmode:gcr:vela:E32697AE-784E-458F-A042-D9B559908721 ends here
