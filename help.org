@@ -2474,7 +2474,7 @@ and bind it during the search.
 :ID:       orgmode:gcr:2017-02-08:mara:0DBA44CA-8A19-4D51-8C2A-A8760534D80F
 :END:
 
-Easily search the filesystem using =ag=.
+Ag integration.
 
 #+NAME: orgmode:gcr:vela:B7EB4F42-9696-495C-98F5-427B03DA93EE
 #+BEGIN_SRC emacs-lisp :results output silent
