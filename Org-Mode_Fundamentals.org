@@ -11,7 +11,9 @@ Sysop is likely to use this periodically.
 
 Start EMACS with this command:
 
-=open /Applications/Emacs.app -n --args --debug-init --quick --load ~/src/help/.org-mode-fundamentals.emacs.el=
+#+BEGIN_EXAMPLE
+emacs --debug-init --no-init-file --no-splash --background-color white --foreground-color black --vertical-scroll-bars --eval '(switch-to-buffer "*Messages*")' --name FND-TEST --title FND-TEST --load ~/src/help/.org-mode-fundamentals.emacs.el &
+#+END_EXAMPLE
 
 #+NAME: orgmode:gcr:vela:78D777D3-FA69-4361-874C-7262DE96F753
 #+BEGIN_SRC emacs-lisp :results output silent
