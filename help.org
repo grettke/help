@@ -2483,7 +2483,7 @@ Easily search the filesystem using =ag=.
   :config
   (setq ag-highlight-search t)
   (setq ag-reuse-window nil)
-  (setq ag-reuse-buffers t)
+  (setq ag-reuse-buffers nil)
   (setq ag-arguments (-insert-at (- (length ag-arguments) 1) '"-i" ag-arguments)))
 #+END_SRC
 

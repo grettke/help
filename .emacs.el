@@ -1476,7 +1476,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   :config
   (setq ag-highlight-search t)
   (setq ag-reuse-window nil)
-  (setq ag-reuse-buffers t)
+  (setq ag-reuse-buffers nil)
   (setq ag-arguments (-insert-at (- (length ag-arguments) 1) '"-i" ag-arguments)))
 ;; orgmode:gcr:vela:B7EB4F42-9696-495C-98F5-427B03DA93EE ends here
 
