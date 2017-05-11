@@ -2194,7 +2194,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (define-key org-mode-map (kbd "s-l") #'help/safb-org-edit-src-code)
 (define-key org-mode-map (kbd "s-;") #'help/safb-help/org-babel-demarcate-block)
 (define-key org-mode-map (kbd "C-,") nil)
-(define-key org-mode-map (kbd "C->") #'(lambda () (interactive) (insert " \\rarr ")))
+(define-key org-mode-map (kbd "C->") #'(lambda () (interactive) (insert "\\rarr{}")))
 (defun help/org-insert-subscript (arg)
   "Maybe insert a subscript with the postfix space."
   (interactive "MSubscript: ")
