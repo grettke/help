@@ -59,7 +59,10 @@ This is a copy and paste. Additional languages would warrant a refactor."
 
 (defun help/org-prp-hdln ()
   "Visit every Headline. If it doesn't have an ID property then add one and
-  assign it a UUID. Attribution: URL `http://article.gmane.org/gmane.emacs.orgmode/99738'"
+  assign it a UUID. Attribution: URL
+  `http://article.gmane.org/gmane.emacs.orgmode/99738'. It is OK to leave the
+  colon separator in here because these are never used as Source-Blocks and
+  the rest of the code expects the colon separator."
   (interactive)
   (save-excursion
     (goto-char (point-min))
@@ -70,6 +73,17 @@ This is a copy and paste. Additional languages would warrant a refactor."
       (org-id-get-create))
     (save-buffer)))
 
+(defun help/org-id-new ()
+  "Re-purposing `org-id' hit a snag when colons were forbidden in Source-Block
+  names. Adding support for a user-defined Org-Id separator would have fixed
+  this but with no benefit to Org-Id. So this function removes the colon
+  instead.
+ "
+  (interactive)
+  (let* ((gend (org-id-new))
+         (newid (replace-regexp-in-string ":" "_" gend)))
+    newid))
+
 (defun help/org-prp-src-blk ()
   "If it doesn't have a NAME property then add one and
    assign it a UUID. Attribution: URL `http://article.gmane.org/gmane.emacs.orgmode/99740'"
@@ -79,7 +93,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
        (if (not (org-element-property :name element))
            (let ((i (org-get-indentation)))
              (beginning-of-line)
-             (save-excursion (insert "#+NAME: orgmode:gcr:vela:" (org-id-new) "\n"))
+             (save-excursion (insert "#+NAME: " (help/org-id-new) "\n"))
              (indent-to i)
              (forward-line 2))))))
 
@@ -101,7 +115,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
   "Add a NAME property then assign it a UUID."
   (interactive)
   (org-babel-demarcate-block)
-  (insert "#+NAME: orgmode:gcr:vela:" (org-id-new))
+  (insert "#+NAME: " (help/org-id-new))
   (beginning-of-line)
   (insert "\n"))
 ;; orgmode:gcr:vela:BB2E97AF-6364-401F-8063-8B5A0BE481E6 ends here
@@ -115,7 +129,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
 ;; orgmode:gcr:vela:751D537A-EE89-4B1D-91E5-99D3A4F8B52E ends here
 
 ;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:885C8386-AC68-4DB7-8D04-537E28ED950B][orgmode:gcr:vela:885C8386-AC68-4DB7-8D04-537E28ED950B]]
-(setq org-id-prefix (concat "orgmode:" (user-real-login-name) ":" (format-time-string "%Y-%m-%d") ":" (system-name)))
+(setq org-id-prefix (concat "org_" (user-real-login-name) "_" (format-time-string "%Y-%m-%d") "_" (system-name)))
 (setq org-id-method 'uuid)
 ;; orgmode:gcr:vela:885C8386-AC68-4DB7-8D04-537E28ED950B ends here
 
