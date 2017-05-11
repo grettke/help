@@ -59,17 +59,17 @@ Please library(dtplyr)!
 *.Rsetup*
 #+NAME: 5EF49EC7-E305-4173-9008-AB3969D9CB23
 #+begin_src sh :tangle .Rsetup.sh :comments no :tangle-mode (identity #o755)
-«rsetup-defs»
+<<rsetup-defs>>
 #+end_src
 
 *.Rprofile*
 #+NAME: FE1A7E06-FF50-4F5D-BE02-762CC92AF434
 #+begin_src R :tangle .Rprofile :comments no
 ## -*- mode: R; -*-
-«rprofile-def»
+<<rprofile-def>>
 .First <- function() {
     gcr <- new.env()
-    «rfirst-defs»
+    <<rfirst-defs>>
     base::attach(gcr, name="gcr", warn.conflicts=FALSE)
 }
 fortune()
@@ -79,13 +79,13 @@ fortune()
 #+NAME: 12B3286A-5077-429B-A0AE-85BE7DD6C35C
 #+begin_src sh :tangle .Renviron :comments no
 # -*- mode: sh; -*-
-«renviron-def»
+<<renviron-def>>
 #+end_src
 
 *.Rinstall*
 #+NAME: B695C2B8-9DD8-4612-ADA3-9330812F1111
 #+begin_src sh :tangle .Rinstall.r :comments no
-«rinstall-def»
+<<rinstall-def>>
 #+end_src
 
 ** .Rsetup

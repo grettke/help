@@ -130,14 +130,6 @@ occur before loading Org-Mode. *Never* remove this from a submitted ECM.
 (setq org-enforce-todo-checkbox-dependencies t)
 #+END_SRC
 
-Use the Guillemet to demarcate source blocks. Reconfigure this yearly.
-
-#+NAME: orgmode:gcr:vela:3BBCDC21-9177-43D2-8423-0AC2253F590D
-#+BEGIN_SRC emacs-lisp :results output silent
-(setq org-babel-noweb-wrap-start "«")
-(setq org-babel-noweb-wrap-end "»")
-#+END_SRC
-
 Load Org-Mode.
 
 #+NAME: orgmode:gcr:vela:86CAEC4F-CFC4-4CAD-9993-E1DCEF3BFCD1
