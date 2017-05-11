@@ -2497,6 +2497,15 @@ Ag integration.
   (setq ag-arguments (-insert-at (- (length ag-arguments) 1) '"-i" ag-arguments)))
 #+END_SRC
 
+Writeable Ag.
+
+#+NAME: orgmode:gcr:2017-05-10:mara:9E7D0528-C932-468D-9B48-D1DEA5AB797C
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package wgrep-ag
+  :ensure t
+  :after ag)
+#+END_SRC
+
 ** Spell Checking
    :PROPERTIES:
    :ID:       orgmode:gcr:vela:902EAA81-4FC0-40A0-AE6D-D31C474B87E0

@@ -1487,6 +1487,12 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (setq ag-arguments (-insert-at (- (length ag-arguments) 1) '"-i" ag-arguments)))
 ;; orgmode:gcr:vela:B7EB4F42-9696-495C-98F5-427B03DA93EE ends here
 
+;; [[file:~/src/help/help.org::orgmode:gcr:2017-05-10:mara:9E7D0528-C932-468D-9B48-D1DEA5AB797C][orgmode:gcr:2017-05-10:mara:9E7D0528-C932-468D-9B48-D1DEA5AB797C]]
+(use-package wgrep-ag
+  :ensure t
+  :after ag)
+;; orgmode:gcr:2017-05-10:mara:9E7D0528-C932-468D-9B48-D1DEA5AB797C ends here
+
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:62360083-1CE2-4EEF-BF61-AEA8F3FA9944][orgmode:gcr:vela:62360083-1CE2-4EEF-BF61-AEA8F3FA9944]]
 (defun help/block-regex (special)
   "Make an ispell skip-region alist for a SPECIAL block."
