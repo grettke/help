@@ -2194,7 +2194,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (define-key org-mode-map (kbd "s-l") #'help/safb-org-edit-src-code)
 (define-key org-mode-map (kbd "s-;") #'help/safb-help/org-babel-demarcate-block)
 (define-key org-mode-map (kbd "C-,") nil)
-(define-key org-mode-map (kbd "C-.") #'(lambda () (interactive) (insert " \\rarr ")))
+(define-key org-mode-map (kbd "C->") #'(lambda () (interactive) (insert " \\rarr ")))
 (defun help/org-insert-subscript (arg)
   "Maybe insert a subscript with the postfix space."
   (interactive "MSubscript: ")
@@ -2488,7 +2488,7 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 ;; orgmode:gcr:vela:5D526636-47A1-463B-9466-4DD240C7F382 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:9E931868-056E-49E6-A0AE-D1447BA27039][orgmode:gcr:vela:9E931868-056E-49E6-A0AE-D1447BA27039]]
-(setq ess-S-assign-key (kbd "C-,"))
+(setq ess-S-assign-key (kbd "C-<"))
 (ess-toggle-S-assign-key t)
 (ess-toggle-underscore nil)
 ;; orgmode:gcr:vela:9E931868-056E-49E6-A0AE-D1447BA27039 ends here
@@ -2506,7 +2506,7 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
   (local-set-key (kbd "s-y") #'r-autoyas-expand)
   (local-set-key (kbd "s-o") #'ess-describe-object-at-point)
   (local-set-key (kbd "s-p") #'ess-R-object-popup)
-  (local-set-key (kbd "C-.") #'(lambda () (interactive) (insert " -> ")))
+  (local-set-key (kbd "C->") #'(lambda () (interactive) (insert " -> ")))
   (key-chord-define-local "<<" #'(lambda () (interactive) (insert " <<- ")))
   (key-chord-define-local ">>" #'(lambda () (interactive) (insert " ->> ")))
   (key-chord-define-local "<>" #'(lambda () (interactive) (insert " %<>% ")))
@@ -3186,14 +3186,9 @@ ALPHA : [ %(frame-parameter nil 'alpha) ].'
 (global-set-key (kbd "H-P") #'help/insert-timestamp*-no-colons)
 ;; orgmode:gcr:vela:239A85C3-2CEB-4E40-975F-8B3584F7F450 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:orgmode:gcr:2017-05-02:mara:21A45F0E-E38D-4F0E-B531-0932AB7DF104][orgmode:gcr:vela:orgmode:gcr:2017-05-02:mara:21A45F0E-E38D-4F0E-B531-0932AB7DF104]]
-(global-set-key (kbd "C-i") #'smex)
-;; orgmode:gcr:vela:orgmode:gcr:2017-05-02:mara:21A45F0E-E38D-4F0E-B531-0932AB7DF104 ends here
-
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:FD9CED46-8D84-495F-A413-90DA9EA52B8A][orgmode:gcr:vela:FD9CED46-8D84-495F-A413-90DA9EA52B8A]]
 (global-set-key (kbd "C-h") nil)
 (global-set-key (kbd "C-h") #'ace-window)
-(global-set-key (kbd "C-;") #'smex)
 ;; orgmode:gcr:vela:FD9CED46-8D84-495F-A413-90DA9EA52B8A ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:E60EA15F-28A0-4E98-B62E-1F8BDE444BD8][orgmode:gcr:vela:E60EA15F-28A0-4E98-B62E-1F8BDE444BD8]]
@@ -3351,6 +3346,8 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (key-chord-define-global "<<" (lambda () (interactive) (insert "«")))
 (key-chord-define-global ">>" (lambda () (interactive) (insert "»")))
 (global-set-key (kbd "C-,") #'ido-switch-buffer)
+(global-set-key (kbd "C-.") nil)
+(global-set-key (kbd "C-.") #'smex)
 ;; orgmode:gcr:2017-01-21:mara:C92235D1-35C7-41EA-B4ED-9727C8531810 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:2017-03-03:mara:B4E3B76E-94CA-482C-BE70-7413A62BB152][orgmode:gcr:2017-03-03:mara:B4E3B76E-94CA-482C-BE70-7413A62BB152]]

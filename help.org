@@ -3940,7 +3940,7 @@ Easily manipulate lists and headlines staying close to home.
 (define-key org-mode-map (kbd "s-l") #'help/safb-org-edit-src-code)
 (define-key org-mode-map (kbd "s-;") #'help/safb-help/org-babel-demarcate-block)
 (define-key org-mode-map (kbd "C-,") nil)
-(define-key org-mode-map (kbd "C-.") #'(lambda () (interactive) (insert " \\rarr ")))
+(define-key org-mode-map (kbd "C->") #'(lambda () (interactive) (insert " \\rarr ")))
 (defun help/org-insert-subscript (arg)
   "Maybe insert a subscript with the postfix space."
   (interactive "MSubscript: ")
@@ -4494,7 +4494,7 @@ Don't use the default assignment binding and allow underscores in names.
 
 #+NAME: orgmode:gcr:vela:9E931868-056E-49E6-A0AE-D1447BA27039
 #+BEGIN_SRC emacs-lisp :results output silent
-(setq ess-S-assign-key (kbd "C-,"))
+(setq ess-S-assign-key (kbd "C-<"))
 (ess-toggle-S-assign-key t)
 (ess-toggle-underscore nil)
 #+END_SRC
@@ -4519,7 +4519,7 @@ R mode hook.
   (local-set-key (kbd "s-y") #'r-autoyas-expand)
   (local-set-key (kbd "s-o") #'ess-describe-object-at-point)
   (local-set-key (kbd "s-p") #'ess-R-object-popup)
-  (local-set-key (kbd "C-.") #'(lambda () (interactive) (insert " -> ")))
+  (local-set-key (kbd "C->") #'(lambda () (interactive) (insert " -> ")))
   (key-chord-define-local "<<" #'(lambda () (interactive) (insert " <<- ")))
   (key-chord-define-local ">>" #'(lambda () (interactive) (insert " ->> ")))
   (key-chord-define-local "<>" #'(lambda () (interactive) (insert " %<>% ")))
@@ -6200,11 +6200,6 @@ Org handle ~TAB~ correctly and nothing is bound to it like ~Auto-Complete~ or
 ~yasnippet~ so this doesn't /need/ ot use ~C-i~ freeing it up. Rebinding ~C-g~ seems
 to make the minibuffer, ~eval-*~ and ~smex~ become confused \rarr quit working.
 
-#+NAME: orgmode:gcr:vela:orgmode:gcr:2017-05-02:mara:21A45F0E-E38D-4F0E-B531-0932AB7DF104
-#+BEGIN_SRC emacs-lisp :results output silent
-(global-set-key (kbd "C-i") #'smex)
-#+END_SRC
-
 **** Row 3
      :PROPERTIES:
      :ID:       orgmode:gcr:vela:6DCD321F-6FDA-4983-9C7C-265D23D1AC4F
@@ -6214,7 +6209,6 @@ to make the minibuffer, ~eval-*~ and ~smex~ become confused \rarr quit working.
 #+BEGIN_SRC emacs-lisp :results output silent
 (global-set-key (kbd "C-h") nil)
 (global-set-key (kbd "C-h") #'ace-window)
-(global-set-key (kbd "C-;") #'smex)
 #+END_SRC
 
 #+NAME: orgmode:gcr:vela:E60EA15F-28A0-4E98-B62E-1F8BDE444BD8
@@ -6393,6 +6387,8 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (key-chord-define-global "<<" (lambda () (interactive) (insert "«")))
 (key-chord-define-global ">>" (lambda () (interactive) (insert "»")))
 (global-set-key (kbd "C-,") #'ido-switch-buffer)
+(global-set-key (kbd "C-.") nil)
+(global-set-key (kbd "C-.") #'smex)
 #+END_SRC
 
 **** Row 1
