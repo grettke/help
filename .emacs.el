@@ -1470,6 +1470,13 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
 (setq history-delete-duplicates t)
 ;; orgmode:gcr:2017-03-03:mara:0B35AE1F-8BFC-4E24-A161-3416323D46B9 ends here
 
+;; [[file:~/src/help/help.org::orgmode:gcr:2017-05-10:mara:054AA200-CD58-43E7-B6F0-FFDC93026F35][orgmode:gcr:2017-05-10:mara:054AA200-CD58-43E7-B6F0-FFDC93026F35]]
+(use-package wgrep
+  :ensure t
+  :config
+  (setq wgrep-auto-save-buffer t))
+;; orgmode:gcr:2017-05-10:mara:054AA200-CD58-43E7-B6F0-FFDC93026F35 ends here
+
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:B7EB4F42-9696-495C-98F5-427B03DA93EE][orgmode:gcr:vela:B7EB4F42-9696-495C-98F5-427B03DA93EE]]
 (use-package ag
   :ensure t
