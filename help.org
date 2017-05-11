@@ -2474,7 +2474,7 @@ and bind it during the search.
 :ID:       orgmode:gcr:2017-02-08:mara:0DBA44CA-8A19-4D51-8C2A-A8760534D80F
 :END:
 
-Grep integration.
+Writeable Grep integration.
 
 #+NAME: orgmode:gcr:2017-05-10:mara:054AA200-CD58-43E7-B6F0-FFDC93026F35
 #+BEGIN_SRC emacs-lisp :results output silent
