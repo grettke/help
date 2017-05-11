@@ -788,7 +788,7 @@ Attribution: `http://stackoverflow.com/a/25212377'"
 ;; orgmode:gcr:vela:170E0633-2AA6-47AD-9234-4C1F0978C058 ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:7CA01CFF-D9B6-4F1D-B120-88AFC30F281E][orgmode:gcr:vela:7CA01CFF-D9B6-4F1D-B120-88AFC30F281E]]
-(setq require-final-newline nil)
+(setq require-final-newline t)
 ;; orgmode:gcr:vela:7CA01CFF-D9B6-4F1D-B120-88AFC30F281E ends here
 
 ;; [[file:~/src/help/help.org::orgmode:gcr:vela:C2215D90-ADDA-47C9-9F1E-21FD79BDDBC0][orgmode:gcr:vela:C2215D90-ADDA-47C9-9F1E-21FD79BDDBC0]]

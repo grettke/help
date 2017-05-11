@@ -1218,12 +1218,11 @@ Provide expected "Undo" functionality.
   :diminish undo-tree-mode)
 #+END_SRC
 
-Ensure that buffers do not end with a new line. This is the decision of Sysop.
-This is important to YASnippets and Source-Blocks. Doing so would violate POLA.
+Ever file must end with a [[https://robots.thoughtbot.com/no-newline-at-end-of-file][newline]].
 
 #+NAME: orgmode:gcr:vela:7CA01CFF-D9B6-4F1D-B120-88AFC30F281E
 #+BEGIN_SRC emacs-lisp :results output silent
-(setq require-final-newline nil)
+(setq require-final-newline t)
 #+END_SRC
 
 If you are on the end of a line, and go up or down, then go to the end of
