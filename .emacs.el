@@ -3177,7 +3177,6 @@ ALPHA : [ %(frame-parameter nil 'alpha) ].'
 (key-chord-define-global "3o" #'help/3-window)
 (key-chord-define-global "4o" #'help/4-window)
 (global-set-key (kbd "s-q") #'kill-buffer)
-(global-set-key (kbd "s-Q") #'kill-this-buffer)
 (global-set-key (kbd "H-i") #'insert-char)
 (global-set-key (kbd "H-p") #'help/insert-datestamp)
 (global-set-key (kbd "H-P") #'help/insert-timestamp*-no-colons)
