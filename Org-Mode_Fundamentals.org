@@ -260,7 +260,14 @@ as their origin document.
 (setq org-babel-tangle-use-relative-file-links t)
 #+END_SRC
 
-Indent tangled files.
+- Post tangle actions
+  - Indentation
+    - At first glance this is surprising! The author should be responsible for
+      the indentation, right? Yes, that is right. But there is one exception:
+      using ~:noweb-ref~ source block concatenation. [[http://orgmode.org/manual/noweb_002dref.html][It]] is powerful and elegant.
+      But the source blocks are indented on their own line. It forces any
+      reader format it to make any sense of it. That is a poor start to using
+      the tangled files. So tangled files get indented.
 
 #+NAME: org_gcr_2017-05-12_mara_1946BB7D-D2A7-40F3-BF7D-1C22B887D1F6
 #+BEGIN_SRC emacs-lisp :results output silent
