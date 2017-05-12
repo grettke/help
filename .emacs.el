@@ -651,6 +651,12 @@ Attribution: URL
   (flycheck-list-errors)
   (other-window 1))
 
+(defun help/safb-kill-this-buffer ()
+  "Save all file buffers and maybe kill this buffer."
+  (interactive)
+  (help/save-all-file-buffers)
+  (kill-this-buffer))
+
 (defmacro help/profile-org (times &rest body)
   "Makes profiling Org-Mode easy by automatically instrumenting the desired
   functions, running the code you want to test, removing the instrumentation,
@@ -3160,7 +3166,7 @@ ALPHA : [ %(frame-parameter nil 'alpha) ].'
 ;; org_gcr_2017-05-12_mara_A165E3DB-37E7-49A7-84E4-1CB0D2A137C6 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C][org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C]]
-(global-set-key (kbd "C-5") #'kill-this-buffer)
+(global-set-key (kbd "C-5") #'help/safb-kill-this-buffer)
 (global-set-key (kbd "C-9") #'(lambda () (interactive) (insert "Vigneswari")))
 (global-set-key (kbd "s-5") #'mc/mark-previous-like-this)
 (global-set-key (kbd "s-4") #'mc/mark-next-like-this)
