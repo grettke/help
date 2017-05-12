@@ -606,11 +606,8 @@ Attribution: URL `http://emacsredux.com/blog/2013/07/25/increment-and-decrement-
   (increment-integer-at-point (- (or dec 1))))
 
 (defun help/reformat-file (file)
-  "Reformat a file.
-
-Handle whether a buffer is attached to the file or not.
-
-Be sure that most recent version of file is loaded into buffer first.
+  "Reformat a file. If it is attached to an existing buffer then use it and
+  revert it.
 
 Attribution: URL `https://www.emacswiki.org/emacs/ElispCookbook#toc46'."
   (interactive)
