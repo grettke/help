@@ -1,8 +1,8 @@
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:78D777D3-FA69-4361-874C-7262DE96F753][orgmode:gcr:vela:78D777D3-FA69-4361-874C-7262DE96F753]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_71A4A257-9A13-457A-B504-888D8131A206][org_gcr_2017-05-12_mara_71A4A257-9A13-457A-B504-888D8131A206]]
 (load-file "~/src/help/.org-mode-ecm.emacs.el")
-;; orgmode:gcr:vela:78D777D3-FA69-4361-874C-7262DE96F753 ends here
+;; org_gcr_2017-05-12_mara_71A4A257-9A13-457A-B504-888D8131A206 ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:BB2E97AF-6364-401F-8063-8B5A0BE481E6][orgmode:gcr:vela:BB2E97AF-6364-401F-8063-8B5A0BE481E6]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_21BEDC86-D1A3-43FC-85AC-8FF54D161E2F][org_gcr_2017-05-12_mara_21BEDC86-D1A3-43FC-85AC-8FF54D161E2F]]
 (defun help/set-org-babel-default-header-args (property value)
   "Easily set system header arguments in org mode.
 
@@ -118,55 +118,55 @@ This is a copy and paste. Additional languages would warrant a refactor."
   (insert "#+NAME: " (help/org-id-new))
   (beginning-of-line)
   (insert "\n"))
-;; orgmode:gcr:vela:BB2E97AF-6364-401F-8063-8B5A0BE481E6 ends here
+;; org_gcr_2017-05-12_mara_21BEDC86-D1A3-43FC-85AC-8FF54D161E2F ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:orgmode:gcr:vela:659CE55F-3CEA-4940-9D5E-5C66258BFE8F][orgmode:gcr:vela:orgmode:gcr:vela:659CE55F-3CEA-4940-9D5E-5C66258BFE8F]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_922805E3-E016-4026-BAF6-C3BA5DFC6B5A][org_gcr_2017-05-12_mara_922805E3-E016-4026-BAF6-C3BA5DFC6B5A]]
 (require 'org-id)
-;; orgmode:gcr:vela:orgmode:gcr:vela:659CE55F-3CEA-4940-9D5E-5C66258BFE8F ends here
+;; org_gcr_2017-05-12_mara_922805E3-E016-4026-BAF6-C3BA5DFC6B5A ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:751D537A-EE89-4B1D-91E5-99D3A4F8B52E][orgmode:gcr:vela:751D537A-EE89-4B1D-91E5-99D3A4F8B52E]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_6F578996-A506-4193-8566-C3FAC6102228][org_gcr_2017-05-12_mara_6F578996-A506-4193-8566-C3FAC6102228]]
 (setq org-id-link-to-org-use-id 'nil)
-;; orgmode:gcr:vela:751D537A-EE89-4B1D-91E5-99D3A4F8B52E ends here
+;; org_gcr_2017-05-12_mara_6F578996-A506-4193-8566-C3FAC6102228 ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:885C8386-AC68-4DB7-8D04-537E28ED950B][orgmode:gcr:vela:885C8386-AC68-4DB7-8D04-537E28ED950B]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_8F2F5DAE-40B9-490D-8523-BABCAA913A71][org_gcr_2017-05-12_mara_8F2F5DAE-40B9-490D-8523-BABCAA913A71]]
 (setq org-id-prefix (concat "org_" (user-real-login-name) "_" (format-time-string "%Y-%m-%d") "_" (system-name)))
 (setq org-id-method 'uuid)
-;; orgmode:gcr:vela:885C8386-AC68-4DB7-8D04-537E28ED950B ends here
+;; org_gcr_2017-05-12_mara_8F2F5DAE-40B9-490D-8523-BABCAA913A71 ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:859E61A4-D910-4731-8328-A63F6B6ACD3F][orgmode:gcr:vela:859E61A4-D910-4731-8328-A63F6B6ACD3F]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_C4C2CC56-88D6-440F-A277-75B174B7F8E8][org_gcr_2017-05-12_mara_C4C2CC56-88D6-440F-A277-75B174B7F8E8]]
 (add-hook 'org-babel-pre-tangle-hook #'help/org-prp-hdln)
 (add-hook 'org-babel-pre-tangle-hook #'help/org-prp-src-blk)
-;; orgmode:gcr:vela:859E61A4-D910-4731-8328-A63F6B6ACD3F ends here
+;; org_gcr_2017-05-12_mara_C4C2CC56-88D6-440F-A277-75B174B7F8E8 ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:F19C629B-E784-48CA-BC53-CCFB849CE9EC][orgmode:gcr:vela:F19C629B-E784-48CA-BC53-CCFB849CE9EC]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_7AFF21D6-39A6-4580-8AD1-3BF24A83091A][org_gcr_2017-05-12_mara_7AFF21D6-39A6-4580-8AD1-3BF24A83091A]]
 (setq org-babel-use-quick-and-dirty-noweb-expansion nil)
-;; orgmode:gcr:vela:F19C629B-E784-48CA-BC53-CCFB849CE9EC ends here
+;; org_gcr_2017-05-12_mara_7AFF21D6-39A6-4580-8AD1-3BF24A83091A ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:orgmode:gcr:vela:F7F35A40-EE63-48B1-8D5D-F745525D9996][orgmode:gcr:vela:orgmode:gcr:vela:F7F35A40-EE63-48B1-8D5D-F745525D9996]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_BFB80EA4-F37F-484C-9A7E-7B97166A2F49][org_gcr_2017-05-12_mara_BFB80EA4-F37F-484C-9A7E-7B97166A2F49]]
 (setq org-babel-tangle-use-relative-file-links t)
-;; orgmode:gcr:vela:orgmode:gcr:vela:F7F35A40-EE63-48B1-8D5D-F745525D9996 ends here
+;; org_gcr_2017-05-12_mara_BFB80EA4-F37F-484C-9A7E-7B97166A2F49 ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:AD42B561-29FA-4652-AD28-692CAD631E62][orgmode:gcr:vela:AD42B561-29FA-4652-AD28-692CAD631E62]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_5516E87C-58CA-451B-84B3-BA7B9D2A284E][org_gcr_2017-05-12_mara_5516E87C-58CA-451B-84B3-BA7B9D2A284E]]
 (help/set-org-babel-default-header-args :comments "noweb")
-;; orgmode:gcr:vela:AD42B561-29FA-4652-AD28-692CAD631E62 ends here
+;; org_gcr_2017-05-12_mara_5516E87C-58CA-451B-84B3-BA7B9D2A284E ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:F501D202-9F0B-4343-B257-E0DEB4483A0B][orgmode:gcr:vela:F501D202-9F0B-4343-B257-E0DEB4483A0B]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_51AE0BB2-9E85-482C-AAC6-8860D2141999][org_gcr_2017-05-12_mara_51AE0BB2-9E85-482C-AAC6-8860D2141999]]
 (help/set-org-babel-default-header-args :mkdirp "yes")
-;; orgmode:gcr:vela:F501D202-9F0B-4343-B257-E0DEB4483A0B ends here
+;; org_gcr_2017-05-12_mara_51AE0BB2-9E85-482C-AAC6-8860D2141999 ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:20BE9B4B-ED66-4935-A351-99D17B3A32D4][orgmode:gcr:vela:20BE9B4B-ED66-4935-A351-99D17B3A32D4]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_F9D0273A-A0E4-4265-B133-C665ADE1F031][org_gcr_2017-05-12_mara_F9D0273A-A0E4-4265-B133-C665ADE1F031]]
 (help/set-org-babel-default-header-args :noweb "no-export")
-;; orgmode:gcr:vela:20BE9B4B-ED66-4935-A351-99D17B3A32D4 ends here
+;; org_gcr_2017-05-12_mara_F9D0273A-A0E4-4265-B133-C665ADE1F031 ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:0F3E7114-A63C-44F4-A9FD-577BAEE536ED][orgmode:gcr:vela:0F3E7114-A63C-44F4-A9FD-577BAEE536ED]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_D7CD2E35-5BE4-4003-8D78-26D939E0031E][org_gcr_2017-05-12_mara_D7CD2E35-5BE4-4003-8D78-26D939E0031E]]
 (help/set-org-babel-default-header-args :padline "yes")
-;; orgmode:gcr:vela:0F3E7114-A63C-44F4-A9FD-577BAEE536ED ends here
+;; org_gcr_2017-05-12_mara_D7CD2E35-5BE4-4003-8D78-26D939E0031E ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:5E69E152-9921-4527-A2B2-24467EEF1BE9][orgmode:gcr:vela:5E69E152-9921-4527-A2B2-24467EEF1BE9]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_B11664F9-C0E7-48C0-8050-0A66B199FEBF][org_gcr_2017-05-12_mara_B11664F9-C0E7-48C0-8050-0A66B199FEBF]]
 (help/set-org-babel-default-header-args :tangle "no")
-;; orgmode:gcr:vela:5E69E152-9921-4527-A2B2-24467EEF1BE9 ends here
+;; org_gcr_2017-05-12_mara_B11664F9-C0E7-48C0-8050-0A66B199FEBF ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:6309AF39-FCE4-43DE-BD46-BC7D0BA0971D][orgmode:gcr:vela:6309AF39-FCE4-43DE-BD46-BC7D0BA0971D]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_54FEB960-2B87-41E3-A4E4-6DE9DED9B1BD][org_gcr_2017-05-12_mara_54FEB960-2B87-41E3-A4E4-6DE9DED9B1BD]]
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((emacs-lisp . t)
@@ -188,81 +188,81 @@ This is a copy and paste. Additional languages would warrant a refactor."
    (ditaa . t)
    (dot . t)
    (plantuml . t)))
-;; orgmode:gcr:vela:6309AF39-FCE4-43DE-BD46-BC7D0BA0971D ends here
+;; org_gcr_2017-05-12_mara_54FEB960-2B87-41E3-A4E4-6DE9DED9B1BD ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:95CAC7B0-5566-4831-A13A-CE225A286F3D][orgmode:gcr:vela:95CAC7B0-5566-4831-A13A-CE225A286F3D]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_66460204-C425-4057-920D-A6CD5A252075][org_gcr_2017-05-12_mara_66460204-C425-4057-920D-A6CD5A252075]]
 (add-to-list 'org-src-lang-modes '("javascript" . js2))
-;; orgmode:gcr:vela:95CAC7B0-5566-4831-A13A-CE225A286F3D ends here
+;; org_gcr_2017-05-12_mara_66460204-C425-4057-920D-A6CD5A252075 ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:58541CA5-C633-4146-8E5D-15C7A3A2D1D7][orgmode:gcr:vela:58541CA5-C633-4146-8E5D-15C7A3A2D1D7]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_FE5C21BF-9766-4277-A413-B3AF5C255C39][org_gcr_2017-05-12_mara_FE5C21BF-9766-4277-A413-B3AF5C255C39]]
 (help/set-org-babel-default-header-args :eval "never-export")
 (help/set-org-babel-default-inline-header-args :eval "never-export")
-;; orgmode:gcr:vela:58541CA5-C633-4146-8E5D-15C7A3A2D1D7 ends here
+;; org_gcr_2017-05-12_mara_FE5C21BF-9766-4277-A413-B3AF5C255C39 ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:D9F32A22-B415-48EA-A189-D8EAF7C202D8][orgmode:gcr:vela:D9F32A22-B415-48EA-A189-D8EAF7C202D8]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_DB816700-04B3-45D0-9847-490BBFE9DBA0][org_gcr_2017-05-12_mara_DB816700-04B3-45D0-9847-490BBFE9DBA0]]
 (setq org-export-babel-evaluate nil)
-;; orgmode:gcr:vela:D9F32A22-B415-48EA-A189-D8EAF7C202D8 ends here
+;; org_gcr_2017-05-12_mara_DB816700-04B3-45D0-9847-490BBFE9DBA0 ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:BC84119C-6085-4B36-A2D9-0918A68D15C5][orgmode:gcr:vela:BC84119C-6085-4B36-A2D9-0918A68D15C5]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_2F6FE420-85A2-4A99-AAB7-20473F02B878][org_gcr_2017-05-12_mara_2F6FE420-85A2-4A99-AAB7-20473F02B878]]
 (defconst help/org-sb-results-cfg "value table drawer replace")
 (help/set-org-babel-default-header-args :results help/org-sb-results-cfg)
-;; orgmode:gcr:vela:BC84119C-6085-4B36-A2D9-0918A68D15C5 ends here
+;; org_gcr_2017-05-12_mara_2F6FE420-85A2-4A99-AAB7-20473F02B878 ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:38A0B76B-EDEB-489C-9229-60E01438CCAD][orgmode:gcr:vela:38A0B76B-EDEB-489C-9229-60E01438CCAD]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_3E59D8A5-2B8A-44D6-A863-7051E8E62421][org_gcr_2017-05-12_mara_3E59D8A5-2B8A-44D6-A863-7051E8E62421]]
 (defconst help/org-isb-results-cfg "replace")
 (help/set-org-babel-default-inline-header-args :results help/org-isb-results-cfg)
-;; orgmode:gcr:vela:38A0B76B-EDEB-489C-9229-60E01438CCAD ends here
+;; org_gcr_2017-05-12_mara_3E59D8A5-2B8A-44D6-A863-7051E8E62421 ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:71BFB4A2-DABD-4621-A6E0-C3CAECD34BC4][orgmode:gcr:vela:71BFB4A2-DABD-4621-A6E0-C3CAECD34BC4]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_FDA3AE76-9095-49A6-8D3B-F522060FFE0E][org_gcr_2017-05-12_mara_FDA3AE76-9095-49A6-8D3B-F522060FFE0E]]
 (setq org-export-with-properties t)
-;; orgmode:gcr:vela:71BFB4A2-DABD-4621-A6E0-C3CAECD34BC4 ends here
+;; org_gcr_2017-05-12_mara_FDA3AE76-9095-49A6-8D3B-F522060FFE0E ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:49FDDABE-7999-4F51-BD93-969187A220D7][orgmode:gcr:vela:49FDDABE-7999-4F51-BD93-969187A220D7]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_75498F0F-C121-4954-9E27-B6859173C1E1][org_gcr_2017-05-12_mara_75498F0F-C121-4954-9E27-B6859173C1E1]]
 (setq org-export-in-background nil)
-;; orgmode:gcr:vela:49FDDABE-7999-4F51-BD93-969187A220D7 ends here
+;; org_gcr_2017-05-12_mara_75498F0F-C121-4954-9E27-B6859173C1E1 ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:07E50259-E68C-465E-9387-9984220CEB69][orgmode:gcr:vela:07E50259-E68C-465E-9387-9984220CEB69]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_400FE840-685A-4130-B697-8835F8FDB1FF][org_gcr_2017-05-12_mara_400FE840-685A-4130-B697-8835F8FDB1FF]]
 (setq org-export-coding-system 'utf-8)
-;; orgmode:gcr:vela:07E50259-E68C-465E-9387-9984220CEB69 ends here
+;; org_gcr_2017-05-12_mara_400FE840-685A-4130-B697-8835F8FDB1FF ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:18CD863D-F01D-44F8-9B4D-A9FC016EDC79][orgmode:gcr:vela:18CD863D-F01D-44F8-9B4D-A9FC016EDC79]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_DE83AAE3-B4D6-4AB8-83BF-EE3252F9F6D2][org_gcr_2017-05-12_mara_DE83AAE3-B4D6-4AB8-83BF-EE3252F9F6D2]]
 (setq org-export-preserve-breaks nil)
-;; orgmode:gcr:vela:18CD863D-F01D-44F8-9B4D-A9FC016EDC79 ends here
+;; org_gcr_2017-05-12_mara_DE83AAE3-B4D6-4AB8-83BF-EE3252F9F6D2 ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:F0703ECD-DB1D-47BF-BF1A-52336FE0C5D8][orgmode:gcr:vela:F0703ECD-DB1D-47BF-BF1A-52336FE0C5D8]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_564FC52E-A339-4209-9B6E-86E890D8835C][org_gcr_2017-05-12_mara_564FC52E-A339-4209-9B6E-86E890D8835C]]
 (setq org-export-copy-to-kill-ring nil)
-;; orgmode:gcr:vela:F0703ECD-DB1D-47BF-BF1A-52336FE0C5D8 ends here
+;; org_gcr_2017-05-12_mara_564FC52E-A339-4209-9B6E-86E890D8835C ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:5BCA100F-6AC1-454B-9F48-31B5A67CB587][orgmode:gcr:vela:5BCA100F-6AC1-454B-9F48-31B5A67CB587]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_BF7F8052-2578-4BA2-9740-DA437B55447B][org_gcr_2017-05-12_mara_BF7F8052-2578-4BA2-9740-DA437B55447B]]
 (setq org-export-with-toc nil)
-;; orgmode:gcr:vela:5BCA100F-6AC1-454B-9F48-31B5A67CB587 ends here
+;; org_gcr_2017-05-12_mara_BF7F8052-2578-4BA2-9740-DA437B55447B ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:5ACDD0B0-2B6F-4F71-BFDF-2D2D1D91B573][orgmode:gcr:vela:5ACDD0B0-2B6F-4F71-BFDF-2D2D1D91B573]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_5E57CCF7-6D5D-42B4-BD49-26D55EC0891C][org_gcr_2017-05-12_mara_5E57CCF7-6D5D-42B4-BD49-26D55EC0891C]]
 (setq org-src-preserve-indentation t)
-;; orgmode:gcr:vela:5ACDD0B0-2B6F-4F71-BFDF-2D2D1D91B573 ends here
+;; org_gcr_2017-05-12_mara_5E57CCF7-6D5D-42B4-BD49-26D55EC0891C ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:A2FF8367-4A6A-444C-BB2E-F5AA494E33B5][orgmode:gcr:vela:A2FF8367-4A6A-444C-BB2E-F5AA494E33B5]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_BC45B41D-BED3-4448-BFE6-9EE43DAD37E2][org_gcr_2017-05-12_mara_BC45B41D-BED3-4448-BFE6-9EE43DAD37E2]]
 (setq org-export-allow-bind-keywords t)
-;; orgmode:gcr:vela:A2FF8367-4A6A-444C-BB2E-F5AA494E33B5 ends here
+;; org_gcr_2017-05-12_mara_BC45B41D-BED3-4448-BFE6-9EE43DAD37E2 ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:E44782C1-A02D-4D4A-982C-9F0908773CF9][orgmode:gcr:vela:E44782C1-A02D-4D4A-982C-9F0908773CF9]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_DA69CB4F-597A-4057-A532-2B9EC5E4FCF9][org_gcr_2017-05-12_mara_DA69CB4F-597A-4057-A532-2B9EC5E4FCF9]]
 (setq org-element-use-cache nil)
-;; orgmode:gcr:vela:E44782C1-A02D-4D4A-982C-9F0908773CF9 ends here
+;; org_gcr_2017-05-12_mara_DA69CB4F-597A-4057-A532-2B9EC5E4FCF9 ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:72A5FF8F-6597-4523-A604-B499B439A103][orgmode:gcr:vela:72A5FF8F-6597-4523-A604-B499B439A103]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_C933F9D3-EC64-4D09-980D-FB8C7E39CB92][org_gcr_2017-05-12_mara_C933F9D3-EC64-4D09-980D-FB8C7E39CB92]]
 (help/set-org-babel-default-header-args :exports "both")
-;; orgmode:gcr:vela:72A5FF8F-6597-4523-A604-B499B439A103 ends here
+;; org_gcr_2017-05-12_mara_C933F9D3-EC64-4D09-980D-FB8C7E39CB92 ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:4EA406BB-7D8F-447A-BE18-48FE241A3930][orgmode:gcr:vela:4EA406BB-7D8F-447A-BE18-48FE241A3930]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_8D15DF2A-D8EE-4797-AD1C-CB81CFE1404B][org_gcr_2017-05-12_mara_8D15DF2A-D8EE-4797-AD1C-CB81CFE1404B]]
 (help/set-org-babel-default-inline-header-args :exports "results")
-;; orgmode:gcr:vela:4EA406BB-7D8F-447A-BE18-48FE241A3930 ends here
+;; org_gcr_2017-05-12_mara_8D15DF2A-D8EE-4797-AD1C-CB81CFE1404B ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:7DA47704-25D2-4812-A838-7FE29E9F88FE][orgmode:gcr:vela:7DA47704-25D2-4812-A838-7FE29E9F88FE]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_9C45DF8B-120E-47C8-9CA8-04EE6EEB162A][org_gcr_2017-05-12_mara_9C45DF8B-120E-47C8-9CA8-04EE6EEB162A]]
 (help/set-org-babel-default-header-args :wrap "EXAMPLE")
-;; orgmode:gcr:vela:7DA47704-25D2-4812-A838-7FE29E9F88FE ends here
+;; org_gcr_2017-05-12_mara_9C45DF8B-120E-47C8-9CA8-04EE6EEB162A ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::orgmode:gcr:vela:0F18A334-A192-4DA5-A897-9D7F3E15C64B][orgmode:gcr:vela:0F18A334-A192-4DA5-A897-9D7F3E15C64B]]
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_28D5D5A9-5CC8-4B6C-887F-A02F9D416B0D][org_gcr_2017-05-12_mara_28D5D5A9-5CC8-4B6C-887F-A02F9D416B0D]]
 (help/set-org-babel-default-header-args:ditaa :wrap "RESULTS")
 (help/set-org-babel-default-header-args:dot :wrap "RESULTS")
 (help/set-org-babel-default-header-args:plantuml :wrap "RESULTS")
-;; orgmode:gcr:vela:0F18A334-A192-4DA5-A897-9D7F3E15C64B ends here
+;; org_gcr_2017-05-12_mara_28D5D5A9-5CC8-4B6C-887F-A02F9D416B0D ends here

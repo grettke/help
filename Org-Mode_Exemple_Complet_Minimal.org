@@ -2,7 +2,7 @@
 
 * Org-Mode Exemple Complet Minimal
    :PROPERTIES:
-   :ID:       orgmode:gcr:vela:83868A6E-76C2-48AE-8A5A-6A3C97492321
+   :ID:       org_gcr_2017-05-12_mara:1035FF79-3703-49A6-8522-618B38A48F6C
    :END:
 
 Configure EMACS to easily provide ECMs.
@@ -17,12 +17,12 @@ emacs --debug-init --no-init-file --no-splash --background-color white --foregro
 
 ** Principle of Least Astonishment (POLA)
   :PROPERTIES:
-  :ID:       orgmode:gcr:vela:43D9AB52-2157-4A1D-AD9C-D35996E91269
+  :ID:       org_gcr_2017-05-12_mara:626B5DD1-97D8-4B85-96BC-B9A96F18AF1E
   :END:
 
 *** Load Behavior
    :PROPERTIES:
-   :ID:       orgmode:gcr:vela:B1A48CB2-9295-466E-947F-EE24D57DB548
+   :ID:       org_gcr_2017-05-12_mara:75985F03-F3B9-4DA3-8F6E-393E4C2F06E7
    :END:
 
 EMACS can load 3 different representations of a Emacs-Lisp source file code
@@ -56,14 +56,14 @@ representations.
 This is the *first* thing that /ought/ to happen in the initialization of *any*
 tangled system.
 
-#+NAME: orgmode:gcr:vela:87B0CAB9-E6E5-4C68-B389-9289E65FCA7F
+#+NAME: org_gcr_2017-05-12_mara_E2EECBA9-1ECD-498B-A45B-CE21135CF080
 #+BEGIN_SRC emacs-lisp :results output silent
 (setq load-prefer-newer t)
 #+END_SRC
 
 ** Org-Mode Exemple Complet Minimal
    :PROPERTIES:
-   :ID:       orgmode:gcr:vela:57C69AB7-A317-4823-ABBF-7DE8A5E2151C
+   :ID:       org_gcr_2017-05-12_mara:572E2309-5DCA-4AE1-AAC4-36B7E07AD46D
    :END:
 
 Every new EMACS releases comes with the latest stable Org-Mode release. To get
@@ -79,7 +79,7 @@ decide whether or not it is what you expect and prepare an ECM if necessary.
 
 Add the Org-Mode core distribution the load path.
 
-#+NAME: orgmode:gcr:vela:D5D4EECF-00C5-4B2F-B9F9-988591C70852
+#+NAME: org_gcr_2017-05-12_mara_DAFA4781-7A63-44A1-8817-C4AB75F23130
 #+BEGIN_SRC emacs-lisp :results output silent
 (add-to-list 'load-path "~/src/org-mode/lisp")
 #+END_SRC
@@ -87,7 +87,7 @@ Add the Org-Mode core distribution the load path.
 Add the Org-Mode-Contributions distribution to the load path. The contributions
 are essential.
 
-#+NAME: orgmode:gcr:vela:4D4E921E-7B99-43B2-AD1F-30D2593F05D7
+#+NAME: org_gcr_2017-05-12_mara_018101D7-1448-4844-861B-789F222A9FD4
 #+BEGIN_SRC emacs-lisp :results output silent
 (add-to-list 'load-path "~/src/org-mode/contrib/lisp")
 #+END_SRC
@@ -95,7 +95,7 @@ are essential.
 Allow single-character alphabetical bullet lists. This configuration must occur
 before loading Org-Mode. *Never* remove this from a submitted ECM.
 
-#+NAME: orgmode:gcr:vela:28776245-A6BB-4294-AC72-30F03F902DF7
+#+NAME: org_gcr_2017-05-12_mara_050624C5-3BC5-4049-B070-F0A6736EB754
 #+BEGIN_SRC emacs-lisp :results output silent
 (setq org-list-allow-alphabetical t)
 #+END_SRC
@@ -103,21 +103,21 @@ before loading Org-Mode. *Never* remove this from a submitted ECM.
 Unchecked boxes prevent marking the parent as done. This configuration must
 occur before loading Org-Mode. *Never* remove this from a submitted ECM.
 
-#+NAME: orgmode:gcr:vela:5112469C-F95A-484B-9D56-90DDC863686A
+#+NAME: org_gcr_2017-05-12_mara_7A650900-7023-4EA7-B2DB-CAB39437E9F3
 #+BEGIN_SRC emacs-lisp :results output silent
 (setq org-enforce-todo-checkbox-dependencies t)
 #+END_SRC
 
 Load Org-Mode.
 
-#+NAME: orgmode:gcr:vela:86CAEC4F-CFC4-4CAD-9993-E1DCEF3BFCD1
+#+NAME: org_gcr_2017-05-12_mara_766E7D57-B6F9-4718-AF7E-30EE4A23BDF1
 #+BEGIN_SRC emacs-lisp :results output silent
 (require 'org)
 #+END_SRC
 
 Display system info.
 
-#+NAME: orgmode:gcr:2017-05-11:mara:D44023E1-2CD4-4313-A405-390F5E4E4DF8
+#+NAME: org_gcr_2017-05-12_mara_901541A6-1DB6-4EA2-8688-9C888C41902A
 #+BEGIN_SRC emacs-lisp :results output silent
 (message "ECM Information Follows")
 (message "Org-Version:")

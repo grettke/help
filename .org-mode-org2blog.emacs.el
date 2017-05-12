@@ -1,45 +1,45 @@
-;; [[file:~/src/help/Org2Blog.org::orgmode:gcr:vela:E32697AE-784E-458F-A042-D9B559908721][orgmode:gcr:vela:E32697AE-784E-458F-A042-D9B559908721]]
+;; [[file:~/src/help/Org2Blog.org::org_gcr_2017-05-12_mara_AD27B44D-A88A-421F-9418-EE1B9E1977D5][org_gcr_2017-05-12_mara_AD27B44D-A88A-421F-9418-EE1B9E1977D5]]
 (load-file "~/src/help/.org-mode-fundamentals.emacs.el")
-;; orgmode:gcr:vela:E32697AE-784E-458F-A042-D9B559908721 ends here
+;; org_gcr_2017-05-12_mara_AD27B44D-A88A-421F-9418-EE1B9E1977D5 ends here
 
-;; [[file:~/src/help/Org2Blog.org::orgmode:gcr:vela:804FD197-8B2A-49F5-A4CB-48F6036FBCEC][orgmode:gcr:vela:804FD197-8B2A-49F5-A4CB-48F6036FBCEC]]
+;; [[file:~/src/help/Org2Blog.org::org_gcr_2017-05-12_mara_0F6BBBBA-259E-46FC-AD7F-C954149CCCEA][org_gcr_2017-05-12_mara_0F6BBBBA-259E-46FC-AD7F-C954149CCCEA]]
 (package-initialize)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
 (add-to-list 'package-archives
              '("gnu" . "http://elpa.gnu.org/packages/") t)
-;; orgmode:gcr:vela:804FD197-8B2A-49F5-A4CB-48F6036FBCEC ends here
+;; org_gcr_2017-05-12_mara_0F6BBBBA-259E-46FC-AD7F-C954149CCCEA ends here
 
-;; [[file:~/src/help/Org2Blog.org::orgmode:gcr:vela:FAB22F99-AB0C-4A75-AFEF-9E680A5EE95D][orgmode:gcr:vela:FAB22F99-AB0C-4A75-AFEF-9E680A5EE95D]]
+;; [[file:~/src/help/Org2Blog.org::org_gcr_2017-05-12_mara_867E1E1D-48E5-47C7-9B39-FD29F137665D][org_gcr_2017-05-12_mara_867E1E1D-48E5-47C7-9B39-FD29F137665D]]
 (add-to-list 'load-path"~/src/use-package")
-;; orgmode:gcr:vela:FAB22F99-AB0C-4A75-AFEF-9E680A5EE95D ends here
+;; org_gcr_2017-05-12_mara_867E1E1D-48E5-47C7-9B39-FD29F137665D ends here
 
-;; [[file:~/src/help/Org2Blog.org::orgmode:gcr:vela:54841CA9-6491-46E8-8F40-4DCF7182CCD7][orgmode:gcr:vela:54841CA9-6491-46E8-8F40-4DCF7182CCD7]]
+;; [[file:~/src/help/Org2Blog.org::org_gcr_2017-05-12_mara_3982F502-880C-4DF4-A1DF-07DA3EAA7D78][org_gcr_2017-05-12_mara_3982F502-880C-4DF4-A1DF-07DA3EAA7D78]]
 (eval-when-compile
   (require 'use-package))
 (use-package diminish)
-;; orgmode:gcr:vela:54841CA9-6491-46E8-8F40-4DCF7182CCD7 ends here
+;; org_gcr_2017-05-12_mara_3982F502-880C-4DF4-A1DF-07DA3EAA7D78 ends here
 
-;; [[file:~/src/help/Org2Blog.org::orgmode:gcr:vela:E99598C8-D394-484B-A7FB-333FA2544CB0][orgmode:gcr:vela:E99598C8-D394-484B-A7FB-333FA2544CB0]]
+;; [[file:~/src/help/Org2Blog.org::org_gcr_2017-05-12_mara_3989AFAA-23E6-4463-98E8-90F7ED269C1B][org_gcr_2017-05-12_mara_3989AFAA-23E6-4463-98E8-90F7ED269C1B]]
 (use-package xml-rpc
   :ensure t)
-;; orgmode:gcr:vela:E99598C8-D394-484B-A7FB-333FA2544CB0 ends here
+;; org_gcr_2017-05-12_mara_3989AFAA-23E6-4463-98E8-90F7ED269C1B ends here
 
-;; [[file:~/src/help/Org2Blog.org::orgmode:gcr:vela:79F63BAD-0CD7-4A97-8A7D-CBAA51BB48E1][orgmode:gcr:vela:79F63BAD-0CD7-4A97-8A7D-CBAA51BB48E1]]
+;; [[file:~/src/help/Org2Blog.org::org_gcr_2017-05-12_mara_C057BFE2-7242-495D-BCD2-62C6389A6551][org_gcr_2017-05-12_mara_C057BFE2-7242-495D-BCD2-62C6389A6551]]
 (use-package metaweblog
   :ensure t)
-;; orgmode:gcr:vela:79F63BAD-0CD7-4A97-8A7D-CBAA51BB48E1 ends here
+;; org_gcr_2017-05-12_mara_C057BFE2-7242-495D-BCD2-62C6389A6551 ends here
 
-;; [[file:~/src/help/Org2Blog.org::orgmode:gcr:vela:DF522DDF-4A71-4D8B-B6F9-9BD6F11EB832][orgmode:gcr:vela:DF522DDF-4A71-4D8B-B6F9-9BD6F11EB832]]
+;; [[file:~/src/help/Org2Blog.org::org_gcr_2017-05-12_mara_EF1B02DF-BDB7-44AA-A018-B0BE6DA1C08F][org_gcr_2017-05-12_mara_EF1B02DF-BDB7-44AA-A018-B0BE6DA1C08F]]
 (add-to-list 'load-path "~/src/org2blog")
 (require 'org2blog-autoloads)
-;; orgmode:gcr:vela:DF522DDF-4A71-4D8B-B6F9-9BD6F11EB832 ends here
+;; org_gcr_2017-05-12_mara_EF1B02DF-BDB7-44AA-A018-B0BE6DA1C08F ends here
 
-;; [[file:~/src/help/Org2Blog.org::orgmode:gcr:vela:9C1EAE6B-9D05-43FB-AC35-7FBFE6CB4F7E][orgmode:gcr:vela:9C1EAE6B-9D05-43FB-AC35-7FBFE6CB4F7E]]
+;; [[file:~/src/help/Org2Blog.org::org_gcr_2017-05-12_mara_FF96F4B6-42B9-45D6-BEE6-6CDC9D6815AE][org_gcr_2017-05-12_mara_FF96F4B6-42B9-45D6-BEE6-6CDC9D6815AE]]
 (setq org2blog/wp-track-posts nil)
-;; orgmode:gcr:vela:9C1EAE6B-9D05-43FB-AC35-7FBFE6CB4F7E ends here
+;; org_gcr_2017-05-12_mara_FF96F4B6-42B9-45D6-BEE6-6CDC9D6815AE ends here
 
-;; [[file:~/src/help/Org2Blog.org::orgmode:gcr:vela:BCA2FE29-930C-4E66-A662-17FF451D1591][orgmode:gcr:vela:BCA2FE29-930C-4E66-A662-17FF451D1591]]
+;; [[file:~/src/help/Org2Blog.org::org_gcr_2017-05-12_mara_854DE6E9-2208-42EB-A164-EC06E489B6B7][org_gcr_2017-05-12_mara_854DE6E9-2208-42EB-A164-EC06E489B6B7]]
 (setq org2blog/wp-blog-alist
       '(("wisdomandwonder"
          :url "https://www.wisdomandwonder.com/xmlrpc.php"
@@ -47,4 +47,4 @@
          :default-categories ("Article" "Link")
          :confirm t
          :show 'show)))
-;; orgmode:gcr:vela:BCA2FE29-930C-4E66-A662-17FF451D1591 ends here
+;; org_gcr_2017-05-12_mara_854DE6E9-2208-42EB-A164-EC06E489B6B7 ends here

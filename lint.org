@@ -1,18 +1,18 @@
 * Linters
 :PROPERTIES:
-:ID:       orgmode:gcr:vela:334F2C0C-9A68-412B-A990-A264EC3ADCF0
+:ID:       org_gcr_2017-05-12_mara:3BF86A13-3CE9-4256-ADC5-CA52CFB69076
 :END:
 ** JavaScript
 :PROPERTIES:
-:ID:       orgmode:gcr:vela:F1931C82-A694-462F-B5E2-AA231D3221ED
+:ID:       org_gcr_2017-05-12_mara:CEF08861-56F7-41FA-83AD-E519249DDC2F
 :END:
 *** JSHint
 :PROPERTIES:
 :header-args: :tangle .jshintrc :eval no :comments no
-:ID:       orgmode:gcr:vela:C5D4A067-AAEF-4D63-8AC2-4C126B4876F8
+:ID:       org_gcr_2017-05-12_mara:B1229403-15D3-4921-AB9E-63A6B64248A8
 :END:
 
-#+NAME: orgmode:gcr:vela:8F15E82F-1561-4169-A366-2A7D9BBB1AFB
+#+NAME: org_gcr_2017-05-12_mara_1E945EC7-5714-4B2C-B41E-49308DBC6006
 #+BEGIN_SRC javascript :prologue "{" :epilogue "}"
 "bitwise": true,
 "browser": true,

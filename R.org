@@ -1,11 +1,11 @@
 * Control Files
 :PROPERTIES:
-:ID:       B98C6FFA-E22E-4B35-96EB-54D48A89A9DE
+:ID:       org_gcr_2017-05-12_mara:3F5D7D24-91F0-4CBD-A514-C9D0B9821BDA
 :END:
 
 ** Configuration
 :PROPERTIES:
-:ID:       59F738BE-D479-4BB2-A41C-918616832571
+:ID:       org_gcr_2017-05-12_mara:091465F6-8E3F-4736-9BF0-A498785F5E1D
 :END:
 
 The goal here is to get R set up thoughtfully and quickly. The profile
@@ -57,13 +57,13 @@ Please library(dtplyr)!
       - After running it a couple of times, it is finished
 
 *.Rsetup*
-#+NAME: 5EF49EC7-E305-4173-9008-AB3969D9CB23
+#+NAME: org_gcr_2017-05-12_mara_290AFF18-0B4B-4EA4-9DD6-5AF56F4D8666
 #+begin_src sh :tangle .Rsetup.sh :comments no :tangle-mode (identity #o755)
 <<rsetup-defs>>
 #+end_src
 
 *.Rprofile*
-#+NAME: FE1A7E06-FF50-4F5D-BE02-762CC92AF434
+#+NAME: org_gcr_2017-05-12_mara_782A27E2-93A2-46E7-8486-5A8D7D7491B9
 #+begin_src R :tangle .Rprofile :comments no
 ## -*- mode: R; -*-
 <<rprofile-def>>
@@ -76,14 +76,14 @@ fortune()
 #+end_src
 
 *.Renviron*
-#+NAME: 12B3286A-5077-429B-A0AE-85BE7DD6C35C
+#+NAME: org_gcr_2017-05-12_mara_CDF69874-1145-4301-8322-A5D59BB37BD8
 #+begin_src sh :tangle .Renviron :comments no
 # -*- mode: sh; -*-
 <<renviron-def>>
 #+end_src
 
 *.Rinstall*
-#+NAME: B695C2B8-9DD8-4612-ADA3-9330812F1111
+#+NAME: org_gcr_2017-05-12_mara_B59C073C-5783-4812-966A-53FDF8F9BE5C
 #+begin_src sh :tangle .Rinstall.r :comments no
 <<rinstall-def>>
 #+end_src
@@ -91,14 +91,14 @@ fortune()
 ** .Rsetup
 :PROPERTIES:
 :header-args: :noweb-ref rsetup-defs
-:ID:       BDE6AFC6-C6E9-44B8-8B37-35A5E59B14D5
+:ID:       org_gcr_2017-05-12_mara:898031D5-9930-420A-9DDD-2F5FA0AA6D63
 :END:
 
 Prepare the operating system to host R.
 
 Recreate the packages directory.
 
-#+NAME: CAA4C1F3-97AC-484B-A95C-0338CC7557D1
+#+NAME: org_gcr_2017-05-12_mara_5B7DB196-95F7-43D7-AF8A-081748C7A91E
 #+BEGIN_SRC sh
 rm -rf ~/.Rpackages
 mkdir ~/.Rpackages
@@ -106,7 +106,7 @@ mkdir ~/.Rpackages
 
 Symbolically link all of the control files.
 
-#+NAME: 2A4A1DF1-C77E-40B8-8F65-0ECE9F07AFC3
+#+NAME: org_gcr_2017-05-12_mara_9BFCAC2B-E570-4038-82FE-C7A4B1AB054C
 #+BEGIN_SRC sh
 rm ~/.Rprofile
 ln -sfn ~/src/help/.Rprofile ~/.Rprofile
@@ -119,7 +119,7 @@ ln -sfn ~/src/help/.Rinstall.r ~/.Rinstall.r
 ** .Rprofile [fn:89a51cf1: https://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile]
       :PROPERTIES:
       :header-args: :noweb-ref rprofile-def
-      :ID:       FDD6A2C4-B9B1-45EB-996B-3AB20FB2BE89
+      :ID:       org_gcr_2017-05-12_mara:F665989E-724D-4983-A8B1-29F566291722
       :END:
 
 - When you install packages, R needs to know which repository it should use. If
@@ -128,7 +128,7 @@ ln -sfn ~/src/help/.Rinstall.r ~/.Rinstall.r
   - Via [fn:41269bb7: http://www.r-bloggers.com/installing-r-packages/]
   - Built-in docs explain that =local= should be used here
   - This could also be a one-liner: ~options("repos" = c(CRAN = "http://cran.r-project.org/"))~
-#+NAME: DFCB2BE3-8170-4759-BCD9-F1B581474F84
+#+NAME: org_gcr_2017-05-12_mara_2776C7D7-893F-4144-9CDA-BE36909E4262
 #+begin_src R
 local({
     r = getOption("repos")
@@ -142,13 +142,13 @@ local({
   - It is too easy to hit enter when you didn't mean it
   - It just /feels/ imprecise
   - Never let this happen, disable that feature
-#+NAME: 8F82DD61-AFAF-4F6E-B816-D435033A14C6
+#+NAME: org_gcr_2017-05-12_mara_DF9DC3F2-E1FA-494C-9F6A-8358E158FFCA
 #+begin_src R
 options(browserNLdisabled = TRUE)
 #+end_src
 
 Show timestamps to 3 sub-seconds:
-#+NAME: 9A3D9DFB-2522-4977-AC9F-753433C578D2
+#+NAME: org_gcr_2017-05-12_mara_87D900DF-7B80-4579-A6C9-1031890A8BA8
 #+begin_src R
 options("digits.secs"=3)
 #+end_src
@@ -164,14 +164,14 @@ arrays. As the popularity of R skyrocketed, suddently people wanted to work
 with them a lot. It isn't custom code that expects it to be true, rather, it
 is library code that expects it to true. Definitely something that you don't
 want to mess with.
-#+NAME: 91B891B7-6DEF-4212-8C15-A59D5EDE71B5
+#+NAME: org_gcr_2017-05-12_mara_D9A48141-CD6E-4BD5-8FB5-95AF5AB99F9C
 #+begin_src R
 options(stringsAsFactors=TRUE)
 #+end_src
 
 This might be /too much/, but always show a call stack when *any* warnings or
 errors occur
-#+NAME: E78F8DC2-7129-4F35-88DF-FCDF9F91E012
+#+NAME: org_gcr_2017-05-12_mara_2797E9CB-6074-432A-A716-7422A347FCD7
 #+begin_src R
 options(showWarnCalls=TRUE)
 options(showErrorCalls=TRUE)
@@ -184,7 +184,7 @@ this approach is only to handle /my/ issues. Imagine of the whole work just
 handled their own issues! Anway, the safe values are set here, leave them alone.
 Making them more aggressive will break your startup. When you are ready to set
 things to be more aggressive, turn it on yourself
-#+NAME: DD5A8E14-CAB4-4C63-8E27-96F70E7D1800
+#+NAME: org_gcr_2017-05-12_mara_F9F57CE4-9446-40D8-8E00-06DF5C1B102C
 #+begin_src R
 options(error=NULL)
 options(warn=0)
@@ -192,7 +192,7 @@ options(warn=0)
 
 Don't print more than 500 lines. If you can grok more than 500 lines then please
 teach me. Be at ease, there is a helper to remove that restriction, just in case.
-#+NAME: 1BF9ABF2-29F7-4FF4-B288-0BD8D60764ED
+#+NAME: org_gcr_2017-05-12_mara_88843855-5194-48BD-A295-9487FD44AFB8
 #+begin_src R
 options(max.print=500)
 #+end_src
@@ -201,7 +201,7 @@ Partial matching is a neat and flexible feature for objects. In theory, it is
 quite powerful and convenient. In practice it seems like a really bad idea to
 me. It is a /personal preference/. It only makes sense from that perspective.
 This could bork 3rd party code.
-#+NAME: C29C1EFC-03A3-4C9B-A3C6-C1BFA1103B50
+#+NAME: org_gcr_2017-05-12_mara_DA5994F4-E4B2-4AAF-ABA3-1894FA1BD6DA
 #+begin_src R
 options(warnPartialMatchDollar = TRUE)
 #+end_src
@@ -222,7 +222,7 @@ Locale:
     until I wanted to be able to easily clear out all of the top-level bindngs to
     "reset" it with a =rm(ls())= kind of thing. For that reason, I just use the
     manifest strings here.
-#+NAME: 834161D5-1065-4C4B-8821-FAC01E8C1DCD
+#+NAME: org_gcr_2017-05-12_mara_2625A28E-D2FD-4239-B7F0-C44393AD5845
 #+begin_src R
 Sys.setenv(LANG = "en_US.UTF-8")
 Sys.setlocale("LC_COLLATE", "en_US.UTF-8")
@@ -231,14 +231,14 @@ Sys.setlocale("LC_MESSAGES", "en_US.UTF-8")
 
 Set the same random seed.
 
-#+NAME: 70C5FBA3-9B87-4A5F-A52A-559CA0677C76
+#+NAME: org_gcr_2017-05-12_mara_88DDEE7D-F188-4E1F-B42D-7B90ACE48F75
 #+begin_src R
 set.seed(970396220)
 #+END_SRC
 
 *** Packages
 :PROPERTIES:
-:ID:       0B04A7FB-2AC9-4BE8-882D-76C196396116
+:ID:       org_gcr_2017-05-12_mara:E5E7A597-B53A-476B-83A4-0B4114125E0C
 :END:
 
 <2014-11-14 Fri>
@@ -248,7 +248,7 @@ then I will install as-needed. As such, I suppose that I've found it.
 
 **** assertthat
 :PROPERTIES:
-:ID:       F43738D7-5E0F-4567-8C08-8EC8850683E2
+:ID:       org_gcr_2017-05-12_mara:404A7BC2-F0E1-4E49-8CCA-D693D3430741
 :END:
 
 Design-by-contract  [fn:bc0c6d68: http://cran.r-project.org/web/packages/assertthat/index.html
@@ -272,12 +272,12 @@ Cheatsheet:
     - =is.writeable= and =is.readable=
     - =has_extension=
 
-#+NAME: 50FF5CA7-0549-48F5-8938-BACF4AA46C73
+#+NAME: org_gcr_2017-05-12_mara_B7F431B3-C5EC-42FB-8C0B-63BEE51FE409
 #+begin_src R
 library(assertthat)
 #+end_src
 
-#+NAME: B5BD4CCA-8560-4232-9066-B92307722630
+#+NAME: org_gcr_2017-05-12_mara_2B97E549-76E0-4EBD-AC7B-68A9AF02D81B
 #+begin_src R :noweb-ref rinstall-def
 if(! require(assertthat)){
     install.packages("assertthat")
@@ -286,7 +286,7 @@ if(! require(assertthat)){
 
 **** testthat
 :PROPERTIES:
-:ID:       007E49F2-44A1-4AB7-AE4F-72534211F4DE
+:ID:       org_gcr_2017-05-12_mara:8B68967C-5F28-47AC-BD20-758661328199
 :END:
 
 Design-by-contract and unit-tests [fn:d61c81a6: http://cran.r-project.org/web/packages/testthat/index.html]
@@ -326,12 +326,12 @@ Expectations:
   - "Each test is run in its own environment so it is self-contained."
     - Plain old code so you can modify the global environment FYI
 
-#+NAME: 9E31BF52-BB47-4E9D-8BB0-F1E94E7924FF
+#+NAME: org_gcr_2017-05-12_mara_BD9434A3-7ABA-47C9-8DF9-9D1333E88FFC
 #+begin_src R
 library(testthat)
 #+end_src
 
-#+NAME: 1357C970-BF9A-4A1F-B221-CE344A19674B
+#+NAME: org_gcr_2017-05-12_mara_36895EED-30D0-4A93-95A8-B067FEF6426A
 #+begin_src R :noweb-ref rinstall-def
 if(! require(testthat)) {
     install.packages("testthat")
@@ -340,18 +340,18 @@ if(! require(testthat)) {
 
 **** stringr
 :PROPERTIES:
-:ID:       BB8CF291-A9BF-4E3B-9E02-3A41EDAF8424
+:ID:       org_gcr_2017-05-12_mara:A25AE0EF-0169-4D2A-9907-D59FA7F0E9C4
 :END:
 
 Make it really easy to work with strings [fn:bb2c9d86: http://cran.r-project.org/web/packages/stringr/index.html]. That is indeed a good goal, and
 the reason that I installed this initially was because =testthat= mentions that
 it is used.
-#+NAME: A4ACDB85-4606-4B9E-AE04-93E9D0F872FB
+#+NAME: org_gcr_2017-05-12_mara_C048FA06-302D-4C4A-AAB1-65B4AE4A5F15
 #+begin_src R
 library(stringr)
 #+end_src
 
-#+NAME: 81868312-F754-4181-8A6A-8744BA2939AC
+#+NAME: org_gcr_2017-05-12_mara_41A574C0-88B8-496F-831D-46D25A417D93
 #+begin_src R :noweb-ref rinstall-def
 if(! require(stringr)) {
     install.packages("stringr")
@@ -360,7 +360,7 @@ if(! require(stringr)) {
 
 **** sqldf
 :PROPERTIES:
-:ID:       3B199A0E-DE1E-4FBD-95A0-6F4D981B021D
+:ID:       org_gcr_2017-05-12_mara:D6EBC636-F22D-452F-B777-15F7C4C025A4
 :END:
 
 How you extract data from a dataframe is flexible and everyone can and may do it
@@ -567,17 +567,17 @@ SQLite, SQL As Understood By SQLite:
 
 =proto= wouldn't load, so first configure =sqldf= via [[https://stackoverflow.com/questions/17128260/r-stuck-in-loading-sqldf-package][this solution]].
 
-#+NAME: E88E9BD2-47F6-471A-9E8E-C4EBE1EEC2AE
+#+NAME: org_gcr_2017-05-12_mara_8708D312-6CA6-4125-AE17-FF00CC503CC7
 #+BEGIN_SRC R
 options(gsubfn.engine="R")
 #+END_SRC
 
-#+NAME: 34909267-A92F-4624-A72F-B1B0E3BAEE97
+#+NAME: org_gcr_2017-05-12_mara_FD54A8D7-65AA-4146-A094-DDB91809560D
 #+begin_src R
 library(sqldf)
 #+end_src
 
-#+NAME: BC0A0BF8-A7A1-42BF-82E2-6D46D48B8F7E
+#+NAME: org_gcr_2017-05-12_mara_E12CC48D-3E41-428E-8D1A-AFEE791F66C8
 #+begin_src R :noweb-ref rinstall-def
 if(! require(sqldf)) {
     install.packages("sqldf")
@@ -586,19 +586,19 @@ if(! require(sqldf)) {
 
 **** MASS
 :PROPERTIES:
-:ID:       0C3E7D6C-68F9-43D0-9F1A-DD9BBB06029C
+:ID:       org_gcr_2017-05-12_mara:A577D755-41C6-4E7E-9637-6118FCD5944B
 :END:
 
 "Functions and datasets to support Venables and Ripley, 'Modern Applied
 Statistics with S' (4th edition, 2002)." Also, =sqldf= recommended it be
 installed, so it is the right time. [fn:4d284c54: http://cran.r-project.org/web/packages/MASS/index.html]
 
-#+NAME: 3417AE70-97DA-4615-B721-747B4EDA379E
+#+NAME: org_gcr_2017-05-12_mara_AC4A011C-9933-4334-BDA6-AEA41F8BAAD0
 #+begin_src R
 library(MASS)
 #+end_src
 
-#+NAME: 9AC4855A-F125-4B6D-BB97-5F8DA3FB0F89
+#+NAME: org_gcr_2017-05-12_mara_D230D03A-F0C1-4002-B5F7-980FEEA00852
 #+begin_src R :noweb-ref rinstall-def
 if(! require(MASS)) {
     install.packages("MASS")
@@ -607,18 +607,18 @@ if(! require(MASS)) {
 
 **** jsonlite
 :PROPERTIES:
-:ID:       C4806332-3925-4CD3-BDA2-68A9291C245B
+:ID:       org_gcr_2017-05-12_mara:B2715DBA-4A80-4DB8-B3BD-C660302D3FB9
 :END:
 
 Make it easy to work with JSON [37138455: http://cran.r-project.org/web/packages/jsonlite/index.html].
 Reading the vignette's, it does a lot more, for example =rbind.pages=.
 
-#+NAME: 113B7F36-8DE1-4BCE-8721-8633DB450A16
+#+NAME: org_gcr_2017-05-12_mara_81499C37-5163-4CE5-B2B3-3FB82FF5B30E
 #+begin_src R
 library(jsonlite)
 #+end_src
 
-#+NAME: F820314F-DA9F-4D46-9DE3-FF32D76E119B
+#+NAME: org_gcr_2017-05-12_mara_0D6D6DFE-C8BF-48C1-8F78-471F103162BE
 #+begin_src R :noweb-ref rinstall-def
 if(! require(jsonlite)) {
     install.packages("jsonlite")
@@ -627,7 +627,7 @@ if(! require(jsonlite)) {
 
 **** dplyr
 :PROPERTIES:
-:ID:       17A5C886-CEC5-466A-885E-6E00FF6AD7F1
+:ID:       org_gcr_2017-05-12_mara:F2C4419D-59D8-423F-97A8-2C4ED2246186
 :END:
 
 dplyr: a grammar of data manipulation in R
@@ -643,25 +643,25 @@ implications, and they are usually never good.
 
 [[http://cran.r-project.org/web/packages/dplyr/README.html][Readme]]. [[http://cran.r-project.org/web/packages/dplyr/dplyr.pdf][Manual]]. [[http://cran.r-project.org/web/packages/dplyr/vignettes/introduction.html][Introduction to dplyr]].
 
-#+NAME: C7B5947C-8E50-46FA-B737-19900584106F
+#+NAME: org_gcr_2017-05-12_mara_BF403663-EA6F-4DEF-96D8-53460EC01901
 #+begin_src R
 library(dplyr)
 #+end_src
 
 **** data.table
 :PROPERTIES:
-:ID:       6FB35637-B75D-47D6-A552-225B2EE36D38
+:ID:       org_gcr_2017-05-12_mara:1604B2A7-7110-45B5-BB29-C27BDE9F37C4
 :END:
 
 =data.table= [fn:de30b846: http://cran.r-project.org/web/packages/data.table/index.html ]
 is quite nice.
 
-#+NAME: 077FB8D1-785B-4445-9A70-137A6165C421
+#+NAME: org_gcr_2017-05-12_mara_4F1AA6B0-18CF-4D27-BEEE-22F3575641A4
 #+begin_src R
 library(data.table)
 #+end_src
 
-#+NAME: EBD717EC-A697-4424-BE96-C30A324FDE94
+#+NAME: org_gcr_2017-05-12_mara_90160989-EC0D-4BEC-AC7B-F28BDAD36759
 #+begin_src R :noweb-ref rinstall-def
 if(! require(data.table)) {
     install.packages("data.table")
@@ -670,22 +670,22 @@ if(! require(data.table)) {
 
 ***** dtplyr
 :PROPERTIES:
-:ID:       9FB51AFC-A77E-4440-AF3E-4AA34AB86DA0
+:ID:       org_gcr_2017-05-12_mara:169E4CE8-D5BE-48F7-A43F-E89CEE4C6211
 :END:
 
-#+NAME: CF63E555-28B8-4BC2-B8B5-8B3EA0ABCF55
+#+NAME: org_gcr_2017-05-12_mara_83D232DA-8D97-4284-96DB-DADB9862F228
 #+begin_src R
 library(dtplyr)
 #+end_src
 
-#+NAME: 030BF270-E38C-4E15-B8C0-0E28E081DAE5
+#+NAME: org_gcr_2017-05-12_mara_92F783DE-ADA4-413A-B06D-967AA93EB141
 #+begin_src R :noweb-ref rinstall-def
 if(! require(dplyr)) {
     install.packages("dplyr")
 }
 #+end_src
 
-#+NAME: 7F4C5DA8-35E1-40DA-9DC2-0527794E1C2B
+#+NAME: org_gcr_2017-05-12_mara_7EC8A890-B67D-444C-9B9D-025A7A844F42
 #+begin_src R :noweb-ref rinstall-def
 if(! require(dtplyr)) {
     install.packages("dtplyr")
@@ -694,17 +694,17 @@ if(! require(dtplyr)) {
 
 **** XML
 :PROPERTIES:
-:ID:       1C5D86C3-F971-4A4A-B3ED-CFA7814B6B6B
+:ID:       org_gcr_2017-05-12_mara:4F801FC6-2D93-495E-9B7A-5FE6C5A1003A
 :END:
 
 Make ℝ truly enterprise [fn:bf8a1f82: http://cran.r-project.org/web/packages/XML/index.html].
 
-#+NAME: 6FDB5B36-774C-4A12-AC2D-23E59C18BE5F
+#+NAME: org_gcr_2017-05-12_mara_A7A52714-2EBB-4AC1-BEFE-5B03B90078A8
 #+begin_src R
 library(XML)
 #+end_src
 
-#+NAME: 32E87A8D-6853-444B-8309-9C2AABB2C6C4
+#+NAME: org_gcr_2017-05-12_mara_262E11ED-2048-41D6-BFA4-1368DAE75DCC
 #+begin_src R :noweb-ref rinstall-def
 if(! require(XML)) {
     install.packages("XML")
@@ -713,7 +713,7 @@ if(! require(XML)) {
 
 **** devtools
 :PROPERTIES:
-:ID:       CC5F0CF1-4067-4269-BA81-4779DD30E1D1
+:ID:       org_gcr_2017-05-12_mara:6BC90505-4FF2-4DB0-8020-F5F8057BA984
 :END:
 
 =devtools=: Tools to make developing ℝ code easier
@@ -735,12 +735,12 @@ Excellent.
 At the very least, just /know of/ this package, as you will be installing it if
 you want to us =tidyr=.
 
-#+NAME: 0B6C1ED4-CE0F-4125-B0DE-24C08E42C253
+#+NAME: org_gcr_2017-05-12_mara_2B4AA89B-247C-46DD-A301-6344F0DBDD55
 #+begin_src R
 library(devtools)
 #+end_src
 
-#+NAME: FBD625EF-C6F8-4D9B-9E9A-ADAE2004D186
+#+NAME: org_gcr_2017-05-12_mara_9B9089AF-61CE-4448-8A4D-F250FB5209C3
 #+begin_src R :noweb-ref rinstall-def
 if(! require(devtools)) {
     install.packages("devtools")
@@ -751,7 +751,7 @@ if(! require(devtools)) {
 
 **** magrittr
 :PROPERTIES:
-:ID:       7714BB94-5E3C-4E15-B22B-9CFD03634520
+:ID:       org_gcr_2017-05-12_mara:E4F80968-F698-4B63-B3F8-745625D74C39
 :END:
 
 This is a add from the /most understated package definition/ of the year
@@ -759,12 +759,12 @@ department. =magrittr= [fn:73ee53da: http://cran.r-project.org/web/packages/magr
 is, much like every Scheme library ever, deceptively simple in its power and
 ease of use that it provides.
 
-#+NAME: 0168A344-5F8A-480B-BFFB-22493D5F173D
+#+NAME: org_gcr_2017-05-12_mara_0E618832-34E5-493A-AF7D-2CD2639E96AA
 #+begin_src R
 library(magrittr)
 #+end_src
 
-#+NAME: 26DD147E-0E6A-4322-B53D-8CC0FB727024
+#+NAME: org_gcr_2017-05-12_mara_BE75C93B-FA42-403F-AAC5-511B6830B77F
 #+begin_src R :noweb-ref rinstall-def
 if(! require(magrittr)) {
     devtools::install_github("smbache/magrittr")
@@ -773,7 +773,7 @@ if(! require(magrittr)) {
 
 **** reshape2
 :PROPERTIES:
-:ID:       11B7E671-6D90-4C37-B13F-1CB21904C304
+:ID:       org_gcr_2017-05-12_mara:68274778-C58F-43D2-92D3-EBD90025A8D0
 :END:
 
 =reshape2=: Flexibly reshape data: a reboot of the =reshape= package
@@ -786,12 +786,12 @@ Reshape lets you flexibly restructure and aggregate data using just two function
 
 This seems to be a defacto standard.
 
-#+NAME: 45CDE8F1-2144-43CA-A4DD-77932C165805
+#+NAME: org_gcr_2017-05-12_mara_7DA54C1E-71A1-4843-99A9-FCE9866EE1A7
 #+begin_src R
 library(reshape2)
 #+end_src
 
-#+NAME: 75CFE76D-7C00-49CA-80EB-7811053CC5BB
+#+NAME: org_gcr_2017-05-12_mara_5307205D-58F2-48B1-A876-C09C2C37EB6F
 #+begin_src R :noweb-ref rinstall-def
 if(! require(reshape2)) {
     install.packages("reshape2")
@@ -800,7 +800,7 @@ if(! require(reshape2)) {
 
 **** tidyr
 :PROPERTIES:
-:ID:       EAB265C6-121F-4CC9-A745-AEA8AECA2D63
+:ID:       org_gcr_2017-05-12_mara:5CE86E38-28A9-48F0-92F8-0874C7B89DEE
 :END:
 
 =tidyr=: Easily tidy data with spread and gather functions for ℝ
@@ -813,12 +813,12 @@ if(! require(reshape2)) {
 
 Not on CRAN yet so install via
 
-#+NAME: 2F704227-46DA-43F7-82E0-909AEFD22BD7
+#+NAME: org_gcr_2017-05-12_mara_F9C761C3-1513-4BF4-99E9-05B225592D36
 #+begin_src R
 library(tidyr)
 #+end_src
 
-#+NAME: 495BF16A-88C6-4169-BFBE-BA25578D8BA5
+#+NAME: org_gcr_2017-05-12_mara_5F0C0855-9BB8-4CC4-B05F-C7F654997BAC
 #+begin_src R :noweb-ref rinstall-def
 if(! require(tidyr)) {
     devtools::install_github("hadley/tidyr")
@@ -828,7 +828,7 @@ if(! require(tidyr)) {
 
 **** lubridate
 :PROPERTIES:
-:ID:       BDFEC2C3-DAC1-4ED2-BC66-C8A793F9EC1C
+:ID:       org_gcr_2017-05-12_mara:7F0E1F05-B547-4E6A-AFBF-E9E9D3FF1059
 :END:
 
 lubridate: Make dealing with dates a little easier in ℝ
@@ -839,12 +839,12 @@ lubridate: Make dealing with dates a little easier in ℝ
 
 [[http://cran.r-project.org/web/packages/lubridate/lubridate.pdf][Manual]]. [[http://cran.r-project.org/web/packages/lubridate/vignettes/lubridate.html][Vignette]].
 
-#+NAME: 44351B15-04C0-43FA-B244-B3BD40C1F19B
+#+NAME: org_gcr_2017-05-12_mara_73EDACC9-C2BC-4648-B304-64E4CC6279E8
 #+begin_src R
 library(lubridate)
 #+end_src
 
-#+NAME: F1A7CFF9-1694-4DFF-9D2C-1E74A23BA4A1
+#+NAME: org_gcr_2017-05-12_mara_13C5AEA5-C8E3-4697-8F05-C475FEB72AAC
 #+begin_src R :noweb-ref rinstall-def
 if(! require(lubridate)) {
     install.packages("lubridate")
@@ -856,7 +856,7 @@ all programming languages.
 
 **** testit
 :PROPERTIES:
-:ID:       EBACD267-84B2-4FF2-ABE3-4DC6070D247D
+:ID:       org_gcr_2017-05-12_mara:4D15CAB4-E41F-4329-ABD3-6352BB53211C
 :END:
 
 testit: A simple package for testing R packages
@@ -865,12 +865,12 @@ testit: A simple package for testing R packages
 
 Gives you =assert= and =test_pkg=. Save characters.
 
-#+NAME: 965B8003-F502-4EF8-9E21-03A47F90267A
+#+NAME: org_gcr_2017-05-12_mara_1F82B124-3A21-481F-8407-2FCB8BAB9B0B
 #+begin_src R
 library(testit)
 #+end_src
 
-#+NAME: 93462E3C-B83F-45C5-B02B-589E961E3E45
+#+NAME: org_gcr_2017-05-12_mara_7514A801-7BBF-4AC8-8A93-98EC0EF06507
 #+begin_src R :noweb-ref rinstall-def
 if(! require(testit)) {
     install.packages("testit")
@@ -879,7 +879,7 @@ if(! require(testit)) {
 
 **** markdown
 :PROPERTIES:
-:ID:       43DA96C6-5440-4BA7-A537-F37BA5B739C1
+:ID:       org_gcr_2017-05-12_mara:A060E8EA-7F3C-4A33-8001-EE936782065A
 :END:
 
 - [[http://cran.r-project.org/web/packages/markdown/index.html][CRAN]]
@@ -888,12 +888,12 @@ if(! require(testit)) {
   - [[http://cran.r-project.org/web/packages/markdown/vignettes/markdown-output.html][vignettes: markdown-output]]
 - [[https://github.com/rstudio/markdown][GitHub]]
 
-#+NAME: AB45CA2B-3CEB-40F4-B9CA-E04BB082AC28
+#+NAME: org_gcr_2017-05-12_mara_6F11689D-25AE-47BB-9150-8AAA0C646D6C
 #+begin_src R
 library(markdown)
 #+end_src
 
-#+NAME: 25C814BD-CF77-441B-AD2F-122F6C854DA3
+#+NAME: org_gcr_2017-05-12_mara_60BB724D-8AE3-497A-918C-9A44AB169740
 #+begin_src R :noweb-ref rinstall-def
 if(! require(markdown)) {
     install.packages("markdown")
@@ -906,7 +906,7 @@ This package is referred to as R Markdown v1 when combined with knitr. The prima
 
 **** knitr
 :PROPERTIES:
-:ID:       3544C2CF-9531-4A1C-95D1-83D423FC5B2E
+:ID:       org_gcr_2017-05-12_mara:90B8880A-A32A-4761-A05A-164144AE93AF
 :END:
 
 knitr: A general-purpose package for dynamic report generation in R
@@ -941,12 +941,12 @@ Somehow missed the [[http://cran.r-project.org/web/packages/knitr/vignettes/knit
 
 [[http://yihui.name/knitr/demo/vignette/][How to build package vignettes with knitr]].
 
-#+NAME: C2032063-FF74-47CE-B75D-23876B518305
+#+NAME: org_gcr_2017-05-12_mara_A5B64729-F8B4-429E-A24F-5DC0BFB7AA4E
 #+begin_src R
 library(knitr)
 #+end_src
 
-#+NAME: 84ADA1D8-C61B-4054-BEEB-A22342A0DB17
+#+NAME: org_gcr_2017-05-12_mara_E65DF403-D8F4-4B18-9AF2-EF07F891FCD9
 #+begin_src R :noweb-ref rinstall-def
 if(! require(knitr)) {
     install.packages("knitr")
@@ -955,19 +955,19 @@ if(! require(knitr)) {
 
 **** fortunes
 :PROPERTIES:
-:ID:       E7C0C8C1-8835-45D3-B7C2-F3D687034CFA
+:ID:       org_gcr_2017-05-12_mara:420C813F-A6C0-41C9-8F4A-042DD8C4D059
 :END:
 
 R Fortunes.
 
 [[http://cran.r-project.org/web/packages/fortunes/index.html][CRAN]].
 
-#+NAME: DFBE1752-4641-4181-A21A-098610904EEB
+#+NAME: org_gcr_2017-05-12_mara_21A2B6D3-05FE-4161-B0B3-A2B1A5184EAF
 #+begin_src R
 library(fortunes)
 #+end_src
 
-#+NAME: 399E1D92-BC6A-40F2-9A08-0F8913A661D2
+#+NAME: org_gcr_2017-05-12_mara_5C7E3B93-1ABC-497D-94C0-E854F3EB8C6A
 #+begin_src R :noweb-ref rinstall-def
 if(! require(fortunes)) {
     install.packages("fortunes")
@@ -976,7 +976,7 @@ if(! require(fortunes)) {
 
 **** ggplot2
 :PROPERTIES:
-:ID:       E51FEB93-89A9-4C5F-BC67-B737D6A853D7
+:ID:       org_gcr_2017-05-12_mara:2CB46933-90E6-4366-BA74-71D2B1A4DE8D
 :END:
 
 - [[http://cran.r-project.org/web/packages/ggplot2/index.html][CRAN]]
@@ -994,12 +994,12 @@ if(! require(fortunes)) {
 - [[http://ggplot2.org/][Homepage]]
   - [[http://docs.ggplot2.org/current/][Documentation]]
 
-#+NAME: EEA6CD82-563E-4195-AA06-8B68CE630170
+#+NAME: org_gcr_2017-05-12_mara_8251EDAD-800D-4AA6-9CF6-6D72D6C28726
 #+begin_src R
 library(ggplot2)
 #+end_src
 
-#+NAME: 875D9D97-919D-4766-A98F-9D88760CBA0B
+#+NAME: org_gcr_2017-05-12_mara_DC1E00FC-2565-45BB-919A-EE51E3B19008
 #+begin_src R :noweb-ref rinstall-def
 if(! require(ggplot2)) {
     install.packages("ggplot2")
@@ -1008,7 +1008,7 @@ if(! require(ggplot2)) {
 
 **** tikzDevice
 :PROPERTIES:
-:ID:       C024D10E-40E2-4192-A953-3EBEC23B25BC
+:ID:       org_gcr_2017-05-12_mara:9CDF266B-9DE6-42A4-846E-212B11070D6F
 :END:
 
 - [[http://cran.r-project.org/web/packages/tikzDevice/index.html][CRAN]]
@@ -1016,12 +1016,12 @@ if(! require(ggplot2)) {
   - [[http://cran.r-project.org/web/packages/tikzDevice/vignettes/tikzDevice.pdf][vignettes: tikzDevice]]
 - [[https://github.com/yihui/tikzDevice][GitHub]]
 
-#+NAME: EC288E1A-B3F9-499C-8170-371D44516029
+#+NAME: org_gcr_2017-05-12_mara_B0E027B5-57BF-4594-B3A6-FA430EB2E97E
 #+begin_src R
 library(tikzDevice)
 #+end_src
 
-#+NAME: 7E6366CC-6A0E-48D1-AF62-EA099A53576C
+#+NAME: org_gcr_2017-05-12_mara_0FD2B191-249B-4694-9CD1-A173801B417B
 #+begin_src R :noweb-ref rinstall-def
 if(! require(tikzDevice)) {
     install.packages("tikzDevice")
@@ -1030,19 +1030,19 @@ if(! require(tikzDevice)) {
 
 **** ascii
 :PROPERTIES:
-:ID:       6237DF5B-5219-403D-BB41-5D0684E75B32
+:ID:       org_gcr_2017-05-12_mara:1645490F-7DEB-4227-8EAA-FBB1EFC329A0
 :END:
 
 - [[http://cran.r-project.org/web/packages/ascii/index.html][CRAN]]
   - [[http://cran.r-project.org/web/packages/ascii/ascii.pdf][reference]]
 - [[https://github.com/eusebe/ascii/][GitHub]]
 
-#+NAME: 28BEF788-5A4D-4F78-81AC-23D22A5BAC56
+#+NAME: org_gcr_2017-05-12_mara_FDD3F939-1F60-4123-AFC5-FA34275A09E4
 #+begin_src R
 library(ascii)
 #+end_src
 
-#+NAME: CD8BC540-6B96-4CC8-BB6C-3070823DBB2B
+#+NAME: org_gcr_2017-05-12_mara_EC4BE76A-ACC9-4172-9D26-E3F1372416F7
 #+begin_src R :noweb-ref rinstall-def
 if(! require(ascii)) {
     install.packages("ascii")
@@ -1052,14 +1052,14 @@ if(! require(ascii)) {
 Always display =org= representations; I'm assuming that it will be /the/ dominant
 vehicle for analysis.
 
-#+NAME: 0964975F-F813-450A-A628-DD28A199DB7C
+#+NAME: org_gcr_2017-05-12_mara_E51BCB45-90E5-46F3-AFE6-C4B60E93597C
 #+begin_src R
 options(asciiType="org")
 #+end_src
 
 **** xtable
 :PROPERTIES:
-:ID:       AE66A34F-A6AF-4578-8617-A7D2363AF81C
+:ID:       org_gcr_2017-05-12_mara:6438AA32-0335-4527-91BC-A90404AB36DD
 :END:
 
 - [[http://cran.r-project.org/web/packages/xtable/index.html][CRAN]]
@@ -1068,12 +1068,12 @@ options(asciiType="org")
   - [[http://cran.r-project.org/web/packages/xtable/vignettes/xtableGallery.pdf][vignettes: xtableGallery]]
 - [[http://xtable.r-forge.r-project.org/][R-Forge]]
 
-#+NAME: 557D70EA-DB5C-49E9-9755-F6E3172038D8
+#+NAME: org_gcr_2017-05-12_mara_EE352CD5-AE55-430D-BA0B-41A56A74B81F
 #+begin_src R
 library(xtable)
 #+end_src
 
-#+NAME: C162AAE1-0A15-433F-8E9A-D65D47D17BF3
+#+NAME: org_gcr_2017-05-12_mara_174E2929-B8BC-4AE4-BEF2-338FAECC9330
 #+begin_src R :noweb-ref rinstall-def
 if(! require(xtable)) {
     install.packages("xtable")
@@ -1082,19 +1082,19 @@ if(! require(xtable)) {
 
 **** Hmisc
 :PROPERTIES:
-:ID:       72F1D963-42B8-43C5-87C3-44AEAFCEC91C
+:ID:       org_gcr_2017-05-12_mara:F42F3746-7E10-478D-ACAE-125BE4A15D5C
 :END:
 
 - [[http://cran.r-project.org/web/packages/Hmisc/index.html][CRAN]]
   - [[http://cran.r-project.org/web/packages/Hmisc/Hmisc.pdf][reference]]
 - [[https://github.com/harrelfe/Hmisc][GitHub]]
 
-#+NAME: F9C27D39-49FD-461A-945D-6B2D2BF6CDD9
+#+NAME: org_gcr_2017-05-12_mara_71B207A8-9A27-41EB-A70C-E46009281865
 #+begin_src R
 library(Hmisc)
 #+end_src
 
-#+NAME: ACF6C5AC-E6B3-4EA4-B500-A5C61546D59D
+#+NAME: org_gcr_2017-05-12_mara_ED5F41D6-717C-4C6C-ABD4-F9BE0BC9CAAE
 #+begin_src R :noweb-ref rinstall-def
 if(! require(Hmisc)) {
     install.packages("Hmisc")
@@ -1103,19 +1103,19 @@ if(! require(Hmisc)) {
 
 **** log4r
 :PROPERTIES:
-:ID:       E343FE37-79D9-4856-AFF1-1BFF49513E10
+:ID:       org_gcr_2017-05-12_mara:C6F05623-CF1C-46D0-A911-2ABB014267AF
 :END:
 
 - [[http://cran.r-project.org/web/packages/log4r/index.html][CRAN]]
   - [[http://cran.r-project.org/web/packages/log4r/log4r.pdf][reference]]
 - [[https://github.com/johnmyleswhite/log4r][GitHub]]
 
-#+NAME: 0F32E4F9-A380-491F-9296-F2BB68FA97A5
+#+NAME: org_gcr_2017-05-12_mara_082A541A-C479-4CAC-9F23-51A34BD7AF11
 #+begin_src R
 library(log4r)
 #+end_src
 
-#+NAME: 3F3ADA7F-1CD2-4645-93B2-7E860E0FA86D
+#+NAME: org_gcr_2017-05-12_mara_DB77D13B-83D4-4465-8F2F-82D9921A3EA0
 #+begin_src R :noweb-ref rinstall-def
 if(! require(log4r)) {
     install.packages("log4r")
@@ -1124,18 +1124,18 @@ if(! require(log4r)) {
 
 **** boot
 :PROPERTIES:
-:ID:       9D4A4744-FDF4-49C5-9B66-08863FCAABC4
+:ID:       org_gcr_2017-05-12_mara:1EC5636D-D340-4F00-BBEF-579000725366
 :END:
 
 - [[http://cran.r-project.org/web/packages/boot/index.html][CRAN]]
   - [[http://cran.r-project.org/web/packages/boot/boot.pdf][reference]]
 
-#+NAME: 9DD22C76-FE94-4193-86C4-94EA9A64B859
+#+NAME: org_gcr_2017-05-12_mara_6A9C1011-0E52-4729-A15E-BDA3DE01D7C9
 #+begin_src R
 library(boot)
 #+end_src
 
-#+NAME: 80437472-ADF6-4394-B7BA-C3DF725D3BAD
+#+NAME: org_gcr_2017-05-12_mara_DD3E0FE3-59A3-449A-8C1D-D821A205545D
 #+begin_src R :noweb-ref rinstall-def
 if(! require(boot)) {
     install.packages("boot")
@@ -1144,7 +1144,7 @@ if(! require(boot)) {
 
 **** kernlab
 :PROPERTIES:
-:ID:       24A2C62F-9EC0-4E51-B21D-364DF4679938
+:ID:       org_gcr_2017-05-12_mara:1860ABE6-06F1-449C-A5E4-EBCDEE4B8EB8
 :END:
 
 - [[http://cran.r-project.org/web/packages/kernlab/index.html][CRAN]]
@@ -1152,12 +1152,12 @@ if(! require(boot)) {
   - [[http://cran.r-project.org/web/packages/kernlab/vignettes/kernlab.pdf][vignettes: kernlab]]
 - GitHub
 
-#+NAME: 98E55DA9-C5AD-485F-8A3D-543B5AA4BD48
+#+NAME: org_gcr_2017-05-12_mara_04200AA3-C30B-410B-A9A1-C89DA77A633B
 #+begin_src R
 library(kernlab)
 #+end_src
 
-#+NAME: 65691806-DBC4-411B-98C3-BD73D8ACE50F
+#+NAME: org_gcr_2017-05-12_mara_9A4FE214-1F39-4CCD-97FC-3C6EDA6439D0
 #+begin_src R :noweb-ref rinstall-def
 if(! require(kernlab)) {
     install.packages("kernlab")
@@ -1166,18 +1166,18 @@ if(! require(kernlab)) {
 
 **** R Utils
 :PROPERTIES:
-:ID:       954DBB37-DD0D-4363-BB3A-6E7787914C1C
+:ID:       org_gcr_2017-05-12_mara:5AAB5490-A3D4-42E1-9630-15E9CE8A6D63
 :END:
 
 Programatically extract BZ2 files. Helpful for making decompression a
 separarate task from loading.
 
-#+NAME: 7C7248A2-3A74-4E24-905A-D97C69E934E0
+#+NAME: org_gcr_2017-05-12_mara_885D2413-5670-4318-8427-B811AAAB2489
 #+begin_src R
 library(R.utils)
 #+end_src
 
-#+NAME: CEA9BA53-21DE-454B-9127-278E0C058E2B
+#+NAME: org_gcr_2017-05-12_mara_50B4B233-C2AD-45AB-B342-E4F6F2CAD200
 #+begin_src R :noweb-ref rinstall-def
 if(! require(R.utils)) {
     install.packages("R.utils")
@@ -1186,7 +1186,7 @@ if(! require(R.utils)) {
 
 **** Not explicitly loaded, but interesting packages
 :PROPERTIES:
-:ID:       1F011148-DBD2-4944-B458-771333F10FB7
+:ID:       org_gcr_2017-05-12_mara:62914096-7336-4480-B8E4-950E2A553AA8
 :END:
 
 - [[http://projecttemplate.net/index.html][ProjectTemplate]]
@@ -1252,7 +1252,7 @@ if(! require(R.utils)) {
 ** .First
       :PROPERTIES:
       :header-args: :noweb-ref rfirst-defs
-      :ID:       10CD604F-503C-46DE-AB32-97884C070344
+      :ID:       org_gcr_2017-05-12_mara:DB8DE38B-83C2-4CF9-B428-4629E4E06547
       :END:
 
 Reading:
@@ -1265,7 +1265,7 @@ Reading:
   not be used much, and if you do need to use it, the it should be really really
   obvious.
   - Eg: [fn:7ce54638: http://www.r-bloggers.com/to-attach-or-not-attach-that-is-the-question/]
-#+NAME: C16F5A58-7869-4A3E-8651-B243CDE77E54
+#+NAME: org_gcr_2017-05-12_mara_45C9CCC7-16B0-463F-8E97-15B1680256FE
 #+begin_src R
 gcr$attach.unsafe <- attach
 gcr$attach <- function(...) {
@@ -1278,7 +1278,7 @@ gcr$attach <- function(...) {
   the useR that they /may/ want the former not the latter
   - Via [fn:84031d95: http://www.r-bloggers.com/library-vs-require-in-r/]
   - Just like everything else here, this is a /personal preference/ thing!
-#+NAME: FD2B4209-4312-4CD2-968F-84C66702E0A4
+#+NAME: org_gcr_2017-05-12_mara_F1DC88CC-9F93-41E7-8736-784E2EACF23F
 #+begin_src R
 gcr$require <- function(...) {
     warning("Are you sure you wanted `require` instead of `library`?")
@@ -1287,7 +1287,7 @@ gcr$require <- function(...) {
 #+end_src
 
 Sometimes you only want to list everything *but* functions [fn:7b11c35d: https://stackoverflow.com/questions/13094324/hiding-function-names-from-ls-results-to-find-a-variable-name-more-quickly]:
-#+NAME: 9354CA61-92CC-4614-B80B-F84C7F414926
+#+NAME: org_gcr_2017-05-12_mara_86FC1743-F679-45B1-AD21-0A8A6F699225
 #+begin_src R
 gcr$lsnofun <- function(name = parent.frame()) {
     obj <- ls(name = name)
@@ -1296,7 +1296,7 @@ gcr$lsnofun <- function(name = parent.frame()) {
 #+end_src
 
 Make it really simple to specify how to handle errors in a given session:
-#+NAME: 70131925-FAE5-4780-A949-6E6F3879561F
+#+NAME: org_gcr_2017-05-12_mara_D959F4C7-DC16-4A96-9928-0A1D9B328431
 #+begin_src R
 gcr$recoveronerror <- function() {
     options(error=recover)
@@ -1308,7 +1308,7 @@ gcr$recoveronerroroff <- function() {
 #+end_src
 
 Make it really simple to specify how to handle warnings in a given session:
-#+NAME: BC7DAB81-7147-4239-BB7F-3AF6C2288B80
+#+NAME: org_gcr_2017-05-12_mara_A1A5310B-3C47-4295-A721-70546CFE0BFB
 #+begin_src R
 gcr$erroronwarn <- function() {
     options(warn=2)
@@ -1321,14 +1321,14 @@ gcr$erroronwarnoff <- function() {
 
 =sqldf= should always use =SQLite=.
 
-#+NAME: D5C8CB56-C0C2-4524-8B86-9C0549F9D727
+#+NAME: org_gcr_2017-05-12_mara_1E1231CF-97D0-4A23-9AE7-B78DA7F87F5D
 #+begin_src R
 options(sqldf.driver = "SQLite")
 #+end_src
 
 Save your fingers from having to type =head= the next =n= thousand times [fn:f9fcc455: https://stackoverflow.com/questions/13024167/how-to-make-head-be-applied-automatically-to-output] because I can't. =ess-rdired= and friends use the dataframe print function,
 so I didn't make dataframes print using it.
-#+NAME: 2C3CDAF3-8D92-44CD-9D00-513E05D53621
+#+NAME: org_gcr_2017-05-12_mara_C8228D0B-C98E-4732-8E04-5778886EBAB4
 #+begin_src R
 gcr$printdf <- function(df) {
     if (nrow(df) > 10) {
@@ -1344,7 +1344,7 @@ gcr$printdf <- function(df) {
 Sometimes you want to see all of the data in a dataframe, and sometimes you
 don't. Make it really easy to change whenever you feel like it.
 
-#+NAME: 32B3BE7D-6BF6-480C-AFFD-255CA71BE24B
+#+NAME: org_gcr_2017-05-12_mara_AB49EDDD-82C2-49C0-923A-75E3B3A6DD4E
 #+begin_src R
 gcr$printlen <- function(len=500) {
     options("max.print" = len)
@@ -1354,7 +1354,7 @@ gcr$printlen <- function(len=500) {
 When you've got =n=-thousand rows of data, make it easier to get a sample from it,
 just make it specific and keep it simple.
 
-#+NAME: C211CA1E-7322-41CA-A82C-ABA5FCD7C34E
+#+NAME: org_gcr_2017-05-12_mara_2F328A8E-E928-4916-B756-6569CCD437E5
 #+begin_src R
 gcr$hundred <- function(df, idx=0) {
     df[idx:(idx+100),]
@@ -1364,7 +1364,7 @@ gcr$hundred <- function(df, idx=0) {
 ** .Renviron
       :PROPERTIES:
       :header-args: :noweb-ref renviron-def
-      :ID:       ADDE28AF-505F-46DF-BF67-C61E435D6981
+      :ID:       org_gcr_2017-05-12_mara:9C053DA5-163C-4C31-9590-15F1BC5EF2DD
       :END:
 
 Install all packages to my home directory [fn:daab690d: http://www.r-bloggers.com/installing-r-packages/]
@@ -1373,7 +1373,7 @@ Install all packages to my home directory [fn:daab690d: http://www.r-bloggers.co
   - Solution:
     - Manual for now
     - Unsure of best way to generalize it
-#+NAME: 0116C775-DD1B-4DB6-8D3F-EA6763810738
+#+NAME: org_gcr_2017-05-12_mara_640084E4-4804-4CAD-98BC-9F3CAC731DE6
 #+begin_src sh
 R_LIBS=~/.Rpackages
 #+end_src
@@ -1396,7 +1396,7 @@ When I us =ggplot= and quarts on this system, it blows up.
 <2014-11-25 Tue>
 Switched to the official CRAN R build, which works fine on OSX.
 
-#+NAME: 1F5E546C-D5C8-482E-BFAB-066494CA8D4E
+#+NAME: org_gcr_2017-05-12_mara_5EF545C1-D37E-4B7C-8943-DF4BA7F3F178
 #+begin_src sh
 R_INTERACTIVE_DEVICE=quartz
 #+end_src
@@ -1407,7 +1407,7 @@ I will put it here. Perhaps this should get set via =Sys.setenv= instead? I'll
 leave it for now and fix it later if necessary. I did test this out with a call
 to =Sys.time()= and it worked correctly.
 
-#+NAME: 93FAA2B4-6A03-4FFE-88BF-02981B522F66
+#+NAME: org_gcr_2017-05-12_mara_78690D30-A36C-4D81-A123-534640CBAEB1
 #+begin_src sh
 TZ=America/Chicago
 #+end_src

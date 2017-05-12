@@ -1,6 +1,6 @@
 ;; -*- lexical-binding: t -*-
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:AD12BE48-B87B-4AB6-814D-4FA5E47597A0][orgmode:gcr:vela:AD12BE48-B87B-4AB6-814D-4FA5E47597A0]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_EE00DAED-88BD-4271-9CFE-34BDCEE68932][org_gcr_2017-05-12_mara_EE00DAED-88BD-4271-9CFE-34BDCEE68932]]
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -8,14 +8,14 @@
 ;(package-initialize)
 
 (load-file "~/src/help/.org-mode-org2blog.emacs.el")
-;; orgmode:gcr:vela:AD12BE48-B87B-4AB6-814D-4FA5E47597A0 ends here
+;; org_gcr_2017-05-12_mara_EE00DAED-88BD-4271-9CFE-34BDCEE68932 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:A66501E1-BB81-405F-8BCE-D752AAC4C719][orgmode:gcr:vela:A66501E1-BB81-405F-8BCE-D752AAC4C719]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_289C017E-D5F0-4B8A-987F-A64696094359][org_gcr_2017-05-12_mara_289C017E-D5F0-4B8A-987F-A64696094359]]
 (setq custom-file "~/src/help/custom.el")
 (load custom-file :noerror)
-;; orgmode:gcr:vela:A66501E1-BB81-405F-8BCE-D752AAC4C719 ends here
+;; org_gcr_2017-05-12_mara_289C017E-D5F0-4B8A-987F-A64696094359 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:20CC11BB-D72C-4A86-8558-44D9AE44FEAF][orgmode:gcr:vela:20CC11BB-D72C-4A86-8558-44D9AE44FEAF]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0A242AFE-3101-4F88-A2CB-F230FA19AC64][org_gcr_2017-05-12_mara_0A242AFE-3101-4F88-A2CB-F230FA19AC64]]
 (defmacro help/on-gui (statement &rest statements)
   "Evaluate the enclosed body only when run on GUI."
   `(when (display-graphic-p)
@@ -27,88 +27,88 @@
   `(when (not (display-graphic-p))
      ,statement
      ,@statements))
-;; orgmode:gcr:vela:20CC11BB-D72C-4A86-8558-44D9AE44FEAF ends here
+;; org_gcr_2017-05-12_mara_0A242AFE-3101-4F88-A2CB-F230FA19AC64 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:2652BC97-28FA-41DC-9E0F-4B107292D78D][orgmode:gcr:vela:2652BC97-28FA-41DC-9E0F-4B107292D78D]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D2A1FF8B-4A1A-4D25-A0CC-D86F3FFD7B28][org_gcr_2017-05-12_mara_D2A1FF8B-4A1A-4D25-A0CC-D86F3FFD7B28]]
 (use-package hydra
   :ensure t)
-;; orgmode:gcr:vela:2652BC97-28FA-41DC-9E0F-4B107292D78D ends here
+;; org_gcr_2017-05-12_mara_D2A1FF8B-4A1A-4D25-A0CC-D86F3FFD7B28 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:06C30DE0-5B5D-4021-B82E-C30CF1DBE923][orgmode:gcr:vela:06C30DE0-5B5D-4021-B82E-C30CF1DBE923]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B25D3BDE-CB14-440D-8246-B833BD8F1C0B][org_gcr_2017-05-12_mara_B25D3BDE-CB14-440D-8246-B833BD8F1C0B]]
 (use-package key-chord
   :ensure t
   :config
   (key-chord-mode t))
-;; orgmode:gcr:vela:06C30DE0-5B5D-4021-B82E-C30CF1DBE923 ends here
+;; org_gcr_2017-05-12_mara_B25D3BDE-CB14-440D-8246-B833BD8F1C0B ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:3EF213A9-048C-4A3D-B242-3A4D699D087C][orgmode:gcr:vela:3EF213A9-048C-4A3D-B242-3A4D699D087C]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_6BB32DFA-105B-4712-BF6D-945A240C29E1][org_gcr_2017-05-12_mara_6BB32DFA-105B-4712-BF6D-945A240C29E1]]
 (setq echo-keystrokes 0.02)
-;; orgmode:gcr:vela:3EF213A9-048C-4A3D-B242-3A4D699D087C ends here
+;; org_gcr_2017-05-12_mara_6BB32DFA-105B-4712-BF6D-945A240C29E1 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:6205B309-A576-4272-9D2B-C65966ECA286][orgmode:gcr:vela:6205B309-A576-4272-9D2B-C65966ECA286]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_12B73D47-AAFB-4271-92F2-98A18E19DC2A][org_gcr_2017-05-12_mara_12B73D47-AAFB-4271-92F2-98A18E19DC2A]]
 (use-package dash
   :ensure t
   :config
   (dash-enable-font-lock))
 (use-package dash-functional
   :ensure t)
-;; orgmode:gcr:vela:6205B309-A576-4272-9D2B-C65966ECA286 ends here
+;; org_gcr_2017-05-12_mara_12B73D47-AAFB-4271-92F2-98A18E19DC2A ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:D483F480-4716-4F79-BD0A-C99691618DC5][orgmode:gcr:vela:D483F480-4716-4F79-BD0A-C99691618DC5]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D99938CC-B521-4A2D-8DAA-F023FFB1E21E][org_gcr_2017-05-12_mara_D99938CC-B521-4A2D-8DAA-F023FFB1E21E]]
 (use-package f
   :ensure t)
-;; orgmode:gcr:vela:D483F480-4716-4F79-BD0A-C99691618DC5 ends here
+;; org_gcr_2017-05-12_mara_D99938CC-B521-4A2D-8DAA-F023FFB1E21E ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:FA4C219D-DCAB-4416-954D-231D3F89FB36][orgmode:gcr:vela:FA4C219D-DCAB-4416-954D-231D3F89FB36]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_04215D1F-F7E8-46E2-A3BC-0D8DEE28B7E1][org_gcr_2017-05-12_mara_04215D1F-F7E8-46E2-A3BC-0D8DEE28B7E1]]
 (use-package s
   :ensure t)
-;; orgmode:gcr:vela:FA4C219D-DCAB-4416-954D-231D3F89FB36 ends here
+;; org_gcr_2017-05-12_mara_04215D1F-F7E8-46E2-A3BC-0D8DEE28B7E1 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:E83B75A1-E27D-42BA-8D46-A6B332E0CAF1][orgmode:gcr:vela:E83B75A1-E27D-42BA-8D46-A6B332E0CAF1]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C063F7CE-637E-43F8-8E16-AFBC68CA7618][org_gcr_2017-05-12_mara_C063F7CE-637E-43F8-8E16-AFBC68CA7618]]
 (use-package persistent-soft
   :ensure t)
-;; orgmode:gcr:vela:E83B75A1-E27D-42BA-8D46-A6B332E0CAF1 ends here
+;; org_gcr_2017-05-12_mara_C063F7CE-637E-43F8-8E16-AFBC68CA7618 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:D94EE9AF-B0E4-4585-BF4A-0E78ABDE81FD][orgmode:gcr:vela:D94EE9AF-B0E4-4585-BF4A-0E78ABDE81FD]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_506BFAA8-1F72-4956-A85F-2C7ED59912D0][org_gcr_2017-05-12_mara_506BFAA8-1F72-4956-A85F-2C7ED59912D0]]
 (use-package names
   :ensure t)
-;; orgmode:gcr:vela:D94EE9AF-B0E4-4585-BF4A-0E78ABDE81FD ends here
+;; org_gcr_2017-05-12_mara_506BFAA8-1F72-4956-A85F-2C7ED59912D0 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:2017-04-25:mara:B6AAB439-C389-4BF7-9A35-6EFC95CAB937][orgmode:gcr:2017-04-25:mara:B6AAB439-C389-4BF7-9A35-6EFC95CAB937]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C0E2C1E6-A271-47A1-84C3-BE9382235979][org_gcr_2017-05-12_mara_C0E2C1E6-A271-47A1-84C3-BE9382235979]]
 (use-package with-editor
   :ensure t)
-;; orgmode:gcr:2017-04-25:mara:B6AAB439-C389-4BF7-9A35-6EFC95CAB937 ends here
+;; org_gcr_2017-05-12_mara_C0E2C1E6-A271-47A1-84C3-BE9382235979 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:1F5BD72D-2E4B-4298-B4BF-DD52BD26FC3E][orgmode:gcr:vela:1F5BD72D-2E4B-4298-B4BF-DD52BD26FC3E]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_2FD3C2CA-508B-453E-A619-76D6EA4AAF71][org_gcr_2017-05-12_mara_2FD3C2CA-508B-453E-A619-76D6EA4AAF71]]
 (use-package diminish)
-;; orgmode:gcr:vela:1F5BD72D-2E4B-4298-B4BF-DD52BD26FC3E ends here
+;; org_gcr_2017-05-12_mara_2FD3C2CA-508B-453E-A619-76D6EA4AAF71 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:4E0CC8F8-620E-41F4-AB7E-B68A82430FE0][orgmode:gcr:vela:4E0CC8F8-620E-41F4-AB7E-B68A82430FE0]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_555EE82E-410B-4189-BE53-D33346F3F3BE][org_gcr_2017-05-12_mara_555EE82E-410B-4189-BE53-D33346F3F3BE]]
 (size-indication-mode)
-;; orgmode:gcr:vela:4E0CC8F8-620E-41F4-AB7E-B68A82430FE0 ends here
+;; org_gcr_2017-05-12_mara_555EE82E-410B-4189-BE53-D33346F3F3BE ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:551CCCA8-8B54-4B5C-9118-22F411C687E0][orgmode:gcr:vela:551CCCA8-8B54-4B5C-9118-22F411C687E0]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BC16CA62-6474-4848-880C-F1EDE2BB5616][org_gcr_2017-05-12_mara_BC16CA62-6474-4848-880C-F1EDE2BB5616]]
 (column-number-mode t)
-;; orgmode:gcr:vela:551CCCA8-8B54-4B5C-9118-22F411C687E0 ends here
+;; org_gcr_2017-05-12_mara_BC16CA62-6474-4848-880C-F1EDE2BB5616 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:84EB04EB-9149-495E-AF38-942C3732D62D][orgmode:gcr:vela:84EB04EB-9149-495E-AF38-942C3732D62D]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_FF670CDD-5374-49BA-897A-AE1A30B444D6][org_gcr_2017-05-12_mara_FF670CDD-5374-49BA-897A-AE1A30B444D6]]
 (defmacro help/on-osx (statement &rest statements)
   "Evaluate the enclosed body only when run on OSX."
   `(when (eq system-type 'darwin)
      ,statement
      ,@statements))
-;; orgmode:gcr:vela:84EB04EB-9149-495E-AF38-942C3732D62D ends here
+;; org_gcr_2017-05-12_mara_FF670CDD-5374-49BA-897A-AE1A30B444D6 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:EA03614E-3B8C-4D07-A8E5-B03FFB120AE4][orgmode:gcr:vela:EA03614E-3B8C-4D07-A8E5-B03FFB120AE4]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_375D2A3D-54B5-4DBC-B911-38CAB716286A][org_gcr_2017-05-12_mara_375D2A3D-54B5-4DBC-B911-38CAB716286A]]
 (help/on-osx
  (use-package exec-path-from-shell
    :ensure t
    :config
    (setq exec-path-from-shell-check-startup-files nil)
    (exec-path-from-shell-initialize)))
-;; orgmode:gcr:vela:EA03614E-3B8C-4D07-A8E5-B03FFB120AE4 ends here
+;; org_gcr_2017-05-12_mara_375D2A3D-54B5-4DBC-B911-38CAB716286A ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:98237FE5-5D02-4DCF-BCCB-082F90AE38D8][orgmode:gcr:vela:98237FE5-5D02-4DCF-BCCB-082F90AE38D8]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F29E41A6-234D-4727-B9DF-75E5F5AC2AD3][org_gcr_2017-05-12_mara_F29E41A6-234D-4727-B9DF-75E5F5AC2AD3]]
 (help/on-osx
  (setq mac-control-modifier 'control)
  (setq mac-right-control-modifier 'left)
@@ -139,9 +139,9 @@
      (message "Toggled `mac-function-modifier' from %s to %s."
               old-func
               mac-function-modifier))))
-;; orgmode:gcr:vela:98237FE5-5D02-4DCF-BCCB-082F90AE38D8 ends here
+;; org_gcr_2017-05-12_mara_F29E41A6-234D-4727-B9DF-75E5F5AC2AD3 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:8764885C-9AFD-49DD-9E4B-F21AA0ED0D2F][orgmode:gcr:vela:8764885C-9AFD-49DD-9E4B-F21AA0ED0D2F]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_82602D6E-30DB-49CF-A900-1FC9B733C347][org_gcr_2017-05-12_mara_82602D6E-30DB-49CF-A900-1FC9B733C347]]
 (help/on-osx
  (defun help/yes-or-no-p (orig-fun &rest args)
    "Prevent yes-or-no-p from activating a dialog."
@@ -149,30 +149,30 @@
      (apply orig-fun args)))
  (advice-add #'yes-or-no-p :around #'help/yes-or-no-p)
  (advice-add #'y-or-n-p :around #'help/yes-or-no-p))
-;; orgmode:gcr:vela:8764885C-9AFD-49DD-9E4B-F21AA0ED0D2F ends here
+;; org_gcr_2017-05-12_mara_82602D6E-30DB-49CF-A900-1FC9B733C347 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:DB9672CE-E027-408F-B072-6E73FDD47349][orgmode:gcr:vela:DB9672CE-E027-408F-B072-6E73FDD47349]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9C48F55A-19D7-4B5F-8779-11BFFF4AE514][org_gcr_2017-05-12_mara_9C48F55A-19D7-4B5F-8779-11BFFF4AE514]]
 (defmacro help/on-windows (statement &rest statements)
   "Evaluate the enclosed body only when run on Microsoft Windows."
   `(when (eq system-type 'windows-nt)
      ,statement
      ,@statements))
-;; orgmode:gcr:vela:DB9672CE-E027-408F-B072-6E73FDD47349 ends here
+;; org_gcr_2017-05-12_mara_9C48F55A-19D7-4B5F-8779-11BFFF4AE514 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:A69B960E-400A-4BC7-961C-AECF3522C7AF][orgmode:gcr:vela:A69B960E-400A-4BC7-961C-AECF3522C7AF]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9CAED015-5B25-41BE-82A9-CBA4D07E8F3D][org_gcr_2017-05-12_mara_9CAED015-5B25-41BE-82A9-CBA4D07E8F3D]]
 (help/on-windows
  (setq shell-file-name "cmdproxy.exe"))
-;; orgmode:gcr:vela:A69B960E-400A-4BC7-961C-AECF3522C7AF ends here
+;; org_gcr_2017-05-12_mara_9CAED015-5B25-41BE-82A9-CBA4D07E8F3D ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:B66E53C2-D90F-422E-BD67-250EB644C6BB][orgmode:gcr:vela:B66E53C2-D90F-422E-BD67-250EB644C6BB]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7AFA0161-4DCA-4C54-8D3C-9EF3FD529BF4][org_gcr_2017-05-12_mara_7AFA0161-4DCA-4C54-8D3C-9EF3FD529BF4]]
 (help/on-windows
  (setq w32-pass-lwindow-to-system nil)
  (defvar w32-lwindow-modifier 'super)
  (setq w32-pass-rwindow-to-system nil)
  (defvar w32-rwindow-modifier 'super))
-;; orgmode:gcr:vela:B66E53C2-D90F-422E-BD67-250EB644C6BB ends here
+;; org_gcr_2017-05-12_mara_7AFA0161-4DCA-4C54-8D3C-9EF3FD529BF4 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:D523CBF8-67C4-4C96-9298-A4A49FE54E61][orgmode:gcr:vela:D523CBF8-67C4-4C96-9298-A4A49FE54E61]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7D37FFE5-2D2B-4CF7-AF27-F3CB8616D81B][org_gcr_2017-05-12_mara_7D37FFE5-2D2B-4CF7-AF27-F3CB8616D81B]]
 (defun help/comment-or-uncomment ()
   "Comment or uncomment the current line or selection."
   (interactive)
@@ -730,33 +730,33 @@ Attribution: `http://stackoverflow.com/a/25212377'"
           (set-buffer-modified-p nil)
           (message "File '%s' successfully renamed to '%s'"
                    name (file-name-nondirectory new-name)))))))
-;; orgmode:gcr:vela:D523CBF8-67C4-4C96-9298-A4A49FE54E61 ends here
+;; org_gcr_2017-05-12_mara_7D37FFE5-2D2B-4CF7-AF27-F3CB8616D81B ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:9DB523BC-E21B-42B7-AEE2-31ED24C14D92][orgmode:gcr:vela:9DB523BC-E21B-42B7-AEE2-31ED24C14D92]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F][org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F]]
 (defconst help/column-width 78)
 (setq-default fill-column help/column-width)
-;; orgmode:gcr:vela:9DB523BC-E21B-42B7-AEE2-31ED24C14D92 ends here
+;; org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:44A54A0C-DA4F-4FBC-9E0A-83CEF28DD5BC][orgmode:gcr:vela:44A54A0C-DA4F-4FBC-9E0A-83CEF28DD5BC]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_FBF549DB-4EA1-438E-9984-D45FE79FDB6B][org_gcr_2017-05-12_mara_FBF549DB-4EA1-438E-9984-D45FE79FDB6B]]
 (setq sentence-end-double-space t)
-;; orgmode:gcr:vela:44A54A0C-DA4F-4FBC-9E0A-83CEF28DD5BC ends here
+;; org_gcr_2017-05-12_mara_FBF549DB-4EA1-438E-9984-D45FE79FDB6B ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:7F3D6946-8A60-403A-A465-D209F95D7C74][orgmode:gcr:vela:7F3D6946-8A60-403A-A465-D209F95D7C74]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_38909B55-115D-44E4-B84F-70285016BF92][org_gcr_2017-05-12_mara_38909B55-115D-44E4-B84F-70285016BF92]]
 (setq colon-double-space t)
-;; orgmode:gcr:vela:7F3D6946-8A60-403A-A465-D209F95D7C74 ends here
+;; org_gcr_2017-05-12_mara_38909B55-115D-44E4-B84F-70285016BF92 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:9288AC00-4B73-4E10-ABAE-F2E886981F97][orgmode:gcr:vela:9288AC00-4B73-4E10-ABAE-F2E886981F97]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_3E475ED3-773E-4537-B29F-6888B7DB90DF][org_gcr_2017-05-12_mara_3E475ED3-773E-4537-B29F-6888B7DB90DF]]
 (use-package fill-column-indicator
   :ensure t
   :config
   (setq fci-rule-column 79))
-;; orgmode:gcr:vela:9288AC00-4B73-4E10-ABAE-F2E886981F97 ends here
+;; org_gcr_2017-05-12_mara_3E475ED3-773E-4537-B29F-6888B7DB90DF ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:1A2B38F5-0C3E-4369-A059-B59C518A27FB][orgmode:gcr:vela:1A2B38F5-0C3E-4369-A059-B59C518A27FB]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_52EB6C54-2A13-4A30-9893-E1E4352CD118][org_gcr_2017-05-12_mara_52EB6C54-2A13-4A30-9893-E1E4352CD118]]
 
-;; orgmode:gcr:vela:1A2B38F5-0C3E-4369-A059-B59C518A27FB ends here
+;; org_gcr_2017-05-12_mara_52EB6C54-2A13-4A30-9893-E1E4352CD118 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:42D5F313-65F0-49E1-8759-9259D4020FA9][orgmode:gcr:vela:42D5F313-65F0-49E1-8759-9259D4020FA9]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F][org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F]]
 (defun help/text-prog*-setup ()
   "HELP's standard configuration for buffer's working with text, often for
    programming."
@@ -771,80 +771,80 @@ Attribution: `http://stackoverflow.com/a/25212377'"
   (turn-on-page-break-lines-mode))
 
 (add-hook 'text-mode-hook #'help/text-prog*-setup)
-;; orgmode:gcr:vela:42D5F313-65F0-49E1-8759-9259D4020FA9 ends here
+;; org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:0E6156C3-4259-4539-BDAC-899B0AF4E80F][orgmode:gcr:vela:0E6156C3-4259-4539-BDAC-899B0AF4E80F]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1986C8FB-6C8F-43F6-811D-D95577160064][org_gcr_2017-05-12_mara_1986C8FB-6C8F-43F6-811D-D95577160064]]
 (desktop-save-mode t)
 (setq desktop-restore-eager 10)
-;; orgmode:gcr:vela:0E6156C3-4259-4539-BDAC-899B0AF4E80F ends here
+;; org_gcr_2017-05-12_mara_1986C8FB-6C8F-43F6-811D-D95577160064 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:170E0633-2AA6-47AD-9234-4C1F0978C058][orgmode:gcr:vela:170E0633-2AA6-47AD-9234-4C1F0978C058]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_40A89EBE-247D-43B1-A606-896B172681D8][org_gcr_2017-05-12_mara_40A89EBE-247D-43B1-A606-896B172681D8]]
 (use-package undo-tree
   :ensure t
   :config
   (global-undo-tree-mode 1)
   (global-set-key (kbd "H-u") #'undo-tree-visualize)
   :diminish undo-tree-mode)
-;; orgmode:gcr:vela:170E0633-2AA6-47AD-9234-4C1F0978C058 ends here
+;; org_gcr_2017-05-12_mara_40A89EBE-247D-43B1-A606-896B172681D8 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:7CA01CFF-D9B6-4F1D-B120-88AFC30F281E][orgmode:gcr:vela:7CA01CFF-D9B6-4F1D-B120-88AFC30F281E]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B41C6C0B-AC1A-44A4-9D0F-471A781BCA81][org_gcr_2017-05-12_mara_B41C6C0B-AC1A-44A4-9D0F-471A781BCA81]]
 (setq require-final-newline t)
-;; orgmode:gcr:vela:7CA01CFF-D9B6-4F1D-B120-88AFC30F281E ends here
+;; org_gcr_2017-05-12_mara_B41C6C0B-AC1A-44A4-9D0F-471A781BCA81 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:C2215D90-ADDA-47C9-9F1E-21FD79BDDBC0][orgmode:gcr:vela:C2215D90-ADDA-47C9-9F1E-21FD79BDDBC0]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_60C775FC-0ACD-47E3-8724-8F4C48980081][org_gcr_2017-05-12_mara_60C775FC-0ACD-47E3-8724-8F4C48980081]]
 (setq track-eol t)
 (setq line-move-visual nil)
-;; orgmode:gcr:vela:C2215D90-ADDA-47C9-9F1E-21FD79BDDBC0 ends here
+;; org_gcr_2017-05-12_mara_60C775FC-0ACD-47E3-8724-8F4C48980081 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:CDBC5A4D-F67C-412C-A1DE-69EB52287E2C][orgmode:gcr:vela:CDBC5A4D-F67C-412C-A1DE-69EB52287E2C]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_6E2D611F-11F0-4703-AC88-AA11CEE56F8D][org_gcr_2017-05-12_mara_6E2D611F-11F0-4703-AC88-AA11CEE56F8D]]
 (setq scroll-preserve-screen-position t)
-;; orgmode:gcr:vela:CDBC5A4D-F67C-412C-A1DE-69EB52287E2C ends here
+;; org_gcr_2017-05-12_mara_6E2D611F-11F0-4703-AC88-AA11CEE56F8D ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:AA25E45E-3FF2-483A-9361-FD44DE6E1C18][orgmode:gcr:vela:AA25E45E-3FF2-483A-9361-FD44DE6E1C18]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F6787724-7C59-4BD3-B436-0AB39E4F96E9][org_gcr_2017-05-12_mara_F6787724-7C59-4BD3-B436-0AB39E4F96E9]]
 (setq scroll-conservatively 101)
-;; orgmode:gcr:vela:AA25E45E-3FF2-483A-9361-FD44DE6E1C18 ends here
+;; org_gcr_2017-05-12_mara_F6787724-7C59-4BD3-B436-0AB39E4F96E9 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:4B565992-E3BA-4355-AD8F-061E6A1736D9][orgmode:gcr:vela:4B565992-E3BA-4355-AD8F-061E6A1736D9]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1BA609EB-C430-4CE0-BD33-9524EBB5A0AC][org_gcr_2017-05-12_mara_1BA609EB-C430-4CE0-BD33-9524EBB5A0AC]]
 (use-package stripe-buffer
   :ensure t)
-;; orgmode:gcr:vela:4B565992-E3BA-4355-AD8F-061E6A1736D9 ends here
+;; org_gcr_2017-05-12_mara_1BA609EB-C430-4CE0-BD33-9524EBB5A0AC ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:C82EDEC4-3E13-4B4A-A947-B8ACDB5C8160][orgmode:gcr:vela:C82EDEC4-3E13-4B4A-A947-B8ACDB5C8160]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1710CA80-60CB-4E40-94E9-C38A2E0A0DE9][org_gcr_2017-05-12_mara_1710CA80-60CB-4E40-94E9-C38A2E0A0DE9]]
 (setq sentence-end-double-space nil)
-;; orgmode:gcr:vela:C82EDEC4-3E13-4B4A-A947-B8ACDB5C8160 ends here
+;; org_gcr_2017-05-12_mara_1710CA80-60CB-4E40-94E9-C38A2E0A0DE9 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:B80399BE-3E19-441E-93CF-C613A1309C35][orgmode:gcr:vela:B80399BE-3E19-441E-93CF-C613A1309C35]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A04E6B4A-EFC6-4AE3-946B-E08CF4E02DD9][org_gcr_2017-05-12_mara_A04E6B4A-EFC6-4AE3-946B-E08CF4E02DD9]]
 (add-hook 'before-save-hook #'help/delete-trailing-whitespace)
-;; orgmode:gcr:vela:B80399BE-3E19-441E-93CF-C613A1309C35 ends here
+;; org_gcr_2017-05-12_mara_A04E6B4A-EFC6-4AE3-946B-E08CF4E02DD9 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:DA9A04CF-ABF9-4BF4-A9FF-85E89DA740E1][orgmode:gcr:vela:DA9A04CF-ABF9-4BF4-A9FF-85E89DA740E1]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_14A9724E-F0E0-40CA-9FD8-142CB77B87BF][org_gcr_2017-05-12_mara_14A9724E-F0E0-40CA-9FD8-142CB77B87BF]]
 (use-package expand-region
   :ensure t)
-;; orgmode:gcr:vela:DA9A04CF-ABF9-4BF4-A9FF-85E89DA740E1 ends here
+;; org_gcr_2017-05-12_mara_14A9724E-F0E0-40CA-9FD8-142CB77B87BF ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:A1A8FE84-0A12-4C5F-9565-F4EACE3DB694][orgmode:gcr:vela:A1A8FE84-0A12-4C5F-9565-F4EACE3DB694]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_6F4C3BCD-2E4B-4B9B-AF41-B489137989EB][org_gcr_2017-05-12_mara_6F4C3BCD-2E4B-4B9B-AF41-B489137989EB]]
 (use-package page-break-lines
   :ensure t)
-;; orgmode:gcr:vela:A1A8FE84-0A12-4C5F-9565-F4EACE3DB694 ends here
+;; org_gcr_2017-05-12_mara_6F4C3BCD-2E4B-4B9B-AF41-B489137989EB ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:C3EAB237-661B-494B-88FF-0133C4AB51DF][orgmode:gcr:vela:C3EAB237-661B-494B-88FF-0133C4AB51DF]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_11CC1DCC-05D6-4564-A40B-DE2AD0A7C46D][org_gcr_2017-05-12_mara_11CC1DCC-05D6-4564-A40B-DE2AD0A7C46D]]
 (use-package page-break-lines
   :diminish page-break-lines-mode)
-;; orgmode:gcr:vela:C3EAB237-661B-494B-88FF-0133C4AB51DF ends here
+;; org_gcr_2017-05-12_mara_11CC1DCC-05D6-4564-A40B-DE2AD0A7C46D ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:240E646E-D7F6-40A1-AA60-F6D0CD83DDD7][orgmode:gcr:vela:240E646E-D7F6-40A1-AA60-F6D0CD83DDD7]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_87233BFD-A241-48A6-9113-B383B30F9BC5][org_gcr_2017-05-12_mara_87233BFD-A241-48A6-9113-B383B30F9BC5]]
 (advice-add #'backward-page :after #'recenter)
 (advice-add #'forward-page :after #'recenter)
-;; orgmode:gcr:vela:240E646E-D7F6-40A1-AA60-F6D0CD83DDD7 ends here
+;; org_gcr_2017-05-12_mara_87233BFD-A241-48A6-9113-B383B30F9BC5 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:C9521BF3-23E7-4952-846F-322D107E3EE3][orgmode:gcr:vela:C9521BF3-23E7-4952-846F-322D107E3EE3]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B8BDE36B-4B27-4580-BA34-35C047FBEA62][org_gcr_2017-05-12_mara_B8BDE36B-4B27-4580-BA34-35C047FBEA62]]
 (use-package mwim
   :ensure t
   :config
   (global-set-key (kbd "C-a") 'mwim-beginning-of-code-or-line))
-;; orgmode:gcr:vela:C9521BF3-23E7-4952-846F-322D107E3EE3 ends here
+;; org_gcr_2017-05-12_mara_B8BDE36B-4B27-4580-BA34-35C047FBEA62 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:2D731158-FCE7-4BDA-AE78-383EAAD1FE4B][orgmode:gcr:vela:2D731158-FCE7-4BDA-AE78-383EAAD1FE4B]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_611E83B9-E797-4512-95EE-643473026607][org_gcr_2017-05-12_mara_611E83B9-E797-4512-95EE-643473026607]]
 (use-package hideshow
   :config
   (setq hs-hide-comments-when-hiding-all t)
@@ -870,38 +870,38 @@ Attribution: `http://stackoverflow.com/a/25212377'"
              (hs-hide-all)
            (hs-show-all)))
   :diminish hs-minor-mode)
-;; orgmode:gcr:vela:2D731158-FCE7-4BDA-AE78-383EAAD1FE4B ends here
+;; org_gcr_2017-05-12_mara_611E83B9-E797-4512-95EE-643473026607 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:5CDF03F0-974F-4AFC-9F63-EA9B5D7C6923][orgmode:gcr:vela:5CDF03F0-974F-4AFC-9F63-EA9B5D7C6923]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BBE40664-C7A9-4586-A5FF-05E570E87B7A][org_gcr_2017-05-12_mara_BBE40664-C7A9-4586-A5FF-05E570E87B7A]]
 (use-package rainbow-mode
   :ensure t
   :config
   :diminish rainbow-mode)
-;; orgmode:gcr:vela:5CDF03F0-974F-4AFC-9F63-EA9B5D7C6923 ends here
+;; org_gcr_2017-05-12_mara_BBE40664-C7A9-4586-A5FF-05E570E87B7A ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:87818F95-F0F0-4538-8103-BBCCFABB8975][orgmode:gcr:vela:87818F95-F0F0-4538-8103-BBCCFABB8975]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D877FC18-3238-45E0-BE6C-6FE3149E4121][org_gcr_2017-05-12_mara_D877FC18-3238-45E0-BE6C-6FE3149E4121]]
 (use-package bug-hunter
   :ensure t)
-;; orgmode:gcr:vela:87818F95-F0F0-4538-8103-BBCCFABB8975 ends here
+;; org_gcr_2017-05-12_mara_D877FC18-3238-45E0-BE6C-6FE3149E4121 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:EE9C450C-14DE-4FC0-8580-BBE89F4BFE9F][orgmode:gcr:vela:EE9C450C-14DE-4FC0-8580-BBE89F4BFE9F]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_510C1AB4-A266-40A6-9DCF-25B827E60786][org_gcr_2017-05-12_mara_510C1AB4-A266-40A6-9DCF-25B827E60786]]
 (use-package macrostep
   :ensure t
   :config
   (define-key emacs-lisp-mode-map (kbd "C-c e") #'macrostep-expand))
-;; orgmode:gcr:vela:EE9C450C-14DE-4FC0-8580-BBE89F4BFE9F ends here
+;; org_gcr_2017-05-12_mara_510C1AB4-A266-40A6-9DCF-25B827E60786 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:96387299-8865-4DF8-8B98-8EF290A319B8][orgmode:gcr:vela:96387299-8865-4DF8-8B98-8EF290A319B8]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_CD327ED5-E83D-471F-9A30-B7A3FBB67486][org_gcr_2017-05-12_mara_CD327ED5-E83D-471F-9A30-B7A3FBB67486]]
 (setq-default eval-expression-print-level nil)
-;; orgmode:gcr:vela:96387299-8865-4DF8-8B98-8EF290A319B8 ends here
+;; org_gcr_2017-05-12_mara_CD327ED5-E83D-471F-9A30-B7A3FBB67486 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:F082B76A-8371-43DE-8FF5-2D95F3FD687A][orgmode:gcr:vela:F082B76A-8371-43DE-8FF5-2D95F3FD687A]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_41240CBD-3217-466E-BD0F-5737D8BC68BF][org_gcr_2017-05-12_mara_41240CBD-3217-466E-BD0F-5737D8BC68BF]]
 (put #'upcase-region 'disabled nil)
 (put #'downcase-region 'disabled nil)
 (put #'narrow-to-region 'disabled nil)
-;; orgmode:gcr:vela:F082B76A-8371-43DE-8FF5-2D95F3FD687A ends here
+;; org_gcr_2017-05-12_mara_41240CBD-3217-466E-BD0F-5737D8BC68BF ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:D2B05DD9-290E-40D2-A012-92A787C9C469][orgmode:gcr:vela:D2B05DD9-290E-40D2-A012-92A787C9C469]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0DE4A73B-54B3-41AA-8744-98D7B34D159B][org_gcr_2017-05-12_mara_0DE4A73B-54B3-41AA-8744-98D7B34D159B]]
 (use-package eval-in-repl
   :ensure t
   :config
@@ -939,14 +939,14 @@ configuration when invoked to evaluate a line."
   (require 'racket-mode) ; if not done elsewhere
   (require 'eval-in-repl-racket)
   (define-key racket-mode-map (kbd "<C-return>") 'eir-eval-in-racket))
-;; orgmode:gcr:vela:D2B05DD9-290E-40D2-A012-92A787C9C469 ends here
+;; org_gcr_2017-05-12_mara_0DE4A73B-54B3-41AA-8744-98D7B34D159B ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:A7C4590E-53C4-4159-B627-178E367B0A12][orgmode:gcr:vela:A7C4590E-53C4-4159-B627-178E367B0A12]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A9233A74-18F8-4C65-AC14-1A6C41F69B80][org_gcr_2017-05-12_mara_A9233A74-18F8-4C65-AC14-1A6C41F69B80]]
 (add-to-list 'load-path (getenv "CCRYPT"))
 (use-package ps-ccrypt)
-;; orgmode:gcr:vela:A7C4590E-53C4-4159-B627-178E367B0A12 ends here
+;; org_gcr_2017-05-12_mara_A9233A74-18F8-4C65-AC14-1A6C41F69B80 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:A9A01E59-A084-4849-93F3-957753D65D24][orgmode:gcr:vela:A9A01E59-A084-4849-93F3-957753D65D24]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E5296E8A-C433-4FBF-97EE-8B95918B5A06][org_gcr_2017-05-12_mara_E5296E8A-C433-4FBF-97EE-8B95918B5A06]]
 (setq eshell-prefer-lisp-functions nil
       eshell-cmpl-cycle-completions nil
       eshell-save-history-on-exit t
@@ -966,9 +966,9 @@ configuration when invoked to evaluate a line."
      (add-to-list 'eshell-visual-commands "tail")
      (add-to-list 'eshell-command-completions-alist
                   '("tar" "\\(\\.tar|\\.tgz\\|\\.tar\\.gz\\)\\'"))))
-;; orgmode:gcr:vela:A9A01E59-A084-4849-93F3-957753D65D24 ends here
+;; org_gcr_2017-05-12_mara_E5296E8A-C433-4FBF-97EE-8B95918B5A06 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:6D58C096-C7DE-44D2-AA33-0602237F46C5][orgmode:gcr:vela:6D58C096-C7DE-44D2-AA33-0602237F46C5]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_47F75687-F505-42B3-9E2B-EA832B41F7EC][org_gcr_2017-05-12_mara_47F75687-F505-42B3-9E2B-EA832B41F7EC]]
 (setq eshell-prompt-regexp "^.+@.+:.+> ")
 (setq eshell-prompt-function
       (lambda ()
@@ -979,26 +979,26 @@ configuration when invoked to evaluate a line."
          ":"
          (eshell/pwd)
          "> ")))
-;; orgmode:gcr:vela:6D58C096-C7DE-44D2-AA33-0602237F46C5 ends here
+;; org_gcr_2017-05-12_mara_47F75687-F505-42B3-9E2B-EA832B41F7EC ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:423B343F-CA48-4C7C-A0A5-45D533FFD8D6][orgmode:gcr:vela:423B343F-CA48-4C7C-A0A5-45D533FFD8D6]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_11891C85-578F-417F-9956-FEBB52045CDC][org_gcr_2017-05-12_mara_11891C85-578F-417F-9956-FEBB52045CDC]]
 (setq auto-save-default t)
 (setq make-backup-files nil)
 (setq auto-save-visited-file-name t)
 (setq auto-save-interval 0)
 (setq auto-save-timeout (* 60 5))
-;; orgmode:gcr:vela:423B343F-CA48-4C7C-A0A5-45D533FFD8D6 ends here
+;; org_gcr_2017-05-12_mara_11891C85-578F-417F-9956-FEBB52045CDC ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:84B0605F-AA20-4CBB-8D14-5B55CF8D097D][orgmode:gcr:vela:84B0605F-AA20-4CBB-8D14-5B55CF8D097D]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A02347F8-B3BB-4F43-8987-718530B6E053][org_gcr_2017-05-12_mara_A02347F8-B3BB-4F43-8987-718530B6E053]]
 (add-hook 'focus-out-hook #'help/save-all-file-buffers)
-;; orgmode:gcr:vela:84B0605F-AA20-4CBB-8D14-5B55CF8D097D ends here
+;; org_gcr_2017-05-12_mara_A02347F8-B3BB-4F43-8987-718530B6E053 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:B04C1388-6C2A-45D9-BFA6-7E21861FB9E3][orgmode:gcr:vela:B04C1388-6C2A-45D9-BFA6-7E21861FB9E3]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_EE759660-2FB2-4BC1-AC4D-EFD21E5B02C0][org_gcr_2017-05-12_mara_EE759660-2FB2-4BC1-AC4D-EFD21E5B02C0]]
 (global-auto-revert-mode 1)
 (diminish 'auto-revert-mode)
-;; orgmode:gcr:vela:B04C1388-6C2A-45D9-BFA6-7E21861FB9E3 ends here
+;; org_gcr_2017-05-12_mara_EE759660-2FB2-4BC1-AC4D-EFD21E5B02C0 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:5A0C3F05-0C41-4E50-944E-0ACC4C2F4A15][orgmode:gcr:vela:5A0C3F05-0C41-4E50-944E-0ACC4C2F4A15]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E2747C5E-DA22-4B22-9C0A-EB9DEED9A5F7][org_gcr_2017-05-12_mara_E2747C5E-DA22-4B22-9C0A-EB9DEED9A5F7]]
 (defun help/safb-help/vc-next-action ()
   (interactive)
   (help/save-all-file-buffers)
@@ -1112,21 +1112,21 @@ configuration when invoked to evaluate a line."
   (help/save-all-file-buffers)
   (call-interactively #'normal-mode)
   (help/save-all-file-buffers))
-;; orgmode:gcr:vela:5A0C3F05-0C41-4E50-944E-0ACC4C2F4A15 ends here
+;; org_gcr_2017-05-12_mara_E2747C5E-DA22-4B22-9C0A-EB9DEED9A5F7 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:DA537B02-6E64-42FC-BE9D-E5A3408B6599][orgmode:gcr:vela:DA537B02-6E64-42FC-BE9D-E5A3408B6599]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_CF605547-BD59-48FD-8CE1-47AD7F28D1B6][org_gcr_2017-05-12_mara_CF605547-BD59-48FD-8CE1-47AD7F28D1B6]]
 (add-to-list 'find-file-not-found-functions #'help/create-non-existent-directory)
-;; orgmode:gcr:vela:DA537B02-6E64-42FC-BE9D-E5A3408B6599 ends here
+;; org_gcr_2017-05-12_mara_CF605547-BD59-48FD-8CE1-47AD7F28D1B6 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:E99CAE8F-970F-4584-9B28-9C77D5B79356][orgmode:gcr:vela:E99CAE8F-970F-4584-9B28-9C77D5B79356]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_6F55AC0E-3877-4935-B93C-22A132C672AB][org_gcr_2017-05-12_mara_6F55AC0E-3877-4935-B93C-22A132C672AB]]
 (setq large-file-warning-threshold (* 1024 1024 2))
-;; orgmode:gcr:vela:E99CAE8F-970F-4584-9B28-9C77D5B79356 ends here
+;; org_gcr_2017-05-12_mara_6F55AC0E-3877-4935-B93C-22A132C672AB ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:584CF9A7-15E8-4F85-ABF2-3592759A7862][orgmode:gcr:vela:584CF9A7-15E8-4F85-ABF2-3592759A7862]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7102B5B4-168F-4E0E-87BD-EEA78DF6837A][org_gcr_2017-05-12_mara_7102B5B4-168F-4E0E-87BD-EEA78DF6837A]]
 (setq temporary-file-directory "/tmp")
-;; orgmode:gcr:vela:584CF9A7-15E8-4F85-ABF2-3592759A7862 ends here
+;; org_gcr_2017-05-12_mara_7102B5B4-168F-4E0E-87BD-EEA78DF6837A ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:26EA1235-E9EC-4DC0-9F7D-B3D14E1A27B7][orgmode:gcr:vela:26EA1235-E9EC-4DC0-9F7D-B3D14E1A27B7]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_83FA67CA-A147-48BF-B404-B945C4140F50][org_gcr_2017-05-12_mara_83FA67CA-A147-48BF-B404-B945C4140F50]]
 (defun help/dired-copy-filename ()
   "Push the path and filename of the file under the point to the kill ring.
 Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2002-10/msg00556.html'"
@@ -1149,26 +1149,26 @@ Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2002-10/msg0
   (load "dired-x")
   (turn-on-stripe-buffer-mode))
 (add-hook 'dired-mode-hook #'help/dired-mode-hook-fn)
-;; orgmode:gcr:vela:26EA1235-E9EC-4DC0-9F7D-B3D14E1A27B7 ends here
+;; org_gcr_2017-05-12_mara_83FA67CA-A147-48BF-B404-B945C4140F50 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:720D3D44-21F6-4AA0-82B7-C23EE86783C9][orgmode:gcr:vela:720D3D44-21F6-4AA0-82B7-C23EE86783C9]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E20AFEA9-62DF-4CB0-9B41-1D3B1AFC7844][org_gcr_2017-05-12_mara_E20AFEA9-62DF-4CB0-9B41-1D3B1AFC7844]]
 (setq dired-dwim-target t)
-;; orgmode:gcr:vela:720D3D44-21F6-4AA0-82B7-C23EE86783C9 ends here
+;; org_gcr_2017-05-12_mara_E20AFEA9-62DF-4CB0-9B41-1D3B1AFC7844 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:8E592C34-93F5-47DC-A072-ACB8C96D3753][orgmode:gcr:vela:8E592C34-93F5-47DC-A072-ACB8C96D3753]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_53A385C0-4E0E-4248-B803-317573EF9133][org_gcr_2017-05-12_mara_53A385C0-4E0E-4248-B803-317573EF9133]]
 (help/on-osx
  (setq ls-lisp-use-insert-directory-program nil)
  (use-package ls-lisp))
-;; orgmode:gcr:vela:8E592C34-93F5-47DC-A072-ACB8C96D3753 ends here
+;; org_gcr_2017-05-12_mara_53A385C0-4E0E-4248-B803-317573EF9133 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:8FE141D1-224D-415F-8D68-D1A30196EA33][orgmode:gcr:vela:8FE141D1-224D-415F-8D68-D1A30196EA33]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_3587BC99-ABF9-44E0-B5FD-E6D556D7A8E8][org_gcr_2017-05-12_mara_3587BC99-ABF9-44E0-B5FD-E6D556D7A8E8]]
 (use-package find-dired
   :ensure t
   :config
   (setq find-ls-option '("-print0 | xargs -0 ls -ld" . "-ld")))
-;; orgmode:gcr:vela:8FE141D1-224D-415F-8D68-D1A30196EA33 ends here
+;; org_gcr_2017-05-12_mara_3587BC99-ABF9-44E0-B5FD-E6D556D7A8E8 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:66FFA0AC-973A-412E-9056-F9B4BE9D3641][orgmode:gcr:vela:66FFA0AC-973A-412E-9056-F9B4BE9D3641]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_EA007F9D-F9EB-433E-A51E-10C2630A7A9F][org_gcr_2017-05-12_mara_EA007F9D-F9EB-433E-A51E-10C2630A7A9F]]
 (use-package wdired
   :ensure t
   :config
@@ -1177,18 +1177,18 @@ Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2002-10/msg0
   (setq wdired-use-interactive-rename t)
   (setq wdired-confirm-overwrite t)
   (setq wdired-use-dired-vertical-movement 'sometimes))
-;; orgmode:gcr:vela:66FFA0AC-973A-412E-9056-F9B4BE9D3641 ends here
+;; org_gcr_2017-05-12_mara_EA007F9D-F9EB-433E-A51E-10C2630A7A9F ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:41A96AA5-4736-40CF-BECD-5AE7C43DCEFF][orgmode:gcr:vela:41A96AA5-4736-40CF-BECD-5AE7C43DCEFF]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_DF4DCB63-ABD8-46AA-A7ED-CDF0A0CB6389][org_gcr_2017-05-12_mara_DF4DCB63-ABD8-46AA-A7ED-CDF0A0CB6389]]
 (use-package dired-imenu
   :ensure t)
-;; orgmode:gcr:vela:41A96AA5-4736-40CF-BECD-5AE7C43DCEFF ends here
+;; org_gcr_2017-05-12_mara_DF4DCB63-ABD8-46AA-A7ED-CDF0A0CB6389 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:35EA0EB6-A64A-49D3-B4DE-7AB0AAA2A9FC][orgmode:gcr:vela:35EA0EB6-A64A-49D3-B4DE-7AB0AAA2A9FC]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_3E39734D-7615-402E-ABF9-378A134D8A01][org_gcr_2017-05-12_mara_3E39734D-7615-402E-ABF9-378A134D8A01]]
 (setq ido-show-dot-for-dired t)
-;; orgmode:gcr:vela:35EA0EB6-A64A-49D3-B4DE-7AB0AAA2A9FC ends here
+;; org_gcr_2017-05-12_mara_3E39734D-7615-402E-ABF9-378A134D8A01 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:D722C567-86BA-45AD-91AB-2536696312C8][orgmode:gcr:vela:D722C567-86BA-45AD-91AB-2536696312C8]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B746C905-E59E-4F33-88F9-5F6CD32C0DE2][org_gcr_2017-05-12_mara_B746C905-E59E-4F33-88F9-5F6CD32C0DE2]]
 (use-package imenu
   :config
   (setq imenu-sort-function #'imenu--sort-by-name))
@@ -1198,9 +1198,9 @@ Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2002-10/msg0
 Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (condition-case nil (imenu-add-to-menubar "Imenu") (error nil)))
 (add-hook 'font-lock-mode-hook #'help/try-to-add-imenu)
-;; orgmode:gcr:vela:D722C567-86BA-45AD-91AB-2536696312C8 ends here
+;; org_gcr_2017-05-12_mara_B746C905-E59E-4F33-88F9-5F6CD32C0DE2 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:CDC23247-0399-4E7B-970A-AD70EA8354DB][orgmode:gcr:vela:CDC23247-0399-4E7B-970A-AD70EA8354DB]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E8A1EB03-CB72-4761-BC0A-555670C0D452][org_gcr_2017-05-12_mara_E8A1EB03-CB72-4761-BC0A-555670C0D452]]
 (use-package imenu-list
   :ensure t
   :config
@@ -1208,9 +1208,9 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (setq imenu-list-auto-resize t)
   (setq imenu-list-position 'left)
   (setq imenu-list-size 40))
-;; orgmode:gcr:vela:CDC23247-0399-4E7B-970A-AD70EA8354DB ends here
+;; org_gcr_2017-05-12_mara_E8A1EB03-CB72-4761-BC0A-555670C0D452 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:CCCA7B51-6A71-41EF-906C-C1C3A6B0C927][orgmode:gcr:vela:CCCA7B51-6A71-41EF-906C-C1C3A6B0C927]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9F4ACDEA-BC93-4BB6-BEA2-B622FF676EB6][org_gcr_2017-05-12_mara_9F4ACDEA-BC93-4BB6-BEA2-B622FF676EB6]]
 (use-package ido)
 (use-package flx-ido
   :ensure t
@@ -1230,60 +1230,60 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   :config
   (ido-vertical-mode t)
   (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right))
-;; orgmode:gcr:vela:CCCA7B51-6A71-41EF-906C-C1C3A6B0C927 ends here
+;; org_gcr_2017-05-12_mara_9F4ACDEA-BC93-4BB6-BEA2-B622FF676EB6 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:4C4179A9-2415-4309-A127-FA143D3331DD][orgmode:gcr:vela:4C4179A9-2415-4309-A127-FA143D3331DD]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8C3DB0A1-305E-4746-8455-E8CB880842B1][org_gcr_2017-05-12_mara_8C3DB0A1-305E-4746-8455-E8CB880842B1]]
 (use-package smex
   :ensure t
   :config
   (smex-initialize))
-;; orgmode:gcr:vela:4C4179A9-2415-4309-A127-FA143D3331DD ends here
+;; org_gcr_2017-05-12_mara_8C3DB0A1-305E-4746-8455-E8CB880842B1 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:667AED70-8685-4BEA-A32F-7B304483C05F][orgmode:gcr:vela:667AED70-8685-4BEA-A32F-7B304483C05F]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5295DEDE-687E-440B-89B9-9BF9BF301595][org_gcr_2017-05-12_mara_5295DEDE-687E-440B-89B9-9BF9BF301595]]
 (setq ido-use-url-at-point t)
 (setq ido-use-filename-at-point 'guess)
-;; orgmode:gcr:vela:667AED70-8685-4BEA-A32F-7B304483C05F ends here
+;; org_gcr_2017-05-12_mara_5295DEDE-687E-440B-89B9-9BF9BF301595 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:881B532E-F141-431C-8CDE-287C59F775C2][orgmode:gcr:vela:881B532E-F141-431C-8CDE-287C59F775C2]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_501304FE-D5DB-40FA-B1BB-01A580C4A155][org_gcr_2017-05-12_mara_501304FE-D5DB-40FA-B1BB-01A580C4A155]]
 (set-fontset-font "fontset-default" nil
                   (font-spec :size 20 :name "Symbola"))
-;; orgmode:gcr:vela:881B532E-F141-431C-8CDE-287C59F775C2 ends here
+;; org_gcr_2017-05-12_mara_501304FE-D5DB-40FA-B1BB-01A580C4A155 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:54E78DF3-0C8E-4ABE-8CD8-36C0AF24DD26][orgmode:gcr:vela:54E78DF3-0C8E-4ABE-8CD8-36C0AF24DD26]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_ADAB043E-BF70-4AE0-BA60-CD08D82474FA][org_gcr_2017-05-12_mara_ADAB043E-BF70-4AE0-BA60-CD08D82474FA]]
 (global-font-lock-mode t)
-;; orgmode:gcr:vela:54E78DF3-0C8E-4ABE-8CD8-36C0AF24DD26 ends here
+;; org_gcr_2017-05-12_mara_ADAB043E-BF70-4AE0-BA60-CD08D82474FA ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:391224F7-3242-4B91-BC34-6E8083947884][orgmode:gcr:vela:391224F7-3242-4B91-BC34-6E8083947884]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7D565C78-A5CB-48BD-8C1B-C08BBFCF64EC][org_gcr_2017-05-12_mara_7D565C78-A5CB-48BD-8C1B-C08BBFCF64EC]]
 (use-package pretty-mode
   :ensure t
   :config
   (global-pretty-mode))
-;; orgmode:gcr:vela:391224F7-3242-4B91-BC34-6E8083947884 ends here
+;; org_gcr_2017-05-12_mara_7D565C78-A5CB-48BD-8C1B-C08BBFCF64EC ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:C95AD351-D087-473F-88EB-B0930C86FBDF][orgmode:gcr:vela:C95AD351-D087-473F-88EB-B0930C86FBDF]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_2B0564C9-2091-4364-8A28-E33A548284A2][org_gcr_2017-05-12_mara_2B0564C9-2091-4364-8A28-E33A548284A2]]
 (use-package avy
   :ensure t
   :config)
-;; orgmode:gcr:vela:C95AD351-D087-473F-88EB-B0930C86FBDF ends here
+;; org_gcr_2017-05-12_mara_2B0564C9-2091-4364-8A28-E33A548284A2 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:42DD3C85-F2C4-4A82-8B76-5BFBCF692E86][orgmode:gcr:vela:42DD3C85-F2C4-4A82-8B76-5BFBCF692E86]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9336B241-3511-4BB1-9CBA-30CA8BD4EFAB][org_gcr_2017-05-12_mara_9336B241-3511-4BB1-9CBA-30CA8BD4EFAB]]
 (use-package writegood-mode
   :ensure t
   :config
   (eval-after-load "writegood-mode"
     '(diminish 'writegood-mode)))
-;; orgmode:gcr:vela:42DD3C85-F2C4-4A82-8B76-5BFBCF692E86 ends here
+;; org_gcr_2017-05-12_mara_9336B241-3511-4BB1-9CBA-30CA8BD4EFAB ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:4FF40D35-DDA0-4E02-80C0-52962DCD449A][orgmode:gcr:vela:4FF40D35-DDA0-4E02-80C0-52962DCD449A]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1CB16C79-7EC3-4375-BAD3-FC612A1C0B9B][org_gcr_2017-05-12_mara_1CB16C79-7EC3-4375-BAD3-FC612A1C0B9B]]
 (use-package langtool
   :ensure t
   :init
   (setq langtool-language-tool-jar (getenv "LANGTOOL"))
   (setq langtool-mother-tongue "en")
   (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java")))
-;; orgmode:gcr:vela:4FF40D35-DDA0-4E02-80C0-52962DCD449A ends here
+;; org_gcr_2017-05-12_mara_1CB16C79-7EC3-4375-BAD3-FC612A1C0B9B ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:2A5BAD60-DF45-4BD1-AA01-E430E495C62D][orgmode:gcr:vela:2A5BAD60-DF45-4BD1-AA01-E430E495C62D]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A17A873C-5FC0-473F-842F-875CA99981D5][org_gcr_2017-05-12_mara_A17A873C-5FC0-473F-842F-875CA99981D5]]
 (with-eval-after-load "flycheck"
   (flycheck-define-checker proselint
     "A linter for prose."
@@ -1296,21 +1296,21 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
               line-end))
     :modes (text-mode org-mode markdown-mode gfm-mode))
   (add-to-list 'flycheck-checkers 'proselint))
-;; orgmode:gcr:vela:2A5BAD60-DF45-4BD1-AA01-E430E495C62D ends here
+;; org_gcr_2017-05-12_mara_A17A873C-5FC0-473F-842F-875CA99981D5 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:2017-03-03:mara:AEE70341-1450-4B46-9690-8F6215B8DCBF][orgmode:gcr:2017-03-03:mara:AEE70341-1450-4B46-9690-8F6215B8DCBF]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_54E04F50-33B3-411D-B759-19408AE1DE48][org_gcr_2017-05-12_mara_54E04F50-33B3-411D-B759-19408AE1DE48]]
 (setq kmacro-ring-max 32)
-;; orgmode:gcr:2017-03-03:mara:AEE70341-1450-4B46-9690-8F6215B8DCBF ends here
+;; org_gcr_2017-05-12_mara_54E04F50-33B3-411D-B759-19408AE1DE48 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:2017-03-03:mara:3DD2F7F0-285C-408C-A620-57420CCCE51D][orgmode:gcr:2017-03-03:mara:3DD2F7F0-285C-408C-A620-57420CCCE51D]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0BE407C6-354F-4E92-B7DC-66000217CCE6][org_gcr_2017-05-12_mara_0BE407C6-354F-4E92-B7DC-66000217CCE6]]
 (use-package elmacro
   :ensure t
   :diminish (elmacro-mode)
   :config
   (elmacro-mode))
-;; orgmode:gcr:2017-03-03:mara:3DD2F7F0-285C-408C-A620-57420CCCE51D ends here
+;; org_gcr_2017-05-12_mara_0BE407C6-354F-4E92-B7DC-66000217CCE6 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:487B46D5-C025-4114-A1B4-BAAF5FAFE430][orgmode:gcr:vela:487B46D5-C025-4114-A1B4-BAAF5FAFE430]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_909723A4-3234-40B4-B741-E59C3C9E3E0A][org_gcr_2017-05-12_mara_909723A4-3234-40B4-B741-E59C3C9E3E0A]]
 (use-package fuzzy
   :ensure t)
 (use-package auto-complete
@@ -1325,14 +1325,14 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   :diminish auto-complete-mode)
 (use-package auto-complete-chunk
   :ensure t)
-;; orgmode:gcr:vela:487B46D5-C025-4114-A1B4-BAAF5FAFE430 ends here
+;; org_gcr_2017-05-12_mara_909723A4-3234-40B4-B741-E59C3C9E3E0A ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:36899F5A-7606-461A-A17C-622B0B807E8E][orgmode:gcr:vela:36899F5A-7606-461A-A17C-622B0B807E8E]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0F225CED-24F2-4801-A3AF-7E45BF787E71][org_gcr_2017-05-12_mara_0F225CED-24F2-4801-A3AF-7E45BF787E71]]
 (use-package auto-complete-chunk
   :ensure t)
-;; orgmode:gcr:vela:36899F5A-7606-461A-A17C-622B0B807E8E ends here
+;; org_gcr_2017-05-12_mara_0F225CED-24F2-4801-A3AF-7E45BF787E71 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:B35D9582-C338-4A9B-A22E-752FCC27831F][orgmode:gcr:vela:B35D9582-C338-4A9B-A22E-752FCC27831F]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_DA93DCF6-E0AB-4B92-9708-4DE4781AA2ED][org_gcr_2017-05-12_mara_DA93DCF6-E0AB-4B92-9708-4DE4781AA2ED]]
 (use-package browse-kill-ring
   :ensure t
   :config
@@ -1349,41 +1349,41 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
     (browse-kill-ring)
     (fci-mode))
   (global-set-key (kbd "M-y") #'help/browse-kill-ring))
-;; orgmode:gcr:vela:B35D9582-C338-4A9B-A22E-752FCC27831F ends here
+;; org_gcr_2017-05-12_mara_DA93DCF6-E0AB-4B92-9708-4DE4781AA2ED ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:0B6E0831-FE6F-442F-918F-48488A6FCD2D][orgmode:gcr:vela:0B6E0831-FE6F-442F-918F-48488A6FCD2D]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B696F088-B5EB-4507-8EBE-C719995EB5DA][org_gcr_2017-05-12_mara_B696F088-B5EB-4507-8EBE-C719995EB5DA]]
 (delete-selection-mode t)
-;; orgmode:gcr:vela:0B6E0831-FE6F-442F-918F-48488A6FCD2D ends here
+;; org_gcr_2017-05-12_mara_B696F088-B5EB-4507-8EBE-C719995EB5DA ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:63C4F1FC-00C6-4EC5-86CE-070D90C5164E][orgmode:gcr:vela:63C4F1FC-00C6-4EC5-86CE-070D90C5164E]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_DDBFF500-4387-47FD-95BD-7F6F369AB0E8][org_gcr_2017-05-12_mara_DDBFF500-4387-47FD-95BD-7F6F369AB0E8]]
 (setq save-interprogram-paste-before-kill t)
-;; orgmode:gcr:vela:63C4F1FC-00C6-4EC5-86CE-070D90C5164E ends here
+;; org_gcr_2017-05-12_mara_DDBFF500-4387-47FD-95BD-7F6F369AB0E8 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:2D385F1C-718A-41CC-899E-DDE9675C36B7][orgmode:gcr:vela:2D385F1C-718A-41CC-899E-DDE9675C36B7]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_087C8A85-9AC0-48C5-A19B-6C5E97F40572][org_gcr_2017-05-12_mara_087C8A85-9AC0-48C5-A19B-6C5E97F40572]]
 (setq mouse-drag-copy-region t)
-;; orgmode:gcr:vela:2D385F1C-718A-41CC-899E-DDE9675C36B7 ends here
+;; org_gcr_2017-05-12_mara_087C8A85-9AC0-48C5-A19B-6C5E97F40572 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:2D2A8781-9A67-4D3A-B0E4-B09EEBBC65D8][orgmode:gcr:vela:2D2A8781-9A67-4D3A-B0E4-B09EEBBC65D8]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F19234A5-0F40-46FE-946A-4B3F47C96424][org_gcr_2017-05-12_mara_F19234A5-0F40-46FE-946A-4B3F47C96424]]
 (fset #'yes-or-no-p #'y-or-n-p)
-;; orgmode:gcr:vela:2D2A8781-9A67-4D3A-B0E4-B09EEBBC65D8 ends here
+;; org_gcr_2017-05-12_mara_F19234A5-0F40-46FE-946A-4B3F47C96424 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:F40D1069-58B9-42CA-A64E-789B56C914EC][orgmode:gcr:vela:F40D1069-58B9-42CA-A64E-789B56C914EC]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_2B089323-1D60-416F-83A7-792AEE290E67][org_gcr_2017-05-12_mara_2B089323-1D60-416F-83A7-792AEE290E67]]
 (setq resize-mini-windows t)
 (setq max-mini-window-height 0.33)
-;; orgmode:gcr:vela:F40D1069-58B9-42CA-A64E-789B56C914EC ends here
+;; org_gcr_2017-05-12_mara_2B089323-1D60-416F-83A7-792AEE290E67 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:A6E43252-3A7E-4647-BC3E-EB93CF178233][orgmode:gcr:vela:A6E43252-3A7E-4647-BC3E-EB93CF178233]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A0D0BC89-5180-4B18-BFDC-17650901FB7F][org_gcr_2017-05-12_mara_A0D0BC89-5180-4B18-BFDC-17650901FB7F]]
 (setq enable-recursive-minibuffers t)
 (minibuffer-depth-indicate-mode t)
-;; orgmode:gcr:vela:A6E43252-3A7E-4647-BC3E-EB93CF178233 ends here
+;; org_gcr_2017-05-12_mara_A0D0BC89-5180-4B18-BFDC-17650901FB7F ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:9B580380-CA8C-4134-80CC-FE3B0376BE73][orgmode:gcr:vela:9B580380-CA8C-4134-80CC-FE3B0376BE73]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_4AA275B8-8C5E-498F-969E-28459D7E88E5][org_gcr_2017-05-12_mara_4AA275B8-8C5E-498F-969E-28459D7E88E5]]
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
 (setq mouse-wheel-progressive-speed nil)
 (setq mouse-wheel-follow-mouse t)
-;; orgmode:gcr:vela:9B580380-CA8C-4134-80CC-FE3B0376BE73 ends here
+;; org_gcr_2017-05-12_mara_4AA275B8-8C5E-498F-969E-28459D7E88E5 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:00A4417A-8BE6-4417-B054-2F9D8287FAFD][orgmode:gcr:vela:00A4417A-8BE6-4417-B054-2F9D8287FAFD]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0EB7874B-7C34-4879-97FA-C487115385EE][org_gcr_2017-05-12_mara_0EB7874B-7C34-4879-97FA-C487115385EE]]
 (defun help/occur-mode-hook-fn ()
   "HELP customizations."
   (interactive)
@@ -1393,9 +1393,9 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
 (define-key occur-mode-map (kbd "n") #'next-logical-line)
 (define-key occur-mode-map (kbd "p") #'previous-logical-line)
 (add-hook 'occur-mode-find-occurrence-hook #'help/recenter-line-near-top-fn)
-;; orgmode:gcr:vela:00A4417A-8BE6-4417-B054-2F9D8287FAFD ends here
+;; org_gcr_2017-05-12_mara_0EB7874B-7C34-4879-97FA-C487115385EE ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:2DE86EF6-3E4B-42FD-AA11-1914A83029BE][orgmode:gcr:vela:2DE86EF6-3E4B-42FD-AA11-1914A83029BE]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_66255B58-A96D-445E-83BF-F597E4BA4FB8][org_gcr_2017-05-12_mara_66255B58-A96D-445E-83BF-F597E4BA4FB8]]
 (use-package alert
   :ensure t
   :config
@@ -1405,9 +1405,9 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
    (help/on-osx
     (setq alert-default-style 'notifier)))
   (setq alert-reveal-idle-time 120))
-;; orgmode:gcr:vela:2DE86EF6-3E4B-42FD-AA11-1914A83029BE ends here
+;; org_gcr_2017-05-12_mara_66255B58-A96D-445E-83BF-F597E4BA4FB8 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:037534FF-945E-477A-9813-D9E4C7E54359][orgmode:gcr:vela:037534FF-945E-477A-9813-D9E4C7E54359]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_814E8B43-89FD-4EC2-9C5A-EEE03D92A918][org_gcr_2017-05-12_mara_814E8B43-89FD-4EC2-9C5A-EEE03D92A918]]
 (use-package projectile
   :ensure t
   :config
@@ -1416,9 +1416,9 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (help/on-windows
    (setq projectile-indexing-method 'alien))
   :diminish projectile-mode)
-;; orgmode:gcr:vela:037534FF-945E-477A-9813-D9E4C7E54359 ends here
+;; org_gcr_2017-05-12_mara_814E8B43-89FD-4EC2-9C5A-EEE03D92A918 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:8431ABE6-1C81-4AD3-AB47-C0B793C98FE3][orgmode:gcr:vela:8431ABE6-1C81-4AD3-AB47-C0B793C98FE3]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A3BF1E41-D15E-43FD-A379-E5283602BBB3][org_gcr_2017-05-12_mara_A3BF1E41-D15E-43FD-A379-E5283602BBB3]]
 (eval-after-load "projectile"
   '(progn (setq magit-repository-directories (mapcar (lambda (dir)
                                                        (substring dir 0 -1))
@@ -1427,19 +1427,19 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
                                                                     (projectile-relevant-known-projects)))
 
                 magit-repository-directories-depth 1)))
-;; orgmode:gcr:vela:8431ABE6-1C81-4AD3-AB47-C0B793C98FE3 ends here
+;; org_gcr_2017-05-12_mara_A3BF1E41-D15E-43FD-A379-E5283602BBB3 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:BD085F97-3BDA-43A5-A5BC-A17DD446E36B][orgmode:gcr:vela:BD085F97-3BDA-43A5-A5BC-A17DD446E36B]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_22C5C379-532B-488C-A155-6212DB791ED6][org_gcr_2017-05-12_mara_22C5C379-532B-488C-A155-6212DB791ED6]]
 (use-package pp
   :commands (pp-display-expression))
-;; orgmode:gcr:vela:BD085F97-3BDA-43A5-A5BC-A17DD446E36B ends here
+;; org_gcr_2017-05-12_mara_22C5C379-532B-488C-A155-6212DB791ED6 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:3E6EFC3D-E8FA-4C27-B58B-DFAA640DD405][orgmode:gcr:vela:3E6EFC3D-E8FA-4C27-B58B-DFAA640DD405]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5418551F-1788-4236-B98B-B963BE0032F7][org_gcr_2017-05-12_mara_5418551F-1788-4236-B98B-B963BE0032F7]]
 (setq register-preview-delay 2)
 (setq register-separator "\n\n")
-;; orgmode:gcr:vela:3E6EFC3D-E8FA-4C27-B58B-DFAA640DD405 ends here
+;; org_gcr_2017-05-12_mara_5418551F-1788-4236-B98B-B963BE0032F7 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:D9A8B6E9-E328-47C1-9B75-863B640BEAB7][orgmode:gcr:vela:D9A8B6E9-E328-47C1-9B75-863B640BEAB7]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_82232186-B19E-402C-B9E7-6FD6839FD7F6][org_gcr_2017-05-12_mara_82232186-B19E-402C-B9E7-6FD6839FD7F6]]
 (use-package anzu
   :ensure t
   :config
@@ -1448,13 +1448,13 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (setq anzu-deactivate-region t)
   (setq anzu-search-threshold 1000)
   (setq anzu-replace-to-string-separator " ⇒ "))
-;; orgmode:gcr:vela:D9A8B6E9-E328-47C1-9B75-863B640BEAB7 ends here
+;; org_gcr_2017-05-12_mara_82232186-B19E-402C-B9E7-6FD6839FD7F6 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:2017-02-12:mara:C17BCB36-D890-400B-B0AD-5CA1240E59C1][orgmode:gcr:2017-02-12:mara:C17BCB36-D890-400B-B0AD-5CA1240E59C1]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9D56BD82-FDED-4326-9078-547457D593ED][org_gcr_2017-05-12_mara_9D56BD82-FDED-4326-9078-547457D593ED]]
 (save-place-mode 1)
-;; orgmode:gcr:2017-02-12:mara:C17BCB36-D890-400B-B0AD-5CA1240E59C1 ends here
+;; org_gcr_2017-05-12_mara_9D56BD82-FDED-4326-9078-547457D593ED ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:FDA728C0-CBE2-4B1B-A30F-CC8EA3E810DB][orgmode:gcr:vela:FDA728C0-CBE2-4B1B-A30F-CC8EA3E810DB]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_2C0AC56F-8956-4EC1-90A9-2FBCC4AA5AD1][org_gcr_2017-05-12_mara_2C0AC56F-8956-4EC1-90A9-2FBCC4AA5AD1]]
 (setq savehist-save-minibuffer-history t)
 (setq savehist-additional-variables
       '(kill-ring
@@ -1464,20 +1464,20 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
         kmacro-ring
         shell-command-history))
 (savehist-mode t)
-;; orgmode:gcr:vela:FDA728C0-CBE2-4B1B-A30F-CC8EA3E810DB ends here
+;; org_gcr_2017-05-12_mara_2C0AC56F-8956-4EC1-90A9-2FBCC4AA5AD1 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:2017-03-03:mara:0B35AE1F-8BFC-4E24-A161-3416323D46B9][orgmode:gcr:2017-03-03:mara:0B35AE1F-8BFC-4E24-A161-3416323D46B9]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D92CB94A-5CDE-49D3-83AD-65242EACA752][org_gcr_2017-05-12_mara_D92CB94A-5CDE-49D3-83AD-65242EACA752]]
 (setq history-delete-duplicates t)
-;; orgmode:gcr:2017-03-03:mara:0B35AE1F-8BFC-4E24-A161-3416323D46B9 ends here
+;; org_gcr_2017-05-12_mara_D92CB94A-5CDE-49D3-83AD-65242EACA752 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:2017-05-10:mara:054AA200-CD58-43E7-B6F0-FFDC93026F35][orgmode:gcr:2017-05-10:mara:054AA200-CD58-43E7-B6F0-FFDC93026F35]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9F40A141-4464-4D4C-A062-54BEC12992FF][org_gcr_2017-05-12_mara_9F40A141-4464-4D4C-A062-54BEC12992FF]]
 (use-package wgrep
   :ensure t
   :config
   (setq wgrep-auto-save-buffer t))
-;; orgmode:gcr:2017-05-10:mara:054AA200-CD58-43E7-B6F0-FFDC93026F35 ends here
+;; org_gcr_2017-05-12_mara_9F40A141-4464-4D4C-A062-54BEC12992FF ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:B7EB4F42-9696-495C-98F5-427B03DA93EE][orgmode:gcr:vela:B7EB4F42-9696-495C-98F5-427B03DA93EE]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_58F6AD1E-7E9B-4650-B859-F9C0540C74B6][org_gcr_2017-05-12_mara_58F6AD1E-7E9B-4650-B859-F9C0540C74B6]]
 (use-package ag
   :ensure t
   :config
@@ -1485,52 +1485,52 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (setq ag-reuse-window nil)
   (setq ag-reuse-buffers nil)
   (setq ag-arguments (-insert-at (- (length ag-arguments) 1) '"-i" ag-arguments)))
-;; orgmode:gcr:vela:B7EB4F42-9696-495C-98F5-427B03DA93EE ends here
+;; org_gcr_2017-05-12_mara_58F6AD1E-7E9B-4650-B859-F9C0540C74B6 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:2017-05-10:mara:9E7D0528-C932-468D-9B48-D1DEA5AB797C][orgmode:gcr:2017-05-10:mara:9E7D0528-C932-468D-9B48-D1DEA5AB797C]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E4E1E1A0-1353-4483-BE1C-746097F60CB6][org_gcr_2017-05-12_mara_E4E1E1A0-1353-4483-BE1C-746097F60CB6]]
 (use-package wgrep-ag
   :ensure t
   :after ag)
-;; orgmode:gcr:2017-05-10:mara:9E7D0528-C932-468D-9B48-D1DEA5AB797C ends here
+;; org_gcr_2017-05-12_mara_E4E1E1A0-1353-4483-BE1C-746097F60CB6 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:62360083-1CE2-4EEF-BF61-AEA8F3FA9944][orgmode:gcr:vela:62360083-1CE2-4EEF-BF61-AEA8F3FA9944]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5EDEEFA9-7DED-41D9-AD9D-5C48BA580AC5][org_gcr_2017-05-12_mara_5EDEEFA9-7DED-41D9-AD9D-5C48BA580AC5]]
 (defun help/block-regex (special)
   "Make an ispell skip-region alist for a SPECIAL block."
   (interactive)
   `(,(concat help/org-special-pre "BEGIN_" special)
     .
     ,(concat help/org-special-pre "END_" special)))
-;; orgmode:gcr:vela:62360083-1CE2-4EEF-BF61-AEA8F3FA9944 ends here
+;; org_gcr_2017-05-12_mara_5EDEEFA9-7DED-41D9-AD9D-5C48BA580AC5 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:23D5548B-1081-48A8-BBCD-5C69AC2C57B8][orgmode:gcr:vela:23D5548B-1081-48A8-BBCD-5C69AC2C57B8]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D15F7E3E-9D35-4AB3-A043-67154E3D588A][org_gcr_2017-05-12_mara_D15F7E3E-9D35-4AB3-A043-67154E3D588A]]
 (add-to-list 'ispell-skip-region-alist (help/block-regex "SRC"))
-;; orgmode:gcr:vela:23D5548B-1081-48A8-BBCD-5C69AC2C57B8 ends here
+;; org_gcr_2017-05-12_mara_D15F7E3E-9D35-4AB3-A043-67154E3D588A ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:CE78FEAC-B28A-4F76-95F2-4FE246FCDCAD][orgmode:gcr:vela:CE78FEAC-B28A-4F76-95F2-4FE246FCDCAD]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_EB14B834-8486-4750-96C5-E5E3CFB4C19B][org_gcr_2017-05-12_mara_EB14B834-8486-4750-96C5-E5E3CFB4C19B]]
 (add-to-list 'ispell-skip-region-alist (help/block-regex "EXAMPLE"))
-;; orgmode:gcr:vela:CE78FEAC-B28A-4F76-95F2-4FE246FCDCAD ends here
+;; org_gcr_2017-05-12_mara_EB14B834-8486-4750-96C5-E5E3CFB4C19B ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:01BEC0C6-64F7-440F-A217-EA73CDA75DDA][orgmode:gcr:vela:01BEC0C6-64F7-440F-A217-EA73CDA75DDA]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F7E77F03-5A3E-4DC1-A345-4BE8E4C7FF11][org_gcr_2017-05-12_mara_F7E77F03-5A3E-4DC1-A345-4BE8E4C7FF11]]
 (add-to-list 'ispell-skip-region-alist '("^\s*:PROPERTIES\:$" . "^\s*:END\:$"))
-;; orgmode:gcr:vela:01BEC0C6-64F7-440F-A217-EA73CDA75DDA ends here
+;; org_gcr_2017-05-12_mara_F7E77F03-5A3E-4DC1-A345-4BE8E4C7FF11 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:F5DC40F2-20EC-45C0-BDB3-7C788514CD23][orgmode:gcr:vela:F5DC40F2-20EC-45C0-BDB3-7C788514CD23]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5459C549-E938-4899-827D-D03707983E52][org_gcr_2017-05-12_mara_5459C549-E938-4899-827D-D03707983E52]]
 (add-to-list 'ispell-skip-region-alist '("\\[fn:.+:" . "\\]"))
-;; orgmode:gcr:vela:F5DC40F2-20EC-45C0-BDB3-7C788514CD23 ends here
+;; org_gcr_2017-05-12_mara_5459C549-E938-4899-827D-D03707983E52 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:F5636C6E-61AC-491F-936E-FAE5974ED541][orgmode:gcr:vela:F5636C6E-61AC-491F-936E-FAE5974ED541]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_ECD4198B-7335-4141-8256-971748EE4D22][org_gcr_2017-05-12_mara_ECD4198B-7335-4141-8256-971748EE4D22]]
 (add-to-list 'ispell-skip-region-alist '("^http" . "\\]"))
-;; orgmode:gcr:vela:F5636C6E-61AC-491F-936E-FAE5974ED541 ends here
+;; org_gcr_2017-05-12_mara_ECD4198B-7335-4141-8256-971748EE4D22 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:D1A2D129-9299-4349-AFF3-8F65F7D0CF95][orgmode:gcr:vela:D1A2D129-9299-4349-AFF3-8F65F7D0CF95]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1048E593-5E66-4F70-A591-B17A18634D8F][org_gcr_2017-05-12_mara_1048E593-5E66-4F70-A591-B17A18634D8F]]
 (add-to-list 'ispell-skip-region-alist '("- \\*.+" . ".*\\*: "))
-;; orgmode:gcr:vela:D1A2D129-9299-4349-AFF3-8F65F7D0CF95 ends here
+;; org_gcr_2017-05-12_mara_1048E593-5E66-4F70-A591-B17A18634D8F ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:A1C03CEB-5FC4-435A-853A-5A0D98A5ED08][orgmode:gcr:vela:A1C03CEB-5FC4-435A-853A-5A0D98A5ED08]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5DB6D56D-1C05-4816-8BB6-8F3E936E5EFC][org_gcr_2017-05-12_mara_5DB6D56D-1C05-4816-8BB6-8F3E936E5EFC]]
 (add-to-list 'ispell-skip-region-alist '("\\rarr"))
-;; orgmode:gcr:vela:A1C03CEB-5FC4-435A-853A-5A0D98A5ED08 ends here
+;; org_gcr_2017-05-12_mara_5DB6D56D-1C05-4816-8BB6-8F3E936E5EFC ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:3745D1E1-33D3-4D2F-B527-BBBCA619D455][orgmode:gcr:vela:3745D1E1-33D3-4D2F-B527-BBBCA619D455]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5C415ECB-91FC-44C2-9886-29704EF74836][org_gcr_2017-05-12_mara_5C415ECB-91FC-44C2-9886-29704EF74836]]
 (let ()
   (--each
       '(("ATTR_LATEX" nil)
@@ -1568,9 +1568,9 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
        (if (cadr it)
            (cons special "$")
          (list special))))))
-;; orgmode:gcr:vela:3745D1E1-33D3-4D2F-B527-BBBCA619D455 ends here
+;; org_gcr_2017-05-12_mara_5C415ECB-91FC-44C2-9886-29704EF74836 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:E2D66077-10AC-46D1-AAAA-D0C81BED451B][orgmode:gcr:vela:E2D66077-10AC-46D1-AAAA-D0C81BED451B]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BC64FFC2-D587-4D4F-B693-71B3731A71F1][org_gcr_2017-05-12_mara_BC64FFC2-D587-4D4F-B693-71B3731A71F1]]
 (help/on-osx
  (defun help/ido-find-file ()
    "Find file as root if necessary.
@@ -1581,19 +1581,19 @@ Attribution: URL `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
      (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
 
  (advice-add #'ido-find-file :after #'help/ido-find-file))
-;; orgmode:gcr:vela:E2D66077-10AC-46D1-AAAA-D0C81BED451B ends here
+;; org_gcr_2017-05-12_mara_BC64FFC2-D587-4D4F-B693-71B3731A71F1 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:33473D12-CA77-453B-8115-FE060E033ED4][orgmode:gcr:vela:33473D12-CA77-453B-8115-FE060E033ED4]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9931B79E-7900-4DE1-B097-45A8DE90CB44][org_gcr_2017-05-12_mara_9931B79E-7900-4DE1-B097-45A8DE90CB44]]
 (use-package flycheck
   :ensure t
   :diminish flycheck-mode)
-;; orgmode:gcr:vela:33473D12-CA77-453B-8115-FE060E033ED4 ends here
+;; org_gcr_2017-05-12_mara_9931B79E-7900-4DE1-B097-45A8DE90CB44 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:6A9C209F-8228-4D10-B23D-6A8376FD7FB3][orgmode:gcr:vela:6A9C209F-8228-4D10-B23D-6A8376FD7FB3]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C23EBD24-B2DC-40CB-9F9E-CAEB03FF8EDC][org_gcr_2017-05-12_mara_C23EBD24-B2DC-40CB-9F9E-CAEB03FF8EDC]]
 (setq-default indent-tabs-mode nil)
-;; orgmode:gcr:vela:6A9C209F-8228-4D10-B23D-6A8376FD7FB3 ends here
+;; org_gcr_2017-05-12_mara_C23EBD24-B2DC-40CB-9F9E-CAEB03FF8EDC ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:FD5B749C-AC7A-40A7-AB88-851F2190E906][orgmode:gcr:vela:FD5B749C-AC7A-40A7-AB88-851F2190E906]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_3FFCD7B4-0055-4BE8-938F-EEA09D077343][org_gcr_2017-05-12_mara_3FFCD7B4-0055-4BE8-938F-EEA09D077343]]
 (defun help/untabify-if-not-indent-tabs-mode ()
   "Untabify if `indent-tabs-mode' is false.
 
@@ -1603,13 +1603,13 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
     (untabify (point-min) (point-max))))
 
 (add-hook 'before-save-hook #'help/untabify-if-not-indent-tabs-mode)
-;; orgmode:gcr:vela:FD5B749C-AC7A-40A7-AB88-851F2190E906 ends here
+;; org_gcr_2017-05-12_mara_3FFCD7B4-0055-4BE8-938F-EEA09D077343 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:1AB838F7-4C9B-4C35-97B5-35390871A22D][orgmode:gcr:vela:1AB838F7-4C9B-4C35-97B5-35390871A22D]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5A73C4A8-C2AE-4F36-9D64-3FB6A4FF31E0][org_gcr_2017-05-12_mara_5A73C4A8-C2AE-4F36-9D64-3FB6A4FF31E0]]
 (setq-default tab-width 2)
-;; orgmode:gcr:vela:1AB838F7-4C9B-4C35-97B5-35390871A22D ends here
+;; org_gcr_2017-05-12_mara_5A73C4A8-C2AE-4F36-9D64-3FB6A4FF31E0 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:14B95634-E6E8-46A0-9698-2C9B847DD404][orgmode:gcr:vela:14B95634-E6E8-46A0-9698-2C9B847DD404]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_3E77B825-E0A4-40EC-88DC-3F5C1E1445CE][org_gcr_2017-05-12_mara_3E77B825-E0A4-40EC-88DC-3F5C1E1445CE]]
 (add-to-list 'load-path "~/src/magit/lisp")
 (require 'magit)
 
@@ -1617,19 +1617,19 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (info-initialize)
   (add-to-list 'Info-directory-list
                "~/src/magit/Documentation/"))
-;; orgmode:gcr:vela:14B95634-E6E8-46A0-9698-2C9B847DD404 ends here
+;; org_gcr_2017-05-12_mara_3E77B825-E0A4-40EC-88DC-3F5C1E1445CE ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:27D5DC40-DD13-4E08-9EF9-D962DD08A7D5][orgmode:gcr:vela:27D5DC40-DD13-4E08-9EF9-D962DD08A7D5]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A078BCD9-1559-412A-8D51-528CDDD4E402][org_gcr_2017-05-12_mara_A078BCD9-1559-412A-8D51-528CDDD4E402]]
 (eval-after-load "log-edit"
   '(remove-hook 'log-edit-hook 'log-edit-insert-message-template))
-;; orgmode:gcr:vela:27D5DC40-DD13-4E08-9EF9-D962DD08A7D5 ends here
+;; org_gcr_2017-05-12_mara_A078BCD9-1559-412A-8D51-528CDDD4E402 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:2017-03-03:mara:DBF9CBC3-79F8-40C8-BB57-80773FA636FA][orgmode:gcr:2017-03-03:mara:DBF9CBC3-79F8-40C8-BB57-80773FA636FA]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A696BECA-ED39-4A7A-911A-66C396E0925C][org_gcr_2017-05-12_mara_A696BECA-ED39-4A7A-911A-66C396E0925C]]
 (use-package git-timemachine
   :ensure t)
-;; orgmode:gcr:2017-03-03:mara:DBF9CBC3-79F8-40C8-BB57-80773FA636FA ends here
+;; org_gcr_2017-05-12_mara_A696BECA-ED39-4A7A-911A-66C396E0925C ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:A45F49E2-E330-463B-82C6-907F138E8F2A][orgmode:gcr:vela:A45F49E2-E330-463B-82C6-907F138E8F2A]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A4E407FE-DD42-458A-BD83-2EFD71C1D728][org_gcr_2017-05-12_mara_A4E407FE-DD42-458A-BD83-2EFD71C1D728]]
 (global-set-key (kbd "s-w") #'git-timemachine)
 (global-set-key (kbd "s-e") #'help/safb-help/magit-status)
 (define-prefix-command 'help/vc-map)
@@ -1638,13 +1638,13 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 (define-key help/vc-map "d" #'help/safb-vc-diff)
 (define-key help/vc-map "u" #'help/safb-vc-revert)
 (global-set-key (kbd "s-f") #'help/safb-help/vc-next-action)
-;; orgmode:gcr:vela:A45F49E2-E330-463B-82C6-907F138E8F2A ends here
+;; org_gcr_2017-05-12_mara_A4E407FE-DD42-458A-BD83-2EFD71C1D728 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:6FD11818-DB10-4AF4-A714-C32C04291AF2][orgmode:gcr:vela:6FD11818-DB10-4AF4-A714-C32C04291AF2]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C374930E-5AE3-478D-B3F1-E7791791D530][org_gcr_2017-05-12_mara_C374930E-5AE3-478D-B3F1-E7791791D530]]
 (add-to-list 'auto-mode-alist '(".gitignore$" . text-mode))
-;; orgmode:gcr:vela:6FD11818-DB10-4AF4-A714-C32C04291AF2 ends here
+;; org_gcr_2017-05-12_mara_C374930E-5AE3-478D-B3F1-E7791791D530 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:2017-03-04:mara:91E38B17-EDBF-4071-8CB3-0DE4E7670931][orgmode:gcr:2017-03-04:mara:91E38B17-EDBF-4071-8CB3-0DE4E7670931]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0183A8E0-5A59-4A4B-9260-FF5E8C5CAF2C][org_gcr_2017-05-12_mara_0183A8E0-5A59-4A4B-9260-FF5E8C5CAF2C]]
 (use-package gitignore-mode
   :ensure t)
 
@@ -1653,9 +1653,9 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 
 (use-package gitattributes-mode
   :ensure t)
-;; orgmode:gcr:2017-03-04:mara:91E38B17-EDBF-4071-8CB3-0DE4E7670931 ends here
+;; org_gcr_2017-05-12_mara_0183A8E0-5A59-4A4B-9260-FF5E8C5CAF2C ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:C6FF37A6-EC87-4918-BFC8-927157F890BF][orgmode:gcr:vela:C6FF37A6-EC87-4918-BFC8-927157F890BF]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BCF6CC3A-98AD-4845-BBE2-EB601E1A8550][org_gcr_2017-05-12_mara_BCF6CC3A-98AD-4845-BBE2-EB601E1A8550]]
 (defvar yt-iframe-format
   ;; You may want to change your width and height.
   (concat "<iframe width=\"440\""
@@ -1676,9 +1676,9 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
                    path (or desc "")))
      (latex (format "\href{%s}{%s}"
                     path (or desc "video"))))))
-;; orgmode:gcr:vela:C6FF37A6-EC87-4918-BFC8-927157F890BF ends here
+;; org_gcr_2017-05-12_mara_BCF6CC3A-98AD-4845-BBE2-EB601E1A8550 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:3327B4FF-82CF-42E7-AEF8-DCC968B97BDC][orgmode:gcr:vela:3327B4FF-82CF-42E7-AEF8-DCC968B97BDC]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_081024E6-F582-40DF-A96F-7216725FDD00][org_gcr_2017-05-12_mara_081024E6-F582-40DF-A96F-7216725FDD00]]
 (use-package whitespace
   :ensure t
   :config
@@ -1688,48 +1688,48 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (setq whitespace-line-column help/column-width)
   (global-whitespace-mode t)
   :diminish whitespace-mode global-whitespace-mode)
-;; orgmode:gcr:vela:3327B4FF-82CF-42E7-AEF8-DCC968B97BDC ends here
+;; org_gcr_2017-05-12_mara_081024E6-F582-40DF-A96F-7216725FDD00 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:EDD8ABBB-B76A-4B95-9367-211A765348CD][orgmode:gcr:vela:EDD8ABBB-B76A-4B95-9367-211A765348CD]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BC6CD3BC-C736-40EE-84FD-33E2BB514A0C][org_gcr_2017-05-12_mara_BC6CD3BC-C736-40EE-84FD-33E2BB514A0C]]
 (diminish 'visual-line-mode)
-;; orgmode:gcr:vela:EDD8ABBB-B76A-4B95-9367-211A765348CD ends here
+;; org_gcr_2017-05-12_mara_BC6CD3BC-C736-40EE-84FD-33E2BB514A0C ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:2017-02-11:mara:E94F5A5F-72C0-4E05-9A2E-687951D63E7E][orgmode:gcr:2017-02-11:mara:E94F5A5F-72C0-4E05-9A2E-687951D63E7E]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_EA8B5E3D-0F0B-4BD8-A510-864EC04BABD7][org_gcr_2017-05-12_mara_EA8B5E3D-0F0B-4BD8-A510-864EC04BABD7]]
 (setq visual-line-fringe-indicators '(nil right-curly-arrow))
-;; orgmode:gcr:2017-02-11:mara:E94F5A5F-72C0-4E05-9A2E-687951D63E7E ends here
+;; org_gcr_2017-05-12_mara_EA8B5E3D-0F0B-4BD8-A510-864EC04BABD7 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:562D0238-DF23-44EB-9512-62EA99D6B6C1][orgmode:gcr:vela:562D0238-DF23-44EB-9512-62EA99D6B6C1]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_94E22B9A-B373-41AB-A8C9-E142CD2F6EED][org_gcr_2017-05-12_mara_94E22B9A-B373-41AB-A8C9-E142CD2F6EED]]
 (setq-default comment-start "> ")
-;; orgmode:gcr:vela:562D0238-DF23-44EB-9512-62EA99D6B6C1 ends here
+;; org_gcr_2017-05-12_mara_94E22B9A-B373-41AB-A8C9-E142CD2F6EED ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:B56D8E08-DF7C-4EBB-922E-EA215BD66C0D][orgmode:gcr:vela:B56D8E08-DF7C-4EBB-922E-EA215BD66C0D]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C][org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C]]
 (setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook R-mode-hook SAS-mode-hook graphviz-dot-mode-hook c-mode-common-hook php-mode-hook scad-mode-hook web-mode-hook js2-mode-hook json-mode-hook))
-;; orgmode:gcr:vela:B56D8E08-DF7C-4EBB-922E-EA215BD66C0D ends here
+;; org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:963C787F-BC23-4A6C-9637-3922541B26E2][orgmode:gcr:vela:963C787F-BC23-4A6C-9637-3922541B26E2]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86][org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86]]
 (setq help/hack-lisp-modes
       '(emacs-lisp-mode-hook
         ielm-mode-hook
         lisp-interaction-mode-hook
         scheme-mode-hook))
 (setq help/hack-modes (append help/hack-modes help/hack-lisp-modes))
-;; orgmode:gcr:vela:963C787F-BC23-4A6C-9637-3922541B26E2 ends here
+;; org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:9585BEED-D8EE-4B47-94FA-7E0C604B5804][orgmode:gcr:vela:9585BEED-D8EE-4B47-94FA-7E0C604B5804]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_02408658-D767-4D6E-8AAA-2BE1933BCBD1][org_gcr_2017-05-12_mara_02408658-D767-4D6E-8AAA-2BE1933BCBD1]]
 (use-package aggressive-indent
   :ensure t
   :config)
-;; orgmode:gcr:vela:9585BEED-D8EE-4B47-94FA-7E0C604B5804 ends here
+;; org_gcr_2017-05-12_mara_02408658-D767-4D6E-8AAA-2BE1933BCBD1 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:2B027700-7A37-4C26-BA3C-AAD0E6549F9F][orgmode:gcr:vela:2B027700-7A37-4C26-BA3C-AAD0E6549F9F]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_3AB5C00B-E0FF-40A1-9C3B-420CB4E8D417][org_gcr_2017-05-12_mara_3AB5C00B-E0FF-40A1-9C3B-420CB4E8D417]]
 (use-package smartparens-config
   :ensure smartparens
   :config
   (setq sp-show-pair-from-inside nil)
   :diminish smartparens-mode)
-;; orgmode:gcr:vela:2B027700-7A37-4C26-BA3C-AAD0E6549F9F ends here
+;; org_gcr_2017-05-12_mara_3AB5C00B-E0FF-40A1-9C3B-420CB4E8D417 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:A0515707-4727-4A01-82E3-01A41CAA841F][orgmode:gcr:vela:A0515707-4727-4A01-82E3-01A41CAA841F]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A3C53136-65BE-4771-A214-19E102E0158B][org_gcr_2017-05-12_mara_A3C53136-65BE-4771-A214-19E102E0158B]]
 (defun help/hack-prog*-mode-hook-fn ()
   (interactive)
   (help/text-prog*-setup)
@@ -1742,38 +1742,38 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 (let ()
   (--each help/hack-modes
     (add-hook it #'help/hack-prog*-mode-hook-fn)))
-;; orgmode:gcr:vela:A0515707-4727-4A01-82E3-01A41CAA841F ends here
+;; org_gcr_2017-05-12_mara_A3C53136-65BE-4771-A214-19E102E0158B ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:BDF6F6E5-D219-4C49-BB3F-D414A9741B11][orgmode:gcr:vela:BDF6F6E5-D219-4C49-BB3F-D414A9741B11]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C344E972-D31C-48F4-8E3B-83A799DE7D37][org_gcr_2017-05-12_mara_C344E972-D31C-48F4-8E3B-83A799DE7D37]]
 (setq initial-scratch-message ";; Happy Hacking 🖖\n\n")
-;; orgmode:gcr:vela:BDF6F6E5-D219-4C49-BB3F-D414A9741B11 ends here
+;; org_gcr_2017-05-12_mara_C344E972-D31C-48F4-8E3B-83A799DE7D37 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:3A3302AF-D60F-4BA8-BD05-1BAA1496F497][orgmode:gcr:vela:3A3302AF-D60F-4BA8-BD05-1BAA1496F497]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A929CBE0-E6D3-4A45-8341-15F50EF2F93A][org_gcr_2017-05-12_mara_A929CBE0-E6D3-4A45-8341-15F50EF2F93A]]
 (setq initial-major-mode 'emacs-lisp-mode)
-;; orgmode:gcr:vela:3A3302AF-D60F-4BA8-BD05-1BAA1496F497 ends here
+;; org_gcr_2017-05-12_mara_A929CBE0-E6D3-4A45-8341-15F50EF2F93A ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:635E416C-A589-4EA9-83C9-E5512E5632AF][orgmode:gcr:vela:635E416C-A589-4EA9-83C9-E5512E5632AF]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1F06F375-41F5-48FA-B787-8B937BDF56FC][org_gcr_2017-05-12_mara_1F06F375-41F5-48FA-B787-8B937BDF56FC]]
 (with-current-buffer "*scratch*"
   (emacs-lock-mode 'kill))
-;; orgmode:gcr:vela:635E416C-A589-4EA9-83C9-E5512E5632AF ends here
+;; org_gcr_2017-05-12_mara_1F06F375-41F5-48FA-B787-8B937BDF56FC ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:1879B1A3-AD2D-4743-B4E7-94CDFA57E47A][orgmode:gcr:vela:1879B1A3-AD2D-4743-B4E7-94CDFA57E47A]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_2757B16C-18ED-4F29-8DFD-CE51B930BA81][org_gcr_2017-05-12_mara_2757B16C-18ED-4F29-8DFD-CE51B930BA81]]
 (use-package persistent-scratch
   :config
   (persistent-scratch-setup-default))
-;; orgmode:gcr:vela:1879B1A3-AD2D-4743-B4E7-94CDFA57E47A ends here
+;; org_gcr_2017-05-12_mara_2757B16C-18ED-4F29-8DFD-CE51B930BA81 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:orgmode:gcr:vela:12985341-6F04-4A94-A41B-4BF3BA5E5C9D][orgmode:gcr:vela:orgmode:gcr:vela:12985341-6F04-4A94-A41B-4BF3BA5E5C9D]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BEA970EF-78FA-448D-96B3-1E135640D16A][org_gcr_2017-05-12_mara_BEA970EF-78FA-448D-96B3-1E135640D16A]]
 (use-package lexbind-mode)
-;; orgmode:gcr:vela:orgmode:gcr:vela:12985341-6F04-4A94-A41B-4BF3BA5E5C9D ends here
+;; org_gcr_2017-05-12_mara_BEA970EF-78FA-448D-96B3-1E135640D16A ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:13D25F47-7634-4B2B-A3C6-EF335DFC215F][orgmode:gcr:vela:13D25F47-7634-4B2B-A3C6-EF335DFC215F]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_26AEDAD1-36FC-490D-92F4-86E0966467E2][org_gcr_2017-05-12_mara_26AEDAD1-36FC-490D-92F4-86E0966467E2]]
 (use-package elisp-slime-nav
   :ensure t
   :diminish elisp-slime-nav-mode)
-;; orgmode:gcr:vela:13D25F47-7634-4B2B-A3C6-EF335DFC215F ends here
+;; org_gcr_2017-05-12_mara_26AEDAD1-36FC-490D-92F4-86E0966467E2 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:orgmode:gcr:vela:FF124A1E-2344-472F-AB1D-B5093C610102][orgmode:gcr:vela:orgmode:gcr:vela:FF124A1E-2344-472F-AB1D-B5093C610102]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D8F41BFE-D2F5-4B86-BFED-B3DE5EA2133C][org_gcr_2017-05-12_mara_D8F41BFE-D2F5-4B86-BFED-B3DE5EA2133C]]
 (defun help/elisp-eval-buffer ()
   "Intelligently evaluate an Elisp buffer."
   (interactive)
@@ -1818,36 +1818,36 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
     (add-hook it #'help/emacs-lisp-mode-hook-fn)))
 
 (add-hook 'ielm-mode-hook #'help/ielm-mode-hook-fn)
-;; orgmode:gcr:vela:orgmode:gcr:vela:FF124A1E-2344-472F-AB1D-B5093C610102 ends here
+;; org_gcr_2017-05-12_mara_D8F41BFE-D2F5-4B86-BFED-B3DE5EA2133C ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:332AF8C9-6442-4C8D-9750-09C648A4AAD4][orgmode:gcr:vela:332AF8C9-6442-4C8D-9750-09C648A4AAD4]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7DB4D819-0D2D-482B-AA02-9CB14F6DA288][org_gcr_2017-05-12_mara_7DB4D819-0D2D-482B-AA02-9CB14F6DA288]]
 (use-package elisp-refs
   :ensure t)
-;; orgmode:gcr:vela:332AF8C9-6442-4C8D-9750-09C648A4AAD4 ends here
+;; org_gcr_2017-05-12_mara_7DB4D819-0D2D-482B-AA02-9CB14F6DA288 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:D05FDD04-0A20-4CB0-BFF6-CA02FFB0F39F][orgmode:gcr:vela:D05FDD04-0A20-4CB0-BFF6-CA02FFB0F39F]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_2B359320-563A-4E80-BB8E-04965E20EBEE][org_gcr_2017-05-12_mara_2B359320-563A-4E80-BB8E-04965E20EBEE]]
 (use-package package-lint
   :ensure t)
 
 (use-package flycheck-package
   :ensure t
   :after (package-lint))
-;; orgmode:gcr:vela:D05FDD04-0A20-4CB0-BFF6-CA02FFB0F39F ends here
+;; org_gcr_2017-05-12_mara_2B359320-563A-4E80-BB8E-04965E20EBEE ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:7CEA216B-6A18-47F6-B1DE-327CFA8A591A][orgmode:gcr:vela:7CEA216B-6A18-47F6-B1DE-327CFA8A591A]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7E2C79D7-3C27-4289-8B07-FB649CFB1C58][org_gcr_2017-05-12_mara_7E2C79D7-3C27-4289-8B07-FB649CFB1C58]]
 (define-key emacs-lisp-mode-map (kbd "s-p") #'describe-thing-in-popup)
-;; orgmode:gcr:vela:7CEA216B-6A18-47F6-B1DE-327CFA8A591A ends here
+;; org_gcr_2017-05-12_mara_7E2C79D7-3C27-4289-8B07-FB649CFB1C58 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:AB26182E-A169-4FB9-BA68-E9F7231069C1][orgmode:gcr:vela:AB26182E-A169-4FB9-BA68-E9F7231069C1]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9D21E326-1742-4DD0-BDF9-624D21873F92][org_gcr_2017-05-12_mara_9D21E326-1742-4DD0-BDF9-624D21873F92]]
 (setq org-babel-min-lines-for-block-output 0)
-;; orgmode:gcr:vela:AB26182E-A169-4FB9-BA68-E9F7231069C1 ends here
+;; org_gcr_2017-05-12_mara_9D21E326-1742-4DD0-BDF9-624D21873F92 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:8F3861FD-B2F6-4618-8E70-026316855E67][orgmode:gcr:vela:8F3861FD-B2F6-4618-8E70-026316855E67]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9427EB38-B623-4B99-B562-C2FD737EB0D7][org_gcr_2017-05-12_mara_9427EB38-B623-4B99-B562-C2FD737EB0D7]]
 (setq org-edit-src-auto-save-idle-delay 0)
 (setq org-edit-src-turn-on-auto-save nil)
-;; orgmode:gcr:vela:8F3861FD-B2F6-4618-8E70-026316855E67 ends here
+;; org_gcr_2017-05-12_mara_9427EB38-B623-4B99-B562-C2FD737EB0D7 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:11B7C941-8AA4-471A-B4A4-BCEBFE850206][orgmode:gcr:vela:11B7C941-8AA4-471A-B4A4-BCEBFE850206]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_780AFFD3-B8F3-4D0F-A3C1-DB30C2182730][org_gcr_2017-05-12_mara_780AFFD3-B8F3-4D0F-A3C1-DB30C2182730]]
 (defun help/org-babel-after-execute-hook ()
   "HELP settings for the `org-babel-after-execute-hook'.
 
@@ -1858,17 +1858,17 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
   (org-redisplay-inline-images))
 
 (add-hook 'org-babel-after-execute-hook #'help/org-babel-after-execute-hook)
-;; orgmode:gcr:vela:11B7C941-8AA4-471A-B4A4-BCEBFE850206 ends here
+;; org_gcr_2017-05-12_mara_780AFFD3-B8F3-4D0F-A3C1-DB30C2182730 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:9947D738-D140-4CBF-BB6D-21E2FF58BD24][orgmode:gcr:vela:9947D738-D140-4CBF-BB6D-21E2FF58BD24]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F0536A1B-195D-4AB9-90B8-D73651740849][org_gcr_2017-05-12_mara_F0536A1B-195D-4AB9-90B8-D73651740849]]
 (setq org-confirm-babel-evaluate nil)
-;; orgmode:gcr:vela:9947D738-D140-4CBF-BB6D-21E2FF58BD24 ends here
+;; org_gcr_2017-05-12_mara_F0536A1B-195D-4AB9-90B8-D73651740849 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:6CE707AD-A340-4B63-B747-8692E0DFF41C][orgmode:gcr:vela:6CE707AD-A340-4B63-B747-8692E0DFF41C]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B804AA93-9D3B-4DC8-BFA3-658DD1FB0601][org_gcr_2017-05-12_mara_B804AA93-9D3B-4DC8-BFA3-658DD1FB0601]]
 (setq org-src-tab-acts-natively nil)
-;; orgmode:gcr:vela:6CE707AD-A340-4B63-B747-8692E0DFF41C ends here
+;; org_gcr_2017-05-12_mara_B804AA93-9D3B-4DC8-BFA3-658DD1FB0601 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:BB8A752F-713B-4450-98DC-CE04957577EF][orgmode:gcr:vela:BB8A752F-713B-4450-98DC-CE04957577EF]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9DE5CE12-157D-4516-9FB1-7DAFA02C571E][org_gcr_2017-05-12_mara_9DE5CE12-157D-4516-9FB1-7DAFA02C571E]]
 (setq org-todo-keywords
       '((sequence
          "TODO(t!)"
@@ -1880,26 +1880,26 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
          "DONE(d@)"
          "CANCELED(c@)"
          )))
-;; orgmode:gcr:vela:BB8A752F-713B-4450-98DC-CE04957577EF ends here
+;; org_gcr_2017-05-12_mara_9DE5CE12-157D-4516-9FB1-7DAFA02C571E ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:4D8598C9-9732-4D76-97F5-3A3F88930741][orgmode:gcr:vela:4D8598C9-9732-4D76-97F5-3A3F88930741]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B237C004-4827-4C39-A9B9-4D0FF9B01053][org_gcr_2017-05-12_mara_B237C004-4827-4C39-A9B9-4D0FF9B01053]]
 (setq org-log-states-order-reversed nil)
-;; orgmode:gcr:vela:4D8598C9-9732-4D76-97F5-3A3F88930741 ends here
+;; org_gcr_2017-05-12_mara_B237C004-4827-4C39-A9B9-4D0FF9B01053 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:D2641303-A028-4760-9838-60A2E1F39A85][orgmode:gcr:vela:D2641303-A028-4760-9838-60A2E1F39A85]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_32AAD797-A7D7-416D-9CE2-425EB96781A7][org_gcr_2017-05-12_mara_32AAD797-A7D7-416D-9CE2-425EB96781A7]]
 (setq org-log-into-drawer t)
-;; orgmode:gcr:vela:D2641303-A028-4760-9838-60A2E1F39A85 ends here
+;; org_gcr_2017-05-12_mara_32AAD797-A7D7-416D-9CE2-425EB96781A7 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:EF4EC62D-3DF8-476F-B30B-C76125A95940][orgmode:gcr:vela:EF4EC62D-3DF8-476F-B30B-C76125A95940]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B6F42ECC-14C0-4C60-8E00-6BBF883B3043][org_gcr_2017-05-12_mara_B6F42ECC-14C0-4C60-8E00-6BBF883B3043]]
 (setq org-archive-mark-done nil)
-;; orgmode:gcr:vela:EF4EC62D-3DF8-476F-B30B-C76125A95940 ends here
+;; org_gcr_2017-05-12_mara_B6F42ECC-14C0-4C60-8E00-6BBF883B3043 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:orgmode:gcr:vela:440C909C-88FA-48D4-8158-EF32FF1B21FB][orgmode:gcr:vela:orgmode:gcr:vela:440C909C-88FA-48D4-8158-EF32FF1B21FB]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_DEE287C2-5B88-4015-9B4F-57DA0F922B0C][org_gcr_2017-05-12_mara_DEE287C2-5B88-4015-9B4F-57DA0F922B0C]]
 (setq org-refile-targets '((nil . (:maxlevel . 10))))
 (setq org-refile-use-outline-path t)
-;; orgmode:gcr:vela:orgmode:gcr:vela:440C909C-88FA-48D4-8158-EF32FF1B21FB ends here
+;; org_gcr_2017-05-12_mara_DEE287C2-5B88-4015-9B4F-57DA0F922B0C ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:A5D38FFE-32B1-4691-BFC8-02725D112F2E][orgmode:gcr:vela:A5D38FFE-32B1-4691-BFC8-02725D112F2E]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7B11F38B-157A-400A-8F93-68E610D47128][org_gcr_2017-05-12_mara_7B11F38B-157A-400A-8F93-68E610D47128]]
 (defun help/org-refile (arg)
   "Refile to /level/ in /file/ by using use /prefix args/: 2+/this/[none], 1+/this/1, 1/choose-file/2"
   (interactive "P")
@@ -1922,25 +1922,25 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
                       (find-file xfil)))))))
    (t
     (call-interactively 'org-refile))))
-;; orgmode:gcr:vela:A5D38FFE-32B1-4691-BFC8-02725D112F2E ends here
+;; org_gcr_2017-05-12_mara_7B11F38B-157A-400A-8F93-68E610D47128 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:8FA9026B-ACAF-496C-B5F6-1F98ABA4FA28][orgmode:gcr:vela:8FA9026B-ACAF-496C-B5F6-1F98ABA4FA28]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_29930A09-6462-4BE7-9AE2-18DC1858666C][org_gcr_2017-05-12_mara_29930A09-6462-4BE7-9AE2-18DC1858666C]]
 (setq org-reverse-note-order t)
-;; orgmode:gcr:vela:8FA9026B-ACAF-496C-B5F6-1F98ABA4FA28 ends here
+;; org_gcr_2017-05-12_mara_29930A09-6462-4BE7-9AE2-18DC1858666C ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:orgmode:gcr:vela:17D0BD24-8C36-4371-91CC-380176017D86][orgmode:gcr:vela:orgmode:gcr:vela:17D0BD24-8C36-4371-91CC-380176017D86]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E0E01F45-C01E-4F6E-AE8D-1B0073ECB377][org_gcr_2017-05-12_mara_E0E01F45-C01E-4F6E-AE8D-1B0073ECB377]]
 (setq org-outline-path-complete-in-steps nil)
-;; orgmode:gcr:vela:orgmode:gcr:vela:17D0BD24-8C36-4371-91CC-380176017D86 ends here
+;; org_gcr_2017-05-12_mara_E0E01F45-C01E-4F6E-AE8D-1B0073ECB377 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:C1A56043-04E5-4C41-A7E3-7E1C5E5301F9][orgmode:gcr:vela:C1A56043-04E5-4C41-A7E3-7E1C5E5301F9]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_07650079-9AE1-4291-97A3-BCFD0628C95D][org_gcr_2017-05-12_mara_07650079-9AE1-4291-97A3-BCFD0628C95D]]
 (setq org-refile-allow-creating-parent-nodes nil)
-;; orgmode:gcr:vela:C1A56043-04E5-4C41-A7E3-7E1C5E5301F9 ends here
+;; org_gcr_2017-05-12_mara_07650079-9AE1-4291-97A3-BCFD0628C95D ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:5969E83F-EC85-4F36-81F9-0F74BD197075][orgmode:gcr:vela:5969E83F-EC85-4F36-81F9-0F74BD197075]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7E513EE1-3EF9-415B-BB94-2135CBFB0E74][org_gcr_2017-05-12_mara_7E513EE1-3EF9-415B-BB94-2135CBFB0E74]]
 (setq org-log-refile 'note)
-;; orgmode:gcr:vela:5969E83F-EC85-4F36-81F9-0F74BD197075 ends here
+;; org_gcr_2017-05-12_mara_7E513EE1-3EF9-415B-BB94-2135CBFB0E74 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:2017-02-05:mara:6F6B518A-9605-4E4D-8A9C-851A0A51E4E7][orgmode:gcr:2017-02-05:mara:6F6B518A-9605-4E4D-8A9C-851A0A51E4E7]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1F938B98-B056-4381-833C-2C9B835B1C23][org_gcr_2017-05-12_mara_1F938B98-B056-4381-833C-2C9B835B1C23]]
 (defun org-read-entry-property-name ()
   "Read a property name from the current entry."
   (let ((completion-ignore-case t)
@@ -1971,126 +1971,126 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
                      (org-read-entry-property-name))))
         ;; set property
         (org-set-property prop val))))
-;; orgmode:gcr:2017-02-05:mara:6F6B518A-9605-4E4D-8A9C-851A0A51E4E7 ends here
+;; org_gcr_2017-05-12_mara_1F938B98-B056-4381-833C-2C9B835B1C23 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:2017-03-11:mara:5DA439B7-55B1-4C3F-82FF-F2D4A9889DCC][orgmode:gcr:2017-03-11:mara:5DA439B7-55B1-4C3F-82FF-F2D4A9889DCC]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8CE235AC-A7C4-48DF-8C97-46CC7F31CDF4][org_gcr_2017-05-12_mara_8CE235AC-A7C4-48DF-8C97-46CC7F31CDF4]]
 (use-package org-table-sticky-header
   :ensure t
   :diminish org-table-sticky-header-mode
   :config
   (add-hook 'org-mode-hook #'org-table-sticky-header-mode))
-;; orgmode:gcr:2017-03-11:mara:5DA439B7-55B1-4C3F-82FF-F2D4A9889DCC ends here
+;; org_gcr_2017-05-12_mara_8CE235AC-A7C4-48DF-8C97-46CC7F31CDF4 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:548D2D49-98E0-456B-91BC-37D0C0BC3557][orgmode:gcr:vela:548D2D49-98E0-456B-91BC-37D0C0BC3557]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9A50B1B6-9446-4CE2-AC58-5ED8878E9041][org_gcr_2017-05-12_mara_9A50B1B6-9446-4CE2-AC58-5ED8878E9041]]
 (setq org-startup-with-inline-images (display-graphic-p))
-;; orgmode:gcr:vela:548D2D49-98E0-456B-91BC-37D0C0BC3557 ends here
+;; org_gcr_2017-05-12_mara_9A50B1B6-9446-4CE2-AC58-5ED8878E9041 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:CE97A1D8-07E2-4445-80B9-3C91ACFE7FB8][orgmode:gcr:vela:CE97A1D8-07E2-4445-80B9-3C91ACFE7FB8]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_34C0D995-C26A-4FAC-9281-8F1D1BBB16BD][org_gcr_2017-05-12_mara_34C0D995-C26A-4FAC-9281-8F1D1BBB16BD]]
 (setq org-completion-use-ido t)
 (setq org-completion-use-iswitchb nil)
-;; orgmode:gcr:vela:CE97A1D8-07E2-4445-80B9-3C91ACFE7FB8 ends here
+;; org_gcr_2017-05-12_mara_34C0D995-C26A-4FAC-9281-8F1D1BBB16BD ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:232DFCF9-BFC7-4022-8B93-09F323CB1BA8][orgmode:gcr:vela:232DFCF9-BFC7-4022-8B93-09F323CB1BA8]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C5BBF231-E413-4A62-9367-A25932090329][org_gcr_2017-05-12_mara_C5BBF231-E413-4A62-9367-A25932090329]]
 (setq org-use-speed-commands t)
-;; orgmode:gcr:vela:232DFCF9-BFC7-4022-8B93-09F323CB1BA8 ends here
+;; org_gcr_2017-05-12_mara_C5BBF231-E413-4A62-9367-A25932090329 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:F5ABA576-FB0D-4FCE-A000-AA5E38B7EB3D][orgmode:gcr:vela:F5ABA576-FB0D-4FCE-A000-AA5E38B7EB3D]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D874DF5C-61BE-4EF9-97F7-5C77927F8656][org_gcr_2017-05-12_mara_D874DF5C-61BE-4EF9-97F7-5C77927F8656]]
 (setq org-confirm-shell-link-function 'y-or-n-p)
-;; orgmode:gcr:vela:F5ABA576-FB0D-4FCE-A000-AA5E38B7EB3D ends here
+;; org_gcr_2017-05-12_mara_D874DF5C-61BE-4EF9-97F7-5C77927F8656 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:13BBCE85-2D3B-4903-8098-EB565B5CB708][orgmode:gcr:vela:13BBCE85-2D3B-4903-8098-EB565B5CB708]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7715C738-ADCF-4DA7-BB26-DF37B5A55460][org_gcr_2017-05-12_mara_7715C738-ADCF-4DA7-BB26-DF37B5A55460]]
 (setq org-confirm-elisp-link-function 'y-or-n-p)
-;; orgmode:gcr:vela:13BBCE85-2D3B-4903-8098-EB565B5CB708 ends here
+;; org_gcr_2017-05-12_mara_7715C738-ADCF-4DA7-BB26-DF37B5A55460 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:4AE6A326-034C-475A-BC95-877D528A94D6][orgmode:gcr:vela:4AE6A326-034C-475A-BC95-877D528A94D6]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_40EE32EF-D461-4A4C-BDDA-5203A0EB5279][org_gcr_2017-05-12_mara_40EE32EF-D461-4A4C-BDDA-5203A0EB5279]]
 (setq org-enforce-todo-dependencies t)
-;; orgmode:gcr:vela:4AE6A326-034C-475A-BC95-877D528A94D6 ends here
+;; org_gcr_2017-05-12_mara_40EE32EF-D461-4A4C-BDDA-5203A0EB5279 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:BA1565BE-2BF1-4121-96BD-A3F7462676CC][orgmode:gcr:vela:BA1565BE-2BF1-4121-96BD-A3F7462676CC]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_065D8A70-E573-4204-B75B-B69F81926188][org_gcr_2017-05-12_mara_065D8A70-E573-4204-B75B-B69F81926188]]
 (when (display-graphic-p)
   (use-package org-mouse))
-;; orgmode:gcr:vela:BA1565BE-2BF1-4121-96BD-A3F7462676CC ends here
+;; org_gcr_2017-05-12_mara_065D8A70-E573-4204-B75B-B69F81926188 ends here
 
-;; [[file:~/src/help/help.org::42f9ce2d-591D-4BDD-998E-C85E0B7B5DF5][42f9ce2d-591D-4BDD-998E-C85E0B7B5DF5]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BD01DD8A-9BA2-4240-8B63-6479D1C868CC][org_gcr_2017-05-12_mara_BD01DD8A-9BA2-4240-8B63-6479D1C868CC]]
 (setq org-ellipsis "…")
-;; 42f9ce2d-591D-4BDD-998E-C85E0B7B5DF5 ends here
+;; org_gcr_2017-05-12_mara_BD01DD8A-9BA2-4240-8B63-6479D1C868CC ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:A0FB5129-6EF9-4D5F-A35A-CB5505C8FD6F][orgmode:gcr:vela:A0FB5129-6EF9-4D5F-A35A-CB5505C8FD6F]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D567F41E-C336-402E-A1A3-EB8D4F91CBDC][org_gcr_2017-05-12_mara_D567F41E-C336-402E-A1A3-EB8D4F91CBDC]]
 (setq org-hide-leading-stars t)
-;; orgmode:gcr:vela:A0FB5129-6EF9-4D5F-A35A-CB5505C8FD6F ends here
+;; org_gcr_2017-05-12_mara_D567F41E-C336-402E-A1A3-EB8D4F91CBDC ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:6801CC24-7220-45DF-BF00-0E3649F2AB4C][orgmode:gcr:vela:6801CC24-7220-45DF-BF00-0E3649F2AB4C]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_95F90F5A-E6EB-43BE-9EF1-B3F0CCE4B331][org_gcr_2017-05-12_mara_95F90F5A-E6EB-43BE-9EF1-B3F0CCE4B331]]
 (setq org-adapt-indentation nil)
-;; orgmode:gcr:vela:6801CC24-7220-45DF-BF00-0E3649F2AB4C ends here
+;; org_gcr_2017-05-12_mara_95F90F5A-E6EB-43BE-9EF1-B3F0CCE4B331 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:4FDB1A19-4906-48EE-B7CB-26B3E9301964][orgmode:gcr:vela:4FDB1A19-4906-48EE-B7CB-26B3E9301964]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_563BB770-66CC-431C-98DE-BD3B5B5762AC][org_gcr_2017-05-12_mara_563BB770-66CC-431C-98DE-BD3B5B5762AC]]
 (setq org-fontify-emphasized-text t)
-;; orgmode:gcr:vela:4FDB1A19-4906-48EE-B7CB-26B3E9301964 ends here
+;; org_gcr_2017-05-12_mara_563BB770-66CC-431C-98DE-BD3B5B5762AC ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:D2453829-D976-4FE0-B517-7CCD8C3C1A2C][orgmode:gcr:vela:D2453829-D976-4FE0-B517-7CCD8C3C1A2C]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5A4B6DC2-4F16-4177-9C8E-0D0CFDE2B24C][org_gcr_2017-05-12_mara_5A4B6DC2-4F16-4177-9C8E-0D0CFDE2B24C]]
 (setq org-pretty-entities t)
-;; orgmode:gcr:vela:D2453829-D976-4FE0-B517-7CCD8C3C1A2C ends here
+;; org_gcr_2017-05-12_mara_5A4B6DC2-4F16-4177-9C8E-0D0CFDE2B24C ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:93A7C08F-762D-43E9-8E56-4F875BF47464][orgmode:gcr:vela:93A7C08F-762D-43E9-8E56-4F875BF47464]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_6488365E-DF20-4300-A979-BA8CE807BBE4][org_gcr_2017-05-12_mara_6488365E-DF20-4300-A979-BA8CE807BBE4]]
 (setq org-use-sub-superscripts '{})
-;; orgmode:gcr:vela:93A7C08F-762D-43E9-8E56-4F875BF47464 ends here
+;; org_gcr_2017-05-12_mara_6488365E-DF20-4300-A979-BA8CE807BBE4 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:B5A535CA-E024-4592-A787-734032E48860][orgmode:gcr:vela:B5A535CA-E024-4592-A787-734032E48860]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8D163D72-07DD-42F2-93BA-9C70EC04D22F][org_gcr_2017-05-12_mara_8D163D72-07DD-42F2-93BA-9C70EC04D22F]]
 (setq org-highlight-latex-and-related '(latex script entities))
-;; orgmode:gcr:vela:B5A535CA-E024-4592-A787-734032E48860 ends here
+;; org_gcr_2017-05-12_mara_8D163D72-07DD-42F2-93BA-9C70EC04D22F ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:834535C5-DCEA-47D3-B251-76DADE4CE897][orgmode:gcr:vela:834535C5-DCEA-47D3-B251-76DADE4CE897]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7A828354-84C9-42DE-B123-E9936D2CC914][org_gcr_2017-05-12_mara_7A828354-84C9-42DE-B123-E9936D2CC914]]
 (setq org-footnote-define-inline t)
 (setq org-footnote-auto-label 'random)
 (setq org-footnote-auto-adjust nil)
 (setq org-footnote-section nil)
-;; orgmode:gcr:vela:834535C5-DCEA-47D3-B251-76DADE4CE897 ends here
+;; org_gcr_2017-05-12_mara_7A828354-84C9-42DE-B123-E9936D2CC914 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:939BFF91-F7AC-446A-B797-6B294D364082][orgmode:gcr:vela:939BFF91-F7AC-446A-B797-6B294D364082]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C7174763-7D1F-491E-9395-8C4100AEA78D][org_gcr_2017-05-12_mara_C7174763-7D1F-491E-9395-8C4100AEA78D]]
 (setq org-catch-invisible-edits 'error)
-;; orgmode:gcr:vela:939BFF91-F7AC-446A-B797-6B294D364082 ends here
+;; org_gcr_2017-05-12_mara_C7174763-7D1F-491E-9395-8C4100AEA78D ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:D8426EE3-702E-4008-B2F5-0A839E0B9C27][orgmode:gcr:vela:D8426EE3-702E-4008-B2F5-0A839E0B9C27]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E8933212-1893-466F-95D1-BE41ADD2DD68][org_gcr_2017-05-12_mara_E8933212-1893-466F-95D1-BE41ADD2DD68]]
 (setq org-loop-over-headlines-in-active-region t)
-;; orgmode:gcr:vela:D8426EE3-702E-4008-B2F5-0A839E0B9C27 ends here
+;; org_gcr_2017-05-12_mara_E8933212-1893-466F-95D1-BE41ADD2DD68 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:EB229153-0540-4EFE-BB44-D44EE0D0E9B8][orgmode:gcr:vela:EB229153-0540-4EFE-BB44-D44EE0D0E9B8]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_018F43BF-99DA-4632-B5B0-A291CEBBA6B5][org_gcr_2017-05-12_mara_018F43BF-99DA-4632-B5B0-A291CEBBA6B5]]
 (setq org-startup-folded "nofold")
-;; orgmode:gcr:vela:EB229153-0540-4EFE-BB44-D44EE0D0E9B8 ends here
+;; org_gcr_2017-05-12_mara_018F43BF-99DA-4632-B5B0-A291CEBBA6B5 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:862CCD19-46D8-47E9-85CF-43F0EE9E8404][orgmode:gcr:vela:862CCD19-46D8-47E9-85CF-43F0EE9E8404]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_85DCD661-A0DA-4AC2-8EB2-5BD9A4C2D0CB][org_gcr_2017-05-12_mara_85DCD661-A0DA-4AC2-8EB2-5BD9A4C2D0CB]]
 (setq org-image-actual-width t)
-;; orgmode:gcr:vela:862CCD19-46D8-47E9-85CF-43F0EE9E8404 ends here
+;; org_gcr_2017-05-12_mara_85DCD661-A0DA-4AC2-8EB2-5BD9A4C2D0CB ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:4F8C7477-3CE5-4C83-9C00-FCBAAECEB5E8][orgmode:gcr:vela:4F8C7477-3CE5-4C83-9C00-FCBAAECEB5E8]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_2DD6E6FC-375C-4FA5-BFA4-C6C9B0EAB483][org_gcr_2017-05-12_mara_2DD6E6FC-375C-4FA5-BFA4-C6C9B0EAB483]]
 (setq org-hide-emphasis-markers t)
-;; orgmode:gcr:vela:4F8C7477-3CE5-4C83-9C00-FCBAAECEB5E8 ends here
+;; org_gcr_2017-05-12_mara_2DD6E6FC-375C-4FA5-BFA4-C6C9B0EAB483 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:78196A51-0117-4C66-8616-1508D81568A7][orgmode:gcr:vela:78196A51-0117-4C66-8616-1508D81568A7]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B5F4B79C-70AD-46D1-AAAF-A4E31091F9B2][org_gcr_2017-05-12_mara_B5F4B79C-70AD-46D1-AAAF-A4E31091F9B2]]
 (setq org-startup-align-all-tables t)
-;; orgmode:gcr:vela:78196A51-0117-4C66-8616-1508D81568A7 ends here
+;; org_gcr_2017-05-12_mara_B5F4B79C-70AD-46D1-AAAF-A4E31091F9B2 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:0102E34E-3098-48E9-AAB9-F5433AE37D66][orgmode:gcr:vela:0102E34E-3098-48E9-AAB9-F5433AE37D66]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_75CA3C3E-CFA6-4FA5-98DA-7EC394781A17][org_gcr_2017-05-12_mara_75CA3C3E-CFA6-4FA5-98DA-7EC394781A17]]
 (setq org-html-checkbox-type 'unicode)
-;; orgmode:gcr:vela:0102E34E-3098-48E9-AAB9-F5433AE37D66 ends here
+;; org_gcr_2017-05-12_mara_75CA3C3E-CFA6-4FA5-98DA-7EC394781A17 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:A1636BE6-8477-4085-BB14-E0870A19A440][orgmode:gcr:vela:A1636BE6-8477-4085-BB14-E0870A19A440]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F04CC035-CFB3-47DB-B1A0-9E58ECE5B01D][org_gcr_2017-05-12_mara_F04CC035-CFB3-47DB-B1A0-9E58ECE5B01D]]
 (setq org-src-fontify-natively nil)
-;; orgmode:gcr:vela:A1636BE6-8477-4085-BB14-E0870A19A440 ends here
+;; org_gcr_2017-05-12_mara_F04CC035-CFB3-47DB-B1A0-9E58ECE5B01D ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:59E79DBC-FDA4-4F1A-9306-DB9204233A7C][orgmode:gcr:vela:59E79DBC-FDA4-4F1A-9306-DB9204233A7C]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_829BF364-D929-4B12-BFB7-82C6F4105CDA][org_gcr_2017-05-12_mara_829BF364-D929-4B12-BFB7-82C6F4105CDA]]
 (setq org-src-strip-leading-and-trailing-blank-lines t)
-;; orgmode:gcr:vela:59E79DBC-FDA4-4F1A-9306-DB9204233A7C ends here
+;; org_gcr_2017-05-12_mara_829BF364-D929-4B12-BFB7-82C6F4105CDA ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:767547FC-FCB3-433C-AC2E-4240D040F5F8][orgmode:gcr:vela:767547FC-FCB3-433C-AC2E-4240D040F5F8]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A4769342-BBC0-40C1-B144-BD24CE74523C][org_gcr_2017-05-12_mara_A4769342-BBC0-40C1-B144-BD24CE74523C]]
 (setq org-src-window-setup 'current-window)
-;; orgmode:gcr:vela:767547FC-FCB3-433C-AC2E-4240D040F5F8 ends here
+;; org_gcr_2017-05-12_mara_A4769342-BBC0-40C1-B144-BD24CE74523C ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:C0FFD815-3AB7-4101-B1E8-D73A10026CB4][orgmode:gcr:vela:C0FFD815-3AB7-4101-B1E8-D73A10026CB4]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7120E516-C6D1-4FD5-A925-7F79B3FE9323][org_gcr_2017-05-12_mara_7120E516-C6D1-4FD5-A925-7F79B3FE9323]]
 (setq org-babel-no-eval-on-ctrl-c-ctrl-c t)
-;; orgmode:gcr:vela:C0FFD815-3AB7-4101-B1E8-D73A10026CB4 ends here
+;; org_gcr_2017-05-12_mara_7120E516-C6D1-4FD5-A925-7F79B3FE9323 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:C1F1C610-AC69-40E8-AD2F-EB6C849B40CB][orgmode:gcr:vela:C1F1C610-AC69-40E8-AD2F-EB6C849B40CB]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E4B28E49-C537-4BA9-B929-A638DBFEED94][org_gcr_2017-05-12_mara_E4B28E49-C537-4BA9-B929-A638DBFEED94]]
 (defun help/vc-next-action ()
   "If in org source block, exit it before `vc-next-action'."
   (interactive)
@@ -2107,59 +2107,59 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
           (error nil))
     (org-edit-src-exit))
   (magit-status))
-;; orgmode:gcr:vela:C1F1C610-AC69-40E8-AD2F-EB6C849B40CB ends here
+;; org_gcr_2017-05-12_mara_E4B28E49-C537-4BA9-B929-A638DBFEED94 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:727834EF-DF94-4190-98AC-B791FCCDE7E3][orgmode:gcr:vela:727834EF-DF94-4190-98AC-B791FCCDE7E3]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1AE94FA9-77C0-4A30-8A70-AFAFD4E4011F][org_gcr_2017-05-12_mara_1AE94FA9-77C0-4A30-8A70-AFAFD4E4011F]]
 (setq org-edit-src-code nil)
-;; orgmode:gcr:vela:727834EF-DF94-4190-98AC-B791FCCDE7E3 ends here
+;; org_gcr_2017-05-12_mara_1AE94FA9-77C0-4A30-8A70-AFAFD4E4011F ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:593A037F-9615-47CA-9C13-5BC88074F24D][orgmode:gcr:vela:593A037F-9615-47CA-9C13-5BC88074F24D]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_CE6FE001-F609-4096-8807-9AB65010AD53][org_gcr_2017-05-12_mara_CE6FE001-F609-4096-8807-9AB65010AD53]]
 (use-package wrap-region
   :ensure t
   :config
   :diminish wrap-region-mode
   :config
   (add-hook 'org-mode-hook 'wrap-region-mode))
-;; orgmode:gcr:vela:593A037F-9615-47CA-9C13-5BC88074F24D ends here
+;; org_gcr_2017-05-12_mara_CE6FE001-F609-4096-8807-9AB65010AD53 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:8055DBFC-C839-4EED-BA59-E56D2E05F027][orgmode:gcr:vela:8055DBFC-C839-4EED-BA59-E56D2E05F027]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_DE1AA644-BCAA-4F1E-AF59-157250A15171][org_gcr_2017-05-12_mara_DE1AA644-BCAA-4F1E-AF59-157250A15171]]
 (wrap-region-add-wrapper "*" "*" nil 'org-mode)
-;; orgmode:gcr:vela:8055DBFC-C839-4EED-BA59-E56D2E05F027 ends here
+;; org_gcr_2017-05-12_mara_DE1AA644-BCAA-4F1E-AF59-157250A15171 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:15774582-183E-4625-9BDB-E36D3A7B2AFE][orgmode:gcr:vela:15774582-183E-4625-9BDB-E36D3A7B2AFE]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_79D2E885-5A18-486B-BA80-C36C0B78972E][org_gcr_2017-05-12_mara_79D2E885-5A18-486B-BA80-C36C0B78972E]]
 (wrap-region-add-wrapper "/" "/" nil 'org-mode)
-;; orgmode:gcr:vela:15774582-183E-4625-9BDB-E36D3A7B2AFE ends here
+;; org_gcr_2017-05-12_mara_79D2E885-5A18-486B-BA80-C36C0B78972E ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:F3B847CA-C89F-4566-98C3-240514B37447][orgmode:gcr:vela:F3B847CA-C89F-4566-98C3-240514B37447]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_353BB5B3-A864-4AE4-AF08-590AFF0DE831][org_gcr_2017-05-12_mara_353BB5B3-A864-4AE4-AF08-590AFF0DE831]]
 (wrap-region-add-wrapper "=" "=" nil 'org-mode)
-;; orgmode:gcr:vela:F3B847CA-C89F-4566-98C3-240514B37447 ends here
+;; org_gcr_2017-05-12_mara_353BB5B3-A864-4AE4-AF08-590AFF0DE831 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:0E2ECE84-87AB-4B18-9929-6E752C88118C][orgmode:gcr:vela:0E2ECE84-87AB-4B18-9929-6E752C88118C]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9D9579E5-4693-417C-BFDE-B9F532381C44][org_gcr_2017-05-12_mara_9D9579E5-4693-417C-BFDE-B9F532381C44]]
 (wrap-region-add-wrapper "~" "~" nil 'org-mode)
-;; orgmode:gcr:vela:0E2ECE84-87AB-4B18-9929-6E752C88118C ends here
+;; org_gcr_2017-05-12_mara_9D9579E5-4693-417C-BFDE-B9F532381C44 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:0EBE9F71-59AC-4D54-B792-AFC3F78985D8][orgmode:gcr:vela:0EBE9F71-59AC-4D54-B792-AFC3F78985D8]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_3331BDE3-CFEA-460B-8E21-45ACF6BAC211][org_gcr_2017-05-12_mara_3331BDE3-CFEA-460B-8E21-45ACF6BAC211]]
 (wrap-region-add-wrapper "+" "+" nil 'org-mode)
-;; orgmode:gcr:vela:0EBE9F71-59AC-4D54-B792-AFC3F78985D8 ends here
+;; org_gcr_2017-05-12_mara_3331BDE3-CFEA-460B-8E21-45ACF6BAC211 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:6C80DBCA-AE28-4FE3-91E3-825E642735BA][orgmode:gcr:vela:6C80DBCA-AE28-4FE3-91E3-825E642735BA]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_258FD451-015B-4195-8349-8B4EFA61B581][org_gcr_2017-05-12_mara_258FD451-015B-4195-8349-8B4EFA61B581]]
 (setq org-hide-macro-markers t)
-;; orgmode:gcr:vela:6C80DBCA-AE28-4FE3-91E3-825E642735BA ends here
+;; org_gcr_2017-05-12_mara_258FD451-015B-4195-8349-8B4EFA61B581 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:234B7922-3C6B-4F25-A2F6-E1073EB7FC83][orgmode:gcr:vela:234B7922-3C6B-4F25-A2F6-E1073EB7FC83]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7CFE23CC-8EBC-46F3-889F-BF36EC45D6CA][org_gcr_2017-05-12_mara_7CFE23CC-8EBC-46F3-889F-BF36EC45D6CA]]
 (setq org-return-follows-link t)
-;; orgmode:gcr:vela:234B7922-3C6B-4F25-A2F6-E1073EB7FC83 ends here
+;; org_gcr_2017-05-12_mara_7CFE23CC-8EBC-46F3-889F-BF36EC45D6CA ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:8C7E90AC-C7EB-4A43-9377-C3C85CE51849][orgmode:gcr:vela:8C7E90AC-C7EB-4A43-9377-C3C85CE51849]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_711B4205-DC28-4A35-B620-23AFD46E3973][org_gcr_2017-05-12_mara_711B4205-DC28-4A35-B620-23AFD46E3973]]
 (help/not-on-gui
  (define-key org-mode-map (kbd "RET") #'org-return-indent)
  (define-key org-mode-map (kbd "C-M-RET") #'electric-indent-just-newline))
 (help/on-gui
  (define-key org-mode-map (kbd "<return>") #'org-return-indent)
  (define-key org-mode-map (kbd "C-M-<return>") #'electric-indent-just-newline))
-;; orgmode:gcr:vela:8C7E90AC-C7EB-4A43-9377-C3C85CE51849 ends here
+;; org_gcr_2017-05-12_mara_711B4205-DC28-4A35-B620-23AFD46E3973 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:E65CF1F6-F56C-4A1A-BB45-5E530FA93C04][orgmode:gcr:vela:E65CF1F6-F56C-4A1A-BB45-5E530FA93C04]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1A8FB05F-FF18-45DD-BFC4-89E76C366B9F][org_gcr_2017-05-12_mara_1A8FB05F-FF18-45DD-BFC4-89E76C366B9F]]
 (global-set-key [(shift f6)] #'kmacro-name-last-macro)
 (global-set-key [(f6)] #'insert-kbd-macro)
 (global-set-key [(f5)] #'elmacro-show-last-macro)
@@ -2167,16 +2167,16 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (define-key org-mode-map (kbd "s-7") #'org-babel-switch-to-session)
 (define-key org-mode-map (kbd "s-8") #'org-babel-switch-to-session-with-code)
 (define-key org-mode-map (kbd "s-9") #'org-todo)
-;; orgmode:gcr:vela:E65CF1F6-F56C-4A1A-BB45-5E530FA93C04 ends here
+;; org_gcr_2017-05-12_mara_1A8FB05F-FF18-45DD-BFC4-89E76C366B9F ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:1BE349AF-620C-4AA4-8250-E1A20FEEFAE6][orgmode:gcr:vela:1BE349AF-620C-4AA4-8250-E1A20FEEFAE6]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_6BA97DBC-AE5D-4C60-AD03-EF150686A03F][org_gcr_2017-05-12_mara_6BA97DBC-AE5D-4C60-AD03-EF150686A03F]]
 (key-chord-define org-mode-map "U*" #'org-metaup)
 (key-chord-define org-mode-map "I(" #'org-metadown)
 (key-chord-define org-mode-map "u8" #'org-metaleft)
 (key-chord-define org-mode-map "i9" #'org-metaright)
-;; orgmode:gcr:vela:1BE349AF-620C-4AA4-8250-E1A20FEEFAE6 ends here
+;; org_gcr_2017-05-12_mara_6BA97DBC-AE5D-4C60-AD03-EF150686A03F ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:9CB5CC76-4C1D-40CB-829C-A5AC98FE23FD][orgmode:gcr:vela:9CB5CC76-4C1D-40CB-829C-A5AC98FE23FD]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_49522E70-EE2D-4CF9-95D7-8E43524A469D][org_gcr_2017-05-12_mara_49522E70-EE2D-4CF9-95D7-8E43524A469D]]
 (define-key org-mode-map (kbd "s-y") #'help/safb-org-babel-execute-buffer)
 (define-key org-mode-map (kbd "s-u") #'help/safb-org-babel-execute-subtree)
 (define-key org-mode-map (kbd "s-U") #'org-mark-ring-goto)
@@ -2185,9 +2185,9 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (define-key org-mode-map (kbd "s-p") #'org-babel-execute-maybe)
 (define-key org-mode-map (kbd "s-[") #'org-babel-remove-inline-result)
 (define-key org-mode-map (kbd "M-{") (lambda () (interactive) (insert "- [ ] ")))
-;; orgmode:gcr:vela:9CB5CC76-4C1D-40CB-829C-A5AC98FE23FD ends here
+;; org_gcr_2017-05-12_mara_49522E70-EE2D-4CF9-95D7-8E43524A469D ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:933B1A3A-A77A-4616-B9D8-9DACED018CC2][orgmode:gcr:vela:933B1A3A-A77A-4616-B9D8-9DACED018CC2]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_EC7D6149-4451-443D-BFFF-1A40073D7D98][org_gcr_2017-05-12_mara_EC7D6149-4451-443D-BFFF-1A40073D7D98]]
 (define-key org-mode-map (kbd "s-h") #'help/safb-org-babel-tangle)
 (define-key org-mode-map (kbd "s-j") #'org-babel-next-src-block)
 (define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
@@ -2209,16 +2209,16 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
       (message "Nothing to insert")
     (insert "^{" arg "} ")))
 (define-key org-mode-map (kbd "s-S") #'help/org-insert-superscript)
-;; orgmode:gcr:vela:933B1A3A-A77A-4616-B9D8-9DACED018CC2 ends here
+;; org_gcr_2017-05-12_mara_EC7D6149-4451-443D-BFFF-1A40073D7D98 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:2F8DDC77-27C4-4E81-8913-28243C4A44B6][orgmode:gcr:vela:2F8DDC77-27C4-4E81-8913-28243C4A44B6]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8C00E3FE-4AE1-49BA-97E7-FAB2784DD0A9][org_gcr_2017-05-12_mara_8C00E3FE-4AE1-49BA-97E7-FAB2784DD0A9]]
 (define-key org-mode-map (kbd "s-n") #'org-babel-view-src-block-info)
 (define-key org-mode-map (kbd "s-m") #'org-babel-expand-src-block)
 (define-key org-mode-map (kbd "s-,") #'org-babel-open-src-block-result)
 (define-key org-mode-map (kbd "s-.") #'org-time-stamp)
-;; orgmode:gcr:vela:2F8DDC77-27C4-4E81-8913-28243C4A44B6 ends here
+;; org_gcr_2017-05-12_mara_8C00E3FE-4AE1-49BA-97E7-FAB2784DD0A9 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:5186DD50-F693-4297-A164-192BEA685C6D][orgmode:gcr:vela:5186DD50-F693-4297-A164-192BEA685C6D]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_90AA8396-E8A0-439C-A1E4-373E90C4DC84][org_gcr_2017-05-12_mara_90AA8396-E8A0-439C-A1E4-373E90C4DC84]]
 (defhydra help/hydra/right-side/org-mode (:color blue
                                                  :hint nil)
   "
@@ -2255,61 +2255,61 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
   ("m" org-mark-subtree)
   ("M" org-mark-element))
 (key-chord-define-global "hh" #'help/hydra/right-side/org-mode/body)
-;; orgmode:gcr:vela:5186DD50-F693-4297-A164-192BEA685C6D ends here
+;; org_gcr_2017-05-12_mara_90AA8396-E8A0-439C-A1E4-373E90C4DC84 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:BFF7A955-3107-4ED3-9022-CAB792E779EC][orgmode:gcr:vela:BFF7A955-3107-4ED3-9022-CAB792E779EC]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B41A9D3F-254B-4E44-8585-380BF23D158D][org_gcr_2017-05-12_mara_B41A9D3F-254B-4E44-8585-380BF23D158D]]
 (define-key org-mode-map (kbd "C-c C-e") #'help/safb-org-export-dispatch)
-;; orgmode:gcr:vela:BFF7A955-3107-4ED3-9022-CAB792E779EC ends here
+;; org_gcr_2017-05-12_mara_B41A9D3F-254B-4E44-8585-380BF23D158D ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:B489F70A-F1B0-41A9-BB98-A5861A867547][orgmode:gcr:vela:B489F70A-F1B0-41A9-BB98-A5861A867547]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5DE43FD1-AEF3-40D0-8C67-1ACBB6EA8317][org_gcr_2017-05-12_mara_5DE43FD1-AEF3-40D0-8C67-1ACBB6EA8317]]
 (define-key org-src-mode-map (kbd "s-l") #'org-edit-src-exit)
-;; orgmode:gcr:vela:B489F70A-F1B0-41A9-BB98-A5861A867547 ends here
+;; org_gcr_2017-05-12_mara_5DE43FD1-AEF3-40D0-8C67-1ACBB6EA8317 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:46FE856B-D5C6-45B0-95D5-891211AC295C][orgmode:gcr:vela:46FE856B-D5C6-45B0-95D5-891211AC295C]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BF73D071-57B8-4DBA-93E9-5A1D532A6321][org_gcr_2017-05-12_mara_BF73D071-57B8-4DBA-93E9-5A1D532A6321]]
 (key-chord-define org-mode-map "<<" (lambda () (interactive) (insert "\\laquo")))
 (key-chord-define org-mode-map ">>" (lambda () (interactive) (insert "\\raquo")))
-;; orgmode:gcr:vela:46FE856B-D5C6-45B0-95D5-891211AC295C ends here
+;; org_gcr_2017-05-12_mara_BF73D071-57B8-4DBA-93E9-5A1D532A6321 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:FB7C19BC-D532-4061-A6B6-F51DC34DC73D][orgmode:gcr:vela:FB7C19BC-D532-4061-A6B6-F51DC34DC73D]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_37C3019C-7C06-4952-888C-AA4660B4310E][org_gcr_2017-05-12_mara_37C3019C-7C06-4952-888C-AA4660B4310E]]
 (use-package blackboard-bold-mode
   :ensure t)
-;; orgmode:gcr:vela:FB7C19BC-D532-4061-A6B6-F51DC34DC73D ends here
+;; org_gcr_2017-05-12_mara_37C3019C-7C06-4952-888C-AA4660B4310E ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:C6CA4298-456E-4563-B870-D599ECF2DBF2][orgmode:gcr:vela:C6CA4298-456E-4563-B870-D599ECF2DBF2]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_AF4667B6-7922-4BC4-840F-63F099E1BC63][org_gcr_2017-05-12_mara_AF4667B6-7922-4BC4-840F-63F099E1BC63]]
 (use-package fraktur-mode
   :ensure t)
-;; orgmode:gcr:vela:C6CA4298-456E-4563-B870-D599ECF2DBF2 ends here
+;; org_gcr_2017-05-12_mara_AF4667B6-7922-4BC4-840F-63F099E1BC63 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:FBBCA655-1B6C-47D2-AF7B-614E74C8B6F6][orgmode:gcr:vela:FBBCA655-1B6C-47D2-AF7B-614E74C8B6F6]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A27A9A2F-11B8-4B31-A68C-6A5E27BCCD8D][org_gcr_2017-05-12_mara_A27A9A2F-11B8-4B31-A68C-6A5E27BCCD8D]]
 (defhydra help/hydra/transliterate (:color blue :hint nil)
   "
 _b_ black-board-bold _f_ fraktur
 "
   ("b" blackboard-bold-mode)
   ("f" fraktur-mode))
-;; orgmode:gcr:vela:FBBCA655-1B6C-47D2-AF7B-614E74C8B6F6 ends here
+;; org_gcr_2017-05-12_mara_A27A9A2F-11B8-4B31-A68C-6A5E27BCCD8D ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:A71F1A03-34C0-4F7F-99BE-3E1F1B469AB0][orgmode:gcr:vela:A71F1A03-34C0-4F7F-99BE-3E1F1B469AB0]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5F206A60-80BB-4394-9ABD-B641C196EE73][org_gcr_2017-05-12_mara_5F206A60-80BB-4394-9ABD-B641C196EE73]]
 (defun help/describe-char ()
   "Evaluate `describe-char' and then `other-window'."
   (interactive)
   (call-interactively #'describe-char)
   (call-interactively #'other-window))
 (global-set-key (kbd "H-d") #'help/describe-char)
-;; orgmode:gcr:vela:A71F1A03-34C0-4F7F-99BE-3E1F1B469AB0 ends here
+;; org_gcr_2017-05-12_mara_5F206A60-80BB-4394-9ABD-B641C196EE73 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:1ADEB461-7766-437F-80B3-677D3DF6AF1E][orgmode:gcr:vela:1ADEB461-7766-437F-80B3-677D3DF6AF1E]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_96974788-400B-439B-9005-04569A326C29][org_gcr_2017-05-12_mara_96974788-400B-439B-9005-04569A326C29]]
 (use-package unicode-troll-stopper
   :ensure t)
-;; orgmode:gcr:vela:1ADEB461-7766-437F-80B3-677D3DF6AF1E ends here
+;; org_gcr_2017-05-12_mara_96974788-400B-439B-9005-04569A326C29 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:7458C43B-A605-4D97-B435-A71E2883C566][orgmode:gcr:vela:7458C43B-A605-4D97-B435-A71E2883C566]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B7889E2D-2E2E-402B-BFC6-F8EC056D1F6E][org_gcr_2017-05-12_mara_B7889E2D-2E2E-402B-BFC6-F8EC056D1F6E]]
 (use-package unicode-escape
   :ensure t
   :config)
-;; orgmode:gcr:vela:7458C43B-A605-4D97-B435-A71E2883C566 ends here
+;; org_gcr_2017-05-12_mara_B7889E2D-2E2E-402B-BFC6-F8EC056D1F6E ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:451FC9F3-2517-4979-A9EC-DE34086E4198][orgmode:gcr:vela:451FC9F3-2517-4979-A9EC-DE34086E4198]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_063B5AFB-C687-49D3-8FE2-3BE2BDCB8E84][org_gcr_2017-05-12_mara_063B5AFB-C687-49D3-8FE2-3BE2BDCB8E84]]
 (defun warn-if-utf-8-bom ()
   "Warn if UTF-8 BOM bytes are present.
 
@@ -2319,127 +2319,127 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
       (message "Call the BOM squad! This UTF-8 file has a BOM!"))))
 
 (add-hook 'find-file-hook #'warn-if-utf-8-bom)
-;; orgmode:gcr:vela:451FC9F3-2517-4979-A9EC-DE34086E4198 ends here
+;; org_gcr_2017-05-12_mara_063B5AFB-C687-49D3-8FE2-3BE2BDCB8E84 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:C060E54C-9FB2-4E2C-BE67-3188E1BA0F22][orgmode:gcr:vela:C060E54C-9FB2-4E2C-BE67-3188E1BA0F22]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_AAEBDA8A-3939-42B1-B7A2-230C43EEF1AB][org_gcr_2017-05-12_mara_AAEBDA8A-3939-42B1-B7A2-230C43EEF1AB]]
 (use-package dash-at-point
  :ensure t)
-;; orgmode:gcr:vela:C060E54C-9FB2-4E2C-BE67-3188E1BA0F22 ends here
+;; org_gcr_2017-05-12_mara_AAEBDA8A-3939-42B1-B7A2-230C43EEF1AB ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:845637D6-CAEF-43FF-AFAB-166EC0E21FC4][orgmode:gcr:vela:845637D6-CAEF-43FF-AFAB-166EC0E21FC4]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C30EFFA1-FDBA-413F-AD23-29C0C2095231][org_gcr_2017-05-12_mara_C30EFFA1-FDBA-413F-AD23-29C0C2095231]]
 (setq gnu-apl-mode-map-prefix "H-")
 (setq gnu-apl-interactive-mode-map-prefix "H-")
 (use-package gnu-apl-mode
   :ensure t)
-;; orgmode:gcr:vela:845637D6-CAEF-43FF-AFAB-166EC0E21FC4 ends here
+;; org_gcr_2017-05-12_mara_C30EFFA1-FDBA-413F-AD23-29C0C2095231 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:E7AE32C1-42CC-482F-92D2-43DBD703500C][orgmode:gcr:vela:E7AE32C1-42CC-482F-92D2-43DBD703500C]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_DB3C5279-6AF3-4EAE-AC9E-F1327BBDC959][org_gcr_2017-05-12_mara_DB3C5279-6AF3-4EAE-AC9E-F1327BBDC959]]
 (use-package ess
   :ensure t)
-;; orgmode:gcr:vela:E7AE32C1-42CC-482F-92D2-43DBD703500C ends here
+;; org_gcr_2017-05-12_mara_DB3C5279-6AF3-4EAE-AC9E-F1327BBDC959 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:DC7E5F11-0C1A-4F9B-B6B1-2133C8B86617][orgmode:gcr:vela:DC7E5F11-0C1A-4F9B-B6B1-2133C8B86617]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_FFED1F51-DA13-4049-85AE-A228F18BD7DA][org_gcr_2017-05-12_mara_FFED1F51-DA13-4049-85AE-A228F18BD7DA]]
 (setq ess-eldoc-show-on-symbol t)
-;; orgmode:gcr:vela:DC7E5F11-0C1A-4F9B-B6B1-2133C8B86617 ends here
+;; org_gcr_2017-05-12_mara_FFED1F51-DA13-4049-85AE-A228F18BD7DA ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:7EF0A0EB-FBE6-4411-A0E5-F0B37AF1743D][orgmode:gcr:vela:7EF0A0EB-FBE6-4411-A0E5-F0B37AF1743D]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_2B155925-39F3-4DD9-A839-2DEF151FABD7][org_gcr_2017-05-12_mara_2B155925-39F3-4DD9-A839-2DEF151FABD7]]
 (setq ess-describe-at-point-method 'tooltip)
-;; orgmode:gcr:vela:7EF0A0EB-FBE6-4411-A0E5-F0B37AF1743D ends here
+;; org_gcr_2017-05-12_mara_2B155925-39F3-4DD9-A839-2DEF151FABD7 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:2FB01FE3-71DD-4FB6-AEC9-E4499AF5E007][orgmode:gcr:vela:2FB01FE3-71DD-4FB6-AEC9-E4499AF5E007]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_2187E82C-7742-45E6-BAA8-65C6A9D97451][org_gcr_2017-05-12_mara_2187E82C-7742-45E6-BAA8-65C6A9D97451]]
 (setq inferior-ess-same-window nil)
 (setq inferior-ess-own-frame nil)
-;; orgmode:gcr:vela:2FB01FE3-71DD-4FB6-AEC9-E4499AF5E007 ends here
+;; org_gcr_2017-05-12_mara_2187E82C-7742-45E6-BAA8-65C6A9D97451 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:47202D29-D75E-426E-AD24-7218BB5F2673][orgmode:gcr:vela:47202D29-D75E-426E-AD24-7218BB5F2673]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BEA01833-63E2-43D9-A8DB-B310281E74B0][org_gcr_2017-05-12_mara_BEA01833-63E2-43D9-A8DB-B310281E74B0]]
 (setq ess-help-own-frame nil)
-;; orgmode:gcr:vela:47202D29-D75E-426E-AD24-7218BB5F2673 ends here
+;; org_gcr_2017-05-12_mara_BEA01833-63E2-43D9-A8DB-B310281E74B0 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:FCB70937-540C-4CC9-B0B7-63E0F0626E25][orgmode:gcr:vela:FCB70937-540C-4CC9-B0B7-63E0F0626E25]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_103FFDAF-2A19-476D-95AB-819DE80F7CD4][org_gcr_2017-05-12_mara_103FFDAF-2A19-476D-95AB-819DE80F7CD4]]
 (setq ess-execute-in-process-buffer t)
-;; orgmode:gcr:vela:FCB70937-540C-4CC9-B0B7-63E0F0626E25 ends here
+;; org_gcr_2017-05-12_mara_103FFDAF-2A19-476D-95AB-819DE80F7CD4 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:36F5EACF-A2AA-42D2-B7B7-EC5C07B2E1A4][orgmode:gcr:vela:36F5EACF-A2AA-42D2-B7B7-EC5C07B2E1A4]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_FB93959C-6C29-4178-8DD4-BB9B3B51C721][org_gcr_2017-05-12_mara_FB93959C-6C29-4178-8DD4-BB9B3B51C721]]
 (setq ess-switch-to-end-of-proc-buffer t)
-;; orgmode:gcr:vela:36F5EACF-A2AA-42D2-B7B7-EC5C07B2E1A4 ends here
+;; org_gcr_2017-05-12_mara_FB93959C-6C29-4178-8DD4-BB9B3B51C721 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:0274002E-BB6F-4131-B6B2-5531D9F630F4][orgmode:gcr:vela:0274002E-BB6F-4131-B6B2-5531D9F630F4]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D5177392-0E32-45CA-AA51-7AFCDE448A7B][org_gcr_2017-05-12_mara_D5177392-0E32-45CA-AA51-7AFCDE448A7B]]
 (setq ess-tab-complete-in-script t)
 (setq ess-first-tab-never-complete 'symbol-or-paren-or-punct)
-;; orgmode:gcr:vela:0274002E-BB6F-4131-B6B2-5531D9F630F4 ends here
+;; org_gcr_2017-05-12_mara_D5177392-0E32-45CA-AA51-7AFCDE448A7B ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:043204D6-59AA-4DB4-ABF4-03D2E8D61154][orgmode:gcr:vela:043204D6-59AA-4DB4-ABF4-03D2E8D61154]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E88B46E3-DF6C-43DB-8769-E6B6516158B4][org_gcr_2017-05-12_mara_E88B46E3-DF6C-43DB-8769-E6B6516158B4]]
 (setq ess-use-ido t)
-;; orgmode:gcr:vela:043204D6-59AA-4DB4-ABF4-03D2E8D61154 ends here
+;; org_gcr_2017-05-12_mara_E88B46E3-DF6C-43DB-8769-E6B6516158B4 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:6C6DC638-6869-4534-AA0D-746263D47FD5][orgmode:gcr:vela:6C6DC638-6869-4534-AA0D-746263D47FD5]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1CD410E0-89C4-49C0-A98D-2E892DA1E3BF][org_gcr_2017-05-12_mara_1CD410E0-89C4-49C0-A98D-2E892DA1E3BF]]
 (setq ess-use-eldoc t)
 (setq ess-eldoc-show-on-symbol t)
 (setq ess-eldoc-abbreviation-style 'normal)
-;; orgmode:gcr:vela:6C6DC638-6869-4534-AA0D-746263D47FD5 ends here
+;; org_gcr_2017-05-12_mara_1CD410E0-89C4-49C0-A98D-2E892DA1E3BF ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:F0740222-26A5-4DA0-9C60-6EC04DCCDDFB][orgmode:gcr:vela:F0740222-26A5-4DA0-9C60-6EC04DCCDDFB]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C3F71A4F-FDB8-46E6-AC97-A66D9DDDD8DA][org_gcr_2017-05-12_mara_C3F71A4F-FDB8-46E6-AC97-A66D9DDDD8DA]]
 (setq ess-keep-dump-files +1)
-;; orgmode:gcr:vela:F0740222-26A5-4DA0-9C60-6EC04DCCDDFB ends here
+;; org_gcr_2017-05-12_mara_C3F71A4F-FDB8-46E6-AC97-A66D9DDDD8DA ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:9FD6F694-08ED-4E08-96FE-28634970388B][orgmode:gcr:vela:9FD6F694-08ED-4E08-96FE-28634970388B]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B40FC7A3-BBCF-4BAF-9B6B-B37C1A3198D6][org_gcr_2017-05-12_mara_B40FC7A3-BBCF-4BAF-9B6B-B37C1A3198D6]]
 (setq ess-delete-dump-files nil)
-;; orgmode:gcr:vela:9FD6F694-08ED-4E08-96FE-28634970388B ends here
+;; org_gcr_2017-05-12_mara_B40FC7A3-BBCF-4BAF-9B6B-B37C1A3198D6 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:252643D9-4FC2-4037-BAF8-5F6043D02C5A][orgmode:gcr:vela:252643D9-4FC2-4037-BAF8-5F6043D02C5A]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BFF312BF-65F2-4C4E-8D6B-E263DF062CB3][org_gcr_2017-05-12_mara_BFF312BF-65F2-4C4E-8D6B-E263DF062CB3]]
 (setq ess-mode-silently-save +1)
-;; orgmode:gcr:vela:252643D9-4FC2-4037-BAF8-5F6043D02C5A ends here
+;; org_gcr_2017-05-12_mara_BFF312BF-65F2-4C4E-8D6B-E263DF062CB3 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:B46D5051-6F7D-4BC9-8A47-DDE14B41C3A5][orgmode:gcr:vela:B46D5051-6F7D-4BC9-8A47-DDE14B41C3A5]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_AE35E686-32C2-4E74-B80B-68913DAE3887][org_gcr_2017-05-12_mara_AE35E686-32C2-4E74-B80B-68913DAE3887]]
 (setq ess-eval-visibly 'nowait)
-;; orgmode:gcr:vela:B46D5051-6F7D-4BC9-8A47-DDE14B41C3A5 ends here
+;; org_gcr_2017-05-12_mara_AE35E686-32C2-4E74-B80B-68913DAE3887 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:77E7570C-C08D-42B4-996D-F38C9F91C248][orgmode:gcr:vela:77E7570C-C08D-42B4-996D-F38C9F91C248]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_3E9EA300-0CB2-4A98-A197-F45F7A5176D7][org_gcr_2017-05-12_mara_3E9EA300-0CB2-4A98-A197-F45F7A5176D7]]
 (setq ess-use-tracebug t)
-;; orgmode:gcr:vela:77E7570C-C08D-42B4-996D-F38C9F91C248 ends here
+;; org_gcr_2017-05-12_mara_3E9EA300-0CB2-4A98-A197-F45F7A5176D7 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:F21989AE-7351-49A7-9B1F-6926F7298182][orgmode:gcr:vela:F21989AE-7351-49A7-9B1F-6926F7298182]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_DB26721B-A854-403D-BC8E-634F300AC859][org_gcr_2017-05-12_mara_DB26721B-A854-403D-BC8E-634F300AC859]]
 (setq ess-tracebug-search-path '())
-;; orgmode:gcr:vela:F21989AE-7351-49A7-9B1F-6926F7298182 ends here
+;; org_gcr_2017-05-12_mara_DB26721B-A854-403D-BC8E-634F300AC859 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:FAFD7683-E1BF-43CF-B862-B90029FBB319][orgmode:gcr:vela:FAFD7683-E1BF-43CF-B862-B90029FBB319]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7C1845A7-2AE7-4B5E-8BF6-9F4D657446C8][org_gcr_2017-05-12_mara_7C1845A7-2AE7-4B5E-8BF6-9F4D657446C8]]
 (define-key compilation-minor-mode-map [(?n)] #'next-error-no-select)
 (define-key compilation-minor-mode-map [(?p)] #'previous-error-no-select)
-;; orgmode:gcr:vela:FAFD7683-E1BF-43CF-B862-B90029FBB319 ends here
+;; org_gcr_2017-05-12_mara_7C1845A7-2AE7-4B5E-8BF6-9F4D657446C8 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:08D73B43-0EAC-433E-A5C8-F4E89A5ADA12][orgmode:gcr:vela:08D73B43-0EAC-433E-A5C8-F4E89A5ADA12]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_EF3B0A0A-2892-422F-A6F5-88CD33D04EAE][org_gcr_2017-05-12_mara_EF3B0A0A-2892-422F-A6F5-88CD33D04EAE]]
 (setq ess-watch-scale-amount -1)
-;; orgmode:gcr:vela:08D73B43-0EAC-433E-A5C8-F4E89A5ADA12 ends here
+;; org_gcr_2017-05-12_mara_EF3B0A0A-2892-422F-A6F5-88CD33D04EAE ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:CAA06F3F-C308-4C51-B5EA-84CB75C66DE7][orgmode:gcr:vela:CAA06F3F-C308-4C51-B5EA-84CB75C66DE7]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_4BCA5828-00AF-4D43-8153-5F9288FA669D][org_gcr_2017-05-12_mara_4BCA5828-00AF-4D43-8153-5F9288FA669D]]
 (setq ess-ask-for-ess-directory nil)
-;; orgmode:gcr:vela:CAA06F3F-C308-4C51-B5EA-84CB75C66DE7 ends here
+;; org_gcr_2017-05-12_mara_4BCA5828-00AF-4D43-8153-5F9288FA669D ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:4A9DDBA7-1715-45C8-A979-69725E37381E][orgmode:gcr:vela:4A9DDBA7-1715-45C8-A979-69725E37381E]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_07110829-1986-4799-8E64-5A0BD8E09527][org_gcr_2017-05-12_mara_07110829-1986-4799-8E64-5A0BD8E09527]]
 (setq inferior-ess-exit-command "q('no')
 ")
-;; orgmode:gcr:vela:4A9DDBA7-1715-45C8-A979-69725E37381E ends here
+;; org_gcr_2017-05-12_mara_07110829-1986-4799-8E64-5A0BD8E09527 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:A0EA1072-089F-4C7A-AE35-7C05D090097E][orgmode:gcr:vela:A0EA1072-089F-4C7A-AE35-7C05D090097E]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_88C6413B-4F5B-4D81-BCA0-F4B385198724][org_gcr_2017-05-12_mara_88C6413B-4F5B-4D81-BCA0-F4B385198724]]
 (use-package ess-R-object-popup
   :ensure t)
-;; orgmode:gcr:vela:A0EA1072-089F-4C7A-AE35-7C05D090097E ends here
+;; org_gcr_2017-05-12_mara_88C6413B-4F5B-4D81-BCA0-F4B385198724 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:FCFBA6B6-B76D-4230-93BE-1DDFE411FF82][orgmode:gcr:vela:FCFBA6B6-B76D-4230-93BE-1DDFE411FF82]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B21C0C45-E1FB-4834-9FFD-DA57ABB1D6B7][org_gcr_2017-05-12_mara_B21C0C45-E1FB-4834-9FFD-DA57ABB1D6B7]]
 (autoload 'ess-rdired "ess-rdired")
-;; orgmode:gcr:vela:FCFBA6B6-B76D-4230-93BE-1DDFE411FF82 ends here
+;; org_gcr_2017-05-12_mara_B21C0C45-E1FB-4834-9FFD-DA57ABB1D6B7 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:B2C94B37-92A9-4320-A5EE-BAAD81FAB1AD][orgmode:gcr:vela:B2C94B37-92A9-4320-A5EE-BAAD81FAB1AD]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0DE5790A-DDF5-4A42-A5EF-EE6AA1841913][org_gcr_2017-05-12_mara_0DE5790A-DDF5-4A42-A5EF-EE6AA1841913]]
 (use-package ess-R-data-view
   :ensure t)
-;; orgmode:gcr:vela:B2C94B37-92A9-4320-A5EE-BAAD81FAB1AD ends here
+;; org_gcr_2017-05-12_mara_0DE5790A-DDF5-4A42-A5EF-EE6AA1841913 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:E49028CA-9CE0-41FD-9B1E-004C3D68445B][orgmode:gcr:vela:E49028CA-9CE0-41FD-9B1E-004C3D68445B]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7C1735F9-2E77-433A-8A6C-DDA2F915AD6E][org_gcr_2017-05-12_mara_7C1735F9-2E77-433A-8A6C-DDA2F915AD6E]]
 (use-package inlineR
   :ensure t)
-;; orgmode:gcr:vela:E49028CA-9CE0-41FD-9B1E-004C3D68445B ends here
+;; org_gcr_2017-05-12_mara_7C1735F9-2E77-433A-8A6C-DDA2F915AD6E ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:D0976061-7DE0-4441-898F-4014547FFB29][orgmode:gcr:vela:D0976061-7DE0-4441-898F-4014547FFB29]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_208F3A57-5958-4B6B-BB9B-84EF13641A2E][org_gcr_2017-05-12_mara_208F3A57-5958-4B6B-BB9B-84EF13641A2E]]
 (setq help/r-dir "~/.R/")
 (defun help/make-warn-R-dir ()
   "Handle of R directory misconfiguration."
@@ -2451,53 +2451,53 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 (help/make-warn-R-dir)
 (setq ess-history-directory help/r-dir)
 (setq ess-source-directory help/r-dir)
-;; orgmode:gcr:vela:D0976061-7DE0-4441-898F-4014547FFB29 ends here
+;; org_gcr_2017-05-12_mara_208F3A57-5958-4B6B-BB9B-84EF13641A2E ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:931F150B-01FB-455C-B6F9-D730BEC162FF][orgmode:gcr:vela:931F150B-01FB-455C-B6F9-D730BEC162FF]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_05252C70-8257-4A7A-BB03-9C5358DCDF6B][org_gcr_2017-05-12_mara_05252C70-8257-4A7A-BB03-9C5358DCDF6B]]
 (setq inferior-ess-program "R")
 (setq inferior-R-program-name "R")
 (setq ess-local-process-name "R")
-;; orgmode:gcr:vela:931F150B-01FB-455C-B6F9-D730BEC162FF ends here
+;; org_gcr_2017-05-12_mara_05252C70-8257-4A7A-BB03-9C5358DCDF6B ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:5D17A7DE-ECAF-4FAE-8425-AD43FEDD2D45][orgmode:gcr:vela:5D17A7DE-ECAF-4FAE-8425-AD43FEDD2D45]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D1D3EE95-CC1D-4F12-9C50-44436CF7AAC8][org_gcr_2017-05-12_mara_D1D3EE95-CC1D-4F12-9C50-44436CF7AAC8]]
 (add-to-list 'auto-mode-alist '("\\.rd\\'" . Rd-mode))
 (add-to-list 'auto-mode-alist '("\\.Rmd$" . r-mode))
-;; orgmode:gcr:vela:5D17A7DE-ECAF-4FAE-8425-AD43FEDD2D45 ends here
+;; org_gcr_2017-05-12_mara_D1D3EE95-CC1D-4F12-9C50-44436CF7AAC8 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:8122AAC4-008A-454B-A3F6-4F9B11F7278E][orgmode:gcr:vela:8122AAC4-008A-454B-A3F6-4F9B11F7278E]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9257DFB5-371B-4A1C-8654-931151FBE3C3][org_gcr_2017-05-12_mara_9257DFB5-371B-4A1C-8654-931151FBE3C3]]
 (local-set-key (kbd "C-c C-. S") #'ess-rutils-rsitesearch)
-;; orgmode:gcr:vela:8122AAC4-008A-454B-A3F6-4F9B11F7278E ends here
+;; org_gcr_2017-05-12_mara_9257DFB5-371B-4A1C-8654-931151FBE3C3 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:17FD6489-F187-4667-9E96-5ECF3DAED95B][orgmode:gcr:vela:17FD6489-F187-4667-9E96-5ECF3DAED95B]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D5290242-1B88-44F2-B387-C1EFC2B308C7][org_gcr_2017-05-12_mara_D5290242-1B88-44F2-B387-C1EFC2B308C7]]
 (use-package ess-rutils
   :config
   (setq ess-rutils-keys t))
-;; orgmode:gcr:vela:17FD6489-F187-4667-9E96-5ECF3DAED95B ends here
+;; org_gcr_2017-05-12_mara_D5290242-1B88-44F2-B387-C1EFC2B308C7 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:588C7A99-908C-4CD9-A1BE-1818938E2D13][orgmode:gcr:vela:588C7A99-908C-4CD9-A1BE-1818938E2D13]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_68A29F8E-1516-4524-91EA-552EBD8EFBAE][org_gcr_2017-05-12_mara_68A29F8E-1516-4524-91EA-552EBD8EFBAE]]
 (use-package r-autoyas
   :ensure t
   :config
   (setq r-autoyas-debug t)
   (setq r-autoyas-expand-package-functions-only nil)
   (setq r-autoyas-remove-explicit-assignments nil))
-;; orgmode:gcr:vela:588C7A99-908C-4CD9-A1BE-1818938E2D13 ends here
+;; org_gcr_2017-05-12_mara_68A29F8E-1516-4524-91EA-552EBD8EFBAE ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:5D526636-47A1-463B-9466-4DD240C7F382][orgmode:gcr:vela:5D526636-47A1-463B-9466-4DD240C7F382]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9B83F15B-249D-4B62-B929-E0AFADEA44C4][org_gcr_2017-05-12_mara_9B83F15B-249D-4B62-B929-E0AFADEA44C4]]
 (setq ess-R-argument-suffix "=")
-;; orgmode:gcr:vela:5D526636-47A1-463B-9466-4DD240C7F382 ends here
+;; org_gcr_2017-05-12_mara_9B83F15B-249D-4B62-B929-E0AFADEA44C4 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:9E931868-056E-49E6-A0AE-D1447BA27039][orgmode:gcr:vela:9E931868-056E-49E6-A0AE-D1447BA27039]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_660E257F-4F4C-4235-A52F-6BDD62206288][org_gcr_2017-05-12_mara_660E257F-4F4C-4235-A52F-6BDD62206288]]
 (setq ess-S-assign-key (kbd "C-<"))
 (ess-toggle-S-assign-key t)
 (ess-toggle-underscore nil)
-;; orgmode:gcr:vela:9E931868-056E-49E6-A0AE-D1447BA27039 ends here
+;; org_gcr_2017-05-12_mara_660E257F-4F4C-4235-A52F-6BDD62206288 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:4B373CC7-EF17-4900-87BE-E38995585C46][orgmode:gcr:vela:4B373CC7-EF17-4900-87BE-E38995585C46]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F9AC8C22-E36D-4956-98AC-45AA00C2BFCC][org_gcr_2017-05-12_mara_F9AC8C22-E36D-4956-98AC-45AA00C2BFCC]]
 (setq inferior-R-args "--no-save --no-restore")
-;; orgmode:gcr:vela:4B373CC7-EF17-4900-87BE-E38995585C46 ends here
+;; org_gcr_2017-05-12_mara_F9AC8C22-E36D-4956-98AC-45AA00C2BFCC ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:E5F48F7A-E926-4FB0-92D2-92204808630E][orgmode:gcr:vela:E5F48F7A-E926-4FB0-92D2-92204808630E]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_CF490053-BBAA-4BDC-86CE-DB0E7A02A81B][org_gcr_2017-05-12_mara_CF490053-BBAA-4BDC-86CE-DB0E7A02A81B]]
 (defun help/R-mode-hook-fn ()
   (local-set-key (kbd "s-6") #'ess-switch-to-end-of-ESS)
   (local-set-key (kbd "s-7") #'ess-rdired)
@@ -2548,33 +2548,33 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
   (stripe-listify-buffer))
 
 (add-hook 'ess-rdired-mode-hook #'help/ess-rdired-mode-hook-fn)
-;; orgmode:gcr:vela:E5F48F7A-E926-4FB0-92D2-92204808630E ends here
+;; org_gcr_2017-05-12_mara_CF490053-BBAA-4BDC-86CE-DB0E7A02A81B ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:4798425A-55ED-49F1-AA3A-D0AB82DC070C][orgmode:gcr:vela:4798425A-55ED-49F1-AA3A-D0AB82DC070C]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_CC727094-99D3-4C48-BE27-C28FC738DF34][org_gcr_2017-05-12_mara_CC727094-99D3-4C48-BE27-C28FC738DF34]]
   (add-to-list 'auto-mode-alist '("\\.scm\\'" . scheme-mode))
   (add-to-list 'auto-mode-alist '("\\.ss\\'" . scheme-mode))
-;; orgmode:gcr:vela:4798425A-55ED-49F1-AA3A-D0AB82DC070C ends here
+;; org_gcr_2017-05-12_mara_CC727094-99D3-4C48-BE27-C28FC738DF34 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:E937C67E-3F3B-4B46-9F0F-F14C558559FC][orgmode:gcr:vela:E937C67E-3F3B-4B46-9F0F-F14C558559FC]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A80E9E8F-A5B7-4C48-A3E5-2C365178EFAF][org_gcr_2017-05-12_mara_A80E9E8F-A5B7-4C48-A3E5-2C365178EFAF]]
   (add-to-list 'auto-mode-alist '("\\.rkt\\'" . scheme-mode))
-;; orgmode:gcr:vela:E937C67E-3F3B-4B46-9F0F-F14C558559FC ends here
+;; org_gcr_2017-05-12_mara_A80E9E8F-A5B7-4C48-A3E5-2C365178EFAF ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:69A655C1-D6E9-4043-A064-477C33736BD8][orgmode:gcr:vela:69A655C1-D6E9-4043-A064-477C33736BD8]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_998AB8A6-A934-4E5A-B869-E1348D919529][org_gcr_2017-05-12_mara_998AB8A6-A934-4E5A-B869-E1348D919529]]
   (add-to-list 'auto-mode-alist '("\\.sls\\'" . scheme-mode))
   (add-to-list 'auto-mode-alist '("\\.sps\\'" . scheme-mode))
-;; orgmode:gcr:vela:69A655C1-D6E9-4043-A064-477C33736BD8 ends here
+;; org_gcr_2017-05-12_mara_998AB8A6-A934-4E5A-B869-E1348D919529 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:8BF8587E-9227-4BA4-8693-E43971E5F9CB][orgmode:gcr:vela:8BF8587E-9227-4BA4-8693-E43971E5F9CB]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5457F0EC-AAB3-4502-ACCD-7F9C1579293D][org_gcr_2017-05-12_mara_5457F0EC-AAB3-4502-ACCD-7F9C1579293D]]
 (use-package geiser
   :ensure t)
-;; orgmode:gcr:vela:8BF8587E-9227-4BA4-8693-E43971E5F9CB ends here
+;; org_gcr_2017-05-12_mara_5457F0EC-AAB3-4502-ACCD-7F9C1579293D ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:B8C71D71-D5C6-409C-A104-26CD6C540746][orgmode:gcr:vela:B8C71D71-D5C6-409C-A104-26CD6C540746]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0F7605F1-8A1F-45FD-88C1-A8E127DA9107][org_gcr_2017-05-12_mara_0F7605F1-8A1F-45FD-88C1-A8E127DA9107]]
 (use-package racket-mode
   :ensure t)
-;; orgmode:gcr:vela:B8C71D71-D5C6-409C-A104-26CD6C540746 ends here
+;; org_gcr_2017-05-12_mara_0F7605F1-8A1F-45FD-88C1-A8E127DA9107 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:E0EBE05B-F57B-4F99-A791-E45634671737][orgmode:gcr:vela:E0EBE05B-F57B-4F99-A791-E45634671737]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_221DF59F-0817-4F0A-BDE7-01FD9D87BAF9][org_gcr_2017-05-12_mara_221DF59F-0817-4F0A-BDE7-01FD9D87BAF9]]
 (use-package ac-geiser
   :ensure t
   :config
@@ -2584,17 +2584,17 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
     '(add-to-list 'ac-modes 'geiser-repl-mode))
   (setq geiser-active-implementations '(racket guile))
   (setq geiser-repl-history-no-dups-p t))
-;; orgmode:gcr:vela:E0EBE05B-F57B-4F99-A791-E45634671737 ends here
+;; org_gcr_2017-05-12_mara_221DF59F-0817-4F0A-BDE7-01FD9D87BAF9 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:CC58FC52-804F-4837-A3C4-C295C8F8E81D][orgmode:gcr:vela:CC58FC52-804F-4837-A3C4-C295C8F8E81D]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_3C48D997-170E-40F4-9BB6-F6BAA9DE77F2][org_gcr_2017-05-12_mara_3C48D997-170E-40F4-9BB6-F6BAA9DE77F2]]
 (defun help/c-mode-common-hook-fn ()
   "HELP c-mode-common customizations."
   (interactive)
   (rainbow-mode))
 (add-hook 'c-mode-common-hook #'help/c-mode-common-hook-fn)
-;; orgmode:gcr:vela:CC58FC52-804F-4837-A3C4-C295C8F8E81D ends here
+;; org_gcr_2017-05-12_mara_3C48D997-170E-40F4-9BB6-F6BAA9DE77F2 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:1827B724-7BC0-4228-8389-2B06F308D6AF][orgmode:gcr:vela:1827B724-7BC0-4228-8389-2B06F308D6AF]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B7B9F4BB-5899-4F2B-94B0-B38F098E9528][org_gcr_2017-05-12_mara_B7B9F4BB-5899-4F2B-94B0-B38F098E9528]]
 (use-package yasnippet
   :ensure t
   :config
@@ -2608,14 +2608,14 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
   (yas-reload-all)
   (setq yas-prompt-functions '(yas-ido-prompt))
   :diminish yas-minor-mode)
-;; orgmode:gcr:vela:1827B724-7BC0-4228-8389-2B06F308D6AF ends here
+;; org_gcr_2017-05-12_mara_B7B9F4BB-5899-4F2B-94B0-B38F098E9528 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:F91A42F6-ED96-4451-B5C0-EB2EFACB75FA][orgmode:gcr:vela:F91A42F6-ED96-4451-B5C0-EB2EFACB75FA]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E4D8989C-E363-4E6B-A308-B0E667FBCE7C][org_gcr_2017-05-12_mara_E4D8989C-E363-4E6B-A308-B0E667FBCE7C]]
 (eval-after-load "abbrev"
   '(diminish 'abbrev-mode))
-;; orgmode:gcr:vela:F91A42F6-ED96-4451-B5C0-EB2EFACB75FA ends here
+;; org_gcr_2017-05-12_mara_E4D8989C-E363-4E6B-A308-B0E667FBCE7C ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:ABA05DE1-22EF-4BDB-935C-B842EBB843B5][orgmode:gcr:vela:ABA05DE1-22EF-4BDB-935C-B842EBB843B5]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_6219D858-98BB-48CF-96F0-ABEB6756A658][org_gcr_2017-05-12_mara_6219D858-98BB-48CF-96F0-ABEB6756A658]]
 (use-package web-mode
   :ensure t
   :init
@@ -2666,9 +2666,9 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
   (turn-off-fci-mode))
 
 (add-hook 'web-mode-hook #'help/web-mode-hook-fn)
-;; orgmode:gcr:vela:ABA05DE1-22EF-4BDB-935C-B842EBB843B5 ends here
+;; org_gcr_2017-05-12_mara_6219D858-98BB-48CF-96F0-ABEB6756A658 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:A0D6BBAD-943E-496D-876C-7B452A2CC581][orgmode:gcr:vela:A0D6BBAD-943E-496D-876C-7B452A2CC581]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_56F80A50-4914-4F8F-8771-5800A54F8300][org_gcr_2017-05-12_mara_56F80A50-4914-4F8F-8771-5800A54F8300]]
 (use-package js2-mode
   :ensure t
   :mode (("\\.js$" . js2-mode)
@@ -2686,9 +2686,9 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
   (progn
     (add-hook 'js2-mode-hook #'js2-refactor-mode)
     (js2r-add-keybindings-with-prefix "C-c C-m")))
-;; orgmode:gcr:vela:A0D6BBAD-943E-496D-876C-7B452A2CC581 ends here
+;; org_gcr_2017-05-12_mara_56F80A50-4914-4F8F-8771-5800A54F8300 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:orgmode:gcr:vela:A68BD655-443A-40CD-916E-D4C3146F2EB9][orgmode:gcr:vela:orgmode:gcr:vela:A68BD655-443A-40CD-916E-D4C3146F2EB9]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_498DAC46-DA9D-4AAA-82BF-46D712E4DBA5][org_gcr_2017-05-12_mara_498DAC46-DA9D-4AAA-82BF-46D712E4DBA5]]
 (use-package json-mode
   :ensure t
   :diminish json-mode
@@ -2698,66 +2698,66 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
     (setq js-indent-level 2)
     (setq json-reformat:indent-width 2)
     (setq json-reformat:pretty-string\? t)))
-;; orgmode:gcr:vela:orgmode:gcr:vela:A68BD655-443A-40CD-916E-D4C3146F2EB9 ends here
+;; org_gcr_2017-05-12_mara_498DAC46-DA9D-4AAA-82BF-46D712E4DBA5 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:B97EDF2E-0538-475A-AA0A-6C708DCCEC11][orgmode:gcr:vela:B97EDF2E-0538-475A-AA0A-6C708DCCEC11]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D035C4E4-B983-4D74-9E3C-764EF00B3795][org_gcr_2017-05-12_mara_D035C4E4-B983-4D74-9E3C-764EF00B3795]]
 (use-package tex-site
   :ensure auctex
   :config
   (eval-after-load "tex"
     '(define-key TeX-mode-map (kbd "C-c C-c") #'help/safb-TeX-command-master)))
-;; orgmode:gcr:vela:B97EDF2E-0538-475A-AA0A-6C708DCCEC11 ends here
+;; org_gcr_2017-05-12_mara_D035C4E4-B983-4D74-9E3C-764EF00B3795 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:2B0193C4-291A-4C5E-9FA0-36A80DE1D379][orgmode:gcr:vela:2B0193C4-291A-4C5E-9FA0-36A80DE1D379]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_86E4D060-B2E1-4F7E-B56C-A7D93C0024FA][org_gcr_2017-05-12_mara_86E4D060-B2E1-4F7E-B56C-A7D93C0024FA]]
 (setq TeX-auto-save t)
-;; orgmode:gcr:vela:2B0193C4-291A-4C5E-9FA0-36A80DE1D379 ends here
+;; org_gcr_2017-05-12_mara_86E4D060-B2E1-4F7E-B56C-A7D93C0024FA ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:278E7DC2-6BD3-4F90-A4F2-25B9BE614981][orgmode:gcr:vela:278E7DC2-6BD3-4F90-A4F2-25B9BE614981]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1502A970-C03E-4D2D-8041-4B7AE8859AF0][org_gcr_2017-05-12_mara_1502A970-C03E-4D2D-8041-4B7AE8859AF0]]
 (setq TeX-parse-self t)
-;; orgmode:gcr:vela:278E7DC2-6BD3-4F90-A4F2-25B9BE614981 ends here
+;; org_gcr_2017-05-12_mara_1502A970-C03E-4D2D-8041-4B7AE8859AF0 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:10789FA5-E5AA-4F8C-BB0E-62307655F7AD][orgmode:gcr:vela:10789FA5-E5AA-4F8C-BB0E-62307655F7AD]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C923F472-C10C-46D2-B9F2-5DBADE6E436D][org_gcr_2017-05-12_mara_C923F472-C10C-46D2-B9F2-5DBADE6E436D]]
 (setq TeX-auto-save t)
-;; orgmode:gcr:vela:10789FA5-E5AA-4F8C-BB0E-62307655F7AD ends here
+;; org_gcr_2017-05-12_mara_C923F472-C10C-46D2-B9F2-5DBADE6E436D ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:F89FBF57-D32D-45B0-B43F-D5A9EB489ABE][orgmode:gcr:vela:F89FBF57-D32D-45B0-B43F-D5A9EB489ABE]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D30FAF98-9340-49C8-BE94-834BF2A2CB11][org_gcr_2017-05-12_mara_D30FAF98-9340-49C8-BE94-834BF2A2CB11]]
 (setq TeX-PDF-mode t)
 (setq TeX-DVI-via-PDFTeX t)
-;; orgmode:gcr:vela:F89FBF57-D32D-45B0-B43F-D5A9EB489ABE ends here
+;; org_gcr_2017-05-12_mara_D30FAF98-9340-49C8-BE94-834BF2A2CB11 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:A193F562-9E1C-49A2-982C-EBF7D9AFF32F][orgmode:gcr:vela:A193F562-9E1C-49A2-982C-EBF7D9AFF32F]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_851CFD0C-D616-47D1-A0E0-044053B89B03][org_gcr_2017-05-12_mara_851CFD0C-D616-47D1-A0E0-044053B89B03]]
 (setq TeX-save-query nil)
-;; orgmode:gcr:vela:A193F562-9E1C-49A2-982C-EBF7D9AFF32F ends here
+;; org_gcr_2017-05-12_mara_851CFD0C-D616-47D1-A0E0-044053B89B03 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:083E953F-E95D-4596-98D1-C8554D451721][orgmode:gcr:vela:083E953F-E95D-4596-98D1-C8554D451721]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5B99942E-0535-40CC-9C61-F895DAF8C545][org_gcr_2017-05-12_mara_5B99942E-0535-40CC-9C61-F895DAF8C545]]
 (add-to-list 'auto-mode-alist '("\\.lco?\\'" . TeX-latex-mode))
-;; orgmode:gcr:vela:083E953F-E95D-4596-98D1-C8554D451721 ends here
+;; org_gcr_2017-05-12_mara_5B99942E-0535-40CC-9C61-F895DAF8C545 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:9FA4E728-0AB8-4A18-9EE8-DC4387E6DD08][orgmode:gcr:vela:9FA4E728-0AB8-4A18-9EE8-DC4387E6DD08]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5E9D3CF3-A603-4225-9BDD-06E2CAA9ED19][org_gcr_2017-05-12_mara_5E9D3CF3-A603-4225-9BDD-06E2CAA9ED19]]
 (add-to-list 'org-latex-packages-alist '("english" "babel" t))
-;; orgmode:gcr:vela:9FA4E728-0AB8-4A18-9EE8-DC4387E6DD08 ends here
+;; org_gcr_2017-05-12_mara_5E9D3CF3-A603-4225-9BDD-06E2CAA9ED19 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:6C50239B-2D5D-4022-8645-+BEGIN_SRC][orgmode:gcr:vela:6C50239B-2D5D-4022-8645-+BEGIN_SRC]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_11FEAF4C-B3C6-4188-B642-DE57F7D2ADCD][org_gcr_2017-05-12_mara_11FEAF4C-B3C6-4188-B642-DE57F7D2ADCD]]
 (add-to-list 'org-latex-packages-alist '("" "mathptmx" t))
-;; orgmode:gcr:vela:6C50239B-2D5D-4022-8645-+BEGIN_SRC ends here
+;; org_gcr_2017-05-12_mara_11FEAF4C-B3C6-4188-B642-DE57F7D2ADCD ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:AA859065-4868-4A02-882E-AD5840B74349][orgmode:gcr:vela:AA859065-4868-4A02-882E-AD5840B74349]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_55AF149A-B2A9-42ED-8E9F-0BDBEAF31301][org_gcr_2017-05-12_mara_55AF149A-B2A9-42ED-8E9F-0BDBEAF31301]]
 (add-to-list 'org-latex-packages-alist '("margin=1.5in" "geometry" nil))
-;; orgmode:gcr:vela:AA859065-4868-4A02-882E-AD5840B74349 ends here
+;; org_gcr_2017-05-12_mara_55AF149A-B2A9-42ED-8E9F-0BDBEAF31301 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:2017-05-02:mara:906E5D8D-60CB-4E75-873C-59D4AD0E9321][orgmode:gcr:2017-05-02:mara:906E5D8D-60CB-4E75-873C-59D4AD0E9321]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0492362D-F615-4D40-9C64-49CD7A8E493E][org_gcr_2017-05-12_mara_0492362D-F615-4D40-9C64-49CD7A8E493E]]
 (add-to-list 'org-latex-packages-alist '("" "parskip" nil))
-;; orgmode:gcr:2017-05-02:mara:906E5D8D-60CB-4E75-873C-59D4AD0E9321 ends here
+;; org_gcr_2017-05-12_mara_0492362D-F615-4D40-9C64-49CD7A8E493E ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:2017-05-02:mara:CE0F6981-2604-4C89-997D-22C4EE82E0A1][orgmode:gcr:2017-05-02:mara:CE0F6981-2604-4C89-997D-22C4EE82E0A1]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5AF3546A-23E6-4DA3-BE95-108C3F8CB6D0][org_gcr_2017-05-12_mara_5AF3546A-23E6-4DA3-BE95-108C3F8CB6D0]]
 (add-to-list 'org-latex-packages-alist '("" "lettrine" nil))
-;; orgmode:gcr:2017-05-02:mara:CE0F6981-2604-4C89-997D-22C4EE82E0A1 ends here
+;; org_gcr_2017-05-12_mara_5AF3546A-23E6-4DA3-BE95-108C3F8CB6D0 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:E6559423-7FC3-4924-A38B-FE4C9CA8CD91][orgmode:gcr:vela:E6559423-7FC3-4924-A38B-FE4C9CA8CD91]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7EE5307A-ACC5-4FE9-A519-0F273B4589E9][org_gcr_2017-05-12_mara_7EE5307A-ACC5-4FE9-A519-0F273B4589E9]]
 (defvar help/ltx-cls-opt "paper=letter, fontsize=12pt")
-;; orgmode:gcr:vela:E6559423-7FC3-4924-A38B-FE4C9CA8CD91 ends here
+;; org_gcr_2017-05-12_mara_7EE5307A-ACC5-4FE9-A519-0F273B4589E9 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:6C864008-5602-4E73-A8DE-6DDE5DFA1EE0][orgmode:gcr:vela:6C864008-5602-4E73-A8DE-6DDE5DFA1EE0]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_006EB5E3-5478-43C7-AEAC-34CCF49127AC][org_gcr_2017-05-12_mara_006EB5E3-5478-43C7-AEAC-34CCF49127AC]]
 (eval-after-load "ox-latex"
   '(add-to-list 'org-latex-classes
                 `("help-article"
@@ -2766,17 +2766,17 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
                            "]{article}"))))
 
 (setq org-latex-default-class "help-article")
-;; orgmode:gcr:vela:6C864008-5602-4E73-A8DE-6DDE5DFA1EE0 ends here
+;; org_gcr_2017-05-12_mara_006EB5E3-5478-43C7-AEAC-34CCF49127AC ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:9B903D8E-6E42-41BB-83AA-EBE64298A7C8][orgmode:gcr:vela:9B903D8E-6E42-41BB-83AA-EBE64298A7C8]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F8F77D4B-8958-49F2-8ED8-FE96F55ECAFB][org_gcr_2017-05-12_mara_F8F77D4B-8958-49F2-8ED8-FE96F55ECAFB]]
 (setq org-export-with-smart-quotes t)
-;; orgmode:gcr:vela:9B903D8E-6E42-41BB-83AA-EBE64298A7C8 ends here
+;; org_gcr_2017-05-12_mara_F8F77D4B-8958-49F2-8ED8-FE96F55ECAFB ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:C2C100F1-B302-4BC7-8633-A79BCBFE1FC7][orgmode:gcr:vela:C2C100F1-B302-4BC7-8633-A79BCBFE1FC7]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C74104AA-A25C-4BE8-A7DD-99DEA240FF73][org_gcr_2017-05-12_mara_C74104AA-A25C-4BE8-A7DD-99DEA240FF73]]
 (eval-after-load "ox" '(require 'ox-koma-letter))
-;; orgmode:gcr:vela:C2C100F1-B302-4BC7-8633-A79BCBFE1FC7 ends here
+;; org_gcr_2017-05-12_mara_C74104AA-A25C-4BE8-A7DD-99DEA240FF73 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:05968019-B83F-4F5B-ACF7-4CFF10CB8690][orgmode:gcr:vela:05968019-B83F-4F5B-ACF7-4CFF10CB8690]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8A241D12-24B3-4C4C-AC99-B55954611025][org_gcr_2017-05-12_mara_8A241D12-24B3-4C4C-AC99-B55954611025]]
 (eval-after-load "ox-koma-letter"
   '(progn
      (add-to-list 'org-latex-classes
@@ -2786,26 +2786,26 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
                              ", pagesize, UScommercial9]{scrlttr2}")))
 
      (setq org-koma-letter-default-class "help-letter")))
-;; orgmode:gcr:vela:05968019-B83F-4F5B-ACF7-4CFF10CB8690 ends here
+;; org_gcr_2017-05-12_mara_8A241D12-24B3-4C4C-AC99-B55954611025 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:EFFC0DFD-168F-42F5-9405-BAECD7EC5CB4][orgmode:gcr:vela:EFFC0DFD-168F-42F5-9405-BAECD7EC5CB4]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_33A83D5A-E541-474C-AA0D-2E039EC74CDD][org_gcr_2017-05-12_mara_33A83D5A-E541-474C-AA0D-2E039EC74CDD]]
 (setq org-koma-letter-class-option-file "KomaDefault")
-;; orgmode:gcr:vela:EFFC0DFD-168F-42F5-9405-BAECD7EC5CB4 ends here
+;; org_gcr_2017-05-12_mara_33A83D5A-E541-474C-AA0D-2E039EC74CDD ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:02005BF5-AADC-45B1-AC64-67ECB028352A][orgmode:gcr:vela:02005BF5-AADC-45B1-AC64-67ECB028352A]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_732CDF3A-C47A-4D5D-BFEC-69B765507B97][org_gcr_2017-05-12_mara_732CDF3A-C47A-4D5D-BFEC-69B765507B97]]
 (use-package ox-gfm
   :ensure t)
-;; orgmode:gcr:vela:02005BF5-AADC-45B1-AC64-67ECB028352A ends here
+;; org_gcr_2017-05-12_mara_732CDF3A-C47A-4D5D-BFEC-69B765507B97 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:8A4DB408-7888-4705-AB2B-C7EED9262DF2][orgmode:gcr:vela:8A4DB408-7888-4705-AB2B-C7EED9262DF2]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_42D37E52-A420-4196-8B2C-6755441A5FC3][org_gcr_2017-05-12_mara_42D37E52-A420-4196-8B2C-6755441A5FC3]]
 (use-package markdown-mode
   :ensure t
   :config
   (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
   (setq markdown-coding-system "utf-8"))
-;; orgmode:gcr:vela:8A4DB408-7888-4705-AB2B-C7EED9262DF2 ends here
+;; org_gcr_2017-05-12_mara_42D37E52-A420-4196-8B2C-6755441A5FC3 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:E26F69F8-ED1F-4F10-A291-6F9CB958FD18][orgmode:gcr:vela:E26F69F8-ED1F-4F10-A291-6F9CB958FD18]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_62E6542A-B340-470A-B7E0-2F4438EBBAE9][org_gcr_2017-05-12_mara_62E6542A-B340-470A-B7E0-2F4438EBBAE9]]
 (use-package htmlize
   :config
   (setq org-html-htmlize-output-type htmlize-output-type)
@@ -2831,30 +2831,30 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
       (when help/htmlize-initial-fci-state
         (fci-mode t))))
   (add-hook 'htmlize-after-hook #'help/htmlize-after-hook-fn))
-;; orgmode:gcr:vela:E26F69F8-ED1F-4F10-A291-6F9CB958FD18 ends here
+;; org_gcr_2017-05-12_mara_62E6542A-B340-470A-B7E0-2F4438EBBAE9 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:080472B8-EC76-4318-876A-A4A65547B056][orgmode:gcr:vela:080472B8-EC76-4318-876A-A4A65547B056]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_03AEAE7A-99ED-42BE-BE6E-0485884B55BB][org_gcr_2017-05-12_mara_03AEAE7A-99ED-42BE-BE6E-0485884B55BB]]
 (setq org-html-doctype "html5")
-;; orgmode:gcr:vela:080472B8-EC76-4318-876A-A4A65547B056 ends here
+;; org_gcr_2017-05-12_mara_03AEAE7A-99ED-42BE-BE6E-0485884B55BB ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:B7F010D3-4A47-4E4A-9E00-D54E4D0F9D63][orgmode:gcr:vela:B7F010D3-4A47-4E4A-9E00-D54E4D0F9D63]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_41F8B285-650A-4394-8ECD-85C81181DF14][org_gcr_2017-05-12_mara_41F8B285-650A-4394-8ECD-85C81181DF14]]
 (setq org-ascii-text-width 80)
 (setq org-ascii-global-margin 0)
-;; orgmode:gcr:vela:B7F010D3-4A47-4E4A-9E00-D54E4D0F9D63 ends here
+;; org_gcr_2017-05-12_mara_41F8B285-650A-4394-8ECD-85C81181DF14 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:2017-02-05:mara:D9FC3B3A-FAC5-4DC6-A582-9583974C4A8C][orgmode:gcr:2017-02-05:mara:D9FC3B3A-FAC5-4DC6-A582-9583974C4A8C]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_96A9D762-036A-49C0-9E1B-5ACD3F5AE58E][org_gcr_2017-05-12_mara_96A9D762-036A-49C0-9E1B-5ACD3F5AE58E]]
 (defun help/occur-non-ascii ()
   "Find any non-ascii characters in the current buffer.
 Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
   (interactive)
   (occur "[^[:ascii:]]"))
-;; orgmode:gcr:2017-02-05:mara:D9FC3B3A-FAC5-4DC6-A582-9583974C4A8C ends here
+;; org_gcr_2017-05-12_mara_96A9D762-036A-49C0-9E1B-5ACD3F5AE58E ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:B77E265B-EE1A-469D-BEFB-51360B7AB45E][orgmode:gcr:vela:B77E265B-EE1A-469D-BEFB-51360B7AB45E]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8D4105B8-5215-4835-91BF-B0D03ACC3A78][org_gcr_2017-05-12_mara_8D4105B8-5215-4835-91BF-B0D03ACC3A78]]
 (use-package ox-beamer)
-;; orgmode:gcr:vela:B77E265B-EE1A-469D-BEFB-51360B7AB45E ends here
+;; org_gcr_2017-05-12_mara_8D4105B8-5215-4835-91BF-B0D03ACC3A78 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:3433DE3A-994E-4E4C-97E1-8C0A1831ABB3][orgmode:gcr:vela:3433DE3A-994E-4E4C-97E1-8C0A1831ABB3]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B19CF074-8B77-4843-912C-F68B6FB0FE2F][org_gcr_2017-05-12_mara_B19CF074-8B77-4843-912C-F68B6FB0FE2F]]
 (use-package fountain-mode
   :config
   (add-to-list 'auto-mode-alist '("\\.fountain$" . fountain-mode))
@@ -2869,14 +2869,14 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
                         )))
     (mapc (lambda (stx) (add-to-list 'ispell-skip-region-alist (list stx)))
           fountain-stx)))
-;; orgmode:gcr:vela:3433DE3A-994E-4E4C-97E1-8C0A1831ABB3 ends here
+;; org_gcr_2017-05-12_mara_B19CF074-8B77-4843-912C-F68B6FB0FE2F ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:63E64A4A-FC5E-4663-BC58-205F5EF130D3][orgmode:gcr:vela:63E64A4A-FC5E-4663-BC58-205F5EF130D3]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_96443D6C-1E5B-48C5-9853-544D0EE79B1E][org_gcr_2017-05-12_mara_96443D6C-1E5B-48C5-9853-544D0EE79B1E]]
 (use-package apache-mode
   :ensure t)
-;; orgmode:gcr:vela:63E64A4A-FC5E-4663-BC58-205F5EF130D3 ends here
+;; org_gcr_2017-05-12_mara_96443D6C-1E5B-48C5-9853-544D0EE79B1E ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:43157E0F-7B49-4594-B41C-3B3805B8D6EF][orgmode:gcr:vela:43157E0F-7B49-4594-B41C-3B3805B8D6EF]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D12C607E-C07C-41F8-A0B0-02A228C7AED7][org_gcr_2017-05-12_mara_D12C607E-C07C-41F8-A0B0-02A228C7AED7]]
 (use-package ssh-config-mode
   :ensure t
   :init
@@ -2885,27 +2885,27 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
   (add-to-list 'auto-mode-alist '("/known_hosts\\'"       . ssh-known-hosts-mode))
   (add-to-list 'auto-mode-alist '("/authorized_keys2?\\'" . ssh-authorized-keys-mode))
   (add-hook 'ssh-config-mode-hook 'turn-on-font-lock))
-;; orgmode:gcr:vela:43157E0F-7B49-4594-B41C-3B3805B8D6EF ends here
+;; org_gcr_2017-05-12_mara_D12C607E-C07C-41F8-A0B0-02A228C7AED7 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:7592B1CF-CDA3-4ED1-99FA-205E41C74FFF][orgmode:gcr:vela:7592B1CF-CDA3-4ED1-99FA-205E41C74FFF]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_AF516C01-3152-4194-954B-91A44A429972][org_gcr_2017-05-12_mara_AF516C01-3152-4194-954B-91A44A429972]]
 (add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
 (add-to-list 'auto-mode-alist '("\\.art" . artist-mode))
 (add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
-;; orgmode:gcr:vela:7592B1CF-CDA3-4ED1-99FA-205E41C74FFF ends here
+;; org_gcr_2017-05-12_mara_AF516C01-3152-4194-954B-91A44A429972 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:6907A176-CCF4-4BDF-A242-BDBC4C67239F][orgmode:gcr:vela:6907A176-CCF4-4BDF-A242-BDBC4C67239F]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9D0BBF2C-BB7C-4B72-BA10-0B497FE8CAA1][org_gcr_2017-05-12_mara_9D0BBF2C-BB7C-4B72-BA10-0B497FE8CAA1]]
 (defconst help/ditaa-jar (getenv "DITAA"))
 (setq org-ditaa-jar-path help/ditaa-jar)
-;; orgmode:gcr:vela:6907A176-CCF4-4BDF-A242-BDBC4C67239F ends here
+;; org_gcr_2017-05-12_mara_9D0BBF2C-BB7C-4B72-BA10-0B497FE8CAA1 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:EAADBBCB-9054-4040-8579-1EC08FB97BDE][orgmode:gcr:vela:EAADBBCB-9054-4040-8579-1EC08FB97BDE]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_362D21E8-3D98-4905-8942-A146C4A555D1][org_gcr_2017-05-12_mara_362D21E8-3D98-4905-8942-A146C4A555D1]]
 (use-package graphviz-dot-mode
   :ensure t
   :config
   (setf (cdr (assoc "dot" org-src-lang-modes)) 'graphviz-dot))
-;; orgmode:gcr:vela:EAADBBCB-9054-4040-8579-1EC08FB97BDE ends here
+;; org_gcr_2017-05-12_mara_362D21E8-3D98-4905-8942-A146C4A555D1 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:80EE7930-0025-4D06-96BB-24A70169CDEA][orgmode:gcr:vela:80EE7930-0025-4D06-96BB-24A70169CDEA]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_91D0CFDF-6FC2-4F4A-9CFC-825CED0061B6][org_gcr_2017-05-12_mara_91D0CFDF-6FC2-4F4A-9CFC-825CED0061B6]]
 (use-package plantuml-mode
   :ensure t
   :init
@@ -2914,89 +2914,89 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
   :config
   (eval-after-load "ob-plantuml"
     (setq org-plantuml-jar-path help/plantuml-jar)))
-;; orgmode:gcr:vela:80EE7930-0025-4D06-96BB-24A70169CDEA ends here
+;; org_gcr_2017-05-12_mara_91D0CFDF-6FC2-4F4A-9CFC-825CED0061B6 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:6C53BC6D-012D-44A6-963B-610610933D4B][orgmode:gcr:vela:6C53BC6D-012D-44A6-963B-610610933D4B]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_70B524CE-27DC-41D1-BB27-99FFE334B40B][org_gcr_2017-05-12_mara_70B524CE-27DC-41D1-BB27-99FFE334B40B]]
 (use-package scad-mode
   :ensure t)
-;; orgmode:gcr:vela:6C53BC6D-012D-44A6-963B-610610933D4B ends here
+;; org_gcr_2017-05-12_mara_70B524CE-27DC-41D1-BB27-99FFE334B40B ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:1B924EB9-5B03-4853-B99A-63984BA344B8][orgmode:gcr:vela:1B924EB9-5B03-4853-B99A-63984BA344B8]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7939B6EA-A76B-4A2A-B1B3-4EB1FEE2D9C2][org_gcr_2017-05-12_mara_7939B6EA-A76B-4A2A-B1B3-4EB1FEE2D9C2]]
 (use-package selectric-mode
   :ensure t)
-;; orgmode:gcr:vela:1B924EB9-5B03-4853-B99A-63984BA344B8 ends here
+;; org_gcr_2017-05-12_mara_7939B6EA-A76B-4A2A-B1B3-4EB1FEE2D9C2 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:DC131133-BEC7-45D2-BA35-42E77FC3BB22][orgmode:gcr:vela:DC131133-BEC7-45D2-BA35-42E77FC3BB22]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7F3AF752-B4D1-4B55-85EC-C5E9B8DC13B9][org_gcr_2017-05-12_mara_7F3AF752-B4D1-4B55-85EC-C5E9B8DC13B9]]
 (use-package nlinum
   :ensure t
   :config
   (setq nlinum-format "%05d"))
-;; orgmode:gcr:vela:DC131133-BEC7-45D2-BA35-42E77FC3BB22 ends here
+;; org_gcr_2017-05-12_mara_7F3AF752-B4D1-4B55-85EC-C5E9B8DC13B9 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:61F1703A-48AA-4C2E-AE78-4C9766B6C8BC][orgmode:gcr:vela:61F1703A-48AA-4C2E-AE78-4C9766B6C8BC]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B1FCEF49-334F-4F64-B96F-A888ABE84BB0][org_gcr_2017-05-12_mara_B1FCEF49-334F-4F64-B96F-A888ABE84BB0]]
 (setq inhibit-eol-conversion t)
-;; orgmode:gcr:vela:61F1703A-48AA-4C2E-AE78-4C9766B6C8BC ends here
+;; org_gcr_2017-05-12_mara_B1FCEF49-334F-4F64-B96F-A888ABE84BB0 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:A5438CB6-5228-4753-B2A7-BFEFC573F6B6][orgmode:gcr:vela:A5438CB6-5228-4753-B2A7-BFEFC573F6B6]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5D771C42-CAAF-439D-BEC1-5A6559D168D2][org_gcr_2017-05-12_mara_5D771C42-CAAF-439D-BEC1-5A6559D168D2]]
 (use-package uniquify)
 (setq uniquify-buffer-name-style 'forward)
-;; orgmode:gcr:vela:A5438CB6-5228-4753-B2A7-BFEFC573F6B6 ends here
+;; org_gcr_2017-05-12_mara_5D771C42-CAAF-439D-BEC1-5A6559D168D2 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:295C91F5-6CD4-41C8-A62C-600B11838B2B][orgmode:gcr:vela:295C91F5-6CD4-41C8-A62C-600B11838B2B]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C5DA95E6-0F38-450E-96C8-6CED005DE0D1][org_gcr_2017-05-12_mara_C5DA95E6-0F38-450E-96C8-6CED005DE0D1]]
 (setq ring-bell-function 'ignore)
 (setq visible-bell t)
-;; orgmode:gcr:vela:295C91F5-6CD4-41C8-A62C-600B11838B2B ends here
+;; org_gcr_2017-05-12_mara_C5DA95E6-0F38-450E-96C8-6CED005DE0D1 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:59F87147-F8C3-49D0-BEC6-A8D19989001E][orgmode:gcr:vela:59F87147-F8C3-49D0-BEC6-A8D19989001E]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F6E5E796-E1A4-4599-B6D1-F0729C1619A0][org_gcr_2017-05-12_mara_F6E5E796-E1A4-4599-B6D1-F0729C1619A0]]
 (setq blink-matching-paren nil)
 (show-paren-mode)
 (setq show-paren-delay 0)
 (setq show-paren-style 'expression)
-;; orgmode:gcr:vela:59F87147-F8C3-49D0-BEC6-A8D19989001E ends here
+;; org_gcr_2017-05-12_mara_F6E5E796-E1A4-4599-B6D1-F0729C1619A0 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:CC0CDAEB-8460-43CE-BA7E-3A9D986A02BB][orgmode:gcr:vela:CC0CDAEB-8460-43CE-BA7E-3A9D986A02BB]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_DD79CB65-2F96-40DD-8BD8-BECDCE8CD399][org_gcr_2017-05-12_mara_DD79CB65-2F96-40DD-8BD8-BECDCE8CD399]]
 (blink-cursor-mode 0)
 (help/on-gui
  (setq-default cursor-type 'box)
  (setq x-stretch-cursor 1))
-;; orgmode:gcr:vela:CC0CDAEB-8460-43CE-BA7E-3A9D986A02BB ends here
+;; org_gcr_2017-05-12_mara_DD79CB65-2F96-40DD-8BD8-BECDCE8CD399 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:BC706CBF-2B98-4FD7-9A5A-61F5483D0899][orgmode:gcr:vela:BC706CBF-2B98-4FD7-9A5A-61F5483D0899]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0BCAB755-9914-473F-9543-37130529809F][org_gcr_2017-05-12_mara_0BCAB755-9914-473F-9543-37130529809F]]
 (prefer-coding-system 'utf-8)
 (help/on-gui
  (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
  (help/on-windows
   (set-clipboard-coding-system 'utf-16le-dos)))
-;; orgmode:gcr:vela:BC706CBF-2B98-4FD7-9A5A-61F5483D0899 ends here
+;; org_gcr_2017-05-12_mara_0BCAB755-9914-473F-9543-37130529809F ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:6FD9F092-7062-4E7A-BB58-4B5F45AF0AD0][orgmode:gcr:vela:6FD9F092-7062-4E7A-BB58-4B5F45AF0AD0]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C53AF7AE-494C-4916-83C8-F175554B1CAE][org_gcr_2017-05-12_mara_C53AF7AE-494C-4916-83C8-F175554B1CAE]]
 (global-hl-line-mode t)
-;; orgmode:gcr:vela:6FD9F092-7062-4E7A-BB58-4B5F45AF0AD0 ends here
+;; org_gcr_2017-05-12_mara_C53AF7AE-494C-4916-83C8-F175554B1CAE ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:D0F5616F-1609-4E12-A4D7-7A1F46D34A2C][orgmode:gcr:vela:D0F5616F-1609-4E12-A4D7-7A1F46D34A2C]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8B8F5CDF-A2FF-49C3-8DB1-3551942F7573][org_gcr_2017-05-12_mara_8B8F5CDF-A2FF-49C3-8DB1-3551942F7573]]
 (setq default-input-method 'TeX)
-;; orgmode:gcr:vela:D0F5616F-1609-4E12-A4D7-7A1F46D34A2C ends here
+;; org_gcr_2017-05-12_mara_8B8F5CDF-A2FF-49C3-8DB1-3551942F7573 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:22652727-D070-49FE-804F-72FA4C86B770][orgmode:gcr:vela:22652727-D070-49FE-804F-72FA4C86B770]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_DD49BAEE-1C39-40E1-93B5-9CBDCD5E284A][org_gcr_2017-05-12_mara_DD49BAEE-1C39-40E1-93B5-9CBDCD5E284A]]
 (setq mouse-drag-copy-region t)
-;; orgmode:gcr:vela:22652727-D070-49FE-804F-72FA4C86B770 ends here
+;; org_gcr_2017-05-12_mara_DD49BAEE-1C39-40E1-93B5-9CBDCD5E284A ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:989C4727-473A-4DAB-8446-5077F3042587][orgmode:gcr:vela:989C4727-473A-4DAB-8446-5077F3042587]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_828D7008-4B78-44AE-B5B7-15B60B03B3A6][org_gcr_2017-05-12_mara_828D7008-4B78-44AE-B5B7-15B60B03B3A6]]
 (use-package multiple-cursors
   :ensure t
   :config
   (setq mc/always-run-for-all t))
-;; orgmode:gcr:vela:989C4727-473A-4DAB-8446-5077F3042587 ends here
+;; org_gcr_2017-05-12_mara_828D7008-4B78-44AE-B5B7-15B60B03B3A6 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:2017-05-03:mara:DDC85815-EA88-407A-A160-782A5BB0F5E4][orgmode:gcr:2017-05-03:mara:DDC85815-EA88-407A-A160-782A5BB0F5E4]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_AA76B6F1-AC3F-42D8-B321-2BD1B05DDE2C][org_gcr_2017-05-12_mara_AA76B6F1-AC3F-42D8-B321-2BD1B05DDE2C]]
 (defun help/recenter-line-near-top-fn ()
   "Move current line near top"
   (interactive)
   (let ((recenter-positions '(5)))
     (recenter-top-bottom)))
-;; orgmode:gcr:2017-05-03:mara:DDC85815-EA88-407A-A160-782A5BB0F5E4 ends here
+;; org_gcr_2017-05-12_mara_AA76B6F1-AC3F-42D8-B321-2BD1B05DDE2C ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:021B7D3A-E696-43B9-BC08-C8BDABB33999][orgmode:gcr:vela:021B7D3A-E696-43B9-BC08-C8BDABB33999]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1AD36955-5FAC-4794-A9B0-A8DC6639A04C][org_gcr_2017-05-12_mara_1AD36955-5FAC-4794-A9B0-A8DC6639A04C]]
 (use-package solarized-theme
   :ensure t
   :config
@@ -3008,22 +3008,22 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
   (setq solarized-emphasize-indicators nil)
   (setq solarized-scale-org-headlines t)
   (load-theme 'solarized-dark t))
-;; orgmode:gcr:vela:021B7D3A-E696-43B9-BC08-C8BDABB33999 ends here
+;; org_gcr_2017-05-12_mara_1AD36955-5FAC-4794-A9B0-A8DC6639A04C ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:CDD7F353-867A-4E9C-A060-5C0F6A26866B][orgmode:gcr:vela:CDD7F353-867A-4E9C-A060-5C0F6A26866B]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_96BD218B-65E7-4ACA-98CE-108C3BFC29A3][org_gcr_2017-05-12_mara_96BD218B-65E7-4ACA-98CE-108C3BFC29A3]]
 (setq comint-scroll-to-bottom-on-input 'this)
 (setq comint-scroll-to-bottom-on-output 'others)
 (setq comint-move-point-for-output 'others)
 (setq comint-show-maximum-output t)
 (setq comint-scroll-show-maximum-output t)
 (setq comint-move-point-for-output t)
-;; orgmode:gcr:vela:CDD7F353-867A-4E9C-A060-5C0F6A26866B ends here
+;; org_gcr_2017-05-12_mara_96BD218B-65E7-4ACA-98CE-108C3BFC29A3 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:346012D4-6861-458B-8352-3874D1F934E6][orgmode:gcr:vela:346012D4-6861-458B-8352-3874D1F934E6]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F4517BF4-A876-4E3B-B636-9A60BED7174F][org_gcr_2017-05-12_mara_F4517BF4-A876-4E3B-B636-9A60BED7174F]]
 (setq comint-prompt-read-only nil)
-;; orgmode:gcr:vela:346012D4-6861-458B-8352-3874D1F934E6 ends here
+;; org_gcr_2017-05-12_mara_F4517BF4-A876-4E3B-B636-9A60BED7174F ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:21687556-D79E-4734-86E6-52FF9EE107B5][orgmode:gcr:vela:21687556-D79E-4734-86E6-52FF9EE107B5]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_6B639D09-DA18-40C5-ABA0-8647820507E6][org_gcr_2017-05-12_mara_6B639D09-DA18-40C5-ABA0-8647820507E6]]
 (help/on-gui
  (defvar help/font-size-current 10 "The preferred font size.")
  (help/on-osx (setq help/font-size-current 17))
@@ -3054,21 +3054,21 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
    (setq help/font-size-current help/font-size-ideal)
    (help/update-font))
  (help/update-font))
-;; orgmode:gcr:vela:21687556-D79E-4734-86E6-52FF9EE107B5 ends here
+;; org_gcr_2017-05-12_mara_6B639D09-DA18-40C5-ABA0-8647820507E6 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:00BC7BEE-F9FC-4B9D-AC1A-4B1A3FFA64A7][orgmode:gcr:vela:00BC7BEE-F9FC-4B9D-AC1A-4B1A3FFA64A7]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_03B4E8E1-083B-4F5D-A4A0-BAE8A0553FAF][org_gcr_2017-05-12_mara_03B4E8E1-083B-4F5D-A4A0-BAE8A0553FAF]]
 (menu-bar-mode nil)
-;; orgmode:gcr:vela:00BC7BEE-F9FC-4B9D-AC1A-4B1A3FFA64A7 ends here
+;; org_gcr_2017-05-12_mara_03B4E8E1-083B-4F5D-A4A0-BAE8A0553FAF ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:2063ECD7-C23B-4CDC-96E0-786361DFAA9C][orgmode:gcr:vela:2063ECD7-C23B-4CDC-96E0-786361DFAA9C]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D462D343-9EA8-4BCF-BD08-8FDD4F3E11E9][org_gcr_2017-05-12_mara_D462D343-9EA8-4BCF-BD08-8FDD4F3E11E9]]
 (tool-bar-mode nil)
-;; orgmode:gcr:vela:2063ECD7-C23B-4CDC-96E0-786361DFAA9C ends here
+;; org_gcr_2017-05-12_mara_D462D343-9EA8-4BCF-BD08-8FDD4F3E11E9 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:96EB14DD-CB63-46F3-B2E3-6F433D70DFAE][orgmode:gcr:vela:96EB14DD-CB63-46F3-B2E3-6F433D70DFAE]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D967070F-06B7-4433-94A8-36E360600C9E][org_gcr_2017-05-12_mara_D967070F-06B7-4433-94A8-36E360600C9E]]
 (scroll-bar-mode nil)
-;; orgmode:gcr:vela:96EB14DD-CB63-46F3-B2E3-6F433D70DFAE ends here
+;; org_gcr_2017-05-12_mara_D967070F-06B7-4433-94A8-36E360600C9E ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:2017-02-05:mara:72643BF5-0810-4188-A39B-302BA06A6182][orgmode:gcr:2017-02-05:mara:72643BF5-0810-4188-A39B-302BA06A6182]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A6D3E9FB-C601-401C-AFA7-B5410A36FDAF][org_gcr_2017-05-12_mara_A6D3E9FB-C601-401C-AFA7-B5410A36FDAF]]
 (defun my--set-transparency (inc)
   "Increase or decrease the selected frame transparency.
 Attribution: URL `https://www.reddit.com/r/emacs/comments/5rnpsm/nice_hydra_to_set_frame_transparency/'"
@@ -3090,31 +3090,31 @@ ALPHA : [ %(frame-parameter nil 'alpha) ].'
   ("K" (lambda () (interactive) (my--set-transparency -10)) "-- less")
   ("=" (lambda (value) (interactive "nTransparency Value 0 - 100 opaque:")
          (set-frame-parameter (selected-frame) 'alpha value)) "Set to ?" :color blue))
-;; orgmode:gcr:2017-02-05:mara:72643BF5-0810-4188-A39B-302BA06A6182 ends here
+;; org_gcr_2017-05-12_mara_A6D3E9FB-C601-401C-AFA7-B5410A36FDAF ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:2017-04-28:mara:6783EA5C-D136-4032-AB98-1BE7942C2ACA][orgmode:gcr:2017-04-28:mara:6783EA5C-D136-4032-AB98-1BE7942C2ACA]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0413671E-4479-4626-80B9-3A22E00D4652][org_gcr_2017-05-12_mara_0413671E-4479-4626-80B9-3A22E00D4652]]
 (define-key global-map (kbd "s-m") nil)
 (define-key global-map (kbd "s-o") nil)
-;; orgmode:gcr:2017-04-28:mara:6783EA5C-D136-4032-AB98-1BE7942C2ACA ends here
+;; org_gcr_2017-05-12_mara_0413671E-4479-4626-80B9-3A22E00D4652 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:9E122111-1074-42D5-A57D-855E3A888C8E][orgmode:gcr:vela:9E122111-1074-42D5-A57D-855E3A888C8E]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_DD263B9E-EFF2-49BF-B367-4F4505F8E618][org_gcr_2017-05-12_mara_DD263B9E-EFF2-49BF-B367-4F4505F8E618]]
 (setq make-pointer-invisible t)
-;; orgmode:gcr:vela:9E122111-1074-42D5-A57D-855E3A888C8E ends here
+;; org_gcr_2017-05-12_mara_DD263B9E-EFF2-49BF-B367-4F4505F8E618 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:668C63F3-C52E-4BDF-929D-E2BF2E985304][orgmode:gcr:vela:668C63F3-C52E-4BDF-929D-E2BF2E985304]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D6C905B3-76CD-4ABE-83D9-F1E708F0041F][org_gcr_2017-05-12_mara_D6C905B3-76CD-4ABE-83D9-F1E708F0041F]]
 (use-package diff-hl
   :ensure t)
-;; orgmode:gcr:vela:668C63F3-C52E-4BDF-929D-E2BF2E985304 ends here
+;; org_gcr_2017-05-12_mara_D6C905B3-76CD-4ABE-83D9-F1E708F0041F ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:5B8FCEDB-66BA-4912-8FC8-B6EFBF6EF34D][orgmode:gcr:vela:5B8FCEDB-66BA-4912-8FC8-B6EFBF6EF34D]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_2E9A617A-5D88-4E71-88EB-595AA1F16EC2][org_gcr_2017-05-12_mara_2E9A617A-5D88-4E71-88EB-595AA1F16EC2]]
 (setq ediff-split-window-function 'split-window-horizontally)
-;; orgmode:gcr:vela:5B8FCEDB-66BA-4912-8FC8-B6EFBF6EF34D ends here
+;; org_gcr_2017-05-12_mara_2E9A617A-5D88-4E71-88EB-595AA1F16EC2 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:3FB7FA94-1A6B-4E3B-8EDE-7A4D1D86E50E][orgmode:gcr:vela:3FB7FA94-1A6B-4E3B-8EDE-7A4D1D86E50E]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8E367FFF-FCF3-4AC8-9542-A20CE62081C4][org_gcr_2017-05-12_mara_8E367FFF-FCF3-4AC8-9542-A20CE62081C4]]
 (winner-mode t)
-;; orgmode:gcr:vela:3FB7FA94-1A6B-4E3B-8EDE-7A4D1D86E50E ends here
+;; org_gcr_2017-05-12_mara_8E367FFF-FCF3-4AC8-9542-A20CE62081C4 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:EA28235F-22B2-463F-AC06-EC79FA613F22][orgmode:gcr:vela:EA28235F-22B2-463F-AC06-EC79FA613F22]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_94DA6C06-BCBB-4231-B0C7-EFD4B1310530][org_gcr_2017-05-12_mara_94DA6C06-BCBB-4231-B0C7-EFD4B1310530]]
 (defun help/1-window ()
   "Work with this buffer in 1 window."
   (interactive)
@@ -3147,22 +3147,22 @@ ALPHA : [ %(frame-parameter nil 'alpha) ].'
   (call-interactively #'other-window)
   (call-interactively #'other-window)
   (balance-windows))
-;; orgmode:gcr:vela:EA28235F-22B2-463F-AC06-EC79FA613F22 ends here
+;; org_gcr_2017-05-12_mara_94DA6C06-BCBB-4231-B0C7-EFD4B1310530 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:2DB2EB2C-74AA-4121-A2BE-4974DCB5638E][orgmode:gcr:vela:2DB2EB2C-74AA-4121-A2BE-4974DCB5638E]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B5190A4E-4174-471F-9C82-C454D269B867][org_gcr_2017-05-12_mara_B5190A4E-4174-471F-9C82-C454D269B867]]
 (setq help-window-select t)
-;; orgmode:gcr:vela:2DB2EB2C-74AA-4121-A2BE-4974DCB5638E ends here
+;; org_gcr_2017-05-12_mara_B5190A4E-4174-471F-9C82-C454D269B867 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:2017-03-04:mara:66C289E4-0535-47DF-9A31-64B373E7C433][orgmode:gcr:2017-03-04:mara:66C289E4-0535-47DF-9A31-64B373E7C433]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A165E3DB-37E7-49A7-84E4-1CB0D2A137C6][org_gcr_2017-05-12_mara_A165E3DB-37E7-49A7-84E4-1CB0D2A137C6]]
 (use-package ace-window
   :ensure t
   :config
   (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
   (setq aw-scope 'frame)
   (setq aw-background nil))
-;; orgmode:gcr:2017-03-04:mara:66C289E4-0535-47DF-9A31-64B373E7C433 ends here
+;; org_gcr_2017-05-12_mara_A165E3DB-37E7-49A7-84E4-1CB0D2A137C6 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:E4B98196-FDFB-42B4-A52A-8CA7DC066E8E][orgmode:gcr:vela:E4B98196-FDFB-42B4-A52A-8CA7DC066E8E]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C][org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C]]
 (global-set-key (kbd "C-5") #'kill-this-buffer)
 (global-set-key (kbd "C-9") #'(lambda () (interactive) (insert "Vigneswari")))
 (global-set-key (kbd "s-5") #'mc/mark-previous-like-this)
@@ -3172,9 +3172,9 @@ ALPHA : [ %(frame-parameter nil 'alpha) ].'
 (global-set-key (kbd "s-1") #'mc/edit-lines)
 (global-set-key (kbd "s--") #'decrement-integer-at-point)
 (global-set-key (kbd "s-+") #'increment-integer-at-point)
-;; orgmode:gcr:vela:E4B98196-FDFB-42B4-A52A-8CA7DC066E8E ends here
+;; org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:239A85C3-2CEB-4E40-975F-8B3584F7F450][orgmode:gcr:vela:239A85C3-2CEB-4E40-975F-8B3584F7F450]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389][org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389]]
 (key-chord-define-global "1o" #'help/1-window)
 (key-chord-define-global "2o" #'help/2-window)
 (key-chord-define-global "3o" #'help/3-window)
@@ -3184,19 +3184,19 @@ ALPHA : [ %(frame-parameter nil 'alpha) ].'
 (global-set-key (kbd "H-i") #'insert-char)
 (global-set-key (kbd "H-p") #'help/insert-datestamp)
 (global-set-key (kbd "H-P") #'help/insert-timestamp*-no-colons)
-;; orgmode:gcr:vela:239A85C3-2CEB-4E40-975F-8B3584F7F450 ends here
+;; org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:FD9CED46-8D84-495F-A413-90DA9EA52B8A][orgmode:gcr:vela:FD9CED46-8D84-495F-A413-90DA9EA52B8A]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E8ABDA7D-AC92-4C24-8287-1505E2377B2C][org_gcr_2017-05-12_mara_E8ABDA7D-AC92-4C24-8287-1505E2377B2C]]
 (global-set-key (kbd "C-h") nil)
 (global-set-key (kbd "C-h") #'ace-window)
-;; orgmode:gcr:vela:FD9CED46-8D84-495F-A413-90DA9EA52B8A ends here
+;; org_gcr_2017-05-12_mara_E8ABDA7D-AC92-4C24-8287-1505E2377B2C ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:E60EA15F-28A0-4E98-B62E-1F8BDE444BD8][orgmode:gcr:vela:E60EA15F-28A0-4E98-B62E-1F8BDE444BD8]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_20330335-75E6-4AB4-A661-D291315FAFD7][org_gcr_2017-05-12_mara_20330335-75E6-4AB4-A661-D291315FAFD7]]
 (global-set-key (kbd "s-a") #'help/safb-switch-to-previous-buffer)
 (global-set-key (kbd "s-d") #'er/expand-region)
-;; orgmode:gcr:vela:E60EA15F-28A0-4E98-B62E-1F8BDE444BD8 ends here
+;; org_gcr_2017-05-12_mara_20330335-75E6-4AB4-A661-D291315FAFD7 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:F6C7AAB7-DF69-4EBA-8116-15DC32022D49][orgmode:gcr:vela:F6C7AAB7-DF69-4EBA-8116-15DC32022D49]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_095E1EC7-12A2-43BB-8ED5-CF2BC6E7D158][org_gcr_2017-05-12_mara_095E1EC7-12A2-43BB-8ED5-CF2BC6E7D158]]
 (defhydra help/hydra/left-side/global (:color blue
                                               :hint nil)
   "
@@ -3264,13 +3264,13 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("c" fill-paragraph )
   ("b" erase-buffer)
   ("B" help/bibtex/body))
-;; orgmode:gcr:vela:F6C7AAB7-DF69-4EBA-8116-15DC32022D49 ends here
+;; org_gcr_2017-05-12_mara_095E1EC7-12A2-43BB-8ED5-CF2BC6E7D158 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:EFFA5A5F-58A8-476D-A8D4-16F232231EC7][orgmode:gcr:vela:EFFA5A5F-58A8-476D-A8D4-16F232231EC7]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_28B4A661-E888-4EFA-ADE3-4B1C05F6E92B][org_gcr_2017-05-12_mara_28B4A661-E888-4EFA-ADE3-4B1C05F6E92B]]
 (key-chord-define-global "vv" #'help/hydra/left-side/global/body)
-;; orgmode:gcr:vela:EFFA5A5F-58A8-476D-A8D4-16F232231EC7 ends here
+;; org_gcr_2017-05-12_mara_28B4A661-E888-4EFA-ADE3-4B1C05F6E92B ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:362686F6-B397-44D5-812F-BE24670F4204][orgmode:gcr:vela:362686F6-B397-44D5-812F-BE24670F4204]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C93A4DB7-1441-4DBA-B586-76266C5C30DF][org_gcr_2017-05-12_mara_C93A4DB7-1441-4DBA-B586-76266C5C30DF]]
 (defhydra hydra-apropos-ish (:color blue
                                     :hint nil)
   "
@@ -3289,9 +3289,9 @@ e_m_acs          elis_p_
   ("e" apropos-value)
   ("m" emacs-index-search)
   ("p" elisp-index-search))
-;; orgmode:gcr:vela:362686F6-B397-44D5-812F-BE24670F4204 ends here
+;; org_gcr_2017-05-12_mara_C93A4DB7-1441-4DBA-B586-76266C5C30DF ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:orgmode:gcr:2017-01-21:mara:2ECB9A12-D860-48B6-B182-3352532B538B][orgmode:gcr:vela:orgmode:gcr:2017-01-21:mara:2ECB9A12-D860-48B6-B182-3352532B538B]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_EE5F8793-8604-4041-8D91-DBC419809947][org_gcr_2017-05-12_mara_EE5F8793-8604-4041-8D91-DBC419809947]]
 (defhydra help/trademark (:color blue :hint nil)
   "
 American _R_egistered Trademark
@@ -3305,9 +3305,9 @@ _K_orean Standard
   ("S" (lambda () (interactive) (insert "℠")))
   ("J" (lambda () (interactive) (insert "〄")))
   ("K" (lambda () (interactive) (insert "㉿"))))
-;; orgmode:gcr:vela:orgmode:gcr:2017-01-21:mara:2ECB9A12-D860-48B6-B182-3352532B538B ends here
+;; org_gcr_2017-05-12_mara_EE5F8793-8604-4041-8D91-DBC419809947 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:2017-02-11:mara:45BE9495-8AEE-42C4-BA90-4CC37A4741D6][orgmode:gcr:2017-02-11:mara:45BE9495-8AEE-42C4-BA90-4CC37A4741D6]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E4413D83-9743-468B-BBAF-3FAF9E31F491][org_gcr_2017-05-12_mara_E4413D83-9743-468B-BBAF-3FAF9E31F491]]
 (defhydra help/checks (:color blue :hint nil)
   "
 _q_ ✓ _w_ ✗ _e_ ☐ _r_ ☑ _t_ ☒_
@@ -3317,9 +3317,9 @@ _q_ ✓ _w_ ✗ _e_ ☐ _r_ ☑ _t_ ☒_
   ("e" (lambda () (interactive) (insert "☐")) :exit nil)
   ("r" (lambda () (interactive) (insert "☑")) :exit nil)
   ("t" (lambda () (interactive) (insert "☒")) :exit nil))
-;; orgmode:gcr:2017-02-11:mara:45BE9495-8AEE-42C4-BA90-4CC37A4741D6 ends here
+;; org_gcr_2017-05-12_mara_E4413D83-9743-468B-BBAF-3FAF9E31F491 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:2017-02-11:mara:EECC4207-5A0D-426A-89CF-86494E6B8667][orgmode:gcr:2017-02-11:mara:EECC4207-5A0D-426A-89CF-86494E6B8667]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D0F37886-4355-478C-A141-93F48E531CE5][org_gcr_2017-05-12_mara_D0F37886-4355-478C-A141-93F48E531CE5]]
 (defhydra help/bibtex (:color blue :hint nil)
   "
 _c_ Clean Entry _C_ Clean Entry & Create New Reference
@@ -3338,9 +3338,9 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
   ("M" (lambda () (interactive)
          (progn (aggressive-indent-mode nil)
                 (visual-line-mode nil)))))
-;; orgmode:gcr:2017-02-11:mara:EECC4207-5A0D-426A-89CF-86494E6B8667 ends here
+;; org_gcr_2017-05-12_mara_D0F37886-4355-478C-A141-93F48E531CE5 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:2017-01-21:mara:C92235D1-35C7-41EA-B4ED-9727C8531810][orgmode:gcr:2017-01-21:mara:C92235D1-35C7-41EA-B4ED-9727C8531810]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B][org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B]]
 (global-set-key (kbd "s-v") #'ido-find-file)
 (global-set-key (kbd "C-x C-c") #'help/safb-save-buffers-kill-terminal)
 (key-chord-define-global "<<" (lambda () (interactive) (insert "«")))
@@ -3348,43 +3348,43 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (global-set-key (kbd "C-,") #'ido-switch-buffer)
 (global-set-key (kbd "C-.") nil)
 (global-set-key (kbd "C-.") #'smex)
-;; orgmode:gcr:2017-01-21:mara:C92235D1-35C7-41EA-B4ED-9727C8531810 ends here
+;; org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:2017-03-03:mara:B4E3B76E-94CA-482C-BE70-7413A62BB152][orgmode:gcr:2017-03-03:mara:B4E3B76E-94CA-482C-BE70-7413A62BB152]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5FAD516B-B4C1-4F47-A6B9-7CA12F9AFF5D][org_gcr_2017-05-12_mara_5FAD516B-B4C1-4F47-A6B9-7CA12F9AFF5D]]
 (global-set-key (kbd "s-SPC") #'cycle-spacing)
-;; orgmode:gcr:2017-03-03:mara:B4E3B76E-94CA-482C-BE70-7413A62BB152 ends here
+;; org_gcr_2017-05-12_mara_5FAD516B-B4C1-4F47-A6B9-7CA12F9AFF5D ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:2608E62D-62B4-4B82-BFE0-E1E04C0D6914][orgmode:gcr:vela:2608E62D-62B4-4B82-BFE0-E1E04C0D6914]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_411C072C-C9A9-42DA-95F2-FB23EE6FF207][org_gcr_2017-05-12_mara_411C072C-C9A9-42DA-95F2-FB23EE6FF207]]
 (global-set-key (kbd "H-o") #'help/occur-dwim)
-;; orgmode:gcr:vela:2608E62D-62B4-4B82-BFE0-E1E04C0D6914 ends here
+;; org_gcr_2017-05-12_mara_411C072C-C9A9-42DA-95F2-FB23EE6FF207 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:4E784CF7-8CB1-42D0-A8EB-6FF54E7B60E9][orgmode:gcr:vela:4E784CF7-8CB1-42D0-A8EB-6FF54E7B60E9]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0CA60630-37AA-4192-91A1-FFC1B16DC3E4][org_gcr_2017-05-12_mara_0CA60630-37AA-4192-91A1-FFC1B16DC3E4]]
 (key-chord-define-global "f9" #'help/util-cycle)
-;; orgmode:gcr:vela:4E784CF7-8CB1-42D0-A8EB-6FF54E7B60E9 ends here
+;; org_gcr_2017-05-12_mara_0CA60630-37AA-4192-91A1-FFC1B16DC3E4 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:374B4284-8823-4E85-A469-F3985D48EC61][orgmode:gcr:vela:374B4284-8823-4E85-A469-F3985D48EC61]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8B031C72-2005-4FAF-A9F4-DE8D613DA01D][org_gcr_2017-05-12_mara_8B031C72-2005-4FAF-A9F4-DE8D613DA01D]]
 (global-set-key (kbd "s-b") #'hs-toggle-hiding)
 (global-set-key (kbd "s-M-b") #'help/my-toggle-hideshow-all)
-;; orgmode:gcr:vela:374B4284-8823-4E85-A469-F3985D48EC61 ends here
+;; org_gcr_2017-05-12_mara_8B031C72-2005-4FAF-A9F4-DE8D613DA01D ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:9E65B9F9-30D6-452F-B7A2-DB02E7E3FCDB][orgmode:gcr:vela:9E65B9F9-30D6-452F-B7A2-DB02E7E3FCDB]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_EAF8D908-3FAA-4C9B-A725-0DA17B163B27][org_gcr_2017-05-12_mara_EAF8D908-3FAA-4C9B-A725-0DA17B163B27]]
 (global-set-key (kbd "H-M") #'help/move-file)
-;; orgmode:gcr:vela:9E65B9F9-30D6-452F-B7A2-DB02E7E3FCDB ends here
+;; org_gcr_2017-05-12_mara_EAF8D908-3FAA-4C9B-A725-0DA17B163B27 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:2017-03-03:mara:17028F30-2195-48D3-A5E4-D84F79908123][orgmode:gcr:2017-03-03:mara:17028F30-2195-48D3-A5E4-D84F79908123]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A0659005-2B0A-4B2B-90EE-3C57076F9E55][org_gcr_2017-05-12_mara_A0659005-2B0A-4B2B-90EE-3C57076F9E55]]
 (global-set-key (kbd "H-m") #'imenu-list-minor-mode)
-;; orgmode:gcr:2017-03-03:mara:17028F30-2195-48D3-A5E4-D84F79908123 ends here
+;; org_gcr_2017-05-12_mara_A0659005-2B0A-4B2B-90EE-3C57076F9E55 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:55D2A3E6-07B1-47B0-9ADD-54C966FA252B][orgmode:gcr:vela:55D2A3E6-07B1-47B0-9ADD-54C966FA252B]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D3A810D3-58D9-48AF-940E-BCE47692282D][org_gcr_2017-05-12_mara_D3A810D3-58D9-48AF-940E-BCE47692282D]]
 (global-set-key (kbd "s-`") #'help/comment-or-uncomment)
-;; orgmode:gcr:vela:55D2A3E6-07B1-47B0-9ADD-54C966FA252B ends here
+;; org_gcr_2017-05-12_mara_D3A810D3-58D9-48AF-940E-BCE47692282D ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:E167321A-E8E5-4C54-B570-241B465B2D4B][orgmode:gcr:vela:E167321A-E8E5-4C54-B570-241B465B2D4B]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_921A07BB-6FBA-46E3-824D-F9F0B92F48B3][org_gcr_2017-05-12_mara_921A07BB-6FBA-46E3-824D-F9F0B92F48B3]]
 (key-chord-define-global "qp" #'ispell)
 (key-chord-define-global "qo" #'ispell-word)
-;; orgmode:gcr:vela:E167321A-E8E5-4C54-B570-241B465B2D4B ends here
+;; org_gcr_2017-05-12_mara_921A07BB-6FBA-46E3-824D-F9F0B92F48B3 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:52E762F8-9A31-4FEC-859D-049BD658C6D9][orgmode:gcr:vela:52E762F8-9A31-4FEC-859D-049BD658C6D9]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B4724C9B-88F1-4EF1-8134-17DBADA44A01][org_gcr_2017-05-12_mara_B4724C9B-88F1-4EF1-8134-17DBADA44A01]]
 (define-prefix-command 'help/langtool-map)
 (key-chord-define-global "qk" #'help/langtool-map)
 (define-key help/langtool-map "c" #'langtool-check-buffer)
@@ -3393,44 +3393,44 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (define-key help/langtool-map "k" #'langtool-show-message-at-point)
 (define-key help/langtool-map "l" #'langtool-goto-next-error)
 (define-key help/langtool-map "q" #'langtool-check-done)
-;; orgmode:gcr:vela:52E762F8-9A31-4FEC-859D-049BD658C6D9 ends here
+;; org_gcr_2017-05-12_mara_B4724C9B-88F1-4EF1-8134-17DBADA44A01 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:5F07753E-91BA-4B4F-B051-0C7C90B1F04A][orgmode:gcr:vela:5F07753E-91BA-4B4F-B051-0C7C90B1F04A]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_2C04C038-F246-4E90-92C6-15ABF018BCD3][org_gcr_2017-05-12_mara_2C04C038-F246-4E90-92C6-15ABF018BCD3]]
 (key-chord-define-global "fj" #'avy-goto-word-1)
 (key-chord-define-global "fm" #'avy-goto-char)
 (key-chord-define-global "FJ" #'avy-pop-mark)
-;; orgmode:gcr:vela:5F07753E-91BA-4B4F-B051-0C7C90B1F04A ends here
+;; org_gcr_2017-05-12_mara_2C04C038-F246-4E90-92C6-15ABF018BCD3 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:B05E89FC-9FCE-48D6-8112-9BF990A8A15D][orgmode:gcr:vela:B05E89FC-9FCE-48D6-8112-9BF990A8A15D]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0729FB1D-FE71-417C-A3F7-AC1A92D71FBC][org_gcr_2017-05-12_mara_0729FB1D-FE71-417C-A3F7-AC1A92D71FBC]]
 (key-chord-define-global "fk" #'help/safb-help/goto-line)
-;; orgmode:gcr:vela:B05E89FC-9FCE-48D6-8112-9BF990A8A15D ends here
+;; org_gcr_2017-05-12_mara_0729FB1D-FE71-417C-A3F7-AC1A92D71FBC ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:F3708409-D807-4541-95AB-C6298540FD59][orgmode:gcr:vela:F3708409-D807-4541-95AB-C6298540FD59]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_ED3BE98E-B863-447A-AB97-F4E878F2C483][org_gcr_2017-05-12_mara_ED3BE98E-B863-447A-AB97-F4E878F2C483]]
 (key-chord-define-global "FK" #'pop-to-mark-command)
-;; orgmode:gcr:vela:F3708409-D807-4541-95AB-C6298540FD59 ends here
+;; org_gcr_2017-05-12_mara_ED3BE98E-B863-447A-AB97-F4E878F2C483 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:0410911F-2D84-4799-8F68-1F3173E318B6][orgmode:gcr:vela:0410911F-2D84-4799-8F68-1F3173E318B6]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9302B01F-93C0-4D21-8BB6-53ECF1478153][org_gcr_2017-05-12_mara_9302B01F-93C0-4D21-8BB6-53ECF1478153]]
 (help/not-on-gui (global-set-key (kbd "s-RET") #'help/smart-open-line))
 (help/on-gui (global-set-key (kbd "s-<return>") #'help/smart-open-line))
-;; orgmode:gcr:vela:0410911F-2D84-4799-8F68-1F3173E318B6 ends here
+;; org_gcr_2017-05-12_mara_9302B01F-93C0-4D21-8BB6-53ECF1478153 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:7B79E6A3-90F2-4F3F-AA40-1231D0DDA684][orgmode:gcr:vela:7B79E6A3-90F2-4F3F-AA40-1231D0DDA684]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_EB0E9368-41FE-4827-9EE2-5CDFCDC1C2BA][org_gcr_2017-05-12_mara_EB0E9368-41FE-4827-9EE2-5CDFCDC1C2BA]]
 (global-set-key (kbd "M-p") (kbd "C-u 1 C-v"))
 (global-set-key (kbd "M-n") (kbd "C-u 1 M-v"))
-;; orgmode:gcr:vela:7B79E6A3-90F2-4F3F-AA40-1231D0DDA684 ends here
+;; org_gcr_2017-05-12_mara_EB0E9368-41FE-4827-9EE2-5CDFCDC1C2BA ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:FA4DDBA3-494B-4062-B43F-5D17DB239AF5][orgmode:gcr:vela:FA4DDBA3-494B-4062-B43F-5D17DB239AF5]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F02E60B9-5CB8-4768-9682-06524E4922C8][org_gcr_2017-05-12_mara_F02E60B9-5CB8-4768-9682-06524E4922C8]]
 (global-set-key (kbd "s-:") #'my-eval-expression)
-;; orgmode:gcr:vela:FA4DDBA3-494B-4062-B43F-5D17DB239AF5 ends here
+;; org_gcr_2017-05-12_mara_F02E60B9-5CB8-4768-9682-06524E4922C8 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:65D190DA-D23D-427D-B070-1C74053EDC4E][orgmode:gcr:vela:65D190DA-D23D-427D-B070-1C74053EDC4E]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_078C604D-5762-4763-AD17-A397C5E224E7][org_gcr_2017-05-12_mara_078C604D-5762-4763-AD17-A397C5E224E7]]
 (global-set-key (kbd "s-C-n") #'next-line)
 (global-set-key (kbd "C-n") #'next-logical-line)
 (global-set-key (kbd "s-C-p") #'previous-line)
 (global-set-key (kbd "C-p") #'previous-logical-line)
-;; orgmode:gcr:vela:65D190DA-D23D-427D-B070-1C74053EDC4E ends here
+;; org_gcr_2017-05-12_mara_078C604D-5762-4763-AD17-A397C5E224E7 ends here
 
-;; [[file:~/src/help/help.org::orgmode:gcr:vela:C8A58EDC-466A-493E-8709-2A241ED10808][orgmode:gcr:vela:C8A58EDC-466A-493E-8709-2A241ED10808]]
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BF926B57-9097-483F-AB90-E3F55869B0D9][org_gcr_2017-05-12_mara_BF926B57-9097-483F-AB90-E3F55869B0D9]]
 (global-set-key (kbd "M-%") #'anzu-query-replace)
 (global-set-key (kbd "C-M-%") #'anzu-query-replace-regexp)
-;; orgmode:gcr:vela:C8A58EDC-466A-493E-8709-2A241ED10808 ends here
+;; org_gcr_2017-05-12_mara_BF926B57-9097-483F-AB90-E3F55869B0D9 ends here
