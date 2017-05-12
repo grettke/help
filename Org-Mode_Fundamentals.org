@@ -260,6 +260,17 @@ as their origin document.
 (setq org-babel-tangle-use-relative-file-links t)
 #+END_SRC
 
+Indent tangled files.
+
+#+NAME: org_gcr_2017-05-12_mara_1946BB7D-D2A7-40F3-BF7D-1C22B887D1F6
+#+BEGIN_SRC emacs-lisp :results output silent
+(defun help/org-babel-post-tangle-hook-fn ()
+  (interactive)
+  (indent-region (point-min) (point-max) nil)
+  (save-buffer))
+(add-hook 'org-babel-post-tangle-hook #'help/org-babel-post-tangle-hook-fn)
+#+END_SRC
+
 **** comments
     :PROPERTIES:
     :ID:       orgmode:gcr:vela:49787FC5-CAA7-466B-B742-0F38973E070B

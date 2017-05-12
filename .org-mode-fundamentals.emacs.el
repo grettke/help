@@ -146,6 +146,14 @@ This is a copy and paste. Additional languages would warrant a refactor."
 (setq org-babel-tangle-use-relative-file-links t)
 ;; org_gcr_2017-05-12_mara_BFB80EA4-F37F-484C-9A7E-7B97166A2F49 ends here
 
+;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_1946BB7D-D2A7-40F3-BF7D-1C22B887D1F6][org_gcr_2017-05-12_mara_1946BB7D-D2A7-40F3-BF7D-1C22B887D1F6]]
+(defun help/org-babel-post-tangle-hook-fn ()
+  (interactive)
+  (indent-region (point-min) (point-max) nil)
+  (save-buffer))
+(add-hook 'org-babel-post-tangle-hook #'help/org-babel-post-tangle-hook-fn)
+;; org_gcr_2017-05-12_mara_1946BB7D-D2A7-40F3-BF7D-1C22B887D1F6 ends here
+
 ;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_5516E87C-58CA-451B-84B3-BA7B9D2A284E][org_gcr_2017-05-12_mara_5516E87C-58CA-451B-84B3-BA7B9D2A284E]]
 (help/set-org-babel-default-header-args :comments "noweb")
 ;; org_gcr_2017-05-12_mara_5516E87C-58CA-451B-84B3-BA7B9D2A284E ends here
