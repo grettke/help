@@ -1129,6 +1129,13 @@ configuration when invoked to evaluate a line."
 (setq temporary-file-directory "/tmp")
 ;; org_gcr_2017-05-12_mara_7102B5B4-168F-4E0E-87BD-EEA78DF6837A ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F0004AA3-B2A6-4265-A9D5-13590DCBEE9A][org_gcr_2017-05-12_mara_F0004AA3-B2A6-4265-A9D5-13590DCBEE9A]]
+(use-package hardhat
+  :ensure t
+  :config
+  (global-hardhat-mode 1))
+;; org_gcr_2017-05-12_mara_F0004AA3-B2A6-4265-A9D5-13590DCBEE9A ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_83FA67CA-A147-48BF-B404-B945C4140F50][org_gcr_2017-05-12_mara_83FA67CA-A147-48BF-B404-B945C4140F50]]
 (defun help/dired-copy-filename ()
   "Push the path and filename of the file under the point to the kill ring.
