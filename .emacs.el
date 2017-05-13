@@ -1130,6 +1130,7 @@ configuration when invoked to evaluate a line."
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F0004AA3-B2A6-4265-A9D5-13590DCBEE9A][org_gcr_2017-05-12_mara_F0004AA3-B2A6-4265-A9D5-13590DCBEE9A]]
 (use-package hardhat
   :ensure t
+  :diminish global-hardhat-mode
   :config
   (global-hardhat-mode 1))
 ;; org_gcr_2017-05-12_mara_F0004AA3-B2A6-4265-A9D5-13590DCBEE9A ends here

@@ -1768,6 +1768,7 @@ Probably never modify some files.
 #+BEGIN_SRC emacs-lisp :results output silent
 (use-package hardhat
   :ensure t
+  :diminish global-hardhat-mode
   :config
   (global-hardhat-mode 1))
 #+END_SRC
