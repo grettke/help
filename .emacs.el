@@ -5,7 +5,7 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
-;(package-initialize)
+                                        ;(package-initialize)
 
 (load-file "~/src/help/.org-mode-org2blog.emacs.el")
 ;; org_gcr_2017-05-12_mara_EE00DAED-88BD-4271-9CFE-34BDCEE68932 ends here
@@ -177,7 +177,7 @@
   "Comment or uncomment the current line or selection."
   (interactive)
   (cond ((not mark-active) (comment-or-uncomment-region (line-beginning-position)
-                                                      (line-end-position)))
+                                                        (line-end-position)))
         ((< (point) (mark)) (comment-or-uncomment-region (point) (mark)))
         (t (comment-or-uncomment-region (mark) (point)))))
 
@@ -709,8 +709,8 @@ Attribution: URL `http://zck.me/emacs-move-file'"
   (let ((old-location (buffer-file-name)))
     (write-file new-location t)
     (when (and old-location
-             (file-exists-p new-location)
-             (not (string-equal old-location new-location)))
+               (file-exists-p new-location)
+               (not (string-equal old-location new-location)))
       (delete-file old-location))))
 
 (defun help/rename-current-buffer-file ()
@@ -1585,7 +1585,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
 
 Attribution: URL `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
    (unless (and buffer-file-name
-              (file-writable-p buffer-file-name))
+                (file-writable-p buffer-file-name))
      (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
 
  (advice-add #'ido-find-file :after #'help/ido-find-file))
@@ -1953,8 +1953,8 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
   "Read a property name from the current entry."
   (let ((completion-ignore-case t)
         (default-prop (or (and (org-at-property-p)
-                            (org-match-string-no-properties 2))
-                         org-last-set-property)))
+                               (org-match-string-no-properties 2))
+                          org-last-set-property)))
     (org-completing-read
      (format "Property [%s]: " (if default-prop default-prop ""))
      (org-entry-properties nil nil)
@@ -1976,7 +1976,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
                  )
             ;; if none was stated by user, read property from user
             (prop (or property
-                     (org-read-entry-property-name))))
+                      (org-read-entry-property-name))))
         ;; set property
         (org-set-property prop val))))
 ;; org_gcr_2017-05-12_mara_1F938B98-B056-4381-833C-2C9B835B1C23 ends here
@@ -2331,7 +2331,7 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_AAEBDA8A-3939-42B1-B7A2-230C43EEF1AB][org_gcr_2017-05-12_mara_AAEBDA8A-3939-42B1-B7A2-230C43EEF1AB]]
 (use-package dash-at-point
- :ensure t)
+  :ensure t)
 ;; org_gcr_2017-05-12_mara_AAEBDA8A-3939-42B1-B7A2-230C43EEF1AB ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C30EFFA1-FDBA-413F-AD23-29C0C2095231][org_gcr_2017-05-12_mara_C30EFFA1-FDBA-413F-AD23-29C0C2095231]]
@@ -2522,15 +2522,15 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
   (r-autoyas-ess-activate)
   (help/turn-on-r-hide-show)
   (lambda () (add-hook 'ess-presend-filter-functions
-                  (lambda ()
-                    (warn
-                     "ESS now supports a standard pre-send filter hook. Please update your configuration to use it instead of using advice."))))
+                       (lambda ()
+                         (warn
+                          "ESS now supports a standard pre-send filter hook. Please update your configuration to use it instead of using advice."))))
   (ess-set-style 'RRR))
 
 (add-hook 'R-mode-hook #'help/R-mode-hook-fn)
 
 (defun help/turn-on-r-hide-show ()
-"Attribution: URL https://github.com/mlf176f2/EmacsMate/blob/master/EmacsMate-ess.org"
+  "Attribution: URL https://github.com/mlf176f2/EmacsMate/blob/master/EmacsMate-ess.org"
   (when (string= "S" ess-language)
     (set (make-local-variable 'hs-special-modes-alist) #'((ess-mode "{" "}" "#" nil nil)))
     (hs-minor-mode 1)
@@ -2559,17 +2559,17 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 ;; org_gcr_2017-05-12_mara_CF490053-BBAA-4BDC-86CE-DB0E7A02A81B ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_CC727094-99D3-4C48-BE27-C28FC738DF34][org_gcr_2017-05-12_mara_CC727094-99D3-4C48-BE27-C28FC738DF34]]
-  (add-to-list 'auto-mode-alist '("\\.scm\\'" . scheme-mode))
-  (add-to-list 'auto-mode-alist '("\\.ss\\'" . scheme-mode))
+(add-to-list 'auto-mode-alist '("\\.scm\\'" . scheme-mode))
+(add-to-list 'auto-mode-alist '("\\.ss\\'" . scheme-mode))
 ;; org_gcr_2017-05-12_mara_CC727094-99D3-4C48-BE27-C28FC738DF34 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A80E9E8F-A5B7-4C48-A3E5-2C365178EFAF][org_gcr_2017-05-12_mara_A80E9E8F-A5B7-4C48-A3E5-2C365178EFAF]]
-  (add-to-list 'auto-mode-alist '("\\.rkt\\'" . scheme-mode))
+(add-to-list 'auto-mode-alist '("\\.rkt\\'" . scheme-mode))
 ;; org_gcr_2017-05-12_mara_A80E9E8F-A5B7-4C48-A3E5-2C365178EFAF ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_998AB8A6-A934-4E5A-B869-E1348D919529][org_gcr_2017-05-12_mara_998AB8A6-A934-4E5A-B869-E1348D919529]]
-  (add-to-list 'auto-mode-alist '("\\.sls\\'" . scheme-mode))
-  (add-to-list 'auto-mode-alist '("\\.sps\\'" . scheme-mode))
+(add-to-list 'auto-mode-alist '("\\.sls\\'" . scheme-mode))
+(add-to-list 'auto-mode-alist '("\\.sps\\'" . scheme-mode))
 ;; org_gcr_2017-05-12_mara_998AB8A6-A934-4E5A-B869-E1348D919529 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5457F0EC-AAB3-4502-ACCD-7F9C1579293D][org_gcr_2017-05-12_mara_5457F0EC-AAB3-4502-ACCD-7F9C1579293D]]
@@ -2662,8 +2662,8 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
   (setq web-mode-enable-auto-pairing nil)
   (defun sp-web-mode-is-code-context (id action context)
     (and (eq action 'insert)
-       (not (or (get-text-property (point) 'part-side)
-             (get-text-property (point) 'block-side)))))
+         (not (or (get-text-property (point) 'part-side)
+                  (get-text-property (point) 'block-side)))))
 
   (sp-local-pair 'web-mode "<" nil :when '(sp-web-mode-is-code-context))
   (setq web-mode-enable-css-colorization t)
