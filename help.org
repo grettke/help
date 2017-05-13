@@ -639,8 +639,6 @@ This is useful for fringe cases where trailing whitespace is important."
          (fnl (s-replace ":" "-" str)))
     (insert fnl)))
 
-  'help/insert-timestamp*-no-colons
-
 (defun help/insert-datestamp ()
   "Produces and inserts a partial ISO 8601 format timestamp."
   (interactive)
