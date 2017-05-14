@@ -1712,7 +1712,20 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 ;; org_gcr_2017-05-12_mara_94E22B9A-B373-41AB-A8C9-E142CD2F6EED ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C][org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C]]
-(setq help/hack-modes '(makefile-mode-hook ruby-mode-hook sh-mode-hook plantuml-mode-hook tex-mode-hook R-mode-hook SAS-mode-hook graphviz-dot-mode-hook c-mode-common-hook php-mode-hook scad-mode-hook web-mode-hook js2-mode-hook json-mode-hook))
+(setq help/hack-modes '(makefile-mode-hook
+                        ruby-mode-hook
+                        sh-mode-hook
+                        plantuml-mode-hook
+                        tex-mode-hook
+                        R-mode-hook
+                        SAS-mode-hook
+                        graphviz-dot-mode-hook
+                        c-mode-common-hook
+                        php-mode-hook
+                        scad-mode-hook
+                        web-mode-hook
+                        js2-mode-hook
+                        json-mode-hook))
 ;; org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86][org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86]]
