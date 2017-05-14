@@ -2915,7 +2915,7 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
          ("/known_hosts\\'"       . ssh-known-hosts-mode)
          ("/authorized_keys2?\\'" . ssh-authorized-keys-mode))
   :config
-  (add-hook 'ssh-config-mode-hook 'turn-on-font-lock))
+  (add-hook 'ssh-config-mode-hook #'turn-on-font-lock)
 ;; org_gcr_2017-05-12_mara_D12C607E-C07C-41F8-A0B0-02A228C7AED7 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_AF516C01-3152-4194-954B-91A44A429972][org_gcr_2017-05-12_mara_AF516C01-3152-4194-954B-91A44A429972]]
