@@ -5238,6 +5238,7 @@ Load Beamer for creating presentations.
          ("/authorized_keys2?\\'" . ssh-authorized-keys-mode))
   :config
   (add-hook 'ssh-config-mode-hook #'turn-on-font-lock)
+  (add-hook 'ssh-config-mode-hook #'help/text-prog*-setup))
 #+END_SRC
 
 ** Diagram
