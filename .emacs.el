@@ -731,6 +731,15 @@ Attribution: `http://stackoverflow.com/a/25212377'"
           (set-buffer-modified-p nil)
           (message "File '%s' successfully renamed to '%s'"
                    name (file-name-nondirectory new-name)))))))
+
+
+(defun help/sort-lines-nocase ()
+  "Sort lines ignoring case.
+
+Attribution: `https://stackoverflow.com/questions/20967818/emacs-function-to-case-insensitive-sort-lines'"
+  (interactive)
+  (let ((sort-fold-case t))
+    (call-interactively 'sort-lines)))
 ;; org_gcr_2017-05-12_mara_7D37FFE5-2D2B-4CF7-AF27-F3CB8616D81B ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F][org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F]]

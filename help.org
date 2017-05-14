@@ -1127,6 +1127,14 @@ Attribution: `http://stackoverflow.com/a/25212377'"
           (message "File '%s' successfully renamed to '%s'"
                    name (file-name-nondirectory new-name)))))))
 
+
+(defun help/sort-lines-nocase ()
+  "Sort lines ignoring case.
+
+Attribution: `https://stackoverflow.com/questions/20967818/emacs-function-to-case-insensitive-sort-lines'"
+  (interactive)
+  (let ((sort-fold-case t))
+    (call-interactively 'sort-lines)))
 #+END_SRC
 
 ** Typography
