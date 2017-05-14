@@ -2888,7 +2888,7 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D12C607E-C07C-41F8-A0B0-02A228C7AED7][org_gcr_2017-05-12_mara_D12C607E-C07C-41F8-A0B0-02A228C7AED7]]
 (use-package ssh-config-mode
   :ensure t
-  :init
+  :config
   (add-to-list 'auto-mode-alist '("/\\.ssh/config\\'"     . ssh-config-mode))
   (add-to-list 'auto-mode-alist '("/sshd?_config\\'"      . ssh-config-mode))
   (add-to-list 'auto-mode-alist '("/known_hosts\\'"       . ssh-known-hosts-mode))
