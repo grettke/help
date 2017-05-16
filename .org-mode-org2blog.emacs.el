@@ -48,3 +48,9 @@
          :confirm t
          :show 'show)))
 ;; org_gcr_2017-05-12_mara_854DE6E9-2208-42EB-A164-EC06E489B6B7 ends here
+
+;; [[file:~/src/help/Org2Blog.org::org_gcr_2017-05-15_mara_5CF1DF19-27F5-4509-8E17-9CA0D1B29314][org_gcr_2017-05-15_mara_5CF1DF19-27F5-4509-8E17-9CA0D1B29314]]
+(add-to-list 'load-path "~/src/pretty-mode")
+(require 'pretty-mode)
+(global-pretty-mode t)
+;; org_gcr_2017-05-15_mara_5CF1DF19-27F5-4509-8E17-9CA0D1B29314 ends here

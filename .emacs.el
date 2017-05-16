@@ -1271,13 +1271,6 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
 (global-font-lock-mode t)
 ;; org_gcr_2017-05-12_mara_ADAB043E-BF70-4AE0-BA60-CD08D82474FA ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7D565C78-A5CB-48BD-8C1B-C08BBFCF64EC][org_gcr_2017-05-12_mara_7D565C78-A5CB-48BD-8C1B-C08BBFCF64EC]]
-(use-package pretty-mode
-  :ensure t
-  :config
-  (global-pretty-mode))
-;; org_gcr_2017-05-12_mara_7D565C78-A5CB-48BD-8C1B-C08BBFCF64EC ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_2B0564C9-2091-4364-8A28-E33A548284A2][org_gcr_2017-05-12_mara_2B0564C9-2091-4364-8A28-E33A548284A2]]
 (use-package avy
   :ensure t

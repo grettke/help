@@ -119,3 +119,17 @@ Configure Org2Blog.
          :confirm t
          :show 'show)))
 #+END_SRC
+
+* Pretty Mode
+:PROPERTIES:
+:ID:       org_gcr_2017-05-15_mara:CB452410-955E-4A91-A811-10755A35A142
+:END:
+
+Visualize ASCII values as their most likely Unicode representation.
+
+#+NAME: org_gcr_2017-05-15_mara_5CF1DF19-27F5-4509-8E17-9CA0D1B29314
+#+BEGIN_SRC emacs-lisp :results output silent
+(add-to-list 'load-path "~/src/pretty-mode")
+(require 'pretty-mode)
+(global-pretty-mode t)
+#+END_SRC

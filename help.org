@@ -2059,16 +2059,6 @@ Activate font locking everywhere possible.
 (global-font-lock-mode t)
 #+END_SRC
 
-Visualize ASCII values as their most likely Unicode representation.
-
-#+NAME: org_gcr_2017-05-12_mara_7D565C78-A5CB-48BD-8C1B-C08BBFCF64EC
-#+BEGIN_SRC emacs-lisp :results output silent
-(use-package pretty-mode
-  :ensure t
-  :config
-  (global-pretty-mode))
-#+END_SRC
-
 ** Going to Objects
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:8A73E509-A878-4E89-86DC-9BDA8C898F8C
