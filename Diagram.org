@@ -1,6 +1,9 @@
 #+PROPERTY: header-args :exports both
 
 * Ditaa
+:PROPERTIES:
+:ID:       org_gcr_2017-05-13_mara:1F041707-87E7-4490-8F29-996C02CAE757
+:END:
 
 When a drop of water joins the ocean it becomes the ocean.
 
@@ -37,6 +40,9 @@ When a drop of water joins the ocean it becomes the ocean.
 
 @@latex: \pagebreak@@
 * Graphviz
+:PROPERTIES:
+:ID:       org_gcr_2017-05-13_mara:26F93EEA-E64B-439A-BAF6-1BB7F5182D12
+:END:
 
 #+NAME: graphviz-life_is_simple
 #+BEGIN_SRC dot :file "./image/graphviz-life_is_simple.png"
@@ -60,8 +66,14 @@ digraph graphviz {
 
 @@latex: \pagebreak@@
 * PlantUML
+:PROPERTIES:
+:ID:       org_gcr_2017-05-13_mara:ADF3A220-77D0-4635-BB50-D9AF82A803E2
+:END:
 
 ** *Sequence Diagram*
+:PROPERTIES:
+:ID:       org_gcr_2017-05-13_mara:EEDE4AC4-E400-470F-BD6E-9D921E8FD016
+:END:
 
 - Feature rich.
 - Information rich.
@@ -80,6 +92,9 @@ Alice <-- Bob: another authentication Response
 
 @@latex: \pagebreak@@
 ** *Use Case Diagram*
+:PROPERTIES:
+:ID:       org_gcr_2017-05-13_mara:8223D025-909D-4B14-A5C2-D939FB2F7E5F
+:END:
 
 - Actor variable aliasing feature.
 #+NAME: plantuml-use_case_diagram
@@ -99,6 +114,9 @@ customer -- (checkout)
 
 @@latex: \pagebreak@@
 ** *Class Diagram*
+:PROPERTIES:
+:ID:       org_gcr_2017-05-13_mara:E0596CAD-4A2C-4230-860F-077FA6E0EB04
+:END:
 
 - Valuable for all sorts of ideas in addition to classes.
 - =hide=, =show=, and =include= are mentioned.
@@ -122,6 +140,9 @@ Sailboat "1" *-- "1..3" Hull
 
 @@latex: \pagebreak@@
 ** *Activity Diagram*
+:PROPERTIES:
+:ID:       org_gcr_2017-05-13_mara:31FDFA62-F14F-48CB-9EFD-997EF9EE92BF
+:END:
 
 - May indicate top to bottom flow using =top=.
 - May label arrows.
@@ -150,6 +171,9 @@ stop
 
 @@latex: \pagebreak@@
 ** *Component Diagram*
+:PROPERTIES:
+:ID:       org_gcr_2017-05-13_mara:029E7ABD-6F38-412E-ABF4-0A202D7E47EF
+:END:
 
 - The names to define all of the diagram entity types.
 - Identify "Modern UML".
@@ -170,6 +194,9 @@ DataAccess - [First Component]
 
 @@latex: \pagebreak@@
 ** *State Diagram*
+:PROPERTIES:
+:ID:       org_gcr_2017-05-13_mara:558F580B-2F94-4A23-9EEB-9DC00BB3B19C
+:END:
 
 #+NAME: plantuml-state_diagram
 #+BEGIN_SRC plantuml :file "./image/plantuml-state_diagram.png"
@@ -183,6 +210,9 @@ State1 : this is a string State1 : this is another string
 
 @@latex: \pagebreak@@
 ** *Object Diagram*
+:PROPERTIES:
+:ID:       org_gcr_2017-05-13_mara:34FC630D-40D9-4E93-8AD9-FD682B32454E
+:END:
 
 #+NAME: plantuml-object_diagram
 #+BEGIN_SRC plantuml :file "./image/plantuml-object_diagram.png"
@@ -196,6 +226,9 @@ Object01 <|-- Object02
 
 @@latex: \pagebreak@@
 ** *Options*
+:PROPERTIES:
+:ID:       org_gcr_2017-05-13_mara:F9F5B9E8-5B8F-4791-9516-880788A0667F
+:END:
 
 - Commands.
   - Header and footer values.
