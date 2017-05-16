@@ -1448,7 +1448,12 @@ Allow most commands.
 (put #'narrow-to-region 'disabled nil)
 #+END_SRC
 
-Easily send expressions to a REPL line by line by hitting =C-RET=.
+Send the current line to the REPL, evaluate it and move to the next line.
+Works for lots of languages and does the /right thing/ navigating to the next
+line.
+
+If you learned this in ESS then you already love it. If you didn't then you
+probably will now
 
 #+NAME: org_gcr_2017-05-12_mara_0DE4A73B-54B3-41AA-8744-98D7B34D159B
 #+BEGIN_SRC emacs-lisp :results output silent
