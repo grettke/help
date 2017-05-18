@@ -6008,6 +6008,7 @@ a fast and intuitive way to go places.
   - =#FF= color code.
   - =cc= carbon copy.
   - =JJ= nick-name.
+    - Rare! Using.
   - =dd= add
 - Symbols are more likely to be safer bets.
   - Only use the symbols.
