@@ -1343,6 +1343,19 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   :ensure t)
 ;; org_gcr_2017-05-12_mara_0F225CED-24F2-4801-A3AF-7E45BF787E71 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-05-17_mara_7D684DF7-2FF5-4386-B845-8F30E9D6E887][org_gcr_2017-05-17_mara_7D684DF7-2FF5-4386-B845-8F30E9D6E887]]
+(use-package dumb-jump
+  :ensure t
+  :config
+  (define-prefix-command 'help/dj-map)
+  (key-chord-define-global "jj" #'help/dj-map)
+  (define-key help/dj-map "j" #'dumb-jump-go)
+  (define-key help/dj-map "i" #'dumb-jump-go-other-window)
+  (define-key help/dj-map "k" #'dumb-jump-back)
+  (define-key help/dj-map "l" #'dumb-jump-go-prompt)
+  (define-key help/dj-map "m" #'dumb-jump-quick-look))
+;; org_gcr_2017-05-17_mara_7D684DF7-2FF5-4386-B845-8F30E9D6E887 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_DA93DCF6-E0AB-4B92-9708-4DE4781AA2ED][org_gcr_2017-05-12_mara_DA93DCF6-E0AB-4B92-9708-4DE4781AA2ED]]
 (use-package browse-kill-ring
   :ensure t

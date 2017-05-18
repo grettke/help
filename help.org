@@ -2178,6 +2178,22 @@ Auto-completion for =.=-separated words.
   :ensure t)
 #+END_SRC
 
+/IntelliJ-Like/ ~jump to definition~.
+
+#+NAME: org_gcr_2017-05-17_mara_7D684DF7-2FF5-4386-B845-8F30E9D6E887
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package dumb-jump
+  :ensure t
+  :config
+  (define-prefix-command 'help/dj-map)
+  (key-chord-define-global "jj" #'help/dj-map)
+  (define-key help/dj-map "j" #'dumb-jump-go)
+  (define-key help/dj-map "i" #'dumb-jump-go-other-window)
+  (define-key help/dj-map "k" #'dumb-jump-back)
+  (define-key help/dj-map "l" #'dumb-jump-go-prompt)
+  (define-key help/dj-map "m" #'dumb-jump-quick-look))
+#+END_SRC
+
 ** Mark, Kill  and Region
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:432D3FDF-38B3-499D-94D3-338CFEF2957C
