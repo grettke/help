@@ -4076,8 +4076,8 @@ Easily enter guillemots.
 
 #+NAME: org_gcr_2017-05-12_mara_BF73D071-57B8-4DBA-93E9-5A1D532A6321
 #+BEGIN_SRC emacs-lisp :results output silent
-(key-chord-define org-mode-map "<<" (lambda () (interactive) (insert "\\laquo")))
-(key-chord-define org-mode-map ">>" (lambda () (interactive) (insert "\\raquo")))
+(key-chord-define org-mode-map "<<" (lambda () (interactive) (insert "\\laquo{}")))
+(key-chord-define org-mode-map ">>" (lambda () (interactive) (insert "\\raquo{}")))
 #+END_SRC
 
 *** Transliteration

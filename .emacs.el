@@ -2304,8 +2304,8 @@ _z_ lint _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
 ;; org_gcr_2017-05-12_mara_5DE43FD1-AEF3-40D0-8C67-1ACBB6EA8317 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BF73D071-57B8-4DBA-93E9-5A1D532A6321][org_gcr_2017-05-12_mara_BF73D071-57B8-4DBA-93E9-5A1D532A6321]]
-(key-chord-define org-mode-map "<<" (lambda () (interactive) (insert "\\laquo")))
-(key-chord-define org-mode-map ">>" (lambda () (interactive) (insert "\\raquo")))
+(key-chord-define org-mode-map "<<" (lambda () (interactive) (insert "\\laquo{}")))
+(key-chord-define org-mode-map ">>" (lambda () (interactive) (insert "\\raquo{}")))
 ;; org_gcr_2017-05-12_mara_BF73D071-57B8-4DBA-93E9-5A1D532A6321 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_37C3019C-7C06-4952-888C-AA4660B4310E][org_gcr_2017-05-12_mara_37C3019C-7C06-4952-888C-AA4660B4310E]]
