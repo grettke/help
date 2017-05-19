@@ -2909,6 +2909,13 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
           fountain-stx)))
 ;; org_gcr_2017-05-12_mara_B19CF074-8B77-4843-912C-F68B6FB0FE2F ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-05-19_mara_3FB67413-237F-425D-97D2-B2E164AE5F8F][org_gcr_2017-05-19_mara_3FB67413-237F-425D-97D2-B2E164AE5F8F]]
+(use-package ox-reveal
+  :ensure t
+  :config
+  (setq org-reveal-root (expand-file-name "~/src/reveal.js")))
+;; org_gcr_2017-05-19_mara_3FB67413-237F-425D-97D2-B2E164AE5F8F ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_96443D6C-1E5B-48C5-9853-544D0EE79B1E][org_gcr_2017-05-12_mara_96443D6C-1E5B-48C5-9853-544D0EE79B1E]]
 (use-package apache-mode
   :ensure t)
