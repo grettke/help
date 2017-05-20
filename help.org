@@ -5211,7 +5211,7 @@ Load Beamer for creating presentations.
 :END:
 #+NAME: org_gcr_2017-05-19_mara_3FB67413-237F-425D-97D2-B2E164AE5F8F
 #+BEGIN_SRC emacs-lisp :results output silent
-(use-package ox-revealn
+(use-package ox-reveal
   :ensure t
   :config
   (setq org-reveal-root (expand-file-name "~/src/reveal.js")))
