@@ -854,6 +854,114 @@ Attribution: `https://stackoverflow.com/questions/20967818/emacs-function-to-cas
   (global-set-key (kbd "C-a") 'mwim-beginning-of-code-or-line))
 ;; org_gcr_2017-05-12_mara_B8BDE36B-4B27-4580-BA34-35C047FBEA62 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-05-19_mara_845BEC94-54CC-46D3-B85F-7B537944E328][org_gcr_2017-05-19_mara_845BEC94-54CC-46D3-B85F-7B537944E328]]
+(defhydra hydra-ibuffer-main (:color pink :hint nil)
+  "
+   ^Navigation^ | ^Mark^        | ^Actions^        | ^View^
+  -^----------^-+-^----^--------+-^-------^--------+-^----^-------
+    _k_:    ʌ   | _m_: mark     | _D_: delete      | _g_: refresh
+   _RET_: visit | _u_: unmark   | _S_: save        | _s_: sort
+    _j_:    v   | _*_: specific | _a_: all actions | _/_: filter
+  -^----------^-+-^----^--------+-^-------^--------+-^----^-------
+  "
+  ("j" ibuffer-forward-line)
+  ("RET" ibuffer-visit-buffer :color blue)
+  ("k" ibuffer-backward-line)
+
+  ("m" ibuffer-mark-forward)
+  ("u" ibuffer-unmark-forward)
+  ("*" hydra-ibuffer-mark/body :color blue)
+
+  ("D" ibuffer-do-delete)
+  ("S" ibuffer-do-save)
+  ("a" hydra-ibuffer-action/body :color blue)
+
+  ("g" ibuffer-update)
+  ("s" hydra-ibuffer-sort/body :color blue)
+  ("/" hydra-ibuffer-filter/body :color blue)
+
+  ("o" ibuffer-visit-buffer-other-window "other window" :color blue)
+  ("q" ibuffer-quit "quit ibuffer" :color blue)
+  ("." nil "toggle hydra" :color blue))
+
+(defhydra hydra-ibuffer-mark (:color teal :columns 5
+                                     :after-exit (hydra-ibuffer-main/body))
+  "Mark"
+  ("*" ibuffer-unmark-all "unmark all")
+  ("M" ibuffer-mark-by-mode "mode")
+  ("m" ibuffer-mark-modified-buffers "modified")
+  ("u" ibuffer-mark-unsaved-buffers "unsaved")
+  ("s" ibuffer-mark-special-buffers "special")
+  ("r" ibuffer-mark-read-only-buffers "read-only")
+  ("/" ibuffer-mark-dired-buffers "dired")
+  ("e" ibuffer-mark-dissociated-buffers "dissociated")
+  ("h" ibuffer-mark-help-buffers "help")
+  ("z" ibuffer-mark-compressed-file-buffers "compressed")
+  ("b" hydra-ibuffer-main/body "back" :color blue))
+
+(defhydra hydra-ibuffer-action (:color teal :columns 4
+                                       :after-exit
+                                       (if (eq major-mode 'ibuffer-mode)
+                                           (hydra-ibuffer-main/body)))
+  "Action"
+  ("A" ibuffer-do-view "view")
+  ("E" ibuffer-do-eval "eval")
+  ("F" ibuffer-do-shell-command-file "shell-command-file")
+  ("I" ibuffer-do-query-replace-regexp "query-replace-regexp")
+  ("H" ibuffer-do-view-other-frame "view-other-frame")
+  ("N" ibuffer-do-shell-command-pipe-replace "shell-cmd-pipe-replace")
+  ("M" ibuffer-do-toggle-modified "toggle-modified")
+  ("O" ibuffer-do-occur "occur")
+  ("P" ibuffer-do-print "print")
+  ("Q" ibuffer-do-query-replace "query-replace")
+  ("R" ibuffer-do-rename-uniquely "rename-uniquely")
+  ("T" ibuffer-do-toggle-read-only "toggle-read-only")
+  ("U" ibuffer-do-replace-regexp "replace-regexp")
+  ("V" ibuffer-do-revert "revert")
+  ("W" ibuffer-do-view-and-eval "view-and-eval")
+  ("X" ibuffer-do-shell-command-pipe "shell-command-pipe")
+  ("b" nil "back"))
+
+(defhydra hydra-ibuffer-sort (:color amaranth :columns 3)
+  "Sort"
+  ("i" ibuffer-invert-sorting "invert")
+  ("a" ibuffer-do-sort-by-alphabetic "alphabetic")
+  ("v" ibuffer-do-sort-by-recency "recently used")
+  ("s" ibuffer-do-sort-by-size "size")
+  ("f" ibuffer-do-sort-by-filename/process "filename")
+  ("m" ibuffer-do-sort-by-major-mode "mode")
+  ("b" hydra-ibuffer-main/body "back" :color blue))
+
+(defhydra hydra-ibuffer-filter (:color amaranth :columns 4)
+  "Filter"
+  ("m" ibuffer-filter-by-used-mode "mode")
+  ("M" ibuffer-filter-by-derived-mode "derived mode")
+  ("n" ibuffer-filter-by-name "name")
+  ("c" ibuffer-filter-by-content "content")
+  ("e" ibuffer-filter-by-predicate "predicate")
+  ("f" ibuffer-filter-by-filename "filename")
+  (">" ibuffer-filter-by-size-gt "size")
+  ("<" ibuffer-filter-by-size-lt "size")
+  ("/" ibuffer-filter-disable "disable")
+  ("b" hydra-ibuffer-main/body "back" :color blue))
+(use-package ibuffer
+  :config
+  (define-key ibuffer-mode-map "." #'hydra-ibuffer-main/body))
+(use-package ibuffer-vc
+  :ensure t)
+(defun help/ibuffer-hook-fn ()
+  "HELP customizations."
+  (interactive)
+  (setq ibuffer-expert t)
+  (setq ibuffer-show-empty-filter-groups nil)
+  (ibuffer-auto-mode t)
+  (stripe-buffer-mode)
+  (ibuffer-vc-set-filter-groups-by-vc-root)
+  (unless (eq ibuffer-sorting-mode 'alphabetic)
+    (ibuffer-do-sort-by-alphabetic)))
+(add-hook 'ibuffer-mode-hooks #'help/ibuffer-hook-fn)
+;; org_gcr_2017-05-19_mara_845BEC94-54CC-46D3-B85F-7B537944E328 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_611E83B9-E797-4512-95EE-643473026607][org_gcr_2017-05-12_mara_611E83B9-E797-4512-95EE-643473026607]]
 (use-package hideshow
   :config
@@ -3396,6 +3504,7 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (key-chord-define-global "<<" (lambda () (interactive) (insert "«")))
 (key-chord-define-global ">>" (lambda () (interactive) (insert "»")))
 (global-set-key (kbd "C-,") #'ido-switch-buffer)
+(global-set-key (kbd "C-M-,") #'ibuffer)
 (global-set-key (kbd "C-.") nil)
 (global-set-key (kbd "C-.") #'smex)
 ;; org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B ends here
