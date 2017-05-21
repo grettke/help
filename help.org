@@ -1236,7 +1236,7 @@ Provide expected "Undo" functionality.
   :ensure t
   :config
   (global-undo-tree-mode 1)
-  (global-set-key (kbd "H-u") #'undo-tree-visualize)
+  (global-set-key (kbd "C-M-u") #'undo-tree-visualize)
   :diminish undo-tree-mode)
 #+END_SRC
 
@@ -3222,7 +3222,8 @@ Slime navigation:
   (local-set-key (kbd "s-l mea") #'macroexpand-all)
   (local-set-key (kbd "s-:") #'my-eval-expression)
   (local-set-key (kbd "#") #'endless/sharp)
-  (local-set-key (kbd "C-c e") #'macrostep-expand))
+  (local-set-key (kbd "C-c e") #'macrostep-expand)
+  (local-unset-key (kbd "C-M-i")))
 
 (defun help/emacs-lisp-mode-hook-fn ()
   (interactive)
@@ -4249,7 +4250,6 @@ Easily understand the current character.
   (interactive)
   (call-interactively #'describe-char)
   (call-interactively #'other-window))
-(global-set-key (kbd "H-d") #'help/describe-char)
 #+END_SRC
 
 Easily identify Unicode homoglyphs most often utilized by pranksters.
@@ -4316,8 +4316,6 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 
 #+NAME: org_gcr_2017-05-12_mara_C30EFFA1-FDBA-413F-AD23-29C0C2095231
 #+BEGIN_SRC emacs-lisp :results output silent
-(setq gnu-apl-mode-map-prefix "H-")
-(setq gnu-apl-interactive-mode-map-prefix "H-")
 (use-package gnu-apl-mode
   :ensure t)
 #+END_SRC
@@ -6026,6 +6024,9 @@ following practices were defined.
   - Most operating systems bind actions to them OOTB anyway.
   - EMACS comes with key-bindings OOTB.
 - Don't try to set up a Hyper-key.
+  - I tried it. It is great to open another namespace. But it ruins
+    cross-platform portability.
+  - However I'm leaving it available for anything possible.
 - Use shift as a name-space expansion vehicle.
   - Shift doubles every name-space in which you use it.
   - Use cautiously, not every name-space vehicle supports it.
@@ -6370,7 +6371,8 @@ These changes helped guide the custom keyboard design.
 (key-chord-define-global "3o" #'help/3-window)
 (key-chord-define-global "4o" #'help/4-window)
 (global-set-key (kbd "s-q") #'kill-buffer)
-(global-set-key (kbd "H-i") #'insert-char)
+(global-unset-key (kbd "C-M-i"))
+(global-set-key (kbd "C-M-i") #'insert-char)
 (global-set-key [(control meta ?p)] #'help/insert-datestamp)
 (global-set-key [(control meta shift ?p)] #'help/insert-timestamp*-no-colons)
 (global-set-key (kbd "C-M-o") #'help/occur-dwim)
@@ -6453,7 +6455,7 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("j" org-babel-tangle-jump-to-org)
   ("u" ucs-insert)
   ("i" scroll-down-command :exit nil)
-  ("d" dash-at-point)
+  ("d" help/describe-char)
   ("D" help/safb-org-babel-detangle)
   ("k" scroll-up-command :exit nil)
   ("I" previous-logical-line :exit nil)
@@ -6474,7 +6476,9 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("}" help/hydra/transliterate/body)
   ("c" fill-paragraph )
   ("b" erase-buffer)
-  ("B" help/bibtex/body))
+  ("B" help/bibtex/body)
+  ("'" help/move-file)
+  ("\"" imenu-list-minor-mode))
 #+END_SRC
 
 #+NAME: org_gcr_2017-05-12_mara_28B4A661-E888-4EFA-ADE3-4B1C05F6E92B
@@ -6629,20 +6633,6 @@ Hide and show code blocks.
 #+BEGIN_SRC emacs-lisp :results output silent
 (global-set-key (kbd "s-b") #'hs-toggle-hiding)
 (global-set-key (kbd "M-s-b") #'help/my-toggle-hideshow-all)
-#+END_SRC
-
-Move a file.
-
-#+NAME: org_gcr_2017-05-12_mara_EAF8D908-3FAA-4C9B-A725-0DA17B163B27
-#+BEGIN_SRC emacs-lisp :results output silent
-(global-set-key (kbd "H-M") #'help/move-file)
-#+END_SRC
-
-Run imenu in list mode.
-
-#+NAME: org_gcr_2017-05-12_mara_A0659005-2B0A-4B2B-90EE-3C57076F9E55
-#+BEGIN_SRC emacs-lisp :results output silent
-(global-set-key (kbd "H-m") #'imenu-list-minor-mode)
 #+END_SRC
 
 *** Left & Right Side

@@ -793,7 +793,7 @@ Attribution: `https://stackoverflow.com/questions/20967818/emacs-function-to-cas
   :ensure t
   :config
   (global-undo-tree-mode 1)
-  (global-set-key (kbd "H-u") #'undo-tree-visualize)
+  (global-set-key (kbd "C-M-u") #'undo-tree-visualize)
   :diminish undo-tree-mode)
 ;; org_gcr_2017-05-12_mara_40A89EBE-247D-43B1-A606-896B172681D8 ends here
 
@@ -1934,7 +1934,8 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (local-set-key (kbd "s-l mea") #'macroexpand-all)
   (local-set-key (kbd "s-:") #'my-eval-expression)
   (local-set-key (kbd "#") #'endless/sharp)
-  (local-set-key (kbd "C-c e") #'macrostep-expand))
+  (local-set-key (kbd "C-c e") #'macrostep-expand)
+  (local-unset-key (kbd "C-M-i")))
 
 (defun help/emacs-lisp-mode-hook-fn ()
   (interactive)
@@ -2441,7 +2442,6 @@ _b_ black-board-bold _f_ fraktur
   (interactive)
   (call-interactively #'describe-char)
   (call-interactively #'other-window))
-(global-set-key (kbd "H-d") #'help/describe-char)
 ;; org_gcr_2017-05-12_mara_5F206A60-80BB-4394-9ABD-B641C196EE73 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_96974788-400B-439B-9005-04569A326C29][org_gcr_2017-05-12_mara_96974788-400B-439B-9005-04569A326C29]]
@@ -2473,8 +2473,6 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 ;; org_gcr_2017-05-12_mara_AAEBDA8A-3939-42B1-B7A2-230C43EEF1AB ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C30EFFA1-FDBA-413F-AD23-29C0C2095231][org_gcr_2017-05-12_mara_C30EFFA1-FDBA-413F-AD23-29C0C2095231]]
-(setq gnu-apl-mode-map-prefix "H-")
-(setq gnu-apl-interactive-mode-map-prefix "H-")
 (use-package gnu-apl-mode
   :ensure t)
 ;; org_gcr_2017-05-12_mara_C30EFFA1-FDBA-413F-AD23-29C0C2095231 ends here
@@ -3334,7 +3332,8 @@ ALPHA : [ %(frame-parameter nil 'alpha) ].'
 (key-chord-define-global "3o" #'help/3-window)
 (key-chord-define-global "4o" #'help/4-window)
 (global-set-key (kbd "s-q") #'kill-buffer)
-(global-set-key (kbd "H-i") #'insert-char)
+(global-unset-key (kbd "C-M-i"))
+(global-set-key (kbd "C-M-i") #'insert-char)
 (global-set-key [(control meta ?p)] #'help/insert-datestamp)
 (global-set-key [(control meta shift ?p)] #'help/insert-timestamp*-no-colons)
 (global-set-key (kbd "C-M-o") #'help/occur-dwim)
@@ -3401,7 +3400,7 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("j" org-babel-tangle-jump-to-org)
   ("u" ucs-insert)
   ("i" scroll-down-command :exit nil)
-  ("d" dash-at-point)
+  ("d" help/describe-char)
   ("D" help/safb-org-babel-detangle)
   ("k" scroll-up-command :exit nil)
   ("I" previous-logical-line :exit nil)
@@ -3422,7 +3421,9 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("}" help/hydra/transliterate/body)
   ("c" fill-paragraph )
   ("b" erase-buffer)
-  ("B" help/bibtex/body))
+  ("B" help/bibtex/body)
+  ("'" help/move-file)
+  ("\"" imenu-list-minor-mode))
 ;; org_gcr_2017-05-12_mara_095E1EC7-12A2-43BB-8ED5-CF2BC6E7D158 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_28B4A661-E888-4EFA-ADE3-4B1C05F6E92B][org_gcr_2017-05-12_mara_28B4A661-E888-4EFA-ADE3-4B1C05F6E92B]]
@@ -3522,14 +3523,6 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (global-set-key (kbd "s-b") #'hs-toggle-hiding)
 (global-set-key (kbd "M-s-b") #'help/my-toggle-hideshow-all)
 ;; org_gcr_2017-05-12_mara_8B031C72-2005-4FAF-A9F4-DE8D613DA01D ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_EAF8D908-3FAA-4C9B-A725-0DA17B163B27][org_gcr_2017-05-12_mara_EAF8D908-3FAA-4C9B-A725-0DA17B163B27]]
-(global-set-key (kbd "H-M") #'help/move-file)
-;; org_gcr_2017-05-12_mara_EAF8D908-3FAA-4C9B-A725-0DA17B163B27 ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A0659005-2B0A-4B2B-90EE-3C57076F9E55][org_gcr_2017-05-12_mara_A0659005-2B0A-4B2B-90EE-3C57076F9E55]]
-(global-set-key (kbd "H-m") #'imenu-list-minor-mode)
-;; org_gcr_2017-05-12_mara_A0659005-2B0A-4B2B-90EE-3C57076F9E55 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D3A810D3-58D9-48AF-940E-BCE47692282D][org_gcr_2017-05-12_mara_D3A810D3-58D9-48AF-940E-BCE47692282D]]
 (global-set-key (kbd "s-`") #'help/comment-or-uncomment)
