@@ -3335,8 +3335,9 @@ ALPHA : [ %(frame-parameter nil 'alpha) ].'
 (key-chord-define-global "4o" #'help/4-window)
 (global-set-key (kbd "s-q") #'kill-buffer)
 (global-set-key (kbd "H-i") #'insert-char)
-(global-set-key (kbd "H-p") #'help/insert-datestamp)
-(global-set-key (kbd "H-P") #'help/insert-timestamp*-no-colons)
+(global-set-key [(control meta ?p)] #'help/insert-datestamp)
+(global-set-key [(control meta shift ?p)] #'help/insert-timestamp*-no-colons)
+(global-set-key (kbd "C-M-o") #'help/occur-dwim)
 ;; org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E8ABDA7D-AC92-4C24-8287-1505E2377B2C][org_gcr_2017-05-12_mara_E8ABDA7D-AC92-4C24-8287-1505E2377B2C]]
@@ -3512,10 +3513,6 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5FAD516B-B4C1-4F47-A6B9-7CA12F9AFF5D][org_gcr_2017-05-12_mara_5FAD516B-B4C1-4F47-A6B9-7CA12F9AFF5D]]
 (global-set-key (kbd "s-SPC") #'cycle-spacing)
 ;; org_gcr_2017-05-12_mara_5FAD516B-B4C1-4F47-A6B9-7CA12F9AFF5D ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_411C072C-C9A9-42DA-95F2-FB23EE6FF207][org_gcr_2017-05-12_mara_411C072C-C9A9-42DA-95F2-FB23EE6FF207]]
-(global-set-key (kbd "H-o") #'help/occur-dwim)
-;; org_gcr_2017-05-12_mara_411C072C-C9A9-42DA-95F2-FB23EE6FF207 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0CA60630-37AA-4192-91A1-FFC1B16DC3E4][org_gcr_2017-05-12_mara_0CA60630-37AA-4192-91A1-FFC1B16DC3E4]]
 (key-chord-define-global "f9" #'help/util-cycle)

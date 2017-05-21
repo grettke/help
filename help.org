@@ -6371,8 +6371,9 @@ These changes helped guide the custom keyboard design.
 (key-chord-define-global "4o" #'help/4-window)
 (global-set-key (kbd "s-q") #'kill-buffer)
 (global-set-key (kbd "H-i") #'insert-char)
-(global-set-key (kbd "H-p") #'help/insert-datestamp)
-(global-set-key (kbd "H-P") #'help/insert-timestamp*-no-colons)
+(global-set-key [(control meta ?p)] #'help/insert-datestamp)
+(global-set-key [(control meta shift ?p)] #'help/insert-timestamp*-no-colons)
+(global-set-key (kbd "C-M-o") #'help/occur-dwim)
 #+END_SRC
 
 Org handle ~TAB~ correctly and nothing is bound to it like ~Auto-Complete~ or
@@ -6599,12 +6600,6 @@ Cycle through common options for removing space between characters. Thank you
      :ID:       org_gcr_2017-05-12_mara:4FEBE5F3-3B9E-438D-9E7F-DA337FB43BB7
      :END:
 
-Occur has 3 cases. I like to use it to explore the unknown.
-
-#+NAME: org_gcr_2017-05-12_mara_411C072C-C9A9-42DA-95F2-FB23EE6FF207
-#+BEGIN_SRC emacs-lisp :results output silent
-(global-set-key (kbd "H-o") #'help/occur-dwim)
-#+END_SRC
 
 Powerful buffer movement. Split between home and lower because
 - It is important if you have multiple windows
