@@ -6751,10 +6751,10 @@ Use a nicer =eval-expression= approach.
 
 #+NAME: org_gcr_2017-05-12_mara_078C604D-5762-4763-AD17-A397C5E224E7
 #+BEGIN_SRC emacs-lisp :results output silent
-(global-set-key (kbd "s-C-n") #'next-line)
 (global-set-key (kbd "C-n") #'next-logical-line)
-(global-set-key (kbd "s-C-p") #'previous-line)
+(global-set-key (kbd "C-s-n") #'next-line)
 (global-set-key (kbd "C-p") #'previous-logical-line)
+(global-set-key (kbd "C-s-p") #'previous-line)
 #+END_SRC
 
 Ansu.

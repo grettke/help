@@ -3580,10 +3580,10 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 ;; org_gcr_2017-05-12_mara_F02E60B9-5CB8-4768-9682-06524E4922C8 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_078C604D-5762-4763-AD17-A397C5E224E7][org_gcr_2017-05-12_mara_078C604D-5762-4763-AD17-A397C5E224E7]]
-(global-set-key (kbd "s-C-n") #'next-line)
 (global-set-key (kbd "C-n") #'next-logical-line)
-(global-set-key (kbd "s-C-p") #'previous-line)
+(global-set-key (kbd "C-s-n") #'next-line)
 (global-set-key (kbd "C-p") #'previous-logical-line)
+(global-set-key (kbd "C-s-p") #'previous-line)
 ;; org_gcr_2017-05-12_mara_078C604D-5762-4763-AD17-A397C5E224E7 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BF926B57-9097-483F-AB90-E3F55869B0D9][org_gcr_2017-05-12_mara_BF926B57-9097-483F-AB90-E3F55869B0D9]]
