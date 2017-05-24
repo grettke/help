@@ -365,7 +365,7 @@ Echo keystrokes immediately.
    :ID:       org_gcr_2017-05-12_mara:E1A8398D-E2F6-485B-83FB-CE52AE9A5D1B
    :END:
 
-Dash is nice to use.
+Lists.
 
 #+NAME: org_gcr_2017-05-12_mara_12B73D47-AAFB-4271-92F2-98A18E19DC2A
 #+BEGIN_SRC emacs-lisp :results output silent
@@ -377,7 +377,7 @@ Dash is nice to use.
   :ensure t)
 #+END_SRC
 
-F is nice to use.
+Files and directories.
 
 #+NAME: org_gcr_2017-05-12_mara_D99938CC-B521-4A2D-8DAA-F023FFB1E21E
 #+BEGIN_SRC emacs-lisp :results output silent
@@ -385,7 +385,7 @@ F is nice to use.
   :ensure t)
 #+END_SRC
 
-S is nice to use.
+Strings.
 
 #+NAME: org_gcr_2017-05-12_mara_04215D1F-F7E8-46E2-A3BC-0D8DEE28B7E1
 #+BEGIN_SRC emacs-lisp :results output silent
