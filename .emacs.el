@@ -3375,6 +3375,7 @@ _a_ ag  _A_ apropo'ish _s_ help/toggle-mac-right-option-modifier _S_ help/toggle
 _l_ visual-line-mode _L_ aggressive-indent-mode
 _x_ delete-indentation _c_ fill-paragraph _v_ desc-symbol _V_ view-mode _b_ erase-buffer _B_ibtex _n_ normal _m_ desc/mode _M_ checks
 _<_ cmtIn _>_ cmtOut _?_ snp"
+  ("q" help/safb-save-buffers-kill-terminal)
   ("|" split-window-horizontally)
   ("-" split-window-vertically)
   ("1" help/font-size-reset :exit nil)
