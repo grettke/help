@@ -393,6 +393,14 @@ S is nice to use.
   :ensure t)
 #+END_SRC
 
+Hash-tables.
+
+#+NAME: org_gcr_2017-05-23_mara_5BAD0073-631D-4D4E-83CD-5B0CD0C7CAD6
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package ht
+  :ensure t)
+#+END_SRC
+
 Caching.
 
 #+NAME: org_gcr_2017-05-12_mara_C063F7CE-637E-43F8-8E16-AFBC68CA7618
