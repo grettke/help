@@ -1176,13 +1176,6 @@ Attribution: `https://stackoverflow.com/questions/20967818/emacs-function-to-cas
 (setq-default fill-column help/column-width)
 #+END_SRC
 
-Two spaces after a period end a sentence.
-
-#+NAME: org_gcr_2017-05-12_mara_FBF549DB-4EA1-438E-9984-D45FE79FDB6B
-#+BEGIN_SRC emacs-lisp :results output silent
-(setq sentence-end-double-space t)
-#+END_SRC
-
 Two spaces follow a colon
 
 Two spaces after a semi-colon.

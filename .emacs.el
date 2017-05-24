@@ -752,10 +752,6 @@ Attribution: `https://stackoverflow.com/questions/20967818/emacs-function-to-cas
 (setq-default fill-column help/column-width)
 ;; org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_FBF549DB-4EA1-438E-9984-D45FE79FDB6B][org_gcr_2017-05-12_mara_FBF549DB-4EA1-438E-9984-D45FE79FDB6B]]
-(setq sentence-end-double-space t)
-;; org_gcr_2017-05-12_mara_FBF549DB-4EA1-438E-9984-D45FE79FDB6B ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_38909B55-115D-44E4-B84F-70285016BF92][org_gcr_2017-05-12_mara_38909B55-115D-44E4-B84F-70285016BF92]]
 (setq colon-double-space t)
 ;; org_gcr_2017-05-12_mara_38909B55-115D-44E4-B84F-70285016BF92 ends here
