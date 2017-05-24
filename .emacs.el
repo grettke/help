@@ -1830,6 +1830,17 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 (setq visual-line-fringe-indicators '(nil right-curly-arrow))
 ;; org_gcr_2017-05-12_mara_EA8B5E3D-0F0B-4BD8-A510-864EC04BABD7 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-05-23_mara_9517CF5A-C95B-454E-A68F-1E4BA677C08C][org_gcr_2017-05-23_mara_9517CF5A-C95B-454E-A68F-1E4BA677C08C]]
+(use-package parent-mode
+  :ensure t
+  :config
+  (defun help/parent-mode-display ()
+    "Display this buffer's mode hierarchy."
+    (interactive)
+    (let ((ls (parent-mode-list major-mode)))
+      (princ ls))))
+;; org_gcr_2017-05-23_mara_9517CF5A-C95B-454E-A68F-1E4BA677C08C ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_94E22B9A-B373-41AB-A8C9-E142CD2F6EED][org_gcr_2017-05-12_mara_94E22B9A-B373-41AB-A8C9-E142CD2F6EED]]
 (setq-default comment-start "> ")
 ;; org_gcr_2017-05-12_mara_94E22B9A-B373-41AB-A8C9-E142CD2F6EED ends here
@@ -3410,6 +3421,7 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("M" help/checks/body)
   ("<" help/chs)
   (">" help/che)
+  ("." help/parent-mode-display)
   ("?" help/insert-noticeable-snip-comment-line)
   (";" isearch-toggle-lax-whitespace)
   ("o" toggle-debug-on-error)

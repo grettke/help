@@ -3048,6 +3048,20 @@ With that in mind this system:
   "configuring ~prog*-mode~" is often blurred and sometimes confusing. The lines
   become wavy and intertwined with mastery of EMACS and LP.
 
+Make sense of the current mode.
+
+#+NAME: org_gcr_2017-05-23_mara_9517CF5A-C95B-454E-A68F-1E4BA677C08C
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package parent-mode
+  :ensure t
+  :config
+  (defun help/parent-mode-display ()
+    "Display this buffer's mode hierarchy."
+    (interactive)
+    (let ((ls (parent-mode-list major-mode)))
+      (princ ls))))
+#+END_SRC
+
 *** Text-Mode
     :PROPERTIES:
     :ID:       org_gcr_2017-05-12_mara:C3270DE0-55FD-4612-B3E3-226CAC5A8FDA
@@ -6472,6 +6486,7 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("M" help/checks/body)
   ("<" help/chs)
   (">" help/che)
+  ("." help/parent-mode-display)
   ("?" help/insert-noticeable-snip-comment-line)
   (";" isearch-toggle-lax-whitespace)
   ("o" toggle-debug-on-error)
