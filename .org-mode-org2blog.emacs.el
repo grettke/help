@@ -32,7 +32,8 @@
 
 ;; [[file:~/src/help/Org2Blog.org::org_gcr_2017-05-12_mara_EF1B02DF-BDB7-44AA-A018-B0BE6DA1C08F][org_gcr_2017-05-12_mara_EF1B02DF-BDB7-44AA-A018-B0BE6DA1C08F]]
 (add-to-list 'load-path "~/src/org2blog")
-(require 'org2blog-autoloads)
+(require 'org2blog)
+(add-hook 'org-mode-hook #'org2blog/wp-org-mode-hook-fn)
 ;; org_gcr_2017-05-12_mara_EF1B02DF-BDB7-44AA-A018-B0BE6DA1C08F ends here
 
 ;; [[file:~/src/help/Org2Blog.org::org_gcr_2017-05-12_mara_FF96F4B6-42B9-45D6-BEE6-6CDC9D6815AE][org_gcr_2017-05-12_mara_FF96F4B6-42B9-45D6-BEE6-6CDC9D6815AE]]
