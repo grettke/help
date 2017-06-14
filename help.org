@@ -3108,7 +3108,8 @@ Set a default commenting prefix.
                         scad-mode-hook
                         web-mode-hook
                         js2-mode-hook
-                        json-mode-hook))
+                        json-mode-hook
+                        crontab-mode-hook))
     #+END_SRC
   - LISP mode hooks.
     - Are hacking modes.
@@ -5416,6 +5417,18 @@ Load Beamer for creating presentations.
   (add-hook 'ssh-config-mode-hook #'help/text-prog*-setup))
 #+END_SRC
 
+*** CRON
+:PROPERTIES:
+:ID:       org_gcr_2017-06-13_mara:9B3AB875-4459-4EC7-A7C5-4C32EC3A5E18
+:END:
+#+NAME: org_gcr_2017-06-13_mara_350A94E2-4280-4D5E-BB58-24887D9A57CD
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package crontab-mode
+  :ensure t
+  :config
+  (add-to-list 'auto-mode-alist '("\\.cron\\(tab\\)?\\'" . crontab-mode))
+  (add-hook 'crontab-mode-hook #'turn-on-stripe-buffer-mode))
+#+END_SRC
 ** Diagram
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:D3EE5DB5-EC7B-4D7C-9749-1BC351B8214D

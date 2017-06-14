@@ -1865,7 +1865,8 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
                         scad-mode-hook
                         web-mode-hook
                         js2-mode-hook
-                        json-mode-hook))
+                        json-mode-hook
+                        crontab-mode-hook))
 ;; org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86][org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86]]
@@ -3055,6 +3056,14 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
   (add-hook 'ssh-config-mode-hook #'turn-on-font-lock)
   (add-hook 'ssh-config-mode-hook #'help/text-prog*-setup))
 ;; org_gcr_2017-05-12_mara_D12C607E-C07C-41F8-A0B0-02A228C7AED7 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2017-06-13_mara_350A94E2-4280-4D5E-BB58-24887D9A57CD][org_gcr_2017-06-13_mara_350A94E2-4280-4D5E-BB58-24887D9A57CD]]
+(use-package crontab-mode
+  :ensure t
+  :config
+  (add-to-list 'auto-mode-alist '("\\.cron\\(tab\\)?\\'" . crontab-mode))
+  (add-hook 'crontab-mode-hook #'turn-on-stripe-buffer-mode))
+;; org_gcr_2017-06-13_mara_350A94E2-4280-4D5E-BB58-24887D9A57CD ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_AF516C01-3152-4194-954B-91A44A429972][org_gcr_2017-05-12_mara_AF516C01-3152-4194-954B-91A44A429972]]
 (add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
