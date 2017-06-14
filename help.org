@@ -451,6 +451,14 @@ Show the column number.
 (column-number-mode t)
 #+END_SRC
 
+Configuration uses active theme.
+
+#+NAME: org_gcr_2017-06-13_mara_7F117B6D-AFE7-479C-8313-3E9B6B4D967F
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package smart-mode-line
+  :ensure t)
+#+END_SRC
+
 ** OS X
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:BC848D6F-7915-4151-8368-D473CA39E7C3
@@ -5648,12 +5656,13 @@ Recenter near top of screen.
   :config
   (setq solarized-distinct-fringe-background t)
   (setq solarized-use-variable-pitch nil)
-  (setq solarized-high-contrast-mode-line t)
   (setq solarized-use-less-bold t)
   (setq solarized-use-more-italic nil)
   (setq solarized-emphasize-indicators nil)
   (setq solarized-scale-org-headlines t)
-  (load-theme 'solarized-dark t))
+  (load-theme 'solarized-dark t)
+  (eval-after-load "smart-mode-line"
+    '(sml/setup)))
 #+END_SRC
 
 ** Comint

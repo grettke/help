@@ -96,6 +96,11 @@
 (column-number-mode t)
 ;; org_gcr_2017-05-12_mara_BC16CA62-6474-4848-880C-F1EDE2BB5616 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-06-13_mara_7F117B6D-AFE7-479C-8313-3E9B6B4D967F][org_gcr_2017-06-13_mara_7F117B6D-AFE7-479C-8313-3E9B6B4D967F]]
+(use-package smart-mode-line
+  :ensure t)
+;; org_gcr_2017-06-13_mara_7F117B6D-AFE7-479C-8313-3E9B6B4D967F ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_FF670CDD-5374-49BA-897A-AE1A30B444D6][org_gcr_2017-05-12_mara_FF670CDD-5374-49BA-897A-AE1A30B444D6]]
 (defmacro help/on-osx (statement &rest statements)
   "Evaluate the enclosed body only when run on OSX."
@@ -3166,12 +3171,13 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
   :config
   (setq solarized-distinct-fringe-background t)
   (setq solarized-use-variable-pitch nil)
-  (setq solarized-high-contrast-mode-line t)
   (setq solarized-use-less-bold t)
   (setq solarized-use-more-italic nil)
   (setq solarized-emphasize-indicators nil)
   (setq solarized-scale-org-headlines t)
-  (load-theme 'solarized-dark t))
+  (load-theme 'solarized-dark t)
+  (eval-after-load "smart-mode-line"
+    '(sml/setup)))
 ;; org_gcr_2017-05-12_mara_1AD36955-5FAC-4794-A9B0-A8DC6639A04C ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_96BD218B-65E7-4ACA-98CE-108C3BFC29A3][org_gcr_2017-05-12_mara_96BD218B-65E7-4ACA-98CE-108C3BFC29A3]]
