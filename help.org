@@ -1565,7 +1565,8 @@ Macro expander:
 #+BEGIN_SRC emacs-lisp :results output silent
 (use-package macrostep
   :ensure t
-  :config)
+  :config
+  (global-set-key (kbd "C-M-8") #'macrostep-expand))
 #+END_SRC
 
 ** Evaluation
