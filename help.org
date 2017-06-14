@@ -6390,6 +6390,26 @@ These changes helped guide the custom keyboard design.
 (global-set-key (kbd "s-+") #'increment-integer-at-point)
 #+END_SRC
 
+Checking things.
+
+#+NAME: org_gcr_2017-06-13_mara_2DFDC64B-DBF2-473E-979F-D7D8D0DD2206
+#+BEGIN_SRC emacs-lisp :results output silent
+(defhydra help/hydra-checking (:color blue
+                                      :hint nil)
+  "
+_y_ checker/toggle _u_ grade-level _i_ reading-ease
+_h_ checker/run _j_ checker/list
+_n_ writegood/toggle
+"
+  ("y" flycheck-mode)
+  ("h" flycheck-buffer)
+  ("j" help/safb-flycheck-list-errors)
+  ("n" writegood-mode)
+  ("u" writegood-grade-level)
+  ("i" writegood-reading-ease))
+(global-set-key (kbd "C-M-7") #'help/hydra-checking/body)
+#+END_SRC
+
 **** Row 4
      :PROPERTIES:
      :ID:       org_gcr_2017-05-12_mara:20E96ACD-1D91-480C-BA3B-D5730EA2173C
@@ -6452,7 +6472,7 @@ Org-Mode and I hit ~s-h~ it hides Emacs. Oops!
                                               :hint nil)
   "
 _O_ base64-encode-region _P_ base64-decode-region _|_ split-window-horizontally _-_ split-window-vertically
-_1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_ flyck/buf _&_ flyck/toggle _*_ flyck/list _8_ grade-level _9_ reading-ease _0_ writegood _w_ widen _=_ reposition-window _t_ rectangle-mark _y_ transparency _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page _}_ transliterate
+_1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _w_ widen _=_ reposition-window _t_ rectangle-mark _y_ transparency _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _[_ ↑page _]_ ↓page _}_ transliterate
 _T_ trademarks
 _a_ ag  _A_ apropo'ish _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point  _D_ detangle _g_ grep _j_ obtj2o _k_ scrollDown _K_ nextLogLine  _;_ toggle-lax-whitespace
 _l_ visual-line-mode _L_ aggressive-indent-mode
@@ -6471,12 +6491,6 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("=" reposition-window)
   ("5" help/uuid)
   ("6" set-buffer-file-coding-system)
-  ("7" flycheck-buffer)
-  ("&" flycheck-mode)
-  ("8" writegood-grade-level)
-  ("*" help/safb-flycheck-list-errors)
-  ("9" writegood-reading-ease)
-  ("0" writegood-mode)
   ("a" ag)
   ("A" hydra-apropos-ish/body)
   ("s" help/toggle-mac-right-option-modifier)
