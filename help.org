@@ -6430,10 +6430,10 @@ _n_ writegood/toggle
 
 #+NAME: org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389
 #+BEGIN_SRC emacs-lisp :results output silent
-(key-chord-define-global "1o" #'help/1-window)
-(key-chord-define-global "2o" #'help/2-window)
-(key-chord-define-global "3o" #'help/3-window)
-(key-chord-define-global "4o" #'help/4-window)
+(global-set-key (kbd "C-M-1") #'help/1-window)
+(global-set-key (kbd "C-M-2") #'help/2-window)
+(global-set-key (kbd "C-M-3") #'help/3-window)
+(global-set-key (kbd "C-M-4") #'help/4-window)
 (global-set-key (kbd "s-q") #'kill-buffer)
 (global-unset-key (kbd "C-M-i"))
 (global-set-key (kbd "C-M-i") #'insert-char)

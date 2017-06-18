@@ -3371,10 +3371,10 @@ _n_ writegood/toggle
 ;; org_gcr_2017-06-13_mara_2DFDC64B-DBF2-473E-979F-D7D8D0DD2206 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389][org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389]]
-(key-chord-define-global "1o" #'help/1-window)
-(key-chord-define-global "2o" #'help/2-window)
-(key-chord-define-global "3o" #'help/3-window)
-(key-chord-define-global "4o" #'help/4-window)
+(global-set-key (kbd "C-M-1") #'help/1-window)
+(global-set-key (kbd "C-M-2") #'help/2-window)
+(global-set-key (kbd "C-M-3") #'help/3-window)
+(global-set-key (kbd "C-M-4") #'help/4-window)
 (global-set-key (kbd "s-q") #'kill-buffer)
 (global-unset-key (kbd "C-M-i"))
 (global-set-key (kbd "C-M-i") #'insert-char)
