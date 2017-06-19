@@ -2246,14 +2246,17 @@ Integrate Langtool.
   (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java")))
 #+END_SRC
 
-Integrate Proselint.
+Integrate Proselint. I wanted to load the executable location from
+=PROSELINT_HOME= but I haven't figured out how yet. ~flycheck-define-checker~ is a
+macro but I don't know how to expand the string for use in the macro. I tried
+quasiquote and that was wrong.
 
 #+NAME: org_gcr_2017-05-12_mara_A17A873C-5FC0-473F-842F-875CA99981D5
 #+BEGIN_SRC emacs-lisp :results output silent
 (with-eval-after-load "flycheck"
   (flycheck-define-checker proselint
     "A linter for prose."
-    :command ("/Users/gcr/util/proselint/env/bin/proselint" source-inplace)
+    :command ("/Users/gcr/proselint/env/bin/proselint" source-inplace)
     :error-patterns
     ((warning line-start (file-name) ":" line ":" column ": "
               (id (one-or-more (not (any " "))))

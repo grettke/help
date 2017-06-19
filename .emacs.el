@@ -1412,7 +1412,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
 (with-eval-after-load "flycheck"
   (flycheck-define-checker proselint
     "A linter for prose."
-    :command ("/Users/gcr/util/proselint/env/bin/proselint" source-inplace)
+    :command ("/Users/gcr/proselint/env/bin/proselint" source-inplace)
     :error-patterns
     ((warning line-start (file-name) ":" line ":" column ": "
               (id (one-or-more (not (any " "))))
