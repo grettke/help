@@ -3109,7 +3109,8 @@ Set a default commenting prefix.
                         web-mode-hook
                         js2-mode-hook
                         json-mode-hook
-                        crontab-mode-hook))
+                        crontab-mode-hook
+                        apache-mode-hook))
     #+END_SRC
   - LISP mode hooks.
     - Are hacking modes.
