@@ -2680,7 +2680,19 @@ Ag integration.
   (setq ag-highlight-search t)
   (setq ag-reuse-window nil)
   (setq ag-reuse-buffers nil)
-  (setq ag-arguments (-insert-at (- (length ag-arguments) 1) '"-i" ag-arguments)))
+  (setq ag-arguments (-insert-at (- (length ag-arguments) 1) '"-i"
+                                 ag-arguments))
+  (defun help/ag-mode-hook-fn ()
+    "HELP ag customizations."
+    (interactive)
+    (turn-on-stripe-buffer-mode))
+  (defun help/ag-mode-finished-hook-fn ()
+    "HELP ag finished hook function."
+    (interactive)
+    (let ((compilation-scroll-output 'first-error))
+      (pop-to-buffer next-error-last-buffer)))
+  (add-hook 'ag-mode-hook #'help/ag-mode-hook-fn)
+  (add-hook 'ag-search-finished-hook #'help/ag-mode-finished-hook-fn))
 #+END_SRC
 
 Writeable Ag.

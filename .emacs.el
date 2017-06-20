@@ -1622,7 +1622,19 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (setq ag-highlight-search t)
   (setq ag-reuse-window nil)
   (setq ag-reuse-buffers nil)
-  (setq ag-arguments (-insert-at (- (length ag-arguments) 1) '"-i" ag-arguments)))
+  (setq ag-arguments (-insert-at (- (length ag-arguments) 1) '"-i"
+                                 ag-arguments))
+  (defun help/ag-mode-hook-fn ()
+    "HELP ag customizations."
+    (interactive)
+    (turn-on-stripe-buffer-mode))
+  (defun help/ag-mode-finished-hook-fn ()
+    "HELP ag finished hook function."
+    (interactive)
+    (let ((compilation-scroll-output 'first-error))
+      (pop-to-buffer next-error-last-buffer)))
+  (add-hook 'ag-mode-hook #'help/ag-mode-hook-fn)
+  (add-hook 'ag-search-finished-hook #'help/ag-mode-finished-hook-fn))
 ;; org_gcr_2017-05-12_mara_58F6AD1E-7E9B-4650-B859-F9C0540C74B6 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E4E1E1A0-1353-4483-BE1C-746097F60CB6][org_gcr_2017-05-12_mara_E4E1E1A0-1353-4483-BE1C-746097F60CB6]]
