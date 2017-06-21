@@ -840,7 +840,16 @@ Attribution: `https://stackoverflow.com/questions/20967818/emacs-function-to-cas
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_11CC1DCC-05D6-4564-A40B-DE2AD0A7C46D][org_gcr_2017-05-12_mara_11CC1DCC-05D6-4564-A40B-DE2AD0A7C46D]]
 (use-package page-break-lines
-  :diminish page-break-lines-mode)
+  :diminish page-break-lines-mode
+  :config
+  (defun help/insert-formfeed ()
+    (interactive)
+    (insert "\f"))
+  (global-set-key (kbd "C-M-<return>") #'help/insert-formfeed)
+  (global-set-key (kbd "C-M-j") #'forward-page)
+  (global-set-key (kbd "C-M-k") #'backward-page)
+  (global-set-key (kbd "C-M-n") #'narrow-to-page)
+  (global-set-key (kbd "C-M-h") #'mark-page))
 ;; org_gcr_2017-05-12_mara_11CC1DCC-05D6-4564-A40B-DE2AD0A7C46D ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_87233BFD-A241-48A6-9113-B383B30F9BC5][org_gcr_2017-05-12_mara_87233BFD-A241-48A6-9113-B383B30F9BC5]]
@@ -1969,8 +1978,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (local-set-key (kbd "s-l mef") #'macroexpand)
   (local-set-key (kbd "s-l mea") #'macroexpand-all)
   (local-set-key (kbd "#") #'endless/sharp)
-  (local-set-key (kbd "C-c e") #'macrostep-expand)
-  (local-unset-key (kbd "C-M-i")))
+  (local-set-key (kbd "C-c e") #'macrostep-expand))
 
 (defun help/emacs-lisp-mode-hook-fn ()
   (interactive)
@@ -3393,8 +3401,7 @@ _n_ writegood/toggle
 (global-set-key (kbd "C-M-3") #'help/3-window)
 (global-set-key (kbd "C-M-4") #'help/4-window)
 (global-set-key (kbd "s-q") #'kill-buffer)
-(global-unset-key (kbd "C-M-i"))
-(global-set-key (kbd "C-M-i") #'insert-char)
+(global-set-key (kbd "C-M-y") #'insert-char)
 (global-set-key [(control meta ?p)] #'help/insert-datestamp)
 (global-set-key [(control meta shift ?p)] #'help/insert-timestamp*-no-colons)
 (global-set-key (kbd "C-M-o") #'help/occur-dwim)
@@ -3478,8 +3485,6 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("p" anzu-query-replace)
   ("O" base64-encode-region)
   ("P" base64-decode-region)
-  ("[" backward-page :exit nil)
-  ("]" forward-page :exit nil)
   ("}" help/hydra/transliterate/body)
   ("c" fill-paragraph )
   ("b" erase-buffer)
