@@ -1963,7 +1963,6 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (local-set-key (kbd "s-l td") #'toggle-debug-on-error)
   (local-set-key (kbd "s-l mef") #'macroexpand)
   (local-set-key (kbd "s-l mea") #'macroexpand-all)
-  (local-set-key (kbd "s-:") #'my-eval-expression)
   (local-set-key (kbd "#") #'endless/sharp)
   (local-set-key (kbd "C-c e") #'macrostep-expand)
   (local-unset-key (kbd "C-M-i")))
@@ -3398,7 +3397,7 @@ _n_ writegood/toggle
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D][org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D]]
 (global-unset-key (kbd "C-M-j"))
-(global-set-key (kbd "C-M-j") #'my-eval-expression)
+(global-set-key (kbd "M-:") #'my-eval-expression)
 ;; org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E8ABDA7D-AC92-4C24-8287-1505E2377B2C][org_gcr_2017-05-12_mara_E8ABDA7D-AC92-4C24-8287-1505E2377B2C]]
@@ -3625,10 +3624,6 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (global-set-key (kbd "M-p") (kbd "C-u 1 C-v"))
 (global-set-key (kbd "M-n") (kbd "C-u 1 M-v"))
 ;; org_gcr_2017-05-12_mara_EB0E9368-41FE-4827-9EE2-5CDFCDC1C2BA ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F02E60B9-5CB8-4768-9682-06524E4922C8][org_gcr_2017-05-12_mara_F02E60B9-5CB8-4768-9682-06524E4922C8]]
-(global-set-key (kbd "s-:") #'my-eval-expression)
-;; org_gcr_2017-05-12_mara_F02E60B9-5CB8-4768-9682-06524E4922C8 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_078C604D-5762-4763-AD17-A397C5E224E7][org_gcr_2017-05-12_mara_078C604D-5762-4763-AD17-A397C5E224E7]]
 (global-set-key (kbd "C-n") #'next-logical-line)
