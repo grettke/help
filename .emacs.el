@@ -860,6 +860,16 @@ Attribution: `https://stackoverflow.com/questions/20967818/emacs-function-to-cas
   (global-set-key (kbd "C-a") 'mwim-beginning-of-code-or-line))
 ;; org_gcr_2017-05-12_mara_B8BDE36B-4B27-4580-BA34-35C047FBEA62 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-06-20_mara_6C4B1CDD-CF71-4A5F-B900-6D3CC06D4028][org_gcr_2017-06-20_mara_6C4B1CDD-CF71-4A5F-B900-6D3CC06D4028]]
+(use-package buffer-move
+  :ensure t
+  :config
+  (global-set-key (kbd "<C-S-up>") #'buf-move-up)
+  (global-set-key (kbd "<C-S-down>") #'buf-move-down)
+  (global-set-key (kbd "<C-S-left>") #'buf-move-left)
+  (global-set-key (kbd "<C-S-right>") #'buf-move-right))
+;; org_gcr_2017-06-20_mara_6C4B1CDD-CF71-4A5F-B900-6D3CC06D4028 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-19_mara_845BEC94-54CC-46D3-B85F-7B537944E328][org_gcr_2017-05-19_mara_845BEC94-54CC-46D3-B85F-7B537944E328]]
 (defhydra hydra-ibuffer-main (:color pink :hint nil)
   "
