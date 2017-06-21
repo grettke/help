@@ -838,11 +838,6 @@ Attribution: `https://stackoverflow.com/questions/20967818/emacs-function-to-cas
   :ensure t)
 ;; org_gcr_2017-05-12_mara_14A9724E-F0E0-40CA-9FD8-142CB77B87BF ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_6F4C3BCD-2E4B-4B9B-AF41-B489137989EB][org_gcr_2017-05-12_mara_6F4C3BCD-2E4B-4B9B-AF41-B489137989EB]]
-(use-package page-break-lines
-  :ensure t)
-;; org_gcr_2017-05-12_mara_6F4C3BCD-2E4B-4B9B-AF41-B489137989EB ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_11CC1DCC-05D6-4564-A40B-DE2AD0A7C46D][org_gcr_2017-05-12_mara_11CC1DCC-05D6-4564-A40B-DE2AD0A7C46D]]
 (use-package page-break-lines
   :diminish page-break-lines-mode)

@@ -1321,15 +1321,7 @@ then document.
   :ensure t)
 #+END_SRC
 
-Visualize the formfeed character: ~C-q C-l~.
-
-#+NAME: org_gcr_2017-05-12_mara_6F4C3BCD-2E4B-4B9B-AF41-B489137989EB
-#+BEGIN_SRC emacs-lisp :results output silent
-(use-package page-break-lines
-  :ensure t)
-#+END_SRC
-
-Configure Page-Break-Lines-Mode.
+Configure Page-Break-Lines-Mode to visualize the formfeed character: ~C-q C-l~.
 
 #+NAME: org_gcr_2017-05-12_mara_11CC1DCC-05D6-4564-A40B-DE2AD0A7C46D
 #+BEGIN_SRC emacs-lisp :results output silent
