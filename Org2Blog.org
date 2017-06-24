@@ -82,8 +82,8 @@ Weblog maintenance via XML-RPC APIs
 
 #+NAME: org_gcr_2017-05-12_mara_C057BFE2-7242-495D-BCD2-62C6389A6551
 #+BEGIN_SRC emacs-lisp :results output silent
-(use-package metaweblog
-  :ensure t)
+(add-to-list 'load-path "~/src/metaweblog")
+(require 'metaweblog)
 #+END_SRC
 
 #+BEGIN_QUOTE
