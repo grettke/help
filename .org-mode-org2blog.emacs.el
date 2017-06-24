@@ -26,8 +26,8 @@
 ;; org_gcr_2017-05-12_mara_3989AFAA-23E6-4463-98E8-90F7ED269C1B ends here
 
 ;; [[file:~/src/help/Org2Blog.org::org_gcr_2017-05-12_mara_C057BFE2-7242-495D-BCD2-62C6389A6551][org_gcr_2017-05-12_mara_C057BFE2-7242-495D-BCD2-62C6389A6551]]
-(use-package metaweblog
-  :ensure t)
+(add-to-list 'load-path "~/src/metaweblog")
+(require 'metaweblog)
 ;; org_gcr_2017-05-12_mara_C057BFE2-7242-495D-BCD2-62C6389A6551 ends here
 
 ;; [[file:~/src/help/Org2Blog.org::org_gcr_2017-05-12_mara_EF1B02DF-BDB7-44AA-A018-B0BE6DA1C08F][org_gcr_2017-05-12_mara_EF1B02DF-BDB7-44AA-A018-B0BE6DA1C08F]]
