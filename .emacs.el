@@ -1852,10 +1852,6 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
       (princ ls))))
 ;; org_gcr_2017-05-23_mara_9517CF5A-C95B-454E-A68F-1E4BA677C08C ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_94E22B9A-B373-41AB-A8C9-E142CD2F6EED][org_gcr_2017-05-12_mara_94E22B9A-B373-41AB-A8C9-E142CD2F6EED]]
-(setq-default comment-start "> ")
-;; org_gcr_2017-05-12_mara_94E22B9A-B373-41AB-A8C9-E142CD2F6EED ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F][org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F]]
 (defun help/text-mode-fn ()
   "HELP's standard configuration for buffer's working with text, often for

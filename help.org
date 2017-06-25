@@ -3083,13 +3083,6 @@ Make sense of the current mode.
     :PROPERTIES:
     :ID:       org_gcr_2017-05-12_mara:C3270DE0-55FD-4612-B3E3-226CAC5A8FDA
     :END:
-Set a default commenting prefix.
-
-#+NAME: org_gcr_2017-05-12_mara_94E22B9A-B373-41AB-A8C9-E142CD2F6EED
-#+BEGIN_SRC emacs-lisp :results output silent
-(setq-default comment-start "> ")
-#+END_SRC
-
 Every text editing buffer needs this.
 
 #+NAME: org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F
