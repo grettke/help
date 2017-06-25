@@ -3145,7 +3145,7 @@ Every text editing buffer needs this.
     - IELM mode hook.
       - Does one or two more things.
 
-*** Prog*-Mode Hook
+*** Prog-Mode Hook Function
     :PROPERTIES:
     :ID:       org_gcr_2017-05-12_mara:750D5ACE-FB06-4A71-A0C1-634C71198A5F
     :END:
