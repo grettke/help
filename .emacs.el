@@ -1897,12 +1897,12 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 ;; org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86][org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86]]
-(setq help/hack-lisp-modes
+(setq help/lisp-modes
       '(emacs-lisp-mode-hook
         ielm-mode-hook
         lisp-interaction-mode-hook
         scheme-mode-hook))
-(setq help/prog-modes (append help/prog-modes help/hack-lisp-modes))
+(setq help/prog-modes (append help/prog-modes help/lisp-modes))
 ;; org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_02408658-D767-4D6E-8AAA-2BE1933BCBD1][org_gcr_2017-05-12_mara_02408658-D767-4D6E-8AAA-2BE1933BCBD1]]
@@ -2003,7 +2003,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (turn-on-elisp-slime-nav-mode))
 
 (let ()
-  (--each help/hack-lisp-modes
+  (--each help/lisp-modes
     (add-hook it #'help/emacs-lisp-mode-hook-fn)))
 
 (add-hook 'ielm-mode-hook #'help/ielm-mode-hook-fn)
