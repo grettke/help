@@ -3110,7 +3110,7 @@ Set a default commenting prefix.
 (setq-default comment-start "> ")
 #+END_SRC
 
-*** Prog*-Mode Modes
+*** Prog-Mode Modes
     :PROPERTIES:
     :ID:       org_gcr_2017-05-12_mara:E20FE37A-E10D-406C-B95D-545607F7A93C
     :END:
@@ -3122,7 +3122,7 @@ Set a default commenting prefix.
   - Configurations common to every hacking vehicle.
     #+NAME: org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C
     #+BEGIN_SRC emacs-lisp :results output silent
-(setq help/hack-modes '(makefile-mode-hook
+(setq help/prog-modes '(makefile-mode-hook
                         ruby-mode-hook
                         sh-mode-hook
                         plantuml-mode-hook
@@ -3148,7 +3148,7 @@ Set a default commenting prefix.
         ielm-mode-hook
         lisp-interaction-mode-hook
         scheme-mode-hook))
-(setq help/hack-modes (append help/hack-modes help/hack-lisp-modes))
+(setq help/prog-modes (append help/prog-modes help/hack-lisp-modes))
       #+END_SRC
     - IELM mode hook.
       - Does one or two more things.
@@ -3191,7 +3191,7 @@ Set a default commenting prefix.
 
 #+NAME: org_gcr_2017-05-12_mara_A3C53136-65BE-4771-A214-19E102E0158B
 #+BEGIN_SRC emacs-lisp :results output silent
-(defun help/hack-prog*-mode-hook-fn ()
+(defun help/prog-mode-hook-fn ()
   (interactive)
   (help/text-prog*-setup)
   (smartparens-strict-mode)
@@ -3201,8 +3201,8 @@ Set a default commenting prefix.
   (help/on-gui (local-set-key (kbd "<return>") #'newline-and-indent)))
 
 (let ()
-  (--each help/hack-modes
-    (add-hook it #'help/hack-prog*-mode-hook-fn)))
+  (--each help/prog-modes
+    (add-hook it #'help/prog-mode-hook-fn)))
 #+END_SRC
 
 ** Literate Programming

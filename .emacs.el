@@ -1878,7 +1878,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 ;; org_gcr_2017-05-12_mara_94E22B9A-B373-41AB-A8C9-E142CD2F6EED ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C][org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C]]
-(setq help/hack-modes '(makefile-mode-hook
+(setq help/prog-modes '(makefile-mode-hook
                         ruby-mode-hook
                         sh-mode-hook
                         plantuml-mode-hook
@@ -1902,7 +1902,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
         ielm-mode-hook
         lisp-interaction-mode-hook
         scheme-mode-hook))
-(setq help/hack-modes (append help/hack-modes help/hack-lisp-modes))
+(setq help/prog-modes (append help/prog-modes help/hack-lisp-modes))
 ;; org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_02408658-D767-4D6E-8AAA-2BE1933BCBD1][org_gcr_2017-05-12_mara_02408658-D767-4D6E-8AAA-2BE1933BCBD1]]
@@ -1920,7 +1920,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 ;; org_gcr_2017-05-12_mara_3AB5C00B-E0FF-40A1-9C3B-420CB4E8D417 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A3C53136-65BE-4771-A214-19E102E0158B][org_gcr_2017-05-12_mara_A3C53136-65BE-4771-A214-19E102E0158B]]
-(defun help/hack-prog*-mode-hook-fn ()
+(defun help/prog-mode-hook-fn ()
   (interactive)
   (help/text-prog*-setup)
   (smartparens-strict-mode)
@@ -1930,8 +1930,8 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (help/on-gui (local-set-key (kbd "<return>") #'newline-and-indent)))
 
 (let ()
-  (--each help/hack-modes
-    (add-hook it #'help/hack-prog*-mode-hook-fn)))
+  (--each help/prog-modes
+    (add-hook it #'help/prog-mode-hook-fn)))
 ;; org_gcr_2017-05-12_mara_A3C53136-65BE-4771-A214-19E102E0158B ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C344E972-D31C-48F4-8E3B-83A799DE7D37][org_gcr_2017-05-12_mara_C344E972-D31C-48F4-8E3B-83A799DE7D37]]
