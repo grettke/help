@@ -1941,6 +1941,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_2757B16C-18ED-4F29-8DFD-CE51B930BA81][org_gcr_2017-05-12_mara_2757B16C-18ED-4F29-8DFD-CE51B930BA81]]
 (use-package persistent-scratch
+  :ensure t
   :config
   (persistent-scratch-setup-default))
 ;; org_gcr_2017-05-12_mara_2757B16C-18ED-4F29-8DFD-CE51B930BA81 ends here
