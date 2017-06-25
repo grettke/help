@@ -3112,6 +3112,11 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
     (setq org-plantuml-jar-path help/plantuml-jar)))
 ;; org_gcr_2017-05-12_mara_91D0CFDF-6FC2-4F4A-9CFC-825CED0061B6 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-06-25_mara_B33E6DF0-8A18-4DBA-A39D-B16649F6E793][org_gcr_2017-06-25_mara_B33E6DF0-8A18-4DBA-A39D-B16649F6E793]]
+(use-package xpm
+  :ensure t)
+;; org_gcr_2017-06-25_mara_B33E6DF0-8A18-4DBA-A39D-B16649F6E793 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_70B524CE-27DC-41D1-BB27-99FFE334B40B][org_gcr_2017-05-12_mara_70B524CE-27DC-41D1-BB27-99FFE334B40B]]
 (use-package scad-mode
   :ensure t)
@@ -3428,7 +3433,7 @@ _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _w_
 _T_ trademarks
 _a_ ag  _A_ apropo'ish _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point  _D_ detangle _g_ grep _j_ obtj2o _k_ scrollDown _K_ nextLogLine  _;_ toggle-lax-whitespace
 _l_ visual-line-mode _L_ aggressive-indent-mode
-_x_ delete-indentation _c_ fill-paragraph _v_ desc-symbol _V_ view-mode _b_ erase-buffer _B_ibtex _n_ normal _m_ desc/mode _M_ checks
+_x_ delete-indentation _X_pm grok _c_ fill-paragraph _v_ desc-symbol _V_ view-mode _b_ erase-buffer _B_ibtex _n_ normal _m_ desc/mode _M_ checks
 _<_ cmtIn _>_ cmtOut _?_ snp"
   ("q" help/safb-save-buffers-kill-terminal)
   ("|" split-window-horizontally)
@@ -3452,6 +3457,7 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("L" aggressive-indent-mode)
   ("S" help/toggle-mac-function-modifier)
   ("x" delete-indentation)
+  ("X" xpm-grok)
   ("f" describe-key)
   ("v" describe-symbol)
   ("V" view-mode)
