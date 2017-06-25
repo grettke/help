@@ -761,23 +761,6 @@ Attribution: `https://stackoverflow.com/questions/20967818/emacs-function-to-cas
 (setq colon-double-space t)
 ;; org_gcr_2017-05-12_mara_38909B55-115D-44E4-B84F-70285016BF92 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F][org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F]]
-(defun help/text-mode-fn ()
-  "HELP's standard configuration for buffer's working with text, often for
-   programming."
-  (interactive)
-  (auto-fill-mode)
-  (diminish 'auto-fill-function)
-  (visual-line-mode)
-  (nlinum-mode)
-  (fci-mode)
-  (rainbow-mode)
-  (help/try-to-add-imenu)
-  (turn-on-page-break-lines-mode))
-
-(add-hook 'text-mode-hook #'help/text-mode-fn)
-;; org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1986C8FB-6C8F-43F6-811D-D95577160064][org_gcr_2017-05-12_mara_1986C8FB-6C8F-43F6-811D-D95577160064]]
 (desktop-save-mode t)
 (setq desktop-restore-eager 10)
@@ -1872,6 +1855,23 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_94E22B9A-B373-41AB-A8C9-E142CD2F6EED][org_gcr_2017-05-12_mara_94E22B9A-B373-41AB-A8C9-E142CD2F6EED]]
 (setq-default comment-start "> ")
 ;; org_gcr_2017-05-12_mara_94E22B9A-B373-41AB-A8C9-E142CD2F6EED ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F][org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F]]
+(defun help/text-mode-fn ()
+  "HELP's standard configuration for buffer's working with text, often for
+   programming."
+  (interactive)
+  (auto-fill-mode)
+  (diminish 'auto-fill-function)
+  (visual-line-mode)
+  (nlinum-mode)
+  (fci-mode)
+  (rainbow-mode)
+  (help/try-to-add-imenu)
+  (turn-on-page-break-lines-mode))
+
+(add-hook 'text-mode-hook #'help/text-mode-fn)
+;; org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C][org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C]]
 (setq help/prog-modes '(makefile-mode-hook

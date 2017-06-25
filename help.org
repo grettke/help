@@ -1192,24 +1192,6 @@ One space after comma.
 #+BEGIN_SRC emacs-lisp :results output silent
 (setq colon-double-space t)
 #+END_SRC
-
-#+NAME: org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F
-#+BEGIN_SRC emacs-lisp :results output silent
-(defun help/text-mode-fn ()
-  "HELP's standard configuration for buffer's working with text, often for
-   programming."
-  (interactive)
-  (auto-fill-mode)
-  (diminish 'auto-fill-function)
-  (visual-line-mode)
-  (nlinum-mode)
-  (fci-mode)
-  (rainbow-mode)
-  (help/try-to-add-imenu)
-  (turn-on-page-break-lines-mode))
-
-(add-hook 'text-mode-hook #'help/text-mode-fn)
-#+END_SRC
 ** Buffer
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:D4FC68F9-CEA3-455A-B718-EBDB113CFA71
@@ -3101,7 +3083,6 @@ Make sense of the current mode.
     :PROPERTIES:
     :ID:       org_gcr_2017-05-12_mara:C3270DE0-55FD-4612-B3E3-226CAC5A8FDA
     :END:
-
 Set a default commenting prefix.
 
 #+NAME: org_gcr_2017-05-12_mara_94E22B9A-B373-41AB-A8C9-E142CD2F6EED
@@ -3109,6 +3090,25 @@ Set a default commenting prefix.
 (setq-default comment-start "> ")
 #+END_SRC
 
+Every text editing buffer needs this.
+
+#+NAME: org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F
+#+BEGIN_SRC emacs-lisp :results output silent
+(defun help/text-mode-fn ()
+  "HELP's standard configuration for buffer's working with text, often for
+   programming."
+  (interactive)
+  (auto-fill-mode)
+  (diminish 'auto-fill-function)
+  (visual-line-mode)
+  (nlinum-mode)
+  (fci-mode)
+  (rainbow-mode)
+  (help/try-to-add-imenu)
+  (turn-on-page-break-lines-mode))
+
+(add-hook 'text-mode-hook #'help/text-mode-fn)
+#+END_SRC
 *** Prog-Mode Modes
     :PROPERTIES:
     :ID:       org_gcr_2017-05-12_mara:E20FE37A-E10D-406C-B95D-545607F7A93C
