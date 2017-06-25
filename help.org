@@ -5513,6 +5513,14 @@ Load Beamer for creating presentations.
 
 *** X PixMap (XPM)
 [[https://en.wikipedia.org/wiki/X_PixMap][X PixMap (XPM)]]
+
+Emacs' provide editing support.
+
+#+NAME: org_gcr_2017-06-25_mara_B33E6DF0-8A18-4DBA-A39D-B16649F6E793
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package xpm
+  :ensure t)
+#+END_SRC
 ** Computer-aided design
 :PROPERTIES:
 :ID:       org_gcr_2017-05-12_mara:50E7A50A-4259-4B6C-8612-99671C6723CC
