@@ -5781,30 +5781,38 @@ character wide buffer and make it easy to adjust it.
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:8D473EA1-DFEE-408E-A1F5-AF1C7D03317D
    :END:
-
-Invite any user with familiar GUI features
-
-Menus bar.
-
+*** Inviting and familiar GUI features
+:PROPERTIES:
+:ID:       org_gcr_2017-06-23_mara:77B3D3E9-B7F7-44FB-8B82-A23CAC02C83B
+:END:
+**** Menu bar
+:PROPERTIES:
+:ID:       org_gcr_2017-06-23_mara:47EF669D-E999-4573-AA5C-5CF038ADA870
+:END:
 #+NAME: org_gcr_2017-05-12_mara_03B4E8E1-083B-4F5D-A4A0-BAE8A0553FAF
 #+BEGIN_SRC emacs-lisp :results output silent
 (menu-bar-mode nil)
 #+END_SRC
-
-Tool bar.
-
+**** Tool bar
+:PROPERTIES:
+:ID:       org_gcr_2017-06-23_mara:EC50EB46-7878-4799-9805-EF0CB3D3E526
+:END:
 #+NAME: org_gcr_2017-05-12_mara_D462D343-9EA8-4BCF-BD08-8FDD4F3E11E9
 #+BEGIN_SRC emacs-lisp :results output silent
 (tool-bar-mode nil)
 #+END_SRC
-
-Scroll bar.
-
+**** Scroll bar
+:PROPERTIES:
+:ID:       org_gcr_2017-06-23_mara:590AD87D-0567-454F-98AE-3AE64A171012
+:END:
 #+NAME: org_gcr_2017-05-12_mara_D967070F-06B7-4433-94A8-36E360600C9E
 #+BEGIN_SRC emacs-lisp :results output silent
 (scroll-bar-mode nil)
 #+END_SRC
-
+**** Various
+:PROPERTIES:
+:ID:       org_gcr_2017-06-23_mara:143A134C-02D9-412F-9D9C-FC6E7B43D505
+:END:
 Adjust frame transparency.
 
 #+NAME: org_gcr_2017-05-12_mara_A6D3E9FB-C601-401C-AFA7-B5410A36FDAF
@@ -5841,7 +5849,6 @@ so I'm happy to stomp on them.
 (define-key global-map (kbd "s-m") nil)
 (define-key global-map (kbd "s-o") nil)
 #+END_SRC
-
 ** Pointer
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:17DB4E08-F6C4-44AF-935B-27E8984F13DB
