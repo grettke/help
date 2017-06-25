@@ -3079,6 +3079,12 @@ Make sense of the current mode.
       (princ ls))))
 #+END_SRC
 
+*** Special Mode
+:PROPERTIES:
+:ID:       org_gcr_2017-06-25_mara:7C9667D1-C881-40AC-9312-EB11A9F4F61E
+:END:
+Every special mode needs this. Which is nothing yet.
+#+END_SRC
 *** Text-Mode
     :PROPERTIES:
     :ID:       org_gcr_2017-05-12_mara:C3270DE0-55FD-4612-B3E3-226CAC5A8FDA
@@ -5518,6 +5524,12 @@ Load Beamer for creating presentations.
 (use-package scad-mode
   :ensure t)
 #+END_SRC
+** Special
+:PROPERTIES:
+:ID:       org_gcr_2017-06-25_mara:BEC7C2AA-4602-4F1C-8AE5-2DAD6439C90F
+:END:
+~messages-mode~ inherits ~special-mode~ hooks but it didn't get stripe buffered so
+I'm trying to set it up here with ~message-mode-hook~ but that didn't work either
 * Quiet and Pleasant Appearance
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:298AA1C9-5745-464F-92A6-2FB04EFB079E
