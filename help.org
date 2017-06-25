@@ -5454,7 +5454,7 @@ Load Beamer for creating presentations.
   (add-to-list 'auto-mode-alist '("\\.cron\\(tab\\)?\\'" . crontab-mode))
   (add-hook 'crontab-mode-hook #'turn-on-stripe-buffer-mode))
 #+END_SRC
-** Diagram
+** Multimedia
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:D3EE5DB5-EC7B-4D7C-9749-1BC351B8214D
    :END:
