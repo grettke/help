@@ -761,17 +761,6 @@ Attribution: `https://stackoverflow.com/questions/20967818/emacs-function-to-cas
 (setq colon-double-space t)
 ;; org_gcr_2017-05-12_mara_38909B55-115D-44E4-B84F-70285016BF92 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_3E475ED3-773E-4537-B29F-6888B7DB90DF][org_gcr_2017-05-12_mara_3E475ED3-773E-4537-B29F-6888B7DB90DF]]
-(use-package fill-column-indicator
-  :ensure t
-  :config
-  (setq fci-rule-column 79))
-;; org_gcr_2017-05-12_mara_3E475ED3-773E-4537-B29F-6888B7DB90DF ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_52EB6C54-2A13-4A30-9893-E1E4352CD118][org_gcr_2017-05-12_mara_52EB6C54-2A13-4A30-9893-E1E4352CD118]]
-
-;; org_gcr_2017-05-12_mara_52EB6C54-2A13-4A30-9893-E1E4352CD118 ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F][org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F]]
 (defun help/text-mode-fn ()
   "HELP's standard configuration for buffer's working with text, often for
@@ -873,6 +862,13 @@ Attribution: `https://stackoverflow.com/questions/20967818/emacs-function-to-cas
   (global-set-key (kbd "<C-S-left>") #'buf-move-left)
   (global-set-key (kbd "<C-S-right>") #'buf-move-right))
 ;; org_gcr_2017-06-20_mara_6C4B1CDD-CF71-4A5F-B900-6D3CC06D4028 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_3E475ED3-773E-4537-B29F-6888B7DB90DF][org_gcr_2017-05-12_mara_3E475ED3-773E-4537-B29F-6888B7DB90DF]]
+(use-package fill-column-indicator
+  :ensure t
+  :config
+  (setq fci-rule-column 79))
+;; org_gcr_2017-05-12_mara_3E475ED3-773E-4537-B29F-6888B7DB90DF ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-19_mara_845BEC94-54CC-46D3-B85F-7B537944E328][org_gcr_2017-05-19_mara_845BEC94-54CC-46D3-B85F-7B537944E328]]
 (defhydra hydra-ibuffer-main (:color pink :hint nil)
