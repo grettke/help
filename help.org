@@ -5511,6 +5511,8 @@ Load Beamer for creating presentations.
     (setq org-plantuml-jar-path help/plantuml-jar)))
 #+END_SRC
 
+*** X PixMap (XPM)
+[[https://en.wikipedia.org/wiki/X_PixMap][X PixMap (XPM)]]
 ** Computer-aided design
 :PROPERTIES:
 :ID:       org_gcr_2017-05-12_mara:50E7A50A-4259-4B6C-8612-99671C6723CC
