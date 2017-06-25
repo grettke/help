@@ -3047,6 +3047,10 @@ Hydra that makes it easy to remember to turn it off.
   :PROPERTIES:
   :ID:       org_gcr_2017-05-12_mara:E900FBB2-2D32-4253-BFE6-36BC951384A2
   :END:
+Emacs has [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Basic-Major-Modes.html#Basic-Major-Modes][three primal major modes that you must understand]]:
+- ~text-mode~
+- ~prog-mode~
+- ~special-mode~
 ** Common Configurations
   :PROPERTIES:
   :ID:       org_gcr_2017-05-12_mara:1864484F-237D-4443-BDD6-D429AAB7BD1A
