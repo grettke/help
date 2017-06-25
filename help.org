@@ -3176,7 +3176,7 @@ Every text editing buffer needs this.
   :diminish smartparens-mode)
   #+END_SRC
 
-**** Implementation.
+**** Implementation
      :PROPERTIES:
      :ID:       org_gcr_2017-05-12_mara:7917A66D-8F20-43A1-888A-E9F0C86C23A7
      :END:
