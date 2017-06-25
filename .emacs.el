@@ -773,7 +773,7 @@ Attribution: `https://stackoverflow.com/questions/20967818/emacs-function-to-cas
 ;; org_gcr_2017-05-12_mara_52EB6C54-2A13-4A30-9893-E1E4352CD118 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F][org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F]]
-(defun help/text-prog*-setup ()
+(defun help/text-mode-fn ()
   "HELP's standard configuration for buffer's working with text, often for
    programming."
   (interactive)
@@ -786,7 +786,7 @@ Attribution: `https://stackoverflow.com/questions/20967818/emacs-function-to-cas
   (help/try-to-add-imenu)
   (turn-on-page-break-lines-mode))
 
-(add-hook 'text-mode-hook #'help/text-prog*-setup)
+(add-hook 'text-mode-hook #'help/text-mode-fn)
 ;; org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1986C8FB-6C8F-43F6-811D-D95577160064][org_gcr_2017-05-12_mara_1986C8FB-6C8F-43F6-811D-D95577160064]]
@@ -1922,7 +1922,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A3C53136-65BE-4771-A214-19E102E0158B][org_gcr_2017-05-12_mara_A3C53136-65BE-4771-A214-19E102E0158B]]
 (defun help/prog-mode-hook-fn ()
   (interactive)
-  (help/text-prog*-setup)
+  (help/text-mode-fn)
   (smartparens-strict-mode)
   (aggressive-indent-mode)
   (hs-minor-mode)
@@ -3079,7 +3079,7 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
          ("/authorized_keys2?\\'" . ssh-authorized-keys-mode))
   :config
   (add-hook 'ssh-config-mode-hook #'turn-on-font-lock)
-  (add-hook 'ssh-config-mode-hook #'help/text-prog*-setup))
+  (add-hook 'ssh-config-mode-hook #'help/text-mode-fn))
 ;; org_gcr_2017-05-12_mara_D12C607E-C07C-41F8-A0B0-02A228C7AED7 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-06-13_mara_350A94E2-4280-4D5E-BB58-24887D9A57CD][org_gcr_2017-06-13_mara_350A94E2-4280-4D5E-BB58-24887D9A57CD]]

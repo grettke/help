@@ -170,7 +170,7 @@ cd ~/src/org-mode
         That is unacceptable.
       - Enable it in ~org-babel-load-languages~.
       - Read the user manual for it.
-    - The =Prog*-Mode= system configuration can result in Headlines that don't
+    - The =Prog-Mode= system configuration can result in Headlines that don't
       need any configuration. The Headline still communicates the mode's
       value to the reader even if it doesn't configure EMACS.
   - It is important to include headlines that are empty and that you may not
@@ -1210,7 +1210,7 @@ One space after comma.
 
 #+NAME: org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F
 #+BEGIN_SRC emacs-lisp :results output silent
-(defun help/text-prog*-setup ()
+(defun help/text-mode-fn ()
   "HELP's standard configuration for buffer's working with text, often for
    programming."
   (interactive)
@@ -1223,7 +1223,7 @@ One space after comma.
   (help/try-to-add-imenu)
   (turn-on-page-break-lines-mode))
 
-(add-hook 'text-mode-hook #'help/text-prog*-setup)
+(add-hook 'text-mode-hook #'help/text-mode-fn)
 #+END_SRC
 
 ** Buffer
@@ -3193,7 +3193,7 @@ Set a default commenting prefix.
 #+BEGIN_SRC emacs-lisp :results output silent
 (defun help/prog-mode-hook-fn ()
   (interactive)
-  (help/text-prog*-setup)
+  (help/text-mode-fn)
   (smartparens-strict-mode)
   (aggressive-indent-mode)
   (hs-minor-mode)
@@ -5440,7 +5440,7 @@ Load Beamer for creating presentations.
          ("/authorized_keys2?\\'" . ssh-authorized-keys-mode))
   :config
   (add-hook 'ssh-config-mode-hook #'turn-on-font-lock)
-  (add-hook 'ssh-config-mode-hook #'help/text-prog*-setup))
+  (add-hook 'ssh-config-mode-hook #'help/text-mode-fn))
 #+END_SRC
 
 *** CRON
