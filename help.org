@@ -321,6 +321,34 @@ So I did and I tried and it was a slow and confusing document because that is
 how it lived in my mind. There were hundreds and hundreds of commits until I
 was both happy enough with it and comfortable enough to share it. This was the
 first time that I started to feel like I had some clue about what I was doing.
+*** Version 4: HELP Enables Literate Programming
+HELP was more than an attempt to create a recursive acronym. It
+/really was helpful/. Every good idea from ALEC got simplified and moved in
+here. Exploration of the tool and of creative processes were still part of it.
+But the bigger part was learning, studying and practicing Literate Programming
+(LP).
+
+Donald Knuth wrote a lot /about/ LP and /wrote/ a lot /in/ LP. That is revealing. To
+get the most about of LP you need to love programming. And you need to love
+writing. Really you need to love writing in whatever form that takes for you.
+And finally you need to love doing both together. Literate programmers are few
+and far between simply because the combination the three desires are uncommon.
+Despite that it is still fun to practice LP. And Org-Mode does LP so well.
+
+Org-Mode's LP tools are stunning and flawless. They shine so brightly that it
+can be difficult to take a look and see what is possible. HELP is my attempt
+to take the options that configure them building the perfect LP environment
+for me. Though HELP is still somewhat wild and unrefined the LP components are
+both precisely configured /and/ understood. Probably only to me and I am fine
+with that. Teaching LP with Org-Mode would be an entirely different task!
+
+Mark my words for they are sure to change here and probably be struck down by
+the idiom-zapper plugin that I've yet to write: this will be a stable version
+of my Emacs configuration for a long time. All of my original desires are
+satisfied. This fine tool, the infinite abacus, has sat in this hearth long
+enough. Now it is time to carry it out into the wilderness and far above and
+beyond the mountaintops to reveal the other side and the mysteries that they
+reveal.
 * Special Operating Procedure
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:A5B71AC0-1725-4416-AB50-86496180526A
