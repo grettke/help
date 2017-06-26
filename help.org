@@ -275,6 +275,29 @@ cd ~/src/org-mode
   - Never describe something as "perfect" or "delightful". If it is part of this
     system then it is perfect and delightful.
 ** History
+*** Version 1: Sufficient And Slipshod
+Emacs never grew on me the first few times I tried using it. The first was out
+of curiosity because a friend used ~jdee~. Five or ten years later I tried using
+it for ~clojure~ and lost interest first in ~clojure~ and then in Emacs. The third
+time was for ~ocaml~ and ~sml~. That worked pretty well but I didn't stick with
+~sml~ so I didn't stick with Emacs either. At least five configuration files
+came out of this time all hand-coded Elisp and they are all either lost or
+hanging around in a SVN repository on a backup. I never had a sense of how
+Emacs worked, found any of it interesting or a problem solved by it. That is a
+reflection of what I did and what I brought to it. And I understand that.
+*** Version 2: How to design a file conservator (HTDFC) or The Care and Conservation of Computer Files (TC3F)
+The second time around VIM got me hooked on Emacs. /Growing up/ with VIM I had
+returned to ~gvim~ and I was happy with plain old text files. For keeping todo
+lists, meeting minutes and working in LaTeX both worked great. That process of
+re-falling in love with plain old text files is what struck me. Once I heard
+the Org-Mode tag line "your life in plain text" I knew I had to take a look.
+And I did and it was delightful. And I was hooked.
+
+The line pulled me into pure exploration. Reading the manuals, blogs and other
+folks' configuration files was an boundless adventure. It wasn't the
+technology that kept me there though, it was the thoughtfulness. Bever before
+had I cared very much about the elegance of /plain text/ and what you /can/ do
+with it. But the resources made you think. The thou
 * Special Operating Procedure
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:A5B71AC0-1725-4416-AB50-86496180526A
