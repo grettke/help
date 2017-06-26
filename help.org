@@ -286,18 +286,21 @@ hanging around in a SVN repository on a backup. I never had a sense of how
 Emacs worked, found any of it interesting or a problem solved by it. That is a
 reflection of what I did and what I brought to it. And I understand that.
 *** Version 2: How to design a file conservator (HTDFC) or The Care and Conservation of Computer Files (TC3F)
-The second time around VIM got me hooked on Emacs. /Growing up/ with VIM I had
+The second time around, VIM got me hooked on Emacs. /Growing up/ with VIM I had
 returned to ~gvim~ and I was happy with plain old text files. For keeping todo
 lists, meeting minutes and working in LaTeX both worked great. That process of
 re-falling in love with plain old text files is what struck me. Once I heard
 the Org-Mode tag line "your life in plain text" I knew I had to take a look.
-And I did and it was delightful. And I was hooked.
+And I did and it was delightful.
 
-The line pulled me into pure exploration. Reading the manuals, blogs and other
-folks' configuration files was an boundless adventure. It wasn't the
-technology that kept me there though, it was the thoughtfulness. Bever before
-had I cared very much about the elegance of /plain text/ and what you /can/ do
-with it. But the resources made you think. The thou
+And I was hooked. The line pulled me into pure exploration. Reading the
+manuals, blogs and other folks' configuration files was an boundless
+adventure. This was entirely about learning different libraries and
+configuration options. And it was pretty fun. It was still hand coded Elisp
+and probably went through ten iterations until I was happy with it.
+
+It meant so much to me that I started naming the configuration finally ending
+up with [[https://raw.githubusercontent.com/grettke/home/master/TC3F.txt][TC3F]].
 * Special Operating Procedure
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:A5B71AC0-1725-4416-AB50-86496180526A
