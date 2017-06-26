@@ -275,7 +275,13 @@ cd ~/src/org-mode
   - Never describe something as "perfect" or "delightful". If it is part of this
     system then it is perfect and delightful.
 ** History
+:PROPERTIES:
+:ID:       org_gcr_2017-06-25_mara:F917FFA6-077B-4A9A-B325-7E9A0CFF9720
+:END:
 *** Version 1: Sufficient And Slipshod
+:PROPERTIES:
+:ID:       org_gcr_2017-06-25_mara:2AE32991-F8DA-4205-822C-51A267EC81D6
+:END:
 Emacs never grew on me the first few times I tried using it. The first was out
 of curiosity because a friend used ~jdee~. Five or ten years later I tried using
 it for ~clojure~ and lost interest first in ~clojure~ and then in Emacs. The third
@@ -286,6 +292,9 @@ hanging around in a SVN repository on a backup. I never had a sense of how
 Emacs worked, found any of it interesting or a problem solved by it. That is a
 reflection of what I did and what I brought to it. And I understand that.
 *** Version 2: How to design a file conservator (HTDFC) or The Care and Conservation of Computer Files (TC3F)
+:PROPERTIES:
+:ID:       org_gcr_2017-06-25_mara:8BD93843-0D61-45FA-98F4-C3BBA0FFBB47
+:END:
 The second time around, VIM got me hooked on Emacs. /Growing up/ with VIM I had
 returned to ~gvim~ and I was happy with plain old text files. For keeping todo
 lists, meeting minutes and working in LaTeX both worked great. That process of
@@ -302,6 +311,9 @@ and probably went through ten iterations until I was happy with it.
 It meant so much to me that I started naming the configuration finally ending
 up with [[https://raw.githubusercontent.com/grettke/home/master/TC3F.txt][TC3F]].
 *** Version 3: ALEC'S A LANGUAGE FOR EXPRESSING CREATIVITY (ALEC)
+:PROPERTIES:
+:ID:       org_gcr_2017-06-25_mara:1D2B647B-DAEC-42FE-97C8-777CF8869C52
+:END:
 ALEC is the Cambrian Explosion of my cognitive model of Emacs. Creativity
 abounded like never before. The technology reflected it, enabled and grew
 into the finest external tool that I had ever known. The passages elaborate on
@@ -322,6 +334,9 @@ how it lived in my mind. There were hundreds and hundreds of commits until I
 was both happy enough with it and comfortable enough to share it. This was the
 first time that I started to feel like I had some clue about what I was doing.
 *** Version 4: HELP Enables Literate Programming
+:PROPERTIES:
+:ID:       org_gcr_2017-06-25_mara:64CA819C-71AD-4E6E-9091-4FFCA95AAF08
+:END:
 HELP was more than an attempt to create a recursive acronym. It
 /really was helpful/. Every good idea from ALEC got simplified and moved in
 here. Exploration of the tool and of creative processes were still part of it.
@@ -787,12 +802,12 @@ Attribution: URL `http://emacsredux.com/blog/2013/03/26/smarter-open-line/'"
 (defun help/insert-ellipsis ()
   "Insert an ellipsis into the current buffer."
   (interactive)
-  (insert "…"))
+  (insert "\dots{}"))
 
 (defun help/insert-checkmark ()
   "Insert a checkmark into the current buffer."
   (interactive)
-  (insert "✓"))
+  (insert "\checkmark{}"))
 
 (defun help/insert-noticeable-snip-comment-line ()
   "Insert a noticeable snip comment line (NSCL)."
@@ -2259,8 +2274,6 @@ Here are the Unicode fonts that provide nearly everything.
 
 To test it run =view-hello-file= and =M-x list-charset-chars RET unicode-bmp RET=.
 
-Perhaps educationally there is a character for bowel-movements: 💩.
-
 Activate font locking everywhere possible.
 
 #+NAME: org_gcr_2017-05-12_mara_ADAB043E-BF70-4AE0-BA60-CD08D82474FA
@@ -2442,8 +2455,8 @@ before killing Emacs data.
 Via Ben Maughan:
 
 #+BEGIN_QUOTE
-;; Save whatever’s in the current (system) clipboard before
-;; replacing it with the Emacs’ text.
+;; Save whatever's in the current (system) clipboard before
+;; replacing it with the Emacs' text.
 ;; https://github.com/dakrone/eos/blob/master/eos.org
 #+END_QUOTE
 
@@ -2682,16 +2695,16 @@ It is *important* to understand how Emacs performs searching.
 Copied and pasted Emacs literature from
 - src_emacs-lisp{(info "(info) Searching Case")}
 - [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Search-Case.html][Searching and Case]]
-follows…
+follows
 
 #+BEGIN_EXAMPLE
 Searches in Emacs normally ignore the case of the text they are searching
 through, if you specify the text in lower case. Thus, if you specify searching
-for ‘foo’, then ‘Foo’ and ‘foo’ also match. Regexps, and in particular
-character sets, behave likewise: ‘[ab]’ matches ‘a’ or ‘A’ or ‘b’ or ‘B’.
+for 'foo', then 'Foo' and 'foo' also match. Regexps, and in particular
+character sets, behave likewise: '[ab]' matches 'a' or 'A' or 'b' or 'B'.
 
 An upper-case letter anywhere in the incremental search string makes the
-search case-sensitive. Thus, searching for ‘Foo’ does not find ‘foo’ or ‘FOO’.
+search case-sensitive. Thus, searching for 'Foo' does not find 'foo' or 'FOO'.
 This applies to regular expression search as well as to string search. The
 effect ceases if you delete the upper-case letter from the search string.
 
@@ -6770,8 +6783,6 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 #+BEGIN_SRC emacs-lisp :results output silent
 (global-set-key (kbd "s-v") #'ido-find-file)
 (global-set-key (kbd "C-x C-c") #'help/safb-save-buffers-kill-terminal)
-(key-chord-define-global "<<" (lambda () (interactive) (insert "«")))
-(key-chord-define-global ">>" (lambda () (interactive) (insert "»")))
 (global-set-key (kbd "C-,") #'ido-switch-buffer)
 (global-set-key (kbd "C-M-,") #'ibuffer)
 (global-set-key (kbd "C-.") nil)

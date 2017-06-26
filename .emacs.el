@@ -306,12 +306,12 @@ Attribution: URL `http://emacsredux.com/blog/2013/03/26/smarter-open-line/'"
 (defun help/insert-ellipsis ()
   "Insert an ellipsis into the current buffer."
   (interactive)
-  (insert "…"))
+  (insert "\dots{}"))
 
 (defun help/insert-checkmark ()
   "Insert a checkmark into the current buffer."
   (interactive)
-  (insert "✓"))
+  (insert "\checkmark{}"))
 
 (defun help/insert-noticeable-snip-comment-line ()
   "Insert a noticeable snip comment line (NSCL)."
@@ -3569,8 +3569,6 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B][org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B]]
 (global-set-key (kbd "s-v") #'ido-find-file)
 (global-set-key (kbd "C-x C-c") #'help/safb-save-buffers-kill-terminal)
-(key-chord-define-global "<<" (lambda () (interactive) (insert "«")))
-(key-chord-define-global ">>" (lambda () (interactive) (insert "»")))
 (global-set-key (kbd "C-,") #'ido-switch-buffer)
 (global-set-key (kbd "C-M-,") #'ibuffer)
 (global-set-key (kbd "C-.") nil)
