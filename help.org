@@ -301,6 +301,26 @@ and probably went through ten iterations until I was happy with it.
 
 It meant so much to me that I started naming the configuration finally ending
 up with [[https://raw.githubusercontent.com/grettke/home/master/TC3F.txt][TC3F]].
+*** Version 3: ALEC'S A LANGUAGE FOR EXPRESSING CREATIVITY (ALEC)
+ALEC is the Cambrian Explosion of my cognitive model of Emacs. Creativity
+abounded like never before. The technology reflected it, enabled and grew
+into the finest external tool that I had ever known. The passages elaborate on
+the technology, the thought processes and justification and go on much further
+into the nature of creativity, cognition and their grand intersection.
+
+That intersection was in the great plains, steaming jungles and snow capped
+mountain peaks. It was everywhere and I was everywhere. This was the point
+where I stopped pretending that it was written for anyone else other than me.
+Part of that admission was finally understanding what it means to learn about
+how we think and how we use that to craft, shape and hone our tools. Emacs is
+referred to in the singular but it is really a collection of hundreds of
+creative parts. The work here helped me start to narrow down what I was trying
+to do and to think. And I thought that I wanted to learn Literate Programming.
+
+So I did and I tried and it was a slow and confusing document because that is
+how it lived in my mind. There were hundreds and hundreds of commits until I
+was both happy enough with it and comfortable enough to share it. This was the
+first time that I started to feel like I had some clue about what I was doing.
 * Special Operating Procedure
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:A5B71AC0-1725-4416-AB50-86496180526A
