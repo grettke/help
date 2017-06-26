@@ -274,6 +274,7 @@ cd ~/src/org-mode
   - "HELP" refers to the system configured by tangling this we.
   - Never describe something as "perfect" or "delightful". If it is part of this
     system then it is perfect and delightful.
+** History
 * Special Operating Procedure
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:A5B71AC0-1725-4416-AB50-86496180526A
