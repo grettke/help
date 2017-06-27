@@ -840,9 +840,13 @@ Attribution: `https://stackoverflow.com/questions/20967818/emacs-function-to-cas
 (use-package buffer-move
   :ensure t
   :config
+  (define-key org-mode-map (kbd "<C-S-up>") nil)
   (global-set-key (kbd "<C-S-up>") #'buf-move-up)
+  (define-key org-mode-map (kbd "<C-S-down>") nil)
   (global-set-key (kbd "<C-S-down>") #'buf-move-down)
+  (define-key org-mode-map (kbd "<C-S-left>") nil)
   (global-set-key (kbd "<C-S-left>") #'buf-move-left)
+  (define-key org-mode-map (kbd "<C-S-right>") nil)
   (global-set-key (kbd "<C-S-right>") #'buf-move-right))
 ;; org_gcr_2017-06-20_mara_6C4B1CDD-CF71-4A5F-B900-6D3CC06D4028 ends here
 

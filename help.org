@@ -1417,9 +1417,13 @@ Fling buffers left and right.
 (use-package buffer-move
   :ensure t
   :config
+  (define-key org-mode-map (kbd "<C-S-up>") nil)
   (global-set-key (kbd "<C-S-up>") #'buf-move-up)
+  (define-key org-mode-map (kbd "<C-S-down>") nil)
   (global-set-key (kbd "<C-S-down>") #'buf-move-down)
+  (define-key org-mode-map (kbd "<C-S-left>") nil)
   (global-set-key (kbd "<C-S-left>") #'buf-move-left)
+  (define-key org-mode-map (kbd "<C-S-right>") nil)
   (global-set-key (kbd "<C-S-right>") #'buf-move-right))
 #+END_SRC
 
