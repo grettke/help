@@ -2375,7 +2375,6 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
 (define-key org-mode-map (kbd "s-l") #'help/safb-org-edit-src-code)
 (define-key org-mode-map (kbd "s-;") #'help/safb-help/org-babel-demarcate-block)
-(define-key org-mode-map (kbd "C-,") nil)
 (define-key org-mode-map (kbd "C->") #'(lambda () (interactive) (insert "\\rarr{}")))
 (defun help/org-insert-subscript (arg)
   "Maybe insert a subscript with the postfix space."
@@ -3569,6 +3568,7 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B][org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B]]
 (global-set-key (kbd "s-v") #'ido-find-file)
 (global-set-key (kbd "C-x C-c") #'help/safb-save-buffers-kill-terminal)
+(define-key org-mode-map (kbd "C-,") nil)
 (global-set-key (kbd "C-,") #'ido-switch-buffer)
 (global-set-key (kbd "C-M-,") #'ibuffer)
 (global-set-key (kbd "C-.") nil)
