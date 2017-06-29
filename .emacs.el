@@ -1894,7 +1894,8 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
                         js2-mode-hook
                         json-mode-hook
                         crontab-mode-hook
-                        apache-mode-hook))
+                        apache-mode-hook
+                        python-mode-hook))
 ;; org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86][org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86]]
@@ -2781,6 +2782,14 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
   (rainbow-mode))
 (add-hook 'c-mode-common-hook #'help/c-mode-common-hook-fn)
 ;; org_gcr_2017-05-12_mara_3C48D997-170E-40F4-9BB6-F6BAA9DE77F2 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2017-06-28_mara_110DAD24-25A3-46B0-A0B1-FD26BFDB28C7][org_gcr_2017-06-28_mara_110DAD24-25A3-46B0-A0B1-FD26BFDB28C7]]
+(defun help/python-mode-hook-fn ()
+  "HELP python mode customizatin."
+  (interactive)
+  (indent-guide-mode))
+(add-hook 'python-mode-hook #'help/python-mode-hook-fn)
+;; org_gcr_2017-06-28_mara_110DAD24-25A3-46B0-A0B1-FD26BFDB28C7 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B7B9F4BB-5899-4F2B-94B0-B38F098E9528][org_gcr_2017-05-12_mara_B7B9F4BB-5899-4F2B-94B0-B38F098E9528]]
 (use-package yasnippet

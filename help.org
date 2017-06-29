@@ -3235,7 +3235,8 @@ Every text editing buffer needs this.
                         js2-mode-hook
                         json-mode-hook
                         crontab-mode-hook
-                        apache-mode-hook))
+                        apache-mode-hook
+                        python-mode-hook))
     #+END_SRC
   - LISP mode hooks.
     - Are hacking modes.
@@ -4955,6 +4956,14 @@ Enable Auto-Complete via Geiser.
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:BA88E1CC-386E-4CFF-89B3-7E003EC92504
    :END:
+#+NAME: org_gcr_2017-06-28_mara_110DAD24-25A3-46B0-A0B1-FD26BFDB28C7
+#+BEGIN_SRC emacs-lisp :results output silent
+(defun help/python-mode-hook-fn ()
+  "HELP python mode customizatin."
+  (interactive)
+  (indent-guide-mode))
+(add-hook 'python-mode-hook #'help/python-mode-hook-fn)
+#+END_SRC
 *** YASnippet & Abbrev
   :PROPERTIES:
   :ID:       org_gcr_2017-05-12_mara:8B8B0626-3A67-4F10-9106-ACFD4E9731E5
