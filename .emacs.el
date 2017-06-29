@@ -857,6 +857,11 @@ Attribution: `https://stackoverflow.com/questions/20967818/emacs-function-to-cas
   (setq fci-rule-column 79))
 ;; org_gcr_2017-05-12_mara_3E475ED3-773E-4537-B29F-6888B7DB90DF ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-06-28_mara_EE77505E-5757-409C-9E87-2FA685145AB2][org_gcr_2017-06-28_mara_EE77505E-5757-409C-9E87-2FA685145AB2]]
+(use-package indent-guide
+  :ensure t)
+;; org_gcr_2017-06-28_mara_EE77505E-5757-409C-9E87-2FA685145AB2 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-19_mara_845BEC94-54CC-46D3-B85F-7B537944E328][org_gcr_2017-05-19_mara_845BEC94-54CC-46D3-B85F-7B537944E328]]
 (defhydra hydra-ibuffer-main (:color pink :hint nil)
   "

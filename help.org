@@ -1438,6 +1438,14 @@ Fling buffers left and right.
   (setq fci-rule-column 79))
   #+END_SRC
 
+Show text indentation guide lines.
+
+#+NAME: org_gcr_2017-06-28_mara_EE77505E-5757-409C-9E87-2FA685145AB2
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package indent-guide
+  :ensure t)
+#+END_SRC
+
 Management:
 - http://martinowen.net/blog/2010/02/03/tips-for-emacs-ibuffer.html
 - https://mytechrants.wordpress.com/2010/03/25/emacs-tip-of-the-day-start-using-ibuffer-asap/
