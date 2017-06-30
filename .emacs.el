@@ -3520,7 +3520,7 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
 _a_propos        _c_ommand
 _d_ocumentation  _l_ibrary
 _v_ariable       _u_ser-option
-valu_e_
+valu_e_          _i_nfo
 e_m_acs          elis_p_
 "
   ("a" apropos)
@@ -3529,6 +3529,7 @@ e_m_acs          elis_p_
   ("c" apropos-command)
   ("l" apropos-library)
   ("u" apropos-user-option)
+  ("i" info-apropos)
   ("e" apropos-value)
   ("m" emacs-index-search)
   ("p" elisp-index-search))
