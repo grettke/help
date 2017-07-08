@@ -3382,6 +3382,14 @@ ALPHA : [ %(frame-parameter nil 'alpha) ].'
 ;; org_gcr_2017-05-12_mara_A165E3DB-37E7-49A7-84E4-1CB0D2A137C6 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C][org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C]]
+(global-set-key (kbd "C-8") (lambda () (interactive) (switch-to-buffer
+                                                      "projects.org")))
+(global-set-key (kbd "C-0") (lambda () (interactive) (switch-to-buffer
+                                                      "scratch.org")))
+(global-set-key (kbd "M-8") (lambda () (interactive) (switch-to-buffer
+                                                      "help/help.org")))
+(global-set-key (kbd "M-0") (lambda () (interactive) (switch-to-buffer
+                                                      "list/help.org")))
 (global-set-key (kbd "C-5") #'help/safb-kill-this-buffer)
 (global-set-key (kbd "C-9") (lambda () (interactive) (insert "Vigneswari")))
 (global-set-key (kbd "s-5") #'mc/mark-previous-like-this)
