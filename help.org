@@ -6081,6 +6081,26 @@ Select windows.
   (setq aw-background nil))
 #+END_SRC
 
+Manageable window configurations:
+- Prefix: ~C-c C-w~
+- Key bind  Function
+- < Switch to previous window config
+- > Switch to next window config
+- ' Switch to last window config
+- " Close current window config
+- , Rename current window config
+- 0 Switch to window config 0
+- 9 Switch to window config 9
+
+#+NAME: org_gcr_2017-07-08_mara_3D694F1B-EB4A-4724-A8E7-61F09C4773A5
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package eyebrowse
+  :ensure t
+  :config
+  (setq eyebrowse-wrap-around t)
+  (eyebrowse-mode t))
+#+END_SRC
+
 * Piano Lessons
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:B9C71531-F4DD-4180-950D-AD3494C5D566

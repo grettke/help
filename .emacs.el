@@ -3381,6 +3381,14 @@ ALPHA : [ %(frame-parameter nil 'alpha) ].'
   (setq aw-background nil))
 ;; org_gcr_2017-05-12_mara_A165E3DB-37E7-49A7-84E4-1CB0D2A137C6 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-07-08_mara_3D694F1B-EB4A-4724-A8E7-61F09C4773A5][org_gcr_2017-07-08_mara_3D694F1B-EB4A-4724-A8E7-61F09C4773A5]]
+(use-package eyebrowse
+  :ensure t
+  :config
+  (setq eyebrowse-wrap-around t)
+  (eyebrowse-mode t))
+;; org_gcr_2017-07-08_mara_3D694F1B-EB4A-4724-A8E7-61F09C4773A5 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C][org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C]]
 (global-set-key (kbd "C-8") (lambda () (interactive) (switch-to-buffer
                                                       "projects.org")))
