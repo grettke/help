@@ -5931,6 +5931,19 @@ character wide buffer and make it easy to adjust it.
 :PROPERTIES:
 :ID:       org_gcr_2017-06-23_mara:77B3D3E9-B7F7-44FB-8B82-A23CAC02C83B
 :END:
+**** Icons
+:PROPERTIES:
+:ID:       org_gcr_2017-07-11_mara:5E885B6C-66CF-4F58-8888-F257F4AB8AFA
+:END:
+Replace major mode lighters with icons.
+
+#+NAME: org_gcr_2017-07-11_mara_90A13EAE-8941-4BDA-8937-DCE5759CBA5C
+#+BEGIN_SRC emacs-lisp :results output silent
+(use-package mode-icons
+  :ensure t
+  :config
+  (mode-icons-mode))
+#+END_SRC
 **** Menu bar
 :PROPERTIES:
 :ID:       org_gcr_2017-06-23_mara:47EF669D-E999-4573-AA5C-5CF038ADA870
