@@ -750,6 +750,22 @@ Attribution: `https://stackoverflow.com/questions/20967818/emacs-function-to-cas
   (interactive)
   (let ((sort-fold-case t))
     (call-interactively 'sort-lines)))
+
+
+(defun help/delete-this-buffer-and-file ()
+  "Deletes file connected to this buffer and kills this buffer.
+
+Attribution: URL `https://rejeep.github.io/emacs/elisp/2010/11/16/delete-file-and-buffer-in-emacs.html'"
+  (interactive)
+  (let ((filename (buffer-file-name))
+        (buffer (current-buffer))
+        (name (buffer-name)))
+    (if (not (and filename (file-exists-p filename)))
+        (error "Nothing to delete: '%s' is not visiting a file." name)
+      (when (yes-or-no-p "Are you sure you want to delete this file? ")
+        (delete-file filename)
+        (kill-buffer buffer)
+        (message "File '%s' successfully deleted." filename)))))
 ;; org_gcr_2017-05-12_mara_7D37FFE5-2D2B-4CF7-AF27-F3CB8616D81B ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F][org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F]]
@@ -2383,6 +2399,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; org_gcr_2017-05-12_mara_49522E70-EE2D-4CF9-95D7-8E43524A469D ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_EC7D6149-4451-443D-BFFF-1A40073D7D98][org_gcr_2017-05-12_mara_EC7D6149-4451-443D-BFFF-1A40073D7D98]]
+(define-key org-mode-map (kbd "C-c C-k") nil)
 (define-key org-mode-map (kbd "s-h") #'help/safb-org-babel-tangle)
 (define-key org-mode-map (kbd "s-j") #'org-babel-next-src-block)
 (define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
@@ -3467,6 +3484,7 @@ _n_ writegood/toggle
 ;; [[file:~/src/help/help.org::org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D][org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D]]
 (global-unset-key (kbd "C-M-j"))
 (global-set-key (kbd "M-:") #'my-eval-expression)
+(global-set-key (kbd "C-c C-k") #'help/delete-this-buffer-and-file)
 ;; org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E8ABDA7D-AC92-4C24-8287-1505E2377B2C][org_gcr_2017-05-12_mara_E8ABDA7D-AC92-4C24-8287-1505E2377B2C]]
