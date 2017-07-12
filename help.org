@@ -6010,6 +6010,17 @@ ibuffer ([[https://commons.wikimedia.org/wiki/Category:List_icons#/media/File:Li
  'ibuffer-fake
  :help "List buffers")
 #+END_SRC
+
+buffer swap ([[https://thenounproject.com/term/swap/99117/][image source]]).
+
+#+NAME: org_gcr_2017-07-11_mara_9D659239-693A-430C-A4CE-6003BD650A60
+#+BEGIN_SRC emacs-lisp
+(tool-bar-add-item
+ "evan-shuster-ca_swap"
+ 'help/safb-switch-to-previous-buffer
+ 'help/safb-switch-to-previous-buffer-fake
+ :help "Go back")
+#+END_SRC
 **** Scroll bar
 :PROPERTIES:
 :ID:       org_gcr_2017-06-23_mara:590AD87D-0567-454F-98AE-3AE64A171012
