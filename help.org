@@ -1,4 +1,4 @@
-#+PROPERTY: header-args :tangle "./.emacs.el"
+#+PROPERTY: header-args :tangle "./.emacs.el" :results output silent
 
 #  LocalWords:  YASnippet UTF defun PlantUML LanguageTool HELP's Eshell showeverything
 
@@ -33,12 +33,12 @@ is inserted only here because it loads each of the child configurations.
 Web.
 
 #+NAME: org_gcr_2017-05-12_mara_881EF8A4-92D9-452C-AACC-2A966497ABF6
-#+BEGIN_SRC emacs-lisp :results output silent :comments no
+#+BEGIN_SRC emacs-lisp :comments no
 ;; -*- lexical-binding: t -*-
 #+END_SRC
 
 #+NAME: org_gcr_2017-05-12_mara_EE00DAED-88BD-4271-9CFE-34BDCEE68932
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -385,7 +385,7 @@ Store Customizations in another file. Avoids the
 [[https://www.reddit.com/r/emacs/comments/53zpv9/how_do_i_get_emacs_to_stop_adding_custom_fields/][package-selected-packages]] portability issue.
 
 #+NAME: org_gcr_2017-05-12_mara_289C017E-D5F0-4B8A-987F-A64696094359
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq custom-file "~/src/help/custom.el")
 (load custom-file :noerror)
 #+END_SRC
@@ -399,7 +399,7 @@ Make it easy to conditionally evaluate code when running with a graphical
 display.
 
 #+NAME: org_gcr_2017-05-12_mara_0A242AFE-3101-4F88-A2CB-F230FA19AC64
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defmacro help/on-gui (statement &rest statements)
   "Evaluate the enclosed body only when run on GUI."
   `(when (display-graphic-p)
@@ -420,7 +420,7 @@ display.
    :END:
 
 #+NAME: org_gcr_2017-05-12_mara_D2A1FF8B-4A1A-4D25-A0CC-D86F3FFD7B28
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package hydra
   :ensure t)
 
@@ -434,7 +434,7 @@ display.
 Key-Chord mode is amazing. Piano-Lessons shows you how.
 
 #+NAME: org_gcr_2017-05-12_mara_B25D3BDE-CB14-440D-8246-B833BD8F1C0B
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package key-chord
   :ensure t
   :config
@@ -444,7 +444,7 @@ Key-Chord mode is amazing. Piano-Lessons shows you how.
 Echo keystrokes immediately.
 
 #+NAME: org_gcr_2017-05-12_mara_6BB32DFA-105B-4712-BF6D-945A240C29E1
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq echo-keystrokes 0.02)
 #+END_SRC
 
@@ -456,7 +456,7 @@ Echo keystrokes immediately.
 Lists.
 
 #+NAME: org_gcr_2017-05-12_mara_12B73D47-AAFB-4271-92F2-98A18E19DC2A
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package dash
   :ensure t
   :config
@@ -468,7 +468,7 @@ Lists.
 Files and directories.
 
 #+NAME: org_gcr_2017-05-12_mara_D99938CC-B521-4A2D-8DAA-F023FFB1E21E
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package f
   :ensure t)
 #+END_SRC
@@ -476,7 +476,7 @@ Files and directories.
 Strings.
 
 #+NAME: org_gcr_2017-05-12_mara_04215D1F-F7E8-46E2-A3BC-0D8DEE28B7E1
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package s
   :ensure t)
 #+END_SRC
@@ -484,7 +484,7 @@ Strings.
 Hash-tables.
 
 #+NAME: org_gcr_2017-05-23_mara_5BAD0073-631D-4D4E-83CD-5B0CD0C7CAD6
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package ht
   :ensure t)
 #+END_SRC
@@ -492,7 +492,7 @@ Hash-tables.
 Caching.
 
 #+NAME: org_gcr_2017-05-12_mara_C063F7CE-637E-43F8-8E16-AFBC68CA7618
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package persistent-soft
   :ensure t)
 #+END_SRC
@@ -500,7 +500,7 @@ Caching.
 Namespacing without language support.
 
 #+NAME: org_gcr_2017-05-12_mara_506BFAA8-1F72-4956-A85F-2C7ED59912D0
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package names
   :ensure t)
 #+END_SRC
@@ -508,7 +508,7 @@ Namespacing without language support.
 Child process handling specifically for Magit.
 
 #+NAME: org_gcr_2017-05-12_mara_C0E2C1E6-A271-47A1-84C3-BE9382235979
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package with-editor
   :ensure t)
 #+END_SRC
@@ -521,28 +521,28 @@ Child process handling specifically for Magit.
 Reduce information about modes in the Modeline.
 
 #+NAME: org_gcr_2017-05-12_mara_2FD3C2CA-508B-453E-A619-76D6EA4AAF71
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package diminish)
 #+END_SRC
 
 Show the file size.
 
 #+NAME: org_gcr_2017-05-12_mara_555EE82E-410B-4189-BE53-D33346F3F3BE
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (size-indication-mode)
 #+END_SRC
 
 Show the column number.
 
 #+NAME: org_gcr_2017-05-12_mara_BC16CA62-6474-4848-880C-F1EDE2BB5616
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (column-number-mode t)
 #+END_SRC
 
 Configuration uses active theme.
 
 #+NAME: org_gcr_2017-06-13_mara_7F117B6D-AFE7-479C-8313-3E9B6B4D967F
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package smart-mode-line
   :ensure t)
 #+END_SRC
@@ -555,7 +555,7 @@ Configuration uses active theme.
 Make it easy to evaluate code only when running on OSX.
 
 #+NAME: org_gcr_2017-05-12_mara_FF670CDD-5374-49BA-897A-AE1A30B444D6
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defmacro help/on-osx (statement &rest statements)
   "Evaluate the enclosed body only when run on OSX."
   `(when (eq system-type 'darwin)
@@ -566,7 +566,7 @@ Make it easy to evaluate code only when running on OSX.
 Pull in the =ENVIRONMENT= variables because the GUI version of EMACS does not.
 
 #+NAME: org_gcr_2017-05-12_mara_375D2A3D-54B5-4DBC-B911-38CAB716286A
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (help/on-osx
  (use-package exec-path-from-shell
    :ensure t
@@ -582,7 +582,7 @@ Use the OS X modifiers as Emacs meta keys. Don't pass them through to OS X.
 Easily allow option pass through for alternate input methods.
 
 #+NAME: org_gcr_2017-05-12_mara_F29E41A6-234D-4727-B9DF-75E5F5AC2AD3
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (help/on-osx
  (setq mac-control-modifier 'control)
  (setq mac-right-control-modifier 'left)
@@ -620,7 +620,7 @@ EMACS dialogues don't work OSX. They lock up EMACS.
 This is a known issue. [[https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-x][Here]] is the solution.
 
 #+NAME: org_gcr_2017-05-12_mara_82602D6E-30DB-49CF-A900-1FC9B733C347
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (help/on-osx
  (defun help/yes-or-no-p (orig-fun &rest args)
    "Prevent yes-or-no-p from activating a dialog."
@@ -638,7 +638,7 @@ This is a known issue. [[https://superuser.com/questions/125569/how-to-fix-emacs
 Make it easy to evaluate code only when running on Windows.
 
 #+NAME: org_gcr_2017-05-12_mara_9C48F55A-19D7-4B5F-8779-11BFFF4AE514
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defmacro help/on-windows (statement &rest statements)
   "Evaluate the enclosed body only when run on Microsoft Windows."
   `(when (eq system-type 'windows-nt)
@@ -649,7 +649,7 @@ Make it easy to evaluate code only when running on Windows.
 Provide the proper shell.
 
 #+NAME: org_gcr_2017-05-12_mara_9CAED015-5B25-41BE-82A9-CBA4D07E8F3D
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (help/on-windows
  (setq shell-file-name "cmdproxy.exe"))
 #+END_SRC
@@ -657,7 +657,7 @@ Provide the proper shell.
 Enable the =super= key-space.
 
 #+NAME: org_gcr_2017-05-12_mara_7AFA0161-4DCA-4C54-8D3C-9EF3FD529BF4
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (help/on-windows
  (setq w32-pass-lwindow-to-system nil)
  (defvar w32-lwindow-modifier 'super)
@@ -678,7 +678,7 @@ Configure EMACS to maximum utility.
    :END:
 
 #+NAME: org_gcr_2017-05-12_mara_7D37FFE5-2D2B-4CF7-AF27-F3CB8616D81B
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defun help/comment-or-uncomment ()
   "Comment or uncomment the current line or selection."
   (interactive)
@@ -1283,7 +1283,7 @@ Attribution: URL `https://rejeep.github.io/emacs/elisp/2010/11/16/delete-file-an
   - Store this as the fill column because all supporting functions will do the
     right thing here
 #+NAME: org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defconst help/column-width 78)
 (setq-default fill-column help/column-width)
 #+END_SRC
@@ -1295,7 +1295,7 @@ Two spaces after a semi-colon.
 One space after comma.
 
 #+NAME: org_gcr_2017-05-12_mara_38909B55-115D-44E4-B84F-70285016BF92
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq colon-double-space t)
 #+END_SRC
 ** Buffer
@@ -1309,7 +1309,7 @@ you may get unexpected behavior. Close all buffers and open them again after
 making such breaking changes.
 
 #+NAME: org_gcr_2017-05-12_mara_1986C8FB-6C8F-43F6-811D-D95577160064
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (desktop-save-mode t)
 (setq desktop-restore-eager 10)
 #+END_SRC
@@ -1317,7 +1317,7 @@ making such breaking changes.
 Provide expected "Undo" functionality.
 
 #+NAME: org_gcr_2017-05-12_mara_40A89EBE-247D-43B1-A606-896B172681D8
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package undo-tree
   :ensure t
   :config
@@ -1329,7 +1329,7 @@ Provide expected "Undo" functionality.
 Ever file must end with a [[https://robots.thoughtbot.com/no-newline-at-end-of-file][newline]].
 
 #+NAME: org_gcr_2017-05-12_mara_B41C6C0B-AC1A-44A4-9D0F-471A781BCA81
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq require-final-newline t)
 #+END_SRC
 
@@ -1338,7 +1338,7 @@ line on that new line. Do not account for anything special about the character
 there.
 
 #+NAME: org_gcr_2017-05-12_mara_60C775FC-0ACD-47E3-8724-8F4C48980081
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq track-eol t)
 (setq line-move-visual nil)
 #+END_SRC
@@ -1346,7 +1346,7 @@ there.
 Take the cursor with scroll activities.
 
 #+NAME: org_gcr_2017-05-12_mara_6E2D611F-11F0-4703-AC88-AA11CEE56F8D
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq scroll-preserve-screen-position t)
 #+END_SRC
 
@@ -1356,14 +1356,14 @@ quickly see the next ten or twenty lines. But ~recenter-top-bottom~ give you
 that so you can have both features easily.
 
 #+NAME: org_gcr_2017-05-12_mara_F6787724-7C59-4BD3-B436-0AB39E4F96E9
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq scroll-conservatively 101)
 #+END_SRC
 
 More easily visualize tabular data. Considered to non-subjective.
 
 #+NAME: org_gcr_2017-05-12_mara_1BA609EB-C430-4CE0-BD33-9524EBB5A0AC
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package stripe-buffer
   :ensure t)
 #+END_SRC
@@ -1371,14 +1371,14 @@ More easily visualize tabular data. Considered to non-subjective.
 End sentences with a single space.
 
 #+NAME: org_gcr_2017-05-12_mara_1710CA80-60CB-4E40-94E9-C38A2E0A0DE9
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq sentence-end-double-space nil)
 #+END_SRC
 
 Ban white-space at end of lines, globally.
 
 #+NAME: org_gcr_2017-05-12_mara_A04E6B4A-EFC6-4AE3-946B-E08CF4E02DD9
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (add-hook 'before-save-hook #'help/delete-trailing-whitespace)
 #+END_SRC
 
@@ -1386,7 +1386,7 @@ Intelligently select the current char, then word, then object, then block,
 then document.
 
 #+NAME: org_gcr_2017-05-12_mara_14A9724E-F0E0-40CA-9FD8-142CB77B87BF
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package expand-region
   :ensure t)
 #+END_SRC
@@ -1394,7 +1394,7 @@ then document.
 Configure Page-Break-Lines-Mode to visualize the formfeed character: ~C-q C-l~.
 
 #+NAME: org_gcr_2017-05-12_mara_11CC1DCC-05D6-4564-A40B-DE2AD0A7C46D
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package page-break-lines
   :diminish page-break-lines-mode
   :config
@@ -1411,7 +1411,7 @@ Configure Page-Break-Lines-Mode to visualize the formfeed character: ~C-q C-l~.
 Center the buffer after navigating pages.
 
 #+NAME: org_gcr_2017-05-12_mara_87233BFD-A241-48A6-9113-B383B30F9BC5
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (advice-add #'backward-page :after #'recenter)
 (advice-add #'forward-page :after #'recenter)
 #+END_SRC
@@ -1419,7 +1419,7 @@ Center the buffer after navigating pages.
 Do the /right thing/ for getting to the start of the line.
 
 #+NAME: org_gcr_2017-05-12_mara_B8BDE36B-4B27-4580-BA34-35C047FBEA62
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package mwim
   :ensure t
   :config
@@ -1429,7 +1429,7 @@ Do the /right thing/ for getting to the start of the line.
 Fling buffers left and right.
 
 #+NAME: org_gcr_2017-06-20_mara_6C4B1CDD-CF71-4A5F-B900-6D3CC06D4028
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package buffer-move
   :ensure t
   :config
@@ -1447,7 +1447,7 @@ Fling buffers left and right.
   - Sometimes I set the fci rule at 81 because a char at 79 pushes the fci
     rule out one extra space. Sometimes it is not an issue.
   #+NAME: org_gcr_2017-05-12_mara_3E475ED3-773E-4537-B29F-6888B7DB90DF
-  #+BEGIN_SRC emacs-lisp :results output silent
+  #+BEGIN_SRC emacs-lisp
 (use-package fill-column-indicator
   :ensure t
   :config
@@ -1457,7 +1457,7 @@ Fling buffers left and right.
 Show text indentation guide lines.
 
 #+NAME: org_gcr_2017-06-28_mara_EE77505E-5757-409C-9E87-2FA685145AB2
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package indent-guide
   :ensure t)
 #+END_SRC
@@ -1478,7 +1478,7 @@ Management:
 - [[https://github.com/abo-abo/hydra/wiki/Ibuffer][Hydra Helper]]
 
 #+NAME: org_gcr_2017-05-19_mara_845BEC94-54CC-46D3-B85F-7B537944E328
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defhydra hydra-ibuffer-main (:color pink :hint nil)
   "
    ^Navigation^ | ^Mark^        | ^Actions^        | ^View^
@@ -1592,7 +1592,7 @@ Management:
    :END:
 
 #+NAME: org_gcr_2017-05-12_mara_611E83B9-E797-4512-95EE-643473026607
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package hideshow
   :config
   (setq hs-hide-comments-when-hiding-all t)
@@ -1630,7 +1630,7 @@ Colorize color names.
 Rainbow-Mode handles most major modes color definitions as expected.
 
 #+NAME: org_gcr_2017-05-12_mara_BBE40664-C7A9-4586-A5FF-05E570E87B7A
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package rainbow-mode
   :ensure t
   :config
@@ -1646,7 +1646,7 @@ Sometimes the judicious use of Git and git bisect can obviate the need for
 manual bisections. Othertimes not. For the latter, use =elisp-bug-hunter=.
 
 #+NAME: org_gcr_2017-05-12_mara_D877FC18-3238-45E0-BE6C-6FE3149E4121
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package bug-hunter
   :ensure t)
 #+END_SRC
@@ -1669,7 +1669,7 @@ Macro expander:
   - jump to the previous macro form in the expansion
 
 #+NAME: org_gcr_2017-05-12_mara_510C1AB4-A266-40A6-9DCF-25B827E60786
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package macrostep
   :ensure t
   :config
@@ -1682,14 +1682,14 @@ Macro expander:
    :END:
 
 #+NAME: org_gcr_2017-05-12_mara_CD327ED5-E83D-471F-9A30-B7A3FBB67486
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq-default eval-expression-print-level nil)
 #+END_SRC
 
 Allow most commands.
 
 #+NAME: org_gcr_2017-05-12_mara_41240CBD-3217-466E-BD0F-5737D8BC68BF
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (put #'upcase-region 'disabled nil)
 (put #'downcase-region 'disabled nil)
 (put #'narrow-to-region 'disabled nil)
@@ -1703,7 +1703,7 @@ If you learned this in ESS then you already love it. If you didn't then you
 probably will now
 
 #+NAME: org_gcr_2017-05-12_mara_0DE4A73B-54B3-41AA-8744-98D7B34D159B
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package eval-in-repl
   :ensure t
   :config
@@ -1751,7 +1751,7 @@ configuration when invoked to evaluate a line."
 Easy to use file-based AES encryption.
 
 #+NAME: org_gcr_2017-05-12_mara_A9233A74-18F8-4C65-AC14-1A6C41F69B80
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path (getenv "CCRYPT"))
 (use-package ps-ccrypt)
 #+END_SRC
@@ -1774,7 +1774,7 @@ it for any commands that need to run using a terminal emulator by adding it to
 to =eshell-visual-commands=.
 
 #+NAME: org_gcr_2017-05-12_mara_E5296E8A-C433-4FBF-97EE-8B95918B5A06
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq eshell-prefer-lisp-functions nil
       eshell-cmpl-cycle-completions nil
       eshell-save-history-on-exit t
@@ -1799,7 +1799,7 @@ to =eshell-visual-commands=.
 Configure a =PS1= like prompt.
 
 #+NAME: org_gcr_2017-05-12_mara_47F75687-F505-42B3-9E2B-EA832B41F7EC
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq eshell-prompt-regexp "^.+@.+:.+> ")
 (setq eshell-prompt-function
       (lambda ()
@@ -1825,7 +1825,7 @@ Don't create backup files. Instead Git for versioning
 Automatically back file-stores if no activity has occurred.
 
 #+NAME: org_gcr_2017-05-12_mara_11891C85-578F-417F-9956-FEBB52045CDC
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq auto-save-default t)
 (setq make-backup-files nil)
 (setq auto-save-visited-file-name t)
@@ -1836,14 +1836,14 @@ Automatically back file-stores if no activity has occurred.
 Backup file-stores when the frame loses focus.
 
 #+NAME: org_gcr_2017-05-12_mara_A02347F8-B3BB-4F43-8987-718530B6E053
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (add-hook 'focus-out-hook #'help/save-all-file-buffers)
 #+END_SRC
 
 Always keep buffers in-sync with changes in-file.
 
 #+NAME: org_gcr_2017-05-12_mara_EE759660-2FB2-4BC1-AC4D-EFD21E5B02C0
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (global-auto-revert-mode 1)
 (diminish 'auto-revert-mode)
 #+END_SRC
@@ -1852,7 +1852,7 @@ Save all files before common activities. Functions are easier to use than
 advice.
 
 #+NAME: org_gcr_2017-05-12_mara_E2747C5E-DA22-4B22-9C0A-EB9DEED9A5F7
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defun help/safb-help/vc-next-action ()
   (interactive)
   (help/save-all-file-buffers)
@@ -2001,7 +2001,7 @@ Try to visit a non-existent file and get prompted to create its parent
 directories.
 
 #+NAME: org_gcr_2017-05-12_mara_CF605547-BD59-48FD-8CE1-47AD7F28D1B6
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (add-to-list 'find-file-not-found-functions #'help/create-non-existent-directory)
 #+END_SRC
 
@@ -2010,7 +2010,7 @@ expensive features in those buffers. NXML also seems to have a difficult time
 with large files.
 
 #+NAME: org_gcr_2017-05-12_mara_6F55AC0E-3877-4935-B93C-22A132C672AB
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq large-file-warning-threshold (* 1024 1024 2))
 #+END_SRC
 
@@ -2018,14 +2018,14 @@ with large files.
   - Via the thread "[O] org-file using tramp + babel?"
 
 #+NAME: org_gcr_2017-05-12_mara_7102B5B4-168F-4E0E-87BD-EEA78DF6837A
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq temporary-file-directory "/tmp")
 #+END_SRC
 
 Probably never modify some files.
 
 #+NAME: org_gcr_2017-05-12_mara_F0004AA3-B2A6-4265-A9D5-13590DCBEE9A
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package hardhat
   :ensure t
   :diminish global-hardhat-mode
@@ -2064,7 +2064,7 @@ files you have selected in the kill ring. =dired-compare-directories= lets you
 perform all sorts of directory comparisons, a handy tool that you need once in
 a while but definitely do need.
 #+NAME: org_gcr_2017-05-12_mara_83FA67CA-A147-48BF-B404-B945C4140F50
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defun help/dired-copy-filename ()
   "Push the path and filename of the file under the point to the kill ring.
 Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2002-10/msg00556.html'"
@@ -2091,13 +2091,13 @@ Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2002-10/msg0
 
 Try to guess the target directory for operations.
 #+NAME: org_gcr_2017-05-12_mara_E20AFEA9-62DF-4CB0-9B41-1D3B1AFC7844
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq dired-dwim-target t)
 #+END_SRC
 
 Use EMACS =ls=.
 #+NAME: org_gcr_2017-05-12_mara_53A385C0-4E0E-4248-B803-317573EF9133
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (help/on-osx
  (setq ls-lisp-use-insert-directory-program nil)
  (use-package ls-lisp))
@@ -2132,7 +2132,7 @@ up in a single Dired buffer that you may work with just like you would any other
 file appearing in a Dired buffer. The abstraction here becomes so obvious, you
 may ask yourself why you never considered such a thing /before/ now (as I did):
 #+NAME: org_gcr_2017-05-12_mara_3587BC99-ABF9-44E0-B5FD-E6D556D7A8E8
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package find-dired
   :ensure t
   :config
@@ -2161,7 +2161,7 @@ to do to it. Very cool.
 - =wdired-abort-changes, C-c ESC= :: revert your changes
 
 #+NAME: org_gcr_2017-05-12_mara_EA007F9D-F9EB-433E-A51E-10C2630A7A9F
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package wdired
   :ensure t
   :config
@@ -2180,7 +2180,7 @@ Since I started using a menu bar again, and wanting to get Imenu really
 exercised, Dired in Imenu seems like an obvious choice.
 
 #+NAME: org_gcr_2017-05-12_mara_DF4DCB63-ABD8-46AA-A7ED-CDF0A0CB6389
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package dired-imenu
   :ensure t)
 #+END_SRC
@@ -2188,7 +2188,7 @@ exercised, Dired in Imenu seems like an obvious choice.
 Use Ido with Dired.
 
 #+NAME: org_gcr_2017-05-12_mara_3E39734D-7615-402E-ABF9-378A134D8A01
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq ido-show-dot-for-dired t)
 #+END_SRC
 
@@ -2200,7 +2200,7 @@ Use Ido with Dired.
 Major productivity hack
 
 #+NAME: org_gcr_2017-05-12_mara_B746C905-E59E-4F33-88F9-5F6CD32C0DE2
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package imenu
   :config
   (setq imenu-sort-function #'imenu--sort-by-name))
@@ -2215,7 +2215,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
 Provide it in a buffer.
 
 #+NAME: org_gcr_2017-05-12_mara_E8A1EB03-CB72-4761-BC0A-555670C0D452
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package imenu-list
   :ensure t
   :config
@@ -2238,7 +2238,7 @@ These configurations are performed in the correct order. Any attempt to refactor
 this Source-Block will break Ido in this system.
 
 #+NAME: org_gcr_2017-05-12_mara_9F4ACDEA-BC93-4BB6-BEA2-B622FF676EB6
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package ido)
 (use-package flx-ido
   :ensure t
@@ -2263,7 +2263,7 @@ this Source-Block will break Ido in this system.
 Make functions search-able.
 
 #+NAME: org_gcr_2017-05-12_mara_8C3DB0A1-305E-4746-8455-E8CB880842B1
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package smex
   :ensure t
   :config
@@ -2273,7 +2273,7 @@ Make functions search-able.
 Make URLs a first-class object.
 
 #+NAME: org_gcr_2017-05-12_mara_5295DEDE-687E-440B-89B9-9BF9BF301595
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq ido-use-url-at-point t)
 (setq ido-use-filename-at-point 'guess)
 #+END_SRC
@@ -2286,7 +2286,7 @@ Make URLs a first-class object.
 Configure the [[http://endlessparentheses.com/manually-choose-a-fallback-font-for-unicode.html][manual configuration of a fallback]] Unicode font.
 
 #+NAME: org_gcr_2017-05-12_mara_501304FE-D5DB-40FA-B1BB-01A580C4A155
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (set-fontset-font "fontset-default" nil
                   (font-spec :size 20 :name "Symbola"))
 #+END_SRC
@@ -2305,7 +2305,7 @@ To test it run =view-hello-file= and =M-x list-charset-chars RET unicode-bmp RET
 Activate font locking everywhere possible.
 
 #+NAME: org_gcr_2017-05-12_mara_ADAB043E-BF70-4AE0-BA60-CD08D82474FA
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (global-font-lock-mode t)
 #+END_SRC
 
@@ -2317,7 +2317,7 @@ Activate font locking everywhere possible.
 Go to any object in the frame quickly.
 
 #+NAME: org_gcr_2017-05-12_mara_2B0564C9-2091-4364-8A28-E33A548284A2
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package avy
   :ensure t
   :config)
@@ -2331,7 +2331,7 @@ Go to any object in the frame quickly.
 Warn of poor grammar immediately interrupting flow with a visual indicator.
 
 #+NAME: org_gcr_2017-05-12_mara_9336B241-3511-4BB1-9CBA-30CA8BD4EFAB
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package writegood-mode
   :ensure t
   :config
@@ -2342,7 +2342,7 @@ Warn of poor grammar immediately interrupting flow with a visual indicator.
 Integrate Langtool.
 
 #+NAME: org_gcr_2017-05-12_mara_1CB16C79-7EC3-4375-BAD3-FC612A1C0B9B
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package langtool
   :ensure t
   :init
@@ -2357,7 +2357,7 @@ macro but I don't know how to expand the string for use in the macro. I tried
 quasiquote and that was wrong.
 
 #+NAME: org_gcr_2017-05-12_mara_A17A873C-5FC0-473F-842F-875CA99981D5
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (with-eval-after-load "flycheck"
   (flycheck-define-checker proselint
     "A linter for prose."
@@ -2380,14 +2380,14 @@ quasiquote and that was wrong.
 Keep many keyboard macros.
 
 #+NAME: org_gcr_2017-05-12_mara_54E04F50-33B3-411D-B759-19408AE1DE48
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq kmacro-ring-max 32)
 #+END_SRC
 
 Persist keyboard macros in Emacs Lisp alternative to ~insert-kbd-macro~.
 
 #+NAME: org_gcr_2017-05-12_mara_0BE407C6-354F-4E92-B7DC-66000217CCE6
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package elmacro
   :ensure t
   :diminish (elmacro-mode)
@@ -2401,7 +2401,7 @@ Persist keyboard macros in Emacs Lisp alternative to ~insert-kbd-macro~.
    :END:
 
 #+NAME: org_gcr_2017-05-12_mara_909723A4-3234-40B4-B741-E59C3C9E3E0A
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package fuzzy
   :ensure t)
 (use-package auto-complete
@@ -2421,7 +2421,7 @@ Persist keyboard macros in Emacs Lisp alternative to ~insert-kbd-macro~.
 Auto-completion for =.=-separated words.
 
 #+NAME: org_gcr_2017-05-12_mara_0F225CED-24F2-4801-A3AF-7E45BF787E71
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package auto-complete-chunk
   :ensure t)
 #+END_SRC
@@ -2429,7 +2429,7 @@ Auto-completion for =.=-separated words.
 /IntelliJ-Like/ ~jump to definition~.
 
 #+NAME: org_gcr_2017-05-17_mara_7D684DF7-2FF5-4386-B845-8F30E9D6E887
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package dumb-jump
   :ensure t
   :config
@@ -2450,7 +2450,7 @@ Auto-completion for =.=-separated words.
 Easy kill ring access.
 
 #+NAME: org_gcr_2017-05-12_mara_DA93DCF6-E0AB-4B92-9708-4DE4781AA2ED
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package browse-kill-ring
   :ensure t
   :config
@@ -2473,7 +2473,7 @@ When you start typing and text is selected, replace it with what you are typing,
 or pasting
 
 #+NAME: org_gcr_2017-05-12_mara_B696F088-B5EB-4507-8EBE-C719995EB5DA
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (delete-selection-mode t)
 #+END_SRC
 
@@ -2489,14 +2489,14 @@ Via Ben Maughan:
 #+END_QUOTE
 
 #+NAME: org_gcr_2017-05-12_mara_DDBFF500-4387-47FD-95BD-7F6F369AB0E8
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq save-interprogram-paste-before-kill t)
 #+END_SRC
 
 [[http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/][Via]]: copy selected text to the clip board.
 
 #+NAME: org_gcr_2017-05-12_mara_087C8A85-9AC0-48C5-A19B-6C5E97F40572
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq mouse-drag-copy-region t)
 #+END_SRC
 
@@ -2507,20 +2507,20 @@ Via Ben Maughan:
 
 Make it easier to answer questions.
 #+NAME: org_gcr_2017-05-12_mara_F19234A5-0F40-46FE-946A-4B3F47C96424
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (fset #'yes-or-no-p #'y-or-n-p)
 #+END_SRC
 
 Comfortably display information.
 #+NAME: org_gcr_2017-05-12_mara_2B089323-1D60-416F-83A7-792AEE290E67
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq resize-mini-windows t)
 (setq max-mini-window-height 0.33)
 #+END_SRC
 
 Allow recursive commands-in-commands and highlight the levels of recursion.
 #+NAME: org_gcr_2017-05-12_mara_A0D0BC89-5180-4B18-BFDC-17650901FB7F
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq enable-recursive-minibuffers t)
 (minibuffer-depth-indicate-mode t)
 #+END_SRC
@@ -2535,7 +2535,7 @@ one line at a time. So does a fast turn. Anything further than 5-10 lines deserv
 a fast navigation vehicle.
 
 #+NAME: org_gcr_2017-05-12_mara_4AA275B8-8C5E-498F-969E-28459D7E88E5
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
 (setq mouse-wheel-progressive-speed nil)
 (setq mouse-wheel-follow-mouse t)
@@ -2552,7 +2552,7 @@ a fast navigation vehicle.
 - Jump near buffer top
 
 #+NAME: org_gcr_2017-05-12_mara_0EB7874B-7C34-4879-97FA-C487115385EE
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defun help/occur-mode-hook-fn ()
   "HELP customizations."
   (interactive)
@@ -2572,7 +2572,7 @@ a fast navigation vehicle.
 Provide popup notifications.
 
 #+NAME: org_gcr_2017-05-12_mara_66255B58-A96D-445E-83BF-F597E4BA4FB8
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package alert
   :ensure t
   :config
@@ -2593,7 +2593,7 @@ Directories that have Git working copies are logically projects. Manage them
 with Projectile.
 
 #+NAME: org_gcr_2017-05-12_mara_814E8B43-89FD-4EC2-9C5A-EEE03D92A918
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package projectile
   :ensure t
   :config
@@ -2607,7 +2607,7 @@ with Projectile.
 Notify Magit about every working copy that Projectile knows about.
 
 #+NAME: org_gcr_2017-05-12_mara_A3BF1E41-D15E-43FD-A379-E5283602BBB3
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (eval-after-load "projectile"
   '(progn (setq magit-repository-directories (mapcar (lambda (dir)
                                                        (substring dir 0 -1))
@@ -2624,7 +2624,7 @@ Notify Magit about every working copy that Projectile knows about.
    :END:
 
 #+NAME: org_gcr_2017-05-12_mara_22C5C379-532B-488C-A155-6212DB791ED6
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package pp
   :commands (pp-display-expression))
 #+END_SRC
@@ -2635,7 +2635,7 @@ Notify Magit about every working copy that Projectile knows about.
    :END:
 
 #+NAME: org_gcr_2017-05-12_mara_5418551F-1788-4236-B98B-B963BE0032F7
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq register-preview-delay 2)
 (setq register-separator "\n\n")
 #+END_SRC
@@ -2648,7 +2648,7 @@ Notify Magit about every working copy that Projectile knows about.
 Display information about search-and-or-replace operation.
 
 #+NAME: org_gcr_2017-05-12_mara_82232186-B19E-402C-B9E7-6FD6839FD7F6
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package anzu
   :ensure t
   :config
@@ -2674,7 +2674,7 @@ When you re-open a file return the mark to its last position
 https://www.emacswiki.org/emacs/SavePlace
 
 #+NAME: org_gcr_2017-05-12_mara_9D56BD82-FDED-4326-9078-547457D593ED
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (save-place-mode 1)
 #+END_SRC
 
@@ -2689,7 +2689,7 @@ back to work, you can just re-run stuff as you need it.
 https://www.emacswiki.org/emacs/SaveHist
 
 #+NAME: org_gcr_2017-05-12_mara_2C0AC56F-8956-4EC1-90A9-2FBCC4AA5AD1
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq savehist-save-minibuffer-history t)
 (setq savehist-additional-variables
       '(kill-ring
@@ -2704,7 +2704,7 @@ https://www.emacswiki.org/emacs/SaveHist
 Use the history as a lookup instead of a log.
 
 #+NAME: org_gcr_2017-05-12_mara_D92CB94A-5CDE-49D3-83AD-65242EACA752
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq history-delete-duplicates t)
 #+END_SRC
 
@@ -2768,7 +2768,7 @@ and bind it during the search.
 Writeable Grep integration.
 
 #+NAME: org_gcr_2017-05-12_mara_9F40A141-4464-4D4C-A062-54BEC12992FF
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package wgrep
   :ensure t
   :config
@@ -2778,7 +2778,7 @@ Writeable Grep integration.
 Ag integration.
 
 #+NAME: org_gcr_2017-05-12_mara_58F6AD1E-7E9B-4650-B859-F9C0540C74B6
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package ag
   :ensure t
   :config
@@ -2803,7 +2803,7 @@ Ag integration.
 Writeable Ag.
 
 #+NAME: org_gcr_2017-05-12_mara_E4E1E1A0-1353-4483-BE1C-746097F60CB6
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package wgrep-ag
   :ensure t
   :after ag)
@@ -2826,7 +2826,7 @@ Never ispell the following objects.
 Block regex helper.
 
 #+NAME: org_gcr_2017-05-12_mara_5EDEEFA9-7DED-41D9-AD9D-5C48BA580AC5
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defun help/block-regex (special)
   "Make an ispell skip-region alist for a SPECIAL block."
   (interactive)
@@ -2838,7 +2838,7 @@ Block regex helper.
 Source-Blocks.
 
 #+NAME: org_gcr_2017-05-12_mara_D15F7E3E-9D35-4AB3-A043-67154E3D588A
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (add-to-list 'ispell-skip-region-alist (help/block-regex "SRC"))
 #+END_SRC
 
@@ -2846,49 +2846,49 @@ Example-Blocks. This system often uses Source-Blocks to edit content and
 Example-Blocks to make it easily renderable when it is not for running.
 
 #+NAME: org_gcr_2017-05-12_mara_EB14B834-8486-4750-96C5-E5E3CFB4C19B
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (add-to-list 'ispell-skip-region-alist (help/block-regex "EXAMPLE"))
 #+END_SRC
 
 Properties.
 
 #+NAME: org_gcr_2017-05-12_mara_F7E77F03-5A3E-4DC1-A345-4BE8E4C7FF11
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (add-to-list 'ispell-skip-region-alist '("^\s*:PROPERTIES\:$" . "^\s*:END\:$"))
 #+END_SRC
 
 Footnotes.
 
 #+NAME: org_gcr_2017-05-12_mara_5459C549-E938-4899-827D-D03707983E52
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (add-to-list 'ispell-skip-region-alist '("\\[fn:.+:" . "\\]"))
 #+END_SRC
 
 Footnotes with URLs that contain line-breaks.
 
 #+NAME: org_gcr_2017-05-12_mara_ECD4198B-7335-4141-8256-971748EE4D22
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (add-to-list 'ispell-skip-region-alist '("^http" . "\\]"))
 #+END_SRC
 
 Bold text list items.
 
 #+NAME: org_gcr_2017-05-12_mara_1048E593-5E66-4F70-A591-B17A18634D8F
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (add-to-list 'ispell-skip-region-alist '("- \\*.+" . ".*\\*: "))
 #+END_SRC
 
 Right arrows.
 
 #+NAME: org_gcr_2017-05-12_mara_5DB6D56D-1C05-4816-8BB6-8F3E936E5EFC
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (add-to-list 'ispell-skip-region-alist '("\\rarr"))
 #+END_SRC
 
 Check =SPECIAL LINE= definitions, ignoring their type.
 
 #+NAME: org_gcr_2017-05-12_mara_5C415ECB-91FC-44C2-9886-29704EF74836
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (let ()
   (--each
       '(("ATTR_LATEX" nil)
@@ -2936,7 +2936,7 @@ Check =SPECIAL LINE= definitions, ignoring their type.
 Configure Sudo with Ido.
 
 #+NAME: org_gcr_2017-05-12_mara_BC64FFC2-D587-4D4F-B693-71B3731A71F1
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (help/on-osx
  (defun help/ido-find-file ()
    "Find file as root if necessary.
@@ -2958,7 +2958,7 @@ Do not perform syntactic analysis on-demand. Something about my config makes
 global-mode puke and kill Emacs every so often.
 
 #+NAME: org_gcr_2017-05-12_mara_9931B79E-7900-4DE1-B097-45A8DE90CB44
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package flycheck
   :ensure t
   :diminish flycheck-mode)
@@ -2972,7 +2972,7 @@ global-mode puke and kill Emacs every so often.
 Most modes in this system will never use TAB stops.
 
 #+NAME: org_gcr_2017-05-12_mara_C23EBD24-B2DC-40CB-9F9E-CAEB03FF8EDC
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq-default indent-tabs-mode nil)
 #+END_SRC
 
@@ -2980,7 +2980,7 @@ Remove TAB from all buffers before persisting to the backing file unless it is
 configured to retain TAB. The use case is a Makefile.
 
 #+NAME: org_gcr_2017-05-12_mara_3FFCD7B4-0055-4BE8-938F-EEA09D077343
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defun help/untabify-if-not-indent-tabs-mode ()
   "Untabify if `indent-tabs-mode' is false.
 
@@ -2995,7 +2995,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 Most programing modes indent to 2 spaces. TABs should be the same width.
 
 #+NAME: org_gcr_2017-05-12_mara_5A73C4A8-C2AE-4F36-9D64-3FB6A4FF31E0
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq-default tab-width 2)
 #+END_SRC
 
@@ -3010,7 +3010,7 @@ The commit log editor uses With-Editor and Server modes. They are not
 diminished because they are infrequently used.
 
 #+NAME: org_gcr_2017-05-12_mara_3E77B825-E0A4-40EC-88DC-3F5C1E1445CE
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path "~/src/magit/lisp")
 (require 'magit)
 
@@ -3023,7 +3023,7 @@ diminished because they are infrequently used.
 Leave the VC message template empty.
 
 #+NAME: org_gcr_2017-05-12_mara_A078BCD9-1559-412A-8D51-528CDDD4E402
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (eval-after-load "log-edit"
   '(remove-hook 'log-edit-hook 'log-edit-insert-message-template))
 #+END_SRC
@@ -3031,7 +3031,7 @@ Leave the VC message template empty.
 Change browsing.
 
 #+NAME: org_gcr_2017-05-12_mara_A696BECA-ED39-4A7A-911A-66C396E0925C
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package git-timemachine
   :ensure t)
 #+END_SRC
@@ -3039,7 +3039,7 @@ Change browsing.
 VC activity keybindings.
 
 #+NAME: org_gcr_2017-05-12_mara_A4E407FE-DD42-458A-BD83-2EFD71C1D728
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "s-w") #'git-timemachine)
 (global-set-key (kbd "s-e") #'help/safb-help/magit-status)
 (define-prefix-command 'help/vc-map)
@@ -3053,14 +3053,14 @@ VC activity keybindings.
 Git ignore files are text files.
 
 #+NAME: org_gcr_2017-05-12_mara_C374930E-5AE3-478D-B3F1-E7791791D530
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (add-to-list 'auto-mode-alist '(".gitignore$" . text-mode))
 #+END_SRC
 
 Git config files.
 
 #+NAME: org_gcr_2017-05-12_mara_0183A8E0-5A59-4A4B-9260-FF5E8C5CAF2C
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package gitignore-mode
   :ensure t)
 
@@ -3079,7 +3079,7 @@ Git config files.
 [[http://endlessparentheses.com/embedding-youtube-videos-with-org-mode-links.html][Embedding Youtube videos with org-mode links]].
 
 #+NAME: org_gcr_2017-05-12_mara_BCF6CC3A-98AD-4845-BBE2-EB601E1A8550
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defvar yt-iframe-format
   ;; You may want to change your width and height.
   (concat "<iframe width=\"440\""
@@ -3111,7 +3111,7 @@ Git config files.
   - Tabs
 
 #+NAME: org_gcr_2017-05-12_mara_081024E6-F582-40DF-A96F-7216725FDD00
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package whitespace
   :ensure t
   :config
@@ -3129,7 +3129,7 @@ Git config files.
    :END:
 
 #+NAME: org_gcr_2017-05-12_mara_BC6CD3BC-C736-40EE-84FD-33E2BB514A0C
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (diminish 'visual-line-mode)
 #+END_SRC
 
@@ -3137,7 +3137,7 @@ Remind me that VLM is turned on so I pay attention to the wrap. There is a
 Hydra that makes it easy to remember to turn it off.
 
 #+NAME: org_gcr_2017-05-12_mara_EA8B5E3D-0F0B-4BD8-A510-864EC04BABD7
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq visual-line-fringe-indicators '(nil right-curly-arrow))
 #+END_SRC
 
@@ -3184,7 +3184,7 @@ With that in mind this system:
 Make sense of the current mode.
 
 #+NAME: org_gcr_2017-05-23_mara_9517CF5A-C95B-454E-A68F-1E4BA677C08C
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package parent-mode
   :ensure t
   :config
@@ -3208,7 +3208,7 @@ Every special mode needs this. Which is nothing yet.
 Every text editing buffer needs this.
 
 #+NAME: org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defun help/text-mode-fn ()
   "HELP's standard configuration for buffer's working with text, often for
    programming."
@@ -3235,7 +3235,7 @@ Every text editing buffer needs this.
 - Hacking mode hooks.
   - Configurations common to every hacking vehicle.
     #+NAME: org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C
-    #+BEGIN_SRC emacs-lisp :results output silent
+    #+BEGIN_SRC emacs-lisp
 (setq help/prog-modes '(makefile-mode-hook
                         ruby-mode-hook
                         sh-mode-hook
@@ -3257,7 +3257,7 @@ Every text editing buffer needs this.
   - LISP mode hooks.
     - Are hacking modes.
       #+NAME: org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86
-      #+BEGIN_SRC emacs-lisp :results output silent
+      #+BEGIN_SRC emacs-lisp
 (setq help/lisp-modes
       '(emacs-lisp-mode-hook
         ielm-mode-hook
@@ -3282,7 +3282,7 @@ Every text editing buffer needs this.
   for the mode. Explicitly define instead of relying on ~prog-mode~ inheritance;
   use this documents logical ~prog*-mode~ approach instead.
   #+NAME: org_gcr_2017-05-12_mara_02408658-D767-4D6E-8AAA-2BE1933BCBD1
-  #+BEGIN_SRC emacs-lisp :results output silent
+  #+BEGIN_SRC emacs-lisp
 (use-package aggressive-indent
   :ensure t
   :config)
@@ -3291,7 +3291,7 @@ Every text editing buffer needs this.
   strings pasted into other strings. Smartparens provides built-in correct
   behavior for most modes.
   #+NAME: org_gcr_2017-05-12_mara_3AB5C00B-E0FF-40A1-9C3B-420CB4E8D417
-  #+BEGIN_SRC emacs-lisp :results output silent
+  #+BEGIN_SRC emacs-lisp
 (use-package smartparens-config
   :ensure smartparens
   :config
@@ -3305,7 +3305,7 @@ Every text editing buffer needs this.
      :END:
 
 #+NAME: org_gcr_2017-05-12_mara_A3C53136-65BE-4771-A214-19E102E0158B
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defun help/prog-mode-hook-fn ()
   (interactive)
   (help/text-mode-fn)
@@ -3332,21 +3332,21 @@ Every text editing buffer needs this.
 Have fun with scratch.
 
 #+NAME: org_gcr_2017-05-12_mara_C344E972-D31C-48F4-8E3B-83A799DE7D37
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq initial-scratch-message ";; Happy Hacking 🖖\n\n")
 #+END_SRC
 
 Use ~emacs-lisp~ in scratch.
 
 #+NAME: org_gcr_2017-05-12_mara_A929CBE0-E6D3-4A45-8341-15F50EF2F93A
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq initial-major-mode 'emacs-lisp-mode)
 #+END_SRC
 
 Immortal scratch [[https://www.reddit.com/r/emacs/comments/4cmfwp/scratch_buffer_hacks_to_increase_its_utility/][via]].
 
 #+NAME: org_gcr_2017-05-12_mara_1F06F375-41F5-48FA-B787-8B937BDF56FC
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (with-current-buffer "*scratch*"
   (emacs-lock-mode 'kill))
 #+END_SRC
@@ -3354,7 +3354,7 @@ Immortal scratch [[https://www.reddit.com/r/emacs/comments/4cmfwp/scratch_buffer
 Persistent scratch.
 
 #+NAME: org_gcr_2017-05-12_mara_2757B16C-18ED-4F29-8DFD-CE51B930BA81
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package persistent-scratch
   :ensure t
   :config
@@ -3364,7 +3364,7 @@ Persistent scratch.
 Broadcast scoping mode.
 
 #+NAME: org_gcr_2017-05-12_mara_BEA970EF-78FA-448D-96B3-1E135640D16A
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package lexbind-mode)
 #+END_SRC
 
@@ -3374,14 +3374,14 @@ Slime navigation:
 - "describe the symbol at point": ~C-c C-d C-d~
 
 #+NAME: org_gcr_2017-05-12_mara_26AEDAD1-36FC-490D-92F4-86E0966467E2
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package elisp-slime-nav
   :ensure t
   :diminish elisp-slime-nav-mode)
 #+END_SRC
 
 #+NAME: org_gcr_2017-05-12_mara_D8F41BFE-D2F5-4B86-BFED-B3DE5EA2133C
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defun help/elisp-eval-buffer ()
   "Intelligently evaluate an Elisp buffer."
   (interactive)
@@ -3430,7 +3430,7 @@ Slime navigation:
 "find callers of elisp functions or macros".
 
 #+NAME: org_gcr_2017-05-12_mara_7DB4D819-0D2D-482B-AA02-9CB14F6DA288
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package elisp-refs
   :ensure t)
 #+END_SRC
@@ -3438,7 +3438,7 @@ Slime navigation:
 Package lint.
 
 #+NAME: org_gcr_2017-05-12_mara_2B359320-563A-4E80-BB8E-04965E20EBEE
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package package-lint
   :ensure t)
 
@@ -3453,7 +3453,7 @@ Package lint.
     :END:
 
 #+NAME: org_gcr_2017-05-12_mara_7E2C79D7-3C27-4289-8B07-FB649CFB1C58
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (define-key emacs-lisp-mode-map (kbd "s-p") #'describe-thing-in-popup)
 #+END_SRC
 
@@ -3474,7 +3474,7 @@ example block. This makes exports more consistent and other Org-Mode features se
 to behave more predictably.
 
 #+NAME: org_gcr_2017-05-12_mara_9D21E326-1742-4DD0-BDF9-624D21873F92
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-babel-min-lines-for-block-output 0)
 #+END_SRC
 
@@ -3482,7 +3482,7 @@ Configure Org-Mode to manage it's Source-Block backed buffers the same as the
 rest of this system.
 
 #+NAME: org_gcr_2017-05-12_mara_9427EB38-B623-4B99-B562-C2FD737EB0D7
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-edit-src-auto-save-idle-delay 0)
 (setq org-edit-src-turn-on-auto-save nil)
 #+END_SRC
@@ -3492,7 +3492,7 @@ That is why it is under this heading and Evaluation. This is a setting configuri
 how the results of evaluation are refreshed in EMACS.
 
 #+NAME: org_gcr_2017-05-12_mara_780AFFD3-B8F3-4D0F-A3C1-DB30C2182730
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defun help/org-babel-after-execute-hook ()
   "HELP settings for the `org-babel-after-execute-hook'.
 
@@ -3508,7 +3508,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 Never "automatically" evaluate a source block.
 
 #+NAME: org_gcr_2017-05-12_mara_F0536A1B-195D-4AB9-90B8-D73651740849
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-confirm-babel-evaluate nil)
 #+END_SRC
 
@@ -3517,7 +3517,7 @@ backed buffer. The next step is to write some code to prevent modifying
 source-blocks outside of that place.
 
 #+NAME: org_gcr_2017-05-12_mara_B804AA93-9D3B-4DC8-BFA3-658DD1FB0601
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-src-tab-acts-natively nil)
 #+END_SRC
 
@@ -3580,7 +3580,7 @@ source-blocks outside of that place.
         - =char= defines a fast-access key for the state name
 
 #+NAME: org_gcr_2017-05-12_mara_9DE5CE12-157D-4516-9FB1-7DAFA02C571E
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-todo-keywords
       '((sequence
          "TODO(t!)"
@@ -3603,21 +3603,21 @@ It is easier to understand the history of a task by reading it in chronological
 order.
 
 #+NAME: org_gcr_2017-05-12_mara_B237C004-4827-4C39-A9B9-4D0FF9B01053
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-log-states-order-reversed nil)
 #+END_SRC
 
 Make it easy to hide the state changes until I want to see them with a Drawer.
 
 #+NAME: org_gcr_2017-05-12_mara_32AAD797-A7D7-416D-9CE2-425EB96781A7
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-log-into-drawer t)
 #+END_SRC
 
 Maintain state when archiving a heading.
 
 #+NAME: org_gcr_2017-05-12_mara_B6F42ECC-14C0-4C60-8E00-6BBF883B3043
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-archive-mark-done nil)
 #+END_SRC
 
@@ -3716,7 +3716,7 @@ file I never need to configure =Refile= file targets in ~org-refile-targets~.
 Refiling at any depth makes
 
 #+NAME: org_gcr_2017-05-12_mara_DEE287C2-5B88-4015-9B4F-57DA0F922B0C
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-refile-targets '((nil . (:maxlevel . 10))))
 (setq org-refile-use-outline-path t)
 #+END_SRC
@@ -3738,7 +3738,7 @@ Because <09% of the time I am moving headings into a new file
 - Single previx argument (16)
 
 #+NAME: org_gcr_2017-05-12_mara_7B11F38B-157A-400A-8F93-68E610D47128
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defun help/org-refile (arg)
   "Refile to /level/ in /file/ by using use /prefix args/: 2+/this/[none], 1+/this/1, 1/choose-file/2"
   (interactive "P")
@@ -3772,26 +3772,26 @@ Because <09% of the time I am moving headings into a new file
   new and need to be prioritized. When they are in front it is easy to notice
   because your eyes go there first (even know you /are/ the one refiling)
   #+NAME: org_gcr_2017-05-12_mara_29930A09-6462-4BE7-9AE2-18DC1858666C
-  #+BEGIN_SRC emacs-lisp :results output silent
+  #+BEGIN_SRC emacs-lisp
 (setq org-reverse-note-order t)
   #+END_SRC
 - Select headings with the full path immediately instead of with clunky
   depth-first navigation
   #+NAME: org_gcr_2017-05-12_mara_E0E01F45-C01E-4F6E-AE8D-1B0073ECB377
-  #+BEGIN_SRC emacs-lisp :results output silent
+  #+BEGIN_SRC emacs-lisp
 (setq org-outline-path-complete-in-steps nil)
   #+END_SRC
 - Create a new parent heading destination first instead of using this GUI to
   do it because it is error prone to do it in the naviation GUI despite the
   available confirmation message
   #+NAME: org_gcr_2017-05-12_mara_07650079-9AE1-4291-97A3-BCFD0628C95D
-  #+BEGIN_SRC emacs-lisp :results output silent
+  #+BEGIN_SRC emacs-lisp
 (setq org-refile-allow-creating-parent-nodes nil)
   #+END_SRC
 - Track refile operations to make sense of why the =Refile= occurred in the same
   spirit of how the workflow state changes are recorded
   #+NAME: org_gcr_2017-05-12_mara_7E513EE1-3EF9-415B-BB94-2135CBFB0E74
-  #+BEGIN_SRC emacs-lisp :results output silent
+  #+BEGIN_SRC emacs-lisp
 (setq org-log-refile 'note)
   #+END_SRC
 
@@ -3804,7 +3804,7 @@ Select a region, yank it, maybe choose a property under the current headline
 and set it's value to the killed text.
 
 #+NAME: org_gcr_2017-05-12_mara_1F938B98-B056-4381-833C-2C9B835B1C23
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defun org-read-entry-property-name ()
   "Read a property name from the current entry."
   (let ((completion-ignore-case t)
@@ -3843,7 +3843,7 @@ and set it's value to the killed text.
 :END:
 Essential for using tables with split windows.
 #+NAME: org_gcr_2017-05-12_mara_8CE235AC-A7C4-48DF-8C97-46CC7F31CDF4
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package org-table-sticky-header
   :ensure t
   :diminish org-table-sticky-header-mode
@@ -3859,14 +3859,14 @@ When running in a GUI, I would like linked images to be displayed inside of
 Emacs.
 
 #+NAME: org_gcr_2017-05-12_mara_9A50B1B6-9446-4CE2-AC58-5ED8878E9041
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-startup-with-inline-images (display-graphic-p))
 #+END_SRC
 
 Use Ido completion in Org-Mode.
 
 #+NAME: org_gcr_2017-05-12_mara_34C0D995-C26A-4FAC-9281-8F1D1BBB16BD
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-completion-use-ido t)
 (setq org-completion-use-iswitchb nil)
 #+END_SRC
@@ -3875,7 +3875,7 @@ Org-Mode lets you use single letter commands to do stuff on headers. I like to
 use =c= for cycling the header expansion.
 
 #+NAME: org_gcr_2017-05-12_mara_C5BBF231-E413-4A62-9367-A25932090329
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-use-speed-commands t)
 #+END_SRC
 
@@ -3883,14 +3883,14 @@ Ask before execution of shell links. This might seem like an Evaluation
 activity. It is. It is interactive.
 
 #+NAME: org_gcr_2017-05-12_mara_D874DF5C-61BE-4EF9-97F7-5C77927F8656
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-confirm-shell-link-function 'y-or-n-p)
 #+END_SRC
 
 Ask before execution of Emacs-Lisp.
 
 #+NAME: org_gcr_2017-05-12_mara_7715C738-ADCF-4DA7-BB26-DF37B5A55460
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-confirm-elisp-link-function 'y-or-n-p)
 #+END_SRC
 
@@ -3898,14 +3898,14 @@ Make sure that incomplete TODO entries prevent the enclosing parent from ever
 turning to DONE.
 
 #+NAME: org_gcr_2017-05-12_mara_40EE32EF-D461-4A4C-BDDA-5203A0EB5279
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-enforce-todo-dependencies t)
 #+END_SRC
 
 Allow the mouse to do Org-Mode things like expand and collapse headings.
 
 #+NAME: org_gcr_2017-05-12_mara_065D8A70-E573-4204-B75B-B69F81926188
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (when (display-graphic-p)
   (use-package org-mouse))
 #+END_SRC
@@ -3916,7 +3916,7 @@ expressive; in particular revealing that there is more content to be "unrolled"
 below the current line.
 
 #+NAME: org_gcr_2017-05-12_mara_BD01DD8A-9BA2-4240-8B63-6479D1C868CC
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-ellipsis "…")
 #+END_SRC
 
@@ -3924,7 +3924,7 @@ It is easy to see indentation of headlines without having to count asterisks, so
 don't show them, only show the significant and last one.
 
 #+NAME: org_gcr_2017-05-12_mara_D567F41E-C336-402E-A1A3-EB8D4F91CBDC
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-hide-leading-stars t)
 #+END_SRC
 
@@ -3933,14 +3933,14 @@ node level because it would waste a lot of space. Ident the next body just like
 any other text document.
 
 #+NAME: org_gcr_2017-05-12_mara_95F90F5A-E6EB-43BE-9EF1-B3F0CCE4B331
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-adapt-indentation nil)
 #+END_SRC
 
 Display emphasized text as you would in a WYSIWYG editor.
 
 #+NAME: org_gcr_2017-05-12_mara_563BB770-66CC-431C-98DE-BD3B5B5762AC
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-fontify-emphasized-text t)
 #+END_SRC
 
@@ -3949,14 +3949,14 @@ symbols are correctly exported to the destination format. The most obvious is
 this example in LaTeX versus Text.
 
 #+NAME: org_gcr_2017-05-12_mara_5A4B6DC2-4F16-4177-9C8E-0D0CFDE2B24C
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-pretty-entities t)
 #+END_SRC
 
 Enable sub and super scripts *only* when wrapped in squiggly brackets.
 
 #+NAME: org_gcr_2017-05-12_mara_6488365E-DF20-4300-A979-BA8CE807BBE4
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-use-sub-superscripts '{})
 #+END_SRC
 
@@ -3970,14 +3970,14 @@ they are special, and specifically /not/-Unicode. Do the same thing for LaTeX
 and related markup.
 
 #+NAME: org_gcr_2017-05-12_mara_8D163D72-07DD-42F2-93BA-9C70EC04D22F
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-highlight-latex-and-related '(latex script entities))
 #+END_SRC
 
 Allow "refactoring" of Footnotes between documents.
 
 #+NAME: org_gcr_2017-05-12_mara_7A828354-84C9-42DE-B123-E9936D2CC914
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-footnote-define-inline t)
 (setq org-footnote-auto-label 'random)
 (setq org-footnote-auto-adjust nil)
@@ -3988,7 +3988,7 @@ This is an amazingly easy way to screw up your document. The more you edit
 org docs, the more you realize how you must truly protect it.
 
 #+NAME: org_gcr_2017-05-12_mara_C7174763-7D1F-491E-9395-8C4100AEA78D
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-catch-invisible-edits 'error)
 #+END_SRC
 
@@ -3997,7 +3997,7 @@ and perhaps this is the start. Even though I enabled this, I don't think that I
 ever used it.
 
 #+NAME: org_gcr_2017-05-12_mara_E8933212-1893-466F-95D1-BE41ADD2DD68
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-loop-over-headlines-in-active-region t)
 #+END_SRC
 
@@ -4006,7 +4006,7 @@ expanded. Anyway, the structure cycling makes it really, really easy to get an
 /outline view/ again.
 
 #+NAME: org_gcr_2017-05-12_mara_018F43BF-99DA-4632-B5B0-A291CEBBA6B5
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-startup-folded "nofold")
 #+END_SRC
 
@@ -4016,7 +4016,7 @@ export will be stated explicitly. Override this by setting
 =#+ATTR_ORG: :width N= in the file.
 
 #+NAME: org_gcr_2017-05-12_mara_85DCD661-A0DA-4AC2-8EB2-5BD9A4C2D0CB
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-image-actual-width t)
 #+END_SRC
 
@@ -4024,28 +4024,28 @@ Hide the delimeter for emphasized text. Unicode characters break table
 alignment.
 
 #+NAME: org_gcr_2017-05-12_mara_2DD6E6FC-375C-4FA5-BFA4-C6C9B0EAB483
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-hide-emphasis-markers t)
 #+END_SRC
 
 Realign tables automatically.
 
 #+NAME: org_gcr_2017-05-12_mara_B5F4B79C-70AD-46D1-AAAF-A4E31091F9B2
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-startup-align-all-tables t)
 #+END_SRC
 
 Always use Unicode checkboxes.
 
 #+NAME: org_gcr_2017-05-12_mara_75CA3C3E-CFA6-4FA5-98DA-7EC394781A17
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-html-checkbox-type 'unicode)
 #+END_SRC
 
 You may display syntax highlighting for code in source blocks. I don't.
 
 #+NAME: org_gcr_2017-05-12_mara_F04CC035-CFB3-47DB-B1A0-9E58ECE5B01D
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-src-fontify-natively nil)
 #+END_SRC
 
@@ -4059,7 +4059,7 @@ empty lines in the source buffer for every source block. With that in mind I
 will enable this feature and try it out again.
 
 #+NAME: org_gcr_2017-05-12_mara_829BF364-D929-4B12-BFB7-82C6F4105CDA
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-src-strip-leading-and-trailing-blank-lines t)
 #+END_SRC
 
@@ -4075,7 +4075,7 @@ way so you can focus completely on each task at hand in the ideal mode for that
 task. Anything else results in distractions and errors.
 
 #+NAME: org_gcr_2017-05-12_mara_A4769342-BBC0-40C1-B144-BD24CE74523C
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-src-window-setup 'current-window)
 #+END_SRC
 
@@ -4089,7 +4089,7 @@ really, really specific and decided action to evaluate a code block, so don't
 make it so easy as =C-c C-c=.
 
 #+NAME: org_gcr_2017-05-12_mara_7120E516-C6D1-4FD5-A925-7F79B3FE9323
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-babel-no-eval-on-ctrl-c-ctrl-c t)
 #+END_SRC
 
@@ -4101,7 +4101,7 @@ as Org-Mode source code upon returning to the source buffer (this). Do the same
 thing before any version control modes that would result in the same condition.
 
 #+NAME: org_gcr_2017-05-12_mara_E4B28E49-C537-4BA9-B929-A638DBFEED94
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defun help/vc-next-action ()
   "If in org source block, exit it before `vc-next-action'."
   (interactive)
@@ -4123,7 +4123,7 @@ thing before any version control modes that would result in the same condition.
 Never use the original version.
 
 #+NAME: org_gcr_2017-05-12_mara_1AE94FA9-77C0-4A30-8A70-AFAFD4E4011F
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-edit-src-code nil)
 #+END_SRC
 
@@ -4131,7 +4131,7 @@ Easily wrap text in Org-Mode. This is not used by the rest of HELP because
 Smartparens provides that functionality for programming modes.
 
 #+NAME: org_gcr_2017-05-12_mara_CE6FE001-F609-4096-8807-9AB65010AD53
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package wrap-region
   :ensure t
   :config
@@ -4143,47 +4143,47 @@ Smartparens provides that functionality for programming modes.
 *Bold*.
 
 #+NAME: org_gcr_2017-05-12_mara_DE1AA644-BCAA-4F1E-AF59-157250A15171
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (wrap-region-add-wrapper "*" "*" nil 'org-mode)
 #+END_SRC
 
 /Italic/.
 
 #+NAME: org_gcr_2017-05-12_mara_79D2E885-5A18-486B-BA80-C36C0B78972E
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (wrap-region-add-wrapper "/" "/" nil 'org-mode)
 #+END_SRC
 
 =Verbatim=.
 #+NAME: org_gcr_2017-05-12_mara_353BB5B3-A864-4AE4-AF08-590AFF0DE831
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (wrap-region-add-wrapper "=" "=" nil 'org-mode)
 #+END_SRC
 
 ~Code~.
 
 #+NAME: org_gcr_2017-05-12_mara_9D9579E5-4693-417C-BFDE-B9F532381C44
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (wrap-region-add-wrapper "~" "~" nil 'org-mode)
 #+END_SRC
 
 +Strike-Through+.
 #+NAME: org_gcr_2017-05-12_mara_3331BDE3-CFEA-460B-8E21-45ACF6BAC211
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (wrap-region-add-wrapper "+" "+" nil 'org-mode)
 #+END_SRC
 
 Minimize Macro text.
 
 #+NAME: org_gcr_2017-05-12_mara_258FD451-015B-4195-8349-8B4EFA61B581
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-hide-macro-markers t)
 #+END_SRC
 
 Follow links without using the mouse or more.
 
 #+NAME: org_gcr_2017-05-12_mara_7CFE23CC-8EBC-46F3-889F-BF36EC45D6CA
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-return-follows-link t)
 #+END_SRC
 
@@ -4215,7 +4215,7 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
   - s-<return> because it is that is the last place in the modifier key chain
 
 #+NAME: org_gcr_2017-05-12_mara_711B4205-DC28-4A35-B620-23AFD46E3973
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (help/not-on-gui
  (define-key org-mode-map (kbd "RET") #'org-return-indent)
  (define-key org-mode-map (kbd "C-M-RET") #'electric-indent-just-newline))
@@ -4230,7 +4230,7 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
      :END:
 
 #+NAME: org_gcr_2017-05-12_mara_1A8FB05F-FF18-45DD-BFC4-89E76C366B9F
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (global-set-key [(shift f6)] #'kmacro-name-last-macro)
 (global-set-key [(f6)] #'insert-kbd-macro)
 (global-set-key [(f5)] #'elmacro-show-last-macro)
@@ -4243,7 +4243,7 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
 Easily manipulate lists and headlines staying close to home.
 
 #+NAME: org_gcr_2017-05-12_mara_6BA97DBC-AE5D-4C60-AD03-EF150686A03F
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (key-chord-define org-mode-map "U*" #'org-metaup)
 (key-chord-define org-mode-map "I(" #'org-metadown)
 (key-chord-define org-mode-map "u8" #'org-metaleft)
@@ -4256,7 +4256,7 @@ Easily manipulate lists and headlines staying close to home.
      :END:
 
 #+NAME: org_gcr_2017-05-12_mara_49522E70-EE2D-4CF9-95D7-8E43524A469D
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (define-key org-mode-map (kbd "s-]") (lambda () (interactive)
                                        (help/org-2every-src-block
                                         'org-babel-remove-result)))
@@ -4276,7 +4276,7 @@ Easily manipulate lists and headlines staying close to home.
      :END:
 
 #+NAME: org_gcr_2017-05-12_mara_EC7D6149-4451-443D-BFFF-1A40073D7D98
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (define-key org-mode-map (kbd "C-c C-k") nil)
 (define-key org-mode-map (kbd "s-h") #'help/safb-org-babel-tangle)
 (define-key org-mode-map (kbd "s-j") #'org-babel-next-src-block)
@@ -4306,7 +4306,7 @@ Easily manipulate lists and headlines staying close to home.
      :END:
 
 #+NAME: org_gcr_2017-05-12_mara_8C00E3FE-4AE1-49BA-97E7-FAB2784DD0A9
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (define-key org-mode-map (kbd "s-n") #'org-babel-view-src-block-info)
 (define-key org-mode-map (kbd "s-m") #'org-babel-expand-src-block)
 (define-key org-mode-map (kbd "s-,") #'org-babel-open-src-block-result)
@@ -4319,7 +4319,7 @@ Easily manipulate lists and headlines staying close to home.
      :END:
 
 #+NAME: org_gcr_2017-05-12_mara_90AA8396-E8A0-439C-A1E4-373E90C4DC84
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defhydra help/hydra/right-side/org-mode (:color blue
                                                  :hint nil)
   "
@@ -4362,21 +4362,21 @@ _z_ lint _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
 Save all buffers before working with Exports.
 
 #+NAME: org_gcr_2017-05-12_mara_B41A9D3F-254B-4E44-8585-380BF23D158D
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (define-key org-mode-map (kbd "C-c C-e") #'help/safb-org-export-dispatch)
 #+END_SRC
 
 Make =s-l= do the same thing to leave the Source-Block-Buffer.
 
 #+NAME: org_gcr_2017-05-12_mara_5DE43FD1-AEF3-40D0-8C67-1ACBB6EA8317
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (define-key org-src-mode-map (kbd "s-l") #'org-edit-src-exit)
 #+END_SRC
 
 Easily enter guillemots.
 
 #+NAME: org_gcr_2017-05-12_mara_BF73D071-57B8-4DBA-93E9-5A1D532A6321
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (key-chord-define org-mode-map "<<" (lambda () (interactive) (insert "\\laquo{}")))
 (key-chord-define org-mode-map ">>" (lambda () (interactive) (insert "\\raquo{}")))
 #+END_SRC
@@ -4389,7 +4389,7 @@ Easily enter guillemots.
 Black board bold characters.
 
 #+NAME: org_gcr_2017-05-12_mara_37C3019C-7C06-4952-888C-AA4660B4310E
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package blackboard-bold-mode
   :ensure t)
 #+END_SRC
@@ -4397,13 +4397,13 @@ Black board bold characters.
 Fraktur characters.
 
 #+NAME: org_gcr_2017-05-12_mara_AF4667B6-7922-4BC4-840F-63F099E1BC63
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package fraktur-mode
   :ensure t)
 #+END_SRC
 
 #+NAME: org_gcr_2017-05-12_mara_A27A9A2F-11B8-4B31-A68C-6A5E27BCCD8D
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defhydra help/hydra/transliterate (:color blue :hint nil)
   "
 _b_ black-board-bold _f_ fraktur
@@ -4420,7 +4420,7 @@ _b_ black-board-bold _f_ fraktur
 Easily understand the current character.
 
 #+NAME: org_gcr_2017-05-12_mara_5F206A60-80BB-4394-9ABD-B641C196EE73
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defun help/describe-char ()
   "Evaluate `describe-char' and then `other-window'."
   (interactive)
@@ -4435,7 +4435,7 @@ Good reference for Unicode character study and exploration.
 Used intermittently so don't diminish it.
 
 #+NAME: org_gcr_2017-05-12_mara_96974788-400B-439B-9005-04569A326C29
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package unicode-troll-stopper
   :ensure t)
 #+END_SRC
@@ -4443,7 +4443,7 @@ Used intermittently so don't diminish it.
 Easily escape and un-escape Unicode hex notation.
 
 #+NAME: org_gcr_2017-05-12_mara_B7889E2D-2E2E-402B-BFC6-F8EC056D1F6E
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package unicode-escape
   :ensure t
   :config)
@@ -4458,7 +4458,7 @@ The UTF-8 representation of the BOM is the byte sequence 0xEF,0xBB,0xBF.
 Test using [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.html][Hexl mode]].
 
 #+NAME: org_gcr_2017-05-12_mara_063B5AFB-C687-49D3-8FE2-3BE2BDCB8E84
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defun warn-if-utf-8-bom ()
   "Warn if UTF-8 BOM bytes are present.
 
@@ -4475,7 +4475,7 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 :ID:       org_gcr_2017-05-12_mara:B541F7EE-BF7E-4055-9EE6-3B0AC34A1602
 :END:
 #+NAME: org_gcr_2017-05-12_mara_AAEBDA8A-3939-42B1-B7A2-230C43EEF1AB
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package dash-at-point
  :ensure t)
 #+END_SRC
@@ -4491,7 +4491,7 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 :END:
 
 #+NAME: org_gcr_2017-05-12_mara_C30EFFA1-FDBA-413F-AD23-29C0C2095231
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package gnu-apl-mode
   :ensure t)
 #+END_SRC
@@ -4502,7 +4502,7 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
   :END:
 
 #+NAME: org_gcr_2017-05-12_mara_DB3C5279-6AF3-4EAE-AC9E-F1327BBDC959
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package ess
   :ensure t)
 #+END_SRC
@@ -4510,7 +4510,7 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 Display object documentation.
 
 #+NAME: org_gcr_2017-05-12_mara_FFED1F51-DA13-4049-85AE-A228F18BD7DA
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq ess-eldoc-show-on-symbol t)
 #+END_SRC
 
@@ -4528,14 +4528,14 @@ Data viewing:
   - =ess-describe-object-at-point=
 
 #+NAME: org_gcr_2017-05-12_mara_2B155925-39F3-4DD9-A839-2DEF151FABD7
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq ess-describe-at-point-method 'tooltip)
 #+END_SRC
 
 Always start =ess= within the curent =emacs= frame, it doesn't need to be separate.
 
 #+NAME: org_gcr_2017-05-12_mara_2187E82C-7742-45E6-BAA8-65C6A9D97451
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq inferior-ess-same-window nil)
 (setq inferior-ess-own-frame nil)
 #+END_SRC
@@ -4543,7 +4543,7 @@ Always start =ess= within the curent =emacs= frame, it doesn't need to be separa
 Help buffers all belong in the same frame.
 
 #+NAME: org_gcr_2017-05-12_mara_BEA01833-63E2-43D9-A8DB-B310281E74B0
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq ess-help-own-frame nil)
 #+END_SRC
 
@@ -4551,7 +4551,7 @@ When commands are executed, display their output within the current buffer,
 rather than to a new dedicated buffer for them.
 
 #+NAME: org_gcr_2017-05-12_mara_103FFDAF-2A19-476D-95AB-819DE80F7CD4
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq ess-execute-in-process-buffer t)
 #+END_SRC
 
@@ -4561,7 +4561,7 @@ handle a buffer that is scrolling when you want to see the last result and will
 scroll back after the fact to see the history.
 
 #+NAME: org_gcr_2017-05-12_mara_FB93959C-6C29-4178-8DD4-BB9B3B51C721
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq ess-switch-to-end-of-proc-buffer t)
 #+END_SRC
 
@@ -4569,7 +4569,7 @@ Use typical auto completion in buffers here, but don't do it when the
 next char is a symbol or closed paren.
 
 #+NAME: org_gcr_2017-05-12_mara_D5177392-0E32-45CA-AA51-7AFCDE448A7B
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq ess-tab-complete-in-script t)
 (setq ess-first-tab-never-complete 'symbol-or-paren-or-punct)
 #+END_SRC
@@ -4577,7 +4577,7 @@ next char is a symbol or closed paren.
 Use =ido= completion whenever possible.
 
 #+NAME: org_gcr_2017-05-12_mara_E88B46E3-DF6C-43DB-8769-E6B6516158B4
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq ess-use-ido t)
 #+END_SRC
 
@@ -4585,7 +4585,7 @@ Use =eldoc= for this mode. Always show it when the point is on a symbol.
 Try to keep help strings at 10 chars or less.
 
 #+NAME: org_gcr_2017-05-12_mara_1CD410E0-89C4-49C0-A98D-2E892DA1E3BF
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq ess-use-eldoc t)
 (setq ess-eldoc-show-on-symbol t)
 (setq ess-eldoc-abbreviation-style 'normal)
@@ -4613,7 +4613,7 @@ is that if we use them, then they are a valid part of the system definition and
 need to be kept.
 
 #+NAME: org_gcr_2017-05-12_mara_C3F71A4F-FDB8-46E6-AC97-A66D9DDDD8DA
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq ess-keep-dump-files +1)
 #+END_SRC
 
@@ -4626,7 +4626,7 @@ new, modified version of the object or function, is never saved to a file for
 later reuse.
 
 #+NAME: org_gcr_2017-05-12_mara_B40FC7A3-BBCF-4BAF-9B6B-B37C1A3198D6
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq ess-delete-dump-files nil)
 #+END_SRC
 
@@ -4638,7 +4638,7 @@ advice before every manual =eval= call so that the buffers and their files stay
 in sync. Yes, it is really that important.
 
 #+NAME: org_gcr_2017-05-12_mara_BFF312BF-65F2-4C4E-8D6B-E263DF062CB3
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq ess-mode-silently-save +1)
 #+END_SRC
 
@@ -4655,7 +4655,7 @@ post are consistent and describe what I had wanted here so I will give it a try
 and see how it goes.
 
 #+NAME: org_gcr_2017-05-12_mara_AE35E686-32C2-4E74-B80B-68913DAE3887
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq ess-eval-visibly 'nowait)
 #+END_SRC
 
@@ -4672,21 +4672,21 @@ and see how it goes.
 Enable a debugger.
 
 #+NAME: org_gcr_2017-05-12_mara_3E9EA300-0CB2-4A98-A197-F45F7A5176D7
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq ess-use-tracebug t)
 #+END_SRC
 
 Configure debugger search path per-project.
 
 #+NAME: org_gcr_2017-05-12_mara_DB26721B-A854-403D-BC8E-634F300AC859
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq ess-tracebug-search-path '())
 #+END_SRC
 
 Easily nevigate errors.
 
 #+NAME: org_gcr_2017-05-12_mara_7C1845A7-2AE7-4B5E-8BF6-9F4D657446C8
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (define-key compilation-minor-mode-map [(?n)] #'next-error-no-select)
 (define-key compilation-minor-mode-map [(?p)] #'previous-error-no-select)
 #+END_SRC
@@ -4694,7 +4694,7 @@ Easily nevigate errors.
 Diminish watched variable font-size.
 
 #+NAME: org_gcr_2017-05-12_mara_EF3B0A0A-2892-422F-A6F5-88CD33D04EAE
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq ess-watch-scale-amount -1)
 #+END_SRC
 
@@ -4703,7 +4703,7 @@ working directory. This is totally fine; so don't ask what the working directory
 should be.
 
 #+NAME: org_gcr_2017-05-12_mara_4BCA5828-00AF-4D43-8153-5F9288FA669D
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq ess-ask-for-ess-directory nil)
 #+END_SRC
 
@@ -4712,7 +4712,7 @@ is an intentional line-break after the closing round bracket because that is the
 approach of the original value here.
 
 #+NAME: org_gcr_2017-05-12_mara_07110829-1986-4799-8E64-5A0BD8E09527
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq inferior-ess-exit-command "q('no')
 ")
 #+END_SRC
@@ -4720,7 +4720,7 @@ approach of the original value here.
 Visualize just about anything with ~ess-R-object-popup~.
 
 #+NAME: org_gcr_2017-05-12_mara_88C6413B-4F5B-4D81-BCA0-F4B385198724
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package ess-R-object-popup
   :ensure t)
 #+END_SRC
@@ -4730,7 +4730,7 @@ Rdired is another way to work with object:
 - View, delete, plot, and update buffer (ala /revert/) are single key commands
 
 #+NAME: org_gcr_2017-05-12_mara_B21C0C45-E1FB-4834-9FFD-DA57ABB1D6B7
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (autoload 'ess-rdired "ess-rdired")
 #+END_SRC
 
@@ -4739,7 +4739,7 @@ Visualize data frames better:
 - =ess-R-dv-pprint=
 
 #+NAME: org_gcr_2017-05-12_mara_0DE5790A-DDF5-4A42-A5EF-EE6AA1841913
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package ess-R-data-view
   :ensure t)
 #+END_SRC
@@ -4749,7 +4749,7 @@ inlineR
 - Ultra lightweight LP, really
 
 #+NAME: org_gcr_2017-05-12_mara_7C1735F9-2E77-433A-8A6C-DDA2F915AD6E
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package inlineR
   :ensure t)
 #+END_SRC
@@ -4764,7 +4764,7 @@ Store history files and dump files in a single known location. If that location
 doesn't exist, then make it.
 
 #+NAME: org_gcr_2017-05-12_mara_208F3A57-5958-4B6B-BB9B-84EF13641A2E
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq help/r-dir "~/.R/")
 (defun help/make-warn-R-dir ()
   "Handle of R directory misconfiguration."
@@ -4781,7 +4781,7 @@ doesn't exist, then make it.
 Since I'm using R for everything, configure /everything/ to be using R.
 
 #+NAME: org_gcr_2017-05-12_mara_05252C70-8257-4A7A-BB03-9C5358DCDF6B
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq inferior-ess-program "R")
 (setq inferior-R-program-name "R")
 (setq ess-local-process-name "R")
@@ -4790,7 +4790,7 @@ Since I'm using R for everything, configure /everything/ to be using R.
 Handle rdoc and rmd files, though I have never used them... yet.
 
 #+NAME: org_gcr_2017-05-12_mara_D1D3EE95-CC1D-4F12-9C50-44436CF7AAC8
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (add-to-list 'auto-mode-alist '("\\.rd\\'" . Rd-mode))
 (add-to-list 'auto-mode-alist '("\\.Rmd$" . r-mode))
 #+END_SRC
@@ -4798,14 +4798,14 @@ Handle rdoc and rmd files, though I have never used them... yet.
 Make it really easy to search the R archives for anything.
 
 #+NAME: org_gcr_2017-05-12_mara_9257DFB5-371B-4A1C-8654-931151FBE3C3
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (local-set-key (kbd "C-c C-. S") #'ess-rutils-rsitesearch)
 #+END_SRC
 
 Make it really easy to do common stuff for R with good keybindings.
 
 #+NAME: org_gcr_2017-05-12_mara_D5290242-1B88-44F2-B387-C1EFC2B308C7
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package ess-rutils
   :config
   (setq ess-rutils-keys t))
@@ -4815,7 +4815,7 @@ Make it really easy to do common stuff for R with good keybindings.
 a while, and now it doesn't work. This needs some TLC.
 
 #+NAME: org_gcr_2017-05-12_mara_68A29F8E-1516-4524-91EA-552EBD8EFBAE
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package r-autoyas
   :ensure t
   :config
@@ -4827,14 +4827,14 @@ a while, and now it doesn't work. This needs some TLC.
 Save two spaces showing function information in the mini-buffer.
 
 #+NAME: org_gcr_2017-05-12_mara_9B83F15B-249D-4B62-B929-E0AFADEA44C4
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq ess-R-argument-suffix "=")
 #+END_SRC
 
 Don't use the default assignment binding and allow underscores in names.
 
 #+NAME: org_gcr_2017-05-12_mara_660E257F-4F4C-4235-A52F-6BDD62206288
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq ess-S-assign-key (kbd "C-<"))
 (ess-toggle-S-assign-key t)
 (ess-toggle-underscore nil)
@@ -4844,14 +4844,14 @@ Don't save the workspace when you quit R and don't restore *ANYTHING* when you
 start it, either. This adheres to the philosopy that the system is file based.
 
 #+NAME: org_gcr_2017-05-12_mara_F9AC8C22-E36D-4956-98AC-45AA00C2BFCC
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq inferior-R-args "--no-save --no-restore")
 #+END_SRC
 
 R mode hook.
 
 #+NAME: org_gcr_2017-05-12_mara_CF490053-BBAA-4BDC-86CE-DB0E7A02A81B
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defun help/R-mode-hook-fn ()
   (local-set-key (kbd "s-6") #'ess-switch-to-end-of-ESS)
   (local-set-key (kbd "s-7") #'ess-rdired)
@@ -4912,18 +4912,18 @@ R mode hook.
 Handle all file extensions:
 - Traditional.
   #+NAME: org_gcr_2017-05-12_mara_CC727094-99D3-4C48-BE27-C28FC738DF34
-  #+BEGIN_SRC emacs-lisp :results output silent
+  #+BEGIN_SRC emacs-lisp
   (add-to-list 'auto-mode-alist '("\\.scm\\'" . scheme-mode))
   (add-to-list 'auto-mode-alist '("\\.ss\\'" . scheme-mode))
   #+END_SRC
 - Racket.
   #+NAME: org_gcr_2017-05-12_mara_A80E9E8F-A5B7-4C48-A3E5-2C365178EFAF
-  #+BEGIN_SRC emacs-lisp :results output silent
+  #+BEGIN_SRC emacs-lisp
   (add-to-list 'auto-mode-alist '("\\.rkt\\'" . scheme-mode))
   #+END_SRC
 - R6RS.
   #+NAME: org_gcr_2017-05-12_mara_998AB8A6-A934-4E5A-B869-E1348D919529
-  #+BEGIN_SRC emacs-lisp :results output silent
+  #+BEGIN_SRC emacs-lisp
   (add-to-list 'auto-mode-alist '("\\.sls\\'" . scheme-mode))
   (add-to-list 'auto-mode-alist '("\\.sps\\'" . scheme-mode))
   #+END_SRC
@@ -4931,7 +4931,7 @@ Handle all file extensions:
 Use Geiser for Racket and Guile
 
 #+NAME: org_gcr_2017-05-12_mara_5457F0EC-AAB3-4502-ACCD-7F9C1579293D
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package geiser
   :ensure t)
 #+END_SRC
@@ -4939,7 +4939,7 @@ Use Geiser for Racket and Guile
 Use Racket.
 
 #+NAME: org_gcr_2017-05-12_mara_0F7605F1-8A1F-45FD-88C1-A8E127DA9107
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package racket-mode
   :ensure t)
 #+END_SRC
@@ -4947,7 +4947,7 @@ Use Racket.
 Enable Auto-Complete via Geiser.
 
 #+NAME: org_gcr_2017-05-12_mara_221DF59F-0817-4F0A-BDE7-01FD9D87BAF9
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package ac-geiser
   :ensure t
   :config
@@ -4965,7 +4965,7 @@ Enable Auto-Complete via Geiser.
    :END:
 
 #+NAME: org_gcr_2017-05-12_mara_3C48D997-170E-40F4-9BB6-F6BAA9DE77F2
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defun help/c-mode-common-hook-fn ()
   "HELP c-mode-common customizations."
   (interactive)
@@ -4977,7 +4977,7 @@ Enable Auto-Complete via Geiser.
    :ID:       org_gcr_2017-05-12_mara:BA88E1CC-386E-4CFF-89B3-7E003EC92504
    :END:
 #+NAME: org_gcr_2017-06-28_mara_110DAD24-25A3-46B0-A0B1-FD26BFDB28C7
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defun help/python-mode-hook-fn ()
   "HELP python mode customizatin."
   (interactive)
@@ -4996,7 +4996,7 @@ Enable Auto-Complete via Geiser.
 - Use Ido to handle user decisions.
 
 #+NAME: org_gcr_2017-05-12_mara_B7B9F4BB-5899-4F2B-94B0-B38F098E9528
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package yasnippet
   :ensure t
   :config
@@ -5017,7 +5017,7 @@ Some modes turn on =abbrev-mode=. Diminish it.
 Fails with ~(eval-after-load 'abbrev (diminish 'abbrev-mode))~.
 
 #+NAME: org_gcr_2017-05-12_mara_E4D8989C-E363-4E6B-A308-B0E667FBCE7C
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (eval-after-load "abbrev"
   '(diminish 'abbrev-mode))
 #+END_SRC
@@ -5035,7 +5035,7 @@ Fails with ~(eval-after-load 'abbrev (diminish 'abbrev-mode))~.
 =web-mode= works great for =AngularJS= and now I see a whole lot more.
 
 #+NAME: org_gcr_2017-05-12_mara_6219D858-98BB-48CF-96F0-ABEB6756A658
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package web-mode
   :ensure t
   :init
@@ -5094,7 +5094,7 @@ Fails with ~(eval-after-load 'abbrev (diminish 'abbrev-mode))~.
 :END:
 
 #+NAME: org_gcr_2017-05-12_mara_56F80A50-4914-4F8F-8771-5800A54F8300
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package js2-mode
   :ensure t
   :mode (("\\.js$" . js2-mode)
@@ -5118,7 +5118,7 @@ Fails with ~(eval-after-load 'abbrev (diminish 'abbrev-mode))~.
 two.
 
 #+NAME: org_gcr_2017-05-12_mara_498DAC46-DA9D-4AAA-82BF-46D712E4DBA5
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package json-mode
   :ensure t
   :diminish json-mode
@@ -5140,7 +5140,7 @@ two.
   :END:
 
 #+NAME: org_gcr_2017-05-12_mara_D035C4E4-B983-4D74-9E3C-764EF00B3795
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package tex-site
   :ensure auctex
   :config
@@ -5151,28 +5151,28 @@ two.
 Save style info. This doesn't control the buffer save.
 
 #+NAME: org_gcr_2017-05-12_mara_86E4D060-B2E1-4F7E-B56C-A7D93C0024FA
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq TeX-auto-save t)
 #+END_SRC
 
 Parse on load.
 
 #+NAME: org_gcr_2017-05-12_mara_1502A970-C03E-4D2D-8041-4B7AE8859AF0
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq TeX-parse-self t)
 #+END_SRC
 
 Parse on save.
 
 #+NAME: org_gcr_2017-05-12_mara_C923F472-C10C-46D2-B9F2-5DBADE6E436D
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq TeX-auto-save t)
 #+END_SRC
 
 Use PDFTeX to generate both DVI and PDF files.
 
 #+NAME: org_gcr_2017-05-12_mara_D30FAF98-9340-49C8-BE94-834BF2A2CB11
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq TeX-PDF-mode t)
 (setq TeX-DVI-via-PDFTeX t)
 #+END_SRC
@@ -5181,35 +5181,35 @@ Don't prompt every time you run =C-c C-c= about saving the file, instead, just
 save it.
 
 #+NAME: org_gcr_2017-05-12_mara_851CFD0C-D616-47D1-A0E0-044053B89B03
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq TeX-save-query nil)
 #+END_SRC
 
 Load LCO files with AucTeX.
 
 #+NAME: org_gcr_2017-05-12_mara_5B99942E-0535-40CC-9C61-F895DAF8C545
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (add-to-list 'auto-mode-alist '("\\.lco?\\'" . TeX-latex-mode))
 #+END_SRC
 
 Culture-dependent typographical results.
 
 #+NAME: org_gcr_2017-05-12_mara_5E9D3CF3-A603-4225-9BDD-06E2CAA9ED19
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (add-to-list 'org-latex-packages-alist '("english" "babel" t))
 #+END_SRC
 
 Use the closest thing to Times New Roman.
 
 #+NAME: org_gcr_2017-05-12_mara_11FEAF4C-B3C6-4188-B642-DE57F7D2ADCD
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (add-to-list 'org-latex-packages-alist '("" "mathptmx" t))
 #+END_SRC
 
 Small margins.
 
 #+NAME: org_gcr_2017-05-12_mara_55AF149A-B2A9-42ED-8E9F-0BDBEAF31301
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (add-to-list 'org-latex-packages-alist '("margin=1.5in" "geometry" nil))
 #+END_SRC
 
@@ -5230,14 +5230,14 @@ Dropped capitals.
 Standard LaTeX class options.
 
 #+NAME: org_gcr_2017-05-12_mara_7EE5307A-ACC5-4FE9-A519-0F273B4589E9
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defvar help/ltx-cls-opt "paper=letter, fontsize=12pt")
 #+END_SRC
 
 Standard article class.
 
 #+NAME: org_gcr_2017-05-12_mara_006EB5E3-5478-43C7-AEAC-34CCF49127AC
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (eval-after-load "ox-latex"
   '(add-to-list 'org-latex-classes
                 `("help-article"
@@ -5251,7 +5251,7 @@ Standard article class.
 Use "Smartquotes".
 
 #+NAME: org_gcr_2017-05-12_mara_F8F77D4B-8958-49F2-8ED8-FE96F55ECAFB
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-export-with-smart-quotes t)
 #+END_SRC
 
@@ -5275,7 +5275,7 @@ other.
 Load the KOMA exporter.
 
 #+NAME: org_gcr_2017-05-12_mara_C74104AA-A25C-4BE8-A7DD-99DEA240FF73
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (eval-after-load "ox" '(require 'ox-koma-letter))
 #+END_SRC
 
@@ -5354,7 +5354,7 @@ Configure the default class.
 for my printed correspondence.
 
 #+NAME: org_gcr_2017-05-12_mara_8A241D12-24B3-4C4C-AC99-B55954611025
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (eval-after-load "ox-koma-letter"
   '(progn
      (add-to-list 'org-latex-classes
@@ -5371,7 +5371,7 @@ There are two formats for the letters: [[http://orgmode.org/w/?p%3Dworg.git%3Ba%
 Set up my default LCO files.
 
 #+NAME: org_gcr_2017-05-12_mara_33A83D5A-E541-474C-AA0D-2E039EC74CDD
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-koma-letter-class-option-file "KomaDefault")
 #+END_SRC
 
@@ -5395,7 +5395,7 @@ Perhaps the [[https://lists.gnu.org/archive/html/emacs-orgmode/2015-07/msg00042.
 Provide Github Flavored Markdown (GFM).
 
 #+NAME: org_gcr_2017-05-12_mara_732CDF3A-C47A-4D5D-BFEC-69B765507B97
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package ox-gfm
   :ensure t)
 #+END_SRC
@@ -5403,7 +5403,7 @@ Provide Github Flavored Markdown (GFM).
 Program GFM.
 
 #+NAME: org_gcr_2017-05-12_mara_42D37E52-A420-4196-8B2C-6755441A5FC3
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package markdown-mode
   :ensure t
   :config
@@ -5419,7 +5419,7 @@ Program GFM.
 Load Htmlize for HTML export.
 
 #+NAME: org_gcr_2017-05-12_mara_62E6542A-B340-470A-B7E0-2F4438EBBAE9
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package htmlize
   :config
   (setq org-html-htmlize-output-type htmlize-output-type)
@@ -5450,7 +5450,7 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 Use in-line CSS.
 
 #+NAME: org_gcr_2017-05-12_mara_03AEAE7A-99ED-42BE-BE6E-0485884B55BB
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-html-doctype "html5")
 #+END_SRC
 
@@ -5460,7 +5460,7 @@ Use in-line CSS.
    :END:
 
 #+NAME: org_gcr_2017-05-12_mara_41F8B285-650A-4394-8ECD-85C81181DF14
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-ascii-text-width 80)
 (setq org-ascii-global-margin 0)
 #+END_SRC
@@ -5468,7 +5468,7 @@ Use in-line CSS.
 Show non-ascii characters
 
 #+NAME: org_gcr_2017-05-12_mara_96A9D762-036A-49C0-9E1B-5ACD3F5AE58E
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defun help/occur-non-ascii ()
   "Find any non-ascii characters in the current buffer.
 Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
@@ -5484,7 +5484,7 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
 Load Beamer for creating presentations.
 
 #+NAME: org_gcr_2017-05-12_mara_8D4105B8-5215-4835-91BF-B0D03ACC3A78
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package ox-beamer)
 #+END_SRC
 
@@ -5494,7 +5494,7 @@ Load Beamer for creating presentations.
 :END:
 
 #+NAME: org_gcr_2017-05-12_mara_B19CF074-8B77-4843-912C-F68B6FB0FE2F
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package fountain-mode
   :config
   (add-to-list 'auto-mode-alist '("\\.fountain$" . fountain-mode))
@@ -5516,7 +5516,7 @@ Load Beamer for creating presentations.
 :ID:       org_gcr_2017-05-19_mara:73719624-5BA9-4000-B70C-77C30CAB592B
 :END:
 #+NAME: org_gcr_2017-05-19_mara_3FB67413-237F-425D-97D2-B2E164AE5F8F
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package ox-reveal
   :ensure t
   :config
@@ -5547,7 +5547,7 @@ Load Beamer for creating presentations.
 :END:
 
 #+NAME: org_gcr_2017-05-12_mara_96443D6C-1E5B-48C5-9853-544D0EE79B1E
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package apache-mode
   :ensure t)
 #+END_SRC
@@ -5558,7 +5558,7 @@ Load Beamer for creating presentations.
 :END:
 
 #+NAME: org_gcr_2017-05-12_mara_D12C607E-C07C-41F8-A0B0-02A228C7AED7
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package ssh-config-mode
   :ensure t
   :mode (("/\\.ssh/config\\'"     . ssh-config-mode)
@@ -5575,7 +5575,7 @@ Load Beamer for creating presentations.
 :ID:       org_gcr_2017-06-13_mara:9B3AB875-4459-4EC7-A7C5-4C32EC3A5E18
 :END:
 #+NAME: org_gcr_2017-06-13_mara_350A94E2-4280-4D5E-BB58-24887D9A57CD
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package crontab-mode
   :ensure t
   :config
@@ -5592,7 +5592,7 @@ Load Beamer for creating presentations.
   :END:
 
 #+NAME: org_gcr_2017-05-12_mara_AF516C01-3152-4194-954B-91A44A429972
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
 (add-to-list 'auto-mode-alist '("\\.art" . artist-mode))
 (add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
@@ -5604,7 +5604,7 @@ Load Beamer for creating presentations.
   :END:
 
 #+NAME: org_gcr_2017-05-12_mara_9D0BBF2C-BB7C-4B72-BA10-0B497FE8CAA1
-#+BEGIN_SRC emacs-lisp :results output silent :wrap "RESULTS"
+#+BEGIN_SRC emacs-lisp :wrap "RESULTS"
 (defconst help/ditaa-jar (getenv "DITAA"))
 (setq org-ditaa-jar-path help/ditaa-jar)
 #+END_SRC
@@ -5615,7 +5615,7 @@ Load Beamer for creating presentations.
   :END:
 
 #+NAME: org_gcr_2017-05-12_mara_362D21E8-3D98-4905-8942-A146C4A555D1
-#+BEGIN_SRC emacs-lisp :results output silent :wrap "RESULTS"
+#+BEGIN_SRC emacs-lisp :wrap "RESULTS"
 (use-package graphviz-dot-mode
   :ensure t
   :config
@@ -5628,7 +5628,7 @@ Load Beamer for creating presentations.
   :END:
 
 #+NAME: org_gcr_2017-05-12_mara_91D0CFDF-6FC2-4F4A-9CFC-825CED0061B6
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package plantuml-mode
   :ensure t
   :init
@@ -5648,7 +5648,7 @@ Load Beamer for creating presentations.
 Emacs' provide editing support.
 
 #+NAME: org_gcr_2017-06-25_mara_B33E6DF0-8A18-4DBA-A39D-B16649F6E793
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package xpm
   :ensure t)
 #+END_SRC
@@ -5662,7 +5662,7 @@ Emacs' provide editing support.
 :END:
 
 #+NAME: org_gcr_2017-05-12_mara_70B524CE-27DC-41D1-BB27-99FFE334B40B
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package scad-mode
   :ensure t)
 #+END_SRC
@@ -5687,7 +5687,7 @@ Configure EMACS to personal-taste for "noise" and "form".
 Make key-presses sound like the ground-breaking Selectric typewriter.
 
 #+NAME: org_gcr_2017-05-12_mara_7939B6EA-A76B-4A2A-B1B3-4EB1FEE2D9C2
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package selectric-mode
   :ensure t)
 #+END_SRC
@@ -5706,7 +5706,7 @@ buffer contents by one character. That is distracting and interrupts the flow.
 Most files will be less than 100,000 lines.
 
 #+NAME: org_gcr_2017-05-12_mara_7F3AF752-B4D1-4B55-85EC-C5E9B8DC13B9
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package nlinum
   :ensure t
   :config
@@ -5722,14 +5722,14 @@ Never automatically convert the end of the line character. For most of us this
 is between UNIX and DOS.
 
 #+NAME: org_gcr_2017-05-12_mara_B1FCEF49-334F-4F64-B96F-A888ABE84BB0
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq inhibit-eol-conversion t)
 #+END_SRC
 
 Give buffers backed by identically named files distinguishable names.
 
 #+NAME: org_gcr_2017-05-12_mara_5D771C42-CAAF-439D-BEC1-5A6559D168D2
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package uniquify)
 (setq uniquify-buffer-name-style 'forward)
 #+END_SRC
@@ -5737,7 +5737,7 @@ Give buffers backed by identically named files distinguishable names.
 Don't use audible bells, use visual bells.
 
 #+NAME: org_gcr_2017-05-12_mara_C5DA95E6-0F38-450E-96C8-6CED005DE0D1
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq ring-bell-function 'ignore)
 (setq visible-bell t)
 #+END_SRC
@@ -5745,7 +5745,7 @@ Don't use audible bells, use visual bells.
 Highlight s-expressions.
 
 #+NAME: org_gcr_2017-05-12_mara_F6E5E796-E1A4-4599-B6D1-F0729C1619A0
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq blink-matching-paren nil)
 (show-paren-mode)
 (setq show-paren-delay 0)
@@ -5756,7 +5756,7 @@ The cursor should not blink and distract you. On a graphic display make the
 cursor a box and stretch it as wide as the character below it.
 
 #+NAME: org_gcr_2017-05-12_mara_DD79CB65-2F96-40DD-8BD8-BECDCE8CD399
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (blink-cursor-mode 0)
 (help/on-gui
  (setq-default cursor-type 'box)
@@ -5766,7 +5766,7 @@ cursor a box and stretch it as wide as the character below it.
 EMACS used UTF-8 by default. Make copying and pasting easier.
 
 #+NAME: org_gcr_2017-05-12_mara_0BCAB755-9914-473F-9543-37130529809F
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (prefer-coding-system 'utf-8)
 (help/on-gui
  (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
@@ -5777,21 +5777,21 @@ EMACS used UTF-8 by default. Make copying and pasting easier.
 Make it very easy to see the line with the cursor.
 
 #+NAME: org_gcr_2017-05-12_mara_C53AF7AE-494C-4916-83C8-F175554B1CAE
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (global-hl-line-mode t)
 #+END_SRC
 
 Make it very easy to input special-characters using TeX coding.
 
 #+NAME: org_gcr_2017-05-12_mara_8B8F5CDF-A2FF-49C3-8DB1-3551942F7573
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq default-input-method 'TeX)
 #+END_SRC
 
 Automatically Copy Text Selected With The Mouse [[http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/][via]].
 
 #+NAME: org_gcr_2017-05-12_mara_DD49BAEE-1C39-40E1-93B5-9CBDCD5E284A
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq mouse-drag-copy-region t)
 #+END_SRC
 
@@ -5801,7 +5801,7 @@ configuration /barely/ utilizes MC because I use all that I can handle right
 now.
 
 #+NAME: org_gcr_2017-05-12_mara_828D7008-4B78-44AE-B5B7-15B60B03B3A6
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package multiple-cursors
   :ensure t
   :config
@@ -5835,7 +5835,7 @@ Recenter near top of screen.
 - Minimize fringe indicators.
 
 #+NAME: org_gcr_2017-05-12_mara_1AD36955-5FAC-4794-A9B0-A8DC6639A04C
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package solarized-theme
   :ensure t
   :config
@@ -5859,7 +5859,7 @@ Recenter near top of screen.
 really, really special.
 
 #+NAME: org_gcr_2017-05-12_mara_96BD218B-65E7-4ACA-98CE-108C3BFC29A3
-#+begin_src emacs-lisp :results output silent
+#+begin_src emacs-lisp
 (setq comint-scroll-to-bottom-on-input 'this)
 (setq comint-scroll-to-bottom-on-output 'others)
 (setq comint-move-point-for-output 'others)
@@ -5876,7 +5876,7 @@ manifested was that all R buffers opened by =ess= were 100% read only which
 obviously is a *big issue* if you actually want to use! ROFL
 
 #+NAME: org_gcr_2017-05-12_mara_F4517BF4-A876-4E3B-B636-9A60BED7174F
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq comint-prompt-read-only nil)
 #+END_SRC
 
@@ -5890,7 +5890,7 @@ support a lot of Unicode characters. Set it to a good default for an 80
 character wide buffer and make it easy to adjust it.
 
 #+NAME: org_gcr_2017-05-12_mara_6B639D09-DA18-40C5-ABA0-8647820507E6
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (help/on-gui
  (defvar help/font-size-current 10 "The preferred font size.")
  (help/on-osx (setq help/font-size-current 17))
@@ -5936,7 +5936,7 @@ character wide buffer and make it easy to adjust it.
 :ID:       org_gcr_2017-07-11_mara:02FCF4D1-5613-49B3-A247-6BFA846D7EEA
 :END:
 #+NAME: org_gcr_2017-07-11_mara_27556B29-B77D-445F-8A54-00BDB89B452A
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (add-to-list 'image-load-path (concat (expand-file-name "./") "xpm"))
 #+END_SRC
 **** Icons
@@ -5946,7 +5946,7 @@ character wide buffer and make it easy to adjust it.
 Replace major mode lighters with icons.
 
 #+NAME: org_gcr_2017-07-11_mara_90A13EAE-8941-4BDA-8937-DCE5759CBA5C
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package mode-icons
   :ensure t
   :config
@@ -5960,7 +5960,7 @@ Replace major mode lighters with icons.
 Enable the menu bar.
 
 #+NAME: org_gcr_2017-05-12_mara_03B4E8E1-083B-4F5D-A4A0-BAE8A0553FAF
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (menu-bar-mode nil)
 #+END_SRC
 **** Tool bar
@@ -5971,14 +5971,14 @@ Enable the menu bar.
 Enable the tool bar.
 
 #+NAME: org_gcr_2017-05-12_mara_D462D343-9EA8-4BCF-BD08-8FDD4F3E11E9
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (tool-bar-mode nil)
 #+END_SRC
 
 Append ibuffer.
 
 #+NAME: org_gcr_2017-07-11_mara_F035C9D9-EAE9-48CF-BE67-5BFF1F0A23FD
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (tool-bar-add-item
  "right-arrow"
  'ibuffer
@@ -5993,7 +5993,7 @@ Append ibuffer.
 Enable the scroll bar.
 
 #+NAME: org_gcr_2017-05-12_mara_D967070F-06B7-4433-94A8-36E360600C9E
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (scroll-bar-mode nil)
 #+END_SRC
 **** Various
@@ -6003,7 +6003,7 @@ Enable the scroll bar.
 Adjust frame transparency.
 
 #+NAME: org_gcr_2017-05-12_mara_A6D3E9FB-C601-401C-AFA7-B5410A36FDAF
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defun my--set-transparency (inc)
   "Increase or decrease the selected frame transparency.
 Attribution: URL `https://www.reddit.com/r/emacs/comments/5rnpsm/nice_hydra_to_set_frame_transparency/'"
@@ -6032,7 +6032,7 @@ Literate Programming setup. Their default binding does thing that I don't want
 so I'm happy to stomp on them.
 
 #+NAME: org_gcr_2017-05-12_mara_0413671E-4479-4626-80B9-3A22E00D4652
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (define-key global-map (kbd "s-m") nil)
 (define-key global-map (kbd "s-o") nil)
 #+END_SRC
@@ -6044,7 +6044,7 @@ so I'm happy to stomp on them.
 Hide the pointer when typing.
 
 #+NAME: org_gcr_2017-05-12_mara_DD263B9E-EFF2-49BF-B367-4F4505F8E618
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq make-pointer-invisible t)
 #+END_SRC
 
@@ -6058,7 +6058,7 @@ Selectively provide VC file status indicators.
 Sometimes it is worth interrupting the flow.
 
 #+NAME: org_gcr_2017-05-12_mara_D6C905B3-76CD-4ABE-83D9-F1E708F0041F
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package diff-hl
   :ensure t)
 #+END_SRC
@@ -6066,7 +6066,7 @@ Sometimes it is worth interrupting the flow.
 Ediff split frame horizontally.
 
 #+NAME: org_gcr_2017-05-12_mara_2E9A617A-5D88-4E71-88EB-595AA1F16EC2
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq ediff-split-window-function 'split-window-horizontally)
 #+END_SRC
 
@@ -6079,14 +6079,14 @@ Easily return to previous configurations. 2-4 windows are easily managed by
 hand.
 
 #+NAME: org_gcr_2017-05-12_mara_8E367FFF-FCF3-4AC8-9542-A20CE62081C4
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (winner-mode t)
 #+END_SRC
 
 Frequently use between 1 and 4 windows.
 
 #+NAME: org_gcr_2017-05-12_mara_94DA6C06-BCBB-4231-B0C7-EFD4B1310530
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defun help/1-window ()
   "Work with this buffer in 1 window."
   (interactive)
@@ -6126,14 +6126,14 @@ appears for different modes in this system. Modes distributed with Emacs are
 configured here.
 
 #+NAME: org_gcr_2017-05-12_mara_B5190A4E-4174-471F-9C82-C454D269B867
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq help-window-select t)
 #+END_SRC
 
 Select windows.
 
 #+NAME: org_gcr_2017-05-12_mara_A165E3DB-37E7-49A7-84E4-1CB0D2A137C6
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package ace-window
   :ensure t
   :config
@@ -6143,7 +6143,7 @@ Select windows.
 #+END_SRC
 
 #+NAME: org_gcr_2017-07-08_mara_3D694F1B-EB4A-4724-A8E7-61F09C4773A5
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (use-package eyebrowse
   :ensure t
   :config
@@ -6643,7 +6643,7 @@ These changes helped guide the custom keyboard design.
      :END:
 
 #+NAME: org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "C-8") (lambda () (interactive) (switch-to-buffer
                                                  "projects.org")))
 (global-set-key (kbd "C-0") (lambda () (interactive) (switch-to-buffer
@@ -6666,7 +6666,7 @@ These changes helped guide the custom keyboard design.
 Checking things.
 
 #+NAME: org_gcr_2017-06-13_mara_2DFDC64B-DBF2-473E-979F-D7D8D0DD2206
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defhydra help/hydra-checking (:color blue
                                       :hint nil)
   "
@@ -6689,7 +6689,7 @@ _n_ writegood/toggle
      :END:
 
 #+NAME: org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "C-M-1") #'help/1-window)
 (global-set-key (kbd "C-M-2") #'help/2-window)
 (global-set-key (kbd "C-M-3") #'help/3-window)
@@ -6713,14 +6713,14 @@ to make the minibuffer, ~eval-*~ and ~smex~ become confused \rarr quit working.
 Eval expression.
 
 #+NAME: org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (global-unset-key (kbd "C-M-j"))
 (global-set-key (kbd "M-:") #'my-eval-expression)
 (global-set-key (kbd "C-c C-k") #'help/delete-this-buffer-and-file)
 #+END_SRC
 
 #+NAME: org_gcr_2017-05-12_mara_E8ABDA7D-AC92-4C24-8287-1505E2377B2C
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "C-h") nil)
 (global-set-key (kbd "C-h") #'ace-window)
 #+END_SRC
@@ -6729,18 +6729,18 @@ In Org-Mode I constantly use ~s-h~ for tangling. When I forget that I am /out of
 Org-Mode and I hit ~s-h~ it hides Emacs. Oops!
 
 #+NAME: org_gcr_2017-05-12_mara_A26325F2-9D6C-49EE-8CBE-DC552C6F315F
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "s-h") nil)
 #+END_SRC
 
 #+NAME: org_gcr_2017-05-12_mara_20330335-75E6-4AB4-A661-D291315FAFD7
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "s-a") #'help/safb-switch-to-previous-buffer)
 (global-set-key (kbd "s-d") #'er/expand-region)
 #+END_SRC
 
 #+NAME: org_gcr_2017-05-12_mara_095E1EC7-12A2-43BB-8ED5-CF2BC6E7D158
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defhydra help/hydra/left-side/global (:color blue
                                               :hint nil)
   "
@@ -6809,14 +6809,14 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
 #+END_SRC
 
 #+NAME: org_gcr_2017-05-12_mara_28B4A661-E888-4EFA-ADE3-4B1C05F6E92B
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (key-chord-define-global "vv" #'help/hydra/left-side/global/body)
 #+END_SRC
 
 [[https://github.com/abo-abo/hydra/blob/master/hydra-examples.el][Attribution.]]
 
 #+NAME: org_gcr_2017-05-12_mara_C93A4DB7-1441-4DBA-B586-76266C5C30DF
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defhydra hydra-apropos-ish (:color blue
                                     :hint nil)
   "
@@ -6842,7 +6842,7 @@ Trademark.
 
 
 #+NAME: org_gcr_2017-05-12_mara_EE5F8793-8604-4041-8D91-DBC419809947
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defhydra help/trademark (:color blue :hint nil)
   "
 American _R_egistered Trademark
@@ -6861,7 +6861,7 @@ _K_orean Standard
 Kinds of checks.
 
 #+NAME: org_gcr_2017-05-12_mara_E4413D83-9743-468B-BBAF-3FAF9E31F491
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defhydra help/checks (:color blue :hint nil)
   "
 _q_ ✓ _w_ ✗ _e_ ☐ _r_ ☑ _t_ ☒_
@@ -6876,7 +6876,7 @@ _q_ ✓ _w_ ✗ _e_ ☐ _r_ ☑ _t_ ☒_
 BibTeX stuff.
 
 #+NAME: org_gcr_2017-05-12_mara_D0F37886-4355-478C-A141-93F48E531CE5
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defhydra help/bibtex (:color blue :hint nil)
   "
 _c_ Clean Entry _C_ Clean Entry & Create New Reference
@@ -6903,7 +6903,7 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 :END:
 
 #+NAME: org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "s-v") #'ido-find-file)
 (global-set-key (kbd "C-x C-c") #'help/safb-save-buffers-kill-terminal)
 (define-key org-mode-map (kbd "C-,") nil)
@@ -6922,7 +6922,7 @@ Cycle through common options for removing space between characters. Thank you
 [[http://pragmaticemacs.com/emacs/cycle-spacing/][Pragmatic Emacs]].
 
 #+NAME: org_gcr_2017-05-12_mara_5FAD516B-B4C1-4F47-A6B9-7CA12F9AFF5D
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "s-SPC") #'cycle-spacing)
 #+END_SRC
 
@@ -6950,14 +6950,14 @@ Toggle utility buffers ("logical F" key, so left side; "logical J" key on
 right).
 
 #+NAME: org_gcr_2017-05-12_mara_0CA60630-37AA-4192-91A1-FFC1B16DC3E4
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (key-chord-define-global "f9" #'help/util-cycle)
 #+END_SRC
 
 Hide and show code blocks.
 
 #+NAME: org_gcr_2017-05-12_mara_8B031C72-2005-4FAF-A9F4-DE8D613DA01D
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "s-b") #'hs-toggle-hiding)
 (global-set-key (kbd "M-s-b") #'help/my-toggle-hideshow-all)
 #+END_SRC
@@ -6972,14 +6972,14 @@ Exploratory programming in EMACS.
 Don't use "qi"; "unique".
 
 #+NAME: org_gcr_2017-05-12_mara_D3A810D3-58D9-48AF-940E-BCE47692282D
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "s-`") #'help/comment-or-uncomment)
 #+END_SRC
 
 Make =ispell= accessible.
 
 #+NAME: org_gcr_2017-05-12_mara_921A07BB-6FBA-46E3-824D-F9F0B92F48B3
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (key-chord-define-global "qp" #'ispell)
 (key-chord-define-global "qo" #'ispell-word)
 #+END_SRC
@@ -6987,7 +6987,7 @@ Make =ispell= accessible.
 Use the default Langtool bindings.
 
 #+NAME: org_gcr_2017-05-12_mara_B4724C9B-88F1-4EF1-8134-17DBADA44A01
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (define-prefix-command 'help/langtool-map)
 (key-chord-define-global "qk" #'help/langtool-map)
 (define-key help/langtool-map "c" #'langtool-check-buffer)
@@ -7009,7 +7009,7 @@ Can't use "gr" brecause of "Grant" and "Great.
 Go to a word.
 
 #+NAME: org_gcr_2017-05-12_mara_2C04C038-F246-4E90-92C6-15ABF018BCD3
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (key-chord-define-global "fj" #'avy-goto-word-1)
 (key-chord-define-global "fm" #'avy-goto-char)
 (key-chord-define-global "FJ" #'avy-pop-mark)
@@ -7018,14 +7018,14 @@ Go to a word.
 Go to a line.
 
 #+NAME: org_gcr_2017-05-12_mara_0729FB1D-FE71-417C-A3F7-AC1A92D71FBC
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (key-chord-define-global "fk" #'help/safb-help/goto-line)
 #+END_SRC
 
 Pop the mark back.
 
 #+NAME: org_gcr_2017-05-12_mara_ED3BE98E-B863-447A-AB97-F4E878F2C483
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (key-chord-define-global "FK" #'pop-to-mark-command)
 #+END_SRC
 
@@ -7046,7 +7046,7 @@ Return.
 Do smart new line inside, indenting given the mode.
 
 #+NAME: org_gcr_2017-05-12_mara_9302B01F-93C0-4D21-8BB6-53ECF1478153
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (help/not-on-gui (global-set-key (kbd "s-RET") #'help/smart-open-line))
 (help/on-gui (global-set-key (kbd "s-<return>") #'help/smart-open-line))
 #+END_SRC
@@ -7054,13 +7054,13 @@ Do smart new line inside, indenting given the mode.
 Move the buffer contents and cursor up or down by one line
 
 #+NAME: org_gcr_2017-05-12_mara_EB0E9368-41FE-4827-9EE2-5CDFCDC1C2BA
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "M-p") (kbd "C-u 1 C-v"))
 (global-set-key (kbd "M-n") (kbd "C-u 1 M-v"))
 #+END_SRC
 
 #+NAME: org_gcr_2017-05-12_mara_078C604D-5762-4763-AD17-A397C5E224E7
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "C-n") #'next-logical-line)
 (global-set-key (kbd "C-s-n") #'next-line)
 (global-set-key (kbd "C-p") #'previous-logical-line)
@@ -7070,7 +7070,7 @@ Move the buffer contents and cursor up or down by one line
 Ansu.
 
 #+NAME: org_gcr_2017-05-12_mara_BF926B57-9097-483F-AB90-E3F55869B0D9
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "M-%") #'anzu-query-replace)
 (global-set-key (kbd "C-M-%") #'anzu-query-replace-regexp)
 #+END_SRC
