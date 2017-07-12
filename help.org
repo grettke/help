@@ -5942,6 +5942,28 @@ Use local bitmaps.
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'image-load-path (expand-file-name "./"))
 #+END_SRC
+
+Bitmap requirements
+- 24x24 seems to be the most common dimension
+
+Finding bitmaps
+- Search for an existing bitmap [[https://commons.wikimedia.org/wiki/Category:Icons_by_subject][by subject]]
+- Prefer SVG for flexibility
+
+Generating bitmaps
+- By hand
+  - Emacs already supports editing and visuaation
+  - Gimp
+- Convert SVG to XPM
+  - Convert SVG to PNG
+    #+BEGIN_EXAMPLE
+rsvg-convert --width=24 --height=24 --format=png --keep-aspect-ratio --output new.png existing.svg
+    #+END_EXAMPLE
+  - Convert PNG to XPM
+    #+BEGIN_EXAMPLE
+convert new.png new.xpm
+    #+END_EXAMPLE
+
 **** Icons
 :PROPERTIES:
 :ID:       org_gcr_2017-07-11_mara:5E885B6C-66CF-4F58-8888-F257F4AB8AFA
@@ -5978,12 +6000,12 @@ Enable the tool bar.
 (tool-bar-mode nil)
 #+END_SRC
 
-Append ibuffer.
+Append ibuffer [[https://commons.wikimedia.org/wiki/Category:List_icons#/media/File:List_alt_font_awesome.svg][image source]].
 
 #+NAME: org_gcr_2017-07-11_mara_F035C9D9-EAE9-48CF-BE67-5BFF1F0A23FD
 #+BEGIN_SRC emacs-lisp
 (tool-bar-add-item
- "right-arrow"
+ "fontawesome_list-alt"
  'ibuffer
  'ibuffer-fake
  :help "List buffers")
