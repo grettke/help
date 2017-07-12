@@ -3200,7 +3200,6 @@ Make sense of the current mode.
 :ID:       org_gcr_2017-06-25_mara:7C9667D1-C881-40AC-9312-EB11A9F4F61E
 :END:
 Every special mode needs this. Which is nothing yet.
-#+END_SRC
 *** Text-Mode
     :PROPERTIES:
     :ID:       org_gcr_2017-05-12_mara:C3270DE0-55FD-4612-B3E3-226CAC5A8FDA
@@ -4325,7 +4324,7 @@ Easily manipulate lists and headlines staying close to home.
   "
 _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ id-create _5_ toggle-macro
 _q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ help/org-refile _R_ g2nms-b _t_ g2s-b/hd _p_ copy/property
-_a_ archive-subtree _s_ oblobigst _u_ goto _h_ dksieb _k_ ob-check-src-blk _l_ lint 
+_a_ archive-subtree _s_ oblobigst _u_ goto _h_ dksieb _k_ ob-check-src-blk _l_ lint
 _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
   ;; Row 5
   ("1" org-babel-sha1-hash)
