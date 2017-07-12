@@ -1,4 +1,4 @@
-#+PROPERTY: header-args :tangle "./.org-mode-ecm.emacs.el" :comments "no" :padline "no"
+#+PROPERTY: header-args :tangle "./.org-mode-ecm.emacs.el" :comments "no" :padline "no" :results output silent
 
 * Org-Mode Exemple Complet Minimal
    :PROPERTIES:
@@ -57,7 +57,7 @@ This is the *first* thing that /ought/ to happen in the initialization of *any*
 tangled system.
 
 #+NAME: org_gcr_2017-05-12_mara_E2EECBA9-1ECD-498B-A45B-CE21135CF080
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq load-prefer-newer t)
 #+END_SRC
 
@@ -80,7 +80,7 @@ decide whether or not it is what you expect and prepare an ECM if necessary.
 Add the Org-Mode core distribution the load path.
 
 #+NAME: org_gcr_2017-05-12_mara_DAFA4781-7A63-44A1-8817-C4AB75F23130
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path "~/src/org-mode/lisp")
 #+END_SRC
 
@@ -88,7 +88,7 @@ Add the Org-Mode-Contributions distribution to the load path. The contributions
 are essential.
 
 #+NAME: org_gcr_2017-05-12_mara_018101D7-1448-4844-861B-789F222A9FD4
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path "~/src/org-mode/contrib/lisp")
 #+END_SRC
 
@@ -96,7 +96,7 @@ Allow single-character alphabetical bullet lists. This configuration must occur
 before loading Org-Mode. *Never* remove this from a submitted ECM.
 
 #+NAME: org_gcr_2017-05-12_mara_050624C5-3BC5-4049-B070-F0A6736EB754
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-list-allow-alphabetical t)
 #+END_SRC
 
@@ -104,21 +104,21 @@ Unchecked boxes prevent marking the parent as done. This configuration must
 occur before loading Org-Mode. *Never* remove this from a submitted ECM.
 
 #+NAME: org_gcr_2017-05-12_mara_7A650900-7023-4EA7-B2DB-CAB39437E9F3
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-enforce-todo-checkbox-dependencies t)
 #+END_SRC
 
 Load Org-Mode.
 
 #+NAME: org_gcr_2017-05-12_mara_766E7D57-B6F9-4718-AF7E-30EE4A23BDF1
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (require 'org)
 #+END_SRC
 
 Display system info.
 
 #+NAME: org_gcr_2017-05-12_mara_901541A6-1DB6-4EA2-8688-9C888C41902A
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (message "ECM Information Follows")
 (message "Org-Version:")
 (message (org-version))
