@@ -3310,6 +3310,14 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
 (tool-bar-mode nil)
 ;; org_gcr_2017-05-12_mara_D462D343-9EA8-4BCF-BD08-8FDD4F3E11E9 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-07-11_mara_F035C9D9-EAE9-48CF-BE67-5BFF1F0A23FD][org_gcr_2017-07-11_mara_F035C9D9-EAE9-48CF-BE67-5BFF1F0A23FD]]
+(tool-bar-add-item
+ "right-arrow"
+ 'ibuffer
+ 'ibuffer-fake
+ :help "List buffers")
+;; org_gcr_2017-07-11_mara_F035C9D9-EAE9-48CF-BE67-5BFF1F0A23FD ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D967070F-06B7-4433-94A8-36E360600C9E][org_gcr_2017-05-12_mara_D967070F-06B7-4433-94A8-36E360600C9E]]
 (scroll-bar-mode nil)
 ;; org_gcr_2017-05-12_mara_D967070F-06B7-4433-94A8-36E360600C9E ends here

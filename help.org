@@ -5966,6 +5966,17 @@ Enable the tool bar.
 #+BEGIN_SRC emacs-lisp :results output silent
 (tool-bar-mode nil)
 #+END_SRC
+
+Append ibuffer.
+
+#+NAME: org_gcr_2017-07-11_mara_F035C9D9-EAE9-48CF-BE67-5BFF1F0A23FD
+#+BEGIN_SRC emacs-lisp :results output silent
+(tool-bar-add-item
+ "right-arrow"
+ 'ibuffer
+ 'ibuffer-fake
+ :help "List buffers")
+#+END_SRC
 **** Scroll bar
 :PROPERTIES:
 :ID:       org_gcr_2017-06-23_mara:590AD87D-0567-454F-98AE-3AE64A171012
