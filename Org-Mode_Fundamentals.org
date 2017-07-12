@@ -1,4 +1,4 @@
-#+PROPERTY: header-args :tangle "./.org-mode-fundamentals.emacs.el"
+#+PROPERTY: header-args :tangle "./.org-mode-fundamentals.emacs.el" :results output silent
 
 * Org-Mode Fundamentals
    :PROPERTIES:
@@ -16,7 +16,7 @@ emacs --debug-init --no-init-file --no-splash --background-color white --foregro
 #+END_EXAMPLE
 
 #+NAME: org_gcr_2017-05-12_mara_71A4A257-9A13-457A-B504-888D8131A206
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (load-file "~/src/help/.org-mode-ecm.emacs.el")
 #+END_SRC
 
@@ -70,7 +70,7 @@ another activity.
 Help configure Org-Mode.
 
 #+NAME: org_gcr_2017-05-12_mara_21BEDC86-D1A3-43FC-85AC-8FF54D161E2F
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defun help/set-org-babel-default-header-args (property value)
   "Easily set system header arguments in org mode.
 
@@ -196,7 +196,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
 A Headline's primary key is =ID=. Use =org-id= to manage it.
 
 #+NAME: org_gcr_2017-05-12_mara_922805E3-E016-4026-BAF6-C3BA5DFC6B5A
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (require 'org-id)
 #+END_SRC
 
@@ -204,7 +204,7 @@ In Links: Never use =ID= or =CUSTOM_ID=; always use the file name and text to ma
 it accessible outside of Emacs.
 
 #+NAME: org_gcr_2017-05-12_mara_6F578996-A506-4193-8566-C3FAC6102228
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-id-link-to-org-use-id 'nil)
 #+END_SRC
 
@@ -223,7 +223,7 @@ Make sure that =ID= is always unique, portable, and easy to maintain by
 - Use a UUID
 
 #+NAME: org_gcr_2017-05-12_mara_8F2F5DAE-40B9-490D-8523-BABCAA913A71
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-id-prefix (concat "org_" (user-real-login-name) "_" (format-time-string "%Y-%m-%d") "_" (system-name)))
 (setq org-id-method 'uuid)
 #+END_SRC
@@ -236,7 +236,7 @@ Make sure that =ID= is always unique, portable, and easy to maintain by
 =ID= and =NAME= are essential for successful =LP= using ~org-babel-tangle-jump-to-org~.
 
 #+NAME: org_gcr_2017-05-12_mara_C4C2CC56-88D6-440F-A277-75B174B7F8E8
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (add-hook 'org-babel-pre-tangle-hook #'help/org-prp-hdln)
 (add-hook 'org-babel-pre-tangle-hook #'help/org-prp-src-blk)
 #+END_SRC
@@ -248,7 +248,7 @@ The problem is that you lose property inheritance which is unacceptable. Never,
 never allow that. Its inconsistent with how Org-Mode works.
 
 #+NAME: org_gcr_2017-05-12_mara_7AFF21D6-39A6-4580-8AD1-3BF24A83091A
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-babel-use-quick-and-dirty-noweb-expansion nil)
 #+END_SRC
 
@@ -256,7 +256,7 @@ Assume that tangled document always live within the same directory structure
 as their origin document.
 
 #+NAME: org_gcr_2017-05-12_mara_BFB80EA4-F37F-484C-9A7E-7B97166A2F49
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-babel-tangle-use-relative-file-links t)
 #+END_SRC
 
@@ -270,7 +270,7 @@ as their origin document.
       the tangled files. So tangled files get indented.
 
 #+NAME: org_gcr_2017-05-12_mara_1946BB7D-D2A7-40F3-BF7D-1C22B887D1F6
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defun help/org-babel-post-tangle-hook-fn ()
   (interactive)
   (indent-region (point-min) (point-max) nil)
@@ -291,7 +291,7 @@ Provide as much information as possible in the tangled artifact about the
 origin artifact.
 
 #+NAME: org_gcr_2017-05-12_mara_5516E87C-58CA-451B-84B3-BA7B9D2A284E
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (help/set-org-babel-default-header-args :comments "noweb")
 #+END_SRC
 
@@ -305,7 +305,7 @@ Toggle creation of parent directories of target files during tangling
 #+END_QUOTE
 
 #+NAME: org_gcr_2017-05-12_mara_51AE0BB2-9E85-482C-AAC6-8860D2141999
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (help/set-org-babel-default-header-args :mkdirp "yes")
 #+END_SRC
 
@@ -342,7 +342,7 @@ computer and the right thing to the human. By the time you get to exporting, you
 ought to refer to the generated document.
 
 #+NAME: org_gcr_2017-05-12_mara_F9D0273A-A0E4-4265-B133-C665ADE1F031
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (help/set-org-babel-default-header-args :noweb "no-export")
 #+END_SRC
 
@@ -386,7 +386,7 @@ Control insertion of padding lines in tangled code files
   I love the spaces. Defaulting to what I like.
 
 #+NAME: org_gcr_2017-05-12_mara_D7CD2E35-5BE4-4003-8D78-26D939E0031E
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (help/set-org-babel-default-header-args :padline "yes")
 #+END_SRC
 
@@ -425,7 +425,7 @@ Toggle tangling and specify file name
 #+END_QUOTE
 
 #+NAME: org_gcr_2017-05-12_mara_B11664F9-C0E7-48C0-8050-0A66B199FEBF
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (help/set-org-babel-default-header-args :tangle "no")
 #+END_SRC
 
@@ -448,7 +448,7 @@ Set permission of tangled files
 Org-Mode may use all of the listed languages.
 
 #+NAME: org_gcr_2017-05-12_mara_54FEB960-2B87-41E3-A4E4-6DE9DED9B1BD
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((emacs-lisp . t)
@@ -476,7 +476,7 @@ Out of the box Emacs supports =js= with ~js-mode~. Define language =javascript= 
 use ~js2-mode~.
 
 #+NAME: org_gcr_2017-05-12_mara_66460204-C425-4057-920D-A6CD5A252075
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (add-to-list 'org-src-lang-modes '("javascript" . js2))
 #+END_SRC
 
@@ -538,7 +538,7 @@ Limit evaluation of specific code blocks
 Never evaluate source-blocks or in-line-source-blocks *on export*.
 
 #+NAME: org_gcr_2017-05-12_mara_FE5C21BF-9766-4277-A413-B3AF5C255C39
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (help/set-org-babel-default-header-args :eval "never-export")
 (help/set-org-babel-default-inline-header-args :eval "never-export")
 #+END_SRC
@@ -546,7 +546,7 @@ Never evaluate source-blocks or in-line-source-blocks *on export*.
 Never evaluate in-line-source-blocks *on export*.
 
 #+NAME: org_gcr_2017-05-12_mara_DB816700-04B3-45D0-9847-490BBFE9DBA0
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-export-babel-evaluate nil)
 #+END_SRC
 
@@ -674,7 +674,7 @@ when it is not.
   - =replace=: Replace theme each time you evaluate the block.
 
 #+NAME: org_gcr_2017-05-12_mara_2F6FE420-85A2-4A99-AAB7-20473F02B878
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defconst help/org-sb-results-cfg "value table drawer replace")
 (help/set-org-babel-default-header-args :results help/org-sb-results-cfg)
 #+END_SRC
@@ -687,7 +687,7 @@ configuration from normal source blocks here breaks the replacement
 functionality.
 
 #+NAME: org_gcr_2017-05-12_mara_3E59D8A5-2B8A-44D6-A863-7051E8E62421
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (defconst help/org-isb-results-cfg "replace")
 (help/set-org-babel-default-inline-header-args :results help/org-isb-results-cfg)
 #+END_SRC
@@ -741,7 +741,7 @@ Help the reader make sense of the document by displaying it's internal
 properties.
 
 #+NAME: org_gcr_2017-05-12_mara_FDA3AE76-9095-49A6-8D3B-F522060FFE0E
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-export-with-properties t)
 #+END_SRC
 
@@ -750,14 +750,14 @@ properties.
     Does not do so; main thread is blocked until weaves complete.
 
 #+NAME: org_gcr_2017-05-12_mara_75498F0F-C121-4954-9E27-B6859173C1E1
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-export-in-background nil)
 #+END_SRC
 
 Make sure that exported files are Unicode UTF-8.
 
 #+NAME: org_gcr_2017-05-12_mara_400FE840-685A-4130-B697-8835F8FDB1FF
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-export-coding-system 'utf-8)
 #+END_SRC
 
@@ -769,14 +769,14 @@ same text to a buffer though, the line breaks are included. Currently I use
 =sacha/unfill-paragraph= on that code.
 
 #+NAME: org_gcr_2017-05-12_mara_DE83AAE3-B4D6-4AB8-83BF-EE3252F9F6D2
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-export-preserve-breaks nil)
 #+END_SRC
 
 When exporting anything, do not insert the exported content into the kill ring.
 
 #+NAME: org_gcr_2017-05-12_mara_564FC52E-A339-4209-9B6E-86E890D8835C
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-export-copy-to-kill-ring nil)
 #+END_SRC
 
@@ -784,7 +784,7 @@ By default I never want a table of contents generated. It is so easy to enable
 it with a property, it will be fine to turn it off.
 
 #+NAME: org_gcr_2017-05-12_mara_BF7F8052-2578-4BA2-9740-DA437B55447B
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-export-with-toc nil)
 #+END_SRC
 
@@ -793,21 +793,21 @@ this is important for make-files. It is really important everywhere because
 anything else would violate the law of least surprise.
 
 #+NAME: org_gcr_2017-05-12_mara_5E57CCF7-6D5D-42B4-BD49-26D55EC0891C
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-src-preserve-indentation t)
 #+END_SRC
 
 Maximize flexibility for weaving operations during export.
 
 #+NAME: org_gcr_2017-05-12_mara_BC45B41D-BED3-4448-BFE6-9EE43DAD37E2
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-export-allow-bind-keywords t)
 #+END_SRC
 
 Disable element caching because it might break weaves via [[https://lists.gnu.org/archive/html/emacs-orgmode/2015-09/msg00646.html][this thread]].
 
 #+NAME: org_gcr_2017-05-12_mara_DA69CB4F-597A-4057-A532-2B9EC5E4FCF9
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org-element-use-cache nil)
 #+END_SRC
 
@@ -826,7 +826,7 @@ to share a result for a source block then disable storage of results on that
 block.
 
 #+NAME: org_gcr_2017-05-12_mara_C933F9D3-EC64-4D09-980D-FB8C7E39CB92
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (help/set-org-babel-default-header-args :exports "both")
 #+END_SRC
 
@@ -835,7 +835,7 @@ show their source code. Allows inline Source-Blocks to function as /rich/ macros
 when combined with ~org-sbe~.
 
 #+NAME: org_gcr_2017-05-12_mara_8D15DF2A-D8EE-4797-AD1C-CB81CFE1404B
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (help/set-org-babel-default-inline-header-args :exports "results")
 #+END_SRC
 
@@ -854,7 +854,7 @@ results need to be visibly noticeably different for the reader by making them
 =EXAMPLE= special blocks.
 
 #+NAME: org_gcr_2017-05-12_mara_9C45DF8B-120E-47C8-9CA8-04EE6EEB162A
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (help/set-org-babel-default-header-args :wrap "EXAMPLE")
 #+END_SRC
 
