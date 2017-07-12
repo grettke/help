@@ -2435,8 +2435,8 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
   "
 _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ id-create _5_ toggle-macro
 _q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ help/org-refile _R_ g2nms-b _t_ g2s-b/hd _p_ copy/property
-_a_ archive-subtree _s_ oblobigst _u_ goto _h_ dksieb _k_ ob-check-src-blk
-_z_ lint _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
+_a_ archive-subtree _s_ oblobigst _u_ goto _h_ dksieb _k_ ob-check-src-blk _l_ lint
+_c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
   ;; Row 5
   ("1" org-babel-sha1-hash)
   ("2" org-display-inline-images)
@@ -2459,8 +2459,8 @@ _z_ lint _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
   ("h" org-babel-do-key-sequence-in-edit-buffer)
   ("H" org-babel-insert-header-arg)
   ("k" org-babel-check-src-block)
+  ("l" org-lint)
   ;; Row 2
-  ("z" org-lint)
   ("c" org-fill-paragraph)
   ("b" org-babel-switch-to-session)
   ("n" org-narrow-to-subtree)
