@@ -1,4 +1,4 @@
-#+PROPERTY: header-args :tangle "./.org-mode-org2blog.emacs.el"
+#+PROPERTY: header-args :tangle "./.org-mode-org2blog.emacs.el" :results output silent
 
 * Org2blog
    :PROPERTIES:
@@ -16,7 +16,7 @@ emacs --debug-init --no-init-file --no-splash --background-color white --foregro
 #+END_EXAMPLE
 
 #+NAME: org_gcr_2017-05-12_mara_AD27B44D-A88A-421F-9418-EE1B9E1977D5
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (load-file "~/src/help/.org-mode-fundamentals.emacs.el")
 #+END_SRC
 
@@ -34,7 +34,7 @@ have their issues fixed very quickly. GNU packages rarely have issues.
 Initialize Package.
 
 #+NAME: org_gcr_2017-05-12_mara_0F6BBBBA-259E-46FC-AD7F-C954149CCCEA
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (package-initialize)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
@@ -47,7 +47,7 @@ Use-Package is the most configurable and performant way to manage ELPA packages.
 Add the Use-Package distribution the load path.
 
 #+NAME: org_gcr_2017-05-12_mara_867E1E1D-48E5-47C7-9B39-FD29F137665D
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path"~/src/use-package")
 #+END_SRC
 
@@ -55,7 +55,7 @@ Load Use-Package and it's partner Diminish. Every package loaded before this
 point uses ~require~. Every package loaded after this point uses ~use-package~.
 
 #+NAME: org_gcr_2017-05-12_mara_3982F502-880C-4DF4-A1DF-07DA3EAA7D78
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (eval-when-compile
   (require 'use-package))
 (use-package diminish)
@@ -71,7 +71,7 @@ An elisp implementation of clientside XML-RPC
 #+END_QUOTE
 
 #+NAME: org_gcr_2017-05-12_mara_3989AFAA-23E6-4463-98E8-90F7ED269C1B
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path "~/src/xml-rpc-el")
 (require 'xml-rpc)
 
@@ -82,7 +82,7 @@ Weblog maintenance via XML-RPC APIs
 #+END_QUOTE
 
 #+NAME: org_gcr_2017-05-12_mara_C057BFE2-7242-495D-BCD2-62C6389A6551
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path "~/src/metaweblog")
 (require 'metaweblog)
 #+END_SRC
@@ -92,7 +92,7 @@ Blog from Org mode to wordpress
 #+END_QUOTE
 
 #+NAME: org_gcr_2017-05-12_mara_EF1B02DF-BDB7-44AA-A018-B0BE6DA1C08F
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path "~/src/org2blog")
 (require 'org2blog)
 (add-hook 'org-mode-hook #'org2blog/wp-org-mode-hook-fn)
@@ -105,14 +105,14 @@ This system works with WisdomAndWonder. It keeps its posts separate giving focus
 to each Web.
 
 #+NAME: org_gcr_2017-05-12_mara_FF96F4B6-42B9-45D6-BEE6-6CDC9D6815AE
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org2blog/wp-track-posts nil)
 #+END_SRC
 
 Configure Org2Blog.
 
 #+NAME: org_gcr_2017-05-12_mara_854DE6E9-2208-42EB-A164-EC06E489B6B7
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (setq org2blog/wp-blog-alist
       '(("wisdomandwonder"
          :url "https://www.wisdomandwonder.com/xmlrpc.php"
@@ -130,7 +130,7 @@ Configure Org2Blog.
 Visualize ASCII values as their most likely Unicode representation.
 
 #+NAME: org_gcr_2017-05-15_mara_5CF1DF19-27F5-4509-8E17-9CA0D1B29314
-#+BEGIN_SRC emacs-lisp :results output silent
+#+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path "~/src/pretty-mode")
 (require 'pretty-mode)
 (global-pretty-mode t)
