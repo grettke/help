@@ -5931,6 +5931,14 @@ character wide buffer and make it easy to adjust it.
 :PROPERTIES:
 :ID:       org_gcr_2017-06-23_mara:77B3D3E9-B7F7-44FB-8B82-A23CAC02C83B
 :END:
+**** Bitmaps
+:PROPERTIES:
+:ID:       org_gcr_2017-07-11_mara:02FCF4D1-5613-49B3-A247-6BFA846D7EEA
+:END:
+#+NAME: org_gcr_2017-07-11_mara_27556B29-B77D-445F-8A54-00BDB89B452A
+#+BEGIN_SRC emacs-lisp :results output silent
+(add-to-list 'image-load-path (concat (expand-file-name "./") "xpm"))
+#+END_SRC
 **** Icons
 :PROPERTIES:
 :ID:       org_gcr_2017-07-11_mara:5E885B6C-66CF-4F58-8888-F257F4AB8AFA
