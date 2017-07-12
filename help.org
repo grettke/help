@@ -5935,6 +5935,9 @@ character wide buffer and make it easy to adjust it.
 :PROPERTIES:
 :ID:       org_gcr_2017-07-11_mara:02FCF4D1-5613-49B3-A247-6BFA846D7EEA
 :END:
+
+Use local bitmaps.
+
 #+NAME: org_gcr_2017-07-11_mara_27556B29-B77D-445F-8A54-00BDB89B452A
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'image-load-path (concat (expand-file-name "./") "xpm"))
