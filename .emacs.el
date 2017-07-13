@@ -3335,27 +3335,21 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
 ;; org_gcr_2017-05-12_mara_D967070F-06B7-4433-94A8-36E360600C9E ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A6D3E9FB-C601-401C-AFA7-B5410A36FDAF][org_gcr_2017-05-12_mara_A6D3E9FB-C601-401C-AFA7-B5410A36FDAF]]
-(defun my--set-transparency (inc)
-  "Increase or decrease the selected frame transparency.
-Attribution: URL `https://www.reddit.com/r/emacs/comments/5rnpsm/nice_hydra_to_set_frame_transparency/'"
-  (let* ((alpha (frame-parameter (selected-frame) 'alpha))
-         (next-alpha (cond ((not alpha) 100)
-                           ((> (- alpha inc) 100) 100)
-                           ((< (- alpha inc) 0) 0)
-                           (t (- alpha inc)))))
-    (set-frame-parameter (selected-frame) 'alpha next-alpha)))
-
-;; Attribution: URL `https://www.reddit.com/r/emacs/comments/5rnpsm/nice_hydra_to_set_frame_transparency/'
-(defhydra hydra-transparency (:columns 2)
-  "
-ALPHA : [ %(frame-parameter nil 'alpha) ].'
+(use-package seethru
+  :ensure t
+  :config
+  (defhydra hydra-transparency (:color blue :hint nil)
+    "
+this frame's opacity: %(frame-parameter nil 'alpha)
+        _i_ reset!
+ _j_ less _k_ 50/50   _l_ more
+ _m_ quit
 "
-  ("j" (lambda () (interactive) (my--set-transparency +1)) "+ more")
-  ("k" (lambda () (interactive) (my--set-transparency -1)) "- less")
-  ("J" (lambda () (interactive) (my--set-transparency +10)) "++ more")
-  ("K" (lambda () (interactive) (my--set-transparency -10)) "-- less")
-  ("=" (lambda (value) (interactive "nTransparency Value 0 - 100 opaque:")
-         (set-frame-parameter (selected-frame) 'alpha value)) "Set to ?" :color blue))
+    ("j" (lambda () (interactive) (seethru-relative -1)) :exit nil)
+    ("i" (lambda () (interactive) (seethru 100)) :exit nil)
+    ("k" (lambda () (interactive) (seethru 50)) :exit nil)
+    ("l" (lambda () (interactive) (seethru-relative 1)) :exit nil)
+    ("m" nil)))
 ;; org_gcr_2017-05-12_mara_A6D3E9FB-C601-401C-AFA7-B5410A36FDAF ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0413671E-4479-4626-80B9-3A22E00D4652][org_gcr_2017-05-12_mara_0413671E-4479-4626-80B9-3A22E00D4652]]
