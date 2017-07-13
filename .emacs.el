@@ -3498,6 +3498,11 @@ _n_ writegood/toggle
 (global-set-key (kbd "C-M-2") #'help/2-window)
 (global-set-key (kbd "C-M-3") #'help/3-window)
 (global-set-key (kbd "C-M-4") #'help/4-window)
+(global-set-key (kbd "s-w") (lambda ()
+                              (interactive)
+                              (save-excursion
+                                (call-interactively 'mark-whole-buffer)
+                                (call-interactively 'kill-ring-save))))
 (global-set-key (kbd "s-q") #'kill-buffer)
 (global-set-key (kbd "C-M-y") #'insert-char)
 (global-set-key [(control meta ?p)] #'help/insert-datestamp)
