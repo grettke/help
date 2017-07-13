@@ -1801,11 +1801,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A4E407FE-DD42-458A-BD83-2EFD71C1D728][org_gcr_2017-05-12_mara_A4E407FE-DD42-458A-BD83-2EFD71C1D728]]
 (global-set-key (kbd "s-w") #'git-timemachine)
 (global-set-key (kbd "s-e") #'help/safb-help/magit-status)
-(define-prefix-command 'help/vc-map)
-(global-set-key (kbd "s-r") #'help/vc-map)
-(define-key help/vc-map "e" #'help/safb-vc-ediff)
-(define-key help/vc-map "d" #'help/safb-vc-diff)
-(define-key help/vc-map "u" #'help/safb-vc-revert)
+(global-set-key (kbd "s-r") #'help/safb-vc-revert)
 (global-set-key (kbd "s-f") #'help/safb-help/vc-next-action)
 ;; org_gcr_2017-05-12_mara_A4E407FE-DD42-458A-BD83-2EFD71C1D728 ends here
 
