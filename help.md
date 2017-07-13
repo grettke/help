@@ -1126,6 +1126,22 @@ Attribution: `https://stackoverflow.com/questions/20967818/emacs-function-to-cas
   (interactive)
   (let ((sort-fold-case t))
     (call-interactively 'sort-lines)))
+
+
+(defun help/delete-this-buffer-and-file ()
+  "Deletes file connected to this buffer and kills this buffer.
+
+Attribution: URL `https://rejeep.github.io/emacs/elisp/2010/11/16/delete-file-and-buffer-in-emacs.html'"
+  (interactive)
+  (let ((filename (buffer-file-name))
+        (buffer (current-buffer))
+        (name (buffer-name)))
+    (if (not (and filename (file-exists-p filename)))
+        (error "Nothing to delete: '%s' is not visiting a file." name)
+      (when (yes-or-no-p "Are you sure you want to delete this file? ")
+        (delete-file filename)
+        (kill-buffer buffer)
+        (message "File '%s' successfully deleted." filename)))))
 ```
 
 
@@ -1272,9 +1288,13 @@ Fling buffers left and right.
 (use-package buffer-move
   :ensure t
   :config
+  (define-key org-mode-map (kbd "<C-S-up>") nil)
   (global-set-key (kbd "<C-S-up>") #'buf-move-up)
+  (define-key org-mode-map (kbd "<C-S-down>") nil)
   (global-set-key (kbd "<C-S-down>") #'buf-move-down)
+  (define-key org-mode-map (kbd "<C-S-left>") nil)
   (global-set-key (kbd "<C-S-left>") #'buf-move-left)
+  (define-key org-mode-map (kbd "<C-S-right>") nil)
   (global-set-key (kbd "<C-S-right>") #'buf-move-right))
 ```
 
@@ -1288,6 +1308,13 @@ Fling buffers left and right.
       :config
       (setq fci-rule-column 79))
     ```
+
+Show text indentation guide lines.
+
+```emacs-lisp
+(use-package indent-guide
+  :ensure t)
+```
 
 Management:
 
@@ -2876,7 +2903,7 @@ Make sense of the current mode.
 
     ID: org_gcr_2017-06-25_mara:7C9667D1-C881-40AC-9312-EB11A9F4F61E
 
-Every special mode needs this. Which is nothing yet. \\#+END<sub>SRC</sub>
+Every special mode needs this. Which is nothing yet.
 
 
 ### Text-Mode
@@ -2929,7 +2956,8 @@ Every text editing buffer needs this.
                                 js2-mode-hook
                                 json-mode-hook
                                 crontab-mode-hook
-                                apache-mode-hook))
+                                apache-mode-hook
+                                python-mode-hook))
         ```
     -   LISP mode hooks.
         -   Are hacking modes.
@@ -3714,6 +3742,9 @@ Package lint.
             ID: org_gcr_2017-05-12_mara:ADB2113A-6D9F-4145-9D78-1DDFE5A2C916
 
         ```emacs-lisp
+        (define-key org-mode-map (kbd "s-]") (lambda () (interactive)
+                                               (help/org-2every-src-block
+                                                'org-babel-remove-result)))
         (define-key org-mode-map (kbd "s-y") #'help/safb-org-babel-execute-buffer)
         (define-key org-mode-map (kbd "s-u") #'help/safb-org-babel-execute-subtree)
         (define-key org-mode-map (kbd "s-U") #'org-mark-ring-goto)
@@ -3729,12 +3760,12 @@ Package lint.
             ID: org_gcr_2017-05-12_mara:AA97F835-E969-43E4-AC84-B3CF472B8726
 
         ```emacs-lisp
+        (define-key org-mode-map (kbd "C-c C-k") nil)
         (define-key org-mode-map (kbd "s-h") #'help/safb-org-babel-tangle)
         (define-key org-mode-map (kbd "s-j") #'org-babel-next-src-block)
         (define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
         (define-key org-mode-map (kbd "s-l") #'help/safb-org-edit-src-code)
         (define-key org-mode-map (kbd "s-;") #'help/safb-help/org-babel-demarcate-block)
-        (define-key org-mode-map (kbd "C-,") nil)
         (define-key org-mode-map (kbd "C->") #'(lambda () (interactive) (insert "\\rarr{}")))
         (defun help/org-insert-subscript (arg)
           "Maybe insert a subscript with the postfix space."
@@ -3752,6 +3783,12 @@ Package lint.
         (define-key org-mode-map (kbd "s-S") #'help/org-insert-superscript)
         ```
 
+        Because I only use this for Org-Mode.
+
+        ```emacs-lisp
+        (define-key global-map (kbd "s-o") nil)
+        ```
+
     4.  Row 2
 
             ID: org_gcr_2017-05-12_mara:680824E4-2C0B-4E0F-BA6E-62AA84D484E4
@@ -3761,6 +3798,12 @@ Package lint.
         (define-key org-mode-map (kbd "s-m") #'org-babel-expand-src-block)
         (define-key org-mode-map (kbd "s-,") #'org-babel-open-src-block-result)
         (define-key org-mode-map (kbd "s-.") #'org-time-stamp)
+        ```
+
+        Because I only use this for Org-Mode.
+
+        ```emacs-lisp
+        (define-key global-map (kbd "s-m") nil)
         ```
 
     5.  Hydra
@@ -3773,8 +3816,8 @@ Package lint.
           "
         _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ id-create _5_ toggle-macro
         _q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ help/org-refile _R_ g2nms-b _t_ g2s-b/hd _p_ copy/property
-        _a_ archive-subtree _s_ oblobigst _u_ goto _h_ dksieb _k_ ob-check-src-blk
-        _z_ lint _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
+        _a_ archive-subtree _s_ oblobigst _u_ goto _h_ dksieb _k_ ob-check-src-blk _l_ lint
+        _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
           ;; Row 5
           ("1" org-babel-sha1-hash)
           ("2" org-display-inline-images)
@@ -3797,8 +3840,8 @@ Package lint.
           ("h" org-babel-do-key-sequence-in-edit-buffer)
           ("H" org-babel-insert-header-arg)
           ("k" org-babel-check-src-block)
+          ("l" org-lint)
           ;; Row 2
-          ("z" org-lint)
           ("c" org-fill-paragraph)
           ("b" org-babel-switch-to-session)
           ("n" org-narrow-to-subtree)
@@ -4338,6 +4381,14 @@ Enable Auto-Complete via Geiser.
 ### Python
 
     ID: org_gcr_2017-05-12_mara:BA88E1CC-386E-4CFF-89B3-7E003EC92504
+
+```emacs-lisp
+(defun help/python-mode-hook-fn ()
+  "HELP python mode customizatin."
+  (interactive)
+  (indent-guide-mode))
+(add-hook 'python-mode-hook #'help/python-mode-hook-fn)
+```
 
 
 ### YASnippet & Abbrev
@@ -5203,65 +5254,122 @@ The best programming font is Deja Vu Sans Mono because it sans-serif and support
 
     ID: org_gcr_2017-06-23_mara:77B3D3E9-B7F7-44FB-8B82-A23CAC02C83B
 
-1.  Menu bar
+1.  Bitmaps
+
+        ID: org_gcr_2017-07-11_mara:02FCF4D1-5613-49B3-A247-6BFA846D7EEA
+
+    Use local bitmaps.
+
+    ```emacs-lisp
+    (add-to-list 'image-load-path (expand-file-name "./"))
+    ```
+
+    Bitmap requirements
+
+    -   24x24 seems to be the most common dimension
+
+    Finding bitmaps
+
+    -   Search for an existing bitmap [by subject](https://commons.wikimedia.org/wiki/Category:Icons_by_subject)
+    -   Prefer SVG for flexibility
+
+    Generating bitmaps
+
+    -   By hand
+        -   Emacs already supports editing and visuaation
+        -   Gimp
+    -   Convert SVG to XPM
+        -   Convert SVG to PNG
+
+                rsvg-convert --width=24 --height=24 --format=png --keep-aspect-ratio --output new.png existing.svg
+        -   Convert PNG to XPM
+
+                convert new.png new.xpm
+
+2.  Icons
+
+        ID: org_gcr_2017-07-11_mara:5E885B6C-66CF-4F58-8888-F257F4AB8AFA
+
+    Replace major mode lighters with icons.
+
+    ```emacs-lisp
+    (use-package mode-icons
+      :ensure t
+      :config
+      (mode-icons-mode))
+    ```
+
+3.  Menu bar
 
         ID: org_gcr_2017-06-23_mara:47EF669D-E999-4573-AA5C-5CF038ADA870
+
+    Enable the menu bar.
 
     ```emacs-lisp
     (menu-bar-mode nil)
     ```
 
-2.  Tool bar
+4.  Tool bar
 
         ID: org_gcr_2017-06-23_mara:EC50EB46-7878-4799-9805-EF0CB3D3E526
+
+    Enable the tool bar.
 
     ```emacs-lisp
     (tool-bar-mode nil)
     ```
 
-3.  Scroll bar
+    ibuffer ([image source](https://commons.wikimedia.org/wiki/Category:List_icons#/media/File:List_alt_font_awesome.svg)).
+
+    ```emacs-lisp
+    (tool-bar-add-item
+     "fontawesome_list-alt"
+     'ibuffer
+     'ibuffer-fake
+     :help "List buffers")
+    ```
+
+    buffer swap ([image source](https://thenounproject.com/term/swap/99117/)).
+
+    ```emacs-lisp
+    (tool-bar-add-item
+     "evan-shuster-ca_swap"
+     'help/safb-switch-to-previous-buffer
+     'help/safb-switch-to-previous-buffer-fake
+     :help "Go back")
+    ```
+
+5.  Scroll bar
 
         ID: org_gcr_2017-06-23_mara:590AD87D-0567-454F-98AE-3AE64A171012
+
+    Enable the scroll bar.
 
     ```emacs-lisp
     (scroll-bar-mode nil)
     ```
 
-4.  Various
+6.  Transparency
 
         ID: org_gcr_2017-06-23_mara:143A134C-02D9-412F-9D9C-FC6E7B43D505
 
-    Adjust frame transparency.
-
     ```emacs-lisp
-    (defun my--set-transparency (inc)
-      "Increase or decrease the selected frame transparency.
-    Attribution: URL `https://www.reddit.com/r/emacs/comments/5rnpsm/nice_hydra_to_set_frame_transparency/'"
-      (let* ((alpha (frame-parameter (selected-frame) 'alpha))
-             (next-alpha (cond ((not alpha) 100)
-                               ((> (- alpha inc) 100) 100)
-                               ((< (- alpha inc) 0) 0)
-                               (t (- alpha inc)))))
-        (set-frame-parameter (selected-frame) 'alpha next-alpha)))
-
-    ;; Attribution: URL `https://www.reddit.com/r/emacs/comments/5rnpsm/nice_hydra_to_set_frame_transparency/'
-    (defhydra hydra-transparency (:columns 2)
-      "
-    ALPHA : [ %(frame-parameter nil 'alpha) ].'
+    (use-package seethru
+      :ensure t
+      :config
+      (defhydra hydra-transparency (:color blue :hint nil)
+        "
+    this frame's opacity: %(frame-parameter nil 'alpha)
+            _i_ reset!
+     _j_ less _k_ 50/50   _l_ more
+     _m_ quit
     "
-      ("j" (lambda () (interactive) (my--set-transparency +1)) "+ more")
-      ("k" (lambda () (interactive) (my--set-transparency -1)) "- less")
-      ("J" (lambda () (interactive) (my--set-transparency +10)) "++ more")
-      ("K" (lambda () (interactive) (my--set-transparency -10)) "-- less")
-      ("=" (lambda (value) (interactive "nTransparency Value 0 - 100 opaque:")
-             (set-frame-parameter (selected-frame) 'alpha value)) "Set to ?" :color blue))
-    ```
+        ("j" (lambda () (interactive) (seethru-relative -1)) :exit nil)
+        ("i" (lambda () (interactive) (seethru 100)) :exit nil)
+        ("k" (lambda () (interactive) (seethru 50)) :exit nil)
+        ("l" (lambda () (interactive) (seethru-relative 1)) :exit nil)
+        ("m" nil)))
 
-    The default keybinding for frame iconification doesn&rsquo;t work for my Org-Mode Literate Programming setup. Their default binding does thing that I don&rsquo;t want so I&rsquo;m happy to stomp on them.
-
-    ```emacs-lisp
-    (define-key global-map (kbd "s-m") nil)
-    (define-key global-map (kbd "s-o") nil)
     ```
 
 
@@ -5358,6 +5466,37 @@ Select windows.
   (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
   (setq aw-scope 'frame)
   (setq aw-background nil))
+```
+
+```emacs-lisp
+(use-package eyebrowse
+  :ensure t
+  :config
+  (setq eyebrowse-wrap-around t)
+  (eyebrowse-mode t)
+  (defhydra help/hydra-left-side/eyebrowse (:color blue :hint nil)
+    "
+current eyebrowse slot: %(eyebrowse--get 'current-slot)
+ _j_ previous _k_ last _l_ next _u_ close _i_ choose _o_ rename _q_ quit
+   _a_ 00 _s_ 01 _d_ 02 _f_ 03 _g_ 04 _z_ 05 _x_ 06 _c_ 07 _v_ 08 _b_ 09"
+    ("j" #'eyebrowse-prev-window-config :exit nil)
+    ("k" #'eyebrowse-last-window-config)
+    ("l" #'eyebrowse-next-window-config :exit nil)
+    ("u" #'eyebrowse-close-window-config :exit nil)
+    ("i" #'eyebrowse-switch-to-window-config)
+    ("o" #'eyebrowse-rename-window-config :exit nil)
+    ("q" nil)
+    ("a" #'eyebrowse-switch-to-window-config-0)
+    ("s" #'eyebrowse-switch-to-window-config-1)
+    ("d" #'eyebrowse-switch-to-window-config-2)
+    ("f" #'eyebrowse-switch-to-window-config-3)
+    ("g" #'eyebrowse-switch-to-window-config-4)
+    ("z" #'eyebrowse-switch-to-window-config-5)
+    ("x" #'eyebrowse-switch-to-window-config-6)
+    ("c" #'eyebrowse-switch-to-window-config-7)
+    ("v" #'eyebrowse-switch-to-window-config-8)
+    ("b" #'eyebrowse-switch-to-window-config-9))
+  (global-set-key (kbd "C-M-e") #'help/hydra-left-side/eyebrowse/body))
 ```
 
 
@@ -5688,8 +5827,16 @@ These changes helped guide the custom keyboard design.
         ID: org_gcr_2017-05-12_mara:5E250B06-C35C-4AEE-90C6-F5333A2D1BE3
 
     ```emacs-lisp
+    (global-set-key (kbd "C-9") (lambda () (interactive) (switch-to-buffer
+                                                     "projects.org")))
+    (global-set-key (kbd "C-0") (lambda () (interactive) (switch-to-buffer
+                                                     "scratch.org")))
+    (global-set-key (kbd "M-9") (lambda () (interactive) (switch-to-buffer
+                                                     "help/help.org")))
+    (global-set-key (kbd "M-0") (lambda () (interactive) (switch-to-buffer
+                                                     "list/help.org")))
     (global-set-key (kbd "C-5") #'help/safb-kill-this-buffer)
-    (global-set-key (kbd "C-9") #'(lambda () (interactive) (insert "Vigneswari")))
+    (global-set-key (kbd "C--") (lambda () (interactive) (insert "Vigneswari")))
     (global-set-key (kbd "s-5") #'mc/mark-previous-like-this)
     (global-set-key (kbd "s-4") #'mc/mark-next-like-this)
     (global-set-key (kbd "s-3") #'mc/mark-previous-like-this)
@@ -5727,6 +5874,11 @@ These changes helped guide the custom keyboard design.
     (global-set-key (kbd "C-M-2") #'help/2-window)
     (global-set-key (kbd "C-M-3") #'help/3-window)
     (global-set-key (kbd "C-M-4") #'help/4-window)
+    (global-set-key (kbd "s-w") (lambda ()
+                                  (interactive)
+                                  (save-excursion
+                                    (call-interactively 'mark-whole-buffer)
+                                    (call-interactively 'kill-ring-save))))
     (global-set-key (kbd "s-q") #'kill-buffer)
     (global-set-key (kbd "C-M-y") #'insert-char)
     (global-set-key [(control meta ?p)] #'help/insert-datestamp)
@@ -5745,6 +5897,7 @@ These changes helped guide the custom keyboard design.
     ```emacs-lisp
     (global-unset-key (kbd "C-M-j"))
     (global-set-key (kbd "M-:") #'my-eval-expression)
+    (global-set-key (kbd "C-c C-k") #'help/delete-this-buffer-and-file)
     ```
 
     ```emacs-lisp
@@ -5844,7 +5997,7 @@ These changes helped guide the custom keyboard design.
     _a_propos        _c_ommand
     _d_ocumentation  _l_ibrary
     _v_ariable       _u_ser-option
-    valu_e_
+    valu_e_          _i_nfo
     e_m_acs          elis_p_
     "
       ("a" apropos)
@@ -5853,6 +6006,7 @@ These changes helped guide the custom keyboard design.
       ("c" apropos-command)
       ("l" apropos-library)
       ("u" apropos-user-option)
+      ("i" info-apropos)
       ("e" apropos-value)
       ("m" emacs-index-search)
       ("p" elisp-index-search))
@@ -5920,6 +6074,7 @@ These changes helped guide the custom keyboard design.
     ```emacs-lisp
     (global-set-key (kbd "s-v") #'ido-find-file)
     (global-set-key (kbd "C-x C-c") #'help/safb-save-buffers-kill-terminal)
+    (define-key org-mode-map (kbd "C-,") nil)
     (global-set-key (kbd "C-,") #'ido-switch-buffer)
     (global-set-key (kbd "C-M-,") #'ibuffer)
     (global-set-key (kbd "C-.") nil)
