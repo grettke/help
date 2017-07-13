@@ -4299,6 +4299,13 @@ Easily manipulate lists and headlines staying close to home.
 (define-key org-mode-map (kbd "s-S") #'help/org-insert-superscript)
 #+END_SRC
 
+Because I only use this for Org-Mode.
+
+#+NAME: org_gcr_2017-07-12_mara_65D0CDCC-66C7-4C81-ABF3-D22AAF71868E
+#+BEGIN_SRC emacs-lisp
+(define-key global-map (kbd "s-o") nil)
+#+END_SRC
+
 ***** Row 2
      :PROPERTIES:
      :ID:       org_gcr_2017-05-12_mara:680824E4-2C0B-4E0F-BA6E-62AA84D484E4
@@ -4310,6 +4317,13 @@ Easily manipulate lists and headlines staying close to home.
 (define-key org-mode-map (kbd "s-m") #'org-babel-expand-src-block)
 (define-key org-mode-map (kbd "s-,") #'org-babel-open-src-block-result)
 (define-key org-mode-map (kbd "s-.") #'org-time-stamp)
+#+END_SRC
+
+Because I only use this for Org-Mode.
+
+#+NAME: org_gcr_2017-07-12_mara_97C70CDA-DFBF-4422-942A-00E732D3AB6A
+#+BEGIN_SRC emacs-lisp
+(define-key global-map (kbd "s-m") nil)
 #+END_SRC
 
 ***** Hydra
@@ -6053,19 +6067,6 @@ this frame's opacity: %(frame-parameter nil 'alpha)
     ("l" (lambda () (interactive) (seethru-relative 1)) :exit nil)
     ("m" nil)))
 
-#+END_SRC
-**** Various
-:PROPERTIES:
-:ID:       org_gcr_2017-07-12_mara:55F65EBE-98C0-44D3-9256-CC31304D7E92
-:END:
-The default keybinding for frame iconification doesn't work for my Org-Mode
-Literate Programming setup. Their default binding does thing that I don't want
-so I'm happy to stomp on them.
-
-#+NAME: org_gcr_2017-05-12_mara_0413671E-4479-4626-80B9-3A22E00D4652
-#+BEGIN_SRC emacs-lisp
-(define-key global-map (kbd "s-m") nil)
-(define-key global-map (kbd "s-o") nil)
 #+END_SRC
 ** Pointer
    :PROPERTIES:

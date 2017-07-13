@@ -2422,12 +2422,20 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (define-key org-mode-map (kbd "s-S") #'help/org-insert-superscript)
 ;; org_gcr_2017-05-12_mara_EC7D6149-4451-443D-BFFF-1A40073D7D98 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-07-12_mara_65D0CDCC-66C7-4C81-ABF3-D22AAF71868E][org_gcr_2017-07-12_mara_65D0CDCC-66C7-4C81-ABF3-D22AAF71868E]]
+(define-key global-map (kbd "s-o") nil)
+;; org_gcr_2017-07-12_mara_65D0CDCC-66C7-4C81-ABF3-D22AAF71868E ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8C00E3FE-4AE1-49BA-97E7-FAB2784DD0A9][org_gcr_2017-05-12_mara_8C00E3FE-4AE1-49BA-97E7-FAB2784DD0A9]]
 (define-key org-mode-map (kbd "s-n") #'org-babel-view-src-block-info)
 (define-key org-mode-map (kbd "s-m") #'org-babel-expand-src-block)
 (define-key org-mode-map (kbd "s-,") #'org-babel-open-src-block-result)
 (define-key org-mode-map (kbd "s-.") #'org-time-stamp)
 ;; org_gcr_2017-05-12_mara_8C00E3FE-4AE1-49BA-97E7-FAB2784DD0A9 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2017-07-12_mara_97C70CDA-DFBF-4422-942A-00E732D3AB6A][org_gcr_2017-07-12_mara_97C70CDA-DFBF-4422-942A-00E732D3AB6A]]
+(define-key global-map (kbd "s-m") nil)
+;; org_gcr_2017-07-12_mara_97C70CDA-DFBF-4422-942A-00E732D3AB6A ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_90AA8396-E8A0-439C-A1E4-373E90C4DC84][org_gcr_2017-05-12_mara_90AA8396-E8A0-439C-A1E4-373E90C4DC84]]
 (defhydra help/hydra/right-side/org-mode (:color blue
@@ -3351,11 +3359,6 @@ this frame's opacity: %(frame-parameter nil 'alpha)
     ("l" (lambda () (interactive) (seethru-relative 1)) :exit nil)
     ("m" nil)))
 ;; org_gcr_2017-05-12_mara_A6D3E9FB-C601-401C-AFA7-B5410A36FDAF ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0413671E-4479-4626-80B9-3A22E00D4652][org_gcr_2017-05-12_mara_0413671E-4479-4626-80B9-3A22E00D4652]]
-(define-key global-map (kbd "s-m") nil)
-(define-key global-map (kbd "s-o") nil)
-;; org_gcr_2017-05-12_mara_0413671E-4479-4626-80B9-3A22E00D4652 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_DD263B9E-EFF2-49BF-B367-4F4505F8E618][org_gcr_2017-05-12_mara_DD263B9E-EFF2-49BF-B367-4F4505F8E618]]
 (setq make-pointer-invisible t)
