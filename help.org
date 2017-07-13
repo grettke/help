@@ -6031,12 +6031,10 @@ Enable the scroll bar.
 #+BEGIN_SRC emacs-lisp
 (scroll-bar-mode nil)
 #+END_SRC
-**** Various
+**** Transparency
 :PROPERTIES:
 :ID:       org_gcr_2017-06-23_mara:143A134C-02D9-412F-9D9C-FC6E7B43D505
 :END:
-Adjust frame transparency.
-
 #+NAME: org_gcr_2017-05-12_mara_A6D3E9FB-C601-401C-AFA7-B5410A36FDAF
 #+BEGIN_SRC emacs-lisp
 (defun my--set-transparency (inc)
@@ -6061,7 +6059,10 @@ ALPHA : [ %(frame-parameter nil 'alpha) ].'
   ("=" (lambda (value) (interactive "nTransparency Value 0 - 100 opaque:")
          (set-frame-parameter (selected-frame) 'alpha value)) "Set to ?" :color blue))
 #+END_SRC
-
+**** Various
+:PROPERTIES:
+:ID:       org_gcr_2017-07-12_mara:55F65EBE-98C0-44D3-9256-CC31304D7E92
+:END:
 The default keybinding for frame iconification doesn't work for my Org-Mode
 Literate Programming setup. Their default binding does thing that I don't want
 so I'm happy to stomp on them.
