@@ -5940,6 +5940,12 @@ character wide buffer and make it easy to adjust it.
 :PROPERTIES:
 :ID:       org_gcr_2017-06-23_mara:77B3D3E9-B7F7-44FB-8B82-A23CAC02C83B
 :END:
+Title.
+
+#+NAME: org_gcr_2017-07-13_mara_A81CE2F3-CD06-40C9-AD1A-8AB74AB88016
+#+BEGIN_SRC emacs-lisp
+(setq frame-title-format '("" "%b - Super Text Editor "))
+#+END_SRC
 **** Bitmaps
 :PROPERTIES:
 :ID:       org_gcr_2017-07-11_mara:02FCF4D1-5613-49B3-A247-6BFA846D7EEA
