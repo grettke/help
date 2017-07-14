@@ -5949,7 +5949,7 @@ Use local bitmaps.
 
 #+NAME: org_gcr_2017-07-11_mara_27556B29-B77D-445F-8A54-00BDB89B452A
 #+BEGIN_SRC emacs-lisp
-(add-to-list 'image-load-path (expand-file-name "./"))
+(add-to-list 'image-load-path "~/src/help/xpm")
 #+END_SRC
 
 Bitmap requirements

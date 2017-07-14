@@ -3300,7 +3300,7 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
 ;; org_gcr_2017-05-12_mara_6B639D09-DA18-40C5-ABA0-8647820507E6 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-07-11_mara_27556B29-B77D-445F-8A54-00BDB89B452A][org_gcr_2017-07-11_mara_27556B29-B77D-445F-8A54-00BDB89B452A]]
-(add-to-list 'image-load-path (expand-file-name "./"))
+(add-to-list 'image-load-path "~/src/help/xpm")
 ;; org_gcr_2017-07-11_mara_27556B29-B77D-445F-8A54-00BDB89B452A ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-07-11_mara_90A13EAE-8941-4BDA-8937-DCE5759CBA5C][org_gcr_2017-07-11_mara_90A13EAE-8941-4BDA-8937-DCE5759CBA5C]]
