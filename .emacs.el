@@ -3326,7 +3326,7 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
 (tool-bar-add-item
  "fontawesome_list-alt"
  'ibuffer
- 'ibuffer-fake
+ 'iBuffer
  :help "List buffers")
 ;; org_gcr_2017-07-11_mara_F035C9D9-EAE9-48CF-BE67-5BFF1F0A23FD ends here
 
@@ -3334,8 +3334,8 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
 (tool-bar-add-item
  "evan-shuster-ca_swap"
  'help/safb-switch-to-previous-buffer
- 'help/safb-switch-to-previous-buffer-fake
- :help "Go back")
+ 'Swap
+ :help "Swap buffers")
 ;; org_gcr_2017-07-11_mara_9D659239-693A-430C-A4CE-6003BD650A60 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D967070F-06B7-4433-94A8-36E360600C9E][org_gcr_2017-05-12_mara_D967070F-06B7-4433-94A8-36E360600C9E]]

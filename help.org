@@ -6023,7 +6023,7 @@ ibuffer ([[https://commons.wikimedia.org/wiki/Category:List_icons#/media/File:Li
 (tool-bar-add-item
  "fontawesome_list-alt"
  'ibuffer
- 'ibuffer-fake
+ 'iBuffer
  :help "List buffers")
 #+END_SRC
 
@@ -6034,8 +6034,8 @@ buffer swap ([[https://thenounproject.com/term/swap/99117/][image source]]).
 (tool-bar-add-item
  "evan-shuster-ca_swap"
  'help/safb-switch-to-previous-buffer
- 'help/safb-switch-to-previous-buffer-fake
- :help "Go back")
+ 'Swap
+ :help "Swap buffers")
 #+END_SRC
 **** Scroll bar
 :PROPERTIES:
