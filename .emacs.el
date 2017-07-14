@@ -3340,6 +3340,7 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D967070F-06B7-4433-94A8-36E360600C9E][org_gcr_2017-05-12_mara_D967070F-06B7-4433-94A8-36E360600C9E]]
 (scroll-bar-mode nil)
+(horizontal-scroll-bar-mode nil)
 ;; org_gcr_2017-05-12_mara_D967070F-06B7-4433-94A8-36E360600C9E ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A6D3E9FB-C601-401C-AFA7-B5410A36FDAF][org_gcr_2017-05-12_mara_A6D3E9FB-C601-401C-AFA7-B5410A36FDAF]]
