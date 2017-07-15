@@ -2394,8 +2394,10 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_49522E70-EE2D-4CF9-95D7-8E43524A469D][org_gcr_2017-05-12_mara_49522E70-EE2D-4CF9-95D7-8E43524A469D]]
 (define-key org-mode-map (kbd "s-]") (lambda () (interactive)
+                                       (message "Removing all source block resuls")
                                        (help/org-2every-src-block
-                                        'org-babel-remove-result)))
+                                        'org-babel-remove-result)
+                                       (message "Done removing all source block resuls")))
 (define-key org-mode-map (kbd "s-y") #'help/safb-org-babel-execute-buffer)
 (define-key org-mode-map (kbd "s-u") #'help/safb-org-babel-execute-subtree)
 (define-key org-mode-map (kbd "s-U") #'org-mark-ring-goto)
