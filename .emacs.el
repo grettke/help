@@ -766,6 +766,18 @@ Attribution: URL `https://rejeep.github.io/emacs/elisp/2010/11/16/delete-file-an
         (delete-file filename)
         (kill-buffer buffer)
         (message "File '%s' successfully deleted." filename)))))
+
+(defun help/wih ()
+  (interactive)
+  (insert "#+CATEGORY: Article
+#+TAGS: Yoga, philosophy, Health, Happiness,
+#+TITLE:"))
+
+(defun help/wio ()
+  (interactive)
+  (insert "#+CATEGORY: Article
+#+TAGS: Babel, Emacs, Ide, Lisp, Literate Programming, Programming Language, Reproducible research, elisp, org-mode
+#+TITLE:"))
 ;; org_gcr_2017-05-12_mara_7D37FFE5-2D2B-4CF7-AF27-F3CB8616D81B ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F][org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F]]

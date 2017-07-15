@@ -1262,6 +1262,18 @@ Attribution: URL `https://rejeep.github.io/emacs/elisp/2010/11/16/delete-file-an
         (delete-file filename)
         (kill-buffer buffer)
         (message "File '%s' successfully deleted." filename)))))
+
+(defun help/wih ()
+  (interactive)
+  (insert "#+CATEGORY: Article
+,#+TAGS: Yoga, philosophy, Health, Happiness,
+,#+TITLE:"))
+
+(defun help/wio ()
+  (interactive)
+  (insert "#+CATEGORY: Article
+,#+TAGS: Babel, Emacs, Ide, Lisp, Literate Programming, Programming Language, Reproducible research, elisp, org-mode
+,#+TITLE:"))
 #+END_SRC
 
 ** Typography
