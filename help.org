@@ -5976,6 +5976,7 @@ Bitmap requirements
 Finding bitmaps
 - Search for an existing bitmap [[https://commons.wikimedia.org/wiki/Category:Icons_by_subject][by subject]]
 - Prefer SVG for flexibility
+- [[https://github.com/encharm/Font-Awesome-SVG-PNG][Font Awesome]] seems like the best Font
 
 Generating bitmaps
 - By hand
