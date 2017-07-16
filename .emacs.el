@@ -3511,16 +3511,19 @@ current eyebrowse slot: %(eyebrowse--get 'current-slot)
 (defhydra help/hydra-checking (:color blue
                                       :hint nil)
   "
-_y_ checker/toggle _u_ grade-level _i_ reading-ease
-_h_ checker/run _j_ checker/list
-_n_ writegood/toggle
+Flycheck On? %(bound-and-true-p flycheck-mode)
+ WriteGood On? %(bound-and-true-p writegood-mode)
+  _j_ checker/toggle _k_ checker/run _l_ checker/list
+   _u_ writegood/toggle _i_ grade-level _o_ reading-ease
+    _q_ quit
 "
-  ("y" flycheck-mode)
-  ("h" flycheck-buffer)
-  ("j" help/safb-flycheck-list-errors)
-  ("n" writegood-mode)
-  ("u" writegood-grade-level)
-  ("i" writegood-reading-ease))
+  ("j" flycheck-mode :exit nil)
+  ("k" flycheck-buffer :exit nil)
+  ("l" help/safb-flycheck-list-errors)
+  ("u" writegood-mode)
+  ("i" writegood-grade-level :exit nil)
+  ("o" writegood-reading-ease :exit nil)
+  ("q" :nil))
 (global-set-key (kbd "C-M-7") #'help/hydra-checking/body)
 ;; org_gcr_2017-06-13_mara_2DFDC64B-DBF2-473E-979F-D7D8D0DD2206 ends here
 
