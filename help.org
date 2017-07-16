@@ -5566,7 +5566,7 @@ best features unseen here (you are looking at the rest below):
 (use-package toggle-quotes
   :ensure t
   :config
-  (define-key sh-mode-map (kbd "C-'") nnnnnnn#'toggle-quotes))
+  (define-key sh-mode-map (kbd "C-'") #'toggle-quotes))
 (defun help/sh-mode-hook-fn ()
   (interactive))
 (add-hook 'sh-mode-hook #'help/sh-mode-hook-fn)
