@@ -3114,6 +3114,10 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
 ;; org_gcr_2017-05-19_mara_3FB67413-237F-425D-97D2-B2E164AE5F8F ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-07-16_mara_05CFE4C1-3363-42A3-A517-9A961282BB19][org_gcr_2017-07-16_mara_05CFE4C1-3363-42A3-A517-9A961282BB19]]
+(use-package toggle-quotes
+  :ensure t
+  :config
+  (define-key sh-mode-map (kbd "C-'") #'toggle-quotes))
 (defun help/sh-mode-hook-fn ()
   (interactive))
 (add-hook 'sh-mode-hook #'help/sh-mode-hook-fn)

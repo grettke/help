@@ -5559,6 +5559,10 @@ Load Beamer for creating presentations.
 :END:
 #+NAME: org_gcr_2017-07-16_mara_05CFE4C1-3363-42A3-A517-9A961282BB19
 #+BEGIN_SRC emacs-lisp
+(use-package toggle-quotes
+  :ensure t
+  :config
+  (define-key sh-mode-map (kbd "C-'") n#'toggle-quotes))
 (defun help/sh-mode-hook-fn ()
   (interactive))
 (add-hook 'sh-mode-hook #'help/sh-mode-hook-fn)
