@@ -5554,6 +5554,15 @@ Load Beamer for creating presentations.
    :ID:       org_gcr_2017-05-12_mara:68AC26B4-B52C-4A1F-AF1E-78AFE5A3D91D
    :END:
 **** Editing
+:PROPERTIES:
+:ID:       org_gcr_2017-07-16_mara:D2B25F16-8384-4641-A2C0-C9D987A83E10
+:END:
+#+NAME: org_gcr_2017-07-16_mara_05CFE4C1-3363-42A3-A517-9A961282BB19
+#+BEGIN_SRC emacs-lisp
+(defun help/sh-mode-hook-fn ()
+  (interactive))
+(add-hook 'sh-mode-hook #'help/sh-mode-hook-fn)
+#+END_SRC
 *** Make
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:4EC46A0A-2D59-4C21-8013-6A86CD46BC5F
