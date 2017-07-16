@@ -5557,6 +5557,10 @@ Load Beamer for creating presentations.
 :PROPERTIES:
 :ID:       org_gcr_2017-07-16_mara:D2B25F16-8384-4641-A2C0-C9D987A83E10
 :END:
+This ~Bash~ IDE appears less valuable because it automatically inherits it's
+best features unseen here (you are looking at the rest below):
+- ~ShellCheck~ integration
+
 #+NAME: org_gcr_2017-07-16_mara_05CFE4C1-3363-42A3-A517-9A961282BB19
 #+BEGIN_SRC emacs-lisp
 (use-package toggle-quotes
