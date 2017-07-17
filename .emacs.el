@@ -1989,6 +1989,11 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   :ensure t)
 ;; org_gcr_2017-07-16_mara_766EBC8F-2A7C-49BB-9916-BE2AAEE019A4 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-07-16_mara_A1EC88B1-71CF-458E-A626-D6A07108BA3F][org_gcr_2017-07-16_mara_A1EC88B1-71CF-458E-A626-D6A07108BA3F]]
+(use-package highlight-stages
+  :ensure t)
+;; org_gcr_2017-07-16_mara_A1EC88B1-71CF-458E-A626-D6A07108BA3F ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_26AEDAD1-36FC-490D-92F4-86E0966467E2][org_gcr_2017-05-12_mara_26AEDAD1-36FC-490D-92F4-86E0966467E2]]
 (use-package elisp-slime-nav
   :ensure t
@@ -2019,7 +2024,8 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (eldoc-mode)
   (diminish 'eldoc-mode)
   (turn-on-elisp-slime-nav-mode)
-  (highlight-quoted-mode))
+  (highlight-quoted-mode)
+  (highlight-stages-mode))
 
 (setq ielm-noisy nil)
 

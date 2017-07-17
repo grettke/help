@@ -3388,6 +3388,14 @@ Symbol visualization.
   :ensure t)
 #+END_SRC
 
+Quasi-Quote visualization.
+
+#+NAME: org_gcr_2017-07-16_mara_A1EC88B1-71CF-458E-A626-D6A07108BA3F
+#+BEGIN_SRC emacs-lisp
+(use-package highlight-stages
+  :ensure t)
+#+END_SRC
+
 #+NAME: org_gcr_2017-05-12_mara_26AEDAD1-36FC-490D-92F4-86E0966467E2
 #+BEGIN_SRC emacs-lisp
 (use-package elisp-slime-nav
@@ -3420,7 +3428,8 @@ Symbol visualization.
   (eldoc-mode)
   (diminish 'eldoc-mode)
   (turn-on-elisp-slime-nav-mode)
-  (highlight-quoted-mode))
+  (highlight-quoted-mode)
+  (highlight-stages-mode))
 
 (setq ielm-noisy nil)
 
@@ -6091,6 +6100,17 @@ Style the tool bar.
 #+BEGIN_SRC emacs-lisp
 (setq tool-bar-style 'both)
 #+END_SRC
+
+Replacement:
+- New (File)
+- Open (File)
+- Open Directory
+- Close (Buffer)
+- Save (Backing file)
+- Undo
+- Copy
+- Paste
+- Search
 
 ibuffer ([[https://commons.wikimedia.org/wiki/Category:List_icons#/media/File:List_alt_font_awesome.svg][image source]]).
 
