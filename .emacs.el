@@ -1984,6 +1984,11 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 (use-package lexbind-mode)
 ;; org_gcr_2017-05-12_mara_BEA970EF-78FA-448D-96B3-1E135640D16A ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-07-16_mara_766EBC8F-2A7C-49BB-9916-BE2AAEE019A4][org_gcr_2017-07-16_mara_766EBC8F-2A7C-49BB-9916-BE2AAEE019A4]]
+(use-package highlight-quoted
+  :ensure t)
+;; org_gcr_2017-07-16_mara_766EBC8F-2A7C-49BB-9916-BE2AAEE019A4 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_26AEDAD1-36FC-490D-92F4-86E0966467E2][org_gcr_2017-05-12_mara_26AEDAD1-36FC-490D-92F4-86E0966467E2]]
 (use-package elisp-slime-nav
   :ensure t
@@ -2013,7 +2018,8 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (lexbind-mode)
   (eldoc-mode)
   (diminish 'eldoc-mode)
-  (turn-on-elisp-slime-nav-mode))
+  (turn-on-elisp-slime-nav-mode)
+  (highlight-quoted-mode))
 
 (setq ielm-noisy nil)
 
