@@ -5557,9 +5557,22 @@ Load Beamer for creating presentations.
 :PROPERTIES:
 :ID:       org_gcr_2017-07-16_mara:D2B25F16-8384-4641-A2C0-C9D987A83E10
 :END:
-This ~Bash~ IDE appears less valuable because it automatically inherits it's
-best features unseen here (you are looking at the rest below):
+This ~Bash~ IDE appears less valuable because it automatically inherits its
+best features unseen here (you are looking at the rest below this big block):
+- Standard programming configuration
 - ~ShellCheck~ integration
+- Default to Bash
+- Smart Hashbang line generation
+
+#+NAME: org_gcr_2017-07-16_mara_FB8AD647-F0FA-4004-B930-A9CD97E97900
+#+BEGIN_SRC emacs-lisp
+(defun help/sh-mode-hook-fn ()
+  (interactive)
+  (setq sh-shell "bash"))
+(add-hook 'sh-mode-hook #'help/sh-mode-hook-fn)
+#+END_SRC
+
+Toggle string quotes between single and double.
 
 #+NAME: org_gcr_2017-07-16_mara_05CFE4C1-3363-42A3-A517-9A961282BB19
 #+BEGIN_SRC emacs-lisp
@@ -5567,9 +5580,22 @@ best features unseen here (you are looking at the rest below):
   :ensure t
   :config
   (define-key sh-mode-map (kbd "C-'") #'toggle-quotes))
-(defun help/sh-mode-hook-fn ()
-  (interactive))
-(add-hook 'sh-mode-hook #'help/sh-mode-hook-fn)
+#+END_SRC
+
+Sh-Mode Hydra.
+
+#+NAME: org_gcr_2017-07-16_mara_B4B1E9B3-3146-46AA-80C8-20B28C352E55
+#+BEGIN_SRC emacs-lisp
+(defhydra help/hydra-sh-mode (:color blue
+                                     :hint nil)
+  "
+sh-mode:
+ _i_ insert #!-line
+  _q_ quit
+"
+  ("i" sh-set-shell)
+  ("q" :nil))
+(key-chord-define sh-mode-map "hh" #'help/hydra-sh-mode/body)
 #+END_SRC
 *** Make
    :PROPERTIES:
