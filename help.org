@@ -2097,7 +2097,8 @@ Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2002-10/msg0
   (local-set-key "]" #'help/dired-copy-path)
   (diff-hl-dired-mode)
   (load "dired-x")
-  (turn-on-stripe-buffer-mode))
+  (turn-on-stripe-buffer-mode)
+  (dired-collapse-mode))
 (add-hook 'dired-mode-hook #'help/dired-mode-hook-fn)
 #+END_SRC
 
@@ -2202,6 +2203,14 @@ Use Ido with Dired.
 #+NAME: org_gcr_2017-05-12_mara_3E39734D-7615-402E-ABF9-378A134D8A01
 #+BEGIN_SRC emacs-lisp
 (setq ido-show-dot-for-dired t)
+#+END_SRC
+
+Collapse long empty paths.
+
+#+NAME: org_gcr_2017-07-16_mara_5E57252F-D68C-4A34-9404-80D6C4887012
+#+BEGIN_SRC emacs-lisp
+(use-package dired-collapse
+  :ensure t)
 #+END_SRC
 
 ** IMenu

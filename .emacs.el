@@ -1309,7 +1309,8 @@ Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2002-10/msg0
   (local-set-key "]" #'help/dired-copy-path)
   (diff-hl-dired-mode)
   (load "dired-x")
-  (turn-on-stripe-buffer-mode))
+  (turn-on-stripe-buffer-mode)
+  (dired-collapse-mode))
 (add-hook 'dired-mode-hook #'help/dired-mode-hook-fn)
 ;; org_gcr_2017-05-12_mara_83FA67CA-A147-48BF-B404-B945C4140F50 ends here
 
@@ -1349,6 +1350,11 @@ Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2002-10/msg0
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_3E39734D-7615-402E-ABF9-378A134D8A01][org_gcr_2017-05-12_mara_3E39734D-7615-402E-ABF9-378A134D8A01]]
 (setq ido-show-dot-for-dired t)
 ;; org_gcr_2017-05-12_mara_3E39734D-7615-402E-ABF9-378A134D8A01 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2017-07-16_mara_5E57252F-D68C-4A34-9404-80D6C4887012][org_gcr_2017-07-16_mara_5E57252F-D68C-4A34-9404-80D6C4887012]]
+(use-package dired-collapse
+  :ensure t)
+;; org_gcr_2017-07-16_mara_5E57252F-D68C-4A34-9404-80D6C4887012 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B746C905-E59E-4F33-88F9-5F6CD32C0DE2][org_gcr_2017-05-12_mara_B746C905-E59E-4F33-88F9-5F6CD32C0DE2]]
 (use-package imenu
