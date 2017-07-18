@@ -59,17 +59,17 @@ Please library(dtplyr)!
 *.Rsetup*
 #+NAME: org_gcr_2017-05-12_mara_290AFF18-0B4B-4EA4-9DD6-5AF56F4D8666
 #+begin_src sh :tangle .Rsetup.sh :comments no :tangle-mode (identity #o755)
-<<rsetup-defs>>
+«rsetup-defs»
 #+end_src
 
 *.Rprofile*
 #+NAME: org_gcr_2017-05-12_mara_782A27E2-93A2-46E7-8486-5A8D7D7491B9
 #+begin_src R :tangle .Rprofile :comments no
 ## -*- mode: R; -*-
-<<rprofile-def>>
+«rprofile-def»
 .First <- function() {
     gcr <- new.env()
-    <<rfirst-defs>>
+    «rfirst-defs»
     base::attach(gcr, name="gcr", warn.conflicts=FALSE)
 }
 fortune()
@@ -79,13 +79,13 @@ fortune()
 #+NAME: org_gcr_2017-05-12_mara_CDF69874-1145-4301-8322-A5D59BB37BD8
 #+begin_src sh :tangle .Renviron :comments no
 # -*- mode: sh; -*-
-<<renviron-def>>
+«renviron-def»
 #+end_src
 
 *.Rinstall*
 #+NAME: org_gcr_2017-05-12_mara_B59C073C-5783-4812-966A-53FDF8F9BE5C
 #+begin_src sh :tangle .Rinstall.r :comments no
-<<rinstall-def>>
+«rinstall-def»
 #+end_src
 
 ** .Rsetup
