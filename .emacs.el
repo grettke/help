@@ -3559,7 +3559,7 @@ Flycheck On? %(bound-and-true-p flycheck-mode)
   ("u" writegood-mode)
   ("i" writegood-grade-level :exit nil)
   ("o" writegood-reading-ease :exit nil)
-  ("q" :nil))
+  ("q" nil))
 (global-set-key (kbd "C-M-7") #'help/hydra-checking/body)
 ;; org_gcr_2017-06-13_mara_2DFDC64B-DBF2-473E-979F-D7D8D0DD2206 ends here
 
@@ -3606,12 +3606,13 @@ Flycheck On? %(bound-and-true-p flycheck-mode)
   "
 _O_ base64-encode-region _P_ base64-decode-region _|_ split-window-horizontally _-_ split-window-vertically
 _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _w_ widen _=_ reposition-window _t_ rectangle-mark _y_ transparency _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _}_ transliterate
-_T_ trademarks
+_Q_ exit-Emacs _q_uit T_ trademarks
 _a_ ag  _A_ apropo'ish _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point  _D_ detangle _g_ grep _j_ obtj2o _k_ scrollDown _K_ nextLogLine  _;_ toggle-lax-whitespace
 _l_ visual-line-mode _L_ aggressive-indent-mode
 _x_ delete-indentation _X_pm grok _c_ fill-paragraph _v_ desc-symbol _V_ view-mode _b_ erase-buffer _B_ibtex _n_ normal _m_ desc/mode _M_ checks
 _<_ cmtIn _>_ cmtOut _?_ snp"
-  ("q" help/safb-save-buffers-kill-terminal)
+  ("Q" help/safb-save-buffers-kill-terminal)
+  ("q" nil)
   ("|" split-window-horizontally)
   ("-" split-window-vertically)
   ("1" help/font-size-reset :exit nil)
