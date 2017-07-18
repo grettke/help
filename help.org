@@ -7040,6 +7040,10 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 
 **** Row 2
 :PROPERTIES:
+:ID:       org_gcr_2017-07-17_mara:B91C9779-B2AD-403B-A11F-5847EF8883C6
+:END:
+
+:PROPERTIES:
 :ID:       org_gcr_2017-05-12_mara:8CA5EED7-5301-43E2-B6B9-C92AC66A2BE6
 :END:
 
@@ -7052,6 +7056,8 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (global-set-key (kbd "C-M-,") #'ibuffer)
 (global-set-key (kbd "C-.") nil)
 (global-set-key (kbd "C-.") #'smex)
+(global-set-key (kbd "s-<") (lambda () (interactive) (insert "«")))
+(global-set-key (kbd "s->") (lambda () (interactive) (insert "»")))
 #+END_SRC
 
 **** Row 1
