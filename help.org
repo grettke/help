@@ -6950,7 +6950,7 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
 
 #+NAME: org_gcr_2017-05-12_mara_28B4A661-E888-4EFA-ADE3-4B1C05F6E92B
 #+BEGIN_SRC emacs-lisp
-(key-chord-define org-mode-map "vv" #'help/hydra/left-side/global/body)
+(key-chord-define-global "vv" #'help/hydra/left-side/global/body)
 #+END_SRC
 
 [[https://github.com/abo-abo/hydra/blob/master/hydra-examples.el][Attribution.]]

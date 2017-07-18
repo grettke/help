@@ -3669,7 +3669,7 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
 ;; org_gcr_2017-05-12_mara_095E1EC7-12A2-43BB-8ED5-CF2BC6E7D158 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_28B4A661-E888-4EFA-ADE3-4B1C05F6E92B][org_gcr_2017-05-12_mara_28B4A661-E888-4EFA-ADE3-4B1C05F6E92B]]
-(key-chord-define org-mode-map "vv" #'help/hydra/left-side/global/body)
+(key-chord-define-global "vv" #'help/hydra/left-side/global/body)
 ;; org_gcr_2017-05-12_mara_28B4A661-E888-4EFA-ADE3-4B1C05F6E92B ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C93A4DB7-1441-4DBA-B586-76266C5C30DF][org_gcr_2017-05-12_mara_C93A4DB7-1441-4DBA-B586-76266C5C30DF]]
