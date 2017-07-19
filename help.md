@@ -1142,6 +1142,18 @@ Attribution: URL `https://rejeep.github.io/emacs/elisp/2010/11/16/delete-file-an
         (delete-file filename)
         (kill-buffer buffer)
         (message "File '%s' successfully deleted." filename)))))
+
+(defun help/wih ()
+  (interactive)
+  (insert "#+CATEGORY: Article
+#+TAGS: Yoga, philosophy, Health, Happiness,
+#+TITLE:"))
+
+(defun help/wio ()
+  (interactive)
+  (insert "#+CATEGORY: Article
+#+TAGS: Babel, Emacs, Ide, Lisp, Literate Programming, Programming Language, Reproducible research, elisp, org-mode
+#+TITLE:"))
 ```
 
 
@@ -1889,7 +1901,8 @@ Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2002-10/msg0
   (local-set-key "]" #'help/dired-copy-path)
   (diff-hl-dired-mode)
   (load "dired-x")
-  (turn-on-stripe-buffer-mode))
+  (turn-on-stripe-buffer-mode)
+  (dired-collapse-mode))
 (add-hook 'dired-mode-hook #'help/dired-mode-hook-fn)
 ```
 
@@ -1980,6 +1993,13 @@ Use Ido with Dired.
 (setq ido-show-dot-for-dired t)
 ```
 
+Collapse long empty paths.
+
+```emacs-lisp
+(use-package dired-collapse
+  :ensure t)
+```
+
 
 ## IMenu
 
@@ -2030,8 +2050,7 @@ These configurations are performed in the correct order. Any attempt to refactor
   (ido-mode t))
 (use-package ido-hacks
   :ensure t)
-(use-package ido-ubiquitous
-  :ensure t
+(use-package ido-completing-read+
   :config
   (ido-ubiquitous-mode t)
   (setq ido-create-new-buffer 'always)
@@ -2226,7 +2245,8 @@ Easy kill ring access.
   (setq browse-kill-ring-highlight-inserted-item t)
   (setq browse-kill-ring-show-preview nil)
   (setq browse-kill-ring-separator
-        "⎀┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅")
+        ".-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-
+")
   (defun help/browse-kill-ring ()
     "Disable `fci-mode' before entering `browse-kill-ring'."
     (interactive)
@@ -2755,11 +2775,7 @@ VC activity keybindings.
 ```emacs-lisp
 (global-set-key (kbd "s-w") #'git-timemachine)
 (global-set-key (kbd "s-e") #'help/safb-help/magit-status)
-(define-prefix-command 'help/vc-map)
-(global-set-key (kbd "s-r") #'help/vc-map)
-(define-key help/vc-map "e" #'help/safb-vc-ediff)
-(define-key help/vc-map "d" #'help/safb-vc-diff)
-(define-key help/vc-map "u" #'help/safb-vc-revert)
+(global-set-key (kbd "s-r") #'help/safb-vc-revert)
 (global-set-key (kbd "s-f") #'help/safb-help/vc-next-action)
 ```
 
@@ -3068,6 +3084,20 @@ Slime navigation:
 -   &ldquo;pop back to previous marks&rdquo;: `M-,`
 -   &ldquo;describe the symbol at point&rdquo;: `C-c C-d C-d`
 
+Symbol visualization.
+
+```emacs-lisp
+(use-package highlight-quoted
+  :ensure t)
+```
+
+Quasi-Quote visualization.
+
+```emacs-lisp
+(use-package highlight-stages
+  :ensure t)
+```
+
 ```emacs-lisp
 (use-package elisp-slime-nav
   :ensure t
@@ -3097,7 +3127,9 @@ Slime navigation:
   (lexbind-mode)
   (eldoc-mode)
   (diminish 'eldoc-mode)
-  (turn-on-elisp-slime-nav-mode))
+  (turn-on-elisp-slime-nav-mode)
+  (highlight-quoted-mode)
+  (highlight-stages-mode))
 
 (setq ielm-noisy nil)
 
@@ -3743,8 +3775,10 @@ Package lint.
 
         ```emacs-lisp
         (define-key org-mode-map (kbd "s-]") (lambda () (interactive)
+                                               (message "Removing all source block resuls")
                                                (help/org-2every-src-block
-                                                'org-babel-remove-result)))
+                                                'org-babel-remove-result)
+                                               (message "Done removing all source block resuls")))
         (define-key org-mode-map (kbd "s-y") #'help/safb-org-babel-execute-buffer)
         (define-key org-mode-map (kbd "s-u") #'help/safb-org-babel-execute-subtree)
         (define-key org-mode-map (kbd "s-U") #'org-mark-ring-goto)
@@ -4883,6 +4917,49 @@ Load Beamer for creating presentations.
 
     ID: org_gcr_2017-05-12_mara:68AC26B4-B52C-4A1F-AF1E-78AFE5A3D91D
 
+1.  Editing
+
+        ID: org_gcr_2017-07-16_mara:D2B25F16-8384-4641-A2C0-C9D987A83E10
+
+    This `Bash` IDE appears less valuable because it automatically inherits its best features unseen here (you are looking at the rest below this big block):
+
+    -   Standard programming configuration
+    -   `ShellCheck` integration
+    -   Default to Bash
+    -   Smart Hashbang line generation
+
+    ```emacs-lisp
+    (defun help/sh-mode-hook-fn ()
+      (interactive)
+      (setq sh-shell "bash")
+      (setq sh-basic-offset 2))
+    (add-hook 'sh-mode-hook #'help/sh-mode-hook-fn)
+    ```
+
+    Toggle string quotes between single and double.
+
+    ```emacs-lisp
+    (use-package toggle-quotes
+      :ensure t
+      :config
+      (define-key sh-mode-map (kbd "C-'") #'toggle-quotes))
+    ```
+
+    Sh-Mode Hydra.
+
+    ```emacs-lisp
+    (defhydra help/hydra-sh-mode (:color blue
+                                         :hint nil)
+      "
+    sh-mode:
+     _i_ insert #!-line
+      _q_ quit
+    "
+      ("i" sh-set-shell)
+      ("q" :nil))
+    (key-chord-define sh-mode-map "hh" #'help/hydra-sh-mode/body)
+    ```
+
 
 ### Make
 
@@ -5254,6 +5331,12 @@ The best programming font is Deja Vu Sans Mono because it sans-serif and support
 
     ID: org_gcr_2017-06-23_mara:77B3D3E9-B7F7-44FB-8B82-A23CAC02C83B
 
+Title.
+
+```emacs-lisp
+(setq frame-title-format '("" "%b - Super Text Editor "))
+```
+
 1.  Bitmaps
 
         ID: org_gcr_2017-07-11_mara:02FCF4D1-5613-49B3-A247-6BFA846D7EEA
@@ -5261,7 +5344,7 @@ The best programming font is Deja Vu Sans Mono because it sans-serif and support
     Use local bitmaps.
 
     ```emacs-lisp
-    (add-to-list 'image-load-path (expand-file-name "./"))
+    (add-to-list 'image-load-path "~/src/help/xpm")
     ```
 
     Bitmap requirements
@@ -5272,6 +5355,7 @@ The best programming font is Deja Vu Sans Mono because it sans-serif and support
 
     -   Search for an existing bitmap [by subject](https://commons.wikimedia.org/wiki/Category:Icons_by_subject)
     -   Prefer SVG for flexibility
+    -   [Font Awesome](https://github.com/encharm/Font-Awesome-SVG-PNG) seems like the best Font
 
     Generating bitmaps
 
@@ -5319,13 +5403,19 @@ The best programming font is Deja Vu Sans Mono because it sans-serif and support
     (tool-bar-mode nil)
     ```
 
+    Style the tool bar.
+
+    ```emacs-lisp
+    (setq tool-bar-style 'both)
+    ```
+
     ibuffer ([image source](https://commons.wikimedia.org/wiki/Category:List_icons#/media/File:List_alt_font_awesome.svg)).
 
     ```emacs-lisp
     (tool-bar-add-item
      "fontawesome_list-alt"
      'ibuffer
-     'ibuffer-fake
+     'iBuffer
      :help "List buffers")
     ```
 
@@ -5335,18 +5425,19 @@ The best programming font is Deja Vu Sans Mono because it sans-serif and support
     (tool-bar-add-item
      "evan-shuster-ca_swap"
      'help/safb-switch-to-previous-buffer
-     'help/safb-switch-to-previous-buffer-fake
-     :help "Go back")
+     'Swap
+     :help "Swap buffers")
     ```
 
 5.  Scroll bar
 
         ID: org_gcr_2017-06-23_mara:590AD87D-0567-454F-98AE-3AE64A171012
 
-    Enable the scroll bar.
+    Enable both the vertical and horizontal scroll bar.
 
     ```emacs-lisp
     (scroll-bar-mode nil)
+    (horizontal-scroll-bar-mode nil)
     ```
 
 6.  Transparency
@@ -5827,6 +5918,8 @@ These changes helped guide the custom keyboard design.
         ID: org_gcr_2017-05-12_mara:5E250B06-C35C-4AEE-90C6-F5333A2D1BE3
 
     ```emacs-lisp
+    (global-set-key (kbd "C-8") (lambda () (interactive) (switch-to-buffer
+                                                     "*scratch*")))
     (global-set-key (kbd "C-9") (lambda () (interactive) (switch-to-buffer
                                                      "projects.org")))
     (global-set-key (kbd "C-0") (lambda () (interactive) (switch-to-buffer
@@ -5852,16 +5945,19 @@ These changes helped guide the custom keyboard design.
     (defhydra help/hydra-checking (:color blue
                                           :hint nil)
       "
-    _y_ checker/toggle _u_ grade-level _i_ reading-ease
-    _h_ checker/run _j_ checker/list
-    _n_ writegood/toggle
+    Flycheck On? %(bound-and-true-p flycheck-mode)
+     WriteGood On? %(bound-and-true-p writegood-mode)
+      _j_ checker/toggle _k_ checker/run _l_ checker/list
+       _u_ writegood/toggle _i_ grade-level _o_ reading-ease
+        _q_ quit
     "
-      ("y" flycheck-mode)
-      ("h" flycheck-buffer)
-      ("j" help/safb-flycheck-list-errors)
-      ("n" writegood-mode)
-      ("u" writegood-grade-level)
-      ("i" writegood-reading-ease))
+      ("j" flycheck-mode :exit nil)
+      ("k" flycheck-buffer :exit nil)
+      ("l" help/safb-flycheck-list-errors)
+      ("u" writegood-mode)
+      ("i" writegood-grade-level :exit nil)
+      ("o" writegood-reading-ease :exit nil)
+      ("q" nil))
     (global-set-key (kbd "C-M-7") #'help/hydra-checking/body)
     ```
 
@@ -5922,12 +6018,13 @@ These changes helped guide the custom keyboard design.
       "
     _O_ base64-encode-region _P_ base64-decode-region _|_ split-window-horizontally _-_ split-window-vertically
     _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _w_ widen _=_ reposition-window _t_ rectangle-mark _y_ transparency _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _}_ transliterate
-    _T_ trademarks
+    _Q_ exit-Emacs _q_uit T_ trademarks
     _a_ ag  _A_ apropo'ish _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point  _D_ detangle _g_ grep _j_ obtj2o _k_ scrollDown _K_ nextLogLine  _;_ toggle-lax-whitespace
     _l_ visual-line-mode _L_ aggressive-indent-mode
     _x_ delete-indentation _X_pm grok _c_ fill-paragraph _v_ desc-symbol _V_ view-mode _b_ erase-buffer _B_ibtex _n_ normal _m_ desc/mode _M_ checks
     _<_ cmtIn _>_ cmtOut _?_ snp"
-      ("q" help/safb-save-buffers-kill-terminal)
+      ("Q" help/safb-save-buffers-kill-terminal)
+      ("q" nil)
       ("|" split-window-horizontally)
       ("-" split-window-vertically)
       ("1" help/font-size-reset :exit nil)
@@ -6069,7 +6166,9 @@ These changes helped guide the custom keyboard design.
 
 4.  Row 2
 
-        ID: org_gcr_2017-05-12_mara:8CA5EED7-5301-43E2-B6B9-C92AC66A2BE6
+        ID: org_gcr_2017-07-17_mara:B91C9779-B2AD-403B-A11F-5847EF8883C6
+
+    :ID: org<sub>gcr</sub><sub>2017</sub>-05-12<sub>mara</sub>:8CA5EED7-5301-43E2-B6B9-C92AC66A2BE6
 
     ```emacs-lisp
     (global-set-key (kbd "s-v") #'ido-find-file)
@@ -6079,6 +6178,8 @@ These changes helped guide the custom keyboard design.
     (global-set-key (kbd "C-M-,") #'ibuffer)
     (global-set-key (kbd "C-.") nil)
     (global-set-key (kbd "C-.") #'smex)
+    (global-set-key (kbd "s-<") (lambda () (interactive) (insert "«")))
+    (global-set-key (kbd "s->") (lambda () (interactive) (insert "»")))
     ```
 
 5.  Row 1
