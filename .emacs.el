@@ -998,6 +998,11 @@ Attribution: URL `https://rejeep.github.io/emacs/elisp/2010/11/16/delete-file-an
 (add-hook 'ibuffer-mode-hooks #'help/ibuffer-hook-fn)
 ;; org_gcr_2017-05-19_mara_845BEC94-54CC-46D3-B85F-7B537944E328 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-07-20_mara_51310F49-2C54-43DC-AA11-CA3A4ABF1A5F][org_gcr_2017-07-20_mara_51310F49-2C54-43DC-AA11-CA3A4ABF1A5F]]
+(use-package face-remap
+  :diminish 'buffer-face-mode)
+;; org_gcr_2017-07-20_mara_51310F49-2C54-43DC-AA11-CA3A4ABF1A5F ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_611E83B9-E797-4512-95EE-643473026607][org_gcr_2017-05-12_mara_611E83B9-E797-4512-95EE-643473026607]]
 (use-package hideshow
   :config
@@ -1925,7 +1930,8 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
                         json-mode-hook
                         crontab-mode-hook
                         apache-mode-hook
-                        python-mode-hook))
+                        python-mode-hook
+                        gnu-apl-mode-hook))
 ;; org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86][org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86]]
@@ -2575,7 +2581,51 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C30EFFA1-FDBA-413F-AD23-29C0C2095231][org_gcr_2017-05-12_mara_C30EFFA1-FDBA-413F-AD23-29C0C2095231]]
 (use-package gnu-apl-mode
-  :ensure t)
+  :ensure t
+  :init
+  (setq gnu-apl-show-keymap-on-startup nil)
+  (setq gnu-apl-show-apl-welcome nil)
+  (setq gnu-apl-show-tips-on-start nil)
+  (setq gnu-apl-mode-map-prefix "C-M-s-")
+  (setq gnu-apl-interactive-mode-map-prefix gnu-apl-mode-map-prefix)
+  :config
+  (defun em-gnu-apl-init ()
+    (setq buffer-face-mode-face 'gnu-apl-default)
+    (buffer-face-mode))
+  (add-hook 'gnu-apl-interactive-mode-hook 'em-gnu-apl-init)
+  (add-hook 'gnu-apl-mode-hook 'em-gnu-apl-init)
+  (defhydra help/hydra/gnu-apl (:color blue
+                                       :hint nil)
+    "
+GNU APL REPL is:
+ _y_ eval-buffer _u_ eval-region _i_ eval-line _o_ eval-function
+  _f_ apropos-symbol _g_ help-symbol _j_ next _k_ previous _l_ keyboard
+   _q_ quit _c_ start APL _v_ to-repl
+"
+    ("i" help/gnu-apl-eval-line)
+    ("o" gnu-apl-interactive-send-current-function)
+    ("j" (lambda () (interactive) (call-interactively 'next-logical-line)) :exit nil)
+    ("k" (lambda () (interactive) (call-interactively 'previous-logical-line))
+     :exit nil)
+    ("v" gnu-apl-switch-to-interactive)
+    ("u" gnu-apl-interactive-send-region)
+    ("l" gnu-apl-show-keyboard)
+    ("y" gnu-apl-interactive-send-buffer)
+    ("t" gnu-apl-trace)
+    ("f" gnu-apl-apropos-symbol)
+    ("g" gnu-apl-show-help-for-symbol)
+    ("c" gnu-apl)
+    ("q" nil))
+  (key-chord-define gnu-apl-mode-map "hh" #'help/hydra/gnu-apl/body)
+  (defun help/gnu-apl-eval-line ()
+    "Evaluate this line and move to next."
+    (interactive)
+    (end-of-line)
+    (set-mark (line-beginning-position))
+    (call-interactively 'gnu-apl-interactive-send-region)
+    (deactivate-mark)
+    (call-interactively 'next-logical-line))
+  (define-key gnu-apl-mode-map (kbd "C-<return>") #'help/gnu-apl-eval-line))
 ;; org_gcr_2017-05-12_mara_C30EFFA1-FDBA-413F-AD23-29C0C2095231 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_DB3C5279-6AF3-4EAE-AC9E-F1327BBDC959][org_gcr_2017-05-12_mara_DB3C5279-6AF3-4EAE-AC9E-F1327BBDC959]]
