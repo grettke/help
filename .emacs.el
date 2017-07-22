@@ -3801,6 +3801,8 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (global-set-key (kbd "C-M-,") #'ibuffer)
 (global-set-key (kbd "C-.") nil)
 (global-set-key (kbd "C-.") #'smex)
+(global-set-key (kbd "C-M-.") nil)
+(global-set-key (kbd "C-M-.") #'dired)
 (global-set-key (kbd "s-<") (lambda () (interactive) (insert "«")))
 (global-set-key (kbd "s->") (lambda () (interactive) (insert "»")))
 ;; org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B ends here
