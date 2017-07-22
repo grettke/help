@@ -3316,10 +3316,11 @@ Every text editing buffer needs this.
   behavior for most modes.
   #+NAME: org_gcr_2017-05-12_mara_3AB5C00B-E0FF-40A1-9C3B-420CB4E8D417
   #+BEGIN_SRC emacs-lisp
-(use-package smartparens-config
-  :ensure smartparens
+(use-package smartparens
+  :ensure t
   :config
   (setq sp-show-pair-from-inside nil)
+  (require 'smartparens-config)
   :diminish smartparens-mode)
   #+END_SRC
 

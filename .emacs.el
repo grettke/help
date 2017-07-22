@@ -1950,10 +1950,11 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 ;; org_gcr_2017-05-12_mara_02408658-D767-4D6E-8AAA-2BE1933BCBD1 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_3AB5C00B-E0FF-40A1-9C3B-420CB4E8D417][org_gcr_2017-05-12_mara_3AB5C00B-E0FF-40A1-9C3B-420CB4E8D417]]
-(use-package smartparens-config
-  :ensure smartparens
+(use-package smartparens
+  :ensure t
   :config
   (setq sp-show-pair-from-inside nil)
+  (require 'smartparens-config)
   :diminish smartparens-mode)
 ;; org_gcr_2017-05-12_mara_3AB5C00B-E0FF-40A1-9C3B-420CB4E8D417 ends here
 
