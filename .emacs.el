@@ -7,7 +7,7 @@
 ;; You may delete these explanatory comments.
                                         ;(package-initialize)
 
-(load-file "~/src/help/.org-mode-org2blog.emacs.el")
+(load-file "~/src/help/.org-mode-contribute.emacs.el")
 ;; org_gcr_2017-05-12_mara_EE00DAED-88BD-4271-9CFE-34BDCEE68932 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_289C017E-D5F0-4B8A-987F-A64696094359][org_gcr_2017-05-12_mara_289C017E-D5F0-4B8A-987F-A64696094359]]

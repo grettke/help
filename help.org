@@ -47,7 +47,7 @@ Never compile this.
 ;; You may delete these explanatory comments.
 ;(package-initialize)
 
-(load-file "~/src/help/.org-mode-org2blog.emacs.el")
+(load-file "~/src/help/.org-mode-contribute.emacs.el")
 #+END_SRC
 
 ** HELP Enables Literate Programming
