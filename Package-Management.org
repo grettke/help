@@ -68,3 +68,14 @@ point uses ~require~. Every package loaded after this point uses ~use-package~.
 (use-package diminish)
 #+END_SRC
 
+Speed up code execution. Review as desired.
+
+#+NAME: org_gcr_2017-07-21_mara_E9CF2CB2-D837-41C3-A56A-B2ACFB9E228F
+#+BEGIN_SRC emacs-lisp
+(use-package auto-compile
+  :ensure t
+  :config
+  (auto-compile-on-load-mode)
+  (auto-compile-on-save-mode)
+  (setq auto-compile-display-buffer nil))
+#+END_SRC
