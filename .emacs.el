@@ -1665,7 +1665,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (setq ag-highlight-search t)
   (setq ag-reuse-window nil)
   (setq ag-reuse-buffers nil)
-  (setq ag-arguments (-insert-at (- (length ag-arguments) 1) '"-i"
+  (setq ag-arguments (-insert-at (- (length ag-arguments) 1) '"--ignore-case"
                                  ag-arguments))
   (defun help/ag-mode-hook-fn ()
     "HELP ag customizations."
