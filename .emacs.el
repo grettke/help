@@ -1667,6 +1667,8 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (setq ag-reuse-buffers nil)
   (setq ag-arguments (-insert-at (- (length ag-arguments) 1) '"--ignore-case"
                                  ag-arguments))
+  (setq ag-arguments (-insert-at (- (length ag-arguments) 1) '"--file-search-regex"
+                                 ag-arguments))
   (defun help/ag-mode-hook-fn ()
     "HELP ag customizations."
     (interactive)
