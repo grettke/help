@@ -41,7 +41,8 @@ Initialize Package.
              '("gnu" . "http://elpa.gnu.org/packages/") t)
 #+END_SRC
 
-Use-Package is the most configurable and performant way to manage ELPA packages.
+Use-Package is the most configurable and performant way to manage ELPA
+packages. Startup speed matters but not right now so don't use ~:defer~.
 
 Add the Use-Package distribution the load path.
 
