@@ -1,0 +1,62 @@
+#+PROPERTY: header-args :tangle "./.org-mode-package-management.emacs.el" :results output silent
+
+* Watch What You Eat
+  :PROPERTIES:
+  :ID:       org_gcr_2017-05-12_mara:BD133C8B-8DFF-45C0-967D-CB83693C54B4
+  :END:
+  :LOGBOOK:
+  - Refiled on [2017-07-21 Fri 20:44] \\
+    Clarify
+  :END:
+
+Configure ~use-package~.
+
+Sysop is likely to use this infrequently.
+
+Start EMACS with this command:
+
+#+BEGIN_EXAMPLE
+emacs --debug-init --no-init-file --no-splash --background-color white --foreground-color black --vertical-scroll-bars --eval '(switch-to-buffer "*Messages*")' --name O2B-TEST --title O2B-TEST --load ~/src/help/.org-mode-package-management.emacs.el
+#+END_EXAMPLE
+
+#+NAME: org_gcr_2017-05-12_mara_AD27B44D-A88A-421F-9418-EE1B9E1977D5
+#+BEGIN_SRC emacs-lisp
+(load-file "~/src/help/.org-mode-fundamentals.emacs.el")
+#+END_SRC
+
+*Code requiring package-management can only follow this block.*
+
+Before ELPA, I used SVN to manage software packages for EMACS. After ELPA,
+I used ELPA-packages. Now this system uses MELPA and GNU. MELPA packages always
+have their issues fixed very quickly. GNU packages rarely have issues.
+
+Initialize Package.
+
+#+NAME: org_gcr_2017-05-12_mara_0F6BBBBA-259E-46FC-AD7F-C954149CCCEA
+#+BEGIN_SRC emacs-lisp
+(package-initialize)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+(add-to-list 'package-archives
+             '("gnu" . "http://elpa.gnu.org/packages/") t)
+#+END_SRC
+
+Use-Package is the most configurable and performant way to manage ELPA packages.
+
+Add the Use-Package distribution the load path.
+
+#+NAME: org_gcr_2017-05-12_mara_867E1E1D-48E5-47C7-9B39-FD29F137665D
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'load-path"~/src/use-package")
+#+END_SRC
+
+Load Use-Package and it's partner Diminish. Every package loaded before this
+point uses ~require~. Every package loaded after this point uses ~use-package~.
+
+#+NAME: org_gcr_2017-05-12_mara_3982F502-880C-4DF4-A1DF-07DA3EAA7D78
+#+BEGIN_SRC emacs-lisp
+(eval-when-compile
+  (require 'use-package))
+(use-package diminish)
+#+END_SRC
+
