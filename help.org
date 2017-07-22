@@ -1308,7 +1308,7 @@ One space after comma.
 
 #+NAME: org_gcr_2017-05-12_mara_38909B55-115D-44E4-B84F-70285016BF92
 #+BEGIN_SRC emacs-lisp
-(setq colon-double-space t)
+(setq colon-double-space nil)
 #+END_SRC
 ** Buffer
    :PROPERTIES:
