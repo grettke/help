@@ -32,9 +32,11 @@ It is enabled with a non-nil buffer-local variable ~lexical-binding~. The variab
 is inserted only here because it loads each of the child configurations.
 Web.
 
+Never compile this.
+
 #+NAME: org_gcr_2017-05-12_mara_881EF8A4-92D9-452C-AACC-2A966497ABF6
 #+BEGIN_SRC emacs-lisp :comments no
-;; -*- lexical-binding: t -*-
+;; -*- lexical-binding: t; no-byte-compile: t; -*-
 #+END_SRC
 
 #+NAME: org_gcr_2017-05-12_mara_EE00DAED-88BD-4271-9CFE-34BDCEE68932

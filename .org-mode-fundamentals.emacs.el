@@ -1,3 +1,5 @@
+;; -*- no-byte-compile: t; -*-
+
 ;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_71A4A257-9A13-457A-B504-888D8131A206][org_gcr_2017-05-12_mara_71A4A257-9A13-457A-B504-888D8131A206]]
 (load-file "~/src/help/.org-mode-ecm.emacs.el")
 ;; org_gcr_2017-05-12_mara_71A4A257-9A13-457A-B504-888D8131A206 ends here
