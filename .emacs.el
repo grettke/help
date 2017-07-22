@@ -3628,6 +3628,8 @@ Flycheck On? %(bound-and-true-p flycheck-mode)
 (global-set-key [(control meta ?p)] #'help/insert-datestamp)
 (global-set-key [(control meta shift ?p)] #'help/insert-timestamp*-no-colons)
 (global-set-key (kbd "C-M-o") #'help/occur-dwim)
+(global-set-key (kbd "M-i") nil)
+(global-set-key (kbd "M-i") #'describe-symbol)
 ;; org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D][org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D]]
@@ -3659,7 +3661,7 @@ _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _w_
 _Q_ exit-Emacs _q_uit T_ trademarks
 _a_ ag  _A_ apropo'ish _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point  _D_ detangle _g_ grep _j_ obtj2o _k_ scrollDown _K_ nextLogLine  _;_ toggle-lax-whitespace
 _l_ visual-line-mode _L_ aggressive-indent-mode
-_x_ delete-indentation _X_pm grok _c_ fill-paragraph _v_ desc-symbol _V_ view-mode _b_ erase-buffer _B_ibtex _n_ normal _m_ desc/mode _M_ checks
+_x_ delete-indentation _X_pm grok _c_ fill-paragraph _V_ view-mode _b_ erase-buffer _B_ibtex _n_ normal _m_ desc/mode _M_ checks
 _<_ cmtIn _>_ cmtOut _?_ snp"
   ("Q" help/safb-save-buffers-kill-terminal)
   ("q" nil)
@@ -3686,7 +3688,6 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("x" delete-indentation)
   ("X" xpm-grok)
   ("f" describe-key)
-  ("v" describe-symbol)
   ("V" view-mode)
   ("w" widen)
   ("t" rectangle-mark-mode)
