@@ -3005,11 +3005,10 @@ GNU APL REPL is:
 ;; org_gcr_2017-05-12_mara_498DAC46-DA9D-4AAA-82BF-46D712E4DBA5 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D035C4E4-B983-4D74-9E3C-764EF00B3795][org_gcr_2017-05-12_mara_D035C4E4-B983-4D74-9E3C-764EF00B3795]]
-(use-package tex-site
+(use-package tex
   :ensure auctex
   :config
-  (eval-after-load "tex"
-    '(define-key TeX-mode-map (kbd "C-c C-c") #'help/safb-TeX-command-master)))
+  (define-key TeX-mode-map (kbd "C-c C-c") #'help/safb-TeX-command-master))
 ;; org_gcr_2017-05-12_mara_D035C4E4-B983-4D74-9E3C-764EF00B3795 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_86E4D060-B2E1-4F7E-B56C-A7D93C0024FA][org_gcr_2017-05-12_mara_86E4D060-B2E1-4F7E-B56C-A7D93C0024FA]]
