@@ -1,5 +1,12 @@
 #+PROPERTY: header-args :tangle "./.org-mode-ecm.emacs.el" :comments "no" :padline "no" :results output silent
 
+Never compile this.
+
+#+NAME: org_gcr_2017-07-21_mara_5170EF1B-2FA1-4BE2-BC63-1443252F0717
+#+BEGIN_SRC emacs-lisp
+;; -*- no-byte-compile: t; -*-
+#+END_SRC
+
 * Org-Mode Exemple Complet Minimal
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:1035FF79-3703-49A6-8522-618B38A48F6C

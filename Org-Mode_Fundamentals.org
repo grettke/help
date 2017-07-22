@@ -1,5 +1,12 @@
 #+PROPERTY: header-args :tangle "./.org-mode-fundamentals.emacs.el" :results output silent
 
+Never compile this.
+
+#+NAME: org_gcr_2017-07-21_mara_495928F4-D984-4DE8-9513-C94FEFD9CDB0
+#+BEGIN_SRC emacs-lisp :comments no
+;; -*- no-byte-compile: t; -*-
+#+END_SRC
+
 * Org-Mode Fundamentals
    :PROPERTIES:
    :ID:       orgmode:gcr:vela:7E71A009-4DD3-4296-9851-293BC71D2DFF

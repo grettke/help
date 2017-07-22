@@ -1,3 +1,5 @@
+;; -*- no-byte-compile: t; -*-
+
 ;; [[file:~/src/help/Package-Management.org::org_gcr_2017-05-12_mara_AD27B44D-A88A-421F-9418-EE1B9E1977D5][org_gcr_2017-05-12_mara_AD27B44D-A88A-421F-9418-EE1B9E1977D5]]
 (load-file "~/src/help/.org-mode-fundamentals.emacs.el")
 ;; org_gcr_2017-05-12_mara_AD27B44D-A88A-421F-9418-EE1B9E1977D5 ends here
