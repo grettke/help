@@ -7,13 +7,6 @@ Never compile this.
 ;; -*- no-byte-compile: t; -*-
 #+END_SRC
 
-* Org2blog
-   :PROPERTIES:
-   :ID:       org_gcr_2017-05-12_mara:B6246A7A-5514-4478-BC3D-7768B05B08B8
-   :END:
-
-Configure Org2blog for use, development, and support.
-
 Sysop is likely to use this periodically.
 
 Start EMACS with this command:
@@ -26,11 +19,12 @@ emacs --debug-init --no-init-file --no-splash --background-color white --foregro
 #+BEGIN_SRC emacs-lisp
 (load-file "~/src/help/.org-mode-package-management.emacs.el")
 #+END_SRC
-
-** Blog
+* Org2blog
    :PROPERTIES:
-   :ID:       org_gcr_2017-05-12_mara:AC5A3F2F-BF02-44D2-9EE1-BC6D6D8A7A00
+   :ID:       org_gcr_2017-05-12_mara:B6246A7A-5514-4478-BC3D-7768B05B08B8
    :END:
+
+Configure Org2blog for use, development, and support.
 
 #+BEGIN_QUOTE
 An elisp implementation of clientside XML-RPC
