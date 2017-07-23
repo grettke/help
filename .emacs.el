@@ -3586,7 +3586,7 @@ current eyebrowse slot: %(eyebrowse--get 'current-slot)
                                                       "help/help.org")))
 (global-set-key (kbd "M-0") (lambda () (interactive) (switch-to-buffer
                                                       "list/help.org")))
-(global-set-key (kbd "C-5") #'help/safb-kill-this-buffer)
+(global-set-key (kbd "C-5") #'ido-kill-buffer)
 (global-set-key (kbd "C--") (lambda () (interactive) (insert "Vigneswari")))
 (global-set-key (kbd "s-5") #'mc/mark-previous-like-this)
 (global-set-key (kbd "s-4") #'mc/mark-next-like-this)
