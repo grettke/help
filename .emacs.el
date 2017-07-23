@@ -2599,29 +2599,48 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
     (buffer-face-mode))
   (add-hook 'gnu-apl-interactive-mode-hook 'em-gnu-apl-init)
   (add-hook 'gnu-apl-mode-hook 'em-gnu-apl-init)
+  (defun help/gnu-apl-runningp ()
+    (interactive)
+    (let ((session (gnu-apl--get-interactive-session-with-nocheck)))
+      (if session 'ON 'OFF)))
+  (defun help/start-gnu-apl ()
+    (interactive)
+    (if (equal (help/gnu-apl-runningp) 'ON) (message "GNU APL is already ON.")
+      (call-interactively 'gnu-apl)))
+  (defun help/stop-gnu-apl ()
+    (interactive)
+    (if (equal (help/gnu-apl-runningp) 'OFF) (message "GNU APL is already OFF.")
+      (progn
+        (gnu-apl-switch-to-interactive)
+        (switch-to-buffer "*gnu-apl*")
+        (insert ")off")
+        (comint-send-input))))
   (defhydra help/hydra/gnu-apl (:color blue
                                        :hint nil)
     "
-GNU APL REPL is:
+GNU APL is: %(help/gnu-apl-runningp)
  _y_ eval-buffer _u_ eval-region _i_ eval-line _o_ eval-function
-  _f_ apropos-symbol _g_ help-symbol _j_ next _k_ previous _l_ keyboard
-   _q_ quit _c_ start APL _v_ to-repl
+  _f_ apropos-symbol _g_ help-symbol _h_ keyboard _j_ next _k_ previous
+   _q_ quit _c_ start APL _v_ stop APL _b_ switch to APL _n_ switch back
 "
     ("i" help/gnu-apl-eval-line)
     ("o" gnu-apl-interactive-send-current-function)
     ("j" (lambda () (interactive) (call-interactively 'next-logical-line)) :exit nil)
     ("k" (lambda () (interactive) (call-interactively 'previous-logical-line))
      :exit nil)
-    ("v" gnu-apl-switch-to-interactive)
+    ("b" gnu-apl-switch-to-interactive)
     ("u" gnu-apl-interactive-send-region)
-    ("l" gnu-apl-show-keyboard)
+    ("h" gnu-apl-show-keyboard)
     ("y" gnu-apl-interactive-send-buffer)
     ("t" gnu-apl-trace)
     ("f" gnu-apl-apropos-symbol)
     ("g" gnu-apl-show-help-for-symbol)
-    ("c" gnu-apl)
+    ("c" help/start-gnu-apl)
+    ("v" help/stop-gnu-apl)
+    ("n" (lambda () (interactive) (other-window -1)))
     ("q" nil))
   (key-chord-define gnu-apl-mode-map "hh" #'help/hydra/gnu-apl/body)
+  (key-chord-define gnu-apl-interactive-mode-map "hh" #'help/hydra/gnu-apl/body)
   (defun help/gnu-apl-eval-line ()
     "Evaluate this line and move to next."
     (interactive)
