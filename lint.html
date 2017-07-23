@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2017-07-22 Sat 23:15 -->
+<!-- 2017-07-22 Sat 23:17 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title></title>
@@ -226,202 +226,65 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<p>
-Never compile this.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-emacs-lisp" id="orgeb780a0"><span class="org-comment-delimiter">;; </span><span class="org-comment">-*- no-byte-compile: t; -*-</span>
-</pre>
-</div>
-
-<div id="outline-container-org31625c4" class="outline-2">
-<h2 id="org31625c4"><a id="org_gcr_2017-05-12_mara:1035FF79-3703-49A6-8522-618B38A48F6C"></a><span class="section-number-2">1</span> Org-Mode Exemple Complet Minimal</h2>
+<div id="outline-container-orga9fbf38" class="outline-2">
+<h2 id="orga9fbf38"><a id="org_gcr_2017-05-12_mara:3BF86A13-3CE9-4256-ADC5-CA52CFB69076"></a><span class="section-number-2">1</span> Linters</h2>
 <div class="outline-text-2" id="text-1">
 <pre class="example">
-ID: org_gcr_2017-05-12_mara:1035FF79-3703-49A6-8522-618B38A48F6C
-</pre>
-
-<p>
-Configure EMACS to easily provide ECMs.
-</p>
-
-<p>
-Sysop is likely to use this often.
-</p>
-
-<p>
-Start EMACS with this command:
-</p>
-
-<pre class="example">
-emacs --debug-init --no-init-file --no-splash --background-color white --foreground-color black  --vertical-scroll-bars --eval '(switch-to-buffer "*Messages*")' --name ECM-TEST --title ECM-TEST --load ~/src/help/.org-mode-ecm.emacs.el &amp;
+ID: org_gcr_2017-05-12_mara:3BF86A13-3CE9-4256-ADC5-CA52CFB69076
 </pre>
 </div>
-
-<div id="outline-container-org51621ff" class="outline-3">
-<h3 id="org51621ff"><a id="org_gcr_2017-05-12_mara:626B5DD1-97D8-4B85-96BC-B9A96F18AF1E"></a><span class="section-number-3">1.1</span> Principle of Least Astonishment (POLA)</h3>
+<div id="outline-container-org9bb88f8" class="outline-3">
+<h3 id="org9bb88f8"><a id="org_gcr_2017-05-12_mara:CEF08861-56F7-41FA-83AD-E519249DDC2F"></a><span class="section-number-3">1.1</span> JavaScript</h3>
 <div class="outline-text-3" id="text-1-1">
 <pre class="example">
-ID: org_gcr_2017-05-12_mara:626B5DD1-97D8-4B85-96BC-B9A96F18AF1E
+ID: org_gcr_2017-05-12_mara:CEF08861-56F7-41FA-83AD-E519249DDC2F
 </pre>
 </div>
-
-<div id="outline-container-orgcd905b3" class="outline-4">
-<h4 id="orgcd905b3"><a id="org_gcr_2017-05-12_mara:75985F03-F3B9-4DA3-8F6E-393E4C2F06E7"></a><span class="section-number-4">1.1.1</span> Load Behavior</h4>
+<div id="outline-container-org3bdbe22" class="outline-4">
+<h4 id="org3bdbe22"><a id="org_gcr_2017-05-12_mara:B1229403-15D3-4921-AB9E-63A6B64248A8"></a><span class="section-number-4">1.1.1</span> JSHint</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <pre class="example">
-ID: org_gcr_2017-05-12_mara:75985F03-F3B9-4DA3-8F6E-393E4C2F06E7
+header-args: :tangle .jshintrc :eval no :comments no
+ID: org_gcr_2017-05-12_mara:B1229403-15D3-4921-AB9E-63A6B64248A8
 </pre>
-
-<p>
-EMACS can load 3 different representations of a Emacs-Lisp source file code
-OOTB. The name of source code file is the value before the file extension. When
-you pass <code>load</code> a name it searches for an acceptable representation. Representation
-types are indicated by their extension name. <code>.el</code> is a human readable and
-uncompiled. <code>.elc</code> is not human readable and compiled. <code>.gz</code> is Gzip compressed and
-contains <code>.el</code> or <code>.elc</code> files.
-</p>
-
-<p>
-The variable <code>load-suffixes</code> determines the order for which text and byte-code
-representations are first searched by extension-name. The variable
-<code>load-file-rep-suffixes</code> determines the order for all other extension types.
-</p>
-
-<p>
-OOTB, EMACS combines the productivity of REPL style of development with the
-speed of compiled code by <code>load</code>&rsquo;ing byte-code first, text second, and compressed
-third. This workflow gives you the fastest code at run-time and lets you
-experiment with new features stored in text. When you are ready to use them
-every time, you compile them. There is only one downside of this approach: when
-you forget that it works this way it can be confusing.
-</p>
-
-<p>
-When you forget about that style of system you end up with surprising behavior.
-The surprise comes when you forget to compile code and then write new code that
-depends on the now old version of that code. After the next build, your system
-can break in surprising ways. This violates the Principle of Least Astonishment.
-</p>
-
-<p>
-This system values predictability so it does the simplest thing possible: <code>load</code>
-searches for the newest representation of a file and uses that one. It assumes
-that Sysop has total and complete control over the management of file
-representations.
-</p>
-
-<p>
-This is the <b>first</b> thing that <i>ought</i> to happen in the initialization of <b>any</b>
-tangled system.
-</p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org137b9be">(<span class="org-keyword">setq</span> load-prefer-newer t)
+<pre class="src src-javascript" id="org5530fdf">"bitwise": true,
+"browser": true,
+"camelcase": true,
+"curly": true,
+"eqeqeq": true,
+"esnext": true,
+"forin": true,
+"globals": {
+    "angular": false,
+    "_": false,
+    "$": false,
+    "moment": false,
+    "toastr": false
+},
+"immed": true,
+"indent": 2,
+"latedef": true,
+"maxcomplexity": 12,
+"maxdepth": 3,
+"maxparams": 10,
+"maxstatements": 300,
+"newcap": true,
+"noarg": true,
+"node": true,
+"noempty": true,
+"nonew": true,
+"plusplus": true,
+"quotmark": "double",
+"regexp": true,
+"smarttabs": true,
+"strict": true,
+"trailing": true,
+"undef": true,
+"unused": true
 </pre>
 </div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org8f5162a" class="outline-3">
-<h3 id="org8f5162a"><a id="org_gcr_2017-05-12_mara:572E2309-5DCA-4AE1-AAC4-36B7E07AD46D"></a><span class="section-number-3">1.2</span> Org-Mode Exemple Complet Minimal</h3>
-<div class="outline-text-3" id="text-1-2">
-<pre class="example">
-ID: org_gcr_2017-05-12_mara:572E2309-5DCA-4AE1-AAC4-36B7E07AD46D
-</pre>
-
-<p>
-Every new EMACS releases comes with the latest stable Org-Mode release. To get
-hot-fixes, cutting edge features, and easy patch creation though, you need to
-use the version from Git.
-</p>
-
-<p>
-These detailed and clear <a href="http://orgmode.org/manual/Installation.html">directions</a> explain how ot run Org-Mode from Git. The only
-thing worth mentioning again is that in order to use <b>any</b> version of Org-Mode
-other than the one that comes OOTB you <b>must</b> load Org-Mode <b>before</b> anything else
-in your initialization file. It is easy to do! When you get
-unexpected Org-Mode behavior be sure to stop and investigate <code>org-version</code> and
-decide whether or not it is what you expect and prepare an ECM if necessary.
-</p>
-
-<p>
-Add the Org-Mode core distribution the load path.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org50e7137">(add-to-list <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">load-path</span> <span class="org-string">"~/src/org-mode/lisp"</span>)
-</pre>
-</div>
-
-<p>
-Add the Org-Mode-Contributions distribution to the load path. The contributions
-are essential.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-emacs-lisp" id="orgc1b266b">(add-to-list <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">load-path</span> <span class="org-string">"~/src/org-mode/contrib/lisp"</span>)
-</pre>
-</div>
-
-<p>
-Allow single-character alphabetical bullet lists. This configuration must occur
-before loading Org-Mode. <b>Never</b> remove this from a submitted ECM.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org75edf3e">(<span class="org-keyword">setq</span> org-list-allow-alphabetical t)
-</pre>
-</div>
-
-<p>
-Unchecked boxes prevent marking the parent as done. This configuration must
-occur before loading Org-Mode. <b>Never</b> remove this from a submitted ECM.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org856baa1">(<span class="org-keyword">setq</span> org-enforce-todo-checkbox-dependencies t)
-</pre>
-</div>
-
-<p>
-Found a copy <span class="underline">Literate Programming</span> so use <code>GUILLEMET</code> delimeters.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org3e0c16f">(<span class="org-keyword">setq</span> org-babel-noweb-wrap-start <span class="org-string">"&#171;"</span>)
-(<span class="org-keyword">setq</span> org-babel-noweb-wrap-end <span class="org-string">"&#187;"</span>)
-</pre>
-</div>
-
-<p>
-Load Org-Mode.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org1ea8af5">(<span class="org-keyword">require</span> <span class="org-highlight-quoted-quote">'</span><span class="org-constant">org</span>)
-</pre>
-</div>
-
-<p>
-Display system info.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org1bed9ce">(message <span class="org-string">"ECM Information As Of: %s\nOrg-Version: %s\nOrg-Git-Version:</span>
-<span class="org-string">         %s\nEmacs-Version: %s\nNoweb wrap start and stop delimeters: '%s' and '%s'\nnorg-babel-default-header-args:\n"</span>
-         (<span class="org-keyword">let*</span> ((timestamp (format-time-string <span class="org-string">"%Y-%m-%dT%T"</span>))
-                (safe (replace-regexp-in-string <span class="org-string">":"</span> <span class="org-string">"-"</span> timestamp)))
-           safe)
-         (org-version)
-         (org-git-version)
-         (emacs-version)
-         org-babel-noweb-wrap-start
-         org-babel-noweb-wrap-end)
-(princ org-babel-default-header-args)
-</pre>
 </div>
 </div>
 </div>
@@ -429,7 +292,7 @@ Display system info.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Grant Rettke</p>
-<p class="date">Created: 2017-07-22 Sat 23:15</p>
+<p class="date">Created: 2017-07-22 Sat 23:17</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

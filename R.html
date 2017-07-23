@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2016-09-01 Thu 19:23 -->
+<!-- 2017-07-22 Sat 23:17 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title></title>
-<meta name="generator" content="Org-mode">
+<meta name="generator" content="Org mode">
 <meta name="author" content="Grant Rettke">
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
@@ -72,6 +72,7 @@
   pre.src-ledger:before { content: 'Ledger'; }
   pre.src-lisp:before { content: 'Lisp'; }
   pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
   pre.src-matlab:before { content: 'MATLAB'; }
   pre.src-mscgen:before { content: 'Mscgen'; }
   pre.src-ocaml:before { content: 'Objective Caml'; }
@@ -181,7 +182,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2013 Free Software Foundation, Inc.
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -225,19 +226,19 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<div id="outline-container-orge63f270" class="outline-2">
-<h2 id="orge63f270"><a id="ID-B98C6FFA-E22E-4B35-96EB-54D48A89A9DE"></a><span class="section-number-2">1</span> Control Files</h2>
+<div id="outline-container-org643f5d1" class="outline-2">
+<h2 id="org643f5d1"><a id="org_gcr_2017-05-12_mara:3F5D7D24-91F0-4CBD-A514-C9D0B9821BDA"></a><span class="section-number-2">1</span> Control Files</h2>
 <div class="outline-text-2" id="text-1">
 <pre class="example">
-ID: B98C6FFA-E22E-4B35-96EB-54D48A89A9DE
+ID: org_gcr_2017-05-12_mara:3F5D7D24-91F0-4CBD-A514-C9D0B9821BDA
 </pre>
 </div>
 
-<div id="outline-container-org55b882d" class="outline-3">
-<h3 id="org55b882d"><a id="ID-59F738BE-D479-4BB2-A41C-918616832571"></a><span class="section-number-3">1.1</span> Configuration</h3>
+<div id="outline-container-org59905e1" class="outline-3">
+<h3 id="org59905e1"><a id="org_gcr_2017-05-12_mara:091465F6-8E3F-4736-9BF0-A498785F5E1D"></a><span class="section-number-3">1.1</span> Configuration</h3>
 <div class="outline-text-3" id="text-1-1">
 <pre class="example">
-ID: 59F738BE-D479-4BB2-A41C-918616832571
+ID: org_gcr_2017-05-12_mara:091465F6-8E3F-4736-9BF0-A498785F5E1D
 </pre>
 
 <p>
@@ -285,6 +286,7 @@ Attaching package: ‘magrittr’
 The following objects are masked from ‘package:testthat’:
 
     equals, is_less_than, not
+
 </pre></li>
 <li><p>
 …
@@ -315,8 +317,7 @@ Please library(dtplyr)!
 <b>.Rsetup</b>
 </p>
 <div class="org-src-container">
-
-<pre class="src src-sh" id="orgb7efe59">&#171;rsetup-defs&#187;
+<pre class="src src-sh" id="orgfa8ebd1">&#171;rsetup-defs&#187;
 </pre>
 </div>
 
@@ -324,8 +325,7 @@ Please library(dtplyr)!
 <b>.Rprofile</b>
 </p>
 <div class="org-src-container">
-
-<pre class="src src-R" id="org7a93681"><span class="org-comment-delimiter">## </span><span class="org-comment">-*- mode: R; -*-</span>
+<pre class="src src-R" id="org27c30b8"><span class="org-comment-delimiter">## </span><span class="org-comment">-*- mode: R; -*-</span>
 &#171;rprofile-def&#187;
 <span class="org-function-name">.First</span> <span class="org-constant">&lt;-</span> <span class="org-keyword">function</span>() {
     gcr <span class="org-constant">&lt;-</span> new.env()
@@ -340,8 +340,7 @@ fortune()
 <b>.Renviron</b>
 </p>
 <div class="org-src-container">
-
-<pre class="src src-sh" id="org7027a93"><span class="org-comment-delimiter"># </span><span class="org-comment">-*- mode: sh; -*-</span>
+<pre class="src src-sh" id="org363c3a5"><span class="org-comment-delimiter"># </span><span class="org-comment">-*- mode: sh; -*-</span>
 &#171;renviron-def&#187;
 </pre>
 </div>
@@ -350,19 +349,18 @@ fortune()
 <b>.Rinstall</b>
 </p>
 <div class="org-src-container">
-
-<pre class="src src-sh" id="orgabd4bf5">&#171;rinstall-def&#187;
+<pre class="src src-sh" id="orgf84c08a">&#171;rinstall-def&#187;
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org8f5d176" class="outline-3">
-<h3 id="org8f5d176"><a id="ID-BDE6AFC6-C6E9-44B8-8B37-35A5E59B14D5"></a><span class="section-number-3">1.2</span> .Rsetup</h3>
+<div id="outline-container-org784e610" class="outline-3">
+<h3 id="org784e610"><a id="org_gcr_2017-05-12_mara:898031D5-9930-420A-9DDD-2F5FA0AA6D63"></a><span class="section-number-3">1.2</span> .Rsetup</h3>
 <div class="outline-text-3" id="text-1-2">
 <pre class="example">
 header-args: :noweb-ref rsetup-defs
-ID: BDE6AFC6-C6E9-44B8-8B37-35A5E59B14D5
+ID: org_gcr_2017-05-12_mara:898031D5-9930-420A-9DDD-2F5FA0AA6D63
 </pre>
 
 <p>
@@ -374,8 +372,7 @@ Recreate the packages directory.
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-sh" id="orgd32c6d1">rm -rf ~/.Rpackages
+<pre class="src src-sh" id="orgc62920e">rm -rf ~/.Rpackages
 mkdir ~/.Rpackages
 </pre>
 </div>
@@ -385,8 +382,7 @@ Symbolically link all of the control files.
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-sh" id="orgabbb036">rm ~/.Rprofile
+<pre class="src src-sh" id="org51a803a">rm ~/.Rprofile
 ln -sfn ~/src/help/.Rprofile ~/.Rprofile
 rm ~/.Renviron
 ln -sfn ~/src/help/.Renviron ~/.Renviron
@@ -397,12 +393,12 @@ ln -sfn ~/src/help/.Rinstall.r ~/.Rinstall.r
 </div>
 </div>
 
-<div id="outline-container-org2b3db01" class="outline-3">
-<h3 id="org2b3db01"><a id="ID-FDD6A2C4-B9B1-45EB-996B-3AB20FB2BE89"></a><span class="section-number-3">1.3</span> .Rprofile <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h3>
+<div id="outline-container-orgf2c86ec" class="outline-3">
+<h3 id="orgf2c86ec"><a id="org_gcr_2017-05-12_mara:F665989E-724D-4983-A8B1-29F566291722"></a><span class="section-number-3">1.3</span> .Rprofile <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h3>
 <div class="outline-text-3" id="text-1-3">
 <pre class="example">
 header-args: :noweb-ref rprofile-def
-ID: FDD6A2C4-B9B1-45EB-996B-3AB20FB2BE89
+ID: org_gcr_2017-05-12_mara:F665989E-724D-4983-A8B1-29F566291722
 </pre>
 
 <ul class="org-ul">
@@ -416,8 +412,7 @@ Make it easier for yourself and specify a repo for once and for all.
 </ul></li>
 </ul>
 <div class="org-src-container">
-
-<pre class="src src-R" id="orgfa7a70d">local({
+<pre class="src src-R" id="org6125d3f">local({
     r = getOption(<span class="org-string">"repos"</span>)
     r[<span class="org-string">"CRAN"</span>] = <span class="org-string">"https://cran.r-project.org/"</span>
     options(repos = r)
@@ -435,8 +430,7 @@ execution at the next statement&rdquo;
 </ul></li>
 </ul>
 <div class="org-src-container">
-
-<pre class="src src-R" id="org91cacd9">options(browserNLdisabled = <span class="org-type">TRUE</span>)
+<pre class="src src-R" id="org5da5d20">options(browserNLdisabled = <span class="org-type">TRUE</span>)
 </pre>
 </div>
 
@@ -444,8 +438,7 @@ execution at the next statement&rdquo;
 Show timestamps to 3 sub-seconds:
 </p>
 <div class="org-src-container">
-
-<pre class="src src-R" id="org2d0dee6">options(<span class="org-string">"digits.secs"</span>=3)
+<pre class="src src-R" id="org0bf64c7">options(<span class="org-string">"digits.secs"</span>=3)
 </pre>
 </div>
 
@@ -463,8 +456,7 @@ is library code that expects it to true. Definitely something that you don&rsquo
 want to mess with.
 </p>
 <div class="org-src-container">
-
-<pre class="src src-R" id="orgb40acbb">options(stringsAsFactors=<span class="org-type">TRUE</span>)
+<pre class="src src-R" id="org9661312">options(stringsAsFactors=<span class="org-type">TRUE</span>)
 </pre>
 </div>
 
@@ -473,8 +465,7 @@ This might be <i>too much</i>, but always show a call stack when <b>any</b> warn
 errors occur
 </p>
 <div class="org-src-container">
-
-<pre class="src src-R" id="org1f83b36">options(showWarnCalls=<span class="org-type">TRUE</span>)
+<pre class="src src-R" id="orgfb4b1ce">options(showWarnCalls=<span class="org-type">TRUE</span>)
 options(showErrorCalls=<span class="org-type">TRUE</span>)
 </pre>
 </div>
@@ -489,8 +480,7 @@ Making them more aggressive will break your startup. When you are ready to set
 things to be more aggressive, turn it on yourself
 </p>
 <div class="org-src-container">
-
-<pre class="src src-R" id="orgb8684c8">options(error=<span class="org-type">NULL</span>)
+<pre class="src src-R" id="orgaa32f17">options(error=<span class="org-type">NULL</span>)
 options(warn=0)
 </pre>
 </div>
@@ -500,8 +490,7 @@ Don&rsquo;t print more than 500 lines. If you can grok more than 500 lines then 
 teach me. Be at ease, there is a helper to remove that restriction, just in case.
 </p>
 <div class="org-src-container">
-
-<pre class="src src-R" id="orgdda76ef">options(max.print=500)
+<pre class="src src-R" id="org330a9c4">options(max.print=500)
 </pre>
 </div>
 
@@ -512,8 +501,7 @@ me. It is a <i>personal preference</i>. It only makes sense from that perspectiv
 This could bork 3rd party code.
 </p>
 <div class="org-src-container">
-
-<pre class="src src-R" id="orgb56aa7a">options(warnPartialMatchDollar = <span class="org-type">TRUE</span>)
+<pre class="src src-R" id="orgd37067b">options(warnPartialMatchDollar = <span class="org-type">TRUE</span>)
 </pre>
 </div>
 
@@ -540,8 +528,7 @@ manifest strings here.</li>
 </ul></li>
 </ul>
 <div class="org-src-container">
-
-<pre class="src src-R" id="orgc0f1ffb">Sys.setenv(LANG = <span class="org-string">"en_US.UTF-8"</span>)
+<pre class="src src-R" id="org7ac2d57">Sys.setenv(LANG = <span class="org-string">"en_US.UTF-8"</span>)
 Sys.setlocale(<span class="org-string">"LC_COLLATE"</span>, <span class="org-string">"en_US.UTF-8"</span>)
 Sys.setlocale(<span class="org-string">"LC_MESSAGES"</span>, <span class="org-string">"en_US.UTF-8"</span>)
 </pre>
@@ -552,17 +539,16 @@ Set the same random seed.
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org62c0a61">set.seed(970396220)
+<pre class="src src-R" id="orgdfdb682">set.seed(970396220)
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org67288c6" class="outline-4">
-<h4 id="org67288c6"><a id="ID-0B04A7FB-2AC9-4BE8-882D-76C196396116"></a><span class="section-number-4">1.3.1</span> Packages</h4>
+<div id="outline-container-orgc600afb" class="outline-4">
+<h4 id="orgc600afb"><a id="org_gcr_2017-05-12_mara:E5E7A597-B53A-476B-83A4-0B4114125E0C"></a><span class="section-number-4">1.3.1</span> Packages</h4>
 <div class="outline-text-4" id="text-1-3-1">
 <pre class="example">
-ID: 0B04A7FB-2AC9-4BE8-882D-76C196396116
+ID: org_gcr_2017-05-12_mara:E5E7A597-B53A-476B-83A4-0B4114125E0C
 </pre>
 
 <p>
@@ -573,9 +559,9 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
 </p>
 </div>
 
-<ol class="org-ol"><li><a id="org7a4c449"></a><a id="ID-F43738D7-5E0F-4567-8C08-8EC8850683E2"></a>assertthat<br ><div class="outline-text-5" id="text-1-3-1-1">
+<ol class="org-ol"><li><a id="org24d51c0"></a><a id="org_gcr_2017-05-12_mara:404A7BC2-F0E1-4E49-8CCA-D693D3430741"></a>assertthat<br><div class="outline-text-5" id="text-1-3-1-1">
 <pre class="example">
-ID: F43738D7-5E0F-4567-8C08-8EC8850683E2
+ID: org_gcr_2017-05-12_mara:404A7BC2-F0E1-4E49-8CCA-D693D3430741
 </pre>
 
 <p>
@@ -609,23 +595,21 @@ Cheatsheet:
 </ul>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org89a2206"><span class="org-constant">library</span>(assertthat)
+<pre class="src src-R" id="org7a90d4e"><span class="org-constant">library</span>(assertthat)
 </pre>
 </div>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org20ac7c6"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(assertthat)){
+<pre class="src src-R" id="orgf438362"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(assertthat)){
     install.packages(<span class="org-string">"assertthat"</span>)
 }
 </pre>
 </div>
 </div></li>
 
-<li><a id="org1f54fe5"></a><a id="ID-007E49F2-44A1-4AB7-AE4F-72534211F4DE"></a>testthat<br ><div class="outline-text-5" id="text-1-3-1-2">
+<li><a id="org1c0c868"></a><a id="org_gcr_2017-05-12_mara:8B68967C-5F28-47AC-BD20-758661328199"></a>testthat<br><div class="outline-text-5" id="text-1-3-1-2">
 <pre class="example">
-ID: 007E49F2-44A1-4AB7-AE4F-72534211F4DE
+ID: org_gcr_2017-05-12_mara:8B68967C-5F28-47AC-BD20-758661328199
 </pre>
 
 <p>
@@ -696,23 +680,21 @@ you want - it checks that an expression is true
 </ul>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org7316b09"><span class="org-constant">library</span>(testthat)
+<pre class="src src-R" id="org1fc7220"><span class="org-constant">library</span>(testthat)
 </pre>
 </div>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="orge3e1dbd"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(testthat)) {
+<pre class="src src-R" id="orgafaf0e4"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(testthat)) {
     install.packages(<span class="org-string">"testthat"</span>)
 }
 </pre>
 </div>
 </div></li>
 
-<li><a id="org267022b"></a><a id="ID-BB8CF291-A9BF-4E3B-9E02-3A41EDAF8424"></a>stringr<br ><div class="outline-text-5" id="text-1-3-1-3">
+<li><a id="org7df09d5"></a><a id="org_gcr_2017-05-12_mara:A25AE0EF-0169-4D2A-9907-D59FA7F0E9C4"></a>stringr<br><div class="outline-text-5" id="text-1-3-1-3">
 <pre class="example">
-ID: BB8CF291-A9BF-4E3B-9E02-3A41EDAF8424
+ID: org_gcr_2017-05-12_mara:A25AE0EF-0169-4D2A-9907-D59FA7F0E9C4
 </pre>
 
 <p>
@@ -721,23 +703,21 @@ the reason that I installed this initially was because <code>testthat</code> men
 it is used.
 </p>
 <div class="org-src-container">
-
-<pre class="src src-R" id="org5638617"><span class="org-constant">library</span>(stringr)
+<pre class="src src-R" id="org5a290cd"><span class="org-constant">library</span>(stringr)
 </pre>
 </div>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="orgfe1b08e"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(stringr)) {
+<pre class="src src-R" id="orgf61fc35"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(stringr)) {
     install.packages(<span class="org-string">"stringr"</span>)
 }
 </pre>
 </div>
 </div></li>
 
-<li><a id="orgad8f934"></a><a id="ID-3B199A0E-DE1E-4FBD-95A0-6F4D981B021D"></a>sqldf<br ><div class="outline-text-5" id="text-1-3-1-4">
+<li><a id="org7342bf3"></a><a id="org_gcr_2017-05-12_mara:D6EBC636-F22D-452F-B777-15F7C4C025A4"></a>sqldf<br><div class="outline-text-5" id="text-1-3-1-4">
 <pre class="example">
-ID: 3B199A0E-DE1E-4FBD-95A0-6F4D981B021D
+ID: org_gcr_2017-05-12_mara:D6EBC636-F22D-452F-B777-15F7C4C025A4
 </pre>
 
 <p>
@@ -1045,29 +1025,26 @@ SQLite, SQL As Understood By SQLite:
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org4b9496b">options(gsubfn.engine=<span class="org-string">"R"</span>)
+<pre class="src src-R" id="org141c6b9">options(gsubfn.engine=<span class="org-string">"R"</span>)
 </pre>
 </div>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="orgce17dff"><span class="org-constant">library</span>(sqldf)
+<pre class="src src-R" id="org8011652"><span class="org-constant">library</span>(sqldf)
 </pre>
 </div>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="orgdacf4f6"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(sqldf)) {
+<pre class="src src-R" id="org3c10358"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(sqldf)) {
     install.packages(<span class="org-string">"sqldf"</span>)
 }
 </pre>
 </div>
 </div></li>
 
-<li><a id="orgdcb2a3f"></a><a id="ID-0C3E7D6C-68F9-43D0-9F1A-DD9BBB06029C"></a>MASS<br ><div class="outline-text-5" id="text-1-3-1-5">
+<li><a id="org487efbf"></a><a id="org_gcr_2017-05-12_mara:A577D755-41C6-4E7E-9637-6118FCD5944B"></a>MASS<br><div class="outline-text-5" id="text-1-3-1-5">
 <pre class="example">
-ID: 0C3E7D6C-68F9-43D0-9F1A-DD9BBB06029C
+ID: org_gcr_2017-05-12_mara:A577D755-41C6-4E7E-9637-6118FCD5944B
 </pre>
 
 <p>
@@ -1077,23 +1054,21 @@ installed, so it is the right time. <sup><a id="fnr.14" class="footref" href="#f
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org8efcaef"><span class="org-constant">library</span>(MASS)
+<pre class="src src-R" id="org54cd914"><span class="org-constant">library</span>(MASS)
 </pre>
 </div>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org372f37e"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(MASS)) {
+<pre class="src src-R" id="orge709bc1"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(MASS)) {
     install.packages(<span class="org-string">"MASS"</span>)
 }
 </pre>
 </div>
 </div></li>
 
-<li><a id="org7591633"></a><a id="ID-C4806332-3925-4CD3-BDA2-68A9291C245B"></a>jsonlite<br ><div class="outline-text-5" id="text-1-3-1-6">
+<li><a id="orgd221038"></a><a id="org_gcr_2017-05-12_mara:B2715DBA-4A80-4DB8-B3BD-C660302D3FB9"></a>jsonlite<br><div class="outline-text-5" id="text-1-3-1-6">
 <pre class="example">
-ID: C4806332-3925-4CD3-BDA2-68A9291C245B
+ID: org_gcr_2017-05-12_mara:B2715DBA-4A80-4DB8-B3BD-C660302D3FB9
 </pre>
 
 <p>
@@ -1102,23 +1077,21 @@ Reading the vignette&rsquo;s, it does a lot more, for example <code>rbind.pages<
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org9f44fad"><span class="org-constant">library</span>(jsonlite)
+<pre class="src src-R" id="org9cf884b"><span class="org-constant">library</span>(jsonlite)
 </pre>
 </div>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org891bf87"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(jsonlite)) {
+<pre class="src src-R" id="orgf7eb46b"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(jsonlite)) {
     install.packages(<span class="org-string">"jsonlite"</span>)
 }
 </pre>
 </div>
 </div></li>
 
-<li><a id="org18c7395"></a><a id="ID-17A5C886-CEC5-466A-885E-6E00FF6AD7F1"></a>dplyr<br ><div class="outline-text-5" id="text-1-3-1-7">
+<li><a id="orgb7b039a"></a><a id="org_gcr_2017-05-12_mara:F2C4419D-59D8-423F-97A8-2C4ED2246186"></a>dplyr<br><div class="outline-text-5" id="text-1-3-1-7">
 <pre class="example">
-ID: 17A5C886-CEC5-466A-885E-6E00FF6AD7F1
+ID: org_gcr_2017-05-12_mara:F2C4419D-59D8-423F-97A8-2C4ED2246186
 </pre>
 
 <p>
@@ -1143,15 +1116,14 @@ implications, and they are usually never good.
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org33f94fd"><span class="org-constant">library</span>(dplyr)
+<pre class="src src-R" id="orga3c3090"><span class="org-constant">library</span>(dplyr)
 </pre>
 </div>
 </div></li>
 
-<li><a id="org5b6aac1"></a><a id="ID-6FB35637-B75D-47D6-A552-225B2EE36D38"></a>data.table<br ><div class="outline-text-5" id="text-1-3-1-8">
+<li><a id="orgc073c2d"></a><a id="org_gcr_2017-05-12_mara:1604B2A7-7110-45B5-BB29-C27BDE9F37C4"></a>data.table<br><div class="outline-text-5" id="text-1-3-1-8">
 <pre class="example">
-ID: 6FB35637-B75D-47D6-A552-225B2EE36D38
+ID: org_gcr_2017-05-12_mara:1604B2A7-7110-45B5-BB29-C27BDE9F37C4
 </pre>
 
 <p>
@@ -1160,99 +1132,68 @@ is quite nice.
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org33fe04e"><span class="org-constant">library</span>(data.table)
+<pre class="src src-R" id="orgac2e843"><span class="org-constant">library</span>(data.table)
 </pre>
 </div>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="orge6e5e7e"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(data.table)) {
+<pre class="src src-R" id="orgeb67370"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(data.table)) {
     install.packages(<span class="org-string">"data.table"</span>)
 }
 </pre>
 </div>
 </div>
 
-<ol class="org-ol"><li><a id="orgafa36c5"></a><a id="ID-9FB51AFC-A77E-4440-AF3E-4AA34AB86DA0"></a>dtplyr<br ><div class="outline-text-6" id="text-1-3-1-8-1">
+<ol class="org-ol"><li><a id="orgb70ecca"></a><a id="org_gcr_2017-05-12_mara:169E4CE8-D5BE-48F7-A43F-E89CEE4C6211"></a>dtplyr<br><div class="outline-text-6" id="text-1-3-1-8-1">
 <pre class="example">
-ID: 9FB51AFC-A77E-4440-AF3E-4AA34AB86DA0
+ID: org_gcr_2017-05-12_mara:169E4CE8-D5BE-48F7-A43F-E89CEE4C6211
 </pre>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="orgb4d2744"><span class="org-constant">library</span>(dtplyr)
+<pre class="src src-R" id="orga2a43a0"><span class="org-constant">library</span>(dtplyr)
 </pre>
 </div>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org24293a2"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(dplyr)) {
+<pre class="src src-R" id="orgab7d443"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(dplyr)) {
     install.packages(<span class="org-string">"dplyr"</span>)
 }
 </pre>
 </div>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="orgb6178c2"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(dtplyr)) {
+<pre class="src src-R" id="org4b5b5df"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(dtplyr)) {
     install.packages(<span class="org-string">"dtplyr"</span>)
 }
 </pre>
 </div>
 </div></li></ol></li>
 
-<li><a id="org4eb47bb"></a><a id="ID-51FF40DD-6B00-48BD-A946-53666E9BE40F"></a>xlsx<br ><div class="outline-text-5" id="text-1-3-1-9">
+<li><a id="org3dad0cd"></a><a id="org_gcr_2017-05-12_mara:4F801FC6-2D93-495E-9B7A-5FE6C5A1003A"></a>XML<br><div class="outline-text-5" id="text-1-3-1-9">
 <pre class="example">
-ID: 51FF40DD-6B00-48BD-A946-53666E9BE40F
+ID: org_gcr_2017-05-12_mara:4F801FC6-2D93-495E-9B7A-5FE6C5A1003A
 </pre>
 
 <p>
-Read and write Excel files <sup><a id="fnr.16" class="footref" href="#fn.16">16</a></sup>.
+Make ℝ truly enterprise <sup><a id="fnr.16" class="footref" href="#fn.16">16</a></sup>.
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org3c238a2"><span class="org-constant">library</span>(xlsx)
+<pre class="src src-R" id="org1f517f6"><span class="org-constant">library</span>(XML)
 </pre>
 </div>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="orga2b0135"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(xlsx)) {
-    install.packages(<span class="org-string">"xlsx"</span>)
-}
-</pre>
-</div>
-</div></li>
-
-<li><a id="org38bf4bc"></a><a id="ID-1C5D86C3-F971-4A4A-B3ED-CFA7814B6B6B"></a>XML<br ><div class="outline-text-5" id="text-1-3-1-10">
-<pre class="example">
-ID: 1C5D86C3-F971-4A4A-B3ED-CFA7814B6B6B
-</pre>
-
-<p>
-Make ℝ truly enterprise <sup><a id="fnr.17" class="footref" href="#fn.17">17</a></sup>.
-</p>
-
-<div class="org-src-container">
-
-<pre class="src src-R" id="org62c2948"><span class="org-constant">library</span>(XML)
-</pre>
-</div>
-
-<div class="org-src-container">
-
-<pre class="src src-R" id="org79a8e99"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(XML)) {
+<pre class="src src-R" id="org62c38e9"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(XML)) {
     install.packages(<span class="org-string">"XML"</span>)
 }
 </pre>
 </div>
 </div></li>
 
-<li><a id="org57b0791"></a><a id="ID-CC5F0CF1-4067-4269-BA81-4779DD30E1D1"></a>devtools<br ><div class="outline-text-5" id="text-1-3-1-11">
+<li><a id="orgf9898d5"></a><a id="org_gcr_2017-05-12_mara:6BC90505-4FF2-4DB0-8020-F5F8057BA984"></a>devtools<br><div class="outline-text-5" id="text-1-3-1-10">
 <pre class="example">
-ID: CC5F0CF1-4067-4269-BA81-4779DD30E1D1
+ID: org_gcr_2017-05-12_mara:6BC90505-4FF2-4DB0-8020-F5F8057BA984
 </pre>
 
 <p>
@@ -1289,51 +1230,48 @@ you want to us <code>tidyr</code>.
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org02440fb"><span class="org-constant">library</span>(devtools)
+<pre class="src src-R" id="org514e841"><span class="org-constant">library</span>(devtools)
 </pre>
 </div>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org52f7983"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(devtools)) {
+<pre class="src src-R" id="org23fd32e"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(devtools)) {
     install.packages(<span class="org-string">"devtools"</span>)
     devtools::install_github(<span class="org-string">"hadley/devtools"</span>)
 }
+
 </pre>
 </div>
 </div></li>
 
-<li><a id="org336a00b"></a><a id="ID-7714BB94-5E3C-4E15-B22B-9CFD03634520"></a>magrittr<br ><div class="outline-text-5" id="text-1-3-1-12">
+<li><a id="org21a8bb4"></a><a id="org_gcr_2017-05-12_mara:E4F80968-F698-4B63-B3F8-745625D74C39"></a>magrittr<br><div class="outline-text-5" id="text-1-3-1-11">
 <pre class="example">
-ID: 7714BB94-5E3C-4E15-B22B-9CFD03634520
+ID: org_gcr_2017-05-12_mara:E4F80968-F698-4B63-B3F8-745625D74C39
 </pre>
 
 <p>
 This is a add from the <i>most understated package definition</i> of the year
-department. <code>magrittr</code> <sup><a id="fnr.18" class="footref" href="#fn.18">18</a></sup>
+department. <code>magrittr</code> <sup><a id="fnr.17" class="footref" href="#fn.17">17</a></sup>
 is, much like every Scheme library ever, deceptively simple in its power and
 ease of use that it provides.
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="orge037ea4"><span class="org-constant">library</span>(magrittr)
+<pre class="src src-R" id="orga2fa200"><span class="org-constant">library</span>(magrittr)
 </pre>
 </div>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org696dcb4"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(magrittr)) {
+<pre class="src src-R" id="org74c3255"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(magrittr)) {
     devtools::install_github(<span class="org-string">"smbache/magrittr"</span>)
 }
 </pre>
 </div>
 </div></li>
 
-<li><a id="org03858d9"></a><a id="ID-11B7E671-6D90-4C37-B13F-1CB21904C304"></a>reshape2<br ><div class="outline-text-5" id="text-1-3-1-13">
+<li><a id="org724ae98"></a><a id="org_gcr_2017-05-12_mara:68274778-C58F-43D2-92D3-EBD90025A8D0"></a>reshape2<br><div class="outline-text-5" id="text-1-3-1-12">
 <pre class="example">
-ID: 11B7E671-6D90-4C37-B13F-1CB21904C304
+ID: org_gcr_2017-05-12_mara:68274778-C58F-43D2-92D3-EBD90025A8D0
 </pre>
 
 <p>
@@ -1355,23 +1293,21 @@ This seems to be a defacto standard.
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org2bee32d"><span class="org-constant">library</span>(reshape2)
+<pre class="src src-R" id="org501fbf6"><span class="org-constant">library</span>(reshape2)
 </pre>
 </div>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="orge725567"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(reshape2)) {
+<pre class="src src-R" id="orga2757f1"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(reshape2)) {
     install.packages(<span class="org-string">"reshape2"</span>)
 }
 </pre>
 </div>
 </div></li>
 
-<li><a id="org2f02380"></a><a id="ID-EAB265C6-121F-4CC9-A745-AEA8AECA2D63"></a>tidyr<br ><div class="outline-text-5" id="text-1-3-1-14">
+<li><a id="org0a1263b"></a><a id="org_gcr_2017-05-12_mara:5CE86E38-28A9-48F0-92F8-0874C7B89DEE"></a>tidyr<br><div class="outline-text-5" id="text-1-3-1-13">
 <pre class="example">
-ID: EAB265C6-121F-4CC9-A745-AEA8AECA2D63
+ID: org_gcr_2017-05-12_mara:5CE86E38-28A9-48F0-92F8-0874C7B89DEE
 </pre>
 
 <p>
@@ -1393,23 +1329,22 @@ Not on CRAN yet so install via
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org56c7b49"><span class="org-constant">library</span>(tidyr)
+<pre class="src src-R" id="org12fda9d"><span class="org-constant">library</span>(tidyr)
 </pre>
 </div>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org0f4020a"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(tidyr)) {
+<pre class="src src-R" id="org6934298"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(tidyr)) {
     devtools::install_github(<span class="org-string">"hadley/tidyr"</span>)
 }
+
 </pre>
 </div>
 </div></li>
 
-<li><a id="org68f1904"></a><a id="ID-BDFEC2C3-DAC1-4ED2-BC66-C8A793F9EC1C"></a>lubridate<br ><div class="outline-text-5" id="text-1-3-1-15">
+<li><a id="orge432528"></a><a id="org_gcr_2017-05-12_mara:7F0E1F05-B547-4E6A-AFBF-E9E9D3FF1059"></a>lubridate<br><div class="outline-text-5" id="text-1-3-1-14">
 <pre class="example">
-ID: BDFEC2C3-DAC1-4ED2-BC66-C8A793F9EC1C
+ID: org_gcr_2017-05-12_mara:7F0E1F05-B547-4E6A-AFBF-E9E9D3FF1059
 </pre>
 
 <p>
@@ -1427,14 +1362,12 @@ lubridate: Make dealing with dates a little easier in ℝ
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org38d3e7c"><span class="org-constant">library</span>(lubridate)
+<pre class="src src-R" id="orgc185d8a"><span class="org-constant">library</span>(lubridate)
 </pre>
 </div>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org6f1f310"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(lubridate)) {
+<pre class="src src-R" id="orgd6c211c"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(lubridate)) {
     install.packages(<span class="org-string">"lubridate"</span>)
 }
 </pre>
@@ -1446,9 +1379,9 @@ all programming languages.
 </p>
 </div></li>
 
-<li><a id="org296c3b6"></a><a id="ID-EBACD267-84B2-4FF2-ABE3-4DC6070D247D"></a>testit<br ><div class="outline-text-5" id="text-1-3-1-16">
+<li><a id="org404b87f"></a><a id="org_gcr_2017-05-12_mara:4D15CAB4-E41F-4329-ABD3-6352BB53211C"></a>testit<br><div class="outline-text-5" id="text-1-3-1-15">
 <pre class="example">
-ID: EBACD267-84B2-4FF2-ABE3-4DC6070D247D
+ID: org_gcr_2017-05-12_mara:4D15CAB4-E41F-4329-ABD3-6352BB53211C
 </pre>
 
 <p>
@@ -1464,23 +1397,21 @@ Gives you <code>assert</code> and <code>test_pkg</code>. Save characters.
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="orge924b3c"><span class="org-constant">library</span>(testit)
+<pre class="src src-R" id="org8a15ffd"><span class="org-constant">library</span>(testit)
 </pre>
 </div>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org4d32306"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(testit)) {
+<pre class="src src-R" id="org99dc145"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(testit)) {
     install.packages(<span class="org-string">"testit"</span>)
 }
 </pre>
 </div>
 </div></li>
 
-<li><a id="orgb9cb7e6"></a><a id="ID-43DA96C6-5440-4BA7-A537-F37BA5B739C1"></a>markdown<br ><div class="outline-text-5" id="text-1-3-1-17">
+<li><a id="org6bf6ddf"></a><a id="org_gcr_2017-05-12_mara:A060E8EA-7F3C-4A33-8001-EE936782065A"></a>markdown<br><div class="outline-text-5" id="text-1-3-1-16">
 <pre class="example">
-ID: 43DA96C6-5440-4BA7-A537-F37BA5B739C1
+ID: org_gcr_2017-05-12_mara:A060E8EA-7F3C-4A33-8001-EE936782065A
 </pre>
 
 <ul class="org-ul">
@@ -1494,14 +1425,12 @@ ID: 43DA96C6-5440-4BA7-A537-F37BA5B739C1
 </ul>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org805f875"><span class="org-constant">library</span>(markdown)
+<pre class="src src-R" id="org11b5549"><span class="org-constant">library</span>(markdown)
 </pre>
 </div>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org29c8a16"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(markdown)) {
+<pre class="src src-R" id="org3b0f58b"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(markdown)) {
     install.packages(<span class="org-string">"markdown"</span>)
 }
 </pre>
@@ -1514,9 +1443,9 @@ This package is referred to as R Markdown v1 when combined with knitr. The prima
 </blockquote>
 </div></li>
 
-<li><a id="org6b73953"></a><a id="ID-3544C2CF-9531-4A1C-95D1-83D423FC5B2E"></a>knitr<br ><div class="outline-text-5" id="text-1-3-1-18">
+<li><a id="org659443a"></a><a id="org_gcr_2017-05-12_mara:90B8880A-A32A-4761-A05A-164144AE93AF"></a>knitr<br><div class="outline-text-5" id="text-1-3-1-17">
 <pre class="example">
-ID: 3544C2CF-9531-4A1C-95D1-83D423FC5B2E
+ID: org_gcr_2017-05-12_mara:90B8880A-A32A-4761-A05A-164144AE93AF
 </pre>
 
 <p>
@@ -1574,23 +1503,21 @@ Somehow missed the <a href="http://cran.r-project.org/web/packages/knitr/vignett
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org9c2a438"><span class="org-constant">library</span>(knitr)
+<pre class="src src-R" id="orgdb8fd70"><span class="org-constant">library</span>(knitr)
 </pre>
 </div>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org7925595"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(knitr)) {
+<pre class="src src-R" id="org1564244"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(knitr)) {
     install.packages(<span class="org-string">"knitr"</span>)
 }
 </pre>
 </div>
 </div></li>
 
-<li><a id="org8763947"></a><a id="ID-E7C0C8C1-8835-45D3-B7C2-F3D687034CFA"></a>fortunes<br ><div class="outline-text-5" id="text-1-3-1-19">
+<li><a id="orgd437e2a"></a><a id="org_gcr_2017-05-12_mara:420C813F-A6C0-41C9-8F4A-042DD8C4D059"></a>fortunes<br><div class="outline-text-5" id="text-1-3-1-18">
 <pre class="example">
-ID: E7C0C8C1-8835-45D3-B7C2-F3D687034CFA
+ID: org_gcr_2017-05-12_mara:420C813F-A6C0-41C9-8F4A-042DD8C4D059
 </pre>
 
 <p>
@@ -1602,23 +1529,21 @@ R Fortunes.
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="orgc98a3ef"><span class="org-constant">library</span>(fortunes)
+<pre class="src src-R" id="org714f374"><span class="org-constant">library</span>(fortunes)
 </pre>
 </div>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org4714453"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(fortunes)) {
+<pre class="src src-R" id="orgf7af345"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(fortunes)) {
     install.packages(<span class="org-string">"fortunes"</span>)
 }
 </pre>
 </div>
 </div></li>
 
-<li><a id="org4cab573"></a><a id="ID-E51FEB93-89A9-4C5F-BC67-B737D6A853D7"></a>ggplot2<br ><div class="outline-text-5" id="text-1-3-1-20">
+<li><a id="org3e90828"></a><a id="org_gcr_2017-05-12_mara:2CB46933-90E6-4366-BA74-71D2B1A4DE8D"></a>ggplot2<br><div class="outline-text-5" id="text-1-3-1-19">
 <pre class="example">
-ID: E51FEB93-89A9-4C5F-BC67-B737D6A853D7
+ID: org_gcr_2017-05-12_mara:2CB46933-90E6-4366-BA74-71D2B1A4DE8D
 </pre>
 
 <ul class="org-ul">
@@ -1649,23 +1574,21 @@ ID: E51FEB93-89A9-4C5F-BC67-B737D6A853D7
 </ul>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org406da11"><span class="org-constant">library</span>(ggplot2)
+<pre class="src src-R" id="org2b411ab"><span class="org-constant">library</span>(ggplot2)
 </pre>
 </div>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org239ed95"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(ggplot2)) {
+<pre class="src src-R" id="org45de6fb"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(ggplot2)) {
     install.packages(<span class="org-string">"ggplot2"</span>)
 }
 </pre>
 </div>
 </div></li>
 
-<li><a id="orga3f5531"></a><a id="ID-C024D10E-40E2-4192-A953-3EBEC23B25BC"></a>tikzDevice<br ><div class="outline-text-5" id="text-1-3-1-21">
+<li><a id="org0894388"></a><a id="org_gcr_2017-05-12_mara:9CDF266B-9DE6-42A4-846E-212B11070D6F"></a>tikzDevice<br><div class="outline-text-5" id="text-1-3-1-20">
 <pre class="example">
-ID: C024D10E-40E2-4192-A953-3EBEC23B25BC
+ID: org_gcr_2017-05-12_mara:9CDF266B-9DE6-42A4-846E-212B11070D6F
 </pre>
 
 <ul class="org-ul">
@@ -1678,23 +1601,21 @@ ID: C024D10E-40E2-4192-A953-3EBEC23B25BC
 </ul>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="orgc9ecaae"><span class="org-constant">library</span>(tikzDevice)
+<pre class="src src-R" id="orgb167be9"><span class="org-constant">library</span>(tikzDevice)
 </pre>
 </div>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="orga713401"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(tikzDevice)) {
+<pre class="src src-R" id="org227512e"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(tikzDevice)) {
     install.packages(<span class="org-string">"tikzDevice"</span>)
 }
 </pre>
 </div>
 </div></li>
 
-<li><a id="org0d88ca4"></a><a id="ID-6237DF5B-5219-403D-BB41-5D0684E75B32"></a>ascii<br ><div class="outline-text-5" id="text-1-3-1-22">
+<li><a id="org728888d"></a><a id="org_gcr_2017-05-12_mara:1645490F-7DEB-4227-8EAA-FBB1EFC329A0"></a>ascii<br><div class="outline-text-5" id="text-1-3-1-21">
 <pre class="example">
-ID: 6237DF5B-5219-403D-BB41-5D0684E75B32
+ID: org_gcr_2017-05-12_mara:1645490F-7DEB-4227-8EAA-FBB1EFC329A0
 </pre>
 
 <ul class="org-ul">
@@ -1706,14 +1627,12 @@ ID: 6237DF5B-5219-403D-BB41-5D0684E75B32
 </ul>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org5159838"><span class="org-constant">library</span>(ascii)
+<pre class="src src-R" id="orga2f5001"><span class="org-constant">library</span>(ascii)
 </pre>
 </div>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org682cef5"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(ascii)) {
+<pre class="src src-R" id="orgaeb8516"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(ascii)) {
     install.packages(<span class="org-string">"ascii"</span>)
 }
 </pre>
@@ -1725,15 +1644,14 @@ vehicle for analysis.
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org78439af">options(asciiType=<span class="org-string">"org"</span>)
+<pre class="src src-R" id="orgca40ef1">options(asciiType=<span class="org-string">"org"</span>)
 </pre>
 </div>
 </div></li>
 
-<li><a id="orgcd88a05"></a><a id="ID-AE66A34F-A6AF-4578-8617-A7D2363AF81C"></a>xtable<br ><div class="outline-text-5" id="text-1-3-1-23">
+<li><a id="org168cd91"></a><a id="org_gcr_2017-05-12_mara:6438AA32-0335-4527-91BC-A90404AB36DD"></a>xtable<br><div class="outline-text-5" id="text-1-3-1-22">
 <pre class="example">
-ID: AE66A34F-A6AF-4578-8617-A7D2363AF81C
+ID: org_gcr_2017-05-12_mara:6438AA32-0335-4527-91BC-A90404AB36DD
 </pre>
 
 <ul class="org-ul">
@@ -1747,23 +1665,21 @@ ID: AE66A34F-A6AF-4578-8617-A7D2363AF81C
 </ul>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="orgecf0068"><span class="org-constant">library</span>(xtable)
+<pre class="src src-R" id="org6675822"><span class="org-constant">library</span>(xtable)
 </pre>
 </div>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="orga70508f"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(xtable)) {
+<pre class="src src-R" id="org3db82ad"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(xtable)) {
     install.packages(<span class="org-string">"xtable"</span>)
 }
 </pre>
 </div>
 </div></li>
 
-<li><a id="org0bdf11e"></a><a id="ID-72F1D963-42B8-43C5-87C3-44AEAFCEC91C"></a>Hmisc<br ><div class="outline-text-5" id="text-1-3-1-24">
+<li><a id="org9650169"></a><a id="org_gcr_2017-05-12_mara:F42F3746-7E10-478D-ACAE-125BE4A15D5C"></a>Hmisc<br><div class="outline-text-5" id="text-1-3-1-23">
 <pre class="example">
-ID: 72F1D963-42B8-43C5-87C3-44AEAFCEC91C
+ID: org_gcr_2017-05-12_mara:F42F3746-7E10-478D-ACAE-125BE4A15D5C
 </pre>
 
 <ul class="org-ul">
@@ -1775,23 +1691,21 @@ ID: 72F1D963-42B8-43C5-87C3-44AEAFCEC91C
 </ul>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org7de8921"><span class="org-constant">library</span>(Hmisc)
+<pre class="src src-R" id="orge7bd469"><span class="org-constant">library</span>(Hmisc)
 </pre>
 </div>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="orgdc2bbe3"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(Hmisc)) {
+<pre class="src src-R" id="org18a0db8"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(Hmisc)) {
     install.packages(<span class="org-string">"Hmisc"</span>)
 }
 </pre>
 </div>
 </div></li>
 
-<li><a id="org0c2a4fe"></a><a id="ID-E343FE37-79D9-4856-AFF1-1BFF49513E10"></a>log4r<br ><div class="outline-text-5" id="text-1-3-1-25">
+<li><a id="orga50a7a6"></a><a id="org_gcr_2017-05-12_mara:C6F05623-CF1C-46D0-A911-2ABB014267AF"></a>log4r<br><div class="outline-text-5" id="text-1-3-1-24">
 <pre class="example">
-ID: E343FE37-79D9-4856-AFF1-1BFF49513E10
+ID: org_gcr_2017-05-12_mara:C6F05623-CF1C-46D0-A911-2ABB014267AF
 </pre>
 
 <ul class="org-ul">
@@ -1803,23 +1717,21 @@ ID: E343FE37-79D9-4856-AFF1-1BFF49513E10
 </ul>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org3885e56"><span class="org-constant">library</span>(log4r)
+<pre class="src src-R" id="org90f5346"><span class="org-constant">library</span>(log4r)
 </pre>
 </div>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org8e7ff9b"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(log4r)) {
+<pre class="src src-R" id="orgfac820c"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(log4r)) {
     install.packages(<span class="org-string">"log4r"</span>)
 }
 </pre>
 </div>
 </div></li>
 
-<li><a id="orgbc17647"></a><a id="ID-9D4A4744-FDF4-49C5-9B66-08863FCAABC4"></a>boot<br ><div class="outline-text-5" id="text-1-3-1-26">
+<li><a id="orgaba2bca"></a><a id="org_gcr_2017-05-12_mara:1EC5636D-D340-4F00-BBEF-579000725366"></a>boot<br><div class="outline-text-5" id="text-1-3-1-25">
 <pre class="example">
-ID: 9D4A4744-FDF4-49C5-9B66-08863FCAABC4
+ID: org_gcr_2017-05-12_mara:1EC5636D-D340-4F00-BBEF-579000725366
 </pre>
 
 <ul class="org-ul">
@@ -1830,23 +1742,21 @@ ID: 9D4A4744-FDF4-49C5-9B66-08863FCAABC4
 </ul>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="orga71277a"><span class="org-constant">library</span>(boot)
+<pre class="src src-R" id="org4dc7ab9"><span class="org-constant">library</span>(boot)
 </pre>
 </div>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="orge2aed61"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(boot)) {
+<pre class="src src-R" id="org3f9ad92"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(boot)) {
     install.packages(<span class="org-string">"boot"</span>)
 }
 </pre>
 </div>
 </div></li>
 
-<li><a id="org7b77cf2"></a><a id="ID-24A2C62F-9EC0-4E51-B21D-364DF4679938"></a>kernlab<br ><div class="outline-text-5" id="text-1-3-1-27">
+<li><a id="org8225ce6"></a><a id="org_gcr_2017-05-12_mara:1860ABE6-06F1-449C-A5E4-EBCDEE4B8EB8"></a>kernlab<br><div class="outline-text-5" id="text-1-3-1-26">
 <pre class="example">
-ID: 24A2C62F-9EC0-4E51-B21D-364DF4679938
+ID: org_gcr_2017-05-12_mara:1860ABE6-06F1-449C-A5E4-EBCDEE4B8EB8
 </pre>
 
 <ul class="org-ul">
@@ -1859,23 +1769,21 @@ ID: 24A2C62F-9EC0-4E51-B21D-364DF4679938
 </ul>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org2761740"><span class="org-constant">library</span>(kernlab)
+<pre class="src src-R" id="org23bbe3c"><span class="org-constant">library</span>(kernlab)
 </pre>
 </div>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org9c38f8d"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(kernlab)) {
+<pre class="src src-R" id="orgda6d239"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(kernlab)) {
     install.packages(<span class="org-string">"kernlab"</span>)
 }
 </pre>
 </div>
 </div></li>
 
-<li><a id="orgb7904aa"></a><a id="ID-954DBB37-DD0D-4363-BB3A-6E7787914C1C"></a>R Utils<br ><div class="outline-text-5" id="text-1-3-1-28">
+<li><a id="org4b564e6"></a><a id="org_gcr_2017-05-12_mara:5AAB5490-A3D4-42E1-9630-15E9CE8A6D63"></a>R Utils<br><div class="outline-text-5" id="text-1-3-1-27">
 <pre class="example">
-ID: 954DBB37-DD0D-4363-BB3A-6E7787914C1C
+ID: org_gcr_2017-05-12_mara:5AAB5490-A3D4-42E1-9630-15E9CE8A6D63
 </pre>
 
 <p>
@@ -1884,23 +1792,21 @@ separarate task from loading.
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org3765c08"><span class="org-constant">library</span>(R.utils)
+<pre class="src src-R" id="org3ca2bd9"><span class="org-constant">library</span>(R.utils)
 </pre>
 </div>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="orgf039521"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(R.utils)) {
+<pre class="src src-R" id="org907ee1a"><span class="org-keyword">if</span>(! <span class="org-constant">require</span>(R.utils)) {
     install.packages(<span class="org-string">"R.utils"</span>)
 }
 </pre>
 </div>
 </div></li>
 
-<li><a id="org0754821"></a><a id="ID-1F011148-DBD2-4944-B458-771333F10FB7"></a>Not explicitly loaded, but interesting packages<br ><div class="outline-text-5" id="text-1-3-1-29">
+<li><a id="orgfe66176"></a><a id="org_gcr_2017-05-12_mara:62914096-7336-4480-B8E4-950E2A553AA8"></a>Not explicitly loaded, but interesting packages<br><div class="outline-text-5" id="text-1-3-1-28">
 <pre class="example">
-ID: 1F011148-DBD2-4944-B458-771333F10FB7
+ID: org_gcr_2017-05-12_mara:62914096-7336-4480-B8E4-950E2A553AA8
 </pre>
 
 <ul class="org-ul">
@@ -1909,7 +1815,7 @@ ID: 1F011148-DBD2-4944-B458-771333F10FB7
 <li><a href="http://cran.r-project.org/web/packages/yaml/index.html">yaml</a></li>
 <li><a href="http://cran.r-project.org/web/packages/whisker/index.html">whisker</a></li>
 <li><a href="http://cran.r-project.org/web/packages/formatR/index.html">formatR</a></li>
-<li>General caching <sup><a id="fnr.19" class="footref" href="#fn.19">19</a></sup></li>
+<li>General caching <sup><a id="fnr.18" class="footref" href="#fn.18">18</a></sup></li>
 <li><a href="http://cran.r-project.org/web/packages/stringi/index.html">stringi</a>
 <ul class="org-ul">
 <li><a href="http://www.r-bloggers.com/faster-easier-and-more-reliable-character-string-processing-with-stringi-0-3-1/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+RBloggers+%28R+bloggers%29">Via</a></li>
@@ -2014,12 +1920,12 @@ ID: 1F011148-DBD2-4944-B458-771333F10FB7
 </div>
 </div>
 
-<div id="outline-container-org7446dd4" class="outline-3">
-<h3 id="org7446dd4"><a id="ID-10CD604F-503C-46DE-AB32-97884C070344"></a><span class="section-number-3">1.4</span> .First</h3>
+<div id="outline-container-orgd2df022" class="outline-3">
+<h3 id="orgd2df022"><a id="org_gcr_2017-05-12_mara:DB8DE38B-83C2-4CF9-B428-4629E4E06547"></a><span class="section-number-3">1.4</span> .First</h3>
 <div class="outline-text-3" id="text-1-4">
 <pre class="example">
 header-args: :noweb-ref rfirst-defs
-ID: 10CD604F-503C-46DE-AB32-97884C070344
+ID: org_gcr_2017-05-12_mara:DB8DE38B-83C2-4CF9-B428-4629E4E06547
 </pre>
 
 <p>
@@ -2035,13 +1941,12 @@ aside, it has its place, so it should not go away completely. However, it ought
 not be used much, and if you do need to use it, the it should be really really
 obvious.
 <ul class="org-ul">
-<li>Eg: <sup><a id="fnr.20" class="footref" href="#fn.20">20</a></sup></li>
+<li>Eg: <sup><a id="fnr.19" class="footref" href="#fn.19">19</a></sup></li>
 </ul></dd>
 </dl>
 <div class="org-src-container">
-
-<pre class="src src-R" id="org7465327">gcr$attach.unsafe <span class="org-constant">&lt;-</span> <span class="org-constant">attach</span>
-gcr$<span class="org-function-name">attach</span> <span class="org-constant">&lt;-</span> <span class="org-keyword">function</span>(...) {
+<pre class="src src-R" id="org87f9533">gcr$attach.unsafe <span class="org-constant">&lt;-</span> <span class="org-constant">attach</span>
+gcr$<span class="org-constant">attach</span> <span class="org-constant">&lt;-</span> <span class="org-keyword">function</span>(...) {
     <span class="org-keyword">warning</span>(<span class="org-string">"NEVER USE ATTACH! Use `unsafe.attach` if you must."</span>)
     attach.unsafe(...)
 }
@@ -2052,13 +1957,12 @@ gcr$<span class="org-function-name">attach</span> <span class="org-constant">&lt
 <li><code>library</code> reports issues immediately, and by design, <code>require</code> does not… remind
 the useR that they <i>may</i> want the former not the latter
 <ul class="org-ul">
-<li>Via <sup><a id="fnr.21" class="footref" href="#fn.21">21</a></sup></li>
+<li>Via <sup><a id="fnr.20" class="footref" href="#fn.20">20</a></sup></li>
 <li>Just like everything else here, this is a <i>personal preference</i> thing!</li>
 </ul></li>
 </ul>
 <div class="org-src-container">
-
-<pre class="src src-R" id="orgb6180a4">gcr$<span class="org-function-name">require</span> <span class="org-constant">&lt;-</span> <span class="org-keyword">function</span>(...) {
+<pre class="src src-R" id="org39f5f6e">gcr$<span class="org-constant">require</span> <span class="org-constant">&lt;-</span> <span class="org-keyword">function</span>(...) {
     <span class="org-keyword">warning</span>(<span class="org-string">"Are you sure you wanted `require` instead of `library`?"</span>)
     base::<span class="org-constant">require</span>(...)
 }
@@ -2066,11 +1970,10 @@ the useR that they <i>may</i> want the former not the latter
 </div>
 
 <p>
-Sometimes you only want to list everything <b>but</b> functions <sup><a id="fnr.22" class="footref" href="#fn.22">22</a></sup>:
+Sometimes you only want to list everything <b>but</b> functions <sup><a id="fnr.21" class="footref" href="#fn.21">21</a></sup>:
 </p>
 <div class="org-src-container">
-
-<pre class="src src-R" id="org249779c">gcr$<span class="org-function-name">lsnofun</span> <span class="org-constant">&lt;-</span> <span class="org-keyword">function</span>(name = parent.frame()) {
+<pre class="src src-R" id="org7bf75ac">gcr$<span class="org-function-name">lsnofun</span> <span class="org-constant">&lt;-</span> <span class="org-keyword">function</span>(name = parent.frame()) {
     obj <span class="org-constant">&lt;-</span> ls(name = name)
     obj[!sapply(obj, <span class="org-keyword">function</span>(x) is.function(get(x)))]
 }
@@ -2081,8 +1984,7 @@ Sometimes you only want to list everything <b>but</b> functions <sup><a id="fnr.
 Make it really simple to specify how to handle errors in a given session:
 </p>
 <div class="org-src-container">
-
-<pre class="src src-R" id="org1facc93">gcr$<span class="org-function-name">recoveronerror</span> <span class="org-constant">&lt;-</span> <span class="org-keyword">function</span>() {
+<pre class="src src-R" id="orgd28b17d">gcr$<span class="org-function-name">recoveronerror</span> <span class="org-constant">&lt;-</span> <span class="org-keyword">function</span>() {
     options(error=recover)
 }
 
@@ -2096,8 +1998,7 @@ gcr$<span class="org-function-name">recoveronerroroff</span> <span class="org-co
 Make it really simple to specify how to handle warnings in a given session:
 </p>
 <div class="org-src-container">
-
-<pre class="src src-R" id="orga7640bb">gcr$<span class="org-function-name">erroronwarn</span> <span class="org-constant">&lt;-</span> <span class="org-keyword">function</span>() {
+<pre class="src src-R" id="orgb1495a7">gcr$<span class="org-function-name">erroronwarn</span> <span class="org-constant">&lt;-</span> <span class="org-keyword">function</span>() {
     options(warn=2)
 }
 
@@ -2112,18 +2013,16 @@ gcr$<span class="org-function-name">erroronwarnoff</span> <span class="org-const
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="orgc3f5ab4">options(sqldf.driver = <span class="org-string">"SQLite"</span>)
+<pre class="src src-R" id="org7c25287">options(sqldf.driver = <span class="org-string">"SQLite"</span>)
 </pre>
 </div>
 
 <p>
-Save your fingers from having to type <code>head</code> the next <code>n</code> thousand times <sup><a id="fnr.23" class="footref" href="#fn.23">23</a></sup> because I can&rsquo;t. <code>ess-rdired</code> and friends use the dataframe print function,
+Save your fingers from having to type <code>head</code> the next <code>n</code> thousand times <sup><a id="fnr.22" class="footref" href="#fn.22">22</a></sup> because I can&rsquo;t. <code>ess-rdired</code> and friends use the dataframe print function,
 so I didn&rsquo;t make dataframes print using it.
 </p>
 <div class="org-src-container">
-
-<pre class="src src-R" id="orgb4261d1">gcr$<span class="org-function-name">printdf</span> <span class="org-constant">&lt;-</span> <span class="org-keyword">function</span>(df) {
+<pre class="src src-R" id="orgd5ebdb7">gcr$<span class="org-function-name">printdf</span> <span class="org-constant">&lt;-</span> <span class="org-keyword">function</span>(df) {
     <span class="org-keyword">if</span> (nrow(df) &gt; 10) {
         print(head(df, 5))
         cat(<span class="org-string">"---\n"</span>)
@@ -2141,8 +2040,7 @@ don&rsquo;t. Make it really easy to change whenever you feel like it.
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org6615973">gcr$<span class="org-function-name">printlen</span> <span class="org-constant">&lt;-</span> <span class="org-keyword">function</span>(len=500) {
+<pre class="src src-R" id="org02954c9">gcr$<span class="org-function-name">printlen</span> <span class="org-constant">&lt;-</span> <span class="org-keyword">function</span>(len=500) {
     options(<span class="org-string">"max.print"</span> = len)
 }
 </pre>
@@ -2154,8 +2052,7 @@ just make it specific and keep it simple.
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-R" id="org7780bec">gcr$<span class="org-function-name">hundred</span> <span class="org-constant">&lt;-</span> <span class="org-keyword">function</span>(df, idx=0) {
+<pre class="src src-R" id="org23ba6eb">gcr$<span class="org-function-name">hundred</span> <span class="org-constant">&lt;-</span> <span class="org-keyword">function</span>(df, idx=0) {
     df[idx:(idx+100),]
 }
 </pre>
@@ -2163,16 +2060,16 @@ just make it specific and keep it simple.
 </div>
 </div>
 
-<div id="outline-container-orga0d9daf" class="outline-3">
-<h3 id="orga0d9daf"><a id="ID-ADDE28AF-505F-46DF-BF67-C61E435D6981"></a><span class="section-number-3">1.5</span> .Renviron</h3>
+<div id="outline-container-org4466daf" class="outline-3">
+<h3 id="org4466daf"><a id="org_gcr_2017-05-12_mara:9C053DA5-163C-4C31-9590-15F1BC5EF2DD"></a><span class="section-number-3">1.5</span> .Renviron</h3>
 <div class="outline-text-3" id="text-1-5">
 <pre class="example">
 header-args: :noweb-ref renviron-def
-ID: ADDE28AF-505F-46DF-BF67-C61E435D6981
+ID: org_gcr_2017-05-12_mara:9C053DA5-163C-4C31-9590-15F1BC5EF2DD
 </pre>
 
 <p>
-Install all packages to my home directory <sup><a id="fnr.24" class="footref" href="#fn.24">24</a></sup>
+Install all packages to my home directory <sup><a id="fnr.23" class="footref" href="#fn.23">23</a></sup>
 </p>
 <ul class="org-ul">
 <li>Call <code>.libPaths()</code> to verify</li>
@@ -2186,8 +2083,7 @@ Install all packages to my home directory <sup><a id="fnr.24" class="footref" hr
 </ul></li>
 </ul>
 <div class="org-src-container">
-
-<pre class="src src-sh" id="org61de392"><span class="org-variable-name">R_LIBS</span>=~/.Rpackages
+<pre class="src src-sh" id="orgdc36475"><span class="org-variable-name">R_LIBS</span>=~/.Rpackages
 </pre>
 </div>
 
@@ -2222,8 +2118,7 @@ Switched to the official CRAN R build, which works fine on OSX.
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-sh" id="orgdf65808"><span class="org-variable-name">R_INTERACTIVE_DEVICE</span>=quartz
+<pre class="src src-sh" id="org56c6fcf"><span class="org-variable-name">R_INTERACTIVE_DEVICE</span>=quartz
 </pre>
 </div>
 
@@ -2236,8 +2131,7 @@ to <code>Sys.time()</code> and it worked correctly.
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-sh" id="org673c5be"><span class="org-variable-name">TZ</span>=America/Chicago
+<pre class="src src-sh" id="org1e12dae"><span class="org-variable-name">TZ</span>=America/Chicago
 </pre>
 </div>
 </div>
@@ -2277,30 +2171,28 @@ to <code>Sys.time()</code> and it worked correctly.
 
 <div class="footdef"><sup><a id="fn.15" class="footnum" href="#fnr.15">15</a></sup> <div class="footpara"><a href="http://cran.r-project.org/web/packages/data.table/index.html">http://cran.r-project.org/web/packages/data.table/index.html</a></div></div>
 
-<div class="footdef"><sup><a id="fn.16" class="footnum" href="#fnr.16">16</a></sup> <div class="footpara"><a href="http://cran.r-project.org/web/packages/xlsx/index.html">http://cran.r-project.org/web/packages/xlsx/index.html</a></div></div>
+<div class="footdef"><sup><a id="fn.16" class="footnum" href="#fnr.16">16</a></sup> <div class="footpara"><a href="http://cran.r-project.org/web/packages/XML/index.html">http://cran.r-project.org/web/packages/XML/index.html</a></div></div>
 
-<div class="footdef"><sup><a id="fn.17" class="footnum" href="#fnr.17">17</a></sup> <div class="footpara"><a href="http://cran.r-project.org/web/packages/XML/index.html">http://cran.r-project.org/web/packages/XML/index.html</a></div></div>
+<div class="footdef"><sup><a id="fn.17" class="footnum" href="#fnr.17">17</a></sup> <div class="footpara"><a href="http://cran.r-project.org/web/packages/magrittr/index.html">http://cran.r-project.org/web/packages/magrittr/index.html</a></div></div>
 
-<div class="footdef"><sup><a id="fn.18" class="footnum" href="#fnr.18">18</a></sup> <div class="footpara"><a href="http://cran.r-project.org/web/packages/magrittr/index.html">http://cran.r-project.org/web/packages/magrittr/index.html</a></div></div>
+<div class="footdef"><sup><a id="fn.18" class="footnum" href="#fnr.18">18</a></sup> <div class="footpara"><a href="https://stackoverflow.com/questions/7262485/options-for-caching-memoization-hashing-in-r">https://stackoverflow.com/questions/7262485/options-for-caching-memoization-hashing-in-r</a></div></div>
 
-<div class="footdef"><sup><a id="fn.19" class="footnum" href="#fnr.19">19</a></sup> <div class="footpara"><a href="https://stackoverflow.com/questions/7262485/options-for-caching-memoization-hashing-in-r">https://stackoverflow.com/questions/7262485/options-for-caching-memoization-hashing-in-r</a></div></div>
+<div class="footdef"><sup><a id="fn.19" class="footnum" href="#fnr.19">19</a></sup> <div class="footpara"><a href="http://www.r-bloggers.com/to-attach-or-not-attach-that-is-the-question/">http://www.r-bloggers.com/to-attach-or-not-attach-that-is-the-question/</a></div></div>
 
-<div class="footdef"><sup><a id="fn.20" class="footnum" href="#fnr.20">20</a></sup> <div class="footpara"><a href="http://www.r-bloggers.com/to-attach-or-not-attach-that-is-the-question/">http://www.r-bloggers.com/to-attach-or-not-attach-that-is-the-question/</a></div></div>
+<div class="footdef"><sup><a id="fn.20" class="footnum" href="#fnr.20">20</a></sup> <div class="footpara"><a href="http://www.r-bloggers.com/library-vs-require-in-r/">http://www.r-bloggers.com/library-vs-require-in-r/</a></div></div>
 
-<div class="footdef"><sup><a id="fn.21" class="footnum" href="#fnr.21">21</a></sup> <div class="footpara"><a href="http://www.r-bloggers.com/library-vs-require-in-r/">http://www.r-bloggers.com/library-vs-require-in-r/</a></div></div>
+<div class="footdef"><sup><a id="fn.21" class="footnum" href="#fnr.21">21</a></sup> <div class="footpara"><a href="https://stackoverflow.com/questions/13094324/hiding-function-names-from-ls-results-to-find-a-variable-name-more-quickly">https://stackoverflow.com/questions/13094324/hiding-function-names-from-ls-results-to-find-a-variable-name-more-quickly</a></div></div>
 
-<div class="footdef"><sup><a id="fn.22" class="footnum" href="#fnr.22">22</a></sup> <div class="footpara"><a href="https://stackoverflow.com/questions/13094324/hiding-function-names-from-ls-results-to-find-a-variable-name-more-quickly">https://stackoverflow.com/questions/13094324/hiding-function-names-from-ls-results-to-find-a-variable-name-more-quickly</a></div></div>
+<div class="footdef"><sup><a id="fn.22" class="footnum" href="#fnr.22">22</a></sup> <div class="footpara"><a href="https://stackoverflow.com/questions/13024167/how-to-make-head-be-applied-automatically-to-output">https://stackoverflow.com/questions/13024167/how-to-make-head-be-applied-automatically-to-output</a></div></div>
 
-<div class="footdef"><sup><a id="fn.23" class="footnum" href="#fnr.23">23</a></sup> <div class="footpara"><a href="https://stackoverflow.com/questions/13024167/how-to-make-head-be-applied-automatically-to-output">https://stackoverflow.com/questions/13024167/how-to-make-head-be-applied-automatically-to-output</a></div></div>
-
-<div class="footdef"><sup><a id="fn.24" class="footnum" href="#fnr.24">24</a></sup> <div class="footpara"><a href="http://www.r-bloggers.com/installing-r-packages/">http://www.r-bloggers.com/installing-r-packages/</a></div></div>
+<div class="footdef"><sup><a id="fn.23" class="footnum" href="#fnr.23">23</a></sup> <div class="footpara"><a href="http://www.r-bloggers.com/installing-r-packages/">http://www.r-bloggers.com/installing-r-packages/</a></div></div>
 
 
 </div>
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Grant Rettke</p>
-<p class="date">Created: 2016-09-01 Thu 19:23</p>
+<p class="date">Created: 2017-07-22 Sat 23:17</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

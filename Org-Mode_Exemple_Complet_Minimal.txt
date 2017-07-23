@@ -1,13 +1,17 @@
 Grant Rettke
 
 
+Never compile this.
 
+,----
+| ;; -*- no-byte-compile: t; -*-
+`----
 
 
 1 Org-Mode Exemple Complet Minimal
 ==================================
 
-  ID: orgmode:gcr:vela:83868A6E-76C2-48AE-8A5A-6A3C97492321
+  ID: org_gcr_2017-05-12_mara:1035FF79-3703-49A6-8522-618B38A48F6C
 
   Configure EMACS to easily provide ECMs.
 
@@ -15,51 +19,21 @@ Grant Rettke
 
   Start EMACS with this command:
 
-  `open /Applications/Emacs.app -n --args --quick --load
-  ~/src/help/.org-mode-ecm.emacs.el'
-
   ,----
-  | ;; -*- lexical-binding: t -*-
+  | emacs --debug-init --no-init-file --no-splash --background-color white --foreground-color black  --vertical-scroll-bars --eval '(switch-to-buffer "*Messages*")' --name ECM-TEST --title ECM-TEST --load ~/src/help/.org-mode-ecm.emacs.el &
   `----
 
 
 1.1 Principle of Least Astonishment (POLA)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  ID: orgmode:gcr:vela:43D9AB52-2157-4A1D-AD9C-D35996E91269
+  ID: org_gcr_2017-05-12_mara:626B5DD1-97D8-4B85-96BC-B9A96F18AF1E
 
 
-1.1.1 Scoping Behavior
-----------------------
-
-  ID: orgmode:gcr:vela:C0F8DDC4-C2B7-4578-B9B4-FA13E3BF0EBD
-
-  EMACS values dynamic-scoping for now and in the future.
-
-  EMACS values lexical-scoping in the future.
-
-  There are pecuilar interactions between [lexically and dynamically scope
-  closures] and [special variables].
-
-  With the future in mind, make the switch now.
-
-  It is enabled with a non-nil buffer-local variable `lexical-binding'. The
-  variable is inserted into each of the Web definitions that this system
-  provides. Those definitions can't use Org-Mode comments so they are defined
-  individually in each Web.
-
-
-[lexically and dynamically scope closures]
-https://yoo2080.wordpress.com/2011/12/31/lexical-scoping-and-dynamic-scoping-in-emacs-lisp/
-
-[special variables]
-https://yoo2080.wordpress.com/2013/08/14/invasion-of-special-variables-in-emacs-lisp/
-
-
-1.1.2 Load Behavior
+1.1.1 Load Behavior
 -------------------
 
-  ID: orgmode:gcr:vela:B1A48CB2-9295-466E-947F-EE24D57DB548
+  ID: org_gcr_2017-05-12_mara:75985F03-F3B9-4DA3-8F6E-393E4C2F06E7
 
   EMACS can load 3 different representations of a Emacs-Lisp source file code
   OOTB. The name of source code file is the value before the file extension.
@@ -101,7 +75,7 @@ https://yoo2080.wordpress.com/2013/08/14/invasion-of-special-variables-in-emacs-
 1.2 Org-Mode Exemple Complet Minimal
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  ID: orgmode:gcr:vela:57C69AB7-A317-4823-ABBF-7DE8A5E2151C
+  ID: org_gcr_2017-05-12_mara:572E2309-5DCA-4AE1-AAC4-36B7E07AD46D
 
   Every new EMACS releases comes with the latest stable Org-Mode release. To get
   hot-fixes, cutting edge features, and easy patch creation though, you need to
@@ -141,7 +115,7 @@ https://yoo2080.wordpress.com/2013/08/14/invasion-of-special-variables-in-emacs-
   | (setq org-enforce-todo-checkbox-dependencies t)
   `----
 
-  Use the Guillemet to demarcate source blocks. Reconfigure this yearly.
+  Found a copy _Literate Programming_ so use `GUILLEMET' delimeters.
 
   ,----
   | (setq org-babel-noweb-wrap-start "«")
@@ -152,6 +126,22 @@ https://yoo2080.wordpress.com/2013/08/14/invasion-of-special-variables-in-emacs-
 
   ,----
   | (require 'org)
+  `----
+
+  Display system info.
+
+  ,----
+  | (message "ECM Information As Of: %s\nOrg-Version: %s\nOrg-Git-Version:
+  |          %s\nEmacs-Version: %s\nNoweb wrap start and stop delimeters: '%s' and '%s'\nnorg-babel-default-header-args:\n"
+  |          (let* ((timestamp (format-time-string "%Y-%m-%dT%T"))
+  |                 (safe (replace-regexp-in-string ":" "-" timestamp)))
+  |            safe)
+  |          (org-version)
+  |          (org-git-version)
+  |          (emacs-version)
+  |          org-babel-noweb-wrap-start
+  |          org-babel-noweb-wrap-end)
+  | (princ org-babel-default-header-args)
   `----
 
 
