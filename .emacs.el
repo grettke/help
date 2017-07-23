@@ -3475,7 +3475,7 @@ sh-mode:
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-07-11_mara_9D659239-693A-430C-A4CE-6003BD650A60][org_gcr_2017-07-11_mara_9D659239-693A-430C-A4CE-6003BD650A60]]
 (tool-bar-add-item
- "evan-shuster-ca_swap"
+ "exchange"
  'help/safb-switch-to-previous-buffer
  'Swap
  :help "Swap buffers")
