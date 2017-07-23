@@ -7,6 +7,16 @@ Never compile this.
 ;; -*- no-byte-compile: t; -*-
 #+END_SRC
 
+* Org2blog
+   :PROPERTIES:
+   :ID:       org_gcr_2017-05-12_mara:B6246A7A-5514-4478-BC3D-7768B05B08B8
+   :END:
+
+#+NAME: org_gcr_2017-07-21_mara_CC0CF0E1-0C39-4937-AD52-FBA49CA10E65
+#+BEGIN_SRC emacs-lisp :comments no
+;; -*- no-byte-compile: t; -*-
+#+END_SRC
+
 Sysop is likely to use this periodically.
 
 Start EMACS with this command:
