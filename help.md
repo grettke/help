@@ -20,8 +20,10 @@ With the future in mind, make the switch now.
 
 It is enabled with a non-nil buffer-local variable `lexical-binding`. The variable is inserted only here because it loads each of the child configurations. Web.
 
+Never compile this.
+
 ```emacs-lisp
-;; -*- lexical-binding: t -*-
+;; -*- lexical-binding: t; no-byte-compile: t; -*-
 ```
 
 ```emacs-lisp
@@ -31,7 +33,7 @@ It is enabled with a non-nil buffer-local variable `lexical-binding`. The variab
 ;; You may delete these explanatory comments.
 ;(package-initialize)
 
-(load-file "~/src/help/.org-mode-org2blog.emacs.el")
+(load-file "~/src/help/.org-mode-contribute.emacs.el")
 ```
 
 
@@ -1145,12 +1147,14 @@ Attribution: URL `https://rejeep.github.io/emacs/elisp/2010/11/16/delete-file-an
 
 (defun help/wih ()
   (interactive)
+  (when (use-region-p) (call-interactively 'kill-region))
   (insert "#+CATEGORY: Article
 #+TAGS: Yoga, philosophy, Health, Happiness,
 #+TITLE:"))
 
 (defun help/wio ()
   (interactive)
+  (when (use-region-p) (call-interactively 'kill-region))
   (insert "#+CATEGORY: Article
 #+TAGS: Babel, Emacs, Ide, Lisp, Literate Programming, Programming Language, Reproducible research, elisp, org-mode
 #+TITLE:"))
@@ -1185,7 +1189,7 @@ Two spaces after a semi-colon.
 One space after comma.
 
 ```emacs-lisp
-(setq colon-double-space t)
+(setq colon-double-space nil)
 ```
 
 
@@ -1450,6 +1454,13 @@ Management:
   (unless (eq ibuffer-sorting-mode 'alphabetic)
     (ibuffer-do-sort-by-alphabetic)))
 (add-hook 'ibuffer-mode-hooks #'help/ibuffer-hook-fn)
+```
+
+This package for GNU APL.
+
+```emacs-lisp
+(use-package face-remap
+  :diminish 'buffer-face-mode)
 ```
 
 
@@ -2541,7 +2552,9 @@ Ag integration.
   (setq ag-highlight-search t)
   (setq ag-reuse-window nil)
   (setq ag-reuse-buffers nil)
-  (setq ag-arguments (-insert-at (- (length ag-arguments) 1) '"-i"
+  (setq ag-arguments (-insert-at (- (length ag-arguments) 1) '"--ignore-case"
+                                 ag-arguments))
+  (setq ag-arguments (-insert-at (- (length ag-arguments) 1) '"--file-search-regex"
                                  ag-arguments))
   (defun help/ag-mode-hook-fn ()
     "HELP ag customizations."
@@ -2973,7 +2986,8 @@ Every text editing buffer needs this.
                                 json-mode-hook
                                 crontab-mode-hook
                                 apache-mode-hook
-                                python-mode-hook))
+                                python-mode-hook
+                                gnu-apl-mode-hook))
         ```
     -   LISP mode hooks.
         -   Are hacking modes.
@@ -3008,10 +3022,11 @@ Every text editing buffer needs this.
     -   Always maintain balanced brackets. Easily wrap the selected region. Auto-escape strings pasted into other strings. Smartparens provides built-in correct behavior for most modes.
 
         ```emacs-lisp
-        (use-package smartparens-config
-          :ensure smartparens
+        (use-package smartparens
+          :ensure t
           :config
           (setq sp-show-pair-from-inside nil)
+          (require 'smartparens-config)
           :diminish smartparens-mode)
         ```
 
@@ -3881,7 +3896,7 @@ Package lint.
           ("n" org-narrow-to-subtree)
           ("m" org-mark-subtree)
           ("M" org-mark-element))
-        (key-chord-define-global "hh" #'help/hydra/right-side/org-mode/body)
+        (key-chord-define org-mode-map "hh" #'help/hydra/right-side/org-mode/body)
         ```
 
         Save all buffers before working with Exports.
@@ -4005,7 +4020,76 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 
 ```emacs-lisp
 (use-package gnu-apl-mode
-  :ensure t)
+  :ensure t
+  :init
+  (setq gnu-apl-show-keymap-on-startup nil)
+  (setq gnu-apl-show-apl-welcome nil)
+  (setq gnu-apl-show-tips-on-start nil)
+  (setq gnu-apl-mode-map-prefix "C-M-s-")
+  (setq gnu-apl-interactive-mode-map-prefix gnu-apl-mode-map-prefix)
+  :config
+  (defun em-gnu-apl-init ()
+    (setq buffer-face-mode-face 'gnu-apl-default)
+    (buffer-face-mode))
+  (add-hook 'gnu-apl-interactive-mode-hook 'em-gnu-apl-init)
+  (add-hook 'gnu-apl-mode-hook 'em-gnu-apl-init)
+  (defun help/gnu-apl-runningp ()
+    (interactive)
+    (let ((session (gnu-apl--get-interactive-session-with-nocheck)))
+      (if session 'ON 'OFF)))
+  (defun help/start-gnu-apl ()
+    (interactive)
+    (if (equal (help/gnu-apl-runningp) 'ON) (message "GNU APL is already ON.")
+      (call-interactively 'gnu-apl)))
+  (defun help/stop-gnu-apl ()
+    (interactive)
+    (if (equal (help/gnu-apl-runningp) 'OFF) (message "GNU APL is already OFF.")
+      (progn
+        (gnu-apl-switch-to-interactive)
+        (switch-to-buffer "*gnu-apl*")
+        (insert ")off")
+        (comint-send-input))))
+  (defhydra help/hydra/gnu-apl (:color blue
+                                       :hint nil)
+    "
+GNU APL is: %(help/gnu-apl-runningp)
+ _y_ eval-buffer _u_ eval-region _i_ eval-line _o_ eval-function
+  _f_ apropos-symbol _g_ help-symbol _h_ keyboard _j_ next _k_ previous
+   _q_ quit _c_ start APL _v_ stop APL _b_ switch to APL _n_ switch back
+"
+    ("i" help/gnu-apl-eval-line)
+    ("o" gnu-apl-interactive-send-current-function)
+    ("j" (lambda () (interactive) (call-interactively 'next-logical-line)) :exit nil)
+    ("k" (lambda () (interactive) (call-interactively 'previous-logical-line))
+     :exit nil)
+    ("b" gnu-apl-switch-to-interactive)
+    ("u" gnu-apl-interactive-send-region)
+    ("h" gnu-apl-show-keyboard)
+    ("y" gnu-apl-interactive-send-buffer)
+    ("t" gnu-apl-trace)
+    ("f" gnu-apl-apropos-symbol)
+    ("g" gnu-apl-show-help-for-symbol)
+    ("c" help/start-gnu-apl)
+    ("v" help/stop-gnu-apl)
+    ("n" (lambda () (interactive) (other-window -1)))
+    ("q" nil))
+  (key-chord-define gnu-apl-mode-map "hh" #'help/hydra/gnu-apl/body)
+  (key-chord-define gnu-apl-interactive-mode-map "hh" #'help/hydra/gnu-apl/body)
+  (defun help/gnu-apl-eval-line ()
+    "Evaluate this line and move to next."
+    (interactive)
+    (end-of-line)
+    (set-mark (line-beginning-position))
+    (call-interactively 'gnu-apl-interactive-send-region)
+    (deactivate-mark)
+    (call-interactively 'next-logical-line))
+  (define-key gnu-apl-mode-map (kbd "C-<return>") #'help/gnu-apl-eval-line)
+  (defun help/gnu-apl-interactive-mode-hook-fn ()
+    (nlinum-mode)
+    (rainbow-mode))
+  (add-hook 'gnu-apl-interactive-mode-hook
+            #'help/gnu-apl-interactive-mode-hook-fn)
+  (add-to-list 'org-babel-load-languages '(gnu-apl . t)))
 ```
 
 
@@ -4575,11 +4659,10 @@ Fails with `(eval-after-load 'abbrev (diminish 'abbrev-mode))`.
     ID: org_gcr_2017-05-12_mara:2DF7BDAD-45C9-4D8D-AC34-FE77E119A093
 
 ```emacs-lisp
-(use-package tex-site
+(use-package tex
   :ensure auctex
   :config
-  (eval-after-load "tex"
-    '(define-key TeX-mode-map (kbd "C-c C-c") #'help/safb-TeX-command-master)))
+  (define-key TeX-mode-map (kbd "C-c C-c") #'help/safb-TeX-command-master))
 ```
 
 Save style info. This doesn&rsquo;t control the buffer save.
@@ -5925,10 +6008,8 @@ These changes helped guide the custom keyboard design.
     (global-set-key (kbd "C-0") (lambda () (interactive) (switch-to-buffer
                                                      "scratch.org")))
     (global-set-key (kbd "M-9") (lambda () (interactive) (switch-to-buffer
-                                                     "help/help.org")))
-    (global-set-key (kbd "M-0") (lambda () (interactive) (switch-to-buffer
-                                                     "list/help.org")))
-    (global-set-key (kbd "C-5") #'help/safb-kill-this-buffer)
+                                                     "help.org")))
+    (global-set-key (kbd "C-5") #'ido-kill-buffer)
     (global-set-key (kbd "C--") (lambda () (interactive) (insert "Vigneswari")))
     (global-set-key (kbd "s-5") #'mc/mark-previous-like-this)
     (global-set-key (kbd "s-4") #'mc/mark-next-like-this)
@@ -5980,6 +6061,8 @@ These changes helped guide the custom keyboard design.
     (global-set-key [(control meta ?p)] #'help/insert-datestamp)
     (global-set-key [(control meta shift ?p)] #'help/insert-timestamp*-no-colons)
     (global-set-key (kbd "C-M-o") #'help/occur-dwim)
+    (global-set-key (kbd "M-i") nil)
+    (global-set-key (kbd "M-i") #'describe-symbol)
     ```
 
     Org handle `TAB` correctly and nothing is bound to it like `Auto-Complete` or `yasnippet` so this doesn&rsquo;t *need* ot use `C-i` freeing it up. Rebinding `C-g` seems to make the minibuffer, `eval-*` and `smex` become confused &rarr; quit working.
@@ -6021,7 +6104,7 @@ These changes helped guide the custom keyboard design.
     _Q_ exit-Emacs _q_uit T_ trademarks
     _a_ ag  _A_ apropo'ish _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point  _D_ detangle _g_ grep _j_ obtj2o _k_ scrollDown _K_ nextLogLine  _;_ toggle-lax-whitespace
     _l_ visual-line-mode _L_ aggressive-indent-mode
-    _x_ delete-indentation _X_pm grok _c_ fill-paragraph _v_ desc-symbol _V_ view-mode _b_ erase-buffer _B_ibtex _n_ normal _m_ desc/mode _M_ checks
+    _x_ delete-indentation _X_pm grok _c_ fill-paragraph _V_ view-mode _b_ erase-buffer _B_ibtex _n_ normal _m_ desc/mode _M_ checks
     _<_ cmtIn _>_ cmtOut _?_ snp"
       ("Q" help/safb-save-buffers-kill-terminal)
       ("q" nil)
@@ -6048,7 +6131,6 @@ These changes helped guide the custom keyboard design.
       ("x" delete-indentation)
       ("X" xpm-grok)
       ("f" describe-key)
-      ("v" describe-symbol)
       ("V" view-mode)
       ("w" widen)
       ("t" rectangle-mark-mode)
@@ -6178,6 +6260,8 @@ These changes helped guide the custom keyboard design.
     (global-set-key (kbd "C-M-,") #'ibuffer)
     (global-set-key (kbd "C-.") nil)
     (global-set-key (kbd "C-.") #'smex)
+    (global-set-key (kbd "C-M-.") nil)
+    (global-set-key (kbd "C-M-.") #'dired)
     (global-set-key (kbd "s-<") (lambda () (interactive) (insert "«")))
     (global-set-key (kbd "s->") (lambda () (interactive) (insert "»")))
     ```

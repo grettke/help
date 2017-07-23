@@ -32,8 +32,10 @@ Grant Rettke
   variable is inserted only here because it loads each of the child
   configurations. Web.
 
+  Never compile this.
+
   ,----
-  | ;; -*- lexical-binding: t -*-
+  | ;; -*- lexical-binding: t; no-byte-compile: t; -*-
   `----
 
   ,----
@@ -43,7 +45,7 @@ Grant Rettke
   | ;; You may delete these explanatory comments.
   | ;(package-initialize)
   |
-  | (load-file "~/src/help/.org-mode-org2blog.emacs.el")
+  | (load-file "~/src/help/.org-mode-contribute.emacs.el")
   `----
 
 
@@ -1305,12 +1307,14 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   |
   | (defun help/wih ()
   |   (interactive)
+  |   (when (use-region-p) (call-interactively 'kill-region))
   |   (insert "#+CATEGORY: Article
   | #+TAGS: Yoga, philosophy, Health, Happiness,
   | #+TITLE:"))
   |
   | (defun help/wio ()
   |   (interactive)
+  |   (when (use-region-p) (call-interactively 'kill-region))
   |   (insert "#+CATEGORY: Article
   | #+TAGS: Babel, Emacs, Ide, Lisp, Literate Programming, Programming Language, Reproducible research, elisp, org-mode
   | #+TITLE:"))
@@ -1348,7 +1352,7 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   One space after comma.
 
   ,----
-  | (setq colon-double-space t)
+  | (setq colon-double-space nil)
   `----
 
 
@@ -1622,6 +1626,13 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   |   (unless (eq ibuffer-sorting-mode 'alphabetic)
   |     (ibuffer-do-sort-by-alphabetic)))
   | (add-hook 'ibuffer-mode-hooks #'help/ibuffer-hook-fn)
+  `----
+
+  This package for GNU APL.
+
+  ,----
+  | (use-package face-remap
+  |   :diminish 'buffer-face-mode)
   `----
 
 
@@ -2855,7 +2866,9 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Search-Case.html
   |   (setq ag-highlight-search t)
   |   (setq ag-reuse-window nil)
   |   (setq ag-reuse-buffers nil)
-  |   (setq ag-arguments (-insert-at (- (length ag-arguments) 1) '"-i"
+  |   (setq ag-arguments (-insert-at (- (length ag-arguments) 1) '"--ignore-case"
+  |                                  ag-arguments))
+  |   (setq ag-arguments (-insert-at (- (length ag-arguments) 1) '"--file-search-regex"
   |                                  ag-arguments))
   |   (defun help/ag-mode-hook-fn ()
   |     "HELP ag customizations."
@@ -3315,7 +3328,8 @@ https://www.gnu.org/software/emacs/manual/html_node/elisp/Basic-Major-Modes.html
       |                         json-mode-hook
       |                         crontab-mode-hook
       |                         apache-mode-hook
-      |                         python-mode-hook))
+      |                         python-mode-hook
+      |                         gnu-apl-mode-hook))
       `----
     - LISP mode hooks.
       - Are hacking modes.
@@ -3353,10 +3367,11 @@ https://www.gnu.org/software/emacs/manual/html_node/elisp/Basic-Major-Modes.html
     Auto-escape strings pasted into other strings. Smartparens provides built-in
     correct behavior for most modes.
     ,----
-    | (use-package smartparens-config
-    |   :ensure smartparens
+    | (use-package smartparens
+    |   :ensure t
     |   :config
     |   (setq sp-show-pair-from-inside nil)
+    |   (require 'smartparens-config)
     |   :diminish smartparens-mode)
     `----
 
@@ -4407,7 +4422,7 @@ https://www.reddit.com/r/emacs/comments/4cmfwp/scratch_buffer_hacks_to_increase_
     |   ("n" org-narrow-to-subtree)
     |   ("m" org-mark-subtree)
     |   ("M" org-mark-element))
-    | (key-chord-define-global "hh" #'help/hydra/right-side/org-mode/body)
+    | (key-chord-define org-mode-map "hh" #'help/hydra/right-side/org-mode/body)
     `----
 
     Save all buffers before working with Exports.
@@ -4545,7 +4560,76 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.h
 
   ,----
   | (use-package gnu-apl-mode
-  |   :ensure t)
+  |   :ensure t
+  |   :init
+  |   (setq gnu-apl-show-keymap-on-startup nil)
+  |   (setq gnu-apl-show-apl-welcome nil)
+  |   (setq gnu-apl-show-tips-on-start nil)
+  |   (setq gnu-apl-mode-map-prefix "C-M-s-")
+  |   (setq gnu-apl-interactive-mode-map-prefix gnu-apl-mode-map-prefix)
+  |   :config
+  |   (defun em-gnu-apl-init ()
+  |     (setq buffer-face-mode-face 'gnu-apl-default)
+  |     (buffer-face-mode))
+  |   (add-hook 'gnu-apl-interactive-mode-hook 'em-gnu-apl-init)
+  |   (add-hook 'gnu-apl-mode-hook 'em-gnu-apl-init)
+  |   (defun help/gnu-apl-runningp ()
+  |     (interactive)
+  |     (let ((session (gnu-apl--get-interactive-session-with-nocheck)))
+  |       (if session 'ON 'OFF)))
+  |   (defun help/start-gnu-apl ()
+  |     (interactive)
+  |     (if (equal (help/gnu-apl-runningp) 'ON) (message "GNU APL is already ON.")
+  |       (call-interactively 'gnu-apl)))
+  |   (defun help/stop-gnu-apl ()
+  |     (interactive)
+  |     (if (equal (help/gnu-apl-runningp) 'OFF) (message "GNU APL is already OFF.")
+  |       (progn
+  |         (gnu-apl-switch-to-interactive)
+  |         (switch-to-buffer "*gnu-apl*")
+  |         (insert ")off")
+  |         (comint-send-input))))
+  |   (defhydra help/hydra/gnu-apl (:color blue
+  |                                        :hint nil)
+  |     "
+  | GNU APL is: %(help/gnu-apl-runningp)
+  |  _y_ eval-buffer _u_ eval-region _i_ eval-line _o_ eval-function
+  |   _f_ apropos-symbol _g_ help-symbol _h_ keyboard _j_ next _k_ previous
+  |    _q_ quit _c_ start APL _v_ stop APL _b_ switch to APL _n_ switch back
+  | "
+  |     ("i" help/gnu-apl-eval-line)
+  |     ("o" gnu-apl-interactive-send-current-function)
+  |     ("j" (lambda () (interactive) (call-interactively 'next-logical-line)) :exit nil)
+  |     ("k" (lambda () (interactive) (call-interactively 'previous-logical-line))
+  |      :exit nil)
+  |     ("b" gnu-apl-switch-to-interactive)
+  |     ("u" gnu-apl-interactive-send-region)
+  |     ("h" gnu-apl-show-keyboard)
+  |     ("y" gnu-apl-interactive-send-buffer)
+  |     ("t" gnu-apl-trace)
+  |     ("f" gnu-apl-apropos-symbol)
+  |     ("g" gnu-apl-show-help-for-symbol)
+  |     ("c" help/start-gnu-apl)
+  |     ("v" help/stop-gnu-apl)
+  |     ("n" (lambda () (interactive) (other-window -1)))
+  |     ("q" nil))
+  |   (key-chord-define gnu-apl-mode-map "hh" #'help/hydra/gnu-apl/body)
+  |   (key-chord-define gnu-apl-interactive-mode-map "hh" #'help/hydra/gnu-apl/body)
+  |   (defun help/gnu-apl-eval-line ()
+  |     "Evaluate this line and move to next."
+  |     (interactive)
+  |     (end-of-line)
+  |     (set-mark (line-beginning-position))
+  |     (call-interactively 'gnu-apl-interactive-send-region)
+  |     (deactivate-mark)
+  |     (call-interactively 'next-logical-line))
+  |   (define-key gnu-apl-mode-map (kbd "C-<return>") #'help/gnu-apl-eval-line)
+  |   (defun help/gnu-apl-interactive-mode-hook-fn ()
+  |     (nlinum-mode)
+  |     (rainbow-mode))
+  |   (add-hook 'gnu-apl-interactive-mode-hook
+  |             #'help/gnu-apl-interactive-mode-hook-fn)
+  |   (add-to-list 'org-babel-load-languages '(gnu-apl . t)))
   `----
 
 
@@ -4674,7 +4758,7 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.h
 
   Since our systems are entirely file-based, the entirety of the system most
   likely lives in different files. Before loading any file for sourcing, save
-  any ESS source buffers. This approach is in addition to two other things:  (1)
+  any ESS source buffers. This approach is in addition to two other things: (1)
   Emacs is auto-saving every file buffer quite frequently and (2) there is
   advice before every manual `eval' call so that the buffers and their files
   stay in sync. Yes, it is really that important.
@@ -5162,11 +5246,10 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.h
   ID: org_gcr_2017-05-12_mara:2DF7BDAD-45C9-4D8D-AC34-FE77E119A093
 
   ,----
-  | (use-package tex-site
+  | (use-package tex
   |   :ensure auctex
   |   :config
-  |   (eval-after-load "tex"
-  |     '(define-key TeX-mode-map (kbd "C-c C-c") #'help/safb-TeX-command-master)))
+  |   (define-key TeX-mode-map (kbd "C-c C-c") #'help/safb-TeX-command-master))
   `----
 
   Save style info. This doesn't control the buffer save.
@@ -6576,7 +6659,7 @@ http://ergoemacs.org/emacs/emacs_key_notation_return_vs_RET.html
   + 6.4.4.2.1 Single-Key Key-Chord Name-Space.
 
     ID: org_gcr_2017-05-12_mara:13704474-DDBB-4D3E-995B-51B7860535DD
-    :Actions:  High :Expertise:  Low :Frequency:  High :Relationship:  Low
+    :Actions: High :Expertise: Low :Frequency: High :Relationship: Low
 
     - Nice if you don't mind hitting the same key twice.
     - You will use come here often, perform your single `action', and be done
@@ -6598,7 +6681,7 @@ http://ergoemacs.org/emacs/emacs_key_notation_return_vs_RET.html
   + 6.4.4.2.2 Two-Key Key-Chord Name-Space.
 
     ID: org_gcr_2017-05-12_mara:033FD965-8C1D-46E4-87FC-4A1E50C746A9
-    :Actions:  Low :Expertise:  High :Frequency:  High :Relationship:  Low
+    :Actions: Low :Expertise: High :Frequency: High :Relationship: Low
 
     - Very attractive.
     - Nice if you don't like hitting the same key twice.
@@ -6805,10 +6888,8 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
   | (global-set-key (kbd "C-0") (lambda () (interactive) (switch-to-buffer
   |                                                  "scratch.org")))
   | (global-set-key (kbd "M-9") (lambda () (interactive) (switch-to-buffer
-  |                                                  "help/help.org")))
-  | (global-set-key (kbd "M-0") (lambda () (interactive) (switch-to-buffer
-  |                                                  "list/help.org")))
-  | (global-set-key (kbd "C-5") #'help/safb-kill-this-buffer)
+  |                                                  "help.org")))
+  | (global-set-key (kbd "C-5") #'ido-kill-buffer)
   | (global-set-key (kbd "C--") (lambda () (interactive) (insert "Vigneswari")))
   | (global-set-key (kbd "s-5") #'mc/mark-previous-like-this)
   | (global-set-key (kbd "s-4") #'mc/mark-next-like-this)
@@ -6861,6 +6942,8 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
   | (global-set-key [(control meta ?p)] #'help/insert-datestamp)
   | (global-set-key [(control meta shift ?p)] #'help/insert-timestamp*-no-colons)
   | (global-set-key (kbd "C-M-o") #'help/occur-dwim)
+  | (global-set-key (kbd "M-i") nil)
+  | (global-set-key (kbd "M-i") #'describe-symbol)
   `----
 
   Org handle `TAB' correctly and nothing is bound to it like `Auto-Complete' or
@@ -6907,7 +6990,7 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
   | _Q_ exit-Emacs _q_uit T_ trademarks
   | _a_ ag  _A_ apropo'ish _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point  _D_ detangle _g_ grep _j_ obtj2o _k_ scrollDown _K_ nextLogLine  _;_ toggle-lax-whitespace
   | _l_ visual-line-mode _L_ aggressive-indent-mode
-  | _x_ delete-indentation _X_pm grok _c_ fill-paragraph _v_ desc-symbol _V_ view-mode _b_ erase-buffer _B_ibtex _n_ normal _m_ desc/mode _M_ checks
+  | _x_ delete-indentation _X_pm grok _c_ fill-paragraph _V_ view-mode _b_ erase-buffer _B_ibtex _n_ normal _m_ desc/mode _M_ checks
   | _<_ cmtIn _>_ cmtOut _?_ snp"
   |   ("Q" help/safb-save-buffers-kill-terminal)
   |   ("q" nil)
@@ -6934,7 +7017,6 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
   |   ("x" delete-indentation)
   |   ("X" xpm-grok)
   |   ("f" describe-key)
-  |   ("v" describe-symbol)
   |   ("V" view-mode)
   |   ("w" widen)
   |   ("t" rectangle-mark-mode)
@@ -7059,7 +7141,7 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
 
   ID: org_gcr_2017-07-17_mara:B91C9779-B2AD-403B-A11F-5847EF8883C6
 
-  :ID:  org_gcr_2017-05-12_mara:8CA5EED7-5301-43E2-B6B9-C92AC66A2BE6
+  :ID: org_gcr_2017-05-12_mara:8CA5EED7-5301-43E2-B6B9-C92AC66A2BE6
 
   ,----
   | (global-set-key (kbd "s-v") #'ido-find-file)
@@ -7069,6 +7151,8 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
   | (global-set-key (kbd "C-M-,") #'ibuffer)
   | (global-set-key (kbd "C-.") nil)
   | (global-set-key (kbd "C-.") #'smex)
+  | (global-set-key (kbd "C-M-.") nil)
+  | (global-set-key (kbd "C-M-.") #'dired)
   | (global-set-key (kbd "s-<") (lambda () (interactive) (insert "«")))
   | (global-set-key (kbd "s->") (lambda () (interactive) (insert "»")))
   `----

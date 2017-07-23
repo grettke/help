@@ -4,13 +4,13 @@ Grant Rettke
 1 Control Files
 ===============
 
-  ID: B98C6FFA-E22E-4B35-96EB-54D48A89A9DE
+  ID: org_gcr_2017-05-12_mara:3F5D7D24-91F0-4CBD-A514-C9D0B9821BDA
 
 
 1.1 Configuration
 ~~~~~~~~~~~~~~~~~
 
-  ID: 59F738BE-D479-4BB2-A41C-918616832571
+  ID: org_gcr_2017-05-12_mara:091465F6-8E3F-4736-9BF0-A498785F5E1D
 
   The goal here is to get R set up thoughtfully and quickly. The profile and
   environ set it up correctly. Always remember this and run R using those
@@ -46,6 +46,7 @@ Grant Rettke
               | The following objects are masked from ‘package:testthat’:
               |
               |     equals, is_less_than, not
+              |
               `----
             - …
               ,----
@@ -93,7 +94,7 @@ Grant Rettke
 ~~~~~~~~~~~
 
   header-args: :noweb-ref rsetup-defs
-  ID: BDE6AFC6-C6E9-44B8-8B37-35A5E59B14D5
+  ID: org_gcr_2017-05-12_mara:898031D5-9930-420A-9DDD-2F5FA0AA6D63
 
   Prepare the operating system to host R.
 
@@ -120,7 +121,7 @@ Grant Rettke
 ~~~~~~~~~~~~~~~~~
 
   header-args: :noweb-ref rprofile-def
-  ID: FDD6A2C4-B9B1-45EB-996B-3AB20FB2BE89
+  ID: org_gcr_2017-05-12_mara:F665989E-724D-4983-A8B1-29F566291722
 
   - When you install packages, R needs to know which repository it should use.
     If you don't tell it, then it will ask you every time. It is just doing its
@@ -232,7 +233,7 @@ Grant Rettke
 1.3.1 Packages
 --------------
 
-  ID: 0B04A7FB-2AC9-4BE8-882D-76C196396116
+  ID: org_gcr_2017-05-12_mara:E5E7A597-B53A-476B-83A4-0B4114125E0C
 
   <2014-11-14 Fri> Below is a try to auto-install packages if they are not
   available, and, it seems to have failed. Perhaps there is a better way, and I
@@ -242,7 +243,7 @@ Grant Rettke
 
 * 1.3.1.1 assertthat
 
-  ID: F43738D7-5E0F-4567-8C08-8EC8850683E2
+  ID: org_gcr_2017-05-12_mara:404A7BC2-F0E1-4E49-8CCA-D693D3430741
 
   Design-by-contract [5] is a great, great thing. Make it much easier with
   valuable functions and useful messages!
@@ -277,7 +278,7 @@ Grant Rettke
 
 * 1.3.1.2 testthat
 
-  ID: 007E49F2-44A1-4AB7-AE4F-72534211F4DE
+  ID: org_gcr_2017-05-12_mara:8B68967C-5F28-47AC-BD20-758661328199
 
   Design-by-contract and unit-tests [6] go hand-in-hand.
 
@@ -330,7 +331,7 @@ Grant Rettke
 
 * 1.3.1.3 stringr
 
-  ID: BB8CF291-A9BF-4E3B-9E02-3A41EDAF8424
+  ID: org_gcr_2017-05-12_mara:A25AE0EF-0169-4D2A-9907-D59FA7F0E9C4
 
   Make it really easy to work with strings [7]. That is indeed a good goal, and
   the reason that I installed this initially was because `testthat' mentions
@@ -348,7 +349,7 @@ Grant Rettke
 
 * 1.3.1.4 sqldf
 
-  ID: 3B199A0E-DE1E-4FBD-95A0-6F4D981B021D
+  ID: org_gcr_2017-05-12_mara:D6EBC636-F22D-452F-B777-15F7C4C025A4
 
   How you extract data from a dataframe is flexible and everyone can and may do
   it differently. One option available is to use `SQL' [8], so make it
@@ -598,7 +599,7 @@ Grant Rettke
 
 * 1.3.1.5 MASS
 
-  ID: 0C3E7D6C-68F9-43D0-9F1A-DD9BBB06029C
+  ID: org_gcr_2017-05-12_mara:A577D755-41C6-4E7E-9637-6118FCD5944B
 
   "Functions and datasets to support Venables and Ripley, 'Modern Applied
   Statistics with S' (4th edition, 2002)." Also, `sqldf' recommended it be
@@ -617,7 +618,7 @@ Grant Rettke
 
 * 1.3.1.6 jsonlite
 
-  ID: C4806332-3925-4CD3-BDA2-68A9291C245B
+  ID: org_gcr_2017-05-12_mara:B2715DBA-4A80-4DB8-B3BD-C660302D3FB9
 
   Make it easy to work with JSON [37138455:
   [http://cran.r-project.org/web/packages/jsonlite/index.html]]. Reading the
@@ -636,7 +637,7 @@ Grant Rettke
 
 * 1.3.1.7 dplyr
 
-  ID: 17A5C886-CEC5-466A-885E-6E00FF6AD7F1
+  ID: org_gcr_2017-05-12_mara:F2C4419D-59D8-423F-97A8-2C4ED2246186
 
   dplyr: a grammar of data manipulation in R
 
@@ -668,7 +669,7 @@ Grant Rettke
 
 * 1.3.1.8 data.table
 
-  ID: 6FB35637-B75D-47D6-A552-225B2EE36D38
+  ID: org_gcr_2017-05-12_mara:1604B2A7-7110-45B5-BB29-C27BDE9F37C4
 
   `data.table' [15] is quite nice.
 
@@ -685,7 +686,7 @@ Grant Rettke
 
   + 1.3.1.8.1 dtplyr
 
-    ID: 9FB51AFC-A77E-4440-AF3E-4AA34AB86DA0
+    ID: org_gcr_2017-05-12_mara:169E4CE8-D5BE-48F7-A43F-E89CEE4C6211
 
     ,----
     | library(dtplyr)
@@ -704,28 +705,11 @@ Grant Rettke
     `----
 
 
-* 1.3.1.9 xlsx
+* 1.3.1.9 XML
 
-  ID: 51FF40DD-6B00-48BD-A946-53666E9BE40F
+  ID: org_gcr_2017-05-12_mara:4F801FC6-2D93-495E-9B7A-5FE6C5A1003A
 
-  Read and write Excel files [16].
-
-  ,----
-  | library(xlsx)
-  `----
-
-  ,----
-  | if(! require(xlsx)) {
-  |     install.packages("xlsx")
-  | }
-  `----
-
-
-* 1.3.1.10 XML
-
-  ID: 1C5D86C3-F971-4A4A-B3ED-CFA7814B6B6B
-
-  Make ℝ truly enterprise [17].
+  Make ℝ truly enterprise [16].
 
   ,----
   | library(XML)
@@ -738,9 +722,9 @@ Grant Rettke
   `----
 
 
-* 1.3.1.11 devtools
+* 1.3.1.10 devtools
 
-  ID: CC5F0CF1-4067-4269-BA81-4779DD30E1D1
+  ID: org_gcr_2017-05-12_mara:6BC90505-4FF2-4DB0-8020-F5F8057BA984
 
   `devtools': Tools to make developing ℝ code easier
 
@@ -775,6 +759,7 @@ Grant Rettke
   |     install.packages("devtools")
   |     devtools::install_github("hadley/devtools")
   | }
+  |
   `----
 
 
@@ -788,12 +773,12 @@ Grant Rettke
   [Github] https://github.com/hadley/devtools
 
 
-* 1.3.1.12 magrittr
+* 1.3.1.11 magrittr
 
-  ID: 7714BB94-5E3C-4E15-B22B-9CFD03634520
+  ID: org_gcr_2017-05-12_mara:E4F80968-F698-4B63-B3F8-745625D74C39
 
   This is a add from the /most understated package definition/ of the year
-  department. `magrittr' [18] is, much like every Scheme library ever,
+  department. `magrittr' [17] is, much like every Scheme library ever,
   deceptively simple in its power and ease of use that it provides.
 
   ,----
@@ -807,9 +792,9 @@ Grant Rettke
   `----
 
 
-* 1.3.1.13 reshape2
+* 1.3.1.12 reshape2
 
-  ID: 11B7E671-6D90-4C37-B13F-1CB21904C304
+  ID: org_gcr_2017-05-12_mara:68274778-C58F-43D2-92D3-EBD90025A8D0
 
   `reshape2': Flexibly reshape data: a reboot of the `reshape' package
 
@@ -838,9 +823,9 @@ Grant Rettke
   [Github] https://github.com/hadley/reshape/blob/master/README.md
 
 
-* 1.3.1.14 tidyr
+* 1.3.1.13 tidyr
 
-  ID: EAB265C6-121F-4CC9-A745-AEA8AECA2D63
+  ID: org_gcr_2017-05-12_mara:5CE86E38-28A9-48F0-92F8-0874C7B89DEE
 
   `tidyr': Easily tidy data with spread and gather functions for ℝ
 
@@ -860,6 +845,7 @@ Grant Rettke
   | if(! require(tidyr)) {
   |     devtools::install_github("hadley/tidyr")
   | }
+  |
   `----
 
 
@@ -872,9 +858,9 @@ Grant Rettke
   [Github] https://github.com/hadley/tidyr
 
 
-* 1.3.1.15 lubridate
+* 1.3.1.14 lubridate
 
-  ID: BDFEC2C3-DAC1-4ED2-BC66-C8A793F9EC1C
+  ID: org_gcr_2017-05-12_mara:7F0E1F05-B547-4E6A-AFBF-E9E9D3FF1059
 
   lubridate: Make dealing with dates a little easier in ℝ
 
@@ -910,9 +896,9 @@ Grant Rettke
   http://cran.r-project.org/web/packages/lubridate/vignettes/lubridate.html
 
 
-* 1.3.1.16 testit
+* 1.3.1.15 testit
 
-  ID: EBACD267-84B2-4FF2-ABE3-4DC6070D247D
+  ID: org_gcr_2017-05-12_mara:4D15CAB4-E41F-4329-ABD3-6352BB53211C
 
   testit: A simple package for testing R packages
 
@@ -938,9 +924,9 @@ Grant Rettke
   [Manual] http://cran.rstudio.com/web/packages/testit/testit.pdf
 
 
-* 1.3.1.17 markdown
+* 1.3.1.16 markdown
 
-  ID: 43DA96C6-5440-4BA7-A537-F37BA5B739C1
+  ID: org_gcr_2017-05-12_mara:A060E8EA-7F3C-4A33-8001-EE936782065A
 
   - [CRAN]
     - [reference]
@@ -977,9 +963,9 @@ Grant Rettke
   [GitHub] https://github.com/rstudio/markdown
 
 
-* 1.3.1.18 knitr
+* 1.3.1.17 knitr
 
-  ID: 3544C2CF-9531-4A1C-95D1-83D423FC5B2E
+  ID: org_gcr_2017-05-12_mara:90B8880A-A32A-4761-A05A-164144AE93AF
 
   knitr: A general-purpose package for dynamic report generation in R
 
@@ -1054,9 +1040,9 @@ Grant Rettke
   http://yihui.name/knitr/demo/vignette/
 
 
-* 1.3.1.19 fortunes
+* 1.3.1.18 fortunes
 
-  ID: E7C0C8C1-8835-45D3-B7C2-F3D687034CFA
+  ID: org_gcr_2017-05-12_mara:420C813F-A6C0-41C9-8F4A-042DD8C4D059
 
   R Fortunes.
 
@@ -1076,9 +1062,9 @@ Grant Rettke
   [CRAN] http://cran.r-project.org/web/packages/fortunes/index.html
 
 
-* 1.3.1.20 ggplot2
+* 1.3.1.19 ggplot2
 
-  ID: E51FEB93-89A9-4C5F-BC67-B737D6A853D7
+  ID: org_gcr_2017-05-12_mara:2CB46933-90E6-4366-BA74-71D2B1A4DE8D
 
   - [CRAN]
     - [reference]
@@ -1121,9 +1107,9 @@ Grant Rettke
   [Documentation] http://docs.ggplot2.org/current/
 
 
-* 1.3.1.21 tikzDevice
+* 1.3.1.20 tikzDevice
 
-  ID: C024D10E-40E2-4192-A953-3EBEC23B25BC
+  ID: org_gcr_2017-05-12_mara:9CDF266B-9DE6-42A4-846E-212B11070D6F
 
   - [CRAN]
     - [reference]
@@ -1151,9 +1137,9 @@ Grant Rettke
   [GitHub] https://github.com/yihui/tikzDevice
 
 
-* 1.3.1.22 ascii
+* 1.3.1.21 ascii
 
-  ID: 6237DF5B-5219-403D-BB41-5D0684E75B32
+  ID: org_gcr_2017-05-12_mara:1645490F-7DEB-4227-8EAA-FBB1EFC329A0
 
   - [CRAN]
     - [reference]
@@ -1184,9 +1170,9 @@ Grant Rettke
   [GitHub] https://github.com/eusebe/ascii/
 
 
-* 1.3.1.23 xtable
+* 1.3.1.22 xtable
 
-  ID: AE66A34F-A6AF-4578-8617-A7D2363AF81C
+  ID: org_gcr_2017-05-12_mara:6438AA32-0335-4527-91BC-A90404AB36DD
 
   - [CRAN]
     - [reference]
@@ -1218,9 +1204,9 @@ Grant Rettke
   [R-Forge] http://xtable.r-forge.r-project.org/
 
 
-* 1.3.1.24 Hmisc
+* 1.3.1.23 Hmisc
 
-  ID: 72F1D963-42B8-43C5-87C3-44AEAFCEC91C
+  ID: org_gcr_2017-05-12_mara:F42F3746-7E10-478D-ACAE-125BE4A15D5C
 
   - [CRAN]
     - [reference]
@@ -1244,9 +1230,9 @@ Grant Rettke
   [GitHub] https://github.com/harrelfe/Hmisc
 
 
-* 1.3.1.25 log4r
+* 1.3.1.24 log4r
 
-  ID: E343FE37-79D9-4856-AFF1-1BFF49513E10
+  ID: org_gcr_2017-05-12_mara:C6F05623-CF1C-46D0-A911-2ABB014267AF
 
   - [CRAN]
     - [reference]
@@ -1270,9 +1256,9 @@ Grant Rettke
   [GitHub] https://github.com/johnmyleswhite/log4r
 
 
-* 1.3.1.26 boot
+* 1.3.1.25 boot
 
-  ID: 9D4A4744-FDF4-49C5-9B66-08863FCAABC4
+  ID: org_gcr_2017-05-12_mara:1EC5636D-D340-4F00-BBEF-579000725366
 
   - [CRAN]
     - [reference]
@@ -1293,9 +1279,9 @@ Grant Rettke
   [reference] http://cran.r-project.org/web/packages/boot/boot.pdf
 
 
-* 1.3.1.27 kernlab
+* 1.3.1.26 kernlab
 
-  ID: 24A2C62F-9EC0-4E51-B21D-364DF4679938
+  ID: org_gcr_2017-05-12_mara:1860ABE6-06F1-449C-A5E4-EBCDEE4B8EB8
 
   - [CRAN]
     - [reference]
@@ -1321,9 +1307,9 @@ Grant Rettke
   http://cran.r-project.org/web/packages/kernlab/vignettes/kernlab.pdf
 
 
-* 1.3.1.28 R Utils
+* 1.3.1.27 R Utils
 
-  ID: 954DBB37-DD0D-4363-BB3A-6E7787914C1C
+  ID: org_gcr_2017-05-12_mara:5AAB5490-A3D4-42E1-9630-15E9CE8A6D63
 
   Programatically extract BZ2 files. Helpful for making decompression a
   separarate task from loading.
@@ -1339,16 +1325,16 @@ Grant Rettke
   `----
 
 
-* 1.3.1.29 Not explicitly loaded, but interesting packages
+* 1.3.1.28 Not explicitly loaded, but interesting packages
 
-  ID: 1F011148-DBD2-4944-B458-771333F10FB7
+  ID: org_gcr_2017-05-12_mara:62914096-7336-4480-B8E4-950E2A553AA8
 
   - [ProjectTemplate]
   - [evaluate].utils
   - [yaml]
   - [whisker]
   - [formatR]
-  - General caching [19]
+  - General caching [18]
   - [stringi]
     - [Via]
     - Seems focused on Unicode details
@@ -1541,7 +1527,7 @@ Grant Rettke
 ~~~~~~~~~~
 
   header-args: :noweb-ref rfirst-defs
-  ID: 10CD604F-503C-46DE-AB32-97884C070344
+  ID: org_gcr_2017-05-12_mara:DB8DE38B-83C2-4CF9-B428-4629E4E06547
 
   Reading:
   [Startup]: mandatory reading, the definitive source
@@ -1552,7 +1538,7 @@ Grant Rettke
     aside, it has its place, so it should not go away completely. However, it
     ought not be used much, and if you do need to use it, the it should be
     really really obvious.
-    - Eg: [20]
+    - Eg: [19]
   ,----
   | gcr$attach.unsafe <- attach
   | gcr$attach <- function(...) {
@@ -1563,7 +1549,7 @@ Grant Rettke
 
   - `library' reports issues immediately, and by design, `require' does not…
     remind the useR that they /may/ want the former not the latter
-    - Via [21]
+    - Via [20]
     - Just like everything else here, this is a /personal preference/ thing!
   ,----
   | gcr$require <- function(...) {
@@ -1572,7 +1558,7 @@ Grant Rettke
   | }
   `----
 
-  Sometimes you only want to list everything *but* functions [22]:
+  Sometimes you only want to list everything *but* functions [21]:
   ,----
   | gcr$lsnofun <- function(name = parent.frame()) {
   |     obj <- ls(name = name)
@@ -1608,7 +1594,7 @@ Grant Rettke
   | options(sqldf.driver = "SQLite")
   `----
 
-  Save your fingers from having to type `head' the next `n' thousand times [23]
+  Save your fingers from having to type `head' the next `n' thousand times [22]
   because I can't. `ess-rdired' and friends use the dataframe print function, so
   I didn't make dataframes print using it.
   ,----
@@ -1652,9 +1638,9 @@ http://cran.r-project.org/doc/contrib/Lemon-kickstart/kr_first.html
 ~~~~~~~~~~~~~
 
   header-args: :noweb-ref renviron-def
-  ID: ADDE28AF-505F-46DF-BF67-C61E435D6981
+  ID: org_gcr_2017-05-12_mara:9C053DA5-163C-4C31-9590-15F1BC5EF2DD
 
-  Install all packages to my home directory [24]
+  Install all packages to my home directory [23]
   - Call `.libPaths()' to verify
   - The directory must exist otherwise ℝ will ignore it
     - Solution:
@@ -1733,23 +1719,21 @@ _________
 
 [15] [http://cran.r-project.org/web/packages/data.table/index.html]
 
-[16] [http://cran.r-project.org/web/packages/xlsx/index.html]
+[16] [http://cran.r-project.org/web/packages/XML/index.html]
 
-[17] [http://cran.r-project.org/web/packages/XML/index.html]
+[17] [http://cran.r-project.org/web/packages/magrittr/index.html]
 
-[18] [http://cran.r-project.org/web/packages/magrittr/index.html]
-
-[19]
+[18]
 [https://stackoverflow.com/questions/7262485/options-for-caching-memoization-hashing-in-r]
 
-[20] [http://www.r-bloggers.com/to-attach-or-not-attach-that-is-the-question/]
+[19] [http://www.r-bloggers.com/to-attach-or-not-attach-that-is-the-question/]
 
-[21] [http://www.r-bloggers.com/library-vs-require-in-r/]
+[20] [http://www.r-bloggers.com/library-vs-require-in-r/]
 
-[22]
+[21]
 [https://stackoverflow.com/questions/13094324/hiding-function-names-from-ls-results-to-find-a-variable-name-more-quickly]
 
-[23]
+[22]
 [https://stackoverflow.com/questions/13024167/how-to-make-head-be-applied-automatically-to-output]
 
-[24] [http://www.r-bloggers.com/installing-r-packages/]
+[23] [http://www.r-bloggers.com/installing-r-packages/]

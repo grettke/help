@@ -1,7 +1,11 @@
 Grant Rettke
 
 
+Never compile this.
 
+,----
+| ;; -*- no-byte-compile: t; -*-
+`----
 
 
 1 Org-Mode Fundamentals
@@ -15,11 +19,8 @@ Grant Rettke
 
   Start EMACS with this command:
 
-  `open /Applications/Emacs.app -n --args --quick --load
-  ~/src/help/.org-mode-fundamentals.emacs.el'
-
   ,----
-  | ;; -*- lexical-binding: t -*-
+  | emacs --debug-init --no-init-file --no-splash --background-color white --foreground-color black --vertical-scroll-bars --eval '(switch-to-buffer "*Messages*")' --name FND-TEST --title FND-TEST --load ~/src/help/.org-mode-fundamentals.emacs.el &
   `----
 
   ,----
@@ -133,7 +134,10 @@ Grant Rettke
   |
   | (defun help/org-prp-hdln ()
   |   "Visit every Headline. If it doesn't have an ID property then add one and
-  |   assign it a UUID. Attribution: URL `http://article.gmane.org/gmane.emacs.orgmode/99738'"
+  |   assign it a UUID. Attribution: URL
+  |   `http://article.gmane.org/gmane.emacs.orgmode/99738'. It is OK to leave the
+  |   colon separator in here because these are never used as Source-Blocks and
+  |   the rest of the code expects the colon separator."
   |   (interactive)
   |   (save-excursion
   |     (goto-char (point-min))
@@ -144,6 +148,17 @@ Grant Rettke
   |       (org-id-get-create))
   |     (save-buffer)))
   |
+  | (defun help/org-id-new ()
+  |   "Re-purposing `org-id' hit a snag when colons were forbidden in Source-Block
+  |   names. Adding support for a user-defined Org-Id separator would have fixed
+  |   this but with no benefit to Org-Id. So this function removes the colon
+  |   instead.
+  |  "
+  |   (interactive)
+  |   (let* ((gend (org-id-new))
+  |          (newid (replace-regexp-in-string ":" "_" gend)))
+  |     newid))
+  |
   | (defun help/org-prp-src-blk ()
   |   "If it doesn't have a NAME property then add one and
   |    assign it a UUID. Attribution: URL `http://article.gmane.org/gmane.emacs.orgmode/99740'"
@@ -153,7 +168,7 @@ Grant Rettke
   |        (if (not (org-element-property :name element))
   |            (let ((i (org-get-indentation)))
   |              (beginning-of-line)
-  |              (save-excursion (insert "#+NAME: orgmode:gcr:vela:" (org-id-new) "\n"))
+  |              (save-excursion (insert "#+NAME: " (help/org-id-new) "\n"))
   |              (indent-to i)
   |              (forward-line 2))))))
   |
@@ -175,7 +190,7 @@ Grant Rettke
   |   "Add a NAME property then assign it a UUID."
   |   (interactive)
   |   (org-babel-demarcate-block)
-  |   (insert "#+NAME: orgmode:gcr:vela:" (org-id-new))
+  |   (insert "#+NAME: " (help/org-id-new))
   |   (beginning-of-line)
   |   (insert "\n"))
   `----
@@ -200,14 +215,21 @@ Grant Rettke
   `----
 
   Make sure that `ID' is always unique, portable, and easy to maintain by
-  - Using a memorable prefix
-    - Must be both LaTeX label and XHTML identifier compliant
+  - Using an acceptable prefix
+    - Memorable
+      - So you can remember where you created it and when
+      - So you can share it and let the recipient know (in theory useful)
+      - So you can enable a non Emacs/Org-Mode user to work with the tangled
+        code referencing it's origin
+    - Valid
+      - Must be both LaTeX label and XHTML identifier compliant
+        - `org-lint' checks for this
   - Include the current login
   - Include the current domain
   - Use a UUID
 
   ,----
-  | (setq org-id-prefix (concat "orgmode:" (user-real-login-name) ":" (system-name)))
+  | (setq org-id-prefix (concat "org_" (user-real-login-name) "_" (format-time-string "%Y-%m-%d") "_" (system-name)))
   | (setq org-id-method 'uuid)
   `----
 
@@ -242,6 +264,25 @@ Grant Rettke
   | (setq org-babel-tangle-use-relative-file-links t)
   `----
 
+  - Post tangle actions
+    - Indentation
+      - At first glance this is surprising! The author should be responsible for
+        the indentation, right? Yes, that is right. But there is one exception:
+        using `:noweb-ref' source block concatenation. [It] is powerful and
+        elegant. But the source blocks are indented on their own line. It forces
+        any reader format it to make any sense of it. That is a poor start to
+        using the tangled files. So tangled files get indented.
+
+  ,----
+  | (defun help/org-babel-post-tangle-hook-fn ()
+  |   (interactive)
+  |   (indent-region (point-min) (point-max) nil)
+  |   (save-buffer))
+  | (add-hook 'org-babel-post-tangle-hook #'help/org-babel-post-tangle-hook-fn)
+  `----
+
+
+[It] http://orgmode.org/manual/noweb_002dref.html
 
 * 1.1.3.1 comments
 
@@ -384,7 +425,7 @@ Grant Rettke
 
   ID: orgmode:gcr:vela:ED23FF0B-1F90-435C-9B56-ACA06C1ACAE0
 
-  Org-Mode may evaluate all of the listed languages.
+  Org-Mode may use all of the listed languages.
 
   ,----
   | (org-babel-do-load-languages
@@ -398,6 +439,7 @@ Grant Rettke
   |    (sass . t)
   |    (scheme . t)
   |    (sql . t)
+  |    (js . t)
   |    ;;
   |    (latex . t)
   |    ;;
@@ -407,6 +449,13 @@ Grant Rettke
   |    (ditaa . t)
   |    (dot . t)
   |    (plantuml . t)))
+  `----
+
+  Out of the box Emacs supports `js' with `js-mode'. Define language
+  `javascript' to use `js2-mode'.
+
+  ,----
+  | (add-to-list 'org-src-lang-modes '("javascript" . js2))
   `----
 
 
@@ -554,7 +603,7 @@ Grant Rettke
         handled
 
   Ways to configure `:results': `(apply '* (-keep 'cdr '((Collection . 2) (Type
-  . 4) (Format . 7) (Handling . 4))))' 224.
+  . 4) (Format . 7) (Handling . 4))))' `224'.
 
   This system stores the results of evaluation in the source document. It
   believes that the results are critical to the research.
@@ -749,4 +798,8 @@ https://lists.gnu.org/archive/html/emacs-orgmode/2015-09/msg00646.html
   | (help/set-org-babel-default-header-args:ditaa :wrap "RESULTS")
   | (help/set-org-babel-default-header-args:dot :wrap "RESULTS")
   | (help/set-org-babel-default-header-args:plantuml :wrap "RESULTS")
+  `----
+
+  ,----
+  | ((:wrap . RESULTS) (:results . file) (:exports . results))
   `----

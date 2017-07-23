@@ -1,14 +1,13 @@
 # Control Files
 
-    ID: B98C6FFA-E22E-4B35-96EB-54D48A89A9DE
+    ID: org_gcr_2017-05-12_mara:3F5D7D24-91F0-4CBD-A514-C9D0B9821BDA
+
 
 ## Configuration
 
-    ID: 59F738BE-D479-4BB2-A41C-918616832571
+    ID: org_gcr_2017-05-12_mara:091465F6-8E3F-4736-9BF0-A498785F5E1D
 
-The goal here is to get R set up thoughtfully and quickly. The profile
-and environ set it up correctly. Always remember this and run R using those
-configuration files.
+The goal here is to get R set up thoughtfully and quickly. The profile and environ set it up correctly. Always remember this and run R using those configuration files.
 
 -   Steps
     -   Review and Run `.Rsetup.sh` prepare the OS for R and R for your configuration
@@ -16,10 +15,7 @@ configuration files.
     -   Review `.Rprofile` to recall how you set it up
     -   Review and Source `Rinstall` to install required packages
         -   Verify the lib path is in the home directory `.libPaths()`
-        -   When R starts, it won&rsquo;t find any of the required packages. It will
-            complain a lot. That is OK. Just keep running the install script until
-            it is happy: `source("~/.Rinstall.r")`. Then restart R and everything should
-            be fine.
+        -   When R starts, it won&rsquo;t find any of the required packages. It will complain a lot. That is OK. Just keep running the install script until it is happy: `source("~/.Rinstall.r")`. Then restart R and everything should be fine.
         -   Run the installation script 3-5 times, each time
             -   Check the version that is running
             -   Go back and read the transcript and make sure that it looks right
@@ -82,11 +78,12 @@ fortune()
 «rinstall-def»
 ```
 
+
 ## .Rsetup
 
     header-args: :noweb-ref rsetup-defs
 
-    ID: BDE6AFC6-C6E9-44B8-8B37-35A5E59B14D5
+    ID: org_gcr_2017-05-12_mara:898031D5-9930-420A-9DDD-2F5FA0AA6D63
 
 Prepare the operating system to host R.
 
@@ -108,15 +105,14 @@ rm ~/.Rinstall.r
 ln -sfn ~/src/help/.Rinstall.r ~/.Rinstall.r
 ```
 
+
 ## .Rprofile <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
 
     header-args: :noweb-ref rprofile-def
 
-    ID: FDD6A2C4-B9B1-45EB-996B-3AB20FB2BE89
+    ID: org_gcr_2017-05-12_mara:F665989E-724D-4983-A8B1-29F566291722
 
--   When you install packages, R needs to know which repository it should use. If
-    you don&rsquo;t tell it, then it will ask you every time. It is just doing its job.
-    Make it easier for yourself and specify a repo for once and for all.
+-   When you install packages, R needs to know which repository it should use. If you don&rsquo;t tell it, then it will ask you every time. It is just doing its job. Make it easier for yourself and specify a repo for once and for all.
     -   Via <sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>
     -   Built-in docs explain that `local` should be used here
     -   This could also be a one-liner: `options("repos" = c(CRAN = "http://cran.r-project.org/"))`
@@ -129,8 +125,7 @@ local({
 })
 ```
 
--   By default, hitting enter in the `browser` will submit a `c` for &ldquo;continue
-    execution at the next statement&rdquo;
+-   By default, hitting enter in the `browser` will submit a `c` for &ldquo;continue execution at the next statement&rdquo;
     -   It is too easy to hit enter when you didn&rsquo;t mean it
     -   It just *feels* imprecise
     -   Never let this happen, disable that feature
@@ -145,54 +140,33 @@ Show timestamps to 3 sub-seconds:
 options("digits.secs"=3)
 ```
 
-Do not allow automatic coercion of strings into factors, as you can specify this
-by argument to make it *real* obvious. Looks like the best way is to leave it
-alone globally and always do it by hand though. hwickam commented that it is
-bad, bad idea to make this option global not because of your code, but because
-of everyone else&rsquo;s that you are using which relies on the option being set to
-`TRUE`. Learning more about this, before this was an option, it was the default
-behavior (being true) because statisticians rarely dealth with character
-arrays. As the popularity of R skyrocketed, suddently people wanted to work
-with them a lot. It isn&rsquo;t custom code that expects it to be true, rather, it
-is library code that expects it to true. Definitely something that you don&rsquo;t
-want to mess with.
+Do not allow automatic coercion of strings into factors, as you can specify this by argument to make it *real* obvious. Looks like the best way is to leave it alone globally and always do it by hand though. hwickam commented that it is bad, bad idea to make this option global not because of your code, but because of everyone else&rsquo;s that you are using which relies on the option being set to `TRUE`. Learning more about this, before this was an option, it was the default behavior (being true) because statisticians rarely dealth with character arrays. As the popularity of R skyrocketed, suddently people wanted to work with them a lot. It isn&rsquo;t custom code that expects it to be true, rather, it is library code that expects it to true. Definitely something that you don&rsquo;t want to mess with.
 
 ```R
 options(stringsAsFactors=TRUE)
 ```
 
-This might be *too much*, but always show a call stack when **any** warnings or
-errors occur
+This might be *too much*, but always show a call stack when **any** warnings or errors occur
 
 ```R
 options(showWarnCalls=TRUE)
 options(showErrorCalls=TRUE)
 ```
 
-Be highly conservative about errors and warnings: handle the former immediately
-and cause the latter to be errors. However, only do this after your workspace
-has initialized correctly. Do so too soon and most things won&rsquo;t work because
-this approach is only to handle *my* issues. Imagine of the whole work just
-handled their own issues! Anway, the safe values are set here, leave them alone.
-Making them more aggressive will break your startup. When you are ready to set
-things to be more aggressive, turn it on yourself
+Be highly conservative about errors and warnings: handle the former immediately and cause the latter to be errors. However, only do this after your workspace has initialized correctly. Do so too soon and most things won&rsquo;t work because this approach is only to handle *my* issues. Imagine of the whole work just handled their own issues! Anway, the safe values are set here, leave them alone. Making them more aggressive will break your startup. When you are ready to set things to be more aggressive, turn it on yourself
 
 ```R
 options(error=NULL)
 options(warn=0)
 ```
 
-Don&rsquo;t print more than 500 lines. If you can grok more than 500 lines then please
-teach me. Be at ease, there is a helper to remove that restriction, just in case.
+Don&rsquo;t print more than 500 lines. If you can grok more than 500 lines then please teach me. Be at ease, there is a helper to remove that restriction, just in case.
 
 ```R
 options(max.print=500)
 ```
 
-Partial matching is a neat and flexible feature for objects. In theory, it is
-quite powerful and convenient. In practice it seems like a really bad idea to
-me. It is a *personal preference*. It only makes sense from that perspective.
-This could bork 3rd party code.
+Partial matching is a neat and flexible feature for objects. In theory, it is quite powerful and convenient. In practice it seems like a really bad idea to me. It is a *personal preference*. It only makes sense from that perspective. This could bork 3rd party code.
 
 ```R
 options(warnPartialMatchDollar = TRUE)
@@ -200,21 +174,10 @@ options(warnPartialMatchDollar = TRUE)
 
 Locale:
 
--   Make sure that the language is set correctly. I couldn&rsquo;t find anything specific
-    about setting it this way other than various posts. In practice you would really
-    put all of this in your system environment configuration, but I&rsquo;m wanting to be
-    a little more particular here because it affects operations on data structures,
-    in particular sorting.
--   Error messages are mostly useful when they are displayed in English, so make
-    sure that the locale is always English <sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>.
-    &ldquo;Note that the LANGUAGE environment variable has precedence over `LC_MESSAGES` in
-    selecting the language for message translation on most R platforms.&rdquo; <sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup>
+-   Make sure that the language is set correctly. I couldn&rsquo;t find anything specific about setting it this way other than various posts. In practice you would really put all of this in your system environment configuration, but I&rsquo;m wanting to be a little more particular here because it affects operations on data structures, in particular sorting.
+-   Error messages are mostly useful when they are displayed in English, so make sure that the locale is always English <sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>. &ldquo;Note that the LANGUAGE environment variable has precedence over `LC_MESSAGES` in selecting the language for message translation on most R platforms.&rdquo; <sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup>
 -   Note:
-    -   My previous approach was to define a top level binding for the locale string
-        and pass that reference to bind each of the following settings. That was fine
-        until I wanted to be able to easily clear out all of the top-level bindngs to
-        &ldquo;reset&rdquo; it with a `rm(ls())` kind of thing. For that reason, I just use the
-        manifest strings here.
+    -   My previous approach was to define a top level binding for the locale string and pass that reference to bind each of the following settings. That was fine until I wanted to be able to easily clear out all of the top-level bindngs to &ldquo;reset&rdquo; it with a `rm(ls())` kind of thing. For that reason, I just use the manifest strings here.
 
 ```R
 Sys.setenv(LANG = "en_US.UTF-8")
@@ -228,21 +191,18 @@ Set the same random seed.
 set.seed(970396220)
 ```
 
+
 ### Packages
 
-    ID: 0B04A7FB-2AC9-4BE8-882D-76C196396116
+    ID: org_gcr_2017-05-12_mara:E5E7A597-B53A-476B-83A4-0B4114125E0C
 
-<span class="timestamp-wrapper"><span class="timestamp">&lt;2014-11-14 Fri&gt;</span></span>
-Below is a try to auto-install packages if they are not available, and, it seems
-to have failed. Perhaps there is a better way, and I do need to find it. Until
-then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2014-11-14 Fri&gt;</span></span> Below is a try to auto-install packages if they are not available, and, it seems to have failed. Perhaps there is a better way, and I do need to find it. Until then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
 
 1.  assertthat
 
-        ID: F43738D7-5E0F-4567-8C08-8EC8850683E2
+        ID: org_gcr_2017-05-12_mara:404A7BC2-F0E1-4E49-8CCA-D693D3430741
 
-    Design-by-contract  <sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup> is a great, great thing. Make it much easier with valuable
-    functions and useful messages!
+    Design-by-contract <sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup> is a great, great thing. Make it much easier with valuable functions and useful messages!
 
     Cheatsheet:
 
@@ -274,10 +234,9 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
 
 2.  testthat
 
-        ID: 007E49F2-44A1-4AB7-AE4F-72534211F4DE
+        ID: org_gcr_2017-05-12_mara:8B68967C-5F28-47AC-BD20-758661328199
 
-    Design-by-contract and unit-tests <sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup>
-    go hand-in-hand.
+    Design-by-contract and unit-tests <sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup> go hand-in-hand.
 
     Expectations:
 
@@ -290,22 +249,18 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
     -   **`is_a()`:** checks that an object `inherit()`&rsquo;s from a specified class
         -   Shorthand: `expect_is(x, y)`
     -   **`matches()`:** matches a character vector against a regular expression.
-        -   The optional all argument controls where all elements or just one element
-            need to match.
+        -   The optional all argument controls where all elements or just one element need to match.
         -   Shorthand: `expect_matches(x, y)`
-    -   **`prints_text()`:** matches the printed output from an expression against a
-        regular expression
+    -   **`prints_text()`:** matches the printed output from an expression against a regular expression
         -   Shorthand: `expect_output(x, y)`
     -   **`shows_message()`:** checks that an expression shows a message
         -   Shorthand: `expect_message(x, y)`
     -   **`gives_warning()`:** expects that you get a warning
         -   Shorthand: `expect_warning(x, y)`
     -   **`throws_error()`:** verifies that the expression throws an error.
-        -   You can also supply a regular expression which is applied to the text of the
-            error
+        -   You can also supply a regular expression which is applied to the text of the error
         -   Shorthand: `expect_error(x, y)`
-    -   **`is_true()`:** is a useful catchall if none of the other expectations do what
-        you want - it checks that an expression is true
+    -   **`is_true()`:** is a useful catchall if none of the other expectations do what you want - it checks that an expression is true
         -   `is_false()` is the complement of `is_true()`
         -   Shorthand: `expect_true(x)`
         -   Shorthand: `expect_false(x)`
@@ -326,11 +281,9 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
 
 3.  stringr
 
-        ID: BB8CF291-A9BF-4E3B-9E02-3A41EDAF8424
+        ID: org_gcr_2017-05-12_mara:A25AE0EF-0169-4D2A-9907-D59FA7F0E9C4
 
-    Make it really easy to work with strings <sup><a id="fnr.7" class="footref" href="#fn.7">7</a></sup>. That is indeed a good goal, and
-    the reason that I installed this initially was because `testthat` mentions that
-    it is used.
+    Make it really easy to work with strings <sup><a id="fnr.7" class="footref" href="#fn.7">7</a></sup>. That is indeed a good goal, and the reason that I installed this initially was because `testthat` mentions that it is used.
 
     ```R
     library(stringr)
@@ -344,17 +297,14 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
 
 4.  sqldf
 
-        ID: 3B199A0E-DE1E-4FBD-95A0-6F4D981B021D
+        ID: org_gcr_2017-05-12_mara:D6EBC636-F22D-452F-B777-15F7C4C025A4
 
-    How you extract data from a dataframe is flexible and everyone can and may do it
-    differently. One option available is to use `SQL` <sup><a id="fnr.8" class="footref" href="#fn.8">8</a></sup>, so make it available.
+    How you extract data from a dataframe is flexible and everyone can and may do it differently. One option available is to use `SQL` <sup><a id="fnr.8" class="footref" href="#fn.8">8</a></sup>, so make it available.
 
     Comments taken from <sup><a id="fnr.9" class="footref" href="#fn.9">9</a></sup>
 
     -   &ldquo;This [using SQL] is a skill that every analyst should possess&rdquo;
-    -   &ldquo;Being able to write SQL will save you time and provide you with a way of
-        getting repeatable results so that you don&rsquo;t have to focus on doing the
-        calculations all the time and worrying about errors in Excel&rdquo;
+    -   &ldquo;Being able to write SQL will save you time and provide you with a way of getting repeatable results so that you don&rsquo;t have to focus on doing the calculations all the time and worrying about errors in Excel&rdquo;
     -   &ldquo;[instead] You can focus on the task of actually analyzing your data&rdquo;
 
     Notes from the user manual <sup><a id="fnr.10" class="footref" href="#fn.10">10</a></sup>
@@ -368,36 +318,21 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
     -   Official site mentioned and it has good docs
     -   Seems to uses SQLLite
     -   `read.csv.sql`
-        -   &ldquo;Read a file into R filtering it with an sql statement. Only the filtered
-            portion is processed by R so that files larger than R can otherwise handle
-            can be accommodated.&rdquo;
+        -   &ldquo;Read a file into R filtering it with an sql statement. Only the filtered portion is processed by R so that files larger than R can otherwise handle can be accommodated.&rdquo;
         -   Parms
             -   Handles `http` and `ftp` `URLs`
             -   `filter`
-                -   &ldquo;If specified, this should be a shell/batch command that the input file is
-                    piped through. For read.csv2.sql it is by default the following on
-                    non-Windows systems: tr , .. This translates all commas in the file to
-                    dots.&rdquo;
+                -   &ldquo;If specified, this should be a shell/batch command that the input file is piped through. For read.csv2.sql it is by default the following on non-Windows systems: tr , .. This translates all commas in the file to dots.&rdquo;
                     -   Why is that specific example mentioned?
             -   `field.types`
                 -   State the SQLite types for the column names
                 -   Rarely needed
             -   `dbname`
-                -   &ldquo;As in `sqldf` except that the default is `tempfile()`. Specifying `NULL` will
-                    put the database in memory which may improve speed but will limit the size
-                    of the database by the available memory.&rdquo;
+                -   &ldquo;As in `sqldf` except that the default is `tempfile()`. Specifying `NULL` will put the database in memory which may improve speed but will limit the size of the database by the available memory.&rdquo;
         -   Details
-            -   &ldquo;Reads the indicated file into an sql database creating the database if it
-                does not already exist. Then it applies the sql statement returning the
-                result as a data frame. If the database did not exist prior to this
-                statement it is removed.&rdquo;
-            -   &ldquo;Note that it uses facilities of SQLite to read the file which are
-                intended for speed and therefore not as flexible as in R. For example, it
-                does not recognize quoted fields as special but will regard the quotes as
-                part of the field. See the sqldf help for more information.&rdquo;
-            -   &ldquo;`read.csv2.sql` is like `read.csv.sql` except the default sep is &rdquo;;&ldquo; and the
-                default filter translates all commas in the file to decimal points (i.e.
-                to dots).&rdquo;
+            -   &ldquo;Reads the indicated file into an sql database creating the database if it does not already exist. Then it applies the sql statement returning the result as a data frame. If the database did not exist prior to this statement it is removed.&rdquo;
+            -   &ldquo;Note that it uses facilities of SQLite to read the file which are intended for speed and therefore not as flexible as in R. For example, it does not recognize quoted fields as special but will regard the quotes as part of the field. See the sqldf help for more information.&rdquo;
+            -   &ldquo;`read.csv2.sql` is like `read.csv.sql` except the default sep is &rdquo;;&ldquo; and the default filter translates all commas in the file to decimal points (i.e. to dots).&rdquo;
         -   Value
             -   &ldquo;If the sql statement is a select statement then a data frame is returned.&rdquo;
     -   `sqldf`
@@ -417,38 +352,15 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
         -   Details
             -   The typical action of sqldf is to
             -   **create a database:** in memory
-            -   **read in the data frames and files:** used in the select statement. This is
-                done by scanning the select statement to see which words in the select
-                statement are of class &ldquo;data.frame&rdquo; or &ldquo;file&rdquo; in the parent frame, or the
-                specified environment if envir is used, and for each object found by
-                reading it into the database if it is a data frame. Note that this
-                heuristic usually reads in the wanted data frames and files but on
-                occasion may harmlessly reads in extra ones too.
+            -   **read in the data frames and files:** used in the select statement. This is done by scanning the select statement to see which words in the select statement are of class &ldquo;data.frame&rdquo; or &ldquo;file&rdquo; in the parent frame, or the specified environment if envir is used, and for each object found by reading it into the database if it is a data frame. Note that this heuristic usually reads in the wanted data frames and files but on occasion may harmlessly reads in extra ones too.
             -   **run the select statement:** getting the result as a data frame
-            -   **assign the classes:** of the returned data frame’s columns if
-                method = &ldquo;auto&rdquo;. This is done by checking all the column names in the
-                read-in data frames and if any are the same as a column output from the
-                data base then that column is coerced to the class of the column whose
-                name matched. If the class of the column is &ldquo;factor&rdquo; or &ldquo;ordered&rdquo; or if
-                the column is not matched then the column is returned as is. If
-                method = &ldquo;auto.factor&rdquo; then processing is similar except that &ldquo;factor&rdquo;
-                and &ldquo;ordered&rdquo; classes and their levels will be assigned as well. The
-                &ldquo;auto.factor&rdquo; heuristic is less reliable than the &ldquo;auto&rdquo; heuristic. If
-                method = &ldquo;raw&rdquo; then the classes are returned as is from the database.
-            -   **cleanup:** If the database was created by sqldf then it is deleted;
-                otherwise, all tables that were created are dropped in order to leave the
-                database in the same state that it was before. The database connection is
-                terminated.
-            -   **Warning:** Although sqldf is usually used with on-the-fly databases which
-                it automatically sets up and destroys if you wish to use it with existing
-                databases be sure to back up your database prior to using it since
-                incorrect operation could destroy the entire database.
+            -   **assign the classes:** of the returned data frame’s columns if method = &ldquo;auto&rdquo;. This is done by checking all the column names in the read-in data frames and if any are the same as a column output from the data base then that column is coerced to the class of the column whose name matched. If the class of the column is &ldquo;factor&rdquo; or &ldquo;ordered&rdquo; or if the column is not matched then the column is returned as is. If method = &ldquo;auto.factor&rdquo; then processing is similar except that &ldquo;factor&rdquo; and &ldquo;ordered&rdquo; classes and their levels will be assigned as well. The &ldquo;auto.factor&rdquo; heuristic is less reliable than the &ldquo;auto&rdquo; heuristic. If method = &ldquo;raw&rdquo; then the classes are returned as is from the database.
+            -   **cleanup:** If the database was created by sqldf then it is deleted; otherwise, all tables that were created are dropped in order to leave the database in the same state that it was before. The database connection is terminated.
+            -   **Warning:** Although sqldf is usually used with on-the-fly databases which it automatically sets up and destroys if you wish to use it with existing databases be sure to back up your database prior to using it since incorrect operation could destroy the entire database.
         -   Value
             -   The result of the specified select statement is output as a data frame.
-            -   If a vector of sql statements is given as x then the result of the last
-                one is returned.
-            -   If the x and connection arguments are missing then it returns a new
-                connection and also places this connection in the option sqldf.connection.
+            -   If a vector of sql statements is given as x then the result of the last one is returned.
+            -   If the x and connection arguments are missing then it returns a new connection and also places this connection in the option sqldf.connection.
                 -   Great to know that the connection is cached!
         -   Notes
             -   Big FYI: Commas in columns will be parsed as column separators!
@@ -470,14 +382,11 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
         -   How it works
             -   The user simply specifies an SQL statement
             -   in R using data frame names in place of table names
-            -   and a database with appropriate table layouts/schema is automatically
-                created,
+            -   and a database with appropriate table layouts/schema is automatically created,
             -   the data frames are automatically loaded into the database,
             -   the specified SQL statement is performed,
             -   the result is read back into R
-            -   and the database is deleted all automatically behind the scenes making the
-                database&rsquo;s existence transparent to the user who only specifies the SQL
-                statement.
+            -   and the database is deleted all automatically behind the scenes making the database&rsquo;s existence transparent to the user who only specifies the SQL statement.
         -   Supports
             -   SQLite
             -   H2
@@ -485,8 +394,7 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
             -   MySQL
         -   The FAQ mostly talks about SQLite
     -   Overview
-        -   with sqldf the user is freed from having to do the following, all of which
-            are automatically done:
+        -   with sqldf the user is freed from having to do the following, all of which are automatically done:
             -   database setup
             -   writing the create table statement which defines each table
             -   importing and exporting to and from the database
@@ -497,9 +405,7 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
             -   Load portions of a really large file
     -   Troubleshooting
         -   Set the driver expicitly
-        -   &ldquo;error messages regarding a data frame that has a dot in its name. The dot
-            is an SQL operator. Either quote the name appropriately or change the name
-            of the data frame to one without a dot.&rdquo;
+        -   &ldquo;error messages regarding a data frame that has a dot in its name. The dot is an SQL operator. Either quote the name appropriately or change the name of the data frame to one without a dot.&rdquo;
     -   FAQ
         -   Column class conversion touched upon
         -   Dots in names
@@ -511,17 +417,14 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
             -   For tables
                 -   Double quote the name
         -   H2 supports date types, which seems quite helpful
-        -   Name a column ending with two underscores and a type and the library will
-            convert the type to R correctly
+        -   Name a column ending with two underscores and a type and the library will convert the type to R correctly
             -   Mentioned in the docs
         -   SQL is case **insensitive**
             -   Don&rsquo;t rely on casing to differentiate column names
         -   We may examine the in-memory database table structure
-        -   Be quite careful about CSV data that contains commas again as this lib
-            won&rsquo;t handle it
+        -   Be quite careful about CSV data that contains commas again as this lib won&rsquo;t handle it
         -   Good examples of cleaning data gettig int into a R friendly format
-        -   Be sure to specify numeric values as integers or doubles so you get expected
-            results from division
+        -   Be sure to specify numeric values as integers or doubles so you get expected results from division
     -   Examples
         -   Example 1. Ordering and Limiting
         -   Example 2. Averaging and Grouping
@@ -539,8 +442,7 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
         -   Example 13. read.csv.sql and read.csv2.sql
             -   Uses SQLite&rsquo;s import facility to create an in-memory database
             -   Then it reads the results of the query into R
-            -   The import does not involve R so it can handle larger files than R can
-                assuming that the query results in a size that does fit
+            -   The import does not involve R so it can handle larger files than R can assuming that the query results in a size that does fit
         -   Example 14. Use of spatialite library functions
         -   Example 15. Use of RSQLite.extfuns library functions
         -   Example 16. Moving Average
@@ -570,11 +472,9 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
 
 5.  MASS
 
-        ID: 0C3E7D6C-68F9-43D0-9F1A-DD9BBB06029C
+        ID: org_gcr_2017-05-12_mara:A577D755-41C6-4E7E-9637-6118FCD5944B
 
-    &ldquo;Functions and datasets to support Venables and Ripley, &lsquo;Modern Applied
-    Statistics with S&rsquo; (4th edition, 2002).&rdquo; Also, `sqldf` recommended it be
-    installed, so it is the right time. <sup><a id="fnr.14" class="footref" href="#fn.14">14</a></sup>
+    &ldquo;Functions and datasets to support Venables and Ripley, &lsquo;Modern Applied Statistics with S&rsquo; (4th edition, 2002).&rdquo; Also, `sqldf` recommended it be installed, so it is the right time. <sup><a id="fnr.14" class="footref" href="#fn.14">14</a></sup>
 
     ```R
     library(MASS)
@@ -588,10 +488,9 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
 
 6.  jsonlite
 
-        ID: C4806332-3925-4CD3-BDA2-68A9291C245B
+        ID: org_gcr_2017-05-12_mara:B2715DBA-4A80-4DB8-B3BD-C660302D3FB9
 
-    Make it easy to work with JSON [37138455: <http://cran.r-project.org/web/packages/jsonlite/index.html>].
-    Reading the vignette&rsquo;s, it does a lot more, for example `rbind.pages`.
+    Make it easy to work with JSON [37138455: <http://cran.r-project.org/web/packages/jsonlite/index.html>]. Reading the vignette&rsquo;s, it does a lot more, for example `rbind.pages`.
 
     ```R
     library(jsonlite)
@@ -605,14 +504,11 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
 
 7.  dplyr
 
-        ID: 17A5C886-CEC5-466A-885E-6E00FF6AD7F1
+        ID: org_gcr_2017-05-12_mara:F2C4419D-59D8-423F-97A8-2C4ED2246186
 
     dplyr: a grammar of data manipulation in R
 
-    The fact that I am loading both `plyr` and `dplyr` is something that I am
-    questioning. I do so because I learned them in that order, so left it that way.
-    However, this just results in **more** binding shadowing, and I am not sure of the
-    implications, and they are usually never good.
+    The fact that I am loading both `plyr` and `dplyr` is something that I am questioning. I do so because I learned them in that order, so left it that way. However, this just results in **more** binding shadowing, and I am not sure of the implications, and they are usually never good.
 
     > [A fast, consistent tool](http://cran.r-project.org/web/packages/dplyr/index.html) for working with data frame like objects, both in memory and out of memory.
 
@@ -624,10 +520,9 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
 
 8.  data.table
 
-        ID: 6FB35637-B75D-47D6-A552-225B2EE36D38
+        ID: org_gcr_2017-05-12_mara:1604B2A7-7110-45B5-BB29-C27BDE9F37C4
 
-    `data.table` <sup><a id="fnr.15" class="footref" href="#fn.15">15</a></sup>
-    is quite nice.
+    `data.table` <sup><a id="fnr.15" class="footref" href="#fn.15">15</a></sup> is quite nice.
 
     ```R
     library(data.table)
@@ -641,7 +536,7 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
 
     1.  dtplyr
 
-            ID: 9FB51AFC-A77E-4440-AF3E-4AA34AB86DA0
+            ID: org_gcr_2017-05-12_mara:169E4CE8-D5BE-48F7-A43F-E89CEE4C6211
 
         ```R
         library(dtplyr)
@@ -659,27 +554,11 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
         }
         ```
 
-9.  xlsx
+9.  XML
 
-        ID: 51FF40DD-6B00-48BD-A946-53666E9BE40F
+        ID: org_gcr_2017-05-12_mara:4F801FC6-2D93-495E-9B7A-5FE6C5A1003A
 
-    Read and write Excel files <sup><a id="fnr.16" class="footref" href="#fn.16">16</a></sup>.
-
-    ```R
-    library(xlsx)
-    ```
-
-    ```R
-    if(! require(xlsx)) {
-        install.packages("xlsx")
-    }
-    ```
-
-10. XML
-
-        ID: 1C5D86C3-F971-4A4A-B3ED-CFA7814B6B6B
-
-    Make ℝ truly enterprise <sup><a id="fnr.17" class="footref" href="#fn.17">17</a></sup>.
+    Make ℝ truly enterprise <sup><a id="fnr.16" class="footref" href="#fn.16">16</a></sup>.
 
     ```R
     library(XML)
@@ -691,9 +570,9 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
     }
     ```
 
-11. devtools
+10. devtools
 
-        ID: CC5F0CF1-4067-4269-BA81-4779DD30E1D1
+        ID: org_gcr_2017-05-12_mara:6BC90505-4FF2-4DB0-8020-F5F8057BA984
 
     `devtools`: Tools to make developing ℝ code easier
 
@@ -707,8 +586,7 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
 
     [Readme](http://cran.r-project.org/web/packages/devtools/README.html). [Manual](http://cran.r-project.org/web/packages/devtools/devtools.pdf). [Github](https://github.com/hadley/devtools).
 
-    At the very least, just *know of* this package, as you will be installing it if
-    you want to us `tidyr`.
+    At the very least, just *know of* this package, as you will be installing it if you want to us `tidyr`.
 
     ```R
     library(devtools)
@@ -719,16 +597,14 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
         install.packages("devtools")
         devtools::install_github("hadley/devtools")
     }
+
     ```
 
-12. magrittr
+11. magrittr
 
-        ID: 7714BB94-5E3C-4E15-B22B-9CFD03634520
+        ID: org_gcr_2017-05-12_mara:E4F80968-F698-4B63-B3F8-745625D74C39
 
-    This is a add from the *most understated package definition* of the year
-    department. `magrittr` <sup><a id="fnr.18" class="footref" href="#fn.18">18</a></sup>
-    is, much like every Scheme library ever, deceptively simple in its power and
-    ease of use that it provides.
+    This is a add from the *most understated package definition* of the year department. `magrittr` <sup><a id="fnr.17" class="footref" href="#fn.17">17</a></sup> is, much like every Scheme library ever, deceptively simple in its power and ease of use that it provides.
 
     ```R
     library(magrittr)
@@ -740,9 +616,9 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
     }
     ```
 
-13. reshape2
+12. reshape2
 
-        ID: 11B7E671-6D90-4C37-B13F-1CB21904C304
+        ID: org_gcr_2017-05-12_mara:68274778-C58F-43D2-92D3-EBD90025A8D0
 
     `reshape2`: Flexibly reshape data: a reboot of the `reshape` package
 
@@ -762,9 +638,9 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
     }
     ```
 
-14. tidyr
+13. tidyr
 
-        ID: EAB265C6-121F-4CC9-A745-AEA8AECA2D63
+        ID: org_gcr_2017-05-12_mara:5CE86E38-28A9-48F0-92F8-0874C7B89DEE
 
     `tidyr`: Easily tidy data with spread and gather functions for ℝ
 
@@ -782,11 +658,12 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
     if(! require(tidyr)) {
         devtools::install_github("hadley/tidyr")
     }
+
     ```
 
-15. lubridate
+14. lubridate
 
-        ID: BDFEC2C3-DAC1-4ED2-BC66-C8A793F9EC1C
+        ID: org_gcr_2017-05-12_mara:7F0E1F05-B547-4E6A-AFBF-E9E9D3FF1059
 
     lubridate: Make dealing with dates a little easier in ℝ
 
@@ -804,12 +681,11 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
     }
     ```
 
-    Perhaps in some *time* there will be a unified approach to time-management among
-    all programming languages.
+    Perhaps in some *time* there will be a unified approach to time-management among all programming languages.
 
-16. testit
+15. testit
 
-        ID: EBACD267-84B2-4FF2-ABE3-4DC6070D247D
+        ID: org_gcr_2017-05-12_mara:4D15CAB4-E41F-4329-ABD3-6352BB53211C
 
     testit: A simple package for testing R packages
 
@@ -827,9 +703,9 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
     }
     ```
 
-17. markdown
+16. markdown
 
-        ID: 43DA96C6-5440-4BA7-A537-F37BA5B739C1
+        ID: org_gcr_2017-05-12_mara:A060E8EA-7F3C-4A33-8001-EE936782065A
 
     -   [CRAN](http://cran.r-project.org/web/packages/markdown/index.html)
         -   [reference](http://cran.r-project.org/web/packages/markdown/markdown.pdf)
@@ -849,37 +725,27 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
 
     > This package is referred to as R Markdown v1 when combined with knitr. The primary output format is HTML. Now we have introduced R Markdown v2, which is based on Pandoc and knitr, and supports much more types of output formats.
 
-18. knitr
+17. knitr
 
-        ID: 3544C2CF-9531-4A1C-95D1-83D423FC5B2E
+        ID: org_gcr_2017-05-12_mara:90B8880A-A32A-4761-A05A-164144AE93AF
 
     knitr: A general-purpose package for dynamic report generation in R
 
     Read the [home page](http://yihui.name/knitr/). It has great resources.
 
-    Watched [the video](https://www.screenr.com/qcv8). Very nice to see; comfortable and familiar. Need to set up
-    RStudio for it. Clearly a critical tool. Cites Knuth.
+    Watched [the video](https://www.screenr.com/qcv8). Very nice to see; comfortable and familiar. Need to set up RStudio for it. Clearly a critical tool. Cites Knuth.
 
-    Features are amazingly understated. If you&rsquo;ve worked with all of these tools,
-    you will appreciate the importance of the author&rsquo;s effort!
+    Features are amazingly understated. If you&rsquo;ve worked with all of these tools, you will appreciate the importance of the author&rsquo;s effort!
 
     `Objects`, `Options`, `Hooks`, and `Patterns` … what is this, Emacs?
 
-    There are demo [links](http://yihui.name/knitr/demos). There is a [project for examples](https://github.com/yihui/knitr-examples). This [showcase](http://yihui.name/knitr/demo/showcase/) has links
-    to websites, book reviews, solutions, R packages, courses, workshops and
-    presentations, books, papers and reports, wrappers, and blog posts on `knitr`.
+    There are demo [links](http://yihui.name/knitr/demos). There is a [project for examples](https://github.com/yihui/knitr-examples). This [showcase](http://yihui.name/knitr/demo/showcase/) has links to websites, book reviews, solutions, R packages, courses, workshops and presentations, books, papers and reports, wrappers, and blog posts on `knitr`.
 
-    [Here](https://github.com/yihui/knitr) is the GitHub project. Read the motivations and see the hours and days and
-    weeks that you have had spared! Uses `testit`, so read up on that and added it.
+    [Here](https://github.com/yihui/knitr) is the GitHub project. Read the motivations and see the hours and days and weeks that you have had spared! Uses `testit`, so read up on that and added it.
 
-    Read the [Frequently Asked Questions](https://github.com/yihui/knitr/blob/master/FAQ.md). Joined the [mailing list](https://groups.google.com/forum/#!forum/knitr). `ess` supports it.
-    Sure that I can configure the custom prompt. Great `README`.
+    Read the [Frequently Asked Questions](https://github.com/yihui/knitr/blob/master/FAQ.md). Joined the [mailing list](https://groups.google.com/forum/#!forum/knitr). `ess` supports it. Sure that I can configure the custom prompt. Great `README`.
 
-    [CRAN](http://cran.r-project.org/web/packages/knitr/index.html) as expected. Much better summary eg HTML, Makrdown, reStructuredText, and
-    AsciiDoc are mentioned. Curious about the cacheing, and how I would do it in
-    `org`. Custom code to run before and after a hunk are another thoughtful touch one
-    would expect coming from `org`. Also support Python and shell. The LaTeX and LyX
-    support is also pretty neat. Same [READM](http://cran.r-project.org/web/packages/knitr/README.html)E. [Reference](http://cran.r-project.org/web/packages/knitr/knitr.pdf).
+    [CRAN](http://cran.r-project.org/web/packages/knitr/index.html) as expected. Much better summary eg HTML, Makrdown, reStructuredText, and AsciiDoc are mentioned. Curious about the cacheing, and how I would do it in `org`. Custom code to run before and after a hunk are another thoughtful touch one would expect coming from `org`. Also support Python and shell. The LaTeX and LyX support is also pretty neat. Same [READM](http://cran.r-project.org/web/packages/knitr/README.html)E. [Reference](http://cran.r-project.org/web/packages/knitr/knitr.pdf).
 
     Somehow missed the [reference card](http://cran.r-project.org/web/packages/knitr/vignettes/knitr-refcard.pdf) initially.
 
@@ -895,9 +761,9 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
     }
     ```
 
-19. fortunes
+18. fortunes
 
-        ID: E7C0C8C1-8835-45D3-B7C2-F3D687034CFA
+        ID: org_gcr_2017-05-12_mara:420C813F-A6C0-41C9-8F4A-042DD8C4D059
 
     R Fortunes.
 
@@ -913,9 +779,9 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
     }
     ```
 
-20. ggplot2
+19. ggplot2
 
-        ID: E51FEB93-89A9-4C5F-BC67-B737D6A853D7
+        ID: org_gcr_2017-05-12_mara:2CB46933-90E6-4366-BA74-71D2B1A4DE8D
 
     -   [CRAN](http://cran.r-project.org/web/packages/ggplot2/index.html)
         -   [reference](http://cran.r-project.org/web/packages/ggplot2/ggplot2.pdf)
@@ -942,9 +808,9 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
     }
     ```
 
-21. tikzDevice
+20. tikzDevice
 
-        ID: C024D10E-40E2-4192-A953-3EBEC23B25BC
+        ID: org_gcr_2017-05-12_mara:9CDF266B-9DE6-42A4-846E-212B11070D6F
 
     -   [CRAN](http://cran.r-project.org/web/packages/tikzDevice/index.html)
         -   [reference](http://cran.r-project.org/web/packages/tikzDevice/tikzDevice.pdf)
@@ -961,9 +827,9 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
     }
     ```
 
-22. ascii
+21. ascii
 
-        ID: 6237DF5B-5219-403D-BB41-5D0684E75B32
+        ID: org_gcr_2017-05-12_mara:1645490F-7DEB-4227-8EAA-FBB1EFC329A0
 
     -   [CRAN](http://cran.r-project.org/web/packages/ascii/index.html)
         -   [reference](http://cran.r-project.org/web/packages/ascii/ascii.pdf)
@@ -979,16 +845,15 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
     }
     ```
 
-    Always display `org` representations; I&rsquo;m assuming that it will be *the* dominant
-    vehicle for analysis.
+    Always display `org` representations; I&rsquo;m assuming that it will be *the* dominant vehicle for analysis.
 
     ```R
     options(asciiType="org")
     ```
 
-23. xtable
+22. xtable
 
-        ID: AE66A34F-A6AF-4578-8617-A7D2363AF81C
+        ID: org_gcr_2017-05-12_mara:6438AA32-0335-4527-91BC-A90404AB36DD
 
     -   [CRAN](http://cran.r-project.org/web/packages/xtable/index.html)
         -   [reference](http://cran.r-project.org/web/packages/xtable/xtable.pdf)
@@ -1006,9 +871,9 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
     }
     ```
 
-24. Hmisc
+23. Hmisc
 
-        ID: 72F1D963-42B8-43C5-87C3-44AEAFCEC91C
+        ID: org_gcr_2017-05-12_mara:F42F3746-7E10-478D-ACAE-125BE4A15D5C
 
     -   [CRAN](http://cran.r-project.org/web/packages/Hmisc/index.html)
         -   [reference](http://cran.r-project.org/web/packages/Hmisc/Hmisc.pdf)
@@ -1024,9 +889,9 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
     }
     ```
 
-25. log4r
+24. log4r
 
-        ID: E343FE37-79D9-4856-AFF1-1BFF49513E10
+        ID: org_gcr_2017-05-12_mara:C6F05623-CF1C-46D0-A911-2ABB014267AF
 
     -   [CRAN](http://cran.r-project.org/web/packages/log4r/index.html)
         -   [reference](http://cran.r-project.org/web/packages/log4r/log4r.pdf)
@@ -1042,9 +907,9 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
     }
     ```
 
-26. boot
+25. boot
 
-        ID: 9D4A4744-FDF4-49C5-9B66-08863FCAABC4
+        ID: org_gcr_2017-05-12_mara:1EC5636D-D340-4F00-BBEF-579000725366
 
     -   [CRAN](http://cran.r-project.org/web/packages/boot/index.html)
         -   [reference](http://cran.r-project.org/web/packages/boot/boot.pdf)
@@ -1059,9 +924,9 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
     }
     ```
 
-27. kernlab
+26. kernlab
 
-        ID: 24A2C62F-9EC0-4E51-B21D-364DF4679938
+        ID: org_gcr_2017-05-12_mara:1860ABE6-06F1-449C-A5E4-EBCDEE4B8EB8
 
     -   [CRAN](http://cran.r-project.org/web/packages/kernlab/index.html)
         -   [reference](http://cran.r-project.org/web/packages/kernlab/kernlab.pdf)
@@ -1078,12 +943,11 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
     }
     ```
 
-28. R Utils
+27. R Utils
 
-        ID: 954DBB37-DD0D-4363-BB3A-6E7787914C1C
+        ID: org_gcr_2017-05-12_mara:5AAB5490-A3D4-42E1-9630-15E9CE8A6D63
 
-    Programatically extract BZ2 files. Helpful for making decompression a
-    separarate task from loading.
+    Programatically extract BZ2 files. Helpful for making decompression a separarate task from loading.
 
     ```R
     library(R.utils)
@@ -1095,16 +959,16 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
     }
     ```
 
-29. Not explicitly loaded, but interesting packages
+28. Not explicitly loaded, but interesting packages
 
-        ID: 1F011148-DBD2-4944-B458-771333F10FB7
+        ID: org_gcr_2017-05-12_mara:62914096-7336-4480-B8E4-950E2A553AA8
 
     -   [ProjectTemplate](http://projecttemplate.net/index.html)
     -   [evaluate](http://cran.r-project.org/web/packages/evaluate/index.html).utils
     -   [yaml](http://cran.r-project.org/web/packages/yaml/index.html)
     -   [whisker](http://cran.r-project.org/web/packages/whisker/index.html)
     -   [formatR](http://cran.r-project.org/web/packages/formatR/index.html)
-    -   General caching <sup><a id="fnr.19" class="footref" href="#fn.19">19</a></sup>
+    -   General caching <sup><a id="fnr.18" class="footref" href="#fn.18">18</a></sup>
     -   [stringi](http://cran.r-project.org/web/packages/stringi/index.html)
         -   [Via](http://www.r-bloggers.com/faster-easier-and-more-reliable-character-string-processing-with-stringi-0-3-1/?utm_source%3Dfeedburner&utm_medium%3Dfeed&utm_campaign%3DFeed%253A%2BRBloggers%2B%2528R%2Bbloggers%2529)
         -   Seems focused on Unicode details
@@ -1159,23 +1023,20 @@ then I will install as-needed. As such, I suppose that I&rsquo;ve found it.
         -   Looks like a great tool for learning about graphcs
         -   [Via](http://www.r-bloggers.com/a-look-at-the-igraph-package/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%253A+RBloggers+%2528R+bloggers%2529)
 
+
 ## .First
 
     header-args: :noweb-ref rfirst-defs
 
-    ID: 10CD604F-503C-46DE-AB32-97884C070344
+    ID: org_gcr_2017-05-12_mara:DB8DE38B-83C2-4CF9-B428-4629E4E06547
 
 Reading:
 
 -   **[Startup](http://stat.ethz.ch/R-manual/R-devel/library/base/html/Startup.html):** mandatory reading, the definitive source
 -   **[Kickstarting R](http://cran.r-project.org/doc/contrib/Lemon-kickstart/kr_first.html):** I just like this tutorial
 
--   `attach` is a powerfuly convenient function. Sure, it can make you and your
-    program go bonkers, but you know, it is worth it for the convenience. Joking
-    aside, it has its place, so it should not go away completely. However, it ought
-    not be used much, and if you do need to use it, the it should be really really
-    obvious.
-    -   Eg: <sup><a id="fnr.20" class="footref" href="#fn.20">20</a></sup>
+-   `attach` is a powerfuly convenient function. Sure, it can make you and your program go bonkers, but you know, it is worth it for the convenience. Joking aside, it has its place, so it should not go away completely. However, it ought not be used much, and if you do need to use it, the it should be really really obvious.
+    -   Eg: <sup><a id="fnr.19" class="footref" href="#fn.19">19</a></sup>
 
 ```R
 gcr$attach.unsafe <- attach
@@ -1185,9 +1046,8 @@ gcr$attach <- function(...) {
 }
 ```
 
--   `library` reports issues immediately, and by design, `require` does not… remind
-    the useR that they *may* want the former not the latter
-    -   Via <sup><a id="fnr.21" class="footref" href="#fn.21">21</a></sup>
+-   `library` reports issues immediately, and by design, `require` does not… remind the useR that they *may* want the former not the latter
+    -   Via <sup><a id="fnr.20" class="footref" href="#fn.20">20</a></sup>
     -   Just like everything else here, this is a *personal preference* thing!
 
 ```R
@@ -1197,7 +1057,7 @@ gcr$require <- function(...) {
 }
 ```
 
-Sometimes you only want to list everything **but** functions <sup><a id="fnr.22" class="footref" href="#fn.22">22</a></sup>:
+Sometimes you only want to list everything **but** functions <sup><a id="fnr.21" class="footref" href="#fn.21">21</a></sup>:
 
 ```R
 gcr$lsnofun <- function(name = parent.frame()) {
@@ -1236,8 +1096,7 @@ gcr$erroronwarnoff <- function() {
 options(sqldf.driver = "SQLite")
 ```
 
-Save your fingers from having to type `head` the next `n` thousand times <sup><a id="fnr.23" class="footref" href="#fn.23">23</a></sup> because I can&rsquo;t. `ess-rdired` and friends use the dataframe print function,
-so I didn&rsquo;t make dataframes print using it.
+Save your fingers from having to type `head` the next `n` thousand times <sup><a id="fnr.22" class="footref" href="#fn.22">22</a></sup> because I can&rsquo;t. `ess-rdired` and friends use the dataframe print function, so I didn&rsquo;t make dataframes print using it.
 
 ```R
 gcr$printdf <- function(df) {
@@ -1251,8 +1110,7 @@ gcr$printdf <- function(df) {
 }
 ```
 
-Sometimes you want to see all of the data in a dataframe, and sometimes you
-don&rsquo;t. Make it really easy to change whenever you feel like it.
+Sometimes you want to see all of the data in a dataframe, and sometimes you don&rsquo;t. Make it really easy to change whenever you feel like it.
 
 ```R
 gcr$printlen <- function(len=500) {
@@ -1260,8 +1118,7 @@ gcr$printlen <- function(len=500) {
 }
 ```
 
-When you&rsquo;ve got `n`-thousand rows of data, make it easier to get a sample from it,
-just make it specific and keep it simple.
+When you&rsquo;ve got `n`-thousand rows of data, make it easier to get a sample from it, just make it specific and keep it simple.
 
 ```R
 gcr$hundred <- function(df, idx=0) {
@@ -1269,13 +1126,14 @@ gcr$hundred <- function(df, idx=0) {
 }
 ```
 
+
 ## .Renviron
 
     header-args: :noweb-ref renviron-def
 
-    ID: ADDE28AF-505F-46DF-BF67-C61E435D6981
+    ID: org_gcr_2017-05-12_mara:9C053DA5-163C-4C31-9590-15F1BC5EF2DD
 
-Install all packages to my home directory <sup><a id="fnr.24" class="footref" href="#fn.24">24</a></sup>
+Install all packages to my home directory <sup><a id="fnr.23" class="footref" href="#fn.23">23</a></sup>
 
 -   Call `.libPaths()` to verify
 -   The directory must exist otherwise ℝ will ignore it
@@ -1287,34 +1145,72 @@ Install all packages to my home directory <sup><a id="fnr.24" class="footref" hr
 R_LIBS=~/.Rpackages
 ```
 
-For the time being, GUI work will only be performed on OSX so utilize OSX&rsquo;s
-renderer [91578029: <http://emacs.1067599.n5.nabble.com/unable-to-start-device-X11-td330804.html>].
+For the time being, GUI work will only be performed on OSX so utilize OSX&rsquo;s renderer [91578029: <http://emacs.1067599.n5.nabble.com/unable-to-start-device-X11-td330804.html>].
 
 That worked fine until I actually starting using that graphics device!
 
 Then even though I was on OSX I **had** to switch to `X11`.
 
-<span class="timestamp-wrapper"><span class="timestamp">&lt;2014-11-05 Wed&gt;</span></span>
-That was probably a mistake. The folks on-list said that `quartz` should be super.
-Perhaps the error was between the keyboard and the chair, so I am switching
-back.
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2014-11-05 Wed&gt;</span></span> That was probably a mistake. The folks on-list said that `quartz` should be super. Perhaps the error was between the keyboard and the chair, so I am switching back.
 
-<span class="timestamp-wrapper"><span class="timestamp">&lt;2014-11-08 Sat&gt;</span></span>
-When I us `ggplot` and quarts on this system, it blows up.
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2014-11-08 Sat&gt;</span></span> When I us `ggplot` and quarts on this system, it blows up.
 
-<span class="timestamp-wrapper"><span class="timestamp">&lt;2014-11-25 Tue&gt;</span></span>
-Switched to the official CRAN R build, which works fine on OSX.
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2014-11-25 Tue&gt;</span></span> Switched to the official CRAN R build, which works fine on OSX.
 
 ```sh
 R_INTERACTIVE_DEVICE=quartz
 ```
 
-Explicitly state the timezone. This could be done either here or in the `.profile`.
-I&rsquo;m not totally sure where to put it. Because I am trying to do **everything** with,
-I will put it here. Perhaps this should get set via `Sys.setenv` instead? I&rsquo;ll
-leave it for now and fix it later if necessary. I did test this out with a call
-to `Sys.time()` and it worked correctly.
+Explicitly state the timezone. This could be done either here or in the `.profile`. I&rsquo;m not totally sure where to put it. Because I am trying to do **everything** with, I will put it here. Perhaps this should get set via `Sys.setenv` instead? I&rsquo;ll leave it for now and fix it later if necessary. I did test this out with a call to `Sys.time()` and it worked correctly.
 
 ```sh
 TZ=America/Chicago
 ```
+
+## Footnotes
+
+<sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <https://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile>
+
+<sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <http://www.r-bloggers.com/installing-r-packages/>
+
+<sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <http://cran.r-project.org/doc/manuals/r-patched/R-admin.html#Localization-of-messages>
+
+<sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <http://stat.ethz.ch/R-manual/R-devel/library/base/html/locales.html>
+
+<sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <http://cran.r-project.org/web/packages/assertthat/index.html>
+
+<sup><a id="fn.6" class="footnum" href="#fnr.6">6</a></sup> <http://cran.r-project.org/web/packages/testthat/index.html>
+
+<sup><a id="fn.7" class="footnum" href="#fnr.7">7</a></sup> <http://cran.r-project.org/web/packages/stringr/index.html>
+
+<sup><a id="fn.8" class="footnum" href="#fnr.8">8</a></sup> <http://cran.r-project.org/web/packages/sqldf/index.html>
+
+<sup><a id="fn.9" class="footnum" href="#fnr.9">9</a></sup> <http://randyzwitch.com/sqldf-package-r/>
+
+<sup><a id="fn.10" class="footnum" href="#fnr.10">10</a></sup> <http://cran.r-project.org/web/packages/sqldf/index.html>
+
+<sup><a id="fn.11" class="footnum" href="#fnr.11">11</a></sup> <https://groups.google.com/forum/#!forum/sqldf>
+
+<sup><a id="fn.12" class="footnum" href="#fnr.12">12</a></sup> <https://stackoverflow.com/questions/19019883/how-to-handle-column-names-not-supported-by-sqldf-in-r>
+
+<sup><a id="fn.13" class="footnum" href="#fnr.13">13</a></sup> <https://code.google.com/p/sqldf/>
+
+<sup><a id="fn.14" class="footnum" href="#fnr.14">14</a></sup> <http://cran.r-project.org/web/packages/MASS/index.html>
+
+<sup><a id="fn.15" class="footnum" href="#fnr.15">15</a></sup> <http://cran.r-project.org/web/packages/data.table/index.html>
+
+<sup><a id="fn.16" class="footnum" href="#fnr.16">16</a></sup> <http://cran.r-project.org/web/packages/XML/index.html>
+
+<sup><a id="fn.17" class="footnum" href="#fnr.17">17</a></sup> <http://cran.r-project.org/web/packages/magrittr/index.html>
+
+<sup><a id="fn.18" class="footnum" href="#fnr.18">18</a></sup> <https://stackoverflow.com/questions/7262485/options-for-caching-memoization-hashing-in-r>
+
+<sup><a id="fn.19" class="footnum" href="#fnr.19">19</a></sup> <http://www.r-bloggers.com/to-attach-or-not-attach-that-is-the-question/>
+
+<sup><a id="fn.20" class="footnum" href="#fnr.20">20</a></sup> <http://www.r-bloggers.com/library-vs-require-in-r/>
+
+<sup><a id="fn.21" class="footnum" href="#fnr.21">21</a></sup> <https://stackoverflow.com/questions/13094324/hiding-function-names-from-ls-results-to-find-a-variable-name-more-quickly>
+
+<sup><a id="fn.22" class="footnum" href="#fnr.22">22</a></sup> <https://stackoverflow.com/questions/13024167/how-to-make-head-be-applied-automatically-to-output>
+
+<sup><a id="fn.23" class="footnum" href="#fnr.23">23</a></sup> <http://www.r-bloggers.com/installing-r-packages/>

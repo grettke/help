@@ -1,3 +1,9 @@
+Never compile this.
+
+```emacs-lisp
+;; -*- no-byte-compile: t; -*-
+```
+
 
 # Org-Mode Fundamentals
 
@@ -9,15 +15,12 @@ Sysop is likely to use this periodically.
 
 Start EMACS with this command:
 
-`open /Applications/Emacs.app -n --args --debug-init --quick --load ~/src/help/.org-mode-fundamentals.emacs.el`
+    emacs --debug-init --no-init-file --no-splash --background-color white --foreground-color black --vertical-scroll-bars --eval '(switch-to-buffer "*Messages*")' --name FND-TEST --title FND-TEST --load ~/src/help/.org-mode-fundamentals.emacs.el &
 
-```lisp
-;; -*- lexical-binding: t -*-
-```
-
-```lisp
+```emacs-lisp
 (load-file "~/src/help/.org-mode-ecm.emacs.el")
 ```
+
 
 ## Literate Programming
 
@@ -31,11 +34,9 @@ This system enables you to perform 3 Literate Document activities
 
 Combined they provide a rich Literate Programming environment.
 
-These activities are not performed interactively by the user. They are automatic
-operations that occur as a result of the configuration by the document itself.
+These activities are not performed interactively by the user. They are automatic operations that occur as a result of the configuration by the document itself.
 
-The following is the guide for the default configuration of this system and how
-it behaves.
+The following is the guide for the default configuration of this system and how it behaves.
 
 Key:
 
@@ -46,71 +47,16 @@ Key:
     -   **C:** Source-Block Evaluation occurred?
     -   **O:** Org-Macro Expansion occurred?
 
-<table>
-
-
-<colgroup>
-<col  class="org-left">
-
-<col  class="org-left">
-
-<col  class="org-left">
-
-<col  class="org-left">
-
-<col  class="org-left">
-
-<col  class="org-left">
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left">Activity</th>
-<th scope="col" class="org-left">S</th>
-<th scope="col" class="org-left">T</th>
-<th scope="col" class="org-left">W</th>
-<th scope="col" class="org-left">C</th>
-<th scope="col" class="org-left">O</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td class="org-left">Tangling</td>
-<td class="org-left">F</td>
-<td class="org-left">T</td>
-<td class="org-left">F</td>
-<td class="org-left">F</td>
-<td class="org-left">F</td>
-</tr>
-
-
-<tr>
-<td class="org-left">Evaluating</td>
-<td class="org-left">T</td>
-<td class="org-left">F</td>
-<td class="org-left">F</td>
-<td class="org-left">T</td>
-<td class="org-left">F</td>
-</tr>
-
-
-<tr>
-<td class="org-left">Weaving</td>
-<td class="org-left">F</td>
-<td class="org-left">F</td>
-<td class="org-left">T</td>
-<td class="org-left">F</td>
-<td class="org-left">T</td>
-</tr>
-</tbody>
-</table>
+| Activity   | S | T | W | C | O |
+|---------- |--- |--- |--- |--- |--- |
+| Tangling   | F | T | F | F | F |
+| Evaluating | T | F | F | T | F |
+| Weaving    | F | F | T | F | T |
 
 They are separate and distinct operations.
 
-&ldquo;Programming&rdquo; is logically an activity that is the combination of these 3
-activites. It is interactively performed by Sysop. It is not a distinct
-or isolated operation. Results of one activity exist here and serve as inputs to
-another activity.
+&ldquo;Programming&rdquo; is logically an activity that is the combination of these 3 activites. It is interactively performed by Sysop. It is not a distinct or isolated operation. Results of one activity exist here and serve as inputs to another activity.
+
 
 ### Helper Functions
 
@@ -118,7 +64,7 @@ another activity.
 
 Help configure Org-Mode.
 
-```lisp
+```emacs-lisp
 (defun help/set-org-babel-default-header-args (property value)
   "Easily set system header arguments in org mode.
 
@@ -175,7 +121,10 @@ This is a copy and paste. Additional languages would warrant a refactor."
 
 (defun help/org-prp-hdln ()
   "Visit every Headline. If it doesn't have an ID property then add one and
-  assign it a UUID. Attribution: URL `http://article.gmane.org/gmane.emacs.orgmode/99738'"
+  assign it a UUID. Attribution: URL
+  `http://article.gmane.org/gmane.emacs.orgmode/99738'. It is OK to leave the
+  colon separator in here because these are never used as Source-Blocks and
+  the rest of the code expects the colon separator."
   (interactive)
   (save-excursion
     (goto-char (point-min))
@@ -186,6 +135,17 @@ This is a copy and paste. Additional languages would warrant a refactor."
       (org-id-get-create))
     (save-buffer)))
 
+(defun help/org-id-new ()
+  "Re-purposing `org-id' hit a snag when colons were forbidden in Source-Block
+  names. Adding support for a user-defined Org-Id separator would have fixed
+  this but with no benefit to Org-Id. So this function removes the colon
+  instead.
+ "
+  (interactive)
+  (let* ((gend (org-id-new))
+         (newid (replace-regexp-in-string ":" "_" gend)))
+    newid))
+
 (defun help/org-prp-src-blk ()
   "If it doesn't have a NAME property then add one and
    assign it a UUID. Attribution: URL `http://article.gmane.org/gmane.emacs.orgmode/99740'"
@@ -195,7 +155,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
        (if (not (org-element-property :name element))
            (let ((i (org-get-indentation)))
              (beginning-of-line)
-             (save-excursion (insert "#+NAME: orgmode:gcr:vela:" (org-id-new) "\n"))
+             (save-excursion (insert "#+NAME: " (help/org-id-new) "\n"))
              (indent-to i)
              (forward-line 2))))))
 
@@ -217,10 +177,11 @@ This is a copy and paste. Additional languages would warrant a refactor."
   "Add a NAME property then assign it a UUID."
   (interactive)
   (org-babel-demarcate-block)
-  (insert "#+NAME: orgmode:gcr:vela:" (org-id-new))
+  (insert "#+NAME: " (help/org-id-new))
   (beginning-of-line)
   (insert "\n"))
 ```
+
 
 ### Identity
 
@@ -228,29 +189,35 @@ This is a copy and paste. Additional languages would warrant a refactor."
 
 A Headline&rsquo;s primary key is `ID`. Use `org-id` to manage it.
 
-```lisp
+```emacs-lisp
 (require 'org-id)
 ```
 
-In Links: Never use `ID` or `CUSTOM_ID`; always use the file name and text to make
-it accessible outside of Emacs.
+In Links: Never use `ID` or `CUSTOM_ID`; always use the file name and text to make it accessible outside of Emacs.
 
-```lisp
+```emacs-lisp
 (setq org-id-link-to-org-use-id 'nil)
 ```
 
 Make sure that `ID` is always unique, portable, and easy to maintain by
 
--   Using a memorable prefix
-    -   Must be both LaTeX label and XHTML identifier compliant
+-   Using an acceptable prefix
+    -   Memorable
+        -   So you can remember where you created it and when
+        -   So you can share it and let the recipient know (in theory useful)
+        -   So you can enable a non Emacs/Org-Mode user to work with the tangled code referencing it&rsquo;s origin
+    -   Valid
+        -   Must be both LaTeX label and XHTML identifier compliant
+            -   `org-lint` checks for this
 -   Include the current login
 -   Include the current domain
 -   Use a UUID
 
-```lisp
-(setq org-id-prefix (concat "orgmode:" (user-real-login-name) ":" (system-name)))
+```emacs-lisp
+(setq org-id-prefix (concat "org_" (user-real-login-name) "_" (format-time-string "%Y-%m-%d") "_" (system-name)))
 (setq org-id-method 'uuid)
 ```
+
 
 ### Tangling
 
@@ -258,26 +225,35 @@ Make sure that `ID` is always unique, portable, and easy to maintain by
 
 `ID` and `NAME` are essential for successful `LP` using `org-babel-tangle-jump-to-org`.
 
-```lisp
+```emacs-lisp
 (add-hook 'org-babel-pre-tangle-hook #'help/org-prp-hdln)
 (add-hook 'org-babel-pre-tangle-hook #'help/org-prp-src-blk)
 ```
 
-There is a way to disable property inheritance that speeds up tangling a lot.
-This is only for user-defined properties; **not** Org-Mode properties.
+There is a way to disable property inheritance that speeds up tangling a lot. This is only for user-defined properties; **not** Org-Mode properties.
 
-The problem is that you lose property inheritance which is unacceptable. Never,
-never allow that. Its inconsistent with how Org-Mode works.
+The problem is that you lose property inheritance which is unacceptable. Never, never allow that. Its inconsistent with how Org-Mode works.
 
-```lisp
+```emacs-lisp
 (setq org-babel-use-quick-and-dirty-noweb-expansion nil)
 ```
 
-Assume that tangled document always live within the same directory structure
-as their origin document.
+Assume that tangled document always live within the same directory structure as their origin document.
 
-```lisp
+```emacs-lisp
 (setq org-babel-tangle-use-relative-file-links t)
+```
+
+-   Post tangle actions
+    -   Indentation
+        -   At first glance this is surprising! The author should be responsible for the indentation, right? Yes, that is right. But there is one exception: using `:noweb-ref` source block concatenation. [It](http://orgmode.org/manual/noweb_002dref.html) is powerful and elegant. But the source blocks are indented on their own line. It forces any reader format it to make any sense of it. That is a poor start to using the tangled files. So tangled files get indented.
+
+```emacs-lisp
+(defun help/org-babel-post-tangle-hook-fn ()
+  (interactive)
+  (indent-region (point-min) (point-max) nil)
+  (save-buffer))
+(add-hook 'org-babel-post-tangle-hook #'help/org-babel-post-tangle-hook-fn)
 ```
 
 1.  comments
@@ -286,10 +262,9 @@ as their origin document.
 
     > Toggle insertion of comments in tangled code files
 
-    Provide as much information as possible in the tangled artifact about the
-    origin artifact.
+    Provide as much information as possible in the tangled artifact about the origin artifact.
 
-    ```lisp
+    ```emacs-lisp
     (help/set-org-babel-default-header-args :comments "noweb")
     ```
 
@@ -299,7 +274,7 @@ as their origin document.
 
     > Toggle creation of parent directories of target files during tangling
 
-    ```lisp
+    ```emacs-lisp
     (help/set-org-babel-default-header-args :mkdirp "yes")
     ```
 
@@ -319,46 +294,15 @@ as their origin document.
 
     Expand noweb references in source-blocks before:
 
-    <table>
+    | Activity   | Expand |
+    |---------- |------ |
+    | Tangling   | T      |
+    | Evaluating | T      |
+    | Weaving    | F      |
 
+    This embraces the notion that you are telling the right thing to the computer and the right thing to the human. By the time you get to exporting, you ought to refer to the generated document.
 
-    <colgroup>
-    <col  class="org-left">
-
-    <col  class="org-left">
-    </colgroup>
-    <thead>
-    <tr>
-    <th scope="col" class="org-left">Activity</th>
-    <th scope="col" class="org-left">Expand</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    <tr>
-    <td class="org-left">Tangling</td>
-    <td class="org-left">T</td>
-    </tr>
-
-
-    <tr>
-    <td class="org-left">Evaluating</td>
-    <td class="org-left">T</td>
-    </tr>
-
-
-    <tr>
-    <td class="org-left">Weaving</td>
-    <td class="org-left">F</td>
-    </tr>
-    </tbody>
-    </table>
-
-    This embraces the notion that you are telling the right thing to the
-    computer and the right thing to the human. By the time you get to exporting, you
-    ought to refer to the generated document.
-
-    ```lisp
+    ```emacs-lisp
     (help/set-org-babel-default-header-args :noweb "no-export")
     ```
 
@@ -384,15 +328,10 @@ as their origin document.
 
     > Control insertion of padding lines in tangled code files
 
-    -   `org-babel-tangle-jump-to-org` requires padded lines. This configuration could
-        arguably appear in the &ldquo;Programming&rdquo; heading because it impacts operation. It
-        lives here because it **must** occur as part of the Tangling activity so that it
-        can be used in the Programming activity.
-    -   Often I go back and for on this one. Sometimes it is nicer to have less spaces
-        in generated code when guests are viewing it. When no one else is reading it
-        I love the spaces. Defaulting to what I like.
+    -   `org-babel-tangle-jump-to-org` requires padded lines. This configuration could arguably appear in the &ldquo;Programming&rdquo; heading because it impacts operation. It lives here because it **must** occur as part of the Tangling activity so that it can be used in the Programming activity.
+    -   Often I go back and for on this one. Sometimes it is nicer to have less spaces in generated code when guests are viewing it. When no one else is reading it I love the spaces. Defaulting to what I like.
 
-    ```lisp
+    ```emacs-lisp
     (help/set-org-babel-default-header-args :padline "yes")
     ```
 
@@ -404,8 +343,7 @@ as their origin document.
 
     Configuration likely per Source-Block or System.
 
-    For some situations, this may be the same for every source block for a
-    particular language. R is a good example.
+    For some situations, this may be the same for every source block for a particular language. R is a good example.
 
 9.  shebang
 
@@ -421,7 +359,7 @@ as their origin document.
 
     > Toggle tangling and specify file name
 
-    ```lisp
+    ```emacs-lisp
     (help/set-org-babel-default-header-args :tangle "no")
     ```
 
@@ -433,13 +371,14 @@ as their origin document.
 
     Configuration likely per Source-Block or System.
 
+
 ### Evaluating
 
     ID: orgmode:gcr:vela:ED23FF0B-1F90-435C-9B56-ACA06C1ACAE0
 
-Org-Mode may evaluate all of the listed languages.
+Org-Mode may use all of the listed languages.
 
-```lisp
+```emacs-lisp
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((emacs-lisp . t)
@@ -451,6 +390,7 @@ Org-Mode may evaluate all of the listed languages.
    (sass . t)
    (scheme . t)
    (sql . t)
+   (js . t)
    ;;
    (latex . t)
    ;;
@@ -460,6 +400,12 @@ Org-Mode may evaluate all of the listed languages.
    (ditaa . t)
    (dot . t)
    (plantuml . t)))
+```
+
+Out of the box Emacs supports `js` with `js-mode`. Define language `javascript` to use `js2-mode`.
+
+```emacs-lisp
+(add-to-list 'org-src-lang-modes '("javascript" . js2))
 ```
 
 1.  cache
@@ -504,14 +450,14 @@ Org-Mode may evaluate all of the listed languages.
 
     Never evaluate source-blocks or in-line-source-blocks **on export**.
 
-    ```lisp
+    ```emacs-lisp
     (help/set-org-babel-default-header-args :eval "never-export")
     (help/set-org-babel-default-inline-header-args :eval "never-export")
     ```
 
     Never evaluate in-line-source-blocks **on export**.
 
-    ```lisp
+    ```emacs-lisp
     (setq org-export-babel-evaluate nil)
     ```
 
@@ -555,8 +501,7 @@ Org-Mode may evaluate all of the listed languages.
 
     Configuration likely per Source-Block or System.
 
-    One example is a System where **all** intermediate results are stored to individual
-    files.
+    One example is a System where **all** intermediate results are stored to individual files.
 
 11. post
 
@@ -574,14 +519,9 @@ Org-Mode may evaluate all of the listed languages.
 
     Configuration likely per Source-Block or System.
 
-    For some situations, this may be the same for every source block for a
-    particular language. The user manual described `gnuplot`, which often shows up on
-    the list and the solution is to `reset` the session.
+    For some situations, this may be the same for every source block for a particular language. The user manual described `gnuplot`, which often shows up on the list and the solution is to `reset` the session.
 
-    Another example, say that you&rsquo;ve got a bunch of R Source-Blocks and you want to
-    be able to rearrange them as you please. You want to be sure that there are no
-    dependencies between them on bindings created in the workspace. Set `prologue`
-    to `rm(list = ls())`.
+    Another example, say that you&rsquo;ve got a bunch of R Source-Blocks and you want to be able to rearrange them as you please. You want to be sure that there are no dependencies between them on bindings created in the workspace. Set `prologue` to `rm(list = ls())`.
 
     Epilgue works hand-in-hand with this.
 
@@ -591,13 +531,11 @@ Org-Mode may evaluate all of the listed languages.
 
     > Specify the type of results and how they will be collected and handled
 
-    Ways to configure `:results`: `(apply '* (-keep 'cdr '((Collection . 2) (Type . 4) (Format . 7) (Handling . 4))))` 224.
+    Ways to configure `:results`: `(apply '* (-keep 'cdr '((Collection . 2) (Type . 4) (Format . 7) (Handling . 4))))` `224`.
 
-    This system stores the results of evaluation in the source document. It believes
-    that the results are critical to the research.
+    This system stores the results of evaluation in the source document. It believes that the results are critical to the research.
 
-    Keep the document as close to being executable as possible; make it very visible
-    when it is not.
+    Keep the document as close to being executable as possible; make it very visible when it is not.
 
     -   Collection
         -   `value`: Functions have a single result. So do Source-Blocks.
@@ -614,18 +552,14 @@ Org-Mode may evaluate all of the listed languages.
     -   Handling
         -   `replace`: Replace theme each time you evaluate the block.
 
-    ```lisp
+    ```emacs-lisp
     (defconst help/org-sb-results-cfg "value table drawer replace")
     (help/set-org-babel-default-header-args :results help/org-sb-results-cfg)
     ```
 
-    Their format will show that they are results. Inline source blocks
-    automatically get formatted as verbatim. For some reason, this only needs to
-    be configured as `replace` to work unlike normal source blocks. Copying the
-    configuration from normal source blocks here breaks the replacement
-    functionality.
+    Their format will show that they are results. Inline source blocks automatically get formatted as verbatim. For some reason, this only needs to be configured as `replace` to work unlike normal source blocks. Copying the configuration from normal source blocks here breaks the replacement functionality.
 
-    ```lisp
+    ```emacs-lisp
     (defconst help/org-isb-results-cfg "replace")
     (help/set-org-babel-default-inline-header-args :results help/org-isb-results-cfg)
     ```
@@ -661,72 +595,63 @@ Org-Mode may evaluate all of the listed languages.
     -   Idexable variable values
     -   Emacs Lisp evaluation of variables
 
+
 ### Weaving
 
     ID: orgmode:gcr:vela:F71DD8BA-B853-4903-A348-400E13C0E6F8
 
-Help the reader make sense of the document by displaying it&rsquo;s internal
-properties.
+Help the reader make sense of the document by displaying it&rsquo;s internal properties.
 
-```lisp
+```emacs-lisp
 (setq org-export-with-properties t)
 ```
 
 -   Stop your flow to monitor the export for errors
-    -   <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-19 Tue&gt; </span></span> Expect it to start weaves for all weavers asynchronously.
-        Does not do so; main thread is blocked until weaves complete.
+    -   <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-01-19 Tue&gt; </span></span> Expect it to start weaves for all weavers asynchronously. Does not do so; main thread is blocked until weaves complete.
 
-```lisp
+```emacs-lisp
 (setq org-export-in-background nil)
 ```
 
 Make sure that exported files are Unicode UTF-8.
 
-```lisp
+```emacs-lisp
 (setq org-export-coding-system 'utf-8)
 ```
 
-Do not preserve line-breaks when exporting instead let the destination
-format handle it as it sees fit. This doesn&rsquo;t work like I had expected and makes
-me wonder what I am confused about here. When I export to HTML text containing
-linebreaks no longer has linebreaks. This is what I expect. When I export that
-same text to a buffer though, the line breaks are included. Currently I use
-`sacha/unfill-paragraph` on that code.
+Do not preserve line-breaks when exporting instead let the destination format handle it as it sees fit. This doesn&rsquo;t work like I had expected and makes me wonder what I am confused about here. When I export to HTML text containing linebreaks no longer has linebreaks. This is what I expect. When I export that same text to a buffer though, the line breaks are included. Currently I use `sacha/unfill-paragraph` on that code.
 
-```lisp
+```emacs-lisp
 (setq org-export-preserve-breaks nil)
 ```
 
 When exporting anything, do not insert the exported content into the kill ring.
 
-```lisp
+```emacs-lisp
 (setq org-export-copy-to-kill-ring nil)
 ```
 
-By default I never want a table of contents generated. It is so easy to enable
-it with a property, it will be fine to turn it off.
+By default I never want a table of contents generated. It is so easy to enable it with a property, it will be fine to turn it off.
 
-```lisp
+```emacs-lisp
 (setq org-export-with-toc nil)
 ```
 
-On export, maintain the literal spacing as found in the source block. Obviously
-this is important for make-files. It is really important everywhere because
-anything else would violate the law of least surprise.
+On export, maintain the literal spacing as found in the source block. Obviously this is important for make-files. It is really important everywhere because anything else would violate the law of least surprise.
 
-```lisp
+```emacs-lisp
 (setq org-src-preserve-indentation t)
 ```
 
 Maximize flexibility for weaving operations during export.
 
-```lisp
+```emacs-lisp
 (setq org-export-allow-bind-keywords t)
 ```
 
 Disable element caching because it might break weaves via [this thread](https://lists.gnu.org/archive/html/emacs-orgmode/2015-09/msg00646.html).
 
-```lisp
+```emacs-lisp
 (setq org-element-use-cache nil)
 ```
 
@@ -736,20 +661,15 @@ Disable element caching because it might break weaves via [this thread](https://
 
     > Export code and/or results
 
-    Always share source blocks and their results. Whether or not to generate a
-    result for a particular source block is configured per-block. If you don&rsquo;t want
-    to share a result for a source block then disable storage of results on that
-    block.
+    Always share source blocks and their results. Whether or not to generate a result for a particular source block is configured per-block. If you don&rsquo;t want to share a result for a source block then disable storage of results on that block.
 
-    ```lisp
+    ```emacs-lisp
     (help/set-org-babel-default-header-args :exports "both")
     ```
 
-    Use inline Source-Blocks to provide values read as part of the document. Don&rsquo;t
-    show their source code. Allows inline Source-Blocks to function as *rich* macros
-    when combined with `org-sbe`.
+    Use inline Source-Blocks to provide values read as part of the document. Don&rsquo;t show their source code. Allows inline Source-Blocks to function as *rich* macros when combined with `org-sbe`.
 
-    ```lisp
+    ```emacs-lisp
     (help/set-org-babel-default-inline-header-args :exports "results")
     ```
 
@@ -759,19 +679,18 @@ Disable element caching because it might break weaves via [this thread](https://
 
     > Mark source block evaluation results
 
-    Inline-Source-Blocks are recognizable by their `verbatim` font. They do not
-    interrupt the flow. Source-Blocks are their own entities. They stand out. Their
-    results need to be visibly noticeably different for the reader by making them
-    `EXAMPLE` special blocks.
+    Inline-Source-Blocks are recognizable by their `verbatim` font. They do not interrupt the flow. Source-Blocks are their own entities. They stand out. Their results need to be visibly noticeably different for the reader by making them `EXAMPLE` special blocks.
 
-    ```lisp
+    ```emacs-lisp
     (help/set-org-babel-default-header-args :wrap "EXAMPLE")
     ```
 
     Diagramming languages require `RESULTS` output for exporting.
 
-    ```lisp
+    ```emacs-lisp
     (help/set-org-babel-default-header-args:ditaa :wrap "RESULTS")
     (help/set-org-babel-default-header-args:dot :wrap "RESULTS")
     (help/set-org-babel-default-header-args:plantuml :wrap "RESULTS")
     ```
+
+        ((:wrap . RESULTS) (:results . file) (:exports . results))
