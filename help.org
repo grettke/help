@@ -4607,7 +4607,8 @@ GNU APL REPL is:
     (nlinum-mode)
     (rainbow-mode))
   (add-hook 'gnu-apl-interactive-mode-hook
-            #'help/gnu-apl-interactive-mode-hook-fn))
+            #'help/gnu-apl-interactive-mode-hook-fn)
+  (add-to-list 'org-babel-load-languages '(gnu-apl . t)))
 #+END_SRC
 
 *** Emacs Speaks Statistics (ESS)
