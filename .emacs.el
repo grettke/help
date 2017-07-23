@@ -3467,7 +3467,7 @@ sh-mode:
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-07-11_mara_F035C9D9-EAE9-48CF-BE67-5BFF1F0A23FD][org_gcr_2017-07-11_mara_F035C9D9-EAE9-48CF-BE67-5BFF1F0A23FD]]
 (tool-bar-add-item
- "fontawesome_list-alt"
+ "list-alt"
  'ibuffer
  'iBuffer
  :help "List buffers")
