@@ -4601,7 +4601,12 @@ GNU APL REPL is:
     (call-interactively 'gnu-apl-interactive-send-region)
     (deactivate-mark)
     (call-interactively 'next-logical-line))
-  (define-key gnu-apl-mode-map (kbd "C-<return>") #'help/gnu-apl-eval-line))
+  (define-key gnu-apl-mode-map (kbd "C-<return>") #'help/gnu-apl-eval-line)
+  (defun help/gnu-apl-interactive-mode-hook-fn ()
+    (nlinum-mode)
+    (rainbow-mode))
+  (add-hook 'gnu-apl-interactive-mode-hook
+            #'help/gnu-apl-interactive-mode-hook-fn))
 #+END_SRC
 
 *** Emacs Speaks Statistics (ESS)

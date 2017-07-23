@@ -2629,7 +2629,12 @@ GNU APL REPL is:
     (call-interactively 'gnu-apl-interactive-send-region)
     (deactivate-mark)
     (call-interactively 'next-logical-line))
-  (define-key gnu-apl-mode-map (kbd "C-<return>") #'help/gnu-apl-eval-line))
+  (define-key gnu-apl-mode-map (kbd "C-<return>") #'help/gnu-apl-eval-line)
+  (defun help/gnu-apl-interactive-mode-hook-fn ()
+    (nlinum-mode)
+    (rainbow-mode))
+  (add-hook 'gnu-apl-interactive-mode-hook
+            #'help/gnu-apl-interactive-mode-hook-fn))
 ;; org_gcr_2017-05-12_mara_C30EFFA1-FDBA-413F-AD23-29C0C2095231 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_DB3C5279-6AF3-4EAE-AC9E-F1327BBDC959][org_gcr_2017-05-12_mara_DB3C5279-6AF3-4EAE-AC9E-F1327BBDC959]]
