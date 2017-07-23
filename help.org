@@ -667,6 +667,21 @@ Enable the =super= key-space.
  (defvar w32-rwindow-modifier 'super))
 #+END_SRC
 
+** Linux
+:PROPERTIES:
+:ID:       org_gcr_2017-07-23_mara:7D02C86B-CDBE-466B-9647-3EDA6DB016C6
+:END:
+Make it easy to evaluate code only when running on .
+
+#+NAME: org_gcr_2017-07-23_mara_ED1CAC7D-4B9E-4316-8AB3-85ACDC06B3F4
+#+BEGIN_SRC emacs-lisp
+(defmacro help/on-gnu/linux (statement &rest statements)
+  "Evaluate the enclosed body only when run on GNU/Linux"
+  `(when (eq system-type 'gnu/linux)
+     ,statement
+     ,@statements))
+
+#+END_SRC
 * Standard Operating Procedure
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:205571BA-2DC4-4DCB-912C-65B9EC843574
@@ -6213,6 +6228,34 @@ swap.
  'Swap
  :help "Swap buffers")
 #+END_SRC
+
+OS Banner.
+
+#+NAME: org_gcr_2017-07-23_mara_949332F2-28B2-4BC3-B1E7-C7A24DF56269
+#+BEGIN_SRC emacs-lisp
+(help/on-osx
+ (tool-bar-add-item
+  "apple"
+  'do-nothing
+  'Powered-by-macOS
+  :help "Powered by macOS"
+  :enable nil))
+(help/on-gnu/linux
+ (tool-bar-add-item
+  "linux"
+  'do-nothing
+  'Powered-by-GNU-Linux
+  :help "Powered by GNU/Linux"
+  :enable nil))
+(help/on-windows
+ (tool-bar-add-item
+  "windows"
+  'do-nothing
+  'Powered-by-Microsoft-Windows
+  :help "Powered by Microsoft Windows"
+  :enable nil))
+#+END_SRC
+
 **** Scroll bar
 :PROPERTIES:
 :ID:       org_gcr_2017-06-23_mara:590AD87D-0567-454F-98AE-3AE64A171012

@@ -182,6 +182,14 @@
  (defvar w32-rwindow-modifier 'super))
 ;; org_gcr_2017-05-12_mara_7AFA0161-4DCA-4C54-8D3C-9EF3FD529BF4 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-07-23_mara_ED1CAC7D-4B9E-4316-8AB3-85ACDC06B3F4][org_gcr_2017-07-23_mara_ED1CAC7D-4B9E-4316-8AB3-85ACDC06B3F4]]
+(defmacro help/on-gnu/linux (statement &rest statements)
+  "Evaluate the enclosed body only when run on GNU/Linux"
+  `(when (eq system-type 'gnu/linux)
+     ,statement
+     ,@statements))
+;; org_gcr_2017-07-23_mara_ED1CAC7D-4B9E-4316-8AB3-85ACDC06B3F4 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7D37FFE5-2D2B-4CF7-AF27-F3CB8616D81B][org_gcr_2017-05-12_mara_7D37FFE5-2D2B-4CF7-AF27-F3CB8616D81B]]
 (defun help/comment-or-uncomment ()
   "Comment or uncomment the current line or selection."
@@ -3480,6 +3488,30 @@ sh-mode:
  'Swap
  :help "Swap buffers")
 ;; org_gcr_2017-07-11_mara_9D659239-693A-430C-A4CE-6003BD650A60 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2017-07-23_mara_949332F2-28B2-4BC3-B1E7-C7A24DF56269][org_gcr_2017-07-23_mara_949332F2-28B2-4BC3-B1E7-C7A24DF56269]]
+(help/on-osx
+ (tool-bar-add-item
+  "apple"
+  'do-nothing
+  'Powered-by-macOS
+  :help "Powered by macOS"
+  :enable nil))
+(help/on-gnu/linux
+ (tool-bar-add-item
+  "linux"
+  'do-nothing
+  'Powered-by-GNU-Linux
+  :help "Powered by GNU/Linux"
+  :enable nil))
+(help/on-windows
+ (tool-bar-add-item
+  "windows"
+  'do-nothing
+  'Powered-by-Microsoft-Windows
+  :help "Powered by Microsoft Windows"
+  :enable nil))
+;; org_gcr_2017-07-23_mara_949332F2-28B2-4BC3-B1E7-C7A24DF56269 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D967070F-06B7-4433-94A8-36E360600C9E][org_gcr_2017-05-12_mara_D967070F-06B7-4433-94A8-36E360600C9E]]
 (scroll-bar-mode nil)
