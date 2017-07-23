@@ -2513,7 +2513,7 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
   ("n" org-narrow-to-subtree)
   ("m" org-mark-subtree)
   ("M" org-mark-element))
-(key-chord-define-global "hh" #'help/hydra/right-side/org-mode/body)
+(key-chord-define org-mode-map "hh" #'help/hydra/right-side/org-mode/body)
 ;; org_gcr_2017-05-12_mara_90AA8396-E8A0-439C-A1E4-373E90C4DC84 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B41A9D3F-254B-4E44-8585-380BF23D158D][org_gcr_2017-05-12_mara_B41A9D3F-254B-4E44-8585-380BF23D158D]]

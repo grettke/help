@@ -4421,7 +4421,7 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
   ("n" org-narrow-to-subtree)
   ("m" org-mark-subtree)
   ("M" org-mark-element))
-(key-chord-define-global "hh" #'help/hydra/right-side/org-mode/body)
+(key-chord-define org-mode-map "hh" #'help/hydra/right-side/org-mode/body)
 #+END_SRC
 
 Save all buffers before working with Exports.
