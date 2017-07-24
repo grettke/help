@@ -6655,6 +6655,21 @@ unclear and being explored.
   - For example in Org-Mode navigating between source-blocks and
     evaluating them.
   - It has 19 bindings available; 26 if you use 6-=. 52 if you shift them.
+- 2017-07-24
+  - This worked out well and close to expected. The ~s(uper)~ name-space is
+    mostly free. Any package using it well I stomped on its bindings without
+    even looking at them. They are supposed to be free but the ~C-c~ and ~C-x~
+    name-space is running out and people get mad about it (I did, and my
+    solution is below). Despite my approach I still ran out of namesake for
+    my super bindings. That surprised me. So I tried using ~H(yper)~ but isn't
+    easily on every keyboard so I converted all of those bindings to ~C-M-~ and
+    that worked out great but now I can't use that for more specific bindings.
+    The whole =left= and =right= zones of the keyboard has worked out well when I
+    remember and it is pretty easy to remember. The only problem with this
+    approach is that I still ran out of name-space despite my approach below.
+    So between key-chords and using the super key and moving a bunch of stuff
+    into Hydras I still ran out of space. That leaves ~C-s~ for more name-space
+    for the left and right side. I'm glad to try this out.
 
 For example, in Org-Mode:
 
