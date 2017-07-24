@@ -6140,6 +6140,7 @@ Use local bitmaps.
 #+NAME: org_gcr_2017-07-11_mara_27556B29-B77D-445F-8A54-00BDB89B452A
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'image-load-path "~/src/help/xpm")
+(add-to-list 'image-load-path "~/src/help/tiff")
 #+END_SRC
 
 Bitmap requirements
@@ -6163,6 +6164,11 @@ rsvg-convert --width=24 --height=24 --format=png --keep-aspect-ratio --output ne
     #+BEGIN_EXAMPLE
 convert new.png new.xpm
     #+END_EXAMPLE
+
+Emacs added macOS support for TIFF. Emacs now prefers TIFF. XPM should work
+everywhere so I want those to be the masters. They are the masters because
+when I make corrections they go there. For example I had a 27x24 bitmap that I
+had to trim to 24x24. So I converted XPMs to TIFF and use those.
 
 **** Icons
 :PROPERTIES:

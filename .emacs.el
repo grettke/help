@@ -3452,6 +3452,7 @@ sh-mode:
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-07-11_mara_27556B29-B77D-445F-8A54-00BDB89B452A][org_gcr_2017-07-11_mara_27556B29-B77D-445F-8A54-00BDB89B452A]]
 (add-to-list 'image-load-path "~/src/help/xpm")
+(add-to-list 'image-load-path "~/src/help/tiff")
 ;; org_gcr_2017-07-11_mara_27556B29-B77D-445F-8A54-00BDB89B452A ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-07-11_mara_90A13EAE-8941-4BDA-8937-DCE5759CBA5C][org_gcr_2017-07-11_mara_90A13EAE-8941-4BDA-8937-DCE5759CBA5C]]
