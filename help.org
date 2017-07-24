@@ -132,7 +132,7 @@ cd ~/src/org-mode
       - ~gcc~ and ~python~
       - ~bash~ and ~perl~
       - ~scheme~ and ~java~
-      - =GCC= and =Pyton=
+      - =GCC= and =Python=
       - =Bash= and =Perl=
       - =Scheme= and =Java=
     - Anything that you would read program or text
