@@ -124,11 +124,12 @@ cd ~/src/org-mode
     - Key bindings
     - Programming language expressions
       - Variable names
-    - Emacs mode function name, package name or Github name
+    - Emacs mode function name, package name or Github name. This is the most
+      technical name that you can and do use in scripts It is meant for computers.
       - ~org-mode~
     - Class and Object names
     - Shell commands that are executable
-    - Executables for programming language compilers and interpereters
+    - Executable for programming language compilers and interpreters
       - ~gcc~ and ~python~
       - ~bash~ and ~perl~
       - ~scheme~ and ~java~
