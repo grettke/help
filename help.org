@@ -6221,7 +6221,7 @@ ibuffer.
 (tool-bar-add-item
  "list-alt"
  'ibuffer
- 'iBuffer
+ 'Buffers
  :help "List buffers")
 #+END_SRC
 

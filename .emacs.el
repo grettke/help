@@ -3478,7 +3478,7 @@ sh-mode:
 (tool-bar-add-item
  "list-alt"
  'ibuffer
- 'iBuffer
+ 'Buffers
  :help "List buffers")
 ;; org_gcr_2017-07-11_mara_F035C9D9-EAE9-48CF-BE67-5BFF1F0A23FD ends here
 
