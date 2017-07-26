@@ -5755,7 +5755,7 @@ sh-mode:
   _q_ quit
 "
   ("i" sh-set-shell)
-  ("q" :nil))
+  ("q" nil))
 (key-chord-define sh-mode-map "hh" #'help/hydra-sh-mode/body)
 #+END_SRC
 *** Make

@@ -3275,7 +3275,7 @@ sh-mode:
   _q_ quit
 "
   ("i" sh-set-shell)
-  ("q" :nil))
+  ("q" nil))
 (key-chord-define sh-mode-map "hh" #'help/hydra-sh-mode/body)
 ;; org_gcr_2017-07-16_mara_B4B1E9B3-3146-46AA-80C8-20B28C352E55 ends here
 
