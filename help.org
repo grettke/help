@@ -6447,14 +6447,16 @@ Select windows.
   (defhydra help/hydra-left-side/eyebrowse (:color blue :hint nil)
     "
 current eyebrowse slot: %(eyebrowse--get 'current-slot)
- _j_ previous _k_ next _i_ choose _l_ last _n_ rename _q_ quit
+ _u_ create _i_ choose _o_ rename _q_ quit
+  _j_ previous _k_ next _l_ last
    _a_ 00 _s_ 01 _d_ 02 _f_ 03 _g_ 04 _z_ 05 _x_ 06 _c_ 07 _v_ 08 _b_ 09 _~_ close "
+    ("u" #'eyebrowse-create-window-config)
+    ("i" #'eyebrowse-switch-to-window-config)
+    ("o" #'eyebrowse-rename-window-config :exit nil)
+    ("q" nil)
     ("j" #'eyebrowse-prev-window-config :exit nil)
     ("k" #'eyebrowse-next-window-config :exit nil)
-    ("i" #'eyebrowse-switch-to-window-config)
     ("l" #'eyebrowse-last-window-config)
-    ("n" #'eyebrowse-rename-window-config :exit nil)
-    ("q" nil)
     ("a" #'eyebrowse-switch-to-window-config-0)
     ("s" #'eyebrowse-switch-to-window-config-1)
     ("d" #'eyebrowse-switch-to-window-config-2)
