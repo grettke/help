@@ -3643,7 +3643,7 @@ this frame's opacity: %(frame-parameter nil 'alpha)
   (eyebrowse-mode t)
   (defhydra help/hydra-left-side/eyebrowse (:color blue :hint nil)
     "
-current eyebrowse slot: %(eyebrowse--get 'current-slot)
+current eyebrowse slot: %(let* ((window-configs (eyebrowse--get 'window-configs))(match (assq (eyebrowse--get 'current-slot) window-configs))(desc (eyebrowse-format-slot match)))desc)
  _u_ create _i_ choose _o_ rename _q_ quit
   _j_ previous _k_ next _l_ last
    _a_ 00 _s_ 01 _d_ 02 _f_ 03 _g_ 04 _z_ 05 _x_ 06 _c_ 07 _v_ 08 _b_ 09 _~_ close "
