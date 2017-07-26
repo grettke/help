@@ -1685,7 +1685,35 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
     (let ((compilation-scroll-output 'first-error))
       (pop-to-buffer next-error-last-buffer)))
   (add-hook 'ag-mode-hook #'help/ag-mode-hook-fn)
-  (add-hook 'ag-search-finished-hook #'help/ag-mode-finished-hook-fn))
+  (add-hook 'ag-search-finished-hook #'help/ag-mode-finished-hook-fn)
+  (defhydra help/hydra/ag (:color blue
+                                  :hint nil)
+    "
+`ag', The Silver Searcher:
+  Present in window:
+    Search in folder:
+      _j_ limit search by file type _k_ search in everything
+    Search in project:
+      _l_ limit search by file type _;_ search in everything
+  Present in dired:
+    Search in folder:
+      _u_ limit search by file type _i_ search in everything
+    Search in project:
+      _o_ limit search by file type _p_ search in everything
+  Other:
+    _n_ close every other buffer _m_ close every buffer _q_ quit
+"
+    ("u" ag-dired-regexp)
+    ("i" ag-dired)
+    ("o" ag-project-dired-regexp)
+    ("p" ag-project-dired)
+    ("j" ag-files)
+    ("k" ag)
+    ("l" ag-project-files)
+    (";" ag-project)
+    ("n" ag-kill-other-buffers)
+    ("m" ag-kill-buffers)
+    ("q" :nil)))
 ;; org_gcr_2017-05-12_mara_58F6AD1E-7E9B-4650-B859-F9C0540C74B6 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E4E1E1A0-1353-4483-BE1C-746097F60CB6][org_gcr_2017-05-12_mara_E4E1E1A0-1353-4483-BE1C-746097F60CB6]]
@@ -3735,7 +3763,7 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("=" reposition-window)
   ("5" help/uuid)
   ("6" set-buffer-file-coding-system)
-  ("a" ag)
+  ("a" help/hydra/ag/body)
   ("A" hydra-apropos-ish/body)
   ("s" help/toggle-mac-right-option-modifier)
   ("g" grep)
