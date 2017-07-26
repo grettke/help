@@ -2480,13 +2480,19 @@ Auto-completion for =.=-separated words.
 (use-package dumb-jump
   :ensure t
   :config
-  (define-prefix-command 'help/dj-map)
-  (key-chord-define-global "jj" #'help/dj-map)
-  (define-key help/dj-map "j" #'dumb-jump-go)
-  (define-key help/dj-map "k" #'dumb-jump-back)
-  (define-key help/dj-map "i" #'dumb-jump-go-prompt)
-  (define-key help/dj-map "u" #'dumb-jump-go-other-window)
-  (define-key help/dj-map "o" #'dumb-jump-quick-look))
+  (defhydra help/hydra-left-side/dumb-jump (:color blue :hint nil)
+    "
+Dumb-Jump:
+ _j_ go to _k_ return from _i_ choose
+  _u_ in other window _o_ peek
+  _q_ quit"
+    ("j" dumb-jump-go)
+    ("k" dumb-jump-back)
+    ("i" dumb-jump-go-prompt)
+    ("u" dumb-jump-go-other-window)
+    ("o" dumb-jump-quick-look)
+    ("q" nil))
+  (key-chord-define-global "jj" #'help/hydra-left-side/dumb-jump/body))
 #+END_SRC
 
 ** Mark, Kill  and Region
