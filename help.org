@@ -2483,10 +2483,10 @@ Auto-completion for =.=-separated words.
   (define-prefix-command 'help/dj-map)
   (key-chord-define-global "jj" #'help/dj-map)
   (define-key help/dj-map "j" #'dumb-jump-go)
-  (define-key help/dj-map "i" #'dumb-jump-go-other-window)
   (define-key help/dj-map "k" #'dumb-jump-back)
-  (define-key help/dj-map "l" #'dumb-jump-go-prompt)
-  (define-key help/dj-map "m" #'dumb-jump-quick-look))
+  (define-key help/dj-map "i" #'dumb-jump-go-prompt)
+  (define-key help/dj-map "u" #'dumb-jump-go-other-window)
+  (define-key help/dj-map "o" #'dumb-jump-quick-look))
 #+END_SRC
 
 ** Mark, Kill  and Region
