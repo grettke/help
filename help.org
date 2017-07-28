@@ -6989,13 +6989,17 @@ These changes helped guide the custom keyboard design.
 
 #+NAME: org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C
 #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "C-9") (lambda () (interactive) (switch-to-buffer
+(defun help/go-there-or-back (name)
+  (if (equal (buffer-name) name)
+      (help/safb-switch-to-previous-buffer)
+    (switch-to-buffer name)))
+(global-set-key (kbd "C-9") (lambda () (interactive) (help/go-there-or-back
                                                  "projects.org")))
-(global-set-key (kbd "C-0") (lambda () (interactive) (switch-to-buffer
+(global-set-key (kbd "C-0") (lambda () (interactive) (help/go-there-or-back
                                                  "scratch.org")))
-(global-set-key (kbd "M-9") (lambda () (interactive) (switch-to-buffer
+(global-set-key (kbd "M-9") (lambda () (interactive) (help/go-there-or-back
                                                  "help.org")))
-(global-set-key (kbd "M-0") (lambda () (interactive) (switch-to-buffer
+(global-set-key (kbd "M-0") (lambda () (interactive) (help/go-there-or-back
                                                  "*scratch*")))
 (global-set-key (kbd "C-5") #'ido-kill-buffer)
 (global-set-key (kbd "C--") (lambda () (interactive) (insert "Vigneswari")))
