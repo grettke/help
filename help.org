@@ -7278,6 +7278,13 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (global-set-key (kbd "C-.") #'smex)
 (global-set-key (kbd "C-M-.") nil)
 (global-set-key (kbd "C-M-.") #'dired)
+#+END_SRC
+
+Sometimes you want to use both the \laquo{} \raquo{} characters and the Org-Mode markup so you
+can't re-use =<<= and =>>=.
+
+#+NAME: org_gcr_2017-07-28_mara_2A9CEE58-31E9-4DC8-B2EB-D3232D9DD9F7
+#+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "s-<") (lambda () (interactive) (insert "«")))
 (global-set-key (kbd "s->") (lambda () (interactive) (insert "»")))
 #+END_SRC

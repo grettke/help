@@ -3929,9 +3929,12 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (global-set-key (kbd "C-.") #'smex)
 (global-set-key (kbd "C-M-.") nil)
 (global-set-key (kbd "C-M-.") #'dired)
+;; org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2017-07-28_mara_2A9CEE58-31E9-4DC8-B2EB-D3232D9DD9F7][org_gcr_2017-07-28_mara_2A9CEE58-31E9-4DC8-B2EB-D3232D9DD9F7]]
 (global-set-key (kbd "s-<") (lambda () (interactive) (insert "«")))
 (global-set-key (kbd "s->") (lambda () (interactive) (insert "»")))
-;; org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B ends here
+;; org_gcr_2017-07-28_mara_2A9CEE58-31E9-4DC8-B2EB-D3232D9DD9F7 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5FAD516B-B4C1-4F47-A6B9-7CA12F9AFF5D][org_gcr_2017-05-12_mara_5FAD516B-B4C1-4F47-A6B9-7CA12F9AFF5D]]
 (global-set-key (kbd "s-SPC") #'cycle-spacing)
