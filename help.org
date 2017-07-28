@@ -3341,7 +3341,8 @@ Every text editing buffer needs this.
       '(emacs-lisp-mode-hook
         ielm-mode-hook
         lisp-interaction-mode-hook
-        scheme-mode-hook))
+        scheme-mode-hook
+        inferior-scheme-mode-hook))
 (setq help/prog-modes (append help/prog-modes help/lisp-modes))
       #+END_SRC
     - IELM mode hook.
@@ -5099,24 +5100,58 @@ Handle all file extensions:
   (add-to-list 'auto-mode-alist '("\\.scm\\'" . scheme-mode))
   (add-to-list 'auto-mode-alist '("\\.ss\\'" . scheme-mode))
   #+END_SRC
-- Racket.
-  #+NAME: org_gcr_2017-05-12_mara_A80E9E8F-A5B7-4C48-A3E5-2C365178EFAF
-  #+BEGIN_SRC emacs-lisp
-  (add-to-list 'auto-mode-alist '("\\.rkt\\'" . scheme-mode))
-  #+END_SRC
 - R6RS.
   #+NAME: org_gcr_2017-05-12_mara_998AB8A6-A934-4E5A-B869-E1348D919529
   #+BEGIN_SRC emacs-lisp
   (add-to-list 'auto-mode-alist '("\\.sls\\'" . scheme-mode))
   (add-to-list 'auto-mode-alist '("\\.sps\\'" . scheme-mode))
   #+END_SRC
+- Racket.
+  #+NAME: org_gcr_2017-05-12_mara_A80E9E8F-A5B7-4C48-A3E5-2C365178EFAF
+  #+BEGIN_SRC emacs-lisp
+  (add-to-list 'auto-mode-alist '("\\.rkt\\'" . scheme-mode))
+  #+END_SRC
 
-Use Geiser for Racket and Guile
+Scheme mode.
+
+#+NAME: org_gcr_2017-07-27_mara_EAEF335C-A35D-4746-AB2F-58BDDDFB6CC0
+#+BEGIN_SRC emacs-lisp
+(use-package scheme-mode
+  :config
+  (defun help/scheme-mode-hook-fn ()
+    (local-set-key (kbd "<C-return>") 'eir-eval-in-scheme))
+  (add-hook 'scheme-mode-hook #'help/scheme-mode-hook-fn)
+  (defhydra help/hydra-scheme-mode (:color blue
+                                           :hint nil)
+    "
+scheme-mode:
+ _m_ module
+  _q_ quit
+"
+    ("m" geiser-completion--complete-module)
+    ("q" nil))
+  (key-chord-define sh-mode-map "hh" #'help/hydra-scheme-mode/body))
+#+END_SRC
+
+Chez Scheme.
+
+#+NAME: org_gcr_2017-07-27_mara_F3538565-26B0-4EAF-8D48-B747ED44DBD4
+#+BEGIN_SRC emacs-lisp
+(setq scheme-program-name "chez")
+#+END_SRC
+
+Use Geiser for Chez
 
 #+NAME: org_gcr_2017-05-12_mara_5457F0EC-AAB3-4502-ACCD-7F9C1579293D
 #+BEGIN_SRC emacs-lisp
 (use-package geiser
-  :ensure t)
+  :ensure t
+  :config
+  (setq geiser-active-implementations '(chez))
+  (setq geiser-repl-history-no-dups-p t)
+  (defun help/geiser-mode-hook-fn ()
+    (define-key scheme-mode-map (kbd "C-.") nil))
+  (add-hook 'geiser-mode-hook #'help/geiser-mode-hook-fn))
 #+END_SRC
 
 Use Racket.
@@ -5137,9 +5172,7 @@ Enable Auto-Complete via Geiser.
   (add-hook 'geiser-mode-hook 'ac-geiser-setup)
   (add-hook 'geiser-repl-mode-hook 'ac-geiser-setup)
   (eval-after-load "auto-complete"
-    '(add-to-list 'ac-modes 'geiser-repl-mode))
-  (setq geiser-active-implementations '(racket guile))
-  (setq geiser-repl-history-no-dups-p t))
+    '(add-to-list 'ac-modes 'geiser-repl-mode)))
 #+END_SRC
 
 *** C

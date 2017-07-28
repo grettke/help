@@ -1984,7 +1984,8 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
       '(emacs-lisp-mode-hook
         ielm-mode-hook
         lisp-interaction-mode-hook
-        scheme-mode-hook))
+        scheme-mode-hook
+        inferior-scheme-mode-hook))
 (setq help/prog-modes (append help/prog-modes help/lisp-modes))
 ;; org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86 ends here
 
@@ -2921,18 +2922,46 @@ GNU APL is: %(help/gnu-apl-runningp)
 (add-to-list 'auto-mode-alist '("\\.ss\\'" . scheme-mode))
 ;; org_gcr_2017-05-12_mara_CC727094-99D3-4C48-BE27-C28FC738DF34 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A80E9E8F-A5B7-4C48-A3E5-2C365178EFAF][org_gcr_2017-05-12_mara_A80E9E8F-A5B7-4C48-A3E5-2C365178EFAF]]
-(add-to-list 'auto-mode-alist '("\\.rkt\\'" . scheme-mode))
-;; org_gcr_2017-05-12_mara_A80E9E8F-A5B7-4C48-A3E5-2C365178EFAF ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_998AB8A6-A934-4E5A-B869-E1348D919529][org_gcr_2017-05-12_mara_998AB8A6-A934-4E5A-B869-E1348D919529]]
 (add-to-list 'auto-mode-alist '("\\.sls\\'" . scheme-mode))
 (add-to-list 'auto-mode-alist '("\\.sps\\'" . scheme-mode))
 ;; org_gcr_2017-05-12_mara_998AB8A6-A934-4E5A-B869-E1348D919529 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A80E9E8F-A5B7-4C48-A3E5-2C365178EFAF][org_gcr_2017-05-12_mara_A80E9E8F-A5B7-4C48-A3E5-2C365178EFAF]]
+(add-to-list 'auto-mode-alist '("\\.rkt\\'" . scheme-mode))
+;; org_gcr_2017-05-12_mara_A80E9E8F-A5B7-4C48-A3E5-2C365178EFAF ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2017-07-27_mara_EAEF335C-A35D-4746-AB2F-58BDDDFB6CC0][org_gcr_2017-07-27_mara_EAEF335C-A35D-4746-AB2F-58BDDDFB6CC0]]
+(use-package scheme-mode
+  :config
+  (defun help/scheme-mode-hook-fn ()
+    (local-set-key (kbd "<C-return>") 'eir-eval-in-scheme))
+  (add-hook 'scheme-mode-hook #'help/scheme-mode-hook-fn)
+  (defhydra help/hydra-scheme-mode (:color blue
+                                           :hint nil)
+    "
+scheme-mode:
+ _m_ module
+  _q_ quit
+"
+    ("m" geiser-completion--complete-module)
+    ("q" nil))
+  (key-chord-define sh-mode-map "hh" #'help/hydra-scheme-mode/body))
+;; org_gcr_2017-07-27_mara_EAEF335C-A35D-4746-AB2F-58BDDDFB6CC0 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2017-07-27_mara_F3538565-26B0-4EAF-8D48-B747ED44DBD4][org_gcr_2017-07-27_mara_F3538565-26B0-4EAF-8D48-B747ED44DBD4]]
+(setq scheme-program-name "chez")
+;; org_gcr_2017-07-27_mara_F3538565-26B0-4EAF-8D48-B747ED44DBD4 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5457F0EC-AAB3-4502-ACCD-7F9C1579293D][org_gcr_2017-05-12_mara_5457F0EC-AAB3-4502-ACCD-7F9C1579293D]]
 (use-package geiser
-  :ensure t)
+  :ensure t
+  :config
+  (setq geiser-active-implementations '(chez))
+  (setq geiser-repl-history-no-dups-p t)
+  (defun help/geiser-mode-hook-fn ()
+    (define-key scheme-mode-map (kbd "C-.") nil))
+  (add-hook 'geiser-mode-hook #'help/geiser-mode-hook-fn))
 ;; org_gcr_2017-05-12_mara_5457F0EC-AAB3-4502-ACCD-7F9C1579293D ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0F7605F1-8A1F-45FD-88C1-A8E127DA9107][org_gcr_2017-05-12_mara_0F7605F1-8A1F-45FD-88C1-A8E127DA9107]]
@@ -2947,9 +2976,7 @@ GNU APL is: %(help/gnu-apl-runningp)
   (add-hook 'geiser-mode-hook 'ac-geiser-setup)
   (add-hook 'geiser-repl-mode-hook 'ac-geiser-setup)
   (eval-after-load "auto-complete"
-    '(add-to-list 'ac-modes 'geiser-repl-mode))
-  (setq geiser-active-implementations '(racket guile))
-  (setq geiser-repl-history-no-dups-p t))
+    '(add-to-list 'ac-modes 'geiser-repl-mode)))
 ;; org_gcr_2017-05-12_mara_221DF59F-0817-4F0A-BDE7-01FD9D87BAF9 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_3C48D997-170E-40F4-9BB6-F6BAA9DE77F2][org_gcr_2017-05-12_mara_3C48D997-170E-40F4-9BB6-F6BAA9DE77F2]]
