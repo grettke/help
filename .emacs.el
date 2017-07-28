@@ -1866,7 +1866,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 ;; org_gcr_2017-05-12_mara_A696BECA-ED39-4A7A-911A-66C396E0925C ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A4E407FE-DD42-458A-BD83-2EFD71C1D728][org_gcr_2017-05-12_mara_A4E407FE-DD42-458A-BD83-2EFD71C1D728]]
-(global-set-key (kbd "s-w") #'git-timemachine)
+(global-set-key (kbd "C-M-w") #'git-timemachine)
 (global-set-key (kbd "s-e") #'help/safb-help/magit-status)
 (global-set-key (kbd "s-r") #'help/safb-vc-revert)
 (global-set-key (kbd "s-f") #'help/safb-help/vc-next-action)
