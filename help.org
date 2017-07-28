@@ -5136,7 +5136,7 @@ scheme-mode:
 Chez Scheme.
 
 #+NAME: org_gcr_2017-07-27_mara_F3538565-26B0-4EAF-8D48-B747ED44DBD4
-#+BEGIN_SRC emacs-lisp
+# #+BEGIN_SRC emacs-lisp
 (setq scheme-program-name "chez")
 #+END_SRC
 
@@ -7273,6 +7273,7 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (global-set-key (kbd "C-M-.") #'dired)
 (global-set-key (kbd "s-<") (lambda () (interactive) (insert "«")))
 (global-set-key (kbd "s->") (lambda () (interactive) (insert "»")))
+(define-key ctl-x-map (kbd "C-;") #'help/comment-or-uncomment)
 #+END_SRC
 
 **** Row 1
@@ -7332,11 +7333,6 @@ Hide and show code blocks.
 Exploratory programming in EMACS.
 
 Don't use "qi"; "unique".
-
-#+NAME: org_gcr_2017-05-12_mara_D3A810D3-58D9-48AF-940E-BCE47692282D
-#+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "s-`") #'help/comment-or-uncomment)
-#+END_SRC
 
 Make =ispell= accessible.
 

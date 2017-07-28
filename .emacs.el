@@ -2949,10 +2949,6 @@ scheme-mode:
   (key-chord-define sh-mode-map "hh" #'help/hydra-scheme-mode/body))
 ;; org_gcr_2017-07-27_mara_EAEF335C-A35D-4746-AB2F-58BDDDFB6CC0 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-07-27_mara_F3538565-26B0-4EAF-8D48-B747ED44DBD4][org_gcr_2017-07-27_mara_F3538565-26B0-4EAF-8D48-B747ED44DBD4]]
-(setq scheme-program-name "chez")
-;; org_gcr_2017-07-27_mara_F3538565-26B0-4EAF-8D48-B747ED44DBD4 ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5457F0EC-AAB3-4502-ACCD-7F9C1579293D][org_gcr_2017-05-12_mara_5457F0EC-AAB3-4502-ACCD-7F9C1579293D]]
 (use-package geiser
   :ensure t
@@ -3928,6 +3924,7 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (global-set-key (kbd "C-M-.") #'dired)
 (global-set-key (kbd "s-<") (lambda () (interactive) (insert "«")))
 (global-set-key (kbd "s->") (lambda () (interactive) (insert "»")))
+(define-key ctl-x-map (kbd "C-;") #'help/comment-or-uncomment)
 ;; org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5FAD516B-B4C1-4F47-A6B9-7CA12F9AFF5D][org_gcr_2017-05-12_mara_5FAD516B-B4C1-4F47-A6B9-7CA12F9AFF5D]]
@@ -3942,10 +3939,6 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (global-set-key (kbd "s-b") #'hs-toggle-hiding)
 (global-set-key (kbd "M-s-b") #'help/my-toggle-hideshow-all)
 ;; org_gcr_2017-05-12_mara_8B031C72-2005-4FAF-A9F4-DE8D613DA01D ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D3A810D3-58D9-48AF-940E-BCE47692282D][org_gcr_2017-05-12_mara_D3A810D3-58D9-48AF-940E-BCE47692282D]]
-(global-set-key (kbd "s-`") #'help/comment-or-uncomment)
-;; org_gcr_2017-05-12_mara_D3A810D3-58D9-48AF-940E-BCE47692282D ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_921A07BB-6FBA-46E3-824D-F9F0B92F48B3][org_gcr_2017-05-12_mara_921A07BB-6FBA-46E3-824D-F9F0B92F48B3]]
 (key-chord-define-global "qp" #'ispell)
