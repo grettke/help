@@ -1103,11 +1103,7 @@ configuration when invoked to evaluate a line."
       (eir-eval-in-shell)))
   (add-hook 'sh-mode-hook
             '(lambda()
-               (local-set-key (kbd "C-M-<return>") 'eir-eval-in-shell2)))
-  ;; racket-mode support (for Racket; if not using Geiser)
-  (require 'racket-mode) ; if not done elsewhere
-  (require 'eval-in-repl-racket)
-  (define-key racket-mode-map (kbd "<C-return>") 'eir-eval-in-racket))
+               (local-set-key (kbd "C-<return>") 'eir-eval-in-shell2))))
 ;; org_gcr_2017-05-12_mara_0DE4A73B-54B3-41AA-8744-98D7B34D159B ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A9233A74-18F8-4C65-AC14-1A6C41F69B80][org_gcr_2017-05-12_mara_A9233A74-18F8-4C65-AC14-1A6C41F69B80]]
@@ -1981,7 +1977,9 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
                         crontab-mode-hook
                         apache-mode-hook
                         python-mode-hook
-                        gnu-apl-mode-hook))
+                        gnu-apl-mode-hook
+                        geiser-mode-hook
+                        geiser-repl-mode-hook))
 ;; org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86][org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86]]
@@ -1990,7 +1988,9 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
         ielm-mode-hook
         lisp-interaction-mode-hook
         scheme-mode-hook
-        inferior-scheme-mode-hook))
+        inferior-scheme-mode-hook
+        geiser-mode-hook
+        geiser-repl-mode-hook))
 (setq help/prog-modes (append help/prog-modes help/lisp-modes))
 ;; org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86 ends here
 
@@ -2105,11 +2105,15 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (help/ielm-auto-complete)
   (turn-on-elisp-slime-nav-mode))
 
+(add-hook 'ielm-mode-hook #'help/ielm-mode-hook-fn)
+
+(defun help/general-lisp-mode-hook-fn ()
+  (highlight-quoted-mode)
+  (highlight-stages-mode))
+
 (let ()
   (--each help/lisp-modes
-    (add-hook it #'help/emacs-lisp-mode-hook-fn)))
-
-(add-hook 'ielm-mode-hook #'help/ielm-mode-hook-fn)
+    (add-hook it #'help/general-lisp-mode-hook-fn)))
 ;; org_gcr_2017-05-12_mara_D8F41BFE-D2F5-4B86-BFED-B3DE5EA2133C ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7DB4D819-0D2D-482B-AA02-9CB14F6DA288][org_gcr_2017-05-12_mara_7DB4D819-0D2D-482B-AA02-9CB14F6DA288]]
@@ -2939,19 +2943,10 @@ GNU APL is: %(help/gnu-apl-runningp)
 ;; [[file:~/src/help/help.org::org_gcr_2017-07-27_mara_EAEF335C-A35D-4746-AB2F-58BDDDFB6CC0][org_gcr_2017-07-27_mara_EAEF335C-A35D-4746-AB2F-58BDDDFB6CC0]]
 (use-package scheme-mode
   :config
-  (defun help/scheme-mode-hook-fn ()
-    (local-set-key (kbd "<C-return>") 'eir-eval-in-scheme))
+  (setq scheme-program-name "chez")
+  (defun help/scheme-mode-hook-fn ())
   (add-hook 'scheme-mode-hook #'help/scheme-mode-hook-fn)
-  (defhydra help/hydra-scheme-mode (:color blue
-                                           :hint nil)
-    "
-scheme-mode:
- _m_ module
-  _q_ quit
-"
-    ("m" geiser-completion--complete-module)
-    ("q" nil))
-  (key-chord-define sh-mode-map "hh" #'help/hydra-scheme-mode/body))
+  (defun help/inferior-scheme-mode-hook-fn ()))
 ;; org_gcr_2017-07-27_mara_EAEF335C-A35D-4746-AB2F-58BDDDFB6CC0 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5457F0EC-AAB3-4502-ACCD-7F9C1579293D][org_gcr_2017-05-12_mara_5457F0EC-AAB3-4502-ACCD-7F9C1579293D]]
@@ -2960,15 +2955,31 @@ scheme-mode:
   :config
   (setq geiser-active-implementations '(chez))
   (setq geiser-repl-history-no-dups-p t)
+  (use-package eir-eval-in-geiser)
+  (defhydra help/hydra-geiser-mode (:color blue
+                                           :hint nil)
+    "
+geiser-mode:
+ _r_ run-geiser
+  _x_ exit-geiser _m_ module
+   _q_ quit
+"
+    ("r" run-geiser)
+    ("x" geiser-repl-exit)
+    ("m" geiser-completion--complete-module)
+    ("q" nil))
   (defun help/geiser-mode-hook-fn ()
-    (define-key scheme-mode-map (kbd "C-.") nil))
-  (add-hook 'geiser-mode-hook #'help/geiser-mode-hook-fn))
+    (turn-off-fci-mode)
+    (unbind-key "C-." geiser-mode-map)
+    (key-chord-define geiser-mode-map "hh" #'help/hydra-geiser-mode/body))
+  (add-hook 'geiser-mode-hook #'help/geiser-mode-hook-fn)
+  (defun help/geiser-repl-mode-hook-fn ()
+    (turn-off-fci-mode)
+    (unbind-key "C-." geiser-repl-mode-map)
+    (define-key geiser-repl-mode-map "\C-j" 'geiser-repl--maybe-send)
+    (key-chord-define geiser-repl-mode-map "hh" #'help/hydra-geiser-mode/body))
+  (add-hook 'geiser-repl-mode-hook #'help/geiser-repl-mode-hook-fn))
 ;; org_gcr_2017-05-12_mara_5457F0EC-AAB3-4502-ACCD-7F9C1579293D ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0F7605F1-8A1F-45FD-88C1-A8E127DA9107][org_gcr_2017-05-12_mara_0F7605F1-8A1F-45FD-88C1-A8E127DA9107]]
-(use-package racket-mode
-  :ensure t)
-;; org_gcr_2017-05-12_mara_0F7605F1-8A1F-45FD-88C1-A8E127DA9107 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_221DF59F-0817-4F0A-BDE7-01FD9D87BAF9][org_gcr_2017-05-12_mara_221DF59F-0817-4F0A-BDE7-01FD9D87BAF9]]
 (use-package ac-geiser
