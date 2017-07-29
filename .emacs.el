@@ -2955,23 +2955,45 @@ GNU APL is: %(help/gnu-apl-runningp)
   :config
   (setq geiser-active-implementations '(chez))
   (setq geiser-repl-history-no-dups-p t)
-  (use-package eir-eval-in-geiser)
+  (defun help/geiser-exit-chez ()
+    (interactive)
+    (call-interactively 'geiser-mode-switch-to-repl)
+    (insert "(exit)")
+    (geiser-repl--maybe-send))
+  (defun help/geiser-on-p ()
+    (if (geiser-repl--live-p) 'ON
+      'OFF))
+  (defun help/geiser-eval-line ()
+    "Evaluate this line and move to next."
+    (interactive)
+    (end-of-line)
+    (set-mark (line-beginning-position))
+    (call-interactively 'geiser-eval-region)
+    (deactivate-mark)
+    (call-interactively 'next-logical-line))
   (defhydra help/hydra-geiser-mode (:color blue
                                            :hint nil)
     "
-geiser-mode:
- _r_ run-geiser
-  _x_ exit-geiser _m_ module
+Geiser REPL is: %(help/geiser-on-p)
+ _y_ eval-buffer _u_ eval-region _U_ (and go)
+  _z_ run (another) geiser _x_ stop latest chez _c_ exit geiser _b_ to latest geiser _n_ switch back
    _q_ quit
 "
-    ("r" run-geiser)
-    ("x" geiser-repl-exit)
-    ("m" geiser-completion--complete-module)
+    ("y" geiser-eval-buffer)
+    ("u" geiser-eval-region)
+    ("U" geiser-eval-region-and-go)
+    ("z" run-geiser)
+    ("x" help/geiser-exit-chez)
+    ("b" geiser-mode-switch-to-repl)
+    ("c" geiser-repl-exit)
+    ("n" (lambda () (interactive) (other-window -1)))
     ("q" nil))
   (defun help/geiser-mode-hook-fn ()
     (turn-off-fci-mode)
     (unbind-key "C-." geiser-mode-map)
-    (key-chord-define geiser-mode-map "hh" #'help/hydra-geiser-mode/body))
+    (key-chord-define geiser-mode-map "hh" #'help/hydra-geiser-mode/body)
+    (unbind-key "C-j")
+    (define-key geiser-mode-map (kbd "C-j") #'help/geiser-eval-line))
   (add-hook 'geiser-mode-hook #'help/geiser-mode-hook-fn)
   (defun help/geiser-repl-mode-hook-fn ()
     (turn-off-fci-mode)
