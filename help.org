@@ -2579,6 +2579,13 @@ Allow recursive commands-in-commands and highlight the levels of recursion.
 (minibuffer-depth-indicate-mode t)
 #+END_SRC
 
+Temporarily give it unlimited memory to speed it up.
+
+#+NAME: org_gcr_2017-07-29_mara_59F9B6F3-A62C-424A-AC57-D2677788FF1A
+#+BEGIN_SRC emacs-lisp
+(add-hook 'minibuffer-setup-hook #'help/set-mem-max)
+(add-hook 'minibuffer-exit-hook #'help/set-mem-default)
+#+END_SRC
 ** Mouse
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:6171A841-DFD0-44A7-AAA6-BB099B1922FE
