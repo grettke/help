@@ -3275,11 +3275,13 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
 ;; org_gcr_2017-05-19_mara_3FB67413-237F-425D-97D2-B2E164AE5F8F ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-07-16_mara_FB8AD647-F0FA-4004-B930-A9CD97E97900][org_gcr_2017-07-16_mara_FB8AD647-F0FA-4004-B930-A9CD97E97900]]
-(defun help/sh-mode-hook-fn ()
-  (interactive)
-  (setq sh-shell "bash")
-  (setq sh-basic-offset 2))
-(add-hook 'sh-mode-hook #'help/sh-mode-hook-fn)
+(use-package sh-script
+  :config
+  (defun help/sh-mode-hook-fn ()
+    (interactive)
+    (setq sh-shell "bash")
+    (setq sh-basic-offset 2))
+  (add-hook 'sh-mode-hook #'help/sh-mode-hook-fn))
 ;; org_gcr_2017-07-16_mara_FB8AD647-F0FA-4004-B930-A9CD97E97900 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-07-16_mara_05CFE4C1-3363-42A3-A517-9A961282BB19][org_gcr_2017-07-16_mara_05CFE4C1-3363-42A3-A517-9A961282BB19]]
