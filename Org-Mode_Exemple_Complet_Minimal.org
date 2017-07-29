@@ -26,7 +26,31 @@ emacs --debug-init --no-init-file --no-splash --background-color white --foregro
   :PROPERTIES:
   :ID:       org_gcr_2017-05-12_mara:626B5DD1-97D8-4B85-96BC-B9A96F18AF1E
   :END:
+*** Garbage Collection
+:PROPERTIES:
+:ID:       org_gcr_2017-07-29_mara:5A6162AE-F0FD-491D-BC05-F288F46F6125
+:END:
+Clear memory and disable garbage collection or return garbage collection to
+normal.
 
+#+NAME: org_gcr_2017-07-29_mara_3F459DF6-EA6A-4D48-BB0A-3670FCB25713
+#+BEGIN_SRC emacs-lisp
+(setq help/default-gc-cons-threshold gc-cons-threshold)
+(defun help/set-mem-max ()
+  (garbage-collect)
+  (setq gc-cons-threshold most-positive-fixnum))
+(defun help/set-mem-default ()
+  (setq gc-cons-threshold help/default-gc-cons-threshold)
+  (garbage-collect))
+#+END_SRC
+
+Disable garbage collection during tangling.
+
+#+NAME: org_gcr_2017-07-29_mara_FEB4526F-E780-4F28-A5FD-65BCE14B5555
+#+BEGIN_SRC emacs-lisp
+(add-hook 'org-babel-pre-tangle-hook #'help/set-mem-max)
+(add-hook 'org-babel-post-tangle-hook #'help/set-mem-default)
+#+END_SRC
 *** Load Behavior
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:75985F03-F3B9-4DA3-8F6E-393E4C2F06E7

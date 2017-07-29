@@ -239,7 +239,6 @@ Make sure that =ID= is always unique, portable, and easy to maintain by
    :PROPERTIES:
    :ID:       orgmode:gcr:vela:267EEDED-1367-405F-807C-B3C489045704
    :END:
-
 =ID= and =NAME= are essential for successful =LP= using ~org-babel-tangle-jump-to-org~.
 
 #+NAME: org_gcr_2017-05-12_mara_C4C2CC56-88D6-440F-A277-75B174B7F8E8

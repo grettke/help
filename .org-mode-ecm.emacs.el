@@ -1,4 +1,13 @@
 ;; -*- no-byte-compile: t; -*-
+(setq help/default-gc-cons-threshold gc-cons-threshold)
+(defun help/set-mem-max ()
+  (garbage-collect)
+  (setq gc-cons-threshold most-positive-fixnum))
+(defun help/set-mem-default ()
+  (setq gc-cons-threshold help/default-gc-cons-threshold)
+  (garbage-collect))
+(add-hook 'org-babel-pre-tangle-hook #'help/set-mem-max)
+(add-hook 'org-babel-post-tangle-hook #'help/set-mem-default)
 (setq load-prefer-newer t)
 (add-to-list 'load-path "~/src/org-mode/lisp")
 (add-to-list 'load-path "~/src/org-mode/contrib/lisp")
