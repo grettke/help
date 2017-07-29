@@ -2078,7 +2078,6 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (local-set-key (kbd "s-l td") #'toggle-debug-on-error)
   (local-set-key (kbd "s-l mef") #'macroexpand)
   (local-set-key (kbd "s-l mea") #'macroexpand-all)
-  (local-set-key (kbd "#") #'endless/sharp)
   (local-set-key (kbd "C-c e") #'macrostep-expand))
 
 (defun help/emacs-lisp-mode-hook-fn ()
@@ -2109,7 +2108,8 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 
 (defun help/general-lisp-mode-hook-fn ()
   (highlight-quoted-mode)
-  (highlight-stages-mode))
+  (highlight-stages-mode)
+  (local-set-key (kbd "#") #'endless/sharp))
 
 (let ()
   (--each help/lisp-modes
