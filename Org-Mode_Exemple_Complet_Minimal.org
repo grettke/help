@@ -43,14 +43,6 @@ normal.
   (setq gc-cons-threshold help/default-gc-cons-threshold)
   (garbage-collect))
 #+END_SRC
-
-Disable garbage collection during tangling.
-
-#+NAME: org_gcr_2017-07-29_mara_FEB4526F-E780-4F28-A5FD-65BCE14B5555
-#+BEGIN_SRC emacs-lisp
-(add-hook 'org-babel-pre-tangle-hook #'help/set-mem-max)
-(add-hook 'org-babel-post-tangle-hook #'help/set-mem-default)
-#+END_SRC
 *** Load Behavior
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:75985F03-F3B9-4DA3-8F6E-393E4C2F06E7
@@ -164,6 +156,17 @@ Load Org-Mode.
 :PROPERTIES:
 :ID:       org_gcr_2017-07-30_mara:D9207828-3783-4599-BA48-A6EB2C3FCAE4
 :END:
+
+Disable garbage collection during tangling. Instead of storing this in the
+primary Org-Mode Literate Programming configuration I want it here so that it
+is always available.
+
+#+NAME: org_gcr_2017-07-29_mara_FEB4526F-E780-4F28-A5FD-65BCE14B5555
+#+BEGIN_SRC emacs-lisp
+(add-hook 'org-babel-pre-tangle-hook #'help/set-mem-max)
+(add-hook 'org-babel-post-tangle-hook #'help/set-mem-default)
+#+END_SRC
+
 Display system info.
 
 #+NAME: org_gcr_2017-05-12_mara_901541A6-1DB6-4EA2-8688-9C888C41902A

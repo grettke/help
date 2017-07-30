@@ -6,8 +6,6 @@
 (defun help/set-mem-default ()
   (setq gc-cons-threshold help/default-gc-cons-threshold)
   (garbage-collect))
-(add-hook 'org-babel-pre-tangle-hook #'help/set-mem-max)
-(add-hook 'org-babel-post-tangle-hook #'help/set-mem-default)
 (setq load-prefer-newer t)
 (add-to-list 'load-path "~/src/org-mode/lisp")
 (add-to-list 'load-path "~/src/org-mode/contrib/lisp")
@@ -16,6 +14,8 @@
 (setq org-babel-noweb-wrap-start "«")
 (setq org-babel-noweb-wrap-end "»")
 (require 'org)
+(add-hook 'org-babel-pre-tangle-hook #'help/set-mem-max)
+(add-hook 'org-babel-post-tangle-hook #'help/set-mem-default)
 (message "ECM Information As Of: %s\nOrg-Version: %s\nOrg-Git-Version:
          %s\nEmacs-Version: %s\nNoweb wrap start and stop delimeters: '%s' and '%s'\nnorg-babel-default-header-args:\n"
          (let* ((timestamp (format-time-string "%Y-%m-%dT%T"))
