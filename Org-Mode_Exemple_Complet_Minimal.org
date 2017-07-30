@@ -37,11 +37,13 @@ normal.
 #+BEGIN_SRC emacs-lisp
 (setq help/default-gc-cons-threshold gc-cons-threshold)
 (defun help/set-mem-max ()
+  (setq garbage-collection-messages 1)
   (garbage-collect)
   (setq gc-cons-threshold most-positive-fixnum))
 (defun help/set-mem-default ()
   (setq gc-cons-threshold help/default-gc-cons-threshold)
-  (garbage-collect))
+  (garbage-collect)
+  (setq garbage-collection-messages nil))
 #+END_SRC
 *** Load Behavior
    :PROPERTIES:
