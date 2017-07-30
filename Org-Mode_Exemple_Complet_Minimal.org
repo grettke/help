@@ -108,6 +108,10 @@ in your initialization file. It is easy to do! When you get
 unexpected Org-Mode behavior be sure to stop and investigate ~org-version~ and
 decide whether or not it is what you expect and prepare an ECM if necessary.
 
+*** Things That Must Occur Before Loading Org-Mode
+:PROPERTIES:
+:ID:       org_gcr_2017-07-30_mara:3CF35008-D435-4CCB-90D7-5CFA06E15467
+:END:
 Add the Org-Mode core distribution the load path.
 
 #+NAME: org_gcr_2017-05-12_mara_DAFA4781-7A63-44A1-8817-C4AB75F23130
@@ -146,14 +150,20 @@ Found a copy _Literate Programming_ so use =GUILLEMET= delimeters.
 (setq org-babel-noweb-wrap-start "«")
 (setq org-babel-noweb-wrap-end "»")
 #+END_SRC
-
+*** Loading Org-Mode
+:PROPERTIES:
+:ID:       org_gcr_2017-07-30_mara:FFA7E062-C039-4F3F-82FC-12A49FF379B8
+:END:
 Load Org-Mode.
 
 #+NAME: org_gcr_2017-05-12_mara_766E7D57-B6F9-4718-AF7E-30EE4A23BDF1
 #+BEGIN_SRC emacs-lisp
 (require 'org)
 #+END_SRC
-
+*** Things That Must Occur Only After Loading Org-Mode
+:PROPERTIES:
+:ID:       org_gcr_2017-07-30_mara:D9207828-3783-4599-BA48-A6EB2C3FCAE4
+:END:
 Display system info.
 
 #+NAME: org_gcr_2017-05-12_mara_901541A6-1DB6-4EA2-8688-9C888C41902A
