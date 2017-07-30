@@ -1257,7 +1257,7 @@ Attribution: `http://stackoverflow.com/a/25212377'"
                    name (file-name-nondirectory new-name)))))))
 
 
-(defun help/sort-lines-nocase ()
+(defun help/sort-lines-ignore-case ()
   "Sort lines ignoring case.
 
 Attribution: `https://stackoverflow.com/questions/20967818/emacs-function-to-case-insensitive-sort-lines'"
