@@ -3660,7 +3660,7 @@ this frame's opacity: %(frame-parameter nil 'alpha)
   "Work with this buffer in 2 windows."
   (interactive)
   (delete-other-windows)
-  (split-window-below)
+  (split-window-right)
   (balance-windows))
 
 (defun help/3-window ()
