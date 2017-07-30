@@ -18,14 +18,17 @@
 (require 'org)
 (add-hook 'org-babel-pre-tangle-hook #'help/set-mem-max)
 (add-hook 'org-babel-post-tangle-hook #'help/set-mem-default)
-(message "ECM Information As Of: %s\nOrg-Version: %s\nOrg-Git-Version:
-         %s\nEmacs-Version: %s\nNoweb wrap start and stop delimeters: '%s' and '%s'\nnorg-babel-default-header-args:\n"
-         (let* ((timestamp (format-time-string "%Y-%m-%dT%T"))
-                (safe (replace-regexp-in-string ":" "-" timestamp)))
-           safe)
-         (org-version)
-         (org-git-version)
-         (emacs-version)
-         org-babel-noweb-wrap-start
-         org-babel-noweb-wrap-end)
-(princ org-babel-default-header-args)
+(defun help/display-system-info ()
+  (interactive)
+  (message "<<<ECM Information>>>\nThis buffer file: %s\nAs Of: %s\nOrg-Version: %s\nOrg-Git-Version:%s\nEmacs-Version: %s\nNoweb wrap start and stop delimeters: '%s' and '%s'\norg-babel-default-header-args:\n"
+           buffer-file-name
+           (let* ((timestamp (format-time-string "%Y-%m-%dT%T"))
+                  (safe (replace-regexp-in-string ":" "-" timestamp)))
+             safe)
+           (org-version)
+           (org-git-version)
+           (emacs-version)
+           org-babel-noweb-wrap-start
+           org-babel-noweb-wrap-end)
+  (pp org-babel-default-header-args))
+(help/display-system-info)

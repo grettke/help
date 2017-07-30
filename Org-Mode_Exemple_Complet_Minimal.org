@@ -173,15 +173,18 @@ Display system info.
 
 #+NAME: org_gcr_2017-05-12_mara_901541A6-1DB6-4EA2-8688-9C888C41902A
 #+BEGIN_SRC emacs-lisp
-(message "ECM Information As Of: %s\nOrg-Version: %s\nOrg-Git-Version:
-         %s\nEmacs-Version: %s\nNoweb wrap start and stop delimeters: '%s' and '%s'\nnorg-babel-default-header-args:\n"
-         (let* ((timestamp (format-time-string "%Y-%m-%dT%T"))
-                (safe (replace-regexp-in-string ":" "-" timestamp)))
-           safe)
-         (org-version)
-         (org-git-version)
-         (emacs-version)
-         org-babel-noweb-wrap-start
-         org-babel-noweb-wrap-end)
-(princ org-babel-default-header-args)
+(defun help/display-system-info ()
+  (interactive)
+  (message "<<<ECM Information>>>\nThis buffer file: %s\nAs Of: %s\nOrg-Version: %s\nOrg-Git-Version:%s\nEmacs-Version: %s\nNoweb wrap start and stop delimeters: '%s' and '%s'\norg-babel-default-header-args:\n"
+           buffer-file-name
+           (let* ((timestamp (format-time-string "%Y-%m-%dT%T"))
+                  (safe (replace-regexp-in-string ":" "-" timestamp)))
+             safe)
+           (org-version)
+           (org-git-version)
+           (emacs-version)
+           org-babel-noweb-wrap-start
+           org-babel-noweb-wrap-end)
+  (pp org-babel-default-header-args))
+(help/display-system-info)
 #+END_SRC
