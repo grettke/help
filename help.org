@@ -3327,7 +3327,8 @@ Every text editing buffer needs this.
                         python-mode-hook
                         gnu-apl-mode-hook
                         geiser-mode-hook
-                        geiser-repl-mode-hook))
+                        geiser-repl-mode-hook
+                        go-mode-hook))
     #+END_SRC
   - LISP mode hooks.
     - Are hacking modes.
@@ -5188,6 +5189,84 @@ Enable Auto-Complete via Geiser.
   (rainbow-mode))
 (add-hook 'c-mode-common-hook #'help/c-mode-common-hook-fn)
 #+END_SRC
+*** go
+:PROPERTIES:
+:ID:       org_gcr_2017-07-30_mara:2F891F22-5C0C-43BA-8891-62DA7E9540FD
+:END:
+#+NAME: org_gcr_2017-07-30_mara_04B4D7BA-6213-4EC0-8631-461270FE1B71
+#+BEGIN_SRC emacs-lisp
+(use-package go-mode
+  :ensure t
+  :config
+  (use-package go-eldoc
+    :ensure t)
+  (use-package go-autocomplete
+    :ensure t
+    :config
+    (ac-config-default))
+  (use-package golint
+    :ensure t)
+  (use-package go-errcheck
+    :ensure t)
+  (use-package ob-go
+    :ensure t)
+  (use-package go-snippets
+    :ensure t)
+  (use-package flycheck-gometalinter
+    :ensure t
+    :config
+    (add-hook 'flycheck-mode-hook #'flycheck-gometalinter-setup)
+    (setq flycheck-gometalinter-concurrency 1)
+    (setq flycheck-gometalinter-deadline "10s")
+    (setq flycheck-gometalinter-disable-all t)
+    (setq flycheck-gometalinter-disable-linters nil)
+    (setq flycheck-gometalinter-enable-linters '("golint" "goimports" "unconvert" "errcheck" "megacheck"))
+    (setq flycheck-gometalinter-errors-only nil)
+    (setq flycheck-gometalinter-fast nil)
+    (setq flycheck-gometalinter-tests t)
+    (setq flycheck-gometalinter-vendor t))
+  (use-package go-guru
+    :ensure t)
+  (use-package go-hydra)
+  (use-package gotest
+    :ensure t)
+  (use-package go-rename
+    :ensure t)
+  (use-package go-direx
+    :ensure t
+    :config
+    (eval-after-load 'popwin
+      '(push '("^\*go-direx:" :regexp t :position left :width 0.4 :dedicated t :stick t)
+             popwin:special-display-config)))
+  (defhydra help/hydra/right/go-mode (:color blue :hint nil)
+    "
+GiPeTo:
+ _e_ explorer _r_ rename _u_ describe symbol at point
+  _g_ guru _j_ go to _k_ in other window _l_ return
+   _c_ build+test+vent+lint _C_ recompile _j_ previous error _k_ next error
+    _q_ quit
+ "
+    ("e" go-direx-pop-to-buffer)
+    ("r" (lambda () (interactive) (help/save-all-file-buffers) (go-rename)))
+    ("u" godef-describe)
+    ("g" go-hydra-guru-go-mode/body)
+    ("j" godef-jump)
+    ("k" godef-jump-other-window)
+    ("l" pop-tag-mark)
+    ("c" compile)
+    ("C" recompile)
+    ("j" previous-error :exit nil)
+    ("k" next-error :exit nil)
+    ("q" nil))
+  (key-chord-define go-mode-map "hh" #'help/hydra/right/go-mode/body)
+  (defun help/go-mode-hook-fn ()
+    (go-eldoc-setup)
+    (setq gofmt-command "goimports")
+    (add-hook 'before-save-hook #'gofmt-before-save)
+    (setq compile-command "go build -v && go test -v && go vet && golint")
+    (go-guru-hl-identifier-mode))
+  (add-hook 'go-mode-hook #'help/go-mode-hook-fn))
+#+END_SRC
 *** Python
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:BA88E1CC-386E-4CFF-89B3-7E003EC92504
@@ -6504,6 +6583,16 @@ current eyebrowse slot: %(let* ((window-configs (eyebrowse--get 'window-configs)
     ("b" #'eyebrowse-switch-to-window-config-9)
     ("~" #'eyebrowse-close-window-config :exit nil))
   (global-set-key (kbd "C-M-e") #'help/hydra-left-side/eyebrowse/body))
+#+END_SRC
+
+Popwin mostly for other tools.
+
+#+NAME: org_gcr_2017-08-01_mara_5D2D879D-DF6C-48AE-8C13-094AA29FB3B2
+#+BEGIN_SRC emacs-lisp
+(use-package popwin
+  :ensure t
+  :config
+  (setq display-buffer-function 'popwin:display-buffer))
 #+END_SRC
 
 * Piano Lessons

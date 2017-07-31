@@ -115,3 +115,14 @@ Visualize ASCII values as their most likely Unicode representation.
 (require 'pretty-mode)
 (global-pretty-mode t)
 #+END_SRC
+* go-hydra
+:PROPERTIES:
+:ID:       org_gcr_2017-08-01_mara:F1CA18C6-F00E-4F1A-BBD3-77FC52B437E8
+:END:
+A collection of Go related Hydras for Emacs.
+
+#+NAME: org_gcr_2017-08-01_mara_A0E420CB-EBB0-4D31-BC97-8FE54008F93D
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'load-path "~/src/go-hydra")
+(require 'go-hydra)
+#+END_SRC

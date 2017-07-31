@@ -1963,7 +1963,8 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
                         python-mode-hook
                         gnu-apl-mode-hook
                         geiser-mode-hook
-                        geiser-repl-mode-hook))
+                        geiser-repl-mode-hook
+                        go-mode-hook))
 ;; org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86][org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86]]
@@ -2993,6 +2994,80 @@ Geiser REPL is: %(help/geiser-on-p)
 (add-hook 'c-mode-common-hook #'help/c-mode-common-hook-fn)
 ;; org_gcr_2017-05-12_mara_3C48D997-170E-40F4-9BB6-F6BAA9DE77F2 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-07-30_mara_04B4D7BA-6213-4EC0-8631-461270FE1B71][org_gcr_2017-07-30_mara_04B4D7BA-6213-4EC0-8631-461270FE1B71]]
+(use-package go-mode
+  :ensure t
+  :config
+  (use-package go-eldoc
+    :ensure t)
+  (use-package go-autocomplete
+    :ensure t
+    :config
+    (ac-config-default))
+  (use-package golint
+    :ensure t)
+  (use-package go-errcheck
+    :ensure t)
+  (use-package ob-go
+    :ensure t)
+  (use-package go-snippets
+    :ensure t)
+  (use-package flycheck-gometalinter
+    :ensure t
+    :config
+    (add-hook 'flycheck-mode-hook #'flycheck-gometalinter-setup)
+    (setq flycheck-gometalinter-concurrency 1)
+    (setq flycheck-gometalinter-deadline "10s")
+    (setq flycheck-gometalinter-disable-all t)
+    (setq flycheck-gometalinter-disable-linters nil)
+    (setq flycheck-gometalinter-enable-linters '("golint" "goimports" "unconvert" "errcheck" "megacheck"))
+    (setq flycheck-gometalinter-errors-only nil)
+    (setq flycheck-gometalinter-fast nil)
+    (setq flycheck-gometalinter-tests t)
+    (setq flycheck-gometalinter-vendor t))
+  (use-package go-guru
+    :ensure t)
+  (use-package go-hydra)
+  (use-package gotest
+    :ensure t)
+  (use-package go-rename
+    :ensure t)
+  (use-package go-direx
+    :ensure t
+    :config
+    (eval-after-load 'popwin
+      '(push '("^\*go-direx:" :regexp t :position left :width 0.4 :dedicated t :stick t)
+             popwin:special-display-config)))
+  (defhydra help/hydra/right/go-mode (:color blue :hint nil)
+    "
+GiPeTo:
+ _e_ explorer _r_ rename _u_ describe symbol at point
+  _g_ guru _j_ go to _k_ in other window _l_ return
+   _c_ build+test+vent+lint _C_ recompile _j_ previous error _k_ next error
+    _q_ quit
+ "
+    ("e" go-direx-pop-to-buffer)
+    ("r" (lambda () (interactive) (help/save-all-file-buffers) (go-rename)))
+    ("u" godef-describe)
+    ("g" go-hydra-guru-go-mode/body)
+    ("j" godef-jump)
+    ("k" godef-jump-other-window)
+    ("l" pop-tag-mark)
+    ("c" compile)
+    ("C" recompile)
+    ("j" previous-error :exit nil)
+    ("k" next-error :exit nil)
+    ("q" nil))
+  (key-chord-define go-mode-map "hh" #'help/hydra/right/go-mode/body)
+  (defun help/go-mode-hook-fn ()
+    (go-eldoc-setup)
+    (setq gofmt-command "goimports")
+    (add-hook 'before-save-hook #'gofmt-before-save)
+    (setq compile-command "go build -v && go test -v && go vet && golint")
+    (go-guru-hl-identifier-mode))
+  (add-hook 'go-mode-hook #'help/go-mode-hook-fn))
+;; org_gcr_2017-07-30_mara_04B4D7BA-6213-4EC0-8631-461270FE1B71 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-06-28_mara_110DAD24-25A3-46B0-A0B1-FD26BFDB28C7][org_gcr_2017-06-28_mara_110DAD24-25A3-46B0-A0B1-FD26BFDB28C7]]
 (defun help/python-mode-hook-fn ()
   "HELP python mode customizatin."
@@ -3702,6 +3777,13 @@ current eyebrowse slot: %(let* ((window-configs (eyebrowse--get 'window-configs)
     ("~" #'eyebrowse-close-window-config :exit nil))
   (global-set-key (kbd "C-M-e") #'help/hydra-left-side/eyebrowse/body))
 ;; org_gcr_2017-07-08_mara_3D694F1B-EB4A-4724-A8E7-61F09C4773A5 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2017-08-01_mara_5D2D879D-DF6C-48AE-8C13-094AA29FB3B2][org_gcr_2017-08-01_mara_5D2D879D-DF6C-48AE-8C13-094AA29FB3B2]]
+(use-package popwin
+  :ensure t
+  :config
+  (setq display-buffer-function 'popwin:display-buffer))
+;; org_gcr_2017-08-01_mara_5D2D879D-DF6C-48AE-8C13-094AA29FB3B2 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C][org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C]]
 (defun help/go-there-or-back (name)

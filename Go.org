@@ -1,0 +1,170 @@
+* go
+:PROPERTIES:
+:ID:       org_gcr_2017-07-30_mara:C1401D90-5662-44A3-8E85-B78D9CAB5A92
+:END:
+=GiPeTo=: Robert Griesemer, Rob Pike and Ken Thompson's Programming Language
+** References
+:PROPERTIES:
+:ID:       org_gcr_2017-07-30_mara:08AD2820-43CC-47A8-99F6-81399A4DC73C
+:END:
+- http://arenzana.org/2015/Emacs-for-Go/
+- https://dev.arvados.org/projects/arvados/wiki/Emacs_and_Go
+** Components
+:PROPERTIES:
+:ID:       org_gcr_2017-07-30_mara:2AF75B25-8A47-4467-8682-D20063F05ACF
+:header-args: :tangle help-go-components.sh :padline no :tangle-mode (identity #o755)
+:END:
+*** godef
+:PROPERTIES:
+:ID:       org_gcr_2017-07-30_mara:4F43D0A8-8031-44B1-9577-725960091F30
+:END:
+[[https://github.com/rogpeppe/godef][Via]]: "Print where symbols are defined in Go source code".
+
+#+NAME: org_gcr_2017-07-30_mara_8717E8C8-FAAC-47F1-9C86-8C3FF48EEB84
+#+BEGIN_SRC sh
+go get -u github.com/rogpeppe/godef
+#+END_SRC
+*** gocode
+:PROPERTIES:
+:ID:       org_gcr_2017-07-30_mara:08DB0F38-7CDF-4F61-A6E9-0CE432C3F218
+:END:
+[[https://github.com/nsf/gocode][Via]]: "An autocompletion daemon for the Go programming language".
+
+#+NAME: org_gcr_2017-07-30_mara_D1F3BB34-CE49-4D0A-8A70-60FAE3633219
+#+BEGIN_SRC sh
+go get -u github.com/nsf/gocode
+#+END_SRC
+*** godoc
+:PROPERTIES:
+:ID:       org_gcr_2017-07-30_mara:9A7DF4C5-BB3E-455E-89B0-ECCA06E35D7A
+:END:
+[[https://godoc.org/golang.org/x/tools/cmd/godoc][Via]]: "Godoc extracts and generates documentation for Go programs."
+
+#+NAME: org_gcr_2017-07-30_mara_F04D4569-D568-4E2F-89F5-E0C45A3A3891
+#+BEGIN_SRC sh
+go get -u golang.org/x/tools/cmd/godoc
+#+END_SRC
+*** gometalinter
+:PROPERTIES:
+:ID:       org_gcr_2017-07-31_mara:30B63CFB-3A48-494F-A6F6-26B2AA931FC6
+:END:
+[[https://github.com/alecthomas/gometalinter][Via]]: "Concurrently run Go lint tools and normalise their output"
+
+Installs a bunch of components. I migrated existing components from my setup
+here. Then in the Emacs I disable everything and only enable the following.
+
+The Default subtree contains components that are default for gometalinter and
+I migrated from this parent subtree.
+
+The Enabled subtree contains components that are default for gometalinter and
+I migrated from this parent subtree.
+
+#+NAME: org_gcr_2017-07-31_mara_F689D245-A022-47D3-8EBE-96E78E81D378
+#+BEGIN_SRC sh
+go get -u gopkg.in/alecthomas/gometalinter.v1
+gometalinter.v1 --install --update
+#+END_SRC
+**** Default
+:PROPERTIES:
+:ID:       org_gcr_2017-07-31_mara:157E2E4D-2631-4761-9D2E-1094BE8F1324
+:END:
+***** unconvert
+:PROPERTIES:
+:ID:       org_gcr_2017-07-31_mara:1488C35C-CE15-4E59-9C49-41773A137AAF
+:END:
+[[https://github.com/mdempsky/unconvert][Via]]: "Remove unnecessary type conversions from Go source"
+
+#+NAME: org_gcr_2017-07-31_mara_F6DCEBC5-FE50-48A2-8A4B-B8917F7DD309
+#+BEGIN_SRC sh
+go get -u github.com/mdempsky/fj"unconvert
+#+END_SRC
+***** errcheck
+:PROPERTIES:
+:ID:       org_gcr_2017-07-31_mara:626D38ED-4E74-4B42-939F-0C3864695E51
+:END:
+[[https://github.com/kisielk/errcheck][Via]]: "errcheck checks that you checked errors."
+
+#+NAME: org_gcr_2017-07-31_mara_1081DCF5-F192-457F-9269-982DF8E72017
+#+BEGIN_SRC sh
+go get -u github.com/kisielk/errcheck
+#+END_SRC
+***** megacheck
+:PROPERTIES:
+:ID:       org_gcr_2017-07-31_mara:6C85624B-9EDF-4FB7-9970-3EBEA9EC50E1
+:END:
+[[https://github.com/dominikh/go-tools/tree/master/cmd/megacheck][Via]]: "megacheck runs staticcheck, gosimple and unused at once."
+
+#+NAME: org_gcr_2017-07-31_mara_799FD877-0E6C-4806-ACF5-ED4D23446525
+#+BEGIN_SRC sh
+go get -u honnef.co/go/tools/cmd/megacheck
+#+END_SRC
+**** Enabled
+:PROPERTIES:
+:ID:       org_gcr_2017-07-31_mara:6643F069-2924-4FC4-8A8A-8BCC22E6E4D2
+:END:
+***** golint
+:PROPERTIES:
+:ID:       org_gcr_2017-07-30_mara:477BD3FB-F2C2-4A48-B3D4-F05DC3228D38
+:END:
+[[https://github.com/golang/lint][Via]]: "This is a linter for Go source code."
+***** goimports
+:PROPERTIES:
+:ID:       org_gcr_2017-07-30_mara:DAEEB803-716D-45BE-9B44-EB85E2E92218
+:END:
+[[https://godoc.org/golang.org/x/tools/cmd/goimports][Via]]: "Command goimports updates your Go import lines, adding missing ones and removing unreferenced ones."
+
+*** guru
+:PROPERTIES:
+:ID:       org_gcr_2017-08-01_mara:11855C46-09E0-4F01-9BA7-1BE64EE707A5
+:END:
+[[https://godoc.org/golang.org/x/tools/cmd/guru][Via]]: "a tool for answering questions about Go source code."
+[[https://docs.google.com/document/d/1_Y9xCEMj5S-7rv2ooHpZNH15JgRT5iM742gJkw5LtmQ/edit][Using Go Guru: an editor-integrated tool for navigating Go code]]
+
+#+NAME: org_gcr_2017-08-01_mara_68807FA0-64C5-4243-B4CB-F6B91618C114
+#+BEGIN_SRC sh
+go get -u golang.org/x/tools/cmd/guru
+#+END_SRC
+*** gorename
+:PROPERTIES:
+:ID:       org_gcr_2017-08-01_mara:46FA22FB-C57D-4629-AC7B-3B52A6CB3548
+:END:
+[[https://godoc.org/golang.org/x/tools/cmd/gorename][Via]]: "precise type-safe renaming of identifiers"
+
+#+NAME: org_gcr_2017-08-01_mara_DDD3881A-7440-483D-AE1F-D09BD77140D9
+#+BEGIN_SRC sh
+go get -u golang.org/x/tools/cmd/gorename
+#+END_SRC
+*** gotags
+:PROPERTIES:
+:ID:       org_gcr_2017-08-01_mara:876778E7-31CD-4729-A4D9-99A8D84D9578
+:END:
+[[https://github.com/jstemmer/gotags][Via]]: "gotags is a ctags-compatible tag generator for Go."
+
+#+NAME: org_gcr_2017-08-01_mara_2708834F-08E0-4237-B045-62CC6DF25793
+#+BEGIN_SRC sh
+go get -u github.com/jstemmer/gotags
+#+END_SRC
+** Projects
+:PROPERTIES:
+:ID:       org_gcr_2017-07-31_mara:8F0E1E13-79F3-449C-AF4E-95104229D21C
+:END:
+*** hello world
+:PROPERTIES:
+:ID:       org_gcr_2017-07-30_mara:0645E61D-8A99-4A55-9A9B-2E36886DDC33
+:END:
+#+NAME: org_gcr_2017-07-30_mara_EA0B3B27-08D7-4D7B-BB9C-E44EB7DF6F97
+#+BEGIN_SRC sh
+go get -u github.com/golang/example/hello
+#+END_SRC
+*** checkers-bot-minimax
+:PROPERTIES:
+:ID:       org_gcr_2017-07-31_mara:36FC4141-B93E-427F-AE54-3D7DB0CD0470
+:END:
+#+BEGIN_QUOTE
+This package works with go-oracle
+#+END_QUOTE
+
+#+NAME: org_gcr_2017-07-31_mara_5E51BB78-840D-4ABE-9432-6A02ADA11DFA
+#+BEGIN_SRC sh
+go get github.com/tleyden/checkers-bot-minimax
+#+END_SRC

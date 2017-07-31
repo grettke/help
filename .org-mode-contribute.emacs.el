@@ -48,3 +48,8 @@
 (require 'pretty-mode)
 (global-pretty-mode t)
 ;; org_gcr_2017-05-15_mara_5CF1DF19-27F5-4509-8E17-9CA0D1B29314 ends here
+
+;; [[file:~/src/help/Contribute.org::org_gcr_2017-08-01_mara_A0E420CB-EBB0-4D31-BC97-8FE54008F93D][org_gcr_2017-08-01_mara_A0E420CB-EBB0-4D31-BC97-8FE54008F93D]]
+(add-to-list 'load-path "~/src/go-hydra")
+(require 'go-hydra)
+;; org_gcr_2017-08-01_mara_A0E420CB-EBB0-4D31-BC97-8FE54008F93D ends here
