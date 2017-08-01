@@ -207,22 +207,6 @@
       (when (and (buffer-file-name) (buffer-modified-p))
         (save-buffer)))))
 
-(defun describe-thing-in-popup ()
-  "Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html'."
-  (interactive)
-  (let* ((thing (symbol-at-point))
-         (help-xref-following t)
-         (description (with-temp-buffer
-                        (help-mode)
-                        (help-xref-interned thing)
-                        (buffer-string))))
-    (popup-tip description
-               :point (point)
-               :around t
-               :height 30
-               :scroll-bar t
-               :margin t)))
-
 (defun help/kill-other-buffers ()
   "Kill all other buffers."
   (interactive)
@@ -2129,10 +2113,6 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   :ensure t
   :after (package-lint))
 ;; org_gcr_2017-05-12_mara_2B359320-563A-4E80-BB8E-04965E20EBEE ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7E2C79D7-3C27-4289-8B07-FB649CFB1C58][org_gcr_2017-05-12_mara_7E2C79D7-3C27-4289-8B07-FB649CFB1C58]]
-(define-key emacs-lisp-mode-map (kbd "s-p") #'describe-thing-in-popup)
-;; org_gcr_2017-05-12_mara_7E2C79D7-3C27-4289-8B07-FB649CFB1C58 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9D21E326-1742-4DD0-BDF9-624D21873F92][org_gcr_2017-05-12_mara_9D21E326-1742-4DD0-BDF9-624D21873F92]]
 (setq org-babel-min-lines-for-block-output 0)
