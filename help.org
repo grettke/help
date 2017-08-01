@@ -2793,6 +2793,21 @@ When you don't want to do that non-interactively then search for that command
 or activities toggling variable ~M-x apropos-variable RET case-fold-search RET~
 and bind it during the search.
 
+Make ~isearch~ automatically search for Unicode homoglyphs of the search
+characters.
+
+#+NAME: org_gcr_2017-08-01_mara_98164910-DD0A-4AAE-A9B2-FAF864BCCE1C
+#+BEGIN_SRC emacs-lisp
+(setq search-default-mode #'char-fold-to-regexp)
+#+END_SRC
+
+Ditto for replace.
+
+#+NAME: org_gcr_2017-08-01_mara_1FA6AB2F-B0A9-491E-89D3-BFDFBD173EDD
+#+BEGIN_SRC emacs-lisp
+(setq replace-char-fold t)
+#+END_SRC
+
 *** External
 :PROPERTIES:
 :ID:       org_gcr_2017-05-12_mara:D55FB85E-A70E-4A56-AA5F-089B4FE52E7F
