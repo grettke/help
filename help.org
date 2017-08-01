@@ -1696,7 +1696,7 @@ Macro expander:
 (use-package macrostep
   :ensure t
   :config
-  (global-set-key (kbd "C-M-8") #'macrostep-expand))
+  (define-key emacs-lisp-mode-map (kbd "C-M-8") #'macrostep-expand))
 #+END_SRC
 
 ** Evaluation

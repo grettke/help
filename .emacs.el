@@ -1041,7 +1041,7 @@ Attribution: URL `https://rejeep.github.io/emacs/elisp/2010/11/16/delete-file-an
 (use-package macrostep
   :ensure t
   :config
-  (global-set-key (kbd "C-M-8") #'macrostep-expand))
+  (define-key emacs-lisp-mode-map (kbd "C-M-8") #'macrostep-expand))
 ;; org_gcr_2017-05-12_mara_510C1AB4-A266-40A6-9DCF-25B827E60786 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_CD327ED5-E83D-471F-9A30-B7A3FBB67486][org_gcr_2017-05-12_mara_CD327ED5-E83D-471F-9A30-B7A3FBB67486]]
