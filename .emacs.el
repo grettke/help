@@ -2579,14 +2579,6 @@ _b_ black-board-bold _f_ fraktur
   ("f" fraktur-mode))
 ;; org_gcr_2017-05-12_mara_A27A9A2F-11B8-4B31-A68C-6A5E27BCCD8D ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5F206A60-80BB-4394-9ABD-B641C196EE73][org_gcr_2017-05-12_mara_5F206A60-80BB-4394-9ABD-B641C196EE73]]
-(defun help/describe-char ()
-  "Evaluate `describe-char' and then `other-window'."
-  (interactive)
-  (call-interactively #'describe-char)
-  (call-interactively #'other-window))
-;; org_gcr_2017-05-12_mara_5F206A60-80BB-4394-9ABD-B641C196EE73 ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_96974788-400B-439B-9005-04569A326C29][org_gcr_2017-05-12_mara_96974788-400B-439B-9005-04569A326C29]]
 (use-package unicode-troll-stopper
   :ensure t)

@@ -4518,17 +4518,6 @@ _b_ black-board-bold _f_ fraktur
 :ID:       org_gcr_2017-05-12_mara:ADAE0A1B-3FD8-4605-8611-388E5ADBAFA8
 :END:
 
-Easily understand the current character.
-
-#+NAME: org_gcr_2017-05-12_mara_5F206A60-80BB-4394-9ABD-B641C196EE73
-#+BEGIN_SRC emacs-lisp
-(defun help/describe-char ()
-  "Evaluate `describe-char' and then `other-window'."
-  (interactive)
-  (call-interactively #'describe-char)
-  (call-interactively #'other-window))
-#+END_SRC
-
 Easily identify Unicode homoglyphs most often utilized by pranksters.
 
 Good reference for Unicode character study and exploration.
