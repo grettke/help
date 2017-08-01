@@ -3858,7 +3858,7 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("j" org-babel-tangle-jump-to-org)
   ("u" ucs-insert)
   ("i" scroll-down-command :exit nil)
-  ("d" help/describe-char)
+  ("d" dash-at-point)
   ("D" help/safb-org-babel-detangle)
   ("k" scroll-up-command :exit nil)
   ("I" previous-logical-line :exit nil)
