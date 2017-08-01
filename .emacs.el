@@ -3765,7 +3765,39 @@ Flycheck On? %(bound-and-true-p flycheck-mode)
 (global-set-key [(control meta shift ?p)] #'help/insert-timestamp*-no-colons)
 (global-set-key (kbd "C-M-o") #'help/occur-dwim)
 (global-set-key (kbd "M-i") nil)
-(global-set-key (kbd "M-i") #'describe-symbol)
+(global-set-key (kbd "M-i") #'help/hydra/left/describe/body)
+(defhydra help/hydra/left/describe (:color blue
+                                           :hint nil)
+  "
+Describe Something
+ _t_ theme _i_ input method _o_ lighter indicator _O_ lighter symbol _p_ package _P_ text properties
+  _s_ symbol _f_ function _F_ flycheck checker _k_ key briefly _K_ key _l_ language environment
+   _c_ char _C_ coding system _v_ variable _b_ bindings _B_ personal bindings _n_ current coding system briefly _N_ current coding system full _m_ major mode _M_ minor mode
+    _q_ quit
+"
+  ("b" describe-bindings)
+  ("B" describe-personal-keybindings)
+  ("C" describe-categories)
+  ("c" describe-char)
+  ("C" describe-coding-system)
+  ("f" describe-function)
+  ("F" flycheck-describe-checker)
+  ("i" describe-input-method)
+  ("K" describe-key)
+  ("k" describe-key-briefly)
+  ("l" describe-language-environment)
+  ("M" describe-minor-mode)
+  ("m" describe-mode)
+  ("N" describe-current-coding-system)
+  ("n" describe-current-coding-system-briefly)
+  ("o" describe-minor-mode-from-indicator)
+  ("O" describe-minor-mode-from-symbol)
+  ("p" describe-package)
+  ("P" describe-text-properties)
+  ("q" nil)
+  ("s" describe-symbol)
+  ("t" describe-theme)
+  ("v" describe-variable))
 ;; org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D][org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D]]
