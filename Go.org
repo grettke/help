@@ -1,6 +1,7 @@
 * go
 :PROPERTIES:
 :ID:       org_gcr_2017-07-30_mara:C1401D90-5662-44A3-8E85-B78D9CAB5A92
+:header-args: :tangle help-go-components.sh :padline no :tangle-mode (identity #o755)
 :END:
 =GiPeTo=
 - robert (G)r(I)esemer
@@ -9,7 +10,6 @@
 ** Components
 :PROPERTIES:
 :ID:       org_gcr_2017-07-30_mara:2AF75B25-8A47-4467-8682-D20063F05ACF
-:header-args: :tangle help-go-components.sh :padline no :tangle-mode (identity #o755)
 :END:
 *** godef
 :PROPERTIES:
