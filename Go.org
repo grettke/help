@@ -2,7 +2,10 @@
 :PROPERTIES:
 :ID:       org_gcr_2017-07-30_mara:C1401D90-5662-44A3-8E85-B78D9CAB5A92
 :END:
-=GiPeTo=: Robert Griesemer, Rob Pike and Ken Thompson's Programming Language
+=GiPeTo=
+- robert (G)r(I)esemer
+- rob (P)ik(E)
+- ken (T)h(O)mpson
 ** References
 :PROPERTIES:
 :ID:       org_gcr_2017-07-30_mara:08AD2820-43CC-47A8-99F6-81399A4DC73C
