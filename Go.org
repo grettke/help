@@ -151,6 +151,10 @@ go get -u github.com/jstemmer/gotags
 [[https://github.com/derekparker/delve][Via]]: "Delve is a debugger for the Go programming language."
 
 - [[https://github.com/derekparker/delve/tree/master/Documentation][Documentation]]
+*** TODO glide
+:LOGBOOK:
+- State "TODO"       from              [2017-08-02 Wed 02:26]
+:END:
 ** Projects
 :PROPERTIES:
 :ID:       org_gcr_2017-07-31_mara:8F0E1E13-79F3-449C-AF4E-95104229D21C
