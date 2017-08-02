@@ -3193,6 +3193,7 @@ Git config files.
         '((tab-mark ?\t [?↹ ?\t] [?␉ ?\t] [?\t])))
   (setq whitespace-line-column help/column-width)
   (global-whitespace-mode t)
+  (setq whitespace-global-modes '(not go-mode))
   :diminish whitespace-mode global-whitespace-mode)
 #+END_SRC
 
