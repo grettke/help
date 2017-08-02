@@ -142,6 +142,9 @@ go get -u golang.org/x/tools/cmd/gorename
 go get -u github.com/jstemmer/gotags
 #+END_SRC
 *** TODO delve
+:PROPERTIES:
+:ID:       org_gcr_2017-08-02_mara:39C074C7-C947-41E7-BE10-F382D4A1DC13
+:END:
 :LOGBOOK:
 - State "TODO"       from              [2017-08-01 Tue 21:20]
 :END:
@@ -171,4 +174,14 @@ This package works with go-oracle
 #+NAME: org_gcr_2017-07-31_mara_5E51BB78-840D-4ABE-9432-6A02ADA11DFA
 #+BEGIN_SRC sh
 go get github.com/tleyden/checkers-bot-minimax
+#+END_SRC
+*** gotour
+:PROPERTIES:
+:ID:       org_gcr_2017-08-02_mara:7BFF517F-0227-4271-B799-63F7E58738FB
+:END:
+Call ~gotour~
+
+#+NAME: org_gcr_2017-08-02_mara_F0F0DEC6-A5F5-4C75-8145-0B0D16569E5E
+#+BEGIN_SRC sh
+go get -u golang.org/x/tour/gotour
 #+END_SRC

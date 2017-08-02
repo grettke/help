@@ -29,3 +29,12 @@ go get -u golang.org/x/tools/cmd/gorename
 # [[file:~/src/help/Go.org::org_gcr_2017-08-01_mara_2708834F-08E0-4237-B045-62CC6DF25793][org_gcr_2017-08-01_mara_2708834F-08E0-4237-B045-62CC6DF25793]]
 go get -u github.com/jstemmer/gotags
 # org_gcr_2017-08-01_mara_2708834F-08E0-4237-B045-62CC6DF25793 ends here
+# [[file:~/src/help/Go.org::org_gcr_2017-07-30_mara_EA0B3B27-08D7-4D7B-BB9C-E44EB7DF6F97][org_gcr_2017-07-30_mara_EA0B3B27-08D7-4D7B-BB9C-E44EB7DF6F97]]
+go get -u github.com/golang/example/hello
+# org_gcr_2017-07-30_mara_EA0B3B27-08D7-4D7B-BB9C-E44EB7DF6F97 ends here
+# [[file:~/src/help/Go.org::org_gcr_2017-07-31_mara_5E51BB78-840D-4ABE-9432-6A02ADA11DFA][org_gcr_2017-07-31_mara_5E51BB78-840D-4ABE-9432-6A02ADA11DFA]]
+go get github.com/tleyden/checkers-bot-minimax
+# org_gcr_2017-07-31_mara_5E51BB78-840D-4ABE-9432-6A02ADA11DFA ends here
+# [[file:~/src/help/Go.org::org_gcr_2017-08-02_mara_F0F0DEC6-A5F5-4C75-8145-0B0D16569E5E][org_gcr_2017-08-02_mara_F0F0DEC6-A5F5-4C75-8145-0B0D16569E5E]]
+go get -u golang.org/x/tour/gotour
+# org_gcr_2017-08-02_mara_F0F0DEC6-A5F5-4C75-8145-0B0D16569E5E ends here
