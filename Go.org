@@ -6,12 +6,6 @@
 - robert (G)r(I)esemer
 - rob (P)ik(E)
 - ken (T)h(O)mpson
-** References
-:PROPERTIES:
-:ID:       org_gcr_2017-07-30_mara:08AD2820-43CC-47A8-99F6-81399A4DC73C
-:END:
-- http://arenzana.org/2015/Emacs-for-Go/
-- https://dev.arvados.org/projects/arvados/wiki/Emacs_and_Go
 ** Components
 :PROPERTIES:
 :ID:       org_gcr_2017-07-30_mara:2AF75B25-8A47-4467-8682-D20063F05ACF
