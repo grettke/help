@@ -5238,23 +5238,22 @@ Enable Auto-Complete via Geiser.
   (use-package go-snippets)
   (defhydra help/hydra/right/go-mode (:color blue :hint nil)
     "
-GiPeTo:
- _e_ explorer _r_ rename _u_ describe symbol at point
-  _g_ guru _j_ go to _k_ in other window _l_ return
-   _c_ build+test+vent+lint _C_ recompile _j_ previous error _k_ next error
-    _q_ quit
+ Go Mode: (_q_uit)       |                 ^^|
+-^----------------------^+^-----------------^+---------------
+ _e_: explorer             | _r_: rename         |
+ _g_: guru                 | _j_: previous error | _k_: next error
+ _c_: build+test+vent+lint | _n_: recompile      | _m_: go mode
  "
     ("e" go-direx-pop-to-buffer)
-    ("r" (lambda () (interactive) (help/save-all-file-buffers) (go-rename)))
-    ("u" godef-describe)
+    ("r" (lambda () (interactive) (help/save-all-file-buffers) (call-interactively 'go-rename)))
     ("g" go-hydra-guru-go-mode/body)
-    ("j" godef-jump)
     ("k" godef-jump-other-window)
     ("l" pop-tag-mark)
     ("c" compile)
-    ("C" recompile)
+    ("n" recompile)
     ("j" previous-error :exit nil)
     ("k" next-error :exit nil)
+    ("m" go-hydra-go-mode/body)
     ("q" nil))
   (key-chord-define go-mode-map "hh" #'help/hydra/right/go-mode/body)
   (defun help/go-mode-hook-fn ()
