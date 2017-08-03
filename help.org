@@ -5234,11 +5234,7 @@ Enable Auto-Complete via Geiser.
   (use-package go-rename
     :ensure t)
   (use-package go-direx
-    :ensure t
-    :config
-    (eval-after-load 'popwin
-      '(push '("^\*go-direx:" :regexp t :position left :width 0.4 :dedicated t :stick t)
-             popwin:special-display-config)))
+    :ensure t)
   (defhydra help/hydra/right/go-mode (:color blue :hint nil)
     "
 GiPeTo:
@@ -6584,16 +6580,6 @@ current eyebrowse slot: %(let* ((window-configs (eyebrowse--get 'window-configs)
     ("b" #'eyebrowse-switch-to-window-config-9)
     ("~" #'eyebrowse-close-window-config :exit nil))
   (global-set-key (kbd "C-M-e") #'help/hydra-left-side/eyebrowse/body))
-#+END_SRC
-
-Popwin mostly for other tools.
-
-#+NAME: org_gcr_2017-08-01_mara_5D2D879D-DF6C-48AE-8C13-094AA29FB3B2
-#+BEGIN_SRC emacs-lisp
-(use-package popwin
-  :ensure t
-  :config
-  (setq display-buffer-function 'popwin:display-buffer))
 #+END_SRC
 
 * Piano Lessons

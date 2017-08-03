@@ -3034,11 +3034,7 @@ Geiser REPL is: %(help/geiser-on-p)
   (use-package go-rename
     :ensure t)
   (use-package go-direx
-    :ensure t
-    :config
-    (eval-after-load 'popwin
-      '(push '("^\*go-direx:" :regexp t :position left :width 0.4 :dedicated t :stick t)
-             popwin:special-display-config)))
+    :ensure t)
   (defhydra help/hydra/right/go-mode (:color blue :hint nil)
     "
 GiPeTo:
@@ -3778,13 +3774,6 @@ current eyebrowse slot: %(let* ((window-configs (eyebrowse--get 'window-configs)
     ("~" #'eyebrowse-close-window-config :exit nil))
   (global-set-key (kbd "C-M-e") #'help/hydra-left-side/eyebrowse/body))
 ;; org_gcr_2017-07-08_mara_3D694F1B-EB4A-4724-A8E7-61F09C4773A5 ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-08-01_mara_5D2D879D-DF6C-48AE-8C13-094AA29FB3B2][org_gcr_2017-08-01_mara_5D2D879D-DF6C-48AE-8C13-094AA29FB3B2]]
-(use-package popwin
-  :ensure t
-  :config
-  (setq display-buffer-function 'popwin:display-buffer))
-;; org_gcr_2017-08-01_mara_5D2D879D-DF6C-48AE-8C13-094AA29FB3B2 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C][org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C]]
 (defun help/go-there-or-back (name)
