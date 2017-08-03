@@ -1,13 +1,13 @@
 ;; -*- no-byte-compile: t; -*-
 (setq help/default-gc-cons-threshold gc-cons-threshold)
-(defun help/set-gc-cons-threshold (&optional multiplier)
+(defun help/set-gc-cons-threshold (&optional multiplier notify)
   "Set `gc-cons-threshold' either to its default value or a
    `multiplier' thereof."
   (let* ((new-multiplier (or multiplier 1))
          (new-threshold (* help/default-gc-cons-threshold
                            new-multiplier)))
     (setq gc-cons-threshold new-threshold)
-    (message "Setting `gc-cons-threshold' to %s" new-threshold)))
+    (when notify (message "Setting `gc-cons-threshold' to %s" new-threshold))))
 (setq load-prefer-newer t)
 (add-to-list 'load-path "~/src/org-mode/lisp")
 (add-to-list 'load-path "~/src/org-mode/contrib/lisp")
