@@ -36,10 +36,13 @@ normal.
 #+NAME: org_gcr_2017-07-29_mara_3F459DF6-EA6A-4D48-BB0A-3670FCB25713
 #+BEGIN_SRC emacs-lisp
 (setq help/default-gc-cons-threshold gc-cons-threshold)
-(defun help/set-mem-max ()
-  (setq gc-cons-threshold most-positive-fixnum))
-(defun help/set-mem-default ()
-  (setq gc-cons-threshold help/default-gc-cons-threshold))
+(defun help/set-gc-cons-threshold (&optional multiplier)
+  "Set `gc-cons-threshold' either to its default value or a
+   `multiplier' thereof."
+  (let* ((new-multiplier (or multiplier 1))
+         (new-threshold (* help/default-gc-cons-threshold
+                           new-multiplier)))
+    (setq gc-cons-threshold new-threshold)))
 #+END_SRC
 *** Load Behavior
    :PROPERTIES:
