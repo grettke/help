@@ -6,7 +6,8 @@
   (let* ((new-multiplier (or multiplier 1))
          (new-threshold (* help/default-gc-cons-threshold
                            new-multiplier)))
-    (setq gc-cons-threshold new-threshold)))
+    (setq gc-cons-threshold new-threshold)
+    (message "Setting `gc-cons-threshold' to %s" new-threshold)))
 (setq load-prefer-newer t)
 (add-to-list 'load-path "~/src/org-mode/lisp")
 (add-to-list 'load-path "~/src/org-mode/contrib/lisp")
@@ -15,8 +16,9 @@
 (setq org-babel-noweb-wrap-start "«")
 (setq org-babel-noweb-wrap-end "»")
 (require 'org)
-(add-hook 'org-babel-pre-tangle-hook #'help/set-mem-max)
-(add-hook 'org-babel-post-tangle-hook #'help/set-mem-default)
+(defun help/double-gc-cons-threshold () "Double `gc-cons-threshold'." (help/set-gc-cons-threshold 2))
+(add-hook 'org-babel-pre-tangle-hook #'help/double-gc-cons-threshold)
+(add-hook 'org-babel-post-tangle-hook #'help/set-gc-cons-threshold)
 (defun help/display-system-info ()
   (interactive)
   (message "<<<ECM Information>>>\nThis buffer file: %s\nAs Of: %s\nOrg-Version: %s\nOrg-Git-Version:%s\nEmacs-Version: %s\nNoweb wrap start and stop delimeters: '%s' and '%s'\norg-babel-default-header-args:\n"
