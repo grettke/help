@@ -3035,6 +3035,7 @@ Geiser REPL is: %(help/geiser-on-p)
     :ensure t)
   (use-package go-direx
     :ensure t)
+  (use-package go-snippets)
   (defhydra help/hydra/right/go-mode (:color blue :hint nil)
     "
 GiPeTo:
