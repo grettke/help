@@ -1545,8 +1545,8 @@ Dumb-Jump:
 ;; org_gcr_2017-05-12_mara_A0D0BC89-5180-4B18-BFDC-17650901FB7F ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-07-29_mara_59F9B6F3-A62C-424A-AC57-D2677788FF1A][org_gcr_2017-07-29_mara_59F9B6F3-A62C-424A-AC57-D2677788FF1A]]
-(add-hook 'minibuffer-setup-hook #'help/set-mem-max)
-(add-hook 'minibuffer-exit-hook #'help/set-mem-default)
+(add-hook 'minibuffer-setup-hook #'help/double-gc-cons-threshold)
+(add-hook 'minibuffer-exit-hook #'help/set-gc-cons-threshold)
 ;; org_gcr_2017-07-29_mara_59F9B6F3-A62C-424A-AC57-D2677788FF1A ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_4AA275B8-8C5E-498F-969E-28459D7E88E5][org_gcr_2017-05-12_mara_4AA275B8-8C5E-498F-969E-28459D7E88E5]]

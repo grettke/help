@@ -2555,8 +2555,8 @@ Temporarily give it unlimited memory to speed it up.
 
 #+NAME: org_gcr_2017-07-29_mara_59F9B6F3-A62C-424A-AC57-D2677788FF1A
 #+BEGIN_SRC emacs-lisp
-(add-hook 'minibuffer-setup-hook #'help/set-mem-max)
-(add-hook 'minibuffer-exit-hook #'help/set-mem-default)
+(add-hook 'minibuffer-setup-hook #'help/double-gc-cons-threshold)
+(add-hook 'minibuffer-exit-hook #'help/set-gc-cons-threshold)
 #+END_SRC
 ** Mouse
    :PROPERTIES:
