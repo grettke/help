@@ -1601,6 +1601,17 @@ This package for GNU APL.
 (use-package face-remap
   :diminish 'buffer-face-mode)
 #+END_SRC
+
+Move line or region up or down.
+
+#+NAME: org_gcr_2017-08-03_mara_5085E329-B4D0-4D69-8AB6-17E7094E44C3
+#+BEGIN_SRC emacs-lisp
+(use-package move-text
+  :ensure t
+  :config
+  (global-set-key (kbd "S-s-<up>") #'move-text-up)
+  (global-set-key (kbd "S-s-<down>") #'move-text-down))
+#+END_SRC
 ** Code Folding
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:94245A47-6A25-442A-B458-AD00A3DDA1A2

@@ -989,6 +989,14 @@ Attribution: URL `https://rejeep.github.io/emacs/elisp/2010/11/16/delete-file-an
   :diminish 'buffer-face-mode)
 ;; org_gcr_2017-07-20_mara_51310F49-2C54-43DC-AA11-CA3A4ABF1A5F ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-08-03_mara_5085E329-B4D0-4D69-8AB6-17E7094E44C3][org_gcr_2017-08-03_mara_5085E329-B4D0-4D69-8AB6-17E7094E44C3]]
+(use-package move-text
+  :ensure t
+  :config
+  (global-set-key (kbd "S-s-<up>") #'move-text-up)
+  (global-set-key (kbd "S-s-<down>") #'move-text-down))
+;; org_gcr_2017-08-03_mara_5085E329-B4D0-4D69-8AB6-17E7094E44C3 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_611E83B9-E797-4512-95EE-643473026607][org_gcr_2017-05-12_mara_611E83B9-E797-4512-95EE-643473026607]]
 (use-package hideshow
   :config
