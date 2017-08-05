@@ -28,5 +28,5 @@
   :config
   (auto-compile-on-load-mode)
   (auto-compile-on-save-mode)
-  (setq auto-compile-display-buffer nil))
+  (setq auto-compile-display-buffer 1))
 ;; org_gcr_2017-07-21_mara_E9CF2CB2-D837-41C3-A56A-B2ACFB9E228F ends here
