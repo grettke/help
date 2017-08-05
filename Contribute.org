@@ -89,6 +89,13 @@ Mode config.
 (add-hook 'org-mode-hook #'help/wp-org-mode-hook-fn)
 #+END_SRC
 
+Post creation handler.
+
+#+NAME: org_gcr_2017-08-04_mara_B782FF06-D0E7-4598-89E4-02A76E882E78
+#+BEGIN_SRC emacs-lisp
+(add-hook 'org2blog/wp-after-new-post-or-page-functions (lambda (p) (pp p)))
+#+END_SRC
+
 Configure Org2Blog.
 
 #+NAME: org_gcr_2017-05-12_mara_854DE6E9-2208-42EB-A164-EC06E489B6B7
