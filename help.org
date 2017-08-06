@@ -5422,17 +5422,15 @@ Fails with ~(eval-after-load 'abbrev (diminish 'abbrev-mode))~.
          ("\\.jsx$" . js2-mode))
   :interpreter ("node" . js2-mode)
   :config
-  (progn
-    (add-hook 'js2-mode-hook #'js2-imenu-extras-mode)))
+  (add-hook 'js2-mode-hook #'js2-imenu-extras-mode))
 
 (use-package js2-refactor
   :after (js2-mode)
   :ensure t
   :diminish js2-refactor-mode
   :config
-  (progn
-    (add-hook 'js2-mode-hook #'js2-refactor-mode)
-    (js2r-add-keybindings-with-prefix "C-c C-m")))
+  (add-hook 'js2-mode-hook #'js2-refactor-mode)
+  (js2r-add-keybindings-with-prefix "C-c C-m"))
 #+END_SRC
 
 ~json-mode~ is derived from ~javascript-mode~ so configure the latter's indent to

@@ -3176,17 +3176,15 @@ Geiser REPL is: %(help/geiser-on-p)
          ("\\.jsx$" . js2-mode))
   :interpreter ("node" . js2-mode)
   :config
-  (progn
-    (add-hook 'js2-mode-hook #'js2-imenu-extras-mode)))
+  (add-hook 'js2-mode-hook #'js2-imenu-extras-mode))
 
 (use-package js2-refactor
   :after (js2-mode)
   :ensure t
   :diminish js2-refactor-mode
   :config
-  (progn
-    (add-hook 'js2-mode-hook #'js2-refactor-mode)
-    (js2r-add-keybindings-with-prefix "C-c C-m")))
+  (add-hook 'js2-mode-hook #'js2-refactor-mode)
+  (js2r-add-keybindings-with-prefix "C-c C-m"))
 ;; org_gcr_2017-05-12_mara_56F80A50-4914-4F8F-8771-5800A54F8300 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_498DAC46-DA9D-4AAA-82BF-46D712E4DBA5][org_gcr_2017-05-12_mara_498DAC46-DA9D-4AAA-82BF-46D712E4DBA5]]
