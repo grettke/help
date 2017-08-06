@@ -5414,6 +5414,9 @@ Fails with ~(eval-after-load 'abbrev (diminish 'abbrev-mode))~.
 :ID:       org_gcr_2017-05-12_mara:92C9A271-BC16-431B-8457-2901DE330164
 :END:
 
+Out of the box Emacs supports =js= with ~js-mode~. Define language =javascript= to
+use ~js2-mode~.
+
 #+NAME: org_gcr_2017-05-12_mara_56F80A50-4914-4F8F-8771-5800A54F8300
 #+BEGIN_SRC emacs-lisp
 (use-package js2-mode
@@ -5422,7 +5425,8 @@ Fails with ~(eval-after-load 'abbrev (diminish 'abbrev-mode))~.
          ("\\.jsx$" . js2-mode))
   :interpreter ("node" . js2-mode)
   :config
-  (add-hook 'js2-mode-hook #'js2-imenu-extras-mode))
+  (add-hook 'js2-mode-hook #'js2-imenu-extras-mode)
+  (add-to-list 'org-src-lang-modes '("javascript" . js2)))
 
 (use-package js2-refactor
   :after (js2-mode)

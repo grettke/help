@@ -477,15 +477,6 @@ Org-Mode may use all of the listed languages.
    (dot . t)
    (plantuml . t)))
 #+END_SRC
-
-Out of the box Emacs supports =js= with ~js-mode~. Define language =javascript= to
-use ~js2-mode~.
-
-#+NAME: org_gcr_2017-05-12_mara_66460204-C425-4057-920D-A6CD5A252075
-#+BEGIN_SRC emacs-lisp
-(add-to-list 'org-src-lang-modes '("javascript" . js2))
-#+END_SRC
-
 **** cache
     :PROPERTIES:
     :ID:       orgmode:gcr:vela:49B8BFE9-643B-450F-A8A1-20CE3079E215
