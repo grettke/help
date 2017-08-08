@@ -7476,8 +7476,8 @@ Hide and show code blocks.
 
 #+NAME: org_gcr_2017-05-12_mara_8B031C72-2005-4FAF-A9F4-DE8D613DA01D
 #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "s-b") #'hs-toggle-hiding)
-(global-set-key (kbd "M-s-b") #'help/my-toggle-hideshow-all)
+(global-set-key (kbd "s-z") #'hs-toggle-hiding)
+(global-set-key [(super shift ?z)] #'help/my-toggle-hideshow-all)
 #+END_SRC
 
 *** Left & Right Side

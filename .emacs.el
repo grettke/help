@@ -4081,8 +4081,8 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 ;; org_gcr_2017-05-12_mara_0CA60630-37AA-4192-91A1-FFC1B16DC3E4 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8B031C72-2005-4FAF-A9F4-DE8D613DA01D][org_gcr_2017-05-12_mara_8B031C72-2005-4FAF-A9F4-DE8D613DA01D]]
-(global-set-key (kbd "s-b") #'hs-toggle-hiding)
-(global-set-key (kbd "M-s-b") #'help/my-toggle-hideshow-all)
+(global-set-key (kbd "s-z") #'hs-toggle-hiding)
+(global-set-key [(super shift ?z)] #'help/my-toggle-hideshow-all)
 ;; org_gcr_2017-05-12_mara_8B031C72-2005-4FAF-A9F4-DE8D613DA01D ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_921A07BB-6FBA-46E3-824D-F9F0B92F48B3][org_gcr_2017-05-12_mara_921A07BB-6FBA-46E3-824D-F9F0B92F48B3]]
