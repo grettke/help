@@ -6745,7 +6745,7 @@ to alter the default configuration. This system does not want to. It wants to
 keep EMACS true to EMACS and your hands happy. To satisfy those goals the
 following practices were defined.
 
-- 99.999% of the time never bind to the =C= or =M= name-space.
+- 99.999% of the time never bind to the =C= or =M= or ~C-M-s~ name-space.
   - They are for system key-bindings. You can break them. Don't.
   - In theory =C-c= is the "user name-space" but packages stomp on this all of the
     time anyway so don't use it.
@@ -6753,6 +6753,8 @@ following practices were defined.
     - =C-;=
       - Your hands are in the home position already.
     - Every modifier key with return.
+  - ~C-M-s~ is for the operating system
+    - Discovered this in macOS
 - Never bind to =F= keys.
   - They are a painful stretch on most keyboards.
   - Some require a lone Pinky with is worse.
