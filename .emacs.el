@@ -2638,7 +2638,7 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
   (setq gnu-apl-show-keymap-on-startup nil)
   (setq gnu-apl-show-apl-welcome nil)
   (setq gnu-apl-show-tips-on-start nil)
-  (setq gnu-apl-mode-map-prefix "C-M-s-")
+  (setq gnu-apl-mode-map-prefix "M-s-")
   (setq gnu-apl-interactive-mode-map-prefix gnu-apl-mode-map-prefix)
   :config
   (defun em-gnu-apl-init ()
