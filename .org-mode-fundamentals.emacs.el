@@ -210,7 +210,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
 ;; org_gcr_2017-05-12_mara_DB816700-04B3-45D0-9847-490BBFE9DBA0 ends here
 
 ;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_2F6FE420-85A2-4A99-AAB7-20473F02B878][org_gcr_2017-05-12_mara_2F6FE420-85A2-4A99-AAB7-20473F02B878]]
-(defconst help/org-sb-results-cfg "value table drawer replace")
+(defconst help/org-sb-results-cfg "value scalar drawer replace")
 (help/set-org-babel-default-header-args :results help/org-sb-results-cfg)
 ;; org_gcr_2017-05-12_mara_2F6FE420-85A2-4A99-AAB7-20473F02B878 ends here
 

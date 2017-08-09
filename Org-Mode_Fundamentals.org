@@ -658,13 +658,21 @@ when it is not.
 - Collection
   - =value=: Functions have a single result. So do Source-Blocks.
 - Type
-  - =table=:
-    - Tables are the best type because
-      - Dimensions make them human-readable in text.
-      - Work with Babel LP.
-      - Appear as lists to programming languages.
-      - Weaves well.
-      - Inline Source-Blocks disallow tables so use scalars instead.
+  - =scalar=
+    - Functions always return a single result
+    - Evidence demonstrates that I use this or =output= most of the time and I
+      want to configure this to work right for =Literate Programming= by default
+      because it feels better.
+  - =WAS=
+    - Because in theory returning a collection was flexible (see below). In
+      practice I never ever used this.
+    - =table=:
+      - Tables are the best type because
+        - Dimensions make them human-readable in text.
+        - Work with Babel LP.
+        - Appear as lists to programming languages.
+        - Weaves well.
+        - Inline Source-Blocks disallow tables so use scalars instead.
 - Format
   - =drawer=: Enable results replacement
 - Handling
@@ -672,10 +680,9 @@ when it is not.
 
 #+NAME: org_gcr_2017-05-12_mara_2F6FE420-85A2-4A99-AAB7-20473F02B878
 #+BEGIN_SRC emacs-lisp
-(defconst help/org-sb-results-cfg "value table drawer replace")
+(defconst help/org-sb-results-cfg "value scalar drawer replace")
 (help/set-org-babel-default-header-args :results help/org-sb-results-cfg)
 #+END_SRC
-
 
 Their format will show that they are results. Inline source blocks
 automatically get formatted as verbatim. For some reason, this only needs to
