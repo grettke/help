@@ -1280,7 +1280,7 @@ Attribution: URL `https://rejeep.github.io/emacs/elisp/2010/11/16/delete-file-an
 ,#+TAGS: Programming Language, %s
 ,#+TITLE: (%s) " name name))))
 
-(defconst help/buffalo "Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo"
+(defconst help/buffalo "(🐃) Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo (🐃)"
   "URL: `https://en.wikipedia.org/wiki/Buffalo_buffalo_Buffalo_buffalo_buffalo_buffalo_Buffalo_buffalo'")
 #+END_SRC
 
