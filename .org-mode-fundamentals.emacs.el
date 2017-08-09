@@ -200,10 +200,6 @@ This is a copy and paste. Additional languages would warrant a refactor."
    (plantuml . t)))
 ;; org_gcr_2017-05-12_mara_54FEB960-2B87-41E3-A4E4-6DE9DED9B1BD ends here
 
-;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_66460204-C425-4057-920D-A6CD5A252075][org_gcr_2017-05-12_mara_66460204-C425-4057-920D-A6CD5A252075]]
-(add-to-list 'org-src-lang-modes '("javascript" . js2))
-;; org_gcr_2017-05-12_mara_66460204-C425-4057-920D-A6CD5A252075 ends here
-
 ;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_FE5C21BF-9766-4277-A413-B3AF5C255C39][org_gcr_2017-05-12_mara_FE5C21BF-9766-4277-A413-B3AF5C255C39]]
 (help/set-org-babel-default-header-args :eval "never-export")
 (help/set-org-babel-default-inline-header-args :eval "never-export")
