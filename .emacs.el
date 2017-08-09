@@ -3035,7 +3035,9 @@ Geiser REPL is: %(help/geiser-on-p)
   (use-package go-errcheck
     :ensure t)
   (use-package ob-go
-    :ensure t)
+    :ensure t
+    :config
+    (add-to-list 'org-babel-load-languages '(go . t)))
   (use-package go-snippets
     :ensure t)
   (use-package flycheck-gometalinter
