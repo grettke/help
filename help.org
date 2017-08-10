@@ -2390,7 +2390,10 @@ Integrate Langtool.
   :init
   (setq langtool-language-tool-jar (getenv "LANGTOOL"))
   (setq langtool-mother-tongue "en")
-  (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java")))
+  (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java"))
+  (setq langtool-disabled-rules nil)
+  (setq langtool-java-user-arguments '("-Dfile.encoding=UTF-8"))
+  (setq langtool-user-arguments nil)
 #+END_SRC
 
 Integrate Proselint. I wanted to load the executable location from
