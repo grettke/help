@@ -1447,7 +1447,30 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   :init
   (setq langtool-language-tool-jar (getenv "LANGTOOL"))
   (setq langtool-mother-tongue "en")
-  (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java")))
+  (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java"))
+  (setq langtool-disabled-rules nil)
+  (setq langtool-java-user-arguments '("-Dfile.encoding=UTF-8"))
+  (setq langtool-user-arguments nil)
+  (defhydra help/hydra/both/langtool (:color blue :hint nil)
+    "
+ Langtool:^         ^|^                   ^|^
+-------------------^^+^-------------------^+^----------------------
+ _h_: check buffer   | _j_: next error     | _i_: brief message
+ _y_: corrent buffer | _k_: previous error | _o_: detailed message
+ _n_: finished       | _q_: guit           |
+ "
+    ("h" langtool-check :exit nil)
+    ("y" langtool-correct-buffer :exit nil)
+    ("n" langtool-check-done)
+
+    ("j" langtool-goto-next-error :exit nil)
+    ("k" langtool-goto-previous-error :exit nil)
+
+    ("i" langtool-show-brief-message-at-point :exit nil)
+    ("o" langtool-show-message-at-point :exit nil)
+
+    ("q" nil))
+  (key-chord-define-global "qk" #'help/hydra/both/langtool/body))
 ;; org_gcr_2017-05-12_mara_1CB16C79-7EC3-4375-BAD3-FC612A1C0B9B ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A17A873C-5FC0-473F-842F-875CA99981D5][org_gcr_2017-05-12_mara_A17A873C-5FC0-473F-842F-875CA99981D5]]
@@ -4094,17 +4117,6 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (key-chord-define-global "qp" #'ispell)
 (key-chord-define-global "qo" #'ispell-word)
 ;; org_gcr_2017-05-12_mara_921A07BB-6FBA-46E3-824D-F9F0B92F48B3 ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B4724C9B-88F1-4EF1-8134-17DBADA44A01][org_gcr_2017-05-12_mara_B4724C9B-88F1-4EF1-8134-17DBADA44A01]]
-(define-prefix-command 'help/langtool-map)
-(key-chord-define-global "qk" #'help/langtool-map)
-(define-key help/langtool-map "c" #'langtool-check-buffer)
-(define-key help/langtool-map "C" #'langtool-correct-buffer)
-(define-key help/langtool-map "j" #'langtool-goto-previous-error)
-(define-key help/langtool-map "k" #'langtool-show-message-at-point)
-(define-key help/langtool-map "l" #'langtool-goto-next-error)
-(define-key help/langtool-map "q" #'langtool-check-done)
-;; org_gcr_2017-05-12_mara_B4724C9B-88F1-4EF1-8134-17DBADA44A01 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_2C04C038-F246-4E90-92C6-15ABF018BCD3][org_gcr_2017-05-12_mara_2C04C038-F246-4E90-92C6-15ABF018BCD3]]
 (key-chord-define-global "fj" #'avy-goto-word-1)

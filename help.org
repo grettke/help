@@ -2394,6 +2394,26 @@ Integrate Langtool.
   (setq langtool-disabled-rules nil)
   (setq langtool-java-user-arguments '("-Dfile.encoding=UTF-8"))
   (setq langtool-user-arguments nil)
+  (defhydra help/hydra/both/langtool (:color blue :hint nil)
+    "
+ Langtool:^         ^|^                   ^|^
+-------------------^^+^-------------------^+^----------------------
+ _h_: check buffer   | _j_: next error     | _i_: brief message
+ _y_: corrent buffer | _k_: previous error | _o_: detailed message
+ _n_: finished       | _q_: guit           |
+ "
+    ("h" langtool-check :exit nil)
+    ("y" langtool-correct-buffer :exit nil)
+    ("n" langtool-check-done)
+
+    ("j" langtool-goto-next-error :exit nil)
+    ("k" langtool-goto-previous-error :exit nil)
+
+    ("i" langtool-show-brief-message-at-point :exit nil)
+    ("o" langtool-show-message-at-point :exit nil)
+
+    ("q" nil))
+  (key-chord-define-global "qk" #'help/hydra/both/langtool/body))
 #+END_SRC
 
 Integrate Proselint. I wanted to load the executable location from
@@ -7503,20 +7523,6 @@ Make =ispell= accessible.
 #+BEGIN_SRC emacs-lisp
 (key-chord-define-global "qp" #'ispell)
 (key-chord-define-global "qo" #'ispell-word)
-#+END_SRC
-
-Use the default Langtool bindings.
-
-#+NAME: org_gcr_2017-05-12_mara_B4724C9B-88F1-4EF1-8134-17DBADA44A01
-#+BEGIN_SRC emacs-lisp
-(define-prefix-command 'help/langtool-map)
-(key-chord-define-global "qk" #'help/langtool-map)
-(define-key help/langtool-map "c" #'langtool-check-buffer)
-(define-key help/langtool-map "C" #'langtool-correct-buffer)
-(define-key help/langtool-map "j" #'langtool-goto-previous-error)
-(define-key help/langtool-map "k" #'langtool-show-message-at-point)
-(define-key help/langtool-map "l" #'langtool-goto-next-error)
-(define-key help/langtool-map "q" #'langtool-check-done)
 #+END_SRC
 
 Easily kill buffers. Can't use "df" because of "PDF".
