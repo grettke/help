@@ -5239,7 +5239,7 @@ Enable Auto-Complete via Geiser.
   (rainbow-mode))
 (add-hook 'c-mode-common-hook #'help/c-mode-common-hook-fn)
 #+END_SRC
-*** go
+*** Go
 :PROPERTIES:
 :ID:       org_gcr_2017-07-30_mara:2F891F22-5C0C-43BA-8891-62DA7E9540FD
 :END:
