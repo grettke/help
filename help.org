@@ -4637,7 +4637,6 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:423BA6AA-5F7D-450D-B686-78A028A37FE2
    :END:
-
 *** APL
 :PROPERTIES:
 :ID:       org_gcr_2017-05-12_mara:5CB03225-60DE-4AC2-8A67-3D7D21BF7818
