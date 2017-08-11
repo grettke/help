@@ -2008,7 +2008,8 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
                         gnu-apl-mode-hook
                         geiser-mode-hook
                         geiser-repl-mode-hook
-                        go-mode-hook))
+                        go-mode-hook
+                        fsharp-mode-hook))
 ;; org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86][org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86]]
@@ -3227,6 +3228,18 @@ Geiser REPL is: %(help/geiser-on-p)
     (setq json-reformat:indent-width 2)
     (setq json-reformat:pretty-string\? t)))
 ;; org_gcr_2017-05-12_mara_498DAC46-DA9D-4AAA-82BF-46D712E4DBA5 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2017-08-10_mara_AD0FE176-6CF0-4078-A6A8-ECB8C26BD93B][org_gcr_2017-08-10_mara_AD0FE176-6CF0-4078-A6A8-ECB8C26BD93B]]
+(use-package fsharp-mode
+  :ensure t
+  :config
+  (use-package ob-fsharp
+    :ensure t
+    :config
+    (autoload 'fsharp-mode "fsharp-mode"     "Major mode for editing F# code." t)
+    (add-to-list 'auto-mode-alist '("\\.fs[iylx]?$" . fsharp-mode))
+    (add-to-list 'org-babel-load-languages '(fsharp . t))))
+;; org_gcr_2017-08-10_mara_AD0FE176-6CF0-4078-A6A8-ECB8C26BD93B ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D035C4E4-B983-4D74-9E3C-764EF00B3795][org_gcr_2017-05-12_mara_D035C4E4-B983-4D74-9E3C-764EF00B3795]]
 (use-package tex
