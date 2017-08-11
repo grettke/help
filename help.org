@@ -4880,11 +4880,6 @@ and see how it goes.
 (setq ess-eval-visibly 'nowait)
 #+END_SRC
 
-*** SAS (ESS)
-  :PROPERTIES:
-  :ID:       org_gcr_2017-05-12_mara:BACA8D4C-7DAD-4457-B089-345BAD1BF3A2
-  :END:
-
 *** R (ESS)
   :PROPERTIES:
   :ID:       org_gcr_2017-05-12_mara:6AE60368-3D9F-400D-AAEC-A9B99F5CE480
