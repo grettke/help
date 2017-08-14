@@ -6235,7 +6235,7 @@ Recenter near top of screen.
 [[https://github.com/bbatsov/solarized-emacs][Solarized Theme]]
 
 - ~1,000 Faces Defined
-- 95,677 Downloads
+- 110,003
 
 - A distinct fringe provides a definition of space.
 - The modeline is always at the bottom and doesn't need differentiation.
