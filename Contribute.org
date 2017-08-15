@@ -68,6 +68,13 @@ Blog from Org mode to wordpress
 (add-hook 'org-mode-hook #'org2blog/wp-org-mode-hook-fn)
 #+END_SRC
 
+Use [[https://www.mathjax.org/][MathJax]] instead of =wp-latex= syntax.
+
+#+NAME: org_gcr_2017-08-14_mara_7625680E-1CA4-428E-A92F-D53114742D28
+#+BEGIN_SRC emacs-lisp
+(setq org2blog/wp-use-wp-latex nil)
+#+END_SRC
+
 Org2Blog depends on Org-Mode. This system loads Org-Mode from Git. Enter the
 =ELPA= cache directory and delete it.
 
@@ -85,7 +92,9 @@ Mode config.
 #+BEGIN_SRC emacs-lisp
 (defun help/wp-org-mode-hook-fn ()
   (local-set-key (kbd "C-s-h")
-                 (lambda () (interactive) (insert "#+HTML: <!--more-->"))))
+                 (lambda () (interactive) (insert "#+HTML: <!--more-->")))
+  (local-set-key (kbd "C-s-l")
+                 (lambda () (interactive) (insert "$\\LaTeX$"))))
 (add-hook 'org-mode-hook #'help/wp-org-mode-hook-fn)
 #+END_SRC
 

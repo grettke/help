@@ -22,6 +22,10 @@
 (add-hook 'org-mode-hook #'org2blog/wp-org-mode-hook-fn)
 ;; org_gcr_2017-05-12_mara_EF1B02DF-BDB7-44AA-A018-B0BE6DA1C08F ends here
 
+;; [[file:~/src/help/Contribute.org::org_gcr_2017-08-14_mara_7625680E-1CA4-428E-A92F-D53114742D28][org_gcr_2017-08-14_mara_7625680E-1CA4-428E-A92F-D53114742D28]]
+(setq org2blog/wp-use-wp-latex nil)
+;; org_gcr_2017-08-14_mara_7625680E-1CA4-428E-A92F-D53114742D28 ends here
+
 ;; [[file:~/src/help/Contribute.org::org_gcr_2017-05-12_mara_FF96F4B6-42B9-45D6-BEE6-6CDC9D6815AE][org_gcr_2017-05-12_mara_FF96F4B6-42B9-45D6-BEE6-6CDC9D6815AE]]
 (setq org2blog/wp-track-posts nil)
 ;; org_gcr_2017-05-12_mara_FF96F4B6-42B9-45D6-BEE6-6CDC9D6815AE ends here
@@ -29,7 +33,9 @@
 ;; [[file:~/src/help/Contribute.org::org_gcr_2017-07-23_mara_A5E125C0-E95E-490E-B773-4E7323A94766][org_gcr_2017-07-23_mara_A5E125C0-E95E-490E-B773-4E7323A94766]]
 (defun help/wp-org-mode-hook-fn ()
   (local-set-key (kbd "C-s-h")
-                 (lambda () (interactive) (insert "#+HTML: <!--more-->"))))
+                 (lambda () (interactive) (insert "#+HTML: <!--more-->")))
+  (local-set-key (kbd "C-s-l")
+                 (lambda () (interactive) (insert "$\\LaTeX$"))))
 (add-hook 'org-mode-hook #'help/wp-org-mode-hook-fn)
 ;; org_gcr_2017-07-23_mara_A5E125C0-E95E-490E-B773-4E7323A94766 ends here
 
