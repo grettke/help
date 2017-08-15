@@ -129,7 +129,9 @@ cd ~/src/org-mode
       - ~org-mode~
     - Class and Object names
     - Shell commands that are executable
-    - Executable for programming language compilers and interpreters
+    - Executable for programming language compilers and interpreters. To
+      clarify these are either the executable names or the human names for
+      example ~gcc versus ~C~.
       - ~gcc~ and ~python~
       - ~bash~ and ~perl~
       - ~scheme~ and ~java~
