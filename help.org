@@ -5314,6 +5314,7 @@ Enable Auto-Complete via Geiser.
     (go-eldoc-setup)
     (setq gofmt-command "goimports")
     (add-hook 'before-save-hook #'gofmt-before-save)
+    (setq compilation-read-command nil)
     (setq compile-command "go install && go test -v && go vet && golint")
     (local-set-key (kbd "s-c") #'compile)
     (go-guru-hl-identifier-mode))
