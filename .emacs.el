@@ -3093,7 +3093,7 @@ Geiser REPL is: %(help/geiser-on-p)
 -^----------------------^+^-----------------^+---------------
  _e_: explorer             | _r_: rename         |
  _g_: guru                 | _j_: previous error | _k_: next error
- _c_: build+test+vent+lint | _n_: recompile      | _m_: go mode
+ _c_: instl+test+vent+lint | _n_: recompile      | _m_: go mode
  "
     ("e" go-direx-pop-to-buffer)
     ("r" (lambda () (interactive) (help/save-all-file-buffers) (call-interactively 'go-rename)))
@@ -3111,7 +3111,8 @@ Geiser REPL is: %(help/geiser-on-p)
     (go-eldoc-setup)
     (setq gofmt-command "goimports")
     (add-hook 'before-save-hook #'gofmt-before-save)
-    (setq compile-command "go build -v && go test -v && go vet && golint")
+    (setq compile-command "go install && go test -v && go vet && golint")
+    (local-set-key (kbd "s-c") #'compile)
     (go-guru-hl-identifier-mode))
   (add-hook 'go-mode-hook #'help/go-mode-hook-fn))
 ;; org_gcr_2017-07-30_mara_04B4D7BA-6213-4EC0-8631-461270FE1B71 ends here
