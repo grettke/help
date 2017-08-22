@@ -2110,6 +2110,18 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (local-set-key (kbd "s-l mea") #'macroexpand-all)
   (local-set-key (kbd "C-c e") #'macrostep-expand))
 
+(defhydra help/hydra-elisp-mode (:color blue
+                                        :hint nil)
+  "
+elisp-mode:
+ _d_ describe-thing _f_ find-thing
+  _q_ quit
+"
+  ("d" elisp-slime-nav-describe-elisp-thing-at-point)
+  ("f" elisp-slime-nav-find-elisp-thing-at-point)
+  ("q" nil))
+(key-chord-define emacs-lisp-mode-map "hh" #'help/hydra-elisp-mode/body)
+
 (defun help/emacs-lisp-mode-hook-fn ()
   (interactive)
   (help/elisp-mode-local-bindings)
