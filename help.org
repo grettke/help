@@ -4482,7 +4482,7 @@ Because I only use this for Org-Mode.
                                                  :hint nil)
   "
 _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ id-create _5_ toggle-macro
-_q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ help/org-refile _R_ g2nms-b _t_ g2s-b/hd _p_ copy/property
+_q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ help/org-refile _R_ g2nms-b _t_ g2s-b/hd _T_ table export format _p_ copy/property
 _a_ archive-subtree _s_ oblobigst _u_ goto _h_ dksieb _k_ ob-check-src-blk _l_ lint
 _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
   ;; Row 5
@@ -4498,6 +4498,7 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
   ("r" help/org-refile)
   ("R" org-babel-goto-named-src-block)
   ("t" org-babel-goto-src-block-head)
+  ("T" (lambda () (interactive) (insert "#+ATTR_HTML: :border 2 :rules all :frame border")))
   ("u" org-goto)
   ("p" my-org-region-to-property)
   ;; Row 3
