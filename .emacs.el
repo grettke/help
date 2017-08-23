@@ -3102,7 +3102,7 @@ Geiser REPL is: %(help/geiser-on-p)
   (use-package go-snippets)
   (defhydra help/hydra/right/go-mode (:color blue :hint nil)
     "
- Go Mode: (_q_uit)         |^                   ^|^
+ Go: (_q_uit)              |^                   ^|^
 -^------------------------^+^-------------------^+---------------
  _e_: explorer             | _r_: rename         |
  _g_: guru                 | _j_: previous error | _k_: next error
