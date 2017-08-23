@@ -3102,15 +3102,16 @@ Geiser REPL is: %(help/geiser-on-p)
   (use-package go-snippets)
   (defhydra help/hydra/right/go-mode (:color blue :hint nil)
     "
- Go: (_q_uit)              |^                   ^|^
--^------------------------^+^-------------------^+---------------
- _e_: explorer             | _r_: rename         | _t_: tools
- _g_: guru                 | _j_: previous error | _k_: next error
- _c_: instl+test+vent+lint | _n_: recompile      |
+ Go: (_q_uit)              |^                   ^|^                ^|^
+-^------------------------^+^-------------------^+----------------^^+^-----------
+ _e_: explorer             | _r_: rename         | _t_: tools       | _p_ println
+ _g_: guru                 | _j_: previous error | _k_: next error  |
+ _c_: instl+test+vent+lint | _n_: recompile      |                ^^|
  "
     ("e" go-direx-switch-to-buffer)
     ("r" (lambda () (interactive) (help/save-all-file-buffers) (call-interactively 'go-rename)))
     ("t" go-hydra-go-mode/body)
+    ("p" (lambda () (interactive) (insert "fmt.Println(\"\")")))
     ("g" go-hydra-guru-go-mode/body)
     ("k" godef-jump-other-window)
     ("l" pop-tag-mark)
