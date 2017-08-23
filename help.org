@@ -5307,12 +5307,13 @@ Enable Auto-Complete via Geiser.
     "
  Go: (_q_uit)              |^                   ^|^
 -^------------------------^+^-------------------^+---------------
- _e_: explorer             | _r_: rename         |
+ _e_: explorer             | _r_: rename         | _t_: tools
  _g_: guru                 | _j_: previous error | _k_: next error
- _c_: instl+test+vent+lint | _n_: recompile      | _m_: go mode
+ _c_: instl+test+vent+lint | _n_: recompile      |
  "
     ("e" go-direx-switch-to-buffer)
     ("r" (lambda () (interactive) (help/save-all-file-buffers) (call-interactively 'go-rename)))
+    ("t" go-hydra-go-mode/body)
     ("g" go-hydra-guru-go-mode/body)
     ("k" godef-jump-other-window)
     ("l" pop-tag-mark)
@@ -5320,7 +5321,6 @@ Enable Auto-Complete via Geiser.
     ("n" recompile)
     ("j" previous-error :exit nil)
     ("k" next-error :exit nil)
-    ("m" go-hydra-go-mode/body)
     ("q" nil))
   (key-chord-define go-mode-map "hh" #'help/hydra/right/go-mode/body)
   (defun help/go-mode-hook-fn ()
