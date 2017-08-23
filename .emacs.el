@@ -3108,7 +3108,7 @@ Geiser REPL is: %(help/geiser-on-p)
  _g_: guru                 | _j_: previous error | _k_: next error
  _c_: instl+test+vent+lint | _n_: recompile      | _m_: go mode
  "
-    ("e" go-direx-pop-to-buffer)
+    ("e" go-direx-switch-to-buffer)
     ("r" (lambda () (interactive) (help/save-all-file-buffers) (call-interactively 'go-rename)))
     ("g" go-hydra-guru-go-mode/body)
     ("k" godef-jump-other-window)
