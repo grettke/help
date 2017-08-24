@@ -3099,7 +3099,8 @@ Geiser REPL is: %(help/geiser-on-p)
     :ensure t)
   (use-package go-direx
     :ensure t)
-  (use-package go-snippets)
+  (use-package go-snippets
+    :ensure t)
   (defhydra help/hydra/right/go-mode (:color blue :hint nil)
     "
  Go: (_q_uit)              |^                   ^|^                ^|^            ^|^
@@ -3111,8 +3112,6 @@ Geiser REPL is: %(help/geiser-on-p)
     ("e" go-direx-switch-to-buffer)
     ("r" (lambda () (interactive) (help/save-all-file-buffers) (call-interactively 'go-rename)))
     ("t" go-hydra-go-mode/body)
-    ("p" (lambda () (interactive) (insert "fmt.Println(\"\")") (backward-char 2)))
-    ("P" (lambda () (interactive) (insert "fmt.Printf(\"\")") (backward-char 2)))
     ("g" go-hydra-guru-go-mode/body)
     ("k" godef-jump-other-window)
     ("l" pop-tag-mark)
