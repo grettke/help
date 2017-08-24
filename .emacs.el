@@ -3107,6 +3107,11 @@ Geiser REPL is: %(help/geiser-on-p)
     :ensure t)
   (use-package go-snippets
     :ensure t)
+  (defun help/go-mode/safb/go-rename ()
+    ""
+    (interactive)
+    (help/save-all-file-buffers)
+    (call-interactively 'go-rename))
   (defhydra help/hydra/right/go-mode (:color blue :hint nil)
     "
  Go: (_q_uit)              |^                   ^|^                ^|

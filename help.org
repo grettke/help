@@ -5310,6 +5310,11 @@ Enable Auto-Complete via Geiser.
     :ensure t)
   (use-package go-snippets
     :ensure t)
+  (defun help/go-mode/safb/go-rename ()
+    ""
+    (interactive)
+    (help/save-all-file-buffers)
+    (call-interactively 'go-rename))
   (defhydra help/hydra/right/go-mode (:color blue :hint nil)
     "
  Go: (_q_uit)              |^                   ^|^                ^|
@@ -5326,6 +5331,7 @@ Enable Auto-Complete via Geiser.
     ("l" pop-tag-mark)
     ("c" help/safb/compile)
     ("n" recompile)
+    ("n" help/go-mode/safb/go-rename)
     ("j" previous-error :exit nil)
     ("k" next-error :exit nil)
     ("q" nil))
