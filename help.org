@@ -5332,6 +5332,7 @@ Enable Auto-Complete via Geiser.
     (setq compile-command "go install && go test -v && go vet && golint")
     (local-set-key (kbd "s-c") #'compile)
     (local-set-key (kbd "s-=") #'(lambda () (interactive) (insert " := ")))
+    (local-set-key (kbd "s-<") #'(lambda () (interactive) (insert " <- ")))
     (go-guru-hl-identifier-mode))
   (add-hook 'go-mode-hook #'help/go-mode-hook-fn))
 #+END_SRC

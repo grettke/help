@@ -3129,6 +3129,7 @@ Geiser REPL is: %(help/geiser-on-p)
     (setq compile-command "go install && go test -v && go vet && golint")
     (local-set-key (kbd "s-c") #'compile)
     (local-set-key (kbd "s-=") #'(lambda () (interactive) (insert " := ")))
+    (local-set-key (kbd "s-<") #'(lambda () (interactive) (insert " <- ")))
     (go-guru-hl-identifier-mode))
   (add-hook 'go-mode-hook #'help/go-mode-hook-fn))
 ;; org_gcr_2017-07-30_mara_04B4D7BA-6213-4EC0-8631-461270FE1B71 ends here
