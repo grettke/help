@@ -5333,6 +5333,9 @@ Enable Auto-Complete via Geiser.
     (local-set-key (kbd "s-c") #'compile)
     (local-set-key (kbd "s-=") #'(lambda () (interactive) (insert " := ")))
     (local-set-key (kbd "s-<") #'(lambda () (interactive) (insert " <- ")))
+    (local-set-key (kbd "s-p") #'(lambda () (interactive)
+                                   (insert "fmt.Println(\"\")")
+                                   (backward-char 2)))
     (go-guru-hl-identifier-mode))
   (add-hook 'go-mode-hook #'help/go-mode-hook-fn))
 #+END_SRC
