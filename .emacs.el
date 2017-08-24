@@ -3102,16 +3102,17 @@ Geiser REPL is: %(help/geiser-on-p)
   (use-package go-snippets)
   (defhydra help/hydra/right/go-mode (:color blue :hint nil)
     "
- Go: (_q_uit)              |^                   ^|^                ^|^
--^------------------------^+^-------------------^+----------------^^+^-----------
- _e_: explorer             | _r_: rename         | _t_: tools       | _p_ println
- _g_: guru                 | _j_: previous error | _k_: next error  |
- _c_: instl+test+vent+lint | _n_: recompile      |                ^^|
+ Go: (_q_uit)              |^                   ^|^                ^|^            ^|^
+-^------------------------^+^-------------------^+----------------^^+^-----------^^+^-----------
+ _e_: explorer             | _r_: rename         | _t_: tools       | _p_ println  | _P_ printf
+ _g_: guru                 | _j_: previous error | _k_: next error  |            ^^|
+ _c_: instl+test+vent+lint | _n_: recompile      |                ^^|            ^^|
  "
     ("e" go-direx-switch-to-buffer)
     ("r" (lambda () (interactive) (help/save-all-file-buffers) (call-interactively 'go-rename)))
     ("t" go-hydra-go-mode/body)
     ("p" (lambda () (interactive) (insert "fmt.Println(\"\")") (backward-char 2)))
+    ("P" (lambda () (interactive) (insert "fmt.Printf(\"\")") (backward-char 2)))
     ("g" go-hydra-guru-go-mode/body)
     ("k" godef-jump-other-window)
     ("l" pop-tag-mark)
@@ -3133,6 +3134,8 @@ Geiser REPL is: %(help/geiser-on-p)
     (local-set-key (kbd "s-p") #'(lambda () (interactive)
                                    (insert "fmt.Println(\"\")")
                                    (backward-char 2)))
+    (local-set-key (kbd "s-P") #'(lambda () (interactive)
+                                   (insert "fmt.Printf(\"\")") (backward-char 2)))
     (go-guru-hl-identifier-mode))
   (add-hook 'go-mode-hook #'help/go-mode-hook-fn))
 ;; org_gcr_2017-07-30_mara_04B4D7BA-6213-4EC0-8631-461270FE1B71 ends here
