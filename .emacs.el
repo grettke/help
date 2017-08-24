@@ -3123,18 +3123,18 @@ Geiser REPL is: %(help/geiser-on-p)
     "
  Go: (_q_uit)              |^                   ^|^                ^|
 -^------------------------^+^-------------------^+----------------^^+
- _e_: explorer             | _r_: rename         | _t_: tools       |
+ _e_: explorer             | _r_: run            | _t_: tools       |
  _g_: guru                 | _j_: previous error | _k_: next error  |
- _c_: instl+test+vent+lint | _n_: recompile      |                ^^|
+ _c_: instl+test+vent+lint | _n_: rename         |                ^^|
  "
     ("e" go-direx-switch-to-buffer)
-    ("r" (lambda () (interactive) (help/save-all-file-buffers) (call-interactively 'go-rename)))
+    ("r" help/go-mode/safb/go-run)
     ("t" go-hydra-go-mode/body)
     ("g" go-hydra-guru-go-mode/body)
     ("k" godef-jump-other-window)
     ("l" pop-tag-mark)
     ("c" help/safb/compile)
-    ("n" recompile)
+    ("n" help/go-mode/safb/go-rename)
     ("j" previous-error :exit nil)
     ("k" next-error :exit nil)
     ("q" nil))
@@ -3146,6 +3146,7 @@ Geiser REPL is: %(help/geiser-on-p)
     (setq compilation-read-command nil)
     (setq compile-command "go install && go test -v && go vet && golint")
     (local-set-key (kbd "s-j") #'help/safb/compile)
+    (local-set-key (kbd "s-k") #'help/go-mode/safb/go-run)
     (local-set-key (kbd "s-=") #'(lambda () (interactive) (insert " := ")))
     (local-set-key (kbd "s-<") #'(lambda () (interactive) (insert " <- ")))
     (go-guru-hl-identifier-mode))
