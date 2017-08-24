@@ -776,6 +776,12 @@ Attribution: URL `https://rejeep.github.io/emacs/elisp/2010/11/16/delete-file-an
 
 (defconst help/buffalo "(🐃) Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo (🐃)"
   "URL: `https://en.wikipedia.org/wiki/Buffalo_buffalo_Buffalo_buffalo_buffalo_buffalo_Buffalo_buffalo'")
+
+(defun help/safb/compile ()
+  "Save all file buffers and call `compile'"
+  (interactive)
+  (help/save-all-file-buffers)
+  (call-interactively 'compile))
 ;; org_gcr_2017-05-12_mara_7D37FFE5-2D2B-4CF7-AF27-F3CB8616D81B ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F][org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F]]
@@ -3115,7 +3121,7 @@ Geiser REPL is: %(help/geiser-on-p)
     ("g" go-hydra-guru-go-mode/body)
     ("k" godef-jump-other-window)
     ("l" pop-tag-mark)
-    ("c" compile)
+    ("c" help/safb/compile)
     ("n" recompile)
     ("j" previous-error :exit nil)
     ("k" next-error :exit nil)
@@ -3127,7 +3133,7 @@ Geiser REPL is: %(help/geiser-on-p)
     (add-hook 'before-save-hook #'gofmt-before-save)
     (setq compilation-read-command nil)
     (setq compile-command "go install && go test -v && go vet && golint")
-    (local-set-key (kbd "s-j") #'compile)
+    (local-set-key (kbd "s-j") #'help/safb/compile)
     (local-set-key (kbd "s-=") #'(lambda () (interactive) (insert " := ")))
     (local-set-key (kbd "s-<") #'(lambda () (interactive) (insert " <- ")))
     (go-guru-hl-identifier-mode))
