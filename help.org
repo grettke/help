@@ -5330,7 +5330,7 @@ Enable Auto-Complete via Geiser.
     (add-hook 'before-save-hook #'gofmt-before-save)
     (setq compilation-read-command nil)
     (setq compile-command "go install && go test -v && go vet && golint")
-    (local-set-key (kbd "s-c") #'compile)
+    (local-set-key (kbd "s-j") #'compile)
     (local-set-key (kbd "s-=") #'(lambda () (interactive) (insert " := ")))
     (local-set-key (kbd "s-<") #'(lambda () (interactive) (insert " <- ")))
     (go-guru-hl-identifier-mode))
