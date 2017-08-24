@@ -5310,6 +5310,13 @@ Enable Auto-Complete via Geiser.
     :ensure t)
   (use-package go-snippets
     :ensure t)
+  (defun help/go-mode/safb/go-run ()
+    ""
+    (interactive)
+    (let* ((old-compile-command compile-command)
+           (compile-command (s-concat old-compile-command " && " (file-name-nondirectory
+                                                                  (directory-file-name default-directory)))))
+      (help/safb/compile)))
   (defun help/go-mode/safb/go-rename ()
     ""
     (interactive)
@@ -5343,6 +5350,7 @@ Enable Auto-Complete via Geiser.
     (setq compilation-read-command nil)
     (setq compile-command "go install && go test -v && go vet && golint")
     (local-set-key (kbd "s-j") #'help/safb/compile)
+    (local-set-key (kbd "s-k") #'help/go-mode/safb/go-run)
     (local-set-key (kbd "s-=") #'(lambda () (interactive) (insert " := ")))
     (local-set-key (kbd "s-<") #'(lambda () (interactive) (insert " <- ")))
     (go-guru-hl-identifier-mode))
