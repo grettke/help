@@ -141,6 +141,17 @@ go get -u golang.org/x/tools/cmd/gorename
 #+BEGIN_SRC sh
 go get -u github.com/jstemmer/gotags
 #+END_SRC
+*** go-spew
+:PROPERTIES:
+:ID:       org_gcr_2017-08-25_mara:84D9F1F5-86B6-40A3-8995-94CFDAA94A88
+:END:
+[[https://github.com/davecgh/go-spew][Via]]: "Implements a deep pretty printer for Go data structures to aid in
+debugging"
+
+#+NAME: org_gcr_2017-08-25_mara_6518E2EC-F775-44A1-8FEB-2C08EFF7D6D0
+#+BEGIN_SRC sh
+go get -u github.com/davecgh/go-spew/spew
+#+END_SRC
 *** TODO delve
 :PROPERTIES:
 :ID:       org_gcr_2017-08-02_mara:39C074C7-C947-41E7-BE10-F382D4A1DC13
