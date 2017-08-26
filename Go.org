@@ -73,7 +73,7 @@ gometalinter.v1 --install --update
 
 #+NAME: org_gcr_2017-07-31_mara_F6DCEBC5-FE50-48A2-8A4B-B8917F7DD309
 #+BEGIN_SRC sh
-go get -u github.com/mdempsky/fj"unconvert
+go get -u github.com/mdempsky/unconvert
 #+END_SRC
 ***** errcheck
 :PROPERTIES:

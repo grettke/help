@@ -3,7 +3,7 @@ go get -u github.com/nsf/gocode
 go get -u golang.org/x/tools/cmd/godoc
 go get -u gopkg.in/alecthomas/gometalinter.v1
 gometalinter.v1 --install --update
-go get -u github.com/mdempsky/fj"unconvert
+go get -u github.com/mdempsky/unconvert
 go get -u github.com/kisielk/errcheck
 go get -u honnef.co/go/tools/cmd/megacheck
 go get -u golang.org/x/tools/cmd/guru
