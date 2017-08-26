@@ -152,6 +152,9 @@ go get -u github.com/jstemmer/gotags
 
 - [[https://github.com/derekparker/delve/tree/master/Documentation][Documentation]]
 *** TODO glide
+:PROPERTIES:
+:ID:       org_gcr_2017-08-25_mara:58373DB5-C5DC-4F55-B70F-C225E82F7D1F
+:END:
 :LOGBOOK:
 - State "TODO"       from              [2017-08-02 Wed 02:26]
 :END:
