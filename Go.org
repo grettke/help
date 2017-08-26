@@ -152,6 +152,17 @@ debugging"
 #+BEGIN_SRC sh
 go get -u -v github.com/davecgh/go-spew/spew
 #+END_SRC
+*** gore
+:PROPERTIES:
+:ID:       org_gcr_2017-08-25_mara:2CE2A39B-83A8-44F6-BEBF-BF2AA08560D8
+:END:
+[[https://github.com/motemen/gore][Via]]: "Yet another Go REPL that works nicely. Featured with line editing, code
+completion, and more."
+
+#+NAME: org_gcr_2017-08-25_mara_1656A78E-4F0D-4143-ACD3-558221975A5E
+#+BEGIN_SRC sh
+go get -u -v github.com/motemen/gore
+#+END_SRC
 *** TODO delve
 :PROPERTIES:
 :ID:       org_gcr_2017-08-02_mara:39C074C7-C947-41E7-BE10-F382D4A1DC13
