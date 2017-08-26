@@ -3119,17 +3119,22 @@ Geiser REPL is: %(help/geiser-on-p)
     (interactive)
     (help/save-all-file-buffers)
     (call-interactively 'go-rename))
+  ;; (use-package gorepl-mode
+  ;;   :ensure t)
+  (add-to-list 'load-path "~/git/github/gorepl-mode")
+  (require 'gorepl-mode)
   (defhydra help/hydra/right/go-mode (:color blue :hint nil)
     "
  Go: (_q_uit)              |^                   ^|^                ^|
--^------------------------^+^-------------------^+----------------^^+
- _e_: explorer             | _r_: run            | _t_: tools       |
+-^------------------------^+^-------------------^+----------------^^+--------
+ _e_: explorer             | _r_: run            | _t_: tools       | g_o_re
  _g_: guru                 | _j_: previous error | _k_: next error  |
  _c_: instl+test+vent+lint | _n_: rename         |                ^^|
  "
     ("e" go-direx-switch-to-buffer)
     ("r" help/go-mode/safb/go-run)
     ("t" go-hydra-go-mode/body)
+    ("o" go-hydra-gore/body)
     ("g" go-hydra-guru-go-mode/body)
     ("k" godef-jump-other-window)
     ("l" pop-tag-mark)
@@ -3149,7 +3154,8 @@ Geiser REPL is: %(help/geiser-on-p)
     (local-set-key (kbd "s-k") #'help/go-mode/safb/go-run)
     (local-set-key (kbd "s-=") #'(lambda () (interactive) (insert " := ")))
     (local-set-key (kbd "s-<") #'(lambda () (interactive) (insert " <- ")))
-    (go-guru-hl-identifier-mode))
+    (go-guru-hl-identifier-mode)
+    (gorepl-mode))
   (add-hook 'go-mode-hook #'help/go-mode-hook-fn))
 ;; org_gcr_2017-07-30_mara_04B4D7BA-6213-4EC0-8631-461270FE1B71 ends here
 
