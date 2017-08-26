@@ -191,7 +191,7 @@ This package works with go-oracle
 
 #+NAME: org_gcr_2017-07-31_mara_5E51BB78-840D-4ABE-9432-6A02ADA11DFA
 #+BEGIN_SRC sh
-go get github.com/tleyden/checkers-bot-minimax
+go get -u github.com/tleyden/checkers-bot-minimax
 #+END_SRC
 *** gotour
 :PROPERTIES:

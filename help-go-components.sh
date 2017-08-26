@@ -11,5 +11,5 @@ go get -u golang.org/x/tools/cmd/gorename
 go get -u github.com/jstemmer/gotags
 go get -u github.com/davecgh/go-spew/spew
 go get -u github.com/golang/example/hello
-go get github.com/tleyden/checkers-bot-minimax
+go get -u github.com/tleyden/checkers-bot-minimax
 go get -u golang.org/x/tour/gotour
