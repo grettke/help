@@ -19,7 +19,7 @@
 
 #+NAME: org_gcr_2017-07-30_mara_8717E8C8-FAAC-47F1-9C86-8C3FF48EEB84
 #+BEGIN_SRC sh
-go get -u github.com/rogpeppe/godef
+go get -u -v github.com/rogpeppe/godef
 #+END_SRC
 *** gocode
 :PROPERTIES:
@@ -29,7 +29,7 @@ go get -u github.com/rogpeppe/godef
 
 #+NAME: org_gcr_2017-07-30_mara_D1F3BB34-CE49-4D0A-8A70-60FAE3633219
 #+BEGIN_SRC sh
-go get -u github.com/nsf/gocode
+go get -u -v github.com/nsf/gocode
 #+END_SRC
 *** godoc
 :PROPERTIES:
@@ -39,7 +39,7 @@ go get -u github.com/nsf/gocode
 
 #+NAME: org_gcr_2017-07-30_mara_F04D4569-D568-4E2F-89F5-E0C45A3A3891
 #+BEGIN_SRC sh
-go get -u golang.org/x/tools/cmd/godoc
+go get -u -v golang.org/x/tools/cmd/godoc
 #+END_SRC
 *** gometalinter
 :PROPERTIES:
@@ -58,7 +58,7 @@ I migrated from this parent subtree.
 
 #+NAME: org_gcr_2017-07-31_mara_F689D245-A022-47D3-8EBE-96E78E81D378
 #+BEGIN_SRC sh
-go get -u gopkg.in/alecthomas/gometalinter.v1
+go get -u -v gopkg.in/alecthomas/gometalinter.v1
 gometalinter.v1 --install --update
 #+END_SRC
 **** Default
@@ -73,7 +73,7 @@ gometalinter.v1 --install --update
 
 #+NAME: org_gcr_2017-07-31_mara_F6DCEBC5-FE50-48A2-8A4B-B8917F7DD309
 #+BEGIN_SRC sh
-go get -u github.com/mdempsky/unconvert
+go get -u -v github.com/mdempsky/unconvert
 #+END_SRC
 ***** errcheck
 :PROPERTIES:
@@ -83,7 +83,7 @@ go get -u github.com/mdempsky/unconvert
 
 #+NAME: org_gcr_2017-07-31_mara_1081DCF5-F192-457F-9269-982DF8E72017
 #+BEGIN_SRC sh
-go get -u github.com/kisielk/errcheck
+go get -u -v github.com/kisielk/errcheck
 #+END_SRC
 ***** megacheck
 :PROPERTIES:
@@ -93,7 +93,7 @@ go get -u github.com/kisielk/errcheck
 
 #+NAME: org_gcr_2017-07-31_mara_799FD877-0E6C-4806-ACF5-ED4D23446525
 #+BEGIN_SRC sh
-go get -u honnef.co/go/tools/cmd/megacheck
+go get -u -v honnef.co/go/tools/cmd/megacheck
 #+END_SRC
 **** Enabled
 :PROPERTIES:
@@ -119,7 +119,7 @@ go get -u honnef.co/go/tools/cmd/megacheck
 
 #+NAME: org_gcr_2017-08-01_mara_68807FA0-64C5-4243-B4CB-F6B91618C114
 #+BEGIN_SRC sh
-go get -u golang.org/x/tools/cmd/guru
+go get -u -v golang.org/x/tools/cmd/guru
 #+END_SRC
 *** gorename
 :PROPERTIES:
@@ -129,7 +129,7 @@ go get -u golang.org/x/tools/cmd/guru
 
 #+NAME: org_gcr_2017-08-01_mara_DDD3881A-7440-483D-AE1F-D09BD77140D9
 #+BEGIN_SRC sh
-go get -u golang.org/x/tools/cmd/gorename
+go get -u -v golang.org/x/tools/cmd/gorename
 #+END_SRC
 *** gotags
 :PROPERTIES:
@@ -139,7 +139,7 @@ go get -u golang.org/x/tools/cmd/gorename
 
 #+NAME: org_gcr_2017-08-01_mara_2708834F-08E0-4237-B045-62CC6DF25793
 #+BEGIN_SRC sh
-go get -u github.com/jstemmer/gotags
+go get -u -v github.com/jstemmer/gotags
 #+END_SRC
 *** go-spew
 :PROPERTIES:
@@ -150,7 +150,7 @@ debugging"
 
 #+NAME: org_gcr_2017-08-25_mara_6518E2EC-F775-44A1-8FEB-2C08EFF7D6D0
 #+BEGIN_SRC sh
-go get -u github.com/davecgh/go-spew/spew
+go get -u -v github.com/davecgh/go-spew/spew
 #+END_SRC
 *** TODO delve
 :PROPERTIES:
@@ -179,7 +179,7 @@ go get -u github.com/davecgh/go-spew/spew
 :END:
 #+NAME: org_gcr_2017-07-30_mara_EA0B3B27-08D7-4D7B-BB9C-E44EB7DF6F97
 #+BEGIN_SRC sh
-go get -u github.com/golang/example/hello
+go get -u -v github.com/golang/example/hello
 #+END_SRC
 *** checkers-bot-minimax
 :PROPERTIES:
@@ -191,7 +191,7 @@ This package works with go-oracle
 
 #+NAME: org_gcr_2017-07-31_mara_5E51BB78-840D-4ABE-9432-6A02ADA11DFA
 #+BEGIN_SRC sh
-go get -u github.com/tleyden/checkers-bot-minimax
+go get -u -v github.com/tleyden/checkers-bot-minimax
 #+END_SRC
 *** gotour
 :PROPERTIES:
@@ -201,5 +201,5 @@ Call ~gotour~
 
 #+NAME: org_gcr_2017-08-02_mara_F0F0DEC6-A5F5-4C75-8145-0B0D16569E5E
 #+BEGIN_SRC sh
-go get -u golang.org/x/tour/gotour
+go get -u -v golang.org/x/tour/gotour
 #+END_SRC
