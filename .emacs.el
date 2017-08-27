@@ -4140,15 +4140,17 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 ;; org_gcr_2017-05-12_mara_D0F37886-4355-478C-A141-93F48E531CE5 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B][org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B]]
-(global-set-key (kbd "s-v") #'ido-find-file)
 (global-set-key (kbd "C-x C-c") #'help/safb-save-buffers-kill-terminal)
 (define-key org-mode-map (kbd "C-j") nil)
 (global-set-key (kbd "C-j") nil)
 (global-set-key (kbd "C-j") #'ido-switch-buffer)
+(global-set-key (kbd "M-j") nil)
+(define-key org-mode-map (kbd "M-j") nil)
+(global-set-key (kbd "M-j") #'smex)
 (global-set-key (kbd "C-M-,") #'ibuffer)
 (define-key org-mode-map (kbd "C-o") nil)
 (global-set-key (kbd "C-o") nil)
-(global-set-key (kbd "C-o") #'smex)
+(global-set-key (kbd "C-o") #'ido-find-file)
 (global-set-key (kbd "C-M-.") nil)
 (global-set-key (kbd "C-M-.") #'dired)
 ;; org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B ends here
