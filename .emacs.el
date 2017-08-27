@@ -3119,8 +3119,6 @@ Geiser REPL is: %(help/geiser-on-p)
     (interactive)
     (help/save-all-file-buffers)
     (call-interactively 'go-rename))
-  ;; (use-package gorepl-mode
-  ;;   :ensure t)
   (add-to-list 'load-path "~/git/github/gorepl-mode")
   (require 'gorepl-mode)
   (defhydra help/hydra/right/go-mode (:color blue :hint nil)
