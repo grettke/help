@@ -6457,11 +6457,11 @@ Enable the menu bar.
 :ID:       org_gcr_2017-06-23_mara:EC50EB46-7878-4799-9805-EF0CB3D3E526
 :END:
 
-Enable the tool bar.
+Disable the tool bar.
 
 #+NAME: org_gcr_2017-05-12_mara_D462D343-9EA8-4BCF-BD08-8FDD4F3E11E9
 #+BEGIN_SRC emacs-lisp
-(tool-bar-mode nil)
+(tool-bar-mode 1)
 #+END_SRC
 
 Style the tool bar.
