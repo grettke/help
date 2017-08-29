@@ -4512,6 +4512,7 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
   ;; Row 4
   ("q" org-babel-switch-to-session-with-code)
   ("w" org-table-edit-field)
+  ("W" help/org-mark-subtree/kill-ring-save)
   ("e" org-babel-goto-named-result)
   ("r" help/org-refile)
   ("R" org-babel-goto-named-src-block)
@@ -4531,7 +4532,7 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
   ("c" org-fill-paragraph)
   ("b" org-babel-switch-to-session)
   ("n" org-narrow-to-subtree)
-  ("m" help/org-mark-subtree/kill-ring-save)
+  ("m" org-mark-subtree)
   ("M" org-mark-element))
 (defun help/org-mark-subtree/kill-ring-save ()
   ""
