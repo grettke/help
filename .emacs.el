@@ -2607,8 +2607,13 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
   ("c" org-fill-paragraph)
   ("b" org-babel-switch-to-session)
   ("n" org-narrow-to-subtree)
-  ("m" org-mark-subtree)
+  ("m" help/org-mark-subtree/kill-ring-save)
   ("M" org-mark-element))
+(defun help/org-mark-subtree/kill-ring-save ()
+  ""
+  (interactive)
+  (call-interactively 'org-mark-subtree)
+  (call-interactively 'kill-ring-save))
 (key-chord-define org-mode-map "hh" #'help/hydra/right-side/org-mode/body)
 ;; org_gcr_2017-05-12_mara_90AA8396-E8A0-439C-A1E4-373E90C4DC84 ends here
 

@@ -4531,8 +4531,13 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
   ("c" org-fill-paragraph)
   ("b" org-babel-switch-to-session)
   ("n" org-narrow-to-subtree)
-  ("m" org-mark-subtree)
+  ("m" help/org-mark-subtree/kill-ring-save)
   ("M" org-mark-element))
+(defun help/org-mark-subtree/kill-ring-save ()
+  ""
+  (interactive)
+  (call-interactively 'org-mark-subtree)
+  (call-interactively 'kill-ring-save))
 (key-chord-define org-mode-map "hh" #'help/hydra/right-side/org-mode/body)
 #+END_SRC
 
