@@ -3111,8 +3111,8 @@ Geiser REPL is: %(help/geiser-on-p)
     :ensure t)
   (use-package go-direx
     :ensure t)
-  (use-package go-snippets
-    :ensure t)
+  (add-to-list 'load-path "~/src/go-snippets")
+  (require 'go-snippets)
   (defun help/go-mode/safb/go-run ()
     ""
     (interactive)
