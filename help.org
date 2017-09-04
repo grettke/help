@@ -5341,7 +5341,7 @@ Enable Auto-Complete via Geiser.
     ("e" go-direx-switch-to-buffer)
     ("r" help/go-mode/safb/go-run)
     ("t" go-hydra-go-mode/body)
-    ("o" go-hydra-gore/body)
+    ("o" gorepl-hydra/body)
     ("g" go-hydra-guru-go-mode/body)
     ("k" godef-jump-other-window)
     ("l" pop-tag-mark)
