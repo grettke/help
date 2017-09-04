@@ -5362,6 +5362,7 @@ Enable Auto-Complete via Geiser.
     (local-set-key (kbd "=") #'(lambda () (interactive) (insert " = ")))
     (local-set-key (kbd "s-=") #'(lambda () (interactive) (insert " := ")))
     (local-set-key (kbd "s-<") #'(lambda () (interactive) (insert " <- ")))
+    (local-set-key (kbd "s-o") #'gorepl-hydra/body)
     (go-guru-hl-identifier-mode)
     (gorepl-mode))
   (add-hook 'go-mode-hook #'help/go-mode-hook-fn))
