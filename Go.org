@@ -47,69 +47,13 @@ go get -u -v golang.org/x/tools/cmd/godoc
 :END:
 [[https://github.com/alecthomas/gometalinter][Via]]: "Concurrently run Go lint tools and normalise their output"
 
-Installs a bunch of components. I migrated existing components from my setup
-here. Then in the Emacs I disable everything and only enable the following.
-
-The Default subtree contains components that are default for gometalinter and
-I migrated from this parent subtree.
-
-The Enabled subtree contains components that are default for gometalinter and
-I migrated from this parent subtree.
+Installs a bunch of components. Enable all of them by enabling itslef.
 
 #+NAME: org_gcr_2017-07-31_mara_F689D245-A022-47D3-8EBE-96E78E81D378
 #+BEGIN_SRC sh
-go get -u -v gopkg.in/alecthomas/gometalinter.v1
-gometalinter.v1 --install --update
+go get -u -v github.com/alecthomas/gometalinter
+gometalinter --install
 #+END_SRC
-**** Default
-:PROPERTIES:
-:ID:       org_gcr_2017-07-31_mara:157E2E4D-2631-4761-9D2E-1094BE8F1324
-:END:
-***** unconvert
-:PROPERTIES:
-:ID:       org_gcr_2017-07-31_mara:1488C35C-CE15-4E59-9C49-41773A137AAF
-:END:
-[[https://github.com/mdempsky/unconvert][Via]]: "Remove unnecessary type conversions from Go source"
-
-#+NAME: org_gcr_2017-07-31_mara_F6DCEBC5-FE50-48A2-8A4B-B8917F7DD309
-#+BEGIN_SRC sh
-go get -u -v github.com/mdempsky/unconvert
-#+END_SRC
-***** errcheck
-:PROPERTIES:
-:ID:       org_gcr_2017-07-31_mara:626D38ED-4E74-4B42-939F-0C3864695E51
-:END:
-[[https://github.com/kisielk/errcheck][Via]]: "errcheck checks that you checked errors."
-
-#+NAME: org_gcr_2017-07-31_mara_1081DCF5-F192-457F-9269-982DF8E72017
-#+BEGIN_SRC sh
-go get -u -v github.com/kisielk/errcheck
-#+END_SRC
-***** megacheck
-:PROPERTIES:
-:ID:       org_gcr_2017-07-31_mara:6C85624B-9EDF-4FB7-9970-3EBEA9EC50E1
-:END:
-[[https://github.com/dominikh/go-tools/tree/master/cmd/megacheck][Via]]: "megacheck runs staticcheck, gosimple and unused at once."
-
-#+NAME: org_gcr_2017-07-31_mara_799FD877-0E6C-4806-ACF5-ED4D23446525
-#+BEGIN_SRC sh
-go get -u -v honnef.co/go/tools/cmd/megacheck
-#+END_SRC
-**** Enabled
-:PROPERTIES:
-:ID:       org_gcr_2017-07-31_mara:6643F069-2924-4FC4-8A8A-8BCC22E6E4D2
-:END:
-***** golint
-:PROPERTIES:
-:ID:       org_gcr_2017-07-30_mara:477BD3FB-F2C2-4A48-B3D4-F05DC3228D38
-:END:
-[[https://github.com/golang/lint][Via]]: "This is a linter for Go source code."
-***** goimports
-:PROPERTIES:
-:ID:       org_gcr_2017-07-30_mara:DAEEB803-716D-45BE-9B44-EB85E2E92218
-:END:
-[[https://godoc.org/golang.org/x/tools/cmd/goimports][Via]]: "Command goimports updates your Go import lines, adding missing ones and removing unreferenced ones."
-
 *** guru
 :PROPERTIES:
 :ID:       org_gcr_2017-08-01_mara:11855C46-09E0-4F01-9BA7-1BE64EE707A5
