@@ -7233,7 +7233,7 @@ Flycheck On? %(bound-and-true-p flycheck-mode)
   ("i" writegood-grade-level :exit nil)
   ("o" writegood-reading-ease :exit nil)
   ("q" nil))
-(global-set-key (kbd "C-M-7") #'help/hydra-checking/body)
+(global-set-key (kbd "C-M-9") #'help/hydra-checking/body)
 #+END_SRC
 
 **** Row 4

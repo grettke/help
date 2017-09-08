@@ -3927,7 +3927,7 @@ Flycheck On? %(bound-and-true-p flycheck-mode)
   ("i" writegood-grade-level :exit nil)
   ("o" writegood-reading-ease :exit nil)
   ("q" nil))
-(global-set-key (kbd "C-M-7") #'help/hydra-checking/body)
+(global-set-key (kbd "C-M-9") #'help/hydra-checking/body)
 ;; org_gcr_2017-06-13_mara_2DFDC64B-DBF2-473E-979F-D7D8D0DD2206 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389][org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389]]
