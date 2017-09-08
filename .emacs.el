@@ -3133,7 +3133,7 @@ Geiser REPL is: %(help/geiser-on-p)
 -^------------------------^+^-------------------^+----------------^^+--------
  _e_: explorer             | _r_: run            | _t_: tools       | g_o_re
  _g_: guru                 | _j_: previous error | _k_: next error  |
- _c_: instl+test+vent+lint | _n_: rename         |                ^^|
+ _c_: build                | _n_: rename         |                ^^|
  "
     ("e" go-direx-switch-to-buffer)
     ("r" help/go-mode/safb/go-run)
@@ -3153,7 +3153,7 @@ Geiser REPL is: %(help/geiser-on-p)
     (setq gofmt-command "goimports")
     (add-hook 'before-save-hook #'gofmt-before-save)
     (setq compilation-read-command nil)
-    (setq compile-command "go install && go test -v && go vet && golint")
+    (setq compile-command "go install && go test -v && gometalinter ./...")
     (local-set-key (kbd "s-j") #'help/safb/compile)
     (local-set-key (kbd "s-k") #'help/go-mode/safb/go-run)
     (local-set-key (kbd "=") #'(lambda () (interactive) (insert " = ")))
