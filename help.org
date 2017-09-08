@@ -7329,7 +7329,7 @@ Org-Mode and I hit ~s-h~ it hides Emacs. Oops!
 
 #+NAME: org_gcr_2017-05-12_mara_20330335-75E6-4AB4-A661-D291315FAFD7
 #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "s-a") #'help/safb-switch-to-previous-buffer)
+(global-set-key (kbd "C-M-j") #'help/safb-switch-to-previous-buffer)
 (global-set-key (kbd "s-d") #'er/expand-region)
 #+END_SRC
 

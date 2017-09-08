@@ -3999,7 +3999,7 @@ Describe Something
 ;; org_gcr_2017-05-12_mara_A26325F2-9D6C-49EE-8CBE-DC552C6F315F ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_20330335-75E6-4AB4-A661-D291315FAFD7][org_gcr_2017-05-12_mara_20330335-75E6-4AB4-A661-D291315FAFD7]]
-(global-set-key (kbd "s-a") #'help/safb-switch-to-previous-buffer)
+(global-set-key (kbd "C-M-j") #'help/safb-switch-to-previous-buffer)
 (global-set-key (kbd "s-d") #'er/expand-region)
 ;; org_gcr_2017-05-12_mara_20330335-75E6-4AB4-A661-D291315FAFD7 ends here
 
