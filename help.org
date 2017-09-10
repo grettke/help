@@ -7643,6 +7643,8 @@ It starts with:
 - H
 - N
 
+Try to use ~s-i~ for things like ~info-at-point~.
+
 *** Exceptions
     :PROPERTIES:
     :ID:       org_gcr_2017-05-12_mara:187B7649-D799-4E41-9DE7-448BC50E0250
