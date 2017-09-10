@@ -7628,7 +7628,13 @@ Pop the mark back.
     :ID:       org_gcr_2017-05-12_mara:6F9375AB-C92C-4986-AECE-ABC945375CA2
     :END:
 
-Try to reserve the right side for mode-specific activities.
+Reserve the right side for mode-specific activities.
+
+It starts with:
+- 6
+- Y
+- H
+- N
 
 *** Exceptions
     :PROPERTIES:
