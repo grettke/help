@@ -7183,6 +7183,13 @@ These changes helped guide the custom keyboard design.
     :ID:       org_gcr_2017-05-12_mara:6F293EA2-D2D4-42F7-8684-D5B53CB849DA
     :END:
 
+Keybindings for every mode. Starts and stop:
+
+- 1-5
+- Q-T
+- A-G
+- Z-B
+
 **** Row 5
      :PROPERTIES:
      :ID:       org_gcr_2017-05-12_mara:5E250B06-C35C-4AEE-90C6-F5333A2D1BE3
