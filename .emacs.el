@@ -3116,9 +3116,8 @@ Geiser REPL is: %(help/geiser-on-p)
   (defun help/go-mode/safb/go-run ()
     ""
     (interactive)
-    (let* ((old-compile-command compile-command)
-           (compile-command (s-concat old-compile-command " && " (file-name-nondirectory
-                                                                  (directory-file-name default-directory)))))
+    (let* ((compile-command (file-name-nondirectory
+                             (directory-file-name default-directory))))
       (help/safb/compile)))
   (defun help/go-mode/safb/go-rename ()
     ""
