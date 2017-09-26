@@ -4514,6 +4514,7 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
   ("w" org-table-edit-field)
   ("W" help/org-mark-subtree/kill-ring-save)
   ("e" org-babel-goto-named-result)
+  ("E" org-entities-help)
   ("r" help/org-refile)
   ("R" org-babel-goto-named-src-block)
   ("t" org-babel-goto-src-block-head)
