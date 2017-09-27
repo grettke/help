@@ -1754,7 +1754,7 @@ Dumb-Jump:
     ("n" ag-kill-other-buffers)
     ("m" ag-kill-buffers)
     ("q" nil))
-  (global-set-key (kbd "C-s-a") #'help/hydra/ag/body))
+  (global-set-key (kbd "C-s-s") #'help/hydra/ag/body))
 ;; org_gcr_2017-05-12_mara_58F6AD1E-7E9B-4650-B859-F9C0540C74B6 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E4E1E1A0-1353-4483-BE1C-746097F60CB6][org_gcr_2017-05-12_mara_E4E1E1A0-1353-4483-BE1C-746097F60CB6]]
