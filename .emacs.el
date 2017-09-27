@@ -1463,7 +1463,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
 -------------------^^+^-------------------^+^----------------------
  _h_: check buffer   | _j_: next error     | _i_: brief message
  _y_: corrent buffer | _k_: previous error | _o_: detailed message
- _n_: finished       | _q_: guit           |
+ _n_: finished       | _q_: quit           |
  "
     ("h" langtool-check :exit nil)
     ("y" langtool-correct-buffer :exit nil)
