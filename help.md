@@ -104,15 +104,15 @@ Never compile this.
         -   Key bindings
         -   Programming language expressions
             -   Variable names
-        -   Emacs mode function name, package name or Github name
+        -   Emacs mode function name, package name or Github name. This is the most technical name that you can and do use in scripts It is meant for computers.
             -   `org-mode`
         -   Class and Object names
         -   Shell commands that are executable
-        -   Executables for programming language compilers and interpereters
+        -   Executable for programming language compilers and interpreters. To clarify these are either the executable names or the human names for example `gcc versus ~C`.
             -   `gcc` and `python`
             -   `bash` and `perl`
             -   `scheme` and `java`
-            -   `GCC` and `Pyton`
+            -   `GCC` and `Python`
             -   `Bash` and `Perl`
             -   `Scheme` and `Java`
         -   Anything that you would read program or text
@@ -549,6 +549,22 @@ Enable the `super` key-space.
 ```
 
 
+## Linux
+
+    ID: org_gcr_2017-07-23_mara:7D02C86B-CDBE-466B-9647-3EDA6DB016C6
+
+Make it easy to evaluate code only when running on .
+
+```emacs-lisp
+(defmacro help/on-gnu/linux (statement &rest statements)
+  "Evaluate the enclosed body only when run on GNU/Linux"
+  `(when (eq system-type 'gnu/linux)
+     ,statement
+     ,@statements))
+
+```
+
+
 # Standard Operating Procedure
 
     ID: org_gcr_2017-05-12_mara:205571BA-2DC4-4DCB-912C-65B9EC843574
@@ -561,14 +577,6 @@ Configure EMACS to maximum utility.
     ID: org_gcr_2017-05-12_mara:1E88DD48-B992-46E1-B49F-EB8071E8EC37
 
 ```emacs-lisp
-(defun help/comment-or-uncomment ()
-  "Comment or uncomment the current line or selection."
-  (interactive)
-  (cond ((not mark-active) (comment-or-uncomment-region (line-beginning-position)
-                                                      (line-end-position)))
-        ((< (point) (mark)) (comment-or-uncomment-region (point) (mark)))
-        (t (comment-or-uncomment-region (mark) (point)))))
-
 (defun help/save-all-file-buffers ()
   "Saves every buffer associated with a file."
   (interactive)
@@ -576,22 +584,6 @@ Configure EMACS to maximum utility.
     (with-current-buffer buf
       (when (and (buffer-file-name) (buffer-modified-p))
         (save-buffer)))))
-
-(defun describe-thing-in-popup ()
-  "Attribution: URL `http://blog.jenkster.com/2013/12/popup-help-in-emacs-lisp.html'."
-  (interactive)
-  (let* ((thing (symbol-at-point))
-         (help-xref-following t)
-         (description (with-temp-buffer
-                        (help-mode)
-                        (help-xref-interned thing)
-                        (buffer-string))))
-    (popup-tip description
-               :point (point)
-               :around t
-               :height 30
-               :scroll-bar t
-               :margin t)))
 
 (defun help/kill-other-buffers ()
   "Kill all other buffers."
@@ -1121,7 +1113,7 @@ Attribution: `http://stackoverflow.com/a/25212377'"
                    name (file-name-nondirectory new-name)))))))
 
 
-(defun help/sort-lines-nocase ()
+(defun help/sort-lines-ignore-case ()
   "Sort lines ignoring case.
 
 Attribution: `https://stackoverflow.com/questions/20967818/emacs-function-to-case-insensitive-sort-lines'"
@@ -1158,6 +1150,24 @@ Attribution: URL `https://rejeep.github.io/emacs/elisp/2010/11/16/delete-file-an
   (insert "#+CATEGORY: Article
 #+TAGS: Babel, Emacs, Ide, Lisp, Literate Programming, Programming Language, Reproducible research, elisp, org-mode
 #+TITLE:"))
+
+(defun help/wip ()
+  (interactive)
+  (when (use-region-p) (call-interactively 'kill-region))
+  (let ((name (read-string "Programming language name? ")))
+    (insert (format
+             "#+CATEGORY: Article
+#+TAGS: Programming Language, %s
+#+TITLE: (%s) " name name))))
+
+(defconst help/buffalo "(🐃) Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo (🐃)"
+  "URL: `https://en.wikipedia.org/wiki/Buffalo_buffalo_Buffalo_buffalo_buffalo_buffalo_Buffalo_buffalo'")
+
+(defun help/safb/compile ()
+  "Save all file buffers and call `compile'"
+  (interactive)
+  (help/save-all-file-buffers)
+  (call-interactively 'compile))
 ```
 
 
@@ -1463,6 +1473,16 @@ This package for GNU APL.
   :diminish 'buffer-face-mode)
 ```
 
+Move line or region up or down.
+
+```emacs-lisp
+(use-package move-text
+  :ensure t
+  :config
+  (global-set-key (kbd "S-s-<up>") #'move-text-up)
+  (global-set-key (kbd "S-s-<down>") #'move-text-down))
+```
+
 
 ## Code Folding
 
@@ -1546,7 +1566,7 @@ Macro expander:
 (use-package macrostep
   :ensure t
   :config
-  (global-set-key (kbd "C-M-8") #'macrostep-expand))
+  (define-key emacs-lisp-mode-map (kbd "C-M-8") #'macrostep-expand))
 ```
 
 
@@ -1603,11 +1623,7 @@ configuration when invoked to evaluate a line."
       (eir-eval-in-shell)))
   (add-hook 'sh-mode-hook
             '(lambda()
-               (local-set-key (kbd "C-M-<return>") 'eir-eval-in-shell2)))
-  ;; racket-mode support (for Racket; if not using Geiser)
-  (require 'racket-mode) ; if not done elsewhere
-  (require 'eval-in-repl-racket)
-  (define-key racket-mode-map (kbd "<C-return>") 'eir-eval-in-racket))
+               (local-set-key (kbd "C-<return>") 'eir-eval-in-shell2))))
 ```
 
 
@@ -2155,7 +2171,30 @@ Integrate Langtool.
   :init
   (setq langtool-language-tool-jar (getenv "LANGTOOL"))
   (setq langtool-mother-tongue "en")
-  (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java")))
+  (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java"))
+  (setq langtool-disabled-rules nil)
+  (setq langtool-java-user-arguments '("-Dfile.encoding=UTF-8"))
+  (setq langtool-user-arguments nil)
+  (defhydra help/hydra/both/langtool (:color blue :hint nil)
+    "
+ Langtool:^         ^|^                   ^|^
+-------------------^^+^-------------------^+^----------------------
+ _h_: check buffer   | _j_: next error     | _i_: brief message
+ _y_: corrent buffer | _k_: previous error | _o_: detailed message
+ _n_: finished       | _q_: quit           |
+ "
+    ("h" langtool-check :exit nil)
+    ("y" langtool-correct-buffer :exit nil)
+    ("n" langtool-check-done)
+
+    ("j" langtool-goto-next-error :exit nil)
+    ("k" langtool-goto-previous-error :exit nil)
+
+    ("i" langtool-show-brief-message-at-point :exit nil)
+    ("o" langtool-show-message-at-point :exit nil)
+
+    ("q" nil))
+  (key-chord-define-global "qk" #'help/hydra/both/langtool/body))
 ```
 
 Integrate Proselint. I wanted to load the executable location from `PROSELINT_HOME` but I haven&rsquo;t figured out how yet. `flycheck-define-checker` is a macro but I don&rsquo;t know how to expand the string for use in the macro. I tried quasiquote and that was wrong.
@@ -2231,13 +2270,19 @@ Auto-completion for `.`-separated words.
 (use-package dumb-jump
   :ensure t
   :config
-  (define-prefix-command 'help/dj-map)
-  (key-chord-define-global "jj" #'help/dj-map)
-  (define-key help/dj-map "j" #'dumb-jump-go)
-  (define-key help/dj-map "i" #'dumb-jump-go-other-window)
-  (define-key help/dj-map "k" #'dumb-jump-back)
-  (define-key help/dj-map "l" #'dumb-jump-go-prompt)
-  (define-key help/dj-map "m" #'dumb-jump-quick-look))
+  (defhydra help/hydra-left-side/dumb-jump (:color blue :hint nil)
+    "
+Dumb-Jump:
+ _j_ go to _k_ return from _i_ choose
+  _u_ in other window _o_ peek
+  _q_ quit"
+    ("j" dumb-jump-go)
+    ("k" dumb-jump-back)
+    ("i" dumb-jump-go-prompt)
+    ("u" dumb-jump-go-other-window)
+    ("o" dumb-jump-quick-look)
+    ("q" nil))
+  (key-chord-define-global "jj" #'help/hydra-left-side/dumb-jump/body))
 ```
 
 
@@ -2312,6 +2357,13 @@ Allow recursive commands-in-commands and highlight the levels of recursion.
 ```emacs-lisp
 (setq enable-recursive-minibuffers t)
 (minibuffer-depth-indicate-mode t)
+```
+
+Temporarily give it unlimited memory to speed it up.
+
+```emacs-lisp
+(add-hook 'minibuffer-setup-hook #'help/double-gc-cons-threshold)
+(add-hook 'minibuffer-exit-hook #'help/set-gc-cons-threshold)
 ```
 
 
@@ -2529,6 +2581,18 @@ When you don&rsquo;t want to do that interactively type M-c in the search input 
 
 When you don&rsquo;t want to do that non-interactively then search for that command or activities toggling variable `M-x apropos-variable RET case-fold-search RET` and bind it during the search.
 
+Make `isearch` automatically search for Unicode homoglyphs of the search characters.
+
+```emacs-lisp
+(setq search-default-mode #'char-fold-to-regexp)
+```
+
+Ditto for replace.
+
+```emacs-lisp
+(setq replace-char-fold t)
+```
+
 
 ### External
 
@@ -2554,8 +2618,6 @@ Ag integration.
   (setq ag-reuse-buffers nil)
   (setq ag-arguments (-insert-at (- (length ag-arguments) 1) '"--ignore-case"
                                  ag-arguments))
-  (setq ag-arguments (-insert-at (- (length ag-arguments) 1) '"--file-search-regex"
-                                 ag-arguments))
   (defun help/ag-mode-hook-fn ()
     "HELP ag customizations."
     (interactive)
@@ -2566,7 +2628,36 @@ Ag integration.
     (let ((compilation-scroll-output 'first-error))
       (pop-to-buffer next-error-last-buffer)))
   (add-hook 'ag-mode-hook #'help/ag-mode-hook-fn)
-  (add-hook 'ag-search-finished-hook #'help/ag-mode-finished-hook-fn))
+  (add-hook 'ag-search-finished-hook #'help/ag-mode-finished-hook-fn)
+  (defhydra help/hydra/ag (:color blue
+                                  :hint nil)
+    "
+`ag', The Silver Searcher:
+  Present in window:
+    Search in folder:
+      _j_ limit search by file type _k_ search in everything
+    Search in project:
+      _l_ limit search by file type _;_ search in everything
+  Present in dired:
+    Search in folder:
+      _u_ limit search by file type _i_ search in everything
+    Search in project:
+      _o_ limit search by file type _p_ search in everything
+  Other:
+    _n_ close every other buffer _m_ close every buffer _q_ quit
+"
+    ("u" ag-dired-regexp)
+    ("i" ag-dired)
+    ("o" ag-project-dired-regexp)
+    ("p" ag-project-dired)
+    ("j" ag-files)
+    ("k" ag)
+    ("l" ag-project-files)
+    (";" ag-project)
+    ("n" ag-kill-other-buffers)
+    ("m" ag-kill-buffers)
+    ("q" nil))
+  (global-set-key (kbd "C-s-s") #'help/hydra/ag/body))
 ```
 
 Writeable Ag.
@@ -2786,7 +2877,7 @@ Change browsing.
 VC activity keybindings.
 
 ```emacs-lisp
-(global-set-key (kbd "s-w") #'git-timemachine)
+(global-set-key (kbd "C-M-w") #'git-timemachine)
 (global-set-key (kbd "s-e") #'help/safb-help/magit-status)
 (global-set-key (kbd "s-r") #'help/safb-vc-revert)
 (global-set-key (kbd "s-f") #'help/safb-help/vc-next-action)
@@ -2858,6 +2949,7 @@ Git config files.
         '((tab-mark ?\t [?↹ ?\t] [?␉ ?\t] [?\t])))
   (setq whitespace-line-column help/column-width)
   (global-whitespace-mode t)
+  (setq whitespace-global-modes '(not go-mode))
   :diminish whitespace-mode global-whitespace-mode)
 ```
 
@@ -2987,7 +3079,11 @@ Every text editing buffer needs this.
                                 crontab-mode-hook
                                 apache-mode-hook
                                 python-mode-hook
-                                gnu-apl-mode-hook))
+                                gnu-apl-mode-hook
+                                geiser-mode-hook
+                                geiser-repl-mode-hook
+                                go-mode-hook
+                                fsharp-mode-hook))
         ```
     -   LISP mode hooks.
         -   Are hacking modes.
@@ -2997,7 +3093,10 @@ Every text editing buffer needs this.
                   '(emacs-lisp-mode-hook
                     ielm-mode-hook
                     lisp-interaction-mode-hook
-                    scheme-mode-hook))
+                    scheme-mode-hook
+                    inferior-scheme-mode-hook
+                    geiser-mode-hook
+                    geiser-repl-mode-hook))
             (setq help/prog-modes (append help/prog-modes help/lisp-modes))
             ```
         -   IELM mode hook.
@@ -3133,8 +3232,19 @@ Quasi-Quote visualization.
   (local-set-key (kbd "s-l td") #'toggle-debug-on-error)
   (local-set-key (kbd "s-l mef") #'macroexpand)
   (local-set-key (kbd "s-l mea") #'macroexpand-all)
-  (local-set-key (kbd "#") #'endless/sharp)
   (local-set-key (kbd "C-c e") #'macrostep-expand))
+
+(defhydra help/hydra-elisp-mode (:color blue
+                                        :hint nil)
+  "
+elisp-mode:
+ _d_ describe-thing _f_ find-thing
+  _q_ quit
+"
+  ("d" elisp-slime-nav-describe-elisp-thing-at-point)
+  ("f" elisp-slime-nav-find-elisp-thing-at-point)
+  ("q" nil))
+(key-chord-define emacs-lisp-mode-map "hh" #'help/hydra-elisp-mode/body)
 
 (defun help/emacs-lisp-mode-hook-fn ()
   (interactive)
@@ -3160,11 +3270,16 @@ Quasi-Quote visualization.
   (help/ielm-auto-complete)
   (turn-on-elisp-slime-nav-mode))
 
+(add-hook 'ielm-mode-hook #'help/ielm-mode-hook-fn)
+
+(defun help/general-lisp-mode-hook-fn ()
+  (highlight-quoted-mode)
+  (highlight-stages-mode)
+  (local-set-key (kbd "#") #'endless/sharp))
+
 (let ()
   (--each help/lisp-modes
-    (add-hook it #'help/emacs-lisp-mode-hook-fn)))
-
-(add-hook 'ielm-mode-hook #'help/ielm-mode-hook-fn)
+    (add-hook it #'help/general-lisp-mode-hook-fn)))
 ```
 
 &ldquo;find callers of elisp functions or macros&rdquo;.
@@ -3184,14 +3299,6 @@ Package lint.
   :ensure t
   :after (package-lint))
 ```
-
-1.  Keybinding
-
-        ID: org_gcr_2017-05-12_mara:8F05616B-84BF-4E34-8964-2E200807E5E9
-
-    ```emacs-lisp
-    (define-key emacs-lisp-mode-map (kbd "s-p") #'describe-thing-in-popup)
-    ```
 
 
 ### Org-Mode
@@ -3864,7 +3971,7 @@ Package lint.
                                                          :hint nil)
           "
         _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ id-create _5_ toggle-macro
-        _q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ help/org-refile _R_ g2nms-b _t_ g2s-b/hd _p_ copy/property
+        _q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ help/org-refile _R_ g2nms-b _t_ g2s-b/hd _T_ table export format _p_ copy/property
         _a_ archive-subtree _s_ oblobigst _u_ goto _h_ dksieb _k_ ob-check-src-blk _l_ lint
         _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
           ;; Row 5
@@ -3876,10 +3983,13 @@ Package lint.
           ;; Row 4
           ("q" org-babel-switch-to-session-with-code)
           ("w" org-table-edit-field)
+          ("W" help/org-mark-subtree/kill-ring-save)
           ("e" org-babel-goto-named-result)
+          ("E" org-entities-help)
           ("r" help/org-refile)
           ("R" org-babel-goto-named-src-block)
           ("t" org-babel-goto-src-block-head)
+          ("T" (lambda () (interactive) (insert "#+ATTR_HTML: :border 2 :rules all :frame border")))
           ("u" org-goto)
           ("p" my-org-region-to-property)
           ;; Row 3
@@ -3896,6 +4006,11 @@ Package lint.
           ("n" org-narrow-to-subtree)
           ("m" org-mark-subtree)
           ("M" org-mark-element))
+        (defun help/org-mark-subtree/kill-ring-save ()
+          ""
+          (interactive)
+          (call-interactively 'org-mark-subtree)
+          (call-interactively 'kill-ring-save))
         (key-chord-define org-mode-map "hh" #'help/hydra/right-side/org-mode/body)
         ```
 
@@ -3951,16 +4066,6 @@ _b_ black-board-bold _f_ fraktur
 
     ID: org_gcr_2017-05-12_mara:ADAE0A1B-3FD8-4605-8611-388E5ADBAFA8
 
-Easily understand the current character.
-
-```emacs-lisp
-(defun help/describe-char ()
-  "Evaluate `describe-char' and then `other-window'."
-  (interactive)
-  (call-interactively #'describe-char)
-  (call-interactively #'other-window))
-```
-
 Easily identify Unicode homoglyphs most often utilized by pranksters.
 
 Good reference for Unicode character study and exploration.
@@ -3999,6 +4104,16 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 ```
 
 
+### Content
+
+    ID: org_gcr_2017-08-04_mara:0A02BFBE-91BE-4629-B4B3-F72F2AAEAD3E
+
+```emacs-lisp
+(use-package lorem-ipsum
+  :ensure t)
+```
+
+
 ### Dash
 
     ID: org_gcr_2017-05-12_mara:B541F7EE-BF7E-4055-9EE6-3B0AC34A1602
@@ -4025,7 +4140,7 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
   (setq gnu-apl-show-keymap-on-startup nil)
   (setq gnu-apl-show-apl-welcome nil)
   (setq gnu-apl-show-tips-on-start nil)
-  (setq gnu-apl-mode-map-prefix "C-M-s-")
+  (setq gnu-apl-mode-map-prefix "M-s-")
   (setq gnu-apl-interactive-mode-map-prefix gnu-apl-mode-map-prefix)
   :config
   (defun em-gnu-apl-init ()
@@ -4206,11 +4321,6 @@ Since our systems are entirely file-based, the entirety of the system most likel
 ```emacs-lisp
 (setq ess-eval-visibly 'nowait)
 ```
-
-
-### SAS (ESS)
-
-    ID: org_gcr_2017-05-12_mara:BACA8D4C-7DAD-4457-B089-345BAD1BF3A2
 
 
 ### R (ESS)
@@ -4430,42 +4540,95 @@ R mode hook.
 ```
 
 
-### Scheme (LISP)
+### Scheme
 
     ID: org_gcr_2017-05-12_mara:80DF94ED-4868-47CE-BAC8-978863BEF5AF
 
-Handle all file extensions:
+File extensions:
 
 -   Traditional.
 
     ```emacs-lisp
-      (add-to-list 'auto-mode-alist '("\\.scm\\'" . scheme-mode))
-      (add-to-list 'auto-mode-alist '("\\.ss\\'" . scheme-mode))
-    ```
--   Racket.
-
-    ```emacs-lisp
-      (add-to-list 'auto-mode-alist '("\\.rkt\\'" . scheme-mode))
+    (add-to-list 'auto-mode-alist '("\\.scm\\'" . scheme-mode))
+    (add-to-list 'auto-mode-alist '("\\.ss\\'" . scheme-mode))
     ```
 -   R6RS.
 
     ```emacs-lisp
-      (add-to-list 'auto-mode-alist '("\\.sls\\'" . scheme-mode))
-      (add-to-list 'auto-mode-alist '("\\.sps\\'" . scheme-mode))
+    (add-to-list 'auto-mode-alist '("\\.sls\\'" . scheme-mode))
+    (add-to-list 'auto-mode-alist '("\\.sps\\'" . scheme-mode))
+    ```
+-   Racket.
+
+    ```emacs-lisp
+    (add-to-list 'auto-mode-alist '("\\.rkt\\'" . scheme-mode))
     ```
 
-Use Geiser for Racket and Guile
+Scheme.
+
+```emacs-lisp
+(use-package scheme-mode
+  :config
+  (setq scheme-program-name "chez")
+  (defun help/scheme-mode-hook-fn ())
+  (add-hook 'scheme-mode-hook #'help/scheme-mode-hook-fn)
+  (defun help/inferior-scheme-mode-hook-fn ()))
+```
+
+Geiser.
 
 ```emacs-lisp
 (use-package geiser
-  :ensure t)
-```
-
-Use Racket.
-
-```emacs-lisp
-(use-package racket-mode
-  :ensure t)
+  :ensure t
+  :config
+  (setq geiser-active-implementations '(chez))
+  (setq geiser-repl-history-no-dups-p t)
+  (defun help/geiser-exit-chez ()
+    (interactive)
+    (call-interactively 'geiser-mode-switch-to-repl)
+    (insert "(exit)")
+    (geiser-repl--maybe-send))
+  (defun help/geiser-on-p ()
+    (if (geiser-repl--live-p) 'ON
+      'OFF))
+  (defun help/geiser-eval-line ()
+    "Evaluate this line and move to next."
+    (interactive)
+    (end-of-line)
+    (set-mark (line-beginning-position))
+    (call-interactively 'geiser-eval-region)
+    (deactivate-mark)
+    (call-interactively 'next-logical-line))
+  (defhydra help/hydra-geiser-mode (:color blue
+                                           :hint nil)
+    "
+Geiser REPL is: %(help/geiser-on-p)
+ _y_ eval-buffer _u_ eval-region _U_ (and go)
+  _z_ run (another) geiser _x_ stop latest chez _c_ exit geiser _b_ to latest geiser _n_ switch back
+   _q_ quit
+"
+    ("y" geiser-eval-buffer)
+    ("u" geiser-eval-region)
+    ("U" geiser-eval-region-and-go)
+    ("z" run-geiser)
+    ("x" help/geiser-exit-chez)
+    ("b" geiser-mode-switch-to-repl)
+    ("c" geiser-repl-exit)
+    ("n" (lambda () (interactive) (other-window -1)))
+    ("q" nil))
+  (defun help/geiser-mode-hook-fn ()
+    (turn-off-fci-mode)
+    (unbind-key "C-." geiser-mode-map)
+    (key-chord-define geiser-mode-map "hh" #'help/hydra-geiser-mode/body)
+    (unbind-key "C-j")
+    (define-key geiser-mode-map (kbd "C-j") #'help/geiser-eval-line))
+  (add-hook 'geiser-mode-hook #'help/geiser-mode-hook-fn)
+  (defun help/geiser-repl-mode-hook-fn ()
+    (turn-off-fci-mode)
+    (unbind-key "C-." geiser-repl-mode-map)
+    (define-key geiser-repl-mode-map "\C-j" 'geiser-repl--maybe-send)
+    (key-chord-define geiser-repl-mode-map "hh" #'help/hydra-geiser-mode/body))
+  (add-hook 'geiser-repl-mode-hook #'help/geiser-repl-mode-hook-fn))
 ```
 
 Enable Auto-Complete via Geiser.
@@ -4477,9 +4640,7 @@ Enable Auto-Complete via Geiser.
   (add-hook 'geiser-mode-hook 'ac-geiser-setup)
   (add-hook 'geiser-repl-mode-hook 'ac-geiser-setup)
   (eval-after-load "auto-complete"
-    '(add-to-list 'ac-modes 'geiser-repl-mode))
-  (setq geiser-active-implementations '(racket guile))
-  (setq geiser-repl-history-no-dups-p t))
+    '(add-to-list 'ac-modes 'geiser-repl-mode)))
 ```
 
 
@@ -4493,6 +4654,108 @@ Enable Auto-Complete via Geiser.
   (interactive)
   (rainbow-mode))
 (add-hook 'c-mode-common-hook #'help/c-mode-common-hook-fn)
+```
+
+
+### Go
+
+    ID: org_gcr_2017-07-30_mara:2F891F22-5C0C-43BA-8891-62DA7E9540FD
+
+```emacs-lisp
+(use-package go-mode
+  :ensure t
+  :config
+  (use-package go-eldoc
+    :ensure t)
+  (use-package go-autocomplete
+    :ensure t
+    :config
+    (ac-config-default))
+  (use-package golint
+    :ensure t)
+  (use-package go-errcheck
+    :ensure t)
+  (use-package ob-go
+    :ensure t
+    :config
+    (add-to-list 'org-babel-load-languages '(go . t)))
+  (use-package go-snippets
+    :ensure t)
+  (use-package flycheck-gometalinter
+    :ensure t
+    :config
+    (add-hook 'flycheck-mode-hook #'flycheck-gometalinter-setup)
+    (setq flycheck-gometalinter-concurrency 2)
+    (setq flycheck-gometalinter-deadline "7s")
+    (setq flycheck-gometalinter-disable-all nil)
+    (setq flycheck-gometalinter-disable-linters nil)
+    (setq flycheck-gometalinter-enable-linters nil)
+    (setq flycheck-gometalinter-errors-only nil)
+    (setq flycheck-gometalinter-fast nil)
+    (setq flycheck-gometalinter-tests t)
+    (setq flycheck-gometalinter-vendor t))
+  (use-package go-guru
+    :ensure t)
+  (use-package go-hydra)
+  (use-package gotest
+    :ensure t)
+  (use-package go-rename
+    :ensure t)
+  (use-package go-direx
+    :ensure t)
+  (add-to-list 'load-path "~/src/go-snippets")
+  (require 'go-snippets)
+  (defun help/go-mode/safb/go-run ()
+    ""
+    (interactive)
+    (let* ((compile-command (file-name-nondirectory
+                             (directory-file-name default-directory))))
+      (help/safb/compile)))
+  (defun help/go-mode/safb/go-rename ()
+    ""
+    (interactive)
+    (help/save-all-file-buffers)
+    (call-interactively 'go-rename))
+  (add-to-list 'load-path "~/git/github/gorepl-mode")
+  (require 'gorepl-mode)
+  (defhydra help/hydra/right/go-mode (:color blue :hint nil)
+    "
+ Go: (_q_uit)              |^                   ^|^                ^|
+-^------------------------^+^-------------------^+----------------^^+--------
+ _e_: explorer             | _r_: run            | _t_: tools       | g_o_re
+ _g_: guru                 | _j_: previous error | _k_: next error  |
+ _c_: build                | _n_: rename         |                ^^|
+ "
+    ("e" go-direx-switch-to-buffer)
+    ("r" help/go-mode/safb/go-run)
+    ("t" go-hydra-go-mode/body)
+    ("o" gorepl-hydra/body)
+    ("g" go-hydra-guru-go-mode/body)
+    ("k" godef-jump-other-window)
+    ("l" pop-tag-mark)
+    ("c" help/safb/compile)
+    ("n" help/go-mode/safb/go-rename)
+    ("j" previous-error :exit nil)
+    ("k" next-error :exit nil)
+    ("q" nil))
+  (key-chord-define go-mode-map "hh" #'help/hydra/right/go-mode/body)
+  (defun help/go-mode-hook-fn ()
+    (go-eldoc-setup)
+    (setq gofmt-command "goimports")
+    (add-hook 'before-save-hook #'gofmt-before-save)
+    (setq compilation-read-command nil)
+    (setq compile-command "go install && go test -v && gometalinter ./...")
+    (local-set-key (kbd "s-i") #'godoc-at-point)
+    (local-set-key (kbd "s-I") #'godoc)
+    (local-set-key (kbd "s-j") #'help/safb/compile)
+    (local-set-key (kbd "s-k") #'help/go-mode/safb/go-run)
+    (local-set-key (kbd "=") #'(lambda () (interactive) (insert " = ")))
+    (local-set-key (kbd "s-=") #'(lambda () (interactive) (insert " := ")))
+    (local-set-key (kbd "s-<") #'(lambda () (interactive) (insert " <- ")))
+    (local-set-key (kbd "s-o") #'gorepl-hydra/body)
+    (go-guru-hl-identifier-mode)
+    (gorepl-mode))
+  (add-hook 'go-mode-hook #'help/go-mode-hook-fn))
 ```
 
 
@@ -4526,7 +4789,7 @@ Enable Auto-Complete via Geiser.
   (yas-global-mode t)
   (help/not-on-gui (define-key yas-minor-mode-map (kbd "TAB") nil))
   (help/on-gui (define-key yas-minor-mode-map (kbd "<tab>") nil))
-  (define-key yas-minor-mode-map (kbd "s-t") #'yas-expand)
+  (define-key yas-minor-mode-map (kbd "C-;") #'yas-expand)
   (help/not-on-gui (define-key yas-keymap (kbd "TAB") #'yas-next-field))
   (help/on-gui (define-key yas-keymap (kbd "<tab>") #'yas-next-field))
   (add-to-list #'yas-snippet-dirs "~/src/help/yasnippet")
@@ -4614,6 +4877,8 @@ Fails with `(eval-after-load 'abbrev (diminish 'abbrev-mode))`.
 
     ID: org_gcr_2017-05-12_mara:92C9A271-BC16-431B-8457-2901DE330164
 
+Out of the box Emacs supports `js` with `js-mode`. Define language `javascript` to use `js2-mode`.
+
 ```emacs-lisp
 (use-package js2-mode
   :ensure t
@@ -4621,17 +4886,16 @@ Fails with `(eval-after-load 'abbrev (diminish 'abbrev-mode))`.
          ("\\.jsx$" . js2-mode))
   :interpreter ("node" . js2-mode)
   :config
-  (progn
-    (add-hook 'js2-mode-hook #'js2-imenu-extras-mode)))
+  (add-hook 'js2-mode-hook #'js2-imenu-extras-mode)
+  (add-to-list 'org-src-lang-modes '("javascript" . js2)))
 
 (use-package js2-refactor
   :after (js2-mode)
   :ensure t
   :diminish js2-refactor-mode
   :config
-  (progn
-    (add-hook 'js2-mode-hook #'js2-refactor-mode)
-    (js2r-add-keybindings-with-prefix "C-c C-m")))
+  (add-hook 'js2-mode-hook #'js2-refactor-mode)
+  (js2r-add-keybindings-with-prefix "C-c C-m"))
 ```
 
 `json-mode` is derived from `javascript-mode` so configure the latter&rsquo;s indent to two.
@@ -4646,6 +4910,23 @@ Fails with `(eval-after-load 'abbrev (diminish 'abbrev-mode))`.
     (setq js-indent-level 2)
     (setq json-reformat:indent-width 2)
     (setq json-reformat:pretty-string\? t)))
+```
+
+
+### F#
+
+    ID: org_gcr_2017-08-10_mara:A449A518-7BDF-4D95-971A-EEA942A1C8EA
+
+```emacs-lisp
+(use-package fsharp-mode
+  :ensure t
+  :config
+  (use-package ob-fsharp
+    :ensure t
+    :config
+    (autoload 'fsharp-mode "fsharp-mode"     "Major mode for editing F# code." t)
+    (add-to-list 'auto-mode-alist '("\\.fs[iylx]?$" . fsharp-mode))
+    (add-to-list 'org-babel-load-languages '(fsharp . t))))
 ```
 
 
@@ -5012,11 +5293,13 @@ Load Beamer for creating presentations.
     -   Smart Hashbang line generation
 
     ```emacs-lisp
-    (defun help/sh-mode-hook-fn ()
-      (interactive)
-      (setq sh-shell "bash")
-      (setq sh-basic-offset 2))
-    (add-hook 'sh-mode-hook #'help/sh-mode-hook-fn)
+    (use-package sh-script
+      :config
+      (defun help/sh-mode-hook-fn ()
+        (interactive)
+        (setq sh-shell "bash")
+        (setq sh-basic-offset 2))
+      (add-hook 'sh-mode-hook #'help/sh-mode-hook-fn))
     ```
 
     Toggle string quotes between single and double.
@@ -5039,7 +5322,7 @@ Load Beamer for creating presentations.
       _q_ quit
     "
       ("i" sh-set-shell)
-      ("q" :nil))
+      ("q" nil))
     (key-chord-define sh-mode-map "hh" #'help/hydra-sh-mode/body)
     ```
 
@@ -5320,7 +5603,7 @@ Recenter near top of screen.
 [Solarized Theme](https://github.com/bbatsov/solarized-emacs)
 
 -   ~1,000 Faces Defined
--   95,677 Downloads
+-   110,003
 
 -   A distinct fringe provides a definition of space.
 -   The modeline is always at the bottom and doesn&rsquo;t need differentiation.
@@ -5428,6 +5711,7 @@ Title.
 
     ```emacs-lisp
     (add-to-list 'image-load-path "~/src/help/xpm")
+    (add-to-list 'image-load-path "~/src/help/tiff")
     ```
 
     Bitmap requirements
@@ -5452,6 +5736,8 @@ Title.
         -   Convert PNG to XPM
 
                 convert new.png new.xpm
+
+    Emacs added macOS support for TIFF. Emacs now prefers TIFF. XPM should work everywhere so I want those to be the masters. They are the masters because when I make corrections they go there. For example I had a 27x24 bitmap that I had to trim to 24x24. So I converted XPMs to TIFF and use those.
 
 2.  Icons
 
@@ -5480,10 +5766,10 @@ Title.
 
         ID: org_gcr_2017-06-23_mara:EC50EB46-7878-4799-9805-EF0CB3D3E526
 
-    Enable the tool bar.
+    Disable the tool bar.
 
     ```emacs-lisp
-    (tool-bar-mode nil)
+    (tool-bar-mode 1)
     ```
 
     Style the tool bar.
@@ -5492,24 +5778,50 @@ Title.
     (setq tool-bar-style 'both)
     ```
 
-    ibuffer ([image source](https://commons.wikimedia.org/wiki/Category:List_icons#/media/File:List_alt_font_awesome.svg)).
+    ibuffer.
 
     ```emacs-lisp
     (tool-bar-add-item
-     "fontawesome_list-alt"
+     "list-alt"
      'ibuffer
-     'iBuffer
+     'Buffers
      :help "List buffers")
     ```
 
-    buffer swap ([image source](https://thenounproject.com/term/swap/99117/)).
+    swap.
 
     ```emacs-lisp
     (tool-bar-add-item
-     "evan-shuster-ca_swap"
+     "exchange"
      'help/safb-switch-to-previous-buffer
      'Swap
      :help "Swap buffers")
+    ```
+
+    OS Banner.
+
+    ```emacs-lisp
+    (help/on-osx
+     (tool-bar-add-item
+      "apple"
+      'do-nothing
+      'Powered-by-macOS
+      :help "Powered by macOS"
+      :enable nil))
+    (help/on-gnu/linux
+     (tool-bar-add-item
+      "linux"
+      'do-nothing
+      'Powered-by-GNU-Linux
+      :help "Powered by GNU/Linux"
+      :enable nil))
+    (help/on-windows
+     (tool-bar-add-item
+      "windows"
+      'do-nothing
+      'Powered-by-Microsoft-Windows
+      :help "Powered by Microsoft Windows"
+      :enable nil))
     ```
 
 5.  Scroll bar
@@ -5600,7 +5912,7 @@ Frequently use between 1 and 4 windows.
   "Work with this buffer in 2 windows."
   (interactive)
   (delete-other-windows)
-  (split-window-below)
+  (split-window-right)
   (balance-windows))
 
 (defun help/3-window ()
@@ -5650,16 +5962,17 @@ Select windows.
   (eyebrowse-mode t)
   (defhydra help/hydra-left-side/eyebrowse (:color blue :hint nil)
     "
-current eyebrowse slot: %(eyebrowse--get 'current-slot)
- _j_ previous _k_ last _l_ next _u_ close _i_ choose _o_ rename _q_ quit
-   _a_ 00 _s_ 01 _d_ 02 _f_ 03 _g_ 04 _z_ 05 _x_ 06 _c_ 07 _v_ 08 _b_ 09"
-    ("j" #'eyebrowse-prev-window-config :exit nil)
-    ("k" #'eyebrowse-last-window-config)
-    ("l" #'eyebrowse-next-window-config :exit nil)
-    ("u" #'eyebrowse-close-window-config :exit nil)
+current eyebrowse slot: %(let* ((window-configs (eyebrowse--get 'window-configs))(match (assq (eyebrowse--get 'current-slot) window-configs))(desc (eyebrowse-format-slot match)))desc)
+ _u_ create _i_ choose _o_ rename _q_ quit
+  _j_ previous _k_ next _l_ last
+   _a_ 00 _s_ 01 _d_ 02 _f_ 03 _g_ 04 _z_ 05 _x_ 06 _c_ 07 _v_ 08 _b_ 09 _~_ close "
+    ("u" #'eyebrowse-create-window-config)
     ("i" #'eyebrowse-switch-to-window-config)
     ("o" #'eyebrowse-rename-window-config :exit nil)
     ("q" nil)
+    ("j" #'eyebrowse-prev-window-config :exit nil)
+    ("k" #'eyebrowse-next-window-config :exit nil)
+    ("l" #'eyebrowse-last-window-config)
     ("a" #'eyebrowse-switch-to-window-config-0)
     ("s" #'eyebrowse-switch-to-window-config-1)
     ("d" #'eyebrowse-switch-to-window-config-2)
@@ -5669,7 +5982,8 @@ current eyebrowse slot: %(eyebrowse--get 'current-slot)
     ("x" #'eyebrowse-switch-to-window-config-6)
     ("c" #'eyebrowse-switch-to-window-config-7)
     ("v" #'eyebrowse-switch-to-window-config-8)
-    ("b" #'eyebrowse-switch-to-window-config-9))
+    ("b" #'eyebrowse-switch-to-window-config-9)
+    ("~" #'eyebrowse-close-window-config :exit nil))
   (global-set-key (kbd "C-M-e") #'help/hydra-left-side/eyebrowse/body))
 ```
 
@@ -5761,13 +6075,15 @@ You operate within a cognitive landscape. Every moment you are in a single `plac
 
 OOTB you wil be visiting many `places` and performing many `activities`. EMACS comes with a good configuration that minimizes `distance`. This isn&rsquo;t worth changing. You can use EMACS for a lifetime without ever having to customize any of the key-bindings. This is what lets anyone use your system. This is what lets you use the system with `-Q` when you break it. You need to decide if you every want to alter the default configuration. This system does not want to. It wants to keep EMACS true to EMACS and your hands happy. To satisfy those goals the following practices were defined.
 
--   99.999% of the time never bind to the `C` or `M` name-space.
+-   99.999% of the time never bind to the `C` or `M` or `C-M-s` name-space.
     -   They are for system key-bindings. You can break them. Don&rsquo;t.
     -   In theory `C-c` is the &ldquo;user name-space&rdquo; but packages stomp on this all of the time anyway so don&rsquo;t use it.
     -   Some bindings are just too valuable to pass up:
         -   `C-;`
             -   Your hands are in the home position already.
         -   Every modifier key with return.
+    -   `C-M-s` is for the operating system
+        -   Discovered this in macOS
 -   Never bind to `F` keys.
     -   They are a painful stretch on most keyboards.
     -   Some require a lone Pinky with is worse.
@@ -5830,6 +6146,8 @@ The relationship between &ldquo;doing those things&rdquo; and those 4 properties
     -   The right side of the keyboard should be used operations specific to the current major mode.
         -   For example in Org-Mode navigating between source-blocks and evaluating them.
         -   It has 19 bindings available; 26 if you use 6-=. 52 if you shift them.
+    -   2017-07-24
+        -   This worked out well and close to expected. The `s(uper)` name-space is mostly free. Any package using it well I stomped on its bindings without even looking at them. They are supposed to be free but the `C-c` and `C-x` name-space is running out and people get mad about it (I did, and my solution is below). Despite my approach I still ran out of namesake for my super bindings. That surprised me. So I tried using `H(yper)` but isn&rsquo;t easily on every keyboard so I converted all of those bindings to `C-M-` and that worked out great but now I can&rsquo;t use that for more specific bindings. The whole `left` and `right` zones of the keyboard has worked out well when I remember and it is pretty easy to remember. The only problem with this approach is that I still ran out of name-space despite my approach below. So between key-chords and using the super key and moving a bunch of stuff into Hydras I still ran out of space. That leaves `C-s` for more name-space for the left and right side. I&rsquo;m glad to try this out.
 
     For example, in Org-Mode:
 
@@ -5996,19 +6314,30 @@ These changes helped guide the custom keyboard design.
 
     ID: org_gcr_2017-05-12_mara:6F293EA2-D2D4-42F7-8684-D5B53CB849DA
 
+Keybindings for every mode. Starts and stop:
+
+-   1-5
+-   Q-T
+-   A-G
+-   Z-B
+
 1.  Row 5
 
         ID: org_gcr_2017-05-12_mara:5E250B06-C35C-4AEE-90C6-F5333A2D1BE3
 
     ```emacs-lisp
-    (global-set-key (kbd "C-8") (lambda () (interactive) (switch-to-buffer
-                                                     "*scratch*")))
-    (global-set-key (kbd "C-9") (lambda () (interactive) (switch-to-buffer
+    (defun help/go-there-or-back (name)
+      (if (equal (buffer-name) name)
+          (help/safb-switch-to-previous-buffer)
+        (switch-to-buffer name)))
+    (global-set-key (kbd "C-9") (lambda () (interactive) (help/go-there-or-back
                                                      "projects.org")))
-    (global-set-key (kbd "C-0") (lambda () (interactive) (switch-to-buffer
+    (global-set-key (kbd "C-0") (lambda () (interactive) (help/go-there-or-back
                                                      "scratch.org")))
-    (global-set-key (kbd "M-9") (lambda () (interactive) (switch-to-buffer
+    (global-set-key (kbd "M-9") (lambda () (interactive) (help/go-there-or-back
                                                      "help.org")))
+    (global-set-key (kbd "M-0") (lambda () (interactive) (help/go-there-or-back
+                                                     "*scratch*")))
     (global-set-key (kbd "C-5") #'ido-kill-buffer)
     (global-set-key (kbd "C--") (lambda () (interactive) (insert "Vigneswari")))
     (global-set-key (kbd "s-5") #'mc/mark-previous-like-this)
@@ -6039,7 +6368,7 @@ These changes helped guide the custom keyboard design.
       ("i" writegood-grade-level :exit nil)
       ("o" writegood-reading-ease :exit nil)
       ("q" nil))
-    (global-set-key (kbd "C-M-7") #'help/hydra-checking/body)
+    (global-set-key (kbd "C-M-9") #'help/hydra-checking/body)
     ```
 
 2.  Row 4
@@ -6051,18 +6380,52 @@ These changes helped guide the custom keyboard design.
     (global-set-key (kbd "C-M-2") #'help/2-window)
     (global-set-key (kbd "C-M-3") #'help/3-window)
     (global-set-key (kbd "C-M-4") #'help/4-window)
-    (global-set-key (kbd "s-w") (lambda ()
-                                  (interactive)
-                                  (save-excursion
-                                    (call-interactively 'mark-whole-buffer)
-                                    (call-interactively 'kill-ring-save))))
+    (defun help/copy-entire-buffer ()
+      (interactive)
+      (save-excursion
+        (call-interactively 'mark-whole-buffer)
+        (call-interactively 'kill-ring-save)
+        (message "Buffer contents copied")))
+    (global-set-key (kbd "s-w") #'help/copy-entire-buffer)
     (global-set-key (kbd "s-q") #'kill-buffer)
     (global-set-key (kbd "C-M-y") #'insert-char)
     (global-set-key [(control meta ?p)] #'help/insert-datestamp)
     (global-set-key [(control meta shift ?p)] #'help/insert-timestamp*-no-colons)
     (global-set-key (kbd "C-M-o") #'help/occur-dwim)
     (global-set-key (kbd "M-i") nil)
-    (global-set-key (kbd "M-i") #'describe-symbol)
+    (global-set-key (kbd "M-i") #'help/hydra/left/describe/body)
+    (defhydra help/hydra/left/describe (:color blue
+                                               :hint nil)
+      "
+    Describe Something
+     _t_ theme _i_ input method _o_ lighter indicator _O_ lighter symbol _p_ package _P_ text properties
+      _s_ symbol _f_ function _F_ flycheck checker _k_ key briefly _K_ key _l_ language environment
+       _c_ char _C_ coding system _v_ variable _b_ bindings _B_ personal bindings _n_ current coding system briefly _N_ current coding system full _m_ major mode _M_ minor mode
+        _q_ quit
+    "
+      ("b" describe-bindings)
+      ("B" describe-personal-keybindings)
+      ("C" describe-categories)
+      ("c" describe-char)
+      ("C" describe-coding-system)
+      ("f" describe-function)
+      ("F" flycheck-describe-checker)
+      ("i" describe-input-method)
+      ("K" describe-key)
+      ("k" describe-key-briefly)
+      ("l" describe-language-environment)
+      ("M" describe-minor-mode)
+      ("m" describe-mode)
+      ("N" describe-current-coding-system)
+      ("n" describe-current-coding-system-briefly)
+      ("o" describe-minor-mode-from-indicator)
+      ("O" describe-minor-mode-from-symbol)
+      ("p" describe-package)
+      ("P" describe-text-properties)
+      ("q" nil)
+      ("s" describe-symbol)
+      ("t" describe-theme)
+      ("v" describe-variable))
     ```
 
     Org handle `TAB` correctly and nothing is bound to it like `Auto-Complete` or `yasnippet` so this doesn&rsquo;t *need* ot use `C-i` freeing it up. Rebinding `C-g` seems to make the minibuffer, `eval-*` and `smex` become confused &rarr; quit working.
@@ -6091,7 +6454,7 @@ These changes helped guide the custom keyboard design.
     ```
 
     ```emacs-lisp
-    (global-set-key (kbd "s-a") #'help/safb-switch-to-previous-buffer)
+    (global-set-key (kbd "C-M-j") #'help/safb-switch-to-previous-buffer)
     (global-set-key (kbd "s-d") #'er/expand-region)
     ```
 
@@ -6100,9 +6463,10 @@ These changes helped guide the custom keyboard design.
                                                   :hint nil)
       "
     _O_ base64-encode-region _P_ base64-decode-region _|_ split-window-horizontally _-_ split-window-vertically
-    _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _w_ widen _=_ reposition-window _t_ rectangle-mark _y_ transparency _u_ ucs-insert  _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _}_ transliterate
+    _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm
+    _w_ widen _=_ reposition-window _t_ rectangle-mark _y_ yas tables _Y_ transparency _u_ ucs-insert _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _}_ transliterate
     _Q_ exit-Emacs _q_uit T_ trademarks
-    _a_ ag  _A_ apropo'ish _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point  _D_ detangle _g_ grep _j_ obtj2o _k_ scrollDown _K_ nextLogLine  _;_ toggle-lax-whitespace
+    _A_ apropo'ish _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point  _D_ detangle _g_ grep _j_ obtj2o _k_ scrollDown _K_ nextLogLine  _;_ toggle-lax-whitespace
     _l_ visual-line-mode _L_ aggressive-indent-mode
     _x_ delete-indentation _X_pm grok _c_ fill-paragraph _V_ view-mode _b_ erase-buffer _B_ibtex _n_ normal _m_ desc/mode _M_ checks
     _<_ cmtIn _>_ cmtOut _?_ snp"
@@ -6120,7 +6484,6 @@ These changes helped guide the custom keyboard design.
       ("=" reposition-window)
       ("5" help/uuid)
       ("6" set-buffer-file-coding-system)
-      ("a" ag)
       ("A" hydra-apropos-ish/body)
       ("s" help/toggle-mac-right-option-modifier)
       ("g" grep)
@@ -6134,11 +6497,12 @@ These changes helped guide the custom keyboard design.
       ("V" view-mode)
       ("w" widen)
       ("t" rectangle-mark-mode)
-      ("y" hydra-transparency/body)
+      ("y" yas-describe-tables)
+      ("Y" hydra-transparency/body)
       ("j" org-babel-tangle-jump-to-org)
       ("u" ucs-insert)
       ("i" scroll-down-command :exit nil)
-      ("d" help/describe-char)
+      ("d" dash-at-point)
       ("D" help/safb-org-babel-detangle)
       ("k" scroll-up-command :exit nil)
       ("I" previous-logical-line :exit nil)
@@ -6253,15 +6617,24 @@ These changes helped guide the custom keyboard design.
     :ID: org<sub>gcr</sub><sub>2017</sub>-05-12<sub>mara</sub>:8CA5EED7-5301-43E2-B6B9-C92AC66A2BE6
 
     ```emacs-lisp
-    (global-set-key (kbd "s-v") #'ido-find-file)
     (global-set-key (kbd "C-x C-c") #'help/safb-save-buffers-kill-terminal)
-    (define-key org-mode-map (kbd "C-,") nil)
-    (global-set-key (kbd "C-,") #'ido-switch-buffer)
+    (define-key org-mode-map (kbd "C-j") nil)
+    (global-set-key (kbd "C-j") nil)
+    (global-set-key (kbd "C-j") #'ido-switch-buffer)
+    (global-set-key (kbd "M-j") nil)
+    (define-key org-mode-map (kbd "M-j") nil)
+    (global-set-key (kbd "M-j") #'smex)
     (global-set-key (kbd "C-M-,") #'ibuffer)
-    (global-set-key (kbd "C-.") nil)
-    (global-set-key (kbd "C-.") #'smex)
+    (define-key org-mode-map (kbd "C-o") nil)
+    (global-set-key (kbd "C-o") nil)
+    (global-set-key (kbd "C-o") #'ido-find-file)
     (global-set-key (kbd "C-M-.") nil)
     (global-set-key (kbd "C-M-.") #'dired)
+    ```
+
+    Mcan&rsquo;t re-use `<<` and `>>`.
+
+    ```emacs-lisp
     (global-set-key (kbd "s-<") (lambda () (interactive) (insert "«")))
     (global-set-key (kbd "s->") (lambda () (interactive) (insert "»")))
     ```
@@ -6305,8 +6678,8 @@ These changes helped guide the custom keyboard design.
     Hide and show code blocks.
 
     ```emacs-lisp
-    (global-set-key (kbd "s-b") #'hs-toggle-hiding)
-    (global-set-key (kbd "M-s-b") #'help/my-toggle-hideshow-all)
+    (global-set-key (kbd "s-z") #'hs-toggle-hiding)
+    (global-set-key [(super shift ?z)] #'help/my-toggle-hideshow-all)
     ```
 
 
@@ -6318,28 +6691,11 @@ Exploratory programming in EMACS.
 
 Don&rsquo;t use &ldquo;qi&rdquo;; &ldquo;unique&rdquo;.
 
-```emacs-lisp
-(global-set-key (kbd "s-`") #'help/comment-or-uncomment)
-```
-
 Make `ispell` accessible.
 
 ```emacs-lisp
 (key-chord-define-global "qp" #'ispell)
 (key-chord-define-global "qo" #'ispell-word)
-```
-
-Use the default Langtool bindings.
-
-```emacs-lisp
-(define-prefix-command 'help/langtool-map)
-(key-chord-define-global "qk" #'help/langtool-map)
-(define-key help/langtool-map "c" #'langtool-check-buffer)
-(define-key help/langtool-map "C" #'langtool-correct-buffer)
-(define-key help/langtool-map "j" #'langtool-goto-previous-error)
-(define-key help/langtool-map "k" #'langtool-show-message-at-point)
-(define-key help/langtool-map "l" #'langtool-goto-next-error)
-(define-key help/langtool-map "q" #'langtool-check-done)
 ```
 
 Easily kill buffers. Can&rsquo;t use &ldquo;df&rdquo; because of &ldquo;PDF&rdquo;.
@@ -6375,7 +6731,16 @@ Pop the mark back.
 
     ID: org_gcr_2017-05-12_mara:6F9375AB-C92C-4986-AECE-ABC945375CA2
 
-Try to reserve the right side for mode-specific activities.
+Reserve the right side for mode-specific activities.
+
+It starts with:
+
+-   6
+-   Y
+-   H
+-   N
+
+Try to use `s-i` for things like `info-at-point`.
 
 
 ### Exceptions
