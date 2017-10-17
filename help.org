@@ -4523,7 +4523,8 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
   ("p" my-org-region-to-property)
   ;; Row 3
   ("a" org-archive-subtree-default)
-  ("s" org-babel-lob-ingest)
+  ("s" org-sort)
+  ("S" org-babel-lob-ingest)
   ("g" org-goto)
   ("h" org-babel-do-key-sequence-in-edit-buffer)
   ("H" org-babel-insert-header-arg)
