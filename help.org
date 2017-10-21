@@ -595,7 +595,6 @@ Easily allow option pass through for alternate input methods.
  (setq mac-right-command-modifier 'left)
  (setq mac-option-modifier 'super)
  (setq mac-right-option-modifier 'left)
- (setq mac-function-modifier 'hyper)
  (defun help/toggle-mac-right-option-modifier ()
    "Toggle between passing option modifier either to Emacs or OS X."
    (interactive)
