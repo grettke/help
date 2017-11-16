@@ -101,6 +101,32 @@
   :ensure t)
 ;; org_gcr_2017-06-13_mara_7F117B6D-AFE7-479C-8313-3E9B6B4D967F ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-11-15_mara_361908ED-32C9-4339-91AE-F02A2E017A87][org_gcr_2017-11-15_mara_361908ED-32C9-4339-91AE-F02A2E017A87]]
+(defvar-local hidden-mode-line-mode nil)
+
+(define-minor-mode hidden-mode-line-mode
+  "Minor mode to hide the mode-line in the current buffer."
+  :init-value nil
+  :global t
+  :variable hidden-mode-line-mode
+  :group 'editing-basics
+  (if hidden-mode-line-mode
+      (setq hide-mode-line mode-line-format
+            mode-line-format nil)
+    (setq mode-line-format hide-mode-line
+          hide-mode-line nil))
+  (force-mode-line-update)
+  ;; Apparently force-mode-line-update is not always enough to
+  ;; redisplay the mode-line
+  (redraw-display)
+  (when (and (called-interactively-p 'interactive)
+             hidden-mode-line-mode)
+    (run-with-idle-timer
+     0 nil 'message
+     (concat "Hidden Mode Line Mode enabled.  "
+             "Use M-x hidden-mode-line-mode to make the mode-line appear."))))
+;; org_gcr_2017-11-15_mara_361908ED-32C9-4339-91AE-F02A2E017A87 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_FF670CDD-5374-49BA-897A-AE1A30B444D6][org_gcr_2017-05-12_mara_FF670CDD-5374-49BA-897A-AE1A30B444D6]]
 (defmacro help/on-osx (statement &rest statements)
   "Evaluate the enclosed body only when run on OSX."
@@ -4015,7 +4041,7 @@ _w_ widen _=_ reposition-window _t_ rectangle-mark _y_ yas tables _Y_ transparen
 _Q_ exit-Emacs _q_uit T_ trademarks
 _A_ apropo'ish _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point  _D_ detangle _g_ grep _j_ obtj2o _k_ scrollDown _K_ nextLogLine  _;_ toggle-lax-whitespace
 _l_ visual-line-mode _L_ aggressive-indent-mode
-_x_ delete-indentation _X_pm grok _c_ fill-paragraph _V_ view-mode _b_ erase-buffer _B_ibtex _n_ normal _m_ checks
+_x_ delete-indentation _X_pm grok _c_ fill-paragraph _V_ view-mode _b_ erase-buffer _B_ibtex _n_ normal _m_ checks _M_ hide modeline
 _<_ cmtIn _>_ cmtOut _?_ snp"
   ("Q" help/safb-save-buffers-kill-terminal)
   ("q" nil)
@@ -4056,6 +4082,7 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("K" next-logical-line :exit nil)
   ("n" help/safb-normal-mode)
   ("m" help/checks/body)
+  ("M" hidden-mode-line-mode)
   ("<" help/chs)
   (">" help/che)
   ("." help/parent-mode-display)
