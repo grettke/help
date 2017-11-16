@@ -7353,7 +7353,7 @@ _w_ widen _=_ reposition-window _t_ rectangle-mark _y_ yas tables _Y_ transparen
 _Q_ exit-Emacs _q_uit T_ trademarks
 _A_ apropo'ish _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point  _D_ detangle _g_ grep _j_ obtj2o _k_ scrollDown _K_ nextLogLine  _;_ toggle-lax-whitespace
 _l_ visual-line-mode _L_ aggressive-indent-mode
-_x_ delete-indentation _X_pm grok _c_ fill-paragraph _V_ view-mode _b_ erase-buffer _B_ibtex _n_ normal _m_ desc/mode _M_ checks
+_x_ delete-indentation _X_pm grok _c_ fill-paragraph _V_ view-mode _b_ erase-buffer _B_ibtex _n_ normal _m_ checks
 _<_ cmtIn _>_ cmtOut _?_ snp"
   ("Q" help/safb-save-buffers-kill-terminal)
   ("q" nil)
@@ -7393,7 +7393,7 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("I" previous-logical-line :exit nil)
   ("K" next-logical-line :exit nil)
   ("n" help/safb-normal-mode)
-  ("M" help/checks/body)
+  ("m" help/checks/body)
   ("<" help/chs)
   (">" help/che)
   ("." help/parent-mode-display)
