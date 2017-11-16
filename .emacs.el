@@ -4041,7 +4041,7 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("S" help/toggle-mac-function-modifier)
   ("x" delete-indentation)
   ("X" xpm-grok)
-  ("f" describe-key)
+  ("f" help/hydra/ag/body)
   ("V" view-mode)
   ("w" widen)
   ("t" rectangle-mark-mode)
