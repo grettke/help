@@ -2926,8 +2926,7 @@ Ag integration.
     (";" ag-project)
     ("n" ag-kill-other-buffers)
     ("m" ag-kill-buffers)
-    ("q" nil))
-  (global-set-key (kbd "C-s-s") #'help/hydra/ag/body))
+    ("q" nil)))
 #+END_SRC
 
 Writeable Ag.
