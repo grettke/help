@@ -4056,7 +4056,6 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("I" previous-logical-line :exit nil)
   ("K" next-logical-line :exit nil)
   ("n" help/safb-normal-mode)
-  ("m" describe-mode)
   ("M" help/checks/body)
   ("<" help/chs)
   (">" help/che)
