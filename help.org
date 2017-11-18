@@ -3378,6 +3378,13 @@ Every text editing buffer needs this.
 
 (add-hook 'text-mode-hook #'help/text-mode-fn)
 #+END_SRC
+
+Can use in source blocks.
+
+#+NAME: org_gcr_2017-11-17_mara_FCDC3DE5-3584-4431-A443-FFC8F9EA8253
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'org-babel-load-languages '(text . t))
+#+END_SRC
 *** Prog-Mode Modes
     :PROPERTIES:
     :ID:       org_gcr_2017-05-12_mara:E20FE37A-E10D-406C-B95D-545607F7A93C
