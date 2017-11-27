@@ -3425,6 +3425,16 @@ Geiser REPL is: %(help/geiser-on-p)
   (setq markdown-coding-system "utf-8"))
 ;; org_gcr_2017-05-12_mara_42D37E52-A420-4196-8B2C-6755441A5FC3 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-11-19_mara_60445A8D-329F-4816-BFA5-1283AC570D30][org_gcr_2017-11-19_mara_60445A8D-329F-4816-BFA5-1283AC570D30]]
+(use-package el2markdown
+  :ensure t
+  :config
+  (defun help/el2markdown-post-convert-hook-fn (buf)
+    (interactive)
+    (message (format "el2markdowned: %s" buf)))
+  (add-hook 'el2markdown-post-convert-hook #'help/el2markdown-post-convert-hook-fn))
+;; org_gcr_2017-11-19_mara_60445A8D-329F-4816-BFA5-1283AC570D30 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_62E6542A-B340-470A-B7E0-2F4438EBBAE9][org_gcr_2017-05-12_mara_62E6542A-B340-470A-B7E0-2F4438EBBAE9]]
 (use-package htmlize
   :config

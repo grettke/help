@@ -5860,6 +5860,19 @@ Program GFM.
   (setq markdown-coding-system "utf-8"))
 #+END_SRC
 
+Generate Markdown from Emacs Lisp comments.
+
+#+NAME: org_gcr_2017-11-19_mara_60445A8D-329F-4816-BFA5-1283AC570D30
+#+BEGIN_SRC emacs-lisp
+(use-package el2markdown
+  :ensure t
+  :config
+  (defun help/el2markdown-post-convert-hook-fn (buf)
+    (interactive)
+    (message (format "el2markdowned: %s" buf)))
+  (add-hook 'el2markdown-post-convert-hook #'help/el2markdown-post-convert-hook-fn))
+#+END_SRC
+
 *** HTML
   :PROPERTIES:
   :ID:       org_gcr_2017-05-12_mara:5AE61C99-1862-456E-B6FA-44225675B208
