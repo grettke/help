@@ -3359,6 +3359,19 @@ Every special mode needs this. Which is nothing yet.
     :PROPERTIES:
     :ID:       org_gcr_2017-05-12_mara:C3270DE0-55FD-4612-B3E3-226CAC5A8FDA
     :END:
+
+Auto-Capitalize in all text modes.
+
+#+NAME: org_gcr_2017-11-30_mara_75B00948-177E-487A-83A9-2F690611CA59
+#+BEGIN_SRC emacs-lisp
+(use-package auto-capitalize
+  :ensure t
+  :config
+  (add-to-list 'auto-capitalize-words "http")
+  (add-to-list 'desktop-minor-mode-handlers
+               '(auto-capitalize . (lambda (desktop-buffer-locals)))))
+#+END_SRC
+
 Every text editing buffer needs this.
 
 #+NAME: org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F
@@ -3374,7 +3387,8 @@ Every text editing buffer needs this.
   (fci-mode)
   (rainbow-mode)
   (help/try-to-add-imenu)
-  (turn-on-page-break-lines-mode))
+  (turn-on-page-break-lines-mode)
+  (turn-on-auto-capitalize-mode))
 
 (add-hook 'text-mode-hook #'help/text-mode-fn)
 #+END_SRC

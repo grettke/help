@@ -2000,6 +2000,15 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
       (princ ls))))
 ;; org_gcr_2017-05-23_mara_9517CF5A-C95B-454E-A68F-1E4BA677C08C ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-11-30_mara_75B00948-177E-487A-83A9-2F690611CA59][org_gcr_2017-11-30_mara_75B00948-177E-487A-83A9-2F690611CA59]]
+(use-package auto-capitalize
+  :ensure t
+  :config
+  (add-to-list 'auto-capitalize-words "http")
+  (add-to-list 'desktop-minor-mode-handlers
+               '(auto-capitalize . (lambda (desktop-buffer-locals)))))
+;; org_gcr_2017-11-30_mara_75B00948-177E-487A-83A9-2F690611CA59 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F][org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F]]
 (defun help/text-mode-fn ()
   "HELP's standard configuration for buffer's working with text, often for
@@ -2012,7 +2021,8 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (fci-mode)
   (rainbow-mode)
   (help/try-to-add-imenu)
-  (turn-on-page-break-lines-mode))
+  (turn-on-page-break-lines-mode)
+  (turn-on-auto-capitalize-mode))
 
 (add-hook 'text-mode-hook #'help/text-mode-fn)
 ;; org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F ends here
