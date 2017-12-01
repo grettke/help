@@ -2009,6 +2009,12 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
                '(auto-capitalize . (lambda (desktop-buffer-locals)))))
 ;; org_gcr_2017-11-30_mara_75B00948-177E-487A-83A9-2F690611CA59 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-11-30_mara_0D5DE620-895E-4BC5-AA15-1E0D19B1815A][org_gcr_2017-11-30_mara_0D5DE620-895E-4BC5-AA15-1E0D19B1815A]]
+(define-key text-mode-map (kbd "C-;") (lambda () (interactive) (insert ". ")))
+(define-key text-mode-map (kbd "C-.") (lambda () (interactive) (insert ", ")))
+(define-key text-mode-map (kbd "C-,") (lambda () (interactive) (insert "; ")))
+;; org_gcr_2017-11-30_mara_0D5DE620-895E-4BC5-AA15-1E0D19B1815A ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F][org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F]]
 (defun help/text-mode-fn ()
   "HELP's standard configuration for buffer's working with text, often for
@@ -3221,7 +3227,7 @@ Geiser REPL is: %(help/geiser-on-p)
   (yas-global-mode t)
   (help/not-on-gui (define-key yas-minor-mode-map (kbd "TAB") nil))
   (help/on-gui (define-key yas-minor-mode-map (kbd "<tab>") nil))
-  (define-key yas-minor-mode-map (kbd "C-;") #'yas-expand)
+  (define-key yas-minor-mode-map (kbd "C-'") #'yas-expand)
   (help/not-on-gui (define-key yas-keymap (kbd "TAB") #'yas-next-field))
   (help/on-gui (define-key yas-keymap (kbd "<tab>") #'yas-next-field))
   (add-to-list #'yas-snippet-dirs "~/src/help/yasnippet")
