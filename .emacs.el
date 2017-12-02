@@ -780,15 +780,15 @@ Attribution: URL `https://rejeep.github.io/emacs/elisp/2010/11/16/delete-file-an
   (interactive)
   (when (use-region-p) (call-interactively 'kill-region))
   (insert "#+CATEGORY: Article
-#+TAGS: Yoga, philosophy, Health, Happiness,
-#+TITLE:"))
+#+TAGS: Happiness, Health, philosophy, Yoga
+#+TITLE: (Happiness) "))
 
 (defun help/wio ()
   (interactive)
   (when (use-region-p) (call-interactively 'kill-region))
   (insert "#+CATEGORY: Article
 #+TAGS: Babel, Emacs, Ide, Lisp, Literate Programming, Programming Language, Reproducible research, elisp, org-mode
-#+TITLE:"))
+#+TITLE: (Emacs+Org-Mode) "))
 
 (defun help/wip ()
   (interactive)
