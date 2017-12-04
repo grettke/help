@@ -6528,7 +6528,8 @@ convert new.png new.xpm
 Emacs added macOS support for TIFF. Emacs now prefers TIFF. XPM should work
 everywhere so I want those to be the masters. They are the masters because
 when I make corrections they go there. For example I had a 27x24 bitmap that I
-had to trim to 24x24. So I converted XPMs to TIFF and use those.
+had to trim to 24x24. So I converted XPMs to TIFF and use those. Then I
+switched to stock Emacs and deleted the TIFF files.
 
 **** Icons
 :PROPERTIES:
