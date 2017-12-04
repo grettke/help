@@ -3704,6 +3704,7 @@ sh-mode:
 (use-package auto-dim-other-buffers
   :ensure t
   :config
+  (diminish 'auto-dim-other-buffers-mode)
   (setq auto-dim-other-buffers-dim-on-focus-out nil)
   (setq auto-dim-other-buffers-dim-on-switch-to-minibuffer nil)
   (auto-dim-other-buffers-mode t))
