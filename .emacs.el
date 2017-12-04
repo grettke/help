@@ -2137,7 +2137,9 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-07-16_mara_A1EC88B1-71CF-458E-A626-D6A07108BA3F][org_gcr_2017-07-16_mara_A1EC88B1-71CF-458E-A626-D6A07108BA3F]]
 (use-package highlight-stages
-  :ensure t)
+  :ensure t
+  :config
+  (diminish 'highlight-stages-mode))
 ;; org_gcr_2017-07-16_mara_A1EC88B1-71CF-458E-A626-D6A07108BA3F ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_26AEDAD1-36FC-490D-92F4-86E0966467E2][org_gcr_2017-05-12_mara_26AEDAD1-36FC-490D-92F4-86E0966467E2]]
