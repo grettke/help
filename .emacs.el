@@ -2097,7 +2097,8 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (aggressive-indent-mode)
   (hs-minor-mode)
   (help/not-on-gui (local-set-key (kbd "RET") #'newline-and-indent))
-  (help/on-gui (local-set-key (kbd "<return>") #'newline-and-indent)))
+  (help/on-gui (local-set-key (kbd "<return>") #'newline-and-indent))
+  (turn-off-auto-capitalize-mode))
 
 (let ()
   (--each help/prog-modes
@@ -2620,7 +2621,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
                                                  :hint nil)
   "
 _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ id-create _5_ toggle-macro
-_q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ help/org-refile _R_ g2nms-b _t_ g2s-b/hd _T_ table export format _p_ copy/property
+_q_ ←/w-code _w_ tbletfld _e_ cbexp _r_ help/org-refile _R_ g2nms-b _t_ g2s-b/hd _T_ table export format _p_ copy/property
 _a_ archive-subtree _s_ sort _S_ lobigst _u_ goto _h_ dksieb _k_ ob-check-src-blk _l_ lint
 _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
   ;; Row 5
@@ -2633,7 +2634,7 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
   ("q" org-babel-switch-to-session-with-code)
   ("w" org-table-edit-field)
   ("W" help/org-mark-subtree/kill-ring-save)
-  ("e" org-babel-goto-named-result)
+  ("e" ox-clip-formatted-copy)
   ("E" org-entities-help)
   ("r" help/org-refile)
   ("R" org-babel-goto-named-src-block)
@@ -3482,6 +3483,11 @@ Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_03AEAE7A-99ED-42BE-BE6E-0485884B55BB][org_gcr_2017-05-12_mara_03AEAE7A-99ED-42BE-BE6E-0485884B55BB]]
 (setq org-html-doctype "html5")
 ;; org_gcr_2017-05-12_mara_03AEAE7A-99ED-42BE-BE6E-0485884B55BB ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2017-12-03_mara_70A08E80-7CD1-4D4F-9584-34F6FBD7A32E][org_gcr_2017-12-03_mara_70A08E80-7CD1-4D4F-9584-34F6FBD7A32E]]
+(use-package ox-clip
+  :ensure t)
+;; org_gcr_2017-12-03_mara_70A08E80-7CD1-4D4F-9584-34F6FBD7A32E ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_41F8B285-650A-4394-8ECD-85C81181DF14][org_gcr_2017-05-12_mara_41F8B285-650A-4394-8ECD-85C81181DF14]]
 (setq org-ascii-text-width 80)
