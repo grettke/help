@@ -2004,6 +2004,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 (use-package auto-capitalize
   :ensure t
   :config
+  (diminish 'auto-capitalize)
   (add-to-list 'auto-capitalize-words "http")
   (add-to-list 'desktop-minor-mode-handlers
                '(auto-capitalize . (lambda (desktop-buffer-locals)))))
