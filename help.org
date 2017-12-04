@@ -6479,7 +6479,7 @@ Title.
 
 #+NAME: org_gcr_2017-07-13_mara_A81CE2F3-CD06-40C9-AD1A-8AB74AB88016
 #+BEGIN_SRC emacs-lisp
-(setq frame-title-format '("" "%b - Super Text Editor "))
+(setq frame-title-format '("" "%b - PIE Interactive Editor "))
 #+END_SRC
 **** Bitmaps
 :PROPERTIES:
