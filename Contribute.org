@@ -142,3 +142,12 @@ A collection of Go related Hydras for Emacs.
 (add-to-list 'load-path "~/src/go-hydra")
 (require 'go-hydra)
 #+END_SRC
+* universal-emotions-emoticons
+:PROPERTIES:
+:ID:       org_gcr_2017-12-05_mara:BAEA6BB3-614D-4957-BEFF-4AE9E6271BF1
+:END:
+#+NAME: org_gcr_2017-12-05_mara_62849D6E-BD7B-4289-AC2C-CF8B51B9C633
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'load-path "~/src/universal-emotions-emoticons")
+(require 'universal-emotions-emoticons)
+#+END_SRC

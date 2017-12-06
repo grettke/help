@@ -63,3 +63,8 @@
 (add-to-list 'load-path "~/src/go-hydra")
 (require 'go-hydra)
 ;; org_gcr_2017-08-01_mara_A0E420CB-EBB0-4D31-BC97-8FE54008F93D ends here
+
+;; [[file:~/src/help/Contribute.org::org_gcr_2017-12-05_mara_62849D6E-BD7B-4289-AC2C-CF8B51B9C633][org_gcr_2017-12-05_mara_62849D6E-BD7B-4289-AC2C-CF8B51B9C633]]
+(add-to-list 'load-path "~/src/universal-emotions-emoticons")
+(require 'universal-emotions-emoticons)
+;; org_gcr_2017-12-05_mara_62849D6E-BD7B-4289-AC2C-CF8B51B9C633 ends here
