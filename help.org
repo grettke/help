@@ -4491,6 +4491,10 @@ Easily manipulate lists and headlines staying close to home.
 (define-key org-mode-map (kbd "s-p") #'org-babel-execute-maybe)
 (define-key org-mode-map (kbd "s-[") #'org-babel-remove-inline-result)
 (define-key org-mode-map (kbd "M-{") (lambda () (interactive) (insert "- [ ] ")))
+(defun help/unset-C-M-t ()
+  (interactive)
+  (local-unset-key (kbd "C-M-t")))
+(add-hook 'org-mode-hook #'help/unset-C-M-t)
 #+END_SRC
 
 ***** Row 3
@@ -7344,9 +7348,9 @@ Flycheck On? %(bound-and-true-p flycheck-mode)
 #+END_SRC
 
 **** Row 4
-     :PROPERTIES:
-     :ID:       org_gcr_2017-05-12_mara:20E96ACD-1D91-480C-BA3B-D5730EA2173C
-     :END:
+:PROPERTIES:
+:ID:       org_gcr_2017-12-07_mara:752198AC-06ED-436E-B526-5A3C8ED32375
+:END:
 #+NAME: org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389
 #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "C-M-1") #'help/1-window)
@@ -7361,10 +7365,10 @@ Flycheck On? %(bound-and-true-p flycheck-mode)
     (message "Buffer contents copied")))
 (global-set-key (kbd "s-w") #'help/copy-entire-buffer)
 (global-set-key (kbd "s-q") #'kill-buffer)
-(global-set-key (kbd "M-t") #'ert)
+(global-set-key (kbd "C-M-t") #'ert)
 (global-set-key (kbd "C-M-y") #'insert-char)
-(global-set-key [(control meta ?t)] #'help/insert-datestamp)
-(global-set-key [(control meta shift ?t)] #'help/insert-timestamp*-no-colons)
+(global-set-key (kbd "C-t") #'help/insert-datestamp)
+(global-set-key (kbd "M-t") #'help/insert-timestamp*-no-colons)
 (global-set-key (kbd "C-M-o") #'help/occur-dwim)
 (global-set-key (kbd "M-i") nil)
 (global-set-key (kbd "M-i") #'help/hydra/left/describe/body)
@@ -7401,6 +7405,9 @@ Describe Something
   ("t" describe-theme)
   ("v" describe-variable))
 #+END_SRC
+     :PROPERTIES:
+     :ID:       org_gcr_2017-05-12_mara:20E96ACD-1D91-480C-BA3B-D5730EA2173C
+     :END:
 
 Org handle ~TAB~ correctly and nothing is bound to it like ~Auto-Complete~ or
 ~yasnippet~ so this doesn't /need/ ot use ~C-i~ freeing it up. Rebinding ~C-g~ seems
