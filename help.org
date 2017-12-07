@@ -1745,9 +1745,7 @@ Macro expander:
 #+NAME: org_gcr_2017-05-12_mara_510C1AB4-A266-40A6-9DCF-25B827E60786
 #+BEGIN_SRC emacs-lisp
 (use-package macrostep
-  :ensure t
-  :config
-  (define-key emacs-lisp-mode-map (kbd "C-M-8") #'macrostep-expand))
+  :ensure t)
 #+END_SRC
 
 ** Evaluation
@@ -3608,7 +3606,7 @@ Quasi-Quote visualization.
   (local-set-key (kbd "s-l td") #'toggle-debug-on-error)
   (local-set-key (kbd "s-l mef") #'macroexpand)
   (local-set-key (kbd "s-l mea") #'macroexpand-all)
-  (local-set-key (kbd "C-c e") #'macrostep-expand))
+  (local-set-key (kbd "s-8") #'macrostep-expand))
 
 (defhydra help/hydra-elisp-mode (:color blue
                                         :hint nil)
