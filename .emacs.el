@@ -2208,6 +2208,8 @@ elisp-mode:
 (let ()
   (--each help/lisp-modes
     (add-hook it #'help/general-lisp-mode-hook-fn)))
+
+(add-hook 'emacs-lisp-mode-hook #'help/emacs-lisp-mode-hook-fn)
 ;; org_gcr_2017-05-12_mara_D8F41BFE-D2F5-4B86-BFED-B3DE5EA2133C ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7DB4D819-0D2D-482B-AA02-9CB14F6DA288][org_gcr_2017-05-12_mara_7DB4D819-0D2D-482B-AA02-9CB14F6DA288]]

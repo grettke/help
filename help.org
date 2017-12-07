@@ -3654,6 +3654,8 @@ elisp-mode:
 (let ()
   (--each help/lisp-modes
     (add-hook it #'help/general-lisp-mode-hook-fn)))
+
+(add-hook 'emacs-lisp-mode-hook #'help/emacs-lisp-mode-hook-fn)
 #+END_SRC
 
 "find callers of elisp functions or macros".
