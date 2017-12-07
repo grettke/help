@@ -7346,7 +7346,6 @@ Flycheck On? %(bound-and-true-p flycheck-mode)
      :PROPERTIES:
      :ID:       org_gcr_2017-05-12_mara:20E96ACD-1D91-480C-BA3B-D5730EA2173C
      :END:
-
 #+NAME: org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389
 #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "C-M-1") #'help/1-window)
@@ -7361,10 +7360,10 @@ Flycheck On? %(bound-and-true-p flycheck-mode)
     (message "Buffer contents copied")))
 (global-set-key (kbd "s-w") #'help/copy-entire-buffer)
 (global-set-key (kbd "s-q") #'kill-buffer)
-(global-set-key (kbd "s-t") #'ert)
+(global-set-key (kbd "M-t") #'ert)
 (global-set-key (kbd "C-M-y") #'insert-char)
-(global-set-key [(control meta ?p)] #'help/insert-datestamp)
-(global-set-key [(control meta shift ?p)] #'help/insert-timestamp*-no-colons)
+(global-set-key [(control meta ?t)] #'help/insert-datestamp)
+(global-set-key [(control meta shift ?t)] #'help/insert-timestamp*-no-colons)
 (global-set-key (kbd "C-M-o") #'help/occur-dwim)
 (global-set-key (kbd "M-i") nil)
 (global-set-key (kbd "M-i") #'help/hydra/left/describe/body)
