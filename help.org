@@ -7317,6 +7317,7 @@ Keybindings for every mode. Starts and stop:
 (global-set-key (kbd "s-1") #'mc/edit-lines)
 (global-set-key (kbd "s--") #'decrement-integer-at-point)
 (global-set-key (kbd "s-+") #'increment-integer-at-point)
+(global-set-key (kbd "C-4") #'universal-emotions-emoticons)
 #+END_SRC
 
 Checking things.
