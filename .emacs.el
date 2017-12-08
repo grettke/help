@@ -2009,9 +2009,10 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 ;; org_gcr_2017-11-30_mara_75B00948-177E-487A-83A9-2F690611CA59 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-11-30_mara_0D5DE620-895E-4BC5-AA15-1E0D19B1815A][org_gcr_2017-11-30_mara_0D5DE620-895E-4BC5-AA15-1E0D19B1815A]]
-(define-key text-mode-map (kbd "C-;") (lambda () (interactive) (insert ". ")))
-(define-key text-mode-map (kbd "C-.") (lambda () (interactive) (insert ", ")))
-(define-key text-mode-map (kbd "C-,") (lambda () (interactive) (insert "; ")))
+(global-set-key (kbd "C-;") (lambda () (interactive) (insert ". ")))
+(global-set-key (kbd "C-.") (lambda () (interactive) (insert ", ")))
+(global-set-key (kbd "C-,") (lambda () (interactive) (insert "; ")))
+(define-key org-mode-map (kbd "C-,") nil)
 ;; org_gcr_2017-11-30_mara_0D5DE620-895E-4BC5-AA15-1E0D19B1815A ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F][org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F]]
