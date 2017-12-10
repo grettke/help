@@ -4069,7 +4069,8 @@ Describe Something
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D][org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D]]
 (global-unset-key (kbd "C-M-j"))
-(global-set-key (kbd "M-:") #'my-eval-expression)
+(global-set-key (kbd "M-;") #'my-eval-expression) ;
+(define-key org-mode-map (kbd "M-;") nil)
 (global-set-key (kbd "C-c C-k") #'help/delete-this-buffer-and-file)
 ;; org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D ends here
 
