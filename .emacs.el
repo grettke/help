@@ -2163,7 +2163,8 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (local-set-key (kbd "s-l td") #'toggle-debug-on-error)
   (local-set-key (kbd "s-l mef") #'macroexpand)
   (local-set-key (kbd "s-l mea") #'macroexpand-all)
-  (local-set-key (kbd "s-8") #'macrostep-expand))
+  (local-set-key (kbd "s-0") #'pp-macroexpand-last-sexp)
+  (local-set-key (kbd "s-9") #'macrostep-expand))
 
 (defhydra help/hydra-elisp-mode (:color blue
                                         :hint nil)
