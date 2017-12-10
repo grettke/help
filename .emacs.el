@@ -350,7 +350,9 @@ Attribution: URL `http://emacsredux.com/blog/2013/03/26/smarter-open-line/'"
             (emacs-lisp-mode)
             (use-local-map my-read-expression-map)
             (setq font-lock-mode t)
-            (funcall font-lock-function 1))
+            (funcall font-lock-function 1)
+            (insert "()")
+            (backward-char))
         (read-from-minibuffer prompt initial-contents
                               my-read-expression-map nil
                               'read-expression-history))))
