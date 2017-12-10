@@ -7324,7 +7324,6 @@ Keybindings for every mode. Starts and stop:
 (global-set-key (kbd "s-1") #'mc/edit-lines)
 (global-set-key (kbd "s--") #'decrement-integer-at-point)
 (global-set-key (kbd "s-+") #'increment-integer-at-point)
-(global-set-key (kbd "C-4") #'universal-emotions-emoticons)
 #+END_SRC
 
 Checking things.
@@ -7493,7 +7492,7 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("y" yas-describe-tables)
   ("Y" hydra-transparency/body)
   ("j" org-babel-tangle-jump-to-org)
-  ("u" ucs-insert)
+  ("u" universal-emotions-emoticons)
   ("i" scroll-down-command :exit nil)
   ("d" dash-at-point)
   ("D" help/safb-org-babel-detangle)

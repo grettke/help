@@ -3991,7 +3991,6 @@ current eyebrowse slot: %(let* ((window-configs (eyebrowse--get 'window-configs)
 (global-set-key (kbd "s-1") #'mc/edit-lines)
 (global-set-key (kbd "s--") #'decrement-integer-at-point)
 (global-set-key (kbd "s-+") #'increment-integer-at-point)
-(global-set-key (kbd "C-4") #'universal-emotions-emoticons)
 ;; org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-06-13_mara_2DFDC64B-DBF2-473E-979F-D7D8D0DD2206][org_gcr_2017-06-13_mara_2DFDC64B-DBF2-473E-979F-D7D8D0DD2206]]
@@ -4130,7 +4129,7 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("y" yas-describe-tables)
   ("Y" hydra-transparency/body)
   ("j" org-babel-tangle-jump-to-org)
-  ("u" ucs-insert)
+  ("u" universal-emotions-emoticons)
   ("i" scroll-down-command :exit nil)
   ("d" dash-at-point)
   ("D" help/safb-org-babel-detangle)
