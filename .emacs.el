@@ -359,7 +359,7 @@ Attribution: URL `http://emacsredux.com/blog/2013/03/26/smarter-open-line/'"
 
   (defun my-eval-expression (expression &optional arg)
     "Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2014-07/msg00135.html'."
-    (interactive (list (read (my-read--expression ""))
+    (interactive (list (read (my-read--expression "EVAL: "))
                        current-prefix-arg))
     (if arg
         (insert (pp-to-string (eval expression lexical-binding)))
