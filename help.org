@@ -868,7 +868,7 @@ Attribution: URL `http://emacsredux.com/blog/2013/03/26/smarter-open-line/'"
                               'read-expression-history))))
 
   (defun my-eval-expression (expression &optional arg)
-    "Evalute EXPRESSION adding the result to the kill-ring then
+    "Evaluate EXPRESSION adding the result to the kill-ring then
     either display it in a buffer or with a prefix argument ARG
     insert it into this buffer.
 
