@@ -334,7 +334,6 @@ Attribution: URL `http://emacsredux.com/blog/2013/03/26/smarter-open-line/'"
       (comment-or-uncomment-region (line-beginning-position) (line-end-position)))))
 
 (progn
-
   (defvar my-read-expression-map
     (let ((map (make-sparse-keymap)))
       (set-keymap-parent map read-expression-map)
@@ -358,13 +357,20 @@ Attribution: URL `http://emacsredux.com/blog/2013/03/26/smarter-open-line/'"
                               'read-expression-history))))
 
   (defun my-eval-expression (expression &optional arg)
-    "Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2014-07/msg00135.html'."
+    "Evalute EXPRESSION adding the result to the kill-ring then
+    either display it in a buffer or with a prefix argument ARG
+    insert it into this buffer.
+
+Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2014-07/msg00135.html'."
     (interactive (list (read (my-read--expression "EVAL: "))
                        current-prefix-arg))
-    (if arg
-        (insert (pp-to-string (eval expression lexical-binding)))
-      (pp-display-expression (eval expression lexical-binding)
-                             "*Pp Eval Output*"))))
+    (let* ((it (eval expression lexical-binding))
+           (itstr (pp-to-string it)))
+      (kill-new itstr)
+      (if arg
+          (insert itstr)
+        (pp-display-expression it
+                               "*Pp Eval Output*")))))
 
 (defun help/util-ielm ()
   "HELP buffer setup for ielm.
