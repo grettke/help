@@ -2624,8 +2624,11 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (define-key org-mode-map (kbd "s-n") #'org-babel-view-src-block-info)
 (define-key org-mode-map (kbd "s-m") #'org-babel-expand-src-block)
 (define-key org-mode-map (kbd "s-,") #'org-babel-open-src-block-result)
-(define-key org-mode-map (kbd "s-.") #'org-time-stamp)
 ;; org_gcr_2017-05-12_mara_8C00E3FE-4AE1-49BA-97E7-FAB2784DD0A9 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC][org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC]]
+(define-key org-mode-map (kbd "s-t") #'org-time-stamp)
+;; org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-07-12_mara_97C70CDA-DFBF-4422-942A-00E732D3AB6A][org_gcr_2017-07-12_mara_97C70CDA-DFBF-4422-942A-00E732D3AB6A]]
 (define-key global-map (kbd "s-m") nil)

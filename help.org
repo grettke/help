@@ -4552,7 +4552,13 @@ Because I only use this for Org-Mode.
 (define-key org-mode-map (kbd "s-n") #'org-babel-view-src-block-info)
 (define-key org-mode-map (kbd "s-m") #'org-babel-expand-src-block)
 (define-key org-mode-map (kbd "s-,") #'org-babel-open-src-block-result)
-(define-key org-mode-map (kbd "s-.") #'org-time-stamp)
+#+END_SRC
+
+Exception to the side-rule: keep this near other time related bindings.
+
+#+NAME: org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC
+#+BEGIN_SRC emacs-lisp
+(define-key org-mode-map (kbd "s-t") #'org-time-stamp)
 #+END_SRC
 
 Because I only use this for Org-Mode.
