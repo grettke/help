@@ -7314,6 +7314,10 @@ Keybindings for every mode. Starts and stop:
 
 #+NAME: org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C
 #+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-4") #'forward-char)
+(global-set-key (kbd "C-3") #'next-logical-line)
+(global-set-key (kbd "C-2") #'previous-logical-line)
+(global-set-key (kbd "C-1") #'backward-char)
 (defun help/go-there-or-back (name)
   (if (equal (buffer-name) name)
       (help/safb-switch-to-previous-buffer)

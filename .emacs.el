@@ -3978,6 +3978,10 @@ current eyebrowse slot: %(let* ((window-configs (eyebrowse--get 'window-configs)
 ;; org_gcr_2017-07-08_mara_3D694F1B-EB4A-4724-A8E7-61F09C4773A5 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C][org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C]]
+(global-set-key (kbd "C-4") #'forward-char)
+(global-set-key (kbd "C-3") #'next-logical-line)
+(global-set-key (kbd "C-2") #'previous-logical-line)
+(global-set-key (kbd "C-1") #'backward-char)
 (defun help/go-there-or-back (name)
   (if (equal (buffer-name) name)
       (help/safb-switch-to-previous-buffer)
