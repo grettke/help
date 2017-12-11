@@ -370,7 +370,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2014-07/msg0
       (if arg
           (insert itstr)
         (pp-display-expression it
-                               "*Pp Eval Output*")))))
+                               "*HELP Eval Output*")))))
 
 (defun help/util-ielm ()
   "HELP buffer setup for ielm.
