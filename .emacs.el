@@ -4053,7 +4053,8 @@ Describe Something
  _t_ theme _i_ input method _o_ lighter indicator _O_ lighter symbol _p_ package _P_ text properties _u_ unbound commands
   _s_ symbol _f_ function _F_ flycheck checker _k_ key briefly _K_ key _l_ language environment
    _c_ char _C_ coding system _v_ variable _b_ bindings _B_ personal bindings _n_ current coding system briefly _N_ current coding system full _m_ major mode _M_ minor mode
-    _q_ quit
+    _a_ all help for everything
+     _q_ quit
 "
   ("b" describe-bindings)
   ("B" describe-personal-keybindings)
@@ -4076,6 +4077,7 @@ Describe Something
   ("P" describe-text-properties)
   ("u" amx-show-unbound-commands)
   ("q" nil)
+  ("a" help)
   ("s" describe-symbol)
   ("t" describe-theme)
   ("v" describe-variable))
@@ -4086,7 +4088,6 @@ Describe Something
 (global-set-key (kbd "C-,") #'my-eval-expression)
 (define-key org-mode-map (kbd "C-,") nil)
 (global-set-key (kbd "C-c C-k") #'help/delete-this-buffer-and-file)
-(global-set-key (kbd "C-M-h") #'help)
 ;; org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E8ABDA7D-AC92-4C24-8287-1505E2377B2C][org_gcr_2017-05-12_mara_E8ABDA7D-AC92-4C24-8287-1505E2377B2C]]
