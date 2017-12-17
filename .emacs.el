@@ -815,6 +815,10 @@ Attribution: URL `https://rejeep.github.io/emacs/elisp/2010/11/16/delete-file-an
   (interactive)
   (help/save-all-file-buffers)
   (call-interactively 'compile))
+
+(defun help/insert-formfeed ()
+  (interactive)
+  (insert "\f"))
 ;; org_gcr_2017-05-12_mara_7D37FFE5-2D2B-4CF7-AF27-F3CB8616D81B ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F][org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F]]
@@ -877,16 +881,7 @@ Attribution: URL `https://rejeep.github.io/emacs/elisp/2010/11/16/delete-file-an
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_11CC1DCC-05D6-4564-A40B-DE2AD0A7C46D][org_gcr_2017-05-12_mara_11CC1DCC-05D6-4564-A40B-DE2AD0A7C46D]]
 (use-package page-break-lines
-  :diminish page-break-lines-mode
-  :config
-  (defun help/insert-formfeed ()
-    (interactive)
-    (insert "\f"))
-  (global-set-key (kbd "C-M-<return>") #'help/insert-formfeed)
-  (global-set-key (kbd "C-M-j") #'forward-page)
-  (global-set-key (kbd "C-M-k") #'backward-page)
-  (global-set-key (kbd "C-M-n") #'narrow-to-page)
-  (global-set-key (kbd "C-M-h") #'mark-page))
+  :diminish page-break-lines-mode)
 ;; org_gcr_2017-05-12_mara_11CC1DCC-05D6-4564-A40B-DE2AD0A7C46D ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_87233BFD-A241-48A6-9113-B383B30F9BC5][org_gcr_2017-05-12_mara_87233BFD-A241-48A6-9113-B383B30F9BC5]]
@@ -4085,9 +4080,9 @@ Describe Something
 ;; org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D][org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D]]
-(global-unset-key (kbd "C-M-j"))
 (global-set-key (kbd "M-,") #'my-eval-expression)
 (define-key org-mode-map (kbd "M-,") nil)
+(define-key prog-mode-map (kbd "M-,") nil)
 (global-set-key (kbd "C-c C-k") #'help/delete-this-buffer-and-file)
 ;; org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D ends here
 
