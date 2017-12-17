@@ -2014,6 +2014,7 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
 ;; [[file:~/src/help/help.org::org_gcr_2017-11-30_mara_0D5DE620-895E-4BC5-AA15-1E0D19B1815A][org_gcr_2017-11-30_mara_0D5DE620-895E-4BC5-AA15-1E0D19B1815A]]
 (global-set-key (kbd "C-;") (lambda () (interactive) (insert ". ")))
 (global-set-key (kbd "C-.") (lambda () (interactive) (insert ", ")))
+(global-set-key (kbd "C-,") (lambda () (interactive) (insert "; ")))
 ;; org_gcr_2017-11-30_mara_0D5DE620-895E-4BC5-AA15-1E0D19B1815A ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F][org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F]]
@@ -2188,7 +2189,6 @@ elisp-mode:
 (defun help/ielm-mode-hook-fn ()
   "HELP customizations."
   (interactive)
-  (help/ielm-auto-complete)
   (help/ielm-auto-complete))
 
 (add-hook 'ielm-mode-hook #'help/ielm-mode-hook-fn)
@@ -4067,9 +4067,7 @@ Describe Something
 ;; org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D][org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D]]
-(global-set-key (kbd "C-,") #'my-eval-expression)
-(define-key org-mode-map (kbd "M-,") nil)
-(define-key prog-mode-map (kbd "M-,") nil)
+(global-set-key (kbd "M-,") #'my-eval-expression)
 (global-set-key (kbd "C-c C-k") #'help/delete-this-buffer-and-file)
 ;; org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D ends here
 
