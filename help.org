@@ -3581,12 +3581,6 @@ Quasi-Quote visualization.
   (diminish 'highlight-stages-mode))
 #+END_SRC
 
-#+NAME: org_gcr_2017-05-12_mara_26AEDAD1-36FC-490D-92F4-86E0966467E2
-#+BEGIN_SRC emacs-lisp
-(use-package elisp-slime-nav
-  :ensure t
-  :diminish elisp-slime-nav-mode)
-#+END_SRC
 
 #+NAME: org_gcr_2017-05-12_mara_D8F41BFE-D2F5-4B86-BFED-B3DE5EA2133C
 #+BEGIN_SRC emacs-lisp
@@ -3610,11 +3604,8 @@ Quasi-Quote visualization.
                                         :hint nil)
   "
 elisp-mode:
- _d_ describe-thing _f_ find-thing
-  _q_ quit
+ _q_ quit
 "
-  ("d" elisp-slime-nav-describe-elisp-thing-at-point)
-  ("f" elisp-slime-nav-find-elisp-thing-at-point)
   ("q" nil))
 (key-chord-define emacs-lisp-mode-map "hh" #'help/hydra-elisp-mode/body)
 
@@ -3624,7 +3615,6 @@ elisp-mode:
   (lexbind-mode)
   (eldoc-mode)
   (diminish 'eldoc-mode)
-  (turn-on-elisp-slime-nav-mode)
   (highlight-quoted-mode)
   (highlight-stages-mode))
 
@@ -3639,8 +3629,7 @@ elisp-mode:
 (defun help/ielm-mode-hook-fn ()
   "HELP customizations."
   (interactive)
-  (help/ielm-auto-complete)
-  (turn-on-elisp-slime-nav-mode))
+  (help/ielm-auto-complete))
 
 (add-hook 'ielm-mode-hook #'help/ielm-mode-hook-fn)
 

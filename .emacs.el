@@ -2142,12 +2142,6 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (diminish 'highlight-stages-mode))
 ;; org_gcr_2017-07-16_mara_A1EC88B1-71CF-458E-A626-D6A07108BA3F ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_26AEDAD1-36FC-490D-92F4-86E0966467E2][org_gcr_2017-05-12_mara_26AEDAD1-36FC-490D-92F4-86E0966467E2]]
-(use-package elisp-slime-nav
-  :ensure t
-  :diminish elisp-slime-nav-mode)
-;; org_gcr_2017-05-12_mara_26AEDAD1-36FC-490D-92F4-86E0966467E2 ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D8F41BFE-D2F5-4B86-BFED-B3DE5EA2133C][org_gcr_2017-05-12_mara_D8F41BFE-D2F5-4B86-BFED-B3DE5EA2133C]]
 (defun help/elisp-eval-buffer ()
   "Intelligently evaluate an Elisp buffer."
@@ -2169,11 +2163,8 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
                                         :hint nil)
   "
 elisp-mode:
- _d_ describe-thing _f_ find-thing
-  _q_ quit
+ _q_ quit
 "
-  ("d" elisp-slime-nav-describe-elisp-thing-at-point)
-  ("f" elisp-slime-nav-find-elisp-thing-at-point)
   ("q" nil))
 (key-chord-define emacs-lisp-mode-map "hh" #'help/hydra-elisp-mode/body)
 
@@ -2183,7 +2174,6 @@ elisp-mode:
   (lexbind-mode)
   (eldoc-mode)
   (diminish 'eldoc-mode)
-  (turn-on-elisp-slime-nav-mode)
   (highlight-quoted-mode)
   (highlight-stages-mode))
 
@@ -2199,7 +2189,7 @@ elisp-mode:
   "HELP customizations."
   (interactive)
   (help/ielm-auto-complete)
-  (turn-on-elisp-slime-nav-mode))
+  (help/ielm-auto-complete))
 
 (add-hook 'ielm-mode-hook #'help/ielm-mode-hook-fn)
 
