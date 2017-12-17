@@ -29,13 +29,10 @@ emacs --debug-init --no-init-file --no-splash --background-color white --foregro
 #+BEGIN_SRC emacs-lisp
 (load-file "~/src/help/.org-mode-package-management.emacs.el")
 #+END_SRC
-* Org2blog
-   :PROPERTIES:
-   :ID:       org_gcr_2017-05-12_mara:B6246A7A-5514-4478-BC3D-7768B05B08B8
-   :END:
-
-Configure Org2blog for use, development, and support.
-
+* xml-rpc
+:PROPERTIES:
+:ID:       org_gcr_2017-12-16_mara:8490F7FD-9718-4ADD-8A84-56A8D6625C12
+:END:
 #+BEGIN_QUOTE
 An elisp implementation of clientside XML-RPC
 #+END_QUOTE
@@ -44,9 +41,11 @@ An elisp implementation of clientside XML-RPC
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path "~/src/xml-rpc-el")
 (require 'xml-rpc)
-
 #+END_SRC
-
+* metaweblog
+:PROPERTIES:
+:ID:       org_gcr_2017-12-16_mara:C3B0266C-F9EC-498B-ABBA-486090654DDA
+:END:
 #+BEGIN_QUOTE
 Weblog maintenance via XML-RPC APIs
 #+END_QUOTE
@@ -56,7 +55,12 @@ Weblog maintenance via XML-RPC APIs
 (add-to-list 'load-path "~/src/metaweblog")
 (require 'metaweblog)
 #+END_SRC
+* Org2blog
+   :PROPERTIES:
+   :ID:       org_gcr_2017-05-12_mara:B6246A7A-5514-4478-BC3D-7768B05B08B8
+   :END:
 
+Configure Org2blog for use, development, and support.
 #+BEGIN_QUOTE
 Blog from Org mode to wordpress
 #+END_QUOTE
