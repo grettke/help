@@ -1439,11 +1439,10 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
 ;; org_gcr_2017-05-12_mara_9F4ACDEA-BC93-4BB6-BEA2-B622FF676EB6 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8C3DB0A1-305E-4746-8455-E8CB880842B1][org_gcr_2017-05-12_mara_8C3DB0A1-305E-4746-8455-E8CB880842B1]]
-(add-to-list 'load-path "~/git/github-anonymous/amx")
-(setq amx-show-key-bindings nil)
-(setq amx-ignored-command-matchers nil)
-(require 'amx)
-(global-set-key (kbd "M-s-j") #'amx-major-mode-commands)
+(use-package smex
+  :ensure t
+  :config
+  (smex-initialize))
 ;; org_gcr_2017-05-12_mara_8C3DB0A1-305E-4746-8455-E8CB880842B1 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5295DEDE-687E-440B-89B9-9BF9BF301595][org_gcr_2017-05-12_mara_5295DEDE-687E-440B-89B9-9BF9BF301595]]
@@ -4045,7 +4044,7 @@ Flycheck On? %(bound-and-true-p flycheck-mode)
                                            :hint nil)
   "
 Describe Something
- _t_ theme _i_ input method _o_ lighter indicator _O_ lighter symbol _p_ package _P_ text properties _u_ unbound commands
+ _t_ theme _i_ input method _o_ lighter indicator _O_ lighter symbol _p_ package _P_ text properties
   _s_ symbol _f_ function _F_ flycheck checker _k_ key briefly _K_ key _l_ language environment
    _c_ char _C_ coding system _v_ variable _b_ bindings _B_ personal bindings _n_ current coding system briefly _N_ current coding system full _m_ major mode _M_ minor mode
     _a_ all help for everything
@@ -4070,7 +4069,6 @@ Describe Something
   ("O" describe-minor-mode-from-symbol)
   ("p" describe-package)
   ("P" describe-text-properties)
-  ("u" amx-show-unbound-commands)
   ("q" nil)
   ("a" help)
   ("s" describe-symbol)
@@ -4250,7 +4248,7 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (global-set-key (kbd "C-j") #'ido-switch-buffer)
 (global-set-key (kbd "M-j") nil)
 (define-key org-mode-map (kbd "M-j") nil)
-(global-set-key (kbd "M-j") #'amx)
+(global-set-key (kbd "M-j") #'smex)
 (global-set-key (kbd "C-M-,") #'ibuffer)
 (define-key org-mode-map (kbd "C-o") nil)
 (global-set-key (kbd "C-o") nil)
