@@ -3563,11 +3563,6 @@ Broadcast scoping mode.
 (use-package lexbind-mode)
 #+END_SRC
 
-Slime navigation:
-- "navigation to the symbol at point": ~M-.~
-- "pop back to previous marks": ~M-,~
-- "describe the symbol at point": ~C-c C-d C-d~
-
 Symbol visualization.
 
 #+NAME: org_gcr_2017-07-16_mara_766EBC8F-2A7C-49BB-9916-BE2AAEE019A4
