@@ -7639,7 +7639,7 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (global-set-key (kbd "C-M-.") #'dired)
 #+END_SRC
 
-Mcan't re-use =<<= and =>>=.
+Can't re-use =<<= and =>>=.
 
 #+NAME: org_gcr_2017-07-28_mara_2A9CEE58-31E9-4DC8-B2EB-D3232D9DD9F7
 #+BEGIN_SRC emacs-lisp
