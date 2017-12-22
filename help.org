@@ -1890,7 +1890,7 @@ Configure a =PS1= like prompt.
          (system-name)
          ":"
          (eshell/pwd)
-         "> ")))
+         "⮞ ")))
 #+END_SRC
 
 ** File Based System

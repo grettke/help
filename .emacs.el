@@ -1181,7 +1181,7 @@ configuration when invoked to evaluate a line."
          (system-name)
          ":"
          (eshell/pwd)
-         "> ")))
+         "⮞ ")))
 ;; org_gcr_2017-05-12_mara_47F75687-F505-42B3-9E2B-EA832B41F7EC ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_11891C85-578F-417F-9956-FEBB52045CDC][org_gcr_2017-05-12_mara_11891C85-578F-417F-9956-FEBB52045CDC]]
