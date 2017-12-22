@@ -3051,12 +3051,13 @@ GNU APL is: %(help/gnu-apl-runningp)
 ;; org_gcr_2017-05-12_mara_A80E9E8F-A5B7-4C48-A3E5-2C365178EFAF ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-07-27_mara_EAEF335C-A35D-4746-AB2F-58BDDDFB6CC0][org_gcr_2017-07-27_mara_EAEF335C-A35D-4746-AB2F-58BDDDFB6CC0]]
-(use-package scheme-mode
+(use-package scheme
   :config
   (setq scheme-program-name "chez")
   (defun help/scheme-mode-hook-fn ())
   (add-hook 'scheme-mode-hook #'help/scheme-mode-hook-fn)
-  (defun help/inferior-scheme-mode-hook-fn ()))
+  (defun help/inferior-scheme-mode-hook-fn ())
+  (add-hook 'inferior-scheme-mode-hook #'help/inferior-scheme-mode-hook-fn))
 ;; org_gcr_2017-07-27_mara_EAEF335C-A35D-4746-AB2F-58BDDDFB6CC0 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5457F0EC-AAB3-4502-ACCD-7F9C1579293D][org_gcr_2017-05-12_mara_5457F0EC-AAB3-4502-ACCD-7F9C1579293D]]
