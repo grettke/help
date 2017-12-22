@@ -2199,7 +2199,9 @@ elisp-mode:
 (defun help/ielm-mode-hook-fn ()
   "HELP customizations."
   (interactive)
-  (help/ielm-auto-complete))
+  (help/ielm-auto-complete)
+  (local-unset-key (kbd "C-j"))
+  (local-set-key (kbd "<C-return>") #'ielm-send-input))
 
 (add-hook 'ielm-mode-hook #'help/ielm-mode-hook-fn)
 
@@ -3106,6 +3108,7 @@ Geiser REPL is: %(help/geiser-on-p)
   (defun help/geiser-repl-mode-hook-fn ()
     (turn-off-fci-mode)
     (local-unset-key (kbd "C-."))
+    (local-unset-key (kbd "C-j"))
     (local-set-key (kbd "<C-return>") #'geiser-repl--maybe-send)
     (key-chord-define-local "hh" #'help/hydra-geiser-mode/body))
   (add-hook 'geiser-repl-mode-hook #'help/geiser-repl-mode-hook-fn))
