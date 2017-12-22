@@ -2190,7 +2190,7 @@ elisp-mode:
 
 (setq ielm-noisy nil)
 
-(setq ielm-prompt "𝔼LISP> ")
+(setq ielm-prompt "ⅇLISP> ")
 
 (setq ielm-dynamic-return nil)
 
