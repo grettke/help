@@ -1956,6 +1956,29 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   :ensure t)
 ;; org_gcr_2017-05-12_mara_0183A8E0-5A59-4A4B-9260-FF5E8C5CAF2C ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-12-22_mara_9F9E1F38-1FD7-474F-B2D9-4D9086316632][org_gcr_2017-12-22_mara_9F9E1F38-1FD7-474F-B2D9-4D9086316632]]
+(defhydra help/hydra/commit-message (:color blue
+                                            :hint nil)
+  "
+Commit Message Descriptor (q to quit)
+_e_nhancement: \"an increase or improvement in quality, value, or extent.\"
+_r_efinement: \"the improvement or clarification of something by the making of small changes.\"
+_c_orrection: \"a change that rectifies an error or inaccuracy.\"
+"
+  ("e" (lambda () (interactive) (insert "(enhancement) ")))
+  ("r" (lambda () (interactive) (insert "(refinement) ")))
+  ("c" (lambda () (interactive) (insert "(correction) ")))
+  ("q" nil))
+;; org_gcr_2017-12-22_mara_9F9E1F38-1FD7-474F-B2D9-4D9086316632 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2017-12-22_mara_93DCBFA6-1D9E-4126-ABA7-070A42297927][org_gcr_2017-12-22_mara_93DCBFA6-1D9E-4126-ABA7-070A42297927]]
+(defun help/commit-message-mode-hook-fn ()
+  "HELP Commit Message Mode Hook Function"
+  (key-chord-define-local "hh" #'help/hydra/commit-message/body))
+(add-hook 'vc-git-log-edit-mode-hook #'help/commit-message-mode-hook-fn)
+(add-hook 'git-commit-setup-hook #'help/commit-message-mode-hook-fn)
+;; org_gcr_2017-12-22_mara_93DCBFA6-1D9E-4126-ABA7-070A42297927 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BCF6CC3A-98AD-4845-BBE2-EB601E1A8550][org_gcr_2017-05-12_mara_BCF6CC3A-98AD-4845-BBE2-EB601E1A8550]]
 (defvar yt-iframe-format
   ;; You may want to change your width and height.

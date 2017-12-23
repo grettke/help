@@ -3236,6 +3236,35 @@ Git config files.
   :ensure t)
 #+END_SRC
 
+Quick note about intent of the change.
+
+#+NAME: org_gcr_2017-12-22_mara_9F9E1F38-1FD7-474F-B2D9-4D9086316632
+#+BEGIN_SRC emacs-lisp
+(defhydra help/hydra/commit-message (:color blue
+:hint nil)
+  "
+Commit Message Descriptor (q to quit)
+_e_nhancement: \"an increase or improvement in quality, value, or extent.\"
+_r_efinement: \"the improvement or clarification of something by the making of small changes.\"
+_c_orrection: \"a change that rectifies an error or inaccuracy.\"
+"
+  ("e" (lambda () (interactive) (insert "(enhancement) ")))
+  ("r" (lambda () (interactive) (insert "(refinement) ")))
+  ("c" (lambda () (interactive) (insert "(correction) ")))
+  ("q" nil))
+#+END_SRC
+
+Commit message mode hook.
+
+#+NAME: org_gcr_2017-12-22_mara_93DCBFA6-1D9E-4126-ABA7-070A42297927
+#+BEGIN_SRC emacs-lisp
+(defun help/commit-message-mode-hook-fn ()
+"HELP Commit Message Mode Hook Function"
+(key-chord-define-local "hh" #'help/hydra/commit-message/body))
+(add-hook 'vc-git-log-edit-mode-hook #'help/commit-message-mode-hook-fn)
+(add-hook 'git-commit-setup-hook #'help/commit-message-mode-hook-fn)
+#+END_SRC
+
 ** Video
 :PROPERTIES:
 :ID:       org_gcr_2017-05-12_mara:BB0F7B20-AC2C-49DB-B6A2-07D3C5D7A197
