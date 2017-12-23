@@ -4076,7 +4076,7 @@ Describe Something
  _t_ theme _i_ input method _o_ lighter indicator _O_ lighter symbol _p_ package _P_ text properties
   _s_ symbol _f_ function _F_ flycheck checker _k_ key briefly _K_ key _l_ language environment
    _c_ char _C_ coding system _v_ variable _b_ bindings _B_ personal bindings _n_ current coding system briefly _N_ current coding system full _m_ major mode _M_ minor mode
-    _a_ all help for everything
+    _a_ all help for everything _w_ where is
      _q_ quit
 "
   ("b" describe-bindings)
@@ -4102,7 +4102,8 @@ Describe Something
   ("a" help)
   ("s" describe-symbol)
   ("t" describe-theme)
-  ("v" describe-variable))
+  ("v" describe-variable)
+  ("w" where-is))
 ;; org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D][org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D]]
