@@ -3077,9 +3077,11 @@ GNU APL is: %(help/gnu-apl-runningp)
 (use-package scheme
   :config
   (setq scheme-program-name "chez")
-  (defun help/scheme-mode-hook-fn ())
+  (defun help/scheme-mode-hook-fn ()
+    "HELP Scheme Mode Hook Function")
   (add-hook 'scheme-mode-hook #'help/scheme-mode-hook-fn)
-  (defun help/inferior-scheme-mode-hook-fn ())
+  (defun help/inferior-scheme-mode-hook-fn ()
+    "HELP Inferior Scheme Mode Hook Function")
   (add-hook 'inferior-scheme-mode-hook #'help/inferior-scheme-mode-hook-fn))
 ;; org_gcr_2017-07-27_mara_EAEF335C-A35D-4746-AB2F-58BDDDFB6CC0 ends here
 

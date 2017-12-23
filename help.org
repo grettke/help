@@ -5280,9 +5280,11 @@ Scheme.
 (use-package scheme
 :config
 (setq scheme-program-name "chez")
-(defun help/scheme-mode-hook-fn ())
+(defun help/scheme-mode-hook-fn ()
+  "HELP Scheme Mode Hook Function")
 (add-hook 'scheme-mode-hook #'help/scheme-mode-hook-fn)
-(defun help/inferior-scheme-mode-hook-fn ())
+(defun help/inferior-scheme-mode-hook-fn ()
+  "HELP Inferior Scheme Mode Hook Function")
 (add-hook 'inferior-scheme-mode-hook #'help/inferior-scheme-mode-hook-fn))
   #+END_SRC
 
