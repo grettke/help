@@ -5295,7 +5295,8 @@ Geiser.
 (use-package geiser
   :ensure t
   :config
-  (setq geiser-active-implementations '(chez))
+  (setq geiser-default-implementation 'chez)
+  (setq geiser-active-implementations (list geiser-default-implementation))
   (setq geiser-repl-history-no-dups-p t)
   (defun help/geiser-exit-chez ()
     (interactive)
