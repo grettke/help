@@ -1965,9 +1965,9 @@ _e_nhancement: \"an increase or improvement in quality, value, or extent.\"
 _r_efinement: \"the improvement or clarification of something by the making of small changes.\"
 _c_orrection: \"a change that rectifies an error or inaccuracy.\"
 "
-  ("e" (lambda () (interactive) (insert "(enhancement) ")))
-  ("r" (lambda () (interactive) (insert "(refinement) ")))
-  ("c" (lambda () (interactive) (insert "(correction) ")))
+  ("e" (lambda () (interactive) (insert "(nhncmnt) ")))
+  ("r" (lambda () (interactive) (insert "(rfnmnt) ")))
+  ("c" (lambda () (interactive) (insert "(crrctn) ")))
   ("q" nil))
 ;; org_gcr_2017-12-22_mara_9F9E1F38-1FD7-474F-B2D9-4D9086316632 ends here
 
