@@ -1990,16 +1990,16 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
                                             :hint nil)
   "
 Commit Message Descriptor (q to quit)
-_e_nhancement: \"an increase or improvement in quality, value, or extent.\"
-_r_efinement: \"the improvement or clarification of something by the making of small changes.\"
-_c_orrection: \"a change that rectifies an error or inaccuracy.\"
-c_l_oses _f_ixes resol_v_es
+_E_nhancement: \"an increase or improvement in quality, value, or extent.\"
+_R_efinement: \"the improvement or clarification of something by the making of small changes.\"
+_C_orrection: \"a change that rectifies an error or inaccuracy.\"
+C_l_oses | _F_ixes | Resol_v_es
 "
-  ("e" (lambda () (interactive) (insert "(nhncmnt) ")))
-  ("r" (lambda () (interactive) (insert "(rfnmnt) ")))
-  ("c" (lambda () (interactive) (insert "(crrctn) ")))
+  ("E" (lambda () (interactive) (insert "(nhncmnt) ")))
+  ("R" (lambda () (interactive) (insert "(rfnmnt) ")))
+  ("C" (lambda () (interactive) (insert "(crrctn) ")))
   ("l" (lambda () (interactive (insert "Closes #"))))
-  ("f" (lambda () (interactive (insert "Fixes #"))))
+  ("F" (lambda () (interactive (insert "Fixes #"))))
   ("v" (lambda () (interactive (insert "Resolves #"))))
   ("q" nil))
 ;; org_gcr_2017-12-22_mara_9F9E1F38-1FD7-474F-B2D9-4D9086316632 ends here
