@@ -1998,9 +1998,9 @@ c_l_oses _f_ixes resol_v_es
   ("e" (lambda () (interactive) (insert "(nhncmnt) ")))
   ("r" (lambda () (interactive) (insert "(rfnmnt) ")))
   ("c" (lambda () (interactive) (insert "(crrctn) ")))
-  ("l" (lambda () (interactive (insert "closes #"))))
-  ("f" (lambda () (interactive (insert "fixes #"))))
-  ("v" (lambda () (interactive (insert "resolves #"))))
+  ("l" (lambda () (interactive (insert "Closes #"))))
+  ("f" (lambda () (interactive (insert "Fixes #"))))
+  ("v" (lambda () (interactive (insert "Resolves #"))))
   ("q" nil))
 ;; org_gcr_2017-12-22_mara_9F9E1F38-1FD7-474F-B2D9-4D9086316632 ends here
 

@@ -3281,9 +3281,9 @@ c_l_oses _f_ixes resol_v_es
   ("e" (lambda () (interactive) (insert "(nhncmnt) ")))
   ("r" (lambda () (interactive) (insert "(rfnmnt) ")))
   ("c" (lambda () (interactive) (insert "(crrctn) ")))
-  ("l" (lambda () (interactive (insert "closes #"))))
-  ("f" (lambda () (interactive (insert "fixes #"))))
-  ("v" (lambda () (interactive (insert "resolves #"))))
+  ("l" (lambda () (interactive (insert "Closes #"))))
+  ("f" (lambda () (interactive (insert "Fixes #"))))
+  ("v" (lambda () (interactive (insert "Resolves #"))))
   ("q" nil))
 #+END_SRC
 
