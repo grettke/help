@@ -7647,13 +7647,13 @@ Kinds of checks.
 #+BEGIN_SRC emacs-lisp
 (defhydra help/checks (:color blue :hint nil)
   "
-_q_ ✓ _w_ ✗ _e_ ☐ _r_ ☑ _t_ ☒_
+_a_ ✓ _s_ ✗ _d_ ☐ _f_ ☑ _g_ ☒_
 "
-  ("q" (lambda () (interactive) (insert "✓")) :exit nil)
-  ("w" (lambda () (interactive) (insert "✗")) :exit nil)
-  ("e" (lambda () (interactive) (insert "☐")) :exit nil)
-  ("r" (lambda () (interactive) (insert "☑")) :exit nil)
-  ("t" (lambda () (interactive) (insert "☒")) :exit nil))
+  ("a" (lambda () (interactive) (insert "✓")) :exit nil)
+  ("s" (lambda () (interactive) (insert "✗")) :exit nil)
+  ("d" (lambda () (interactive) (insert "☐")) :exit nil)
+  ("f" (lambda () (interactive) (insert "☑")) :exit nil)
+  ("g" (lambda () (interactive) (insert "☒")) :exit nil))
 #+END_SRC
 
 BibTeX stuff.

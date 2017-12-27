@@ -4270,13 +4270,13 @@ _K_orean Standard
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E4413D83-9743-468B-BBAF-3FAF9E31F491][org_gcr_2017-05-12_mara_E4413D83-9743-468B-BBAF-3FAF9E31F491]]
 (defhydra help/checks (:color blue :hint nil)
   "
-_q_ ✓ _w_ ✗ _e_ ☐ _r_ ☑ _t_ ☒_
+_a_ ✓ _s_ ✗ _d_ ☐ _f_ ☑ _g_ ☒_
 "
-  ("q" (lambda () (interactive) (insert "✓")) :exit nil)
-  ("w" (lambda () (interactive) (insert "✗")) :exit nil)
-  ("e" (lambda () (interactive) (insert "☐")) :exit nil)
-  ("r" (lambda () (interactive) (insert "☑")) :exit nil)
-  ("t" (lambda () (interactive) (insert "☒")) :exit nil))
+  ("a" (lambda () (interactive) (insert "✓")) :exit nil)
+  ("s" (lambda () (interactive) (insert "✗")) :exit nil)
+  ("d" (lambda () (interactive) (insert "☐")) :exit nil)
+  ("f" (lambda () (interactive) (insert "☑")) :exit nil)
+  ("g" (lambda () (interactive) (insert "☒")) :exit nil))
 ;; org_gcr_2017-05-12_mara_E4413D83-9743-468B-BBAF-3FAF9E31F491 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D0F37886-4355-478C-A141-93F48E531CE5][org_gcr_2017-05-12_mara_D0F37886-4355-478C-A141-93F48E531CE5]]
