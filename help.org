@@ -3276,10 +3276,14 @@ Commit Message Descriptor (q to quit)
 _e_nhancement: \"an increase or improvement in quality, value, or extent.\"
 _r_efinement: \"the improvement or clarification of something by the making of small changes.\"
 _c_orrection: \"a change that rectifies an error or inaccuracy.\"
+c_l_oses _f_ixes resol_v_es
 "
   ("e" (lambda () (interactive) (insert "(nhncmnt) ")))
   ("r" (lambda () (interactive) (insert "(rfnmnt) ")))
   ("c" (lambda () (interactive) (insert "(crrctn) ")))
+  ("l" (lambda () (interactive (insert "closes #"))))
+  ("f" (lambda () (interactive (insert "fixes #"))))
+  ("v" (lambda () (interactive (insert "resolves #"))))
   ("q" nil))
 #+END_SRC
 
