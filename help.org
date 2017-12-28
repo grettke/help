@@ -1524,23 +1524,6 @@ Do the /right thing/ for getting to the start of the line.
   (global-set-key (kbd "C-a") 'mwim-beginning-of-code-or-line))
 #+END_SRC
 
-Fling buffers left and right.
-
-#+NAME: org_gcr_2017-06-20_mara_6C4B1CDD-CF71-4A5F-B900-6D3CC06D4028
-#+BEGIN_SRC emacs-lisp
-(use-package buffer-move
-  :ensure t
-  :config
-  (define-key org-mode-map (kbd "<C-S-up>") nil)
-  (global-set-key (kbd "<C-S-up>") #'buf-move-up)
-  (define-key org-mode-map (kbd "<C-S-down>") nil)
-  (global-set-key (kbd "<C-S-down>") #'buf-move-down)
-  (define-key org-mode-map (kbd "<C-S-left>") nil)
-  (global-set-key (kbd "<C-S-left>") #'buf-move-left)
-  (define-key org-mode-map (kbd "<C-S-right>") nil)
-  (global-set-key (kbd "<C-S-right>") #'buf-move-right))
-#+END_SRC
-
 - Easily see the fill-column (or close too it)
   - Sometimes I set the fci rule at 81 because a char at 79 pushes the fci
     rule out one extra space. Sometimes it is not an issue.
@@ -6879,6 +6862,22 @@ current eyebrowse slot: %(let* ((window-configs (eyebrowse--get 'window-configs)
   (global-set-key (kbd "C-M-e") #'help/hydra-left-side/eyebrowse/body))
 #+END_SRC
 
+Fling buffers left and right.
+
+#+NAME: org_gcr_2017-06-20_mara_6C4B1CDD-CF71-4A5F-B900-6D3CC06D4028
+#+BEGIN_SRC emacs-lisp
+(use-package buffer-move
+  :ensure t
+  :config
+  (define-key org-mode-map (kbd "<C-S-up>") nil)
+  (global-set-key (kbd "<C-S-up>") #'buf-move-up)
+  (define-key org-mode-map (kbd "<C-S-down>") nil)
+  (global-set-key (kbd "<C-S-down>") #'buf-move-down)
+  (define-key org-mode-map (kbd "<C-S-left>") nil)
+  (global-set-key (kbd "<C-S-left>") #'buf-move-left)
+  (define-key org-mode-map (kbd "<C-S-right>") nil)
+  (global-set-key (kbd "<C-S-right>") #'buf-move-right))
+#+END_SRC
 * Piano Lessons
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:B9C71531-F4DD-4180-950D-AD3494C5D566

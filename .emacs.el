@@ -935,20 +935,6 @@ Attribution: URL `http://ergoemacs.org/emacs/elisp_command_working_on_string_or_
   (global-set-key (kbd "C-a") 'mwim-beginning-of-code-or-line))
 ;; org_gcr_2017-05-12_mara_B8BDE36B-4B27-4580-BA34-35C047FBEA62 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-06-20_mara_6C4B1CDD-CF71-4A5F-B900-6D3CC06D4028][org_gcr_2017-06-20_mara_6C4B1CDD-CF71-4A5F-B900-6D3CC06D4028]]
-(use-package buffer-move
-  :ensure t
-  :config
-  (define-key org-mode-map (kbd "<C-S-up>") nil)
-  (global-set-key (kbd "<C-S-up>") #'buf-move-up)
-  (define-key org-mode-map (kbd "<C-S-down>") nil)
-  (global-set-key (kbd "<C-S-down>") #'buf-move-down)
-  (define-key org-mode-map (kbd "<C-S-left>") nil)
-  (global-set-key (kbd "<C-S-left>") #'buf-move-left)
-  (define-key org-mode-map (kbd "<C-S-right>") nil)
-  (global-set-key (kbd "<C-S-right>") #'buf-move-right))
-;; org_gcr_2017-06-20_mara_6C4B1CDD-CF71-4A5F-B900-6D3CC06D4028 ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_3E475ED3-773E-4537-B29F-6888B7DB90DF][org_gcr_2017-05-12_mara_3E475ED3-773E-4537-B29F-6888B7DB90DF]]
 (use-package fill-column-indicator
   :ensure t
@@ -4035,6 +4021,20 @@ current eyebrowse slot: %(let* ((window-configs (eyebrowse--get 'window-configs)
     ("~" #'eyebrowse-close-window-config :exit nil))
   (global-set-key (kbd "C-M-e") #'help/hydra-left-side/eyebrowse/body))
 ;; org_gcr_2017-07-08_mara_3D694F1B-EB4A-4724-A8E7-61F09C4773A5 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2017-06-20_mara_6C4B1CDD-CF71-4A5F-B900-6D3CC06D4028][org_gcr_2017-06-20_mara_6C4B1CDD-CF71-4A5F-B900-6D3CC06D4028]]
+(use-package buffer-move
+  :ensure t
+  :config
+  (define-key org-mode-map (kbd "<C-S-up>") nil)
+  (global-set-key (kbd "<C-S-up>") #'buf-move-up)
+  (define-key org-mode-map (kbd "<C-S-down>") nil)
+  (global-set-key (kbd "<C-S-down>") #'buf-move-down)
+  (define-key org-mode-map (kbd "<C-S-left>") nil)
+  (global-set-key (kbd "<C-S-left>") #'buf-move-left)
+  (define-key org-mode-map (kbd "<C-S-right>") nil)
+  (global-set-key (kbd "<C-S-right>") #'buf-move-right))
+;; org_gcr_2017-06-20_mara_6C4B1CDD-CF71-4A5F-B900-6D3CC06D4028 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C][org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C]]
 (global-set-key (kbd "C-4") #'forward-char)
