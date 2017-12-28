@@ -4036,6 +4036,13 @@ current eyebrowse slot: %(let* ((window-configs (eyebrowse--get 'window-configs)
   (global-set-key (kbd "<C-S-right>") #'buf-move-right))
 ;; org_gcr_2017-06-20_mara_6C4B1CDD-CF71-4A5F-B900-6D3CC06D4028 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-12-27_mara_AA4152A3-5D5C-4D41-AF55-4828F8BDEF7D][org_gcr_2017-12-27_mara_AA4152A3-5D5C-4D41-AF55-4828F8BDEF7D]]
+(use-package resize-window
+  :ensure t
+  :config
+  (key-chord-define-global "ww" #'resize-window))
+;; org_gcr_2017-12-27_mara_AA4152A3-5D5C-4D41-AF55-4828F8BDEF7D ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C][org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C]]
 (global-set-key (kbd "C-4") #'forward-char)
 (global-set-key (kbd "C-3") #'next-logical-line)

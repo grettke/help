@@ -6878,6 +6878,16 @@ Fling buffers left and right.
   (define-key org-mode-map (kbd "<C-S-right>") nil)
   (global-set-key (kbd "<C-S-right>") #'buf-move-right))
 #+END_SRC
+
+Resize window.
+
+#+NAME: org_gcr_2017-12-27_mara_AA4152A3-5D5C-4D41-AF55-4828F8BDEF7D
+#+BEGIN_SRC emacs-lisp
+(use-package resize-window
+  :ensure t
+  :config
+  (key-chord-define-global "ww" #'resize-window))
+#+END_SRC
 * Piano Lessons
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:B9C71531-F4DD-4180-950D-AD3494C5D566
