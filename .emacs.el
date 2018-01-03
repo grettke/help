@@ -1988,8 +1988,8 @@ _A_rchives | Rest_o_res
   ("l" (lambda () (interactive (insert "Closes #"))))
   ("F" (lambda () (interactive (insert "Fixes #"))))
   ("v" (lambda () (interactive (insert "Resolves #"))))
-  ("A" (lambda () (interactive (insert "(rchvs)"))))
-  ("o" (lambda () (interactive (insert "(rslvs)"))))
+  ("A" (lambda () (interactive (insert "(rchvs) "))))
+  ("o" (lambda () (interactive (insert "(rslvs) "))))
   ("q" nil))
 ;; org_gcr_2017-12-22_mara_9F9E1F38-1FD7-474F-B2D9-4D9086316632 ends here
 

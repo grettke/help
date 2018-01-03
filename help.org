@@ -3268,8 +3268,8 @@ _A_rchives | Rest_o_res
   ("l" (lambda () (interactive (insert "Closes #"))))
   ("F" (lambda () (interactive (insert "Fixes #"))))
   ("v" (lambda () (interactive (insert "Resolves #"))))
-  ("A" (lambda () (interactive (insert "(rchvs)"))))
-  ("o" (lambda () (interactive (insert "(rslvs)"))))
+  ("A" (lambda () (interactive (insert "(rchvs) "))))
+  ("o" (lambda () (interactive (insert "(rslvs) "))))
   ("q" nil))
 #+END_SRC
 
