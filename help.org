@@ -1537,6 +1537,8 @@ Do the /right thing/ for getting to the start of the line.
 
 Show text indentation guide lines.
 
+~highlight-indentation~ is too difficult to see.
+
 #+NAME: org_gcr_2017-06-28_mara_EE77505E-5757-409C-9E87-2FA685145AB2
 #+BEGIN_SRC emacs-lisp
 (use-package indent-guide
