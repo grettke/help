@@ -7580,7 +7580,7 @@ Org-Mode and I hit ~s-h~ it hides Emacs. Oops!
 (defhydra help/hydra/left-side/global (:color blue
                                               :hint nil)
   "
-_O_ base64-encode-region _P_ base64-decode-region _|_ split-window-horizontally _-_ split-window-vertically
+_O_ base64-encode-region _P_ base64-decode-region _|_ split-window-horizontally _-_ split-window-vertically _8_ selectric
 _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm
 _w_ widen _=_ reposition-window _t_ rectangle-mark _y_ yas tables _Y_ transparency _u_ ucs-insert _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _}_ transliterate
 _Q_ exit-Emacs _q_uit T_ trademarks
@@ -7596,6 +7596,7 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("2" help/text-scale-decrease :exit nil)
   ("3" help/text-scale-increase :exit nil)
   ("4" help/insert-ellipsis)
+  ("8" selectric-mode)
   ("r" count-words)
   ("R" help/rename-current-buffer-file)
   ("T" help/trademark/body)
@@ -7638,7 +7639,7 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("O" base64-encode-region)
   ("P" base64-decode-region)
   ("}" help/hydra/transliterate/body)
-  ("c" fill-paragraph )
+  ("c" fill-paragraph)
   ("b" erase-buffer)
   ("B" help/bibtex/body)
   ("'" help/move-file)
