@@ -2250,8 +2250,10 @@ _A_rchives | Rest_o_res
                                         :hint nil)
   "
 elisp-mode:
- _q_ quit
+ _h_ eval-buffer
+  _q_ quit
 "
+  ("h" eval-buffer)
   ("q" nil))
 (key-chord-define emacs-lisp-mode-map "hh" #'help/hydra-elisp-mode/body)
 
