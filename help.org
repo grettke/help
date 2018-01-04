@@ -1736,6 +1736,24 @@ Smart-Shift: (q to quit)
   :diminish hs-minor-mode)
 #+END_SRC
 
+Fold on indentation level.
+
+#+NAME: org_gcr_2018-01-03_mara_0B7D49CD-6177-4F18-8C2E-540B01E34340
+#+BEGIN_SRC emacs-lisp
+(defun aj-toggle-fold ()
+  "Toggle fold all lines larger than indentation on current line
+
+URL: `https://stackoverflow.com/questions/1587972/how-to-display-indentation-guides-in-emacs/4459159#4459159'"
+  (interactive)
+  (let ((col 1))
+    (save-excursion
+      (back-to-indentation)
+      (setq col (+ 1 (current-column)))
+      (set-selective-display
+       (if selective-display nil (or col 1))))))
+(global-set-key (kbd "s-q") #'aj-toggle-fold)
+#+END_SRC
+
 ** Colors
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:DA9E0CC6-F3D4-4B9B-944C-0ECB69D8899C

@@ -1111,6 +1111,21 @@ Smart-Shift: (q to quit)
   :diminish hs-minor-mode)
 ;; org_gcr_2017-05-12_mara_611E83B9-E797-4512-95EE-643473026607 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-01-03_mara_0B7D49CD-6177-4F18-8C2E-540B01E34340][org_gcr_2018-01-03_mara_0B7D49CD-6177-4F18-8C2E-540B01E34340]]
+(defun aj-toggle-fold ()
+  "Toggle fold all lines larger than indentation on current line
+
+URL: `https://stackoverflow.com/questions/1587972/how-to-display-indentation-guides-in-emacs/4459159#4459159'"
+  (interactive)
+  (let ((col 1))
+    (save-excursion
+      (back-to-indentation)
+      (setq col (+ 1 (current-column)))
+      (set-selective-display
+       (if selective-display nil (or col 1))))))
+(global-set-key (kbd "s-q") #'aj-toggle-fold)
+;; org_gcr_2018-01-03_mara_0B7D49CD-6177-4F18-8C2E-540B01E34340 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BBE40664-C7A9-4586-A5FF-05E570E87B7A][org_gcr_2017-05-12_mara_BBE40664-C7A9-4586-A5FF-05E570E87B7A]]
 (use-package rainbow-mode
   :ensure t
