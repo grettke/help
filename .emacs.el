@@ -362,7 +362,7 @@ Attribution: URL `http://emacsredux.com/blog/2013/03/26/smarter-open-line/'"
     insert it into this buffer.
 
 Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2014-07/msg00135.html'."
-    (interactive (list (read (my-read--expression "EVAL: "))
+    (interactive (list (read (my-read--expression "𝔼𝕍𝔸𝕃: "))
                        current-prefix-arg))
     (let* ((it (eval expression lexical-binding))
            (itstr (pp-to-string it)))
