@@ -3319,6 +3319,13 @@ Commit message mode hook.
 (add-hook 'git-commit-setup-hook #'help/commit-message-mode-hook-fn)
 #+END_SRC
 
+Smerge.
+
+#+NAME: org_gcr_2018-01-04_mara_3088E232-25CB-4DCA-8FA0-ADD739504E08
+#+BEGIN_SRC emacs-lisp
+(diminish "smerge-mode")
+#+END_SRC
+
 ** Video
 :PROPERTIES:
 :ID:       org_gcr_2017-05-12_mara:BB0F7B20-AC2C-49DB-B6A2-07D3C5D7A197

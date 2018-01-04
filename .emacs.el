@@ -2031,6 +2031,10 @@ _A_rchives | Rest_o_res
 (add-hook 'git-commit-setup-hook #'help/commit-message-mode-hook-fn)
 ;; org_gcr_2017-12-22_mara_93DCBFA6-1D9E-4126-ABA7-070A42297927 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-01-04_mara_3088E232-25CB-4DCA-8FA0-ADD739504E08][org_gcr_2018-01-04_mara_3088E232-25CB-4DCA-8FA0-ADD739504E08]]
+(diminish "smerge-mode")
+;; org_gcr_2018-01-04_mara_3088E232-25CB-4DCA-8FA0-ADD739504E08 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BCF6CC3A-98AD-4845-BBE2-EB601E1A8550][org_gcr_2017-05-12_mara_BCF6CC3A-98AD-4845-BBE2-EB601E1A8550]]
 (defvar yt-iframe-format
   ;; You may want to change your width and height.
