@@ -3683,6 +3683,50 @@ sh-mode:
   (add-hook 'crontab-mode-hook #'turn-on-stripe-buffer-mode))
 ;; org_gcr_2017-06-13_mara_350A94E2-4280-4D5E-BB58-24887D9A57CD ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-01-03_mara_CD4698C2-3650-45E4-94F8-F8B3EB66DA57][org_gcr_2018-01-03_mara_CD4698C2-3650-45E4-94F8-F8B3EB66DA57]]
+(use-package yaml-mode
+  :ensure t
+  :config
+  (defun yaml-next-field ()
+    "Jump to next yaml field.
+
+URL: `https://stackoverflow.com/questions/12648388/emacs-yaml-editing'"
+    (interactive)
+    (search-forward-regexp ": *"))
+  (defun yaml-prev-field ()
+    "Jump to next yaml field.
+
+URL: `https://stackoverflow.com/questions/12648388/emacs-yaml-editing'"
+    (interactive)
+    (search-backward-regexp ": *"))
+  (use-package ansible
+    :ensure t)
+  (defhydra help/hydra/ansible (:color blue
+                                       :hint nil)
+    "
+Ansible (q to quit)
+ _D_ecrypt buffer _E_ncrypt buffer
+"
+    ("D" #'ansible::decrypt-buffer)
+    ("E" #'ansible::encrypt-buffer)
+    ("q" nil))
+  (defun help/yaml-mode-hook-fn ()
+    (turn-off-auto-fill)
+    (visual-line-mode t)
+    (turn-off-fci-mode)
+    (turn-off-auto-capitalize-mode)
+    (ansible 1)
+    (indent-guide-mode)
+    (turn-on-smartparens-strict-mode)
+    (define-key yaml-mode-map (kbd "<backspace>") nil)
+    (define-key yaml-mode-map (kbd "<backspace>") #'sp-backward-delete-char)
+    (define-key yaml-mode-map (kbd "s-j") #'yaml-next-field)
+    (define-key yaml-mode-map (kbd "s-k") #'yaml-prev-field)
+    (key-chord-define-local "hh" #'help/hydra/ansible/body))
+  (add-hook 'yaml-mode-hook #'help/yaml-mode-hook-fn)
+  (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode)))
+;; org_gcr_2018-01-03_mara_CD4698C2-3650-45E4-94F8-F8B3EB66DA57 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_AF516C01-3152-4194-954B-91A44A429972][org_gcr_2017-05-12_mara_AF516C01-3152-4194-954B-91A44A429972]]
 (add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
 (add-to-list 'auto-mode-alist '("\\.art" . artist-mode))

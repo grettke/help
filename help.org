@@ -6227,6 +6227,54 @@ sh-mode:
   (add-to-list 'auto-mode-alist '("\\.cron\\(tab\\)?\\'" . crontab-mode))
   (add-hook 'crontab-mode-hook #'turn-on-stripe-buffer-mode))
 #+END_SRC
+*** Ansible
+:PROPERTIES:
+:ID:       org_gcr_2018-01-03_mara:626CA760-B710-4A90-A585-66C5EEC2DAD9
+:END:
+#+NAME: org_gcr_2018-01-03_mara_CD4698C2-3650-45E4-94F8-F8B3EB66DA57
+#+BEGIN_SRC emacs-lisp
+(use-package yaml-mode
+  :ensure t
+  :config
+  (defun yaml-next-field ()
+    "Jump to next yaml field.
+
+URL: `https://stackoverflow.com/questions/12648388/emacs-yaml-editing'"
+    (interactive)
+    (search-forward-regexp ": *"))
+  (defun yaml-prev-field ()
+    "Jump to next yaml field.
+
+URL: `https://stackoverflow.com/questions/12648388/emacs-yaml-editing'"
+    (interactive)
+    (search-backward-regexp ": *"))
+  (use-package ansible
+    :ensure t)
+  (defhydra help/hydra/ansible (:color blue
+                                       :hint nil)
+    "
+Ansible (q to quit)
+ _D_ecrypt buffer _E_ncrypt buffer
+"
+    ("D" #'ansible::decrypt-buffer)
+    ("E" #'ansible::encrypt-buffer)
+    ("q" nil))
+  (defun help/yaml-mode-hook-fn ()
+    (turn-off-auto-fill)
+    (visual-line-mode t)
+    (turn-off-fci-mode)
+    (turn-off-auto-capitalize-mode)
+    (ansible 1)
+    (indent-guide-mode)
+    (turn-on-smartparens-strict-mode)
+    (define-key yaml-mode-map (kbd "<backspace>") nil)
+    (define-key yaml-mode-map (kbd "<backspace>") #'sp-backward-delete-char)
+    (define-key yaml-mode-map (kbd "s-j") #'yaml-next-field)
+    (define-key yaml-mode-map (kbd "s-k") #'yaml-prev-field)
+    (key-chord-define-local "hh" #'help/hydra/ansible/body))
+  (add-hook 'yaml-mode-hook #'help/yaml-mode-hook-fn)
+  (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode)))
+#+END_SRC
 ** Multimedia
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:D3EE5DB5-EC7B-4D7C-9749-1BC351B8214D
