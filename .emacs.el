@@ -1060,13 +1060,28 @@ Attribution: URL `http://ergoemacs.org/emacs/elisp_command_working_on_string_or_
   :diminish 'buffer-face-mode)
 ;; org_gcr_2017-07-20_mara_51310F49-2C54-43DC-AA11-CA3A4ABF1A5F ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-08-03_mara_5085E329-B4D0-4D69-8AB6-17E7094E44C3][org_gcr_2017-08-03_mara_5085E329-B4D0-4D69-8AB6-17E7094E44C3]]
-(use-package move-text
+;; [[file:~/src/help/help.org::org_gcr_2018-01-03_mara_F64F240D-3891-46C0-8989-6124AEF60518][org_gcr_2018-01-03_mara_F64F240D-3891-46C0-8989-6124AEF60518]]
+(use-package smart-shift
   :ensure t
   :config
-  (global-set-key (kbd "S-s-<up>") #'move-text-up)
-  (global-set-key (kbd "S-s-<down>") #'move-text-down))
-;; org_gcr_2017-08-03_mara_5085E329-B4D0-4D69-8AB6-17E7094E44C3 ends here
+  (global-smart-shift-mode 1)
+  (defhydra help/hydra/smart-shift (:color blue
+                                           :hint nil)
+    "
+Smart-Shift: (q to quit)
+    ↑
+    _i_
+← _j_   _l_ →
+    _k_
+    ↓
+"
+    ("j" smart-shift-left :exit nil)
+    ("k" smart-shift-down :exit nil)
+    ("i" smart-shift-up :exit nil)
+    ("l" smart-shift-right :exit nil)
+    ("q" nil))
+  (global-set-key (kbd "C-s-j") #'help/hydra/smart-shift/body))
+;; org_gcr_2018-01-03_mara_F64F240D-3891-46C0-8989-6124AEF60518 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_611E83B9-E797-4512-95EE-643473026607][org_gcr_2017-05-12_mara_611E83B9-E797-4512-95EE-643473026607]]
 (use-package hideshow
