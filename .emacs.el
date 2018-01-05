@@ -2778,6 +2778,11 @@ _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
 (key-chord-define org-mode-map ">>" (lambda () (interactive) (insert "\\raquo{}")))
 ;; org_gcr_2017-05-12_mara_BF73D071-57B8-4DBA-93E9-5A1D532A6321 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-01-04_mara_42B53E96-5046-4A7B-8CC9-A7046CCD3BF1][org_gcr_2018-01-04_mara_42B53E96-5046-4A7B-8CC9-A7046CCD3BF1]]
+(use-package edit-indirect
+  :ensure t)
+;; org_gcr_2018-01-04_mara_42B53E96-5046-4A7B-8CC9-A7046CCD3BF1 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_37C3019C-7C06-4952-888C-AA4660B4310E][org_gcr_2017-05-12_mara_37C3019C-7C06-4952-888C-AA4660B4310E]]
 (use-package blackboard-bold-mode
   :ensure t)
@@ -4146,6 +4151,7 @@ current eyebrowse slot: %(let* ((window-configs (eyebrowse--get 'window-configs)
                                                       "help.org")))
 (global-set-key (kbd "M-0") (lambda () (interactive) (help/go-there-or-back
                                                       "*scratch*")))
+(global-set-key (kbd "C-M-=") #'edit-indirect-region)
 (global-set-key (kbd "C-5") #'ido-kill-buffer)
 (global-set-key (kbd "C--") (lambda () (interactive) (insert "Vigneswari")))
 (global-set-key (kbd "s-1") #'mc/edit-lines)

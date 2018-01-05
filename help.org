@@ -4732,6 +4732,20 @@ Easily enter guillemots.
 (key-chord-define org-mode-map ">>" (lambda () (interactive) (insert "\\raquo{}")))
 #+END_SRC
 
+*** Intermittent Literate Programming
+:PROPERTIES:
+:ID:       org_gcr_2018-01-04_mara:43462ECD-9C40-43D2-872F-A2E9DB134199
+:END:
+See [[https://www.wisdomandwonder.com/link/8610/lightweight-multiple-modes-for-semi-literate-programming][this post]].
+
+Edit region in separate buffer. "Final" version works without carrying over
+buffer properties.
+
+#+NAME: org_gcr_2018-01-04_mara_42B53E96-5046-4A7B-8CC9-A7046CCD3BF1
+#+BEGIN_SRC emacs-lisp
+(use-package edit-indirect
+  :ensure t)
+#+END_SRC
 *** Transliteration
 :PROPERTIES:
 :ID:       org_gcr_2017-05-12_mara:D15B4305-4503-4D8C-8CDA-258FA4AF7EB2
@@ -7496,6 +7510,7 @@ Keybindings for every mode. Starts and stop:
                                                  "help.org")))
 (global-set-key (kbd "M-0") (lambda () (interactive) (help/go-there-or-back
                                                  "*scratch*")))
+(global-set-key (kbd "C-M-=") #'edit-indirect-region)
 (global-set-key (kbd "C-5") #'ido-kill-buffer)
 (global-set-key (kbd "C--") (lambda () (interactive) (insert "Vigneswari")))
 (global-set-key (kbd "s-1") #'mc/edit-lines)
