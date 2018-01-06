@@ -4273,7 +4273,8 @@ _Q_ exit-Emacs _q_uit T_ trademarks
 _A_ apropo'ish _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point  _D_ detangle _g_ grep _j_ obtj2o _k_ scrollDown _K_ nextLogLine  _;_ toggle-lax-whitespace
 _l_ visual-line-mode _L_ aggressive-indent-mode
 _x_ delete-indentation _X_pm grok _c_ fill-paragraph _V_ view-mode _b_ erase-buffer _B_ibtex _n_ normal _m_ checks _M_ hide modeline
-_<_ cmtIn _>_ cmtOut _?_ snp"
+_<_ cmtIn _>_ cmtOut _?_ snp
+_f_ ag _F_ ag*"
   ("Q" help/safb-save-buffers-kill-terminal)
   ("q" nil)
   ("|" split-window-horizontally)
@@ -4298,7 +4299,8 @@ _<_ cmtIn _>_ cmtOut _?_ snp"
   ("S" help/toggle-mac-function-modifier)
   ("x" delete-indentation)
   ("X" xpm-grok)
-  ("f" help/hydra/ag/body)
+  ("f" ag)
+  ("F" help/hydra/ag/body)
   ("V" view-mode)
   ("w" widen)
   ("t" rectangle-mark-mode)
