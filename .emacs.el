@@ -2672,9 +2672,6 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; org_gcr_2017-05-12_mara_49522E70-EE2D-4CF9-95D7-8E43524A469D ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_EC7D6149-4451-443D-BFFF-1A40073D7D98][org_gcr_2017-05-12_mara_EC7D6149-4451-443D-BFFF-1A40073D7D98]]
-(define-key org-mode-map (kbd "C-k") nil)
-(define-key org-mode-map (kbd "C-M-k") nil)
-(define-key org-mode-map (kbd "C-M-k") #'org-kill-line)
 (define-key org-mode-map (kbd "C-c C-k") nil)
 (define-key org-mode-map (kbd "s-h") #'help/safb-org-babel-tangle)
 (define-key org-mode-map (kbd "s-j") #'org-babel-next-src-block)
@@ -4242,9 +4239,7 @@ Describe Something
 ;; org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D][org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D]]
-(global-set-key (kbd "C-k") nil)
-(global-set-key (kbd "C-k") #'my-eval-expression)
-(global-set-key (kbd "C-M-k") #'kill-line)
+(global-set-key (kbd "C-M-k") #'my-eval-expression)
 (global-set-key (kbd "C-c C-k") #'help/delete-this-buffer-and-file)
 ;; org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D ends here
 
@@ -4274,7 +4269,8 @@ _A_ apropo'ish _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-fun
 _l_ visual-line-mode _L_ aggressive-indent-mode
 _x_ delete-indentation _X_pm grok _c_ fill-paragraph _V_ view-mode _b_ erase-buffer _B_ibtex _n_ normal _m_ checks _M_ hide modeline
 _<_ cmtIn _>_ cmtOut _?_ snp
-_f_ ag _F_ ag*"
+_f_ ag _F_ ag*
+"
   ("Q" help/safb-save-buffers-kill-terminal)
   ("q" nil)
   ("|" split-window-horizontally)
