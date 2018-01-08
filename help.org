@@ -4518,7 +4518,7 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
 - org-meta-return :: Make it really easy to add new list items, headings, and
   table contents
   - M-<return> because the binding comes with Org
-- electric-indent-just-newline :: For when I want to break out of the default
+- *newline* :: For when I want to break out of the default
   Org indentation to start working at the beginning of the line for example when
   I'm done working in a list or have just created a new heading
   - C-M-<return> because it is next step "lower" in the binding
@@ -4530,10 +4530,10 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
 #+BEGIN_SRC emacs-lisp
 (help/not-on-gui
  (define-key org-mode-map (kbd "RET") #'org-return-indent)
- (define-key org-mode-map (kbd "C-M-RET") #'electric-indent-just-newline))
+ (define-key org-mode-map (kbd "C-M-RET") #'newline))
 (help/on-gui
  (define-key org-mode-map (kbd "<return>") #'org-return-indent)
- (define-key org-mode-map (kbd "C-M-<return>") #'electric-indent-just-newline))
+ (define-key org-mode-map (kbd "C-M-<return>") #'newline))
 #+END_SRC
 
 ***** Row 5

@@ -2627,10 +2627,10 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_711B4205-DC28-4A35-B620-23AFD46E3973][org_gcr_2017-05-12_mara_711B4205-DC28-4A35-B620-23AFD46E3973]]
 (help/not-on-gui
  (define-key org-mode-map (kbd "RET") #'org-return-indent)
- (define-key org-mode-map (kbd "C-M-RET") #'electric-indent-just-newline))
+ (define-key org-mode-map (kbd "C-M-RET") #'newline))
 (help/on-gui
  (define-key org-mode-map (kbd "<return>") #'org-return-indent)
- (define-key org-mode-map (kbd "C-M-<return>") #'electric-indent-just-newline))
+ (define-key org-mode-map (kbd "C-M-<return>") #'newline))
 ;; org_gcr_2017-05-12_mara_711B4205-DC28-4A35-B620-23AFD46E3973 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1A8FB05F-FF18-45DD-BFC4-89E76C366B9F][org_gcr_2017-05-12_mara_1A8FB05F-FF18-45DD-BFC4-89E76C366B9F]]
