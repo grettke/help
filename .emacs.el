@@ -3430,7 +3430,23 @@ Geiser REPL is: %(help/geiser-on-p)
     (setq js-indent-level 2)
     (setq json-reformat:indent-width 2)
     (setq json-reformat:pretty-string\? t))
-  (defun help/json-mode-hook-fn ())
+  (defhydra help/hydra/json (:color blue
+                                    :hint nil)
+    "
+JSON (q to quit)
+ _q_uit
+"
+    ("q" nil))
+  (define-key json-mode-map (kbd "RET") #'newline)
+  (defun help/json-mode-hook-fn ()
+    (visual-line-mode -1)
+    (aggressive-indent-mode -1)
+    (turn-off-auto-fill)
+    (turn-off-fci-mode)
+    (turn-off-auto-capitalize-mode)
+    (indent-guide-mode)
+    (turn-on-smartparens-strict-mode)
+    (key-chord-define-local "hh" #'help/hydra/json/body))
   (add-hook 'json-mode-hook #'help/json-mode-hook-fn))
 ;; org_gcr_2017-05-12_mara_498DAC46-DA9D-4AAA-82BF-46D712E4DBA5 ends here
 
