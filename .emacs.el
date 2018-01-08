@@ -3430,7 +3430,9 @@ Geiser REPL is: %(help/geiser-on-p)
   (progn
     (setq js-indent-level 2)
     (setq json-reformat:indent-width 2)
-    (setq json-reformat:pretty-string\? t)))
+    (setq json-reformat:pretty-string\? t))
+  (defun help/json-mode-hook-fn ())
+  (add-hook 'json-mode-hook #'help/json-mode-hook-fn))
 ;; org_gcr_2017-05-12_mara_498DAC46-DA9D-4AAA-82BF-46D712E4DBA5 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-08-10_mara_AD0FE176-6CF0-4078-A6A8-ECB8C26BD93B][org_gcr_2017-08-10_mara_AD0FE176-6CF0-4078-A6A8-ECB8C26BD93B]]
