@@ -2120,7 +2120,6 @@ _A_rchives | Rest_o_res
   (help/try-to-add-imenu)
   (turn-on-page-break-lines-mode)
   (turn-on-auto-capitalize-mode))
-
 (add-hook 'text-mode-hook #'help/text-mode-fn)
 ;; org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F ends here
 

@@ -3500,7 +3500,6 @@ Every text editing buffer needs this.
   (help/try-to-add-imenu)
   (turn-on-page-break-lines-mode)
   (turn-on-auto-capitalize-mode))
-
 (add-hook 'text-mode-hook #'help/text-mode-fn)
 #+END_SRC
 
