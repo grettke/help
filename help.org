@@ -7533,7 +7533,7 @@ Keybindings for every mode. Starts and stop:
                                                  "*scratch*")))
 (global-set-key (kbd "C-M-=") #'edit-indirect-region)
 (global-set-key (kbd "C-5") #'ido-kill-buffer)
-(global-set-key (kbd "C--") (lambda () (interactive) (insert "Vigneswari")))
+(global-set-key (kbd "C--") (lambda () (interactive) (insert "—")))
 (global-set-key (kbd "s-1") #'mc/edit-lines)
 (global-set-key (kbd "s-2") #'mc/mark-all-like-this)
 (global-set-key (kbd "s-3") #'mc/mark-previous-like-this)
