@@ -4543,9 +4543,6 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
 
 #+NAME: org_gcr_2017-05-12_mara_1A8FB05F-FF18-45DD-BFC4-89E76C366B9F
 #+BEGIN_SRC emacs-lisp
-(global-set-key [(shift f6)] #'kmacro-name-last-macro)
-(global-set-key [(f6)] #'insert-kbd-macro)
-(global-set-key [(f5)] #'elmacro-show-last-macro)
 (define-key org-mode-map (kbd "s-6") #'org-babel-load-in-session)
 (define-key org-mode-map (kbd "s-7") #'org-babel-switch-to-session)
 (define-key org-mode-map (kbd "s-8") #'org-babel-switch-to-session-with-code)
@@ -7501,6 +7498,16 @@ Keybindings for every mode. Starts and stop:
 - A-G
 - Z-B
 
+**** Row 6
+:PROPERTIES:
+:ID:       org_gcr_2018-01-08_mara:D12EA6D3-9746-4AA3-A622-71314840A6FA
+:END:
+#+NAME: org_gcr_2018-01-08_mara_82A71AA0-C415-49B1-8554-334215625E4F
+#+BEGIN_SRC emacs-lisp
+(global-set-key [(shift f6)] #'kmacro-name-last-macro)
+(global-set-key [(f6)] #'insert-kbd-macro)
+(global-set-key [(f5)] #'elmacro-show-last-macro)
+#+END_SRC
 **** Row 5
      :PROPERTIES:
      :ID:       org_gcr_2017-05-12_mara:5E250B06-C35C-4AEE-90C6-F5333A2D1BE3

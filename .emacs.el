@@ -2634,9 +2634,6 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; org_gcr_2017-05-12_mara_711B4205-DC28-4A35-B620-23AFD46E3973 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1A8FB05F-FF18-45DD-BFC4-89E76C366B9F][org_gcr_2017-05-12_mara_1A8FB05F-FF18-45DD-BFC4-89E76C366B9F]]
-(global-set-key [(shift f6)] #'kmacro-name-last-macro)
-(global-set-key [(f6)] #'insert-kbd-macro)
-(global-set-key [(f5)] #'elmacro-show-last-macro)
 (define-key org-mode-map (kbd "s-6") #'org-babel-load-in-session)
 (define-key org-mode-map (kbd "s-7") #'org-babel-switch-to-session)
 (define-key org-mode-map (kbd "s-8") #'org-babel-switch-to-session-with-code)
@@ -4147,6 +4144,12 @@ current eyebrowse slot: %(let* ((window-configs (eyebrowse--get 'window-configs)
   :config
   (key-chord-define-global "ww" #'resize-window))
 ;; org_gcr_2017-12-27_mara_AA4152A3-5D5C-4D41-AF55-4828F8BDEF7D ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-01-08_mara_82A71AA0-C415-49B1-8554-334215625E4F][org_gcr_2018-01-08_mara_82A71AA0-C415-49B1-8554-334215625E4F]]
+(global-set-key [(shift f6)] #'kmacro-name-last-macro)
+(global-set-key [(f6)] #'insert-kbd-macro)
+(global-set-key [(f5)] #'elmacro-show-last-macro)
+;; org_gcr_2018-01-08_mara_82A71AA0-C415-49B1-8554-334215625E4F ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C][org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C]]
 (global-set-key (kbd "C-4") #'forward-char)
