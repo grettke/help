@@ -1794,8 +1794,6 @@ Dumb-Jump:
   (setq ag-highlight-search t)
   (setq ag-reuse-window nil)
   (setq ag-reuse-buffers nil)
-  (setq ag-arguments (-insert-at (- (length ag-arguments) 1) '"--ignore-case"
-                                 ag-arguments))
   (defun help/ag-mode-hook-fn ()
     "HELP ag customizations."
     (interactive)
