@@ -3469,7 +3469,7 @@ Auto-Capitalize in all text modes.
   :ensure t
   :config
   (diminish 'auto-capitalize)
-  (add-to-list 'auto-capitalize-words "http")
+  (add-to-list 'auto-capitalize-words "HTTP")
   (add-to-list 'desktop-minor-mode-handlers
                '(auto-capitalize . (lambda (desktop-buffer-locals)))))
 #+END_SRC

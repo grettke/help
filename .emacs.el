@@ -2095,7 +2095,7 @@ _A_rchives | Rest_o_res
   :ensure t
   :config
   (diminish 'auto-capitalize)
-  (add-to-list 'auto-capitalize-words "http")
+  (add-to-list 'auto-capitalize-words "HTTP")
   (add-to-list 'desktop-minor-mode-handlers
                '(auto-capitalize . (lambda (desktop-buffer-locals)))))
 ;; org_gcr_2017-11-30_mara_75B00948-177E-487A-83A9-2F690611CA59 ends here
