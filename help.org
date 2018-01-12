@@ -3470,6 +3470,7 @@ Auto-Capitalize in all text modes.
   :config
   (diminish 'auto-capitalize)
   (add-to-list 'auto-capitalize-words "HTTP")
+  (add-to-list 'auto-capitalize-words "Fr")
   (add-to-list 'desktop-minor-mode-handlers
                '(auto-capitalize . (lambda (desktop-buffer-locals)))))
 #+END_SRC
