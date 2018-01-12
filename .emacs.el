@@ -1794,6 +1794,7 @@ Dumb-Jump:
   (setq ag-highlight-search t)
   (setq ag-reuse-window nil)
   (setq ag-reuse-buffers nil)
+  (add-to-list 'ag-arguments "--hidden")
   (defun help/ag-mode-hook-fn ()
     "HELP ag customizations."
     (interactive)
