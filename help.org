@@ -7648,7 +7648,7 @@ Eval expression.
 #+NAME: org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D
 #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "C-d") #'delete-forward-char)
-(global-set-key (kbd "M-d") #'backward-delete-char)
+(global-set-key [(control shift ?d)] #'backward-delete-char)
 (global-set-key (kbd "C-M-k") #'my-eval-expression)
 (global-set-key (kbd "C-c C-k") #'help/delete-this-buffer-and-file)
 #+END_SRC
