@@ -4285,15 +4285,39 @@ Describe Something
 (defhydra help/hydra/left-side/global (:color blue
                                               :hint nil)
   "
-_O_ base64-encode-region _P_ base64-decode-region _|_ split-window-horizontally _-_ split-window-vertically _8_ selectric
-_1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm
-_w_ widen _=_ reposition-window _t_ rectangle-mark _y_ yas tables _Y_ transparency _u_ ucs-insert _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _}_ transliterate
-_Q_ exit-Emacs _q_uit T_ trademarks
-_A_ apropo'ish _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point  _D_ detangle _g_ grep _j_ obtj2o _k_ scrollDown _K_ nextLogLine  _;_ toggle-lax-whitespace
-_l_ visual-line-mode _L_ aggressive-indent-mode
-_x_ delete-indentation _X_pm grok _c_ fill-paragraph _V_ view-mode _b_ erase-buffer _B_ibtex _n_ normal _m_ checks _M_ hide modeline
-_<_ cmtIn _>_ cmtOut _?_ snp
+_1_ reset-font _2_ -font _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _8_ selectric _-_ split-window-vertically _=_ reposition-window
+
+_q_uit _Q_ exit-Emacs
+_w_ widen
+_t_ rectangle-mark _T_ trademarks
+_y_ yas tables _Y_ transparency
+_u_ ucs-insert
+_i_ scrollUp _I_ prevLogLine
+_o_ dbgOnErr _O_ base64-encode-region
+_p_ query-replace _P_ base64-decode-region
+_}_ transliterate
+_|_ split-window-horizontally
+
+_A_ apropo'ish
+_s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier
+_d_ dash-at-point _D_ detangle
 _f_ ag _F_ ag*
+_g_ grep
+_j_ obtj2o
+_k_ scrollDown
+_l_ visual-line-mode _L_ aggressive-indent-mode
+_K_ nextLogLine
+_;_ toggle-lax-whitespace
+
+_x_ delete-indentation _X_pm grok
+_c_ fill-paragraph
+_V_ view-mode
+_b_ erase-buffer _B_ibtex
+_n_ normal
+_m_ checks _M_ hide modeline
+_<_ cmtIn
+_>_ cmtOut
+_?_ snp
 "
   ("Q" help/safb-save-buffers-kill-terminal)
   ("q" nil)
