@@ -944,7 +944,8 @@ Attribution: URL `http://ergoemacs.org/emacs/elisp_command_working_on_string_or_
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-06-28_mara_EE77505E-5757-409C-9E87-2FA685145AB2][org_gcr_2017-06-28_mara_EE77505E-5757-409C-9E87-2FA685145AB2]]
 (use-package indent-guide
-  :ensure t)
+  :ensure t
+  :diminish 'indent-guide-mode)
 ;; org_gcr_2017-06-28_mara_EE77505E-5757-409C-9E87-2FA685145AB2 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-19_mara_845BEC94-54CC-46D3-B85F-7B537944E328][org_gcr_2017-05-19_mara_845BEC94-54CC-46D3-B85F-7B537944E328]]
@@ -2142,6 +2143,7 @@ _A_rchives | Rest_o_res
                         web-mode-hook
                         js2-mode-hook
                         json-mode-hook
+                        yaml-mode-hook
                         crontab-mode-hook
                         apache-mode-hook
                         python-mode-hook
@@ -3450,6 +3452,47 @@ _b_eautify
   (add-hook 'json-mode-hook #'help/json-mode-hook-fn))
 ;; org_gcr_2017-05-12_mara_498DAC46-DA9D-4AAA-82BF-46D712E4DBA5 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-01-16_mara_B1860F4D-930E-4DDE-8392-BDC52107B11F][org_gcr_2018-01-16_mara_B1860F4D-930E-4DDE-8392-BDC52107B11F]]
+(use-package yaml-mode
+  :ensure t
+  :config
+  (defun yaml-next-field ()
+    "Jump to next yaml field.
+
+URL: `https://stackoverflow.com/questions/12648388/emacs-yaml-editing'"
+    (interactive)
+    (search-forward-regexp ": *"))
+  (defun yaml-prev-field ()
+    "Jump to next yaml field.
+
+URL: `https://stackoverflow.com/questions/12648388/emacs-yaml-editing'"
+    (interactive)
+    (search-backward-regexp ": *"))
+  (defhydra help/hydra/yaml (:color blue
+                                    :hint nil)
+    "
+YAML: (q to quit)
+ _i_ indent line
+  _n_ narrow to block literal
+   _c_ fill paragraph
+"
+    ("i" yaml-indent-line)
+    ("n" yaml-narrow-to-block-literal)
+    ("c" yaml-fill-paragraph)
+    ("q" nil))
+  (defun help/yaml-mode-hook-fn ()
+    (indent-guide-mode)
+    (turn-off-auto-capitalize-mode)
+    (turn-off-auto-fill))
+  (add-hook 'yaml-mode-hook #'help/yaml-mode-hook-fn)
+  (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+  (define-key yaml-mode-map (kbd "<backspace>") nil)
+  (define-key yaml-mode-map (kbd "<backspace>") #'sp-backward-delete-char)
+  (define-key yaml-mode-map (kbd "s-j") #'yaml-next-field)
+  (define-key yaml-mode-map (kbd "s-k") #'yaml-prev-field)
+  (key-chord-define yaml-mode-map "hh" #'help/hydra/yaml/body))
+;; org_gcr_2018-01-16_mara_B1860F4D-930E-4DDE-8392-BDC52107B11F ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-08-10_mara_AD0FE176-6CF0-4078-A6A8-ECB8C26BD93B][org_gcr_2017-08-10_mara_AD0FE176-6CF0-4078-A6A8-ECB8C26BD93B]]
 (use-package fsharp-mode
   :ensure t
@@ -3710,47 +3753,19 @@ sh-mode:
 ;; org_gcr_2017-06-13_mara_350A94E2-4280-4D5E-BB58-24887D9A57CD ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2018-01-03_mara_CD4698C2-3650-45E4-94F8-F8B3EB66DA57][org_gcr_2018-01-03_mara_CD4698C2-3650-45E4-94F8-F8B3EB66DA57]]
-(use-package yaml-mode
+(use-package ansible
   :ensure t
   :config
-  (defun yaml-next-field ()
-    "Jump to next yaml field.
-
-URL: `https://stackoverflow.com/questions/12648388/emacs-yaml-editing'"
-    (interactive)
-    (search-forward-regexp ": *"))
-  (defun yaml-prev-field ()
-    "Jump to next yaml field.
-
-URL: `https://stackoverflow.com/questions/12648388/emacs-yaml-editing'"
-    (interactive)
-    (search-backward-regexp ": *"))
-  (use-package ansible
-    :ensure t)
   (defhydra help/hydra/ansible (:color blue
                                        :hint nil)
     "
-Ansible (q to quit)
+Ansible: (q to quit)
  _D_ecrypt buffer _E_ncrypt buffer
 "
     ("D" #'ansible::decrypt-buffer)
     ("E" #'ansible::encrypt-buffer)
     ("q" nil))
-  (defun help/yaml-mode-hook-fn ()
-    (turn-off-auto-fill)
-    (visual-line-mode t)
-    (turn-off-fci-mode)
-    (turn-off-auto-capitalize-mode)
-    (ansible 1)
-    (indent-guide-mode)
-    (turn-on-smartparens-strict-mode)
-    (define-key yaml-mode-map (kbd "<backspace>") nil)
-    (define-key yaml-mode-map (kbd "<backspace>") #'sp-backward-delete-char)
-    (define-key yaml-mode-map (kbd "s-j") #'yaml-next-field)
-    (define-key yaml-mode-map (kbd "s-k") #'yaml-prev-field)
-    (key-chord-define-local "hh" #'help/hydra/ansible/body))
-  (add-hook 'yaml-mode-hook #'help/yaml-mode-hook-fn)
-  (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode)))
+  (key-chord-define ansible::key-map "hh" #'help/hydra/ansible/body))
 ;; org_gcr_2018-01-03_mara_CD4698C2-3650-45E4-94F8-F8B3EB66DA57 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_AF516C01-3152-4194-954B-91A44A429972][org_gcr_2017-05-12_mara_AF516C01-3152-4194-954B-91A44A429972]]
