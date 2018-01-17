@@ -5782,6 +5782,13 @@ YAML: (q to quit)
   (define-key yaml-mode-map (kbd "s-j") #'yaml-next-field)
   (define-key yaml-mode-map (kbd "s-k") #'yaml-prev-field)
   (key-chord-define yaml-mode-map "hh" #'help/hydra/yaml/body))
+
+(use-package flycheck-yamllint
+  :ensure t
+  :config
+  (eval-after-load 'flycheck
+    '(add-hook 'flycheck-mode-hook 'flycheck-yamllint-setup))
+  (setq flycheck-yaml-yamllint-executable "/Users/gcr/yamllint/env/bin/yamllint"))
 #+END_SRC
 *** F#
 :PROPERTIES:
