@@ -3424,26 +3424,28 @@ Geiser REPL is: %(help/geiser-on-p)
   :diminish json-mode
   :mode (("\\.jshintrc$" . json-mode))
   :config
-  (setq js-indent-level 2)
-  (setq json-reformat:indent-width 2)
-  (setq json-reformat:pretty-string\? t)
   (defhydra help/hydra/json (:color blue
                                     :hint nil)
     "
 JSON: (q to quit)
- _b_eautify
+_b_eautify
+ _s_how-path _k_ill-path
+  _t_oggle boolean _n_ullify sexp
+   _i_ncrement number _d_ecrement number
 "
     ("b" json-mode-beautify)
+    ("s" json-mode-show-path)
+    ("k" json-mode-kill-path)
+    ("t" json-toggle-boolean)
+    ("n" json-nullify-sexp)
+    ("i" json-increment-number-at-point :exit nil)
+    ("d" json-decrement-number-at-point :exit nil)
     ("q" nil))
   (define-key json-mode-map (kbd "RET") #'newline)
   (defun help/json-mode-hook-fn ()
-    (visual-line-mode -1)
-    (aggressive-indent-mode -1)
-    (turn-off-auto-fill)
-    (turn-off-fci-mode)
-    (turn-off-auto-capitalize-mode)
     (indent-guide-mode)
-    (turn-on-smartparens-strict-mode)
+    (turn-off-auto-capitalize-mode)
+    (turn-off-auto-fill)
     (key-chord-define-local "hh" #'help/hydra/json/body))
   (add-hook 'json-mode-hook #'help/json-mode-hook-fn))
 ;; org_gcr_2017-05-12_mara_498DAC46-DA9D-4AAA-82BF-46D712E4DBA5 ends here
@@ -4226,12 +4228,31 @@ Flycheck On? %(bound-and-true-p flycheck-mode)
 (defhydra help/hydra/left/describe (:color blue
                                            :hint nil)
   "
-Describe Something
- _t_ theme _i_ input method _o_ lighter indicator _O_ lighter symbol _p_ package _P_ text properties
-  _s_ symbol _f_ function _F_ flycheck checker _k_ key briefly _K_ key _l_ language environment
-   _c_ char _C_ coding system _v_ variable _b_ bindings _B_ personal bindings _n_ current coding system briefly _N_ current coding system full _m_ major mode _M_ minor mode
-    _a_ all help for everything _w_ where is
-     _q_ quit
+Describe Something: (q to quit)
+_a_ all help for everything screen
+_b_ bindings
+_B_ personal bindings
+_c_ char
+_C_ coding system
+_f_ function
+_F_ flycheck checker
+_i_ input method
+_k_ key briefly
+_K_ key
+_l_ language environment
+_L_ mode lineage
+_m_ major mode
+_M_ minor mode
+_n_ current coding system briefly
+_N_ current coding system full
+_o_ lighter indicator
+_O_ lighter symbol
+_p_ package
+_P_ text properties
+_s_ symbol
+_t_ theme
+_v_ variable
+_w_ where is something defined
 "
   ("b" describe-bindings)
   ("B" describe-personal-keybindings)
@@ -4244,6 +4265,7 @@ Describe Something
   ("K" describe-key)
   ("k" describe-key-briefly)
   ("l" describe-language-environment)
+  ("L" help/parent-mode-display)
   ("M" describe-minor-mode)
   ("m" describe-mode)
   ("N" describe-current-coding-system)
