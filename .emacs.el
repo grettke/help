@@ -4311,7 +4311,7 @@ _;_ toggle-lax-whitespace
 
 _x_ delete-indentation _X_pm grok
 _c_ fill-paragraph
-_V_ view-mode
+_V_ view-only mode
 _b_ erase-buffer _B_ibtex
 _n_ normal
 _m_ checks _M_ hide modeline
