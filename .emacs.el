@@ -3424,16 +3424,16 @@ Geiser REPL is: %(help/geiser-on-p)
   :diminish json-mode
   :mode (("\\.jshintrc$" . json-mode))
   :config
-  (progn
-    (setq js-indent-level 2)
-    (setq json-reformat:indent-width 2)
-    (setq json-reformat:pretty-string\? t))
+  (setq js-indent-level 2)
+  (setq json-reformat:indent-width 2)
+  (setq json-reformat:pretty-string\? t)
   (defhydra help/hydra/json (:color blue
                                     :hint nil)
     "
-JSON (q to quit)
- _q_uit
+JSON: (q to quit)
+ _b_eautify
 "
+    ("b" json-mode-beautify)
     ("q" nil))
   (define-key json-mode-map (kbd "RET") #'newline)
   (defun help/json-mode-hook-fn ()
