@@ -3483,14 +3483,21 @@ YAML: (q to quit)
   (defun help/yaml-mode-hook-fn ()
     (indent-guide-mode)
     (turn-off-auto-capitalize-mode)
-    (turn-off-auto-fill))
+    (turn-off-auto-fill)
+    (setq flycheck-checker 'yaml-yamllint))
   (add-hook 'yaml-mode-hook #'help/yaml-mode-hook-fn)
   (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
   (define-key yaml-mode-map (kbd "<backspace>") nil)
   (define-key yaml-mode-map (kbd "<backspace>") #'sp-backward-delete-char)
   (define-key yaml-mode-map (kbd "s-j") #'yaml-next-field)
   (define-key yaml-mode-map (kbd "s-k") #'yaml-prev-field)
-  (key-chord-define yaml-mode-map "hh" #'help/hydra/yaml/body))
+  (key-chord-define yaml-mode-map "hh" #'help/hydra/yaml/body)
+  (use-package flycheck-yamllint
+    :ensure t
+    :config
+    (with-eval-after-load "flycheck"
+      (add-hook 'flycheck-mode-hook 'flycheck-yamllint-setup))
+    (setq flycheck-yaml-yamllint-executable "/Users/gcr/yamllint/env/bin/yamllint")))
 ;; org_gcr_2018-01-16_mara_B1860F4D-930E-4DDE-8392-BDC52107B11F ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-08-10_mara_AD0FE176-6CF0-4078-A6A8-ECB8C26BD93B][org_gcr_2017-08-10_mara_AD0FE176-6CF0-4078-A6A8-ECB8C26BD93B]]
