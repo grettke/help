@@ -2733,7 +2733,7 @@ _e_ ox-clip-formatted-copy "
   ("e" ox-clip-formatted-copy)
   ("E" org-entities-help)
   ("r" help/org-refile)
-  ("R" org-babel-goto-named-src-block)
+  ("R" (lambda () (interactive) (insert "(refile)")))
   ("t" org-babel-goto-src-block-head)
   ("T" (lambda () (interactive) (insert "#+ATTR_HTML: :border 2 :rules all :frame border")))
   ("u" org-goto)
