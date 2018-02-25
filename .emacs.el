@@ -1969,6 +1969,19 @@ Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
                "~/src/magit/Documentation/"))
 ;; org_gcr_2017-05-12_mara_3E77B825-E0A4-40EC-88DC-3F5C1E1445CE ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-02-24_mara_A2D8DA8E-CE8C-4F26-9DED-7E0AA2DD3CCA][org_gcr_2018-02-24_mara_A2D8DA8E-CE8C-4F26-9DED-7E0AA2DD3CCA]]
+(defun help/magit-kill-buffers ()
+  "Restore window configuration and kill all Magit buffers.
+
+Attribution: URL `https://manuel-uberti.github.io/emacs/2018/02/17/magit-bury-buffer/'"
+  (interactive)
+  (let ((buffers (magit-mode-get-buffers)))
+    (magit-restore-window-configuration)
+    (mapc #'kill-buffer buffers)))
+
+(bind-key "q" #'help/magit-kill-buffers magit-status-mode-map)
+;; org_gcr_2018-02-24_mara_A2D8DA8E-CE8C-4F26-9DED-7E0AA2DD3CCA ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A078BCD9-1559-412A-8D51-528CDDD4E402][org_gcr_2017-05-12_mara_A078BCD9-1559-412A-8D51-528CDDD4E402]]
 (eval-after-load "log-edit"
   '(remove-hook 'log-edit-hook 'log-edit-insert-message-template))
