@@ -5,7 +5,7 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
-                                        ;(package-initialize)
+;;(package-initialize)
 
 (load-file "~/src/help/.org-mode-contribute.emacs.el")
 ;; org_gcr_2017-05-12_mara_EE00DAED-88BD-4271-9CFE-34BDCEE68932 ends here
@@ -3344,6 +3344,8 @@ Geiser REPL is: %(help/geiser-on-p)
 (use-package yasnippet
   :ensure t
   :config
+  (use-package yasnippet-snippets
+    :ensure t)
   (yas-global-mode t)
   (help/not-on-gui (define-key yas-minor-mode-map (kbd "TAB") nil))
   (help/on-gui (define-key yas-minor-mode-map (kbd "<tab>") nil))

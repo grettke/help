@@ -5592,6 +5592,8 @@ Enable Auto-Complete via Geiser.
 (use-package yasnippet
   :ensure t
   :config
+  (use-package yasnippet-snippets
+    :ensure t)
   (yas-global-mode t)
   (help/not-on-gui (define-key yas-minor-mode-map (kbd "TAB") nil))
   (help/on-gui (define-key yas-minor-mode-map (kbd "<tab>") nil))
