@@ -416,7 +416,6 @@ display.
   `(when (not (display-graphic-p))
      ,statement
      ,@statements))
-
 #+END_SRC
 
 ** Hydra
@@ -428,7 +427,6 @@ display.
 #+BEGIN_SRC emacs-lisp
 (use-package hydra
   :ensure t)
-
 #+END_SRC
 
 ** Keyboard
@@ -574,7 +572,7 @@ Emacs mode for hiding the mode-line from [[https://emacs-doctor.com/emacs-hide-m
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-           hidden-mode-line-mode)
+             hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -711,7 +709,6 @@ Make it easy to evaluate code only when running on .
   `(when (eq system-type 'gnu/linux)
      ,statement
      ,@statements))
-
 #+END_SRC
 * Standard Operating Procedure
    :PROPERTIES:
@@ -1247,8 +1244,8 @@ Attribution: URL `http://zck.me/emacs-move-file'"
   (let ((old-location (buffer-file-name)))
     (write-file new-location t)
     (when (and old-location
-             (file-exists-p new-location)
-             (not (string-equal old-location new-location)))
+               (file-exists-p new-location)
+               (not (string-equal old-location new-location)))
       (delete-file old-location))))
 
 (defun help/rename-current-buffer-file ()
