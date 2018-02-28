@@ -2023,7 +2023,7 @@ _E_nhancement: \"an increase or improvement in quality, value, or extent.\"
 _R_efinement: \"the improvement or clarification of something by the making of small changes.\"
 _C_orrection: \"a change that rectifies an error or inaccuracy.\"
 C_l_oses | _F_ixes | Resol_v_es
-_A_rchives | Rest_o_res
+_T_odo | _A_rchives | Rest_o_res
 "
   ("E" (lambda () (interactive) (insert "(nhncmnt) ")))
   ("R" (lambda () (interactive) (insert "(rfnmnt) ")))
@@ -2031,6 +2031,7 @@ _A_rchives | Rest_o_res
   ("l" (lambda () (interactive (insert "Closes #"))))
   ("F" (lambda () (interactive (insert "Fixes #"))))
   ("v" (lambda () (interactive (insert "Resolves #"))))
+  ("T" (lambda () (interactive) (insert "(ToDoDoDoDoDoDo)")))
   ("A" (lambda () (interactive (insert "(rchvs) "))))
   ("o" (lambda () (interactive (insert "(rslvs) "))))
   ("q" nil))
