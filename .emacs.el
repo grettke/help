@@ -2719,6 +2719,12 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC][org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC]]
 (define-key org-mode-map (kbd "s-t") #'org-time-stamp)
+(defun help/org-time-stamp-with-seconds-now ()
+  (interactive)
+  (let ((current-prefix-arg '(16)))
+    (call-interactively 'org-time-stamp)))
+(global-unset-key (kbd "C-M-t"))
+(global-set-key (kbd "C-M-t") #'help/org-time-stamp-with-seconds-now)
 ;; org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-07-12_mara_97C70CDA-DFBF-4422-942A-00E732D3AB6A][org_gcr_2017-07-12_mara_97C70CDA-DFBF-4422-942A-00E732D3AB6A]]
