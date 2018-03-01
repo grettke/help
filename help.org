@@ -3919,6 +3919,7 @@ source-blocks outside of that place.
          "|"
          "DONE(d@)"
          "CANCELED(c@)"
+         "DUPLICATE(p@)"
          )))
 #+END_SRC
 

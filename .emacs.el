@@ -2369,6 +2369,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
          "|"
          "DONE(d@)"
          "CANCELED(c@)"
+         "DUPLICATE(p@)"
          )))
 ;; org_gcr_2017-05-12_mara_9DE5CE12-157D-4516-9FB1-7DAFA02C571E ends here
 
