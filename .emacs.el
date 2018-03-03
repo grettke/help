@@ -2654,7 +2654,6 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (define-key org-mode-map (kbd "s-6") #'org-babel-load-in-session)
 (define-key org-mode-map (kbd "s-7") #'org-babel-switch-to-session)
 (define-key org-mode-map (kbd "s-8") #'org-babel-switch-to-session-with-code)
-(define-key org-mode-map (kbd "s-9") #'org-todo)
 ;; org_gcr_2017-05-12_mara_1A8FB05F-FF18-45DD-BFC4-89E76C366B9F ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_6BA97DBC-AE5D-4C60-AD03-EF150686A03F][org_gcr_2017-05-12_mara_6BA97DBC-AE5D-4C60-AD03-EF150686A03F]]
@@ -2764,8 +2763,9 @@ _e_ ox-clip-formatted-copy "
   ("s" org-sort)
   ("S" org-babel-lob-ingest)
   ("g" org-goto)
-  ("h" org-babel-do-key-sequence-in-edit-buffer)
-  ("H" org-babel-insert-header-arg)
+  ("h" org-todo)
+  ("i" org-babel-do-key-sequence-in-edit-buffer)
+  ("I" org-babel-insert-header-arg)
   ("k" org-babel-check-src-block)
   ("l" org-lint)
   ;; Row 2
@@ -4358,7 +4358,7 @@ _q_uit _Q_ exit-Emacs
 _w_ widen
 _t_ rectangle-mark _T_ trademarks
 _y_ yas tables _Y_ transparency
-_u_ ucs-insert
+_u_ universal-emotions-emoticons
 _i_ scrollUp _I_ prevLogLine
 _o_ dbgOnErr _O_ base64-encode-region
 _p_ query-replace _P_ base64-decode-region
