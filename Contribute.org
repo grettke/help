@@ -56,10 +56,9 @@ Weblog maintenance via XML-RPC APIs
 (require 'metaweblog)
 #+END_SRC
 * Org2blog
-   :PROPERTIES:
-   :ID:       org_gcr_2017-05-12_mara:B6246A7A-5514-4478-BC3D-7768B05B08B8
-   :END:
-
+:PROPERTIES:
+:ID:       org_gcr_2018-03-03_mara:60113001-1991-4EB5-BF61-190C198AF742
+:END:
 Configure Org2blog for use, development, and support.
 #+BEGIN_QUOTE
 Blog from Org mode to wordpress
