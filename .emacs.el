@@ -4417,7 +4417,7 @@ _?_ snp
   ("t" rectangle-mark-mode)
   ("y" yas-describe-tables)
   ("Y" hydra-transparency/body)
-  ("j" org-babel-tangle-jump-to-org)
+  ("J" org-babel-tangle-jump-to-org)
   ("u" universal-emotions-emoticons)
   ("i" scroll-down-command :exit nil)
   ("d" dash-at-point)
