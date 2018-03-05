@@ -4370,7 +4370,7 @@ _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier
 _d_ dash-at-point _D_ detangle
 _f_ ag _F_ ag*
 _g_ grep
-_j_ obtj2o
+_J_ obtj2o
 _k_ scrollDown
 _l_ visual-line-mode _L_ aggressive-indent-mode
 _K_ nextLogLine
