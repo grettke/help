@@ -1122,11 +1122,6 @@ URL: `https://stackoverflow.com/questions/1587972/how-to-display-indentation-gui
 (global-set-key (kbd "s-q") #'aj-toggle-fold)
 ;; org_gcr_2018-01-03_mara_0B7D49CD-6177-4F18-8C2E-540B01E34340 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D877FC18-3238-45E0-BE6C-6FE3149E4121][org_gcr_2017-05-12_mara_D877FC18-3238-45E0-BE6C-6FE3149E4121]]
-(use-package bug-hunter
-  :ensure t)
-;; org_gcr_2017-05-12_mara_D877FC18-3238-45E0-BE6C-6FE3149E4121 ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_510C1AB4-A266-40A6-9DCF-25B827E60786][org_gcr_2017-05-12_mara_510C1AB4-A266-40A6-9DCF-25B827E60786]]
 (use-package macrostep
   :ensure t)
