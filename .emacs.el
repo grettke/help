@@ -3599,13 +3599,6 @@ Ansible: (q to quit)
 (add-to-list 'image-load-path "~/src/help/tiff")
 ;; org_gcr_2017-07-11_mara_27556B29-B77D-445F-8A54-00BDB89B452A ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-07-11_mara_90A13EAE-8941-4BDA-8937-DCE5759CBA5C][org_gcr_2017-07-11_mara_90A13EAE-8941-4BDA-8937-DCE5759CBA5C]]
-(use-package mode-icons
-  :ensure t
-  :config
-  (mode-icons-mode))
-;; org_gcr_2017-07-11_mara_90A13EAE-8941-4BDA-8937-DCE5759CBA5C ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_03B4E8E1-083B-4F5D-A4A0-BAE8A0553FAF][org_gcr_2017-05-12_mara_03B4E8E1-083B-4F5D-A4A0-BAE8A0553FAF]]
 (menu-bar-mode nil)
 ;; org_gcr_2017-05-12_mara_03B4E8E1-083B-4F5D-A4A0-BAE8A0553FAF ends here

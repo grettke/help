@@ -6038,20 +6038,6 @@ everywhere so I want those to be the masters. They are the masters because
 when I make corrections they go there. For example I had a 27x24 bitmap that I
 had to trim to 24x24. So I converted XPMs to TIFF and use those. Then I
 switched to stock Emacs and deleted the TIFF files.
-
-**** Icons
-:PROPERTIES:
-:ID:       org_gcr_2017-07-11_mara:5E885B6C-66CF-4F58-8888-F257F4AB8AFA
-:END:
-Replace major mode lighters with icons.
-
-#+NAME: org_gcr_2017-07-11_mara_90A13EAE-8941-4BDA-8937-DCE5759CBA5C
-#+BEGIN_SRC emacs-lisp
-(use-package mode-icons
-  :ensure t
-  :config
-  (mode-icons-mode))
-#+END_SRC
 **** Menu bar
 :PROPERTIES:
 :ID:       org_gcr_2017-06-23_mara:47EF669D-E999-4573-AA5C-5CF038ADA870
