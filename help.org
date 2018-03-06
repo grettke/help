@@ -500,14 +500,6 @@ Caching.
   :ensure t)
 #+END_SRC
 
-Namespacing without language support.
-
-#+NAME: org_gcr_2017-05-12_mara_506BFAA8-1F72-4956-A85F-2C7ED59912D0
-#+BEGIN_SRC emacs-lisp
-(use-package names
-  :ensure t)
-#+END_SRC
-
 Child process handling specifically for Magit.
 
 #+NAME: org_gcr_2017-05-12_mara_C0E2C1E6-A271-47A1-84C3-BE9382235979

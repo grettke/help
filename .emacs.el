@@ -74,11 +74,6 @@
   :ensure t)
 ;; org_gcr_2017-05-12_mara_C063F7CE-637E-43F8-8E16-AFBC68CA7618 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_506BFAA8-1F72-4956-A85F-2C7ED59912D0][org_gcr_2017-05-12_mara_506BFAA8-1F72-4956-A85F-2C7ED59912D0]]
-(use-package names
-  :ensure t)
-;; org_gcr_2017-05-12_mara_506BFAA8-1F72-4956-A85F-2C7ED59912D0 ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C0E2C1E6-A271-47A1-84C3-BE9382235979][org_gcr_2017-05-12_mara_C0E2C1E6-A271-47A1-84C3-BE9382235979]]
 (use-package with-editor
   :ensure t)
