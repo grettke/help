@@ -3462,11 +3462,6 @@ Ansible: (q to quit)
   :ensure t)
 ;; org_gcr_2017-06-25_mara_B33E6DF0-8A18-4DBA-A39D-B16649F6E793 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7939B6EA-A76B-4A2A-B1B3-4EB1FEE2D9C2][org_gcr_2017-05-12_mara_7939B6EA-A76B-4A2A-B1B3-4EB1FEE2D9C2]]
-(use-package selectric-mode
-  :ensure t)
-;; org_gcr_2017-05-12_mara_7939B6EA-A76B-4A2A-B1B3-4EB1FEE2D9C2 ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7F3AF752-B4D1-4B55-85EC-C5E9B8DC13B9][org_gcr_2017-05-12_mara_7F3AF752-B4D1-4B55-85EC-C5E9B8DC13B9]]
 (use-package nlinum
   :ensure t

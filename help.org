@@ -5768,19 +5768,6 @@ I'm trying to set it up here with ~message-mode-hook~ but that didn't work eithe
 
 Configure EMACS to personal-taste for "noise" and "form".
 
-** Key Press
-:PROPERTIES:
-:ID:       org_gcr_2017-05-12_mara:EBAA168D-C2E9-40E3-B448-9AA076802029
-:END:
-
-Make key-presses sound like the ground-breaking Selectric typewriter.
-
-#+NAME: org_gcr_2017-05-12_mara_7939B6EA-A76B-4A2A-B1B3-4EB1FEE2D9C2
-#+BEGIN_SRC emacs-lisp
-(use-package selectric-mode
-  :ensure t)
-#+END_SRC
-
 ** Line Number
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:5FFDA284-6C92-40C8-B23E-E345940DC6C4
