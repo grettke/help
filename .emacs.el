@@ -1213,8 +1213,7 @@ URL: `https://stackoverflow.com/questions/1587972/how-to-display-indentation-gui
 (defun help/safb-vc-revert ()
   (interactive)
   (help/save-all-file-buffers)
-  (vc-revert)
-  (when (bound-and-true-p diff-hl-mode) (call-interactively 'diff-hl-mode nil)))
+  (vc-revert))
 
 (defun help/safb-help/magit-status ()
   (interactive)
