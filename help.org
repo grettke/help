@@ -3268,7 +3268,8 @@ Can use in source blocks.
                         gnu-apl-mode-hook
                         geiser-mode-hook
                         geiser-repl-mode-hook
-                        go-mode-hook))
+                        go-mode-hook
+                        TeX-mode-hook))
     #+END_SRC
   - LISP mode hooks.
     - Are hacking modes.
@@ -3349,7 +3350,6 @@ Can use in source blocks.
   :PROPERTIES:
   :ID:       org_gcr_2017-05-12_mara:3A31F89D-2534-4E5F-8C3B-3CEBAFAC9E2D
   :END:
-
 Have fun with scratch.
 
 #+NAME: org_gcr_2017-05-12_mara_C344E972-D31C-48F4-8E3B-83A799DE7D37
@@ -3493,12 +3493,10 @@ Package lint.
   :ensure t
   :after (package-lint))
 #+END_SRC
-
 *** Org-Mode
   :PROPERTIES:
   :ID:       org_gcr_2017-05-12_mara:D017621F-5169-442A-A52C-7D91EEB7D796
   :END:
-
 **** Literate Programming
 :PROPERTIES:
 :ID:       org_gcr_2017-05-12_mara:CD4943EE-DE3D-4B3A-AB12-525580DC8EB7
@@ -3888,6 +3886,81 @@ Essential for using tables with split windows.
   :config
   (add-hook 'org-mode-hook #'org-table-sticky-header-mode))
 #+END_SRC
+**** Publishing With TeX
+:PROPERTIES:
+:ID:       org_gcr_2018-03-07_mara:5C1154DE-B06C-444D-BB7B-32F0294BF64B
+:END:
+***** Engine
+:PROPERTIES:
+:ID:       org_gcr_2018-03-07_mara:BF9E72A9-58C7-4BD8-B0E3-60185434EADF
+:END:
+Use XeTeX.
+
+#+name: org_gcr_2018-03-07_mara_D89CE4CB-12B1-47A6-9B0B-EA544343BA85
+#+begin_src emacs-lisp
+(setq org-latex-compiler "xelatex")
+(setq org-latex-pdf-process '("latexmk -xelatex -quiet -shell-escape -f %f"))
+#+end_src
+***** Packages
+:PROPERTIES:
+:ID:       org_gcr_2018-03-07_mara:AE89B25B-486B-41BD-B3C5-C9499D93A4F2
+:END:
+Copied and customized from [[https://github.com/kaushalmodi/.emacs.d/blob/master/setup-files/setup-org.el][here]].
+
+#+name: org_gcr_2018-03-07_mara_C60306B4-7FB0-45AB-B39F-2BF47FA39604
+#+begin_src emacs-lisp
+(setq org-latex-default-packages-alist
+      (delq (rassoc '("hyperref" nil) org-latex-default-packages-alist)
+            org-latex-default-packages-alist))
+(defconst help/org-latex-packages-alist-pre-hyperref
+  '(("letterpaper,margin=1.0in" "geometry")
+    ("" "float")))
+(defconst help/org-latex-packages-alist-post-hyperref
+  '( ("section" "placeins")
+     ("" "tikz")
+     ("" "caption")
+     ("" "latexsym")
+     ("" "lettrine")
+     ("" "grantcrettke")))
+(setq org-latex-packages-alist
+      (append help/org-latex-packages-alist-pre-hyperref
+              '(("" "hyperref" nil))
+              help/org-latex-packages-alist-post-hyperref))
+#+end_src
+***** Classes
+:PROPERTIES:
+:ID:       org_gcr_2018-03-07_mara:D397AC3E-DFED-4228-B8CD-7D62318414E9
+:END:
+Standard LaTeX class options.
+
+#+NAME: org_gcr_2017-05-12_mara_7EE5307A-ACC5-4FE9-A519-0F273B4589E9
+#+BEGIN_SRC emacs-lisp
+(defvar help/ltx-cls-opt "12pt")
+#+END_SRC
+
+Standard article class.
+
+#+NAME: org_gcr_2017-05-12_mara_006EB5E3-5478-43C7-AEAC-34CCF49127AC
+#+BEGIN_SRC emacs-lisp
+(eval-after-load "ox-latex"
+  '(add-to-list 'org-latex-classes
+                `("help-article"
+                  ,(concat "\\documentclass["
+                           help/ltx-cls-opt
+                           "]{article}"))))
+
+(setq org-latex-default-class "help-article")
+#+END_SRC
+***** Unclassified
+:PROPERTIES:
+:ID:       org_gcr_2018-03-07_mara:593C2BE0-5AD2-4654-B44B-C7F80F33F99A
+:END:
+Don't float images.
+
+#+name: org_gcr_2018-03-07_mara_22B13787-67AA-4462-949B-3C1E6702EB7C
+#+begin_src emacs-lisp
+(setq org-latex-default-figure-position "H")
+#+end_src
 **** Unclassified
 :PROPERTIES:
 :ID:       org_gcr_2017-05-12_mara:FD7E89EA-72DC-4395-AE07-4CAA66B8BD28
@@ -5113,47 +5186,126 @@ YAML: (q to quit)
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:0A4A1510-41F7-4469-87D1-156D44A06216
    :END:
-*** TeX
+*** AUCTeX
   :PROPERTIES:
   :ID:       org_gcr_2017-05-12_mara:2DF7BDAD-45C9-4D8D-AC34-FE77E119A093
   :END:
+**** Introduction
+:PROPERTIES:
+:ID:       org_gcr_2018-03-05_mara:EF3E6F3E-B457-477F-95B3-B08E83B797B6
+:END:
+Load AUCTeX.
 
 #+NAME: org_gcr_2017-05-12_mara_D035C4E4-B983-4D74-9E3C-764EF00B3795
 #+BEGIN_SRC emacs-lisp
 (use-package tex
-  :ensure auctex
+  :ensure auctex)
+#+END_SRC
+
+Load LatexMk.
+
+#+name: org_gcr_2018-03-07_mara_F85003E7-83AD-4E9E-B333-E0FBD79872F5
+#+begin_src emacs-lisp
+(use-package auctex-latexmk
+  :ensure t
   :config
-  (define-key TeX-mode-map (kbd "C-c C-c") #'help/safb-TeX-command-master))
-#+END_SRC
+  (setq auctex-latexmk-inherit-TeX-PDF-mode t)
+  (auctex-latexmk-setup))
+#+end_src
+**** Editing the Document Source
+:PROPERTIES:
+:ID:       org_gcr_2018-03-06_mara:15BDC594-E44E-41A0-B5E3-A5490E2DD3A7
+:END:
+Insert and toggle inline math.
 
-Save style info. This doesn't control the buffer save.
+#+name: org_gcr_2018-03-06_mara_4C2DF1A6-C32B-49F5-A88B-1268AFBD94C0
+#+begin_src emacs-lisp
+(setq TeX-electric-math t)
+#+end_src
 
-#+NAME: org_gcr_2017-05-12_mara_86E4D060-B2E1-4F7E-B56C-A7D93C0024FA
-#+BEGIN_SRC emacs-lisp
-(setq TeX-auto-save t)
-#+END_SRC
+Balance opening and closing brackets because I don't think that SmartParens
+will always know /the right thing/ to do here.
 
-Parse on load.
+#+name: org_gcr_2018-03-06_mara_88B1D568-BECF-464A-A4D0-A5AE34835C7D
+#+begin_src emacs-lisp
+(setq LaTeX-electric-left-right-brace t)
+#+end_src
 
-#+NAME: org_gcr_2017-05-12_mara_1502A970-C03E-4D2D-8041-4B7AE8859AF0
-#+BEGIN_SRC emacs-lisp
-(setq TeX-parse-self t)
-#+END_SRC
+Section hooks.
 
-Parse on save.
+#+name: org_gcr_2018-03-06_mara_284DFD79-73E7-41FF-990D-7CD066DB225E
+#+begin_src emacs-lisp
+(setq LaTeX-section-hook
+      '(LaTeX-section-heading
+        LaTeX-section-title
+        LaTeX-section-toc
+        LaTeX-section-section
+        LaTeX-section-label))
 
-#+NAME: org_gcr_2017-05-12_mara_C923F472-C10C-46D2-B9F2-5DBADE6E436D
-#+BEGIN_SRC emacs-lisp
-(setq TeX-auto-save t)
-#+END_SRC
+#+end_src
 
-Use PDFTeX to generate both DVI and PDF files.
+Always prompt for item labels.
 
-#+NAME: org_gcr_2017-05-12_mara_D30FAF98-9340-49C8-BE94-834BF2A2CB11
-#+BEGIN_SRC emacs-lisp
-(setq TeX-PDF-mode t)
-(setq TeX-DVI-via-PDFTeX t)
-#+END_SRC
+#+name: org_gcr_2018-03-06_mara_43E5AAFE-542B-4ED2-9E1A-6F744E6EF1CA
+#+begin_src emacs-lisp
+(setq TeX-arg-item-label-p t)
+#+end_src
+
+Show Unicode symbols in the menu.
+
+#+name: org_gcr_2018-03-06_mara_0C89F53D-FA9C-4A41-889F-24F4E708AE03
+#+begin_src emacs-lisp
+(setq LaTeX-math-menu-unicode t)
+#+end_src
+
+Automatically bracket sub and superscripts.
+
+#+name: org_gcr_2018-03-06_mara_A73A7792-02FB-400F-8805-B9C89E9F8ADA
+#+begin_src emacs-lisp
+(setq TeX-electric-sub-and-superscript t)
+#+end_src
+
+On macro insertion prompt for both required and optional arguments every time.
+
+#+name: org_gcr_2018-03-06_mara_9FBCFE6F-DFBF-4921-A6E6-DA7B98748A3A
+#+begin_src emacs-lisp
+(setq TeX-insert-macro-default-style 'show-all-optional-args)
+#+end_src
+
+Make =\= insert a macro.
+
+#+name: org_gcr_2018-03-06_mara_42A55264-E5F9-4FBE-A0A1-3C53CAB34932
+#+begin_src emacs-lisp
+(setq TeX-electric-escape t)
+#+end_src
+
+Always bracket macros.
+
+#+name: org_gcr_2018-03-06_mara_DBAA8162-1455-436D-AD2C-37EFC820ACC4
+#+begin_src emacs-lisp
+(setq TeX-insert-braces t)
+#+end_src
+
+Complete expert commands.
+
+#+name: org_gcr_2018-03-06_mara_6C656B2D-B4AB-4800-AE8D-C9D38F593430
+#+begin_src emacs-lisp
+(setq TeX-complete-expert-commands t)
+#+end_src
+
+Always check environment indentation.
+
+#+name: org_gcr_2018-03-06_mara_D50FCEC2-0D5A-49C6-B599-E649F315375D
+#+begin_src emacs-lisp
+(setq LaTeX-indent-environment-check t)
+#+end_src
+
+Indent comment syntactically.
+
+#+name: org_gcr_2018-03-06_mara_24B30BAF-6284-48FA-BBAC-172979A25B71
+#+begin_src emacs-lisp
+(setq LaTeX-syntactic-comments t)
+#+end_src
 
 Don't prompt every time you run =C-c C-c= about saving the file, instead, just
 save it.
@@ -5169,70 +5321,195 @@ Load LCO files with AucTeX.
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'auto-mode-alist '("\\.lco?\\'" . TeX-latex-mode))
 #+END_SRC
+**** Controlling Screen Display
+:PROPERTIES:
+:ID:       org_gcr_2018-03-06_mara:AD0AF49A-F5EE-4931-867A-63E0C7F87FC7
+:END:
+Fontify super and subscripts.
 
-Culture-dependent typographical results.
+#+name: org_gcr_2018-03-06_mara_58F2B467-037A-4DE8-B780-886A7A0BEC09
+#+begin_src emacs-lisp
+(setq font-latex-fontify-script t)
+#+end_src
 
-#+NAME: org_gcr_2017-05-12_mara_5E9D3CF3-A603-4225-9BDD-06E2CAA9ED19
-#+BEGIN_SRC emacs-lisp
-(add-to-list 'org-latex-packages-alist '("english" "babel" t))
-#+END_SRC
+Allow =n= super and subscript depth.
 
-Use the closest thing to Times New Roman.
+#+name: org_gcr_2018-03-06_mara_6C92D757-E7A6-4635-B1F5-762DAC8C8503
+#+begin_src emacs-lisp
+(setq font-latex-fontify-script-max-level 3)
+#+end_src
+**** Starting Processors, Viewers and Other Programs
+:PROPERTIES:
+:ID:       org_gcr_2018-03-06_mara:8D6395B6-CFE8-4A87-96E2-C4D1A24117E6
+:END:
 
-#+NAME: org_gcr_2017-05-12_mara_11FEAF4C-B3C6-4188-B642-DE57F7D2ADCD
-#+BEGIN_SRC emacs-lisp
-(add-to-list 'org-latex-packages-alist '("" "mathptmx" t))
-#+END_SRC
+Tell ~ispell~ to ignore things.
 
-Small margins.
+#+name: org_gcr_2018-03-06_mara_10961961-251E-46A1-B155-FD424A99B2FF
+#+begin_src emacs-lisp
+(setq TeX-ispell-extend-skip-list t)
+#+end_src
 
-#+NAME: org_gcr_2017-05-12_mara_55AF149A-B2A9-42ED-8E9F-0BDBEAF31301
-#+BEGIN_SRC emacs-lisp
-(add-to-list 'org-latex-packages-alist '("margin=1.5in" "geometry" nil))
-#+END_SRC
+Create DVI from PDF.
 
-One empty line between paragraphs.
+#+name: org_gcr_2018-03-07_mara_4533FF11-F0B1-48B8-A780-D737AC29F7D6
+#+begin_src emacs-lisp
+(setq TeX-PDF-mode t)
+#+end_src
 
-#+NAME: org_gcr_2017-05-12_mara_0492362D-F615-4D40-9C64-49CD7A8E493E
-#+BEGIN_SRC emacs-lisp
-(add-to-list 'org-latex-packages-alist '("" "parskip" nil))
-#+END_SRC
+Use XeTeX.
 
-Dropped capitals.
+#+name: org_gcr_2018-03-06_mara_C3C1359C-0A11-47C1-AEFD-4C657DF7787A
+#+begin_src emacs-lisp
+(setq-default TeX-engine 'xetex)
+(setq-default TeX-PDF-mode t)
+#+end_src
 
-#+NAME: org_gcr_2017-05-12_mara_5AF3546A-23E6-4DA3-BE95-108C3F8CB6D0
-#+BEGIN_SRC emacs-lisp
-(add-to-list 'org-latex-packages-alist '("" "lettrine" nil))
-#+END_SRC
+Show compilation is another window.
 
-Standard LaTeX class options.
+#+name: org_gcr_2018-03-06_mara_4826C62E-511D-453D-8FF2-3A916A9D3B65
+#+begin_src emacs-lisp
+(setq TeX-show-compilation t)
+#+end_src
 
-#+NAME: org_gcr_2017-05-12_mara_7EE5307A-ACC5-4FE9-A519-0F273B4589E9
-#+BEGIN_SRC emacs-lisp
-(defvar help/ltx-cls-opt "paper=letter, fontsize=12pt")
-#+END_SRC
+Error message format.
 
-Standard article class.
+#+name: org_gcr_2018-03-06_mara_88CDF424-3E45-4D0E-838F-B9387054B7DB
+#+begin_src emacs-lisp
+(setq TeX-file-line-error t)
+#+end_src
 
-#+NAME: org_gcr_2017-05-12_mara_006EB5E3-5478-43C7-AEAC-34CCF49127AC
-#+BEGIN_SRC emacs-lisp
-(eval-after-load "ox-latex"
-  '(add-to-list 'org-latex-classes
-                `("help-article"
-                  ,(concat "\\documentclass["
-                           help/ltx-cls-opt
-                           "]{article}"))))
+Prompt before cleaning.
 
-(setq org-latex-default-class "help-article")
-#+END_SRC
+#+name: org_gcr_2018-03-06_mara_214A76EF-F021-4FE3-95B7-AFE7453EDB21
+#+begin_src emacs-lisp
+(setq TeX-clean-confirm t)
+#+end_src
+**** Customization and Extension
+:PROPERTIES:
+:ID:       org_gcr_2018-03-07_mara:B440BBB2-DC5D-421D-85BD-988BF56B7E2B
+:END:
+Never use multi-file document structure.
 
-Use "Smartquotes".
+#+name: org_gcr_2018-03-05_mara_5F1D507C-7E7F-40C0-9547-A2864763FFEC
+#+begin_src emacs-lisp
+(setq-default TeX-master t)
+#+end_src
 
-#+NAME: org_gcr_2017-05-12_mara_F8F77D4B-8958-49F2-8ED8-FE96F55ECAFB
-#+BEGIN_SRC emacs-lisp
-(setq org-export-with-smart-quotes t)
-#+END_SRC
+Automatically parse on load and save.
 
+#+name: org_gcr_2018-03-07_mara_8C054399-B5D2-4951-BB01-9D97FD1EBD4F
+#+begin_src emacs-lisp
+(setq TeX-parse-self t)
+(setq TeX-auto-save t)
+#+end_src
+
+Recursively search for all customizations.
+
+#+name: org_gcr_2018-03-07_mara_DB006B6E-953F-48B8-ABE2-1CC763558DA5
+#+begin_src emacs-lisp
+(setq TeX-file-recurse t)
+#+end_src
+**** Key Bindings
+:PROPERTIES:
+:ID:       org_gcr_2018-03-05_mara:D945AAE3-61B6-4EE8-8693-D67685344A17
+:END:
+#+name: org_gcr_2018-03-05_mara_0A5B88B3-C1DE-4C06-B44C-98E5468CDCC2
+#+begin_src emacs-lisp
+(define-key TeX-mode-map (kbd "C-c C-c") #'help/safb-TeX-command-master)
+(define-key TeX-mode-map (kbd "C-j") nil)
+(define-key TeX-mode-map (kbd "C-M-f") nil)
+(define-key TeX-mode-map (kbd "C-M-f") #'LaTeX-find-matching-end)
+(define-key TeX-mode-map (kbd "C-M-b") nil)
+(define-key TeX-mode-map (kbd "C-M-b") #'LaTeX-find-matching-begin)
+(define-key TeX-mode-map (kbd "s-l") nil)
+(define-key TeX-mode-map (kbd "s-l") #'TeX-complete-symbol)
+#+end_src
+**** Hydras
+:PROPERTIES:
+:ID:       org_gcr_2018-03-05_mara:56F54131-AD99-411E-89D0-1AD104B3E228
+:END:
+#+name: org_gcr_2018-03-05_mara_033D8FD5-B014-40CC-9EBD-095FF51EBD6A
+#+begin_src emacs-lisp
+(defhydra help/hydra/auctex (:color blue
+                                    :hint nil)
+  "
+AUCTeX: (q to quit)
+Do: Run_a_ll →R_e_gion →B_u_ffer →Section(_1_) _K_ill-Job
+    Center-Buffer(_2_) Go-Home(_3_) Clean(_4_) Texdoc(_5_) Save-Belonging(_6_
+Insert: _S_ection _E_nvironment _M_acro _F_ont(¿) _C_lose-Env _I_tem
+Mark: E_n_vironment (_j_ust one) Se_c_tion (jus_t_ one)
+Fold: Fol_d_* Bu_f_fe_r_ Re_g_i_o_n _P_aragraph Macr_o_ En_v_ Mat_h_ Co_m_ment
+Narrow: _G_roup Env_i_ronment
+Errors: _R_eport ⏼_B_oxes ⏼_W_arnings
+"
+  ;; Do
+  ("a" TeX-command-run-all)
+  ("e" TeX-command-region)
+  ("u" TeX-command-buffer)
+  ("1" LaTeX-command-section)
+  ("K" TeX-kill-job)
+  ("2" TeX-recenter-output-buffer)
+  ("3" TeX-home-buffer)
+  ("4" TeX-clean)
+  ("5" TeX-documentation-texdoc)
+  ("6" TeX-save-document)
+  ;; Insert
+  ("S" LaTeX-section)
+  ("E" LaTeX-environment)
+  ("M" TeX-insert-macro)
+  ("F" TeX-font)
+  ("C" LaTeX-close-environment)
+  ("I" LaTeX-insert-item)
+  ;; Mark
+  ("n" LaTeX-mark-environment)
+  ("j" (lambda (interactive)
+         (let ((current-prefix-arg '(4))) (call-interactively 'LaTeX-mark-environment)) ))
+  ("c" LaTeX-mark-section)
+  ("t" (lambda (interactive)
+         (let ((current-prefix-arg '(4))) (call-interactively
+                                           'LaTeX-mark-section)) ))
+  ;; Folding
+  ("d" TeX-fold-dwim)
+  ("f" TeX-fold-buffer)
+  ("r" TeX-fold-clearout-buffer)
+  ("g" TeX-fold-region)
+  ("i" TeX-fold-clearout-region)
+  ("P" TeX-fold-paragraph)
+  ("o" TeX-fold-macro)
+  ("v" TeX-fold-env)
+  ("h" TeX-fold-math)
+  ("m" TeX-fold-comment)
+  ;; Narrow:
+  ("G" TeX-narrow-to-group)
+  ("i" LaTeX-narrow-to-environment)
+  ;; Errors
+  ("R" TeX-error-overview)
+  ("B" TeX-toggle-debug-bad-boxes)
+  ("W" TeX-toggle-debug-warnings)
+  ("q" nil))
+#+end_src
+**** Hooks
+:PROPERTIES:
+:ID:       org_gcr_2018-03-05_mara:5C39E41D-C6EC-4A6F-ACB5-A59B472D02CE
+:END:
+- Hook customization
+  - If for all text modes then add it to ~text-mode-hook~
+  - If for all AUCTeX modes then add it to ~TeX-mode-hook~
+  - Otherwise add it to a mode specific hook
+#+name: org_gcr_2018-03-05_mara_8E7A881B-6807-4FA9-A37B-F5E5B1292181
+#+begin_src emacs-lisp
+(defun help/TeX-mode-hook ()
+  (key-chord-define-local "hh" #'help/hydra/auctex/body)
+  (LaTeX-math-mode)
+  (TeX-fold-mode 1)
+  (prettify-symbols-mode)
+  (TeX-install-toolbar)
+  (setq LaTeX-enable-toolbar t)
+  (TeX-interactive-mode)
+  (local-unset-key (kbd "C-j")))
+(add-hook 'TeX-mode-hook 'help/TeX-mode-hook)
+#+end_src
 *** KOMA-Script
   :PROPERTIES:
   :ID:       org_gcr_2017-05-12_mara:623E9A43-A969-48FD-9045-356F83B135E2

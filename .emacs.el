@@ -2010,7 +2010,8 @@ _T_odo | _A_rchives | Rest_o_res
                         gnu-apl-mode-hook
                         geiser-mode-hook
                         geiser-repl-mode-hook
-                        go-mode-hook))
+                        go-mode-hook
+                        TeX-mode-hook))
 ;; org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86][org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86]]
@@ -2315,6 +2316,50 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
   :config
   (add-hook 'org-mode-hook #'org-table-sticky-header-mode))
 ;; org_gcr_2017-05-12_mara_8CE235AC-A7C4-48DF-8C97-46CC7F31CDF4 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-03-07_mara_D89CE4CB-12B1-47A6-9B0B-EA544343BA85][org_gcr_2018-03-07_mara_D89CE4CB-12B1-47A6-9B0B-EA544343BA85]]
+(setq org-latex-compiler "xelatex")
+(setq org-latex-pdf-process '("latexmk -xelatex -quiet -shell-escape -f %f"))
+;; org_gcr_2018-03-07_mara_D89CE4CB-12B1-47A6-9B0B-EA544343BA85 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-03-07_mara_C60306B4-7FB0-45AB-B39F-2BF47FA39604][org_gcr_2018-03-07_mara_C60306B4-7FB0-45AB-B39F-2BF47FA39604]]
+(setq org-latex-default-packages-alist
+      (delq (rassoc '("hyperref" nil) org-latex-default-packages-alist)
+            org-latex-default-packages-alist))
+(defconst help/org-latex-packages-alist-pre-hyperref
+  '(("letterpaper,margin=1.0in" "geometry")
+    ("" "float")))
+(defconst help/org-latex-packages-alist-post-hyperref
+  '( ("section" "placeins")
+     ("" "tikz")
+     ("" "caption")
+     ("" "latexsym")
+     ("" "lettrine")
+     ("" "grantcrettke")))
+(setq org-latex-packages-alist
+      (append help/org-latex-packages-alist-pre-hyperref
+              '(("" "hyperref" nil))
+              help/org-latex-packages-alist-post-hyperref))
+;; org_gcr_2018-03-07_mara_C60306B4-7FB0-45AB-B39F-2BF47FA39604 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7EE5307A-ACC5-4FE9-A519-0F273B4589E9][org_gcr_2017-05-12_mara_7EE5307A-ACC5-4FE9-A519-0F273B4589E9]]
+(defvar help/ltx-cls-opt "12pt")
+;; org_gcr_2017-05-12_mara_7EE5307A-ACC5-4FE9-A519-0F273B4589E9 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_006EB5E3-5478-43C7-AEAC-34CCF49127AC][org_gcr_2017-05-12_mara_006EB5E3-5478-43C7-AEAC-34CCF49127AC]]
+(eval-after-load "ox-latex"
+  '(add-to-list 'org-latex-classes
+                `("help-article"
+                  ,(concat "\\documentclass["
+                           help/ltx-cls-opt
+                           "]{article}"))))
+
+(setq org-latex-default-class "help-article")
+;; org_gcr_2017-05-12_mara_006EB5E3-5478-43C7-AEAC-34CCF49127AC ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-03-07_mara_22B13787-67AA-4462-949B-3C1E6702EB7C][org_gcr_2018-03-07_mara_22B13787-67AA-4462-949B-3C1E6702EB7C]]
+(setq org-latex-default-figure-position "H")
+;; org_gcr_2018-03-07_mara_22B13787-67AA-4462-949B-3C1E6702EB7C ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9A50B1B6-9446-4CE2-AC58-5ED8878E9041][org_gcr_2017-05-12_mara_9A50B1B6-9446-4CE2-AC58-5ED8878E9041]]
 (setq org-startup-with-inline-images (display-graphic-p))
@@ -3142,27 +3187,69 @@ YAML: (q to quit)
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D035C4E4-B983-4D74-9E3C-764EF00B3795][org_gcr_2017-05-12_mara_D035C4E4-B983-4D74-9E3C-764EF00B3795]]
 (use-package tex
-  :ensure auctex
-  :config
-  (define-key TeX-mode-map (kbd "C-c C-c") #'help/safb-TeX-command-master))
+  :ensure auctex)
 ;; org_gcr_2017-05-12_mara_D035C4E4-B983-4D74-9E3C-764EF00B3795 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_86E4D060-B2E1-4F7E-B56C-A7D93C0024FA][org_gcr_2017-05-12_mara_86E4D060-B2E1-4F7E-B56C-A7D93C0024FA]]
-(setq TeX-auto-save t)
-;; org_gcr_2017-05-12_mara_86E4D060-B2E1-4F7E-B56C-A7D93C0024FA ends here
+;; [[file:~/src/help/help.org::org_gcr_2018-03-07_mara_F85003E7-83AD-4E9E-B333-E0FBD79872F5][org_gcr_2018-03-07_mara_F85003E7-83AD-4E9E-B333-E0FBD79872F5]]
+(use-package auctex-latexmk
+  :ensure t
+  :config
+  (setq auctex-latexmk-inherit-TeX-PDF-mode t)
+  (auctex-latexmk-setup))
+;; org_gcr_2018-03-07_mara_F85003E7-83AD-4E9E-B333-E0FBD79872F5 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1502A970-C03E-4D2D-8041-4B7AE8859AF0][org_gcr_2017-05-12_mara_1502A970-C03E-4D2D-8041-4B7AE8859AF0]]
-(setq TeX-parse-self t)
-;; org_gcr_2017-05-12_mara_1502A970-C03E-4D2D-8041-4B7AE8859AF0 ends here
+;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_4C2DF1A6-C32B-49F5-A88B-1268AFBD94C0][org_gcr_2018-03-06_mara_4C2DF1A6-C32B-49F5-A88B-1268AFBD94C0]]
+(setq TeX-electric-math t)
+;; org_gcr_2018-03-06_mara_4C2DF1A6-C32B-49F5-A88B-1268AFBD94C0 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C923F472-C10C-46D2-B9F2-5DBADE6E436D][org_gcr_2017-05-12_mara_C923F472-C10C-46D2-B9F2-5DBADE6E436D]]
-(setq TeX-auto-save t)
-;; org_gcr_2017-05-12_mara_C923F472-C10C-46D2-B9F2-5DBADE6E436D ends here
+;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_88B1D568-BECF-464A-A4D0-A5AE34835C7D][org_gcr_2018-03-06_mara_88B1D568-BECF-464A-A4D0-A5AE34835C7D]]
+(setq LaTeX-electric-left-right-brace t)
+;; org_gcr_2018-03-06_mara_88B1D568-BECF-464A-A4D0-A5AE34835C7D ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D30FAF98-9340-49C8-BE94-834BF2A2CB11][org_gcr_2017-05-12_mara_D30FAF98-9340-49C8-BE94-834BF2A2CB11]]
-(setq TeX-PDF-mode t)
-(setq TeX-DVI-via-PDFTeX t)
-;; org_gcr_2017-05-12_mara_D30FAF98-9340-49C8-BE94-834BF2A2CB11 ends here
+;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_284DFD79-73E7-41FF-990D-7CD066DB225E][org_gcr_2018-03-06_mara_284DFD79-73E7-41FF-990D-7CD066DB225E]]
+(setq LaTeX-section-hook
+      '(LaTeX-section-heading
+        LaTeX-section-title
+        LaTeX-section-toc
+        LaTeX-section-section
+        LaTeX-section-label))
+;; org_gcr_2018-03-06_mara_284DFD79-73E7-41FF-990D-7CD066DB225E ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_43E5AAFE-542B-4ED2-9E1A-6F744E6EF1CA][org_gcr_2018-03-06_mara_43E5AAFE-542B-4ED2-9E1A-6F744E6EF1CA]]
+(setq TeX-arg-item-label-p t)
+;; org_gcr_2018-03-06_mara_43E5AAFE-542B-4ED2-9E1A-6F744E6EF1CA ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_0C89F53D-FA9C-4A41-889F-24F4E708AE03][org_gcr_2018-03-06_mara_0C89F53D-FA9C-4A41-889F-24F4E708AE03]]
+(setq LaTeX-math-menu-unicode t)
+;; org_gcr_2018-03-06_mara_0C89F53D-FA9C-4A41-889F-24F4E708AE03 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_A73A7792-02FB-400F-8805-B9C89E9F8ADA][org_gcr_2018-03-06_mara_A73A7792-02FB-400F-8805-B9C89E9F8ADA]]
+(setq TeX-electric-sub-and-superscript t)
+;; org_gcr_2018-03-06_mara_A73A7792-02FB-400F-8805-B9C89E9F8ADA ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_9FBCFE6F-DFBF-4921-A6E6-DA7B98748A3A][org_gcr_2018-03-06_mara_9FBCFE6F-DFBF-4921-A6E6-DA7B98748A3A]]
+(setq TeX-insert-macro-default-style 'show-all-optional-args)
+;; org_gcr_2018-03-06_mara_9FBCFE6F-DFBF-4921-A6E6-DA7B98748A3A ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_42A55264-E5F9-4FBE-A0A1-3C53CAB34932][org_gcr_2018-03-06_mara_42A55264-E5F9-4FBE-A0A1-3C53CAB34932]]
+(setq TeX-electric-escape t)
+;; org_gcr_2018-03-06_mara_42A55264-E5F9-4FBE-A0A1-3C53CAB34932 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_DBAA8162-1455-436D-AD2C-37EFC820ACC4][org_gcr_2018-03-06_mara_DBAA8162-1455-436D-AD2C-37EFC820ACC4]]
+(setq TeX-insert-braces t)
+;; org_gcr_2018-03-06_mara_DBAA8162-1455-436D-AD2C-37EFC820ACC4 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_6C656B2D-B4AB-4800-AE8D-C9D38F593430][org_gcr_2018-03-06_mara_6C656B2D-B4AB-4800-AE8D-C9D38F593430]]
+(setq TeX-complete-expert-commands t)
+;; org_gcr_2018-03-06_mara_6C656B2D-B4AB-4800-AE8D-C9D38F593430 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_D50FCEC2-0D5A-49C6-B599-E649F315375D][org_gcr_2018-03-06_mara_D50FCEC2-0D5A-49C6-B599-E649F315375D]]
+(setq LaTeX-indent-environment-check t)
+;; org_gcr_2018-03-06_mara_D50FCEC2-0D5A-49C6-B599-E649F315375D ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_24B30BAF-6284-48FA-BBAC-172979A25B71][org_gcr_2018-03-06_mara_24B30BAF-6284-48FA-BBAC-172979A25B71]]
+(setq LaTeX-syntactic-comments t)
+;; org_gcr_2018-03-06_mara_24B30BAF-6284-48FA-BBAC-172979A25B71 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_851CFD0C-D616-47D1-A0E0-044053B89B03][org_gcr_2017-05-12_mara_851CFD0C-D616-47D1-A0E0-044053B89B03]]
 (setq TeX-save-query nil)
@@ -3172,44 +3259,135 @@ YAML: (q to quit)
 (add-to-list 'auto-mode-alist '("\\.lco?\\'" . TeX-latex-mode))
 ;; org_gcr_2017-05-12_mara_5B99942E-0535-40CC-9C61-F895DAF8C545 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5E9D3CF3-A603-4225-9BDD-06E2CAA9ED19][org_gcr_2017-05-12_mara_5E9D3CF3-A603-4225-9BDD-06E2CAA9ED19]]
-(add-to-list 'org-latex-packages-alist '("english" "babel" t))
-;; org_gcr_2017-05-12_mara_5E9D3CF3-A603-4225-9BDD-06E2CAA9ED19 ends here
+;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_58F2B467-037A-4DE8-B780-886A7A0BEC09][org_gcr_2018-03-06_mara_58F2B467-037A-4DE8-B780-886A7A0BEC09]]
+(setq font-latex-fontify-script t)
+;; org_gcr_2018-03-06_mara_58F2B467-037A-4DE8-B780-886A7A0BEC09 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_11FEAF4C-B3C6-4188-B642-DE57F7D2ADCD][org_gcr_2017-05-12_mara_11FEAF4C-B3C6-4188-B642-DE57F7D2ADCD]]
-(add-to-list 'org-latex-packages-alist '("" "mathptmx" t))
-;; org_gcr_2017-05-12_mara_11FEAF4C-B3C6-4188-B642-DE57F7D2ADCD ends here
+;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_6C92D757-E7A6-4635-B1F5-762DAC8C8503][org_gcr_2018-03-06_mara_6C92D757-E7A6-4635-B1F5-762DAC8C8503]]
+(setq font-latex-fontify-script-max-level 3)
+;; org_gcr_2018-03-06_mara_6C92D757-E7A6-4635-B1F5-762DAC8C8503 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_55AF149A-B2A9-42ED-8E9F-0BDBEAF31301][org_gcr_2017-05-12_mara_55AF149A-B2A9-42ED-8E9F-0BDBEAF31301]]
-(add-to-list 'org-latex-packages-alist '("margin=1.5in" "geometry" nil))
-;; org_gcr_2017-05-12_mara_55AF149A-B2A9-42ED-8E9F-0BDBEAF31301 ends here
+;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_10961961-251E-46A1-B155-FD424A99B2FF][org_gcr_2018-03-06_mara_10961961-251E-46A1-B155-FD424A99B2FF]]
+(setq TeX-ispell-extend-skip-list t)
+;; org_gcr_2018-03-06_mara_10961961-251E-46A1-B155-FD424A99B2FF ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0492362D-F615-4D40-9C64-49CD7A8E493E][org_gcr_2017-05-12_mara_0492362D-F615-4D40-9C64-49CD7A8E493E]]
-(add-to-list 'org-latex-packages-alist '("" "parskip" nil))
-;; org_gcr_2017-05-12_mara_0492362D-F615-4D40-9C64-49CD7A8E493E ends here
+;; [[file:~/src/help/help.org::org_gcr_2018-03-07_mara_4533FF11-F0B1-48B8-A780-D737AC29F7D6][org_gcr_2018-03-07_mara_4533FF11-F0B1-48B8-A780-D737AC29F7D6]]
+(setq TeX-PDF-mode t)
+;; org_gcr_2018-03-07_mara_4533FF11-F0B1-48B8-A780-D737AC29F7D6 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5AF3546A-23E6-4DA3-BE95-108C3F8CB6D0][org_gcr_2017-05-12_mara_5AF3546A-23E6-4DA3-BE95-108C3F8CB6D0]]
-(add-to-list 'org-latex-packages-alist '("" "lettrine" nil))
-;; org_gcr_2017-05-12_mara_5AF3546A-23E6-4DA3-BE95-108C3F8CB6D0 ends here
+;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_C3C1359C-0A11-47C1-AEFD-4C657DF7787A][org_gcr_2018-03-06_mara_C3C1359C-0A11-47C1-AEFD-4C657DF7787A]]
+(setq-default TeX-engine 'xetex)
+(setq-default TeX-PDF-mode t)
+;; org_gcr_2018-03-06_mara_C3C1359C-0A11-47C1-AEFD-4C657DF7787A ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7EE5307A-ACC5-4FE9-A519-0F273B4589E9][org_gcr_2017-05-12_mara_7EE5307A-ACC5-4FE9-A519-0F273B4589E9]]
-(defvar help/ltx-cls-opt "paper=letter, fontsize=12pt")
-;; org_gcr_2017-05-12_mara_7EE5307A-ACC5-4FE9-A519-0F273B4589E9 ends here
+;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_4826C62E-511D-453D-8FF2-3A916A9D3B65][org_gcr_2018-03-06_mara_4826C62E-511D-453D-8FF2-3A916A9D3B65]]
+(setq TeX-show-compilation t)
+;; org_gcr_2018-03-06_mara_4826C62E-511D-453D-8FF2-3A916A9D3B65 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_006EB5E3-5478-43C7-AEAC-34CCF49127AC][org_gcr_2017-05-12_mara_006EB5E3-5478-43C7-AEAC-34CCF49127AC]]
-(eval-after-load "ox-latex"
-  '(add-to-list 'org-latex-classes
-                `("help-article"
-                  ,(concat "\\documentclass["
-                           help/ltx-cls-opt
-                           "]{article}"))))
+;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_88CDF424-3E45-4D0E-838F-B9387054B7DB][org_gcr_2018-03-06_mara_88CDF424-3E45-4D0E-838F-B9387054B7DB]]
+(setq TeX-file-line-error t)
+;; org_gcr_2018-03-06_mara_88CDF424-3E45-4D0E-838F-B9387054B7DB ends here
 
-(setq org-latex-default-class "help-article")
-;; org_gcr_2017-05-12_mara_006EB5E3-5478-43C7-AEAC-34CCF49127AC ends here
+;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_214A76EF-F021-4FE3-95B7-AFE7453EDB21][org_gcr_2018-03-06_mara_214A76EF-F021-4FE3-95B7-AFE7453EDB21]]
+(setq TeX-clean-confirm t)
+;; org_gcr_2018-03-06_mara_214A76EF-F021-4FE3-95B7-AFE7453EDB21 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F8F77D4B-8958-49F2-8ED8-FE96F55ECAFB][org_gcr_2017-05-12_mara_F8F77D4B-8958-49F2-8ED8-FE96F55ECAFB]]
-(setq org-export-with-smart-quotes t)
-;; org_gcr_2017-05-12_mara_F8F77D4B-8958-49F2-8ED8-FE96F55ECAFB ends here
+;; [[file:~/src/help/help.org::org_gcr_2018-03-05_mara_5F1D507C-7E7F-40C0-9547-A2864763FFEC][org_gcr_2018-03-05_mara_5F1D507C-7E7F-40C0-9547-A2864763FFEC]]
+(setq-default TeX-master t)
+;; org_gcr_2018-03-05_mara_5F1D507C-7E7F-40C0-9547-A2864763FFEC ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-03-07_mara_8C054399-B5D2-4951-BB01-9D97FD1EBD4F][org_gcr_2018-03-07_mara_8C054399-B5D2-4951-BB01-9D97FD1EBD4F]]
+(setq TeX-parse-self t)
+(setq TeX-auto-save t)
+;; org_gcr_2018-03-07_mara_8C054399-B5D2-4951-BB01-9D97FD1EBD4F ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-03-07_mara_DB006B6E-953F-48B8-ABE2-1CC763558DA5][org_gcr_2018-03-07_mara_DB006B6E-953F-48B8-ABE2-1CC763558DA5]]
+(setq TeX-file-recurse t)
+;; org_gcr_2018-03-07_mara_DB006B6E-953F-48B8-ABE2-1CC763558DA5 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-03-05_mara_0A5B88B3-C1DE-4C06-B44C-98E5468CDCC2][org_gcr_2018-03-05_mara_0A5B88B3-C1DE-4C06-B44C-98E5468CDCC2]]
+(define-key TeX-mode-map (kbd "C-c C-c") #'help/safb-TeX-command-master)
+(define-key TeX-mode-map (kbd "C-j") nil)
+(define-key TeX-mode-map (kbd "C-M-f") nil)
+(define-key TeX-mode-map (kbd "C-M-f") #'LaTeX-find-matching-end)
+(define-key TeX-mode-map (kbd "C-M-b") nil)
+(define-key TeX-mode-map (kbd "C-M-b") #'LaTeX-find-matching-begin)
+(define-key TeX-mode-map (kbd "s-l") nil)
+(define-key TeX-mode-map (kbd "s-l") #'TeX-complete-symbol)
+;; org_gcr_2018-03-05_mara_0A5B88B3-C1DE-4C06-B44C-98E5468CDCC2 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-03-05_mara_033D8FD5-B014-40CC-9EBD-095FF51EBD6A][org_gcr_2018-03-05_mara_033D8FD5-B014-40CC-9EBD-095FF51EBD6A]]
+(defhydra help/hydra/auctex (:color blue
+                                    :hint nil)
+  "
+AUCTeX: (q to quit)
+Do: Run_a_ll →R_e_gion →B_u_ffer →Section(_1_) _K_ill-Job
+    Center-Buffer(_2_) Go-Home(_3_) Clean(_4_) Texdoc(_5_) Save-Belonging(_6_
+Insert: _S_ection _E_nvironment _M_acro _F_ont(¿) _C_lose-Env _I_tem
+Mark: E_n_vironment (_j_ust one) Se_c_tion (jus_t_ one)
+Fold: Fol_d_* Bu_f_fe_r_ Re_g_i_o_n _P_aragraph Macr_o_ En_v_ Mat_h_ Co_m_ment
+Narrow: _G_roup Env_i_ronment
+Errors: _R_eport ⏼_B_oxes ⏼_W_arnings
+"
+  ;; Do
+  ("a" TeX-command-run-all)
+  ("e" TeX-command-region)
+  ("u" TeX-command-buffer)
+  ("1" LaTeX-command-section)
+  ("K" TeX-kill-job)
+  ("2" TeX-recenter-output-buffer)
+  ("3" TeX-home-buffer)
+  ("4" TeX-clean)
+  ("5" TeX-documentation-texdoc)
+  ("6" TeX-save-document)
+  ;; Insert
+  ("S" LaTeX-section)
+  ("E" LaTeX-environment)
+  ("M" TeX-insert-macro)
+  ("F" TeX-font)
+  ("C" LaTeX-close-environment)
+  ("I" LaTeX-insert-item)
+  ;; Mark
+  ("n" LaTeX-mark-environment)
+  ("j" (lambda (interactive)
+         (let ((current-prefix-arg '(4))) (call-interactively 'LaTeX-mark-environment)) ))
+  ("c" LaTeX-mark-section)
+  ("t" (lambda (interactive)
+         (let ((current-prefix-arg '(4))) (call-interactively
+                                           'LaTeX-mark-section)) ))
+  ;; Folding
+  ("d" TeX-fold-dwim)
+  ("f" TeX-fold-buffer)
+  ("r" TeX-fold-clearout-buffer)
+  ("g" TeX-fold-region)
+  ("i" TeX-fold-clearout-region)
+  ("P" TeX-fold-paragraph)
+  ("o" TeX-fold-macro)
+  ("v" TeX-fold-env)
+  ("h" TeX-fold-math)
+  ("m" TeX-fold-comment)
+  ;; Narrow:
+  ("G" TeX-narrow-to-group)
+  ("i" LaTeX-narrow-to-environment)
+  ;; Errors
+  ("R" TeX-error-overview)
+  ("B" TeX-toggle-debug-bad-boxes)
+  ("W" TeX-toggle-debug-warnings)
+  ("q" nil))
+;; org_gcr_2018-03-05_mara_033D8FD5-B014-40CC-9EBD-095FF51EBD6A ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-03-05_mara_8E7A881B-6807-4FA9-A37B-F5E5B1292181][org_gcr_2018-03-05_mara_8E7A881B-6807-4FA9-A37B-F5E5B1292181]]
+(defun help/TeX-mode-hook ()
+  (key-chord-define-local "hh" #'help/hydra/auctex/body)
+  (LaTeX-math-mode)
+  (TeX-fold-mode 1)
+  (prettify-symbols-mode)
+  (TeX-install-toolbar)
+  (setq LaTeX-enable-toolbar t)
+  (TeX-interactive-mode)
+  (local-unset-key (kbd "C-j")))
+(add-hook 'TeX-mode-hook 'help/TeX-mode-hook)
+;; org_gcr_2018-03-05_mara_8E7A881B-6807-4FA9-A37B-F5E5B1292181 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C74104AA-A25C-4BE8-A7DD-99DEA240FF73][org_gcr_2017-05-12_mara_C74104AA-A25C-4BE8-A7DD-99DEA240FF73]]
 (eval-after-load "ox" '(require 'ox-koma-letter))
