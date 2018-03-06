@@ -1137,42 +1137,6 @@ URL: `https://stackoverflow.com/questions/1587972/how-to-display-indentation-gui
 (put #'narrow-to-region 'disabled nil)
 ;; org_gcr_2017-05-12_mara_41240CBD-3217-466E-BD0F-5737D8BC68BF ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0DE4A73B-54B3-41AA-8744-98D7B34D159B][org_gcr_2017-05-12_mara_0DE4A73B-54B3-41AA-8744-98D7B34D159B]]
-(use-package eval-in-repl
-  :ensure t
-  :config
-  (setq eir-jump-after-eval nil)
-  (setq eir-always-split-script-window t)
-  (setq eir-delete-other-windows t)
-  (setq eir-repl-placement 'right)
-  ;; ielm support (for emacs lisp)
-  (require 'eval-in-repl-ielm)
-  ;; for .el files
-  (define-key emacs-lisp-mode-map (kbd "<C-return>") 'eir-eval-in-ielm)
-  ;; for *scratch*
-  (define-key lisp-interaction-mode-map (kbd "<C-return>") 'eir-eval-in-ielm)
-  ;; for M-x info
-  (eval-after-load "info"
-    '(define-key Info-mode-map (kbd "<C-return>") 'eir-eval-in-ielm))
-  ;; Shell support
-  (require 'eval-in-repl-shell)
-  (add-hook 'sh-mode-hook
-            '(lambda()
-               (local-set-key (kbd "C-<return>") 'eir-eval-in-shell)))
-  ;; Version with opposite behavior to eir-jump-after-eval configuration
-  (defun eir-eval-in-shell2 ()
-    "eval-in-repl for shell script (opposite behavior)
-
-This version has the opposite behavior to the eir-jump-after-eval
-configuration when invoked to evaluate a line."
-    (interactive)
-    (let ((eir-jump-after-eval (not eir-jump-after-eval)))
-      (eir-eval-in-shell)))
-  (add-hook 'sh-mode-hook
-            '(lambda()
-               (local-set-key (kbd "C-<return>") 'eir-eval-in-shell2))))
-;; org_gcr_2017-05-12_mara_0DE4A73B-54B3-41AA-8744-98D7B34D159B ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A9233A74-18F8-4C65-AC14-1A6C41F69B80][org_gcr_2017-05-12_mara_A9233A74-18F8-4C65-AC14-1A6C41F69B80]]
 (add-to-list 'load-path (getenv "CCRYPT"))
 (use-package ps-ccrypt)
