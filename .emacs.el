@@ -3715,39 +3715,6 @@ Ansible: (q to quit)
   (setq aw-background nil))
 ;; org_gcr_2017-05-12_mara_A165E3DB-37E7-49A7-84E4-1CB0D2A137C6 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-07-08_mara_3D694F1B-EB4A-4724-A8E7-61F09C4773A5][org_gcr_2017-07-08_mara_3D694F1B-EB4A-4724-A8E7-61F09C4773A5]]
-(use-package eyebrowse
-  :ensure t
-  :config
-  (setq eyebrowse-wrap-around t)
-  (eyebrowse-mode t)
-  (defhydra help/hydra-left-side/eyebrowse (:color blue :hint nil)
-    "
-current eyebrowse slot: %(let* ((window-configs (eyebrowse--get 'window-configs))(match (assq (eyebrowse--get 'current-slot) window-configs))(desc (eyebrowse-format-slot match)))desc)
- _u_ create _i_ choose _o_ rename _q_ quit
-  _j_ previous _k_ next _l_ last
-   _a_ 00 _s_ 01 _d_ 02 _f_ 03 _g_ 04 _z_ 05 _x_ 06 _c_ 07 _v_ 08 _b_ 09 _~_ close "
-    ("u" #'eyebrowse-create-window-config)
-    ("i" #'eyebrowse-switch-to-window-config)
-    ("o" #'eyebrowse-rename-window-config :exit nil)
-    ("q" nil)
-    ("j" #'eyebrowse-prev-window-config :exit nil)
-    ("k" #'eyebrowse-next-window-config :exit nil)
-    ("l" #'eyebrowse-last-window-config)
-    ("a" #'eyebrowse-switch-to-window-config-0)
-    ("s" #'eyebrowse-switch-to-window-config-1)
-    ("d" #'eyebrowse-switch-to-window-config-2)
-    ("f" #'eyebrowse-switch-to-window-config-3)
-    ("g" #'eyebrowse-switch-to-window-config-4)
-    ("z" #'eyebrowse-switch-to-window-config-5)
-    ("x" #'eyebrowse-switch-to-window-config-6)
-    ("c" #'eyebrowse-switch-to-window-config-7)
-    ("v" #'eyebrowse-switch-to-window-config-8)
-    ("b" #'eyebrowse-switch-to-window-config-9)
-    ("~" #'eyebrowse-close-window-config :exit nil))
-  (global-set-key (kbd "C-M-e") #'help/hydra-left-side/eyebrowse/body))
-;; org_gcr_2017-07-08_mara_3D694F1B-EB4A-4724-A8E7-61F09C4773A5 ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-06-20_mara_6C4B1CDD-CF71-4A5F-B900-6D3CC06D4028][org_gcr_2017-06-20_mara_6C4B1CDD-CF71-4A5F-B900-6D3CC06D4028]]
 (use-package buffer-move
   :ensure t
