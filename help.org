@@ -5826,19 +5826,6 @@ Recenter near top of screen.
   (let ((recenter-positions '(5)))
     (recenter-top-bottom)))
 #+END_SRC
-
-Sometime dim buffers.
-
-#+NAME: org_gcr_2017-11-17_mara_3251EF44-28A3-4EDA-8E05-CE41B2962E04
-#+BEGIN_SRC emacs-lisp
-(use-package auto-dim-other-buffers
-  :ensure t
-  :config
-  (diminish 'auto-dim-other-buffers-mode)
-  (setq auto-dim-other-buffers-dim-on-focus-out nil)
-  (setq auto-dim-other-buffers-dim-on-switch-to-minibuffer nil)
-  (auto-dim-other-buffers-mode t))
-#+END_SRC
 ** Color Theme
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:3C38AF9D-1905-4B33-A4F5-065D17E9B647

@@ -3479,16 +3479,6 @@ Ansible: (q to quit)
     (recenter-top-bottom)))
 ;; org_gcr_2017-05-12_mara_AA76B6F1-AC3F-42D8-B321-2BD1B05DDE2C ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-11-17_mara_3251EF44-28A3-4EDA-8E05-CE41B2962E04][org_gcr_2017-11-17_mara_3251EF44-28A3-4EDA-8E05-CE41B2962E04]]
-(use-package auto-dim-other-buffers
-  :ensure t
-  :config
-  (diminish 'auto-dim-other-buffers-mode)
-  (setq auto-dim-other-buffers-dim-on-focus-out nil)
-  (setq auto-dim-other-buffers-dim-on-switch-to-minibuffer nil)
-  (auto-dim-other-buffers-mode t))
-;; org_gcr_2017-11-17_mara_3251EF44-28A3-4EDA-8E05-CE41B2962E04 ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1AD36955-5FAC-4794-A9B0-A8DC6639A04C][org_gcr_2017-05-12_mara_1AD36955-5FAC-4794-A9B0-A8DC6639A04C]]
 (use-package solarized-theme
   :ensure t
