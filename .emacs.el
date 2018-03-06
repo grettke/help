@@ -1213,7 +1213,6 @@ URL: `https://stackoverflow.com/questions/1587972/how-to-display-indentation-gui
 (defun help/safb-vc-revert ()
   (interactive)
   (help/save-all-file-buffers)
-  (unless (bound-and-true-p diff-hl-mode) (diff-hl-mode))
   (vc-revert)
   (when (bound-and-true-p diff-hl-mode) (call-interactively 'diff-hl-mode nil)))
 
@@ -3659,11 +3658,6 @@ Ansible: (q to quit)
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_DD263B9E-EFF2-49BF-B367-4F4505F8E618][org_gcr_2017-05-12_mara_DD263B9E-EFF2-49BF-B367-4F4505F8E618]]
 (setq make-pointer-invisible t)
 ;; org_gcr_2017-05-12_mara_DD263B9E-EFF2-49BF-B367-4F4505F8E618 ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D6C905B3-76CD-4ABE-83D9-F1E708F0041F][org_gcr_2017-05-12_mara_D6C905B3-76CD-4ABE-83D9-F1E708F0041F]]
-(use-package diff-hl
-  :ensure t)
-;; org_gcr_2017-05-12_mara_D6C905B3-76CD-4ABE-83D9-F1E708F0041F ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_2E9A617A-5D88-4E71-88EB-595AA1F16EC2][org_gcr_2017-05-12_mara_2E9A617A-5D88-4E71-88EB-595AA1F16EC2]]
 (setq ediff-split-window-function 'split-window-horizontally)

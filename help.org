@@ -1914,7 +1914,6 @@ advice.
 (defun help/safb-vc-revert ()
   (interactive)
   (help/save-all-file-buffers)
-  (unless (bound-and-true-p diff-hl-mode) (diff-hl-mode))
   (vc-revert)
   (when (bound-and-true-p diff-hl-mode) (call-interactively 'diff-hl-mode nil)))
 
@@ -6145,16 +6144,6 @@ Hide the pointer when typing.
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:09918DB9-3AE3-44DF-9E1F-A4A3918F3315
    :END:
-
-Selectively provide VC file status indicators.
-
-Sometimes it is worth interrupting the flow.
-
-#+NAME: org_gcr_2017-05-12_mara_D6C905B3-76CD-4ABE-83D9-F1E708F0041F
-#+BEGIN_SRC emacs-lisp
-(use-package diff-hl
-  :ensure t)
-#+END_SRC
 
 Ediff split frame horizontally.
 
