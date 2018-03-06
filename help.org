@@ -1744,23 +1744,6 @@ URL: `https://stackoverflow.com/questions/1587972/how-to-display-indentation-gui
 (global-set-key (kbd "s-q") #'aj-toggle-fold)
 #+END_SRC
 
-** Colors
-   :PROPERTIES:
-   :ID:       org_gcr_2017-05-12_mara:DA9E0CC6-F3D4-4B9B-944C-0ECB69D8899C
-   :END:
-
-Colorize color names.
-
-Rainbow-Mode handles most major modes color definitions as expected.
-
-#+NAME: org_gcr_2017-05-12_mara_BBE40664-C7A9-4586-A5FF-05E570E87B7A
-#+BEGIN_SRC emacs-lisp
-(use-package rainbow-mode
-  :ensure t
-  :config
-  :diminish rainbow-mode)
-#+END_SRC
-
 ** Debugging
 :PROPERTIES:
 :ID:       org_gcr_2017-05-12_mara:C54D8CF3-E2C4-4A7A-A92C-5252826EFD01
