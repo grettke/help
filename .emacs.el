@@ -499,9 +499,7 @@ Attribuation: URL https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#unf
   (interactive)
   (help/on-gui
    (setq help/font-size-current (+ help/font-size-current 1))
-   (help/update-font))
-  (help/not-on-gui
-   (message "Please resize the terminal emulator font.")))
+   (help/update-font)))
 (defun help/text-scale-decrease ()
   "Reduce font size."
   (interactive)
@@ -1475,7 +1473,6 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (setq ac-quick-help-prefer-pos-tip nil)
   (ac-config-default)
   (setq ac-auto-start nil)
-  (help/not-on-gui (ac-set-trigger-key "TAB"))
   (help/on-gui (ac-set-trigger-key "<tab>"))
   :diminish auto-complete-mode)
 (use-package auto-complete-chunk
@@ -2058,7 +2055,6 @@ _T_odo | _A_rchives | Rest_o_res
   (aggressive-indent-mode)
   (unless (equal major-mode 'fundamental-mode)
     (hs-minor-mode))
-  (help/not-on-gui (local-set-key (kbd "RET") #'newline-and-indent))
   (help/on-gui (local-set-key (kbd "<return>") #'newline-and-indent))
   (turn-off-auto-capitalize-mode))
 
@@ -2497,9 +2493,6 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; org_gcr_2017-05-12_mara_7CFE23CC-8EBC-46F3-889F-BF36EC45D6CA ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_711B4205-DC28-4A35-B620-23AFD46E3973][org_gcr_2017-05-12_mara_711B4205-DC28-4A35-B620-23AFD46E3973]]
-(help/not-on-gui
- (define-key org-mode-map (kbd "RET") #'org-return-indent)
- (define-key org-mode-map (kbd "C-M-RET") #'newline))
 (help/on-gui
  (define-key org-mode-map (kbd "<return>") #'org-return-indent)
  (define-key org-mode-map (kbd "C-M-<return>") #'newline))
@@ -2989,7 +2982,6 @@ Geiser REPL is: %(help/geiser-on-p)
   (use-package yasnippet-snippets
     :ensure t)
   (yas-global-mode t)
-  (help/not-on-gui (define-key yas-minor-mode-map (kbd "TAB") nil))
   (help/on-gui (define-key yas-minor-mode-map (kbd "<tab>") nil))
   (define-key yas-minor-mode-map (kbd "C-'") #'yas-expand)
   (help/not-on-gui (define-key yas-keymap (kbd "TAB") #'yas-next-field))
@@ -4115,7 +4107,6 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 ;; org_gcr_2017-05-12_mara_ED3BE98E-B863-447A-AB97-F4E878F2C483 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9302B01F-93C0-4D21-8BB6-53ECF1478153][org_gcr_2017-05-12_mara_9302B01F-93C0-4D21-8BB6-53ECF1478153]]
-(help/not-on-gui (global-set-key (kbd "s-RET") #'help/smart-open-line))
 (help/on-gui (global-set-key (kbd "s-<return>") #'help/smart-open-line))
 ;; org_gcr_2017-05-12_mara_9302B01F-93C0-4D21-8BB6-53ECF1478153 ends here
 
