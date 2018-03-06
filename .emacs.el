@@ -2024,8 +2024,7 @@ _T_odo | _A_rchives | Rest_o_res
                         gnu-apl-mode-hook
                         geiser-mode-hook
                         geiser-repl-mode-hook
-                        go-mode-hook
-                        fsharp-mode-hook))
+                        go-mode-hook))
 ;; org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86][org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86]]
@@ -3165,18 +3164,6 @@ YAML: (q to quit)
       (add-hook 'flycheck-mode-hook 'flycheck-yamllint-setup))
     (setq flycheck-yaml-yamllint-executable "/Users/gcr/yamllint/env/bin/yamllint")))
 ;; org_gcr_2018-01-16_mara_B1860F4D-930E-4DDE-8392-BDC52107B11F ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-08-10_mara_AD0FE176-6CF0-4078-A6A8-ECB8C26BD93B][org_gcr_2017-08-10_mara_AD0FE176-6CF0-4078-A6A8-ECB8C26BD93B]]
-(use-package fsharp-mode
-  :ensure t
-  :config
-  (use-package ob-fsharp
-    :ensure t
-    :config
-    (autoload 'fsharp-mode "fsharp-mode"     "Major mode for editing F# code." t)
-    (add-to-list 'auto-mode-alist '("\\.fs[iylx]?$" . fsharp-mode))
-    (add-to-list 'org-babel-load-languages '(fsharp . t))))
-;; org_gcr_2017-08-10_mara_AD0FE176-6CF0-4078-A6A8-ECB8C26BD93B ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D035C4E4-B983-4D74-9E3C-764EF00B3795][org_gcr_2017-05-12_mara_D035C4E4-B983-4D74-9E3C-764EF00B3795]]
 (use-package tex

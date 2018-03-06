@@ -3283,8 +3283,7 @@ Can use in source blocks.
                         gnu-apl-mode-hook
                         geiser-mode-hook
                         geiser-repl-mode-hook
-                        go-mode-hook
-                        fsharp-mode-hook))
+                        go-mode-hook))
     #+END_SRC
   - LISP mode hooks.
     - Are hacking modes.
@@ -5135,22 +5134,6 @@ YAML: (q to quit)
     (with-eval-after-load "flycheck"
       (add-hook 'flycheck-mode-hook 'flycheck-yamllint-setup))
     (setq flycheck-yaml-yamllint-executable "/Users/gcr/yamllint/env/bin/yamllint")))
-#+END_SRC
-*** F#
-:PROPERTIES:
-:ID:       org_gcr_2017-08-10_mara:A449A518-7BDF-4D95-971A-EEA942A1C8EA
-:END:
-#+NAME: org_gcr_2017-08-10_mara_AD0FE176-6CF0-4078-A6A8-ECB8C26BD93B
-#+BEGIN_SRC emacs-lisp
-(use-package fsharp-mode
-  :ensure t
-  :config
-  (use-package ob-fsharp
-    :ensure t
-    :config
-    (autoload 'fsharp-mode "fsharp-mode"     "Major mode for editing F# code." t)
-    (add-to-list 'auto-mode-alist '("\\.fs[iylx]?$" . fsharp-mode))
-    (add-to-list 'org-babel-load-languages '(fsharp . t))))
 #+END_SRC
 ** Publishing
    :PROPERTIES:
