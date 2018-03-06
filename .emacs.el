@@ -115,7 +115,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-           hidden-mode-line-mode)
+             hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -3655,24 +3655,6 @@ Ansible: (q to quit)
 (scroll-bar-mode nil)
 (horizontal-scroll-bar-mode nil)
 ;; org_gcr_2017-05-12_mara_D967070F-06B7-4433-94A8-36E360600C9E ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A6D3E9FB-C601-401C-AFA7-B5410A36FDAF][org_gcr_2017-05-12_mara_A6D3E9FB-C601-401C-AFA7-B5410A36FDAF]]
-(use-package seethru
-  :ensure t
-  :config
-  (defhydra hydra-transparency (:color blue :hint nil)
-    "
-this frame's opacity: %(frame-parameter nil 'alpha)
-        _i_ reset!
- _j_ less _k_ 50/50   _l_ more
- _m_ quit
-"
-    ("j" (lambda () (interactive) (seethru-relative -1)) :exit nil)
-    ("i" (lambda () (interactive) (seethru 100)) :exit nil)
-    ("k" (lambda () (interactive) (seethru 50)) :exit nil)
-    ("l" (lambda () (interactive) (seethru-relative 1)) :exit nil)
-    ("m" nil)))
-;; org_gcr_2017-05-12_mara_A6D3E9FB-C601-401C-AFA7-B5410A36FDAF ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_DD263B9E-EFF2-49BF-B367-4F4505F8E618][org_gcr_2017-05-12_mara_DD263B9E-EFF2-49BF-B367-4F4505F8E618]]
 (setq make-pointer-invisible t)

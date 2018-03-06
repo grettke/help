@@ -6129,29 +6129,6 @@ Enable both the vertical and horizontal scroll bar.
 (scroll-bar-mode nil)
 (horizontal-scroll-bar-mode nil)
 #+END_SRC
-**** Transparency
-:PROPERTIES:
-:ID:       org_gcr_2017-06-23_mara:143A134C-02D9-412F-9D9C-FC6E7B43D505
-:END:
-#+NAME: org_gcr_2017-05-12_mara_A6D3E9FB-C601-401C-AFA7-B5410A36FDAF
-#+BEGIN_SRC emacs-lisp
-(use-package seethru
-  :ensure t
-  :config
-  (defhydra hydra-transparency (:color blue :hint nil)
-    "
-this frame's opacity: %(frame-parameter nil 'alpha)
-        _i_ reset!
- _j_ less _k_ 50/50   _l_ more
- _m_ quit
-"
-    ("j" (lambda () (interactive) (seethru-relative -1)) :exit nil)
-    ("i" (lambda () (interactive) (seethru 100)) :exit nil)
-    ("k" (lambda () (interactive) (seethru 50)) :exit nil)
-    ("l" (lambda () (interactive) (seethru-relative 1)) :exit nil)
-    ("m" nil)))
-
-#+END_SRC
 ** Pointer
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:17DB4E08-F6C4-44AF-935B-27E8984F13DB
