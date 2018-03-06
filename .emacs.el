@@ -1330,74 +1330,6 @@ URL: `https://stackoverflow.com/questions/1587972/how-to-display-indentation-gui
   (global-hardhat-mode 1))
 ;; org_gcr_2017-05-12_mara_F0004AA3-B2A6-4265-A9D5-13590DCBEE9A ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_83FA67CA-A147-48BF-B404-B945C4140F50][org_gcr_2017-05-12_mara_83FA67CA-A147-48BF-B404-B945C4140F50]]
-(defun help/dired-copy-filename ()
-  "Push the path and filename of the file under the point to the kill ring.
-Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2002-10/msg00556.html'"
-  (interactive)
-  (message "Added %s to kill ring" (kill-new (dired-get-filename))))
-(defun help/dired-copy-path ()
-  "Push the path of the directory under the point to the kill ring."
-  (interactive)
-  (message "Added %s to kill ring" (kill-new default-directory)))
-(setq dired-listing-switches "-alh")
-(setq dired-recursive-deletes 'top)
-(use-package dired-details+
-  :ensure t)
-(setq-default dired-details-hidden-string "")
-(defun help/dired-mode-hook-fn ()
-  "HELP dired customizations."
-  (local-set-key "c" #'help/dired-copy-filename)
-  (local-set-key "]" #'help/dired-copy-path)
-  (diff-hl-dired-mode)
-  (load "dired-x")
-  (turn-on-stripe-buffer-mode)
-  (dired-collapse-mode))
-(add-hook 'dired-mode-hook #'help/dired-mode-hook-fn)
-;; org_gcr_2017-05-12_mara_83FA67CA-A147-48BF-B404-B945C4140F50 ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E20AFEA9-62DF-4CB0-9B41-1D3B1AFC7844][org_gcr_2017-05-12_mara_E20AFEA9-62DF-4CB0-9B41-1D3B1AFC7844]]
-(setq dired-dwim-target t)
-;; org_gcr_2017-05-12_mara_E20AFEA9-62DF-4CB0-9B41-1D3B1AFC7844 ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_53A385C0-4E0E-4248-B803-317573EF9133][org_gcr_2017-05-12_mara_53A385C0-4E0E-4248-B803-317573EF9133]]
-(help/on-osx
- (setq ls-lisp-use-insert-directory-program nil)
- (use-package ls-lisp))
-;; org_gcr_2017-05-12_mara_53A385C0-4E0E-4248-B803-317573EF9133 ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_3587BC99-ABF9-44E0-B5FD-E6D556D7A8E8][org_gcr_2017-05-12_mara_3587BC99-ABF9-44E0-B5FD-E6D556D7A8E8]]
-(use-package find-dired
-  :ensure t
-  :config
-  (setq find-ls-option '("-print0 | xargs -0 ls -ld" . "-ld")))
-;; org_gcr_2017-05-12_mara_3587BC99-ABF9-44E0-B5FD-E6D556D7A8E8 ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_EA007F9D-F9EB-433E-A51E-10C2630A7A9F][org_gcr_2017-05-12_mara_EA007F9D-F9EB-433E-A51E-10C2630A7A9F]]
-(use-package wdired
-  :ensure t
-  :config
-  (setq wdired-allow-to-change-permissions t)
-  (setq wdired-allow-to-redirect-links t)
-  (setq wdired-use-interactive-rename t)
-  (setq wdired-confirm-overwrite t)
-  (setq wdired-use-dired-vertical-movement 'sometimes))
-;; org_gcr_2017-05-12_mara_EA007F9D-F9EB-433E-A51E-10C2630A7A9F ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_DF4DCB63-ABD8-46AA-A7ED-CDF0A0CB6389][org_gcr_2017-05-12_mara_DF4DCB63-ABD8-46AA-A7ED-CDF0A0CB6389]]
-(use-package dired-imenu
-  :ensure t)
-;; org_gcr_2017-05-12_mara_DF4DCB63-ABD8-46AA-A7ED-CDF0A0CB6389 ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_3E39734D-7615-402E-ABF9-378A134D8A01][org_gcr_2017-05-12_mara_3E39734D-7615-402E-ABF9-378A134D8A01]]
-(setq ido-show-dot-for-dired t)
-;; org_gcr_2017-05-12_mara_3E39734D-7615-402E-ABF9-378A134D8A01 ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-07-16_mara_5E57252F-D68C-4A34-9404-80D6C4887012][org_gcr_2017-07-16_mara_5E57252F-D68C-4A34-9404-80D6C4887012]]
-(use-package dired-collapse
-  :ensure t)
-;; org_gcr_2017-07-16_mara_5E57252F-D68C-4A34-9404-80D6C4887012 ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B746C905-E59E-4F33-88F9-5F6CD32C0DE2][org_gcr_2017-05-12_mara_B746C905-E59E-4F33-88F9-5F6CD32C0DE2]]
 (use-package imenu
   :config
@@ -4480,7 +4412,6 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (global-set-key (kbd "C-o") nil)
 (global-set-key (kbd "C-o") #'ido-find-file)
 (global-set-key (kbd "C-M-.") nil)
-(global-set-key (kbd "C-M-.") #'dired)
 ;; org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-07-28_mara_2A9CEE58-31E9-4DC8-B2EB-D3232D9DD9F7][org_gcr_2017-07-28_mara_2A9CEE58-31E9-4DC8-B2EB-D3232D9DD9F7]]
