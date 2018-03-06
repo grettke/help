@@ -1989,7 +1989,6 @@ _T_odo | _A_rchives | Rest_o_res
   (auto-fill-mode)
   (diminish 'auto-fill-function)
   (visual-line-mode)
-  (nlinum-mode)
   (fci-mode)
   (rainbow-mode)
   (help/try-to-add-imenu)
@@ -2778,7 +2777,6 @@ GNU APL is: %(help/gnu-apl-runningp)
     (call-interactively 'next-logical-line))
   (define-key gnu-apl-mode-map (kbd "C-<return>") #'help/gnu-apl-eval-line)
   (defun help/gnu-apl-interactive-mode-hook-fn ()
-    (nlinum-mode)
     (rainbow-mode))
   (add-hook 'gnu-apl-interactive-mode-hook
             #'help/gnu-apl-interactive-mode-hook-fn)
@@ -3461,13 +3459,6 @@ Ansible: (q to quit)
 (use-package xpm
   :ensure t)
 ;; org_gcr_2017-06-25_mara_B33E6DF0-8A18-4DBA-A39D-B16649F6E793 ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7F3AF752-B4D1-4B55-85EC-C5E9B8DC13B9][org_gcr_2017-05-12_mara_7F3AF752-B4D1-4B55-85EC-C5E9B8DC13B9]]
-(use-package nlinum
-  :ensure t
-  :config
-  (setq nlinum-format "%05d"))
-;; org_gcr_2017-05-12_mara_7F3AF752-B4D1-4B55-85EC-C5E9B8DC13B9 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B1FCEF49-334F-4F64-B96F-A888ABE84BB0][org_gcr_2017-05-12_mara_B1FCEF49-334F-4F64-B96F-A888ABE84BB0]]
 (setq inhibit-eol-conversion t)
