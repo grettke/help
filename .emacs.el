@@ -1489,25 +1489,6 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   :ensure t)
 ;; org_gcr_2017-05-12_mara_0F225CED-24F2-4801-A3AF-7E45BF787E71 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-17_mara_7D684DF7-2FF5-4386-B845-8F30E9D6E887][org_gcr_2017-05-17_mara_7D684DF7-2FF5-4386-B845-8F30E9D6E887]]
-(use-package dumb-jump
-  :ensure t
-  :config
-  (defhydra help/hydra-left-side/dumb-jump (:color blue :hint nil)
-    "
-Dumb-Jump:
- _j_ go to _k_ return from _i_ choose
-  _u_ in other window _o_ peek
-  _q_ quit"
-    ("j" dumb-jump-go)
-    ("k" dumb-jump-back)
-    ("i" dumb-jump-go-prompt)
-    ("u" dumb-jump-go-other-window)
-    ("o" dumb-jump-quick-look)
-    ("q" nil))
-  (key-chord-define-global "jj" #'help/hydra-left-side/dumb-jump/body))
-;; org_gcr_2017-05-17_mara_7D684DF7-2FF5-4386-B845-8F30E9D6E887 ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_DA93DCF6-E0AB-4B92-9708-4DE4781AA2ED][org_gcr_2017-05-12_mara_DA93DCF6-E0AB-4B92-9708-4DE4781AA2ED]]
 (use-package browse-kill-ring
   :ensure t

@@ -2331,28 +2331,6 @@ Auto-completion for =.=-separated words.
   :ensure t)
 #+END_SRC
 
-/IntelliJ-Like/ ~jump to definition~.
-
-#+NAME: org_gcr_2017-05-17_mara_7D684DF7-2FF5-4386-B845-8F30E9D6E887
-#+BEGIN_SRC emacs-lisp
-(use-package dumb-jump
-  :ensure t
-  :config
-  (defhydra help/hydra-left-side/dumb-jump (:color blue :hint nil)
-    "
-Dumb-Jump:
- _j_ go to _k_ return from _i_ choose
-  _u_ in other window _o_ peek
-  _q_ quit"
-    ("j" dumb-jump-go)
-    ("k" dumb-jump-back)
-    ("i" dumb-jump-go-prompt)
-    ("u" dumb-jump-go-other-window)
-    ("o" dumb-jump-quick-look)
-    ("q" nil))
-  (key-chord-define-global "jj" #'help/hydra-left-side/dumb-jump/body))
-#+END_SRC
-
 ** Mark, Kill  and Region
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:432D3FDF-38B3-499D-94D3-338CFEF2957C
