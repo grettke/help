@@ -1495,13 +1495,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (setq browse-kill-ring-separator
         ".-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-
 ")
-  (defun help/browse-kill-ring ()
-    "Disable `fci-mode' before entering `browse-kill-ring'."
-    (interactive)
-    (fci-mode)
-    (browse-kill-ring)
-    (fci-mode))
-  (global-set-key (kbd "M-y") #'help/browse-kill-ring))
+  (global-set-key (kbd "M-y") #'browse-kill-ring))
 ;; org_gcr_2017-05-12_mara_DA93DCF6-E0AB-4B92-9708-4DE4781AA2ED ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B696F088-B5EB-4507-8EBE-C719995EB5DA][org_gcr_2017-05-12_mara_B696F088-B5EB-4507-8EBE-C719995EB5DA]]
@@ -1984,7 +1978,6 @@ _T_odo | _A_rchives | Rest_o_res
   (auto-fill-mode)
   (diminish 'auto-fill-function)
   (visual-line-mode)
-  (fci-mode)
   (help/try-to-add-imenu)
   (turn-on-page-break-lines-mode)
   (turn-on-auto-capitalize-mode))
@@ -2838,7 +2831,6 @@ Geiser REPL is: %(help/geiser-on-p)
     ("n" (lambda () (interactive) (other-window -1)))
     ("q" nil))
   (defun help/geiser-mode-hook-fn ()
-    (turn-off-fci-mode)
     (local-unset-key (kbd "C-."))
     (key-chord-define geiser-mode-map "hh" #'help/hydra-geiser-mode/body)
     (local-unset-key (kbd "C-j"))
@@ -3044,8 +3036,7 @@ Geiser REPL is: %(help/geiser-on-p)
   (setq web-mode-enable-block-face t)
   (setq web-mode-enable-part-face t)
   (setq web-mode-enable-comment-keywords t)
-  (setq web-mode-enable-heredoc-fontification t)
-  (turn-off-fci-mode))
+  (setq web-mode-enable-heredoc-fontification t))
 
 (add-hook 'web-mode-hook #'help/web-mode-hook-fn)
 ;; org_gcr_2017-05-12_mara_6219D858-98BB-48CF-96F0-ABEB6756A658 ends here
@@ -3267,28 +3258,7 @@ YAML: (q to quit)
 (use-package htmlize
   :config
   (setq org-html-htmlize-output-type htmlize-output-type)
-  (setq htmlize-output-type 'inline-css)
-  (defvar help/htmlize-initial-fci-state nil
-    "Variable to store the state of `fci-mode' upon calling `htmlize-buffer'.
-
-Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
-  (defvar help/htmlize-initial-flyspell-state nil
-    "Variable to store the state of `flyspell-mode' upon calling `htmlize-buffer'.
-
-Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
-
-  (defun help/htmlize-before-hook-fn ()
-    (when (fboundp 'fci-mode)
-      (setq help/htmlize-initial-fci-state fci-mode)
-      (when fci-mode
-        (fci-mode -1))))
-  (add-hook 'htmlize-before-hook #'help/htmlize-before-hook-fn)
-
-  (defun help/htmlize-after-hook-fn ()
-    (when (fboundp 'fci-mode)
-      (when help/htmlize-initial-fci-state
-        (fci-mode t))))
-  (add-hook 'htmlize-after-hook #'help/htmlize-after-hook-fn))
+  (setq htmlize-output-type 'inline-css))
 ;; org_gcr_2017-05-12_mara_62E6542A-B340-470A-B7E0-2F4438EBBAE9 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_03AEAE7A-99ED-42BE-BE6E-0485884B55BB][org_gcr_2017-05-12_mara_03AEAE7A-99ED-42BE-BE6E-0485884B55BB]]

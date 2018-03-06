@@ -1373,7 +1373,6 @@ Attribution: URL `http://ergoemacs.org/emacs/elisp_command_working_on_string_or_
     - It *isn't* the fill column though
     - I want it to indicate 80 chars, typically the maximum number of columns
       for a line, to know how to size the window itself
-    - Fci-Mode supports this
   - Store this as the fill column because all supporting functions will do the
     right thing here
 #+NAME: org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F
@@ -2345,13 +2344,7 @@ Easy kill ring access.
   (setq browse-kill-ring-separator
         ".-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-
 ")
-  (defun help/browse-kill-ring ()
-    "Disable `fci-mode' before entering `browse-kill-ring'."
-    (interactive)
-    (fci-mode)
-    (browse-kill-ring)
-    (fci-mode))
-  (global-set-key (kbd "M-y") #'help/browse-kill-ring))
+  (global-set-key (kbd "M-y") #'browse-kill-ring))
 #+END_SRC
 
 When you start typing and text is selected, replace it with what you are typing,
@@ -3230,7 +3223,6 @@ Every text editing buffer needs this.
   (auto-fill-mode)
   (diminish 'auto-fill-function)
   (visual-line-mode)
-  (fci-mode)
   (help/try-to-add-imenu)
   (turn-on-page-break-lines-mode)
   (turn-on-auto-capitalize-mode))
@@ -4738,7 +4730,6 @@ Geiser REPL is: %(help/geiser-on-p)
     ("n" (lambda () (interactive) (other-window -1)))
     ("q" nil))
   (defun help/geiser-mode-hook-fn ()
-    (turn-off-fci-mode)
     (local-unset-key (kbd "C-."))
     (key-chord-define geiser-mode-map "hh" #'help/hydra-geiser-mode/body)
     (local-unset-key (kbd "C-j"))
@@ -4990,8 +4981,7 @@ Fails with ~(eval-after-load 'abbrev (diminish 'abbrev-mode))~.
   (setq web-mode-enable-block-face t)
   (setq web-mode-enable-part-face t)
   (setq web-mode-enable-comment-keywords t)
-  (setq web-mode-enable-heredoc-fontification t)
-  (turn-off-fci-mode))
+  (setq web-mode-enable-heredoc-fontification t))
 
 (add-hook 'web-mode-hook #'help/web-mode-hook-fn)
 #+END_SRC
@@ -5424,28 +5414,7 @@ Load Htmlize for HTML export.
 (use-package htmlize
   :config
   (setq org-html-htmlize-output-type htmlize-output-type)
-  (setq htmlize-output-type 'inline-css)
-  (defvar help/htmlize-initial-fci-state nil
-    "Variable to store the state of `fci-mode' upon calling `htmlize-buffer'.
-
-Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
-  (defvar help/htmlize-initial-flyspell-state nil
-    "Variable to store the state of `flyspell-mode' upon calling `htmlize-buffer'.
-
-Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
-
-  (defun help/htmlize-before-hook-fn ()
-    (when (fboundp 'fci-mode)
-      (setq help/htmlize-initial-fci-state fci-mode)
-      (when fci-mode
-        (fci-mode -1))))
-  (add-hook 'htmlize-before-hook #'help/htmlize-before-hook-fn)
-
-  (defun help/htmlize-after-hook-fn ()
-    (when (fboundp 'fci-mode)
-      (when help/htmlize-initial-fci-state
-        (fci-mode t))))
-  (add-hook 'htmlize-after-hook #'help/htmlize-after-hook-fn))
+  (setq htmlize-output-type 'inline-css))
 #+END_SRC
 
 Use in-line CSS.
