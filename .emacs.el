@@ -1990,7 +1990,6 @@ _T_odo | _A_rchives | Rest_o_res
   (diminish 'auto-fill-function)
   (visual-line-mode)
   (fci-mode)
-  (rainbow-mode)
   (help/try-to-add-imenu)
   (turn-on-page-break-lines-mode)
   (turn-on-auto-capitalize-mode))
@@ -2776,8 +2775,6 @@ GNU APL is: %(help/gnu-apl-runningp)
     (deactivate-mark)
     (call-interactively 'next-logical-line))
   (define-key gnu-apl-mode-map (kbd "C-<return>") #'help/gnu-apl-eval-line)
-  (defun help/gnu-apl-interactive-mode-hook-fn ()
-    (rainbow-mode))
   (add-hook 'gnu-apl-interactive-mode-hook
             #'help/gnu-apl-interactive-mode-hook-fn)
   (add-to-list 'org-babel-load-languages '(gnu-apl . t)))
@@ -2878,8 +2875,7 @@ Geiser REPL is: %(help/geiser-on-p)
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_3C48D997-170E-40F4-9BB6-F6BAA9DE77F2][org_gcr_2017-05-12_mara_3C48D997-170E-40F4-9BB6-F6BAA9DE77F2]]
 (defun help/c-mode-common-hook-fn ()
   "HELP c-mode-common customizations."
-  (interactive)
-  (rainbow-mode))
+  (interactive))
 (add-hook 'c-mode-common-hook #'help/c-mode-common-hook-fn)
 ;; org_gcr_2017-05-12_mara_3C48D997-170E-40F4-9BB6-F6BAA9DE77F2 ends here
 
