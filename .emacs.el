@@ -3462,11 +3462,6 @@ Ansible: (q to quit)
   :ensure t)
 ;; org_gcr_2017-06-25_mara_B33E6DF0-8A18-4DBA-A39D-B16649F6E793 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_70B524CE-27DC-41D1-BB27-99FFE334B40B][org_gcr_2017-05-12_mara_70B524CE-27DC-41D1-BB27-99FFE334B40B]]
-(use-package scad-mode
-  :ensure t)
-;; org_gcr_2017-05-12_mara_70B524CE-27DC-41D1-BB27-99FFE334B40B ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7939B6EA-A76B-4A2A-B1B3-4EB1FEE2D9C2][org_gcr_2017-05-12_mara_7939B6EA-A76B-4A2A-B1B3-4EB1FEE2D9C2]]
 (use-package selectric-mode
   :ensure t)

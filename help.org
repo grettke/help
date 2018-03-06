@@ -5755,16 +5755,6 @@ Emacs' provide editing support.
 :PROPERTIES:
 :ID:       org_gcr_2017-05-12_mara:50E7A50A-4259-4B6C-8612-99671C6723CC
 :END:
-*** OpenSCAD
-:PROPERTIES:
-:ID:       org_gcr_2017-05-12_mara:423A1845-3D84-45FB-8373-509033537F86
-:END:
-
-#+NAME: org_gcr_2017-05-12_mara_70B524CE-27DC-41D1-BB27-99FFE334B40B
-#+BEGIN_SRC emacs-lisp
-(use-package scad-mode
-  :ensure t)
-#+END_SRC
 ** Special
 :PROPERTIES:
 :ID:       org_gcr_2017-06-25_mara:BEC7C2AA-4602-4F1C-8AE5-2DAD6439C90F
