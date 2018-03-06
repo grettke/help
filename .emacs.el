@@ -3710,7 +3710,7 @@ Ansible: (q to quit)
 (use-package ace-window
   :ensure t
   :config
-  (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+  (setq aw-keys '(?j ?k ?l ?i ?o ?p))
   (setq aw-scope 'frame)
   (setq aw-background nil))
 ;; org_gcr_2017-05-12_mara_A165E3DB-37E7-49A7-84E4-1CB0D2A137C6 ends here

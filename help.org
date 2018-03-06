@@ -6219,7 +6219,7 @@ Select windows.
 (use-package ace-window
   :ensure t
   :config
-  (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+  (setq aw-keys '(?j ?k ?l ?i ?o ?p))
   (setq aw-scope 'frame)
   (setq aw-background nil))
 #+END_SRC
