@@ -117,7 +117,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
   "Add a NAME property then assign it a UUID."
   (interactive)
   (org-babel-demarcate-block)
-  (insert "#+NAME: " (help/org-id-new))
+  (insert "#+name: " (help/org-id-new))
   (beginning-of-line)
   (insert "\n"))
 ;; org_gcr_2017-05-12_mara_21BEDC86-D1A3-43FC-85AC-8FF54D161E2F ends here
