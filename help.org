@@ -3462,9 +3462,23 @@ elisp-mode:
 
 (add-hook 'ielm-mode-hook #'help/ielm-mode-hook-fn)
 
+(defun help/general-lisp-prettify ()
+  (mapc (lambda (pair) (push pair prettify-symbols-alist))
+        '(("nil" . ?∅)
+          ("*" . ?×)
+          ("/" . ?÷)
+          ("<=" . ?≤)
+          (">=" . ?≥)
+          ("lambda" . ?λ)
+          ("not" . ?¬)
+          ("and" . ?∧)
+          ("or" . ?∨)
+          ("sqrt" . ?√))))
+
 (defun help/general-lisp-mode-hook-fn ()
   (highlight-quoted-mode)
   (highlight-stages-mode)
+  (help/general-lisp-prettify)
   (local-set-key (kbd "#") #'endless/sharp))
 
 (let ()
