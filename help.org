@@ -746,28 +746,6 @@ This is useful for fringe cases where trailing whitespace is important."
       (delete-trailing-whitespace first-part-start first-part-end)
       (delete-trailing-whitespace second-part-start second-part-end))))
 
-(defun help/insert-timestamp ()
-  "Produces and inserts a full ISO 8601 format timestamp."
-  (interactive)
-  (insert (format-time-string "%Y-%m-%dT%T%z")))
-
-(defun help/insert-timestamp* ()
-  "Produces and inserts a near-full ISO 8601 format timestamp."
-  (interactive)
-  (insert (format-time-string "%Y-%m-%dT%T")))
-
-(defun help/insert-timestamp*-no-colons ()
-  "Produces and inserts a near-full ISO 8601-like format timestamp."
-  (interactive)
-  (let* ((str (format-time-string "%Y-%m-%dT%T"))
-         (fnl (s-replace ":" "-" str)))
-    (insert fnl)))
-
-(defun help/insert-datestamp ()
-  "Produces and inserts a partial ISO 8601 format timestamp."
-  (interactive)
-  (insert (format-time-string "%F")))
-
 (defun help/indent-curly-block (&rest _ignored)
   "Open a new brace or bracket expression, with relevant newlines and indent. URL: `https://github.com/Fuco1/smartparens/issues/80'"
   (interactive)
@@ -1923,13 +1901,13 @@ advice.
   (help/save-all-file-buffers)
   (let ((start (current-time)))
     (message (concat "org-babel-tangle BEFORE: <"
-                     (format-time-string "%Y-%m-%dT%T%z")
+                     (help/get-timestamp)
                      ">"))
     (org-babel-tangle)
     (let* ((dur (float-time (time-since start)))
            (msg (format "Tangling complete after: %.06f seconds" dur)))
       (message (concat "org-babel-tangle AFTER: <"
-                       (format-time-string "%Y-%m-%dT%T%z")
+                       (help/get-timestamp)
                        ">"))
       (message msg)
       (help/on-gui (alert msg :title "org-mode")))))
@@ -7093,7 +7071,7 @@ Flycheck On? %(bound-and-true-p flycheck-mode)
 (global-set-key (kbd "M-r") #'ert)
 (global-set-key (kbd "C-M-y") #'insert-char)
 (global-set-key (kbd "C-t") #'help/insert-datestamp)
-(global-set-key (kbd "M-t") #'help/insert-timestamp*-no-colons)
+(global-set-key (kbd "M-t") #'help/insert-timestamp-no-colons)
 (global-set-key (kbd "C-M-o") #'help/occur-dwim)
 (global-set-key (kbd "M-i") nil)
 (global-set-key (kbd "M-i") #'help/hydra/left/describe/body)

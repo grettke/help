@@ -131,7 +131,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
 ;; org_gcr_2017-05-12_mara_6F578996-A506-4193-8566-C3FAC6102228 ends here
 
 ;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_8F2F5DAE-40B9-490D-8523-BABCAA913A71][org_gcr_2017-05-12_mara_8F2F5DAE-40B9-490D-8523-BABCAA913A71]]
-(setq org-id-prefix (concat "org_" (user-real-login-name) "_" (format-time-string "%Y-%m-%d") "_" (system-name)))
+(setq org-id-prefix (concat "org_" (user-real-login-name) "_" (help/get-timestamp-no-colons) "_" (system-name)))
 (setq org-id-method 'uuid)
 ;; org_gcr_2017-05-12_mara_8F2F5DAE-40B9-490D-8523-BABCAA913A71 ends here
 

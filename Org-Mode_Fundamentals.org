@@ -231,7 +231,7 @@ Make sure that =ID= is always unique, portable, and easy to maintain by
 
 #+NAME: org_gcr_2017-05-12_mara_8F2F5DAE-40B9-490D-8523-BABCAA913A71
 #+BEGIN_SRC emacs-lisp
-(setq org-id-prefix (concat "org_" (user-real-login-name) "_" (format-time-string "%Y-%m-%d") "_" (system-name)))
+(setq org-id-prefix (concat "org_" (user-real-login-name) "_" (help/get-timestamp-no-colons) "_" (system-name)))
 (setq org-id-method 'uuid)
 #+END_SRC
 
