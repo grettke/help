@@ -6423,8 +6423,7 @@ Ediff split frame horizontally.
    :ID:       org_gcr_2017-05-12_mara:FBD41A4B-9764-49CB-8439-74581B2211A0
    :END:
 
-Easily return to previous configurations. 2-4 windows are easily managed by
-hand.
+Cycle between configurations.
 
 #+NAME: org_gcr_2017-05-12_mara_8E367FFF-FCF3-4AC8-9542-A20CE62081C4
 #+BEGIN_SRC emacs-lisp
