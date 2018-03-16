@@ -2544,6 +2544,23 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (setq org-return-follows-link t)
 ;; org_gcr_2017-05-12_mara_7CFE23CC-8EBC-46F3-889F-BF36EC45D6CA ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-03-15_mara_05415B89-71CA-4176-80EF-FB36F2D97F20][org_gcr_2018-03-15_mara_05415B89-71CA-4176-80EF-FB36F2D97F20]]
+(defun help/prettify-org-mode ()
+  (push '("#+BEGIN_SRC" . ?╭)
+        prettify-symbols-alist)
+  (push '("#+begin_src" . ?╭)
+        prettify-symbols-alist)
+  (push '("#+END_SRC" . ?╰)
+        prettify-symbols-alist)
+  (push '("#+end_src" . ?╰)
+        prettify-symbols-alist)
+  (push '("#+NAME\:" . ?·)
+        prettify-symbols-alist)
+  (push '("#+name\:" . ?·)
+        prettify-symbols-alist))
+(add-hook 'org-mode-hook #'help/prettify-org-mode)
+;; org_gcr_2018-03-15_mara_05415B89-71CA-4176-80EF-FB36F2D97F20 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_711B4205-DC28-4A35-B620-23AFD46E3973][org_gcr_2017-05-12_mara_711B4205-DC28-4A35-B620-23AFD46E3973]]
 (help/on-gui
  (define-key org-mode-map (kbd "<return>") #'org-return-indent)
