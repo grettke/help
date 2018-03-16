@@ -132,7 +132,6 @@ Visualize ASCII values as their most likely Unicode representation.
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path "~/src/pretty-mode")
 (require 'pretty-mode)
-(global-pretty-mode t)
 #+END_SRC
 * go-hydra
 :PROPERTIES:

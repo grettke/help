@@ -56,7 +56,6 @@
 ;; [[file:~/src/help/Contribute.org::org_gcr_2017-05-15_mara_5CF1DF19-27F5-4509-8E17-9CA0D1B29314][org_gcr_2017-05-15_mara_5CF1DF19-27F5-4509-8E17-9CA0D1B29314]]
 (add-to-list 'load-path "~/src/pretty-mode")
 (require 'pretty-mode)
-(global-pretty-mode t)
 ;; org_gcr_2017-05-15_mara_5CF1DF19-27F5-4509-8E17-9CA0D1B29314 ends here
 
 ;; [[file:~/src/help/Contribute.org::org_gcr_2017-08-01_mara_A0E420CB-EBB0-4D31-BC97-8FE54008F93D][org_gcr_2017-08-01_mara_A0E420CB-EBB0-4D31-BC97-8FE54008F93D]]
