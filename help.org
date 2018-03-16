@@ -766,7 +766,7 @@ This is useful for fringe cases where trailing whitespace is important."
 (defun help/insert-datestamp ()
   "Produces and inserts a partial ISO 8601 format timestamp."
   (interactive)
-  (insert (format-time-string "%Y-%m-%d")))
+  (insert (format-time-string "%F")))
 
 (defun help/indent-curly-block (&rest _ignored)
   "Open a new brace or bracket expression, with relevant newlines and indent. URL: `https://github.com/Fuco1/smartparens/issues/80'"
