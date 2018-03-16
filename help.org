@@ -6391,7 +6391,8 @@ Enable both the vertical and horizontal scroll bar.
 #+NAME: org_gcr_2017-05-12_mara_D967070F-06B7-4433-94A8-36E360600C9E
 #+BEGIN_SRC emacs-lisp
 (scroll-bar-mode nil)
-(horizontal-scroll-bar-mode nil)
+(help/on-gnu/linux
+ (horizontal-scroll-bar-mode nil))
 #+END_SRC
 ** Pointer
    :PROPERTIES:
