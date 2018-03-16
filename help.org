@@ -6103,6 +6103,14 @@ Recenter near top of screen.
   (let ((recenter-positions '(5)))
     (recenter-top-bottom)))
 #+END_SRC
+
+Visualize ASCII strings with Unicode.
+
+#+name: org_gcr_2018-03-14_mara_385BE196-A42C-4086-9BA4-948DB62C2E26
+#+begin_src emacs-lisp
+(global-prettify-symbols-mode)
+(setq prettify-symbols-unprettify-at-point 'right-edge)
+#+end_src
 ** Color Theme
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:3C38AF9D-1905-4B33-A4F5-065D17E9B647

@@ -3657,6 +3657,11 @@ Ansible: (q to quit)
     (recenter-top-bottom)))
 ;; org_gcr_2017-05-12_mara_AA76B6F1-AC3F-42D8-B321-2BD1B05DDE2C ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-03-14_mara_385BE196-A42C-4086-9BA4-948DB62C2E26][org_gcr_2018-03-14_mara_385BE196-A42C-4086-9BA4-948DB62C2E26]]
+(global-prettify-symbols-mode)
+(setq prettify-symbols-unprettify-at-point 'right-edge)
+;; org_gcr_2018-03-14_mara_385BE196-A42C-4086-9BA4-948DB62C2E26 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1AD36955-5FAC-4794-A9B0-A8DC6639A04C][org_gcr_2017-05-12_mara_1AD36955-5FAC-4794-A9B0-A8DC6639A04C]]
 (use-package solarized-theme
   :ensure t
