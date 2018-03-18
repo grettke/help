@@ -2009,7 +2009,8 @@ _T_odo | _A_rchives | Rest_o_res
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_02408658-D767-4D6E-8AAA-2BE1933BCBD1][org_gcr_2017-05-12_mara_02408658-D767-4D6E-8AAA-2BE1933BCBD1]]
 (use-package aggressive-indent
   :ensure t
-  :config)
+  :config
+  (global-aggressive-indent-mode))
 ;; org_gcr_2017-05-12_mara_02408658-D767-4D6E-8AAA-2BE1933BCBD1 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_3AB5C00B-E0FF-40A1-9C3B-420CB4E8D417][org_gcr_2017-05-12_mara_3AB5C00B-E0FF-40A1-9C3B-420CB4E8D417]]
@@ -2026,7 +2027,6 @@ _T_odo | _A_rchives | Rest_o_res
   (interactive)
   (help/text-mode-fn)
   (smartparens-strict-mode)
-  (aggressive-indent-mode)
   (unless (equal major-mode 'fundamental-mode)
     (hs-minor-mode))
   (help/on-gui (local-set-key (kbd "<return>") #'newline-and-indent))
@@ -3529,6 +3529,15 @@ sh-mode:
   ("q" nil))
 (key-chord-define sh-mode-map "hh" #'help/hydra-sh-mode/body)
 ;; org_gcr_2017-07-16_mara_B4B1E9B3-3146-46AA-80C8-20B28C352E55 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-03-17T20-26-45-05-00_mara_AF83DB64-A5AD-4853-BE74-6DA4E4A4E2C6][org_gcr_2018-03-17T20-26-45-05-00_mara_AF83DB64-A5AD-4853-BE74-6DA4E4A4E2C6]]
+(use-package make-mode
+  :config
+  (defun help/make-mode-hook ()
+    (set (make-local-variable 'tab-width) 4)))
+(add-hook 'makefile-mode-hook #'help/make-mode-hook)
+(add-to-list 'auto-mode-alist '("Makefile" . makefile-mode))
+;; org_gcr_2018-03-17T20-26-45-05-00_mara_AF83DB64-A5AD-4853-BE74-6DA4E4A4E2C6 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_96443D6C-1E5B-48C5-9853-544D0EE79B1E][org_gcr_2017-05-12_mara_96443D6C-1E5B-48C5-9853-544D0EE79B1E]]
 (use-package apache-mode

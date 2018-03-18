@@ -3279,13 +3279,19 @@ Can use in source blocks.
      :END:
 
 - Indent at every opportunity and automatically. Verify that it makes sense
-  for the mode. Explicitly define instead of relying on ~prog-mode~ inheritance;
-  use this documents logical ~prog*-mode~ approach instead.
+  for the mode then enable or disable it. Originally enabled for individual
+  modes. That worked fine until I wanted to disable it for a mode where the
+  mode hook ran before the ~prog-mode-hook~ ran. Well that didn't work because
+  the child disabled this mode and then the parent enabled it again. You
+  aren't supposed to rely on order of execution in them so I am switching to
+  global mode and updating the excluded list in the same granular manner. In
+  affect, nothing has changed.
   #+NAME: org_gcr_2017-05-12_mara_02408658-D767-4D6E-8AAA-2BE1933BCBD1
   #+BEGIN_SRC emacs-lisp
 (use-package aggressive-indent
   :ensure t
-  :config)
+  :config
+  (global-aggressive-indent-mode))
   #+END_SRC
 - Always maintain balanced brackets. Easily wrap the selected region. Auto-escape
   strings pasted into other strings. Smartparens provides built-in correct
@@ -3311,7 +3317,6 @@ Can use in source blocks.
   (interactive)
   (help/text-mode-fn)
   (smartparens-strict-mode)
-  (aggressive-indent-mode)
   (unless (equal major-mode 'fundamental-mode)
     (hs-minor-mode))
   (help/on-gui (local-set-key (kbd "<return>") #'newline-and-indent))
@@ -5850,6 +5855,15 @@ sh-mode:
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:4EC46A0A-2D59-4C21-8013-6A86CD46BC5F
    :END:
+#+name: org_gcr_2018-03-17T20-26-45-05-00_mara_AF83DB64-A5AD-4853-BE74-6DA4E4A4E2C6
+#+begin_src emacs-lisp
+(use-package make-mode
+  :config
+  (defun help/make-mode-hook ()
+    (set (make-local-variable 'tab-width) 4)))
+(add-hook 'makefile-mode-hook #'help/make-mode-hook)
+(add-to-list 'auto-mode-alist '("Makefile" . makefile-mode))
+#+end_src
 *** Vagrant
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:D8A25DB9-FFAD-4C06-95C8-948AB0AFC4DE
