@@ -2017,6 +2017,7 @@ _T_odo | _A_rchives | Rest_o_res
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_02408658-D767-4D6E-8AAA-2BE1933BCBD1][org_gcr_2017-05-12_mara_02408658-D767-4D6E-8AAA-2BE1933BCBD1]]
 (use-package aggressive-indent
   :ensure t
+  :diminish aggressive-indent-mode
   :config
   (global-aggressive-indent-mode))
 ;; org_gcr_2017-05-12_mara_02408658-D767-4D6E-8AAA-2BE1933BCBD1 ends here

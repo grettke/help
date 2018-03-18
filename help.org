@@ -3298,6 +3298,7 @@ Can use in source blocks.
   #+BEGIN_SRC emacs-lisp
 (use-package aggressive-indent
   :ensure t
+  :diminish aggressive-indent-mode
   :config
   (global-aggressive-indent-mode))
   #+END_SRC
