@@ -1900,33 +1900,30 @@ advice.
   (interactive)
   (help/save-all-file-buffers)
   (let ((start (current-time)))
-    (message (concat "org-babel-tangle BEFORE: <"
-                     (help/get-timestamp)
-                     ">"))
+    (message (concat "org-babel-tangle began at: "
+                     (help/get-timestamp)))
     (org-babel-tangle)
     (let* ((dur (float-time (time-since start)))
-           (msg (format "Tangling complete after: %.06f seconds" dur)))
-      (message (concat "org-babel-tangle AFTER: <"
-                       (help/get-timestamp)
-                       ">"))
+           (msg (format "Tangled for %s " (seconds-to-string dur))))
+      (message (concat "org-babel-tangle completed on: "
+                       (help/get-timestamp)))
       (message msg)
-      (help/on-gui (alert msg :title "org-mode")))))
+      (help/on-gui (alert msg :title "Org-Mode")))))
 
 (defun help/safb-org-babel-detangle ()
   (interactive)
   (help/save-all-file-buffers)
   (let ((start (current-time)))
-    (message (concat "org-babel-detangle BEFORE: <"
+    (message (concat "org-babel-detangle began at: "
                      (help/get-timestamp)
                      ">"))
     (org-babel-detangle)
     (let* ((dur (float-time (time-since start)))
-           (msg (format "DE-Tangling complete after: %.06f seconds" dur)))
-      (message (concat "org-babel-detangle AFTER: <"
-                       (help/get-timestamp)
-                       ">"))
+           (msg (format "DE-Tangled for %s" (seconds-to-string dur))))
+      (message (concat "org-babel-detangle on: "
+                       (help/get-timestamp)))
       (message msg)
-      (help/on-gui (alert msg :title "org-mode")))))
+      (help/on-gui (alert msg :title "Org-Mode")))))
 
 (defun help/safb-other-window ()
   (interactive)
