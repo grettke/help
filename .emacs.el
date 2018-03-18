@@ -115,7 +115,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-             hidden-mode-line-mode)
+           hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -1215,7 +1215,18 @@ URL: `https://stackoverflow.com/questions/1587972/how-to-display-indentation-gui
 (defun help/safb-org-babel-detangle ()
   (interactive)
   (help/save-all-file-buffers)
-  (org-babel-detangle))
+  (let ((start (current-time)))
+    (message (concat "org-babel-detangle BEFORE: <"
+                     (help/get-timestamp)
+                     ">"))
+    (org-babel-detangle)
+    (let* ((dur (float-time (time-since start)))
+           (msg (format "DE-Tangling complete after: %.06f seconds" dur)))
+      (message (concat "org-babel-detangle AFTER: <"
+                       (help/get-timestamp)
+                       ">"))
+      (message msg)
+      (help/on-gui (alert msg :title "org-mode")))))
 
 (defun help/safb-other-window ()
   (interactive)

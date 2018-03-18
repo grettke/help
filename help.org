@@ -1915,7 +1915,18 @@ advice.
 (defun help/safb-org-babel-detangle ()
   (interactive)
   (help/save-all-file-buffers)
-  (org-babel-detangle))
+  (let ((start (current-time)))
+    (message (concat "org-babel-detangle BEFORE: <"
+                     (help/get-timestamp)
+                     ">"))
+    (org-babel-detangle)
+    (let* ((dur (float-time (time-since start)))
+           (msg (format "DE-Tangling complete after: %.06f seconds" dur)))
+      (message (concat "org-babel-detangle AFTER: <"
+                       (help/get-timestamp)
+                       ">"))
+      (message msg)
+      (help/on-gui (alert msg :title "org-mode")))))
 
 (defun help/safb-other-window ()
   (interactive)
