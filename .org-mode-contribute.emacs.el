@@ -30,15 +30,6 @@
 (setq org2blog/wp-track-posts nil)
 ;; org_gcr_2017-05-12_mara_FF96F4B6-42B9-45D6-BEE6-6CDC9D6815AE ends here
 
-;; [[file:~/src/help/Contribute.org::org_gcr_2017-07-23_mara_A5E125C0-E95E-490E-B773-4E7323A94766][org_gcr_2017-07-23_mara_A5E125C0-E95E-490E-B773-4E7323A94766]]
-(defun help/wp-org-mode-hook-fn ()
-  (local-set-key (kbd "C-s-h")
-                 (lambda () (interactive) (insert "#+HTML: <!--more-->")))
-  (local-set-key (kbd "C-s-l")
-                 (lambda () (interactive) (insert "$\\LaTeX$"))))
-(add-hook 'org-mode-hook #'help/wp-org-mode-hook-fn)
-;; org_gcr_2017-07-23_mara_A5E125C0-E95E-490E-B773-4E7323A94766 ends here
-
 ;; [[file:~/src/help/Contribute.org::org_gcr_2017-08-04_mara_B782FF06-D0E7-4598-89E4-02A76E882E78][org_gcr_2017-08-04_mara_B782FF06-D0E7-4598-89E4-02A76E882E78]]
 (add-hook 'org2blog/wp-after-new-post-or-page-functions (lambda (p) (pp p)))
 ;; org_gcr_2017-08-04_mara_B782FF06-D0E7-4598-89E4-02A76E882E78 ends here
