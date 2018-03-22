@@ -2903,15 +2903,29 @@ configured to retain TAB. The use case is a Makefile.
 
 #+NAME: org_gcr_2017-05-12_mara_3FFCD7B4-0055-4BE8-938F-EEA09D077343
 #+BEGIN_SRC emacs-lisp
-(defun help/untabify-if-not-indent-tabs-mode ()
-  "Untabify if `indent-tabs-mode' is false.
+(defun help/untabify-buffer-if-not-indent-tabs-mode ()
+  "Untabify buffer if `indent-tabs-mode' is false.
 
 Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (interactive)
   (when (not indent-tabs-mode)
     (untabify (point-min) (point-max))))
 
-(add-hook 'before-save-hook #'help/untabify-if-not-indent-tabs-mode)
+(defun help/untabify-buffer-or-region-if-not-indent-tabs-mode ()
+  "Untabify a region if selected, otherwise the whole buffer.
+
+URL: `http://emacsredux.com/blog/2013/03/27/indent-region-or-buffer/'"
+  (interactive)
+  (save-excursion
+    (if (region-active-p)
+        (progn
+          (untabify (region-beginning) (region-end))
+          (message "Untabified selected region."))
+      (progn
+        (help/untabify-buffer-if-not-indent-tabs-mode)
+        (message "Untabified buffer.")))))
+
+(add-hook 'before-save-hook #'help/untabify-buffer-if-not-indent-tabs-mode)
 #+END_SRC
 
 Most programing modes indent to 2 spaces. TABs should be the same width.
@@ -7095,6 +7109,7 @@ Flycheck On? %(bound-and-true-p flycheck-mode)
 :END:
 #+NAME: org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389
 #+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-M-<tab>") #'help/untabify-buffer-or-region-if-not-indent-tabs-mode)
 (global-set-key (kbd "C-M-1") #'help/1-window)
 (global-set-key (kbd "C-M-2") #'help/2-window)
 (global-set-key (kbd "C-M-3") #'help/3-window)

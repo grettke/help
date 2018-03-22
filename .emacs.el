@@ -1788,15 +1788,29 @@ Attribution: URL `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
 ;; org_gcr_2017-05-12_mara_C23EBD24-B2DC-40CB-9F9E-CAEB03FF8EDC ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_3FFCD7B4-0055-4BE8-938F-EEA09D077343][org_gcr_2017-05-12_mara_3FFCD7B4-0055-4BE8-938F-EEA09D077343]]
-(defun help/untabify-if-not-indent-tabs-mode ()
-  "Untabify if `indent-tabs-mode' is false.
+(defun help/untabify-buffer-if-not-indent-tabs-mode ()
+  "Untabify buffer if `indent-tabs-mode' is false.
 
 Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   (interactive)
   (when (not indent-tabs-mode)
     (untabify (point-min) (point-max))))
 
-(add-hook 'before-save-hook #'help/untabify-if-not-indent-tabs-mode)
+(defun help/untabify-buffer-or-region-if-not-indent-tabs-mode ()
+  "Untabify a region if selected, otherwise the whole buffer.
+
+URL: `http://emacsredux.com/blog/2013/03/27/indent-region-or-buffer/'"
+  (interactive)
+  (save-excursion
+    (if (region-active-p)
+        (progn
+          (untabify (region-beginning) (region-end))
+          (message "Untabified selected region."))
+      (progn
+        (help/untabify-buffer-if-not-indent-tabs-mode)
+        (message "Untabified buffer.")))))
+
+(add-hook 'before-save-hook #'help/untabify-buffer-if-not-indent-tabs-mode)
 ;; org_gcr_2017-05-12_mara_3FFCD7B4-0055-4BE8-938F-EEA09D077343 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5A73C4A8-C2AE-4F36-9D64-3FB6A4FF31E0][org_gcr_2017-05-12_mara_5A73C4A8-C2AE-4F36-9D64-3FB6A4FF31E0]]
@@ -3972,6 +3986,7 @@ Flycheck On? %(bound-and-true-p flycheck-mode)
 ;; org_gcr_2017-06-13_mara_2DFDC64B-DBF2-473E-979F-D7D8D0DD2206 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389][org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389]]
+(global-set-key (kbd "C-M-<tab>") #'help/untabify-buffer-or-region-if-not-indent-tabs-mode)
 (global-set-key (kbd "C-M-1") #'help/1-window)
 (global-set-key (kbd "C-M-2") #'help/2-window)
 (global-set-key (kbd "C-M-3") #'help/3-window)
