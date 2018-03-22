@@ -3950,10 +3950,15 @@ Ansible: (q to quit)
 (global-set-key (kbd "C-M-=") #'edit-indirect-region)
 (global-set-key (kbd "C-5") #'ido-kill-buffer)
 (defun help/insert-em-dash ()
-  "Inserts a M-DASH (not a HYPEN, not an N-DASH)"
+  "Inserts an EM-DASH (not a HYPEN, not an N-DASH)"
   (interactive)
   (insert "—"))
+(defun help/insert-en-dash ()
+  "Inserts an EN-DASH (not a HYPEN, not an EM-DASH)"
+  (interactive)
+  (insert "–"))
 (global-set-key (kbd "C--") #'help/insert-em-dash)
+(global-set-key (kbd "M--") #'help/insert-en-dash)
 (global-set-key (kbd "s-1") #'mc/edit-lines)
 (global-set-key (kbd "s-2") #'mc/mark-all-like-this)
 (global-set-key (kbd "s-3") #'mc/mark-previous-like-this)
