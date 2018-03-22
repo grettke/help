@@ -817,6 +817,27 @@ Attribution: URL `http://ergoemacs.org/emacs/elisp_command_working_on_string_or_
         (delete-region $from $to)
         (goto-char $from)
         (insert outputStr) )) ) )
+
+(defun help/indent-buffer ()
+  "Indent the currently visited buffer.
+
+URL: `http://emacsredux.com/blog/2013/03/27/indent-region-or-buffer/'"
+  (interactive)
+  (indent-region (point-min) (point-max)))
+
+(defun help/indent-region-or-buffer ()
+  "Indent a region if selected, otherwise the whole buffer.
+
+URL: `http://emacsredux.com/blog/2013/03/27/indent-region-or-buffer/'"
+  (interactive)
+  (save-excursion
+    (if (region-active-p)
+        (progn
+          (indent-region (region-beginning) (region-end))
+          (message "Indented selected region."))
+      (progn
+        (help/indent-buffer)
+        (message "Indented buffer.")))))
 ;; org_gcr_2017-05-12_mara_7D37FFE5-2D2B-4CF7-AF27-F3CB8616D81B ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F][org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F]]
@@ -3955,6 +3976,7 @@ Flycheck On? %(bound-and-true-p flycheck-mode)
 (global-set-key (kbd "C-M-2") #'help/2-window)
 (global-set-key (kbd "C-M-3") #'help/3-window)
 (global-set-key (kbd "C-M-4") #'help/4-window)
+(global-set-key (kbd "C-M-\\") #'help/indent-region-or-buffer)
 (defun help/copy-entire-buffer ()
   (interactive)
   (save-excursion
