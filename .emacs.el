@@ -1968,6 +1968,7 @@ _T_odo | _A_rchives | Rest_o_res
   :config
   (diminish 'auto-capitalize)
   (add-to-list 'auto-capitalize-words "HTTP")
+  (add-to-list 'auto-capitalize-words "HTTPS")
   (add-to-list 'auto-capitalize-words "Fr")
   (add-to-list 'auto-capitalize-words "SI")
   (add-to-list 'auto-capitalize-words "24B")
