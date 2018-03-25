@@ -5699,23 +5699,19 @@ Perhaps the [[https://lists.gnu.org/archive/html/emacs-orgmode/2015-07/msg00042.
    :ID:       org_gcr_2017-05-12_mara:005B395D-AF3F-471D-AD11-45FDBAA85D7A
    :END:
 
-Provide Github Flavored Markdown (GFM).
-
-#+NAME: org_gcr_2017-05-12_mara_732CDF3A-C47A-4D5D-BFEC-69B765507B97
-#+BEGIN_SRC emacs-lisp
-(use-package ox-gfm
-  :ensure t)
-#+END_SRC
-
-Program GFM.
+Markdown.
 
 #+NAME: org_gcr_2017-05-12_mara_42D37E52-A420-4196-8B2C-6755441A5FC3
 #+BEGIN_SRC emacs-lisp
 (use-package markdown-mode
   :ensure t
   :config
-  (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
-  (setq markdown-coding-system "utf-8"))
+  (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+  (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+  (use-package ox-gfm
+    :ensure t
+    :config
+    (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))))
 #+END_SRC
 
 Generate Markdown from Emacs Lisp comments.

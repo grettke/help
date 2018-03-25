@@ -3454,17 +3454,16 @@ Errors: _R_eport ⏼_B_oxes ⏼_W_arnings
 (setq org-koma-letter-class-option-file "KomaDefault")
 ;; org_gcr_2017-05-12_mara_33A83D5A-E541-474C-AA0D-2E039EC74CDD ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_732CDF3A-C47A-4D5D-BFEC-69B765507B97][org_gcr_2017-05-12_mara_732CDF3A-C47A-4D5D-BFEC-69B765507B97]]
-(use-package ox-gfm
-  :ensure t)
-;; org_gcr_2017-05-12_mara_732CDF3A-C47A-4D5D-BFEC-69B765507B97 ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_42D37E52-A420-4196-8B2C-6755441A5FC3][org_gcr_2017-05-12_mara_42D37E52-A420-4196-8B2C-6755441A5FC3]]
 (use-package markdown-mode
   :ensure t
   :config
-  (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
-  (setq markdown-coding-system "utf-8"))
+  (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+  (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+  (use-package ox-gfm
+    :ensure t
+    :config
+    (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))))
 ;; org_gcr_2017-05-12_mara_42D37E52-A420-4196-8B2C-6755441A5FC3 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-11-19_mara_60445A8D-329F-4816-BFA5-1283AC570D30][org_gcr_2017-11-19_mara_60445A8D-329F-4816-BFA5-1283AC570D30]]
