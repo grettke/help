@@ -4112,6 +4112,8 @@ _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier
 _d_ dash-at-point _D_ detangle
 _f_ ag _F_ ag*
 _g_ grep
+_h_ hack-local-variables
+_H_ hidden-mode-line
 _J_ obtj2o
 _k_ scrollDown
 _l_ visual-line-mode _L_ aggressive-indent-mode
@@ -4123,7 +4125,7 @@ _c_ fill-paragraph
 _V_ view-only mode
 _b_ erase-buffer _B_ibtex
 _n_ normal
-_m_ checks _M_ hide modeline
+_m_ checkmarks _M_ Marked 2
 _<_ cmtIn
 _>_ cmtOut
 _?_ snp
@@ -4147,6 +4149,7 @@ _?_ snp
   ("s" help/toggle-mac-right-option-modifier)
   ("g" grep)
   ("h" hack-local-variable)
+  ("H" hidden-mode-line-mode)
   ("l" visual-line-mode)
   ("L" aggressive-indent-mode)
   ("S" help/toggle-mac-function-modifier)
@@ -4169,7 +4172,7 @@ _?_ snp
   ("K" next-logical-line :exit nil)
   ("n" help/safb-normal-mode)
   ("m" help/checks/body)
-  ("M" hidden-mode-line-mode)
+  ("M" help/preview-buffer-file-in-marked-2)
   ("<" help/chs)
   (">" help/che)
   ("." help/parent-mode-display)
