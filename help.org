@@ -4672,7 +4672,7 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 (add-hook 'find-file-hook #'warn-if-utf-8-bom)
 #+END_SRC
 
-*** Content
+*** Vocabulary
 :PROPERTIES:
 :ID:       org_gcr_2017-08-04_mara:0A02BFBE-91BE-4629-B4B3-F72F2AAEAD3E
 :END:
