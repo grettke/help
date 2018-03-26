@@ -695,8 +695,8 @@ Attribution: URL `http://zck.me/emacs-move-file'"
   (let ((old-location (buffer-file-name)))
     (write-file new-location t)
     (when (and old-location
-             (file-exists-p new-location)
-             (not (string-equal old-location new-location)))
+               (file-exists-p new-location)
+               (not (string-equal old-location new-location)))
       (delete-file old-location))))
 
 (defun help/rename-current-buffer-file ()
@@ -1771,7 +1771,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
 
 Attribution: URL `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
    (unless (and buffer-file-name
-              (file-writable-p buffer-file-name))
+                (file-writable-p buffer-file-name))
      (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
 
  (advice-add #'ido-find-file :after #'help/ido-find-file))
@@ -2775,6 +2775,9 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-08-04_mara_24E4983A-3842-4365-8C3A-8D2019AB223D][org_gcr_2017-08-04_mara_24E4983A-3842-4365-8C3A-8D2019AB223D]]
 (use-package lorem-ipsum
+  :ensure t)
+
+(use-package academic-phrases
   :ensure t)
 ;; org_gcr_2017-08-04_mara_24E4983A-3842-4365-8C3A-8D2019AB223D ends here
 
