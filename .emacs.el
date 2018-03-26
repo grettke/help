@@ -2779,6 +2779,22 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 
 (use-package academic-phrases
   :ensure t)
+
+(defhydra help/hydra/vocabulary (:color blue :hint nil)
+  "
+Vocabulary: (_q_uit)
+ Lorem Ipsum: _s_entence _p_aragraphs _l_list
+  Academic Phrases: _a_ll _s_ection"
+
+  ("q" nil)
+
+
+  ("s" Lorem-ipsum-insert-sentences :exit nil)
+  ("p" lorem-ipsum-insert-paragraphs :exit nil)
+  ("l" lorem-ipsum-insert-lists :exit nil)
+
+  ("a" academic-phrases-by-section)
+  ("s" academic-phrases))
 ;; org_gcr_2017-08-04_mara_24E4983A-3842-4365-8C3A-8D2019AB223D ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_AAEBDA8A-3939-42B1-B7A2-230C43EEF1AB][org_gcr_2017-05-12_mara_AAEBDA8A-3939-42B1-B7A2-230C43EEF1AB]]
@@ -4127,6 +4143,7 @@ _;_ toggle-lax-whitespace
 
 _x_ delete-indentation _X_pm grok
 _c_ fill-paragraph
+_v_ vocabulary
 _V_ view-only mode
 _b_ erase-buffer _B_ibtex
 _n_ normal
@@ -4162,6 +4179,7 @@ _?_ snp
   ("X" xpm-grok)
   ("f" ag)
   ("F" help/hydra/ag/body)
+  ("v" help/hydra/vocabulary/body)
   ("V" view-mode)
   ("w" widen)
   ("t" rectangle-mark-mode)
