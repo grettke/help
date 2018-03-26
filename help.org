@@ -5711,7 +5711,9 @@ Markdown.
   (use-package ox-gfm
     :ensure t
     :config
-    (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))))
+    (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode)))
+  (help/on-osx
+   (setq markdown-open-command "/Users/gcr/util/mark")))
 #+END_SRC
 
 Generate Markdown from Emacs Lisp comments.

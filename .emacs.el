@@ -115,7 +115,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-             hidden-mode-line-mode)
+           hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -695,8 +695,8 @@ Attribution: URL `http://zck.me/emacs-move-file'"
   (let ((old-location (buffer-file-name)))
     (write-file new-location t)
     (when (and old-location
-               (file-exists-p new-location)
-               (not (string-equal old-location new-location)))
+             (file-exists-p new-location)
+             (not (string-equal old-location new-location)))
       (delete-file old-location))))
 
 (defun help/rename-current-buffer-file ()
@@ -1771,7 +1771,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
 
 Attribution: URL `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
    (unless (and buffer-file-name
-                (file-writable-p buffer-file-name))
+              (file-writable-p buffer-file-name))
      (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
 
  (advice-add #'ido-find-file :after #'help/ido-find-file))
@@ -3463,7 +3463,9 @@ Errors: _R_eport ⏼_B_oxes ⏼_W_arnings
   (use-package ox-gfm
     :ensure t
     :config
-    (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))))
+    (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode)))
+  (help/on-osx
+   (setq markdown-open-command "/Users/gcr/util/mark")))
 ;; org_gcr_2017-05-12_mara_42D37E52-A420-4196-8B2C-6755441A5FC3 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-11-19_mara_60445A8D-329F-4816-BFA5-1283AC570D30][org_gcr_2017-11-19_mara_60445A8D-329F-4816-BFA5-1283AC570D30]]
