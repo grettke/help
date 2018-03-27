@@ -115,7 +115,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-           hidden-mode-line-mode)
+             hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -4301,6 +4301,7 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (global-set-key (kbd "C-o") nil)
 (global-set-key (kbd "C-o") #'ido-find-file)
 (global-set-key (kbd "C-M-.") nil)
+(global-set-key (kbd "M-s-m") #'ns-do-hide-emacs)
 ;; org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-07-28_mara_2A9CEE58-31E9-4DC8-B2EB-D3232D9DD9F7][org_gcr_2017-07-28_mara_2A9CEE58-31E9-4DC8-B2EB-D3232D9DD9F7]]
