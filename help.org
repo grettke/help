@@ -4425,7 +4425,6 @@ Easily manipulate lists and headlines staying close to home.
 (define-key org-mode-map (kbd "s-o") #'org-babel-remove-result)
 (define-key org-mode-map (kbd "s-p") #'org-babel-execute-maybe)
 (define-key org-mode-map (kbd "s-[") #'org-babel-remove-inline-result)
-(define-key org-mode-map (kbd "M-{") (lambda () (interactive) (insert "- [ ] ")))
 (defun help/unset-C-M-t ()
   (interactive)
   (local-unset-key (kbd "C-M-t")))
@@ -4512,7 +4511,7 @@ Because I only use this for Org-Mode.
                                                  :hint nil)
   "
 _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ id-create _5_ toggle-macro _9_ o2b/more _0_ o2b/LaTeX
-_q_ ←/w-code _w_ tbletfld _r_ help/org-refile _R_ g2nms-b _t_ g2s-b/hd _T_ table export format _p_ copy/property
+_q_ ←/w-code _w_ tbletfld _r_ help/org-refile _R_ g2nms-b _t_ g2s-b/hd _T_ table export format _p_ copy/property [ listbox
 _a_ archive-subtree _s_ sort _S_ lobigst _u_ goto _k_ ob-check-src-blk _l_ lint
 _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree
 _e_ ox-clip-formatted-copy "
@@ -4535,6 +4534,8 @@ _e_ ox-clip-formatted-copy "
   ("T" (lambda () (interactive) (insert "#+ATTR_HTML: :border 2 :rules all :frame border")))
   ("u" org-goto)
   ("p" my-org-region-to-property)
+  ;; Row 4
+  ("[" (lambda () (interactive) (insert "- [ ] ")))
   ;; Row 3
   ("a" org-archive-subtree-default)
   ("s" org-sort)
