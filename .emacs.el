@@ -2121,6 +2121,8 @@ _T_odo | _A_rchives | Rest_o_res
   (local-set-key (kbd "s-l mef") #'macroexpand)
   (local-set-key (kbd "s-l mea") #'macroexpand-all)
   (local-set-key (kbd "s-0") #'pp-macroexpand-last-sexp)
+  (local-set-key (kbd "s-8") #'lispy-multiline)
+  (local-set-key (kbd "s-*") #'lispy-oneline)
   (local-set-key (kbd "s-9") #'macrostep-expand))
 
 (defhydra help/hydra-elisp-mode (:color blue
@@ -2199,6 +2201,11 @@ elisp-mode:
   :ensure t
   :after (package-lint))
 ;; org_gcr_2017-05-12_mara_2B359320-563A-4E80-BB8E-04965E20EBEE ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-03-27T21-28-18-05-00_mara_02B76E03-F34A-45A7-A7DC-30209F91095E][org_gcr_2018-03-27T21-28-18-05-00_mara_02B76E03-F34A-45A7-A7DC-30209F91095E]]
+(use-package lispy
+  :ensure t)
+;; org_gcr_2018-03-27T21-28-18-05-00_mara_02B76E03-F34A-45A7-A7DC-30209F91095E ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9D21E326-1742-4DD0-BDF9-624D21873F92][org_gcr_2017-05-12_mara_9D21E326-1742-4DD0-BDF9-624D21873F92]]
 (setq org-babel-min-lines-for-block-output 0)
