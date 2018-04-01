@@ -3153,7 +3153,8 @@ Geiser REPL is: %(help/geiser-on-p)
   (setq web-mode-enable-block-face t)
   (setq web-mode-enable-part-face t)
   (setq web-mode-enable-comment-keywords t)
-  (setq web-mode-enable-heredoc-fontification t))
+  (setq web-mode-enable-heredoc-fontification t)
+  (setq ispell-skip-html t))
 
 (add-hook 'web-mode-hook #'help/web-mode-hook-fn)
 ;; org_gcr_2017-05-12_mara_6219D858-98BB-48CF-96F0-ABEB6756A658 ends here
