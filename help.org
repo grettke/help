@@ -5893,9 +5893,7 @@ Toggle string quotes between single and double.
 #+NAME: org_gcr_2017-07-16_mara_05CFE4C1-3363-42A3-A517-9A961282BB19
 #+BEGIN_SRC emacs-lisp
 (use-package toggle-quotes
-  :ensure t
-  :config
-  (define-key sh-mode-map (kbd "C-'") #'toggle-quotes))
+  :ensure t)
 #+END_SRC
 
 Sh-Mode Hydra.
@@ -7241,6 +7239,7 @@ Eval expression.
 (global-set-key [(control shift ?d)] #'backward-delete-char)
 (global-set-key (kbd "C-M-k") #'my-eval-expression)
 (global-set-key (kbd "C-c C-k") #'help/delete-this-buffer-and-file)
+(global-set-key (kbd "C-M-'") #'toggle-quotes)
 #+END_SRC
 
 #+NAME: org_gcr_2017-05-12_mara_E8ABDA7D-AC92-4C24-8287-1505E2377B2C
