@@ -7068,6 +7068,10 @@ Keybindings for every mode. Starts and stop:
 (global-set-key [(f5)] #'elmacro-show-last-macro)
 #+END_SRC
 **** Row 5
+:PROPERTIES:
+:ID:       org_gcr_2018-04-03T15-26-04-05-00_mara:8EE3BC1F-945D-422C-847F-4EFD8D02A8C6
+:END:
+****
      :PROPERTIES:
      :ID:       org_gcr_2017-05-12_mara:5E250B06-C35C-4AEE-90C6-F5333A2D1BE3
      :END:
@@ -7090,6 +7094,8 @@ Keybindings for every mode. Starts and stop:
                                                  "help.org")))
 (global-set-key (kbd "M-0") (lambda () (interactive) (help/go-there-or-back
                                                  "*scratch*")))
+;; Don't use M-1, M-2, M-3, or M-4
+
 (global-set-key (kbd "C-M-=") #'edit-indirect-region)
 (global-set-key (kbd "C-5") #'ido-kill-buffer)
 (defun help/insert-em-dash ()

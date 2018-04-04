@@ -3975,6 +3975,8 @@ Ansible: (q to quit)
                                                       "help.org")))
 (global-set-key (kbd "M-0") (lambda () (interactive) (help/go-there-or-back
                                                       "*scratch*")))
+;; Don't use M-1, M-2, M-3, or M-4
+
 (global-set-key (kbd "C-M-=") #'edit-indirect-region)
 (global-set-key (kbd "C-5") #'ido-kill-buffer)
 (defun help/insert-em-dash ()
