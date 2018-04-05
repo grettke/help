@@ -4762,6 +4762,9 @@ Vocabulary: (_q_uit)
         (switch-to-buffer "*gnu-apl*")
         (insert ")off")
         (comint-send-input))))
+  (defun help/gnu-apl-prefix-string ()
+    (interactive)
+    gnu-apl-mode-map-prefix)
   (defhydra help/hydra/gnu-apl (:color blue
                                        :hint nil)
     "
@@ -4769,6 +4772,7 @@ GNU APL is: %(help/gnu-apl-runningp)
  _y_ eval-buffer _u_ eval-region _i_ eval-line _o_ eval-function
   _f_ apropos-symbol _g_ help-symbol _h_ keyboard _j_ next _k_ previous
    _q_ quit _c_ start APL _v_ stop APL _b_ switch to APL _n_ switch back
+    Prefix key is: %(help/gnu-apl-prefix-string)
 "
     ("i" help/gnu-apl-eval-line)
     ("o" gnu-apl-interactive-send-current-function)
@@ -7040,6 +7044,10 @@ These changes helped guide the custom keyboard design.
 +---------------------------------------+
 #+END_EXAMPLE
 
+- Cheat-Sheet
+  - C, M, C-M, C-M, C-S, C-s are for Emacs
+  - C-M-s are for the operating system
+
 ** Take a Sip
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:D33533BC-3E1F-4E7E-B9B3-2C0D0518400E
@@ -7058,6 +7066,9 @@ Keybindings for every mode. Starts and stop:
 - Z-B
 
 **** Row 6
+:PROPERTIES:
+:ID:       org_gcr_2018-04-04T19-35-03-05-00_mara:5674E80B-C4B1-4AFA-A93D-E466FA7C37EB
+:END:
 Try to reserve this for the OS.
 
 :PROPERTIES:
