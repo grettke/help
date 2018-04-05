@@ -115,7 +115,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-             hidden-mode-line-mode)
+           hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -4143,8 +4143,8 @@ _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier
 _d_ dash-at-point _D_ detangle
 _f_ ag _F_ ag*
 _g_ grep
-_h_ hack-local-variables
-_H_ hidden-mode-line
+_h_ hidden-mode-line
+_H_ hack-local-variables (see also normal-mode)
 _J_ obtj2o
 _k_ scrollDown
 _l_ visual-line-mode _L_ aggressive-indent-mode
@@ -4156,7 +4156,7 @@ _c_ fill-paragraph
 _v_ vocabulary
 _V_ view-only mode
 _b_ erase-buffer _B_ibtex
-_n_ normal
+_N_ normal-mode (see also hack-local-variables)
 _m_ checkmarks _M_ Marked 2
 _<_ cmtIn
 _>_ cmtOut
@@ -4180,8 +4180,8 @@ _?_ snp
   ("A" hydra-apropos-ish/body)
   ("s" help/toggle-mac-right-option-modifier)
   ("g" grep)
-  ("h" hack-local-variable)
-  ("H" hidden-mode-line-mode)
+  ("h" hidden-mode-line-mode)
+  ("H" (lambda () (interactive) (hack-local-variables) (message "Local variables hacked")))
   ("l" visual-line-mode)
   ("L" aggressive-indent-mode)
   ("S" help/toggle-mac-function-modifier)
@@ -4203,7 +4203,7 @@ _?_ snp
   ("k" scroll-up-command :exit nil)
   ("I" previous-logical-line :exit nil)
   ("K" next-logical-line :exit nil)
-  ("n" help/safb-normal-mode)
+  ("N" (lambda () (interactive) (help/safb-normal-mode) (message "Entering normal-mode")))
   ("m" help/checks/body)
   ("M" help/preview-buffer-file-in-marked-2)
   ("<" help/chs)
