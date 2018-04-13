@@ -1,12 +1,10 @@
 #+PROPERTY: header-args :tangle "./.org-mode-package-management.emacs.el" :results output silent
 
 Never compile this.
-
 #+NAME: org_gcr_2017-07-21_mara_6CF4E40C-3850-46FA-ACAF-C13CF7C2A765
 #+BEGIN_SRC emacs-lisp :comments no
 ;; -*- no-byte-compile: t; -*-
 #+END_SRC
-
 * Watch What You Eat
   :PROPERTIES:
   :ID:       org_gcr_2017-05-12_mara:BD133C8B-8DFF-45C0-967D-CB83693C54B4
@@ -15,7 +13,10 @@ Never compile this.
   - Refiled on [2017-07-21 Fri 20:44] \\
     Clarify
   :END:
-
+** Use-Package
+:PROPERTIES:
+:ID:       org_gcr_2018-04-11T09-44-43-05-00_mara:55083825-349A-44D0-8026-2E652BE228A9
+:END:
 Configure ~use-package~.
 
 Sysop is likely to use this infrequently.
@@ -67,7 +68,10 @@ point uses ~require~. Every package loaded after this point uses ~use-package~.
   (require 'use-package))
 (use-package diminish)
 #+END_SRC
-
+** Helper
+:PROPERTIES:
+:ID:       org_gcr_2018-04-11T09-44-43-05-00_mara:27CF9494-7866-4AB9-A2AD-254F84224658
+:END:
 Speed up code execution. Review as desired.
 
 #+NAME: org_gcr_2017-07-21_mara_E9CF2CB2-D837-41C3-A56A-B2ACFB9E228F
