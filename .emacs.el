@@ -3983,10 +3983,8 @@ Ansible: (q to quit)
 ;; org_gcr_2018-01-08_mara_82A71AA0-C415-49B1-8554-334215625E4F ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C][org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C]]
-(global-set-key (kbd "C-4") #'forward-char)
-(global-set-key (kbd "C-3") #'next-logical-line)
-(global-set-key (kbd "C-2") #'previous-logical-line)
-(global-set-key (kbd "C-1") #'backward-char)
+(global-set-key (kbd "C-4") #'hs-toggle-hiding)
+(global-set-key (kbd "C-3") #'help/my-toggle-hideshow-all)
 (defun help/go-there-or-back (name)
   (if (equal (buffer-name) name)
       (help/safb-switch-to-previous-buffer)
@@ -4348,11 +4346,6 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0CA60630-37AA-4192-91A1-FFC1B16DC3E4][org_gcr_2017-05-12_mara_0CA60630-37AA-4192-91A1-FFC1B16DC3E4]]
 (key-chord-define-global "f9" #'help/util-cycle)
 ;; org_gcr_2017-05-12_mara_0CA60630-37AA-4192-91A1-FFC1B16DC3E4 ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8B031C72-2005-4FAF-A9F4-DE8D613DA01D][org_gcr_2017-05-12_mara_8B031C72-2005-4FAF-A9F4-DE8D613DA01D]]
-(global-set-key (kbd "s-z") #'hs-toggle-hiding)
-(global-set-key [(super shift ?z)] #'help/my-toggle-hideshow-all)
-;; org_gcr_2017-05-12_mara_8B031C72-2005-4FAF-A9F4-DE8D613DA01D ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_921A07BB-6FBA-46E3-824D-F9F0B92F48B3][org_gcr_2017-05-12_mara_921A07BB-6FBA-46E3-824D-F9F0B92F48B3]]
 (key-chord-define-global "qp" #'ispell)

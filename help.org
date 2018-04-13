@@ -7114,10 +7114,8 @@ Try to reserve this for the OS.
 
 #+NAME: org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C
 #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "C-4") #'forward-char)
-(global-set-key (kbd "C-3") #'next-logical-line)
-(global-set-key (kbd "C-2") #'previous-logical-line)
-(global-set-key (kbd "C-1") #'backward-char)
+(global-set-key (kbd "C-4") #'hs-toggle-hiding)
+(global-set-key (kbd "C-3") #'help/my-toggle-hideshow-all)
 (defun help/go-there-or-back (name)
   (if (equal (buffer-name) name)
       (help/safb-switch-to-previous-buffer)
@@ -7568,14 +7566,6 @@ right).
 #+NAME: org_gcr_2017-05-12_mara_0CA60630-37AA-4192-91A1-FFC1B16DC3E4
 #+BEGIN_SRC emacs-lisp
 (key-chord-define-global "f9" #'help/util-cycle)
-#+END_SRC
-
-Hide and show code blocks.
-
-#+NAME: org_gcr_2017-05-12_mara_8B031C72-2005-4FAF-A9F4-DE8D613DA01D
-#+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "s-z") #'hs-toggle-hiding)
-(global-set-key [(super shift ?z)] #'help/my-toggle-hideshow-all)
 #+END_SRC
 
 *** Left & Right Side
