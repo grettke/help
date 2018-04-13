@@ -2841,6 +2841,9 @@ Vocabulary: (_q_uit)
         (switch-to-buffer "*gnu-apl*")
         (insert ")off")
         (comint-send-input))))
+  (defun help/gnu-apl-prefix-string ()
+    (interactive)
+    gnu-apl-mode-map-prefix)
   (defhydra help/hydra/gnu-apl (:color blue
                                        :hint nil)
     "
@@ -2848,6 +2851,7 @@ GNU APL is: %(help/gnu-apl-runningp)
  _y_ eval-buffer _u_ eval-region _i_ eval-line _o_ eval-function
   _f_ apropos-symbol _g_ help-symbol _h_ keyboard _j_ next _k_ previous
    _q_ quit _c_ start APL _v_ stop APL _b_ switch to APL _n_ switch back
+    Prefix key is: %(help/gnu-apl-prefix-string)
 "
     ("i" help/gnu-apl-eval-line)
     ("o" gnu-apl-interactive-send-current-function)
@@ -3975,8 +3979,6 @@ Ansible: (q to quit)
                                                       "help.org")))
 (global-set-key (kbd "M-0") (lambda () (interactive) (help/go-there-or-back
                                                       "*scratch*")))
-;; Don't use M-1, M-2, M-3, or M-4
-
 (global-set-key (kbd "C-M-=") #'edit-indirect-region)
 (global-set-key (kbd "C-5") #'ido-kill-buffer)
 (defun help/insert-em-dash ()
