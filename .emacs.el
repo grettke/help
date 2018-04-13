@@ -115,7 +115,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-           hidden-mode-line-mode)
+             hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -2788,11 +2788,18 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 (use-package academic-phrases
   :ensure t)
 
-(defhydra help/hydra/vocabulary (:color blue :hint nil)
+(defhydra help/hydra/words (:color blue :hint nil)
   "
 Vocabulary: (_q_uit)
  Lorem Ipsum: _s_entence _p_aragraphs _l_list
-  Academic Phrases: _a_ll _s_ection"
+  Academic Phrases: _a_ll _s_ection
+   _E_macs Name (insert _e_macs name)
+    _F_lame (insert _f_lame)
+     _H_oroscope (insert _h_oroscope)
+      _K_ibologize
+       _S_hop
+        _Y_ouwill"
+
 
   ("q" nil)
 
@@ -2800,9 +2807,17 @@ Vocabulary: (_q_uit)
   ("s" Lorem-ipsum-insert-sentences :exit nil)
   ("p" lorem-ipsum-insert-paragraphs :exit nil)
   ("l" lorem-ipsum-insert-lists :exit nil)
-
   ("a" academic-phrases-by-section)
-  ("s" academic-phrases))
+  ("s" academic-phrases)
+  ("E" emacs-name)
+  ("e" (lambda () (interactive) (insert (emacs-name))))
+  ("F" flame)
+  ("f" insert-flame)
+  ("H" horoscope)
+  ("h" (lambda () (interactive) (horoscope t)))
+  ("K" kibologize)
+  ("S" shop)
+  ("Y" youwill))
 ;; org_gcr_2017-08-04_mara_24E4983A-3842-4365-8C3A-8D2019AB223D ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_AAEBDA8A-3939-42B1-B7A2-230C43EEF1AB][org_gcr_2017-05-12_mara_AAEBDA8A-3939-42B1-B7A2-230C43EEF1AB]]
@@ -4130,7 +4145,7 @@ _w_ where is something defined
 _1_ reset-font _2_ -font _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _8_ selectric _-_ split-window-vertically _=_ reposition-window
 
 _q_uit _Q_ exit-Emacs
-_w_ widen
+_w_ widen _W_ords
 _t_ rectangle-mark _T_ trademarks
 _y_ yas tables _Y_ transparency
 _u_ universal-emotions-emoticons
@@ -4155,7 +4170,6 @@ _;_ toggle-lax-whitespace
 
 _x_ delete-indentation _X_pm grok
 _c_ fill-paragraph
-_v_ vocabulary
 _V_ view-only mode
 _b_ erase-buffer _B_ibtex
 _N_ normal-mode (see also hack-local-variables)
@@ -4194,6 +4208,7 @@ _?_ snp
   ("v" help/hydra/vocabulary/body)
   ("V" view-mode)
   ("w" widen)
+  ("W" help/hydra/words/body)
   ("t" rectangle-mark-mode)
   ("y" yas-describe-tables)
   ("Y" hydra-transparency/body)
