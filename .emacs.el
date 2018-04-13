@@ -115,7 +115,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-             hidden-mode-line-mode)
+           hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -1063,6 +1063,11 @@ Smart-Shift: (q to quit)
     ("q" nil))
   (global-set-key (kbd "C-s-j") #'help/hydra/smart-shift/body))
 ;; org_gcr_2018-01-03_mara_F64F240D-3891-46C0-8989-6124AEF60518 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-04-12T21-31-52-05-00_mara_4844006E-A8C3-4F45-BA6D-FFC6B3BFF7DC][org_gcr_2018-04-12T21-31-52-05-00_mara_4844006E-A8C3-4F45-BA6D-FFC6B3BFF7DC]]
+(use-package unfill
+  :ensure t)
+;; org_gcr_2018-04-12T21-31-52-05-00_mara_4844006E-A8C3-4F45-BA6D-FFC6B3BFF7DC ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_611E83B9-E797-4512-95EE-643473026607][org_gcr_2017-05-12_mara_611E83B9-E797-4512-95EE-643473026607]]
 (use-package hideshow

@@ -1676,6 +1676,14 @@ Smart-Shift: (q to quit)
     ("q" nil))
   (global-set-key (kbd "C-s-j") #'help/hydra/smart-shift/body))
 #+END_SRC
+
+Unfilling
+
+#+name: org_gcr_2018-04-12T21-31-52-05-00_mara_4844006E-A8C3-4F45-BA6D-FFC6B3BFF7DC
+#+begin_src emacs-lisp
+(use-package unfill
+  :ensure t)
+#+end_src
 ** Code Folding
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:94245A47-6A25-442A-B458-AD00A3DDA1A2
