@@ -4712,7 +4712,7 @@ Vocabulary: (_q_uit)
     _F_lame (insert _f_lame)
      _H_oroscope (insert _h_oroscope)
       _K_ibologize (insert _k_ibologize)
-       _S_hop
+       _S_hop _m_iddle name
         _Y_ouwill"
 
 
@@ -4733,6 +4733,7 @@ Vocabulary: (_q_uit)
   ("K" kibologize)
   ("k" help/kibologize-insert)
   ("S" shop)
+  ("m" shop-middle-name)
   ("Y" youwill))
 #+END_SRC
 *** Dash
