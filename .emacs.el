@@ -3988,12 +3988,9 @@ Ansible: (q to quit)
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C][org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C]]
 (global-set-key (kbd "C-4") #'hs-toggle-hiding)
 (global-set-key (kbd "C-3") #'help/my-toggle-hideshow-all)
-(defun help/go-there-or-back (name)
-  (if (equal (buffer-name) name)
-      (help/safb-switch-to-previous-buffer)
-    (switch-to-buffer name)))
-(global-set-key (kbd "C-M-=") #'edit-indirect-region)
 (global-set-key (kbd "C-5") #'ido-kill-buffer)
+(global-set-key (kbd "C-M-=") #'edit-indirect-region)
+
 (defun help/insert-em-dash ()
   "Inserts an EM-DASH (not a HYPEN, not an N-DASH)"
   (interactive)
@@ -4004,6 +4001,7 @@ Ansible: (q to quit)
   (insert "–"))
 (global-set-key (kbd "C--") #'help/insert-em-dash)
 (global-set-key (kbd "M--") #'help/insert-en-dash)
+
 (global-set-key (kbd "s-1") #'mc/edit-lines)
 (global-set-key (kbd "s-2") #'mc/mark-all-like-this)
 (global-set-key (kbd "s-3") #'mc/mark-previous-like-this)
