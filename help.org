@@ -7324,7 +7324,7 @@ _|_ split-window-horizontally
 
 _A_ apropo'ish
 _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier
-_d_ dash-at-point _D_ detangle
+_d_ detangle
 _f_ ag _F_ ag*
 _g_ grep
 _h_ hidden-mode-line
@@ -7382,8 +7382,7 @@ _?_ snp
   ("J" org-babel-tangle-jump-to-org)
   ("u" universal-emotions-emoticons)
   ("i" scroll-down-command :exit nil)
-  ("d" dash-at-point)
-  ("D" help/safb-org-babel-detangle)
+  ("d" help/safb-org-babel-detangle)
   ("k" scroll-up-command :exit nil)
   ("I" previous-logical-line :exit nil)
   ("K" next-logical-line :exit nil)
