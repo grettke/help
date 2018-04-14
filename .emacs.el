@@ -3992,14 +3992,6 @@ Ansible: (q to quit)
   (if (equal (buffer-name) name)
       (help/safb-switch-to-previous-buffer)
     (switch-to-buffer name)))
-(global-set-key (kbd "C-9") (lambda () (interactive) (help/go-there-or-back
-                                                      "projects.org")))
-(global-set-key (kbd "C-0") (lambda () (interactive) (help/go-there-or-back
-                                                      "scratch.org")))
-(global-set-key (kbd "M-9") (lambda () (interactive) (help/go-there-or-back
-                                                      "help.org")))
-(global-set-key (kbd "M-0") (lambda () (interactive) (help/go-there-or-back
-                                                      "*scratch*")))
 (global-set-key (kbd "C-M-=") #'edit-indirect-region)
 (global-set-key (kbd "C-5") #'ido-kill-buffer)
 (defun help/insert-em-dash ()
