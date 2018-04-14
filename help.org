@@ -4706,7 +4706,7 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 (defhydra help/hydra/words (:color blue :hint nil)
   "
 Vocabulary: (_q_uit)
- Lorem Ipsum: _s_entence _p_aragraphs _l_list
+ Lorem Ipsum: _s_entence _p_aragraphs _l_ist
   Academic Phrases: _a_ll _s_ection
    _E_macs Name (insert _e_macs name)
     _F_lame (insert _f_lame)
