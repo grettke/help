@@ -87,6 +87,10 @@
          :website "http://www.splode.com/"
          :description "generate ravings about kibology, in the style of kibo"))
 (add-to-list 'help/el-get-packages 'kibologize)
+(defun help/kibologize-insert ()
+  (interactive)
+  (let ((current-prefix-arg '(4)))
+    (call-interactively 'kibologize)))
 ;; org_gcr_2018-04-11T09-44-43-05-00_mara_40D6F67F-CB60-4D03-95D1-0A32D460D366 ends here
 
 ;; [[file:~/src/help/Package-Management.org::org_gcr_2018-04-11T09-44-43-05-00_mara_4BC2EFC6-D51B-4D90-8486-5DB2B8B1E02E][org_gcr_2018-04-11T09-44-43-05-00_mara_4BC2EFC6-D51B-4D90-8486-5DB2B8B1E02E]]

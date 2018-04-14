@@ -4711,7 +4711,7 @@ Vocabulary: (_q_uit)
    _E_macs Name (insert _e_macs name)
     _F_lame (insert _f_lame)
      _H_oroscope (insert _h_oroscope)
-      _K_ibologize
+      _K_ibologize (insert _k_ibologize)
        _S_hop
         _Y_ouwill"
 
@@ -4731,6 +4731,7 @@ Vocabulary: (_q_uit)
   ("H" horoscope)
   ("h" (lambda () (interactive) (horoscope t)))
   ("K" kibologize)
+  ("k" help/kibologize-insert)
   ("S" shop)
   ("Y" youwill))
 #+END_SRC

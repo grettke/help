@@ -158,6 +158,10 @@ be honored.
           :website "http://www.splode.com/"
           :description "generate ravings about kibology, in the style of kibo"))
 (add-to-list 'help/el-get-packages 'kibologize)
+(defun help/kibologize-insert ()
+  (interactive)
+  (let ((current-prefix-arg '(4)))
+    (call-interactively 'kibologize)))
 #+end_src
 
 You might not always remember your shopping list, but we will remember it for
