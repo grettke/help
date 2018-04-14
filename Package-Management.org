@@ -196,6 +196,10 @@ your life and bought you a kitten? You will.
           :website "http://www.splode.com/"
           :description "generate meaningless marketing hype"))
 (add-to-list 'help/el-get-packages 'youwill)
+(defun help/youwill-insert ()
+  (interactive)
+  (let ((current-prefix-arg '(4)))
+    (call-interactively 'youwill)))
 #+end_src
 
 Ask el-get to make sure that those desired packages are installed.

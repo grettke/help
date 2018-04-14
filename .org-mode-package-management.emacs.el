@@ -117,6 +117,10 @@
          :website "http://www.splode.com/"
          :description "generate meaningless marketing hype"))
 (add-to-list 'help/el-get-packages 'youwill)
+(defun help/youwill-insert ()
+  (interactive)
+  (let ((current-prefix-arg '(4)))
+    (call-interactively 'youwill)))
 ;; org_gcr_2018-04-11T09-44-43-05-00_mara_BF33EE53-4A53-46A9-A6BF-4F7419A082F9 ends here
 
 ;; [[file:~/src/help/Package-Management.org::org_gcr_2018-04-11T09-44-43-05-00_mara_2E404438-B898-448B-98AD-B1A5468DEA80][org_gcr_2018-04-11T09-44-43-05-00_mara_2E404438-B898-448B-98AD-B1A5468DEA80]]

@@ -2803,7 +2803,7 @@ Vocabulary: (_q_uit)
      _H_oroscope (insert _h_oroscope)
       _K_ibologize (insert _k_ibologize)
        _S_hop _m_iddle name
-        _Y_ouwill"
+        _Y_ouwill (insert _y_ouwill)"
 
 
   ("q" nil)
@@ -2823,8 +2823,9 @@ Vocabulary: (_q_uit)
   ("K" kibologize)
   ("k" help/kibologize-insert)
   ("S" shop)
-  ("s" shop-middle-name)
-  ("Y" youwill))
+  ("m" shop-middle-name)
+  ("Y" youwill)
+  ("y" help/youwill-insert))
 ;; org_gcr_2017-08-04_mara_24E4983A-3842-4365-8C3A-8D2019AB223D ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_AAEBDA8A-3939-42B1-B7A2-230C43EEF1AB][org_gcr_2017-05-12_mara_AAEBDA8A-3939-42B1-B7A2-230C43EEF1AB]]

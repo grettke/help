@@ -4713,7 +4713,7 @@ Vocabulary: (_q_uit)
      _H_oroscope (insert _h_oroscope)
       _K_ibologize (insert _k_ibologize)
        _S_hop _m_iddle name
-        _Y_ouwill"
+        _Y_ouwill (insert _y_ouwill)"
 
 
   ("q" nil)
@@ -4734,7 +4734,8 @@ Vocabulary: (_q_uit)
   ("k" help/kibologize-insert)
   ("S" shop)
   ("m" shop-middle-name)
-  ("Y" youwill))
+  ("Y" youwill)
+  ("y" help/youwill-insert))
 #+END_SRC
 *** Dash
 :PROPERTIES:
