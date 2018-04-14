@@ -7110,10 +7110,6 @@ Try to reserve this for the OS.
 :PROPERTIES:
 :ID:       org_gcr_2018-04-03T15-26-04-05-00_mara:8EE3BC1F-945D-422C-847F-4EFD8D02A8C6
 :END:
-****
-     :PROPERTIES:
-     :ID:       org_gcr_2017-05-12_mara:5E250B06-C35C-4AEE-90C6-F5333A2D1BE3
-     :END:
 
 #+NAME: org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C
 #+BEGIN_SRC emacs-lisp
