@@ -180,12 +180,12 @@ occur before loading Org-Mode. *Never* remove this from a submitted ECM.
 (setq org-enforce-todo-checkbox-dependencies t)
 #+END_SRC
 
-Found a copy _Literate Programming_ so use =GUILLEMET= delimeters.
+Use math double brackets for _Literate Programming_ instead of GUILLEMET delimeters.
 
 #+NAME: org_gcr_2017-07-17_mara_755B4DF4-9BEF-4349-94CB-0452730D67F1
 #+BEGIN_SRC emacs-lisp
-(setq org-babel-noweb-wrap-start "«")
-(setq org-babel-noweb-wrap-end "»")
+(setq org-babel-noweb-wrap-start "⟫")
+(setq org-babel-noweb-wrap-end "⟪")
 #+END_SRC
 *** Loading Org-Mode
 :PROPERTIES:
