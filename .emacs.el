@@ -115,7 +115,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-           hidden-mode-line-mode)
+             hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -3990,6 +3990,8 @@ Ansible: (q to quit)
 (global-set-key (kbd "C-3") #'help/my-toggle-hideshow-all)
 (global-set-key (kbd "C-5") #'ido-kill-buffer)
 (global-set-key (kbd "C-M-=") #'edit-indirect-region)
+
+;; Leave C-8, C-9, and C-0 free for the OS
 
 (defun help/insert-em-dash ()
   "Inserts an EM-DASH (not a HYPEN, not an N-DASH)"
