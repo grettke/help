@@ -838,6 +838,24 @@ URL: `http://emacsredux.com/blog/2013/03/27/indent-region-or-buffer/'"
       (progn
         (help/indent-buffer)
         (message "Indented buffer.")))))
+
+(defun help/alist-set (key val alist &optional symbol)
+  "Set property KEY to VAL in ALIST. Return new alist.
+This creates the association if it is missing, and otherwise sets
+the cdr of the first matching association in the list. It does
+not create duplicate associations. By default, key comparison is
+done with `equal'. However, if SYMBOL is non-nil, then `eq' is
+used instead.
+
+This method may mutate the original alist, but you still need to
+use the return value of this method instead of the original
+alist, to ensure correct results.
+
+Atribution: URL `https://emacs.stackexchange.com/a/33893/341'"
+  (if-let ((pair (if symbol (assq key alist) (assoc key alist))))
+      (setcdr pair val)
+    (push (cons key val) alist))
+  alist)
 ;; org_gcr_2017-05-12_mara_7D37FFE5-2D2B-4CF7-AF27-F3CB8616D81B ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F][org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F]]
@@ -2569,23 +2587,6 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (setq org-return-follows-link t)
 ;; org_gcr_2017-05-12_mara_7CFE23CC-8EBC-46F3-889F-BF36EC45D6CA ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-15_mara_05415B89-71CA-4176-80EF-FB36F2D97F20][org_gcr_2018-03-15_mara_05415B89-71CA-4176-80EF-FB36F2D97F20]]
-(defun help/prettify-org-mode ()
-  (push '("#+BEGIN_SRC" . ?╭)
-        prettify-symbols-alist)
-  (push '("#+begin_src" . ?╭)
-        prettify-symbols-alist)
-  (push '("#+END_SRC" . ?╰)
-        prettify-symbols-alist)
-  (push '("#+end_src" . ?╰)
-        prettify-symbols-alist)
-  (push '("#+NAME\:" . ?·)
-        prettify-symbols-alist)
-  (push '("#+name\:" . ?·)
-        prettify-symbols-alist))
-(add-hook 'org-mode-hook #'help/prettify-org-mode)
-;; org_gcr_2018-03-15_mara_05415B89-71CA-4176-80EF-FB36F2D97F20 ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_711B4205-DC28-4A35-B620-23AFD46E3973][org_gcr_2017-05-12_mara_711B4205-DC28-4A35-B620-23AFD46E3973]]
 (help/on-gui
  (define-key org-mode-map (kbd "<return>") #'org-return-indent)
@@ -2738,6 +2739,31 @@ _e_ ox-clip-formatted-copy "
 (key-chord-define org-mode-map "<<" (lambda () (interactive) (insert "\\laquo{}")))
 (key-chord-define org-mode-map ">>" (lambda () (interactive) (insert "\\raquo{}")))
 ;; org_gcr_2017-05-12_mara_BF73D071-57B8-4DBA-93E9-5A1D532A6321 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-03-15_mara_05415B89-71CA-4176-80EF-FB36F2D97F20][org_gcr_2018-03-15_mara_05415B89-71CA-4176-80EF-FB36F2D97F20]]
+(defun help/prettify-org-mode ()
+  (interactive)
+  (setq prettify-symbols-alist (help/alist-set "#+NAME\:" ?╭ prettify-symbols-alist))
+  (setq prettify-symbols-alist (help/alist-set "#+name\:" ?╭ prettify-symbols-alist))
+  (setq prettify-symbols-alist (help/alist-set "#+BEGIN_SRC" ?├ prettify-symbols-alist))
+  (setq prettify-symbols-alist (help/alist-set "#+begin_src" ?├ prettify-symbols-alist))
+  (setq prettify-symbols-alist (help/alist-set "#+END_SRC" ?╰ prettify-symbols-alist))
+  (setq prettify-symbols-alist (help/alist-set "#+end_src" ?╰ prettify-symbols-alist))
+  (help/prettify-org-mode-names ?╮))
+(add-hook 'org-mode-hook #'help/prettify-org-mode)
+
+(defun help/prettify-org-mode-names (&optional replacement)
+  (interactive)
+  (or replacement (setq replacement ?·))
+  (save-excursion
+    (goto-char (point-min))
+    (let ((case-fold-search t))
+      (while (re-search-forward "#\\+name: " nil t)
+        (copy-region-as-kill (point) (line-end-position))
+        (let ((name (substring-no-properties(pop kill-ring))))
+          (when (string-prefix-p "org_" name)
+            (setq prettify-symbols-alist (help/alist-set name replacement prettify-symbols-alist))))))))
+;; org_gcr_2018-03-15_mara_05415B89-71CA-4176-80EF-FB36F2D97F20 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2018-01-04_mara_42B53E96-5046-4A7B-8CC9-A7046CCD3BF1][org_gcr_2018-01-04_mara_42B53E96-5046-4A7B-8CC9-A7046CCD3BF1]]
 (use-package edit-indirect

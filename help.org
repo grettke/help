@@ -1343,6 +1343,24 @@ URL: `http://emacsredux.com/blog/2013/03/27/indent-region-or-buffer/'"
       (progn
         (help/indent-buffer)
         (message "Indented buffer.")))))
+
+(defun help/alist-set (key val alist &optional symbol)
+  "Set property KEY to VAL in ALIST. Return new alist.
+This creates the association if it is missing, and otherwise sets
+the cdr of the first matching association in the list. It does
+not create duplicate associations. By default, key comparison is
+done with `equal'. However, if SYMBOL is non-nil, then `eq' is
+used instead.
+
+This method may mutate the original alist, but you still need to
+use the return value of this method instead of the original
+alist, to ensure correct results.
+
+Atribution: URL `https://emacs.stackexchange.com/a/33893/341'"
+  (if-let ((pair (if symbol (assq key alist) (assoc key alist))))
+      (setcdr pair val)
+    (push (cons key val) alist))
+  alist)
 #+END_SRC
 
 ** Typography
@@ -4348,25 +4366,6 @@ Follow links without using the mouse or more.
 (setq org-return-follows-link t)
 #+END_SRC
 
-Prettifications.
-
-#+name: org_gcr_2018-03-15_mara_05415B89-71CA-4176-80EF-FB36F2D97F20
-#+begin_src emacs-lisp
-(defun help/prettify-org-mode ()
-  (push '("#+BEGIN_SRC" . ?╭)
-        prettify-symbols-alist)
-  (push '("#+begin_src" . ?╭)
-        prettify-symbols-alist)
-  (push '("#+END_SRC" . ?╰)
-        prettify-symbols-alist)
-  (push '("#+end_src" . ?╰)
-        prettify-symbols-alist)
-  (push '("#+NAME\:" . ?·)
-        prettify-symbols-alist)
-  (push '("#+name\:" . ?·)
-        prettify-symbols-alist))
-(add-hook 'org-mode-hook #'help/prettify-org-mode)
-#+end_src
 **** Keybindings
     :PROPERTIES:
     :ID:       org_gcr_2017-05-12_mara:F5256DB3-BD52-409B-80CF-6E601A29AA4A
@@ -4599,6 +4598,37 @@ Easily enter guillemots.
 (key-chord-define org-mode-map ">>" (lambda () (interactive) (insert "\\raquo{}")))
 #+END_SRC
 
+**** Prettification
+:PROPERTIES:
+:ID:       org_gcr_2018-04-20T15-46-50-05-00_mara:356CA076-3E60-4908-BED1-DD7715C51C8C
+:END:
+Prettifications.
+
+#+name: org_gcr_2018-03-15_mara_05415B89-71CA-4176-80EF-FB36F2D97F20
+#+begin_src emacs-lisp
+(defun help/prettify-org-mode ()
+  (interactive)
+  (setq prettify-symbols-alist (help/alist-set "#+NAME\:" ?╭ prettify-symbols-alist))
+  (setq prettify-symbols-alist (help/alist-set "#+name\:" ?╭ prettify-symbols-alist))
+  (setq prettify-symbols-alist (help/alist-set "#+BEGIN_SRC" ?├ prettify-symbols-alist))
+  (setq prettify-symbols-alist (help/alist-set "#+begin_src" ?├ prettify-symbols-alist))
+  (setq prettify-symbols-alist (help/alist-set "#+END_SRC" ?╰ prettify-symbols-alist))
+  (setq prettify-symbols-alist (help/alist-set "#+end_src" ?╰ prettify-symbols-alist))
+  (help/prettify-org-mode-names ?╮))
+(add-hook 'org-mode-hook #'help/prettify-org-mode)
+
+(defun help/prettify-org-mode-names (&optional replacement)
+  (interactive)
+  (or replacement (setq replacement ?·))
+  (save-excursion
+    (goto-char (point-min))
+    (let ((case-fold-search t))
+      (while (re-search-forward "#\\+name: " nil t)
+        (copy-region-as-kill (point) (line-end-position))
+        (let ((name (substring-no-properties(pop kill-ring))))
+          (when (string-prefix-p "org_" name)
+            (setq prettify-symbols-alist (help/alist-set name replacement prettify-symbols-alist))))))))
+#+end_src
 *** Intermittent Literate Programming
 :PROPERTIES:
 :ID:       org_gcr_2018-01-04_mara:43462ECD-9C40-43D2-872F-A2E9DB134199
