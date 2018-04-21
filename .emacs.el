@@ -2748,6 +2748,16 @@ _e_ ox-clip-formatted-copy "
   (setq prettify-symbols-alist (help/alist-set "#+BEGIN_SRC" ?├ prettify-symbols-alist))
   (setq prettify-symbols-alist (help/alist-set "#+begin_src" ?├ prettify-symbols-alist))
   (setq prettify-symbols-alist (help/alist-set "#+END_SRC" ?╰ prettify-symbols-alist))
+  (setq prettify-symbols-alist (help/alist-set "#+end_src" ?╰
+                                               prettify-symbols-alist))
+  (setq prettify-symbols-alist (help/alist-set "#+BEGIN_EXAMPLE" ?💡
+                                               prettify-symbols-alist))
+  (setq prettify-symbols-alist (help/alist-set "#+begin_example" ?💡
+                                               prettify-symbols-alist))
+  (setq prettify-symbols-alist (help/alist-set "#+END_EXAMPLE" ?💡
+                                               prettify-symbols-alist))
+  (setq prettify-symbols-alist (help/alist-set "#+end_example" ?💡
+                                               prettify-symbols-alist))
   (setq prettify-symbols-alist (help/alist-set "#+end_src" ?╰ prettify-symbols-alist))
   (help/prettify-org-mode-names ?╮))
 (add-hook 'org-mode-hook #'help/prettify-org-mode)
