@@ -2046,7 +2046,8 @@ _T_odo | _A_rchives | Rest_o_res
                         geiser-mode-hook
                         geiser-repl-mode-hook
                         go-mode-hook
-                        TeX-mode-hook))
+                        TeX-mode-hook
+                        apples-mode-hook))
 ;; org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86][org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86]]
@@ -3240,6 +3241,47 @@ Geiser REPL is: %(help/geiser-on-p)
   (add-hook 'js2-mode-hook #'js2-refactor-mode)
   (js2r-add-keybindings-with-prefix "C-c C-m"))
 ;; org_gcr_2017-05-12_mara_56F80A50-4914-4F8F-8771-5800A54F8300 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-04-20T15-46-50-05-00_mara_E248AEB6-4E35-40F3-A23A-E5D7BED863C4][org_gcr_2018-04-20T15-46-50-05-00_mara_E248AEB6-4E35-40F3-A23A-E5D7BED863C4]]
+(use-package apples-mode
+  :ensure t
+  :config
+  (setq apples-compile-create-file-flag t)
+  (setq apples-continuation-offset 2)
+  (setq apples-decompile-query ?o)
+  (setq apples-follow-error-position t)
+  (setq apples-indent-offset 2)
+  (setq apples-prefer-coding-system coding-category-utf-8)
+  (setq apples-tmp-dir "~/tmp")
+  (defhydra help/hydra/right/apples-mode (:color blue :hint nil)
+    "
+ AppleScript: (_q_uit)     |^                       ^|^                     ^|
+-^------------------------^+^-----------------------^+---------------------^^+
+ _j_: eval region          | _o_: continuation       | _i_: show last result
+ _J_: eval buffer          | _O_: continue+newline   | _9_: open dict
+ _i_: compile              | _u_: close block        | _0_: send-to-editor
+ _I_: decompile            | _U_: toggle-indentation |
+ "
+    ("j" apples-run-region)
+    ("J" apples-run-buffer)
+    ("i" apples-compile)
+    ("I" apples-decompile)
+    ("o" apples-insert-continuation-char)
+    ("O" apples-insert-continuation-char-and-newline)
+    ("u" apples-end-completion)
+    ("U" apples-toggle-indent)
+    ("i" apples-show-last-result)
+    ("9" apples-open-dict-index)
+    ("0" apples-send-to-applescript-editor)
+    ("q" nil))
+  (key-chord-define apples-mode-map "hh" #'help/hydra/right/apples-mode/body)
+  (use-package ob-applescript
+    :ensure t
+    :config
+    (add-to-list 'org-babel-load-languages '(apples . t)))
+  (defun help/apples-mode-hook-fun ())
+  (add-hook 'apples-mode-hook #'help/apples-mode-hook-fun))
+;; org_gcr_2018-04-20T15-46-50-05-00_mara_E248AEB6-4E35-40F3-A23A-E5D7BED863C4 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_498DAC46-DA9D-4AAA-82BF-46D712E4DBA5][org_gcr_2017-05-12_mara_498DAC46-DA9D-4AAA-82BF-46D712E4DBA5]]
 (use-package json-mode
