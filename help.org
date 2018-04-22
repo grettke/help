@@ -3351,7 +3351,8 @@ Can use in source blocks.
   :ensure t
   :diminish aggressive-indent-mode
   :config
-  (global-aggressive-indent-mode))
+  (global-aggressive-indent-mode)
+  (add-to-list 'aggressive-indent-excluded-modes 'minibuffer-inactive-mode))
   #+END_SRC
 - Always maintain balanced brackets. Easily wrap the selected region. Auto-escape
   strings pasted into other strings. Smartparens provides built-in correct

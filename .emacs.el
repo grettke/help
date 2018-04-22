@@ -2067,7 +2067,8 @@ _T_odo | _A_rchives | Rest_o_res
   :ensure t
   :diminish aggressive-indent-mode
   :config
-  (global-aggressive-indent-mode))
+  (global-aggressive-indent-mode)
+  (add-to-list 'aggressive-indent-excluded-modes 'minibuffer-inactive-mode))
 ;; org_gcr_2017-05-12_mara_02408658-D767-4D6E-8AAA-2BE1933BCBD1 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_3AB5C00B-E0FF-40A1-9C3B-420CB4E8D417][org_gcr_2017-05-12_mara_3AB5C00B-E0FF-40A1-9C3B-420CB4E8D417]]
