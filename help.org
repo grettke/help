@@ -2207,6 +2207,14 @@ Activate font locking everywhere possible.
 (global-font-lock-mode t)
 #+END_SRC
 
+Adds FontAwesome.
+
+#+name: org_gcr_2018-04-22T14-17-00-05-00_mara_5C4879AB-6272-4269-A515-CD2FD35F3549
+#+begin_src emacs-lisp
+(use-package fontawesome
+  :ensure t)
+#+end_src
+
 ** Going to Objects
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:8A73E509-A878-4E89-86DC-9BDA8C898F8C
@@ -7392,6 +7400,7 @@ _1_ reset-font _2_ -font _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _8_ 
 
 _q_uit _Q_ exit-Emacs
 _w_ widen _W_ords
+_e_ FontAwesome
 _t_ rectangle-mark _T_ trademarks
 _y_ yas tables _Y_ transparency
 _u_ universal-emotions-emoticons
@@ -7426,6 +7435,7 @@ _?_ snp
 "
   ("Q" help/safb-save-buffers-kill-terminal)
   ("q" nil)
+  ("e" (lambda () (interactive) (insert (call-interactively 'fontawesome))))
   ("|" split-window-horizontally)
   ("-" split-window-vertically)
   ("1" help/font-size-reset :exit nil)
