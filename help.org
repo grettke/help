@@ -4633,7 +4633,10 @@ Prettifications.
                                                prettify-symbols-alist))
   (setq prettify-symbols-alist (help/alist-set "#+end_example" ?💡
                                                prettify-symbols-alist))
-  (setq prettify-symbols-alist (help/alist-set "#+end_src" ?╰ prettify-symbols-alist))
+  (setq prettify-symbols-alist (help/alist-set "#+BEGIN_QUOTE" ?🗣 prettify-symbols-alist))
+  (setq prettify-symbols-alist (help/alist-set "#+begin_quote" ?🗣 prettify-symbols-alist))
+  (setq prettify-symbols-alist (help/alist-set "#+end_QUOTE" ?🗣 prettify-symbols-alist))
+  (setq prettify-symbols-alist (help/alist-set "#+end_quote" ?🗣 prettify-symbols-alist))
   (help/prettify-org-mode-names ?╮))
 (add-hook 'org-mode-hook #'help/prettify-org-mode)
 
