@@ -5637,9 +5637,9 @@ Recursively search for all customizations.
 (defhydra help/hydra/auctex (:color blue
                                     :hint nil)
   "
-AUCTeX: (q to quit)
+AUCTeX: _H_elp _q_uit
 Do: Run_a_ll →R_e_gion →B_u_ffer →Section(_1_) _K_ill-Job
-    Center-Buffer(_2_) Go-Home(_3_) Clean(_4_) Texdoc(_5_) Save-Belonging(_6_
+    Center-Buffer(_2_) Go-Home(_3_) Clean(_4_) Save-Belonging(_6_
 Insert: _S_ection _E_nvironment _M_acro _F_ont(¿) _C_lose-Env _I_tem
 Mark: E_n_vironment (_j_ust one) Se_c_tion (jus_t_ one)
 Fold: Fol_d_* Bu_f_fe_r_ Re_g_i_o_n _P_aragraph Macr_o_ En_v_ Mat_h_ Co_m_ment
@@ -5655,7 +5655,7 @@ Errors: _R_eport ⏼_B_oxes ⏼_W_arnings
   ("2" TeX-recenter-output-buffer)
   ("3" TeX-home-buffer)
   ("4" TeX-clean)
-  ("5" TeX-documentation-texdoc)
+  ("H" TeX-documentation-texdoc)
   ("6" TeX-save-document)
   ;; Insert
   ("S" LaTeX-section)
