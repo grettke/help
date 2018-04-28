@@ -4749,7 +4749,7 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
   "
 Vocabulary: (_q_uit)
  Lorem Ipsum: _s_entence _p_aragraphs _l_ist
-  Academic Phrases: _a_ll _s_ection
+  Academic Phrases: _a_ll or by se_c_tion
    _E_macs Name (insert _e_macs name)
     _F_lame (insert _f_lame)
      _H_oroscope (insert _h_oroscope)
@@ -4760,22 +4760,28 @@ Vocabulary: (_q_uit)
 
   ("q" nil)
 
-
   ("s" Lorem-ipsum-insert-sentences :exit nil)
   ("p" lorem-ipsum-insert-paragraphs :exit nil)
   ("l" lorem-ipsum-insert-lists :exit nil)
-  ("a" academic-phrases-by-section)
-  ("s" academic-phrases)
+
+  ("a" academic-phrases)
+  ("c" academic-phrases-by-section)
+
   ("E" emacs-name)
   ("e" (lambda () (interactive) (insert (emacs-name))))
+
   ("F" flame)
   ("f" insert-flame)
+
   ("H" horoscope)
   ("h" (lambda () (interactive) (horoscope t)))
+
   ("K" kibologize)
   ("k" help/kibologize-insert)
+
   ("S" shop)
   ("m" shop-middle-name)
+
   ("Y" youwill)
   ("y" help/youwill-insert))
 #+END_SRC
