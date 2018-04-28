@@ -1515,17 +1515,6 @@ Do the /right thing/ for getting to the start of the line.
   (global-set-key (kbd "C-a") 'mwim-beginning-of-code-or-line))
 #+END_SRC
 
-- Easily see the fill-column (or close too it)
-  - Sometimes I set the fci rule at 81 because a char at 79 pushes the fci
-    rule out one extra space. Sometimes it is not an issue.
-  #+NAME: org_gcr_2017-05-12_mara_3E475ED3-773E-4537-B29F-6888B7DB90DF
-  #+BEGIN_SRC emacs-lisp
-(use-package fill-column-indicator
-  :ensure t
-  :config
-  (setq fci-rule-column 79))
-  #+END_SRC
-
 Show text indentation guide lines.
 
 ~highlight-indentation~ is too difficult to see.
@@ -4974,7 +4963,6 @@ Geiser REPL is: %(help/geiser-on-p)
     (local-set-key (kbd "<C-return>") #'help/geiser-eval-line))
   (add-hook 'geiser-mode-hook #'help/geiser-mode-hook-fn)
   (defun help/geiser-repl-mode-hook-fn ()
-    (turn-off-fci-mode)
     (local-unset-key (kbd "C-."))
     (local-unset-key (kbd "C-j"))
     (local-set-key (kbd "<C-return>") #'geiser-repl--maybe-send)

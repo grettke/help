@@ -933,13 +933,6 @@ Atribution: URL `https://emacs.stackexchange.com/a/33893/341'"
   (global-set-key (kbd "C-a") 'mwim-beginning-of-code-or-line))
 ;; org_gcr_2017-05-12_mara_B8BDE36B-4B27-4580-BA34-35C047FBEA62 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_3E475ED3-773E-4537-B29F-6888B7DB90DF][org_gcr_2017-05-12_mara_3E475ED3-773E-4537-B29F-6888B7DB90DF]]
-(use-package fill-column-indicator
-  :ensure t
-  :config
-  (setq fci-rule-column 79))
-;; org_gcr_2017-05-12_mara_3E475ED3-773E-4537-B29F-6888B7DB90DF ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-06-28_mara_EE77505E-5757-409C-9E87-2FA685145AB2][org_gcr_2017-06-28_mara_EE77505E-5757-409C-9E87-2FA685145AB2]]
 (use-package indent-guide
   :ensure t
@@ -3027,7 +3020,6 @@ Geiser REPL is: %(help/geiser-on-p)
     (local-set-key (kbd "<C-return>") #'help/geiser-eval-line))
   (add-hook 'geiser-mode-hook #'help/geiser-mode-hook-fn)
   (defun help/geiser-repl-mode-hook-fn ()
-    (turn-off-fci-mode)
     (local-unset-key (kbd "C-."))
     (local-unset-key (kbd "C-j"))
     (local-set-key (kbd "<C-return>") #'geiser-repl--maybe-send)
