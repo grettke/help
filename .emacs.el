@@ -867,6 +867,11 @@ Atribution: URL `https://emacs.stackexchange.com/a/33893/341'"
   (interactive)
   (insert (format-time-string "%m/%d/%y")))
 
+(defun help/insert-datestamp-us-full-year-and-dashes ()
+  "Produces and inserts a US datestamp with full year and dashes."
+  (interactive)
+  (insert (format-time-string "%m-%d-%Y")))
+
 (defun help/insert-datestamp-us-full-year ()
   "Produces and inserts a US datestamp with full year."
   (interactive)
@@ -4190,7 +4195,7 @@ Flycheck On? %(bound-and-true-p flycheck-mode)
 (defhydra help/hydra/timestamp (:color blue :hint nil)
   "
 Timestamps: (_q_uit)
-  Date: _I_SO, _U_S, US With _Y_ear, US In _W_ords
+  Date: _I_SO, _U_S, US With _Y_ear and _D_ashes, US In _W_ords
    Date/Time: _N_o Colons or _w_ith
     Org-Mode: _R_ight Now or _c_hoose
 "
@@ -4199,6 +4204,7 @@ Timestamps: (_q_uit)
   ("I" help/insert-datestamp)
   ("U" help/insert-datestamp-us)
   ("Y" help/insert-datestamp-us-full-year)
+  ("D" help/insert-datestamp-us-full-year-and-dashes)
   ("W" help/insert-datestamp-us-words)
 
   ("N" help/insert-timestamp-no-colons)
