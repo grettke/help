@@ -2967,8 +2967,6 @@ URL: `http://emacsredux.com/blog/2013/03/27/indent-region-or-buffer/'"
       (progn
         (help/untabify-buffer-if-not-indent-tabs-mode)
         (message "Untabified buffer.")))))
-
-(add-hook 'before-save-hook #'help/untabify-buffer-if-not-indent-tabs-mode)
 #+END_SRC
 
 Most programing modes indent to 2 spaces. TABs should be the same width.

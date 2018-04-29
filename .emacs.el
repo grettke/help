@@ -1850,8 +1850,6 @@ URL: `http://emacsredux.com/blog/2013/03/27/indent-region-or-buffer/'"
       (progn
         (help/untabify-buffer-if-not-indent-tabs-mode)
         (message "Untabified buffer.")))))
-
-(add-hook 'before-save-hook #'help/untabify-buffer-if-not-indent-tabs-mode)
 ;; org_gcr_2017-05-12_mara_3FFCD7B4-0055-4BE8-938F-EEA09D077343 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5A73C4A8-C2AE-4F36-9D64-3FB6A4FF31E0][org_gcr_2017-05-12_mara_5A73C4A8-C2AE-4F36-9D64-3FB6A4FF31E0]]
