@@ -4775,7 +4775,7 @@ Vocabulary: (_q_uit)
 
   ("q" nil)
 
-  ("s" Lorem-ipsum-insert-sentences :exit nil)
+  ("s" lorem-ipsum-insert-sentences :exit nil)
   ("p" lorem-ipsum-insert-paragraphs :exit nil)
   ("l" lorem-ipsum-insert-lists :exit nil)
 
