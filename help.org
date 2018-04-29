@@ -4755,7 +4755,18 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 #+NAME: org_gcr_2017-08-04_mara_24E4983A-3842-4365-8C3A-8D2019AB223D
 #+BEGIN_SRC emacs-lisp
 (use-package lorem-ipsum
-  :ensure t)
+  :ensure t
+  :config
+  (defun help/lorem-ipsum-insert-word ()
+    (interactive)
+    (let* ((paragraph
+            (nth (random (length lorem-ipsum-text)) lorem-ipsum-text))
+           (sentence
+            (concat (nth (random (length paragraph)) paragraph)
+                    lorem-ipsum-sentence-separator))
+           (words (split-string sentence))
+           (word (nth (random (length words)) words)))
+      (insert word))))
 
 (use-package academic-phrases
   :ensure t)
@@ -4763,7 +4774,7 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 (defhydra help/hydra/words (:color blue :hint nil)
   "
 Vocabulary: (_q_uit)
- Lorem Ipsum: _s_entence _p_aragraphs _l_ist
+ Lorem Ipsum: _w_ord _s_entence _p_aragraphs _l_ist
   Academic Phrases: _a_ll or by se_c_tion
    _E_macs Name (insert _e_macs name)
     _F_lame (insert _f_lame)
@@ -4775,6 +4786,7 @@ Vocabulary: (_q_uit)
 
   ("q" nil)
 
+  ("w" help/lorem-ipsum-insert-word)
   ("s" lorem-ipsum-insert-sentences :exit nil)
   ("p" lorem-ipsum-insert-paragraphs :exit nil)
   ("l" lorem-ipsum-insert-lists :exit nil)
