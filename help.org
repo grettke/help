@@ -3152,7 +3152,7 @@ Smerge.
   (setq whitespace-display-mappings
         '((tab-mark ?\t [?↹ ?\t] [?␉ ?\t] [?\t])))
   (setq whitespace-line-column help/column-width)
-  (global-whitespace-mode t)
+  (global-whitespace-mode nil)
   (setq whitespace-global-modes '(not go-mode))
   :diminish whitespace-mode global-whitespace-mode)
 #+END_SRC

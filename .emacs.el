@@ -1977,7 +1977,7 @@ _T_odo | _A_rchives | Rest_o_res
   (setq whitespace-display-mappings
         '((tab-mark ?\t [?↹ ?\t] [?␉ ?\t] [?\t])))
   (setq whitespace-line-column help/column-width)
-  (global-whitespace-mode t)
+  (global-whitespace-mode nil)
   (setq whitespace-global-modes '(not go-mode))
   :diminish whitespace-mode global-whitespace-mode)
 ;; org_gcr_2017-05-12_mara_081024E6-F582-40DF-A96F-7216725FDD00 ends here
