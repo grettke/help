@@ -2941,8 +2941,7 @@ Most modes in this system will never use TAB stops.
 (setq-default indent-tabs-mode nil)
 #+END_SRC
 
-Remove TAB from all buffers before persisting to the backing file unless it is
-configured to retain TAB. The use case is a Makefile.
+Functions to remove TAB
 
 #+NAME: org_gcr_2017-05-12_mara_3FFCD7B4-0055-4BE8-938F-EEA09D077343
 #+BEGIN_SRC emacs-lisp
@@ -2969,11 +2968,12 @@ URL: `http://emacsredux.com/blog/2013/03/27/indent-region-or-buffer/'"
         (message "Untabified buffer.")))))
 #+END_SRC
 
-Most programing modes indent to 2 spaces. TABs should be the same width.
+JavaScript programmers set tabs to 2. C programmers set it to 8. Makefiles
+looks great at 4. 4 is the average and it looks good in exported LaTeX listings.
 
 #+NAME: org_gcr_2017-05-12_mara_5A73C4A8-C2AE-4F36-9D64-3FB6A4FF31E0
 #+BEGIN_SRC emacs-lisp
-(setq-default tab-width 2)
+(setq-default tab-width 4)
 #+END_SRC
 
 ** Version Control
@@ -6126,8 +6126,7 @@ sh-mode:
 #+begin_src emacs-lisp
 (use-package make-mode
   :config
-  (defun help/make-mode-hook ()
-    (set (make-local-variable 'tab-width) 4)))
+  (defun help/make-mode-hook ()))
 (add-hook 'makefile-mode-hook #'help/make-mode-hook)
 (add-to-list 'auto-mode-alist '("Makefile" . makefile-mode))
 #+end_src

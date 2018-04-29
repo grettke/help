@@ -1853,7 +1853,7 @@ URL: `http://emacsredux.com/blog/2013/03/27/indent-region-or-buffer/'"
 ;; org_gcr_2017-05-12_mara_3FFCD7B4-0055-4BE8-938F-EEA09D077343 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5A73C4A8-C2AE-4F36-9D64-3FB6A4FF31E0][org_gcr_2017-05-12_mara_5A73C4A8-C2AE-4F36-9D64-3FB6A4FF31E0]]
-(setq-default tab-width 2)
+(setq-default tab-width 4)
 ;; org_gcr_2017-05-12_mara_5A73C4A8-C2AE-4F36-9D64-3FB6A4FF31E0 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_3E77B825-E0A4-40EC-88DC-3F5C1E1445CE][org_gcr_2017-05-12_mara_3E77B825-E0A4-40EC-88DC-3F5C1E1445CE]]
@@ -3773,8 +3773,7 @@ sh-mode:
 ;; [[file:~/src/help/help.org::org_gcr_2018-03-17T20-26-45-05-00_mara_AF83DB64-A5AD-4853-BE74-6DA4E4A4E2C6][org_gcr_2018-03-17T20-26-45-05-00_mara_AF83DB64-A5AD-4853-BE74-6DA4E4A4E2C6]]
 (use-package make-mode
   :config
-  (defun help/make-mode-hook ()
-    (set (make-local-variable 'tab-width) 4)))
+  (defun help/make-mode-hook ()))
 (add-hook 'makefile-mode-hook #'help/make-mode-hook)
 (add-to-list 'auto-mode-alist '("Makefile" . makefile-mode))
 ;; org_gcr_2018-03-17T20-26-45-05-00_mara_AF83DB64-A5AD-4853-BE74-6DA4E4A4E2C6 ends here
