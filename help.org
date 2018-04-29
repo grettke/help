@@ -1361,6 +1361,26 @@ Atribution: URL `https://emacs.stackexchange.com/a/33893/341'"
       (setcdr pair val)
     (push (cons key val) alist))
   alist)
+
+(defun help/org-time-stamp-with-seconds-now ()
+  (interactive)
+  (let ((current-prefix-arg '(16)))
+    (call-interactively 'org-time-stamp)))
+
+(defun help/insert-datestamp-us ()
+  "Produces and inserts a US datestamp."
+  (interactive)
+  (insert (format-time-string "%m/%d/%y")))
+
+(defun help/insert-datestamp-us-full-year ()
+  "Produces and inserts a US datestamp with full year."
+  (interactive)
+  (insert (format-time-string "%m/%d/%Y")))
+
+(defun help/insert-datestamp-us-words ()
+  "Produces and inserts a US datestamp using words."
+  (interactive)
+  (insert (format-time-string "%A %B %d, %Y")))
 #+END_SRC
 
 ** Typography
@@ -4427,6 +4447,14 @@ Easily manipulate lists and headlines staying close to home.
      :ID:       org_gcr_2017-05-12_mara:ADB2113A-6D9F-4145-9D78-1DDFE5A2C916
      :END:
 
+
+Release these bindings.
+
+#+NAME: org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC
+#+BEGIN_SRC emacs-lisp
+(global-unset-key (kbd "C-M-t"))
+#+END_SRC
+
 #+NAME: org_gcr_2017-05-12_mara_49522E70-EE2D-4CF9-95D7-8E43524A469D
 #+BEGIN_SRC emacs-lisp
 (define-key org-mode-map (kbd "s-]") (lambda () (interactive)
@@ -4494,19 +4522,6 @@ Because I only use this for Org-Mode.
 (define-key org-mode-map (kbd "s-n") #'org-babel-view-src-block-info)
 (define-key org-mode-map (kbd "s-m") #'org-babel-expand-src-block)
 (define-key org-mode-map (kbd "s-,") #'org-babel-open-src-block-result)
-#+END_SRC
-
-Exception to the side-rule: keep this near other time related bindings.
-
-#+NAME: org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC
-#+BEGIN_SRC emacs-lisp
-(define-key org-mode-map (kbd "s-t") #'org-time-stamp)
-(defun help/org-time-stamp-with-seconds-now ()
-  (interactive)
-  (let ((current-prefix-arg '(16)))
-    (call-interactively 'org-time-stamp)))
-(global-unset-key (kbd "C-M-t"))
-(global-set-key (kbd "C-M-t") #'help/org-time-stamp-with-seconds-now)
 #+END_SRC
 
 Because I only use this for Org-Mode.
@@ -7265,6 +7280,34 @@ Flycheck On? %(bound-and-true-p flycheck-mode)
 :PROPERTIES:
 :ID:       org_gcr_2017-12-07_mara:752198AC-06ED-436E-B526-5A3C8ED32375
 :END:
+
+
+Date related things.
+
+#+NAME: org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC
+#+BEGIN_SRC emacs-lisp
+(defhydra help/hydra/timestamp (:color blue :hint nil)
+  "
+Timestamps: (_q_uit)
+  Date: _I_SO, _U_S, US With _Y_ear, US In _W_ords
+   Date/Time: _N_o Colons or _w_ith
+    Org-Mode: _R_ight Now or _c_hoose
+"
+  ("q" nil)
+
+  ("I" help/insert-datestamp)
+  ("U" help/insert-datestamp-us)
+  ("Y" help/insert-datestamp-us-full-year)
+  ("W" help/insert-datestamp-us-words)
+
+  ("N" help/insert-timestamp-no-colons)
+  ("w" help/insert-timestamp)
+
+  ("R" help/org-time-stamp-with-seconds-now)
+  ("c" org-time-stamp))
+(global-set-key (kbd "C-t") #'help/hydra/timestamp/body)
+#+END_SRC
+
 #+NAME: org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389
 #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "C-M-<tab>") #'help/untabify-buffer-or-region-if-not-indent-tabs-mode)
@@ -7283,8 +7326,6 @@ Flycheck On? %(bound-and-true-p flycheck-mode)
 (global-set-key (kbd "s-q") #'kill-buffer)
 (global-set-key (kbd "M-r") #'ert)
 (global-set-key (kbd "C-M-y") #'insert-char)
-(global-set-key (kbd "C-t") #'help/insert-datestamp)
-(global-set-key (kbd "M-t") #'help/insert-timestamp-no-colons)
 (global-set-key (kbd "C-M-o") #'help/occur-dwim)
 (global-set-key (kbd "M-i") nil)
 (global-set-key (kbd "M-i") #'help/hydra/left/describe/body)

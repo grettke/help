@@ -115,7 +115,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-             hidden-mode-line-mode)
+           hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -856,6 +856,26 @@ Atribution: URL `https://emacs.stackexchange.com/a/33893/341'"
       (setcdr pair val)
     (push (cons key val) alist))
   alist)
+
+(defun help/org-time-stamp-with-seconds-now ()
+  (interactive)
+  (let ((current-prefix-arg '(16)))
+    (call-interactively 'org-time-stamp)))
+
+(defun help/insert-datestamp-us ()
+  "Produces and inserts a US datestamp."
+  (interactive)
+  (insert (format-time-string "%m/%d/%y")))
+
+(defun help/insert-datestamp-us-full-year ()
+  "Produces and inserts a US datestamp with full year."
+  (interactive)
+  (insert (format-time-string "%m/%d/%Y")))
+
+(defun help/insert-datestamp-us-words ()
+  "Produces and inserts a US datestamp using words."
+  (interactive)
+  (insert (format-time-string "%A %B %d, %Y")))
 ;; org_gcr_2017-05-12_mara_7D37FFE5-2D2B-4CF7-AF27-F3CB8616D81B ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F][org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F]]
@@ -2607,6 +2627,10 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (key-chord-define org-mode-map "i9" #'org-metaright)
 ;; org_gcr_2017-05-12_mara_6BA97DBC-AE5D-4C60-AD03-EF150686A03F ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC][org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC]]
+(global-unset-key (kbd "C-M-t"))
+;; org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_49522E70-EE2D-4CF9-95D7-8E43524A469D][org_gcr_2017-05-12_mara_49522E70-EE2D-4CF9-95D7-8E43524A469D]]
 (define-key org-mode-map (kbd "s-]") (lambda () (interactive)
                                        (message "Removing all source block resuls")
@@ -2659,16 +2683,6 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (define-key org-mode-map (kbd "s-m") #'org-babel-expand-src-block)
 (define-key org-mode-map (kbd "s-,") #'org-babel-open-src-block-result)
 ;; org_gcr_2017-05-12_mara_8C00E3FE-4AE1-49BA-97E7-FAB2784DD0A9 ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC][org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC]]
-(define-key org-mode-map (kbd "s-t") #'org-time-stamp)
-(defun help/org-time-stamp-with-seconds-now ()
-  (interactive)
-  (let ((current-prefix-arg '(16)))
-    (call-interactively 'org-time-stamp)))
-(global-unset-key (kbd "C-M-t"))
-(global-set-key (kbd "C-M-t") #'help/org-time-stamp-with-seconds-now)
-;; org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-07-12_mara_97C70CDA-DFBF-4422-942A-00E732D3AB6A][org_gcr_2017-07-12_mara_97C70CDA-DFBF-4422-942A-00E732D3AB6A]]
 (define-key global-map (kbd "s-m") nil)
@@ -4120,6 +4134,29 @@ Flycheck On? %(bound-and-true-p flycheck-mode)
 (global-set-key (kbd "C-M-9") #'help/hydra-checking/body)
 ;; org_gcr_2017-06-13_mara_2DFDC64B-DBF2-473E-979F-D7D8D0DD2206 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC][org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC]]
+(defhydra help/hydra/timestamp (:color blue :hint nil)
+  "
+Timestamps: (_q_uit)
+  Date: _I_SO, _U_S, US With _Y_ear, US In _W_ords
+   Date/Time: _N_o Colons or _w_ith
+    Org-Mode: _R_ight Now or _c_hoose
+"
+  ("q" nil)
+
+  ("I" help/insert-datestamp)
+  ("U" help/insert-datestamp-us)
+  ("Y" help/insert-datestamp-us-full-year)
+  ("W" help/insert-datestamp-us-words)
+
+  ("N" help/insert-timestamp-no-colons)
+  ("w" help/insert-timestamp)
+
+  ("R" help/org-time-stamp-with-seconds-now)
+  ("c" org-time-stamp))
+(global-set-key (kbd "C-t") #'help/hydra/timestamp/body)
+;; org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389][org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389]]
 (global-set-key (kbd "C-M-<tab>") #'help/untabify-buffer-or-region-if-not-indent-tabs-mode)
 (global-set-key (kbd "C-M-1") #'help/1-window)
@@ -4137,8 +4174,6 @@ Flycheck On? %(bound-and-true-p flycheck-mode)
 (global-set-key (kbd "s-q") #'kill-buffer)
 (global-set-key (kbd "M-r") #'ert)
 (global-set-key (kbd "C-M-y") #'insert-char)
-(global-set-key (kbd "C-t") #'help/insert-datestamp)
-(global-set-key (kbd "M-t") #'help/insert-timestamp-no-colons)
 (global-set-key (kbd "C-M-o") #'help/occur-dwim)
 (global-set-key (kbd "M-i") nil)
 (global-set-key (kbd "M-i") #'help/hydra/left/describe/body)
