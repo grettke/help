@@ -3992,6 +3992,10 @@ Use XeTeX.
 :PROPERTIES:
 :ID:       org_gcr_2018-03-07_mara:AE89B25B-486B-41BD-B3C5-C9499D93A4F2
 :END:
+****** Installation
+:PROPERTIES:
+:ID:       org_gcr_2018-04-28T19-58-14-05-00_mara:B51D7F56-0F8F-4206-8775-E6871618E28C
+:END:
 Copied and customized from [[https://github.com/kaushalmodi/.emacs.d/blob/master/setup-files/setup-org.el][here]].
 
 #+name: org_gcr_2018-03-07_mara_C60306B4-7FB0-45AB-B39F-2BF47FA39604
@@ -4008,11 +4012,54 @@ Copied and customized from [[https://github.com/kaushalmodi/.emacs.d/blob/master
      ("" "caption")
      ("" "latexsym")
      ("" "lettrine")
-     ("" "grantcrettke")))
+     ("" "grantcrettke")
+     ("" "listings")
+     ("" "color")
+     ("" "fancyvrb")))
 (setq org-latex-packages-alist
       (append help/org-latex-packages-alist-pre-hyperref
               '(("" "hyperref" nil))
               help/org-latex-packages-alist-post-hyperref))
+#+end_src
+****** Configuration
+:PROPERTIES:
+:ID:       org_gcr_2018-04-28T19-58-14-05-00_mara:8CC6E1C3-5300-4D9D-AB13-A064276342FB
+:END:
+#+name: org_gcr_2018-04-28T19-58-14-05-00_mara_50C0EEF0-A896-44B3-AC2B-0635552A723A
+#+begin_src emacs-lisp
+(setq org-latex-listings-options
+      '(("basicstyle" "\\ttfamily")
+        ("breakatwhitespace" "false")
+        ("breakautoindent" "true")
+        ("breaklines" "true")
+        ("columns" "[c]fullflexible")
+        ("commentstyle" "")
+        ("emptylines" "*")
+        ("extendedchars" "false")
+        ("fancyvrb" "true")
+        ("firstnumber" "auto")
+        ("flexiblecolumns" "false")
+        ("frame" "single")
+        ("frameround" "tttt")
+        ("identifierstyle" "")
+        ("keepspaces" "true")
+        ("keywordstyle" "")
+        ("mathescape" "false")
+        ("numbers" "left")
+        ("numbers" "none")
+        ("numbersep" "5pt")
+        ("numberstyle" "\\tiny")
+        ("resetmargins" "false")
+        ("showlines" "true")
+        ("showspaces" "false")
+        ("showstringspaces" "false")
+        ("showtabs" "true")
+        ("stepnumber" "2")
+        ("stringstyle" "")
+        ("tab" "↹")
+        ("tabsize" "4")
+        ("texcl" "false")
+        ("upquote" "false")))
 #+end_src
 ***** Classes
 :PROPERTIES:
@@ -4038,6 +4085,14 @@ Standard article class.
 
 (setq org-latex-default-class "help-article")
 #+END_SRC
+***** Printing Source Code
+:PROPERTIES:
+:ID:       org_gcr_2018-04-28T19-58-14-05-00_mara:5CF00598-18B1-473C-804E-6A49AE8E0C51
+:END:
+#+name: org_gcr_2018-04-28T19-58-14-05-00_mara_C24D46F9-B35E-4D87-B47D-662D29F4173A
+#+begin_src emacs-lisp
+(setq org-latex-listings t)
+#+end_src
 ***** Unclassified
 :PROPERTIES:
 :ID:       org_gcr_2018-03-07_mara:593C2BE0-5AD2-4654-B44B-C7F80F33F99A

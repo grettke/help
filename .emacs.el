@@ -2412,12 +2412,51 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
      ("" "caption")
      ("" "latexsym")
      ("" "lettrine")
-     ("" "grantcrettke")))
+     ("" "grantcrettke")
+     ("" "listings")
+     ("" "color")
+     ("" "fancyvrb")))
 (setq org-latex-packages-alist
       (append help/org-latex-packages-alist-pre-hyperref
               '(("" "hyperref" nil))
               help/org-latex-packages-alist-post-hyperref))
 ;; org_gcr_2018-03-07_mara_C60306B4-7FB0-45AB-B39F-2BF47FA39604 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-04-28T19-58-14-05-00_mara_50C0EEF0-A896-44B3-AC2B-0635552A723A][org_gcr_2018-04-28T19-58-14-05-00_mara_50C0EEF0-A896-44B3-AC2B-0635552A723A]]
+(setq org-latex-listings-options
+      '(("basicstyle" "\\ttfamily")
+        ("breakatwhitespace" "false")
+        ("breakautoindent" "true")
+        ("breaklines" "true")
+        ("columns" "[c]fullflexible")
+        ("commentstyle" "")
+        ("emptylines" "*")
+        ("extendedchars" "false")
+        ("fancyvrb" "true")
+        ("firstnumber" "auto")
+        ("flexiblecolumns" "false")
+        ("frame" "single")
+        ("frameround" "tttt")
+        ("identifierstyle" "")
+        ("keepspaces" "true")
+        ("keywordstyle" "")
+        ("mathescape" "false")
+        ("numbers" "left")
+        ("numbers" "none")
+        ("numbersep" "5pt")
+        ("numberstyle" "\\tiny")
+        ("resetmargins" "false")
+        ("showlines" "true")
+        ("showspaces" "false")
+        ("showstringspaces" "false")
+        ("showtabs" "true")
+        ("stepnumber" "2")
+        ("stringstyle" "")
+        ("tab" "↹")
+        ("tabsize" "4")
+        ("texcl" "false")
+        ("upquote" "false")))
+;; org_gcr_2018-04-28T19-58-14-05-00_mara_50C0EEF0-A896-44B3-AC2B-0635552A723A ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7EE5307A-ACC5-4FE9-A519-0F273B4589E9][org_gcr_2017-05-12_mara_7EE5307A-ACC5-4FE9-A519-0F273B4589E9]]
 (defvar help/ltx-cls-opt "12pt")
@@ -2433,6 +2472,10 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 
 (setq org-latex-default-class "help-article")
 ;; org_gcr_2017-05-12_mara_006EB5E3-5478-43C7-AEAC-34CCF49127AC ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-04-28T19-58-14-05-00_mara_C24D46F9-B35E-4D87-B47D-662D29F4173A][org_gcr_2018-04-28T19-58-14-05-00_mara_C24D46F9-B35E-4D87-B47D-662D29F4173A]]
+(setq org-latex-listings t)
+;; org_gcr_2018-04-28T19-58-14-05-00_mara_C24D46F9-B35E-4D87-B47D-662D29F4173A ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2018-03-07_mara_22B13787-67AA-4462-949B-3C1E6702EB7C][org_gcr_2018-03-07_mara_22B13787-67AA-4462-949B-3C1E6702EB7C]]
 (setq org-latex-default-figure-position "H")
