@@ -115,7 +115,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-           hidden-mode-line-mode)
+             hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -2174,11 +2174,13 @@ _T_odo | _A_rchives | Rest_o_res
 (defhydra help/hydra-elisp-mode (:color blue
                                         :hint nil)
   "
-elisp-mode:
- _h_ eval-buffer
-  _q_ quit
+elisp-mode: _q_uit
+ Reformat s-expr: _m_ultiline or _o_ne line
+  Evaluation: _b_uffer
 "
-  ("h" eval-buffer)
+  ("m" lispy-multiline)
+  ("o" lispy-oneline)
+  ("b" eval-buffer)
   ("q" nil))
 (key-chord-define emacs-lisp-mode-map "hh" #'help/hydra-elisp-mode/body)
 
