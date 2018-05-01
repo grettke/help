@@ -123,15 +123,15 @@
 ;; org_gcr_2017-11-15_mara_361908ED-32C9-4339-91AE-F02A2E017A87 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_FF670CDD-5374-49BA-897A-AE1A30B444D6][org_gcr_2017-05-12_mara_FF670CDD-5374-49BA-897A-AE1A30B444D6]]
-(defmacro help/on-osx (statement &rest statements)
-  "Evaluate the enclosed body only when run on OSX."
+(defmacro help/on-mac-os (statement &rest statements)
+  "Evaluate the enclosed body only when run on macOS."
   `(when (eq system-type 'darwin)
      ,statement
      ,@statements))
 ;; org_gcr_2017-05-12_mara_FF670CDD-5374-49BA-897A-AE1A30B444D6 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_375D2A3D-54B5-4DBC-B911-38CAB716286A][org_gcr_2017-05-12_mara_375D2A3D-54B5-4DBC-B911-38CAB716286A]]
-(help/on-osx
+(help/on-mac-os
  (use-package exec-path-from-shell
    :ensure t
    :config
@@ -140,7 +140,7 @@
 ;; org_gcr_2017-05-12_mara_375D2A3D-54B5-4DBC-B911-38CAB716286A ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F29E41A6-234D-4727-B9DF-75E5F5AC2AD3][org_gcr_2017-05-12_mara_F29E41A6-234D-4727-B9DF-75E5F5AC2AD3]]
-(help/on-osx
+(help/on-mac-os
  (setq mac-control-modifier 'control)
  (setq mac-right-control-modifier 'left)
  (setq mac-command-modifier 'meta)
@@ -148,7 +148,7 @@
  (setq mac-option-modifier 'super)
  (setq mac-right-option-modifier 'left)
  (defun help/toggle-mac-right-option-modifier ()
-   "Toggle between passing option modifier either to Emacs or OS X."
+   "Toggle between passing option modifier either to Emacs or macOS."
    (interactive)
    (let ((old-ropt mac-right-option-modifier))
      (setq mac-right-option-modifier
@@ -159,7 +159,7 @@
               old-ropt
               mac-right-option-modifier)))
  (defun help/toggle-mac-function-modifier ()
-   "Toggle between passing function modifier either to Emacs or OS X."
+   "Toggle between passing function modifier either to Emacs or macOS."
    (interactive)
    (let ((old-func mac-function-modifier))
      (setq mac-function-modifier
@@ -172,7 +172,7 @@
 ;; org_gcr_2017-05-12_mara_F29E41A6-234D-4727-B9DF-75E5F5AC2AD3 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_82602D6E-30DB-49CF-A900-1FC9B733C347][org_gcr_2017-05-12_mara_82602D6E-30DB-49CF-A900-1FC9B733C347]]
-(help/on-osx
+(help/on-mac-os
  (defun help/yes-or-no-p (orig-fun &rest args)
    "Prevent yes-or-no-p from activating a dialog."
    (let ((use-dialog-box nil))
@@ -623,7 +623,7 @@ Attribution: URL `https://www.emacswiki.org/emacs/DosToUnix'"
 Attribution: URL
 `https://github.com/kotfu/marked-bonus-pack/blob/master/Emacs/dot.emacs.txt'"
   (interactive)
-  (help/on-osx
+  (help/on-mac-os
    (shell-command
     (format "open -a 'Marked 2.app' %s"
             (shell-quote-argument (buffer-file-name))))))
@@ -1595,7 +1595,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (setq alert-fade-time 10)
   (setq alert-default-style 'message)
   (help/on-gui
-   (help/on-osx
+   (help/on-mac-os
     (setq alert-default-style 'notifier)))
   (setq alert-reveal-idle-time 120))
 ;; org_gcr_2017-05-12_mara_66255B58-A96D-445E-83BF-F597E4BA4FB8 ends here
@@ -1811,7 +1811,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
 ;; org_gcr_2017-05-12_mara_5C415ECB-91FC-44C2-9886-29704EF74836 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BC64FFC2-D587-4D4F-B693-71B3731A71F1][org_gcr_2017-05-12_mara_BC64FFC2-D587-4D4F-B693-71B3731A71F1]]
-(help/on-osx
+(help/on-mac-os
  (defun help/ido-find-file ()
    "Find file as root if necessary.
 
@@ -3678,7 +3678,7 @@ Errors: _R_eport ⏼_B_oxes ⏼_W_arnings
     :ensure t
     :config
     (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode)))
-  (help/on-osx
+  (help/on-mac-os
    (setq markdown-open-command "/Users/gcr/util/mark")))
 ;; org_gcr_2017-05-12_mara_42D37E52-A420-4196-8B2C-6755441A5FC3 ends here
 
@@ -3959,7 +3959,7 @@ Ansible: (q to quit)
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_6B639D09-DA18-40C5-ABA0-8647820507E6][org_gcr_2017-05-12_mara_6B639D09-DA18-40C5-ABA0-8647820507E6]]
 (help/on-gui
  (defvar help/font-size-current 10 "The preferred font size.")
- (help/on-osx (setq help/font-size-current 17))
+ (help/on-mac-os (setq help/font-size-current 17))
  (help/on-windows (setq help/font-size-current 13))
  (defconst help/font-size-ideal help/font-size-current "The ideal font for this system.")
  (defconst help/font-base "DejaVu Sans Mono" "The preferred font name.")
@@ -4027,7 +4027,7 @@ Ansible: (q to quit)
 ;; org_gcr_2017-07-11_mara_9D659239-693A-430C-A4CE-6003BD650A60 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-07-23_mara_949332F2-28B2-4BC3-B1E7-C7A24DF56269][org_gcr_2017-07-23_mara_949332F2-28B2-4BC3-B1E7-C7A24DF56269]]
-(help/on-osx
+(help/on-mac-os
  (tool-bar-add-item
   "apple"
   'do-nothing

@@ -43,17 +43,17 @@ Grant Rettke
   | ;; installed packages.  Don't delete this line.  If you don't want it,
   | ;; just comment it out by adding a semicolon to the start of the line.
   | ;; You may delete these explanatory comments.
-  | ;(package-initialize)
+  | ;;(package-initialize)
   |
   | (load-file "~/src/help/.org-mode-contribute.emacs.el")
   `----
 
 
 [lexically and dynamically scope closures]
-https://yoo2080.wordpress.com/2011/12/31/lexical-scoping-and-dynamic-scoping-in-emacs-lisp/
+<https://yoo2080.wordpress.com/2011/12/31/lexical-scoping-and-dynamic-scoping-in-emacs-lisp/>
 
 [special variables]
-https://yoo2080.wordpress.com/2013/08/14/invasion-of-special-variables-in-emacs-lisp/
+<https://yoo2080.wordpress.com/2013/08/14/invasion-of-special-variables-in-emacs-lisp/>
 
 1.1 HELP Enables Literate Programming
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -89,20 +89,20 @@ https://yoo2080.wordpress.com/2013/08/14/invasion-of-special-variables-in-emacs-
        - `ln -s ~/src/help/.emacs.el ~/.emacs.el'
 
 
-[Clone Org-Mode] http://orgmode.org/
+[Clone Org-Mode] <http://orgmode.org/>
 
 [Generating autoloads and Compiling Org without make]
-http://orgmode.org/worg/org-hacks.html
+<http://orgmode.org/worg/org-hacks.html>
 
-[Clone Org2Blog] https://github.com/punchagan/org2blog
+[Clone Org2Blog] <https://github.com/punchagan/org2blog>
 
-[Clone Use-Package] https://github.com/jwiegley/use-package
+[Clone Use-Package] <https://github.com/jwiegley/use-package>
 
-[Oracle Java] https://www.oracle.com/java/index.html
+[Oracle Java] <https://www.oracle.com/java/index.html>
 
-[LanguageTool] https://www.languagetool.org/
+[LanguageTool] <https://www.languagetool.org/>
 
-[MacTeX] https://tug.org/mactex/
+[MacTeX] <https://tug.org/mactex/>
 
 
 1.2 Style Guide
@@ -119,17 +119,25 @@ http://orgmode.org/worg/org-hacks.html
       - Does it belong in this web?
       - Does it belong in this headline?
   - Dictionary
-    Exemple Complet Minimal (ECM): The minimal complete example of expected versus
-                                   actual behavior. [Source].
-    Key-Bind: A verb. The act of creating a Key Binding.
-    Literate Programming (LP): As Knuth intended.
-    Out of the Box (OOTB): The default configuration.
-    Sysop: A proper noun. The System-Operator. The human operating this EMACS
-           based Org-Mode enabled literate programming system. The reader.
-    Tangle: A verb. Assemble a document for consumption by another program or
-            machine.
-    Weave: A verb. Prepare a document for consumption by a human.
-    Web: A document contained Source-Block definitions that define a system.
+    Exemple Complet Minimal (ECM)
+          The minimal complete example of expected versus actual behavior.
+          [Source].
+    Key-Bind
+          A verb. The act of creating a Key Binding.
+    Literate Programming (LP)
+          As Knuth intended.
+    Out of the Box (OOTB)
+          The default configuration.
+    Sysop
+          A proper noun. The System-Operator. The human operating this EMACS
+          based Org-Mode enabled literate programming system. The reader.
+    Tangle
+          A verb. Assemble a document for consumption by another program or
+          machine.
+    Weave
+          A verb. Prepare a document for consumption by a human.
+    Web
+          A document contained Source-Block definitions that define a system.
   - Encoding
     - Prefer Unicode characters over ASCII equivalents.
       - Note eventual switch form PDFLaTeX to LuaTeX.
@@ -304,10 +312,10 @@ http://orgmode.org/worg/org-hacks.html
       this system then it is perfect and delightful.
 
 
-[Source] http://orgmode.org/worg/org-faq.html
+[Source] <http://orgmode.org/worg/org-faq.html>
 
 [Quoted via]
-https://www.gnu.org/software/emacs/manual/html_node/elisp/Using-Lexical-Binding.html#Using-Lexical-Binding
+<https://www.gnu.org/software/emacs/manual/html_node/elisp/Using-Lexical-Binding.html#Using-Lexical-Binding>
 
 
 1.3 History
@@ -353,7 +361,7 @@ https://www.gnu.org/software/emacs/manual/html_node/elisp/Using-Lexical-Binding.
   up with [TC3F].
 
 
-[TC3F] https://raw.githubusercontent.com/grettke/home/master/TC3F.txt
+[TC3F] <https://raw.githubusercontent.com/grettke/home/master/TC3F.txt>
 
 
 1.3.3 Version 3: ALEC'S A LANGUAGE FOR EXPRESSING CREATIVITY (ALEC)
@@ -444,7 +452,7 @@ https://www.gnu.org/software/emacs/manual/html_node/elisp/Using-Lexical-Binding.
 
 
 [package-selected-packages]
-https://www.reddit.com/r/emacs/comments/53zpv9/how_do_i_get_emacs_to_stop_adding_custom_fields/
+<https://www.reddit.com/r/emacs/comments/53zpv9/how_do_i_get_emacs_to_stop_adding_custom_fields/>
 
 
 2.2 Display
@@ -467,7 +475,6 @@ https://www.reddit.com/r/emacs/comments/53zpv9/how_do_i_get_emacs_to_stop_adding
   |   `(when (not (display-graphic-p))
   |      ,statement
   |      ,@statements))
-  |
   `----
 
 
@@ -479,7 +486,6 @@ https://www.reddit.com/r/emacs/comments/53zpv9/how_do_i_get_emacs_to_stop_adding
   ,----
   | (use-package hydra
   |   :ensure t)
-  |
   `----
 
 
@@ -548,13 +554,6 @@ https://www.reddit.com/r/emacs/comments/53zpv9/how_do_i_get_emacs_to_stop_adding
   |   :ensure t)
   `----
 
-  Namespacing without language support.
-
-  ,----
-  | (use-package names
-  |   :ensure t)
-  `----
-
   Child process handling specifically for Magit.
 
   ,----
@@ -593,17 +592,48 @@ https://www.reddit.com/r/emacs/comments/53zpv9/how_do_i_get_emacs_to_stop_adding
   |   :ensure t)
   `----
 
+  Emacs mode for hiding the mode-line from [Bastien].
 
-2.7 OS X
-~~~~~~~~
+  ,----
+  | (defvar-local hidden-mode-line-mode nil)
+  |
+  | (define-minor-mode hidden-mode-line-mode
+  |   "Minor mode to hide the mode-line in the current buffer."
+  |   :init-value nil
+  |   :global t
+  |   :variable hidden-mode-line-mode
+  |   :group 'editing-basics
+  |   (if hidden-mode-line-mode
+  |       (setq hide-mode-line mode-line-format
+  |             mode-line-format nil)
+  |     (setq mode-line-format hide-mode-line
+  |           hide-mode-line nil))
+  |   (force-mode-line-update)
+  |   ;; Apparently force-mode-line-update is not always enough to
+  |   ;; redisplay the mode-line
+  |   (redraw-display)
+  |   (when (and (called-interactively-p 'interactive)
+  |              hidden-mode-line-mode)
+  |     (run-with-idle-timer
+  |      0 nil 'message
+  |      (concat "Hidden Mode Line Mode enabled.  "
+  |              "Use M-x hidden-mode-line-mode to make the mode-line appear."))))
+  `----
+
+
+[Bastien] <https://emacs-doctor.com/emacs-hide-mode-line.html>
+
+
+2.7 macOS
+~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:BC848D6F-7915-4151-8368-D473CA39E7C3
 
-  Make it easy to evaluate code only when running on OSX.
+  Make it easy to evaluate code only when running on macOS
 
   ,----
-  | (defmacro help/on-osx (statement &rest statements)
-  |   "Evaluate the enclosed body only when run on OSX."
+  | (defmacro help/on-mac-os (statement &rest statements)
+  |   "Evaluate the enclosed body only when run on macOS."
   |   `(when (eq system-type 'darwin)
   |      ,statement
   |      ,@statements))
@@ -612,7 +642,7 @@ https://www.reddit.com/r/emacs/comments/53zpv9/how_do_i_get_emacs_to_stop_adding
   Pull in the `ENVIRONMENT' variables because the GUI version of EMACS does not.
 
   ,----
-  | (help/on-osx
+  | (help/on-mac-os
   |  (use-package exec-path-from-shell
   |    :ensure t
   |    :config
@@ -622,21 +652,20 @@ https://www.reddit.com/r/emacs/comments/53zpv9/how_do_i_get_emacs_to_stop_adding
 
   Configure the meta keys.
 
-  Use the OS X modifiers as Emacs meta keys. Don't pass them through to OS X.
+  Use the macOS modifiers as Emacs meta keys. Don't pass them through to macOS.
 
   Easily allow option pass through for alternate input methods.
 
   ,----
-  | (help/on-osx
+  | (help/on-mac-os
   |  (setq mac-control-modifier 'control)
   |  (setq mac-right-control-modifier 'left)
   |  (setq mac-command-modifier 'meta)
   |  (setq mac-right-command-modifier 'left)
   |  (setq mac-option-modifier 'super)
   |  (setq mac-right-option-modifier 'left)
-  |  (setq mac-function-modifier 'hyper)
   |  (defun help/toggle-mac-right-option-modifier ()
-  |    "Toggle between passing option modifier either to Emacs or OS X."
+  |    "Toggle between passing option modifier either to Emacs or macOS."
   |    (interactive)
   |    (let ((old-ropt mac-right-option-modifier))
   |      (setq mac-right-option-modifier
@@ -647,7 +676,7 @@ https://www.reddit.com/r/emacs/comments/53zpv9/how_do_i_get_emacs_to_stop_adding
   |               old-ropt
   |               mac-right-option-modifier)))
   |  (defun help/toggle-mac-function-modifier ()
-  |    "Toggle between passing function modifier either to Emacs or OS X."
+  |    "Toggle between passing function modifier either to Emacs or macOS."
   |    (interactive)
   |    (let ((old-func mac-function-modifier))
   |      (setq mac-function-modifier
@@ -659,12 +688,12 @@ https://www.reddit.com/r/emacs/comments/53zpv9/how_do_i_get_emacs_to_stop_adding
   |               mac-function-modifier))))
   `----
 
-  EMACS dialogues don't work OSX. They lock up EMACS.
+  EMACS dialogues don't work macOS. They lock up EMACS.
 
   This is a known issue. [Here] is the solution.
 
   ,----
-  | (help/on-osx
+  | (help/on-mac-os
   |  (defun help/yes-or-no-p (orig-fun &rest args)
   |    "Prevent yes-or-no-p from activating a dialog."
   |    (let ((use-dialog-box nil))
@@ -675,7 +704,7 @@ https://www.reddit.com/r/emacs/comments/53zpv9/how_do_i_get_emacs_to_stop_adding
 
 
 [Here]
-https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-x
+<https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-x>
 
 
 2.8 Windows
@@ -723,7 +752,6 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   |   `(when (eq system-type 'gnu/linux)
   |      ,statement
   |      ,@statements))
-  |
   `----
 
 
@@ -770,28 +798,6 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   |           (second-part-end (point-max)))
   |       (delete-trailing-whitespace first-part-start first-part-end)
   |       (delete-trailing-whitespace second-part-start second-part-end))))
-  |
-  | (defun help/insert-timestamp ()
-  |   "Produces and inserts a full ISO 8601 format timestamp."
-  |   (interactive)
-  |   (insert (format-time-string "%Y-%m-%dT%T%z")))
-  |
-  | (defun help/insert-timestamp* ()
-  |   "Produces and inserts a near-full ISO 8601 format timestamp."
-  |   (interactive)
-  |   (insert (format-time-string "%Y-%m-%dT%T")))
-  |
-  | (defun help/insert-timestamp*-no-colons ()
-  |   "Produces and inserts a near-full ISO 8601-like format timestamp."
-  |   (interactive)
-  |   (let* ((str (format-time-string "%Y-%m-%dT%T"))
-  |          (fnl (s-replace ":" "-" str)))
-  |     (insert fnl)))
-  |
-  | (defun help/insert-datestamp ()
-  |   "Produces and inserts a partial ISO 8601 format timestamp."
-  |   (interactive)
-  |   (insert (format-time-string "%Y-%m-%d")))
   |
   | (defun help/indent-curly-block (&rest _ignored)
   |   "Open a new brace or bracket expression, with relevant newlines and indent. URL: `https://github.com/Fuco1/smartparens/issues/80'"
@@ -859,7 +865,6 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   |       (comment-or-uncomment-region (line-beginning-position) (line-end-position)))))
   |
   | (progn
-  |
   |   (defvar my-read-expression-map
   |     (let ((map (make-sparse-keymap)))
   |       (set-keymap-parent map read-expression-map)
@@ -875,19 +880,28 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   |             (emacs-lisp-mode)
   |             (use-local-map my-read-expression-map)
   |             (setq font-lock-mode t)
-  |             (funcall font-lock-function 1))
+  |             (funcall font-lock-function 1)
+  |             (insert "()")
+  |             (backward-char))
   |         (read-from-minibuffer prompt initial-contents
   |                               my-read-expression-map nil
   |                               'read-expression-history))))
   |
   |   (defun my-eval-expression (expression &optional arg)
-  |     "Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2014-07/msg00135.html'."
-  |     (interactive (list (read (my-read--expression ""))
+  |     "Evaluate EXPRESSION adding the result to the kill-ring then
+  |     either display it in a buffer or with a prefix argument ARG
+  |     insert it into this buffer.
+  |
+  | Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2014-07/msg00135.html'."
+  |     (interactive (list (read (my-read--expression "𝔼𝕍𝔸𝕃: "))
   |                        current-prefix-arg))
-  |     (if arg
-  |         (insert (pp-to-string (eval expression lexical-binding)))
-  |       (pp-display-expression (eval expression lexical-binding)
-  |                              "*Pp Eval Output*"))))
+  |     (let* ((it (eval expression lexical-binding))
+  |            (itstr (pp-to-string it)))
+  |       (kill-new itstr)
+  |       (if arg
+  |           (insert itstr)
+  |         (pp-display-expression it
+  |                                "*HELP Eval Output*")))))
   |
   | (defun help/util-ielm ()
   |   "HELP buffer setup for ielm.
@@ -1021,9 +1035,7 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   |   (interactive)
   |   (help/on-gui
   |    (setq help/font-size-current (+ help/font-size-current 1))
-  |    (help/update-font))
-  |   (help/not-on-gui
-  |    (message "Please resize the terminal emulator font.")))
+  |    (help/update-font)))
   | (defun help/text-scale-decrease ()
   |   "Reduce font size."
   |   (interactive)
@@ -1147,18 +1159,6 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   |   (interactive "p")
   |   (increment-integer-at-point (- (or dec 1))))
   |
-  | (defun help/reformat-file (file)
-  |   "Reformat a file. If it is attached to an existing buffer then use it and
-  |   revert it.
-  |
-  | Attribution: URL `https://www.emacswiki.org/emacs/ElispCookbook#toc46'."
-  |   (interactive)
-  |   (with-current-buffer (find-file-noselect file)
-  |     (revert-buffer t t)
-  |     (with-temp-message "Formatting file..."
-  |       (indent-region (point-min) (point-max) nil))
-  |     (message "Formatting file done")))
-  |
   | (defun switch-to-previous-buffer ()
   |   "Switch to most recent buffer. Repeated calls toggle back and forth between the most recent two buffers.
   |
@@ -1181,7 +1181,7 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   | Attribution: URL
   | `https://github.com/kotfu/marked-bonus-pack/blob/master/Emacs/dot.emacs.txt'"
   |   (interactive)
-  |   (help/on-osx
+  |   (help/on-mac-os
   |    (shell-command
   |     (format "open -a 'Marked 2.app' %s"
   |             (shell-quote-argument (buffer-file-name))))))
@@ -1253,8 +1253,8 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   |   (let ((old-location (buffer-file-name)))
   |     (write-file new-location t)
   |     (when (and old-location
-  |              (file-exists-p new-location)
-  |              (not (string-equal old-location new-location)))
+  |                (file-exists-p new-location)
+  |                (not (string-equal old-location new-location)))
   |       (delete-file old-location))))
   |
   | (defun help/rename-current-buffer-file ()
@@ -1305,15 +1305,15 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   |   (interactive)
   |   (when (use-region-p) (call-interactively 'kill-region))
   |   (insert "#+CATEGORY: Article
-  | #+TAGS: Yoga, philosophy, Health, Happiness,
-  | #+TITLE:"))
+  | #+TAGS: Happiness, Health, philosophy, Yoga
+  | #+TITLE: (Happiness) "))
   |
   | (defun help/wio ()
   |   (interactive)
   |   (when (use-region-p) (call-interactively 'kill-region))
   |   (insert "#+CATEGORY: Article
   | #+TAGS: Babel, Emacs, Ide, Lisp, Literate Programming, Programming Language, Reproducible research, elisp, org-mode
-  | #+TITLE:"))
+  | #+TITLE: (Emacs+Org-Mode) "))
   |
   | (defun help/wip ()
   |   (interactive)
@@ -1332,6 +1332,113 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   |   (interactive)
   |   (help/save-all-file-buffers)
   |   (call-interactively 'compile))
+  |
+  | (defun help/insert-formfeed ()
+  |   (interactive)
+  |   (insert "\f"))
+  |
+  | (defun help/itwas ()
+  |   "Attribution: W<"
+  |   (interactive)
+  |   (insert-file-contents-literally "~/src/help/ascii/it-was-a-dark-and-stormy-night.asc"))
+  |
+  | (defun help/pie-blurb ()
+  |   "Attribution: FontAwesome"
+  |   (interactive)
+  |   (insert-file-contents-literally "~/src/help/ascii/pie.asc"))
+  |
+  | (defun remove-vowel ($string &optional $from $to)
+  |   "Remove the following letters: {a e i o u}.
+  |
+  | When called interactively, work on current paragraph or text selection.
+  |
+  | When called in lisp code, if ξstring is non-nil, returns a changed string.
+  | If ξstring nil, change the text in the region between positions ξfrom ξto.
+  |
+  | Attribution: URL `http://ergoemacs.org/emacs/elisp_command_working_on_string_or_region.html'"
+  |   (interactive
+  |    (if (use-region-p)
+  |        (list nil (region-beginning) (region-end))
+  |      (let ((bds (bounds-of-thing-at-point 'paragraph)) )
+  |        (list nil (car bds) (cdr bds)) ) ) )
+  |
+  |   (let (workOnStringP inputStr outputStr)
+  |     (setq workOnStringP (if $string t nil))
+  |     (setq inputStr (if workOnStringP $string (buffer-substring-no-properties $from $to)))
+  |     (setq outputStr
+  |           (let ((case-fold-search t))
+  |             (replace-regexp-in-string "a\\|e\\|i\\|o\\|u\\|" "" inputStr) )  )
+  |
+  |     (if workOnStringP
+  |         outputStr
+  |       (save-excursion
+  |         (delete-region $from $to)
+  |         (goto-char $from)
+  |         (insert outputStr) )) ) )
+  |
+  | (defun help/indent-buffer ()
+  |   "Indent the currently visited buffer.
+  |
+  | URL: `http://emacsredux.com/blog/2013/03/27/indent-region-or-buffer/'"
+  |   (interactive)
+  |   (indent-region (point-min) (point-max)))
+  |
+  | (defun help/indent-region-or-buffer ()
+  |   "Indent a region if selected, otherwise the whole buffer.
+  |
+  | URL: `http://emacsredux.com/blog/2013/03/27/indent-region-or-buffer/'"
+  |   (interactive)
+  |   (save-excursion
+  |     (if (region-active-p)
+  |         (progn
+  |           (indent-region (region-beginning) (region-end))
+  |           (message "Indented selected region."))
+  |       (progn
+  |         (help/indent-buffer)
+  |         (message "Indented buffer.")))))
+  |
+  | (defun help/alist-set (key val alist &optional symbol)
+  |   "Set property KEY to VAL in ALIST. Return new alist.
+  | This creates the association if it is missing, and otherwise sets
+  | the cdr of the first matching association in the list. It does
+  | not create duplicate associations. By default, key comparison is
+  | done with `equal'. However, if SYMBOL is non-nil, then `eq' is
+  | used instead.
+  |
+  | This method may mutate the original alist, but you still need to
+  | use the return value of this method instead of the original
+  | alist, to ensure correct results.
+  |
+  | Atribution: URL `https://emacs.stackexchange.com/a/33893/341'"
+  |   (if-let ((pair (if symbol (assq key alist) (assoc key alist))))
+  |       (setcdr pair val)
+  |     (push (cons key val) alist))
+  |   alist)
+  |
+  | (defun help/org-time-stamp-with-seconds-now ()
+  |   (interactive)
+  |   (let ((current-prefix-arg '(16)))
+  |     (call-interactively 'org-time-stamp)))
+  |
+  | (defun help/insert-datestamp-us ()
+  |   "Produces and inserts a US datestamp."
+  |   (interactive)
+  |   (insert (format-time-string "%m/%d/%y")))
+  |
+  | (defun help/insert-datestamp-us-full-year-and-dashes ()
+  |   "Produces and inserts a US datestamp with full year and dashes."
+  |   (interactive)
+  |   (insert (format-time-string "%m-%d-%Y")))
+  |
+  | (defun help/insert-datestamp-us-full-year ()
+  |   "Produces and inserts a US datestamp with full year."
+  |   (interactive)
+  |   (insert (format-time-string "%m/%d/%Y")))
+  |
+  | (defun help/insert-datestamp-us-words ()
+  |   "Produces and inserts a US datestamp using words."
+  |   (interactive)
+  |   (insert (format-time-string "%A %B %d, %Y")))
   `----
 
 
@@ -1351,7 +1458,6 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
       - It *isn't* the fill column though
       - I want it to indicate 80 chars, typically the maximum number of columns
         for a line, to know how to size the window itself
-      - Fci-Mode supports this
     - Store this as the fill column because all supporting functions will do the
       right thing here
   ,----
@@ -1458,16 +1564,7 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
 
   ,----
   | (use-package page-break-lines
-  |   :diminish page-break-lines-mode
-  |   :config
-  |   (defun help/insert-formfeed ()
-  |     (interactive)
-  |     (insert "\f"))
-  |   (global-set-key (kbd "C-M-<return>") #'help/insert-formfeed)
-  |   (global-set-key (kbd "C-M-j") #'forward-page)
-  |   (global-set-key (kbd "C-M-k") #'backward-page)
-  |   (global-set-key (kbd "C-M-n") #'narrow-to-page)
-  |   (global-set-key (kbd "C-M-h") #'mark-page))
+  |   :diminish page-break-lines-mode)
   `----
 
   Center the buffer after navigating pages.
@@ -1486,42 +1583,19 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   |   (global-set-key (kbd "C-a") 'mwim-beginning-of-code-or-line))
   `----
 
-  Fling buffers left and right.
-
-  ,----
-  | (use-package buffer-move
-  |   :ensure t
-  |   :config
-  |   (define-key org-mode-map (kbd "<C-S-up>") nil)
-  |   (global-set-key (kbd "<C-S-up>") #'buf-move-up)
-  |   (define-key org-mode-map (kbd "<C-S-down>") nil)
-  |   (global-set-key (kbd "<C-S-down>") #'buf-move-down)
-  |   (define-key org-mode-map (kbd "<C-S-left>") nil)
-  |   (global-set-key (kbd "<C-S-left>") #'buf-move-left)
-  |   (define-key org-mode-map (kbd "<C-S-right>") nil)
-  |   (global-set-key (kbd "<C-S-right>") #'buf-move-right))
-  `----
-
-  - Easily see the fill-column (or close too it)
-    - Sometimes I set the fci rule at 81 because a char at 79 pushes the fci
-      rule out one extra space. Sometimes it is not an issue.
-    ,----
-    | (use-package fill-column-indicator
-    |   :ensure t
-    |   :config
-    |   (setq fci-rule-column 79))
-    `----
-
   Show text indentation guide lines.
+
+  `highlight-indentation' is too difficult to see.
 
   ,----
   | (use-package indent-guide
-  |   :ensure t)
+  |   :ensure t
+  |   :diminish 'indent-guide-mode)
   `----
 
   Management:
-  - [http://martinowen.net/blog/2010/02/03/tips-for-emacs-ibuffer.html]
-  - [https://mytechrants.wordpress.com/2010/03/25/emacs-tip-of-the-day-start-using-ibuffer-asap/]
+  - <http://martinowen.net/blog/2010/02/03/tips-for-emacs-ibuffer.html>
+  - <https://mytechrants.wordpress.com/2010/03/25/emacs-tip-of-the-day-start-using-ibuffer-asap/>
   - Group approach
     - See the world organized by?
       - File names
@@ -1649,24 +1723,46 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   |   :diminish 'buffer-face-mode)
   `----
 
-  Move line or region up or down.
+  Move region.
 
   ,----
-  | (use-package move-text
+  | (use-package smart-shift
   |   :ensure t
   |   :config
-  |   (global-set-key (kbd "S-s-<up>") #'move-text-up)
-  |   (global-set-key (kbd "S-s-<down>") #'move-text-down))
+  |   (global-smart-shift-mode 1)
+  |   (defhydra help/hydra/smart-shift (:color blue
+  |                                            :hint nil)
+  |     "
+  | Smart-Shift: (q to quit)
+  |     ↑
+  |     _i_
+  | ← _j_   _l_ →
+  |     _k_
+  |     ↓
+  | "
+  |     ("j" smart-shift-left :exit nil)
+  |     ("k" smart-shift-down :exit nil)
+  |     ("i" smart-shift-up :exit nil)
+  |     ("l" smart-shift-right :exit nil)
+  |     ("q" nil))
+  |   (global-set-key (kbd "C-s-j") #'help/hydra/smart-shift/body))
+  `----
+
+  Unfilling
+
+  ,----
+  | (use-package unfill
+  |   :ensure t)
   `----
 
 
-[newline] https://robots.thoughtbot.com/no-newline-at-end-of-file
+[newline] <https://robots.thoughtbot.com/no-newline-at-end-of-file>
 
-[Projectile project] https://github.com/purcell/ibuffer-projectile
+[Projectile project] <https://github.com/purcell/ibuffer-projectile>
 
-[Git] https://github.com/purcell/ibuffer-vc
+[Git] <https://github.com/purcell/ibuffer-vc>
 
-[Hydra Helper] https://github.com/abo-abo/hydra/wiki/Ibuffer
+[Hydra Helper] <https://github.com/abo-abo/hydra/wiki/Ibuffer>
 
 
 3.4 Code Folding
@@ -1702,39 +1798,25 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   |   :diminish hs-minor-mode)
   `----
 
-
-3.5 Colors
-~~~~~~~~~~
-
-  ID: org_gcr_2017-05-12_mara:DA9E0CC6-F3D4-4B9B-944C-0ECB69D8899C
-
-  Colorize color names.
-
-  Rainbow-Mode handles most major modes color definitions as expected.
+  Fold on indentation level.
 
   ,----
-  | (use-package rainbow-mode
-  |   :ensure t
-  |   :config
-  |   :diminish rainbow-mode)
+  | (defun aj-toggle-fold ()
+  |   "Toggle fold all lines larger than indentation on current line
+  |
+  | URL: `https://stackoverflow.com/questions/1587972/how-to-display-indentation-guides-in-emacs/4459159#4459159'"
+  |   (interactive)
+  |   (let ((col 1))
+  |     (save-excursion
+  |       (back-to-indentation)
+  |       (setq col (+ 1 (current-column)))
+  |       (set-selective-display
+  |        (if selective-display nil (or col 1))))))
+  | (global-set-key (kbd "s-q") #'aj-toggle-fold)
   `----
 
 
-3.6 Debugging
-~~~~~~~~~~~~~
-
-  ID: org_gcr_2017-05-12_mara:C54D8CF3-E2C4-4A7A-A92C-5252826EFD01
-
-  Sometimes the judicious use of Git and git bisect can obviate the need for
-  manual bisections. Othertimes not. For the latter, use `elisp-bug-hunter'.
-
-  ,----
-  | (use-package bug-hunter
-  |   :ensure t)
-  `----
-
-
-3.7 Emacs Lisp Macros
+3.5 Emacs Lisp Macros
 ~~~~~~~~~~~~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:6D4A22CE-EC84-4245-AD7E-2CCC0B35CBCA
@@ -1753,13 +1835,11 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
 
   ,----
   | (use-package macrostep
-  |   :ensure t
-  |   :config
-  |   (define-key emacs-lisp-mode-map (kbd "C-M-8") #'macrostep-expand))
+  |   :ensure t)
   `----
 
 
-3.8 Evaluation
+3.6 Evaluation
 ~~~~~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:C88E8819-35D2-40E0-BBAD-3AC799DA0A33
@@ -1776,51 +1856,8 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   | (put #'narrow-to-region 'disabled nil)
   `----
 
-  Send the current line to the REPL, evaluate it and move to the next line.
-  Works for lots of languages and does the /right thing/ navigating to the next
-  line.
 
-  If you learned this in ESS then you already love it. If you didn't then you
-  probably will now
-
-  ,----
-  | (use-package eval-in-repl
-  |   :ensure t
-  |   :config
-  |   (setq eir-jump-after-eval nil)
-  |   (setq eir-always-split-script-window t)
-  |   (setq eir-delete-other-windows t)
-  |   (setq eir-repl-placement 'right)
-  |   ;; ielm support (for emacs lisp)
-  |   (require 'eval-in-repl-ielm)
-  |   ;; for .el files
-  |   (define-key emacs-lisp-mode-map (kbd "<C-return>") 'eir-eval-in-ielm)
-  |   ;; for *scratch*
-  |   (define-key lisp-interaction-mode-map (kbd "<C-return>") 'eir-eval-in-ielm)
-  |   ;; for M-x info
-  |   (eval-after-load "info"
-  |     '(define-key Info-mode-map (kbd "<C-return>") 'eir-eval-in-ielm))
-  |   ;; Shell support
-  |   (require 'eval-in-repl-shell)
-  |   (add-hook 'sh-mode-hook
-  |             '(lambda()
-  |                (local-set-key (kbd "C-<return>") 'eir-eval-in-shell)))
-  |   ;; Version with opposite behavior to eir-jump-after-eval configuration
-  |   (defun eir-eval-in-shell2 ()
-  |     "eval-in-repl for shell script (opposite behavior)
-  |
-  | This version has the opposite behavior to the eir-jump-after-eval
-  | configuration when invoked to evaluate a line."
-  |     (interactive)
-  |     (let ((eir-jump-after-eval (not eir-jump-after-eval)))
-  |       (eir-eval-in-shell)))
-  |   (add-hook 'sh-mode-hook
-  |             '(lambda()
-  |                (local-set-key (kbd "C-<return>") 'eir-eval-in-shell2))))
-  `----
-
-
-3.9 Encryption
+3.7 Encryption
 ~~~~~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:DF56C626-A2CD-4011-9B2E-9863E72F0563
@@ -1833,8 +1870,8 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   `----
 
 
-3.10 Eshell
-~~~~~~~~~~~
+3.8 Eshell
+~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:5FED47A4-C1F3-4866-AF87-86996BC999CA
 
@@ -1885,12 +1922,12 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   |          (system-name)
   |          ":"
   |          (eshell/pwd)
-  |          "> ")))
+  |          "⮞ ")))
   `----
 
 
-3.11 File Based System
-~~~~~~~~~~~~~~~~~~~~~~
+3.9 File Based System
+~~~~~~~~~~~~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:E57D0D2A-0BF5-4733-AE1B-7CEA95171316
 
@@ -1944,9 +1981,7 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   | (defun help/safb-vc-revert ()
   |   (interactive)
   |   (help/save-all-file-buffers)
-  |   (unless (bound-and-true-p diff-hl-mode) (diff-hl-mode))
-  |   (vc-revert)
-  |   (when (bound-and-true-p diff-hl-mode) (call-interactively 'diff-hl-mode nil)))
+  |   (vc-revert))
   |
   | (defun help/safb-help/magit-status ()
   |   (interactive)
@@ -1957,22 +1992,30 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   |   (interactive)
   |   (help/save-all-file-buffers)
   |   (let ((start (current-time)))
-  |     (message (concat "org-babel-tangle BEFORE: <"
-  |                      (format-time-string "%Y-%m-%dT%T%z")
-  |                      ">"))
+  |     (message (concat "org-babel-tangle began at: "
+  |                      (help/get-timestamp)))
   |     (org-babel-tangle)
   |     (let* ((dur (float-time (time-since start)))
-  |            (msg (format "Tangling complete after: %.06f seconds" dur)))
-  |       (message (concat "org-babel-tangle AFTER: <"
-  |                        (format-time-string "%Y-%m-%dT%T%z")
-  |                        ">"))
+  |            (msg (format "Tangled for %s " (seconds-to-string dur))))
+  |       (message (concat "org-babel-tangle completed on: "
+  |                        (help/get-timestamp)))
   |       (message msg)
-  |       (help/on-gui (alert msg :title "org-mode")))))
+  |       (help/on-gui (alert msg :title "Org-Mode")))))
   |
   | (defun help/safb-org-babel-detangle ()
   |   (interactive)
   |   (help/save-all-file-buffers)
-  |   (org-babel-detangle))
+  |   (let ((start (current-time)))
+  |     (message (concat "org-babel-detangle began at: "
+  |                      (help/get-timestamp)
+  |                      ">"))
+  |     (org-babel-detangle)
+  |     (let* ((dur (float-time (time-since start)))
+  |            (msg (format "DE-Tangled for %s" (seconds-to-string dur))))
+  |       (message (concat "org-babel-detangle on: "
+  |                        (help/get-timestamp)))
+  |       (message msg)
+  |       (help/on-gui (alert msg :title "Org-Mode")))))
   |
   | (defun help/safb-other-window ()
   |   (interactive)
@@ -2050,7 +2093,6 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   - avy jump
   - dired
   - eshell
-  - ess-rdired
   - eval-defun
   - eval-region
   - help/newline
@@ -2103,180 +2145,7 @@ https://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-
   `----
 
 
-3.12 File-system/directory management (Console)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  ID: org_gcr_2017-05-12_mara:AACEA837-9B4D-484A-B6C9-6C04DD8DE8A7
-
-  You can use the usual machinery to work with the files. Highlight a region and
-  operation selections occur for all files in that region. Commands are
-  scheduled, and then executed, upon your command. Files can be viewed in modify
-  or read-only mode, too. There is an idea of `mark' in files, which is to
-  select them and perform operations on the marked files. There are helper
-  methods for most things you can think if like directories or modified-files or
-  whatever, meaning you can use regexen to mark whatever you like however you
-  like. If that suits you, then don't be afraid of using the regular expression
-  builder that is built into EMACS. Bulk marked file operations include
-  additionally copying, deleting, creating hard links to, renaming, modifying
-  the mode, owner, and group information, changing the time-stamp, listing the
-  marked files, compressing them, decrypting, verifying and signing, loading or
-  byte compiling them (Lisp files).
-
-  `g' updates the current buffer; `s' orders the listing by alpha or date-time.
-
-  `find-name-dired' beings the results back into Dired, which is nifty.
-
-  Wdired lets you modify files directly via the UI, which is interesting.
-  Image-Dired lets you do just that.
-
-  `+' creates a new directory. `dired-copy-filename-as-kill' stores the list of
-  files you have selected in the kill ring. `dired-compare-directories' lets you
-  perform all sorts of directory comparisons, a handy tool that you need once in
-  a while but definitely do need.
-  ,----
-  | (defun help/dired-copy-filename ()
-  |   "Push the path and filename of the file under the point to the kill ring.
-  | Attribution: URL `https://lists.gnu.org/archive/html/help-gnu-emacs/2002-10/msg00556.html'"
-  |   (interactive)
-  |   (message "Added %s to kill ring" (kill-new (dired-get-filename))))
-  | (defun help/dired-copy-path ()
-  |   "Push the path of the directory under the point to the kill ring."
-  |   (interactive)
-  |   (message "Added %s to kill ring" (kill-new default-directory)))
-  | (setq dired-listing-switches "-alh")
-  | (setq dired-recursive-deletes 'top)
-  | (use-package dired-details+
-  |   :ensure t)
-  | (setq-default dired-details-hidden-string "")
-  | (defun help/dired-mode-hook-fn ()
-  |   "HELP dired customizations."
-  |   (local-set-key "c" #'help/dired-copy-filename)
-  |   (local-set-key "]" #'help/dired-copy-path)
-  |   (diff-hl-dired-mode)
-  |   (load "dired-x")
-  |   (turn-on-stripe-buffer-mode)
-  |   (dired-collapse-mode))
-  | (add-hook 'dired-mode-hook #'help/dired-mode-hook-fn)
-  `----
-
-  Try to guess the target directory for operations.
-  ,----
-  | (setq dired-dwim-target t)
-  `----
-
-  Use EMACS `ls'.
-  ,----
-  | (help/on-osx
-  |  (setq ls-lisp-use-insert-directory-program nil)
-  |  (use-package ls-lisp))
-  `----
-
-  After dabbling, something happened that really changed my mind. These three
-  articles changed everything: [Dired Shell Command], [ Working with multiple
-  files in dired], and [WDired: Editable Dired Buffers].. They just made the
-  power of Dired so obvious, and so easy to use, that it instantly because
-  delightful to use. That was very, very cool. Even though I was really, really
-  happy with Finder and Explorer... suddenly it just became so obvious and
-  pleasant to use Dired. That is so wild.
-
-  Key notes when executing shell commands on file selection...
-
-  Substitution:
-  `<cmd> ?': 1* calls to cmd, each file a single argument
-  `<cmd> *': 1 call to `cmd', selected list as argument
-  `<cmd> *""': have the shell expand the * as a globbing wild-card
-               - Not sure what this means
-
-  Synchronicity:
-  `<cmd> ...': by default commands are called synchronously
-  `<cmd> &': execute in parallel
-  `<cmd> ;': execute sequentially, asynchronously
-  `<cmd> ;&': execute in parallel, asynchronously
-
-  Key notes on working with files in multiple directories... use the following:
-
-  Use `find' just like you would at the command line and all of the results show
-  up in a single Dired buffer that you may work with just like you would any
-  other file appearing in a Dired buffer. The abstraction here becomes so
-  obvious, you may ask yourself why you never considered such a thing /before/
-  now (as I did):
-  ,----
-  | (use-package find-dired
-  |   :ensure t
-  |   :config
-  |   (setq find-ls-option '("-print0 | xargs -0 ls -ld" . "-ld")))
-  `----
-
-  Noting that:
-  `find-dired': is the general use case
-  `find-name-dired': is for simple, single string cases
-
-  And if you want to use the faster Elisp version, that uses lisp regex, use:
-  `find-lisp-find-dired': for anything
-  `find-lisp-find-dired-subdirectories': for only directories
-
-  Key notes on working with editable buffers...
-
-  As the author notes, you probably already instinctually knew what is possible.
-  After reading his brief and concise exposition, it would be hard /not/ to
-  intuit what is possible! The options are big if you make a writable file
-  buffer. Think about using multiple cursors. Done? Well, that is a no-brainer.
-  Once you grok multiple cursors just `find-dired' what you need and then do
-  what you need to do to it. Very cool.
-
-  `dired-toggle-read-only, C-x C-q': cycle between dired-mode and wdired-mode
-  `wdired-finish-edit, C-c C-c': commit your changes
-  `wdired-abort-changes, C-c ESC': revert your changes
-
-  ,----
-  | (use-package wdired
-  |   :ensure t
-  |   :config
-  |   (setq wdired-allow-to-change-permissions t)
-  |   (setq wdired-allow-to-redirect-links t)
-  |   (setq wdired-use-interactive-rename t)
-  |   (setq wdired-confirm-overwrite t)
-  |   (setq wdired-use-dired-vertical-movement 'sometimes))
-  `----
-
-  When you selected a bunch of files or directories, you /may/ want to
-  communicate somewhere your selection somehow. The simplest way to do this is
-  to utilize `dired-copy-filename-as-kill'. What a nice idea, and its default
-  binding is `w'.
-
-  Since I started using a menu bar again, and wanting to get Imenu really
-  exercised, Dired in Imenu seems like an obvious choice.
-
-  ,----
-  | (use-package dired-imenu
-  |   :ensure t)
-  `----
-
-  Use Ido with Dired.
-
-  ,----
-  | (setq ido-show-dot-for-dired t)
-  `----
-
-  Collapse long empty paths.
-
-  ,----
-  | (use-package dired-collapse
-  |   :ensure t)
-  `----
-
-
-[Dired Shell Command]
-http://www.masteringemacs.org/articles/2014/04/10/dired-shell-commands-find-xargs-replacement/
-
-[ Working with multiple files in dired]
-https://www.masteringemacs.org/article/working-multiple-files-dired
-
-[WDired: Editable Dired Buffers]
-https://www.masteringemacs.org/article/wdired-editable-dired-buffers
-
-
-3.13 IMenu
+3.10 IMenu
 ~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:12791F68-A7B0-4F93-9648-386C65C09355
@@ -2308,7 +2177,7 @@ https://www.masteringemacs.org/article/wdired-editable-dired-buffers
   `----
 
 
-3.14 Interactively DO Things
+3.11 Interactively DO Things
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:29AAB820-5824-43F8-9E7F-7FD1CB6F4624
@@ -2358,7 +2227,7 @@ https://www.masteringemacs.org/article/wdired-editable-dired-buffers
   `----
 
 
-3.15 Font
+3.12 Font
 ~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:D12919AC-9D9B-4C40-9872-1E01C92FA493
@@ -2388,33 +2257,41 @@ https://www.masteringemacs.org/article/wdired-editable-dired-buffers
   | (global-font-lock-mode t)
   `----
 
+  Adds FontAwesome.
+
+  ,----
+  | (use-package fontawesome
+  |   :ensure t)
+  `----
+
 
 [manual configuration of a fallback]
-http://endlessparentheses.com/manually-choose-a-fallback-font-for-unicode.html
+<http://endlessparentheses.com/manually-choose-a-fallback-font-for-unicode.html>
 
 [DejaVu]
-http://sourceforge.net/projects/dejavu/files/dejavu/2.34/dejavu-fonts-ttf-2.34.tar.bz2
+<http://sourceforge.net/projects/dejavu/files/dejavu/2.34/dejavu-fonts-ttf-2.34.tar.bz2>
 
 [.]
-http://sourceforge.net/projects/dejavu/files/dejavu/2.34/dejavu-fonts-ttf-2.34.tar.bz2
+<http://sourceforge.net/projects/dejavu/files/dejavu/2.34/dejavu-fonts-ttf-2.34.tar.bz2>
 
-[Symbola] http://users.teilar.gr/~g1951d/
+[Symbola] <http://users.teilar.gr/~g1951d/>
 
-[.] http://users.teilar.gr/~g1951d/Symbola.zip
+[.] <http://users.teilar.gr/~g1951d/Symbola.zip>
 
-[Quivira] http://www.quivira-font.com/
+[Quivira] <http://www.quivira-font.com/>
 
-[.] http://www.quivira-font.com/files/Quivira.otf
+[.] <http://www.quivira-font.com/files/Quivira.otf>
 
-[Noto] https://code.google.com/p/noto/
+[Noto] <https://code.google.com/p/noto/>
 
-[1] http://noto.googlecode.com/git/fonts/individual/hinted/NotoSans-Regular.ttc
+[1]
+<http://noto.googlecode.com/git/fonts/individual/hinted/NotoSans-Regular.ttc>
 
 [2]
-http://noto.googlecode.com/git/fonts/individual/unhinted/NotoSansSymbols-Regular.ttf
+<http://noto.googlecode.com/git/fonts/individual/unhinted/NotoSansSymbols-Regular.ttf>
 
 
-3.16 Going to Objects
+3.13 Going to Objects
 ~~~~~~~~~~~~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:8A73E509-A878-4E89-86DC-9BDA8C898F8C
@@ -2428,7 +2305,7 @@ http://noto.googlecode.com/git/fonts/individual/unhinted/NotoSansSymbols-Regular
   `----
 
 
-3.17 Grammar
+3.14 Grammar
 ~~~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:2E0F4D9D-5AB6-407C-BBC6-BD0277ECA015
@@ -2498,7 +2375,7 @@ http://noto.googlecode.com/git/fonts/individual/unhinted/NotoSansSymbols-Regular
   `----
 
 
-3.18 Keyboard Macros
+3.15 Keyboard Macros
 ~~~~~~~~~~~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:F2701D64-8484-4EB0-9FBD-692C98CA3C58
@@ -2520,7 +2397,7 @@ http://noto.googlecode.com/git/fonts/individual/unhinted/NotoSansSymbols-Regular
   `----
 
 
-3.19 Intellisense
+3.16 Intellisense
 ~~~~~~~~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:DE05FF62-53EA-491A-881B-650030210591
@@ -2535,7 +2412,6 @@ http://noto.googlecode.com/git/fonts/individual/unhinted/NotoSansSymbols-Regular
   |   (setq ac-quick-help-prefer-pos-tip nil)
   |   (ac-config-default)
   |   (setq ac-auto-start nil)
-  |   (help/not-on-gui (ac-set-trigger-key "TAB"))
   |   (help/on-gui (ac-set-trigger-key "<tab>"))
   |   :diminish auto-complete-mode)
   | (use-package auto-complete-chunk
@@ -2549,30 +2425,9 @@ http://noto.googlecode.com/git/fonts/individual/unhinted/NotoSansSymbols-Regular
   |   :ensure t)
   `----
 
-  /IntelliJ-Like/ `jump to definition'.
 
-  ,----
-  | (use-package dumb-jump
-  |   :ensure t
-  |   :config
-  |   (defhydra help/hydra-left-side/dumb-jump (:color blue :hint nil)
-  |     "
-  | Dumb-Jump:
-  |  _j_ go to _k_ return from _i_ choose
-  |   _u_ in other window _o_ peek
-  |   _q_ quit"
-  |     ("j" dumb-jump-go)
-  |     ("k" dumb-jump-back)
-  |     ("i" dumb-jump-go-prompt)
-  |     ("u" dumb-jump-go-other-window)
-  |     ("o" dumb-jump-quick-look)
-  |     ("q" nil))
-  |   (key-chord-define-global "jj" #'help/hydra-left-side/dumb-jump/body))
-  `----
-
-
-3.20 Mark, Kill  and Region
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3.17 Mark, Kill and Region
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:432D3FDF-38B3-499D-94D3-338CFEF2957C
 
@@ -2589,13 +2444,7 @@ http://noto.googlecode.com/git/fonts/individual/unhinted/NotoSansSymbols-Regular
   |   (setq browse-kill-ring-separator
   |         ".-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-
   | ")
-  |   (defun help/browse-kill-ring ()
-  |     "Disable `fci-mode' before entering `browse-kill-ring'."
-  |     (interactive)
-  |     (fci-mode)
-  |     (browse-kill-ring)
-  |     (fci-mode))
-  |   (global-set-key (kbd "M-y") #'help/browse-kill-ring))
+  |   (global-set-key (kbd "M-y") #'browse-kill-ring))
   `----
 
   When you start typing and text is selected, replace it with what you are
@@ -2612,7 +2461,7 @@ http://noto.googlecode.com/git/fonts/individual/unhinted/NotoSansSymbols-Regular
 
         ;; Save whatever's in the current (system) clipboard before
         ;; replacing it with the Emacs' text.
-        ;; [https://github.com/dakrone/eos/blob/master/eos.org]
+        ;; <https://github.com/dakrone/eos/blob/master/eos.org>
 
   ,----
   | (setq save-interprogram-paste-before-kill t)
@@ -2626,10 +2475,10 @@ http://noto.googlecode.com/git/fonts/individual/unhinted/NotoSansSymbols-Regular
 
 
 [Via]
-http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/
+<http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/>
 
 
-3.21 Minibuffer
+3.18 Minibuffer
 ~~~~~~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:FABF1013-0F88-4207-AB8E-982E7F4C250D
@@ -2659,7 +2508,7 @@ http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/
   `----
 
 
-3.22 Mouse
+3.19 Mouse
 ~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:6171A841-DFD0-44A7-AAA6-BB099B1922FE
@@ -2675,7 +2524,7 @@ http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/
   `----
 
 
-3.23 Occur
+3.20 Occur
 ~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:54249478-0107-4838-8394-4A6A1850ED99
@@ -2698,7 +2547,7 @@ http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/
   `----
 
 
-3.24 Popups
+3.21 Popups
 ~~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:5EFCDB34-DC9E-4502-93AD-8E31363F8A5C
@@ -2712,13 +2561,13 @@ http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/
   |   (setq alert-fade-time 10)
   |   (setq alert-default-style 'message)
   |   (help/on-gui
-  |    (help/on-osx
+  |    (help/on-mac-os
   |     (setq alert-default-style 'notifier)))
   |   (setq alert-reveal-idle-time 120))
   `----
 
 
-3.25 Projects
+3.22 Projects
 ~~~~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:BEFE841E-58A8-43D6-84F0-5BA2EBCFE6B8
@@ -2751,7 +2600,7 @@ http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/
   `----
 
 
-3.26 Printing
+3.23 Printing
 ~~~~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:93730D86-E142-49E7-9325-0A48D23A8BE5
@@ -2762,7 +2611,7 @@ http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/
   `----
 
 
-3.27 Register
+3.24 Register
 ~~~~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:132C5084-FD72-45C5-BD32-DCE78A00ED34
@@ -2773,7 +2622,7 @@ http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/
   `----
 
 
-3.28 Replacing
+3.25 Replacing
 ~~~~~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:8DDCD1EC-C603-41D8-85A4-EA7C11C86207
@@ -2792,27 +2641,27 @@ http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/
   `----
 
 
-3.29 Save and Restore Operating State
+3.26 Save and Restore Operating State
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:217B8635-CA69-4F58-A12D-124ED384EE22
 
 
-3.29.1 Mark
+3.26.1 Mark
 -----------
 
   ID: org_gcr_2017-05-12_mara:2CBAFE00-5B18-4798-AEF3-488D622374BE
 
   When you re-open a file return the mark to its last position
 
-  [https://www.emacswiki.org/emacs/SavePlace]
+  <https://www.emacswiki.org/emacs/SavePlace>
 
   ,----
   | (save-place-mode 1)
   `----
 
 
-3.29.2 Minibuffer
+3.26.2 Minibuffer
 -----------------
 
   ID: org_gcr_2017-05-12_mara:88B140F9-567E-47DA-8137-42EF4CE0904E
@@ -2820,7 +2669,7 @@ http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/
   It is nice to have commands and their history saved so that every time you get
   back to work, you can just re-run stuff as you need it.
 
-  [https://www.emacswiki.org/emacs/SaveHist]
+  <https://www.emacswiki.org/emacs/SaveHist>
 
   ,----
   | (setq savehist-save-minibuffer-history t)
@@ -2841,13 +2690,13 @@ http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/
   `----
 
 
-3.30 Searching
+3.27 Searching
 ~~~~~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:AA7F12B0-13E2-4B5A-A8BB-B42E1FCC6E55
 
 
-3.30.1 Internal
+3.27.1 Internal
 ---------------
 
   ID: org_gcr_2017-05-12_mara:11DF2712-61B1-4E9F-9950-8BDB0E57E580
@@ -2909,10 +2758,10 @@ http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/
 
 
 [Searching and Case]
-https://www.gnu.org/software/emacs/manual/html_node/emacs/Search-Case.html
+<https://www.gnu.org/software/emacs/manual/html_node/emacs/Search-Case.html>
 
 
-3.30.2 External
+3.27.2 External
 ---------------
 
   ID: org_gcr_2017-05-12_mara:D55FB85E-A70E-4A56-AA5F-089B4FE52E7F
@@ -2935,8 +2784,7 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Search-Case.html
   |   (setq ag-highlight-search t)
   |   (setq ag-reuse-window nil)
   |   (setq ag-reuse-buffers nil)
-  |   (setq ag-arguments (-insert-at (- (length ag-arguments) 1) '"--ignore-case"
-  |                                  ag-arguments))
+  |   (add-to-list 'ag-arguments "--hidden")
   |   (defun help/ag-mode-hook-fn ()
   |     "HELP ag customizations."
   |     (interactive)
@@ -2975,8 +2823,7 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Search-Case.html
   |     (";" ag-project)
   |     ("n" ag-kill-other-buffers)
   |     ("m" ag-kill-buffers)
-  |     ("q" nil))
-  |   (global-set-key (kbd "C-s-s") #'help/hydra/ag/body))
+  |     ("q" nil)))
   `----
 
   Writeable Ag.
@@ -2988,7 +2835,7 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Search-Case.html
   `----
 
 
-3.31 Spell Checking
+3.28 Spell Checking
 ~~~~~~~~~~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:44909368-2D9A-40B9-A3F4-DF297A0EE570
@@ -2996,7 +2843,7 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Search-Case.html
   Ispell is simple and powerful.
 
 
-3.31.1 Org-Mode
+3.28.1 Org-Mode
 ---------------
 
   ID: org_gcr_2017-05-12_mara:4892BEB5-C0B5-4506-BBB3-40E41F9E25FF
@@ -3100,7 +2947,7 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Search-Case.html
   `----
 
 
-3.32 Sudo
+3.29 Sudo
 ~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:7853E266-9462-4CEB-A6AB-873EAC06666F
@@ -3108,7 +2955,7 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Search-Case.html
   Configure Sudo with Ido.
 
   ,----
-  | (help/on-osx
+  | (help/on-mac-os
   |  (defun help/ido-find-file ()
   |    "Find file as root if necessary.
   |
@@ -3121,7 +2968,7 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Search-Case.html
   `----
 
 
-3.33 Syntax Checking
+3.30 Syntax Checking
 ~~~~~~~~~~~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:DD506D5A-5F57-4939-B446-536437FDDC97
@@ -3136,7 +2983,7 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Search-Case.html
   `----
 
 
-3.34 TAB
+3.31 TAB
 ~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:C9ACAB8C-1D19-4CC2-ABE9-ACEBCDBCA9E6
@@ -3147,29 +2994,42 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Search-Case.html
   | (setq-default indent-tabs-mode nil)
   `----
 
-  Remove TAB from all buffers before persisting to the backing file unless it is
-  configured to retain TAB. The use case is a Makefile.
+  Functions to remove TAB
 
   ,----
-  | (defun help/untabify-if-not-indent-tabs-mode ()
-  |   "Untabify if `indent-tabs-mode' is false.
+  | (defun help/untabify-buffer-if-not-indent-tabs-mode ()
+  |   "Untabify buffer if `indent-tabs-mode' is false.
   |
   | Attribution: URL `http://www.emacswiki.org/emacs/UntabifyUponSave'"
   |   (interactive)
   |   (when (not indent-tabs-mode)
   |     (untabify (point-min) (point-max))))
   |
-  | (add-hook 'before-save-hook #'help/untabify-if-not-indent-tabs-mode)
+  | (defun help/untabify-buffer-or-region-if-not-indent-tabs-mode ()
+  |   "Untabify a region if selected, otherwise the whole buffer.
+  |
+  | URL: `http://emacsredux.com/blog/2013/03/27/indent-region-or-buffer/'"
+  |   (interactive)
+  |   (save-excursion
+  |     (if (region-active-p)
+  |         (progn
+  |           (untabify (region-beginning) (region-end))
+  |           (message "Untabified selected region."))
+  |       (progn
+  |         (help/untabify-buffer-if-not-indent-tabs-mode)
+  |         (message "Untabified buffer.")))))
   `----
 
-  Most programing modes indent to 2 spaces. TABs should be the same width.
+  JavaScript programmers set tabs to 2. C programmers set it to 8. Makefiles
+  looks great at 4. 4 is the average and it looks good in exported LaTeX
+  listings.
 
   ,----
-  | (setq-default tab-width 2)
+  | (setq-default tab-width 4)
   `----
 
 
-3.35 Version Control
+3.32 Version Control
 ~~~~~~~~~~~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:BDC3035D-4F09-4A7B-8F14-1EE4604ACC0D
@@ -3187,6 +3047,21 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Search-Case.html
   |   (info-initialize)
   |   (add-to-list 'Info-directory-list
   |                "~/src/magit/Documentation/"))
+  `----
+
+  Close Magit-process related buffers when they become obselete.
+
+  ,----
+  | (defun help/magit-kill-buffers ()
+  |   "Restore window configuration and kill all Magit buffers.
+  |
+  | Attribution: URL `https://manuel-uberti.github.io/emacs/2018/02/17/magit-bury-buffer/'"
+  |   (interactive)
+  |   (let ((buffers (magit-mode-get-buffers)))
+  |     (magit-restore-window-configuration)
+  |     (mapc #'kill-buffer buffers)))
+  |
+  | (bind-key "q" #'help/magit-kill-buffers magit-status-mode-map)
   `----
 
   Leave the VC message template empty.
@@ -3231,8 +3106,49 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Search-Case.html
   |   :ensure t)
   `----
 
+  Quick note about intent of the change.
 
-3.36 Video
+  ,----
+  | (defhydra help/hydra/commit-message (:color blue
+  |                                             :hint nil)
+  |   "
+  | Commit Message Descriptor (q to quit)
+  | _E_nhancement: \"an increase or improvement in quality, value, or extent.\"
+  | _R_efinement: \"the improvement or clarification of something by the making of small changes.\"
+  | _C_orrection: \"a change that rectifies an error or inaccuracy.\"
+  | C_l_oses | _F_ixes | Resol_v_es
+  | _T_odo | _A_rchives | Rest_o_res
+  | "
+  |   ("E" (lambda () (interactive) (insert "(nhncmnt) ")))
+  |   ("R" (lambda () (interactive) (insert "(rfnmnt) ")))
+  |   ("C" (lambda () (interactive) (insert "(crrctn) ")))
+  |   ("l" (lambda () (interactive (insert "Closes #"))))
+  |   ("F" (lambda () (interactive (insert "Fixes #"))))
+  |   ("v" (lambda () (interactive (insert "Resolves #"))))
+  |   ("T" (lambda () (interactive) (insert "(ToDoDoDoDoDoDo)")))
+  |   ("A" (lambda () (interactive (insert "(rchvs) "))))
+  |   ("o" (lambda () (interactive (insert "(rslvs) "))))
+  |   ("q" nil))
+  `----
+
+  Commit message mode hook.
+
+  ,----
+  | (defun help/commit-message-mode-hook-fn ()
+  | "HELP Commit Message Mode Hook Function"
+  | (key-chord-define-local "hh" #'help/hydra/commit-message/body))
+  | (add-hook 'vc-git-log-edit-mode-hook #'help/commit-message-mode-hook-fn)
+  | (add-hook 'git-commit-setup-hook #'help/commit-message-mode-hook-fn)
+  `----
+
+  Smerge.
+
+  ,----
+  | (diminish "smerge-mode")
+  `----
+
+
+3.33 Video
 ~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:BB0F7B20-AC2C-49DB-B6A2-07D3C5D7A197
@@ -3264,10 +3180,10 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Search-Case.html
 
 
 [Embedding Youtube videos with org-mode links]
-http://endlessparentheses.com/embedding-youtube-videos-with-org-mode-links.html
+<http://endlessparentheses.com/embedding-youtube-videos-with-org-mode-links.html>
 
 
-3.37 Whitespace Management
+3.34 Whitespace Management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:9FBD1929-29C7-45CE-B9EC-DF0711778439
@@ -3283,13 +3199,13 @@ http://endlessparentheses.com/embedding-youtube-videos-with-org-mode-links.html
   |   (setq whitespace-display-mappings
   |         '((tab-mark ?\t [?↹ ?\t] [?␉ ?\t] [?\t])))
   |   (setq whitespace-line-column help/column-width)
-  |   (global-whitespace-mode t)
+  |   (global-whitespace-mode nil)
   |   (setq whitespace-global-modes '(not go-mode))
   |   :diminish whitespace-mode global-whitespace-mode)
   `----
 
 
-3.38 Word Wrap
+3.35 Word Wrap
 ~~~~~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:202157D8-58BB-4250-BDDD-98ADBF97F801
@@ -3317,7 +3233,7 @@ http://endlessparentheses.com/embedding-youtube-videos-with-org-mode-links.html
 
 
 [three primal major modes that you must understand]
-https://www.gnu.org/software/emacs/manual/html_node/elisp/Basic-Major-Modes.html#Basic-Major-Modes
+<https://www.gnu.org/software/emacs/manual/html_node/elisp/Basic-Major-Modes.html#Basic-Major-Modes>
 
 4.1 Common Configurations
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3378,6 +3294,31 @@ https://www.gnu.org/software/emacs/manual/html_node/elisp/Basic-Major-Modes.html
 ---------------
 
   ID: org_gcr_2017-05-12_mara:C3270DE0-55FD-4612-B3E3-226CAC5A8FDA
+
+  Auto-Capitalize in all text modes.
+
+  ,----
+  | (use-package auto-capitalize
+  |   :ensure t
+  |   :config
+  |   (diminish 'auto-capitalize)
+  |   (add-to-list 'auto-capitalize-words "HTTP")
+  |   (add-to-list 'auto-capitalize-words "HTTPS")
+  |   (add-to-list 'auto-capitalize-words "Fr")
+  |   (add-to-list 'auto-capitalize-words "SI")
+  |   (add-to-list 'auto-capitalize-words "24B")
+  |   (add-to-list 'desktop-minor-mode-handlers
+  |                '(auto-capitalize . (lambda (desktop-buffer-locals)))))
+  `----
+
+  Speed up punctuation marks.
+
+  ,----
+  | (global-set-key (kbd "C-;") (lambda () (interactive) (insert ". ")))
+  | (global-set-key (kbd "C-.") (lambda () (interactive) (insert ", ")))
+  | (global-set-key (kbd "C-,") (lambda () (interactive) (insert "; ")))
+  `----
+
   Every text editing buffer needs this.
 
   ,----
@@ -3388,13 +3329,16 @@ https://www.gnu.org/software/emacs/manual/html_node/elisp/Basic-Major-Modes.html
   |   (auto-fill-mode)
   |   (diminish 'auto-fill-function)
   |   (visual-line-mode)
-  |   (nlinum-mode)
-  |   (fci-mode)
-  |   (rainbow-mode)
   |   (help/try-to-add-imenu)
-  |   (turn-on-page-break-lines-mode))
-  |
+  |   (turn-on-page-break-lines-mode)
+  |   (turn-on-auto-capitalize-mode))
   | (add-hook 'text-mode-hook #'help/text-mode-fn)
+  `----
+
+  Can use in source blocks.
+
+  ,----
+  | (add-to-list 'org-babel-load-languages '(text . t))
   `----
 
 
@@ -3423,6 +3367,7 @@ https://www.gnu.org/software/emacs/manual/html_node/elisp/Basic-Major-Modes.html
       |                         web-mode-hook
       |                         js2-mode-hook
       |                         json-mode-hook
+      |                         yaml-mode-hook
       |                         crontab-mode-hook
       |                         apache-mode-hook
       |                         python-mode-hook
@@ -3430,7 +3375,8 @@ https://www.gnu.org/software/emacs/manual/html_node/elisp/Basic-Major-Modes.html
       |                         geiser-mode-hook
       |                         geiser-repl-mode-hook
       |                         go-mode-hook
-      |                         fsharp-mode-hook))
+      |                         TeX-mode-hook
+      |                         apples-mode-hook))
       `----
     - LISP mode hooks.
       - Are hacking modes.
@@ -3460,12 +3406,20 @@ https://www.gnu.org/software/emacs/manual/html_node/elisp/Basic-Major-Modes.html
   ID: org_gcr_2017-05-12_mara:34B0116F-B50F-487A-A605-0D31C07F6773
 
   - Indent at every opportunity and automatically. Verify that it makes sense
-    for the mode. Explicitly define instead of relying on `prog-mode'
-    inheritance; use this documents logical `prog*-mode' approach instead.
+    for the mode then enable or disable it. Originally enabled for individual
+    modes. That worked fine until I wanted to disable it for a mode where the
+    mode hook ran before the `prog-mode-hook' ran. Well that didn't work because
+    the child disabled this mode and then the parent enabled it again. You
+    aren't supposed to rely on order of execution in them so I am switching to
+    global mode and updating the excluded list in the same granular manner. In
+    affect, nothing has changed.
     ,----
     | (use-package aggressive-indent
     |   :ensure t
-    |   :config)
+    |   :diminish aggressive-indent-mode
+    |   :config
+    |   (global-aggressive-indent-mode)
+    |   (add-to-list 'aggressive-indent-excluded-modes 'minibuffer-inactive-mode))
     `----
   - Always maintain balanced brackets. Easily wrap the selected region.
     Auto-escape strings pasted into other strings. Smartparens provides built-in
@@ -3489,10 +3443,10 @@ https://www.gnu.org/software/emacs/manual/html_node/elisp/Basic-Major-Modes.html
   |   (interactive)
   |   (help/text-mode-fn)
   |   (smartparens-strict-mode)
-  |   (aggressive-indent-mode)
-  |   (hs-minor-mode)
-  |   (help/not-on-gui (local-set-key (kbd "RET") #'newline-and-indent))
-  |   (help/on-gui (local-set-key (kbd "<return>") #'newline-and-indent)))
+  |   (unless (equal major-mode 'fundamental-mode)
+  |     (hs-minor-mode))
+  |   (help/on-gui (local-set-key (kbd "<return>") #'newline-and-indent))
+  |   (turn-off-auto-capitalize-mode))
   |
   | (let ()
   |   (--each help/prog-modes
@@ -3510,7 +3464,6 @@ https://www.gnu.org/software/emacs/manual/html_node/elisp/Basic-Major-Modes.html
 ----------------
 
   ID: org_gcr_2017-05-12_mara:3A31F89D-2534-4E5F-8C3B-3CEBAFAC9E2D
-
   Have fun with scratch.
 
   ,----
@@ -3545,11 +3498,6 @@ https://www.gnu.org/software/emacs/manual/html_node/elisp/Basic-Major-Modes.html
   | (use-package lexbind-mode)
   `----
 
-  Slime navigation:
-  - "navigation to the symbol at point": `M-.'
-  - "pop back to previous marks": `M-,'
-  - "describe the symbol at point": `C-c C-d C-d'
-
   Symbol visualization.
 
   ,----
@@ -3561,13 +3509,9 @@ https://www.gnu.org/software/emacs/manual/html_node/elisp/Basic-Major-Modes.html
 
   ,----
   | (use-package highlight-stages
-  |   :ensure t)
-  `----
-
-  ,----
-  | (use-package elisp-slime-nav
   |   :ensure t
-  |   :diminish elisp-slime-nav-mode)
+  |   :config
+  |   (diminish 'highlight-stages-mode))
   `----
 
   ,----
@@ -3584,17 +3528,21 @@ https://www.gnu.org/software/emacs/manual/html_node/elisp/Basic-Major-Modes.html
   |   (local-set-key (kbd "s-l td") #'toggle-debug-on-error)
   |   (local-set-key (kbd "s-l mef") #'macroexpand)
   |   (local-set-key (kbd "s-l mea") #'macroexpand-all)
-  |   (local-set-key (kbd "C-c e") #'macrostep-expand))
+  |   (local-set-key (kbd "s-0") #'pp-macroexpand-last-sexp)
+  |   (local-set-key (kbd "s-8") #'lispy-multiline)
+  |   (local-set-key (kbd "s-*") #'lispy-oneline)
+  |   (local-set-key (kbd "s-9") #'macrostep-expand))
   |
   | (defhydra help/hydra-elisp-mode (:color blue
   |                                         :hint nil)
   |   "
-  | elisp-mode:
-  |  _d_ describe-thing _f_ find-thing
-  |   _q_ quit
+  | elisp-mode: _q_uit
+  |  Reformat s-expr: _m_ultiline or _o_ne line
+  |   Evaluation: _b_uffer
   | "
-  |   ("d" elisp-slime-nav-describe-elisp-thing-at-point)
-  |   ("f" elisp-slime-nav-find-elisp-thing-at-point)
+  |   ("m" lispy-multiline)
+  |   ("o" lispy-oneline)
+  |   ("b" eval-buffer)
   |   ("q" nil))
   | (key-chord-define emacs-lisp-mode-map "hh" #'help/hydra-elisp-mode/body)
   |
@@ -3604,13 +3552,12 @@ https://www.gnu.org/software/emacs/manual/html_node/elisp/Basic-Major-Modes.html
   |   (lexbind-mode)
   |   (eldoc-mode)
   |   (diminish 'eldoc-mode)
-  |   (turn-on-elisp-slime-nav-mode)
   |   (highlight-quoted-mode)
   |   (highlight-stages-mode))
   |
   | (setq ielm-noisy nil)
   |
-  | (setq ielm-prompt "𝔼LISP> ")
+  | (setq ielm-prompt "ⅇLISP⮞ ")
   |
   | (setq ielm-dynamic-return nil)
   |
@@ -3620,18 +3567,35 @@ https://www.gnu.org/software/emacs/manual/html_node/elisp/Basic-Major-Modes.html
   |   "HELP customizations."
   |   (interactive)
   |   (help/ielm-auto-complete)
-  |   (turn-on-elisp-slime-nav-mode))
+  |   (local-unset-key (kbd "C-j"))
+  |   (local-set-key (kbd "<C-return>") #'ielm-send-input))
   |
   | (add-hook 'ielm-mode-hook #'help/ielm-mode-hook-fn)
+  |
+  | (defun help/general-lisp-prettify ()
+  |   (mapc (lambda (pair) (push pair prettify-symbols-alist))
+  |         '(("nil" . ?∅)
+  |           ("*" . ?×)
+  |           ("/" . ?÷)
+  |           ("<=" . ?≤)
+  |           (">=" . ?≥)
+  |           ("lambda" . ?λ)
+  |           ("not" . ?¬)
+  |           ("and" . ?∧)
+  |           ("or" . ?∨)
+  |           ("sqrt" . ?√))))
   |
   | (defun help/general-lisp-mode-hook-fn ()
   |   (highlight-quoted-mode)
   |   (highlight-stages-mode)
+  |   (help/general-lisp-prettify)
   |   (local-set-key (kbd "#") #'endless/sharp))
   |
   | (let ()
   |   (--each help/lisp-modes
   |     (add-hook it #'help/general-lisp-mode-hook-fn)))
+  |
+  | (add-hook 'emacs-lisp-mode-hook #'help/emacs-lisp-mode-hook-fn)
   `----
 
   "find callers of elisp functions or macros".
@@ -3652,9 +3616,16 @@ https://www.gnu.org/software/emacs/manual/html_node/elisp/Basic-Major-Modes.html
   |   :after (package-lint))
   `----
 
+  Lispy super editing functions.
+
+  ,----
+  | (use-package lispy
+  |   :ensure t)
+  `----
+
 
 [via]
-https://www.reddit.com/r/emacs/comments/4cmfwp/scratch_buffer_hacks_to_increase_its_utility/
+<https://www.reddit.com/r/emacs/comments/4cmfwp/scratch_buffer_hacks_to_increase_its_utility/>
 
 
 4.2.2 Org-Mode
@@ -3787,6 +3758,7 @@ https://www.reddit.com/r/emacs/comments/4cmfwp/scratch_buffer_hacks_to_increase_
   |          "|"
   |          "DONE(d@)"
   |          "CANCELED(c@)"
+  |          "DUPLICATE(p@)"
   |          )))
   `----
 
@@ -3816,13 +3788,13 @@ https://www.reddit.com/r/emacs/comments/4cmfwp/scratch_buffer_hacks_to_increase_
 
 
   [StackOverflow: Add CREATED date property to TODOs in org-mode]
-  http://stackoverflow.com/questions/12262220/add-created-date-property-to-todos-in-org-mode
+  <http://stackoverflow.com/questions/12262220/add-created-date-property-to-todos-in-org-mode>
 
   [Org: 5.2.1 TODO keywords as workflow states]
-  http://orgmode.org/org.html#Workflow-states
+  <http://orgmode.org/org.html#Workflow-states>
 
   [5.3.2 Tracking TODO state changes]
-  http://orgmode.org/org.html#Tracking-TODO-state-changes
+  <http://orgmode.org/org.html#Tracking-TODO-state-changes>
 
 
 * 4.2.2.3 Refile
@@ -4052,7 +4024,142 @@ https://www.reddit.com/r/emacs/comments/4cmfwp/scratch_buffer_hacks_to_increase_
   `----
 
 
-* 4.2.2.6 Unclassified
+* 4.2.2.6 Publishing With TeX
+
+  ID: org_gcr_2018-03-07_mara:5C1154DE-B06C-444D-BB7B-32F0294BF64B
+
+
+  + 4.2.2.6.1 Engine
+
+    ID: org_gcr_2018-03-07_mara:BF9E72A9-58C7-4BD8-B0E3-60185434EADF
+    Use XeTeX.
+
+    ,----
+    | (setq org-latex-compiler "xelatex")
+    | (setq org-latex-pdf-process '("latexmk -xelatex -quiet -shell-escape -f %f"))
+    `----
+
+
+  + 4.2.2.6.2 Packages
+
+    ID: org_gcr_2018-03-07_mara:AE89B25B-486B-41BD-B3C5-C9499D93A4F2
+
+
+    - 4.2.2.6.2.1 Installation
+
+      ID: org_gcr_2018-04-28T19-58-14-05-00_mara:B51D7F56-0F8F-4206-8775-E6871618E28C
+      Copied and customized from [here].
+
+      ,----
+      | (setq org-latex-default-packages-alist
+      |       (delq (rassoc '("hyperref" nil) org-latex-default-packages-alist)
+      |             org-latex-default-packages-alist))
+      | (defconst help/org-latex-packages-alist-pre-hyperref
+      |   '(("letterpaper,margin=1.0in" "geometry")
+      |     ("" "float")))
+      | (defconst help/org-latex-packages-alist-post-hyperref
+      |   '( ("section" "placeins")
+      |      ("" "tikz")
+      |      ("" "caption")
+      |      ("" "latexsym")
+      |      ("" "lettrine")
+      |      ("" "grantcrettke")
+      |      ("" "listings")
+      |      ("" "color")
+      |      ("" "fancyvrb")))
+      | (setq org-latex-packages-alist
+      |       (append help/org-latex-packages-alist-pre-hyperref
+      |               '(("" "hyperref" nil))
+      |               help/org-latex-packages-alist-post-hyperref))
+      `----
+
+
+      [here]
+      <https://github.com/kaushalmodi/.emacs.d/blob/master/setup-files/setup-org.el>
+
+
+    - 4.2.2.6.2.2 Configuration
+
+      ID: org_gcr_2018-04-28T19-58-14-05-00_mara:8CC6E1C3-5300-4D9D-AB13-A064276342FB
+      ,----
+      | (setq org-latex-listings-options
+      |       '(("basicstyle" "\\ttfamily")
+      |         ("breakatwhitespace" "false")
+      |         ("breakautoindent" "true")
+      |         ("breaklines" "true")
+      |         ("columns" "[c]fullflexible")
+      |         ("commentstyle" "")
+      |         ("emptylines" "*")
+      |         ("extendedchars" "false")
+      |         ("fancyvrb" "true")
+      |         ("firstnumber" "auto")
+      |         ("flexiblecolumns" "false")
+      |         ("frame" "single")
+      |         ("frameround" "tttt")
+      |         ("identifierstyle" "")
+      |         ("keepspaces" "true")
+      |         ("keywordstyle" "")
+      |         ("mathescape" "false")
+      |         ("numbers" "left")
+      |         ("numbers" "none")
+      |         ("numbersep" "5pt")
+      |         ("numberstyle" "\\tiny")
+      |         ("resetmargins" "false")
+      |         ("showlines" "true")
+      |         ("showspaces" "false")
+      |         ("showstringspaces" "false")
+      |         ("showtabs" "true")
+      |         ("stepnumber" "2")
+      |         ("stringstyle" "")
+      |         ("tab" "↹")
+      |         ("tabsize" "4")
+      |         ("texcl" "false")
+      |         ("upquote" "false")))
+      `----
+
+
+  + 4.2.2.6.3 Classes
+
+    ID: org_gcr_2018-03-07_mara:D397AC3E-DFED-4228-B8CD-7D62318414E9
+    Standard LaTeX class options.
+
+    ,----
+    | (defvar help/ltx-cls-opt "12pt")
+    `----
+
+    Standard article class.
+
+    ,----
+    | (eval-after-load "ox-latex"
+    |   '(add-to-list 'org-latex-classes
+    |                 `("help-article"
+    |                   ,(concat "\\documentclass["
+    |                            help/ltx-cls-opt
+    |                            "]{article}"))))
+    |
+    | (setq org-latex-default-class "help-article")
+    `----
+
+
+  + 4.2.2.6.4 Printing Source Code
+
+    ID: org_gcr_2018-04-28T19-58-14-05-00_mara:5CF00598-18B1-473C-804E-6A49AE8E0C51
+    ,----
+    | (setq org-latex-listings t)
+    `----
+
+
+  + 4.2.2.6.5 Unclassified
+
+    ID: org_gcr_2018-03-07_mara:593C2BE0-5AD2-4654-B44B-C7F80F33F99A
+    Don't float images.
+
+    ,----
+    | (setq org-latex-default-figure-position "H")
+    `----
+
+
+* 4.2.2.7 Unclassified
 
   ID: org_gcr_2017-05-12_mara:FD7E89EA-72DC-4395-AE07-4CAA66B8BD28
 
@@ -4354,10 +4461,10 @@ https://www.reddit.com/r/emacs/comments/4cmfwp/scratch_buffer_hacks_to_increase_
 
 
   [Artur]
-  http://endlessparentheses.com/changing-the-org-mode-ellipsis.html?source=rss
+  <http://endlessparentheses.com/changing-the-org-mode-ellipsis.html?source=rss>
 
 
-* 4.2.2.7 Keybindings
+* 4.2.2.8 Keybindings
 
   ID: org_gcr_2017-05-12_mara:F5256DB3-BD52-409B-80CF-6E601A29AA4A
 
@@ -4368,41 +4475,36 @@ https://www.reddit.com/r/emacs/comments/4cmfwp/scratch_buffer_hacks_to_increase_
   that in mind, RETURN is bound to that now. Now HELP has four different kinds
   of "returns" in Org in order of likelihood of usage:
 
-  org-return-indent: Make it really easy to work in existing list items, headings,
-                     and tables
-                     - This is listed first because I often go back to modify entries
-                     - <return> because it is used the most
-  org-meta-return: Make it really easy to add new list items, headings, and table
-                   contents
-                   - M-<return> because the binding comes with Org
-  electric-indent-just-newline: For when I want to break out of the default Org
-                                indentation to start working at the beginning of
-                                the line for example when I'm done working in a
-                                list or have just created a new heading
-                                - C-M-<return> because it is next step "lower" in the binding
-  help/smart-open-line: When I want to insert a new line between the current and
-                        next line then position the cursor correctly indented at
-                        the start of it.
-                        - s-<return> because it is that is the last place in the modifier key chain
+  org-return-indent
+        Make it really easy to work in existing list items, headings, and tables
+        - This is listed first because I often go back to modify entries
+        - <return> because it is used the most
+  org-meta-return
+        Make it really easy to add new list items, headings, and table contents
+        - M-<return> because the binding comes with Org
+  *newline*
+        For when I want to break out of the default Org indentation to start
+        working at the beginning of the line for example when I'm done working
+        in a list or have just created a new heading
+        - C-M-<return> because it is next step "lower" in the binding
+  help/smart-open-line
+        When I want to insert a new line between the current and next line then
+        position the cursor correctly indented at the start of it.
+        - s-<return> because it is that is the last place in the modifier key
+          chain
 
   ,----
-  | (help/not-on-gui
-  |  (define-key org-mode-map (kbd "RET") #'org-return-indent)
-  |  (define-key org-mode-map (kbd "C-M-RET") #'electric-indent-just-newline))
   | (help/on-gui
   |  (define-key org-mode-map (kbd "<return>") #'org-return-indent)
-  |  (define-key org-mode-map (kbd "C-M-<return>") #'electric-indent-just-newline))
+  |  (define-key org-mode-map (kbd "C-M-<return>") #'newline))
   `----
 
 
-  + 4.2.2.7.1 Row 5
+  + 4.2.2.8.1 Row 5
 
     ID: org_gcr_2017-05-12_mara:B493B118-37D7-4C49-B300-EFBBEF91F0D6
 
     ,----
-    | (global-set-key [(shift f6)] #'kmacro-name-last-macro)
-    | (global-set-key [(f6)] #'insert-kbd-macro)
-    | (global-set-key [(f5)] #'elmacro-show-last-macro)
     | (define-key org-mode-map (kbd "s-6") #'org-babel-load-in-session)
     | (define-key org-mode-map (kbd "s-7") #'org-babel-switch-to-session)
     | (define-key org-mode-map (kbd "s-8") #'org-babel-switch-to-session-with-code)
@@ -4419,9 +4521,16 @@ https://www.reddit.com/r/emacs/comments/4cmfwp/scratch_buffer_hacks_to_increase_
     `----
 
 
-  + 4.2.2.7.2 Row 4
+  + 4.2.2.8.2 Row 4
 
     ID: org_gcr_2017-05-12_mara:ADB2113A-6D9F-4145-9D78-1DDFE5A2C916
+
+
+    Release these bindings.
+
+    ,----
+    | (global-unset-key (kbd "C-M-t"))
+    `----
 
     ,----
     | (define-key org-mode-map (kbd "s-]") (lambda () (interactive)
@@ -4436,11 +4545,14 @@ https://www.reddit.com/r/emacs/comments/4cmfwp/scratch_buffer_hacks_to_increase_
     | (define-key org-mode-map (kbd "s-o") #'org-babel-remove-result)
     | (define-key org-mode-map (kbd "s-p") #'org-babel-execute-maybe)
     | (define-key org-mode-map (kbd "s-[") #'org-babel-remove-inline-result)
-    | (define-key org-mode-map (kbd "M-{") (lambda () (interactive) (insert "- [ ] ")))
+    | (defun help/unset-C-M-t ()
+    |   (interactive)
+    |   (local-unset-key (kbd "C-M-t")))
+    | (add-hook 'org-mode-hook #'help/unset-C-M-t)
     `----
 
 
-  + 4.2.2.7.3 Row 3
+  + 4.2.2.8.3 Row 3
 
     ID: org_gcr_2017-05-12_mara:AA97F835-E969-43E4-AC84-B3CF472B8726
 
@@ -4475,7 +4587,7 @@ https://www.reddit.com/r/emacs/comments/4cmfwp/scratch_buffer_hacks_to_increase_
     `----
 
 
-  + 4.2.2.7.4 Row 2
+  + 4.2.2.8.4 Row 2
 
     ID: org_gcr_2017-05-12_mara:680824E4-2C0B-4E0F-BA6E-62AA84D484E4
 
@@ -4483,7 +4595,6 @@ https://www.reddit.com/r/emacs/comments/4cmfwp/scratch_buffer_hacks_to_increase_
     | (define-key org-mode-map (kbd "s-n") #'org-babel-view-src-block-info)
     | (define-key org-mode-map (kbd "s-m") #'org-babel-expand-src-block)
     | (define-key org-mode-map (kbd "s-,") #'org-babel-open-src-block-result)
-    | (define-key org-mode-map (kbd "s-.") #'org-time-stamp)
     `----
 
     Because I only use this for Org-Mode.
@@ -4493,7 +4604,7 @@ https://www.reddit.com/r/emacs/comments/4cmfwp/scratch_buffer_hacks_to_increase_
     `----
 
 
-  + 4.2.2.7.5 Hydra
+  + 4.2.2.8.5 Hydra
 
     ID: org_gcr_2017-05-12_mara:08A11E45-D41A-44D6-945D-45DF85F8D037
 
@@ -4501,34 +4612,39 @@ https://www.reddit.com/r/emacs/comments/4cmfwp/scratch_buffer_hacks_to_increase_
     | (defhydra help/hydra/right-side/org-mode (:color blue
     |                                                  :hint nil)
     |   "
-    | _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ id-create _5_ toggle-macro
-    | _q_ ←/w-code _w_ tbletfld _e_ g2nmrst _r_ help/org-refile _R_ g2nms-b _t_ g2s-b/hd _T_ table export format _p_ copy/property
-    | _a_ archive-subtree _s_ oblobigst _u_ goto _h_ dksieb _k_ ob-check-src-blk _l_ lint
-    | _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
+    | _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ id-create _5_ toggle-macro _9_ o2b/more _0_ o2b/LaTeX
+    | _q_ ←/w-code _w_ tbletfld _r_ help/org-refile _R_ g2nms-b _t_ g2s-b/hd _T_ table export format _p_ copy/property [ listbox
+    | _a_ archive-subtree _s_ sort _S_ lobigst _u_ goto _k_ ob-check-src-blk _l_ lint
+    | _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree
+    | _e_ ox-clip-formatted-copy "
     |   ;; Row 5
     |   ("1" org-babel-sha1-hash)
     |   ("2" org-display-inline-images)
     |   ("3" org-remove-inline-images)
     |   ("4" org-id-get-create)
     |   ("5" help/org-toggle-macro-markers)
-    |   ;; Row 4
+    |   ("9" (lambda () (interactive) (insert "#+HTML: <!--more-->")))
+    |   ("0" (lambda () (interactive) (insert "$\\LaTeX$")))  ;; Row 4
     |   ("q" org-babel-switch-to-session-with-code)
     |   ("w" org-table-edit-field)
     |   ("W" help/org-mark-subtree/kill-ring-save)
-    |   ("e" org-babel-goto-named-result)
+    |   ("e" ox-clip-formatted-copy)
     |   ("E" org-entities-help)
     |   ("r" help/org-refile)
-    |   ("R" org-babel-goto-named-src-block)
+    |   ("R" (lambda () (interactive) (insert "(refile)")))
     |   ("t" org-babel-goto-src-block-head)
     |   ("T" (lambda () (interactive) (insert "#+ATTR_HTML: :border 2 :rules all :frame border")))
     |   ("u" org-goto)
     |   ("p" my-org-region-to-property)
+    |   ;; Row 4
+    |   ("[" (lambda () (interactive) (insert "- [ ] ")))
     |   ;; Row 3
     |   ("a" org-archive-subtree-default)
-    |   ("s" org-babel-lob-ingest)
+    |   ("s" org-sort)
+    |   ("S" org-babel-lob-ingest)
     |   ("g" org-goto)
-    |   ("h" org-babel-do-key-sequence-in-edit-buffer)
-    |   ("H" org-babel-insert-header-arg)
+    |   ("i" org-babel-do-key-sequence-in-edit-buffer)
+    |   ("I" org-babel-insert-header-arg)
     |   ("k" org-babel-check-src-block)
     |   ("l" org-lint)
     |   ;; Row 2
@@ -4565,7 +4681,70 @@ https://www.reddit.com/r/emacs/comments/4cmfwp/scratch_buffer_hacks_to_increase_
     `----
 
 
-4.2.3 Transliteration
+* 4.2.2.9 Prettification
+
+  ID: org_gcr_2018-04-20T15-46-50-05-00_mara:356CA076-3E60-4908-BED1-DD7715C51C8C
+  Prettifications.
+
+  ,----
+  | (defun help/prettify-org-mode ()
+  |   (interactive)
+  |   (setq prettify-symbols-alist (help/alist-set "#+NAME\:" ?╭ prettify-symbols-alist))
+  |   (setq prettify-symbols-alist (help/alist-set "#+name\:" ?╭ prettify-symbols-alist))
+  |   (setq prettify-symbols-alist (help/alist-set "#+BEGIN_SRC" ?├ prettify-symbols-alist))
+  |   (setq prettify-symbols-alist (help/alist-set "#+begin_src" ?├ prettify-symbols-alist))
+  |   (setq prettify-symbols-alist (help/alist-set "#+END_SRC" ?╰ prettify-symbols-alist))
+  |   (setq prettify-symbols-alist (help/alist-set "#+end_src" ?╰
+  |                                                prettify-symbols-alist))
+  |   (setq prettify-symbols-alist (help/alist-set "#+BEGIN_EXAMPLE" ?💡
+  |                                                prettify-symbols-alist))
+  |   (setq prettify-symbols-alist (help/alist-set "#+begin_example" ?💡
+  |                                                prettify-symbols-alist))
+  |   (setq prettify-symbols-alist (help/alist-set "#+END_EXAMPLE" ?💡
+  |                                                prettify-symbols-alist))
+  |   (setq prettify-symbols-alist (help/alist-set "#+end_example" ?💡
+  |                                                prettify-symbols-alist))
+  |   (setq prettify-symbols-alist (help/alist-set "#+BEGIN_QUOTE" ?🗣 prettify-symbols-alist))
+  |   (setq prettify-symbols-alist (help/alist-set "#+begin_quote" ?🗣 prettify-symbols-alist))
+  |   (setq prettify-symbols-alist (help/alist-set "#+end_QUOTE" ?🗣 prettify-symbols-alist))
+  |   (setq prettify-symbols-alist (help/alist-set "#+end_quote" ?🗣 prettify-symbols-alist))
+  |   (help/prettify-org-mode-names ?╮))
+  | (add-hook 'org-mode-hook #'help/prettify-org-mode)
+  |
+  | (defun help/prettify-org-mode-names (&optional replacement)
+  |   (interactive)
+  |   (or replacement (setq replacement ?·))
+  |   (save-excursion
+  |     (goto-char (point-min))
+  |     (let ((case-fold-search t))
+  |       (while (re-search-forward "#\\+name: " nil t)
+  |         (copy-region-as-kill (point) (line-end-position))
+  |         (let ((name (substring-no-properties(pop kill-ring))))
+  |           (when (string-prefix-p "org_" name)
+  |             (setq prettify-symbols-alist (help/alist-set name replacement prettify-symbols-alist))))))))
+  `----
+
+
+4.2.3 Intermittent Literate Programming
+---------------------------------------
+
+  ID: org_gcr_2018-01-04_mara:43462ECD-9C40-43D2-872F-A2E9DB134199
+  See [this post].
+
+  Edit region in separate buffer. "Final" version works without carrying over
+  buffer properties.
+
+  ,----
+  | (use-package edit-indirect
+  |   :ensure t)
+  `----
+
+
+[this post]
+<https://www.wisdomandwonder.com/link/8610/lightweight-multiple-modes-for-semi-literate-programming>
+
+
+4.2.4 Transliteration
 ---------------------
 
   ID: org_gcr_2017-05-12_mara:D15B4305-4503-4D8C-8CDA-258FA4AF7EB2
@@ -4594,7 +4773,7 @@ https://www.reddit.com/r/emacs/comments/4cmfwp/scratch_buffer_hacks_to_increase_
   `----
 
 
-4.2.4 Unicode
+4.2.5 Unicode
 -------------
 
   ID: org_gcr_2017-05-12_mara:ADAE0A1B-3FD8-4605-8611-388E5ADBAFA8
@@ -4638,26 +4817,81 @@ https://www.reddit.com/r/emacs/comments/4cmfwp/scratch_buffer_hacks_to_increase_
   `----
 
 
-[BOM] https://en.wikipedia.org/wiki/Byte_order_mark
+[BOM] <https://en.wikipedia.org/wiki/Byte_order_mark>
 
 [skeeto]
-https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_warning_if_i_open_a_file_with_utf8/d5kszsh
+<https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_warning_if_i_open_a_file_with_utf8/d5kszsh>
 
 [Hexl mode]
-https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.html
+<https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.html>
 
 
-4.2.5 Content
--------------
+4.2.6 Words
+-----------
 
   ID: org_gcr_2017-08-04_mara:0A02BFBE-91BE-4629-B4B3-F72F2AAEAD3E
   ,----
   | (use-package lorem-ipsum
+  |   :ensure t
+  |   :config
+  |   (defun help/lorem-ipsum-insert-word ()
+  |     (interactive)
+  |     (let* ((paragraph
+  |             (nth (random (length lorem-ipsum-text)) lorem-ipsum-text))
+  |            (sentence
+  |             (concat (nth (random (length paragraph)) paragraph)
+  |                     lorem-ipsum-sentence-separator))
+  |            (words (split-string sentence))
+  |            (word (nth (random (length words)) words)))
+  |       (insert word))))
+  |
+  | (use-package academic-phrases
   |   :ensure t)
+  |
+  | (defhydra help/hydra/words (:color blue :hint nil)
+  |   "
+  | Vocabulary: (_q_uit)
+  |  Lorem Ipsum: _w_ord _s_entence _p_aragraphs _l_ist
+  |   Academic Phrases: _a_ll or by se_c_tion
+  |    _E_macs Name (insert _e_macs name)
+  |     _F_lame (insert _f_lame)
+  |      _H_oroscope (insert _h_oroscope)
+  |       _K_ibologize (insert _k_ibologize)
+  |        _S_hop _m_iddle name
+  |         _Y_ouwill (insert _y_ouwill)"
+  |
+  |
+  |   ("q" nil)
+  |
+  |   ("w" help/lorem-ipsum-insert-word)
+  |   ("s" lorem-ipsum-insert-sentences :exit nil)
+  |   ("p" lorem-ipsum-insert-paragraphs :exit nil)
+  |   ("l" lorem-ipsum-insert-lists :exit nil)
+  |
+  |   ("a" academic-phrases)
+  |   ("c" academic-phrases-by-section)
+  |
+  |   ("E" emacs-name)
+  |   ("e" (lambda () (interactive) (insert (emacs-name))))
+  |
+  |   ("F" flame)
+  |   ("f" insert-flame)
+  |
+  |   ("H" horoscope)
+  |   ("h" (lambda () (interactive) (horoscope t)))
+  |
+  |   ("K" kibologize)
+  |   ("k" help/kibologize-insert)
+  |
+  |   ("S" shop)
+  |   ("m" shop-middle-name)
+  |
+  |   ("Y" youwill)
+  |   ("y" help/youwill-insert))
   `----
 
 
-4.2.6 Dash
+4.2.7 Dash
 ----------
 
   ID: org_gcr_2017-05-12_mara:B541F7EE-BF7E-4055-9EE6-3B0AC34A1602
@@ -4685,7 +4919,7 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.h
   |   (setq gnu-apl-show-keymap-on-startup nil)
   |   (setq gnu-apl-show-apl-welcome nil)
   |   (setq gnu-apl-show-tips-on-start nil)
-  |   (setq gnu-apl-mode-map-prefix "M-s-")
+  |   (setq gnu-apl-mode-map-prefix "C-s-")
   |   (setq gnu-apl-interactive-mode-map-prefix gnu-apl-mode-map-prefix)
   |   :config
   |   (defun em-gnu-apl-init ()
@@ -4709,6 +4943,9 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.h
   |         (switch-to-buffer "*gnu-apl*")
   |         (insert ")off")
   |         (comint-send-input))))
+  |   (defun help/gnu-apl-prefix-string ()
+  |     (interactive)
+  |     gnu-apl-mode-map-prefix)
   |   (defhydra help/hydra/gnu-apl (:color blue
   |                                        :hint nil)
   |     "
@@ -4716,6 +4953,7 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.h
   |  _y_ eval-buffer _u_ eval-region _i_ eval-line _o_ eval-function
   |   _f_ apropos-symbol _g_ help-symbol _h_ keyboard _j_ next _k_ previous
   |    _q_ quit _c_ start APL _v_ stop APL _b_ switch to APL _n_ switch back
+  |     Prefix key is: %(help/gnu-apl-prefix-string)
   | "
   |     ("i" help/gnu-apl-eval-line)
   |     ("o" gnu-apl-interactive-send-current-function)
@@ -4744,389 +4982,13 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.h
   |     (deactivate-mark)
   |     (call-interactively 'next-logical-line))
   |   (define-key gnu-apl-mode-map (kbd "C-<return>") #'help/gnu-apl-eval-line)
-  |   (defun help/gnu-apl-interactive-mode-hook-fn ()
-  |     (nlinum-mode)
-  |     (rainbow-mode))
   |   (add-hook 'gnu-apl-interactive-mode-hook
   |             #'help/gnu-apl-interactive-mode-hook-fn)
   |   (add-to-list 'org-babel-load-languages '(gnu-apl . t)))
   `----
 
 
-4.3.2 Emacs Speaks Statistics (ESS)
------------------------------------
-
-  ID: org_gcr_2017-05-12_mara:92D8EC6D-9E6B-482A-B100-66CD75870EF5
-
-  ,----
-  | (use-package ess
-  |   :ensure t)
-  `----
-
-  Display object documentation.
-
-  ,----
-  | (setq ess-eldoc-show-on-symbol t)
-  `----
-
-  Data viewing:
-  - *Never* rely upon on the REPL for data viewing
-    - Will mix up exploratory code with data
-      - Can't easily distinguish between code and data
-      - Distracting you
-      - Breaking your flow
-  - Sometimes
-    - You end up somewhere
-      - And the `ess' buffer cursor is at the top!
-      - No problem, call `ess-switch-to-end-of-ESS'
-  - Make it easier to know what object values are.
-    - `ess-describe-object-at-point'
-
-  ,----
-  | (setq ess-describe-at-point-method 'tooltip)
-  `----
-
-  Always start `ess' within the curent `emacs' frame, it doesn't need to be
-  separate.
-
-  ,----
-  | (setq inferior-ess-same-window nil)
-  | (setq inferior-ess-own-frame nil)
-  `----
-
-  Help buffers all belong in the same frame.
-
-  ,----
-  | (setq ess-help-own-frame nil)
-  `----
-
-  When commands are executed, display their output within the current buffer,
-  rather than to a new dedicated buffer for them.
-
-  ,----
-  | (setq ess-execute-in-process-buffer t)
-  `----
-
-  When you cycle between a the REPL buffer and the script, you get to the
-  process buffer, you will go to the end of the buffer. This setting is
-  specifically to handle a buffer that is scrolling when you want to see the
-  last result and will scroll back after the fact to see the history.
-
-  ,----
-  | (setq ess-switch-to-end-of-proc-buffer t)
-  `----
-
-  Use typical auto completion in buffers here, but don't do it when the next
-  char is a symbol or closed paren.
-
-  ,----
-  | (setq ess-tab-complete-in-script t)
-  | (setq ess-first-tab-never-complete 'symbol-or-paren-or-punct)
-  `----
-
-  Use `ido' completion whenever possible.
-
-  ,----
-  | (setq ess-use-ido t)
-  `----
-
-  Use `eldoc' for this mode. Always show it when the point is on a symbol. Try
-  to keep help strings at 10 chars or less.
-
-  ,----
-  | (setq ess-use-eldoc t)
-  | (setq ess-eldoc-show-on-symbol t)
-  | (setq ess-eldoc-abbreviation-style 'normal)
-  `----
-
-  These functions are mentioned, and I am not sure where or how to use them yet,
-  but Vitalie Spinu mentioned them as being useful:
-
-  - `comint-previous-matching-input-from-input'
-  - `comint-history-isearch-backward-regexp'
-
-  For a while I used `ess-eval-buffer-and-go', but now I know that it is
-  insanely faster to use `ess-eval-buffer' instead. Previously I've read people
-  saying that, and it is true.
-
-  *Philosophy*
-
-  The current `ESS' maintainers philosophies about how to maintain an R
-  code-base make sense to me and are virtually the same as my own. Quite simply,
-  the rule is that the code artifacts are the single source of system
-  definition. Consequently, the system should be configured in this manner:
-
-  We want to keep dump files after loading them; never delete them. The idea is
-  that if we use them, then they are a valid part of the system definition and
-  need to be kept.
-
-  ,----
-  | (setq ess-keep-dump-files +1)
-  `----
-
-  `ESS' allows us to quite easily modify live R objects and functions. It
-  provides this functionality via `ess-dump-object-into-edit-buffer'. These
-  changes are considered to be experimental, and not part of the master record
-  according to our philosophy. As such, we don't care to know that these new
-  versions ever existed and their record will be forgotten from history. In
-  other words, that new, modified version of the object or function, is never
-  saved to a file for later reuse.
-
-  ,----
-  | (setq ess-delete-dump-files nil)
-  `----
-
-  Since our systems are entirely file-based, the entirety of the system most
-  likely lives in different files. Before loading any file for sourcing, save
-  any ESS source buffers. This approach is in addition to two other things: (1)
-  Emacs is auto-saving every file buffer quite frequently and (2) there is
-  advice before every manual `eval' call so that the buffers and their files
-  stay in sync. Yes, it is really that important.
-
-  ,----
-  | (setq ess-mode-silently-save +1)
-  `----
-
-  `ESS' executes code in another process. That is no secret. When displaying
-  output from that code running in another process though, it can look like
-  Emacs is locking up. That is not the case:
-  [https://stackoverflow.com/questions/2770523/how-can-i-background-the-r-process-in-ess-emacs].
-  What is happening that Emacs is waiting for the output. Configure this mode to
-  continue to accept user input, which is obviously critical, but don't wait for
-  the process to provide its output. Instead, all output is printed after the
-  last input lines. What we gain is perceived speed, and what we lose is the
-  nice sequential this/that/this/that we get from a typical REPL interaction. As
-  I write this, I'm not totally sure how this will work, but the documentation
-  and post are consistent and describe what I had wanted here so I will give it
-  a try and see how it goes.
-
-  ,----
-  | (setq ess-eval-visibly 'nowait)
-  `----
-
-
-4.3.3 R (ESS)
--------------
-
-  ID: org_gcr_2017-05-12_mara:6AE60368-3D9F-400D-AAEC-A9B99F5CE480
-
-  Enable a debugger.
-
-  ,----
-  | (setq ess-use-tracebug t)
-  `----
-
-  Configure debugger search path per-project.
-
-  ,----
-  | (setq ess-tracebug-search-path '())
-  `----
-
-  Easily nevigate errors.
-
-  ,----
-  | (define-key compilation-minor-mode-map [(?n)] #'next-error-no-select)
-  | (define-key compilation-minor-mode-map [(?p)] #'previous-error-no-select)
-  `----
-
-  Diminish watched variable font-size.
-
-  ,----
-  | (setq ess-watch-scale-amount -1)
-  `----
-
-  When `ess' starts, or when R starts, it takes the current directory as its
-  working directory. This is totally fine; so don't ask what the working
-  directory should be.
-
-  ,----
-  | (setq ess-ask-for-ess-directory nil)
-  `----
-
-  My preference is for ESS to quit and not ask me whether or not I am sure.
-  There is an intentional line-break after the closing round bracket because
-  that is the approach of the original value here.
-
-  ,----
-  | (setq inferior-ess-exit-command "q('no')
-  | ")
-  `----
-
-  Visualize just about anything with `ess-R-object-popup'.
-
-  ,----
-  | (use-package ess-R-object-popup
-  |   :ensure t)
-  `----
-
-  Rdired is another way to work with object:
-  - `ess-rdired'
-  - View, delete, plot, and update buffer (ala /revert/) are single key commands
-
-  ,----
-  | (autoload 'ess-rdired "ess-rdired")
-  `----
-
-  Visualize data frames better:
-  - `ess-R-dv-ctable'
-  - `ess-R-dv-pprint'
-
-  ,----
-  | (use-package ess-R-data-view
-  |   :ensure t)
-  `----
-
-  inlineR
-  - /Not/ a competitor to `org-mode'
-  - Ultra lightweight LP, really
-
-  ,----
-  | (use-package inlineR
-  |   :ensure t)
-  `----
-
-  Documentation:
-  - Whole section on native documentation; I'll re-visit as needed.
-  - Roxygen, too.
-
-  `ess-developer' helps you to easily work within specific name-spaces.
-
-  Store history files and dump files in a single known location. If that
-  location doesn't exist, then make it.
-
-  ,----
-  | (setq help/r-dir "~/.R/")
-  | (defun help/make-warn-R-dir ()
-  |   "Handle of R directory misconfiguration."
-  |   (interactive)
-  |   (unless (f-directory? help/r-dir)
-  |     (progn
-  |       (message "Couldn't find %S… creating it." help/r-dir)
-  |       (f-mkdir help/r-dir))))
-  | (help/make-warn-R-dir)
-  | (setq ess-history-directory help/r-dir)
-  | (setq ess-source-directory help/r-dir)
-  `----
-
-  Since I'm using R for everything, configure /everything/ to be using R.
-
-  ,----
-  | (setq inferior-ess-program "R")
-  | (setq inferior-R-program-name "R")
-  | (setq ess-local-process-name "R")
-  `----
-
-  Handle rdoc and rmd files, though I have never used them... yet.
-
-  ,----
-  | (add-to-list 'auto-mode-alist '("\\.rd\\'" . Rd-mode))
-  | (add-to-list 'auto-mode-alist '("\\.Rmd$" . r-mode))
-  `----
-
-  Make it really easy to search the R archives for anything.
-
-  ,----
-  | (local-set-key (kbd "C-c C-. S") #'ess-rutils-rsitesearch)
-  `----
-
-  Make it really easy to do common stuff for R with good keybindings.
-
-  ,----
-  | (use-package ess-rutils
-  |   :config
-  |   (setq ess-rutils-keys t))
-  `----
-
-  `r-autoyas' does argument completion. I had it working nice, and didn't use it
-  for a while, and now it doesn't work. This needs some TLC.
-
-  ,----
-  | (use-package r-autoyas
-  |   :ensure t
-  |   :config
-  |   (setq r-autoyas-debug t)
-  |   (setq r-autoyas-expand-package-functions-only nil)
-  |   (setq r-autoyas-remove-explicit-assignments nil))
-  `----
-
-  Save two spaces showing function information in the mini-buffer.
-
-  ,----
-  | (setq ess-R-argument-suffix "=")
-  `----
-
-  Don't use the default assignment binding and allow underscores in names.
-
-  ,----
-  | (setq ess-S-assign-key (kbd "C-<"))
-  | (ess-toggle-S-assign-key t)
-  | (ess-toggle-underscore nil)
-  `----
-
-  Don't save the workspace when you quit R and don't restore *ANYTHING* when you
-  start it, either. This adheres to the philosopy that the system is file based.
-
-  ,----
-  | (setq inferior-R-args "--no-save --no-restore")
-  `----
-
-  R mode hook.
-
-  ,----
-  | (defun help/R-mode-hook-fn ()
-  |   (local-set-key (kbd "s-6") #'ess-switch-to-end-of-ESS)
-  |   (local-set-key (kbd "s-7") #'ess-rdired)
-  |   (local-set-key (kbd "s-8") #'ess-R-dv-ctable)
-  |   (local-set-key (kbd "s-9") #'ess-R-dv-pprint)
-  |   (local-set-key (kbd "s-y") #'r-autoyas-expand)
-  |   (local-set-key (kbd "s-o") #'ess-describe-object-at-point)
-  |   (local-set-key (kbd "s-p") #'ess-R-object-popup)
-  |   (local-set-key (kbd "C->") #'(lambda () (interactive) (insert " -> ")))
-  |   (key-chord-define-local "<<" #'(lambda () (interactive) (insert " <<- ")))
-  |   (key-chord-define-local ">>" #'(lambda () (interactive) (insert " ->> ")))
-  |   (key-chord-define-local "<>" #'(lambda () (interactive) (insert " %<>% ")))
-  |   (local-set-key (kbd "s-.") #'(lambda () (interactive) (insert " %>% ")))
-  |   (r-autoyas-ess-activate)
-  |   (help/turn-on-r-hide-show)
-  |   (lambda () (add-hook 'ess-presend-filter-functions
-  |                   (lambda ()
-  |                     (warn
-  |                      "ESS now supports a standard pre-send filter hook. Please update your configuration to use it instead of using advice."))))
-  |   (ess-set-style 'RRR))
-  |
-  | (add-hook 'R-mode-hook #'help/R-mode-hook-fn)
-  |
-  | (defun help/turn-on-r-hide-show ()
-  | "Attribution: URL https://github.com/mlf176f2/EmacsMate/blob/master/EmacsMate-ess.org"
-  |   (when (string= "S" ess-language)
-  |     (set (make-local-variable 'hs-special-modes-alist) #'((ess-mode "{" "}" "#" nil nil)))
-  |     (hs-minor-mode 1)
-  |     (when (fboundp 'foldit-mode)
-  |       (foldit-mode 1))
-  |     (when (fboundp 'fold-dwim-org/minor-mode)
-  |       (fold-dwim-org/minor-mode))))
-  |
-  | (defun help/Rd-mode-hook-fn ()
-  |   (help/R-mode-hook-fn))
-  |
-  | (add-hook 'Rd-mode-hook #'help/Rd-mode-hook-fn)
-  |
-  | (defun help/inferior-ess-mode-hook-fn ()
-  |   (help/R-mode-hook-fn))
-  |
-  | (add-hook 'inferior-ess-mode-hook #'help/inferior-ess-mode-hook-fn)
-  |
-  | (defun help/ess-rdired-mode-hook-fn ()
-  |   "Personal customizations."
-  |   (interactive)
-  |   (turn-on-stripe-buffer-mode)
-  |   (stripe-listify-buffer))
-  |
-  | (add-hook 'ess-rdired-mode-hook #'help/ess-rdired-mode-hook-fn)
-  `----
-
-
-4.3.4 Scheme
+4.3.2 Scheme
 ------------
 
   ID: org_gcr_2017-05-12_mara:80DF94ED-4868-47CE-BAC8-978863BEF5AF
@@ -5150,12 +5012,15 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.h
   Scheme.
 
   ,----
-  | (use-package scheme-mode
-  |   :config
-  |   (setq scheme-program-name "chez")
-  |   (defun help/scheme-mode-hook-fn ())
-  |   (add-hook 'scheme-mode-hook #'help/scheme-mode-hook-fn)
-  |   (defun help/inferior-scheme-mode-hook-fn ()))
+  | (use-package scheme
+  | :config
+  | (setq scheme-program-name "chez")
+  | (defun help/scheme-mode-hook-fn ()
+  |   "HELP Scheme Mode Hook Function")
+  | (add-hook 'scheme-mode-hook #'help/scheme-mode-hook-fn)
+  | (defun help/inferior-scheme-mode-hook-fn ()
+  |   "HELP Inferior Scheme Mode Hook Function")
+  | (add-hook 'inferior-scheme-mode-hook #'help/inferior-scheme-mode-hook-fn))
   `----
 
   Geiser.
@@ -5164,7 +5029,8 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.h
   | (use-package geiser
   |   :ensure t
   |   :config
-  |   (setq geiser-active-implementations '(chez))
+  |   (setq geiser-default-implementation 'chez)
+  |   (setq geiser-active-implementations (list geiser-default-implementation))
   |   (setq geiser-repl-history-no-dups-p t)
   |   (defun help/geiser-exit-chez ()
   |     (interactive)
@@ -5200,17 +5066,16 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.h
   |     ("n" (lambda () (interactive) (other-window -1)))
   |     ("q" nil))
   |   (defun help/geiser-mode-hook-fn ()
-  |     (turn-off-fci-mode)
-  |     (unbind-key "C-." geiser-mode-map)
+  |     (local-unset-key (kbd "C-."))
   |     (key-chord-define geiser-mode-map "hh" #'help/hydra-geiser-mode/body)
-  |     (unbind-key "C-j")
-  |     (define-key geiser-mode-map (kbd "C-j") #'help/geiser-eval-line))
+  |     (local-unset-key (kbd "C-j"))
+  |     (local-set-key (kbd "<C-return>") #'help/geiser-eval-line))
   |   (add-hook 'geiser-mode-hook #'help/geiser-mode-hook-fn)
   |   (defun help/geiser-repl-mode-hook-fn ()
-  |     (turn-off-fci-mode)
-  |     (unbind-key "C-." geiser-repl-mode-map)
-  |     (define-key geiser-repl-mode-map "\C-j" 'geiser-repl--maybe-send)
-  |     (key-chord-define geiser-repl-mode-map "hh" #'help/hydra-geiser-mode/body))
+  |     (local-unset-key (kbd "C-."))
+  |     (local-unset-key (kbd "C-j"))
+  |     (local-set-key (kbd "<C-return>") #'geiser-repl--maybe-send)
+  |     (key-chord-define-local "hh" #'help/hydra-geiser-mode/body))
   |   (add-hook 'geiser-repl-mode-hook #'help/geiser-repl-mode-hook-fn))
   `----
 
@@ -5227,7 +5092,7 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.h
   `----
 
 
-4.3.5 C
+4.3.3 C
 -------
 
   ID: org_gcr_2017-05-12_mara:F72D838E-4540-4EC1-AECB-B521DF78D8D8
@@ -5235,13 +5100,12 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.h
   ,----
   | (defun help/c-mode-common-hook-fn ()
   |   "HELP c-mode-common customizations."
-  |   (interactive)
-  |   (rainbow-mode))
+  |   (interactive))
   | (add-hook 'c-mode-common-hook #'help/c-mode-common-hook-fn)
   `----
 
 
-4.3.6 Go
+4.3.4 Go
 --------
 
   ID: org_gcr_2017-07-30_mara:2F891F22-5C0C-43BA-8891-62DA7E9540FD
@@ -5343,7 +5207,7 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.h
   `----
 
 
-4.3.7 Python
+4.3.5 Python
 ------------
 
   ID: org_gcr_2017-05-12_mara:BA88E1CC-386E-4CFF-89B3-7E003EC92504
@@ -5356,7 +5220,7 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.h
   `----
 
 
-4.3.8 YASnippet & Abbrev
+4.3.6 YASnippet & Abbrev
 ------------------------
 
   ID: org_gcr_2017-05-12_mara:8B8B0626-3A67-4F10-9106-ACFD4E9731E5
@@ -5371,10 +5235,11 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.h
   | (use-package yasnippet
   |   :ensure t
   |   :config
+  |   (use-package yasnippet-snippets
+  |     :ensure t)
   |   (yas-global-mode t)
-  |   (help/not-on-gui (define-key yas-minor-mode-map (kbd "TAB") nil))
   |   (help/on-gui (define-key yas-minor-mode-map (kbd "<tab>") nil))
-  |   (define-key yas-minor-mode-map (kbd "C-;") #'yas-expand)
+  |   (define-key yas-minor-mode-map (kbd "C-'") #'yas-expand)
   |   (help/not-on-gui (define-key yas-keymap (kbd "TAB") #'yas-next-field))
   |   (help/on-gui (define-key yas-keymap (kbd "<tab>") #'yas-next-field))
   |   (add-to-list #'yas-snippet-dirs "~/src/help/yasnippet")
@@ -5393,14 +5258,14 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.h
   `----
 
 
-4.3.9 Structured Query Language (SQL)
+4.3.7 Structured Query Language (SQL)
 -------------------------------------
 
   ID: org_gcr_2017-05-12_mara:74BF0520-1F06-4FAF-921C-64E8109CEF03
 
 
-4.3.10 Web Development
-----------------------
+4.3.8 Web Development
+---------------------
 
   ID: org_gcr_2017-05-12_mara:58CFE4EF-8A8A-4C41-9ECF-C9F6D814218E
 
@@ -5454,19 +5319,21 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.h
   |   (setq web-mode-enable-part-face t)
   |   (setq web-mode-enable-comment-keywords t)
   |   (setq web-mode-enable-heredoc-fontification t)
-  |   (turn-off-fci-mode))
+  |   (setq ispell-skip-html t))
   |
   | (add-hook 'web-mode-hook #'help/web-mode-hook-fn)
   `----
 
 
-4.3.11 JavaScript
------------------
+4.3.9 JavaScript
+----------------
 
   ID: org_gcr_2017-05-12_mara:92C9A271-BC16-431B-8457-2901DE330164
 
-  Out of the box Emacs supports `js' with `js-mode'. Define language
-  `javascript' to use `js2-mode'.
+  js2-mode is derived from js-mode and most of the indentation settings are done
+  there.
+
+  Add `JavaScript' language to Org-Mode.
 
   ,----
   | (use-package js2-mode
@@ -5487,8 +5354,66 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.h
   |   (js2r-add-keybindings-with-prefix "C-c C-m"))
   `----
 
-  `json-mode' is derived from `javascript-mode' so configure the latter's indent
-  to two.
+
+4.3.10 AppleScript
+------------------
+
+  ID: org_gcr_2018-04-22T00-19-01-05-00_mara:BB59BC9A-5CBE-4A0A-9276-C4835E28E8B4
+  ,----
+  | (use-package apples-mode
+  |   :ensure t
+  |   :config
+  |   (setq apples-compile-create-file-flag t)
+  |   (setq apples-continuation-offset 2)
+  |   (setq apples-decompile-query ?o)
+  |   (setq apples-follow-error-position t)
+  |   (setq apples-indent-offset 2)
+  |   (setq apples-prefer-coding-system coding-category-utf-8)
+  |   (setq apples-tmp-dir "~/tmp")
+  |   (defhydra help/hydra/right/apples-mode (:color blue :hint nil)
+  |     "
+  |  AppleScript: (_q_uit)     |^                       ^|^                     ^|
+  | -^------------------------^+^-----------------------^+---------------------^^+
+  |  _j_: eval region          | _o_: continuation       | _i_: show last result
+  |  _J_: eval buffer          | _O_: continue+newline   | _9_: open dict
+  |  _i_: compile              | _u_: close block        | _0_: send-to-editor
+  |  _I_: decompile            | _U_: toggle-indentation |
+  |  "
+  |     ("j" apples-run-region)
+  |     ("J" apples-run-buffer)
+  |     ("i" apples-compile)
+  |     ("I" apples-decompile)
+  |     ("o" apples-insert-continuation-char)
+  |     ("O" apples-insert-continuation-char-and-newline)
+  |     ("u" apples-end-completion)
+  |     ("U" apples-toggle-indent)
+  |     ("i" apples-show-last-result)
+  |     ("9" apples-open-dict-index)
+  |     ("0" apples-send-to-applescript-editor)
+  |     ("q" nil))
+  |   (key-chord-define apples-mode-map "hh" #'help/hydra/right/apples-mode/body)
+  |   (use-package ob-applescript
+  |     :ensure t
+  |     :config
+  |     (add-to-list 'org-babel-load-languages '(apples . t)))
+  |   (defun help/apples-mode-hook-fun ())
+  |   (add-hook 'apples-mode-hook #'help/apples-mode-hook-fun))
+  `----
+
+
+4.4 Data
+~~~~~~~~
+
+  ID: org_gcr_2018-04-20T15-46-50-05-00_mara:3259C745-2E58-4F02-B384-A2B341B598DA
+
+
+4.4.1 JSON
+----------
+
+  ID: org_gcr_2018-01-16_mara:59857D34-FF7E-49DC-B639-DCE18813974E
+  javascript-mode is an alias for json-mode.
+
+  json-mode is derived from javascript-mode.
 
   ,----
   | (use-package json-mode
@@ -5496,71 +5421,199 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.h
   |   :diminish json-mode
   |   :mode (("\\.jshintrc$" . json-mode))
   |   :config
-  |   (progn
-  |     (setq js-indent-level 2)
-  |     (setq json-reformat:indent-width 2)
-  |     (setq json-reformat:pretty-string\? t)))
+  |   (defhydra help/hydra/json (:color blue
+  |                                     :hint nil)
+  |     "
+  | JSON: (q to quit)
+  | _b_eautify
+  |  _s_how-path _k_ill-path
+  |   _t_oggle boolean _n_ullify sexp
+  |    _i_ncrement number _d_ecrement number
+  | "
+  |     ("b" json-mode-beautify)
+  |     ("s" json-mode-show-path)
+  |     ("k" json-mode-kill-path)
+  |     ("t" json-toggle-boolean)
+  |     ("n" json-nullify-sexp)
+  |     ("i" json-increment-number-at-point :exit nil)
+  |     ("d" json-decrement-number-at-point :exit nil)
+  |     ("q" nil))
+  |   (define-key json-mode-map (kbd "RET") #'newline)
+  |   (defun help/json-mode-hook-fn ()
+  |     (indent-guide-mode)
+  |     (turn-off-auto-capitalize-mode)
+  |     (turn-off-auto-fill)
+  |     (key-chord-define-local "hh" #'help/hydra/json/body))
+  |   (add-hook 'json-mode-hook #'help/json-mode-hook-fn))
   `----
 
 
-4.3.12 F#
----------
+4.4.2 YAML
+----------
 
-  ID: org_gcr_2017-08-10_mara:A449A518-7BDF-4D95-971A-EEA942A1C8EA
+  ID: org_gcr_2018-01-16_mara:D8AD667E-3B40-44A1-A4D3-CC3383DAA4A0
   ,----
-  | (use-package fsharp-mode
+  | (use-package yaml-mode
   |   :ensure t
   |   :config
-  |   (use-package ob-fsharp
+  |   (defun yaml-next-field ()
+  |     "Jump to next yaml field.
+  |
+  | URL: `https://stackoverflow.com/questions/12648388/emacs-yaml-editing'"
+  |     (interactive)
+  |     (search-forward-regexp ": *"))
+  |   (defun yaml-prev-field ()
+  |     "Jump to next yaml field.
+  |
+  | URL: `https://stackoverflow.com/questions/12648388/emacs-yaml-editing'"
+  |     (interactive)
+  |     (search-backward-regexp ": *"))
+  |   (defhydra help/hydra/yaml (:color blue
+  |                                     :hint nil)
+  |     "
+  | YAML: (q to quit)
+  |  _i_ indent line
+  |   _n_ narrow to block literal
+  |    _c_ fill paragraph
+  | "
+  |     ("i" yaml-indent-line)
+  |     ("n" yaml-narrow-to-block-literal)
+  |     ("c" yaml-fill-paragraph)
+  |     ("q" nil))
+  |   (defun help/yaml-mode-hook-fn ()
+  |     (indent-guide-mode)
+  |     (turn-off-auto-capitalize-mode)
+  |     (turn-off-auto-fill)
+  |     (setq flycheck-checker 'yaml-yamllint))
+  |   (add-hook 'yaml-mode-hook #'help/yaml-mode-hook-fn)
+  |   (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+  |   (define-key yaml-mode-map (kbd "<backspace>") nil)
+  |   (define-key yaml-mode-map (kbd "<backspace>") #'sp-backward-delete-char)
+  |   (define-key yaml-mode-map (kbd "s-j") #'yaml-next-field)
+  |   (define-key yaml-mode-map (kbd "s-k") #'yaml-prev-field)
+  |   (key-chord-define yaml-mode-map "hh" #'help/hydra/yaml/body)
+  |   (use-package flycheck-yamllint
   |     :ensure t
   |     :config
-  |     (autoload 'fsharp-mode "fsharp-mode"     "Major mode for editing F# code." t)
-  |     (add-to-list 'auto-mode-alist '("\\.fs[iylx]?$" . fsharp-mode))
-  |     (add-to-list 'org-babel-load-languages '(fsharp . t))))
+  |     (with-eval-after-load "flycheck"
+  |       (add-hook 'flycheck-mode-hook 'flycheck-yamllint-setup))
+  |     (setq flycheck-yaml-yamllint-executable "/Users/gcr/yamllint/env/bin/yamllint")))
   `----
 
 
-4.4 Publishing
+4.5 Publishing
 ~~~~~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:0A4A1510-41F7-4469-87D1-156D44A06216
 
 
-4.4.1 TeX
----------
+4.5.1 AUCTeX
+------------
 
   ID: org_gcr_2017-05-12_mara:2DF7BDAD-45C9-4D8D-AC34-FE77E119A093
 
+
+* 4.5.1.1 Introduction
+
+  ID: org_gcr_2018-03-05_mara:EF3E6F3E-B457-477F-95B3-B08E83B797B6
+  Load AUCTeX.
+
   ,----
   | (use-package tex
-  |   :ensure auctex
+  |   :ensure auctex)
+  `----
+
+  Load LatexMk.
+
+  ,----
+  | (use-package auctex-latexmk
+  |   :ensure t
   |   :config
-  |   (define-key TeX-mode-map (kbd "C-c C-c") #'help/safb-TeX-command-master))
+  |   (setq auctex-latexmk-inherit-TeX-PDF-mode t)
+  |   (auctex-latexmk-setup))
   `----
 
-  Save style info. This doesn't control the buffer save.
+
+* 4.5.1.2 Editing the Document Source
+
+  ID: org_gcr_2018-03-06_mara:15BDC594-E44E-41A0-B5E3-A5490E2DD3A7
+  Insert and toggle inline math.
 
   ,----
-  | (setq TeX-auto-save t)
+  | (setq TeX-electric-math t)
   `----
 
-  Parse on load.
+  Balance opening and closing brackets because I don't think that SmartParens
+  will always know /the right thing/ to do here.
 
   ,----
-  | (setq TeX-parse-self t)
+  | (setq LaTeX-electric-left-right-brace t)
   `----
 
-  Parse on save.
+  Section hooks.
 
   ,----
-  | (setq TeX-auto-save t)
+  | (setq LaTeX-section-hook
+  |       '(LaTeX-section-heading
+  |         LaTeX-section-title
+  |         LaTeX-section-toc
+  |         LaTeX-section-section
+  |         LaTeX-section-label))
+  |
   `----
 
-  Use PDFTeX to generate both DVI and PDF files.
+  Always prompt for item labels.
 
   ,----
-  | (setq TeX-PDF-mode t)
-  | (setq TeX-DVI-via-PDFTeX t)
+  | (setq TeX-arg-item-label-p t)
+  `----
+
+  Show Unicode symbols in the menu.
+
+  ,----
+  | (setq LaTeX-math-menu-unicode t)
+  `----
+
+  Automatically bracket sub and superscripts.
+
+  ,----
+  | (setq TeX-electric-sub-and-superscript t)
+  `----
+
+  On macro insertion prompt for both required and optional arguments every time.
+
+  ,----
+  | (setq TeX-insert-macro-default-style 'show-all-optional-args)
+  `----
+
+  Make `\' insert a macro.
+
+  ,----
+  | (setq TeX-electric-escape t)
+  `----
+
+  Always bracket macros.
+
+  ,----
+  | (setq TeX-insert-braces t)
+  `----
+
+  Complete expert commands.
+
+  ,----
+  | (setq TeX-complete-expert-commands t)
+  `----
+
+  Always check environment indentation.
+
+  ,----
+  | (setq LaTeX-indent-environment-check t)
+  `----
+
+  Indent comment syntactically.
+
+  ,----
+  | (setq LaTeX-syntactic-comments t)
   `----
 
   Don't prompt every time you run `C-c C-c' about saving the file, instead, just
@@ -5576,63 +5629,189 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.h
   | (add-to-list 'auto-mode-alist '("\\.lco?\\'" . TeX-latex-mode))
   `----
 
-  Culture-dependent typographical results.
+
+* 4.5.1.3 Controlling Screen Display
+
+  ID: org_gcr_2018-03-06_mara:AD0AF49A-F5EE-4931-867A-63E0C7F87FC7
+  Fontify super and subscripts.
 
   ,----
-  | (add-to-list 'org-latex-packages-alist '("english" "babel" t))
+  | (setq font-latex-fontify-script t)
   `----
 
-  Use the closest thing to Times New Roman.
+  Allow `n' super and subscript depth.
 
   ,----
-  | (add-to-list 'org-latex-packages-alist '("" "mathptmx" t))
-  `----
-
-  Small margins.
-
-  ,----
-  | (add-to-list 'org-latex-packages-alist '("margin=1.5in" "geometry" nil))
-  `----
-
-  One empty line between paragraphs.
-
-  ,----
-  | (add-to-list 'org-latex-packages-alist '("" "parskip" nil))
-  `----
-
-  Dropped capitals.
-
-  ,----
-  | (add-to-list 'org-latex-packages-alist '("" "lettrine" nil))
-  `----
-
-  Standard LaTeX class options.
-
-  ,----
-  | (defvar help/ltx-cls-opt "paper=letter, fontsize=12pt")
-  `----
-
-  Standard article class.
-
-  ,----
-  | (eval-after-load "ox-latex"
-  |   '(add-to-list 'org-latex-classes
-  |                 `("help-article"
-  |                   ,(concat "\\documentclass["
-  |                            help/ltx-cls-opt
-  |                            "]{article}"))))
-  |
-  | (setq org-latex-default-class "help-article")
-  `----
-
-  Use "Smartquotes".
-
-  ,----
-  | (setq org-export-with-smart-quotes t)
+  | (setq font-latex-fontify-script-max-level 3)
   `----
 
 
-4.4.2 KOMA-Script
+* 4.5.1.4 Starting Processors, Viewers and Other Programs
+
+  ID: org_gcr_2018-03-06_mara:8D6395B6-CFE8-4A87-96E2-C4D1A24117E6
+
+  Tell `ispell' to ignore things.
+
+  ,----
+  | (setq TeX-ispell-extend-skip-list t)
+  `----
+
+  Create DVI from PDF.
+
+  ,----
+  | (setq TeX-PDF-mode t)
+  `----
+
+  Use XeTeX.
+
+  ,----
+  | (setq-default TeX-engine 'xetex)
+  | (setq-default TeX-PDF-mode t)
+  `----
+
+  Show compilation is another window.
+
+  ,----
+  | (setq TeX-show-compilation t)
+  `----
+
+  Error message format.
+
+  ,----
+  | (setq TeX-file-line-error t)
+  `----
+
+  Prompt before cleaning.
+
+  ,----
+  | (setq TeX-clean-confirm t)
+  `----
+
+
+* 4.5.1.5 Customization and Extension
+
+  ID: org_gcr_2018-03-07_mara:B440BBB2-DC5D-421D-85BD-988BF56B7E2B
+  Never use multi-file document structure.
+
+  ,----
+  | (setq-default TeX-master t)
+  `----
+
+  Automatically parse on load and save.
+
+  ,----
+  | (setq TeX-parse-self t)
+  | (setq TeX-auto-save t)
+  `----
+
+  Recursively search for all customizations.
+
+  ,----
+  | (setq TeX-file-recurse t)
+  `----
+
+
+* 4.5.1.6 Key Bindings
+
+  ID: org_gcr_2018-03-05_mara:D945AAE3-61B6-4EE8-8693-D67685344A17
+  ,----
+  | (define-key TeX-mode-map (kbd "C-c C-c") #'help/safb-TeX-command-master)
+  | (define-key TeX-mode-map (kbd "C-j") nil)
+  | (define-key TeX-mode-map (kbd "C-M-f") nil)
+  | (define-key TeX-mode-map (kbd "C-M-f") #'LaTeX-find-matching-end)
+  | (define-key TeX-mode-map (kbd "C-M-b") nil)
+  | (define-key TeX-mode-map (kbd "C-M-b") #'LaTeX-find-matching-begin)
+  | (define-key TeX-mode-map (kbd "s-l") nil)
+  | (define-key TeX-mode-map (kbd "s-l") #'TeX-complete-symbol)
+  `----
+
+
+* 4.5.1.7 Hydras
+
+  ID: org_gcr_2018-03-05_mara:56F54131-AD99-411E-89D0-1AD104B3E228
+  ,----
+  | (defhydra help/hydra/auctex (:color blue
+  |                                     :hint nil)
+  |   "
+  | AUCTeX: _H_elp _q_uit
+  | Do: Run_a_ll →R_e_gion →B_u_ffer →Section(_1_) _K_ill-Job
+  |     Center-Buffer(_2_) Go-Home(_3_) Clean(_4_) Save-Belonging(_6_
+  | Insert: _S_ection _E_nvironment _M_acro _F_ont(¿) _C_lose-Env _I_tem
+  | Mark: E_n_vironment (_j_ust one) Se_c_tion (jus_t_ one)
+  | Fold: Fol_d_* Bu_f_fe_r_ Re_g_i_o_n _P_aragraph Macr_o_ En_v_ Mat_h_ Co_m_ment
+  | Narrow: _G_roup Env_i_ronment
+  | Errors: _R_eport ⏼_B_oxes ⏼_W_arnings
+  | "
+  |   ;; Do
+  |   ("a" TeX-command-run-all)
+  |   ("e" TeX-command-region)
+  |   ("u" TeX-command-buffer)
+  |   ("1" LaTeX-command-section)
+  |   ("K" TeX-kill-job)
+  |   ("2" TeX-recenter-output-buffer)
+  |   ("3" TeX-home-buffer)
+  |   ("4" TeX-clean)
+  |   ("H" TeX-documentation-texdoc)
+  |   ("6" TeX-save-document)
+  |   ;; Insert
+  |   ("S" LaTeX-section)
+  |   ("E" LaTeX-environment)
+  |   ("M" TeX-insert-macro)
+  |   ("F" TeX-font)
+  |   ("C" LaTeX-close-environment)
+  |   ("I" LaTeX-insert-item)
+  |   ;; Mark
+  |   ("n" LaTeX-mark-environment)
+  |   ("j" (lambda (interactive)
+  |          (let ((current-prefix-arg '(4))) (call-interactively 'LaTeX-mark-environment)) ))
+  |   ("c" LaTeX-mark-section)
+  |   ("t" (lambda (interactive)
+  |          (let ((current-prefix-arg '(4))) (call-interactively
+  |                                            'LaTeX-mark-section)) ))
+  |   ;; Folding
+  |   ("d" TeX-fold-dwim)
+  |   ("f" TeX-fold-buffer)
+  |   ("r" TeX-fold-clearout-buffer)
+  |   ("g" TeX-fold-region)
+  |   ("i" TeX-fold-clearout-region)
+  |   ("P" TeX-fold-paragraph)
+  |   ("o" TeX-fold-macro)
+  |   ("v" TeX-fold-env)
+  |   ("h" TeX-fold-math)
+  |   ("m" TeX-fold-comment)
+  |   ;; Narrow:
+  |   ("G" TeX-narrow-to-group)
+  |   ("i" LaTeX-narrow-to-environment)
+  |   ;; Errors
+  |   ("R" TeX-error-overview)
+  |   ("B" TeX-toggle-debug-bad-boxes)
+  |   ("W" TeX-toggle-debug-warnings)
+  |   ("q" nil))
+  `----
+
+
+* 4.5.1.8 Hooks
+
+  ID: org_gcr_2018-03-05_mara:5C39E41D-C6EC-4A6F-ACB5-A59B472D02CE
+  - Hook customization
+    - If for all text modes then add it to `text-mode-hook'
+    - If for all AUCTeX modes then add it to `TeX-mode-hook'
+    - Otherwise add it to a mode specific hook
+  ,----
+  | (defun help/TeX-mode-hook ()
+  |   (key-chord-define-local "hh" #'help/hydra/auctex/body)
+  |   (LaTeX-math-mode)
+  |   (TeX-fold-mode 1)
+  |   (prettify-symbols-mode)
+  |   (TeX-install-toolbar)
+  |   (setq LaTeX-enable-toolbar t)
+  |   (TeX-interactive-mode)
+  |   (local-unset-key (kbd "C-j")))
+  | (add-hook 'TeX-mode-hook 'help/TeX-mode-hook)
+  `----
+
+
+4.5.2 KOMA-Script
 -----------------
 
   ID: org_gcr_2017-05-12_mara:623E9A43-A969-48FD-9045-356F83B135E2
@@ -5754,26 +5933,27 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.h
   `----
 
 
-[KOMA Script exporter] http://orgmode.org/worg/exporters/koma-letter-export.html
+[KOMA Script exporter]
+<http://orgmode.org/worg/exporters/koma-letter-export.html>
 
-[KOMA-script] https://www.ctan.org/pkg/koma-script?lang%3Den
+[KOMA-script] <https://www.ctan.org/pkg/koma-script?lang%3Den>
 
 [ox-koma-letter.el]
-http://orgmode.org/cgit.cgi/org-mode.git/plain/contrib/lisp/ox-koma-letter.el
+<http://orgmode.org/cgit.cgi/org-mode.git/plain/contrib/lisp/ox-koma-letter.el>
 
-[babel] https://www.ctan.org/pkg/babel?lang%3Den
+[babel] <https://www.ctan.org/pkg/babel?lang%3Den>
 
 [This]
-https://tex.stackexchange.com/questions/102922/how-can-i-get-us-letter-output-from-koma-scripts-scrlttr2-class
+<https://tex.stackexchange.com/questions/102922/how-can-i-get-us-letter-output-from-koma-scripts-scrlttr2-class>
 
 [heading-based]
-http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-new-example.org%3Bh%3D180a9a0e10dd8f7483a67946daf36732c316f821%3Bhb%3D180a9a0e10dd8f7483a67946daf36732c316f821
+<http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-new-example.org%3Bh%3D180a9a0e10dd8f7483a67946daf36732c316f821%3Bhb%3D180a9a0e10dd8f7483a67946daf36732c316f821>
 
 [property-based]
-http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-example.org%3Bh%3De21b8b00c3e895be9dd573d02ea84b08796296a3%3Bhb%3De21b8b00c3e895be9dd573d02ea84b08796296a3
+<http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-example.org%3Bh%3De21b8b00c3e895be9dd573d02ea84b08796296a3%3Bhb%3De21b8b00c3e895be9dd573d02ea84b08796296a3>
 
 
-4.4.3 Texinfo
+4.5.3 Texinfo
 -------------
 
   ID: org_gcr_2017-05-12_mara:2A19DF86-96B0-4371-8DE9-1F79861F5E89
@@ -5781,39 +5961,50 @@ http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-exampl
   Perhaps the [first] document typeset with Org-Texinfo.
 
 
-[first] https://lists.gnu.org/archive/html/emacs-orgmode/2015-07/msg00042.html
+[first] <https://lists.gnu.org/archive/html/emacs-orgmode/2015-07/msg00042.html>
 
 
-4.4.4 Pandoc
+4.5.4 Pandoc
 ------------
 
   ID: org_gcr_2017-05-12_mara:BF923ADF-EB81-4695-9F98-F68D557D667B
 
 
-4.4.5 Markdown
+4.5.5 Markdown
 --------------
 
   ID: org_gcr_2017-05-12_mara:005B395D-AF3F-471D-AD11-45FDBAA85D7A
 
-  Provide Github Flavored Markdown (GFM).
-
-  ,----
-  | (use-package ox-gfm
-  |   :ensure t)
-  `----
-
-  Program GFM.
+  Markdown.
 
   ,----
   | (use-package markdown-mode
   |   :ensure t
   |   :config
-  |   (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
-  |   (setq markdown-coding-system "utf-8"))
+  |   (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+  |   (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+  |   (use-package ox-gfm
+  |     :ensure t
+  |     :config
+  |     (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode)))
+  |   (help/on-mac-os
+  |    (setq markdown-open-command "/Users/gcr/util/mark")))
+  `----
+
+  Generate Markdown from Emacs Lisp comments.
+
+  ,----
+  | (use-package el2markdown
+  |   :ensure t
+  |   :config
+  |   (defun help/el2markdown-post-convert-hook-fn (buf)
+  |     (interactive)
+  |     (message (format "el2markdowned: %s" buf)))
+  |   (add-hook 'el2markdown-post-convert-hook #'help/el2markdown-post-convert-hook-fn))
   `----
 
 
-4.4.6 HTML
+4.5.6 HTML
 ----------
 
   ID: org_gcr_2017-05-12_mara:5AE61C99-1862-456E-B6FA-44225675B208
@@ -5824,28 +6015,7 @@ http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-exampl
   | (use-package htmlize
   |   :config
   |   (setq org-html-htmlize-output-type htmlize-output-type)
-  |   (setq htmlize-output-type 'inline-css)
-  |   (defvar help/htmlize-initial-fci-state nil
-  |     "Variable to store the state of `fci-mode' upon calling `htmlize-buffer'.
-  |
-  | Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
-  |   (defvar help/htmlize-initial-flyspell-state nil
-  |     "Variable to store the state of `flyspell-mode' upon calling `htmlize-buffer'.
-  |
-  | Attribution: URL `http://permalink.gmane.org/gmane.emacs.orgmode/98153'.")
-  |
-  |   (defun help/htmlize-before-hook-fn ()
-  |     (when (fboundp 'fci-mode)
-  |       (setq help/htmlize-initial-fci-state fci-mode)
-  |       (when fci-mode
-  |         (fci-mode -1))))
-  |   (add-hook 'htmlize-before-hook #'help/htmlize-before-hook-fn)
-  |
-  |   (defun help/htmlize-after-hook-fn ()
-  |     (when (fboundp 'fci-mode)
-  |       (when help/htmlize-initial-fci-state
-  |         (fci-mode t))))
-  |   (add-hook 'htmlize-after-hook #'help/htmlize-after-hook-fn))
+  |   (setq htmlize-output-type 'inline-css))
   `----
 
   Use in-line CSS.
@@ -5854,8 +6024,15 @@ http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-exampl
   | (setq org-html-doctype "html5")
   `----
 
+  Export HTML to the clipboard.
 
-4.4.7 ASCII
+  ,----
+  | (use-package ox-clip
+  |   :ensure t)
+  `----
+
+
+4.5.7 ASCII
 -----------
 
   ID: org_gcr_2017-05-12_mara:7BEBFA9B-E445-41F3-ABC6-08AFB3020D30
@@ -5876,7 +6053,7 @@ http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-exampl
   `----
 
 
-4.4.8 Beamer
+4.5.8 Beamer
 ------------
 
   ID: org_gcr_2017-05-12_mara:1D459BA8-B1B0-40B9-B733-6B59216FD1B2
@@ -5888,7 +6065,7 @@ http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-exampl
   `----
 
 
-4.4.9 Screenwriting
+4.5.9 Screenwriting
 -------------------
 
   ID: org_gcr_2017-05-12_mara:AE18CBCE-F03C-4422-AAC8-E1E2C76A7C5E
@@ -5911,7 +6088,7 @@ http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-exampl
   `----
 
 
-4.4.10 Reveal.js
+4.5.10 Reveal.js
 ----------------
 
   ID: org_gcr_2017-05-19_mara:73719624-5BA9-4000-B70C-77C30CAB592B
@@ -5923,19 +6100,19 @@ http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-exampl
   `----
 
 
-4.5 DevOps
+4.6 DevOps
 ~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:F79C9679-7887-40B8-8882-51EE6EC1BDE2
 
 
-4.5.1 Shell Script
+4.6.1 Shell Script
 ------------------
 
   ID: org_gcr_2017-05-12_mara:68AC26B4-B52C-4A1F-AF1E-78AFE5A3D91D
 
 
-* 4.5.1.1 Editing
+* 4.6.1.1 Editing
 
   ID: org_gcr_2017-07-16_mara:D2B25F16-8384-4641-A2C0-C9D987A83E10
   This `Bash' IDE appears less valuable because it automatically inherits its
@@ -5960,9 +6137,7 @@ http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-exampl
 
   ,----
   | (use-package toggle-quotes
-  |   :ensure t
-  |   :config
-  |   (define-key sh-mode-map (kbd "C-'") #'toggle-quotes))
+  |   :ensure t)
   `----
 
   Sh-Mode Hydra.
@@ -5981,13 +6156,20 @@ http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-exampl
   `----
 
 
-4.5.2 Make
+4.6.2 Make
 ----------
 
   ID: org_gcr_2017-05-12_mara:4EC46A0A-2D59-4C21-8013-6A86CD46BC5F
+  ,----
+  | (use-package make-mode
+  |   :config
+  |   (defun help/make-mode-hook ()))
+  | (add-hook 'makefile-mode-hook #'help/make-mode-hook)
+  | (add-to-list 'auto-mode-alist '("Makefile" . makefile-mode))
+  `----
 
 
-4.5.3 Vagrant
+4.6.3 Vagrant
 -------------
 
   ID: org_gcr_2017-05-12_mara:D8A25DB9-FFAD-4C06-95C8-948AB0AFC4DE
@@ -5995,7 +6177,7 @@ http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-exampl
   `ruby-mode' supports `Vagrantfile' OOTB.
 
 
-4.5.4 Apache
+4.6.4 Apache
 ------------
 
   ID: org_gcr_2017-05-12_mara:719B95DC-1AF2-4581-BDEB-FC2430EAE076
@@ -6006,7 +6188,7 @@ http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-exampl
   `----
 
 
-4.5.5 SSH
+4.6.5 SSH
 ---------
 
   ID: org_gcr_2017-05-12_mara:EF50829C-C6BA-4D22-ACD0-5386EF38155D
@@ -6024,7 +6206,7 @@ http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-exampl
   `----
 
 
-4.5.6 CRON
+4.6.6 CRON
 ----------
 
   ID: org_gcr_2017-06-13_mara:9B3AB875-4459-4EC7-A7C5-4C32EC3A5E18
@@ -6037,13 +6219,38 @@ http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-exampl
   `----
 
 
-4.6 Multimedia
+4.6.7 Ansible
+-------------
+
+  ID: org_gcr_2018-01-17_mara:3CB6A9AB-EB08-4762-A017-249764566C1E
+
+  Remember it is a minor mode that will only ever run under YAML mode.
+
+  :ID: org_gcr_2018-01-03_mara:626CA760-B710-4A90-A585-66C5EEC2DAD9
+  ,----
+  | (use-package ansible
+  |   :ensure t
+  |   :config
+  |   (defhydra help/hydra/ansible (:color blue
+  |                                        :hint nil)
+  |     "
+  | Ansible: (q to quit)
+  |  _D_ecrypt buffer _E_ncrypt buffer
+  | "
+  |     ("D" #'ansible::decrypt-buffer)
+  |     ("E" #'ansible::encrypt-buffer)
+  |     ("q" nil))
+  |   (key-chord-define ansible::key-map "hh" #'help/hydra/ansible/body))
+  `----
+
+
+4.7 Multimedia
 ~~~~~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:D3EE5DB5-EC7B-4D7C-9749-1BC351B8214D
 
 
-4.6.1 Artist
+4.7.1 Artist
 ------------
 
   ID: org_gcr_2017-05-12_mara:4C5A0835-B5EE-4248-A04A-5F1E90FDC308
@@ -6055,7 +6262,7 @@ http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-exampl
   `----
 
 
-4.6.2 DITAA
+4.7.2 DITAA
 -----------
 
   ID: org_gcr_2017-05-12_mara:6D7CE54F-D123-4C90-BFB6-374B2ACB1D1C
@@ -6066,7 +6273,7 @@ http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-exampl
   `----
 
 
-4.6.3 Graphviz
+4.7.3 Graphviz
 --------------
 
   ID: org_gcr_2017-05-12_mara:8523DEE7-31C4-445A-B300-4923BCA3F7D7
@@ -6079,7 +6286,7 @@ http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-exampl
   `----
 
 
-4.6.4 PlantUML
+4.7.4 PlantUML
 --------------
 
   ID: org_gcr_2017-05-12_mara:1AE2633B-E811-4117-ACE7-0D7D2F88EDEB
@@ -6096,7 +6303,7 @@ http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-exampl
   `----
 
 
-4.6.5 X PixMap (XPM)
+4.7.5 X PixMap (XPM)
 --------------------
 
   ID: org_gcr_2017-06-25_mara:53D58BE5-1E7D-4E75-8359-AF7EF001CE2B
@@ -6110,27 +6317,16 @@ http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-exampl
   `----
 
 
-[X PixMap (XPM)] https://en.wikipedia.org/wiki/X_PixMap
+[X PixMap (XPM)] <https://en.wikipedia.org/wiki/X_PixMap>
 
 
-4.7 Computer-aided design
+4.8 Computer-aided design
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:50E7A50A-4259-4B6C-8612-99671C6723CC
 
 
-4.7.1 OpenSCAD
---------------
-
-  ID: org_gcr_2017-05-12_mara:423A1845-3D84-45FB-8373-509033537F86
-
-  ,----
-  | (use-package scad-mode
-  |   :ensure t)
-  `----
-
-
-4.8 Special
+4.9 Special
 ~~~~~~~~~~~
 
   ID: org_gcr_2017-06-25_mara:BEC7C2AA-4602-4F1C-8AE5-2DAD6439C90F
@@ -6147,41 +6343,7 @@ http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-exampl
   Configure EMACS to personal-taste for "noise" and "form".
 
 
-5.1 Key Press
-~~~~~~~~~~~~~
-
-  ID: org_gcr_2017-05-12_mara:EBAA168D-C2E9-40E3-B448-9AA076802029
-
-  Make key-presses sound like the ground-breaking Selectric typewriter.
-
-  ,----
-  | (use-package selectric-mode
-  |   :ensure t)
-  `----
-
-
-5.2 Line Number
-~~~~~~~~~~~~~~~
-
-  ID: org_gcr_2017-05-12_mara:5FFDA284-6C92-40C8-B23E-E345940DC6C4
-
-  The nlinum gutter should not "shift" as it transitions between line numbers of
-  different magnitudes. For example going from line 99 to 100 will shift the
-  buffer contents by one character. That is distracting and interrupts the flow.
-  - Switched to `nlinum' from `linum' because of slowness with this file when
-    headings are collapsed
-
-  Most files will be less than 100,000 lines.
-
-  ,----
-  | (use-package nlinum
-  |   :ensure t
-  |   :config
-  |   (setq nlinum-format "%05d"))
-  `----
-
-
-5.3 Buffer
+5.1 Buffer
 ~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:4A3C9150-EC66-4462-B14A-92C8BE34FB94
@@ -6276,12 +6438,19 @@ http://orgmode.org/w/?p%3Dworg.git%3Ba%3Dblob%3Bf%3Dexporters/koma-letter-exampl
   |     (recenter-top-bottom)))
   `----
 
+  Visualize ASCII strings with Unicode.
+
+  ,----
+  | (global-prettify-symbols-mode)
+  | (setq prettify-symbols-unprettify-at-point 'right-edge)
+  `----
+
 
 [via]
-http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/
+<http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/>
 
 
-5.4 Color Theme
+5.2 Color Theme
 ~~~~~~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:3C38AF9D-1905-4B33-A4F5-065D17E9B647
@@ -6312,10 +6481,10 @@ http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/
   `----
 
 
-[Solarized Theme] https://github.com/bbatsov/solarized-emacs
+[Solarized Theme] <https://github.com/bbatsov/solarized-emacs>
 
 
-5.5 Comint
+5.3 Comint
 ~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:EFB91C72-0036-49D8-B4B9-C7473C838E11
@@ -6344,7 +6513,7 @@ http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/
   `----
 
 
-5.6 Font
+5.4 Font
 ~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:948F97ED-7FD3-4AC9-89D4-CB270CD0540C
@@ -6356,7 +6525,7 @@ http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/
   ,----
   | (help/on-gui
   |  (defvar help/font-size-current 10 "The preferred font size.")
-  |  (help/on-osx (setq help/font-size-current 17))
+  |  (help/on-mac-os (setq help/font-size-current 17))
   |  (help/on-windows (setq help/font-size-current 13))
   |  (defconst help/font-size-ideal help/font-size-current "The ideal font for this system.")
   |  (defconst help/font-base "DejaVu Sans Mono" "The preferred font name.")
@@ -6387,24 +6556,24 @@ http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/
   `----
 
 
-5.7 Frame
+5.5 Frame
 ~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:8D473EA1-DFEE-408E-A1F5-AF1C7D03317D
 
 
-5.7.1 Inviting and familiar GUI features
+5.5.1 Inviting and familiar GUI features
 ----------------------------------------
 
   ID: org_gcr_2017-06-23_mara:77B3D3E9-B7F7-44FB-8B82-A23CAC02C83B
   Title.
 
   ,----
-  | (setq frame-title-format '("" "%b - Super Text Editor "))
+  | (setq frame-title-format '("" "%b - PIE Interactive Editor "))
   `----
 
 
-* 5.7.1.1 Bitmaps
+* 5.5.1.1 Bitmaps
 
   ID: org_gcr_2017-07-11_mara:02FCF4D1-5613-49B3-A247-6BFA846D7EEA
 
@@ -6440,28 +6609,16 @@ http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/
   Emacs added macOS support for TIFF. Emacs now prefers TIFF. XPM should work
   everywhere so I want those to be the masters. They are the masters because
   when I make corrections they go there. For example I had a 27x24 bitmap that I
-  had to trim to 24x24. So I converted XPMs to TIFF and use those.
+  had to trim to 24x24. So I converted XPMs to TIFF and use those. Then I
+  switched to stock Emacs and deleted the TIFF files.
 
 
-  [by subject] https://commons.wikimedia.org/wiki/Category:Icons_by_subject
+  [by subject] <https://commons.wikimedia.org/wiki/Category:Icons_by_subject>
 
-  [Font Awesome] https://github.com/encharm/Font-Awesome-SVG-PNG
-
-
-* 5.7.1.2 Icons
-
-  ID: org_gcr_2017-07-11_mara:5E885B6C-66CF-4F58-8888-F257F4AB8AFA
-  Replace major mode lighters with icons.
-
-  ,----
-  | (use-package mode-icons
-  |   :ensure t
-  |   :config
-  |   (mode-icons-mode))
-  `----
+  [Font Awesome] <https://github.com/encharm/Font-Awesome-SVG-PNG>
 
 
-* 5.7.1.3 Menu bar
+* 5.5.1.2 Menu bar
 
   ID: org_gcr_2017-06-23_mara:47EF669D-E999-4573-AA5C-5CF038ADA870
 
@@ -6472,7 +6629,7 @@ http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/
   `----
 
 
-* 5.7.1.4 Tool bar
+* 5.5.1.3 Tool bar
 
   ID: org_gcr_2017-06-23_mara:EC50EB46-7878-4799-9805-EF0CB3D3E526
 
@@ -6511,7 +6668,7 @@ http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/
   OS Banner.
 
   ,----
-  | (help/on-osx
+  | (help/on-mac-os
   |  (tool-bar-add-item
   |   "apple"
   |   'do-nothing
@@ -6535,7 +6692,7 @@ http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/
   `----
 
 
-* 5.7.1.5 Scroll bar
+* 5.5.1.4 Scroll bar
 
   ID: org_gcr_2017-06-23_mara:590AD87D-0567-454F-98AE-3AE64A171012
 
@@ -6543,34 +6700,12 @@ http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/
 
   ,----
   | (scroll-bar-mode nil)
-  | (horizontal-scroll-bar-mode nil)
+  | (help/on-gnu/linux
+  |  (horizontal-scroll-bar-mode nil))
   `----
 
 
-* 5.7.1.6 Transparency
-
-  ID: org_gcr_2017-06-23_mara:143A134C-02D9-412F-9D9C-FC6E7B43D505
-  ,----
-  | (use-package seethru
-  |   :ensure t
-  |   :config
-  |   (defhydra hydra-transparency (:color blue :hint nil)
-  |     "
-  | this frame's opacity: %(frame-parameter nil 'alpha)
-  |         _i_ reset!
-  |  _j_ less _k_ 50/50   _l_ more
-  |  _m_ quit
-  | "
-  |     ("j" (lambda () (interactive) (seethru-relative -1)) :exit nil)
-  |     ("i" (lambda () (interactive) (seethru 100)) :exit nil)
-  |     ("k" (lambda () (interactive) (seethru 50)) :exit nil)
-  |     ("l" (lambda () (interactive) (seethru-relative 1)) :exit nil)
-  |     ("m" nil)))
-  |
-  `----
-
-
-5.8 Pointer
+5.6 Pointer
 ~~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:17DB4E08-F6C4-44AF-935B-27E8984F13DB
@@ -6582,19 +6717,10 @@ http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/
   `----
 
 
-5.9 Version Control
+5.7 Version Control
 ~~~~~~~~~~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:09918DB9-3AE3-44DF-9E1F-A4A3918F3315
-
-  Selectively provide VC file status indicators.
-
-  Sometimes it is worth interrupting the flow.
-
-  ,----
-  | (use-package diff-hl
-  |   :ensure t)
-  `----
 
   Ediff split frame horizontally.
 
@@ -6603,13 +6729,12 @@ http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/
   `----
 
 
-5.10 Window
-~~~~~~~~~~~
+5.8 Window
+~~~~~~~~~~
 
   ID: org_gcr_2017-05-12_mara:FBD41A4B-9764-49CB-8439-74581B2211A0
 
-  Easily return to previous configurations. 2-4 windows are easily managed by
-  hand.
+  Cycle between configurations.
 
   ,----
   | (winner-mode t)
@@ -6666,42 +6791,34 @@ http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/
   | (use-package ace-window
   |   :ensure t
   |   :config
-  |   (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+  |   (setq aw-keys '(?j ?k ?l ?i ?o ?p))
   |   (setq aw-scope 'frame)
   |   (setq aw-background nil))
   `----
 
+  Fling buffers left and right.
+
   ,----
-  | (use-package eyebrowse
+  | (use-package buffer-move
   |   :ensure t
   |   :config
-  |   (setq eyebrowse-wrap-around t)
-  |   (eyebrowse-mode t)
-  |   (defhydra help/hydra-left-side/eyebrowse (:color blue :hint nil)
-  |     "
-  | current eyebrowse slot: %(let* ((window-configs (eyebrowse--get 'window-configs))(match (assq (eyebrowse--get 'current-slot) window-configs))(desc (eyebrowse-format-slot match)))desc)
-  |  _u_ create _i_ choose _o_ rename _q_ quit
-  |   _j_ previous _k_ next _l_ last
-  |    _a_ 00 _s_ 01 _d_ 02 _f_ 03 _g_ 04 _z_ 05 _x_ 06 _c_ 07 _v_ 08 _b_ 09 _~_ close "
-  |     ("u" #'eyebrowse-create-window-config)
-  |     ("i" #'eyebrowse-switch-to-window-config)
-  |     ("o" #'eyebrowse-rename-window-config :exit nil)
-  |     ("q" nil)
-  |     ("j" #'eyebrowse-prev-window-config :exit nil)
-  |     ("k" #'eyebrowse-next-window-config :exit nil)
-  |     ("l" #'eyebrowse-last-window-config)
-  |     ("a" #'eyebrowse-switch-to-window-config-0)
-  |     ("s" #'eyebrowse-switch-to-window-config-1)
-  |     ("d" #'eyebrowse-switch-to-window-config-2)
-  |     ("f" #'eyebrowse-switch-to-window-config-3)
-  |     ("g" #'eyebrowse-switch-to-window-config-4)
-  |     ("z" #'eyebrowse-switch-to-window-config-5)
-  |     ("x" #'eyebrowse-switch-to-window-config-6)
-  |     ("c" #'eyebrowse-switch-to-window-config-7)
-  |     ("v" #'eyebrowse-switch-to-window-config-8)
-  |     ("b" #'eyebrowse-switch-to-window-config-9)
-  |     ("~" #'eyebrowse-close-window-config :exit nil))
-  |   (global-set-key (kbd "C-M-e") #'help/hydra-left-side/eyebrowse/body))
+  |   (define-key org-mode-map (kbd "<C-S-up>") nil)
+  |   (global-set-key (kbd "<C-S-up>") #'buf-move-up)
+  |   (define-key org-mode-map (kbd "<C-S-down>") nil)
+  |   (global-set-key (kbd "<C-S-down>") #'buf-move-down)
+  |   (define-key org-mode-map (kbd "<C-S-left>") nil)
+  |   (global-set-key (kbd "<C-S-left>") #'buf-move-left)
+  |   (define-key org-mode-map (kbd "<C-S-right>") nil)
+  |   (global-set-key (kbd "<C-S-right>") #'buf-move-right))
+  `----
+
+  Resize window.
+
+  ,----
+  | (use-package resize-window
+  |   :ensure t
+  |   :config
+  |   (key-chord-define-global "ww" #'resize-window))
   `----
 
 
@@ -6733,7 +6850,7 @@ http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/
   system. This system will always respect the POLA.
 
 
-[Emacs Reference Mug] http://shop.fsf.org/product/gnu-emacs-reference-mugs/
+[Emacs Reference Mug] <http://shop.fsf.org/product/gnu-emacs-reference-mugs/>
 
 
 6.2 A Keyboard on Every Desk
@@ -6757,7 +6874,8 @@ http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/
   configuring the keyboard for this system.
 
 
-[layout of letters] http://xahlee.info/kbd/dvorak_and_all_keyboard_layouts.html
+[layout of letters]
+<http://xahlee.info/kbd/dvorak_and_all_keyboard_layouts.html>
 
 
 6.3 A Display with Every Keyboard
@@ -6820,7 +6938,7 @@ http://pragmaticemacs.com/emacs/automatically-copy-text-selected-with-the-mouse/
 
 
 [on different outputs]
-http://ergoemacs.org/emacs/emacs_key_notation_return_vs_RET.html
+<http://ergoemacs.org/emacs/emacs_key_notation_return_vs_RET.html>
 
 
 6.4.2 Understanding Your Cognitive Landscape.
@@ -6909,11 +7027,14 @@ http://ergoemacs.org/emacs/emacs_key_notation_return_vs_RET.html
 
   They were initially described by the properties:
 
-  Actions: The number of related actions in that place.
-  Expertise: The level of skill and speed with which you are performing the
-             activity.
-  Relationship: How closely those activities are related in the current place.
-  Frequency: How many times you perform these actions when you here.
+  Actions
+        The number of related actions in that place.
+  Expertise
+        The level of skill and speed with which you are performing the activity.
+  Relationship
+        How closely those activities are related in the current place.
+  Frequency
+        How many times you perform these actions when you here.
 
   The relationship between "doing those things" and those 4 properties is still
   unclear and being explored.
@@ -7137,17 +7258,17 @@ http://ergoemacs.org/emacs/emacs_key_notation_return_vs_RET.html
   | +---------------------------------------+
   `----
 
-  On OS X Dyalog uses an input source for entering APL symbols. Enable its input
-  source, press option-i, and you get the symbol ⍳ (APL FUNCTIONAL SYMBOL IOTA).
-  It should work in every OS X application. When I tried to use it in Emacs
-  though it didn't work. This configuration swallows the option key and
-  translates it to the Emacs Super key. Any option chords are never sent to OS
-  X. This had worked fine because I'd never used command. Most of the time I
+  On macOS Dyalog uses an input source for entering APL symbols. Enable its
+  input source, press option-i, and you get the symbol ⍳ (APL FUNCTIONAL SYMBOL
+  IOTA). It should work in every macOS application. When I tried to use it in
+  Emacs though it didn't work. This configuration swallows the option key and
+  translates it to the Emacs Super key. Any option chords are never sent to
+  macOS. This had worked fine because I'd never used command. Most of the time I
   want Emacs to work this way, but some of the time I want to pass command
-  through to OS X. How can I do this?
+  through to macOS. How can I do this?
 
   When I read the Emacs documentation they explained that you can choose whether
-  or not you want ALT or GUI (option and command on OS X) to be swallowed by
+  or not you want ALT or GUI (option and command on macOS) to be swallowed by
   Emacs or passed through to the OS. Most of us already have this in our config.
   How can we switch it back and forth then?
 
@@ -7188,14 +7309,18 @@ http://ergoemacs.org/emacs/emacs_key_notation_return_vs_RET.html
   | +---------------------------------------+
   `----
 
+  - Cheat-Sheet
+    - C, M, C-M, C-M, C-S, C-s are for Emacs
+    - C-M-s are for the operating system
+
 
 [Ukulele]
-http://scripts.sil.org/cms/scripts/page.php?site_id%3Dnrsi&id%3Dukelele
+<http://scripts.sil.org/cms/scripts/page.php?site_id%3Dnrsi&id%3Dukelele>
 
-[Karabiner] https://pqrs.org/osx/karabiner/
+[Karabiner] <https://pqrs.org/osx/karabiner/>
 
 [happens]
-https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
+<https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/>
 
 
 6.5 Take a Sip
@@ -7217,30 +7342,49 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
   - Z-B
 
 
-* 6.5.1.1 Row 5
+* 6.5.1.1 Row 6
 
-  ID: org_gcr_2017-05-12_mara:5E250B06-C35C-4AEE-90C6-F5333A2D1BE3
+  ID: org_gcr_2018-04-04T19-35-03-05-00_mara:5674E80B-C4B1-4AFA-A93D-E466FA7C37EB
+  Try to reserve this for the OS.
+
+  :ID: org_gcr_2018-01-08_mara:D12EA6D3-9746-4AA3-A622-71314840A6FA
+  ,----
+  | (global-set-key [(shift f6)] #'kmacro-name-last-macro)
+  | (global-set-key [(f6)] #'insert-kbd-macro)
+  | (global-set-key [(f5)] #'elmacro-show-last-macro)
+  `----
+
+
+* 6.5.1.2 Row 5
+
+  ID: org_gcr_2018-04-03T15-26-04-05-00_mara:8EE3BC1F-945D-422C-847F-4EFD8D02A8C6
 
   ,----
-  | (defun help/go-there-or-back (name)
-  |   (if (equal (buffer-name) name)
-  |       (help/safb-switch-to-previous-buffer)
-  |     (switch-to-buffer name)))
-  | (global-set-key (kbd "C-9") (lambda () (interactive) (help/go-there-or-back
-  |                                                  "projects.org")))
-  | (global-set-key (kbd "C-0") (lambda () (interactive) (help/go-there-or-back
-  |                                                  "scratch.org")))
-  | (global-set-key (kbd "M-9") (lambda () (interactive) (help/go-there-or-back
-  |                                                  "help.org")))
-  | (global-set-key (kbd "M-0") (lambda () (interactive) (help/go-there-or-back
-  |                                                  "*scratch*")))
+  | (global-set-key (kbd "C-4") #'hs-toggle-hiding)
+  | (global-set-key (kbd "C-3") #'help/my-toggle-hideshow-all)
   | (global-set-key (kbd "C-5") #'ido-kill-buffer)
-  | (global-set-key (kbd "C--") (lambda () (interactive) (insert "Vigneswari")))
-  | (global-set-key (kbd "s-5") #'mc/mark-previous-like-this)
-  | (global-set-key (kbd "s-4") #'mc/mark-next-like-this)
-  | (global-set-key (kbd "s-3") #'mc/mark-previous-like-this)
-  | (global-set-key (kbd "s-2") #'mc/mark-all-like-this)
+  | (global-set-key (kbd "C-M-=") #'edit-indirect-region)
+  |
+  | ;; Leave C-8, C-9, and C-0 free for the OS
+  |
+  | (defun help/insert-em-dash ()
+  |   "Inserts an EM-DASH (not a HYPEN, not an N-DASH)"
+  |   (interactive)
+  |   (insert "—"))
+  | (defun help/insert-en-dash ()
+  |   "Inserts an EN-DASH (not a HYPEN, not an EM-DASH)"
+  |   (interactive)
+  |   (insert "–"))
+  | (global-set-key (kbd "C--") #'help/insert-em-dash)
+  | (global-set-key (kbd "M--") #'help/insert-en-dash)
+  |
   | (global-set-key (kbd "s-1") #'mc/edit-lines)
+  | (global-set-key (kbd "s-2") #'mc/mark-all-like-this)
+  | (global-set-key (kbd "s-3") #'mc/mark-previous-like-this)
+  | (global-set-key (kbd "s-4") #'mc/mark-next-like-this)
+  | (global-set-key (kbd "s-$") #'mc-hide-unmatched-lines-mode)
+  | (global-set-key (kbd "s-5") #'mc/skip-to-previous-like-this)
+  | (global-set-key (kbd "s-6") #'mc/skip-to-next-like-this)
   | (global-set-key (kbd "s--") #'decrement-integer-at-point)
   | (global-set-key (kbd "s-+") #'increment-integer-at-point)
   `----
@@ -7268,15 +7412,43 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
   `----
 
 
-* 6.5.1.2 Row 4
+* 6.5.1.3 Row 4
 
-  ID: org_gcr_2017-05-12_mara:20E96ACD-1D91-480C-BA3B-D5730EA2173C
+  ID: org_gcr_2017-12-07_mara:752198AC-06ED-436E-B526-5A3C8ED32375
+
+  Date related things.
 
   ,----
+  | (defhydra help/hydra/timestamp (:color blue :hint nil)
+  |   "
+  | Timestamps: (_q_uit)
+  |   Date: _I_SO, _U_S, US With _Y_ear and _D_ashes, US In _W_ords
+  |    Date/Time: _N_o Colons or _w_ith
+  |     Org-Mode: _R_ight Now or _c_hoose
+  | "
+  |   ("q" nil)
+  |
+  |   ("I" help/insert-datestamp)
+  |   ("U" help/insert-datestamp-us)
+  |   ("Y" help/insert-datestamp-us-full-year)
+  |   ("D" help/insert-datestamp-us-full-year-and-dashes)
+  |   ("W" help/insert-datestamp-us-words)
+  |
+  |   ("N" help/insert-timestamp-no-colons)
+  |   ("w" help/insert-timestamp)
+  |
+  |   ("R" help/org-time-stamp-with-seconds-now)
+  |   ("c" org-time-stamp))
+  | (global-set-key (kbd "C-t") #'help/hydra/timestamp/body)
+  `----
+
+  ,----
+  | (global-set-key (kbd "C-M-<tab>") #'help/untabify-buffer-or-region-if-not-indent-tabs-mode)
   | (global-set-key (kbd "C-M-1") #'help/1-window)
   | (global-set-key (kbd "C-M-2") #'help/2-window)
   | (global-set-key (kbd "C-M-3") #'help/3-window)
   | (global-set-key (kbd "C-M-4") #'help/4-window)
+  | (global-set-key (kbd "C-M-\\") #'help/indent-region-or-buffer)
   | (defun help/copy-entire-buffer ()
   |   (interactive)
   |   (save-excursion
@@ -7285,20 +7457,39 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
   |     (message "Buffer contents copied")))
   | (global-set-key (kbd "s-w") #'help/copy-entire-buffer)
   | (global-set-key (kbd "s-q") #'kill-buffer)
+  | (global-set-key (kbd "M-r") #'ert)
   | (global-set-key (kbd "C-M-y") #'insert-char)
-  | (global-set-key [(control meta ?p)] #'help/insert-datestamp)
-  | (global-set-key [(control meta shift ?p)] #'help/insert-timestamp*-no-colons)
   | (global-set-key (kbd "C-M-o") #'help/occur-dwim)
   | (global-set-key (kbd "M-i") nil)
   | (global-set-key (kbd "M-i") #'help/hydra/left/describe/body)
   | (defhydra help/hydra/left/describe (:color blue
   |                                            :hint nil)
   |   "
-  | Describe Something
-  |  _t_ theme _i_ input method _o_ lighter indicator _O_ lighter symbol _p_ package _P_ text properties
-  |   _s_ symbol _f_ function _F_ flycheck checker _k_ key briefly _K_ key _l_ language environment
-  |    _c_ char _C_ coding system _v_ variable _b_ bindings _B_ personal bindings _n_ current coding system briefly _N_ current coding system full _m_ major mode _M_ minor mode
-  |     _q_ quit
+  | Describe Something: (q to quit)
+  | _a_ all help for everything screen
+  | _b_ bindings
+  | _B_ personal bindings
+  | _c_ char
+  | _C_ coding system
+  | _f_ function
+  | _F_ flycheck checker
+  | _i_ input method
+  | _k_ key briefly
+  | _K_ key
+  | _l_ language environment
+  | _L_ mode lineage
+  | _m_ major mode
+  | _M_ minor mode
+  | _n_ current coding system briefly
+  | _N_ current coding system full
+  | _o_ lighter indicator
+  | _O_ lighter symbol
+  | _p_ package
+  | _P_ text properties
+  | _s_ symbol
+  | _t_ theme
+  | _v_ variable
+  | _w_ where is something defined
   | "
   |   ("b" describe-bindings)
   |   ("B" describe-personal-keybindings)
@@ -7311,6 +7502,7 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
   |   ("K" describe-key)
   |   ("k" describe-key-briefly)
   |   ("l" describe-language-environment)
+  |   ("L" help/parent-mode-display)
   |   ("M" describe-minor-mode)
   |   ("m" describe-mode)
   |   ("N" describe-current-coding-system)
@@ -7320,10 +7512,13 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
   |   ("p" describe-package)
   |   ("P" describe-text-properties)
   |   ("q" nil)
+  |   ("a" help)
   |   ("s" describe-symbol)
   |   ("t" describe-theme)
-  |   ("v" describe-variable))
+  |   ("v" describe-variable)
+  |   ("w" where-is))
   `----
+  :ID: org_gcr_2017-05-12_mara:20E96ACD-1D91-480C-BA3B-D5730EA2173C
 
   Org handle `TAB' correctly and nothing is bound to it like `Auto-Complete' or
   `yasnippet' so this doesn't /need/ ot use `C-i' freeing it up. Rebinding `C-g'
@@ -7331,16 +7526,18 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
   working.
 
 
-* 6.5.1.3 Row 3
+* 6.5.1.4 Row 3
 
   ID: org_gcr_2017-05-12_mara:C0B604C5-F530-4770-9061-92E8468C8557
 
   Eval expression.
 
   ,----
-  | (global-unset-key (kbd "C-M-j"))
-  | (global-set-key (kbd "M-:") #'my-eval-expression)
+  | (global-set-key (kbd "C-d") #'delete-forward-char)
+  | (global-set-key [(control shift ?d)] #'backward-delete-char)
+  | (global-set-key (kbd "C-M-k") #'my-eval-expression)
   | (global-set-key (kbd "C-c C-k") #'help/delete-this-buffer-and-file)
+  | (global-set-key (kbd "C-M-'") #'toggle-quotes)
   `----
 
   ,----
@@ -7364,22 +7561,54 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
   | (defhydra help/hydra/left-side/global (:color blue
   |                                               :hint nil)
   |   "
-  | _O_ base64-encode-region _P_ base64-decode-region _|_ split-window-horizontally _-_ split-window-vertically
-  | _1_ reset-font _2_ -font  _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm
-  | _w_ widen _=_ reposition-window _t_ rectangle-mark _y_ yas tables _Y_ transparency _u_ ucs-insert _i_ scrollUp _I_ prevLogLine _o_ dbgOnErr _p_ query-replace _}_ transliterate
-  | _Q_ exit-Emacs _q_uit T_ trademarks
-  | _A_ apropo'ish _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier _d_ dash-at-point  _D_ detangle _g_ grep _j_ obtj2o _k_ scrollDown _K_ nextLogLine  _;_ toggle-lax-whitespace
+  | _1_ reset-font _2_ -font _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _8_ selectric _-_ split-window-vertically _=_ reposition-window
+  |
+  | _q_uit _Q_ exit-Emacs
+  | _w_ widen _W_ords
+  | _e_ FontAwesome _E_ prettify-symbols-mode
+  | _t_ rectangle-mark _T_ trademarks
+  | _y_ yas tables _Y_ transparency
+  | _u_ universal-emotions-emoticons
+  | _i_ scrollUp _I_ prevLogLine
+  | _o_ dbgOnErr _O_ base64-encode-region
+  | _p_ query-replace _P_ base64-decode-region
+  | _}_ transliterate
+  | _|_ split-window-horizontally
+  |
+  | _A_ apropo'ish
+  | _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier
+  | _d_ detangle
+  | _f_ ag _F_ ag*
+  | _g_ grep
+  | _h_ hidden-mode-line
+  | _H_ hack-local-variables (see also normal-mode)
+  | _J_ obtj2o
+  | _k_ scrollDown
   | _l_ visual-line-mode _L_ aggressive-indent-mode
-  | _x_ delete-indentation _X_pm grok _c_ fill-paragraph _V_ view-mode _b_ erase-buffer _B_ibtex _n_ normal _m_ desc/mode _M_ checks
-  | _<_ cmtIn _>_ cmtOut _?_ snp"
+  | _K_ nextLogLine
+  | _;_ toggle-lax-whitespace
+  |
+  | _x_ delete-indentation _X_pm grok
+  | _c_ fill-paragraph
+  | _V_ view-only mode
+  | _b_ erase-buffer _B_ibtex
+  | _N_ normal-mode (see also hack-local-variables)
+  | _m_ checkmarks _M_ Marked 2
+  | _<_ cmtIn
+  | _>_ cmtOut
+  | _?_ snp
+  | "
   |   ("Q" help/safb-save-buffers-kill-terminal)
   |   ("q" nil)
+  |   ("e" (lambda () (interactive) (insert (call-interactively 'fontawesome))))
+  |   ("E" prettify-symbols-mode)
   |   ("|" split-window-horizontally)
   |   ("-" split-window-vertically)
   |   ("1" help/font-size-reset :exit nil)
   |   ("2" help/text-scale-decrease :exit nil)
   |   ("3" help/text-scale-increase :exit nil)
   |   ("4" help/insert-ellipsis)
+  |   ("8" selectric-mode)
   |   ("r" count-words)
   |   ("R" help/rename-current-buffer-file)
   |   ("T" help/trademark/body)
@@ -7389,29 +7618,32 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
   |   ("A" hydra-apropos-ish/body)
   |   ("s" help/toggle-mac-right-option-modifier)
   |   ("g" grep)
-  |   ("h" hack-local-variable)
+  |   ("h" hidden-mode-line-mode)
+  |   ("H" (lambda () (interactive) (hack-local-variables) (message "Local variables hacked")))
   |   ("l" visual-line-mode)
   |   ("L" aggressive-indent-mode)
   |   ("S" help/toggle-mac-function-modifier)
   |   ("x" delete-indentation)
   |   ("X" xpm-grok)
-  |   ("f" describe-key)
+  |   ("f" ag)
+  |   ("F" help/hydra/ag/body)
+  |   ("v" help/hydra/vocabulary/body)
   |   ("V" view-mode)
   |   ("w" widen)
+  |   ("W" help/hydra/words/body)
   |   ("t" rectangle-mark-mode)
   |   ("y" yas-describe-tables)
   |   ("Y" hydra-transparency/body)
-  |   ("j" org-babel-tangle-jump-to-org)
-  |   ("u" ucs-insert)
+  |   ("J" org-babel-tangle-jump-to-org)
+  |   ("u" universal-emotions-emoticons)
   |   ("i" scroll-down-command :exit nil)
-  |   ("d" dash-at-point)
-  |   ("D" help/safb-org-babel-detangle)
+  |   ("d" help/safb-org-babel-detangle)
   |   ("k" scroll-up-command :exit nil)
   |   ("I" previous-logical-line :exit nil)
   |   ("K" next-logical-line :exit nil)
-  |   ("n" help/safb-normal-mode)
-  |   ("m" describe-mode)
-  |   ("M" help/checks/body)
+  |   ("N" (lambda () (interactive) (help/safb-normal-mode) (message "Entering normal-mode")))
+  |   ("m" help/checks/body)
+  |   ("M" help/preview-buffer-file-in-marked-2)
   |   ("<" help/chs)
   |   (">" help/che)
   |   ("." help/parent-mode-display)
@@ -7422,7 +7654,7 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
   |   ("O" base64-encode-region)
   |   ("P" base64-decode-region)
   |   ("}" help/hydra/transliterate/body)
-  |   ("c" fill-paragraph )
+  |   ("c" fill-paragraph)
   |   ("b" erase-buffer)
   |   ("B" help/bibtex/body)
   |   ("'" help/move-file)
@@ -7481,13 +7713,13 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
   ,----
   | (defhydra help/checks (:color blue :hint nil)
   |   "
-  | _q_ ✓ _w_ ✗ _e_ ☐ _r_ ☑ _t_ ☒_
+  | _a_ ✓ _s_ ✗ _d_ ☐ _f_ ☑ _g_ ☒_
   | "
-  |   ("q" (lambda () (interactive) (insert "✓")) :exit nil)
-  |   ("w" (lambda () (interactive) (insert "✗")) :exit nil)
-  |   ("e" (lambda () (interactive) (insert "☐")) :exit nil)
-  |   ("r" (lambda () (interactive) (insert "☑")) :exit nil)
-  |   ("t" (lambda () (interactive) (insert "☒")) :exit nil))
+  |   ("a" (lambda () (interactive) (insert "✓")) :exit nil)
+  |   ("s" (lambda () (interactive) (insert "✗")) :exit nil)
+  |   ("d" (lambda () (interactive) (insert "☐")) :exit nil)
+  |   ("f" (lambda () (interactive) (insert "☑")) :exit nil)
+  |   ("g" (lambda () (interactive) (insert "☒")) :exit nil))
   `----
 
   BibTeX stuff.
@@ -7514,10 +7746,11 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
   `----
 
 
-  [Attribution.] https://github.com/abo-abo/hydra/blob/master/hydra-examples.el
+  [Attribution.]
+  <https://github.com/abo-abo/hydra/blob/master/hydra-examples.el>
 
 
-* 6.5.1.4 Row 2
+* 6.5.1.5 Row 2
 
   ID: org_gcr_2017-07-17_mara:B91C9779-B2AD-403B-A11F-5847EF8883C6
 
@@ -7536,18 +7769,18 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
   | (global-set-key (kbd "C-o") nil)
   | (global-set-key (kbd "C-o") #'ido-find-file)
   | (global-set-key (kbd "C-M-.") nil)
-  | (global-set-key (kbd "C-M-.") #'dired)
+  | (global-set-key (kbd "M-s-m") #'ns-do-hide-emacs)
   `----
 
-  Mcan't re-use `<<' and `>>'.
+  For Org-Babel.
 
   ,----
-  | (global-set-key (kbd "s-<") (lambda () (interactive) (insert "«")))
-  | (global-set-key (kbd "s->") (lambda () (interactive) (insert "»")))
+  | (global-set-key (kbd "s-<") (lambda () (interactive) (insert "⟪")))
+  | (global-set-key (kbd "s->") (lambda () (interactive) (insert "⟫")))
   `----
 
 
-* 6.5.1.5 Row 1
+* 6.5.1.6 Row 1
 
   ID: org_gcr_2017-05-12_mara:A791BE09-ED4B-46F4-8225-EE73C15C1DD0
 
@@ -7559,10 +7792,10 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
   `----
 
 
-  [Pragmatic Emacs] http://pragmaticemacs.com/emacs/cycle-spacing/
+  [Pragmatic Emacs] <http://pragmaticemacs.com/emacs/cycle-spacing/>
 
 
-* 6.5.1.6 Unsorted
+* 6.5.1.7 Unsorted
 
   ID: org_gcr_2017-05-12_mara:4FEBE5F3-3B9E-438D-9E7F-DA337FB43BB7
 
@@ -7588,23 +7821,16 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
   | (key-chord-define-global "f9" #'help/util-cycle)
   `----
 
-  Hide and show code blocks.
 
-  ,----
-  | (global-set-key (kbd "s-z") #'hs-toggle-hiding)
-  | (global-set-key [(super shift ?z)] #'help/my-toggle-hideshow-all)
-  `----
+  [Ways] <http://www.wordfind.com/ends-with/nv/>
 
+  [find] <https://www.morewords.com/contains/nv/>
 
-  [Ways] http://www.wordfind.com/ends-with/nv/
+  [them] <https://www.morewords.com/pair/nv/>
 
-  [find] https://www.morewords.com/contains/nv/
+  [and] <http://www.thefreedictionary.com/words-containing-nv>
 
-  [them] https://www.morewords.com/pair/nv/
-
-  [and] http://www.thefreedictionary.com/words-containing-nv
-
-  [where] http://www.wordhippo.com/what-is/containing/6-letter-words-nv.html
+  [where] <http://www.wordhippo.com/what-is/containing/6-letter-words-nv.html>
 
 
 6.5.2 Left & Right Side
@@ -7678,7 +7904,6 @@ https://www.reddit.com/r/emacs/comments/38qllb/karabiner_space_as_control/
   Do smart new line inside, indenting given the mode.
 
   ,----
-  | (help/not-on-gui (global-set-key (kbd "s-RET") #'help/smart-open-line))
   | (help/on-gui (global-set-key (kbd "s-<return>") #'help/smart-open-line))
   `----
 
