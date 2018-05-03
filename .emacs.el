@@ -4221,6 +4221,7 @@ _C_ coding system
 _f_ function
 _F_ flycheck checker
 _i_ input method
+_I_ info
 _k_ key briefly
 _K_ key
 _l_ language environment
@@ -4246,6 +4247,7 @@ _w_ where is something defined
   ("f" describe-function)
   ("F" flycheck-describe-checker)
   ("i" describe-input-method)
+  ("I" info)
   ("K" describe-key)
   ("k" describe-key-briefly)
   ("l" describe-language-environment)
