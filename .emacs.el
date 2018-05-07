@@ -4326,9 +4326,11 @@ _V_ view-only mode
 _b_ erase-buffer _B_ibtex
 _N_ normal-mode (see also hack-local-variables)
 _m_ checkmarks _M_ Marked 2
-_<_ cmtIn
-_>_ cmtOut
-_?_ snp
+_<_ double bracket, angle, left
+_>_ double bracket, angle, right
+_,_ snip comment start
+_._ snip comment stop
+_?_ tons of scissors
 "
   ("Q" help/safb-save-buffers-kill-terminal)
   ("q" nil)
@@ -4376,9 +4378,10 @@ _?_ snp
   ("N" (lambda () (interactive) (help/safb-normal-mode) (message "Entering normal-mode")))
   ("m" help/checks/body)
   ("M" help/preview-buffer-file-in-marked-2)
-  ("<" help/chs)
-  (">" help/che)
-  ("." help/parent-mode-display)
+  ("<" (lambda () (interactive) (insert "⟪")))
+  (">" (lambda () (interactive) (insert "⟫")))
+  ("," help/chs)
+  ("." help/che)
   ("?" help/insert-noticeable-snip-comment-line)
   (";" isearch-toggle-lax-whitespace)
   ("o" toggle-debug-on-error)
@@ -4483,11 +4486,6 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (global-set-key (kbd "C-M-.") nil)
 (global-set-key (kbd "M-s-m") #'ns-do-hide-emacs)
 ;; org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-07-28_mara_2A9CEE58-31E9-4DC8-B2EB-D3232D9DD9F7][org_gcr_2017-07-28_mara_2A9CEE58-31E9-4DC8-B2EB-D3232D9DD9F7]]
-(global-set-key (kbd "s-<") (lambda () (interactive) (insert "⟪")))
-(global-set-key (kbd "s->") (lambda () (interactive) (insert "⟫")))
-;; org_gcr_2017-07-28_mara_2A9CEE58-31E9-4DC8-B2EB-D3232D9DD9F7 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5FAD516B-B4C1-4F47-A6B9-7CA12F9AFF5D][org_gcr_2017-05-12_mara_5FAD516B-B4C1-4F47-A6B9-7CA12F9AFF5D]]
 (global-set-key (kbd "s-SPC") #'cycle-spacing)
