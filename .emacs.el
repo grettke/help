@@ -2795,7 +2795,10 @@ _e_ ox-clip-formatted-copy "
   (setq prettify-symbols-alist (help/alist-set "#+begin_quote" ?🗣 prettify-symbols-alist))
   (setq prettify-symbols-alist (help/alist-set "#+END_QUOTE" ?🗣 prettify-symbols-alist))
   (setq prettify-symbols-alist (help/alist-set "#+end_quote" ?🗣 prettify-symbols-alist))
-  (help/prettify-org-mode-names ?╮))
+  (help/prettify-org-mode-names ?╮)
+  (setq prettify-symbols-alist
+        (help/alist-set "{{{" ?⟦ prettify-symbols-alist))
+        (setq prettify-symbols-alist (help/alist-set "}}}" ?⟧ prettify-symbols-alist)))
 (add-hook 'org-mode-hook #'help/prettify-org-mode)
 
 (defun help/prettify-org-mode-names (&optional replacement)
