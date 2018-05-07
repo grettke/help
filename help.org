@@ -7507,7 +7507,7 @@ _f_ ag _F_ ag*
 _g_ grep
 _h_ hidden-mode-line
 _H_ hack-local-variables (see also normal-mode)
-_J_ obtj2o
+_J_ org-babel-tangle-jump-to-org
 _k_ scrollDown
 _l_ visual-line-mode _L_ aggressive-indent-mode
 _K_ nextLogLine
