@@ -7498,6 +7498,8 @@ _o_ dbgOnErr _O_ base64-encode-region
 _p_ query-replace _P_ base64-decode-region
 _}_ transliterate
 _|_ split-window-horizontally
+_[_ single bracket, white, square, left
+_]_ single bracket, white, square, right
 
 _A_ apropo'ish
 _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier
@@ -7535,6 +7537,8 @@ _?_ tons of scissors
   ("3" help/text-scale-increase :exit nil)
   ("4" help/insert-ellipsis)
   ("8" selectric-mode)
+  ("[" (lambda () (interactive) (insert "⟦")))
+  ("]" (lambda () (interactive) (insert "⟧")))
   ("r" count-words)
   ("R" help/rename-current-buffer-file)
   ("T" help/trademark/body)
