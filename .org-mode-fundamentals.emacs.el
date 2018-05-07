@@ -232,7 +232,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
 ;; org_gcr_2017-05-12_mara_400FE840-685A-4130-B697-8835F8FDB1FF ends here
 
 ;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_DE83AAE3-B4D6-4AB8-83BF-EE3252F9F6D2][org_gcr_2017-05-12_mara_DE83AAE3-B4D6-4AB8-83BF-EE3252F9F6D2]]
-(setq org-export-preserve-breaks nil)
+(setq org-export-preserve-breaks t)
 ;; org_gcr_2017-05-12_mara_DE83AAE3-B4D6-4AB8-83BF-EE3252F9F6D2 ends here
 
 ;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_564FC52E-A339-4209-9B6E-86E890D8835C][org_gcr_2017-05-12_mara_564FC52E-A339-4209-9B6E-86E890D8835C]]
