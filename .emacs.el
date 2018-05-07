@@ -115,7 +115,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-             hidden-mode-line-mode)
+           hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -2713,7 +2713,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
                                                  :hint nil)
   "
 _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ id-create _9_ o2b/more _0_ o2b/LaTeX
-_q_ ←/w-code _w_ tbletfld _r_ help/org-refile _R_ g2nms-b _t_ export to ASCII _T_ table export format _p_ copy/property [ listbox
+_q_ ←/w-code _w_ tbletfld _r_ help/org-refile _R_ g2nms-b _t_ export to ASCII _T_ table export format _p_ copy/property _[_ listbox
 _a_ archive-subtree _s_ sort _S_ lobigst _d_ g2s-b/hd _u_ goto _k_ ob-check-src-blk _l_ lint
 _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree
 _e_ ox-clip-formatted-copy "
