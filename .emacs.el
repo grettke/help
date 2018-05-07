@@ -2620,7 +2620,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; org_gcr_2017-05-12_mara_3331BDE3-CFEA-460B-8E21-45ACF6BAC211 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_258FD451-015B-4195-8349-8B4EFA61B581][org_gcr_2017-05-12_mara_258FD451-015B-4195-8349-8B4EFA61B581]]
-(setq org-hide-macro-markers t)
+(setq org-hide-macro-markers nil)
 ;; org_gcr_2017-05-12_mara_258FD451-015B-4195-8349-8B4EFA61B581 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7CFE23CC-8EBC-46F3-889F-BF36EC45D6CA][org_gcr_2017-05-12_mara_7CFE23CC-8EBC-46F3-889F-BF36EC45D6CA]]
@@ -2712,7 +2712,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (defhydra help/hydra/right-side/org-mode (:color blue
                                                  :hint nil)
   "
-_1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ id-create _5_ toggle-macro _9_ o2b/more _0_ o2b/LaTeX
+_1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ id-create _9_ o2b/more _0_ o2b/LaTeX
 _q_ ←/w-code _w_ tbletfld _r_ help/org-refile _R_ g2nms-b _t_ g2s-b/hd _T_ table export format _p_ copy/property [ listbox
 _a_ archive-subtree _s_ sort _S_ lobigst _u_ goto _k_ ob-check-src-blk _l_ lint
 _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree
@@ -2722,7 +2722,6 @@ _e_ ox-clip-formatted-copy "
   ("2" org-display-inline-images)
   ("3" org-remove-inline-images)
   ("4" org-id-get-create)
-  ("5" help/org-toggle-macro-markers)
   ("9" (lambda () (interactive) (insert "#+HTML: <!--more-->")))
   ("0" (lambda () (interactive) (insert "$\\LaTeX$")))  ;; Row 4
   ("q" org-babel-switch-to-session-with-code)
