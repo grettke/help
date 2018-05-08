@@ -3227,7 +3227,7 @@ Every special mode needs this. Which is nothing yet.
 Auto-Capitalize in all text modes.
 
 #+NAME: org_gcr_2017-11-30_mara_75B00948-177E-487A-83A9-2F690611CA59
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle no
 (use-package auto-capitalize
   :ensure t
   :config
@@ -3263,7 +3263,8 @@ Every text editing buffer needs this.
   (visual-line-mode)
   (help/try-to-add-imenu)
   (turn-on-page-break-lines-mode)
-  (turn-on-auto-capitalize-mode))
+  ;; (turn-on-auto-capitalize-mode)
+  )
 (add-hook 'text-mode-hook #'help/text-mode-fn)
 #+END_SRC
 
@@ -3381,7 +3382,8 @@ Can use in source blocks.
   (unless (equal major-mode 'fundamental-mode)
     (hs-minor-mode))
   (help/on-gui (local-set-key (kbd "<return>") #'newline-and-indent))
-  (turn-off-auto-capitalize-mode))
+  ;; (turn-off-auto-capitalize-mode)
+  )
 
 (let ()
   (--each help/prog-modes
@@ -5403,7 +5405,7 @@ _b_eautify
   (define-key json-mode-map (kbd "RET") #'newline)
   (defun help/json-mode-hook-fn ()
     (indent-guide-mode)
-    (turn-off-auto-capitalize-mode)
+    ;; (turn-off-auto-capitalize-mode)
     (turn-off-auto-fill)
     (key-chord-define-local "hh" #'help/hydra/json/body))
   (add-hook 'json-mode-hook #'help/json-mode-hook-fn))
@@ -5444,7 +5446,7 @@ YAML: (q to quit)
     ("q" nil))
   (defun help/yaml-mode-hook-fn ()
     (indent-guide-mode)
-    (turn-off-auto-capitalize-mode)
+    ;; (turn-off-auto-capitalize-mode)
     (turn-off-auto-fill)
     (setq flycheck-checker 'yaml-yamllint))
   (add-hook 'yaml-mode-hook #'help/yaml-mode-hook-fn)
@@ -6043,17 +6045,6 @@ Load Beamer for creating presentations.
           fountain-stx)))
 #+END_SRC
 
-*** Reveal.js
-:PROPERTIES:
-:ID:       org_gcr_2017-05-19_mara:73719624-5BA9-4000-B70C-77C30CAB592B
-:END:
-#+NAME: org_gcr_2017-05-19_mara_3FB67413-237F-425D-97D2-B2E164AE5F8F
-#+BEGIN_SRC emacs-lisp
-(use-package ox-reveal
-  :ensure t
-  :config
-  (setq org-reveal-root (expand-file-name "~/src/reveal.js")))
-#+END_SRC
 ** DevOps
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:F79C9679-7887-40B8-8882-51EE6EC1BDE2
@@ -6161,7 +6152,7 @@ sh-mode:
 :ID:       org_gcr_2017-06-13_mara:9B3AB875-4459-4EC7-A7C5-4C32EC3A5E18
 :END:
 #+NAME: org_gcr_2017-06-13_mara_350A94E2-4280-4D5E-BB58-24887D9A57CD
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle no
 (use-package crontab-mode
   :ensure t
   :config

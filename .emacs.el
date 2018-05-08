@@ -1979,20 +1979,6 @@ _T_odo | _A_rchives | Rest_o_res
       (princ ls))))
 ;; org_gcr_2017-05-23_mara_9517CF5A-C95B-454E-A68F-1E4BA677C08C ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-11-30_mara_75B00948-177E-487A-83A9-2F690611CA59][org_gcr_2017-11-30_mara_75B00948-177E-487A-83A9-2F690611CA59]]
-(use-package auto-capitalize
-  :ensure t
-  :config
-  (diminish 'auto-capitalize)
-  (add-to-list 'auto-capitalize-words "HTTP")
-  (add-to-list 'auto-capitalize-words "HTTPS")
-  (add-to-list 'auto-capitalize-words "Fr")
-  (add-to-list 'auto-capitalize-words "SI")
-  (add-to-list 'auto-capitalize-words "24B")
-  (add-to-list 'desktop-minor-mode-handlers
-               '(auto-capitalize . (lambda (desktop-buffer-locals)))))
-;; org_gcr_2017-11-30_mara_75B00948-177E-487A-83A9-2F690611CA59 ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-11-30_mara_0D5DE620-895E-4BC5-AA15-1E0D19B1815A][org_gcr_2017-11-30_mara_0D5DE620-895E-4BC5-AA15-1E0D19B1815A]]
 (global-set-key (kbd "C-;") (lambda () (interactive) (insert ". ")))
 (global-set-key (kbd "C-.") (lambda () (interactive) (insert ", ")))
@@ -2009,7 +1995,8 @@ _T_odo | _A_rchives | Rest_o_res
   (visual-line-mode)
   (help/try-to-add-imenu)
   (turn-on-page-break-lines-mode)
-  (turn-on-auto-capitalize-mode))
+  ;; (turn-on-auto-capitalize-mode)
+  )
 (add-hook 'text-mode-hook #'help/text-mode-fn)
 ;; org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F ends here
 
@@ -2082,7 +2069,8 @@ _T_odo | _A_rchives | Rest_o_res
   (unless (equal major-mode 'fundamental-mode)
     (hs-minor-mode))
   (help/on-gui (local-set-key (kbd "<return>") #'newline-and-indent))
-  (turn-off-auto-capitalize-mode))
+  ;; (turn-off-auto-capitalize-mode)
+  )
 
 (let ()
   (--each help/prog-modes
@@ -3366,7 +3354,7 @@ _b_eautify
   (define-key json-mode-map (kbd "RET") #'newline)
   (defun help/json-mode-hook-fn ()
     (indent-guide-mode)
-    (turn-off-auto-capitalize-mode)
+    ;; (turn-off-auto-capitalize-mode)
     (turn-off-auto-fill)
     (key-chord-define-local "hh" #'help/hydra/json/body))
   (add-hook 'json-mode-hook #'help/json-mode-hook-fn))
@@ -3402,7 +3390,7 @@ YAML: (q to quit)
     ("q" nil))
   (defun help/yaml-mode-hook-fn ()
     (indent-guide-mode)
-    (turn-off-auto-capitalize-mode)
+    ;; (turn-off-auto-capitalize-mode)
     (turn-off-auto-fill)
     (setq flycheck-checker 'yaml-yamllint))
   (add-hook 'yaml-mode-hook #'help/yaml-mode-hook-fn)
@@ -3718,13 +3706,6 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
           fountain-stx)))
 ;; org_gcr_2017-05-12_mara_B19CF074-8B77-4843-912C-F68B6FB0FE2F ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-19_mara_3FB67413-237F-425D-97D2-B2E164AE5F8F][org_gcr_2017-05-19_mara_3FB67413-237F-425D-97D2-B2E164AE5F8F]]
-(use-package ox-reveal
-  :ensure t
-  :config
-  (setq org-reveal-root (expand-file-name "~/src/reveal.js")))
-;; org_gcr_2017-05-19_mara_3FB67413-237F-425D-97D2-B2E164AE5F8F ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-07-16_mara_FB8AD647-F0FA-4004-B930-A9CD97E97900][org_gcr_2017-07-16_mara_FB8AD647-F0FA-4004-B930-A9CD97E97900]]
 (use-package sh-script
   :config
@@ -3777,14 +3758,6 @@ sh-mode:
   (add-hook 'ssh-config-mode-hook #'turn-on-font-lock)
   (add-hook 'ssh-config-mode-hook #'help/text-mode-fn))
 ;; org_gcr_2017-05-12_mara_D12C607E-C07C-41F8-A0B0-02A228C7AED7 ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-06-13_mara_350A94E2-4280-4D5E-BB58-24887D9A57CD][org_gcr_2017-06-13_mara_350A94E2-4280-4D5E-BB58-24887D9A57CD]]
-(use-package crontab-mode
-  :ensure t
-  :config
-  (add-to-list 'auto-mode-alist '("\\.cron\\(tab\\)?\\'" . crontab-mode))
-  (add-hook 'crontab-mode-hook #'turn-on-stripe-buffer-mode))
-;; org_gcr_2017-06-13_mara_350A94E2-4280-4D5E-BB58-24887D9A57CD ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2018-01-03_mara_CD4698C2-3650-45E4-94F8-F8B3EB66DA57][org_gcr_2018-01-03_mara_CD4698C2-3650-45E4-94F8-F8B3EB66DA57]]
 (use-package ansible
