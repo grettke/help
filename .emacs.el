@@ -2381,7 +2381,10 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
      ("" "grantcrettke")
      ("" "listings")
      ("" "color")
-     ("" "fancyvrb")))
+     ("" "fancyvrb")
+     ("" "fancyhdr")
+     ("" "scrlayer-scrpage")
+     ("" "lastpage")))
 (setq org-latex-packages-alist
       (append help/org-latex-packages-alist-pre-hyperref
               '(("" "hyperref" nil))

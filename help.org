@@ -4002,7 +4002,10 @@ Copied and customized from [[https://github.com/kaushalmodi/.emacs.d/blob/master
      ("" "grantcrettke")
      ("" "listings")
      ("" "color")
-     ("" "fancyvrb")))
+     ("" "fancyvrb")
+     ("" "fancyhdr")
+     ("" "scrlayer-scrpage")
+     ("" "lastpage")))
 (setq org-latex-packages-alist
       (append help/org-latex-packages-alist-pre-hyperref
               '(("" "hyperref" nil))
