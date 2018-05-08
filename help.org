@@ -1273,7 +1273,7 @@ Attribution: URL `https://rejeep.github.io/emacs/elisp/2010/11/16/delete-file-an
   (interactive)
   (insert-file-contents-literally "~/src/help/ascii/pie.asc"))
 
-(defun remove-vowel ($string &optional $from $to)
+(defun help/remove-vowel ($string &optional $from $to)
   "Remove the following letters: {a e i o u}.
 
 When called interactively, work on current paragraph or text selection.
