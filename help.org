@@ -2139,6 +2139,7 @@ this Source-Block will break Ido in this system.
 (use-package ido-hacks
   :ensure t)
 (use-package ido-completing-read+
+  :ensure t
   :config
   (ido-ubiquitous-mode t)
   (setq ido-create-new-buffer 'always)

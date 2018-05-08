@@ -1365,6 +1365,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
 (use-package ido-hacks
   :ensure t)
 (use-package ido-completing-read+
+  :ensure t
   :config
   (ido-ubiquitous-mode t)
   (setq ido-create-new-buffer 'always)
