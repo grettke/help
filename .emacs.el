@@ -4457,6 +4457,8 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 ;; org_gcr_2017-05-12_mara_D0F37886-4355-478C-A141-93F48E531CE5 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B][org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B]]
+;; Leave C-z free for Tmux
+(global-set-key (kbd "C-z") nil)
 (global-set-key (kbd "C-x C-c") #'help/safb-save-buffers-kill-terminal)
 (define-key org-mode-map (kbd "C-j") nil)
 (global-set-key (kbd "C-j") nil)

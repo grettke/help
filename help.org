@@ -7272,6 +7272,7 @@ Try to reserve this for the OS.
 
 #+NAME: org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C
 #+BEGIN_SRC emacs-lisp
+
 (global-set-key (kbd "C-4") #'hs-toggle-hiding)
 (global-set-key (kbd "C-3") #'help/my-toggle-hideshow-all)
 (global-set-key (kbd "C-5") #'ido-kill-buffer)
@@ -7691,6 +7692,8 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 
 #+NAME: org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B
 #+BEGIN_SRC emacs-lisp
+;; Leave C-z free for Tmux
+(global-set-key (kbd "C-z") nil)
 (global-set-key (kbd "C-x C-c") #'help/safb-save-buffers-kill-terminal)
 (define-key org-mode-map (kbd "C-j") nil)
 (global-set-key (kbd "C-j") nil)
