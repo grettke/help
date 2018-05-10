@@ -1,0 +1,114 @@
+#+property: header-args :tangle ".tmux.conf"
+
+* Cheat-sheet
+:PROPERTIES:
+:ID:       org_gcr_2018-05-10T15-49-02-05-00_mara:555C5B58-E572-4EF8-8AA9-5C9CAB1FCDD9
+:END:
+- Commands
+  - Window
+    - ~n~ / ~p~ Next, Previous
+    - ~0-9~ Select Directly
+    - ~w~ Select Interactively
+    - ~c~ Create
+    - ~,~ Rename
+  - Session
+    - ~d~ Detach
+    - ~$~ Rename
+- Command Line
+  - ~new -s name~ Create
+  - ~ls~ List sessions
+  - ~attach~ Attach
+    - ~0-9~ By index
+    - ~-t name~ By name
+  - ~kill-session -t name~ Kill
+* Prefix Key
+:PROPERTIES:
+:ID:       org_gcr_2018-05-10T15-49-02-05-00_mara:20D67E23-23A9-449E-921E-0D7261733BC9
+:END:
+
+Avoid stock and personal Emacs bindings for the Prefix Key.
+
+#+name: org_gcr_2018-05-10T15-49-02-05-00_mara_C5F450D0-5D9F-4B03-AB8F-1597E6D6363D
+#+begin_src sh
+unbind C-b
+set -g prefix C-z
+bind C-z send-prefix
+#+end_src
+* Color Theme Solarized 256
+:PROPERTIES:
+:ID:       org_gcr_2018-05-10T15-49-02-05-00_mara:78384823-06FC-44BA-90D0-6A289A689570
+:END:
+Copied from [[https://github.com/seebi/tmux-colors-solarized/blob/master/tmuxcolors-256.conf][this project.]]
+** Default Statusbar Colors
+:PROPERTIES:
+:ID:       org_gcr_2018-05-10T15-49-02-05-00_mara:397FE877-D542-4D6F-8002-1B30E4C2A691
+:END:
+#+name: org_gcr_2018-05-10T15-49-02-05-00_mara_800A75BC-E211-44FE-8BB7-4BC178F69E33
+#+begin_src sh
+set-option -g status-bg colour235 #base02
+set-option -g status-fg colour136 #yellow
+set-option -g status-attr default
+#+end_src
+** Default Window Title Colors
+:PROPERTIES:
+:ID:       org_gcr_2018-05-10T15-49-02-05-00_mara:EA2939DA-9426-4D75-B6BB-B95883F51FED
+:END:
+#+name: org_gcr_2018-05-10T15-49-02-05-00_mara_73D071BD-7BF8-4044-8A86-63407A173440
+#+begin_src sh
+set-window-option -g window-status-fg colour244 #base0
+set-window-option -g window-status-bg default
+#set-window-option -g window-status-attr dim
+#+end_src
+** Active Window Title Colors
+:PROPERTIES:
+:ID:       org_gcr_2018-05-10T15-49-02-05-00_mara:7CA1BF33-8173-4474-AEC3-F7FF5BAAB965
+:END:
+#+name: org_gcr_2018-05-10T15-49-02-05-00_mara_2A0CFAB6-3844-48B7-B689-896011DE7E95
+#+begin_src sh
+set-window-option -g window-status-current-fg colour166 #orange
+set-window-option -g window-status-current-bg default
+#set-window-option -g window-status-current-attr bright
+#+end_src
+** Pane Border
+:PROPERTIES:
+:ID:       org_gcr_2018-05-10T15-49-02-05-00_mara:9C2C57B6-2717-412A-97E9-65E5869A6D1E
+:END:
+#+name: org_gcr_2018-05-10T15-49-02-05-00_mara_6C726E34-827B-4823-98E8-7DB8B00AB736
+#+begin_src sh
+set-option -g pane-border-fg colour235 #base02
+set-option -g pane-active-border-fg colour240 #base01
+#+end_src
+** Message Text
+:PROPERTIES:
+:ID:       org_gcr_2018-05-10T15-49-02-05-00_mara:10576B9D-78B7-4EDA-B64E-087714685BB5
+:END:
+#+name: org_gcr_2018-05-10T15-49-02-05-00_mara_970D0EE2-A62F-490F-A1AF-708896737976
+#+begin_src sh
+set-option -g message-bg colour235 #base02
+set-option -g message-fg colour166 #orange
+#+end_src
+** Pane Number Display
+:PROPERTIES:
+:ID:       org_gcr_2018-05-10T15-49-02-05-00_mara:BD3FE91B-C6E1-49F0-A2AB-852F793533B1
+:END:
+#+name: org_gcr_2018-05-10T15-49-02-05-00_mara_6B179680-19BA-4959-A374-CC548AB1A102
+#+begin_src sh
+set-option -g display-panes-active-colour colour33 #blue
+set-option -g display-panes-colour colour166 #orange
+#+end_src
+** Clock
+:PROPERTIES:
+:ID:       org_gcr_2018-05-10T15-49-02-05-00_mara:0CB4D3F0-D4AB-4E08-9DFF-DD0F1391F6C1
+:END:
+#+name: org_gcr_2018-05-10T15-49-02-05-00_mara_9B4833AA-1AD9-4AD5-ADA1-BB958CCE1CA7
+#+begin_src sh
+set-window-option -g clock-mode-colour colour64 #green
+#+end_src
+** Bell
+:PROPERTIES:
+:ID:       org_gcr_2018-05-10T15-49-02-05-00_mara:7634F0DB-4675-4E7E-9F64-03104ACFB754
+:END:
+#+name: org_gcr_2018-05-10T15-49-02-05-00_mara_245711E4-35FE-4F2B-ACBC-783CC29D2D0E
+#+begin_src sh
+set-window-option -g window-status-bell-style fg=colour235,bg=colour160 #base02, red
+#+end_src
