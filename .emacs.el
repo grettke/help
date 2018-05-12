@@ -1894,21 +1894,21 @@ Attribution: URL `https://manuel-uberti.github.io/emacs/2018/02/17/magit-bury-bu
                                             :hint nil)
   "
 Commit Message Descriptor (q to quit)
-_E_nhancement: \"an increase or improvement in quality, value, or extent.\"
-_R_efinement: \"the improvement or clarification of something by the making of small changes.\"
-_C_orrection: \"a change that rectifies an error or inaccuracy.\"
+_E_nhances: \"an increase or improvement in quality, value, or extent.\"
+_R_efines: \"the improvement or clarification of something by the making of small changes.\"
+_C_orrects: \"a change that rectifies an error or inaccuracy.\"
 C_l_oses | _F_ixes | Resol_v_es
-_T_odo | _A_rchives | Rest_o_res
+_A_rchives | Rest_o_res | Re_f_iles
 "
-  ("E" (lambda () (interactive) (insert "(nhncmnt) ")))
-  ("R" (lambda () (interactive) (insert "(rfnmnt) ")))
-  ("C" (lambda () (interactive) (insert "(crrctn) ")))
+  ("E" (lambda () (interactive) (insert "(nhncs) ")))
+  ("R" (lambda () (interactive) (insert "(rfns) ")))
+  ("C" (lambda () (interactive) (insert "(crrcts) ")))
   ("l" (lambda () (interactive (insert "Closes #"))))
   ("F" (lambda () (interactive (insert "Fixes #"))))
   ("v" (lambda () (interactive (insert "Resolves #"))))
-  ("T" (lambda () (interactive) (insert "(ToDoDoDoDoDoDo)")))
   ("A" (lambda () (interactive (insert "(rchvs) "))))
-  ("o" (lambda () (interactive (insert "(rslvs) "))))
+  ("o" (lambda () (interactive (insert "(rstrs) "))))
+  ("f" (lambda () (interactive (insert "(rfls) "))))
   ("q" nil))
 ;; org_gcr_2017-12-22_mara_9F9E1F38-1FD7-474F-B2D9-4D9086316632 ends here
 
