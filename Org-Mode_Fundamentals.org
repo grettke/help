@@ -765,11 +765,13 @@ Make sure that exported files are Unicode UTF-8.
 (setq org-export-coding-system 'utf-8)
 #+END_SRC
 
-Line breaks are for humans and exporting to ASCII so export them.
+Line breaks are for humans typing them, not for publishing.
+
+When publishing to ASCII, set this property in the file.
 
 #+NAME: org_gcr_2017-05-12_mara_DE83AAE3-B4D6-4AB8-83BF-EE3252F9F6D2
 #+BEGIN_SRC emacs-lisp
-(setq org-export-preserve-breaks t)
+(setq org-export-preserve-breaks nil)
 #+END_SRC
 
 When exporting anything, do not insert the exported content into the kill ring.
