@@ -2928,6 +2928,10 @@ Most modes in this system will never use TAB stops.
 
 Functions to remove TAB
 
+It is at least unpleasant removing tabs that somebody wanted in the file, and for
+that alone it is worth removing untabification from the on save buffer file
+hook. Worst case it ruins files for example Makefiles or tab-delimited data files.
+
 #+NAME: org_gcr_2017-05-12_mara_3FFCD7B4-0055-4BE8-938F-EEA09D077343
 #+BEGIN_SRC emacs-lisp
 (defun help/untabify-buffer-if-not-indent-tabs-mode ()
