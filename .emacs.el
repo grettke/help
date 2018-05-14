@@ -115,7 +115,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-           hidden-mode-line-mode)
+             hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -3410,6 +3410,57 @@ YAML: (q to quit)
       (add-hook 'flycheck-mode-hook 'flycheck-yamllint-setup))
     (setq flycheck-yaml-yamllint-executable "/Users/gcr/yamllint/env/bin/yamllint")))
 ;; org_gcr_2018-01-16_mara_B1860F4D-930E-4DDE-8392-BDC52107B11F ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-05-11T16-33-31-05-00_mara_0045CEB5-A317-4B3F-8362-C60124D35AD7][org_gcr_2018-05-11T16-33-31-05-00_mara_0045CEB5-A317-4B3F-8362-C60124D35AD7]]
+(use-package csv-mode
+  :ensure t
+  :config
+  (use-package nlinum
+    :ensure t
+    :config
+    (setq nlinum-format "%04d"))
+  (defun help/csv-mode/csv-descending ()
+    (interactive)
+    csv-descending)
+  (defun help/csv-mode/csv-invisibility ()
+    (interactive)
+    buffer-invisibility-spec)
+  (defhydra help/hydra/csv-mode (:color blue :hint nil)
+    "
+CSV: (_q_uit)
+ Row: Sort: _l_exographically _n_umerically
+      Descending is %(help/csv-mode/csv-descending): _t_oggle it
+      Re_v_erse
+      Invisibility is %(help/csv-mode/csv-invisibility): toggle _i_t
+ Row or Columns: t_r_anspose
+ Fields or Columns: _k_ill _y_ank
+ Fields: _a_lign _u_nalign
+ Table: yank a_s_ new
+"
+    ("q" nil)
+
+    ("l" csv-sort-fields)
+    ("n" csv-sort-numeric-fields)
+    ("t" csv-toggle-descending :exit nil)
+    ("v" csv-reverse-region)
+    ("i" csv-toggle-invisibility)
+
+    ("r" csv-transpose)
+
+    ("k" csv-kill-fields)
+    ("y" csv-kill-fields)
+
+    ("a" csv-align-fields :exit nil)
+    ("u" csv-unalign-fields :exit nil)
+
+    ("s" csv-yank-as-new-table))
+  (key-chord-define csv-mode-map "hh" #'help/hydra/csv-mode/body)
+  (defun help/csv-mode-hook-fn ()
+    (nlinum-mode)
+    (visual-line-mode))
+  ;; todo: can I toggle this: csv-descending
+  (add-hook 'csv-mode-hook #'help/csv-mode-hook-fn))
+;; org_gcr_2018-05-11T16-33-31-05-00_mara_0045CEB5-A317-4B3F-8362-C60124D35AD7 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D035C4E4-B983-4D74-9E3C-764EF00B3795][org_gcr_2017-05-12_mara_D035C4E4-B983-4D74-9E3C-764EF00B3795]]
 (use-package tex
