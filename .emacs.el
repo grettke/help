@@ -2137,11 +2137,12 @@ _A_rchives | Rest_o_res | Re_f_iles
   "
 elisp-mode: _q_uit
  Reformat s-expr: _m_ultiline or _o_ne line
-  Evaluation: _b_uffer
+  Evaluation: _b_uffer _r_un tests
 "
   ("m" lispy-multiline)
   ("o" lispy-oneline)
   ("b" eval-buffer)
+  ("r" ert)
   ("q" nil))
 (key-chord-define emacs-lisp-mode-map "hh" #'help/hydra-elisp-mode/body)
 
@@ -4235,7 +4236,6 @@ Timestamps: (_q_uit)
     (message "Buffer contents copied")))
 (global-set-key (kbd "s-w") #'help/copy-entire-buffer)
 (global-set-key (kbd "s-q") #'kill-buffer)
-(global-set-key (kbd "M-r") #'ert)
 (global-set-key (kbd "C-M-y") #'insert-char)
 (global-set-key (kbd "C-M-o") #'help/occur-dwim)
 (global-set-key (kbd "M-i") nil)
