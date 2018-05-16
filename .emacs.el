@@ -2729,7 +2729,7 @@ _e_ ox-clip-formatted-copy _E_ list org entities"
   ("u" org-goto)
   ("p" my-org-region-to-property)
   ;; Row 4
-  ("[" (lambda () (interactive) (insert "- [ ] ")))
+  ("[" (lambda () (interactive) (insert "[ ] ")))
   ;; Row 3
   ("a" org-archive-subtree-default)
   ("s" org-sort)
