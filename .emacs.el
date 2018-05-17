@@ -4203,7 +4203,7 @@ Flycheck On? %(bound-and-true-p flycheck-mode)
 Timestamps: (_q_uit)
   Date: _I_SO, _U_S, US With _Y_ear and _D_ashes, US In _W_ords
    Date/Time: _N_o Colons or _w_ith
-    Org-Mode: _R_ight Now or _c_hoose
+    Org-Mode: _T_oday, _R_ight Now, or _c_hoose
 "
   ("q" nil)
 
@@ -4216,6 +4216,7 @@ Timestamps: (_q_uit)
   ("N" help/insert-timestamp-no-colons)
   ("w" help/insert-timestamp)
 
+  ("T" org-date-from-calendar)
   ("R" help/org-time-stamp-with-seconds-now)
   ("c" org-time-stamp))
 (global-set-key (kbd "C-t") #'help/hydra/timestamp/body)
