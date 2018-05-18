@@ -853,6 +853,11 @@ Atribution: URL `https://emacs.stackexchange.com/a/33893/341'"
   "Produces and inserts a US datestamp using words."
   (interactive)
   (insert (format-time-string "%A %B %d, %Y")))
+
+(defun help/insert-org-datestamp ()
+  "Produces and inserts an Org-Mode timestamp."
+  (interactive)
+  (insert (format "<%s>"(format-time-string "%F"))))
 ;; org_gcr_2017-05-12_mara_7D37FFE5-2D2B-4CF7-AF27-F3CB8616D81B ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F][org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F]]
@@ -4216,7 +4221,7 @@ Timestamps: (_q_uit)
   ("N" help/insert-timestamp-no-colons)
   ("w" help/insert-timestamp)
 
-  ("T" org-date-from-calendar)
+  ("T" help/insert-org-datestamp)
   ("R" help/org-time-stamp-with-seconds-now)
   ("c" org-time-stamp))
 (global-set-key (kbd "C-t") #'help/hydra/timestamp/body)
