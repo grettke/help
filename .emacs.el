@@ -3421,6 +3421,8 @@ YAML: (q to quit)
 (use-package csv-mode
   :ensure t
   :config
+  (use-package pcsv
+    :ensure t)
   (use-package nlinum
     :ensure t
     :config

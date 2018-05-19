@@ -5489,6 +5489,8 @@ FYI: Strip-buffer-mode doesn't help here.
 (use-package csv-mode
   :ensure t
   :config
+  (use-package pcsv
+    :ensure t)
   (use-package nlinum
     :ensure t
     :config
