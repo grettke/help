@@ -3970,6 +3970,13 @@ Essential for using tables with split windows.
   :config
   (add-hook 'org-mode-hook #'org-table-sticky-header-mode))
 #+END_SRC
+
+Exports to CSV by default.
+
+#+name: org_gcr_2018-05-17T22-08-31-05-00_mara_AE590C3B-9E70-4694-A2B1-B4EA164D36FB
+#+begin_src emacs-lisp
+(setq org-table-export-default-format "orgtbl-to-csv")
+#+end_src
 **** Publishing With TeX
 :PROPERTIES:
 :ID:       org_gcr_2018-03-07_mara:5C1154DE-B06C-444D-BB7B-32F0294BF64B

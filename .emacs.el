@@ -2366,6 +2366,10 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
   (add-hook 'org-mode-hook #'org-table-sticky-header-mode))
 ;; org_gcr_2017-05-12_mara_8CE235AC-A7C4-48DF-8C97-46CC7F31CDF4 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-05-17T22-08-31-05-00_mara_AE590C3B-9E70-4694-A2B1-B4EA164D36FB][org_gcr_2018-05-17T22-08-31-05-00_mara_AE590C3B-9E70-4694-A2B1-B4EA164D36FB]]
+(setq org-table-export-default-format "orgtbl-to-csv")
+;; org_gcr_2018-05-17T22-08-31-05-00_mara_AE590C3B-9E70-4694-A2B1-B4EA164D36FB ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2018-03-07_mara_D89CE4CB-12B1-47A6-9B0B-EA544343BA85][org_gcr_2018-03-07_mara_D89CE4CB-12B1-47A6-9B0B-EA544343BA85]]
 (setq org-latex-compiler "xelatex")
 (setq org-latex-pdf-process '("latexmk -xelatex -quiet -shell-escape -f %f"))
