@@ -1559,7 +1559,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   "HELP customizations."
   (interactive)
   (turn-on-stripe-buffer-mode)
-  (occur-rename-buffer))
+  (occur-rename-buffer t))
 (add-hook 'occur-mode-hook #'help/occur-mode-hook-fn)
 (define-key occur-mode-map (kbd "n") #'next-logical-line)
 (define-key occur-mode-map (kbd "p") #'previous-logical-line)
