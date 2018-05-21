@@ -1033,7 +1033,7 @@ Atribution: URL `https://emacs.stackexchange.com/a/33893/341'"
   ("b" hydra-ibuffer-main/body "back" :color blue))
 (use-package ibuffer
   :config
-  (define-key ibuffer-mode-map "." #'hydra-ibuffer-main/body))
+  (key-chord-define ibuffer-mode-map "hh" #'hydra-ibuffer-main/body))
 (use-package ibuffer-vc
   :ensure t)
 (defun help/ibuffer-hook-fn ()
