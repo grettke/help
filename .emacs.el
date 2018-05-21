@@ -1082,6 +1082,14 @@ Smart-Shift: (q to quit)
   :ensure t)
 ;; org_gcr_2018-04-12T21-31-52-05-00_mara_4844006E-A8C3-4F45-BA6D-FFC6B3BFF7DC ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-05-21T05-52-58-05-00_mara_33917C9D-A4FF-434A-99BE-E7297D5FE094][org_gcr_2018-05-21T05-52-58-05-00_mara_33917C9D-A4FF-434A-99BE-E7297D5FE094]]
+(use-package move-text
+  :ensure t
+  :config
+  (global-set-key (kbd "M-s-i") #'move-text-up)
+  (global-set-key (kbd "M-s-k") #'move-text-down))
+;; org_gcr_2018-05-21T05-52-58-05-00_mara_33917C9D-A4FF-434A-99BE-E7297D5FE094 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_611E83B9-E797-4512-95EE-643473026607][org_gcr_2017-05-12_mara_611E83B9-E797-4512-95EE-643473026607]]
 (use-package hideshow
   :config
