@@ -7581,7 +7581,8 @@ _]_ single bracket, white, square, right
 
 _A_ apropo'ish
 _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier
-_d_ detangle
+_d_ dired
+_D_ detangle
 _f_ ag _F_ ag*
 _g_ grep
 _h_ hidden-mode-line
@@ -7645,7 +7646,8 @@ _?_ tons of scissors
   ("J" org-babel-tangle-jump-to-org)
   ("u" universal-emotions-emoticons)
   ("i" scroll-down-command :exit nil)
-  ("d" help/safb-org-babel-detangle)
+  ("d" dired)
+  ("D" help/safb-org-babel-detangle)
   ("k" scroll-up-command :exit nil)
   ("I" previous-logical-line :exit nil)
   ("K" next-logical-line :exit nil)
