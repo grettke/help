@@ -2294,6 +2294,10 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (setq org-archive-mark-done nil)
 ;; org_gcr_2017-05-12_mara_B6F42ECC-14C0-4C60-8E00-6BBF883B3043 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-05-23T09-03-14-05-00_mara_E899B70E-F49F-4ADC-9C4C-819F1B40D5AE][org_gcr_2018-05-23T09-03-14-05-00_mara_E899B70E-F49F-4ADC-9C4C-819F1B40D5AE]]
+(require 'org-inlinetask)
+;; org_gcr_2018-05-23T09-03-14-05-00_mara_E899B70E-F49F-4ADC-9C4C-819F1B40D5AE ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_DEE287C2-5B88-4015-9B4F-57DA0F922B0C][org_gcr_2017-05-12_mara_DEE287C2-5B88-4015-9B4F-57DA0F922B0C]]
 (setq org-refile-targets '((nil . (:maxlevel . 10))))
 (setq org-refile-use-outline-path t)
@@ -2731,7 +2735,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
   "
 _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ id-create _9_ o2b/more _0_ o2b/LaTeX
 _q_ ←/w-code _w_ tbletfld _r_ help/org-refile _R_ g2nms-b _t_ export to ASCII _T_ table export format _p_ copy/property _[_ listbox
-_a_ archive-subtree _s_ sort _S_ lobigst _d_ g2s-b/hd _u_ goto _k_ ob-check-src-blk _l_ lint
+_a_ archive-subtree _s_ sort _S_ lobigst _d_ g2s-b/hd _u_ goto _k_ ob-check-src-blk _l_ lint _L_ insert inline task
 _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree
 _e_ ox-clip-formatted-copy _E_ list org entities"
   ;; Row 5
@@ -2764,6 +2768,7 @@ _e_ ox-clip-formatted-copy _E_ list org entities"
   ("I" org-babel-insert-header-arg)
   ("k" org-babel-check-src-block)
   ("l" org-lint)
+  ("L" org-inlinetask-insert-task)
   ;; Row 2
   ("c" org-fill-paragraph)
   ("b" org-babel-switch-to-session)
