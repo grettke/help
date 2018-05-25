@@ -7791,6 +7791,11 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
                 (visual-line-mode nil)))))
 #+END_SRC
 
+#+name: org_gcr_2018-05-24T12-09-16-04-00_mara_09A8135C-9B9B-4039-A091-6DB640A7C3EF
+#+begin_src emacs-lisp
+(global-set-key (kbd "M-s M-s") #'shell)
+#+end_src
+
 **** Row 2
 :PROPERTIES:
 :ID:       org_gcr_2017-07-17_mara:B91C9779-B2AD-403B-A11F-5847EF8883C6
