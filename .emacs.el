@@ -1403,11 +1403,6 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
 (setq ido-use-filename-at-point 'guess)
 ;; org_gcr_2017-05-12_mara_5295DEDE-687E-440B-89B9-9BF9BF301595 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_501304FE-D5DB-40FA-B1BB-01A580C4A155][org_gcr_2017-05-12_mara_501304FE-D5DB-40FA-B1BB-01A580C4A155]]
-(set-fontset-font "fontset-default" nil
-                  (font-spec :size 20 :name "Symbola"))
-;; org_gcr_2017-05-12_mara_501304FE-D5DB-40FA-B1BB-01A580C4A155 ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_ADAB043E-BF70-4AE0-BA60-CD08D82474FA][org_gcr_2017-05-12_mara_ADAB043E-BF70-4AE0-BA60-CD08D82474FA]]
 (global-font-lock-mode t)
 ;; org_gcr_2017-05-12_mara_ADAB043E-BF70-4AE0-BA60-CD08D82474FA ends here
@@ -1416,6 +1411,11 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
 (use-package fontawesome
   :ensure t)
 ;; org_gcr_2018-04-22T14-17-00-05-00_mara_5C4879AB-6272-4269-A515-CD2FD35F3549 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_501304FE-D5DB-40FA-B1BB-01A580C4A155][org_gcr_2017-05-12_mara_501304FE-D5DB-40FA-B1BB-01A580C4A155]]
+(set-fontset-font "fontset-default" nil
+                  (font-spec :size 20 :name "Symbola"))
+;; org_gcr_2017-05-12_mara_501304FE-D5DB-40FA-B1BB-01A580C4A155 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_2B0564C9-2091-4364-8A28-E33A548284A2][org_gcr_2017-05-12_mara_2B0564C9-2091-4364-8A28-E33A548284A2]]
 (use-package avy

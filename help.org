@@ -2190,7 +2190,25 @@ Make URLs a first-class object.
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:D12919AC-9D9B-4C40-9872-1E01C92FA493
    :END:
+Activate font locking everywhere possible.
 
+#+NAME: org_gcr_2017-05-12_mara_ADAB043E-BF70-4AE0-BA60-CD08D82474FA
+#+BEGIN_SRC emacs-lisp
+(global-font-lock-mode t)
+#+END_SRC
+
+Adds FontAwesome.
+
+#+name: org_gcr_2018-04-22T14-17-00-05-00_mara_5C4879AB-6272-4269-A515-CD2FD35F3549
+#+begin_src emacs-lisp
+(use-package fontawesome
+  :ensure t)
+#+end_src
+
+*** Unicode
+:PROPERTIES:
+:ID:       org_gcr_2018-06-03T01-16-43-05-00_mara:212A33F4-21C1-4810-B767-CDA8CEF2126F
+:END:
 Configure the [[http://endlessparentheses.com/manually-choose-a-fallback-font-for-unicode.html][manual configuration of a fallback]] Unicode font.
 
 #+NAME: org_gcr_2017-05-12_mara_501304FE-D5DB-40FA-B1BB-01A580C4A155
@@ -2209,22 +2227,6 @@ Here are the Unicode fonts that provide nearly everything.
 | [[https://code.google.com/p/noto/][Noto]]    |       ? | [[http://noto.googlecode.com/git/fonts/individual/hinted/NotoSans-Regular.ttc][1]] [[http://noto.googlecode.com/git/fonts/individual/unhinted/NotoSansSymbols-Regular.ttf][2]] | Has morse code, and more |
 
 To test it run =view-hello-file= and =M-x list-charset-chars RET unicode-bmp RET=.
-
-Activate font locking everywhere possible.
-
-#+NAME: org_gcr_2017-05-12_mara_ADAB043E-BF70-4AE0-BA60-CD08D82474FA
-#+BEGIN_SRC emacs-lisp
-(global-font-lock-mode t)
-#+END_SRC
-
-Adds FontAwesome.
-
-#+name: org_gcr_2018-04-22T14-17-00-05-00_mara_5C4879AB-6272-4269-A515-CD2FD35F3549
-#+begin_src emacs-lisp
-(use-package fontawesome
-  :ensure t)
-#+end_src
-
 ** Going to Objects
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:8A73E509-A878-4E89-86DC-9BDA8C898F8C
