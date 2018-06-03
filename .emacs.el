@@ -1412,10 +1412,12 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   :ensure t)
 ;; org_gcr_2018-04-22T14-17-00-05-00_mara_5C4879AB-6272-4269-A515-CD2FD35F3549 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_501304FE-D5DB-40FA-B1BB-01A580C4A155][org_gcr_2017-05-12_mara_501304FE-D5DB-40FA-B1BB-01A580C4A155]]
-(set-fontset-font "fontset-default" nil
-                  (font-spec :size 20 :name "Symbola"))
-;; org_gcr_2017-05-12_mara_501304FE-D5DB-40FA-B1BB-01A580C4A155 ends here
+;; [[file:~/src/help/help.org::org_gcr_2018-06-03T01-16-43-05-00_mara_3374BEB2-6CF3-4F07-B2D6-7D84147CEDF3][org_gcr_2018-06-03T01-16-43-05-00_mara_3374BEB2-6CF3-4F07-B2D6-7D84147CEDF3]]
+(use-package unicode-fonts
+  :ensure t
+  :config
+  (unicode-fonts-setup))
+;; org_gcr_2018-06-03T01-16-43-05-00_mara_3374BEB2-6CF3-4F07-B2D6-7D84147CEDF3 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_2B0564C9-2091-4364-8A28-E33A548284A2][org_gcr_2017-05-12_mara_2B0564C9-2091-4364-8A28-E33A548284A2]]
 (use-package avy
@@ -4280,8 +4282,9 @@ Describe Something: (q to quit)
 _a_ all help for everything screen
 _b_ bindings
 _B_ personal bindings
-_c_ char
-_C_ coding system
+_c_ character
+_T_ character set _1_ list characters in oneset  _2_ list all set2
+_S_ coding system
 _f_ function
 _F_ flycheck checker
 _i_ input method
@@ -4303,11 +4306,12 @@ _t_ theme
 _v_ variable
 _w_ where is something defined
 "
+  ("1" list-charset-chars)
+  ("2" list-character-sets)
   ("b" describe-bindings)
   ("B" describe-personal-keybindings)
   ("C" describe-categories)
   ("c" describe-char)
-  ("C" describe-coding-system)
   ("f" describe-function)
   ("F" flycheck-describe-checker)
   ("i" describe-input-method)
@@ -4327,7 +4331,9 @@ _w_ where is something defined
   ("q" nil)
   ("a" help)
   ("s" describe-symbol)
+  ("S" describe-coding-system)
   ("t" describe-theme)
+  ("T" describe-character-set)
   ("v" describe-variable)
   ("w" where-is))
 ;; org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389 ends here

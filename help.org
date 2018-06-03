@@ -2209,24 +2209,21 @@ Adds FontAwesome.
 :PROPERTIES:
 :ID:       org_gcr_2018-06-03T01-16-43-05-00_mara:212A33F4-21C1-4810-B767-CDA8CEF2126F
 :END:
-Configure the [[http://endlessparentheses.com/manually-choose-a-fallback-font-for-unicode.html][manual configuration of a fallback]] Unicode font.
+Configure fonts for Unicode blocks.
 
-#+NAME: org_gcr_2017-05-12_mara_501304FE-D5DB-40FA-B1BB-01A580C4A155
-#+BEGIN_SRC emacs-lisp
-(set-fontset-font "fontset-default" nil
-                  (font-spec :size 20 :name "Symbola"))
-#+END_SRC
+#+name: org_gcr_2018-06-03T01-16-43-05-00_mara_3374BEB2-6CF3-4F07-B2D6-7D84147CEDF3
+#+begin_src emacs-lisp
+(use-package unicode-fonts
+  :ensure t
+  :config
+  (unicode-fonts-setup))
+#+end_src
 
-Here are the Unicode fonts that provide nearly everything.
-
-| Name    | Version | URL | Comments                 |
-|---------+---------+-----+--------------------------|
-| [[http://sourceforge.net/projects/dejavu/files/dejavu/2.34/dejavu-fonts-ttf-2.34.tar.bz2][DejaVu]]  |    2.43 | [[http://sourceforge.net/projects/dejavu/files/dejavu/2.34/dejavu-fonts-ttf-2.34.tar.bz2][.]]   | Modern classic           |
-| [[http://users.teilar.gr/~g1951d/][Symbola]] |    7.17 | [[http://users.teilar.gr/~g1951d/Symbola.zip][.]]   | Neat                     |
-| [[http://www.quivira-font.com/][Quivira]] |     4.0 | [[http://www.quivira-font.com/files/Quivira.otf][.]]   | Amazing                  |
-| [[https://code.google.com/p/noto/][Noto]]    |       ? | [[http://noto.googlecode.com/git/fonts/individual/hinted/NotoSans-Regular.ttc][1]] [[http://noto.googlecode.com/git/fonts/individual/unhinted/NotoSansSymbols-Regular.ttf][2]] | Has morse code, and more |
-
-To test it run =view-hello-file= and =M-x list-charset-chars RET unicode-bmp RET=.
+- Test with
+  - view-hello-file
+  - list-charset-chars RET unicode-bmp RET
+  - list-charset-chars RET unicode-smp RET
+  - unicode-fonts-debug-insert-block RET Mathematical_Operators RET
 ** Going to Objects
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:8A73E509-A878-4E89-86DC-9BDA8C898F8C
@@ -7495,8 +7492,9 @@ Describe Something: (q to quit)
 _a_ all help for everything screen
 _b_ bindings
 _B_ personal bindings
-_c_ char
-_C_ coding system
+_c_ character
+_T_ character set _1_ list characters in oneset  _2_ list all set2
+_S_ coding system
 _f_ function
 _F_ flycheck checker
 _i_ input method
@@ -7518,11 +7516,12 @@ _t_ theme
 _v_ variable
 _w_ where is something defined
 "
+  ("1" list-charset-chars)
+  ("2" list-character-sets)
   ("b" describe-bindings)
   ("B" describe-personal-keybindings)
   ("C" describe-categories)
   ("c" describe-char)
-  ("C" describe-coding-system)
   ("f" describe-function)
   ("F" flycheck-describe-checker)
   ("i" describe-input-method)
@@ -7542,7 +7541,9 @@ _w_ where is something defined
   ("q" nil)
   ("a" help)
   ("s" describe-symbol)
+  ("S" describe-coding-system)
   ("t" describe-theme)
+  ("T" describe-character-set)
   ("v" describe-variable)
   ("w" where-is))
 #+END_SRC
