@@ -15,7 +15,7 @@
  '(unicode-fonts-debug-availability t)
  '(unicode-fonts-skip-font-groups
    (quote
-    (microsoft-only apple-only non-free decorative low-quality-glyphs))))
+    (microsoft-only apple-only multicolor non-free decorative low-quality-glyphs))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
