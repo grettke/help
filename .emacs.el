@@ -4297,11 +4297,13 @@ Describe Something: (q to quit)
 _a_ all help for everything screen
 _b_ bindings
 _B_ personal bindings
-_c_ character
+_c_ character briefly
+_C_ character full
 _T_ character set _1_ list characters in oneset  _2_ list all set2
 _S_ coding system
 _f_ function
 _F_ flycheck checker
+_g_ categories
 _i_ input method
 _I_ info
 _k_ key briefly
@@ -4325,10 +4327,11 @@ _w_ where is something defined
   ("2" list-character-sets)
   ("b" describe-bindings)
   ("B" describe-personal-keybindings)
-  ("C" describe-categories)
-  ("c" describe-char)
+  ("c" (lambda () (interactive) (unicode-fonts-debug-info-at-point)))
+  ("C" describe-char)
   ("f" describe-function)
   ("F" flycheck-describe-checker)
+  ("g" describe-categories)
   ("i" describe-input-method)
   ("I" info)
   ("K" describe-key)
