@@ -4044,13 +4044,13 @@ Copied and customized from [[https://github.com/kaushalmodi/.emacs.d/blob/master
     ("" "caption")
     ("" "latexsym")
     ("" "lettrine")
-    ("" "grantcrettke")
     ("" "listings")
     ("" "color")
     ("" "fancyvrb")
     ("" "fancyhdr")
     ("" "scrlayer-scrpage")
-    ("" "lastpage")))
+    ("" "lastpage")
+    ("" "grantcrettke")))
 (setq org-latex-packages-alist
       (append help/org-latex-packages-alist-pre-hyperref
               '(("" "hyperref" nil))

@@ -115,7 +115,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-             hidden-mode-line-mode)
+           hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -2410,13 +2410,13 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
     ("" "caption")
     ("" "latexsym")
     ("" "lettrine")
-    ("" "grantcrettke")
     ("" "listings")
     ("" "color")
     ("" "fancyvrb")
     ("" "fancyhdr")
     ("" "scrlayer-scrpage")
-    ("" "lastpage")))
+    ("" "lastpage")
+    ("" "grantcrettke")))
 (setq org-latex-packages-alist
       (append help/org-latex-packages-alist-pre-hyperref
               '(("" "hyperref" nil))
