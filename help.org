@@ -6707,6 +6707,22 @@ swap.
  :help "Swap buffers")
 #+END_SRC
 
+Page up and down.
+
+#+name: org_gcr_2018-06-04T06-09-31-05-00_mara_6DA26126-B1ED-467A-B4FD-DB729AE2B04C
+#+begin_src emacs-lisp
+(tool-bar-add-item
+ "arrow-up"
+ 'scroll-down-command
+ 'ScrollUp
+ :help "Scroll Down")
+(tool-bar-add-item
+ "arrow-down"
+ 'scroll-up-command
+ 'ScrollDown
+ :help "Scroll Up")
+#+end_src
+
 OS Banner.
 
 #+NAME: org_gcr_2017-07-23_mara_949332F2-28B2-4BC3-B1E7-C7A24DF56269

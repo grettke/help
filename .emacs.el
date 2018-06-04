@@ -115,7 +115,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-           hidden-mode-line-mode)
+             hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -4065,6 +4065,19 @@ Ansible: (q to quit)
  'Swap
  :help "Swap buffers")
 ;; org_gcr_2017-07-11_mara_9D659239-693A-430C-A4CE-6003BD650A60 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-06-04T06-09-31-05-00_mara_6DA26126-B1ED-467A-B4FD-DB729AE2B04C][org_gcr_2018-06-04T06-09-31-05-00_mara_6DA26126-B1ED-467A-B4FD-DB729AE2B04C]]
+(tool-bar-add-item
+ "arrow-up"
+ 'scroll-down-command
+ 'ScrollUp
+ :help "Scroll Down")
+(tool-bar-add-item
+ "arrow-down"
+ 'scroll-up-command
+ 'ScrollDown
+ :help "Scroll Up")
+;; org_gcr_2018-06-04T06-09-31-05-00_mara_6DA26126-B1ED-467A-B4FD-DB729AE2B04C ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-07-23_mara_949332F2-28B2-4BC3-B1E7-C7A24DF56269][org_gcr_2017-07-23_mara_949332F2-28B2-4BC3-B1E7-C7A24DF56269]]
 (help/on-mac-os
