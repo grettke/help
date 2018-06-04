@@ -4038,7 +4038,8 @@ Copied and customized from [[https://github.com/kaushalmodi/.emacs.d/blob/master
   '(("letterpaper,margin=1.0in" "geometry")
     ("" "float")))
 (defconst help/org-latex-packages-alist-post-hyperref
-  '(("section" "placeins")
+  '(("" "fontspec")
+    ("section" "placeins")
     ("" "tikz")
     ("" "caption")
     ("" "latexsym")

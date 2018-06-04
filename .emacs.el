@@ -2404,7 +2404,8 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
   '(("letterpaper,margin=1.0in" "geometry")
     ("" "float")))
 (defconst help/org-latex-packages-alist-post-hyperref
-  '(("section" "placeins")
+  '(("" "fontspec")
+    ("section" "placeins")
     ("" "tikz")
     ("" "caption")
     ("" "latexsym")
