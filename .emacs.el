@@ -2416,6 +2416,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
     ("" "fancyhdr")
     ("" "scrlayer-scrpage")
     ("" "lastpage")
+    ("" "polyglossia")
     ("" "grantcrettke")))
 (setq org-latex-packages-alist
       (append help/org-latex-packages-alist-pre-hyperref

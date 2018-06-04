@@ -4050,6 +4050,7 @@ Copied and customized from [[https://github.com/kaushalmodi/.emacs.d/blob/master
     ("" "fancyhdr")
     ("" "scrlayer-scrpage")
     ("" "lastpage")
+    ("" "polyglossia")
     ("" "grantcrettke")))
 (setq org-latex-packages-alist
       (append help/org-latex-packages-alist-pre-hyperref
