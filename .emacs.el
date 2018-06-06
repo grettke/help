@@ -2822,7 +2822,7 @@ _e_ ox-clip-formatted-copy _E_ list org entities"
   (setq prettify-symbols-alist (help/alist-set "#+begin_quote" ?🗣 prettify-symbols-alist))
   (setq prettify-symbols-alist (help/alist-set "#+END_QUOTE" ?🗣 prettify-symbols-alist))
   (setq prettify-symbols-alist (help/alist-set "#+end_quote" ?🗣 prettify-symbols-alist))
-  (help/prettify-org-mode-names ?╮)
+  (help/prettify-org-mode-names)
   (setq prettify-symbols-alist
         (help/alist-set "{{{" ?⟦ prettify-symbols-alist))
         (setq prettify-symbols-alist (help/alist-set "}}}" ?⟧ prettify-symbols-alist)))
@@ -2830,7 +2830,7 @@ _e_ ox-clip-formatted-copy _E_ list org entities"
 
 (defun help/prettify-org-mode-names (&optional replacement)
   (interactive)
-  (or replacement (setq replacement ?·))
+  (or replacement (setq replacement ?╮))
   (save-excursion
     (goto-char (point-min))
     (let ((case-fold-search t))
