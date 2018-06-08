@@ -571,6 +571,16 @@ Emacs mode for hiding the mode-line from [[https://emacs-doctor.com/emacs-hide-m
              "Use M-x hidden-mode-line-mode to make the mode-line appear."))))
 #+END_SRC
 
+Fancy progress indicator.
+
+#+name: org_gcr_2018-06-06T22-01-54-05-00_mara_00E980AF-8BD1-4AFF-A815-303C78B85871
+#+begin_src emacs-lisp
+(use-package unicode-progress-reporter
+  :ensure t
+  :config
+  (unicode-progress-reporter-setup))
+#+end_src
+
 ** macOS
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:BC848D6F-7915-4151-8368-D473CA39E7C3

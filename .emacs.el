@@ -122,6 +122,13 @@
              "Use M-x hidden-mode-line-mode to make the mode-line appear."))))
 ;; org_gcr_2017-11-15_mara_361908ED-32C9-4339-91AE-F02A2E017A87 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-06-06T22-01-54-05-00_mara_00E980AF-8BD1-4AFF-A815-303C78B85871][org_gcr_2018-06-06T22-01-54-05-00_mara_00E980AF-8BD1-4AFF-A815-303C78B85871]]
+(use-package unicode-progress-reporter
+  :ensure t
+  :config
+  (unicode-progress-reporter-setup))
+;; org_gcr_2018-06-06T22-01-54-05-00_mara_00E980AF-8BD1-4AFF-A815-303C78B85871 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_FF670CDD-5374-49BA-897A-AE1A30B444D6][org_gcr_2017-05-12_mara_FF670CDD-5374-49BA-897A-AE1A30B444D6]]
 (defmacro help/on-mac-os (statement &rest statements)
   "Evaluate the enclosed body only when run on macOS."
