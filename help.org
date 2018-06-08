@@ -4854,7 +4854,52 @@ Vocabulary: (_q_uit)
 :PROPERTIES:
 :ID:       org_gcr_2018-06-06T22-01-54-05-00_mara:DD18C2DA-10EE-43BD-AED0-5DD4680CA566
 :END:
-*** Various
+*** Font
+:PROPERTIES:
+:ID:       org_gcr_2018-06-06T22-01-54-05-00_mara:99E80492-40C4-4879-B2D6-582362D0FC58
+:END:
+Configure fonts for Unicode blocks.
+
+#+name: org_gcr_2018-06-03T01-16-43-05-00_mara_3374BEB2-6CF3-4F07-B2D6-7D84147CEDF3
+#+begin_src emacs-lisp
+(use-package unicode-fonts
+  :ensure t
+  :config
+  (unicode-fonts-setup))
+#+end_src
+
+- Test with
+  - view-hello-file
+  - list-charset-chars RET unicode-bmp RET
+  - list-charset-chars RET unicode-smp RET
+  - unicode-fonts-debug-insert-block RET Mathematical_Operators RET
+*** Utility
+:PROPERTIES:
+:ID:       org_gcr_2018-06-06T22-01-54-05-00_mara:702B80D4-22BB-4A0B-B33C-1D314A337C83
+:END:
+Show all code points in a block
+
+#+name: org_gcr_2018-06-06T22-01-54-05-00_mara_4EB996DD-4FBC-492B-B773-73D78D431CEA
+#+begin_src emacs-lisp
+(use-package charmap
+  :ensure t)
+#+end_src
+*** Hydra
+:PROPERTIES:
+:ID:       org_gcr_2018-06-06T22-01-54-05-00_mara:F0E4B9C4-4873-4519-9FE5-B7CF14103FE3
+:END:
+#+name: org_gcr_2018-06-06T22-01-54-05-00_mara_61574A72-BF05-4C0A-B665-BC80C13C35E5
+#+begin_src emacs-lisp
+(defhydra help/hydra/unicode (:color blue :hint nil)
+  "
+Unicode: (_q_uit)
+ Block: _L_ist Points.
+"
+  ("L" charmap)
+  ("q" nil))
+(global-set-key (kbd "C-M-u") #'help/hydra/unicode/body)
+#+end_src
+*** To Sort
 :PROPERTIES:
 :ID:       org_gcr_2017-05-12_mara:ADAE0A1B-3FD8-4605-8611-388E5ADBAFA8
 :END:
@@ -4863,11 +4908,7 @@ Vocabulary: (_q_uit)
   Move to Unicode hack heading.
 :END:
 
-Easily identify Unicode homeoglyphs most often utilized by pranksters.
-
-Good reference for Unicode character study and exploration.
-
-Used intermittently so don't diminish it.
+Identify Unicode homeoglyphs,
 
 #+NAME: org_gcr_2017-05-12_mara_96974788-400B-439B-9005-04569A326C29
 #+BEGIN_SRC emacs-lisp
@@ -4875,7 +4916,7 @@ Used intermittently so don't diminish it.
   :ensure t)
 #+END_SRC
 
-Easily escape and un-escape Unicode hex notation.
+Escape and un-escape Unicode hex notation.
 
 #+NAME: org_gcr_2017-05-12_mara_B7889E2D-2E2E-402B-BFC6-F8EC056D1F6E
 #+BEGIN_SRC emacs-lisp
@@ -4904,26 +4945,6 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 
 (add-hook 'find-file-hook #'warn-if-utf-8-bom)
 #+END_SRC
-
-*** Fonts
-:PROPERTIES:
-:ID:       org_gcr_2018-06-06T22-01-54-05-00_mara:99E80492-40C4-4879-B2D6-582362D0FC58
-:END:
-Configure fonts for Unicode blocks.
-
-#+name: org_gcr_2018-06-03T01-16-43-05-00_mara_3374BEB2-6CF3-4F07-B2D6-7D84147CEDF3
-#+begin_src emacs-lisp
-(use-package unicode-fonts
-  :ensure t
-  :config
-  (unicode-fonts-setup))
-#+end_src
-
-- Test with
-  - view-hello-file
-  - list-charset-chars RET unicode-bmp RET
-  - list-charset-chars RET unicode-smp RET
-  - unicode-fonts-debug-insert-block RET Mathematical_Operators RET
 ** Applied Mathematics
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:423BA6AA-5F7D-450D-B686-78A028A37FE2
@@ -7463,6 +7484,10 @@ Flycheck On? %(bound-and-true-p flycheck-mode)
 #+END_SRC
 
 **** Row 4
+:PROPERTIES:
+:ID:       org_gcr_2018-06-06T22-01-54-05-00_mara:D34D40ED-F8E3-405D-88AA-AB8C52533706
+:END:
+
 :PROPERTIES:
 :ID:       org_gcr_2017-12-07_mara:752198AC-06ED-436E-B526-5A3C8ED32375
 :END:
