@@ -879,7 +879,7 @@ Atribution: URL `https://emacs.stackexchange.com/a/33893/341'"
   :ensure t
   :config
   (global-undo-tree-mode 1)
-  (global-set-key (kbd "C-M-u") #'undo-tree-visualize)
+  (global-set-key (kbd "C-M-/") #'undo-tree-visualize)
   :diminish undo-tree-mode)
 ;; org_gcr_2017-05-12_mara_40A89EBE-247D-43B1-A606-896B172681D8 ends here
 

@@ -1429,7 +1429,7 @@ Provide expected "Undo" functionality.
   :ensure t
   :config
   (global-undo-tree-mode 1)
-  (global-set-key (kbd "C-M-u") #'undo-tree-visualize)
+  (global-set-key (kbd "C-M-/") #'undo-tree-visualize)
   :diminish undo-tree-mode)
 #+END_SRC
 
