@@ -4884,6 +4884,17 @@ Show all code points in a block
 (use-package charmap
   :ensure t)
 #+end_src
+
+Search code points by name and present the result(s).
+- code point
+- character
+- name
+
+#+name: org_gcr_2018-06-06T22-01-54-05-00_mara_9533C0F0-AAA8-4B6B-A06A-29AD18CF72D7
+#+begin_src emacs-lisp
+(use-package list-unicode-display
+  :ensure t)
+#+end_src
 *** Hydra
 :PROPERTIES:
 :ID:       org_gcr_2018-06-06T22-01-54-05-00_mara:F0E4B9C4-4873-4519-9FE5-B7CF14103FE3
@@ -4894,8 +4905,10 @@ Show all code points in a block
   "
 Unicode: (_q_uit)
  Block: _L_ist Points.
+  Point: _S_earch And List.
 "
   ("L" charmap)
+  ("S" list-unicode-display)
   ("q" nil))
 (global-set-key (kbd "C-M-u") #'help/hydra/unicode/body)
 #+end_src

@@ -2935,13 +2935,20 @@ Vocabulary: (_q_uit)
   :ensure t)
 ;; org_gcr_2018-06-06T22-01-54-05-00_mara_4EB996DD-4FBC-492B-B773-73D78D431CEA ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-06-06T22-01-54-05-00_mara_9533C0F0-AAA8-4B6B-A06A-29AD18CF72D7][org_gcr_2018-06-06T22-01-54-05-00_mara_9533C0F0-AAA8-4B6B-A06A-29AD18CF72D7]]
+(use-package list-unicode-display
+  :ensure t)
+;; org_gcr_2018-06-06T22-01-54-05-00_mara_9533C0F0-AAA8-4B6B-A06A-29AD18CF72D7 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2018-06-06T22-01-54-05-00_mara_61574A72-BF05-4C0A-B665-BC80C13C35E5][org_gcr_2018-06-06T22-01-54-05-00_mara_61574A72-BF05-4C0A-B665-BC80C13C35E5]]
 (defhydra help/hydra/unicode (:color blue :hint nil)
   "
 Unicode: (_q_uit)
  Block: _L_ist Points.
+  Point: _S_earch And List.
 "
   ("L" charmap)
+  ("S" list-unicode-display)
   ("q" nil))
 (global-set-key (kbd "C-M-u") #'help/hydra/unicode/body)
 ;; org_gcr_2018-06-06T22-01-54-05-00_mara_61574A72-BF05-4C0A-B665-BC80C13C35E5 ends here
