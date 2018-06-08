@@ -2960,6 +2960,28 @@ Vocabulary: (_q_uit)
   (ucs-utils-install-aliases))
 ;; org_gcr_2018-06-06T22-01-54-05-00_mara_15766015-F908-40FF-81B2-71DADC8FE0A7 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-06-07T23-45-23-05-00_mara_B658364A-13A0-411F-8DA7-A3FF3B92F38D][org_gcr_2018-06-07T23-45-23-05-00_mara_B658364A-13A0-411F-8DA7-A3FF3B92F38D]]
+(use-package unidecode
+  :ensure t
+  :config
+  (defun help/unidecode-region (beginning end)
+    "Unidecode region.
+
+For example try it on: Déjà vu"
+    (interactive "r")
+    (if (use-region-p)
+        (unidecode-region beginning end)
+      (message "Sorry, there was no active region to unidecode.")))
+  (defun help/unidecode-sanitize-region (beginning end)
+    "Unidecode sanitize region.
+
+For example try it on: 北亰"
+    (interactive "r")
+    (if (use-region-p)
+        (unidecode-sanitize-region beginning end)
+      (message "Sorry, there was no active region to unidecode sanitize."))))
+;; org_gcr_2018-06-07T23-45-23-05-00_mara_B658364A-13A0-411F-8DA7-A3FF3B92F38D ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2018-06-06T22-01-54-05-00_mara_9533C0F0-AAA8-4B6B-A06A-29AD18CF72D7][org_gcr_2018-06-06T22-01-54-05-00_mara_9533C0F0-AAA8-4B6B-A06A-29AD18CF72D7]]
 (use-package list-unicode-display
   :ensure t)
@@ -2971,7 +2993,7 @@ Vocabulary: (_q_uit)
 Unicode: (_q_uit)
  Block: _L_ist Points.
   Point: _S_earch And List.
-   Character: _I_nsert, E_v_aluate, _E_scape, _U_nescape, 🛇_H_omoglyphs.
+   Character: _I_nsert, E_v_aluate, _E_scape, _U_nescape, _D_ecode, S_a_nitize, 🛇_H_omoglyphs.
     MuLE: TODO
 "
   ("q" nil)
@@ -2981,6 +3003,8 @@ Unicode: (_q_uit)
   ("v" ucs-utils-eval)
   ("E" unicode-escape-region)
   ("U" unicode-unescape-region)
+  ("D" help/unidecode-region)
+  ("a" help/unidecode-sanitize-region)
   ("H" unicode-troll-stopper-mode))
 (global-set-key (kbd "C-M-u") #'help/hydra/unicode/body)
 ;; org_gcr_2018-06-06T22-01-54-05-00_mara_61574A72-BF05-4C0A-B665-BC80C13C35E5 ends here

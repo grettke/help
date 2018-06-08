@@ -4927,6 +4927,31 @@ Roland's utilities.
   :config
   (ucs-utils-install-aliases))
 #+end_src
+
+Convert to ASCII.
+
+#+name: org_gcr_2018-06-07T23-45-23-05-00_mara_B658364A-13A0-411F-8DA7-A3FF3B92F38D
+#+begin_src emacs-lisp
+(use-package unidecode
+  :ensure t
+  :config
+  (defun help/unidecode-region (beginning end)
+    "Unidecode region.
+
+For example try it on: Déjà vu"
+    (interactive "r")
+    (if (use-region-p)
+        (unidecode-region beginning end)
+      (message "Sorry, there was no active region to unidecode.")))
+  (defun help/unidecode-sanitize-region (beginning end)
+    "Unidecode sanitize region.
+
+For example try it on: 北亰"
+    (interactive "r")
+    (if (use-region-p)
+        (unidecode-sanitize-region beginning end)
+      (message "Sorry, there was no active region to unidecode sanitize."))))
+#+end_src
 **** Point
 :PROPERTIES:
 :ID:       org_gcr_2018-06-06T22-01-54-05-00_mara:5686D072-60ED-4F68-8A74-CB5CA0AD5E99
@@ -4952,7 +4977,7 @@ Search code points by name and present the result(s).
 Unicode: (_q_uit)
  Block: _L_ist Points.
   Point: _S_earch And List.
-   Character: _I_nsert, E_v_aluate, _E_scape, _U_nescape, 🛇_H_omoglyphs.
+   Character: _I_nsert, E_v_aluate, _E_scape, _U_nescape, _D_ecode, S_a_nitize, 🛇_H_omoglyphs.
     MuLE: TODO
 "
   ("q" nil)
@@ -4962,6 +4987,8 @@ Unicode: (_q_uit)
   ("v" ucs-utils-eval)
   ("E" unicode-escape-region)
   ("U" unicode-unescape-region)
+  ("D" help/unidecode-region)
+  ("a" help/unidecode-sanitize-region)
   ("H" unicode-troll-stopper-mode))
 (global-set-key (kbd "C-M-u") #'help/hydra/unicode/body)
 #+end_src
