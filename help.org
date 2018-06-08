@@ -4888,13 +4888,31 @@ Configure fonts for Unicode blocks.
 :ID:       org_gcr_2018-06-06T22-01-54-05-00_mara:702B80D4-22BB-4A0B-B33C-1D314A337C83
 :END:
 Show all code points in a block
-
+**** Block
+:PROPERTIES:
+:ID:       org_gcr_2018-06-06T22-01-54-05-00_mara:E5E9332A-777B-4937-9A70-5DBBE9028D8D
+:END:
 #+name: org_gcr_2018-06-06T22-01-54-05-00_mara_4EB996DD-4FBC-492B-B773-73D78D431CEA
 #+begin_src emacs-lisp
 (use-package charmap
   :ensure t)
 #+end_src
+**** Char
+:PROPERTIES:
+:ID:       org_gcr_2018-06-06T22-01-54-05-00_mara:D507FC09-B53D-4206-8789-297DEDDFE4C7
+:END:
+Escape and unescape characters.
 
+#+NAME: org_gcr_2017-05-12_mara_B7889E2D-2E2E-402B-BFC6-F8EC056D1F6E
+#+BEGIN_SRC emacs-lisp
+(use-package unicode-escape
+  :ensure t
+  :config)
+#+END_SRC
+**** Point
+:PROPERTIES:
+:ID:       org_gcr_2018-06-06T22-01-54-05-00_mara:5686D072-60ED-4F68-8A74-CB5CA0AD5E99
+:END:
 Search code points by name and present the result(s).
 - code point
 - character
@@ -4916,11 +4934,14 @@ Search code points by name and present the result(s).
 Unicode: (_q_uit)
  Block: _L_ist Points.
   Point: _S_earch And List.
-   MuLE: TODO
+   Character: _E_scape, _U_nescape.
+    MuLE: TODO
 "
+  ("q" nil)
   ("L" charmap)
   ("S" list-unicode-display)
-  ("q" nil))
+  ("E" unicode-escape-region)
+  ("U" unicode-unescape-region))
 (global-set-key (kbd "C-M-u") #'help/hydra/unicode/body)
 #+end_src
 *** To Sort
@@ -4938,15 +4959,6 @@ Identify Unicode homeoglyphs,
 #+BEGIN_SRC emacs-lisp
 (use-package unicode-troll-stopper
   :ensure t)
-#+END_SRC
-
-Escape and un-escape Unicode hex notation.
-
-#+NAME: org_gcr_2017-05-12_mara_B7889E2D-2E2E-402B-BFC6-F8EC056D1F6E
-#+BEGIN_SRC emacs-lisp
-(use-package unicode-escape
-  :ensure t
-  :config)
 #+END_SRC
 
 Warn of UTF [[https://en.wikipedia.org/wiki/Byte_order_mark][BOM]] bytes via [[https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_warning_if_i_open_a_file_with_utf8/d5kszsh][skeeto]].
