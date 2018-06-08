@@ -3171,12 +3171,25 @@ Smerge.
 (diminish 'visual-line-mode)
 #+END_SRC
 
-Remind me that VLM is turned on so I pay attention to the wrap. There is a
-Hydra that makes it easy to remember to turn it off.
+How VLM works here:
+- At the end of visible line, which is where the wrap occurred, show a right
+  curly arrow to draw your eye to the next line and back left to the beginning
+  of it.
+- At the start of this new visible line, where the wrap continued, show a
+  right straight arrow to draw your eye forward to continue the wrapped line
+  where you came from.
+
+With these VLM settings, along with delete trailing whitespace on save, you don't
+need end of line indicators because every line is either:
+- An end of line with no trailing spaces between the last character and the newline
+- The line exceeds the maximum visible length desired so it has wrapped and
+  you see arrows in the left and right fringe so you know that the isn't a
+  newline in that visible line. You'll see a row that starts with a right
+  arrow, and with nothing, and the line above that will have a right curly arrow.
 
 #+NAME: org_gcr_2017-05-12_mara_EA8B5E3D-0F0B-4BD8-A510-864EC04BABD7
 #+BEGIN_SRC emacs-lisp
-(setq visual-line-fringe-indicators '(nil right-curly-arrow))
+(setq visual-line-fringe-indicators '(right-arrow right-curly-arrow))
 #+END_SRC
 
 * Hacking
