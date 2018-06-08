@@ -4909,6 +4909,14 @@ Escape and unescape characters.
   :ensure t
   :config)
 #+END_SRC
+
+Homoglyph warning system.
+
+#+NAME: org_gcr_2017-05-12_mara_96974788-400B-439B-9005-04569A326C29
+#+BEGIN_SRC emacs-lisp
+(use-package unicode-troll-stopper
+  :ensure t)
+#+END_SRC
 **** Point
 :PROPERTIES:
 :ID:       org_gcr_2018-06-06T22-01-54-05-00_mara:5686D072-60ED-4F68-8A74-CB5CA0AD5E99
@@ -4934,14 +4942,15 @@ Search code points by name and present the result(s).
 Unicode: (_q_uit)
  Block: _L_ist Points.
   Point: _S_earch And List.
-   Character: _E_scape, _U_nescape.
+   Character: _E_scape, _U_nescape, 🛇_H_omoglyphs.
     MuLE: TODO
 "
   ("q" nil)
   ("L" charmap)
   ("S" list-unicode-display)
   ("E" unicode-escape-region)
-  ("U" unicode-unescape-region))
+  ("U" unicode-unescape-region)
+  ("H" unicode-troll-stopper-mode))
 (global-set-key (kbd "C-M-u") #'help/hydra/unicode/body)
 #+end_src
 *** To Sort
@@ -4952,15 +4961,6 @@ Unicode: (_q_uit)
 - Refiled on [2018-06-07 Thu 22:16] \\
   Move to Unicode hack heading.
 :END:
-
-Identify Unicode homeoglyphs,
-
-#+NAME: org_gcr_2017-05-12_mara_96974788-400B-439B-9005-04569A326C29
-#+BEGIN_SRC emacs-lisp
-(use-package unicode-troll-stopper
-  :ensure t)
-#+END_SRC
-
 Warn of UTF [[https://en.wikipedia.org/wiki/Byte_order_mark][BOM]] bytes via [[https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_warning_if_i_open_a_file_with_utf8/d5kszsh][skeeto]].
 
 #+BEGIN_QUOTE
