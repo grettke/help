@@ -2204,26 +2204,6 @@ Adds FontAwesome.
 (use-package fontawesome
   :ensure t)
 #+end_src
-
-*** Unicode
-:PROPERTIES:
-:ID:       org_gcr_2018-06-03T01-16-43-05-00_mara:212A33F4-21C1-4810-B767-CDA8CEF2126F
-:END:
-Configure fonts for Unicode blocks.
-
-#+name: org_gcr_2018-06-03T01-16-43-05-00_mara_3374BEB2-6CF3-4F07-B2D6-7D84147CEDF3
-#+begin_src emacs-lisp
-(use-package unicode-fonts
-  :ensure t
-  :config
-  (unicode-fonts-setup))
-#+end_src
-
-- Test with
-  - view-hello-file
-  - list-charset-chars RET unicode-bmp RET
-  - list-charset-chars RET unicode-smp RET
-  - unicode-fonts-debug-insert-block RET Mathematical_Operators RET
 ** Going to Objects
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:8A73E509-A878-4E89-86DC-9BDA8C898F8C
@@ -4918,6 +4898,22 @@ Vocabulary: (_q_uit)
 #+END_SRC
 
 ** Unicode
+*** Fonts
+Configure fonts for Unicode blocks.
+
+#+name: org_gcr_2018-06-03T01-16-43-05-00_mara_3374BEB2-6CF3-4F07-B2D6-7D84147CEDF3
+#+begin_src emacs-lisp
+(use-package unicode-fonts
+  :ensure t
+  :config
+  (unicode-fonts-setup))
+#+end_src
+
+- Test with
+  - view-hello-file
+  - list-charset-chars RET unicode-bmp RET
+  - list-charset-chars RET unicode-smp RET
+  - unicode-fonts-debug-insert-block RET Mathematical_Operators RET
 ** Applied Mathematics
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:423BA6AA-5F7D-450D-B686-78A028A37FE2
