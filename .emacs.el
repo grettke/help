@@ -1412,13 +1412,6 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   :ensure t)
 ;; org_gcr_2018-04-22T14-17-00-05-00_mara_5C4879AB-6272-4269-A515-CD2FD35F3549 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-06-03T01-16-43-05-00_mara_3374BEB2-6CF3-4F07-B2D6-7D84147CEDF3][org_gcr_2018-06-03T01-16-43-05-00_mara_3374BEB2-6CF3-4F07-B2D6-7D84147CEDF3]]
-(use-package unicode-fonts
-  :ensure t
-  :config
-  (unicode-fonts-setup))
-;; org_gcr_2018-06-03T01-16-43-05-00_mara_3374BEB2-6CF3-4F07-B2D6-7D84147CEDF3 ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_2B0564C9-2091-4364-8A28-E33A548284A2][org_gcr_2017-05-12_mara_2B0564C9-2091-4364-8A28-E33A548284A2]]
 (use-package avy
   :ensure t
@@ -2865,29 +2858,6 @@ _b_ black-board-bold _f_ fraktur
   ("f" fraktur-mode))
 ;; org_gcr_2017-05-12_mara_A27A9A2F-11B8-4B31-A68C-6A5E27BCCD8D ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_96974788-400B-439B-9005-04569A326C29][org_gcr_2017-05-12_mara_96974788-400B-439B-9005-04569A326C29]]
-(use-package unicode-troll-stopper
-  :ensure t)
-;; org_gcr_2017-05-12_mara_96974788-400B-439B-9005-04569A326C29 ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B7889E2D-2E2E-402B-BFC6-F8EC056D1F6E][org_gcr_2017-05-12_mara_B7889E2D-2E2E-402B-BFC6-F8EC056D1F6E]]
-(use-package unicode-escape
-  :ensure t
-  :config)
-;; org_gcr_2017-05-12_mara_B7889E2D-2E2E-402B-BFC6-F8EC056D1F6E ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_063B5AFB-C687-49D3-8FE2-3BE2BDCB8E84][org_gcr_2017-05-12_mara_063B5AFB-C687-49D3-8FE2-3BE2BDCB8E84]]
-(defun warn-if-utf-8-bom ()
-  "Warn if UTF-8 BOM bytes are present.
-
-Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_warning_if_i_open_a_file_with_utf8/d5kszsh'"
-  (let ((name (symbol-name buffer-file-coding-system)))
-    (when (string-match-p "utf-8-with-signature" name)
-      (message "Call the BOM squad! This UTF-8 file has a BOM!"))))
-
-(add-hook 'find-file-hook #'warn-if-utf-8-bom)
-;; org_gcr_2017-05-12_mara_063B5AFB-C687-49D3-8FE2-3BE2BDCB8E84 ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-08-04_mara_24E4983A-3842-4365-8C3A-8D2019AB223D][org_gcr_2017-08-04_mara_24E4983A-3842-4365-8C3A-8D2019AB223D]]
 (use-package lorem-ipsum
   :ensure t
@@ -2952,6 +2922,36 @@ Vocabulary: (_q_uit)
 (use-package dash-at-point
   :ensure t)
 ;; org_gcr_2017-05-12_mara_AAEBDA8A-3939-42B1-B7A2-230C43EEF1AB ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_96974788-400B-439B-9005-04569A326C29][org_gcr_2017-05-12_mara_96974788-400B-439B-9005-04569A326C29]]
+(use-package unicode-troll-stopper
+  :ensure t)
+;; org_gcr_2017-05-12_mara_96974788-400B-439B-9005-04569A326C29 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B7889E2D-2E2E-402B-BFC6-F8EC056D1F6E][org_gcr_2017-05-12_mara_B7889E2D-2E2E-402B-BFC6-F8EC056D1F6E]]
+(use-package unicode-escape
+  :ensure t
+  :config)
+;; org_gcr_2017-05-12_mara_B7889E2D-2E2E-402B-BFC6-F8EC056D1F6E ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_063B5AFB-C687-49D3-8FE2-3BE2BDCB8E84][org_gcr_2017-05-12_mara_063B5AFB-C687-49D3-8FE2-3BE2BDCB8E84]]
+(defun warn-if-utf-8-bom ()
+  "Warn if UTF-8 BOM bytes are present.
+
+Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_warning_if_i_open_a_file_with_utf8/d5kszsh'"
+  (let ((name (symbol-name buffer-file-coding-system)))
+    (when (string-match-p "utf-8-with-signature" name)
+      (message "Call the BOM squad! This UTF-8 file has a BOM!"))))
+
+(add-hook 'find-file-hook #'warn-if-utf-8-bom)
+;; org_gcr_2017-05-12_mara_063B5AFB-C687-49D3-8FE2-3BE2BDCB8E84 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-06-03T01-16-43-05-00_mara_3374BEB2-6CF3-4F07-B2D6-7D84147CEDF3][org_gcr_2018-06-03T01-16-43-05-00_mara_3374BEB2-6CF3-4F07-B2D6-7D84147CEDF3]]
+(use-package unicode-fonts
+  :ensure t
+  :config
+  (unicode-fonts-setup))
+;; org_gcr_2018-06-03T01-16-43-05-00_mara_3374BEB2-6CF3-4F07-B2D6-7D84147CEDF3 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C30EFFA1-FDBA-413F-AD23-29C0C2095231][org_gcr_2017-05-12_mara_C30EFFA1-FDBA-413F-AD23-29C0C2095231]]
 (use-package gnu-apl-mode

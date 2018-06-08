@@ -4776,53 +4776,6 @@ _b_ black-board-bold _f_ fraktur
   ("f" fraktur-mode))
 #+END_SRC
 
-*** Unicode
-:PROPERTIES:
-:ID:       org_gcr_2017-05-12_mara:ADAE0A1B-3FD8-4605-8611-388E5ADBAFA8
-:END:
-
-Easily identify Unicode homoglyphs most often utilized by pranksters.
-
-Good reference for Unicode character study and exploration.
-
-Used intermittently so don't diminish it.
-
-#+NAME: org_gcr_2017-05-12_mara_96974788-400B-439B-9005-04569A326C29
-#+BEGIN_SRC emacs-lisp
-(use-package unicode-troll-stopper
-  :ensure t)
-#+END_SRC
-
-Easily escape and un-escape Unicode hex notation.
-
-#+NAME: org_gcr_2017-05-12_mara_B7889E2D-2E2E-402B-BFC6-F8EC056D1F6E
-#+BEGIN_SRC emacs-lisp
-(use-package unicode-escape
-  :ensure t
-  :config)
-#+END_SRC
-
-Warn of UTF [[https://en.wikipedia.org/wiki/Byte_order_mark][BOM]] bytes via [[https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_warning_if_i_open_a_file_with_utf8/d5kszsh][skeeto]].
-
-#+BEGIN_QUOTE
-The UTF-8 representation of the BOM is the byte sequence 0xEF,0xBB,0xBF.
-#+END_QUOTE
-
-Test using [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.html][Hexl mode]].
-
-#+NAME: org_gcr_2017-05-12_mara_063B5AFB-C687-49D3-8FE2-3BE2BDCB8E84
-#+BEGIN_SRC emacs-lisp
-(defun warn-if-utf-8-bom ()
-  "Warn if UTF-8 BOM bytes are present.
-
-Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_warning_if_i_open_a_file_with_utf8/d5kszsh'"
-  (let ((name (symbol-name buffer-file-coding-system)))
-    (when (string-match-p "utf-8-with-signature" name)
-      (message "Call the BOM squad! This UTF-8 file has a BOM!"))))
-
-(add-hook 'find-file-hook #'warn-if-utf-8-bom)
-#+END_SRC
-
 *** Words
 :PROPERTIES:
 :ID:       org_gcr_2017-08-04_mara:0A02BFBE-91BE-4629-B4B3-F72F2AAEAD3E
@@ -4898,7 +4851,64 @@ Vocabulary: (_q_uit)
 #+END_SRC
 
 ** Unicode
+:PROPERTIES:
+:ID:       org_gcr_2018-06-06T22-01-54-05-00_mara:DD18C2DA-10EE-43BD-AED0-5DD4680CA566
+:END:
+*** Various
+:PROPERTIES:
+:ID:       org_gcr_2017-05-12_mara:ADAE0A1B-3FD8-4605-8611-388E5ADBAFA8
+:END:
+:LOGBOOK:
+- Refiled on [2018-06-07 Thu 22:16] \\
+  Move to Unicode hack heading.
+:END:
+
+Easily identify Unicode homeoglyphs most often utilized by pranksters.
+
+Good reference for Unicode character study and exploration.
+
+Used intermittently so don't diminish it.
+
+#+NAME: org_gcr_2017-05-12_mara_96974788-400B-439B-9005-04569A326C29
+#+BEGIN_SRC emacs-lisp
+(use-package unicode-troll-stopper
+  :ensure t)
+#+END_SRC
+
+Easily escape and un-escape Unicode hex notation.
+
+#+NAME: org_gcr_2017-05-12_mara_B7889E2D-2E2E-402B-BFC6-F8EC056D1F6E
+#+BEGIN_SRC emacs-lisp
+(use-package unicode-escape
+  :ensure t
+  :config)
+#+END_SRC
+
+Warn of UTF [[https://en.wikipedia.org/wiki/Byte_order_mark][BOM]] bytes via [[https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_warning_if_i_open_a_file_with_utf8/d5kszsh][skeeto]].
+
+#+BEGIN_QUOTE
+The UTF-8 representation of the BOM is the byte sequence 0xEF,0xBB,0xBF.
+#+END_QUOTE
+
+Test using [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.html][Hexl mode]].
+
+#+NAME: org_gcr_2017-05-12_mara_063B5AFB-C687-49D3-8FE2-3BE2BDCB8E84
+#+BEGIN_SRC emacs-lisp
+(defun warn-if-utf-8-bom ()
+  "Warn if UTF-8 BOM bytes are present.
+
+Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_warning_if_i_open_a_file_with_utf8/d5kszsh'"
+  (let ((name (symbol-name buffer-file-coding-system)))
+    (when (string-match-p "utf-8-with-signature" name)
+      (message "Call the BOM squad! This UTF-8 file has a BOM!"))))
+
+(add-hook 'find-file-hook #'warn-if-utf-8-bom)
+#+END_SRC
+
 *** Fonts
+:PROPERTIES:
+:ID:       org_gcr_2018-06-06T22-01-54-05-00_mara:99E80492-40C4-4879-B2D6-582362D0FC58
+:END:
 Configure fonts for Unicode blocks.
 
 #+name: org_gcr_2018-06-03T01-16-43-05-00_mara_3374BEB2-6CF3-4F07-B2D6-7D84147CEDF3
