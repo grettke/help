@@ -2953,6 +2953,13 @@ Vocabulary: (_q_uit)
   :ensure t)
 ;; org_gcr_2017-05-12_mara_96974788-400B-439B-9005-04569A326C29 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-06-06T22-01-54-05-00_mara_15766015-F908-40FF-81B2-71DADC8FE0A7][org_gcr_2018-06-06T22-01-54-05-00_mara_15766015-F908-40FF-81B2-71DADC8FE0A7]]
+(use-package ucs-utils
+  :ensure t
+  :config
+  (ucs-utils-install-aliases))
+;; org_gcr_2018-06-06T22-01-54-05-00_mara_15766015-F908-40FF-81B2-71DADC8FE0A7 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2018-06-06T22-01-54-05-00_mara_9533C0F0-AAA8-4B6B-A06A-29AD18CF72D7][org_gcr_2018-06-06T22-01-54-05-00_mara_9533C0F0-AAA8-4B6B-A06A-29AD18CF72D7]]
 (use-package list-unicode-display
   :ensure t)
@@ -2964,12 +2971,14 @@ Vocabulary: (_q_uit)
 Unicode: (_q_uit)
  Block: _L_ist Points.
   Point: _S_earch And List.
-   Character: _E_scape, _U_nescape, 🛇_H_omoglyphs.
+   Character: _I_nsert, E_v_aluate, _E_scape, _U_nescape, 🛇_H_omoglyphs.
     MuLE: TODO
 "
   ("q" nil)
   ("L" charmap)
   ("S" list-unicode-display)
+  ("I" ucs-utils-ucs-insert)
+  ("v" ucs-utils-eval)
   ("E" unicode-escape-region)
   ("U" unicode-unescape-region)
   ("H" unicode-troll-stopper-mode))

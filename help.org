@@ -4917,6 +4917,16 @@ Homoglyph warning system.
 (use-package unicode-troll-stopper
   :ensure t)
 #+END_SRC
+
+Roland's utilities.
+
+#+name: org_gcr_2018-06-06T22-01-54-05-00_mara_15766015-F908-40FF-81B2-71DADC8FE0A7
+#+begin_src emacs-lisp
+(use-package ucs-utils
+  :ensure t
+  :config
+  (ucs-utils-install-aliases))
+#+end_src
 **** Point
 :PROPERTIES:
 :ID:       org_gcr_2018-06-06T22-01-54-05-00_mara:5686D072-60ED-4F68-8A74-CB5CA0AD5E99
@@ -4942,12 +4952,14 @@ Search code points by name and present the result(s).
 Unicode: (_q_uit)
  Block: _L_ist Points.
   Point: _S_earch And List.
-   Character: _E_scape, _U_nescape, 🛇_H_omoglyphs.
+   Character: _I_nsert, E_v_aluate, _E_scape, _U_nescape, 🛇_H_omoglyphs.
     MuLE: TODO
 "
   ("q" nil)
   ("L" charmap)
   ("S" list-unicode-display)
+  ("I" ucs-utils-ucs-insert)
+  ("v" ucs-utils-eval)
   ("E" unicode-escape-region)
   ("U" unicode-unescape-region)
   ("H" unicode-troll-stopper-mode))
