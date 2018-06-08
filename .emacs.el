@@ -2991,13 +2991,14 @@ For example try it on: 北亰"
 (defhydra help/hydra/unicode (:color blue :hint nil)
   "
 Unicode: (_q_uit)
- Block: _L_ist Points.
+ Block: _L_ist Points In Block, _P_aste Points Into This Buffer.
   Point: _S_earch And List.
    Character: _I_nsert, E_v_aluate, _E_scape, _U_nescape, _D_ecode, S_a_nitize, 🛇_H_omoglyphs.
     MuLE: TODO
 "
   ("q" nil)
   ("L" charmap)
+  ("P" (lambda () (interactive) (unicode-fonts-debug-insert-block)))
   ("S" list-unicode-display)
   ("I" ucs-utils-ucs-insert)
   ("v" ucs-utils-eval)
