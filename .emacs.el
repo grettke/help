@@ -115,7 +115,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-             hidden-mode-line-mode)
+           hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -2982,6 +2982,18 @@ For example try it on: 北亰"
       (message "Sorry, there was no active region to unidecode sanitize."))))
 ;; org_gcr_2018-06-07T23-45-23-05-00_mara_B658364A-13A0-411F-8DA7-A3FF3B92F38D ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_063B5AFB-C687-49D3-8FE2-3BE2BDCB8E84][org_gcr_2017-05-12_mara_063B5AFB-C687-49D3-8FE2-3BE2BDCB8E84]]
+(defun warn-if-utf-8-bom ()
+  "Warn if UTF-8 BOM bytes are present.
+
+Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_warning_if_i_open_a_file_with_utf8/d5kszsh'"
+  (let ((name (symbol-name buffer-file-coding-system)))
+    (when (string-match-p "utf-8-with-signature" name)
+      (message "Call the BOM squad! This UTF-8 file has a BOM!"))))
+
+(add-hook 'find-file-hook #'warn-if-utf-8-bom)
+;; org_gcr_2017-05-12_mara_063B5AFB-C687-49D3-8FE2-3BE2BDCB8E84 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2018-06-06T22-01-54-05-00_mara_9533C0F0-AAA8-4B6B-A06A-29AD18CF72D7][org_gcr_2018-06-06T22-01-54-05-00_mara_9533C0F0-AAA8-4B6B-A06A-29AD18CF72D7]]
 (use-package list-unicode-display
   :ensure t)
@@ -3009,18 +3021,6 @@ Unicode: (_q_uit)
   ("H" unicode-troll-stopper-mode))
 (global-set-key (kbd "C-M-u") #'help/hydra/unicode/body)
 ;; org_gcr_2018-06-06T22-01-54-05-00_mara_61574A72-BF05-4C0A-B665-BC80C13C35E5 ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_063B5AFB-C687-49D3-8FE2-3BE2BDCB8E84][org_gcr_2017-05-12_mara_063B5AFB-C687-49D3-8FE2-3BE2BDCB8E84]]
-(defun warn-if-utf-8-bom ()
-  "Warn if UTF-8 BOM bytes are present.
-
-Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_warning_if_i_open_a_file_with_utf8/d5kszsh'"
-  (let ((name (symbol-name buffer-file-coding-system)))
-    (when (string-match-p "utf-8-with-signature" name)
-      (message "Call the BOM squad! This UTF-8 file has a BOM!"))))
-
-(add-hook 'find-file-hook #'warn-if-utf-8-bom)
-;; org_gcr_2017-05-12_mara_063B5AFB-C687-49D3-8FE2-3BE2BDCB8E84 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C30EFFA1-FDBA-413F-AD23-29C0C2095231][org_gcr_2017-05-12_mara_C30EFFA1-FDBA-413F-AD23-29C0C2095231]]
 (use-package gnu-apl-mode
@@ -4371,6 +4371,7 @@ Describe Something: (q to quit)
 _a_ all help for everything screen
 _b_ bindings
 _B_ personal bindings
+_r_ character char name only
 _c_ character briefly
 _C_ character full
 _T_ character set _1_ list characters in oneset  _2_ list all set2

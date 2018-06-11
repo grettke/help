@@ -4890,7 +4890,6 @@ Configure fonts for Unicode blocks.
   :config
   (unicode-fonts-setup))
 #+end_src
-
 - Test with
   - view-hello-file
   - list-charset-chars RET unicode-bmp RET
@@ -4965,6 +4964,32 @@ For example try it on: 北亰"
         (unidecode-sanitize-region beginning end)
       (message "Sorry, there was no active region to unidecode sanitize."))))
 #+end_src
+**** File
+:PROPERTIES:
+:ID:       org_gcr_2017-05-12_mara:ADAE0A1B-3FD8-4605-8611-388E5ADBAFA8
+:END:
+:LOGBOOK:
+- Refiled on [2018-06-07 Thu 22:16] \\
+  Move to Unicode hack heading.
+:END:
+Warn of UTF [[https://en.wikipedia.org/wiki/Byte_order_mark][BOM]] bytes via [[https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_warning_if_i_open_a_file_with_utf8/d5kszsh][skeeto]].
+
+#+BEGIN_QUOTE
+The UTF-8 representation of the BOM is the byte sequence 0xEF,0xBB,0xBF.
+#+END_QUOTE
+
+#+NAME: org_gcr_2017-05-12_mara_063B5AFB-C687-49D3-8FE2-3BE2BDCB8E84
+#+BEGIN_SRC emacs-lisp
+(defun warn-if-utf-8-bom ()
+  "Warn if UTF-8 BOM bytes are present.
+
+Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_warning_if_i_open_a_file_with_utf8/d5kszsh'"
+  (let ((name (symbol-name buffer-file-coding-system)))
+    (when (string-match-p "utf-8-with-signature" name)
+      (message "Call the BOM squad! This UTF-8 file has a BOM!"))))
+
+(add-hook 'find-file-hook #'warn-if-utf-8-bom)
+#+END_SRC
 **** Point
 :PROPERTIES:
 :ID:       org_gcr_2018-06-06T22-01-54-05-00_mara:5686D072-60ED-4F68-8A74-CB5CA0AD5E99
@@ -5006,34 +5031,6 @@ Unicode: (_q_uit)
   ("H" unicode-troll-stopper-mode))
 (global-set-key (kbd "C-M-u") #'help/hydra/unicode/body)
 #+end_src
-*** To Sort
-:PROPERTIES:
-:ID:       org_gcr_2017-05-12_mara:ADAE0A1B-3FD8-4605-8611-388E5ADBAFA8
-:END:
-:LOGBOOK:
-- Refiled on [2018-06-07 Thu 22:16] \\
-  Move to Unicode hack heading.
-:END:
-Warn of UTF [[https://en.wikipedia.org/wiki/Byte_order_mark][BOM]] bytes via [[https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_warning_if_i_open_a_file_with_utf8/d5kszsh][skeeto]].
-
-#+BEGIN_QUOTE
-The UTF-8 representation of the BOM is the byte sequence 0xEF,0xBB,0xBF.
-#+END_QUOTE
-
-Test using [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Editing-Binary-Files.html][Hexl mode]].
-
-#+NAME: org_gcr_2017-05-12_mara_063B5AFB-C687-49D3-8FE2-3BE2BDCB8E84
-#+BEGIN_SRC emacs-lisp
-(defun warn-if-utf-8-bom ()
-  "Warn if UTF-8 BOM bytes are present.
-
-Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_warning_if_i_open_a_file_with_utf8/d5kszsh'"
-  (let ((name (symbol-name buffer-file-coding-system)))
-    (when (string-match-p "utf-8-with-signature" name)
-      (message "Call the BOM squad! This UTF-8 file has a BOM!"))))
-
-(add-hook 'find-file-hook #'warn-if-utf-8-bom)
-#+END_SRC
 ** Applied Mathematics
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:423BA6AA-5F7D-450D-B686-78A028A37FE2
@@ -6283,7 +6280,7 @@ Load Beamer for creating presentations.
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:F79C9679-7887-40B8-8882-51EE6EC1BDE2
    :END:
-*** Shell Script
+*** Shell Scripty
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:68AC26B4-B52C-4A1F-AF1E-78AFE5A3D91D
    :END:
@@ -7636,6 +7633,7 @@ Describe Something: (q to quit)
 _a_ all help for everything screen
 _b_ bindings
 _B_ personal bindings
+_r_ character char name only
 _c_ character briefly
 _C_ character full
 _T_ character set _1_ list characters in oneset  _2_ list all set2
