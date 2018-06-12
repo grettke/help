@@ -4401,6 +4401,7 @@ _w_ where is something defined
   ("2" list-character-sets)
   ("b" describe-bindings)
   ("B" describe-personal-keybindings)
+  ("r" ucs-eval)
   ("c" (lambda () (interactive) (unicode-fonts-debug-info-at-point)))
   ("C" describe-char)
   ("f" describe-function)
