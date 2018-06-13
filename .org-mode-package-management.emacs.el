@@ -127,6 +127,10 @@
 (el-get 'sync help/el-get-packages)
 ;; org_gcr_2018-04-11T09-44-43-05-00_mara_2E404438-B898-448B-98AD-B1A5468DEA80 ends here
 
+;; [[file:~/src/help/Package-Management.org::org_gcr_2018-06-12T21-48-52-05-00_mara_B1725462-DA56-408C-92FA-F74B34DB1EC1][org_gcr_2018-06-12T21-48-52-05-00_mara_B1725462-DA56-408C-92FA-F74B34DB1EC1]]
+(add-to-list 'load-path "~/src/help/lisp")
+;; org_gcr_2018-06-12T21-48-52-05-00_mara_B1725462-DA56-408C-92FA-F74B34DB1EC1 ends here
+
 ;; [[file:~/src/help/Package-Management.org::org_gcr_2017-07-21_mara_E9CF2CB2-D837-41C3-A56A-B2ACFB9E228F][org_gcr_2017-07-21_mara_E9CF2CB2-D837-41C3-A56A-B2ACFB9E228F]]
 (use-package auto-compile
   :ensure t

@@ -208,6 +208,14 @@ Ask el-get to make sure that those desired packages are installed.
 #+begin_src emacs-lisp
 (el-get 'sync help/el-get-packages)
 #+end_src
+** Stand-Alone
+:PROPERTIES:
+:ID:       org_gcr_2018-06-12T21-48-52-05-00_mara:D53227C4-5084-4A36-AD92-49B72D3C198C
+:END:
+#+name: org_gcr_2018-06-12T21-48-52-05-00_mara_B1725462-DA56-408C-92FA-F74B34DB1EC1
+#+begin_src emacs-lisp
+(add-to-list 'load-path "~/src/help/lisp")
+#+end_src
 ** Helper
 :PROPERTIES:
 :ID:       org_gcr_2018-04-11T09-44-43-05-00_mara:27CF9494-7866-4AB9-A2AD-254F84224658
