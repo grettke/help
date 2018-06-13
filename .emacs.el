@@ -1438,7 +1438,8 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   :ensure t
   :init
   (setq langtool-language-tool-jar (getenv "LANGTOOL"))
-  (setq langtool-mother-tongue "en")
+  (let ((lang "en"))
+    (setq langtool-mother-tongue lang))
   (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java"))
   (setq langtool-disabled-rules nil)
   (setq langtool-java-user-arguments '("-Dfile.encoding=UTF-8"))
