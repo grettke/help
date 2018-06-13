@@ -3261,21 +3261,21 @@ Every special mode needs this. Which is nothing yet.
     :ID:       org_gcr_2017-05-12_mara:C3270DE0-55FD-4612-B3E3-226CAC5A8FDA
     :END:
 
-Auto-Capitalize in all text modes.
+Auto-Capitalize text modes.
 
 #+NAME: org_gcr_2017-11-30_mara_75B00948-177E-487A-83A9-2F690611CA59
-#+BEGIN_SRC emacs-lisp :tangle no
-(use-package auto-capitalize
-  :ensure t
-  :config
-  (diminish 'auto-capitalize)
-  (add-to-list 'auto-capitalize-words "HTTP")
-  (add-to-list 'auto-capitalize-words "HTTPS")
-  (add-to-list 'auto-capitalize-words "Fr")
-  (add-to-list 'auto-capitalize-words "SI")
-  (add-to-list 'auto-capitalize-words "24B")
-  (add-to-list 'desktop-minor-mode-handlers
-               '(auto-capitalize . (lambda (desktop-buffer-locals)))))
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'load-path "~/src/auto-capitalize")
+(eval-after-load "auto-capitalize" '(diminish "auto-capitalize-mode"))
+(require 'auto-capitalize)
+(diminish 'auto-capitalize-mode)
+(add-to-list 'auto-capitalize-words "HTTP")
+(add-to-list 'auto-capitalize-words "HTTPS")
+(add-to-list 'auto-capitalize-words "Fr")
+(add-to-list 'auto-capitalize-words "SI")
+(add-to-list 'auto-capitalize-words "24B")
+(add-to-list 'desktop-minor-mode-handlers
+             '(auto-capitalize . (lambda (desktop-buffer-locals))))
 #+END_SRC
 
 Speed up punctuation marks.
@@ -3300,8 +3300,7 @@ Every text editing buffer needs this.
   (visual-line-mode)
   (help/try-to-add-imenu)
   (turn-on-page-break-lines-mode)
-  (turn-on-auto-capitalize-mode)
-  )
+  (turn-on-auto-capitalize-mode))
 (add-hook 'text-mode-hook #'help/text-mode-fn)
 (define-key text-mode-map (kbd ".")
   (lambda () (interactive) (popup-tip
@@ -3427,8 +3426,7 @@ Can use in source blocks.
   (unless (equal major-mode 'fundamental-mode)
     (hs-minor-mode))
   (help/on-gui (local-set-key (kbd "<return>") #'newline-and-indent))
-  ;; (turn-off-auto-capitalize-mode)
-  )
+  (turn-off-auto-capitalize-mode))
 
 (let ()
   (--each help/prog-modes
@@ -5586,7 +5584,7 @@ _b_eautify
   (define-key json-mode-map (kbd "RET") #'newline)
   (defun help/json-mode-hook-fn ()
     (indent-guide-mode)
-    ;; (turn-off-auto-capitalize-mode)
+    (turn-off-auto-capitalize-mode)
     (turn-off-auto-fill)
     (key-chord-define-local "hh" #'help/hydra/json/body))
   (add-hook 'json-mode-hook #'help/json-mode-hook-fn))
@@ -5627,7 +5625,7 @@ YAML: (q to quit)
     ("q" nil))
   (defun help/yaml-mode-hook-fn ()
     (indent-guide-mode)
-    ;; (turn-off-auto-capitalize-mode)
+    (turn-off-auto-capitalize-mode)
     (turn-off-auto-fill)
     (setq flycheck-checker 'yaml-yamllint))
   (add-hook 'yaml-mode-hook #'help/yaml-mode-hook-fn)

@@ -2005,6 +2005,20 @@ _A_rchives | Rest_o_res | Re_f_iles
       (princ ls))))
 ;; org_gcr_2017-05-23_mara_9517CF5A-C95B-454E-A68F-1E4BA677C08C ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-11-30_mara_75B00948-177E-487A-83A9-2F690611CA59][org_gcr_2017-11-30_mara_75B00948-177E-487A-83A9-2F690611CA59]]
+(add-to-list 'load-path "~/src/auto-capitalize")
+(eval-after-load "auto-capitalize" '(diminish "auto-capitalize-mode"))
+(require 'auto-capitalize)
+(diminish 'auto-capitalize-mode)
+(add-to-list 'auto-capitalize-words "HTTP")
+(add-to-list 'auto-capitalize-words "HTTPS")
+(add-to-list 'auto-capitalize-words "Fr")
+(add-to-list 'auto-capitalize-words "SI")
+(add-to-list 'auto-capitalize-words "24B")
+(add-to-list 'desktop-minor-mode-handlers
+             '(auto-capitalize . (lambda (desktop-buffer-locals))))
+;; org_gcr_2017-11-30_mara_75B00948-177E-487A-83A9-2F690611CA59 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-11-30_mara_0D5DE620-895E-4BC5-AA15-1E0D19B1815A][org_gcr_2017-11-30_mara_0D5DE620-895E-4BC5-AA15-1E0D19B1815A]]
 (global-set-key (kbd "C-;") (lambda () (interactive) (insert ". ")))
 (global-set-key (kbd "C-.") (lambda () (interactive) (insert ", ")))
@@ -2021,8 +2035,7 @@ _A_rchives | Rest_o_res | Re_f_iles
   (visual-line-mode)
   (help/try-to-add-imenu)
   (turn-on-page-break-lines-mode)
-  ;; (turn-on-auto-capitalize-mode)
-  )
+  (turn-on-auto-capitalize-mode))
 (add-hook 'text-mode-hook #'help/text-mode-fn)
 (define-key text-mode-map (kbd ".")
   (lambda () (interactive) (popup-tip
@@ -2103,8 +2116,7 @@ _A_rchives | Rest_o_res | Re_f_iles
   (unless (equal major-mode 'fundamental-mode)
     (hs-minor-mode))
   (help/on-gui (local-set-key (kbd "<return>") #'newline-and-indent))
-  ;; (turn-off-auto-capitalize-mode)
-  )
+  (turn-off-auto-capitalize-mode))
 
 (let ()
   (--each help/prog-modes
@@ -3476,7 +3488,7 @@ _b_eautify
   (define-key json-mode-map (kbd "RET") #'newline)
   (defun help/json-mode-hook-fn ()
     (indent-guide-mode)
-    ;; (turn-off-auto-capitalize-mode)
+    (turn-off-auto-capitalize-mode)
     (turn-off-auto-fill)
     (key-chord-define-local "hh" #'help/hydra/json/body))
   (add-hook 'json-mode-hook #'help/json-mode-hook-fn))
@@ -3512,7 +3524,7 @@ YAML: (q to quit)
     ("q" nil))
   (defun help/yaml-mode-hook-fn ()
     (indent-guide-mode)
-    ;; (turn-off-auto-capitalize-mode)
+    (turn-off-auto-capitalize-mode)
     (turn-off-auto-fill)
     (setq flycheck-checker 'yaml-yamllint))
   (add-hook 'yaml-mode-hook #'help/yaml-mode-hook-fn)
