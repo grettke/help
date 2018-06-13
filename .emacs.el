@@ -2024,6 +2024,14 @@ _A_rchives | Rest_o_res | Re_f_iles
   ;; (turn-on-auto-capitalize-mode)
   )
 (add-hook 'text-mode-hook #'help/text-mode-fn)
+(define-key text-mode-map (kbd ".")
+  (lambda () (interactive) (popup-tip
+                            "In text-mode I'm trying not to use the period key."
+                            :point (point)
+                            :around t
+                            :height 30
+                            :scroll-bar t
+                            :margin t)))
 ;; org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-11-17_mara_FCDC3DE5-3584-4431-A443-FFC8F9EA8253][org_gcr_2017-11-17_mara_FCDC3DE5-3584-4431-A443-FFC8F9EA8253]]

@@ -3300,9 +3300,17 @@ Every text editing buffer needs this.
   (visual-line-mode)
   (help/try-to-add-imenu)
   (turn-on-page-break-lines-mode)
-  ;; (turn-on-auto-capitalize-mode)
+  (turn-on-auto-capitalize-mode)
   )
 (add-hook 'text-mode-hook #'help/text-mode-fn)
+(define-key text-mode-map (kbd ".")
+  (lambda () (interactive) (popup-tip
+                       "In text-mode I'm trying not to use the period key."
+                       :point (point)
+                       :around t
+                       :height 30
+                       :scroll-bar t
+                       :margin t)))
 #+END_SRC
 
 Can use in source blocks.
