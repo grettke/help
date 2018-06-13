@@ -115,7 +115,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-           hidden-mode-line-mode)
+             hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -1448,7 +1448,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
  Langtool:^         ^|^                   ^|^
 -------------------^^+^-------------------^+^----------------------
  _h_: check buffer   | _j_: next error     | _i_: brief message
- _y_: corrent buffer | _k_: previous error | _o_: detailed message
+ _y_: correct buffer | _k_: previous error | _o_: detailed message
  _n_: finished       | _q_: quit           |
  "
     ("h" langtool-check :exit nil)
