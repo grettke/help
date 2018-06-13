@@ -1588,6 +1588,10 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (setq alert-reveal-idle-time 120))
 ;; org_gcr_2017-05-12_mara_66255B58-A96D-445E-83BF-F597E4BA4FB8 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-06-12T21-48-52-05-00_mara_AD90D136-9CF3-46CE-8CDF-919A6E95AADD][org_gcr_2018-06-12T21-48-52-05-00_mara_AD90D136-9CF3-46CE-8CDF-919A6E95AADD]]
+(require 'popup)
+;; org_gcr_2018-06-12T21-48-52-05-00_mara_AD90D136-9CF3-46CE-8CDF-919A6E95AADD ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_814E8B43-89FD-4EC2-9C5A-EEE03D92A918][org_gcr_2017-05-12_mara_814E8B43-89FD-4EC2-9C5A-EEE03D92A918]]
 (use-package projectile
   :ensure t

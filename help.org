@@ -2497,6 +2497,11 @@ Provide popup notifications.
   (setq alert-reveal-idle-time 120))
 #+END_SRC
 
+#+name: org_gcr_2018-06-12T21-48-52-05-00_mara_AD90D136-9CF3-46CE-8CDF-919A6E95AADD
+#+begin_src emacs-lisp
+(require 'popup)
+#+end_src
+
 ** Projects
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:BEFE841E-58A8-43D6-84F0-5BA2EBCFE6B8
