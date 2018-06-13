@@ -3947,6 +3947,12 @@ sh-mode:
   (add-hook 'ssh-config-mode-hook #'help/text-mode-fn))
 ;; org_gcr_2017-05-12_mara_D12C607E-C07C-41F8-A0B0-02A228C7AED7 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-06-13_mara_350A94E2-4280-4D5E-BB58-24887D9A57CD][org_gcr_2017-06-13_mara_350A94E2-4280-4D5E-BB58-24887D9A57CD]]
+(require 'crontab-mode)
+(add-to-list 'auto-mode-alist '("\\.cron\\(tab\\)?\\'" . crontab-mode))
+(add-hook 'crontab-mode-hook #'turn-on-stripe-buffer-mode)
+;; org_gcr_2017-06-13_mara_350A94E2-4280-4D5E-BB58-24887D9A57CD ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2018-01-03_mara_CD4698C2-3650-45E4-94F8-F8B3EB66DA57][org_gcr_2018-01-03_mara_CD4698C2-3650-45E4-94F8-F8B3EB66DA57]]
 (use-package ansible
   :ensure t
