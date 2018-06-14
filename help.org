@@ -4765,6 +4765,18 @@ Prettifications.
           (when (string-prefix-p "org_" name)
             (setq prettify-symbols-alist (help/alist-set name replacement prettify-symbols-alist))))))))
 #+end_src
+
+Custom font lock
+- Hypen appears as em-dash
+
+#+name: org_gcr_2018-06-14T14-15-42-05-00_mara_2F1F424E-F780-4D04-B582-7770987CC960
+#+begin_src emacs-lisp
+(font-lock-add-keywords
+ 'org-mode
+ '(("^[[:space:]]*\\(-\\) "
+    0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "—")))))
+
+#+end_src
 *** Intermittent Literate Programming
 :PROPERTIES:
 :ID:       org_gcr_2018-01-04_mara:43462ECD-9C40-43D2-872F-A2E9DB134199

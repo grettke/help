@@ -2865,6 +2865,13 @@ _e_ ox-clip-formatted-copy _E_ list org entities"
             (setq prettify-symbols-alist (help/alist-set name replacement prettify-symbols-alist))))))))
 ;; org_gcr_2018-03-15_mara_05415B89-71CA-4176-80EF-FB36F2D97F20 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-06-14T14-15-42-05-00_mara_2F1F424E-F780-4D04-B582-7770987CC960][org_gcr_2018-06-14T14-15-42-05-00_mara_2F1F424E-F780-4D04-B582-7770987CC960]]
+(font-lock-add-keywords
+ 'org-mode
+ '(("^[[:space:]]*\\(-\\) "
+    0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "—")))))
+;; org_gcr_2018-06-14T14-15-42-05-00_mara_2F1F424E-F780-4D04-B582-7770987CC960 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2018-01-04_mara_42B53E96-5046-4A7B-8CC9-A7046CCD3BF1][org_gcr_2018-01-04_mara_42B53E96-5046-4A7B-8CC9-A7046CCD3BF1]]
 (use-package edit-indirect
   :ensure t)
