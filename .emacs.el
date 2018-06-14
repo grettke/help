@@ -1443,8 +1443,14 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
     (setq langtool-mother-tongue lang))
   (setq langtool-java-bin (concat (getenv "JAVA_HOME") "/bin/java"))
   (setq langtool-disabled-rules nil)
-  (setq langtool-java-user-arguments '("-Dfile.encoding=UTF-8"))
+  (setq langtool-java-user-arguments
+        '("-Dfile.encoding=UTF-8" ))
   (setq langtool-user-arguments nil)
+  (setq langtool-disabled-rules
+        '(
+          "DASH_RULE"
+          "WHITESPACE_RULE"
+          ))
   (defhydra help/hydra/both/langtool (:color blue :hint nil)
     "
  Langtool:^         ^|^                   ^|^
