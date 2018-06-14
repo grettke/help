@@ -4649,7 +4649,7 @@ Because I only use this for Org-Mode.
                                                  :hint nil)
   "
 _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ id-create _9_ o2b/more _0_ o2b/LaTeX
-_q_ ←/w-code _w_ tbletfld _r_ help/org-refile _R_ g2nms-b _t_ export to ASCII _T_ table export format _p_ copy/property _[_ listbox
+_q_ ←/w-code _w_ tbletfld _r_ help/org-refile _R_ g2nms-b _t_ export to ASCII _T_ table export format _p_ copy/property
 _a_ archive-subtree _s_ sort _S_ lobigst _d_ g2s-b/hd _u_ goto _k_ ob-check-src-blk _l_ lint _L_ insert inline task
 _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree
 _e_ ox-clip-formatted-copy _E_ list org entities"
@@ -4671,8 +4671,6 @@ _e_ ox-clip-formatted-copy _E_ list org entities"
   ("T" (lambda () (interactive) (insert "#+ATTR_HTML: :border 2 :rules all :frame border")))
   ("u" org-goto)
   ("p" my-org-region-to-property)
-  ;; Row 4
-  ("[" (lambda () (interactive) (insert "[ ] ")))
   ;; Row 3
   ("a" org-archive-subtree-default)
   ("s" org-sort)
