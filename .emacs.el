@@ -2684,6 +2684,10 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (setq org-return-follows-link t)
 ;; org_gcr_2017-05-12_mara_7CFE23CC-8EBC-46F3-889F-BF36EC45D6CA ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-06-15T10-59-11-05-00_mara_18E869DD-ECC4-4267-B019-CBACA6D89465][org_gcr_2018-06-15T10-59-11-05-00_mara_18E869DD-ECC4-4267-B019-CBACA6D89465]]
+(require 'org-tempo)
+;; org_gcr_2018-06-15T10-59-11-05-00_mara_18E869DD-ECC4-4267-B019-CBACA6D89465 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_711B4205-DC28-4A35-B620-23AFD46E3973][org_gcr_2017-05-12_mara_711B4205-DC28-4A35-B620-23AFD46E3973]]
 (help/on-gui
  (define-key org-mode-map (kbd "<return>") #'org-return-indent)

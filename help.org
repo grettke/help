@@ -4498,6 +4498,13 @@ Follow links without using the mouse or more.
 (setq org-return-follows-link t)
 #+END_SRC
 
+Org templates
+
+#+name: org_gcr_2018-06-15T10-59-11-05-00_mara_18E869DD-ECC4-4267-B019-CBACA6D89465
+#+begin_src emacs-lisp
+(require 'org-tempo)
+#+end_src
+
 **** Keybindings
     :PROPERTIES:
     :ID:       org_gcr_2017-05-12_mara:F5256DB3-BD52-409B-80CF-6E601A29AA4A
@@ -7793,7 +7800,7 @@ _]_ single bracket, white, square, right
 _A_ apropo'ish
 _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier
 _d_ dired
-_D_ detangle
+_D_ help/safb-org-babel-detangle
 _f_ ag _F_ ag*
 _g_ grep
 _h_ hidden-mode-line
