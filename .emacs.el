@@ -115,7 +115,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-             hidden-mode-line-mode)
+           hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -3912,7 +3912,6 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
   :config
   (defun help/sh-mode-hook-fn ()
     (interactive)
-    (setq sh-shell "bash")
     (setq sh-basic-offset 2))
   (add-hook 'sh-mode-hook #'help/sh-mode-hook-fn))
 ;; org_gcr_2017-07-16_mara_FB8AD647-F0FA-4004-B930-A9CD97E97900 ends here

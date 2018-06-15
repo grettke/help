@@ -6330,7 +6330,6 @@ best features unseen here (you are looking at the rest below this big block):
   :config
   (defun help/sh-mode-hook-fn ()
     (interactive)
-    (setq sh-shell "bash")
     (setq sh-basic-offset 2))
   (add-hook 'sh-mode-hook #'help/sh-mode-hook-fn))
 #+END_SRC
