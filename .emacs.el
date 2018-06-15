@@ -2922,7 +2922,7 @@ _b_ black-board-bold _f_ fraktur
 
 (defhydra help/hydra/words (:color blue :hint nil)
   "
-Vocabulary: (_q_uit)
+Words: (_q_uit)
  Lorem Ipsum: _w_ord _s_entence _p_aragraphs _l_ist
   Academic Phrases: _a_ll or by se_c_tion
    _E_macs Name (insert _e_macs name)
