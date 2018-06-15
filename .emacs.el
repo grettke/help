@@ -115,7 +115,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-           hidden-mode-line-mode)
+             hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -3095,7 +3095,7 @@ Unicode: (_q_uit)
   (defhydra help/hydra/gnu-apl (:color blue
                                        :hint nil)
     "
-GNU APL is: %(help/gnu-apl-runningp)
+GNU APL: ⏼%(help/gnu-apl-runningp)
  _y_ eval-buffer _u_ eval-region _i_ eval-line _o_ eval-function
   _f_ apropos-symbol _g_ help-symbol _h_ keyboard _j_ next _k_ previous
    _q_ quit _c_ start APL _v_ stop APL _b_ switch to APL _n_ switch back
@@ -3185,7 +3185,7 @@ GNU APL is: %(help/gnu-apl-runningp)
   (defhydra help/hydra-geiser-mode (:color blue
                                            :hint nil)
     "
-Geiser REPL is: %(help/geiser-on-p)
+Geiser REPL: ⏼%(help/geiser-on-p)
  _y_ eval-buffer _u_ eval-region _U_ (and go)
   _z_ run (another) geiser _x_ stop latest chez _c_ exit geiser _b_ to latest geiser _n_ switch back
    _q_ quit
@@ -4345,7 +4345,7 @@ Ansible: (q to quit)
 (defhydra help/hydra-checking (:color blue
                                       :hint nil)
   "
-Flycheck On? %(bound-and-true-p flycheck-mode)
+Flycheck: ⏼%(bound-and-true-p flycheck-mode)
  WriteGood On? %(bound-and-true-p writegood-mode)
   _j_ checker/toggle _k_ checker/run _l_ checker/list
    _u_ writegood/toggle _i_ grade-level _o_ reading-ease
