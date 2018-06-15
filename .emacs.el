@@ -4361,6 +4361,10 @@ Flycheck: ⏼%(bound-and-true-p flycheck-mode)
 (global-set-key (kbd "C-M-9") #'help/hydra-checking/body)
 ;; org_gcr_2017-06-13_mara_2DFDC64B-DBF2-473E-979F-D7D8D0DD2206 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-06-14T21-39-17-05-00_mara_70C898D6-ECBA-463D-B33D-3A1C309AE2E1][org_gcr_2018-06-14T21-39-17-05-00_mara_70C898D6-ECBA-463D-B33D-3A1C309AE2E1]]
+(global-set-key (kbd "C-M-0") #'help/hydra/words/body)
+;; org_gcr_2018-06-14T21-39-17-05-00_mara_70C898D6-ECBA-463D-B33D-3A1C309AE2E1 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC][org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC]]
 (defhydra help/hydra/timestamp (:color blue :hint nil)
   "
@@ -4502,7 +4506,7 @@ _w_ where is something defined
 _1_ reset-font _2_ -font _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _8_ selectric _-_ split-window-vertically _=_ reposition-window
 
 _q_uit _Q_ exit-Emacs
-_w_ widen _W_ords
+_w_ widen
 _e_ FontAwesome _E_ prettify-symbols-mode
 _t_ rectangle-mark _T_ trademarks
 _y_ yas tables _Y_ transparency
@@ -4575,7 +4579,6 @@ _?_ tons of scissors
   ("v" help/hydra/vocabulary/body)
   ("V" view-mode)
   ("w" widen)
-  ("W" help/hydra/words/body)
   ("t" rectangle-mark-mode)
   ("y" yas-describe-tables)
   ("Y" hydra-transparency/body)
