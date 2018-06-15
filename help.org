@@ -7579,17 +7579,12 @@ Checking things.
                                       :hint nil)
   "
 Flycheck: ⏼%(bound-and-true-p flycheck-mode)
- WriteGood On? %(bound-and-true-p writegood-mode)
-  _j_ checker/toggle _k_ checker/run _l_ checker/list
-   _u_ writegood/toggle _i_ grade-level _o_ reading-ease
-    _q_ quit
+ _j_ checker/toggle _k_ checker/run _l_ checker/list
+  _q_ quit
 "
   ("j" flycheck-mode :exit nil)
   ("k" flycheck-buffer :exit nil)
   ("l" help/safb-flycheck-list-errors)
-  ("u" writegood-mode)
-  ("i" writegood-grade-level :exit nil)
-  ("o" writegood-reading-ease :exit nil)
   ("q" nil))
 (global-set-key (kbd "C-M-9") #'help/hydra-checking/body)
 #+END_SRC

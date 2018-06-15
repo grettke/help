@@ -4346,17 +4346,12 @@ Ansible: (q to quit)
                                       :hint nil)
   "
 Flycheck: ⏼%(bound-and-true-p flycheck-mode)
- WriteGood On? %(bound-and-true-p writegood-mode)
-  _j_ checker/toggle _k_ checker/run _l_ checker/list
-   _u_ writegood/toggle _i_ grade-level _o_ reading-ease
-    _q_ quit
+ _j_ checker/toggle _k_ checker/run _l_ checker/list
+  _q_ quit
 "
   ("j" flycheck-mode :exit nil)
   ("k" flycheck-buffer :exit nil)
   ("l" help/safb-flycheck-list-errors)
-  ("u" writegood-mode)
-  ("i" writegood-grade-level :exit nil)
-  ("o" writegood-reading-ease :exit nil)
   ("q" nil))
 (global-set-key (kbd "C-M-9") #'help/hydra-checking/body)
 ;; org_gcr_2017-06-13_mara_2DFDC64B-DBF2-473E-979F-D7D8D0DD2206 ends here
