@@ -115,7 +115,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-           hidden-mode-line-mode)
+             hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -4345,7 +4345,7 @@ Ansible: (q to quit)
 (defhydra help/hydra-checking (:color blue
                                       :hint nil)
   "
-Flycheck On? %(bound-and-true-p flycheck-mode)
+Flycheck: ⏼%(bound-and-true-p flycheck-mode)
  WriteGood On? %(bound-and-true-p writegood-mode)
   _j_ checker/toggle _k_ checker/run _l_ checker/list
    _u_ writegood/toggle _i_ grade-level _o_ reading-ease
