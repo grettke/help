@@ -115,7 +115,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-           hidden-mode-line-mode)
+             hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -4522,7 +4522,7 @@ _]_ single bracket, white, square, right
 _A_ apropo'ish
 _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier
 _d_ dired
-_D_ detangle
+_D_ help/safb-org-babel-detangle
 _f_ ag _F_ ag*
 _g_ grep
 _h_ hidden-mode-line
