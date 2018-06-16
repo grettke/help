@@ -8029,6 +8029,7 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (global-set-key (kbd "C-o") #'ido-find-file)
 (global-set-key (kbd "C-M-.") nil)
 (global-set-key (kbd "M-s-m") #'ns-do-hide-emacs)
+(global-set-key (kbd "C-M-n") #'info)
 #+END_SRC
 
 **** Row 1
