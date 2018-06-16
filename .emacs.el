@@ -189,6 +189,11 @@
      ,@statements))
 ;; org_gcr_2017-07-23_mara_ED1CAC7D-4B9E-4316-8AB3-85ACDC06B3F4 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-06-16T15-06-43-05-00_mara_3E1D8E08-EE82-4A70-A5D1-9B57C0882044][org_gcr_2018-06-16T15-06-43-05-00_mara_3E1D8E08-EE82-4A70-A5D1-9B57C0882044]]
+(use-package info-buffer
+  :ensure t)
+;; org_gcr_2018-06-16T15-06-43-05-00_mara_3E1D8E08-EE82-4A70-A5D1-9B57C0882044 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7D37FFE5-2D2B-4CF7-AF27-F3CB8616D81B][org_gcr_2017-05-12_mara_7D37FFE5-2D2B-4CF7-AF27-F3CB8616D81B]]
 (defun help/save-all-file-buffers ()
   "Saves every buffer associated with a file."
@@ -4730,7 +4735,7 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (global-set-key (kbd "C-o") #'ido-find-file)
 (global-set-key (kbd "C-M-.") nil)
 (global-set-key (kbd "M-s-m") #'ns-do-hide-emacs)
-(global-set-key (kbd "C-M-n") #'info)
+(global-set-key (kbd "C-M-n") #'info-buffer)
 ;; org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5FAD516B-B4C1-4F47-A6B9-7CA12F9AFF5D][org_gcr_2017-05-12_mara_5FAD516B-B4C1-4F47-A6B9-7CA12F9AFF5D]]

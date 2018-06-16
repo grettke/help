@@ -691,6 +691,15 @@ Make it easy to evaluate code only when running on .
      ,statement
      ,@statements))
 #+END_SRC
+** Info
+:PROPERTIES:
+:ID:       org_gcr_2018-06-16T15-06-43-05-00_mara:EB3BD539-5ABE-420D-940A-80B0D4C20BB9
+:END:
+#+name: org_gcr_2018-06-16T15-06-43-05-00_mara_3E1D8E08-EE82-4A70-A5D1-9B57C0882044
+#+begin_src emacs-lisp
+(use-package info-buffer
+  :ensure t)
+#+end_src
 * Standard Operating Procedure
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:205571BA-2DC4-4DCB-912C-65B9EC843574
@@ -8008,10 +8017,6 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 :ID:       org_gcr_2017-07-17_mara:B91C9779-B2AD-403B-A11F-5847EF8883C6
 :END:
 
-:PROPERTIES:
-:ID:       org_gcr_2017-05-12_mara:8CA5EED7-5301-43E2-B6B9-C92AC66A2BE6
-:END:
-
 #+NAME: org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B
 #+BEGIN_SRC emacs-lisp
 ;; Leave C-z free for Tmux
@@ -8029,9 +8034,8 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (global-set-key (kbd "C-o") #'ido-find-file)
 (global-set-key (kbd "C-M-.") nil)
 (global-set-key (kbd "M-s-m") #'ns-do-hide-emacs)
-(global-set-key (kbd "C-M-n") #'info)
+(global-set-key (kbd "C-M-n") #'info-buffer)
 #+END_SRC
-
 **** Row 1
      :PROPERTIES:
      :ID:       org_gcr_2017-05-12_mara:A791BE09-ED4B-46F4-8225-EE73C15C1DD0
