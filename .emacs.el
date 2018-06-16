@@ -2926,7 +2926,7 @@ _b_ black-board-bold _f_ fraktur
 
 (defhydra help/hydra/words (:color blue :hint nil)
   "
-Words: _C_ount, _G_rade Level, _R_eading Ease
+Words: _C_ount, _G_rade Level, _R_eading Ease, _A_ffect vs Effect
  Lorem Ipsum: _w_ord _s_entence _p_aragraphs _l_ist
   Academic Phrases: _a_ll or by se_c_tion
    _E_macs Name (insert _e_macs name)
@@ -2943,6 +2943,7 @@ Words: _C_ount, _G_rade Level, _R_eading Ease
   ("C" count-words)
   ("G" writegood-grade-level)
   ("R" writegood-reading-ease)
+  ("A" affect-vs-effect-explanation)
 
   ("w" help/lorem-ipsum-insert-word)
   ("s" lorem-ipsum-insert-sentences :exit nil)
@@ -2969,6 +2970,9 @@ Words: _C_ount, _G_rade Level, _R_eading Ease
 
   ("Y" youwill)
   ("y" help/youwill-insert))
+
+(use-package affect-vs-effect
+  :ensure t)
 ;; org_gcr_2017-08-04_mara_24E4983A-3842-4365-8C3A-8D2019AB223D ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_AAEBDA8A-3939-42B1-B7A2-230C43EEF1AB][org_gcr_2017-05-12_mara_AAEBDA8A-3939-42B1-B7A2-230C43EEF1AB]]

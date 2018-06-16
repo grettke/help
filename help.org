@@ -4860,7 +4860,7 @@ _b_ black-board-bold _f_ fraktur
 
 (defhydra help/hydra/words (:color blue :hint nil)
   "
-Words: _C_ount, _G_rade Level, _R_eading Ease
+Words: _C_ount, _G_rade Level, _R_eading Ease, _A_ffect vs Effect
  Lorem Ipsum: _w_ord _s_entence _p_aragraphs _l_ist
   Academic Phrases: _a_ll or by se_c_tion
    _E_macs Name (insert _e_macs name)
@@ -4877,6 +4877,7 @@ Words: _C_ount, _G_rade Level, _R_eading Ease
   ("C" count-words)
   ("G" writegood-grade-level)
   ("R" writegood-reading-ease)
+  ("A" affect-vs-effect-explanation)
 
   ("w" help/lorem-ipsum-insert-word)
   ("s" lorem-ipsum-insert-sentences :exit nil)
@@ -4903,6 +4904,9 @@ Words: _C_ount, _G_rade Level, _R_eading Ease
 
   ("Y" youwill)
   ("y" help/youwill-insert))
+
+(use-package affect-vs-effect
+  :ensure t)
 #+END_SRC
 *** Dash
 :PROPERTIES:
