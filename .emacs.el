@@ -4486,6 +4486,7 @@ _w_ where is something defined
 ;; org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D][org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D]]
+(global-set-key (kbd "C-M-a") #'help/hydra/apropo/body)
 (global-set-key (kbd "C-d") #'delete-forward-char)
 (global-set-key [(control shift ?d)] #'backward-delete-char)
 (global-set-key (kbd "C-M-k") #'my-eval-expression)
@@ -4527,7 +4528,6 @@ _|_ split-window-horizontally
 _[_ single bracket, white, square, left
 _]_ single bracket, white, square, right
 
-_A_ apropo'ish
 _s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier
 _d_ dired
 _D_ help/safb-org-babel-detangle
@@ -4571,7 +4571,6 @@ _?_ tons of scissors
   ("=" reposition-window)
   ("5" help/uuid)
   ("6" set-buffer-file-coding-system)
-  ("A" hydra-apropos-ish/body)
   ("s" help/toggle-mac-right-option-modifier)
   ("g" grep)
   ("h" hidden-mode-line-mode)
@@ -4623,25 +4622,42 @@ _?_ tons of scissors
 ;; org_gcr_2017-05-12_mara_28B4A661-E888-4EFA-ADE3-4B1C05F6E92B ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C93A4DB7-1441-4DBA-B586-76266C5C30DF][org_gcr_2017-05-12_mara_C93A4DB7-1441-4DBA-B586-76266C5C30DF]]
-(defhydra hydra-apropos-ish (:color blue
+(defhydra help/hydra/apropo (:color blue
                                     :hint nil)
   "
-_a_propos        _c_ommand
-_d_ocumentation  _l_ibrary
-_v_ariable       _u_ser-option
-valu_e_          _i_nfo
-e_m_acs          elis_p_
+===============+===================================================
+Apropos'       (_q_uit)
+===============+===================================================
+Everything:    \"…all meaningful Lisp _s_ymbols…\"
+Info:          \"…all known _I_nfo files…\"
+===============+===================================================
+Documentation  \"…symbols whose _d_ocumentation…\"
+User Manual:   \"…the Emacs _U_ser Manual.\"
+Lisp Manual:   \"…the Emacs _L_isp Reference Manual.\"
+===============+===================================================
+Commands       \"…_c_ommands (interactively callable functions)…\"
+Variables      \"…variables…\"
+Printed Value: \"…symbols whose value’s printed _r_epresentation…\"
+===============+===================================================
+Library:       \"…variables and functions defined by _l_ibrary…\"
+User Options:  \"…user _o_ptions…\"
+===============+===================================================
 "
-  ("a" apropos)
+  ("s" apropos)
+  ("I" info-apropos)
   ("d" apropos-documentation)
-  ("v" apropos-variable)
+
+  ("U" emacs-index-search)
+  ("L" elisp-index-search)
+
   ("c" apropos-command)
+  ("v" apropos-variable)
+  ("r" apropos-value)
+
   ("l" apropos-library)
-  ("u" apropos-user-option)
-  ("i" info-apropos)
-  ("e" apropos-value)
-  ("m" emacs-index-search)
-  ("p" elisp-index-search))
+  ("o" apropos-user-option)
+
+  ("q" nil))
 ;; org_gcr_2017-05-12_mara_C93A4DB7-1441-4DBA-B586-76266C5C30DF ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_EE5F8793-8604-4041-8D91-DBC419809947][org_gcr_2017-05-12_mara_EE5F8793-8604-4041-8D91-DBC419809947]]
