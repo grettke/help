@@ -2132,7 +2132,7 @@ _A_rchives | Rest_o_res | Re_f_iles
 ;; org_gcr_2017-05-12_mara_A3C53136-65BE-4771-A214-19E102E0158B ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C344E972-D31C-48F4-8E3B-83A799DE7D37][org_gcr_2017-05-12_mara_C344E972-D31C-48F4-8E3B-83A799DE7D37]]
-(setq initial-scratch-message ";; Happy Hacking 🖖\n\n")
+(setq initial-scratch-message ";; Happy Hacking ☕\n\n")
 ;; org_gcr_2017-05-12_mara_C344E972-D31C-48F4-8E3B-83A799DE7D37 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A929CBE0-E6D3-4A45-8341-15F50EF2F93A][org_gcr_2017-05-12_mara_A929CBE0-E6D3-4A45-8341-15F50EF2F93A]]

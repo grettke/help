@@ -3453,7 +3453,7 @@ Have fun with scratch.
 
 #+NAME: org_gcr_2017-05-12_mara_C344E972-D31C-48F4-8E3B-83A799DE7D37
 #+BEGIN_SRC emacs-lisp
-(setq initial-scratch-message ";; Happy Hacking 🖖\n\n")
+(setq initial-scratch-message ";; Happy Hacking ☕\n\n")
 #+END_SRC
 
 Use ~emacs-lisp~ in scratch.
