@@ -2985,6 +2985,17 @@ Words: _C_ount, _G_rade Level, _R_eading Ease, _A_ffect vs Effect
   :ensure t)
 ;; org_gcr_2017-05-12_mara_AAEBDA8A-3939-42B1-B7A2-230C43EEF1AB ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0BCAB755-9914-473F-9543-37130529809F][org_gcr_2017-05-12_mara_0BCAB755-9914-473F-9543-37130529809F]]
+(prefer-coding-system 'utf-8)
+;; org_gcr_2017-05-12_mara_0BCAB755-9914-473F-9543-37130529809F ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-06-16T16-57-47-05-00_mara_B04ABAAC-94BC-460E-970F-30E13D8A08BA][org_gcr_2018-06-16T16-57-47-05-00_mara_B04ABAAC-94BC-460E-970F-30E13D8A08BA]]
+(help/on-gui
+ (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
+ (help/on-windows
+  (set-clipboard-coding-system 'utf-16le-dos)))
+;; org_gcr_2018-06-16T16-57-47-05-00_mara_B04ABAAC-94BC-460E-970F-30E13D8A08BA ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2018-06-03T01-16-43-05-00_mara_3374BEB2-6CF3-4F07-B2D6-7D84147CEDF3][org_gcr_2018-06-03T01-16-43-05-00_mara_3374BEB2-6CF3-4F07-B2D6-7D84147CEDF3]]
 (use-package unicode-fonts
   :ensure t
@@ -4060,17 +4071,6 @@ Ansible: (q to quit)
  (setq-default cursor-type 'box)
  (setq x-stretch-cursor 1))
 ;; org_gcr_2017-05-12_mara_DD79CB65-2F96-40DD-8BD8-BECDCE8CD399 ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0BCAB755-9914-473F-9543-37130529809F][org_gcr_2017-05-12_mara_0BCAB755-9914-473F-9543-37130529809F]]
-(prefer-coding-system 'utf-8)
-;; org_gcr_2017-05-12_mara_0BCAB755-9914-473F-9543-37130529809F ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2018-06-16T16-57-47-05-00_mara_B04ABAAC-94BC-460E-970F-30E13D8A08BA][org_gcr_2018-06-16T16-57-47-05-00_mara_B04ABAAC-94BC-460E-970F-30E13D8A08BA]]
-(help/on-gui
- (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
- (help/on-windows
-  (set-clipboard-coding-system 'utf-16le-dos)))
-;; org_gcr_2018-06-16T16-57-47-05-00_mara_B04ABAAC-94BC-460E-970F-30E13D8A08BA ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C53AF7AE-494C-4916-83C8-F175554B1CAE][org_gcr_2017-05-12_mara_C53AF7AE-494C-4916-83C8-F175554B1CAE]]
 (global-hl-line-mode t)
