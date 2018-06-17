@@ -2986,7 +2986,8 @@ Words: _C_ount, _G_rade Level, _R_eading Ease, _A_ffect vs Effect
 ;; org_gcr_2017-05-12_mara_AAEBDA8A-3939-42B1-B7A2-230C43EEF1AB ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0BCAB755-9914-473F-9543-37130529809F][org_gcr_2017-05-12_mara_0BCAB755-9914-473F-9543-37130529809F]]
-(prefer-coding-system 'utf-8)
+(let ((lang 'utf-8))
+  (prefer-coding-system lang))
 ;; org_gcr_2017-05-12_mara_0BCAB755-9914-473F-9543-37130529809F ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2018-06-16T16-57-47-05-00_mara_B04ABAAC-94BC-460E-970F-30E13D8A08BA][org_gcr_2018-06-16T16-57-47-05-00_mara_B04ABAAC-94BC-460E-970F-30E13D8A08BA]]
