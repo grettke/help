@@ -2991,10 +2991,14 @@ Words: _C_ount, _G_rade Level, _R_eading Ease, _A_ffect vs Effect
 
 ;; [[file:~/src/help/help.org::org_gcr_2018-06-16T16-57-47-05-00_mara_B04ABAAC-94BC-460E-970F-30E13D8A08BA][org_gcr_2018-06-16T16-57-47-05-00_mara_B04ABAAC-94BC-460E-970F-30E13D8A08BA]]
 (help/on-gui
- (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
+ (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING)))
+;; org_gcr_2018-06-16T16-57-47-05-00_mara_B04ABAAC-94BC-460E-970F-30E13D8A08BA ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-06-16T16-57-47-05-00_mara_C5558E79-8862-409B-A591-F7401A0EB969][org_gcr_2018-06-16T16-57-47-05-00_mara_C5558E79-8862-409B-A591-F7401A0EB969]]
+(help/on-gui
  (help/on-windows
   (set-clipboard-coding-system 'utf-16le-dos)))
-;; org_gcr_2018-06-16T16-57-47-05-00_mara_B04ABAAC-94BC-460E-970F-30E13D8A08BA ends here
+;; org_gcr_2018-06-16T16-57-47-05-00_mara_C5558E79-8862-409B-A591-F7401A0EB969 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2018-06-03T01-16-43-05-00_mara_3374BEB2-6CF3-4F07-B2D6-7D84147CEDF3][org_gcr_2018-06-03T01-16-43-05-00_mara_3374BEB2-6CF3-4F07-B2D6-7D84147CEDF3]]
 (use-package unicode-fonts
