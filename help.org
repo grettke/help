@@ -2119,6 +2119,13 @@ Probably never modify some files.
   (global-hardhat-mode 1))
 #+END_SRC
 
+Show real end of lines. 
+
+#+name: org_gcr_2018-06-16T20-53-59-05-00_mara_FDBFB65D-7BF1-4C66-A322-4818B1EF04A9
+#+begin_src emacs-lisp
+(setq inhibit-eol-conversion t)
+#+end_src
+
 ** IMenu
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:12791F68-A7B0-4F93-9648-386C65C09355

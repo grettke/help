@@ -1359,6 +1359,10 @@ URL: `https://stackoverflow.com/questions/1587972/how-to-display-indentation-gui
   (global-hardhat-mode 1))
 ;; org_gcr_2017-05-12_mara_F0004AA3-B2A6-4265-A9D5-13590DCBEE9A ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-06-16T20-53-59-05-00_mara_FDBFB65D-7BF1-4C66-A322-4818B1EF04A9][org_gcr_2018-06-16T20-53-59-05-00_mara_FDBFB65D-7BF1-4C66-A322-4818B1EF04A9]]
+(setq inhibit-eol-conversion t)
+;; org_gcr_2018-06-16T20-53-59-05-00_mara_FDBFB65D-7BF1-4C66-A322-4818B1EF04A9 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B746C905-E59E-4F33-88F9-5F6CD32C0DE2][org_gcr_2017-05-12_mara_B746C905-E59E-4F33-88F9-5F6CD32C0DE2]]
 (use-package imenu
   :config
