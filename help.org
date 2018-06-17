@@ -6603,11 +6603,17 @@ cursor a box and stretch it as wide as the character below it.
  (setq x-stretch-cursor 1))
 #+END_SRC
 
-EMACS used UTF-8 by default. Make copying and pasting easier.
+Prefer UTF-8 by default.
 
 #+NAME: org_gcr_2017-05-12_mara_0BCAB755-9914-473F-9543-37130529809F
 #+BEGIN_SRC emacs-lisp
 (prefer-coding-system 'utf-8)
+#+END_SRC
+
+Make copying and pasting easier.
+
+#+name: org_gcr_2018-06-16T16-57-47-05-00_mara_B04ABAAC-94BC-460E-970F-30E13D8A08BA
+#+BEGIN_SRC emacs-lisp
 (help/on-gui
  (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
  (help/on-windows
