@@ -3190,6 +3190,14 @@ Smerge.
   :diminish whitespace-mode global-whitespace-mode)
 #+END_SRC
 
+** whoami
+:PROPERTIES:
+:ID:       org_gcr_2018-06-17T11-45-33-05-00_mara:F4562648-EFF8-4C9A-8F2E-08F32E9D7473
+:END:
+#+name: org_gcr_2018-06-17T11-45-33-05-00_mara_6EACD283-EEC3-4A5D-968D-85F37294C887
+#+begin_src emacs-lisp
+(setq user-mail-address "gcr@wisdomandwonder.com")
+#+end_src
 ** Word Wrap
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:202157D8-58BB-4250-BDDD-98ADBF97F801

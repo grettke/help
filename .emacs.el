@@ -2003,6 +2003,10 @@ _A_rchives | Rest_o_res | Re_f_iles
   :diminish whitespace-mode global-whitespace-mode)
 ;; org_gcr_2017-05-12_mara_081024E6-F582-40DF-A96F-7216725FDD00 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-06-17T11-45-33-05-00_mara_6EACD283-EEC3-4A5D-968D-85F37294C887][org_gcr_2018-06-17T11-45-33-05-00_mara_6EACD283-EEC3-4A5D-968D-85F37294C887]]
+(setq user-mail-address "gcr@wisdomandwonder.com")
+;; org_gcr_2018-06-17T11-45-33-05-00_mara_6EACD283-EEC3-4A5D-968D-85F37294C887 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BC6CD3BC-C736-40EE-84FD-33E2BB514A0C][org_gcr_2017-05-12_mara_BC6CD3BC-C736-40EE-84FD-33E2BB514A0C]]
 (diminish 'visual-line-mode)
 ;; org_gcr_2017-05-12_mara_BC6CD3BC-C736-40EE-84FD-33E2BB514A0C ends here
