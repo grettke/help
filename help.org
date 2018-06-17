@@ -4940,6 +4940,7 @@ Prefer UTF-8 by default.
 #+NAME: org_gcr_2017-05-12_mara_0BCAB755-9914-473F-9543-37130529809F
 #+BEGIN_SRC emacs-lisp
 (let ((lang 'utf-8))
+  (set-language-environment lang)
   (prefer-coding-system lang))
 #+END_SRC
 
