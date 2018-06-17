@@ -4947,6 +4947,10 @@ Prefer UTF-8 by default.
 #+NAME: org_gcr_2017-05-12_mara_0BCAB755-9914-473F-9543-37130529809F
 #+BEGIN_SRC emacs-lisp
 (let ((lang 'utf-8))
+  (message "In the environment, 'LANG' and 'LC_ALL' are set to '%s' and '%s'."
+           (getenv "LANG") (getenv "LC_ALL"))
+  (message "However, '%s' is overriding them with profile for '%s, manually configuring the language and coding system."
+           (buffer-file-name) lang)
   (set-language-environment lang)
   (prefer-coding-system lang))
 #+END_SRC
