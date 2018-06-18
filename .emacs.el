@@ -4663,7 +4663,7 @@ User Manual:   \"…the Emacs _U_ser Manual.\"
 Lisp Manual:   \"…the Emacs _L_isp Reference Manual.\"
 ===============+===================================================
 Commands       \"…_c_ommands (interactively callable functions)…\"
-Variables      \"…variables…\"
+Variables      \"…_v_ariables…\"
 Printed Value: \"…symbols whose value’s printed _r_epresentation…\"
 ===============+===================================================
 Library:       \"…variables and functions defined by _l_ibrary…\"
@@ -4672,8 +4672,8 @@ User Options:  \"…user _o_ptions…\"
 "
   ("s" apropos)
   ("I" info-apropos)
-  ("d" apropos-documentation)
 
+  ("d" apropos-documentation)
   ("U" emacs-index-search)
   ("L" elisp-index-search)
 
