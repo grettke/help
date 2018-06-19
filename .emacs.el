@@ -3094,13 +3094,14 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 Unicode: (_q_uit)
  Block: _L_ist Points In Block, _P_aste Points Into This Buffer.
   Point: _S_earch And List.
-   Character: _I_nsert, E_v_aluate, _E_scape, _U_nescape, _D_ecode, S_a_nitize, 🛇_H_omoglyphs.
+   Character: _i_nsert by name, _I_nsert by codepoint, E_v_aluate, _E_scape, _U_nescape, _D_ecode, S_a_nitize, 🛇_H_omoglyphs.
 "
   ("q" nil)
   ("L" charmap)
   ("P" (lambda () (interactive) (unicode-fonts-debug-insert-block)))
   ("S" list-unicode-display)
-  ("I" ucs-utils-ucs-insert)
+  ("i" ucs-utils-ucs-insert)
+  ("I" insert-char)
   ("v" ucs-utils-eval)
   ("E" unicode-escape-region)
   ("U" unicode-unescape-region)
