@@ -3083,6 +3083,11 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
   :ensure t)
 ;; org_gcr_2018-06-06T22-01-54-05-00_mara_9533C0F0-AAA8-4B6B-A06A-29AD18CF72D7 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-06-18T11-01-53-05-00_mara_CF9E5234-BD32-4119-94F1-31D86953850F][org_gcr_2018-06-18T11-01-53-05-00_mara_CF9E5234-BD32-4119-94F1-31D86953850F]]
+(add-to-list 'load-path "~/src/org-unimacrode")
+(require 'org-unimacrode)
+;; org_gcr_2018-06-18T11-01-53-05-00_mara_CF9E5234-BD32-4119-94F1-31D86953850F ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2018-06-06T22-01-54-05-00_mara_61574A72-BF05-4C0A-B665-BC80C13C35E5][org_gcr_2018-06-06T22-01-54-05-00_mara_61574A72-BF05-4C0A-B665-BC80C13C35E5]]
 (defhydra help/hydra/unicode (:color blue :hint nil)
   "
@@ -4544,6 +4549,8 @@ _1_ reset-font _2_ -font _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _8_ 
 _q_uit _Q_ exit-Emacs
 _w_ widen
 _e_ FontAwesome _E_ prettify-symbols-mode
+_r_ rename this buffer and file
+_R_ insert the default file header
 _t_ rectangle-mark _T_ trademarks
 _y_ yas tables _Y_ transparency
 _u_ universal-emotions-emoticons
@@ -4593,7 +4600,8 @@ _?_ tons of scissors
   ("8" selectric-mode)
   ("[" (lambda () (interactive) (insert "⟦")))
   ("]" (lambda () (interactive) (insert "⟧")))
-  ("R" help/rename-current-buffer-file)
+  ("r" help/rename-current-buffer-file)
+  ("R" auto-insert)
   ("T" help/trademark/body)
   ("=" reposition-window)
   ("5" help/uuid)

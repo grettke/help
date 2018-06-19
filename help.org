@@ -2119,7 +2119,7 @@ Probably never modify some files.
   (global-hardhat-mode 1))
 #+END_SRC
 
-Show real end of lines. 
+Show real end of lines.
 
 #+name: org_gcr_2018-06-16T20-53-59-05-00_mara_FDBFB65D-7BF1-4C66-A322-4818B1EF04A9
 #+begin_src emacs-lisp
@@ -5109,6 +5109,15 @@ Search code points by name and present the result(s).
 (use-package list-unicode-display
   :ensure t)
 #+end_src
+**** Org-Mode
+:PROPERTIES:
+:ID:       org_gcr_2018-06-18T11-01-53-05-00_mara:51B3EC8F-B3FB-46E4-A06F-E5BFF5E8920D
+:END:
+#+name: org_gcr_2018-06-18T11-01-53-05-00_mara_CF9E5234-BD32-4119-94F1-31D86953850F
+#+begin_src emacs-lisp
+(add-to-list 'load-path "~/src/org-unimacrode")
+(require 'org-unimacrode)
+#+end_src
 *** Hydra
 :PROPERTIES:
 :ID:       org_gcr_2018-06-06T22-01-54-05-00_mara:F0E4B9C4-4873-4519-9FE5-B7CF14103FE3
@@ -7841,6 +7850,8 @@ _1_ reset-font _2_ -font _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _8_ 
 _q_uit _Q_ exit-Emacs
 _w_ widen
 _e_ FontAwesome _E_ prettify-symbols-mode
+_r_ rename this buffer and file
+_R_ insert the default file header
 _t_ rectangle-mark _T_ trademarks
 _y_ yas tables _Y_ transparency
 _u_ universal-emotions-emoticons
@@ -7890,7 +7901,8 @@ _?_ tons of scissors
   ("8" selectric-mode)
   ("[" (lambda () (interactive) (insert "⟦")))
   ("]" (lambda () (interactive) (insert "⟧")))
-  ("R" help/rename-current-buffer-file)
+  ("r" help/rename-current-buffer-file)
+  ("R" auto-insert)
   ("T" help/trademark/body)
   ("=" reposition-window)
   ("5" help/uuid)
