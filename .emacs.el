@@ -2204,14 +2204,17 @@ _A_rchives | Rest_o_res | Re_f_iles
   "
 elisp-mode: _q_uit
  Reformat s-expr: _m_ultiline orr _o_ne line
-  Evaluation: _b_uffer, _t_ests
-   Other: Generate _R_eadme
+  Evaluation: buffe_r_
+   ERT: _i_nteractively, _b_atch, _d_elete all
+    other: Generate _R_eadme
 "
   ("q" nil)
   ("m" lispy-multiline)
   ("o" lispy-oneline)
-  ("b" eval-buffer)
-  ("t" ert)
+  ("r" eval-buffer)
+  ("i" (lambda () (interactive) (eval-buffer) (call-interactively 'ert)))
+  ("b" (lambda () (interactive) (eval-buffer) (ert-run-tests-batch)))
+  ("d" ert-delete-all-tests)
   ("R" el2markdown-write-readme))
 (key-chord-define emacs-lisp-mode-map "hh" #'help/hydra-elisp-mode/body)
 
