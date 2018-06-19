@@ -3554,14 +3554,16 @@ Quasi-Quote visualization.
                                         :hint nil)
   "
 elisp-mode: _q_uit
- Reformat s-expr: _m_ultiline or _o_ne line
-  Evaluation: _b_uffer _r_un tests
+ Reformat s-expr: _m_ultiline orr _o_ne line
+  Evaluation: _b_uffer, _t_ests
+   Other: Generate _R_eadme
 "
+  ("q" nil)
   ("m" lispy-multiline)
   ("o" lispy-oneline)
   ("b" eval-buffer)
-  ("r" ert)
-  ("q" nil))
+  ("t" ert)
+  ("R" el2markdown-write-readme))
 (key-chord-define emacs-lisp-mode-map "hh" #'help/hydra-elisp-mode/body)
 
 (defun help/emacs-lisp-mode-hook-fn ()
