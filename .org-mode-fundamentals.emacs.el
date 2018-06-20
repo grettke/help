@@ -57,7 +57,12 @@ This is a copy and paste. Additional languages would warrant a refactor."
 
 (defun help/org-toggle-macro-markers ()
   (interactive)
-  (setq org-hide-macro-markers (not org-hide-macro-markers)))
+  (let ((old org-hide-macro-markers)
+        (new (not org-hide-macro-markers)))
+    (setq org-hide-macro-markers new)
+    (message "Just changed org-hide-macro-markers from %s to %s" old new)
+    (font-lock-mode)
+    (font-lock-mode)))
 
 (defun help/org-prp-hdln ()
   "Visit every Headline. If it doesn't have an ID property then add one and
