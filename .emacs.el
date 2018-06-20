@@ -4573,12 +4573,12 @@ _l_ visual-line-mode _L_ aggressive-indent-mode
 _K_ nextLogLine
 _;_ toggle-lax-whitespace
 
-_x_ delete-indentation _X_pm grok
+_x_ delete-indentation _X_ checkmarks
 _c_ fill-paragraph
 _V_ view-only mode
 _b_ erase-buffer _B_ibtex
 _N_ normal-mode (see also hack-local-variables)
-_m_ checkmarks _M_ Marked 2
+_m_ font lock _M_ Marked 2
 _<_ double bracket, angle, left
 _>_ double bracket, angle, right
 _,_ snip comment start
@@ -4612,7 +4612,7 @@ _?_ tons of scissors
   ("L" aggressive-indent-mode)
   ("S" help/toggle-mac-function-modifier)
   ("x" delete-indentation)
-  ("X" xpm-grok)
+  ("X" help/checks/body)
   ("f" ag)
   ("F" help/hydra/ag/body)
   ("v" help/hydra/vocabulary/body)
@@ -4630,7 +4630,7 @@ _?_ tons of scissors
   ("I" previous-logical-line :exit nil)
   ("K" next-logical-line :exit nil)
   ("N" (lambda () (interactive) (help/safb-normal-mode) (message "Entering normal-mode")))
-  ("m" help/checks/body)
+  ("m" font-lock-mode)
   ("M" help/preview-buffer-file-in-marked-2)
   ("<" (lambda () (interactive) (insert "⟪")))
   (">" (lambda () (interactive) (insert "⟫")))
