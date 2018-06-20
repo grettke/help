@@ -4801,7 +4801,7 @@ Prettifications.
 #+end_src
 
 Custom font lock
-- Hypen appears as em-dash
+- Hyphen appears as em-dash
 
 #+name: org_gcr_2018-06-14T14-15-42-05-00_mara_2F1F424E-F780-4D04-B582-7770987CC960
 #+begin_src emacs-lisp
