@@ -2994,7 +2994,7 @@ Words: _C_ount, _G_rade Level, _R_eading Ease, _A_ffect vs Effect
 (let ((lang 'utf-8))
   (message "In the environment, 'LANG' and 'LC_ALL' are set to '%s' and '%s'."
            (getenv "LANG") (getenv "LC_ALL"))
-  (message "However, '%s' is overriding them with profile for '%s, manually configuring the language and coding system."
+  (message "However, the init file is overriding them with the profile for '%s', manually configuring the language and coding system."
            (buffer-file-name) lang)
   (set-language-environment lang)
   (prefer-coding-system lang))
