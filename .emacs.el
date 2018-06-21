@@ -3087,8 +3087,8 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 ;; org_gcr_2018-06-06T22-01-54-05-00_mara_9533C0F0-AAA8-4B6B-A06A-29AD18CF72D7 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2018-06-18T11-01-53-05-00_mara_CF9E5234-BD32-4119-94F1-31D86953850F][org_gcr_2018-06-18T11-01-53-05-00_mara_CF9E5234-BD32-4119-94F1-31D86953850F]]
-(add-to-list 'load-path "~/src/org-unimacrode")
-(require 'org-unimacrode)
+(add-to-list 'load-path "~/src/org-utf-to-xetex")
+(require 'org-utf-to-xetex)
 ;; org_gcr_2018-06-18T11-01-53-05-00_mara_CF9E5234-BD32-4119-94F1-31D86953850F ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2018-06-06T22-01-54-05-00_mara_61574A72-BF05-4C0A-B665-BC80C13C35E5][org_gcr_2018-06-06T22-01-54-05-00_mara_61574A72-BF05-4C0A-B665-BC80C13C35E5]]

@@ -5118,8 +5118,8 @@ Search code points by name and present the result(s).
 :END:
 #+name: org_gcr_2018-06-18T11-01-53-05-00_mara_CF9E5234-BD32-4119-94F1-31D86953850F
 #+begin_src emacs-lisp
-(add-to-list 'load-path "~/src/org-unimacrode")
-(require 'org-unimacrode)
+(add-to-list 'load-path "~/src/org-utf-to-xetex")
+(require 'org-utf-to-xetex)
 #+end_src
 *** Hydra
 :PROPERTIES:
