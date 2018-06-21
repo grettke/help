@@ -4688,11 +4688,11 @@ Because I only use this for Org-Mode.
 (defhydra help/hydra/right-side/org-mode (:color blue
                                                  :hint nil)
   "
-_1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ id-create _9_ o2b/more _0_ o2b/LaTeX
-_q_ ←/w-code _w_ tbletfld _r_ help/org-refile _R_ g2nms-b _t_ export to ASCII _T_ table export format _p_ copy/property
-_a_ archive-subtree _s_ sort _S_ lobigst _d_ g2s-b/hd _u_ goto _k_ ob-check-src-blk _l_ lint _L_ insert inline task
-_c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree
-_e_ ox-clip-formatted-copy _E_ list org entities"
+Row 5: _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ id-create _9_ o2b/more _0_ o2b/LaTeX
+Row 4: _t_oggle macro marker ATT_R_HTML _q_ ←/w-code _w_ tbletfld _r_ help/org-refile _R_ g2nms-b _t_ export to ASCII _T_ table export format _p_ copy/property
+Row 3: _a_ archive-subtree _s_ sort _S_ lobigst _d_ g2s-b/hd _u_ goto _k_ ob-check-src-blk _l_ lint _L_ insert inline task
+Row 2: _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree
+Row 1: _e_ ox-clip-formatted-copy _E_ list org entities"
   ;; Row 5
   ("1" org-babel-sha1-hash)
   ("2" org-display-inline-images)
@@ -4707,10 +4707,11 @@ _e_ ox-clip-formatted-copy _E_ list org entities"
   ("E" org-entities-help)
   ("r" help/org-refile)
   ("R" (lambda () (interactive) (insert "(refile)")))
-  ("t" org-ascii-export-to-ascii)
-  ("T" (lambda () (interactive) (insert "#+ATTR_HTML: :border 2 :rules all :frame border")))
   ("u" org-goto)
   ("p" my-org-region-to-property)
+  ;; Row 4
+  ("t" help/org-toggle-macro-markers)
+  ("T" (lambda () (interactive) (insert "#+ATTR_HTML: :border 2 :rules all :frame border")))
   ;; Row 3
   ("a" org-archive-subtree-default)
   ("s" org-sort)
