@@ -2195,14 +2195,15 @@ _A_rchives | Rest_o_res | Re_f_iles
                                         :hint nil)
   "
 elisp-mode: _q_uit
- Evaluation: buffe_r_
+ Evaluation: buffe_r_, byte _c_ompile file
   ERT: _i_nteractively, _b_atch, _d_elete all
    Reformat s-expr: _m_ultiline orr _o_ne line
-    Other: Generate _R_eadme
+    Other: Generate _R_eadme _C_heckdoc
 "
   ("q" nil)
 
   ("r" eval-buffer)
+  ("c" (lambda () (interactive) (byte-compile-file (buffer-file-name))))
 
   ("i" (lambda () (interactive) (eval-buffer) (call-interactively 'ert)))
   ("b" (lambda () (interactive) (eval-buffer) (ert-run-tests-batch)))
@@ -2211,7 +2212,8 @@ elisp-mode: _q_uit
   ("m" lispy-multiline)
   ("o" lispy-oneline)
 
-  ("R" el2markdown-write-readme))
+  ("R" el2markdown-write-readme)
+  ("C" checkdoc))
 (key-chord-define emacs-lisp-mode-map "hh" #'help/hydra-elisp-mode/body)
 
 (defun help/emacs-lisp-mode-hook-fn ()
