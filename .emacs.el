@@ -679,8 +679,8 @@ Attribution: URL `http://zck.me/emacs-move-file'"
   (let ((old-location (buffer-file-name)))
     (write-file new-location t)
     (when (and old-location
-             (file-exists-p new-location)
-             (not (string-equal old-location new-location)))
+               (file-exists-p new-location)
+               (not (string-equal old-location new-location)))
       (delete-file old-location))))
 
 (defun help/rename-current-buffer-file ()
@@ -2789,31 +2789,37 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (defhydra help/hydra/right-side/org-mode (:color blue
                                                  :hint nil)
   "
-Row 5: _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ id-create _9_ o2b/more _0_ o2b/LaTeX
-Row 4: _t_oggle macro marker ATT_R_HTML _q_ ←/w-code _w_ tbletfld _r_ help/org-refile _R_ g2nms-b _t_ export to ASCII _T_ table export format _p_ copy/property
-Row 3: _a_ archive-subtree _s_ sort _S_ lobigst _d_ g2s-b/hd _u_ goto _k_ ob-check-src-blk _l_ lint _L_ insert inline task
-Row 2: _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree
-Row 1: _e_ ox-clip-formatted-copy _E_ list org entities"
-  ;; Row 5
+Org-Mode: (_q_uit)
+Row 4: _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ id-create _9_ o2b/more _0_ o2b/LaTeX
+Row 3: _w_ tbletfld _e_ ob-clip-formatted _E_ list entities _r_ help/org-refile _R_ insert \"refile\"  _t_oggle macro marker ATT_R_HTML 4 table export format _u_ goto  _p_ copy-reg-2-property
+Row 2: _a_ archive-subtree _s_ sort _S_ lobigst _d_ g2s-b/hd _k_ ob-check-src-blk _l_ lint _L_ insert inline task
+Row 1: _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
+
+  ("q" org-babel-switch-to-session-with-code)
+
+  ;; Row 4
   ("1" org-babel-sha1-hash)
   ("2" org-display-inline-images)
   ("3" org-remove-inline-images)
   ("4" org-id-get-create)
   ("9" (lambda () (interactive) (insert "#+HTML: <!--more-->")))
   ("0" (lambda () (interactive) (insert "$\\LaTeX$")))  ;; Row 4
-  ("q" org-babel-switch-to-session-with-code)
+
+  ;; Row 3
   ("w" org-table-edit-field)
   ("W" help/org-mark-subtree/kill-ring-save)
   ("e" ox-clip-formatted-copy)
   ("E" org-entities-help)
   ("r" help/org-refile)
   ("R" (lambda () (interactive) (insert "(refile)")))
-  ("u" org-goto)
-  ("p" my-org-region-to-property)
-  ;; Row 4
   ("t" help/org-toggle-macro-markers)
   ("T" (lambda () (interactive) (insert "#+ATTR_HTML: :border 2 :rules all :frame border")))
-  ;; Row 3
+  ("u" org-goto)
+  ("p" my-org-region-to-property)
+
+  ;; TODO
+
+  ;; Row 2
   ("a" org-archive-subtree-default)
   ("s" org-sort)
   ("S" org-babel-lob-ingest)
@@ -2824,7 +2830,8 @@ Row 1: _e_ ox-clip-formatted-copy _E_ list org entities"
   ("k" org-babel-check-src-block)
   ("l" org-lint)
   ("L" org-inlinetask-insert-task)
-  ;; Row 2
+
+  ;; Row 1
   ("c" org-fill-paragraph)
   ("b" org-babel-switch-to-session)
   ("n" org-narrow-to-subtree)
