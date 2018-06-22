@@ -5135,6 +5135,7 @@ Search code points by name and present the result(s).
 #+begin_src emacs-lisp
 (add-to-list 'load-path "~/src/org-utf-to-xetex")
 (require 'org-utf-to-xetex)
+(add-hook 'org-mode-hook #'org-utf-to-xetex-prettify)
 #+end_src
 *** Hydra
 :PROPERTIES:
