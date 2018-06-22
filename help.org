@@ -4770,6 +4770,13 @@ Easily enter guillemots.
 :PROPERTIES:
 :ID:       org_gcr_2018-04-20T15-46-50-05-00_mara:356CA076-3E60-4908-BED1-DD7715C51C8C
 :END:
+Macro markers.
+
+#+name: org_gcr_2018-06-21T13-13-25-05-00_mara_91DB03A0-F253-41EF-B3D7-820293D5AD94
+#+begin_src emacs-lisp
+(setq org-hide-macro-markers nil)
+#+end_src
+
 Prettifications.
 
 #+name: org_gcr_2018-03-15_mara_05415B89-71CA-4176-80EF-FB36F2D97F20

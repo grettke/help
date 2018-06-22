@@ -2858,6 +2858,10 @@ Row 1: _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
 (key-chord-define org-mode-map ">>" (lambda () (interactive) (insert "\\raquo{}")))
 ;; org_gcr_2017-05-12_mara_BF73D071-57B8-4DBA-93E9-5A1D532A6321 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-06-21T13-13-25-05-00_mara_91DB03A0-F253-41EF-B3D7-820293D5AD94][org_gcr_2018-06-21T13-13-25-05-00_mara_91DB03A0-F253-41EF-B3D7-820293D5AD94]]
+(setq org-hide-macro-markers nil)
+;; org_gcr_2018-06-21T13-13-25-05-00_mara_91DB03A0-F253-41EF-B3D7-820293D5AD94 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2018-03-15_mara_05415B89-71CA-4176-80EF-FB36F2D97F20][org_gcr_2018-03-15_mara_05415B89-71CA-4176-80EF-FB36F2D97F20]]
 (defun help/prettify-org-mode ()
   (interactive)
