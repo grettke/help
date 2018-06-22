@@ -5171,6 +5171,12 @@ Unicode: (_q_uit)
 :ID:       org_gcr_2017-05-12_mara:5CB03225-60DE-4AC2-8A67-3D7D21BF7818
 :END:
 
+- Prefix key options
+  - C-M: No structural navigation
+  - C-M-s: No that is for the operating system
+  - M-s: Existing bindings that I don't want to mess with
+  - M-s: Pretty much never use this, so use it
+
 #+NAME: org_gcr_2017-05-12_mara_C30EFFA1-FDBA-413F-AD23-29C0C2095231
 #+BEGIN_SRC emacs-lisp
 (use-package gnu-apl-mode
@@ -5179,7 +5185,7 @@ Unicode: (_q_uit)
   (setq gnu-apl-show-keymap-on-startup nil)
   (setq gnu-apl-show-apl-welcome nil)
   (setq gnu-apl-show-tips-on-start nil)
-  (setq gnu-apl-mode-map-prefix "C-s-")
+  (setq gnu-apl-mode-map-prefix "M-s-")
   (setq gnu-apl-interactive-mode-map-prefix gnu-apl-mode-map-prefix)
   :config
   (defun em-gnu-apl-init ()
