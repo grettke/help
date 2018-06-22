@@ -5212,7 +5212,7 @@ Unicode: (_q_uit)
 GNU APL: ⏼%(help/gnu-apl-runningp)
  _y_ eval-buffer _u_ eval-region _i_ eval-line _o_ eval-function
   _f_ apropos-symbol _g_ help-symbol _h_ keyboard _j_ next _k_ previous
-   _q_ quit _c_ start APL _v_ stop APL _b_ switch to APL _n_ switch back
+   _c_ start APL _v_ stop APL _b_ switch to APL _n_ switch back
     Prefix key is: %(help/gnu-apl-prefix-string)
 "
     ("i" help/gnu-apl-eval-line)
