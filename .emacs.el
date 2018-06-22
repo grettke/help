@@ -2884,10 +2884,7 @@ Row 1: _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
   (setq prettify-symbols-alist (help/alist-set "#+begin_quote" ?🗣 prettify-symbols-alist))
   (setq prettify-symbols-alist (help/alist-set "#+END_QUOTE" ?🗣 prettify-symbols-alist))
   (setq prettify-symbols-alist (help/alist-set "#+end_quote" ?🗣 prettify-symbols-alist))
-  (help/prettify-org-mode-names)
-  (setq prettify-symbols-alist
-        (help/alist-set "{{{" ?⟦ prettify-symbols-alist))
-        (setq prettify-symbols-alist (help/alist-set "}}}" ?⟧ prettify-symbols-alist)))
+  (help/prettify-org-mode-names))
 (add-hook 'org-mode-hook #'help/prettify-org-mode)
 
 (defun help/prettify-org-mode-names (&optional replacement)
