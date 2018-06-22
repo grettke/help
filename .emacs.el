@@ -2793,7 +2793,7 @@ Org-Mode: (_q_uit)
 Row 4: _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ id-create _9_ o2b/more _0_ o2b/LaTeX
 Row 3: _w_ tbletfld _e_ ob-clip-formatted _E_ list entities _r_ help/org-refile _R_ insert \"refile\"  _t_oggle macro marker ATT_R_HTML 4 table export format _u_ goto  _p_ copy-reg-2-property
 Row 2: _a_ archive-subtree _s_ sort _S_ lobigst _d_ g2s-b/hd _k_ ob-check-src-blk _l_ lint _L_ insert inline task
-Row 1: _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
+Row 1: _x_ utf2xtx _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
 
   ("q" org-babel-switch-to-session-with-code)
 
@@ -2832,6 +2832,7 @@ Row 1: _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
   ("L" org-inlinetask-insert-task)
 
   ;; Row 1
+  ("x" org-utf-to-xetex-insert-macro)
   ("c" org-fill-paragraph)
   ("b" org-babel-switch-to-session)
   ("n" org-narrow-to-subtree)
@@ -2884,7 +2885,7 @@ Row 1: _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
   (setq prettify-symbols-alist (help/alist-set "#+begin_quote" ?🗣 prettify-symbols-alist))
   (setq prettify-symbols-alist (help/alist-set "#+END_QUOTE" ?🗣 prettify-symbols-alist))
   (setq prettify-symbols-alist (help/alist-set "#+end_quote" ?🗣 prettify-symbols-alist))
-  (help/prettify-org-mode-names))
+  (help/prettify-org-mode-names)n)
 (add-hook 'org-mode-hook #'help/prettify-org-mode)
 
 (defun help/prettify-org-mode-names (&optional replacement)
