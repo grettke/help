@@ -2920,7 +2920,7 @@ Row 1: _x_ utf2xtx _c_ org-fill-para _C_ount words _b_ swtch2sessn _n_ n2sbtre _
   (setq prettify-symbols-alist (help/alist-set "#+begin_quote" ?🗣 prettify-symbols-alist))
   (setq prettify-symbols-alist (help/alist-set "#+END_QUOTE" ?🗣 prettify-symbols-alist))
   (setq prettify-symbols-alist (help/alist-set "#+end_quote" ?🗣 prettify-symbols-alist))
-  (help/prettify-org-mode-names)n)
+  (help/prettify-org-mode-names))
 (add-hook 'org-mode-hook #'help/prettify-org-mode)
 
 (defun help/prettify-org-mode-names (&optional replacement)
