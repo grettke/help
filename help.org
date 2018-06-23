@@ -1389,6 +1389,40 @@ Atribution: URL `https://emacs.stackexchange.com/a/33893/341'"
   "Produces and inserts an Org-Mode timestamp."
   (interactive)
   (insert (format "<%s>"(format-time-string "%F"))))
+
+(defun help/org-count-words ()
+  "If region is active, count words in it; otherwise count words in current subtree."
+  (interactive)
+  (if (use-region-p)
+      (funcall-interactively #'count-words-region (region-beginning) (region-end))
+    (org-with-wide-buffer
+     (cl-loop for (lines words characters)
+              in (org-map-entries
+                  (lambda ()
+                    (help/org-forward-to-entry-content 'unsafe)
+                    (let ((end (org-entry-end-position)))
+                      (list (count-lines (point) end)
+                            (count-words (point) end)
+                            (- end (point)))))
+                  nil 'tree)
+              sum lines into total-lines
+              sum words into total-words
+              sum characters into total-characters
+              finally do (message "Subtree \"%s\" has %s lines, %s words, and %s characters."
+                                  (org-get-heading t t) total-lines
+                                  total-words total-characters)))))
+
+(defun help/org-forward-to-entry-content (&optional unsafe)
+  "Skip headline, planning line, and all drawers in current entry.
+If UNSAFE is non-nil, assume point is on headline."
+  (unless unsafe
+    (org-back-to-heading))
+  (cl-loop for element = (org-element-at-point)
+           for pos = (pcase element
+                       (`(headline . ,_) (org-element-property :contents-begin element))
+                       (`(,(or 'planning 'property-drawer 'drawer) . ,_) (org-element-property :end element)))
+           while pos
+           do (goto-char pos)))
 #+END_SRC
 
 ** Typography
@@ -4692,7 +4726,7 @@ Org-Mode: (_q_uit)
 Row 4: _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ id-create _9_ o2b/more _0_ o2b/LaTeX
 Row 3: _w_ tbletfld _e_ ob-clip-formatted _E_ list entities _r_ help/org-refile _R_ insert \"refile\"  _t_oggle macro marker ATT_R_HTML 4 table export format _u_ goto  _p_ copy-reg-2-property
 Row 2: _a_ archive-subtree _s_ sort _S_ lobigst _d_ g2s-b/hd _k_ ob-check-src-blk _l_ lint _L_ insert inline task
-Row 1: _x_ utf2xtx _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
+Row 1: _x_ utf2xtx _c_ org-fill-para _C_ount words _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
 
   ("q" org-babel-switch-to-session-with-code)
 
@@ -4733,6 +4767,7 @@ Row 1: _x_ utf2xtx _c_ org-fill-para _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtre
   ;; Row 1
   ("x" org-utf-to-xetex-insert-macro)
   ("c" org-fill-paragraph)
+  ("C" help/org-count-words)
   ("b" org-babel-switch-to-session)
   ("n" org-narrow-to-subtree)
   ("m" org-mark-subtree)
