@@ -1471,7 +1471,7 @@ making such breaking changes.
 #+NAME: org_gcr_2017-05-12_mara_1986C8FB-6C8F-43F6-811D-D95577160064
 #+BEGIN_SRC emacs-lisp
 (desktop-save-mode t)
-(setq desktop-restore-eager 10)
+(setq desktop-restore-eager 5)
 #+END_SRC
 
 Provide expected "Undo" functionality.
