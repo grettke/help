@@ -4723,7 +4723,7 @@ Because I only use this for Org-Mode.
                                                  :hint nil)
   "
 Org-Mode: (_q_uit)
-Row 4: _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ id-create _8_ ltx/noindent _9_ o2b/more _0_ o2b/LaTeX
+Row 4: _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ id-create _7_ org2xtx _8_ ltx/noindent _9_ o2b/more _0_ o2b/LaTeX
 Row 3: _w_ tbletfld _e_ ob-clip-formatted _E_ list entities _r_ help/org-refile _R_ insert \"refile\"  _t_oggle macro marker ATT_R_HTML 4 table export format _u_ goto  _p_ copy-reg-2-property
 Row 2: _a_ archive-subtree _s_ sort _S_ lobigst _d_ g2s-b/hd _k_ ob-check-src-blk _l_ lint _L_ insert inline task
 Row 1: _x_ utf2xtx _c_ org-fill-para _C_ount words _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
@@ -4735,7 +4735,8 @@ Row 1: _x_ utf2xtx _c_ org-fill-para _C_ount words _b_ swtch2sessn _n_ n2sbtre _
   ("2" org-display-inline-images)
   ("3" org-remove-inline-images)
   ("4" org-id-get-create)
-  ("8" (lambda () (interactive) (insert "@@latex:\\\\noindent{}@@")))
+  ("7" org-utf-to-xetex-insert-or-wrap-with-macro)
+  ("8" (lambda () (interactive) (insert "@@latex:\\noindent{}@@")))
   ("9" (lambda () (interactive) (insert "#+HTML: <!--more-->")))
   ("0" (lambda () (interactive) (insert "$\\LaTeX$")))  ;; Row 4
 
