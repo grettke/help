@@ -3597,7 +3597,7 @@ elisp-mode: _q_uit
   ("m" lispy-multiline)
   ("o" lispy-oneline)
 
-  ("R" el2markdown-write-readme)
+  ("R" (lambda () (interactive) (el2markdown-write-file "README.md" t)))
   ("C" checkdoc))
 (key-chord-define emacs-lisp-mode-map "hh" #'help/hydra-elisp-mode/body)
 
