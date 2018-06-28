@@ -3143,13 +3143,14 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 (defhydra help/hydra/unicode (:color blue :hint nil)
   "
 Unicode: (_q_uit)
- Block: _L_ist Points In Block, _P_aste Points Into This Buffer.
+ Block: _L_ist Points In Block, _P_aste Points Into This Buffer, For _t_his one.
   Point: _S_earch And List.
    Character: _i_nsert by name, _I_nsert by codepoint, E_v_aluate, _E_scape, _U_nescape, _D_ecode, S_a_nitize, 🛇_H_omoglyphs.
 "
   ("q" nil)
   ("L" charmap)
   ("P" (lambda () (interactive) (unicode-fonts-debug-insert-block)))
+  ("t" org-utf-to-xetex-get-unicode-block-for-string-char-after)
   ("S" list-unicode-display)
   ("i" ucs-utils-ucs-insert)
   ("I" insert-char)
