@@ -691,15 +691,6 @@ Make it easy to evaluate code only when running on .
      ,statement
      ,@statements))
 #+END_SRC
-** Info
-:PROPERTIES:
-:ID:       org_gcr_2018-06-16T15-06-43-05-00_mara:EB3BD539-5ABE-420D-940A-80B0D4C20BB9
-:END:
-#+name: org_gcr_2018-06-16T15-06-43-05-00_mara_3E1D8E08-EE82-4A70-A5D1-9B57C0882044
-#+begin_src emacs-lisp
-(use-package info-buffer
-  :ensure t)
-#+end_src
 * Standard Operating Procedure
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:205571BA-2DC4-4DCB-912C-65B9EC843574

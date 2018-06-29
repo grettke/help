@@ -189,11 +189,6 @@
      ,@statements))
 ;; org_gcr_2017-07-23_mara_ED1CAC7D-4B9E-4316-8AB3-85ACDC06B3F4 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-06-16T15-06-43-05-00_mara_3E1D8E08-EE82-4A70-A5D1-9B57C0882044][org_gcr_2018-06-16T15-06-43-05-00_mara_3E1D8E08-EE82-4A70-A5D1-9B57C0882044]]
-(use-package info-buffer
-  :ensure t)
-;; org_gcr_2018-06-16T15-06-43-05-00_mara_3E1D8E08-EE82-4A70-A5D1-9B57C0882044 ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7D37FFE5-2D2B-4CF7-AF27-F3CB8616D81B][org_gcr_2017-05-12_mara_7D37FFE5-2D2B-4CF7-AF27-F3CB8616D81B]]
 (defun help/save-all-file-buffers ()
   "Saves every buffer associated with a file."
