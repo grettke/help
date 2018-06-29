@@ -115,7 +115,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-             hidden-mode-line-mode)
+           hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -2071,6 +2071,7 @@ _A_rchives | Rest_o_res | Re_f_iles
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-11-30_mara_0D5DE620-895E-4BC5-AA15-1E0D19B1815A][org_gcr_2017-11-30_mara_0D5DE620-895E-4BC5-AA15-1E0D19B1815A]]
 (global-set-key (kbd "C-;") (lambda () (interactive) (insert ". ")))
+(global-set-key (kbd "C-M-;") (lambda () (interactive) (insert ". ") (next-logical-line)))
 (global-set-key (kbd "C-.") (lambda () (interactive) (insert ", ")))
 (global-set-key (kbd "C-,") (lambda () (interactive) (insert "; ")))
 ;; org_gcr_2017-11-30_mara_0D5DE620-895E-4BC5-AA15-1E0D19B1815A ends here
