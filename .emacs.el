@@ -115,7 +115,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-           hidden-mode-line-mode)
+             hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -3067,11 +3067,6 @@ Words: _C_ount, _G_rade Level, _R_eading Ease, _A_ffect vs Effect
   (unicode-fonts-setup))
 ;; org_gcr_2018-06-03T01-16-43-05-00_mara_3374BEB2-6CF3-4F07-B2D6-7D84147CEDF3 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-06-06T22-01-54-05-00_mara_4EB996DD-4FBC-492B-B773-73D78D431CEA][org_gcr_2018-06-06T22-01-54-05-00_mara_4EB996DD-4FBC-492B-B773-73D78D431CEA]]
-(use-package charmap
-  :ensure t)
-;; org_gcr_2018-06-06T22-01-54-05-00_mara_4EB996DD-4FBC-492B-B773-73D78D431CEA ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B7889E2D-2E2E-402B-BFC6-F8EC056D1F6E][org_gcr_2017-05-12_mara_B7889E2D-2E2E-402B-BFC6-F8EC056D1F6E]]
 (use-package unicode-escape
   :ensure t
@@ -3139,22 +3134,29 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 (defhydra help/hydra/unicode (:color blue :hint nil)
   "
 Unicode: (_q_uit)
- Block: _L_ist Points In Block, _P_aste Points Into This Buffer, For _t_his one.
-  Point: _S_earch And List.
-   Character: _i_nsert by name, _I_nsert by codepoint, E_v_aluate, _E_scape, _U_nescape, _D_ecode, S_a_nitize, 🛇_H_omoglyphs.
+ Insert: ∧_C_har, RegE_x_🔎
+  'Ify Region: _A_scii'ify, _R_oman'ify
+   _E_scape Region: 😄 → \\\\uD83D\\\\uDE04
+    _U_nescape Region: \\\\uD83D\\\\uDE04 → 😄
+      Blocks: _B_lock Name At Point, _I_nsert Block
+       Char: _U_CS Name At Point, _H_omoglyph Warning System
 "
   ("q" nil)
-  ("L" charmap)
-  ("P" (lambda () (interactive) (unicode-fonts-debug-insert-block)))
-  ("t" org-utf-to-xetex-get-unicode-block-for-string-char-after)
-  ("S" list-unicode-display)
-  ("i" ucs-utils-ucs-insert)
-  ("I" insert-char)
-  ("v" ucs-utils-eval)
-  ("E" unicode-escape-region)
-  ("U" unicode-unescape-region)
-  ("D" help/unidecode-region)
-  ("a" help/unidecode-sanitize-region)
+
+  ("C" ucs-utils-ucs-insert)
+  ("x" list-unicode-display)
+
+  ("A" help/unidecode-region)
+  ("R" help/unidecode-sanitize-region)
+
+  ("E" unicode-escape)
+
+  ("U" unicode-unescape)
+
+  ("B" org-utf-to-xetex-get-unicode-block-for-string-char-after)
+  ("I" (lambda () (interactive) (unicode-fonts-debug-insert-block)))
+
+  ("U" ucs-utils-eval)
   ("H" unicode-troll-stopper-mode))
 (global-set-key (kbd "C-M-u") #'help/hydra/unicode/body)
 ;; org_gcr_2018-06-06T22-01-54-05-00_mara_61574A72-BF05-4C0A-B665-BC80C13C35E5 ends here

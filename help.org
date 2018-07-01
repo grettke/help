@@ -5050,15 +5050,6 @@ Configure fonts for Unicode blocks.
 :ID:       org_gcr_2018-06-06T22-01-54-05-00_mara:702B80D4-22BB-4A0B-B33C-1D314A337C83
 :END:
 Show all code points in a block
-**** Block
-:PROPERTIES:
-:ID:       org_gcr_2018-06-06T22-01-54-05-00_mara:E5E9332A-777B-4937-9A70-5DBBE9028D8D
-:END:
-#+name: org_gcr_2018-06-06T22-01-54-05-00_mara_4EB996DD-4FBC-492B-B773-73D78D431CEA
-#+begin_src emacs-lisp
-(use-package charmap
-  :ensure t)
-#+end_src
 **** Char
 :PROPERTIES:
 :ID:       org_gcr_2018-06-06T22-01-54-05-00_mara:D507FC09-B53D-4206-8789-297DEDDFE4C7
@@ -5173,24 +5164,32 @@ Search code points by name and present the result(s).
 (defhydra help/hydra/unicode (:color blue :hint nil)
   "
 Unicode: (_q_uit)
- Block: _L_ist Points In Block, _P_aste Points Into This Buffer, For _t_his one.
-  Point: _S_earch And List.
-   Character: _i_nsert by name, _I_nsert by codepoint, E_v_aluate, _E_scape, _U_nescape, _D_ecode, S_a_nitize, 🛇_H_omoglyphs.
+ Insert: ∧_C_har, RegE_x_🔎
+  'Ify Region: _A_scii'ify, _R_oman'ify
+   _E_scape Region: 😄 → \\\\uD83D\\\\uDE04
+    _U_nescape Region: \\\\uD83D\\\\uDE04 → 😄
+      Blocks: _B_lock Name At Point, _I_nsert Block
+       Char: _U_CS Name At Point, _H_omoglyph Warning System
 "
   ("q" nil)
-  ("L" charmap)
-  ("P" (lambda () (interactive) (unicode-fonts-debug-insert-block)))
-  ("t" org-utf-to-xetex-get-unicode-block-for-string-char-after)
-  ("S" list-unicode-display)
-  ("i" ucs-utils-ucs-insert)
-  ("I" insert-char)
-  ("v" ucs-utils-eval)
-  ("E" unicode-escape-region)
-  ("U" unicode-unescape-region)
-  ("D" help/unidecode-region)
-  ("a" help/unidecode-sanitize-region)
+
+  ("C" ucs-utils-ucs-insert)
+  ("x" list-unicode-display)
+
+  ("A" help/unidecode-region)
+  ("R" help/unidecode-sanitize-region)
+
+  ("E" unicode-escape)
+
+  ("U" unicode-unescape)
+
+  ("B" org-utf-to-xetex-get-unicode-block-for-string-char-after)
+  ("I" (lambda () (interactive) (unicode-fonts-debug-insert-block)))
+
+  ("U" ucs-utils-eval)
   ("H" unicode-troll-stopper-mode))
 (global-set-key (kbd "C-M-u") #'help/hydra/unicode/body)
+
 #+end_src
 ** Applied Mathematics
    :PROPERTIES:
