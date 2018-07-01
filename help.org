@@ -5166,16 +5166,18 @@ Search code points by name and present the result(s).
 (defhydra help/hydra/unicode (:color blue :hint nil)
   "
 Unicode: (_q_uit)
- Insert: ∧_C_har, RegE_x_🔎
-  'Ify Region: _A_scii'ify, _R_oman'ify
-   _E_scape Region: 😄 → \\\\uD83D\\\\uDE04
-    _U_nescape Region: \\\\uD83D\\\\uDE04 → 😄
+ Insert: ∧By _N_ame, ∧By _C_odepoint (name string | hex string | code point w/radix octal #o21430, hex #x2318, or decimal #10r8984)
+  Search: RegE_x_🔎
+   'Ify Region: _A_scii'ify, _R_oman'ify
+    _E_scape Region: 😄 → \\\\uD83D\\\\uDE04
+     _U_nescape Region: \\\\uD83D\\\\uDE04 → 😄
       Blocks: _B_lock Name At Point, _I_nsert Block
        Char: _U_CS Name At Point, _H_omoglyph Warning System
 "
   ("q" nil)
 
-  ("C" ucs-utils-ucs-insert)
+  ("N" ucs-utils-ucs-insert)
+  ("C" insert-char)
   ("x" list-unicode-display)
 
   ("A" help/unidecode-region)
