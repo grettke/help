@@ -2495,6 +2495,8 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
     ("" "scrlayer-scrpage")
     ("" "lastpage")
     ("" "polyglossia")
+    ("" "tabularx")
+    ("" "tabu")
     ("" "grantcrettke")))
 (setq org-latex-packages-alist
       (append help/org-latex-packages-alist-pre-hyperref

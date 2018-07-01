@@ -4126,6 +4126,8 @@ Copied and customized from [[https://github.com/kaushalmodi/.emacs.d/blob/master
     ("" "scrlayer-scrpage")
     ("" "lastpage")
     ("" "polyglossia")
+    ("" "tabularx")
+    ("" "tabu")
     ("" "grantcrettke")))
 (setq org-latex-packages-alist
       (append help/org-latex-packages-alist-pre-hyperref
