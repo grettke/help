@@ -2822,8 +2822,8 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
                                                  :hint nil)
   "
 Org-Mode: (_q_uit)
-Row 4: _1_ SHA-1-hash _2_ +imgs _3_ -imgs _4_ id-create _7_ org2xtx _8_ ltx/noindent _9_ o2b/more _0_ o2b/LaTeX
-Row 3: _w_ tbletfld _e_ ob-clip-formatted _E_ list entities _r_ help/org-refile _R_ insert \"refile\"  _t_oggle macro marker ATT_R_HTML 4 table export format _u_ goto  _p_ copy-reg-2-property
+Row 4: _1_ SHA-1-hash _2_ display images _3_ hide images _4_ id-create _8_ ltx/noindent _9_ o2b/more _0_ o2b/LaTeX
+Row 3: _w_ ob-clip-formatted _e_ edit field  _E_ list entities _r_ help/org-refile _R_ insert \"refile\"  _t_oggle macro marker ATT_R_HTML 4 table export format _u_ goto  _p_ copy-reg-2-property
 Row 2: _a_ archive-subtree _s_ sort _S_ lobigst _d_ g2s-b/hd _k_ ob-check-src-blk _l_ lint _L_ insert inline task
 Row 1: _x_ utf2xtx _c_ org-fill-para _C_ount words _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
 
@@ -2840,9 +2840,9 @@ Row 1: _x_ utf2xtx _c_ org-fill-para _C_ount words _b_ swtch2sessn _n_ n2sbtre _
   ("0" (lambda () (interactive) (insert "$\\LaTeX$")))  ;; Row 4
 
   ;; Row 3
-  ("w" org-table-edit-field)
+  ("w" ox-clip-formatted-copy)
+  ("e" org-table-edit-field)
   ("W" help/org-mark-subtree/kill-ring-save)
-  ("e" ox-clip-formatted-copy)
   ("E" org-entities-help)
   ("r" help/org-refile)
   ("R" (lambda () (interactive) (insert "(refile)")))
