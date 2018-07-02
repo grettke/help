@@ -4861,6 +4861,21 @@ Custom font lock
     0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "—")))))
 
 #+end_src
+**** HTML Exporter
+:PROPERTIES:
+:ID:       org_gcr_2018-07-02T07-07-57-05-00_mara:7236EDFF-7176-4C5F-842C-7919D3E73C28
+:END:
+
+Doctype—use the default.
+
+~org-html-table-default-attributes~ (which are ignored in the ~HTML5~).
+#+name: org_gcr_2018-07-02T07-07-57-05-00_mara_50C8A3C0-835D-4DE9-B5AE-161C127BF850
+#+begin_src emacs-lisp
+(setq org-html-table-default-attributes
+      (plist-put org-html-table-default-attributes :rules "all"))
+(setq org-html-table-default-attributes
+      (plist-put org-html-table-default-attributes :frame "border"))
+#+end_src
 *** Intermittent Literate Programming
 :PROPERTIES:
 :ID:       org_gcr_2018-01-04_mara:43462ECD-9C40-43D2-872F-A2E9DB134199
@@ -6372,13 +6387,6 @@ Load Htmlize for HTML export.
   :config
   (setq org-html-htmlize-output-type htmlize-output-type)
   (setq htmlize-output-type 'inline-css))
-#+END_SRC
-
-Use in-line CSS.
-
-#+NAME: org_gcr_2017-05-12_mara_03AEAE7A-99ED-42BE-BE6E-0485884B55BB
-#+BEGIN_SRC emacs-lisp
-(setq org-html-doctype "html5")
 #+END_SRC
 
 Export HTML to the clipboard.

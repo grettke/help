@@ -2943,6 +2943,13 @@ Row 1: _x_ utf2xtx _c_ org-fill-para _C_ount words _b_ swtch2sessn _n_ n2sbtre _
     0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "—")))))
 ;; org_gcr_2018-06-14T14-15-42-05-00_mara_2F1F424E-F780-4D04-B582-7770987CC960 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-07-02T07-07-57-05-00_mara_50C8A3C0-835D-4DE9-B5AE-161C127BF850][org_gcr_2018-07-02T07-07-57-05-00_mara_50C8A3C0-835D-4DE9-B5AE-161C127BF850]]
+(setq org-html-table-default-attributes
+      (plist-put org-html-table-default-attributes :rules "all"))
+(setq org-html-table-default-attributes
+      (plist-put org-html-table-default-attributes :frame "border"))
+;; org_gcr_2018-07-02T07-07-57-05-00_mara_50C8A3C0-835D-4DE9-B5AE-161C127BF850 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2018-01-04_mara_42B53E96-5046-4A7B-8CC9-A7046CCD3BF1][org_gcr_2018-01-04_mara_42B53E96-5046-4A7B-8CC9-A7046CCD3BF1]]
 (use-package edit-indirect
   :ensure t)
@@ -3970,10 +3977,6 @@ Errors: _R_eport ⏼_B_oxes ⏼_W_arnings
   (setq org-html-htmlize-output-type htmlize-output-type)
   (setq htmlize-output-type 'inline-css))
 ;; org_gcr_2017-05-12_mara_62E6542A-B340-470A-B7E0-2F4438EBBAE9 ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_03AEAE7A-99ED-42BE-BE6E-0485884B55BB][org_gcr_2017-05-12_mara_03AEAE7A-99ED-42BE-BE6E-0485884B55BB]]
-(setq org-html-doctype "html5")
-;; org_gcr_2017-05-12_mara_03AEAE7A-99ED-42BE-BE6E-0485884B55BB ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-12-03_mara_70A08E80-7CD1-4D4F-9584-34F6FBD7A32E][org_gcr_2017-12-03_mara_70A08E80-7CD1-4D4F-9584-34F6FBD7A32E]]
 (use-package ox-clip
