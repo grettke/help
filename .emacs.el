@@ -1488,6 +1488,8 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
         '(
           "DASH_RULE"
           "WHITESPACE_RULE"
+          "PUNCTUATION_PARAGRAPH_END"
+          "EN_QUOTES"
           ))
   (defhydra help/hydra/both/langtool (:color blue :hint nil)
     "
@@ -2866,7 +2868,7 @@ Row 1: _x_ utf2xtx _c_ org-fill-para _C_ount words _b_ swtch2sessn _n_ n2sbtre _
   ("L" org-inlinetask-insert-task)
 
   ;; Row 1
-  ("x" org-utf-to-xetex-insert-macro)
+  ("x" org-utf-to-xetex-insert-or-wrap-with-macro)
   ("c" org-fill-paragraph)
   ("C" help/org-count-words)
   ("b" org-babel-switch-to-session)
