@@ -141,3 +141,12 @@ A collection of Go related Hydras for Emacs.
 (add-to-list 'load-path "~/src/universal-emotions-emoticons")
 (require 'universal-emotions-emoticons)
 #+END_SRC
+* corporate-bs-generator
+:PROPERTIES:
+:ID:       org_gcr_2018-07-06T22-26-05-05-00_mara:EBD3FC34-3153-4E01-A8DD-099CF51A08EF
+:END:
+#+name: org_gcr_2018-07-06T22-26-05-05-00_mara_8504E527-9CB6-4CF7-AF8D-5E98CCA540E6
+#+begin_src emacs-lisp
+(add-to-list 'load-path "~/src/corporate-bs-generator")
+(require 'corporate-bs-generator)
+#+end_src

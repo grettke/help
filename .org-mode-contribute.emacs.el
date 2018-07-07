@@ -58,3 +58,8 @@
 (add-to-list 'load-path "~/src/universal-emotions-emoticons")
 (require 'universal-emotions-emoticons)
 ;; org_gcr_2017-12-05_mara_62849D6E-BD7B-4289-AC2C-CF8B51B9C633 ends here
+
+;; [[file:~/src/help/Contribute.org::org_gcr_2018-07-06T22-26-05-05-00_mara_8504E527-9CB6-4CF7-AF8D-5E98CCA540E6][org_gcr_2018-07-06T22-26-05-05-00_mara_8504E527-9CB6-4CF7-AF8D-5E98CCA540E6]]
+(add-to-list 'load-path "~/src/corporate-bs-generator")
+(require 'corporate-bs-generator)
+;; org_gcr_2018-07-06T22-26-05-05-00_mara_8504E527-9CB6-4CF7-AF8D-5E98CCA540E6 ends here
