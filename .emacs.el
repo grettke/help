@@ -115,7 +115,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-             hidden-mode-line-mode)
+           hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -3005,7 +3005,8 @@ Words: _C_ount, _G_rade Level, _R_eading Ease, _A_ffect vs Effect
       _K_ibologize (insert _k_ibologize)
        _S_hop _m_iddle name
         _Y_ouwill (insert _y_ouwill)
-         _q_uit"
+         Corporate _B_.S.: (_I_nsert B.S.) (A_d_d B.S. To Kill Ring)
+          _q_uit"
 
 
   ("q" nil)
@@ -3039,7 +3040,11 @@ Words: _C_ount, _G_rade Level, _R_eading Ease, _A_ffect vs Effect
   ("m" shop-middle-name)
 
   ("Y" youwill)
-  ("y" help/youwill-insert))
+  ("y" help/youwill-insert)
+
+  ("B" corporate-bs-generator-create)
+  ("I" (lambda () (interactive) (let ((current-prefix-arg '(4))) (corporate-bs-generator-create))))
+  ("d" (lambda () (interactive) (let ((current-prefix-arg '(16))) (corporate-bs-generator-create)))))
 
 (use-package affect-vs-effect
   :ensure t)
@@ -4606,7 +4611,7 @@ _w_ where is something defined
 _1_ reset-font _2_ -font _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _8_ selectric _-_ split-window-vertically _=_ reposition-window
 
 _q_uit _Q_ exit-Emacs
-_w_ widen
+_w_ widen _W_ords
 _e_ FontAwesome _E_ prettify-symbols-mode
 _r_ rename this buffer and file
 _R_ insert the default file header
@@ -4679,6 +4684,7 @@ _?_ tons of scissors
   ("v" help/hydra/vocabulary/body)
   ("V" view-mode)
   ("w" widen)
+  ("W" help/hydra/words/body)
   ("t" rectangle-mark-mode)
   ("y" yas-describe-tables)
   ("Y" hydra-transparency/body)
