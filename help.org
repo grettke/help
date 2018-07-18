@@ -6812,7 +6812,7 @@ Visualize ASCII strings with Unicode.
 (setq solarized-use-more-italic nil)
 (setq solarized-emphasize-indicators nil)
 (setq solarized-scale-org-headlines t)
-(load-theme 'solarized-dark t)
+(load-theme 'solarized-light t)
 (eval-after-load "smart-mode-line"
   '(sml/setup))
 #+END_SRC

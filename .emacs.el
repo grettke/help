@@ -115,7 +115,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-           hidden-mode-line-mode)
+             hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -4201,7 +4201,7 @@ Ansible: (q to quit)
 (setq solarized-use-more-italic nil)
 (setq solarized-emphasize-indicators nil)
 (setq solarized-scale-org-headlines t)
-(load-theme 'solarized-dark t)
+(load-theme 'solarized-light t)
 (eval-after-load "smart-mode-line"
   '(sml/setup))
 ;; org_gcr_2017-05-12_mara_1AD36955-5FAC-4794-A9B0-A8DC6639A04C ends here
