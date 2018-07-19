@@ -7702,8 +7702,8 @@ Try to reserve this for the OS.
   "Inserts an EN-DASH (not a HYPEN, not an EM-DASH)"
   (interactive)
   (insert "–"))
-(global-set-key (kbd "C--") #'help/insert-em-dash)
-(global-set-key (kbd "M--") #'help/insert-en-dash)
+(global-set-key (kbd "s-_") #'help/insert-em-dash)
+(global-set-key (kbd "s--") #'help/insert-en-dash)
 
 (global-set-key (kbd "s-1") #'mc/edit-lines)
 (global-set-key (kbd "s-2") #'mc/mark-all-like-this)
@@ -7712,8 +7712,6 @@ Try to reserve this for the OS.
 (global-set-key (kbd "s-$") #'mc-hide-unmatched-lines-mode)
 (global-set-key (kbd "s-5") #'mc/skip-to-previous-like-this)
 (global-set-key (kbd "s-6") #'mc/skip-to-next-like-this)
-(global-set-key (kbd "s--") #'decrement-integer-at-point)
-(global-set-key (kbd "s-+") #'increment-integer-at-point)
 #+END_SRC
 
 Checking things.
