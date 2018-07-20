@@ -1420,6 +1420,43 @@ If UNSAFE is non-nil, assume point is on headline."
                        (`(,(or 'planning 'property-drawer 'drawer) . ,_) (org-element-property :end element)))
            while pos
            do (goto-char pos)))
+
+(defvar help/most-used-words-count 10 "Default most used word count to show")
+
+(defun help/most-used-words-fn (&optional n)
+  "Make a list of the N most used words in buffer, or use default.
+Attribution: Udyant Wig <udyantw@gmail.com>"
+  (let ((n (or n help/most-used-words-count))
+        (counts (make-hash-table :test #'equal))
+        (words (split-string (buffer-string)))
+        sorted-counts)
+    (dolist (word words)
+      (let ((count (gethash (downcase word) counts 0)))
+        (puthash (downcase word) (1+ count) counts)))
+    (cl-loop for word being the hash-keys of counts
+             using (hash-values count)
+             do
+             (push (list word count) sorted-counts)
+             finally (setf sorted-counts (cl-sort sorted-counts #'>
+                                                  :key #'cl-second)))
+    (mapcar #'cl-first (cl-subseq sorted-counts 0 n))))
+
+(defun help/most-used-words ()
+  "Report top N most used words in a new buffer, defaults to 1"
+  (interactive)
+  (let* ((input-raw (read-string "Report the top N most used words <hit enter for default>: " nil nil nil))
+         (input-num (floor (string-to-number (string-trim input-raw))))
+         (n (if (<= input-num 0) help/most-used-words-count input-num))
+         (words (help/most-used-words-fn n))
+         (name (format "TOP %s USED WORDS IN %s" n (buffer-name)))
+         (underbar (make-string (length name) ?=))
+         (buf (get-buffer-create (format "*%s*"name))))
+    (switch-to-buffer buf)
+    (insert (format "%s\n%s\n" name underbar))
+    (dolist (word words) (insert (format "%s\n" word)))
+    (help-mode)
+    (setq buffer-read-only t)
+    (goto-char (point-min))))
 #+END_SRC
 
 ** Typography
@@ -3099,7 +3136,7 @@ VC activity keybindings.
 
 #+NAME: org_gcr_2017-05-12_mara_A4E407FE-DD42-458A-BD83-2EFD71C1D728
 #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "C-M-w") #'git-timemachine)
+(global-set-key (kbd "C-M-w") #'help/hydra/words/body)
 (global-set-key (kbd "s-e") #'help/safb-help/magit-status)
 (global-set-key (kbd "s-r") #'help/safb-vc-revert)
 (global-set-key (kbd "s-f") #'help/safb-help/vc-next-action)
@@ -4954,7 +4991,7 @@ _b_ black-board-bold _f_ fraktur
 
 (defhydra help/hydra/words (:color blue :hint nil)
   "
-Words: _C_ount, _G_rade Level, _R_eading Ease, _A_ffect vs Effect
+Words: _C_ount, _T_op#, _G_rade Level, _R_eading Ease, _A_ffect vs Effect
  Lorem Ipsum: _w_ord _s_entence _p_aragraphs _l_ist
   Academic Phrases: _a_ll or by se_c_tion
    _E_macs Name (insert _e_macs name)
@@ -4970,6 +5007,7 @@ Words: _C_ount, _G_rade Level, _R_eading Ease, _A_ffect vs Effect
   ("q" nil)
 
   ("C" count-words)
+  ("T" help/most-used-words)
   ("G" writegood-grade-level)
   ("R" writegood-reading-ease)
   ("A" affect-vs-effect-explanation)
@@ -7923,7 +7961,7 @@ Org-Mode and I hit ~s-h~ it hides Emacs. Oops!
 _1_ reset-font _2_ -font _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _8_ selectric _-_ split-window-vertically _=_ reposition-window
 
 _q_uit _Q_ exit-Emacs
-_w_ widen _W_ords
+_w_ widen _W_ git time machine
 _e_ FontAwesome _E_ prettify-symbols-mode
 _r_ rename this buffer and file
 _R_ insert the default file header
@@ -7996,7 +8034,7 @@ _?_ tons of scissors
   ("v" help/hydra/vocabulary/body)
   ("V" view-mode)
   ("w" widen)
-  ("W" help/hydra/words/body)
+  ("W" git-timemachine)
   ("t" rectangle-mark-mode)
   ("y" yas-describe-tables)
   ("Y" hydra-transparency/body)
