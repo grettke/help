@@ -79,6 +79,10 @@
   :ensure t)
 ;; org_gcr_2017-05-12_mara_C0E2C1E6-A271-47A1-84C3-BE9382235979 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-07-18T20-32-35-05-00_mara_411E5B87-16D6-4ACA-8DF0-10DC5C92F934][org_gcr_2018-07-18T20-32-35-05-00_mara_411E5B87-16D6-4ACA-8DF0-10DC5C92F934]]
+(require 'cl-lib)
+;; org_gcr_2018-07-18T20-32-35-05-00_mara_411E5B87-16D6-4ACA-8DF0-10DC5C92F934 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_2FD3C2CA-508B-453E-A619-76D6EA4AAF71][org_gcr_2017-05-12_mara_2FD3C2CA-508B-453E-A619-76D6EA4AAF71]]
 (use-package diminish)
 ;; org_gcr_2017-05-12_mara_2FD3C2CA-508B-453E-A619-76D6EA4AAF71 ends here

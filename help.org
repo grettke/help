@@ -508,6 +508,12 @@ Child process handling specifically for Magit.
   :ensure t)
 #+END_SRC
 
+~CL-LIB~.
+
+#+name: org_gcr_2018-07-18T20-32-35-05-00_mara_411E5B87-16D6-4ACA-8DF0-10DC5C92F934
+#+begin_src emacs-lisp
+(require 'cl-lib)
+#+end_src
 ** Modeline
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:953129BC-045D-43B5-A194-904818E44FC7
