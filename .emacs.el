@@ -4648,7 +4648,7 @@ _w_ where is something defined
 (defhydra help/hydra/left-side/global (:color blue
                                               :hint nil)
   "
-_1_ reset-font _2_ -font _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _8_ selectric _-_ split-window-vertically _=_ reposition-window
+_1_ reset-font _2_ -font _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _8_ selectric _9_ 👍_0_ 👎 _-_ split-window-vertically _=_ reposition-window
 
 _q_uit _Q_ exit-Emacs
 _w_ widen _W_ git time machine
@@ -4702,6 +4702,8 @@ _?_ tons of scissors
   ("3" help/text-scale-increase :exit nil)
   ("4" help/insert-ellipsis)
   ("8" selectric-mode)
+  ("9" (lambda () (interactive) (insert "👍")))
+  ("0" (lambda () (interactive) (insert "👎")))
   ("[" (lambda () (interactive) (insert "⟦")))
   ("]" (lambda () (interactive) (insert "⟧")))
   ("r" help/rename-current-buffer-file)
