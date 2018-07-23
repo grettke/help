@@ -4648,7 +4648,7 @@ _w_ where is something defined
 (defhydra help/hydra/left-side/global (:color blue
                                               :hint nil)
   "
-_1_ reset-font _2_ -font _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _8_ selectric _9_ 👍_0_ 👎 _-_ split-window-vertically _=_ reposition-window
+_1_ reset-font _2_ -font _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_ selectric _8_ 👍_9_ 👎 _0_ 👏_-_ split-window-vertically _=_ reposition-window
 
 _q_uit _Q_ exit-Emacs
 _w_ widen _W_ git time machine
@@ -4701,17 +4701,18 @@ _?_ tons of scissors
   ("2" help/text-scale-decrease :exit nil)
   ("3" help/text-scale-increase :exit nil)
   ("4" help/insert-ellipsis)
-  ("8" selectric-mode)
-  ("9" (lambda () (interactive) (insert "👍")))
-  ("0" (lambda () (interactive) (insert "👎")))
+  ("5" help/uuid)
+  ("6" set-buffer-file-coding-system)
+  ("7" selectric-mode)
+  ("8" (lambda () (interactive) (insert "👍")))
+  ("9" (lambda () (interactive) (insert "👎")))
+  ("0" (lambda () (interactive) (insert "👏")) :exit nil)
   ("[" (lambda () (interactive) (insert "⟦")))
   ("]" (lambda () (interactive) (insert "⟧")))
   ("r" help/rename-current-buffer-file)
   ("R" auto-insert)
   ("T" help/trademark/body)
   ("=" reposition-window)
-  ("5" help/uuid)
-  ("6" set-buffer-file-coding-system)
   ("s" help/toggle-mac-right-option-modifier)
   ("g" grep)
   ("h" hidden-mode-line-mode)
