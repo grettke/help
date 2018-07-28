@@ -74,11 +74,6 @@
   :ensure t)
 ;; org_gcr_2017-05-12_mara_C063F7CE-637E-43F8-8E16-AFBC68CA7618 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C0E2C1E6-A271-47A1-84C3-BE9382235979][org_gcr_2017-05-12_mara_C0E2C1E6-A271-47A1-84C3-BE9382235979]]
-(use-package with-editor
-  :ensure t)
-;; org_gcr_2017-05-12_mara_C0E2C1E6-A271-47A1-84C3-BE9382235979 ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2018-07-18T20-32-35-05-00_mara_411E5B87-16D6-4ACA-8DF0-10DC5C92F934][org_gcr_2018-07-18T20-32-35-05-00_mara_411E5B87-16D6-4ACA-8DF0-10DC5C92F934]]
 (require 'cl-lib)
 ;; org_gcr_2018-07-18T20-32-35-05-00_mara_411E5B87-16D6-4ACA-8DF0-10DC5C92F934 ends here
@@ -1950,13 +1945,13 @@ URL: `http://emacsredux.com/blog/2013/03/27/indent-region-or-buffer/'"
 ;; org_gcr_2017-05-12_mara_5A73C4A8-C2AE-4F36-9D64-3FB6A4FF31E0 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_3E77B825-E0A4-40EC-88DC-3F5C1E1445CE][org_gcr_2017-05-12_mara_3E77B825-E0A4-40EC-88DC-3F5C1E1445CE]]
-(add-to-list 'load-path "~/src/magit/lisp")
-(require 'magit)
-
-(with-eval-after-load 'info
-  (info-initialize)
-  (add-to-list 'Info-directory-list
-               "~/src/magit/Documentation/"))
+(use-package magit
+  :ensure t
+  :config
+  (with-eval-after-load 'info
+    (info-initialize)
+    (add-to-list 'Info-directory-list
+                 "~/src/magit/Documentation/")))
 ;; org_gcr_2017-05-12_mara_3E77B825-E0A4-40EC-88DC-3F5C1E1445CE ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2018-02-24_mara_A2D8DA8E-CE8C-4F26-9DED-7E0AA2DD3CCA][org_gcr_2018-02-24_mara_A2D8DA8E-CE8C-4F26-9DED-7E0AA2DD3CCA]]

@@ -500,14 +500,6 @@ Caching.
   :ensure t)
 #+END_SRC
 
-Child process handling specifically for Magit.
-
-#+NAME: org_gcr_2017-05-12_mara_C0E2C1E6-A271-47A1-84C3-BE9382235979
-#+BEGIN_SRC emacs-lisp
-(use-package with-editor
-  :ensure t)
-#+END_SRC
-
 ~CL-LIB~.
 
 #+name: org_gcr_2018-07-18T20-32-35-05-00_mara_411E5B87-16D6-4ACA-8DF0-10DC5C92F934
@@ -3086,18 +3078,15 @@ looks great at 4. 4 is the average and it looks good in exported LaTeX listings.
 
 Use VC for single files and Magit for multiple files.
 
-The commit log editor uses With-Editor and Server modes. They are not
-diminished because they are infrequently used.
-
 #+NAME: org_gcr_2017-05-12_mara_3E77B825-E0A4-40EC-88DC-3F5C1E1445CE
 #+BEGIN_SRC emacs-lisp
-(add-to-list 'load-path "~/src/magit/lisp")
-(require 'magit)
-
-(with-eval-after-load 'info
-  (info-initialize)
-  (add-to-list 'Info-directory-list
-               "~/src/magit/Documentation/"))
+(use-package magit
+  :ensure t
+  :config
+  (with-eval-after-load 'info
+    (info-initialize)
+    (add-to-list 'Info-directory-list
+                 "~/src/magit/Documentation/")))
 #+END_SRC
 
 Close Magit-process related buffers when they become obselete.
