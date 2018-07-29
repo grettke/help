@@ -4510,10 +4510,6 @@ Flycheck: ⏼%(bound-and-true-p flycheck-mode)
 (global-set-key (kbd "C-M-9") #'help/hydra-checking/body)
 ;; org_gcr_2017-06-13_mara_2DFDC64B-DBF2-473E-979F-D7D8D0DD2206 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-06-14T21-39-17-05-00_mara_70C898D6-ECBA-463D-B33D-3A1C309AE2E1][org_gcr_2018-06-14T21-39-17-05-00_mara_70C898D6-ECBA-463D-B33D-3A1C309AE2E1]]
-(global-set-key (kbd "C-M-0") #'help/hydra/words/body)
-;; org_gcr_2018-06-14T21-39-17-05-00_mara_70C898D6-ECBA-463D-B33D-3A1C309AE2E1 ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC][org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC]]
 (defhydra help/hydra/timestamp (:color blue :hint nil)
   "

@@ -7775,14 +7775,6 @@ Flycheck: ⏼%(bound-and-true-p flycheck-mode)
   ("q" nil))
 (global-set-key (kbd "C-M-9") #'help/hydra-checking/body)
 #+END_SRC
-
-Words
-
-#+name: org_gcr_2018-06-14T21-39-17-05-00_mara_70C898D6-ECBA-463D-B33D-3A1C309AE2E1
-#+begin_src emacs-lisp
-(global-set-key (kbd "C-M-0") #'help/hydra/words/body)
-#+end_src
-
 **** Row 4
 :PROPERTIES:
 :ID:       org_gcr_2018-06-06T22-01-54-05-00_mara:D34D40ED-F8E3-405D-88AA-AB8C52533706
