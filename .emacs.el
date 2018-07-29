@@ -2103,6 +2103,9 @@ _A_rchives | Rest_o_res | Re_f_iles
 (add-to-list 'auto-capitalize-words "Fr")
 (add-to-list 'auto-capitalize-words "SI")
 (add-to-list 'auto-capitalize-words "24B")
+(add-to-list 'auto-capitalize-words "Mantra")
+(add-to-list 'auto-capitalize-words "Tantra")
+(add-to-list 'auto-capitalize-words "Yantra")
 (add-to-list 'desktop-minor-mode-handlers
              '(auto-capitalize . (lambda (desktop-buffer-locals))))
 ;; org_gcr_2017-11-30_mara_75B00948-177E-487A-83A9-2F690611CA59 ends here

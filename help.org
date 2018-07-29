@@ -3365,6 +3365,9 @@ Auto-Capitalize text modes.
 (add-to-list 'auto-capitalize-words "Fr")
 (add-to-list 'auto-capitalize-words "SI")
 (add-to-list 'auto-capitalize-words "24B")
+(add-to-list 'auto-capitalize-words "Mantra")
+(add-to-list 'auto-capitalize-words "Tantra")
+(add-to-list 'auto-capitalize-words "Yantra")
 (add-to-list 'desktop-minor-mode-handlers
              '(auto-capitalize . (lambda (desktop-buffer-locals))))
 #+END_SRC
