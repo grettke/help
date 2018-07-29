@@ -2098,14 +2098,22 @@ _A_rchives | Rest_o_res | Re_f_iles
 (eval-after-load "auto-capitalize" '(diminish "auto-capitalize-mode"))
 (require 'auto-capitalize)
 (diminish 'auto-capitalize-mode)
-(add-to-list 'auto-capitalize-words "HTTP")
-(add-to-list 'auto-capitalize-words "HTTPS")
-(add-to-list 'auto-capitalize-words "Fr")
-(add-to-list 'auto-capitalize-words "SI")
-(add-to-list 'auto-capitalize-words "24B")
-(add-to-list 'auto-capitalize-words "Mantra")
-(add-to-list 'auto-capitalize-words "Tantra")
-(add-to-list 'auto-capitalize-words "Yantra")
+(dolist (it '(
+              "24B"
+              "Fr"
+              "God"
+              "HTTP"
+              "HTTPS"
+              "Mantra"
+              "SI"
+              "Sri"
+              "StoneIsle"
+              "Tantra"
+              "Vidya"
+              "Yantra"
+              "Yoga"
+              ))
+  (add-to-list 'auto-capitalize-words it))
 (add-to-list 'desktop-minor-mode-handlers
              '(auto-capitalize . (lambda (desktop-buffer-locals))))
 ;; org_gcr_2017-11-30_mara_75B00948-177E-487A-83A9-2F690611CA59 ends here
