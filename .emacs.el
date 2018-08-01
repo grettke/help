@@ -2119,7 +2119,18 @@ _A_rchives | Rest_o_res | Re_f_iles
 ;; org_gcr_2017-11-30_mara_75B00948-177E-487A-83A9-2F690611CA59 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-11-30_mara_0D5DE620-895E-4BC5-AA15-1E0D19B1815A][org_gcr_2017-11-30_mara_0D5DE620-895E-4BC5-AA15-1E0D19B1815A]]
-(global-set-key (kbd "C-;") (lambda () (interactive) (insert ". ")))
+(defun help/dot-space ()
+  (interactive)
+  (let ((dot 46)
+        (space 32)
+        (org-p (bound-and-true-p org-mode)))
+    (setq last-command-event dot)
+    (if org-p (org-self-insert-command 1)
+      (self-insert-command 1))
+    (setq last-command-event space)
+    (if org-p (org-self-insert-command 1)
+      (self-insert-command 1))))
+(global-set-key (kbd "C-;") #'help/dot-space)
 (global-set-key (kbd "C-M-;") (lambda () (interactive) (insert ". ") (next-logical-line)))
 (global-set-key (kbd "C-.") (lambda () (interactive) (insert ", ")))
 (global-set-key (kbd "C-,") (lambda () (interactive) (insert "; ")))
