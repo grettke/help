@@ -935,6 +935,26 @@ Attribution: Udyant Wig <udyantw@gmail.com>"
     (help-mode)
     (setq buffer-read-only t)
     (goto-char (point-min))))
+
+(defun help/dot-space ()
+  (interactive)
+  (let ((dot 46)
+        (space 32)
+        (org-p (bound-and-true-p org-mode)))
+    (setq last-command-event dot)
+    (if org-p (org-self-insert-command 1)
+      (self-insert-command 1))
+    (setq last-command-event space)
+    (if org-p (org-self-insert-command 1)
+      (self-insert-command 1))))
+
+(defun help/dot ()
+  (interactive)
+  (let ((dot 46)
+        (org-p (bound-and-true-p org-mode)))
+    (setq last-command-event dot)
+    (if org-p (org-self-insert-command 1)
+      (self-insert-command 1))))
 ;; org_gcr_2017-05-12_mara_7D37FFE5-2D2B-4CF7-AF27-F3CB8616D81B ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F][org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F]]
@@ -2119,21 +2139,8 @@ _A_rchives | Rest_o_res | Re_f_iles
 ;; org_gcr_2017-11-30_mara_75B00948-177E-487A-83A9-2F690611CA59 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-11-30_mara_0D5DE620-895E-4BC5-AA15-1E0D19B1815A][org_gcr_2017-11-30_mara_0D5DE620-895E-4BC5-AA15-1E0D19B1815A]]
-(defun help/dot-space ()
-  (interactive)
-  (let ((dot 46)
-        (space 32)
-        (org-p (bound-and-true-p org-mode)))
-    (setq last-command-event dot)
-    (if org-p (org-self-insert-command 1)
-      (self-insert-command 1))
-    (setq last-command-event space)
-    (if org-p (org-self-insert-command 1)
-      (self-insert-command 1))))
-(global-set-key (kbd "C-;") #'help/dot-space)
-(global-set-key (kbd "C-M-;") (lambda () (interactive) (insert ". ") (next-logical-line)))
-(global-set-key (kbd "C-.") (lambda () (interactive) (insert ", ")))
-(global-set-key (kbd "C-,") (lambda () (interactive) (insert "; ")))
+(global-set-key (kbd ".") #'help/dot-space)
+(global-set-key (kbd "C-.") #'help/dot)
 ;; org_gcr_2017-11-30_mara_0D5DE620-895E-4BC5-AA15-1E0D19B1815A ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F][org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F]]

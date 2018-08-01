@@ -1449,6 +1449,26 @@ Attribution: Udyant Wig <udyantw@gmail.com>"
     (help-mode)
     (setq buffer-read-only t)
     (goto-char (point-min))))
+
+(defun help/dot-space ()
+  (interactive)
+  (let ((dot 46)
+        (space 32)
+        (org-p (bound-and-true-p org-mode)))
+    (setq last-command-event dot)
+    (if org-p (org-self-insert-command 1)
+      (self-insert-command 1))
+    (setq last-command-event space)
+    (if org-p (org-self-insert-command 1)
+      (self-insert-command 1))))
+
+(defun help/dot ()
+  (interactive)
+  (let ((dot 46)
+        (org-p (bound-and-true-p org-mode)))
+    (setq last-command-event dot)
+    (if org-p (org-self-insert-command 1)
+      (self-insert-command 1))))
 #+END_SRC
 
 ** Typography
@@ -1907,7 +1927,7 @@ Provide a cross-platform command line shell that is a first-class EMACS citizen.
 Commands input in eshell are delegated in order to an alias, a built in command,
 an Elisp function with the same name, and finally to a system call. Semicolons
 separate commands. =which= tells you what implementation will satisfy the call
-that you are going to make. The flag =eshell-prefer-lisp-functions= does what it
+that you are going to make. The flag =eshell-prefer-lis-functions= does what it
 says. =$$= is the result of the last command. Aliases live in
 =eshell-aliases-file=. History is maintained and expandable. =eshell-source-file=
 will run scripts. Since Eshell is not a terminal emulator, you need to configure
@@ -3384,21 +3404,8 @@ Speed up punctuation marks.
 
 #+NAME: org_gcr_2017-11-30_mara_0D5DE620-895E-4BC5-AA15-1E0D19B1815A
 #+BEGIN_SRC emacs-lisp
-(defun help/dot-space ()
-  (interactive)
-  (let ((dot 46)
-        (space 32)
-        (org-p (bound-and-true-p org-mode)))
-    (setq last-command-event dot)
-    (if org-p (org-self-insert-command 1)
-      (self-insert-command 1))
-    (setq last-command-event space)
-    (if org-p (org-self-insert-command 1)
-      (self-insert-command 1))))
-(global-set-key (kbd "C-;") #'help/dot-space)
-(global-set-key (kbd "C-M-;") (lambda () (interactive) (insert ". ") (next-logical-line)))
-(global-set-key (kbd "C-.") (lambda () (interactive) (insert ", ")))
-(global-set-key (kbd "C-,") (lambda () (interactive) (insert "; ")))
+(global-set-key (kbd ".") #'help/dot-space)
+(global-set-key (kbd "C-.") #'help/dot)
 #+END_SRC
 
 Every text editing buffer needs this.
@@ -4227,7 +4234,7 @@ Copied and customized from [[https://github.com/kaushalmodi/.emacs.d/blob/master
         ("stringstyle" "")
         ("tab" "↹")
         ("tabsize" "4")
-        ("texcl" "false")
+q        ("texcl" "false")
         ("upquote" "false")))
 #+end_src
 ***** Classes
