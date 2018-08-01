@@ -1927,7 +1927,7 @@ Provide a cross-platform command line shell that is a first-class EMACS citizen.
 Commands input in eshell are delegated in order to an alias, a built in command,
 an Elisp function with the same name, and finally to a system call. Semicolons
 separate commands. =which= tells you what implementation will satisfy the call
-that you are going to make. The flag =eshell-prefer-lis-functions= does what it
+that you are going to make. The flag =eshell-prefer-lisp-functions= does what it
 says. =$$= is the result of the last command. Aliases live in
 =eshell-aliases-file=. History is maintained and expandable. =eshell-source-file=
 will run scripts. Since Eshell is not a terminal emulator, you need to configure
