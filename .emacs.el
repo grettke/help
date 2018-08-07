@@ -114,7 +114,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-             hidden-mode-line-mode)
+           hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -2901,7 +2901,6 @@ Row 1: _x_ utf2xtx _c_ org-fill-para _C_ount words _b_ swtch2sessn _n_ n2sbtre _
   ("2" org-display-inline-images)
   ("3" org-remove-inline-images)
   ("4" org-id-get-create)
-  ("7" org-utf-to-xetex-insert-or-wrap-with-macro)
   ("8" (lambda () (interactive) (insert "@@latex:\\noindent{}@@")))
   ("9" (lambda () (interactive) (insert "#+HTML: <!--more-->")))
   ("0" (lambda () (interactive) (insert "$\\LaTeX$")))  ;; Row 4
