@@ -3400,14 +3400,6 @@ Auto-Capitalize text modes.
              '(auto-capitalize . (lambda (desktop-buffer-locals))))
 #+END_SRC
 
-Speed up punctuation marks.
-
-#+NAME: org_gcr_2017-11-30_mara_0D5DE620-895E-4BC5-AA15-1E0D19B1815A
-#+BEGIN_SRC emacs-lisp
-(global-set-key (kbd ".") #'help/dot-space)
-(global-set-key (kbd "C-.") #'help/dot)
-#+END_SRC
-
 Every text editing buffer needs this.
 
 #+NAME: org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F
@@ -3421,7 +3413,9 @@ Every text editing buffer needs this.
   (visual-line-mode)
   (help/try-to-add-imenu)
   (turn-on-page-break-lines-mode)
-  (turn-on-auto-capitalize-mode))
+  (turn-on-auto-capitalize-mode)
+  (local-set-key (kbd ".") #'help/dot-space)
+  (local-set-key (kbd "C-.") #'help/dot))
 (add-hook 'text-mode-hook #'help/text-mode-fn)
 #+END_SRC
 
@@ -3539,7 +3533,9 @@ Can use in source blocks.
   (unless (equal major-mode 'fundamental-mode)
     (hs-minor-mode))
   (help/on-gui (local-set-key (kbd "<return>") #'newline-and-indent))
-  (turn-off-auto-capitalize-mode))
+  (turn-off-auto-capitalize-mode)
+  (local-unset-key (kbd "."))
+  (local-unset-key (kbd "C-.")))
 
 (let ()
   (--each help/prog-modes

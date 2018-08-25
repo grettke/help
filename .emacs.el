@@ -2138,11 +2138,6 @@ _A_rchives | Rest_o_res | Re_f_iles
              '(auto-capitalize . (lambda (desktop-buffer-locals))))
 ;; org_gcr_2017-11-30_mara_75B00948-177E-487A-83A9-2F690611CA59 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-11-30_mara_0D5DE620-895E-4BC5-AA15-1E0D19B1815A][org_gcr_2017-11-30_mara_0D5DE620-895E-4BC5-AA15-1E0D19B1815A]]
-(global-set-key (kbd ".") #'help/dot-space)
-(global-set-key (kbd "C-.") #'help/dot)
-;; org_gcr_2017-11-30_mara_0D5DE620-895E-4BC5-AA15-1E0D19B1815A ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F][org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F]]
 (defun help/text-mode-fn ()
   "HELP's standard configuration for buffer's working with text, often for
@@ -2153,7 +2148,9 @@ _A_rchives | Rest_o_res | Re_f_iles
   (visual-line-mode)
   (help/try-to-add-imenu)
   (turn-on-page-break-lines-mode)
-  (turn-on-auto-capitalize-mode))
+  (turn-on-auto-capitalize-mode)
+  (local-set-key (kbd ".") #'help/dot-space)
+  (local-set-key (kbd "C-.") #'help/dot))
 (add-hook 'text-mode-hook #'help/text-mode-fn)
 ;; org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F ends here
 
@@ -2226,7 +2223,9 @@ _A_rchives | Rest_o_res | Re_f_iles
   (unless (equal major-mode 'fundamental-mode)
     (hs-minor-mode))
   (help/on-gui (local-set-key (kbd "<return>") #'newline-and-indent))
-  (turn-off-auto-capitalize-mode))
+  (turn-off-auto-capitalize-mode)
+  (local-unset-key (kbd "."))
+  (local-unset-key (kbd "C-.")))
 
 (let ()
   (--each help/prog-modes
