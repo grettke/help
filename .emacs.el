@@ -4518,12 +4518,20 @@ Ansible: (q to quit)
                                       :hint nil)
   "
 Flycheck: ⏼%(bound-and-true-p flycheck-mode)
- _j_ checker/toggle _k_ checker/run _l_ checker/list
-  _q_ quit
+ Controls: _u_: checker/toggle _i_: checker/run _o_ checker/list
+  Navigate: _n_ext _p_revious _f_irst _l_ast
+   Error: _d_escribe _e_xplain
+   _q_ quit
 "
-  ("j" flycheck-mode :exit nil)
-  ("k" flycheck-buffer :exit nil)
-  ("l" help/safb-flycheck-list-errors)
+  ("u" flycheck-mode :exit nil)
+  ("i" flycheck-buffer :exit nil)
+  ("o" help/safb-flycheck-list-errors)
+  ("n" flycheck-next-error :exit nil)
+  ("p" flycheck-previous-error :exit nil)
+  ("f" flycheck-first-error)
+  ("l" flycheck-last-error)
+  ("d" flycheck-display-error-at-point)
+  ("e" flycheck-explain-error-at-point)
   ("q" nil))
 (global-set-key (kbd "C-M-9") #'help/hydra-checking/body)
 ;; org_gcr_2017-06-13_mara_2DFDC64B-DBF2-473E-979F-D7D8D0DD2206 ends here
