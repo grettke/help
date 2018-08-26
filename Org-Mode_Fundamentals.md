@@ -1,9 +1,19 @@
+- [Org-Mode Fundamentals](#orge170950)
+  - [Literate Programming](#org1349e19)
+    - [Helper Functions](#org1eff3cb)
+    - [Identity](#orge18e117)
+    - [Tangling](#org96a44e8)
+    - [Evaluating](#org1b62fb1)
+    - [Weaving](#orgc2fa338)
+
 Never compile this.
 
 ```emacs-lisp
 ;; -*- no-byte-compile: t; -*-
 ```
 
+
+<a id="orge170950"></a>
 
 # Org-Mode Fundamentals
 
@@ -21,6 +31,8 @@ Start EMACS with this command:
 (load-file "~/src/help/.org-mode-ecm.emacs.el")
 ```
 
+
+<a id="org1349e19"></a>
 
 ## Literate Programming
 
@@ -55,8 +67,10 @@ Key:
 
 They are separate and distinct operations.
 
-&ldquo;Programming&rdquo; is logically an activity that is the combination of these 3 activites. It is interactively performed by Sysop. It is not a distinct or isolated operation. Results of one activity exist here and serve as inputs to another activity.
+"Programming" is logically an activity that is the combination of these 3 activites. It is interactively performed by Sysop. It is not a distinct or isolated operation. Results of one activity exist here and serve as inputs to another activity.
 
+
+<a id="org1eff3cb"></a>
 
 ### Helper Functions
 
@@ -117,7 +131,12 @@ This is a copy and paste. Additional languages would warrant a refactor."
 
 (defun help/org-toggle-macro-markers ()
   (interactive)
-  (setq org-hide-macro-markers (not org-hide-macro-markers)))
+  (let ((old org-hide-macro-markers)
+        (new (not org-hide-macro-markers)))
+    (setq org-hide-macro-markers new)
+    (message "Just changed org-hide-macro-markers from %s to %s" old new)
+    (font-lock-mode)
+    (font-lock-mode)))
 
 (defun help/org-prp-hdln ()
   "Visit every Headline. If it doesn't have an ID property then add one and
@@ -177,17 +196,19 @@ This is a copy and paste. Additional languages would warrant a refactor."
   "Add a NAME property then assign it a UUID."
   (interactive)
   (org-babel-demarcate-block)
-  (insert "#+NAME: " (help/org-id-new))
+  (insert "#+name: " (help/org-id-new))
   (beginning-of-line)
   (insert "\n"))
 ```
 
 
+<a id="orge18e117"></a>
+
 ### Identity
 
     ID: orgmode:gcr:vela:25F4226F-2EB2-48EC-A4D5-56DD5CCC753E
 
-A Headline&rsquo;s primary key is `ID`. Use `org-id` to manage it.
+A Headline's primary key is `ID`. Use `org-id` to manage it.
 
 ```emacs-lisp
 (require 'org-id)
@@ -205,7 +226,7 @@ Make sure that `ID` is always unique, portable, and easy to maintain by
     -   Memorable
         -   So you can remember where you created it and when
         -   So you can share it and let the recipient know (in theory useful)
-        -   So you can enable a non Emacs/Org-Mode user to work with the tangled code referencing it&rsquo;s origin
+        -   So you can enable a non Emacs/Org-Mode user to work with the tangled code referencing it's origin
     -   Valid
         -   Must be both LaTeX label and XHTML identifier compliant
             -   `org-lint` checks for this
@@ -214,10 +235,12 @@ Make sure that `ID` is always unique, portable, and easy to maintain by
 -   Use a UUID
 
 ```emacs-lisp
-(setq org-id-prefix (concat "org_" (user-real-login-name) "_" (format-time-string "%Y-%m-%d") "_" (system-name)))
+(setq org-id-prefix (concat "org_" (user-real-login-name) "_" (help/get-timestamp-no-colons) "_" (system-name)))
 (setq org-id-method 'uuid)
 ```
 
+
+<a id="org96a44e8"></a>
 
 ### Tangling
 
@@ -310,7 +333,7 @@ Assume that tangled document always live within the same directory structure as 
 
         ID: orgmode:gcr:vela:2836D0AA-5DBA-48AC-A338-B47002DE8D7F
 
-    > Specify block&rsquo;s noweb reference resolution target
+    > Specify block's noweb reference resolution target
 
     Configuration likely per Source-Block or System.
 
@@ -328,7 +351,7 @@ Assume that tangled document always live within the same directory structure as 
 
     > Control insertion of padding lines in tangled code files
 
-    -   `org-babel-tangle-jump-to-org` requires padded lines. This configuration could arguably appear in the &ldquo;Programming&rdquo; heading because it impacts operation. It lives here because it **must** occur as part of the Tangling activity so that it can be used in the Programming activity.
+    -   `org-babel-tangle-jump-to-org` requires padded lines. This configuration could arguably appear in the "Programming" heading because it impacts operation. It lives here because it **must** occur as part of the Tangling activity so that it can be used in the Programming activity.
     -   Often I go back and for on this one. Sometimes it is nicer to have less spaces in generated code when guests are viewing it. When no one else is reading it I love the spaces. Defaulting to what I like.
 
     ```emacs-lisp
@@ -372,6 +395,8 @@ Assume that tangled document always live within the same directory structure as 
     Configuration likely per Source-Block or System.
 
 
+<a id="org1b62fb1"></a>
+
 ### Evaluating
 
     ID: orgmode:gcr:vela:ED23FF0B-1F90-435C-9B56-ACA06C1ACAE0
@@ -400,12 +425,6 @@ Org-Mode may use all of the listed languages.
    (ditaa . t)
    (dot . t)
    (plantuml . t)))
-```
-
-Out of the box Emacs supports `js` with `js-mode`. Define language `javascript` to use `js2-mode`.
-
-```emacs-lisp
-(add-to-list 'org-src-lang-modes '("javascript" . js2))
 ```
 
 1.  cache
@@ -521,7 +540,7 @@ Out of the box Emacs supports `js` with `js-mode`. Define language `javascript` 
 
     For some situations, this may be the same for every source block for a particular language. The user manual described `gnuplot`, which often shows up on the list and the solution is to `reset` the session.
 
-    Another example, say that you&rsquo;ve got a bunch of R Source-Blocks and you want to be able to rearrange them as you please. You want to be sure that there are no dependencies between them on bindings created in the workspace. Set `prologue` to `rm(list = ls())`.
+    Another example, say that you've got a bunch of R Source-Blocks and you want to be able to rearrange them as you please. You want to be sure that there are no dependencies between them on bindings created in the workspace. Set `prologue` to `rm(list = ls())`.
 
     Epilgue works hand-in-hand with this.
 
@@ -540,20 +559,25 @@ Out of the box Emacs supports `js` with `js-mode`. Define language `javascript` 
     -   Collection
         -   `value`: Functions have a single result. So do Source-Blocks.
     -   Type
-        -   `table`:
-        -   Tables are the best type because
-            -   Dimensions make them human-readable in text.
-            -   Work with Babel LP.
-            -   Appear as lists to programming languages.
-            -   Weaves well.
-            -   Inline Source-Blocks disallow tables so use scalars instead.
+        -   `scalar`
+            -   Functions always return a single result
+            -   Evidence demonstrates that I use this or `output` most of the time and I want to configure this to work right for `Literate Programming` by default because it feels better.
+        -   `WAS`
+            -   Because in theory returning a collection was flexible (see below). In practice I never ever used this.
+            -   `table`:
+                -   Tables are the best type because
+                    -   Dimensions make them human-readable in text.
+                    -   Work with Babel LP.
+                    -   Appear as lists to programming languages.
+                    -   Weaves well.
+                    -   Inline Source-Blocks disallow tables so use scalars instead.
     -   Format
         -   `drawer`: Enable results replacement
     -   Handling
         -   `replace`: Replace theme each time you evaluate the block.
 
     ```emacs-lisp
-    (defconst help/org-sb-results-cfg "value table drawer replace")
+    (defconst help/org-sb-results-cfg "value scalar drawer replace")
     (help/set-org-babel-default-header-args :results help/org-sb-results-cfg)
     ```
 
@@ -586,7 +610,7 @@ Out of the box Emacs supports `js` with `js-mode`. Define language `javascript` 
 
     > Pass arguments to code blocks
 
-    -   **The** most revealing of the power of Org-Mode&rsquo;s LP offering
+    -   **The** most revealing of the power of Org-Mode's LP offering
     -   Values-by-reference
         -   Table
         -   List
@@ -596,11 +620,13 @@ Out of the box Emacs supports `js` with `js-mode`. Define language `javascript` 
     -   Emacs Lisp evaluation of variables
 
 
+<a id="orgc2fa338"></a>
+
 ### Weaving
 
     ID: orgmode:gcr:vela:F71DD8BA-B853-4903-A348-400E13C0E6F8
 
-Help the reader make sense of the document by displaying it&rsquo;s internal properties.
+Help the reader make sense of the document by displaying it's internal properties.
 
 ```emacs-lisp
 (setq org-export-with-properties t)
@@ -619,7 +645,9 @@ Make sure that exported files are Unicode UTF-8.
 (setq org-export-coding-system 'utf-8)
 ```
 
-Do not preserve line-breaks when exporting instead let the destination format handle it as it sees fit. This doesn&rsquo;t work like I had expected and makes me wonder what I am confused about here. When I export to HTML text containing linebreaks no longer has linebreaks. This is what I expect. When I export that same text to a buffer though, the line breaks are included. Currently I use `sacha/unfill-paragraph` on that code.
+Line breaks are for humans typing them, not for publishing.
+
+When publishing to ASCII, set this property in the file.
 
 ```emacs-lisp
 (setq org-export-preserve-breaks nil)
@@ -661,13 +689,13 @@ Disable element caching because it might break weaves via [this thread](https://
 
     > Export code and/or results
 
-    Always share source blocks and their results. Whether or not to generate a result for a particular source block is configured per-block. If you don&rsquo;t want to share a result for a source block then disable storage of results on that block.
+    Always share source blocks and their results. Whether or not to generate a result for a particular source block is configured per-block. If you don't want to share a result for a source block then disable storage of results on that block.
 
     ```emacs-lisp
     (help/set-org-babel-default-header-args :exports "both")
     ```
 
-    Use inline Source-Blocks to provide values read as part of the document. Don&rsquo;t show their source code. Allows inline Source-Blocks to function as *rich* macros when combined with `org-sbe`.
+    Use inline Source-Blocks to provide values read as part of the document. Don't show their source code. Allows inline Source-Blocks to function as *rich* macros when combined with `org-sbe`.
 
     ```emacs-lisp
     (help/set-org-babel-default-inline-header-args :exports "results")

@@ -1,4 +1,5 @@
 #+PROPERTY: header-args :tangle "./.emacs.el" :results output silent
+#+OPTIONS: toc:3
 
 #  LocalWords:  YASnippet UTF defun PlantUML LanguageTool HELP's Eshell showeverything
 

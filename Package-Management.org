@@ -1,4 +1,5 @@
 #+PROPERTY: header-args :tangle "./.org-mode-package-management.emacs.el" :results output silent
+#+OPTIONS: toc:3
 
 Never compile this.
 #+NAME: org_gcr_2017-07-21_mara_6CF4E40C-3850-46FA-ACAF-C13CF7C2A765

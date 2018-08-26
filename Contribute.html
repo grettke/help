@@ -1,12 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-07-22 Sat 23:15 -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title></title>
-<meta name="generator" content="Org mode">
-<meta name="author" content="Grant Rettke">
+<!-- 2018-08-25 Sat 22:45 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Grant Rettke" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -66,6 +68,7 @@
   pre.src-fortran:before { content: 'Fortran'; }
   pre.src-gnuplot:before { content: 'gnuplot'; }
   pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
   pre.src-java:before { content: 'Java'; }
   pre.src-js:before { content: 'Javascript'; }
   pre.src-latex:before { content: 'LaTeX'; }
@@ -158,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -182,7 +198,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2017 Free Software Foundation, Inc.
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -226,24 +242,39 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org4e6a676">1. Contribute</a></li>
+<li><a href="#org7968d7e">2. xml-rpc</a></li>
+<li><a href="#org1ac16fe">3. metaweblog</a></li>
+<li><a href="#org1024343">4. Org2blog</a></li>
+<li><a href="#org6d53204">5. Pretty Mode</a></li>
+<li><a href="#org9382b80">6. go-hydra</a></li>
+<li><a href="#org43bc62d">7. universal-emotions-emoticons</a></li>
+<li><a href="#orgb0185db">8. corporate-bs-generator</a></li>
+</ul>
+</div>
+</div>
 <p>
 Never compile this.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="orgfcad24f"><span class="org-comment-delimiter">;; </span><span class="org-comment">-*- no-byte-compile: t; -*-</span>
+<pre class="src src-emacs-lisp" id="orgc3df955"><span class="org-comment-delimiter">;; </span><span class="org-comment">-*- no-byte-compile: t; -*-</span>
 </pre>
 </div>
 
-<div id="outline-container-org70668a7" class="outline-2">
-<h2 id="org70668a7"><a id="org_gcr_2017-05-12_mara:B6246A7A-5514-4478-BC3D-7768B05B08B8"></a><span class="section-number-2">1</span> Org2blog</h2>
+<div id="outline-container-org4e6a676" class="outline-2">
+<h2 id="org4e6a676"><span class="section-number-2">1</span> Contribute</h2>
 <div class="outline-text-2" id="text-1">
 <pre class="example">
 ID: org_gcr_2017-05-12_mara:B6246A7A-5514-4478-BC3D-7768B05B08B8
 </pre>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org7e35647"><span class="org-comment-delimiter">;; </span><span class="org-comment">-*- no-byte-compile: t; -*-</span>
+<pre class="src src-emacs-lisp" id="org50acc5f"><span class="org-comment-delimiter">;; </span><span class="org-comment">-*- no-byte-compile: t; -*-</span>
 </pre>
 </div>
 
@@ -260,22 +291,17 @@ emacs --debug-init --no-init-file --no-splash --background-color white --foregro
 </pre>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org2b009d1">(load-file <span class="org-string">"~/src/help/.org-mode-package-management.emacs.el"</span>)
+<pre class="src src-emacs-lisp" id="org8774fd5">(load-file <span class="org-string">"~/src/help/.org-mode-package-management.emacs.el"</span>)
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgf13e91c" class="outline-2">
-<h2 id="orgf13e91c"><a id="org_gcr_2017-05-12_mara:B6246A7A-5514-4478-BC3D-7768B05B08B8"></a><span class="section-number-2">2</span> Org2blog</h2>
+<div id="outline-container-org7968d7e" class="outline-2">
+<h2 id="org7968d7e"><span class="section-number-2">2</span> xml-rpc</h2>
 <div class="outline-text-2" id="text-2">
 <pre class="example">
-ID: org_gcr_2017-05-12_mara:B6246A7A-5514-4478-BC3D-7768B05B08B8
+ID: org_gcr_2017-12-16_mara:8490F7FD-9718-4ADD-8A84-56A8D6625C12
 </pre>
-
-<p>
-Configure Org2blog for use, development, and support.
-</p>
-
 <blockquote>
 <p>
 An elisp implementation of clientside XML-RPC
@@ -283,12 +309,18 @@ An elisp implementation of clientside XML-RPC
 </blockquote>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org764d345">(add-to-list <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">load-path</span> <span class="org-string">"~/src/xml-rpc-el"</span>)
+<pre class="src src-emacs-lisp" id="orgaac74de">(add-to-list <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">load-path</span> <span class="org-string">"~/src/xml-rpc-el"</span>)
 (<span class="org-keyword">require</span> <span class="org-highlight-quoted-quote">'</span><span class="org-constant">xml-rpc</span>)
-
 </pre>
 </div>
-
+</div>
+</div>
+<div id="outline-container-org1ac16fe" class="outline-2">
+<h2 id="org1ac16fe"><span class="section-number-2">3</span> metaweblog</h2>
+<div class="outline-text-2" id="text-3">
+<pre class="example">
+ID: org_gcr_2017-12-16_mara:C3B0266C-F9EC-498B-ABBA-486090654DDA
+</pre>
 <blockquote>
 <p>
 Weblog maintenance via XML-RPC APIs
@@ -296,11 +328,21 @@ Weblog maintenance via XML-RPC APIs
 </blockquote>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org192e6c3">(add-to-list <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">load-path</span> <span class="org-string">"~/src/metaweblog"</span>)
+<pre class="src src-emacs-lisp" id="orgd844680">(add-to-list <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">load-path</span> <span class="org-string">"~/src/metaweblog"</span>)
 (<span class="org-keyword">require</span> <span class="org-highlight-quoted-quote">'</span><span class="org-constant">metaweblog</span>)
 </pre>
 </div>
-
+</div>
+</div>
+<div id="outline-container-org1024343" class="outline-2">
+<h2 id="org1024343"><span class="section-number-2">4</span> Org2blog</h2>
+<div class="outline-text-2" id="text-4">
+<pre class="example">
+ID: org_gcr_2018-03-03_mara:60113001-1991-4EB5-BF61-190C198AF742
+</pre>
+<p>
+Configure Org2blog for use, development, and support.
+</p>
 <blockquote>
 <p>
 Blog from Org mode to wordpress
@@ -308,9 +350,18 @@ Blog from Org mode to wordpress
 </blockquote>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org8e6f7c0">(add-to-list <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">load-path</span> <span class="org-string">"~/src/org2blog"</span>)
+<pre class="src src-emacs-lisp" id="org2512696">(add-to-list <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">load-path</span> <span class="org-string">"~/src/org2blog"</span>)
 (<span class="org-keyword">require</span> <span class="org-highlight-quoted-quote">'</span><span class="org-constant">org2blog</span>)
 (add-hook <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">org-mode-hook</span> <span class="org-highlight-quoted-quote">#'</span><span class="org-highlight-quoted-symbol">org2blog/wp-org-mode-hook-fn</span>)
+</pre>
+</div>
+
+<p>
+Use <a href="https://www.mathjax.org/">MathJax</a> instead of <code>wp-latex</code> syntax.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp" id="org70e3aca">(<span class="org-keyword">setq</span> org2blog/wp-use-wp-latex nil)
 </pre>
 </div>
 
@@ -325,7 +376,16 @@ to each Web.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="orgb58f2b9">(<span class="org-keyword">setq</span> org2blog/wp-track-posts nil)
+<pre class="src src-emacs-lisp" id="orgd246c54">(<span class="org-keyword">setq</span> org2blog/wp-track-posts nil)
+</pre>
+</div>
+
+<p>
+Post creation handler.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp" id="orgecd4649">(add-hook <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">org2blog/wp-after-new-post-or-page-functions</span> (<span class="org-keyword">lambda</span> (p) (pp p)))
 </pre>
 </div>
 
@@ -334,7 +394,7 @@ Configure Org2Blog.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org85cc2bc">(<span class="org-keyword">setq</span> org2blog/wp-blog-alist
+<pre class="src src-emacs-lisp" id="org3193a1b">(<span class="org-keyword">setq</span> org2blog/wp-blog-alist
       <span class="org-highlight-quoted-quote">'</span>((<span class="org-string">"wisdomandwonder"</span>
          <span class="org-builtin">:url</span> <span class="org-string">"https://www.wisdomandwonder.com/xmlrpc.php"</span>
          <span class="org-builtin">:username</span> <span class="org-string">"admin"</span>
@@ -346,9 +406,9 @@ Configure Org2Blog.
 </div>
 </div>
 
-<div id="outline-container-org8c3c430" class="outline-2">
-<h2 id="org8c3c430"><a id="org_gcr_2017-05-15_mara:CB452410-955E-4A91-A811-10755A35A142"></a><span class="section-number-2">3</span> Pretty Mode</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-org6d53204" class="outline-2">
+<h2 id="org6d53204"><span class="section-number-2">5</span> Pretty Mode</h2>
+<div class="outline-text-2" id="text-5">
 <pre class="example">
 ID: org_gcr_2017-05-15_mara:CB452410-955E-4A91-A811-10755A35A142
 </pre>
@@ -358,9 +418,51 @@ Visualize ASCII values as their most likely Unicode representation.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="orgf439bdd">(add-to-list <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">load-path</span> <span class="org-string">"~/src/pretty-mode"</span>)
+<pre class="src src-emacs-lisp" id="orge707a7c">(add-to-list <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">load-path</span> <span class="org-string">"~/src/pretty-mode"</span>)
 (<span class="org-keyword">require</span> <span class="org-highlight-quoted-quote">'</span><span class="org-constant">pretty-mode</span>)
-(global-pretty-mode t)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org9382b80" class="outline-2">
+<h2 id="org9382b80"><span class="section-number-2">6</span> go-hydra</h2>
+<div class="outline-text-2" id="text-6">
+<pre class="example">
+ID: org_gcr_2017-08-01_mara:F1CA18C6-F00E-4F1A-BBD3-77FC52B437E8
+</pre>
+<p>
+A collection of Go related Hydras for Emacs.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp" id="orge387897">(add-to-list <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">load-path</span> <span class="org-string">"~/src/go-hydra"</span>)
+(<span class="org-keyword">require</span> <span class="org-highlight-quoted-quote">'</span><span class="org-constant">go-hydra</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org43bc62d" class="outline-2">
+<h2 id="org43bc62d"><span class="section-number-2">7</span> universal-emotions-emoticons</h2>
+<div class="outline-text-2" id="text-7">
+<pre class="example">
+ID: org_gcr_2017-12-05_mara:BAEA6BB3-614D-4957-BEFF-4AE9E6271BF1
+</pre>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp" id="orgf9217cc">(add-to-list <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">load-path</span> <span class="org-string">"~/src/universal-emotions-emoticons"</span>)
+(<span class="org-keyword">require</span> <span class="org-highlight-quoted-quote">'</span><span class="org-constant">universal-emotions-emoticons</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb0185db" class="outline-2">
+<h2 id="orgb0185db"><span class="section-number-2">8</span> corporate-bs-generator</h2>
+<div class="outline-text-2" id="text-8">
+<pre class="example">
+ID: org_gcr_2018-07-06T22-26-05-05-00_mara:EBD3FC34-3153-4E01-A8DD-099CF51A08EF
+</pre>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp" id="orgb01c649">(add-to-list <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">load-path</span> <span class="org-string">"~/src/corporate-bs-generator"</span>)
+(<span class="org-keyword">require</span> <span class="org-highlight-quoted-quote">'</span><span class="org-constant">corporate-bs-generator</span>)
 </pre>
 </div>
 </div>
@@ -368,7 +470,7 @@ Visualize ASCII values as their most likely Unicode representation.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Grant Rettke</p>
-<p class="date">Created: 2017-07-22 Sat 23:15</p>
+<p class="date">Created: 2018-08-25 Sat 22:45</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

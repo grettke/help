@@ -1,6 +1,18 @@
 Grant Rettke
 
 
+Table of Contents
+_________________
+
+1. Org-Mode Fundamentals
+.. 1. Literate Programming
+..... 1. Helper Functions
+..... 2. Identity
+..... 3. Tangling
+..... 4. Evaluating
+..... 5. Weaving
+
+
 Never compile this.
 
 ,----
@@ -50,11 +62,16 @@ Never compile this.
   Key:
 
   - Columns
-    S: Source document modified?
-    T: Destination tangled-document modified?
-    W: Destination weaved-document modified?
-    C: Source-Block Evaluation occurred?
-    O: Org-Macro Expansion occurred?
+    S
+          Source document modified?
+    T
+          Destination tangled-document modified?
+    W
+          Destination weaved-document modified?
+    C
+          Source-Block Evaluation occurred?
+    O
+          Org-Macro Expansion occurred?
 
    Activity    S  T  W  C  O
   ---------------------------
@@ -130,7 +147,12 @@ Never compile this.
   |
   | (defun help/org-toggle-macro-markers ()
   |   (interactive)
-  |   (setq org-hide-macro-markers (not org-hide-macro-markers)))
+  |   (let ((old org-hide-macro-markers)
+  |         (new (not org-hide-macro-markers)))
+  |     (setq org-hide-macro-markers new)
+  |     (message "Just changed org-hide-macro-markers from %s to %s" old new)
+  |     (font-lock-mode)
+  |     (font-lock-mode)))
   |
   | (defun help/org-prp-hdln ()
   |   "Visit every Headline. If it doesn't have an ID property then add one and
@@ -190,7 +212,7 @@ Never compile this.
   |   "Add a NAME property then assign it a UUID."
   |   (interactive)
   |   (org-babel-demarcate-block)
-  |   (insert "#+NAME: " (help/org-id-new))
+  |   (insert "#+name: " (help/org-id-new))
   |   (beginning-of-line)
   |   (insert "\n"))
   `----
@@ -229,7 +251,7 @@ Never compile this.
   - Use a UUID
 
   ,----
-  | (setq org-id-prefix (concat "org_" (user-real-login-name) "_" (format-time-string "%Y-%m-%d") "_" (system-name)))
+  | (setq org-id-prefix (concat "org_" (user-real-login-name) "_" (help/get-timestamp-no-colons) "_" (system-name)))
   | (setq org-id-method 'uuid)
   `----
 
@@ -238,7 +260,6 @@ Never compile this.
 --------------
 
   ID: orgmode:gcr:vela:267EEDED-1367-405F-807C-B3C489045704
-
   `ID' and `NAME' are essential for successful `LP' using
   `org-babel-tangle-jump-to-org'.
 
@@ -282,7 +303,7 @@ Never compile this.
   `----
 
 
-[It] http://orgmode.org/manual/noweb_002dref.html
+[It] <http://orgmode.org/manual/noweb_002dref.html>
 
 * 1.1.3.1 comments
 
@@ -451,13 +472,6 @@ Never compile this.
   |    (plantuml . t)))
   `----
 
-  Out of the box Emacs supports `js' with `js-mode'. Define language
-  `javascript' to use `js2-mode'.
-
-  ,----
-  | (add-to-list 'org-src-lang-modes '("javascript" . js2))
-  `----
-
 
 * 1.1.4.1 cache
 
@@ -614,23 +628,30 @@ Never compile this.
   - Collection
     - `value': Functions have a single result. So do Source-Blocks.
   - Type
-    - `table':
-    - Tables are the best type because
-      - Dimensions make them human-readable in text.
-      - Work with Babel LP.
-      - Appear as lists to programming languages.
-      - Weaves well.
-      - Inline Source-Blocks disallow tables so use scalars instead.
+    - `scalar'
+      - Functions always return a single result
+      - Evidence demonstrates that I use this or `output' most of the time and I
+        want to configure this to work right for `Literate Programming' by
+        default because it feels better.
+    - `WAS'
+      - Because in theory returning a collection was flexible (see below). In
+        practice I never ever used this.
+      - `table':
+        - Tables are the best type because
+          - Dimensions make them human-readable in text.
+          - Work with Babel LP.
+          - Appear as lists to programming languages.
+          - Weaves well.
+          - Inline Source-Blocks disallow tables so use scalars instead.
   - Format
     - `drawer': Enable results replacement
   - Handling
     - `replace': Replace theme each time you evaluate the block.
 
   ,----
-  | (defconst help/org-sb-results-cfg "value table drawer replace")
+  | (defconst help/org-sb-results-cfg "value scalar drawer replace")
   | (help/set-org-babel-default-header-args :results help/org-sb-results-cfg)
   `----
-
 
   Their format will show that they are results. Inline source blocks
   automatically get formatted as verbatim. For some reason, this only needs to
@@ -704,12 +725,9 @@ Never compile this.
   | (setq org-export-coding-system 'utf-8)
   `----
 
-  Do not preserve line-breaks when exporting instead let the destination format
-  handle it as it sees fit. This doesn't work like I had expected and makes me
-  wonder what I am confused about here. When I export to HTML text containing
-  linebreaks no longer has linebreaks. This is what I expect. When I export that
-  same text to a buffer though, the line breaks are included. Currently I use
-  `sacha/unfill-paragraph' on that code.
+  Line breaks are for humans typing them, not for publishing.
+
+  When publishing to ASCII, set this property in the file.
 
   ,----
   | (setq org-export-preserve-breaks nil)
@@ -751,7 +769,7 @@ Never compile this.
 
 
 [this thread]
-https://lists.gnu.org/archive/html/emacs-orgmode/2015-09/msg00646.html
+<https://lists.gnu.org/archive/html/emacs-orgmode/2015-09/msg00646.html>
 
 * 1.1.5.1 exports
 

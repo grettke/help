@@ -1,6 +1,19 @@
 Grant Rettke
 
 
+Table of Contents
+_________________
+
+1. Contribute
+2. xml-rpc
+3. metaweblog
+4. Org2blog
+5. Pretty Mode
+6. go-hydra
+7. universal-emotions-emoticons
+8. corporate-bs-generator
+
+
 Never compile this.
 
 ,----
@@ -8,8 +21,8 @@ Never compile this.
 `----
 
 
-1 Org2blog
-==========
+1 Contribute
+============
 
   ID: org_gcr_2017-05-12_mara:B6246A7A-5514-4478-BC3D-7768B05B08B8
 
@@ -30,21 +43,22 @@ Never compile this.
   `----
 
 
-2 Org2blog
-==========
+2 xml-rpc
+=========
 
-  ID: org_gcr_2017-05-12_mara:B6246A7A-5514-4478-BC3D-7768B05B08B8
-
-  Configure Org2blog for use, development, and support.
-
+  ID: org_gcr_2017-12-16_mara:8490F7FD-9718-4ADD-8A84-56A8D6625C12
         An elisp implementation of clientside XML-RPC
 
   ,----
   | (add-to-list 'load-path "~/src/xml-rpc-el")
   | (require 'xml-rpc)
-  |
   `----
 
+
+3 metaweblog
+============
+
+  ID: org_gcr_2017-12-16_mara:C3B0266C-F9EC-498B-ABBA-486090654DDA
         Weblog maintenance via XML-RPC APIs
 
   ,----
@@ -52,12 +66,24 @@ Never compile this.
   | (require 'metaweblog)
   `----
 
+
+4 Org2blog
+==========
+
+  ID: org_gcr_2018-03-03_mara:60113001-1991-4EB5-BF61-190C198AF742
+  Configure Org2blog for use, development, and support.
         Blog from Org mode to wordpress
 
   ,----
   | (add-to-list 'load-path "~/src/org2blog")
   | (require 'org2blog)
   | (add-hook 'org-mode-hook #'org2blog/wp-org-mode-hook-fn)
+  `----
+
+  Use [MathJax] instead of `wp-latex' syntax.
+
+  ,----
+  | (setq org2blog/wp-use-wp-latex nil)
   `----
 
   Org2Blog depends on Org-Mode. This system loads Org-Mode from Git. Enter the
@@ -68,6 +94,12 @@ Never compile this.
 
   ,----
   | (setq org2blog/wp-track-posts nil)
+  `----
+
+  Post creation handler.
+
+  ,----
+  | (add-hook 'org2blog/wp-after-new-post-or-page-functions (lambda (p) (pp p)))
   `----
 
   Configure Org2Blog.
@@ -83,7 +115,10 @@ Never compile this.
   `----
 
 
-3 Pretty Mode
+[MathJax] <https://www.mathjax.org/>
+
+
+5 Pretty Mode
 =============
 
   ID: org_gcr_2017-05-15_mara:CB452410-955E-4A91-A811-10755A35A142
@@ -93,5 +128,36 @@ Never compile this.
   ,----
   | (add-to-list 'load-path "~/src/pretty-mode")
   | (require 'pretty-mode)
-  | (global-pretty-mode t)
+  `----
+
+
+6 go-hydra
+==========
+
+  ID: org_gcr_2017-08-01_mara:F1CA18C6-F00E-4F1A-BBD3-77FC52B437E8
+  A collection of Go related Hydras for Emacs.
+
+  ,----
+  | (add-to-list 'load-path "~/src/go-hydra")
+  | (require 'go-hydra)
+  `----
+
+
+7 universal-emotions-emoticons
+==============================
+
+  ID: org_gcr_2017-12-05_mara:BAEA6BB3-614D-4957-BEFF-4AE9E6271BF1
+  ,----
+  | (add-to-list 'load-path "~/src/universal-emotions-emoticons")
+  | (require 'universal-emotions-emoticons)
+  `----
+
+
+8 corporate-bs-generator
+========================
+
+  ID: org_gcr_2018-07-06T22-26-05-05-00_mara:EBD3FC34-3153-4E01-A8DD-099CF51A08EF
+  ,----
+  | (add-to-list 'load-path "~/src/corporate-bs-generator")
+  | (require 'corporate-bs-generator)
   `----

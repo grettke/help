@@ -1,12 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-07-22 Sat 23:16 -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title></title>
-<meta name="generator" content="Org mode">
-<meta name="author" content="Grant Rettke">
+<!-- 2018-08-25 Sat 22:47 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Grant Rettke" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -66,6 +68,7 @@
   pre.src-fortran:before { content: 'Fortran'; }
   pre.src-gnuplot:before { content: 'gnuplot'; }
   pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
   pre.src-java:before { content: 'Java'; }
   pre.src-js:before { content: 'Javascript'; }
   pre.src-latex:before { content: 'LaTeX'; }
@@ -158,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -182,7 +198,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2017 Free Software Foundation, Inc.
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -226,17 +242,37 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org9b1488d">1. Org-Mode Fundamentals</a>
+<ul>
+<li><a href="#orgdc66b69">1.1. Literate Programming</a>
+<ul>
+<li><a href="#org9e19b93">1.1.1. Helper Functions</a></li>
+<li><a href="#org0f005be">1.1.2. Identity</a></li>
+<li><a href="#org5c87315">1.1.3. Tangling</a></li>
+<li><a href="#org0b61b80">1.1.4. Evaluating</a></li>
+<li><a href="#org2ff40c8">1.1.5. Weaving</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
 <p>
 Never compile this.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="orgc7961bf"><span class="org-comment-delimiter">;; </span><span class="org-comment">-*- no-byte-compile: t; -*-</span>
+<pre class="src src-emacs-lisp" id="org7da9184"><span class="org-comment-delimiter">;; </span><span class="org-comment">-*- no-byte-compile: t; -*-</span>
 </pre>
 </div>
 
-<div id="outline-container-org96ee8a2" class="outline-2">
-<h2 id="org96ee8a2"><a id="orgmode:gcr:vela:7E71A009-4DD3-4296-9851-293BC71D2DFF"></a><span class="section-number-2">1</span> Org-Mode Fundamentals</h2>
+<div id="outline-container-org9b1488d" class="outline-2">
+<h2 id="org9b1488d"><span class="section-number-2">1</span> Org-Mode Fundamentals</h2>
 <div class="outline-text-2" id="text-1">
 <pre class="example">
 ID: orgmode:gcr:vela:7E71A009-4DD3-4296-9851-293BC71D2DFF
@@ -259,13 +295,13 @@ emacs --debug-init --no-init-file --no-splash --background-color white --foregro
 </pre>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org6bbf94d">(load-file <span class="org-string">"~/src/help/.org-mode-ecm.emacs.el"</span>)
+<pre class="src src-emacs-lisp" id="orgf9e5895">(load-file <span class="org-string">"~/src/help/.org-mode-ecm.emacs.el"</span>)
 </pre>
 </div>
 </div>
 
-<div id="outline-container-orgd40f3bf" class="outline-3">
-<h3 id="orgd40f3bf"><a id="orgmode:gcr:vela:8510C876-F644-4804-9F87-54A0B44DBA6A"></a><span class="section-number-3">1.1</span> Literate Programming</h3>
+<div id="outline-container-orgdc66b69" class="outline-3">
+<h3 id="orgdc66b69"><span class="section-number-3">1.1</span> Literate Programming</h3>
 <div class="outline-text-3" id="text-1-1">
 <pre class="example">
 ID: orgmode:gcr:vela:8510C876-F644-4804-9F87-54A0B44DBA6A
@@ -309,21 +345,21 @@ Key:
 </dl></li>
 </ul>
 
-<table>
+<table border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
 
 
 <colgroup>
-<col  class="org-left">
+<col  class="org-left" />
 
-<col  class="org-left">
+<col  class="org-left" />
 
-<col  class="org-left">
+<col  class="org-left" />
 
-<col  class="org-left">
+<col  class="org-left" />
 
-<col  class="org-left">
+<col  class="org-left" />
 
-<col  class="org-left">
+<col  class="org-left" />
 </colgroup>
 <thead>
 <tr>
@@ -370,15 +406,15 @@ They are separate and distinct operations.
 </p>
 
 <p>
-&ldquo;Programming&rdquo; is logically an activity that is the combination of these 3
+"Programming" is logically an activity that is the combination of these 3
 activites. It is interactively performed by Sysop. It is not a distinct
 or isolated operation. Results of one activity exist here and serve as inputs to
 another activity.
 </p>
 </div>
 
-<div id="outline-container-org55234a2" class="outline-4">
-<h4 id="org55234a2"><a id="orgmode:gcr:vela:B14776FD-6835-4D1D-BCD3-50D56555423C"></a><span class="section-number-4">1.1.1</span> Helper Functions</h4>
+<div id="outline-container-org9e19b93" class="outline-4">
+<h4 id="org9e19b93"><span class="section-number-4">1.1.1</span> Helper Functions</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <pre class="example">
 ID: orgmode:gcr:vela:B14776FD-6835-4D1D-BCD3-50D56555423C
@@ -389,7 +425,7 @@ Help configure Org-Mode.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org3b856fa">(<span class="org-keyword">defun</span> <span class="org-function-name">help/set-org-babel-default-header-args</span> (property value)
+<pre class="src src-emacs-lisp" id="orga36c2d5">(<span class="org-keyword">defun</span> <span class="org-function-name">help/set-org-babel-default-header-args</span> (property value)
   <span class="org-doc">"Easily set system header arguments in org mode.</span>
 
 <span class="org-doc">PROPERTY is the system-wide value that you would like to modify.</span>
@@ -441,7 +477,12 @@ Help configure Org-Mode.
 
 (<span class="org-keyword">defun</span> <span class="org-function-name">help/org-toggle-macro-markers</span> ()
   (<span class="org-keyword">interactive</span>)
-  (<span class="org-keyword">setq</span> org-hide-macro-markers (not org-hide-macro-markers)))
+  (<span class="org-keyword">let</span> ((old org-hide-macro-markers)
+        (new (not org-hide-macro-markers)))
+    (<span class="org-keyword">setq</span> org-hide-macro-markers new)
+    (message <span class="org-string">"Just changed org-hide-macro-markers from %s to %s"</span> old new)
+    (font-lock-mode)
+    (font-lock-mode)))
 
 (<span class="org-keyword">defun</span> <span class="org-function-name">help/org-prp-hdln</span> ()
   <span class="org-doc">"Visit every Headline. If it doesn't have an ID property then add one and</span>
@@ -501,7 +542,7 @@ Help configure Org-Mode.
   <span class="org-doc">"Add a NAME property then assign it a UUID."</span>
   (<span class="org-keyword">interactive</span>)
   (org-babel-demarcate-block)
-  (insert <span class="org-string">"#+NAME: "</span> (help/org-id-new))
+  (insert <span class="org-string">"#+name: "</span> (help/org-id-new))
   (beginning-of-line)
   (insert <span class="org-string">"\n"</span>))
 </pre>
@@ -509,19 +550,19 @@ Help configure Org-Mode.
 </div>
 </div>
 
-<div id="outline-container-org9239351" class="outline-4">
-<h4 id="org9239351"><a id="orgmode:gcr:vela:25F4226F-2EB2-48EC-A4D5-56DD5CCC753E"></a><span class="section-number-4">1.1.2</span> Identity</h4>
+<div id="outline-container-org0f005be" class="outline-4">
+<h4 id="org0f005be"><span class="section-number-4">1.1.2</span> Identity</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <pre class="example">
 ID: orgmode:gcr:vela:25F4226F-2EB2-48EC-A4D5-56DD5CCC753E
 </pre>
 
 <p>
-A Headline&rsquo;s primary key is <code>ID</code>. Use <code>org-id</code> to manage it.
+A Headline's primary key is <code>ID</code>. Use <code>org-id</code> to manage it.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org58b6cd9">(<span class="org-keyword">require</span> <span class="org-highlight-quoted-quote">'</span><span class="org-constant">org-id</span>)
+<pre class="src src-emacs-lisp" id="org8066194">(<span class="org-keyword">require</span> <span class="org-highlight-quoted-quote">'</span><span class="org-constant">org-id</span>)
 </pre>
 </div>
 
@@ -531,7 +572,7 @@ it accessible outside of Emacs.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org5a23cde">(<span class="org-keyword">setq</span> org-id-link-to-org-use-id <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">nil</span>)
+<pre class="src src-emacs-lisp" id="orged42703">(<span class="org-keyword">setq</span> org-id-link-to-org-use-id <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">nil</span>)
 </pre>
 </div>
 
@@ -546,7 +587,7 @@ Make sure that <code>ID</code> is always unique, portable, and easy to maintain 
 <li>So you can remember where you created it and when</li>
 <li>So you can share it and let the recipient know (in theory useful)</li>
 <li>So you can enable a non Emacs/Org-Mode user to work with the tangled
-code referencing it&rsquo;s origin</li>
+code referencing it's origin</li>
 </ul></li>
 <li>Valid
 <ul class="org-ul">
@@ -562,26 +603,25 @@ code referencing it&rsquo;s origin</li>
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org394431c">(<span class="org-keyword">setq</span> org-id-prefix (concat <span class="org-string">"org_"</span> (user-real-login-name) <span class="org-string">"_"</span> (format-time-string <span class="org-string">"%Y-%m-%d"</span>) <span class="org-string">"_"</span> (system-name)))
+<pre class="src src-emacs-lisp" id="orgf60a386">(<span class="org-keyword">setq</span> org-id-prefix (concat <span class="org-string">"org_"</span> (user-real-login-name) <span class="org-string">"_"</span> (help/get-timestamp-no-colons) <span class="org-string">"_"</span> (system-name)))
 (<span class="org-keyword">setq</span> org-id-method <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">uuid</span>)
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org761a6c8" class="outline-4">
-<h4 id="org761a6c8"><a id="orgmode:gcr:vela:267EEDED-1367-405F-807C-B3C489045704"></a><span class="section-number-4">1.1.3</span> Tangling</h4>
+<div id="outline-container-org5c87315" class="outline-4">
+<h4 id="org5c87315"><span class="section-number-4">1.1.3</span> Tangling</h4>
 <div class="outline-text-4" id="text-1-1-3">
 <pre class="example">
 ID: orgmode:gcr:vela:267EEDED-1367-405F-807C-B3C489045704
 </pre>
-
 <p>
 <code>ID</code> and <code>NAME</code> are essential for successful <code>LP</code> using <code>org-babel-tangle-jump-to-org</code>.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="orga303a3e">(add-hook <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">org-babel-pre-tangle-hook</span> <span class="org-highlight-quoted-quote">#'</span><span class="org-highlight-quoted-symbol">help/org-prp-hdln</span>)
+<pre class="src src-emacs-lisp" id="org2ef544b">(add-hook <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">org-babel-pre-tangle-hook</span> <span class="org-highlight-quoted-quote">#'</span><span class="org-highlight-quoted-symbol">help/org-prp-hdln</span>)
 (add-hook <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">org-babel-pre-tangle-hook</span> <span class="org-highlight-quoted-quote">#'</span><span class="org-highlight-quoted-symbol">help/org-prp-src-blk</span>)
 </pre>
 </div>
@@ -597,7 +637,7 @@ never allow that. Its inconsistent with how Org-Mode works.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org64c851f">(<span class="org-keyword">setq</span> org-babel-use-quick-and-dirty-noweb-expansion nil)
+<pre class="src src-emacs-lisp" id="orgab9f9a6">(<span class="org-keyword">setq</span> org-babel-use-quick-and-dirty-noweb-expansion nil)
 </pre>
 </div>
 
@@ -607,7 +647,7 @@ as their origin document.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org4de25ca">(<span class="org-keyword">setq</span> org-babel-tangle-use-relative-file-links t)
+<pre class="src src-emacs-lisp" id="org973aab3">(<span class="org-keyword">setq</span> org-babel-tangle-use-relative-file-links t)
 </pre>
 </div>
 
@@ -627,7 +667,7 @@ the tangled files. So tangled files get indented.</li>
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org6db9911">(<span class="org-keyword">defun</span> <span class="org-function-name">help/org-babel-post-tangle-hook-fn</span> ()
+<pre class="src src-emacs-lisp" id="orgc10205c">(<span class="org-keyword">defun</span> <span class="org-function-name">help/org-babel-post-tangle-hook-fn</span> ()
   (<span class="org-keyword">interactive</span>)
   (indent-region (point-min) (point-max) nil)
   (save-buffer))
@@ -636,7 +676,9 @@ the tangled files. So tangled files get indented.</li>
 </div>
 </div>
 
-<ol class="org-ol"><li><a id="org7cc7d91"></a><a id="orgmode:gcr:vela:49787FC5-CAA7-466B-B742-0F38973E070B"></a>comments<br><div class="outline-text-5" id="text-1-1-3-1">
+<ol class="org-ol">
+<li><a id="org5427833"></a>comments<br />
+<div class="outline-text-5" id="text-1-1-3-1">
 <pre class="example">
 ID: orgmode:gcr:vela:49787FC5-CAA7-466B-B742-0F38973E070B
 </pre>
@@ -653,12 +695,14 @@ origin artifact.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="orge3fce32">(help/set-org-babel-default-header-args <span class="org-builtin">:comments</span> <span class="org-string">"noweb"</span>)
+<pre class="src src-emacs-lisp" id="org0e743b1">(help/set-org-babel-default-header-args <span class="org-builtin">:comments</span> <span class="org-string">"noweb"</span>)
 </pre>
 </div>
-</div></li>
+</div>
+</li>
 
-<li><a id="org6a7c998"></a><a id="orgmode:gcr:vela:B0F9A321-3B69-46BB-B512-0AF3C663A4C0"></a>mkdirp<br><div class="outline-text-5" id="text-1-1-3-2">
+<li><a id="orga0f31db"></a>mkdirp<br />
+<div class="outline-text-5" id="text-1-1-3-2">
 <pre class="example">
 ID: orgmode:gcr:vela:B0F9A321-3B69-46BB-B512-0AF3C663A4C0
 </pre>
@@ -670,12 +714,14 @@ Toggle creation of parent directories of target files during tangling
 </blockquote>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="orgefa3db1">(help/set-org-babel-default-header-args <span class="org-builtin">:mkdirp</span> <span class="org-string">"yes"</span>)
+<pre class="src src-emacs-lisp" id="orgdc0e053">(help/set-org-babel-default-header-args <span class="org-builtin">:mkdirp</span> <span class="org-string">"yes"</span>)
 </pre>
 </div>
-</div></li>
+</div>
+</li>
 
-<li><a id="org5562688"></a><a id="orgmode:gcr:vela:90170E6A-AA1A-44EA-9BF8-1A6AA38FD224"></a>no-expand<br><div class="outline-text-5" id="text-1-1-3-3">
+<li><a id="org37fdb8e"></a>no-expand<br />
+<div class="outline-text-5" id="text-1-1-3-3">
 <pre class="example">
 ID: orgmode:gcr:vela:90170E6A-AA1A-44EA-9BF8-1A6AA38FD224
 </pre>
@@ -689,9 +735,11 @@ Turn off variable assignment and noweb expansion during tangling
 <p>
 Configuration likely per Source-Block or System.
 </p>
-</div></li>
+</div>
+</li>
 
-<li><a id="org2c1c0b3"></a><a id="orgmode:gcr:vela:E12B48AB-68E8-4515-89E3-30A16FB6FD22"></a>noweb<br><div class="outline-text-5" id="text-1-1-3-4">
+<li><a id="orgc613baa"></a>noweb<br />
+<div class="outline-text-5" id="text-1-1-3-4">
 <pre class="example">
 ID: orgmode:gcr:vela:E12B48AB-68E8-4515-89E3-30A16FB6FD22
 </pre>
@@ -706,13 +754,13 @@ Toggle expansion of noweb references
 Expand noweb references in source-blocks before:
 </p>
 
-<table>
+<table border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
 
 
 <colgroup>
-<col  class="org-left">
+<col  class="org-left" />
 
-<col  class="org-left">
+<col  class="org-left" />
 </colgroup>
 <thead>
 <tr>
@@ -745,28 +793,32 @@ ought to refer to the generated document.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org7613001">(help/set-org-babel-default-header-args <span class="org-builtin">:noweb</span> <span class="org-string">"no-export"</span>)
+<pre class="src src-emacs-lisp" id="org1055ee6">(help/set-org-babel-default-header-args <span class="org-builtin">:noweb</span> <span class="org-string">"no-export"</span>)
 </pre>
 </div>
-</div></li>
+</div>
+</li>
 
-<li><a id="org6b4a6e7"></a><a id="orgmode:gcr:vela:2836D0AA-5DBA-48AC-A338-B47002DE8D7F"></a>noweb-ref<br><div class="outline-text-5" id="text-1-1-3-5">
+<li><a id="org64313a5"></a>noweb-ref<br />
+<div class="outline-text-5" id="text-1-1-3-5">
 <pre class="example">
 ID: orgmode:gcr:vela:2836D0AA-5DBA-48AC-A338-B47002DE8D7F
 </pre>
 
 <blockquote>
 <p>
-Specify block&rsquo;s noweb reference resolution target
+Specify block's noweb reference resolution target
 </p>
 </blockquote>
 
 <p>
 Configuration likely per Source-Block or System.
 </p>
-</div></li>
+</div>
+</li>
 
-<li><a id="orgdf65daf"></a><a id="orgmode:gcr:vela:B1A57D15-6BBF-4E78-A0D9-0B02C283C6B0"></a>noweb-sep<br><div class="outline-text-5" id="text-1-1-3-6">
+<li><a id="orgc7c9018"></a>noweb-sep<br />
+<div class="outline-text-5" id="text-1-1-3-6">
 <pre class="example">
 ID: orgmode:gcr:vela:B1A57D15-6BBF-4E78-A0D9-0B02C283C6B0
 </pre>
@@ -780,9 +832,11 @@ String used to separate noweb references
 <p>
 Configuration likely per Source-Block or System.
 </p>
-</div></li>
+</div>
+</li>
 
-<li><a id="orgd8739a2"></a><a id="orgmode:gcr:vela:DDE727A6-DDF7-4B61-9063-549614B135F0"></a>padline<br><div class="outline-text-5" id="text-1-1-3-7">
+<li><a id="org41884b3"></a>padline<br />
+<div class="outline-text-5" id="text-1-1-3-7">
 <pre class="example">
 ID: orgmode:gcr:vela:DDE727A6-DDF7-4B61-9063-549614B135F0
 </pre>
@@ -795,7 +849,7 @@ Control insertion of padding lines in tangled code files
 
 <ul class="org-ul">
 <li><code>org-babel-tangle-jump-to-org</code> requires padded lines. This configuration could
-arguably appear in the &ldquo;Programming&rdquo; heading because it impacts operation. It
+arguably appear in the "Programming" heading because it impacts operation. It
 lives here because it <b>must</b> occur as part of the Tangling activity so that it
 can be used in the Programming activity.</li>
 <li>Often I go back and for on this one. Sometimes it is nicer to have less spaces
@@ -804,12 +858,14 @@ I love the spaces. Defaulting to what I like.</li>
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="orgebfedff">(help/set-org-babel-default-header-args <span class="org-builtin">:padline</span> <span class="org-string">"yes"</span>)
+<pre class="src src-emacs-lisp" id="org0e172cd">(help/set-org-babel-default-header-args <span class="org-builtin">:padline</span> <span class="org-string">"yes"</span>)
 </pre>
 </div>
-</div></li>
+</div>
+</li>
 
-<li><a id="org58a00bf"></a><a id="orgmode:gcr:vela:8219A42A-E90F-418A-8EF0-EB150CF6D730"></a>session<br><div class="outline-text-5" id="text-1-1-3-8">
+<li><a id="orga48c0e7"></a>session<br />
+<div class="outline-text-5" id="text-1-1-3-8">
 <pre class="example">
 ID: orgmode:gcr:vela:8219A42A-E90F-418A-8EF0-EB150CF6D730
 </pre>
@@ -828,9 +884,11 @@ Configuration likely per Source-Block or System.
 For some situations, this may be the same for every source block for a
 particular language. R is a good example.
 </p>
-</div></li>
+</div>
+</li>
 
-<li><a id="org7cb0f0c"></a><a id="orgmode:gcr:vela:542185DD-4FD6-459A-B422-DA7B546FB292"></a>shebang<br><div class="outline-text-5" id="text-1-1-3-9">
+<li><a id="org9569e48"></a>shebang<br />
+<div class="outline-text-5" id="text-1-1-3-9">
 <pre class="example">
 ID: orgmode:gcr:vela:542185DD-4FD6-459A-B422-DA7B546FB292
 </pre>
@@ -844,9 +902,11 @@ Make tangled files executable
 <p>
 Configuration likely per Source-Block or System.
 </p>
-</div></li>
+</div>
+</li>
 
-<li><a id="orgf17b91a"></a><a id="orgmode:gcr:vela:EA716FC9-4A90-4F3E-ABD0-31FEA575C969"></a>tangle<br><div class="outline-text-5" id="text-1-1-3-10">
+<li><a id="org4f3049e"></a>tangle<br />
+<div class="outline-text-5" id="text-1-1-3-10">
 <pre class="example">
 ID: orgmode:gcr:vela:EA716FC9-4A90-4F3E-ABD0-31FEA575C969
 </pre>
@@ -858,12 +918,14 @@ Toggle tangling and specify file name
 </blockquote>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org849acef">(help/set-org-babel-default-header-args <span class="org-builtin">:tangle</span> <span class="org-string">"no"</span>)
+<pre class="src src-emacs-lisp" id="orga6b9638">(help/set-org-babel-default-header-args <span class="org-builtin">:tangle</span> <span class="org-string">"no"</span>)
 </pre>
 </div>
-</div></li>
+</div>
+</li>
 
-<li><a id="org44df59b"></a><a id="orgmode:gcr:vela:5F0B7157-2DC8-4AFD-8F26-4B21025A5ECE"></a>tangle-mode<br><div class="outline-text-5" id="text-1-1-3-11">
+<li><a id="org45fb108"></a>tangle-mode<br />
+<div class="outline-text-5" id="text-1-1-3-11">
 <pre class="example">
 ID: orgmode:gcr:vela:5F0B7157-2DC8-4AFD-8F26-4B21025A5ECE
 </pre>
@@ -877,11 +939,13 @@ Set permission of tangled files
 <p>
 Configuration likely per Source-Block or System.
 </p>
-</div></li></ol>
+</div>
+</li>
+</ol>
 </div>
 
-<div id="outline-container-orgf1559e0" class="outline-4">
-<h4 id="orgf1559e0"><a id="orgmode:gcr:vela:ED23FF0B-1F90-435C-9B56-ACA06C1ACAE0"></a><span class="section-number-4">1.1.4</span> Evaluating</h4>
+<div id="outline-container-org0b61b80" class="outline-4">
+<h4 id="org0b61b80"><span class="section-number-4">1.1.4</span> Evaluating</h4>
 <div class="outline-text-4" id="text-1-1-4">
 <pre class="example">
 ID: orgmode:gcr:vela:ED23FF0B-1F90-435C-9B56-ACA06C1ACAE0
@@ -892,7 +956,7 @@ Org-Mode may use all of the listed languages.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org788377d">(org-babel-do-load-languages
+<pre class="src src-emacs-lisp" id="orge5261bc">(org-babel-do-load-languages
  <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">org-babel-load-languages</span>
  <span class="org-highlight-quoted-quote">'</span>((emacs-lisp . t)
    (org . t)
@@ -915,19 +979,10 @@ Org-Mode may use all of the listed languages.
    (plantuml . t)))
 </pre>
 </div>
-
-<p>
-Out of the box Emacs supports <code>js</code> with <code>js-mode</code>. Define language <code>javascript</code> to
-use <code>js2-mode</code>.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-emacs-lisp" id="orgd36be4f">(add-to-list <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">org-src-lang-modes</span> <span class="org-highlight-quoted-quote">'</span>(<span class="org-string">"javascript"</span> . js2))
-</pre>
 </div>
-</div>
-
-<ol class="org-ol"><li><a id="orga0bf144"></a><a id="orgmode:gcr:vela:49B8BFE9-643B-450F-A8A1-20CE3079E215"></a>cache<br><div class="outline-text-5" id="text-1-1-4-1">
+<ol class="org-ol">
+<li><a id="org01b738b"></a>cache<br />
+<div class="outline-text-5" id="text-1-1-4-1">
 <pre class="example">
 ID: orgmode:gcr:vela:49B8BFE9-643B-450F-A8A1-20CE3079E215
 </pre>
@@ -945,9 +1000,11 @@ Configuration likely per Source-Block or System.
 <p>
 Default <code>no</code> is correct for nearly every scenario.
 </p>
-</div></li>
+</div>
+</li>
 
-<li><a id="orgb7c10c6"></a><a id="orgmode:gcr:vela:4D683007-14AE-4A7D-A506-E2301FD32E82"></a>colnames<br><div class="outline-text-5" id="text-1-1-4-2">
+<li><a id="org347aae7"></a>colnames<br />
+<div class="outline-text-5" id="text-1-1-4-2">
 <pre class="example">
 ID: orgmode:gcr:vela:4D683007-14AE-4A7D-A506-E2301FD32E82
 </pre>
@@ -961,9 +1018,11 @@ Handle column names in tables
 <p>
 Configuration likely per Source-Block or System.
 </p>
-</div></li>
+</div>
+</li>
 
-<li><a id="org50202b3"></a><a id="orgmode:gcr:vela:CD1494F1-0A2A-44D0-9955-0D0501AF1539"></a>dir<br><div class="outline-text-5" id="text-1-1-4-3">
+<li><a id="org5fcff3d"></a>dir<br />
+<div class="outline-text-5" id="text-1-1-4-3">
 <pre class="example">
 ID: orgmode:gcr:vela:CD1494F1-0A2A-44D0-9955-0D0501AF1539
 </pre>
@@ -977,9 +1036,11 @@ Specify the default (possibly remote) directory for code block execution
 <p>
 Configuration likely per Source-Block or System.
 </p>
-</div></li>
+</div>
+</li>
 
-<li><a id="orgf81b609"></a><a id="orgmode:gcr:vela:CA7F5086-9D4B-4847-9449-3231CE027804"></a>epilogue<br><div class="outline-text-5" id="text-1-1-4-4">
+<li><a id="orgf3498c2"></a>epilogue<br />
+<div class="outline-text-5" id="text-1-1-4-4">
 <pre class="example">
 ID: orgmode:gcr:vela:CA7F5086-9D4B-4847-9449-3231CE027804
 </pre>
@@ -993,9 +1054,11 @@ Text to append to code block body
 <p>
 See Prologue.
 </p>
-</div></li>
+</div>
+</li>
 
-<li><a id="org9c067c7"></a><a id="orgmode:gcr:vela:0329BACE-2C99-4BB3-A7A5-7C800EF53FAD"></a>eval<br><div class="outline-text-5" id="text-1-1-4-5">
+<li><a id="org1f8262e"></a>eval<br />
+<div class="outline-text-5" id="text-1-1-4-5">
 <pre class="example">
 ID: orgmode:gcr:vela:0329BACE-2C99-4BB3-A7A5-7C800EF53FAD
 </pre>
@@ -1011,7 +1074,7 @@ Never evaluate source-blocks or in-line-source-blocks <b>on export</b>.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="orgfd20a4b">(help/set-org-babel-default-header-args <span class="org-builtin">:eval</span> <span class="org-string">"never-export"</span>)
+<pre class="src src-emacs-lisp" id="orgd7fa4a4">(help/set-org-babel-default-header-args <span class="org-builtin">:eval</span> <span class="org-string">"never-export"</span>)
 (help/set-org-babel-default-inline-header-args <span class="org-builtin">:eval</span> <span class="org-string">"never-export"</span>)
 </pre>
 </div>
@@ -1021,12 +1084,14 @@ Never evaluate in-line-source-blocks <b>on export</b>.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org178594c">(<span class="org-keyword">setq</span> org-export-babel-evaluate nil)
+<pre class="src src-emacs-lisp" id="orgfafaf6c">(<span class="org-keyword">setq</span> org-export-babel-evaluate nil)
 </pre>
 </div>
-</div></li>
+</div>
+</li>
 
-<li><a id="org3302771"></a><a id="orgmode:gcr:vela:80824708-62AF-4337-A517-828DA22D1FCA"></a>file<br><div class="outline-text-5" id="text-1-1-4-6">
+<li><a id="org0b7ff38"></a>file<br />
+<div class="outline-text-5" id="text-1-1-4-6">
 <pre class="example">
 ID: orgmode:gcr:vela:80824708-62AF-4337-A517-828DA22D1FCA
 </pre>
@@ -1040,9 +1105,11 @@ Specify a path for file output
 <p>
 Configuration likely per Source-Block or System.
 </p>
-</div></li>
+</div>
+</li>
 
-<li><a id="org887b809"></a><a id="orgmode:gcr:vela:6F9A2745-7118-469E-9FDB-4B327C02E5FA"></a>file-desc<br><div class="outline-text-5" id="text-1-1-4-7">
+<li><a id="org9e4a189"></a>file-desc<br />
+<div class="outline-text-5" id="text-1-1-4-7">
 <pre class="example">
 ID: orgmode:gcr:vela:6F9A2745-7118-469E-9FDB-4B327C02E5FA
 </pre>
@@ -1056,9 +1123,11 @@ Specify a description for file results
 <p>
 Configuration likely per Source-Block or System.
 </p>
-</div></li>
+</div>
+</li>
 
-<li><a id="org5f12a93"></a><a id="orgmode:gcr:vela:0716A48E-9227-44FD-B1FA-185DF6545E91"></a>file-ext<br><div class="outline-text-5" id="text-1-1-4-8">
+<li><a id="org2b967e1"></a>file-ext<br />
+<div class="outline-text-5" id="text-1-1-4-8">
 <pre class="example">
 ID: orgmode:gcr:vela:0716A48E-9227-44FD-B1FA-185DF6545E91
 </pre>
@@ -1072,9 +1141,11 @@ Specify an extension for file output
 <p>
 Configuration likely per Source-Block or System.
 </p>
-</div></li>
+</div>
+</li>
 
-<li><a id="org2acda7a"></a><a id="orgmode:gcr:vela:721F4E5E-A343-4D7C-A3A3-12A544B3A273"></a>hlines<br><div class="outline-text-5" id="text-1-1-4-9">
+<li><a id="org1dda165"></a>hlines<br />
+<div class="outline-text-5" id="text-1-1-4-9">
 <pre class="example">
 ID: orgmode:gcr:vela:721F4E5E-A343-4D7C-A3A3-12A544B3A273
 </pre>
@@ -1088,9 +1159,11 @@ Handle horizontal lines in tables
 <p>
 Configuration likely per Source-Block or System.
 </p>
-</div></li>
+</div>
+</li>
 
-<li><a id="org99605d2"></a><a id="orgmode:gcr:vela:D0DDFE88-1B41-4A67-A5F4-88B1B35A7513"></a>output-dir<br><div class="outline-text-5" id="text-1-1-4-10">
+<li><a id="org4bacb25"></a>output-dir<br />
+<div class="outline-text-5" id="text-1-1-4-10">
 <pre class="example">
 ID: orgmode:gcr:vela:D0DDFE88-1B41-4A67-A5F4-88B1B35A7513
 </pre>
@@ -1109,9 +1182,11 @@ Configuration likely per Source-Block or System.
 One example is a System where <b>all</b> intermediate results are stored to individual
 files.
 </p>
-</div></li>
+</div>
+</li>
 
-<li><a id="org9e0a957"></a><a id="orgmode:gcr:vela:1A4DEC98-C735-4D88-8261-6AD13C495EF2"></a>post<br><div class="outline-text-5" id="text-1-1-4-11">
+<li><a id="org01f5f3d"></a>post<br />
+<div class="outline-text-5" id="text-1-1-4-11">
 <pre class="example">
 ID: orgmode:gcr:vela:1A4DEC98-C735-4D88-8261-6AD13C495EF2
 </pre>
@@ -1125,9 +1200,11 @@ Post processing of code block results
 <p>
 Configuration likely per Source-Block or System.
 </p>
-</div></li>
+</div>
+</li>
 
-<li><a id="org0ae79b4"></a><a id="orgmode:gcr:vela:3D1780E0-2E6D-428C-916D-BFB10E79C76F"></a>prologue<br><div class="outline-text-5" id="text-1-1-4-12">
+<li><a id="org04fed3e"></a>prologue<br />
+<div class="outline-text-5" id="text-1-1-4-12">
 <pre class="example">
 ID: orgmode:gcr:vela:3D1780E0-2E6D-428C-916D-BFB10E79C76F
 </pre>
@@ -1149,7 +1226,7 @@ the list and the solution is to <code>reset</code> the session.
 </p>
 
 <p>
-Another example, say that you&rsquo;ve got a bunch of R Source-Blocks and you want to
+Another example, say that you've got a bunch of R Source-Blocks and you want to
 be able to rearrange them as you please. You want to be sure that there are no
 dependencies between them on bindings created in the workspace. Set <code>prologue</code>
 to <code>rm(list = ls())</code>.
@@ -1158,9 +1235,11 @@ to <code>rm(list = ls())</code>.
 <p>
 Epilgue works hand-in-hand with this.
 </p>
-</div></li>
+</div>
+</li>
 
-<li><a id="org4feafa2"></a><a id="orgmode:gcr:vela:2755571E-113B-436E-9EEC-26618A55A27E"></a>results<br><div class="outline-text-5" id="text-1-1-4-13">
+<li><a id="org3789dd0"></a>results<br />
+<div class="outline-text-5" id="text-1-1-4-13">
 <pre class="example">
 ID: orgmode:gcr:vela:2755571E-113B-436E-9EEC-26618A55A27E
 </pre>
@@ -1192,7 +1271,19 @@ when it is not.
 </ul></li>
 <li>Type
 <ul class="org-ul">
-<li><code>table</code>:</li>
+<li><code>scalar</code>
+<ul class="org-ul">
+<li>Functions always return a single result</li>
+<li>Evidence demonstrates that I use this or <code>output</code> most of the time and I
+want to configure this to work right for <code>Literate Programming</code> by default
+because it feels better.</li>
+</ul></li>
+<li><code>WAS</code>
+<ul class="org-ul">
+<li>Because in theory returning a collection was flexible (see below). In
+practice I never ever used this.</li>
+<li><code>table</code>:
+<ul class="org-ul">
 <li>Tables are the best type because
 <ul class="org-ul">
 <li>Dimensions make them human-readable in text.</li>
@@ -1200,6 +1291,8 @@ when it is not.
 <li>Appear as lists to programming languages.</li>
 <li>Weaves well.</li>
 <li>Inline Source-Blocks disallow tables so use scalars instead.</li>
+</ul></li>
+</ul></li>
 </ul></li>
 </ul></li>
 <li>Format
@@ -1213,11 +1306,10 @@ when it is not.
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="orgdf967e2">(<span class="org-keyword">defconst</span> <span class="org-variable-name">help/org-sb-results-cfg</span> <span class="org-string">"value table drawer replace"</span>)
+<pre class="src src-emacs-lisp" id="org19278d9">(<span class="org-keyword">defconst</span> <span class="org-variable-name">help/org-sb-results-cfg</span> <span class="org-string">"value scalar drawer replace"</span>)
 (help/set-org-babel-default-header-args <span class="org-builtin">:results</span> help/org-sb-results-cfg)
 </pre>
 </div>
-
 
 <p>
 Their format will show that they are results. Inline source blocks
@@ -1228,13 +1320,15 @@ functionality.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org475bf17">(<span class="org-keyword">defconst</span> <span class="org-variable-name">help/org-isb-results-cfg</span> <span class="org-string">"replace"</span>)
+<pre class="src src-emacs-lisp" id="org81fe5a1">(<span class="org-keyword">defconst</span> <span class="org-variable-name">help/org-isb-results-cfg</span> <span class="org-string">"replace"</span>)
 (help/set-org-babel-default-inline-header-args <span class="org-builtin">:results</span> help/org-isb-results-cfg)
 </pre>
 </div>
-</div></li>
+</div>
+</li>
 
-<li><a id="org0cc76b1"></a><a id="orgmode:gcr:vela:B184A507-1B03-4096-A4D8-E50A1DA047DB"></a>rownames<br><div class="outline-text-5" id="text-1-1-4-14">
+<li><a id="orge3aae45"></a>rownames<br />
+<div class="outline-text-5" id="text-1-1-4-14">
 <pre class="example">
 ID: orgmode:gcr:vela:B184A507-1B03-4096-A4D8-E50A1DA047DB
 </pre>
@@ -1248,9 +1342,11 @@ Handle row names in tables
 <p>
 Configuration likely per Source-Block or System.
 </p>
-</div></li>
+</div>
+</li>
 
-<li><a id="org0bed99a"></a><a id="orgmode:gcr:vela:F1336AAA-68EF-4E87-B253-458103B6FF2F"></a>sep<br><div class="outline-text-5" id="text-1-1-4-15">
+<li><a id="orgfc174dd"></a>sep<br />
+<div class="outline-text-5" id="text-1-1-4-15">
 <pre class="example">
 ID: orgmode:gcr:vela:F1336AAA-68EF-4E87-B253-458103B6FF2F
 </pre>
@@ -1264,9 +1360,11 @@ Delimiter for writing tabular results outside Org
 <p>
 Configuration likely per Source-Block or System.
 </p>
-</div></li>
+</div>
+</li>
 
-<li><a id="org8b42e02"></a><a id="orgmode:gcr:vela:3B4D638C-82EE-47F3-835C-52B2F03620A0"></a>var<br><div class="outline-text-5" id="text-1-1-4-16">
+<li><a id="orgcfe2bac"></a>var<br />
+<div class="outline-text-5" id="text-1-1-4-16">
 <pre class="example">
 ID: orgmode:gcr:vela:3B4D638C-82EE-47F3-835C-52B2F03620A0
 </pre>
@@ -1278,7 +1376,7 @@ Pass arguments to code blocks
 </blockquote>
 
 <ul class="org-ul">
-<li><b>The</b> most revealing of the power of Org-Mode&rsquo;s LP offering</li>
+<li><b>The</b> most revealing of the power of Org-Mode's LP offering</li>
 <li>Values-by-reference
 <ul class="org-ul">
 <li>Table</li>
@@ -1289,23 +1387,25 @@ Pass arguments to code blocks
 <li>Idexable variable values</li>
 <li>Emacs Lisp evaluation of variables</li>
 </ul>
-</div></li></ol>
+</div>
+</li>
+</ol>
 </div>
 
-<div id="outline-container-org724b59e" class="outline-4">
-<h4 id="org724b59e"><a id="orgmode:gcr:vela:F71DD8BA-B853-4903-A348-400E13C0E6F8"></a><span class="section-number-4">1.1.5</span> Weaving</h4>
+<div id="outline-container-org2ff40c8" class="outline-4">
+<h4 id="org2ff40c8"><span class="section-number-4">1.1.5</span> Weaving</h4>
 <div class="outline-text-4" id="text-1-1-5">
 <pre class="example">
 ID: orgmode:gcr:vela:F71DD8BA-B853-4903-A348-400E13C0E6F8
 </pre>
 
 <p>
-Help the reader make sense of the document by displaying it&rsquo;s internal
+Help the reader make sense of the document by displaying it's internal
 properties.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org74c26af">(<span class="org-keyword">setq</span> org-export-with-properties t)
+<pre class="src src-emacs-lisp" id="org157b79d">(<span class="org-keyword">setq</span> org-export-with-properties t)
 </pre>
 </div>
 
@@ -1318,7 +1418,7 @@ Does not do so; main thread is blocked until weaves complete.</li>
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org92cfd04">(<span class="org-keyword">setq</span> org-export-in-background nil)
+<pre class="src src-emacs-lisp" id="orgcbb57a7">(<span class="org-keyword">setq</span> org-export-in-background nil)
 </pre>
 </div>
 
@@ -1327,21 +1427,20 @@ Make sure that exported files are Unicode UTF-8.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org3fa2c6b">(<span class="org-keyword">setq</span> org-export-coding-system <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">utf-8</span>)
+<pre class="src src-emacs-lisp" id="orgfafa36b">(<span class="org-keyword">setq</span> org-export-coding-system <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">utf-8</span>)
 </pre>
 </div>
 
 <p>
-Do not preserve line-breaks when exporting instead let the destination
-format handle it as it sees fit. This doesn&rsquo;t work like I had expected and makes
-me wonder what I am confused about here. When I export to HTML text containing
-linebreaks no longer has linebreaks. This is what I expect. When I export that
-same text to a buffer though, the line breaks are included. Currently I use
-<code>sacha/unfill-paragraph</code> on that code.
+Line breaks are for humans typing them, not for publishing.
+</p>
+
+<p>
+When publishing to ASCII, set this property in the file.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org7f6c57d">(<span class="org-keyword">setq</span> org-export-preserve-breaks nil)
+<pre class="src src-emacs-lisp" id="org6d5b905">(<span class="org-keyword">setq</span> org-export-preserve-breaks nil)
 </pre>
 </div>
 
@@ -1350,7 +1449,7 @@ When exporting anything, do not insert the exported content into the kill ring.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org70e3ed9">(<span class="org-keyword">setq</span> org-export-copy-to-kill-ring nil)
+<pre class="src src-emacs-lisp" id="org6b58e00">(<span class="org-keyword">setq</span> org-export-copy-to-kill-ring nil)
 </pre>
 </div>
 
@@ -1360,7 +1459,7 @@ it with a property, it will be fine to turn it off.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org6c9164c">(<span class="org-keyword">setq</span> org-export-with-toc nil)
+<pre class="src src-emacs-lisp" id="org489b98d">(<span class="org-keyword">setq</span> org-export-with-toc nil)
 </pre>
 </div>
 
@@ -1371,7 +1470,7 @@ anything else would violate the law of least surprise.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org414345d">(<span class="org-keyword">setq</span> org-src-preserve-indentation t)
+<pre class="src src-emacs-lisp" id="org42baaf9">(<span class="org-keyword">setq</span> org-src-preserve-indentation t)
 </pre>
 </div>
 
@@ -1380,7 +1479,7 @@ Maximize flexibility for weaving operations during export.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org658fdb8">(<span class="org-keyword">setq</span> org-export-allow-bind-keywords t)
+<pre class="src src-emacs-lisp" id="orgfc1fd6c">(<span class="org-keyword">setq</span> org-export-allow-bind-keywords t)
 </pre>
 </div>
 
@@ -1389,12 +1488,14 @@ Disable element caching because it might break weaves via <a href="https://lists
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="orgf8d045e">(<span class="org-keyword">setq</span> org-element-use-cache nil)
+<pre class="src src-emacs-lisp" id="orgfc231c6">(<span class="org-keyword">setq</span> org-element-use-cache nil)
 </pre>
 </div>
 </div>
 
-<ol class="org-ol"><li><a id="org12c5576"></a><a id="orgmode:gcr:vela:57B3786B-017F-4F6E-89F9-05642304F3B6"></a>exports<br><div class="outline-text-5" id="text-1-1-5-1">
+<ol class="org-ol">
+<li><a id="org8c158d3"></a>exports<br />
+<div class="outline-text-5" id="text-1-1-5-1">
 <pre class="example">
 ID: orgmode:gcr:vela:57B3786B-017F-4F6E-89F9-05642304F3B6
 </pre>
@@ -1407,29 +1508,31 @@ Export code and/or results
 
 <p>
 Always share source blocks and their results. Whether or not to generate a
-result for a particular source block is configured per-block. If you don&rsquo;t want
+result for a particular source block is configured per-block. If you don't want
 to share a result for a source block then disable storage of results on that
 block.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org032a33b">(help/set-org-babel-default-header-args <span class="org-builtin">:exports</span> <span class="org-string">"both"</span>)
+<pre class="src src-emacs-lisp" id="orgff294ec">(help/set-org-babel-default-header-args <span class="org-builtin">:exports</span> <span class="org-string">"both"</span>)
 </pre>
 </div>
 
 <p>
-Use inline Source-Blocks to provide values read as part of the document. Don&rsquo;t
+Use inline Source-Blocks to provide values read as part of the document. Don't
 show their source code. Allows inline Source-Blocks to function as <i>rich</i> macros
 when combined with <code>org-sbe</code>.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org4fdc0cb">(help/set-org-babel-default-inline-header-args <span class="org-builtin">:exports</span> <span class="org-string">"results"</span>)
+<pre class="src src-emacs-lisp" id="orge6e36c2">(help/set-org-babel-default-inline-header-args <span class="org-builtin">:exports</span> <span class="org-string">"results"</span>)
 </pre>
 </div>
-</div></li>
+</div>
+</li>
 
-<li><a id="org1cbbebc"></a><a id="orgmode:gcr:vela:94D6B3BE-5DA1-499A-B5C7-A6B71710A1EA"></a>wrap<br><div class="outline-text-5" id="text-1-1-5-2">
+<li><a id="org1d82f4f"></a>wrap<br />
+<div class="outline-text-5" id="text-1-1-5-2">
 <pre class="example">
 ID: orgmode:gcr:vela:94D6B3BE-5DA1-499A-B5C7-A6B71710A1EA
 </pre>
@@ -1448,7 +1551,7 @@ results need to be visibly noticeably different for the reader by making them
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org12af855">(help/set-org-babel-default-header-args <span class="org-builtin">:wrap</span> <span class="org-string">"EXAMPLE"</span>)
+<pre class="src src-emacs-lisp" id="org7c19097">(help/set-org-babel-default-header-args <span class="org-builtin">:wrap</span> <span class="org-string">"EXAMPLE"</span>)
 </pre>
 </div>
 
@@ -1457,7 +1560,7 @@ Diagramming languages require <code>RESULTS</code> output for exporting.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="orgf5661d1">(help/set-org-babel-default-header-args:ditaa <span class="org-builtin">:wrap</span> <span class="org-string">"RESULTS"</span>)
+<pre class="src src-emacs-lisp" id="org29c3055">(help/set-org-babel-default-header-args:ditaa <span class="org-builtin">:wrap</span> <span class="org-string">"RESULTS"</span>)
 (help/set-org-babel-default-header-args:dot <span class="org-builtin">:wrap</span> <span class="org-string">"RESULTS"</span>)
 (help/set-org-babel-default-header-args:plantuml <span class="org-builtin">:wrap</span> <span class="org-string">"RESULTS"</span>)
 </pre>
@@ -1466,14 +1569,16 @@ Diagramming languages require <code>RESULTS</code> output for exporting.
 <pre class="example">
 ((:wrap . RESULTS) (:results . file) (:exports . results))
 </pre>
-</div></li></ol>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Grant Rettke</p>
-<p class="date">Created: 2017-07-22 Sat 23:16</p>
+<p class="date">Created: 2018-08-25 Sat 22:47</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

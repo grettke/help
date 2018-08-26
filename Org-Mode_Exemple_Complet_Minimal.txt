@@ -1,6 +1,20 @@
 Grant Rettke
 
 
+Table of Contents
+_________________
+
+1. Org-Mode Exemple Complet Minimal
+.. 1. Principle of Least Astonishment (POLA)
+..... 1. Time
+..... 2. Garbage Collection
+..... 3. Load Behavior
+.. 2. Org-Mode Exemple Complet Minimal
+..... 1. Things That Must Occur Before Loading Org-Mode
+..... 2. Loading Org-Mode
+..... 3. Things That Must Occur Only After Loading Org-Mode
+
+
 Never compile this.
 
 ,----
@@ -30,7 +44,71 @@ Never compile this.
   ID: org_gcr_2017-05-12_mara:626B5DD1-97D8-4B85-96BC-B9A96F18AF1E
 
 
-1.1.1 Load Behavior
+1.1.1 Time
+----------
+
+  ID: org_gcr_2018-03-16_mara:BC16A47E-FC4E-4F12-8813-583BF4C3EF5A
+  Standardize timestamps.
+
+  ,----
+  | (defun help/get-timestamp ()
+  |   "Produces a full ISO 8601 format timestamp."
+  |   (interactive)
+  |   (let* ((timestamp-without-timezone (format-time-string "%Y-%m-%dT%T"))
+  |          (timezone-name-in-numeric-form (format-time-string "%z"))
+  |          (timezone-utf-offset
+  |           (concat (substring timezone-name-in-numeric-form 0 3)
+  |                   ":"
+  |                   (substring timezone-name-in-numeric-form 3 5)))
+  |          (timestamp (concat timestamp-without-timezone
+  |                             timezone-utf-offset)))
+  |     timestamp))
+  |
+  | (defun help/insert-timestamp ()
+  |   "Inserts a full ISO 8601 format timestamp."
+  |   (interactive)
+  |   (insert (help/get-timestamp)))
+  |
+  | (defun help/get-timestamp-no-colons ()
+  |   "Produces a full ISO 8601 format timestamp with colons replaced by hyphens."
+  |   (interactive)
+  |   (let* ((timestamp (help/get-timestamp))
+  |          (timestamp-no-colons (replace-regexp-in-string ":" "-" timestamp)))
+  |     timestamp-no-colons))
+  |
+  | (defun help/insert-timestamp-no-colons ()
+  |   "Inserts a full ISO 8601 format timestamp with colons replaced by hyphens."
+  |   (interactive)
+  |   (insert (help/get-timestamp-no-colons)))
+  |
+  | (defun help/insert-datestamp ()
+  |   "Produces and inserts a partial ISO 8601 format timestamp."
+  |   (interactive)
+  |   (insert (format-time-string "%F")))
+  `----
+
+
+1.1.2 Garbage Collection
+------------------------
+
+  ID: org_gcr_2017-07-29_mara:5A6162AE-F0FD-491D-BC05-F288F46F6125
+  Clear memory and disable garbage collection or return garbage collection to
+  normal.
+
+  ,----
+  | (setq help/default-gc-cons-threshold gc-cons-threshold)
+  | (defun help/set-gc-cons-threshold (&optional multiplier notify)
+  |   "Set `gc-cons-threshold' either to its default value or a
+  |    `multiplier' thereof."
+  |   (let* ((new-multiplier (or multiplier 1))
+  |          (new-threshold (* help/default-gc-cons-threshold
+  |                            new-multiplier)))
+  |     (setq gc-cons-threshold new-threshold)
+  |     (when notify (message "Setting `gc-cons-threshold' to %s" new-threshold))))
+  `----
+
+
+1.1.3 Load Behavior
 -------------------
 
   ID: org_gcr_2017-05-12_mara:75985F03-F3B9-4DA3-8F6E-393E4C2F06E7
@@ -88,6 +166,13 @@ Never compile this.
   unexpected Org-Mode behavior be sure to stop and investigate `org-version' and
   decide whether or not it is what you expect and prepare an ECM if necessary.
 
+
+[directions] <http://orgmode.org/manual/Installation.html>
+
+1.2.1 Things That Must Occur Before Loading Org-Mode
+----------------------------------------------------
+
+  ID: org_gcr_2017-07-30_mara:3CF35008-D435-4CCB-90D7-5CFA06E15467
   Add the Org-Mode core distribution the load path.
 
   ,----
@@ -115,34 +200,59 @@ Never compile this.
   | (setq org-enforce-todo-checkbox-dependencies t)
   `----
 
-  Found a copy _Literate Programming_ so use `GUILLEMET' delimeters.
+  Use math double brackets for _Literate Programming_ instead of GUILLEMET
+  delimeters.
 
   ,----
-  | (setq org-babel-noweb-wrap-start "«")
-  | (setq org-babel-noweb-wrap-end "»")
+  | (setq org-babel-noweb-wrap-start "⟪")
+  | (setq org-babel-noweb-wrap-end "⟫")
   `----
 
+
+1.2.2 Loading Org-Mode
+----------------------
+
+  ID: org_gcr_2017-07-30_mara:FFA7E062-C039-4F3F-82FC-12A49FF379B8
   Load Org-Mode.
 
   ,----
   | (require 'org)
   `----
 
+
+1.2.3 Things That Must Occur Only After Loading Org-Mode
+--------------------------------------------------------
+
+  ID: org_gcr_2017-07-30_mara:D9207828-3783-4599-BA48-A6EB2C3FCAE4
+
+  Helper doubles available memory.
+
+  ,----
+  | (defun help/double-gc-cons-threshold () "Double `gc-cons-threshold'." (help/set-gc-cons-threshold 2))
+  `----
+
+  Double garbage collection during tangling. Instead of storing this in the
+  primary Org-Mode Literate Programming configuration I want it here so that it
+  is always available.
+
+  ,----
+  | (add-hook 'org-babel-pre-tangle-hook #'help/double-gc-cons-threshold)
+  | (add-hook 'org-babel-post-tangle-hook #'help/set-gc-cons-threshold)
+  `----
+
   Display system info.
 
   ,----
-  | (message "ECM Information As Of: %s\nOrg-Version: %s\nOrg-Git-Version:
-  |          %s\nEmacs-Version: %s\nNoweb wrap start and stop delimeters: '%s' and '%s'\nnorg-babel-default-header-args:\n"
-  |          (let* ((timestamp (format-time-string "%Y-%m-%dT%T"))
-  |                 (safe (replace-regexp-in-string ":" "-" timestamp)))
-  |            safe)
-  |          (org-version)
-  |          (org-git-version)
-  |          (emacs-version)
-  |          org-babel-noweb-wrap-start
-  |          org-babel-noweb-wrap-end)
-  | (princ org-babel-default-header-args)
+  | (defun help/display-system-info ()
+  |   (interactive)
+  |   (message "<<<ECM Information>>>\nThis buffer file: %s\nAs Of: %s\nOrg-Version: %s\nOrg-Git-Version:%s\nEmacs-Version: %s\nNoweb wrap start and stop delimeters: '%s' and '%s'\norg-babel-default-header-args:\n"
+  |            buffer-file-name
+  |            (help/get-timestamp)
+  |            (org-version)
+  |            (org-git-version)
+  |            (emacs-version)
+  |            org-babel-noweb-wrap-start
+  |            org-babel-noweb-wrap-end)
+  |   (pp org-babel-default-header-args))
+  | (help/display-system-info)
   `----
-
-
-[directions] http://orgmode.org/manual/Installation.html

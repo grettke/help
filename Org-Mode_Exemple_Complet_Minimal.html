@@ -1,12 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-07-22 Sat 23:15 -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title></title>
-<meta name="generator" content="Org mode">
-<meta name="author" content="Grant Rettke">
+<!-- 2018-08-25 Sat 22:48 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Grant Rettke" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -66,6 +68,7 @@
   pre.src-fortran:before { content: 'Fortran'; }
   pre.src-gnuplot:before { content: 'gnuplot'; }
   pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
   pre.src-java:before { content: 'Java'; }
   pre.src-js:before { content: 'Javascript'; }
   pre.src-latex:before { content: 'LaTeX'; }
@@ -158,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -182,7 +198,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2017 Free Software Foundation, Inc.
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -226,17 +242,42 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org56dc263">1. Org-Mode Exemple Complet Minimal</a>
+<ul>
+<li><a href="#orgea42d6d">1.1. Principle of Least Astonishment (POLA)</a>
+<ul>
+<li><a href="#org697e351">1.1.1. Time</a></li>
+<li><a href="#org2b164ad">1.1.2. Garbage Collection</a></li>
+<li><a href="#orgfb1fead">1.1.3. Load Behavior</a></li>
+</ul>
+</li>
+<li><a href="#org4c379c8">1.2. Org-Mode Exemple Complet Minimal</a>
+<ul>
+<li><a href="#org2f71afb">1.2.1. Things That Must Occur Before Loading Org-Mode</a></li>
+<li><a href="#org7d3e8d2">1.2.2. Loading Org-Mode</a></li>
+<li><a href="#orgabb83a2">1.2.3. Things That Must Occur Only After Loading Org-Mode</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
 <p>
 Never compile this.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="orgeb780a0"><span class="org-comment-delimiter">;; </span><span class="org-comment">-*- no-byte-compile: t; -*-</span>
+<pre class="src src-emacs-lisp" id="orga6cd7fe"><span class="org-comment-delimiter">;; </span><span class="org-comment">-*- no-byte-compile: t; -*-</span>
 </pre>
 </div>
 
-<div id="outline-container-org31625c4" class="outline-2">
-<h2 id="org31625c4"><a id="org_gcr_2017-05-12_mara:1035FF79-3703-49A6-8522-618B38A48F6C"></a><span class="section-number-2">1</span> Org-Mode Exemple Complet Minimal</h2>
+<div id="outline-container-org56dc263" class="outline-2">
+<h2 id="org56dc263"><span class="section-number-2">1</span> Org-Mode Exemple Complet Minimal</h2>
 <div class="outline-text-2" id="text-1">
 <pre class="example">
 ID: org_gcr_2017-05-12_mara:1035FF79-3703-49A6-8522-618B38A48F6C
@@ -259,17 +300,90 @@ emacs --debug-init --no-init-file --no-splash --background-color white --foregro
 </pre>
 </div>
 
-<div id="outline-container-org51621ff" class="outline-3">
-<h3 id="org51621ff"><a id="org_gcr_2017-05-12_mara:626B5DD1-97D8-4B85-96BC-B9A96F18AF1E"></a><span class="section-number-3">1.1</span> Principle of Least Astonishment (POLA)</h3>
+<div id="outline-container-orgea42d6d" class="outline-3">
+<h3 id="orgea42d6d"><span class="section-number-3">1.1</span> Principle of Least Astonishment (POLA)</h3>
 <div class="outline-text-3" id="text-1-1">
 <pre class="example">
 ID: org_gcr_2017-05-12_mara:626B5DD1-97D8-4B85-96BC-B9A96F18AF1E
 </pre>
 </div>
-
-<div id="outline-container-orgcd905b3" class="outline-4">
-<h4 id="orgcd905b3"><a id="org_gcr_2017-05-12_mara:75985F03-F3B9-4DA3-8F6E-393E4C2F06E7"></a><span class="section-number-4">1.1.1</span> Load Behavior</h4>
+<div id="outline-container-org697e351" class="outline-4">
+<h4 id="org697e351"><span class="section-number-4">1.1.1</span> Time</h4>
 <div class="outline-text-4" id="text-1-1-1">
+<pre class="example">
+ID: org_gcr_2018-03-16_mara:BC16A47E-FC4E-4F12-8813-583BF4C3EF5A
+</pre>
+<p>
+Standardize timestamps.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp" id="org7d16fc2">(<span class="org-keyword">defun</span> <span class="org-function-name">help/get-timestamp</span> ()
+  <span class="org-doc">"Produces a full ISO 8601 format timestamp."</span>
+  (<span class="org-keyword">interactive</span>)
+  (<span class="org-keyword">let*</span> ((timestamp-without-timezone (format-time-string <span class="org-string">"%Y-%m-%dT%T"</span>))
+         (timezone-name-in-numeric-form (format-time-string <span class="org-string">"%z"</span>))
+         (timezone-utf-offset
+          (concat (substring timezone-name-in-numeric-form 0 3)
+                  <span class="org-string">":"</span>
+                  (substring timezone-name-in-numeric-form 3 5)))
+         (timestamp (concat timestamp-without-timezone
+                            timezone-utf-offset)))
+    timestamp))
+
+(<span class="org-keyword">defun</span> <span class="org-function-name">help/insert-timestamp</span> ()
+  <span class="org-doc">"Inserts a full ISO 8601 format timestamp."</span>
+  (<span class="org-keyword">interactive</span>)
+  (insert (help/get-timestamp)))
+
+(<span class="org-keyword">defun</span> <span class="org-function-name">help/get-timestamp-no-colons</span> ()
+  <span class="org-doc">"Produces a full ISO 8601 format timestamp with colons replaced by hyphens."</span>
+  (<span class="org-keyword">interactive</span>)
+  (<span class="org-keyword">let*</span> ((timestamp (help/get-timestamp))
+         (timestamp-no-colons (replace-regexp-in-string <span class="org-string">":"</span> <span class="org-string">"-"</span> timestamp)))
+    timestamp-no-colons))
+
+(<span class="org-keyword">defun</span> <span class="org-function-name">help/insert-timestamp-no-colons</span> ()
+  <span class="org-doc">"Inserts a full ISO 8601 format timestamp with colons replaced by hyphens."</span>
+  (<span class="org-keyword">interactive</span>)
+  (insert (help/get-timestamp-no-colons)))
+
+(<span class="org-keyword">defun</span> <span class="org-function-name">help/insert-datestamp</span> ()
+  <span class="org-doc">"Produces and inserts a partial ISO 8601 format timestamp."</span>
+  (<span class="org-keyword">interactive</span>)
+  (insert (format-time-string <span class="org-string">"%F"</span>)))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org2b164ad" class="outline-4">
+<h4 id="org2b164ad"><span class="section-number-4">1.1.2</span> Garbage Collection</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<pre class="example">
+ID: org_gcr_2017-07-29_mara:5A6162AE-F0FD-491D-BC05-F288F46F6125
+</pre>
+<p>
+Clear memory and disable garbage collection or return garbage collection to
+normal.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp" id="org3af8372">(<span class="org-keyword">setq</span> help/default-gc-cons-threshold gc-cons-threshold)
+(<span class="org-keyword">defun</span> <span class="org-function-name">help/set-gc-cons-threshold</span> (<span class="org-type">&amp;optional</span> multiplier notify)
+  <span class="org-doc">"Set `</span><span class="org-doc"><span class="org-constant">gc-cons-threshold</span></span><span class="org-doc">' either to its default value or a</span>
+<span class="org-doc">   `</span><span class="org-doc"><span class="org-constant">multiplier</span></span><span class="org-doc">' thereof."</span>
+  (<span class="org-keyword">let*</span> ((new-multiplier (<span class="org-keyword">or</span> multiplier 1))
+         (new-threshold (* help/default-gc-cons-threshold
+                           new-multiplier)))
+    (<span class="org-keyword">setq</span> gc-cons-threshold new-threshold)
+    (<span class="org-keyword">when</span> notify (message <span class="org-string">"Setting `</span><span class="org-string"><span class="org-constant">gc-cons-threshold</span></span><span class="org-string">' to %s"</span> new-threshold))))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfb1fead" class="outline-4">
+<h4 id="orgfb1fead"><span class="section-number-4">1.1.3</span> Load Behavior</h4>
+<div class="outline-text-4" id="text-1-1-3">
 <pre class="example">
 ID: org_gcr_2017-05-12_mara:75985F03-F3B9-4DA3-8F6E-393E4C2F06E7
 </pre>
@@ -291,7 +405,7 @@ representations are first searched by extension-name. The variable
 
 <p>
 OOTB, EMACS combines the productivity of REPL style of development with the
-speed of compiled code by <code>load</code>&rsquo;ing byte-code first, text second, and compressed
+speed of compiled code by <code>load</code>'ing byte-code first, text second, and compressed
 third. This workflow gives you the fastest code at run-time and lets you
 experiment with new features stored in text. When you are ready to use them
 every time, you compile them. There is only one downside of this approach: when
@@ -318,15 +432,15 @@ tangled system.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org137b9be">(<span class="org-keyword">setq</span> load-prefer-newer t)
+<pre class="src src-emacs-lisp" id="orgc4e3e14">(<span class="org-keyword">setq</span> load-prefer-newer t)
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org8f5162a" class="outline-3">
-<h3 id="org8f5162a"><a id="org_gcr_2017-05-12_mara:572E2309-5DCA-4AE1-AAC4-36B7E07AD46D"></a><span class="section-number-3">1.2</span> Org-Mode Exemple Complet Minimal</h3>
+<div id="outline-container-org4c379c8" class="outline-3">
+<h3 id="org4c379c8"><span class="section-number-3">1.2</span> Org-Mode Exemple Complet Minimal</h3>
 <div class="outline-text-3" id="text-1-2">
 <pre class="example">
 ID: org_gcr_2017-05-12_mara:572E2309-5DCA-4AE1-AAC4-36B7E07AD46D
@@ -346,13 +460,20 @@ in your initialization file. It is easy to do! When you get
 unexpected Org-Mode behavior be sure to stop and investigate <code>org-version</code> and
 decide whether or not it is what you expect and prepare an ECM if necessary.
 </p>
+</div>
 
+<div id="outline-container-org2f71afb" class="outline-4">
+<h4 id="org2f71afb"><span class="section-number-4">1.2.1</span> Things That Must Occur Before Loading Org-Mode</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<pre class="example">
+ID: org_gcr_2017-07-30_mara:3CF35008-D435-4CCB-90D7-5CFA06E15467
+</pre>
 <p>
 Add the Org-Mode core distribution the load path.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org50e7137">(add-to-list <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">load-path</span> <span class="org-string">"~/src/org-mode/lisp"</span>)
+<pre class="src src-emacs-lisp" id="org08a93e3">(add-to-list <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">load-path</span> <span class="org-string">"~/src/org-mode/lisp"</span>)
 </pre>
 </div>
 
@@ -362,7 +483,7 @@ are essential.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="orgc1b266b">(add-to-list <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">load-path</span> <span class="org-string">"~/src/org-mode/contrib/lisp"</span>)
+<pre class="src src-emacs-lisp" id="org6be953a">(add-to-list <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">load-path</span> <span class="org-string">"~/src/org-mode/contrib/lisp"</span>)
 </pre>
 </div>
 
@@ -372,7 +493,7 @@ before loading Org-Mode. <b>Never</b> remove this from a submitted ECM.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org75edf3e">(<span class="org-keyword">setq</span> org-list-allow-alphabetical t)
+<pre class="src src-emacs-lisp" id="org487cbe7">(<span class="org-keyword">setq</span> org-list-allow-alphabetical t)
 </pre>
 </div>
 
@@ -382,26 +503,62 @@ occur before loading Org-Mode. <b>Never</b> remove this from a submitted ECM.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org856baa1">(<span class="org-keyword">setq</span> org-enforce-todo-checkbox-dependencies t)
+<pre class="src src-emacs-lisp" id="orgc650eeb">(<span class="org-keyword">setq</span> org-enforce-todo-checkbox-dependencies t)
 </pre>
 </div>
 
 <p>
-Found a copy <span class="underline">Literate Programming</span> so use <code>GUILLEMET</code> delimeters.
+Use math double brackets for <span class="underline">Literate Programming</span> instead of GUILLEMET delimeters.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org3e0c16f">(<span class="org-keyword">setq</span> org-babel-noweb-wrap-start <span class="org-string">"&#171;"</span>)
-(<span class="org-keyword">setq</span> org-babel-noweb-wrap-end <span class="org-string">"&#187;"</span>)
+<pre class="src src-emacs-lisp" id="org34ecdbd">(<span class="org-keyword">setq</span> org-babel-noweb-wrap-start <span class="org-string">"&#10218;"</span>)
+(<span class="org-keyword">setq</span> org-babel-noweb-wrap-end <span class="org-string">"&#10219;"</span>)
 </pre>
 </div>
-
+</div>
+</div>
+<div id="outline-container-org7d3e8d2" class="outline-4">
+<h4 id="org7d3e8d2"><span class="section-number-4">1.2.2</span> Loading Org-Mode</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<pre class="example">
+ID: org_gcr_2017-07-30_mara:FFA7E062-C039-4F3F-82FC-12A49FF379B8
+</pre>
 <p>
 Load Org-Mode.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org1ea8af5">(<span class="org-keyword">require</span> <span class="org-highlight-quoted-quote">'</span><span class="org-constant">org</span>)
+<pre class="src src-emacs-lisp" id="org6d516fc">(<span class="org-keyword">require</span> <span class="org-highlight-quoted-quote">'</span><span class="org-constant">org</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgabb83a2" class="outline-4">
+<h4 id="orgabb83a2"><span class="section-number-4">1.2.3</span> Things That Must Occur Only After Loading Org-Mode</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<pre class="example">
+ID: org_gcr_2017-07-30_mara:D9207828-3783-4599-BA48-A6EB2C3FCAE4
+</pre>
+
+<p>
+Helper doubles available memory.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp" id="orgdab7213">(<span class="org-keyword">defun</span> <span class="org-function-name">help/double-gc-cons-threshold</span> () <span class="org-doc">"Double `</span><span class="org-doc"><span class="org-constant">gc-cons-threshold</span></span><span class="org-doc">'."</span> (help/set-gc-cons-threshold 2))
+</pre>
+</div>
+
+<p>
+Double garbage collection during tangling. Instead of storing this in the
+primary Org-Mode Literate Programming configuration I want it here so that it
+is always available.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp" id="orgb50282d">(add-hook <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">org-babel-pre-tangle-hook</span> <span class="org-highlight-quoted-quote">#'</span><span class="org-highlight-quoted-symbol">help/double-gc-cons-threshold</span>)
+(add-hook <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">org-babel-post-tangle-hook</span> <span class="org-highlight-quoted-quote">#'</span><span class="org-highlight-quoted-symbol">help/set-gc-cons-threshold</span>)
 </pre>
 </div>
 
@@ -410,18 +567,20 @@ Display system info.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org1bed9ce">(message <span class="org-string">"ECM Information As Of: %s\nOrg-Version: %s\nOrg-Git-Version:</span>
-<span class="org-string">         %s\nEmacs-Version: %s\nNoweb wrap start and stop delimeters: '%s' and '%s'\nnorg-babel-default-header-args:\n"</span>
-         (<span class="org-keyword">let*</span> ((timestamp (format-time-string <span class="org-string">"%Y-%m-%dT%T"</span>))
-                (safe (replace-regexp-in-string <span class="org-string">":"</span> <span class="org-string">"-"</span> timestamp)))
-           safe)
-         (org-version)
-         (org-git-version)
-         (emacs-version)
-         org-babel-noweb-wrap-start
-         org-babel-noweb-wrap-end)
-(princ org-babel-default-header-args)
+<pre class="src src-emacs-lisp" id="org61aeaf1">(<span class="org-keyword">defun</span> <span class="org-function-name">help/display-system-info</span> ()
+  (<span class="org-keyword">interactive</span>)
+  (message <span class="org-string">"&lt;&lt;&lt;ECM Information&gt;&gt;&gt;\nThis buffer file: %s\nAs Of: %s\nOrg-Version: %s\nOrg-Git-Version:%s\nEmacs-Version: %s\nNoweb wrap start and stop delimeters: '%s' and '%s'\norg-babel-default-header-args:\n"</span>
+           buffer-file-name
+           (help/get-timestamp)
+           (org-version)
+           (org-git-version)
+           (emacs-version)
+           org-babel-noweb-wrap-start
+           org-babel-noweb-wrap-end)
+  (pp org-babel-default-header-args))
+(help/display-system-info)
 </pre>
+</div>
 </div>
 </div>
 </div>
@@ -429,7 +588,7 @@ Display system info.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Grant Rettke</p>
-<p class="date">Created: 2017-07-22 Sat 23:15</p>
+<p class="date">Created: 2018-08-25 Sat 22:48</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
