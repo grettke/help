@@ -3798,7 +3798,7 @@ _________________
   | elisp-mode: _q_uit
   |  Evaluation: buffe_r_, byte _c_ompile file
   |   ERT: _i_nteractively, _b_atch, _d_elete all
-  |    Reformat s-expr: _m_ultiline orr _o_ne line
+  |    Reformat s-expr: _m_ultiline or _o_ne line
   |     Other: Generate _R_eadme _C_heckdoc
   | "
   |   ("q" nil)
