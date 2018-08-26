@@ -1948,10 +1948,6 @@ to =eshell-visual-commands=.
      (use-package em-prompt)
      (use-package em-term)
      (setenv "PAGER" "cat")
-     (add-hook 'eshell-mode-hook
-               (lambda ()
-                 (message "Welcome to Eshell.")
-                 (setq pcomplete-cycle-completions nil)))
      (add-to-list 'eshell-visual-commands "ssh")
      (add-to-list 'eshell-visual-commands "tail")
      (add-to-list 'eshell-command-completions-alist
@@ -1974,6 +1970,16 @@ Configure a =PS1= like prompt.
          "⮞ ")))
 #+END_SRC
 
+Mode hook.
+
+#+name: org_gcr_2018-08-22T06-50-28-05-00_globigerina_EB364115-FC98-4798-ABD7-C7C7DE6A5BD3
+#+begin_src emacs-lisp
+(defun help/eshell-mode-hook-fn ()
+  (message "Welcome to Eshell.")
+  (setq pcomplete-cycle-completions nil))
+
+(add-hook 'eshell-mode-hook #'help/eshell-mode-hook-fn)
+#+end_src
 ** File Based System
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:E57D0D2A-0BF5-4733-AE1B-7CEA95171316

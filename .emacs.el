@@ -1262,10 +1262,6 @@ URL: `https://stackoverflow.com/questions/1587972/how-to-display-indentation-gui
      (use-package em-prompt)
      (use-package em-term)
      (setenv "PAGER" "cat")
-     (add-hook 'eshell-mode-hook
-               (lambda ()
-                 (message "Welcome to Eshell.")
-                 (setq pcomplete-cycle-completions nil)))
      (add-to-list 'eshell-visual-commands "ssh")
      (add-to-list 'eshell-visual-commands "tail")
      (add-to-list 'eshell-command-completions-alist
@@ -1284,6 +1280,14 @@ URL: `https://stackoverflow.com/questions/1587972/how-to-display-indentation-gui
          (eshell/pwd)
          "⮞ ")))
 ;; org_gcr_2017-05-12_mara_47F75687-F505-42B3-9E2B-EA832B41F7EC ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-08-22T06-50-28-05-00_globigerina_EB364115-FC98-4798-ABD7-C7C7DE6A5BD3][org_gcr_2018-08-22T06-50-28-05-00_globigerina_EB364115-FC98-4798-ABD7-C7C7DE6A5BD3]]
+(defun help/eshell-mode-hook-fn ()
+  (message "Welcome to Eshell.")
+  (setq pcomplete-cycle-completions nil))
+
+(add-hook 'eshell-mode-hook #'help/eshell-mode-hook-fn)
+;; org_gcr_2018-08-22T06-50-28-05-00_globigerina_EB364115-FC98-4798-ABD7-C7C7DE6A5BD3 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_11891C85-578F-417F-9956-FEBB52045CDC][org_gcr_2017-05-12_mara_11891C85-578F-417F-9956-FEBB52045CDC]]
 (setq auto-save-default t)
