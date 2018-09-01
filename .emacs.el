@@ -4521,16 +4521,15 @@ Ansible: (q to quit)
                                       :hint nil)
   "
 Flycheck: ⏼%(bound-and-true-p flycheck-mode)
- Controls: _u_: checker/toggle _i_: checker/run _o_ checker/list
-  Navigate: _n_ext _p_revious _f_irst _l_ast
+ Controls: _u_: checker/toggle _i_ checker/list
+  Navigate: _j_ next _k_ previous _f_irst _l_ast
    Error: _d_escribe _e_xplain
    _q_ quit
 "
   ("u" flycheck-mode :exit nil)
-  ("i" flycheck-buffer :exit nil)
-  ("o" help/safb-flycheck-list-errors)
-  ("n" flycheck-next-error :exit nil)
-  ("p" flycheck-previous-error :exit nil)
+  ("i" help/safb-flycheck-list-errors)
+  ("j" flycheck-next-error :exit nil)
+  ("k" flycheck-previous-error :exit nil)
   ("f" flycheck-first-error)
   ("l" flycheck-last-error)
   ("d" flycheck-display-error-at-point)
