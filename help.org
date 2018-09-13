@@ -5554,7 +5554,7 @@ Enable Auto-Complete via Geiser.
     (interactive)
     (help/save-all-file-buffers)
     (call-interactively 'go-rename))
-  (add-to-list 'load-path "~/git/github/gorepl-mode")
+  (add-to-list 'load-path "~/git/github-anonymous/gorepl-mode")
   (require 'gorepl-mode)
   (defhydra help/hydra/right/go-mode (:color blue :hint nil)
     "

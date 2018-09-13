@@ -1,6 +1,6 @@
 ;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_EE00DAED-88BD-4271-9CFE-34BDCEE68932][org_gcr_2017-05-12_mara_EE00DAED-88BD-4271-9CFE-34BDCEE68932]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_EE00DAED-88BD-4271-9CFE-34BDCEE68932][org_gcr_2017-05-12_mara_EE00DAED-88BD-4271-9CFE-34BDCEE68932]]
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -10,12 +10,12 @@
 (load-file "~/src/help/.org-mode-contribute.emacs.el")
 ;; org_gcr_2017-05-12_mara_EE00DAED-88BD-4271-9CFE-34BDCEE68932 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_289C017E-D5F0-4B8A-987F-A64696094359][org_gcr_2017-05-12_mara_289C017E-D5F0-4B8A-987F-A64696094359]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_289C017E-D5F0-4B8A-987F-A64696094359][org_gcr_2017-05-12_mara_289C017E-D5F0-4B8A-987F-A64696094359]]
 (setq custom-file "~/src/help/custom.el")
 (load custom-file :noerror)
 ;; org_gcr_2017-05-12_mara_289C017E-D5F0-4B8A-987F-A64696094359 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0A242AFE-3101-4F88-A2CB-F230FA19AC64][org_gcr_2017-05-12_mara_0A242AFE-3101-4F88-A2CB-F230FA19AC64]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_0A242AFE-3101-4F88-A2CB-F230FA19AC64][org_gcr_2017-05-12_mara_0A242AFE-3101-4F88-A2CB-F230FA19AC64]]
 (defmacro help/on-gui (statement &rest statements)
   "Evaluate the enclosed body only when run on GUI."
   `(when (display-graphic-p)
@@ -29,23 +29,23 @@
      ,@statements))
 ;; org_gcr_2017-05-12_mara_0A242AFE-3101-4F88-A2CB-F230FA19AC64 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D2A1FF8B-4A1A-4D25-A0CC-D86F3FFD7B28][org_gcr_2017-05-12_mara_D2A1FF8B-4A1A-4D25-A0CC-D86F3FFD7B28]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_D2A1FF8B-4A1A-4D25-A0CC-D86F3FFD7B28][org_gcr_2017-05-12_mara_D2A1FF8B-4A1A-4D25-A0CC-D86F3FFD7B28]]
 (use-package hydra
   :ensure t)
 ;; org_gcr_2017-05-12_mara_D2A1FF8B-4A1A-4D25-A0CC-D86F3FFD7B28 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B25D3BDE-CB14-440D-8246-B833BD8F1C0B][org_gcr_2017-05-12_mara_B25D3BDE-CB14-440D-8246-B833BD8F1C0B]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_B25D3BDE-CB14-440D-8246-B833BD8F1C0B][org_gcr_2017-05-12_mara_B25D3BDE-CB14-440D-8246-B833BD8F1C0B]]
 (use-package key-chord
   :ensure t
   :config
   (key-chord-mode t))
 ;; org_gcr_2017-05-12_mara_B25D3BDE-CB14-440D-8246-B833BD8F1C0B ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_6BB32DFA-105B-4712-BF6D-945A240C29E1][org_gcr_2017-05-12_mara_6BB32DFA-105B-4712-BF6D-945A240C29E1]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_6BB32DFA-105B-4712-BF6D-945A240C29E1][org_gcr_2017-05-12_mara_6BB32DFA-105B-4712-BF6D-945A240C29E1]]
 (setq echo-keystrokes 0.02)
 ;; org_gcr_2017-05-12_mara_6BB32DFA-105B-4712-BF6D-945A240C29E1 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_12B73D47-AAFB-4271-92F2-98A18E19DC2A][org_gcr_2017-05-12_mara_12B73D47-AAFB-4271-92F2-98A18E19DC2A]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_12B73D47-AAFB-4271-92F2-98A18E19DC2A][org_gcr_2017-05-12_mara_12B73D47-AAFB-4271-92F2-98A18E19DC2A]]
 (use-package dash
   :ensure t
   :config
@@ -54,48 +54,48 @@
   :ensure t)
 ;; org_gcr_2017-05-12_mara_12B73D47-AAFB-4271-92F2-98A18E19DC2A ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D99938CC-B521-4A2D-8DAA-F023FFB1E21E][org_gcr_2017-05-12_mara_D99938CC-B521-4A2D-8DAA-F023FFB1E21E]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_D99938CC-B521-4A2D-8DAA-F023FFB1E21E][org_gcr_2017-05-12_mara_D99938CC-B521-4A2D-8DAA-F023FFB1E21E]]
 (use-package f
   :ensure t)
 ;; org_gcr_2017-05-12_mara_D99938CC-B521-4A2D-8DAA-F023FFB1E21E ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_04215D1F-F7E8-46E2-A3BC-0D8DEE28B7E1][org_gcr_2017-05-12_mara_04215D1F-F7E8-46E2-A3BC-0D8DEE28B7E1]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_04215D1F-F7E8-46E2-A3BC-0D8DEE28B7E1][org_gcr_2017-05-12_mara_04215D1F-F7E8-46E2-A3BC-0D8DEE28B7E1]]
 (use-package s
   :ensure t)
 ;; org_gcr_2017-05-12_mara_04215D1F-F7E8-46E2-A3BC-0D8DEE28B7E1 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-23_mara_5BAD0073-631D-4D4E-83CD-5B0CD0C7CAD6][org_gcr_2017-05-23_mara_5BAD0073-631D-4D4E-83CD-5B0CD0C7CAD6]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-23_mara_5BAD0073-631D-4D4E-83CD-5B0CD0C7CAD6][org_gcr_2017-05-23_mara_5BAD0073-631D-4D4E-83CD-5B0CD0C7CAD6]]
 (use-package ht
   :ensure t)
 ;; org_gcr_2017-05-23_mara_5BAD0073-631D-4D4E-83CD-5B0CD0C7CAD6 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C063F7CE-637E-43F8-8E16-AFBC68CA7618][org_gcr_2017-05-12_mara_C063F7CE-637E-43F8-8E16-AFBC68CA7618]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_C063F7CE-637E-43F8-8E16-AFBC68CA7618][org_gcr_2017-05-12_mara_C063F7CE-637E-43F8-8E16-AFBC68CA7618]]
 (use-package persistent-soft
   :ensure t)
 ;; org_gcr_2017-05-12_mara_C063F7CE-637E-43F8-8E16-AFBC68CA7618 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-07-18T20-32-35-05-00_mara_411E5B87-16D6-4ACA-8DF0-10DC5C92F934][org_gcr_2018-07-18T20-32-35-05-00_mara_411E5B87-16D6-4ACA-8DF0-10DC5C92F934]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-07-18T20-32-35-05-00_mara_411E5B87-16D6-4ACA-8DF0-10DC5C92F934][org_gcr_2018-07-18T20-32-35-05-00_mara_411E5B87-16D6-4ACA-8DF0-10DC5C92F934]]
 (require 'cl-lib)
 ;; org_gcr_2018-07-18T20-32-35-05-00_mara_411E5B87-16D6-4ACA-8DF0-10DC5C92F934 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_2FD3C2CA-508B-453E-A619-76D6EA4AAF71][org_gcr_2017-05-12_mara_2FD3C2CA-508B-453E-A619-76D6EA4AAF71]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_2FD3C2CA-508B-453E-A619-76D6EA4AAF71][org_gcr_2017-05-12_mara_2FD3C2CA-508B-453E-A619-76D6EA4AAF71]]
 (use-package diminish)
 ;; org_gcr_2017-05-12_mara_2FD3C2CA-508B-453E-A619-76D6EA4AAF71 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_555EE82E-410B-4189-BE53-D33346F3F3BE][org_gcr_2017-05-12_mara_555EE82E-410B-4189-BE53-D33346F3F3BE]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_555EE82E-410B-4189-BE53-D33346F3F3BE][org_gcr_2017-05-12_mara_555EE82E-410B-4189-BE53-D33346F3F3BE]]
 (size-indication-mode)
 ;; org_gcr_2017-05-12_mara_555EE82E-410B-4189-BE53-D33346F3F3BE ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BC16CA62-6474-4848-880C-F1EDE2BB5616][org_gcr_2017-05-12_mara_BC16CA62-6474-4848-880C-F1EDE2BB5616]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_BC16CA62-6474-4848-880C-F1EDE2BB5616][org_gcr_2017-05-12_mara_BC16CA62-6474-4848-880C-F1EDE2BB5616]]
 (column-number-mode t)
 ;; org_gcr_2017-05-12_mara_BC16CA62-6474-4848-880C-F1EDE2BB5616 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-06-13_mara_7F117B6D-AFE7-479C-8313-3E9B6B4D967F][org_gcr_2017-06-13_mara_7F117B6D-AFE7-479C-8313-3E9B6B4D967F]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-06-13_mara_7F117B6D-AFE7-479C-8313-3E9B6B4D967F][org_gcr_2017-06-13_mara_7F117B6D-AFE7-479C-8313-3E9B6B4D967F]]
 (use-package smart-mode-line
   :ensure t)
 ;; org_gcr_2017-06-13_mara_7F117B6D-AFE7-479C-8313-3E9B6B4D967F ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-11-15_mara_361908ED-32C9-4339-91AE-F02A2E017A87][org_gcr_2017-11-15_mara_361908ED-32C9-4339-91AE-F02A2E017A87]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-11-15_mara_361908ED-32C9-4339-91AE-F02A2E017A87][org_gcr_2017-11-15_mara_361908ED-32C9-4339-91AE-F02A2E017A87]]
 (defvar-local hidden-mode-line-mode nil)
 
 (define-minor-mode hidden-mode-line-mode
@@ -114,21 +114,21 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-           hidden-mode-line-mode)
+             hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
              "Use M-x hidden-mode-line-mode to make the mode-line appear."))))
 ;; org_gcr_2017-11-15_mara_361908ED-32C9-4339-91AE-F02A2E017A87 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-06-06T22-01-54-05-00_mara_00E980AF-8BD1-4AFF-A815-303C78B85871][org_gcr_2018-06-06T22-01-54-05-00_mara_00E980AF-8BD1-4AFF-A815-303C78B85871]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-06-06T22-01-54-05-00_mara_00E980AF-8BD1-4AFF-A815-303C78B85871][org_gcr_2018-06-06T22-01-54-05-00_mara_00E980AF-8BD1-4AFF-A815-303C78B85871]]
 (use-package unicode-progress-reporter
   :ensure t
   :config
   (unicode-progress-reporter-setup))
 ;; org_gcr_2018-06-06T22-01-54-05-00_mara_00E980AF-8BD1-4AFF-A815-303C78B85871 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_FF670CDD-5374-49BA-897A-AE1A30B444D6][org_gcr_2017-05-12_mara_FF670CDD-5374-49BA-897A-AE1A30B444D6]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_FF670CDD-5374-49BA-897A-AE1A30B444D6][org_gcr_2017-05-12_mara_FF670CDD-5374-49BA-897A-AE1A30B444D6]]
 (defmacro help/on-mac-os (statement &rest statements)
   "Evaluate the enclosed body only when run on macOS."
   `(when (eq system-type 'darwin)
@@ -136,7 +136,7 @@
      ,@statements))
 ;; org_gcr_2017-05-12_mara_FF670CDD-5374-49BA-897A-AE1A30B444D6 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_375D2A3D-54B5-4DBC-B911-38CAB716286A][org_gcr_2017-05-12_mara_375D2A3D-54B5-4DBC-B911-38CAB716286A]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_375D2A3D-54B5-4DBC-B911-38CAB716286A][org_gcr_2017-05-12_mara_375D2A3D-54B5-4DBC-B911-38CAB716286A]]
 (help/on-mac-os
  (use-package exec-path-from-shell
    :ensure t
@@ -145,11 +145,11 @@
    (exec-path-from-shell-initialize)))
 ;; org_gcr_2017-05-12_mara_375D2A3D-54B5-4DBC-B911-38CAB716286A ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F29E41A6-234D-4727-B9DF-75E5F5AC2AD3][org_gcr_2017-05-12_mara_F29E41A6-234D-4727-B9DF-75E5F5AC2AD3]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_F29E41A6-234D-4727-B9DF-75E5F5AC2AD3][org_gcr_2017-05-12_mara_F29E41A6-234D-4727-B9DF-75E5F5AC2AD3]]
 (help/on-mac-os (load-file "~/src/help/.mac-os-keys.el"))
 ;; org_gcr_2017-05-12_mara_F29E41A6-234D-4727-B9DF-75E5F5AC2AD3 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_82602D6E-30DB-49CF-A900-1FC9B733C347][org_gcr_2017-05-12_mara_82602D6E-30DB-49CF-A900-1FC9B733C347]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_82602D6E-30DB-49CF-A900-1FC9B733C347][org_gcr_2017-05-12_mara_82602D6E-30DB-49CF-A900-1FC9B733C347]]
 (help/on-mac-os
  (defun help/yes-or-no-p (orig-fun &rest args)
    "Prevent yes-or-no-p from activating a dialog."
@@ -159,7 +159,7 @@
  (advice-add #'y-or-n-p :around #'help/yes-or-no-p))
 ;; org_gcr_2017-05-12_mara_82602D6E-30DB-49CF-A900-1FC9B733C347 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9C48F55A-19D7-4B5F-8779-11BFFF4AE514][org_gcr_2017-05-12_mara_9C48F55A-19D7-4B5F-8779-11BFFF4AE514]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_9C48F55A-19D7-4B5F-8779-11BFFF4AE514][org_gcr_2017-05-12_mara_9C48F55A-19D7-4B5F-8779-11BFFF4AE514]]
 (defmacro help/on-windows (statement &rest statements)
   "Evaluate the enclosed body only when run on Microsoft Windows."
   `(when (eq system-type 'windows-nt)
@@ -167,12 +167,12 @@
      ,@statements))
 ;; org_gcr_2017-05-12_mara_9C48F55A-19D7-4B5F-8779-11BFFF4AE514 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9CAED015-5B25-41BE-82A9-CBA4D07E8F3D][org_gcr_2017-05-12_mara_9CAED015-5B25-41BE-82A9-CBA4D07E8F3D]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_9CAED015-5B25-41BE-82A9-CBA4D07E8F3D][org_gcr_2017-05-12_mara_9CAED015-5B25-41BE-82A9-CBA4D07E8F3D]]
 (help/on-windows
  (setq shell-file-name "cmdproxy.exe"))
 ;; org_gcr_2017-05-12_mara_9CAED015-5B25-41BE-82A9-CBA4D07E8F3D ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7AFA0161-4DCA-4C54-8D3C-9EF3FD529BF4][org_gcr_2017-05-12_mara_7AFA0161-4DCA-4C54-8D3C-9EF3FD529BF4]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_7AFA0161-4DCA-4C54-8D3C-9EF3FD529BF4][org_gcr_2017-05-12_mara_7AFA0161-4DCA-4C54-8D3C-9EF3FD529BF4]]
 (help/on-windows
  (setq w32-pass-lwindow-to-system nil)
  (defvar w32-lwindow-modifier 'super)
@@ -180,7 +180,7 @@
  (defvar w32-rwindow-modifier 'super))
 ;; org_gcr_2017-05-12_mara_7AFA0161-4DCA-4C54-8D3C-9EF3FD529BF4 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-07-23_mara_ED1CAC7D-4B9E-4316-8AB3-85ACDC06B3F4][org_gcr_2017-07-23_mara_ED1CAC7D-4B9E-4316-8AB3-85ACDC06B3F4]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-07-23_mara_ED1CAC7D-4B9E-4316-8AB3-85ACDC06B3F4][org_gcr_2017-07-23_mara_ED1CAC7D-4B9E-4316-8AB3-85ACDC06B3F4]]
 (defmacro help/on-gnu/linux (statement &rest statements)
   "Evaluate the enclosed body only when run on GNU/Linux"
   `(when (eq system-type 'gnu/linux)
@@ -188,7 +188,7 @@
      ,@statements))
 ;; org_gcr_2017-07-23_mara_ED1CAC7D-4B9E-4316-8AB3-85ACDC06B3F4 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7D37FFE5-2D2B-4CF7-AF27-F3CB8616D81B][org_gcr_2017-05-12_mara_7D37FFE5-2D2B-4CF7-AF27-F3CB8616D81B]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_7D37FFE5-2D2B-4CF7-AF27-F3CB8616D81B][org_gcr_2017-05-12_mara_7D37FFE5-2D2B-4CF7-AF27-F3CB8616D81B]]
 (defun help/save-all-file-buffers ()
   "Saves every buffer associated with a file."
   (interactive)
@@ -957,21 +957,21 @@ Attribution: Udyant Wig <udyantw@gmail.com>"
       (self-insert-command 1))))
 ;; org_gcr_2017-05-12_mara_7D37FFE5-2D2B-4CF7-AF27-F3CB8616D81B ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F][org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F][org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F]]
 (defconst help/column-width 78)
 (setq-default fill-column help/column-width)
 ;; org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_38909B55-115D-44E4-B84F-70285016BF92][org_gcr_2017-05-12_mara_38909B55-115D-44E4-B84F-70285016BF92]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_38909B55-115D-44E4-B84F-70285016BF92][org_gcr_2017-05-12_mara_38909B55-115D-44E4-B84F-70285016BF92]]
 (setq colon-double-space nil)
 ;; org_gcr_2017-05-12_mara_38909B55-115D-44E4-B84F-70285016BF92 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1986C8FB-6C8F-43F6-811D-D95577160064][org_gcr_2017-05-12_mara_1986C8FB-6C8F-43F6-811D-D95577160064]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_1986C8FB-6C8F-43F6-811D-D95577160064][org_gcr_2017-05-12_mara_1986C8FB-6C8F-43F6-811D-D95577160064]]
 (desktop-save-mode t)
 (setq desktop-restore-eager 5)
 ;; org_gcr_2017-05-12_mara_1986C8FB-6C8F-43F6-811D-D95577160064 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_40A89EBE-247D-43B1-A606-896B172681D8][org_gcr_2017-05-12_mara_40A89EBE-247D-43B1-A606-896B172681D8]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_40A89EBE-247D-43B1-A606-896B172681D8][org_gcr_2017-05-12_mara_40A89EBE-247D-43B1-A606-896B172681D8]]
 (use-package undo-tree
   :ensure t
   :config
@@ -980,65 +980,65 @@ Attribution: Udyant Wig <udyantw@gmail.com>"
   :diminish undo-tree-mode)
 ;; org_gcr_2017-05-12_mara_40A89EBE-247D-43B1-A606-896B172681D8 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B41C6C0B-AC1A-44A4-9D0F-471A781BCA81][org_gcr_2017-05-12_mara_B41C6C0B-AC1A-44A4-9D0F-471A781BCA81]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_B41C6C0B-AC1A-44A4-9D0F-471A781BCA81][org_gcr_2017-05-12_mara_B41C6C0B-AC1A-44A4-9D0F-471A781BCA81]]
 (setq require-final-newline t)
 ;; org_gcr_2017-05-12_mara_B41C6C0B-AC1A-44A4-9D0F-471A781BCA81 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_60C775FC-0ACD-47E3-8724-8F4C48980081][org_gcr_2017-05-12_mara_60C775FC-0ACD-47E3-8724-8F4C48980081]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_60C775FC-0ACD-47E3-8724-8F4C48980081][org_gcr_2017-05-12_mara_60C775FC-0ACD-47E3-8724-8F4C48980081]]
 (setq track-eol t)
 (setq line-move-visual nil)
 ;; org_gcr_2017-05-12_mara_60C775FC-0ACD-47E3-8724-8F4C48980081 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_6E2D611F-11F0-4703-AC88-AA11CEE56F8D][org_gcr_2017-05-12_mara_6E2D611F-11F0-4703-AC88-AA11CEE56F8D]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_6E2D611F-11F0-4703-AC88-AA11CEE56F8D][org_gcr_2017-05-12_mara_6E2D611F-11F0-4703-AC88-AA11CEE56F8D]]
 (setq scroll-preserve-screen-position t)
 ;; org_gcr_2017-05-12_mara_6E2D611F-11F0-4703-AC88-AA11CEE56F8D ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F6787724-7C59-4BD3-B436-0AB39E4F96E9][org_gcr_2017-05-12_mara_F6787724-7C59-4BD3-B436-0AB39E4F96E9]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_F6787724-7C59-4BD3-B436-0AB39E4F96E9][org_gcr_2017-05-12_mara_F6787724-7C59-4BD3-B436-0AB39E4F96E9]]
 (setq scroll-conservatively 101)
 ;; org_gcr_2017-05-12_mara_F6787724-7C59-4BD3-B436-0AB39E4F96E9 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1BA609EB-C430-4CE0-BD33-9524EBB5A0AC][org_gcr_2017-05-12_mara_1BA609EB-C430-4CE0-BD33-9524EBB5A0AC]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_1BA609EB-C430-4CE0-BD33-9524EBB5A0AC][org_gcr_2017-05-12_mara_1BA609EB-C430-4CE0-BD33-9524EBB5A0AC]]
 (use-package stripe-buffer
   :ensure t)
 ;; org_gcr_2017-05-12_mara_1BA609EB-C430-4CE0-BD33-9524EBB5A0AC ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1710CA80-60CB-4E40-94E9-C38A2E0A0DE9][org_gcr_2017-05-12_mara_1710CA80-60CB-4E40-94E9-C38A2E0A0DE9]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_1710CA80-60CB-4E40-94E9-C38A2E0A0DE9][org_gcr_2017-05-12_mara_1710CA80-60CB-4E40-94E9-C38A2E0A0DE9]]
 (setq sentence-end-double-space nil)
 ;; org_gcr_2017-05-12_mara_1710CA80-60CB-4E40-94E9-C38A2E0A0DE9 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A04E6B4A-EFC6-4AE3-946B-E08CF4E02DD9][org_gcr_2017-05-12_mara_A04E6B4A-EFC6-4AE3-946B-E08CF4E02DD9]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_A04E6B4A-EFC6-4AE3-946B-E08CF4E02DD9][org_gcr_2017-05-12_mara_A04E6B4A-EFC6-4AE3-946B-E08CF4E02DD9]]
 (add-hook 'before-save-hook #'help/delete-trailing-whitespace)
 ;; org_gcr_2017-05-12_mara_A04E6B4A-EFC6-4AE3-946B-E08CF4E02DD9 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_14A9724E-F0E0-40CA-9FD8-142CB77B87BF][org_gcr_2017-05-12_mara_14A9724E-F0E0-40CA-9FD8-142CB77B87BF]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_14A9724E-F0E0-40CA-9FD8-142CB77B87BF][org_gcr_2017-05-12_mara_14A9724E-F0E0-40CA-9FD8-142CB77B87BF]]
 (use-package expand-region
   :ensure t)
 ;; org_gcr_2017-05-12_mara_14A9724E-F0E0-40CA-9FD8-142CB77B87BF ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_11CC1DCC-05D6-4564-A40B-DE2AD0A7C46D][org_gcr_2017-05-12_mara_11CC1DCC-05D6-4564-A40B-DE2AD0A7C46D]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_11CC1DCC-05D6-4564-A40B-DE2AD0A7C46D][org_gcr_2017-05-12_mara_11CC1DCC-05D6-4564-A40B-DE2AD0A7C46D]]
 (use-package page-break-lines
   :diminish page-break-lines-mode)
 ;; org_gcr_2017-05-12_mara_11CC1DCC-05D6-4564-A40B-DE2AD0A7C46D ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_87233BFD-A241-48A6-9113-B383B30F9BC5][org_gcr_2017-05-12_mara_87233BFD-A241-48A6-9113-B383B30F9BC5]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_87233BFD-A241-48A6-9113-B383B30F9BC5][org_gcr_2017-05-12_mara_87233BFD-A241-48A6-9113-B383B30F9BC5]]
 (advice-add #'backward-page :after #'recenter)
 (advice-add #'forward-page :after #'recenter)
 ;; org_gcr_2017-05-12_mara_87233BFD-A241-48A6-9113-B383B30F9BC5 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B8BDE36B-4B27-4580-BA34-35C047FBEA62][org_gcr_2017-05-12_mara_B8BDE36B-4B27-4580-BA34-35C047FBEA62]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_B8BDE36B-4B27-4580-BA34-35C047FBEA62][org_gcr_2017-05-12_mara_B8BDE36B-4B27-4580-BA34-35C047FBEA62]]
 (use-package mwim
   :ensure t
   :config
   (global-set-key (kbd "C-a") 'mwim-beginning-of-code-or-line))
 ;; org_gcr_2017-05-12_mara_B8BDE36B-4B27-4580-BA34-35C047FBEA62 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-06-28_mara_EE77505E-5757-409C-9E87-2FA685145AB2][org_gcr_2017-06-28_mara_EE77505E-5757-409C-9E87-2FA685145AB2]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-06-28_mara_EE77505E-5757-409C-9E87-2FA685145AB2][org_gcr_2017-06-28_mara_EE77505E-5757-409C-9E87-2FA685145AB2]]
 (use-package indent-guide
   :ensure t
   :diminish 'indent-guide-mode)
 ;; org_gcr_2017-06-28_mara_EE77505E-5757-409C-9E87-2FA685145AB2 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-19_mara_845BEC94-54CC-46D3-B85F-7B537944E328][org_gcr_2017-05-19_mara_845BEC94-54CC-46D3-B85F-7B537944E328]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-19_mara_845BEC94-54CC-46D3-B85F-7B537944E328][org_gcr_2017-05-19_mara_845BEC94-54CC-46D3-B85F-7B537944E328]]
 (defhydra hydra-ibuffer-main (:color pink :hint nil)
   "
    ^Navigation^ | ^Mark^        | ^Actions^        | ^View^
@@ -1146,12 +1146,12 @@ Attribution: Udyant Wig <udyantw@gmail.com>"
 (add-hook 'ibuffer-mode-hooks #'help/ibuffer-hook-fn)
 ;; org_gcr_2017-05-19_mara_845BEC94-54CC-46D3-B85F-7B537944E328 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-07-20_mara_51310F49-2C54-43DC-AA11-CA3A4ABF1A5F][org_gcr_2017-07-20_mara_51310F49-2C54-43DC-AA11-CA3A4ABF1A5F]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-07-20_mara_51310F49-2C54-43DC-AA11-CA3A4ABF1A5F][org_gcr_2017-07-20_mara_51310F49-2C54-43DC-AA11-CA3A4ABF1A5F]]
 (use-package face-remap
   :diminish 'buffer-face-mode)
 ;; org_gcr_2017-07-20_mara_51310F49-2C54-43DC-AA11-CA3A4ABF1A5F ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-01-03_mara_F64F240D-3891-46C0-8989-6124AEF60518][org_gcr_2018-01-03_mara_F64F240D-3891-46C0-8989-6124AEF60518]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-01-03_mara_F64F240D-3891-46C0-8989-6124AEF60518][org_gcr_2018-01-03_mara_F64F240D-3891-46C0-8989-6124AEF60518]]
 (use-package smart-shift
   :ensure t
   :config
@@ -1174,12 +1174,12 @@ Smart-Shift: (q to quit)
   (global-set-key (kbd "C-s-j") #'help/hydra/smart-shift/body))
 ;; org_gcr_2018-01-03_mara_F64F240D-3891-46C0-8989-6124AEF60518 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-04-12T21-31-52-05-00_mara_4844006E-A8C3-4F45-BA6D-FFC6B3BFF7DC][org_gcr_2018-04-12T21-31-52-05-00_mara_4844006E-A8C3-4F45-BA6D-FFC6B3BFF7DC]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-04-12T21-31-52-05-00_mara_4844006E-A8C3-4F45-BA6D-FFC6B3BFF7DC][org_gcr_2018-04-12T21-31-52-05-00_mara_4844006E-A8C3-4F45-BA6D-FFC6B3BFF7DC]]
 (use-package unfill
   :ensure t)
 ;; org_gcr_2018-04-12T21-31-52-05-00_mara_4844006E-A8C3-4F45-BA6D-FFC6B3BFF7DC ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-05-21T05-52-58-05-00_mara_33917C9D-A4FF-434A-99BE-E7297D5FE094][org_gcr_2018-05-21T05-52-58-05-00_mara_33917C9D-A4FF-434A-99BE-E7297D5FE094]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-05-21T05-52-58-05-00_mara_33917C9D-A4FF-434A-99BE-E7297D5FE094][org_gcr_2018-05-21T05-52-58-05-00_mara_33917C9D-A4FF-434A-99BE-E7297D5FE094]]
 (use-package move-text
   :ensure t
   :config
@@ -1187,7 +1187,7 @@ Smart-Shift: (q to quit)
   (global-set-key (kbd "M-s-k") #'move-text-down))
 ;; org_gcr_2018-05-21T05-52-58-05-00_mara_33917C9D-A4FF-434A-99BE-E7297D5FE094 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_611E83B9-E797-4512-95EE-643473026607][org_gcr_2017-05-12_mara_611E83B9-E797-4512-95EE-643473026607]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_611E83B9-E797-4512-95EE-643473026607][org_gcr_2017-05-12_mara_611E83B9-E797-4512-95EE-643473026607]]
 (use-package hideshow
   :config
   (setq hs-hide-comments-when-hiding-all t)
@@ -1215,7 +1215,7 @@ Smart-Shift: (q to quit)
   :diminish hs-minor-mode)
 ;; org_gcr_2017-05-12_mara_611E83B9-E797-4512-95EE-643473026607 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-01-03_mara_0B7D49CD-6177-4F18-8C2E-540B01E34340][org_gcr_2018-01-03_mara_0B7D49CD-6177-4F18-8C2E-540B01E34340]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-01-03_mara_0B7D49CD-6177-4F18-8C2E-540B01E34340][org_gcr_2018-01-03_mara_0B7D49CD-6177-4F18-8C2E-540B01E34340]]
 (defun aj-toggle-fold ()
   "Toggle fold all lines larger than indentation on current line
 
@@ -1230,27 +1230,27 @@ URL: `https://stackoverflow.com/questions/1587972/how-to-display-indentation-gui
 (global-set-key (kbd "s-q") #'aj-toggle-fold)
 ;; org_gcr_2018-01-03_mara_0B7D49CD-6177-4F18-8C2E-540B01E34340 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_510C1AB4-A266-40A6-9DCF-25B827E60786][org_gcr_2017-05-12_mara_510C1AB4-A266-40A6-9DCF-25B827E60786]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_510C1AB4-A266-40A6-9DCF-25B827E60786][org_gcr_2017-05-12_mara_510C1AB4-A266-40A6-9DCF-25B827E60786]]
 (use-package macrostep
   :ensure t)
 ;; org_gcr_2017-05-12_mara_510C1AB4-A266-40A6-9DCF-25B827E60786 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_CD327ED5-E83D-471F-9A30-B7A3FBB67486][org_gcr_2017-05-12_mara_CD327ED5-E83D-471F-9A30-B7A3FBB67486]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_CD327ED5-E83D-471F-9A30-B7A3FBB67486][org_gcr_2017-05-12_mara_CD327ED5-E83D-471F-9A30-B7A3FBB67486]]
 (setq-default eval-expression-print-level nil)
 ;; org_gcr_2017-05-12_mara_CD327ED5-E83D-471F-9A30-B7A3FBB67486 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_41240CBD-3217-466E-BD0F-5737D8BC68BF][org_gcr_2017-05-12_mara_41240CBD-3217-466E-BD0F-5737D8BC68BF]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_41240CBD-3217-466E-BD0F-5737D8BC68BF][org_gcr_2017-05-12_mara_41240CBD-3217-466E-BD0F-5737D8BC68BF]]
 (put #'upcase-region 'disabled nil)
 (put #'downcase-region 'disabled nil)
 (put #'narrow-to-region 'disabled nil)
 ;; org_gcr_2017-05-12_mara_41240CBD-3217-466E-BD0F-5737D8BC68BF ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A9233A74-18F8-4C65-AC14-1A6C41F69B80][org_gcr_2017-05-12_mara_A9233A74-18F8-4C65-AC14-1A6C41F69B80]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_A9233A74-18F8-4C65-AC14-1A6C41F69B80][org_gcr_2017-05-12_mara_A9233A74-18F8-4C65-AC14-1A6C41F69B80]]
 (add-to-list 'load-path (getenv "CCRYPT"))
 (use-package ps-ccrypt)
 ;; org_gcr_2017-05-12_mara_A9233A74-18F8-4C65-AC14-1A6C41F69B80 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E5296E8A-C433-4FBF-97EE-8B95918B5A06][org_gcr_2017-05-12_mara_E5296E8A-C433-4FBF-97EE-8B95918B5A06]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_E5296E8A-C433-4FBF-97EE-8B95918B5A06][org_gcr_2017-05-12_mara_E5296E8A-C433-4FBF-97EE-8B95918B5A06]]
 (setq eshell-prefer-lisp-functions nil
       eshell-cmpl-cycle-completions nil
       eshell-save-history-on-exit t
@@ -1268,7 +1268,7 @@ URL: `https://stackoverflow.com/questions/1587972/how-to-display-indentation-gui
                   '("tar" "\\(\\.tar|\\.tgz\\|\\.tar\\.gz\\)\\'"))))
 ;; org_gcr_2017-05-12_mara_E5296E8A-C433-4FBF-97EE-8B95918B5A06 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_47F75687-F505-42B3-9E2B-EA832B41F7EC][org_gcr_2017-05-12_mara_47F75687-F505-42B3-9E2B-EA832B41F7EC]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_47F75687-F505-42B3-9E2B-EA832B41F7EC][org_gcr_2017-05-12_mara_47F75687-F505-42B3-9E2B-EA832B41F7EC]]
 (setq eshell-prompt-regexp "^.+@.+:.+> ")
 (setq eshell-prompt-function
       (lambda ()
@@ -1281,7 +1281,7 @@ URL: `https://stackoverflow.com/questions/1587972/how-to-display-indentation-gui
          "⮞ ")))
 ;; org_gcr_2017-05-12_mara_47F75687-F505-42B3-9E2B-EA832B41F7EC ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-08-22T06-50-28-05-00_globigerina_EB364115-FC98-4798-ABD7-C7C7DE6A5BD3][org_gcr_2018-08-22T06-50-28-05-00_globigerina_EB364115-FC98-4798-ABD7-C7C7DE6A5BD3]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-08-22T06-50-28-05-00_globigerina_EB364115-FC98-4798-ABD7-C7C7DE6A5BD3][org_gcr_2018-08-22T06-50-28-05-00_globigerina_EB364115-FC98-4798-ABD7-C7C7DE6A5BD3]]
 (defun help/eshell-mode-hook-fn ()
   (message "Welcome to Eshell.")
   (setq pcomplete-cycle-completions nil))
@@ -1289,7 +1289,7 @@ URL: `https://stackoverflow.com/questions/1587972/how-to-display-indentation-gui
 (add-hook 'eshell-mode-hook #'help/eshell-mode-hook-fn)
 ;; org_gcr_2018-08-22T06-50-28-05-00_globigerina_EB364115-FC98-4798-ABD7-C7C7DE6A5BD3 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_11891C85-578F-417F-9956-FEBB52045CDC][org_gcr_2017-05-12_mara_11891C85-578F-417F-9956-FEBB52045CDC]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_11891C85-578F-417F-9956-FEBB52045CDC][org_gcr_2017-05-12_mara_11891C85-578F-417F-9956-FEBB52045CDC]]
 (setq auto-save-default t)
 (setq make-backup-files nil)
 (setq auto-save-visited-file-name t)
@@ -1297,16 +1297,16 @@ URL: `https://stackoverflow.com/questions/1587972/how-to-display-indentation-gui
 (setq auto-save-timeout (* 60 5))
 ;; org_gcr_2017-05-12_mara_11891C85-578F-417F-9956-FEBB52045CDC ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A02347F8-B3BB-4F43-8987-718530B6E053][org_gcr_2017-05-12_mara_A02347F8-B3BB-4F43-8987-718530B6E053]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_A02347F8-B3BB-4F43-8987-718530B6E053][org_gcr_2017-05-12_mara_A02347F8-B3BB-4F43-8987-718530B6E053]]
 (add-hook 'focus-out-hook #'help/save-all-file-buffers)
 ;; org_gcr_2017-05-12_mara_A02347F8-B3BB-4F43-8987-718530B6E053 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_EE759660-2FB2-4BC1-AC4D-EFD21E5B02C0][org_gcr_2017-05-12_mara_EE759660-2FB2-4BC1-AC4D-EFD21E5B02C0]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_EE759660-2FB2-4BC1-AC4D-EFD21E5B02C0][org_gcr_2017-05-12_mara_EE759660-2FB2-4BC1-AC4D-EFD21E5B02C0]]
 (global-auto-revert-mode 1)
 (diminish 'auto-revert-mode)
 ;; org_gcr_2017-05-12_mara_EE759660-2FB2-4BC1-AC4D-EFD21E5B02C0 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E2747C5E-DA22-4B22-9C0A-EB9DEED9A5F7][org_gcr_2017-05-12_mara_E2747C5E-DA22-4B22-9C0A-EB9DEED9A5F7]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_E2747C5E-DA22-4B22-9C0A-EB9DEED9A5F7][org_gcr_2017-05-12_mara_E2747C5E-DA22-4B22-9C0A-EB9DEED9A5F7]]
 (defun help/safb-help/vc-next-action ()
   (interactive)
   (help/save-all-file-buffers)
@@ -1428,19 +1428,19 @@ URL: `https://stackoverflow.com/questions/1587972/how-to-display-indentation-gui
   (help/save-all-file-buffers))
 ;; org_gcr_2017-05-12_mara_E2747C5E-DA22-4B22-9C0A-EB9DEED9A5F7 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_CF605547-BD59-48FD-8CE1-47AD7F28D1B6][org_gcr_2017-05-12_mara_CF605547-BD59-48FD-8CE1-47AD7F28D1B6]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_CF605547-BD59-48FD-8CE1-47AD7F28D1B6][org_gcr_2017-05-12_mara_CF605547-BD59-48FD-8CE1-47AD7F28D1B6]]
 (add-to-list 'find-file-not-found-functions #'help/create-non-existent-directory)
 ;; org_gcr_2017-05-12_mara_CF605547-BD59-48FD-8CE1-47AD7F28D1B6 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_6F55AC0E-3877-4935-B93C-22A132C672AB][org_gcr_2017-05-12_mara_6F55AC0E-3877-4935-B93C-22A132C672AB]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_6F55AC0E-3877-4935-B93C-22A132C672AB][org_gcr_2017-05-12_mara_6F55AC0E-3877-4935-B93C-22A132C672AB]]
 (setq large-file-warning-threshold (* 1024 1024 2))
 ;; org_gcr_2017-05-12_mara_6F55AC0E-3877-4935-B93C-22A132C672AB ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7102B5B4-168F-4E0E-87BD-EEA78DF6837A][org_gcr_2017-05-12_mara_7102B5B4-168F-4E0E-87BD-EEA78DF6837A]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_7102B5B4-168F-4E0E-87BD-EEA78DF6837A][org_gcr_2017-05-12_mara_7102B5B4-168F-4E0E-87BD-EEA78DF6837A]]
 (setq temporary-file-directory "/tmp")
 ;; org_gcr_2017-05-12_mara_7102B5B4-168F-4E0E-87BD-EEA78DF6837A ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F0004AA3-B2A6-4265-A9D5-13590DCBEE9A][org_gcr_2017-05-12_mara_F0004AA3-B2A6-4265-A9D5-13590DCBEE9A]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_F0004AA3-B2A6-4265-A9D5-13590DCBEE9A][org_gcr_2017-05-12_mara_F0004AA3-B2A6-4265-A9D5-13590DCBEE9A]]
 (use-package hardhat
   :ensure t
   :diminish global-hardhat-mode
@@ -1448,11 +1448,11 @@ URL: `https://stackoverflow.com/questions/1587972/how-to-display-indentation-gui
   (global-hardhat-mode 1))
 ;; org_gcr_2017-05-12_mara_F0004AA3-B2A6-4265-A9D5-13590DCBEE9A ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-06-16T20-53-59-05-00_mara_FDBFB65D-7BF1-4C66-A322-4818B1EF04A9][org_gcr_2018-06-16T20-53-59-05-00_mara_FDBFB65D-7BF1-4C66-A322-4818B1EF04A9]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-06-16T20-53-59-05-00_mara_FDBFB65D-7BF1-4C66-A322-4818B1EF04A9][org_gcr_2018-06-16T20-53-59-05-00_mara_FDBFB65D-7BF1-4C66-A322-4818B1EF04A9]]
 (setq inhibit-eol-conversion t)
 ;; org_gcr_2018-06-16T20-53-59-05-00_mara_FDBFB65D-7BF1-4C66-A322-4818B1EF04A9 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B746C905-E59E-4F33-88F9-5F6CD32C0DE2][org_gcr_2017-05-12_mara_B746C905-E59E-4F33-88F9-5F6CD32C0DE2]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_B746C905-E59E-4F33-88F9-5F6CD32C0DE2][org_gcr_2017-05-12_mara_B746C905-E59E-4F33-88F9-5F6CD32C0DE2]]
 (use-package imenu
   :config
   (setq imenu-sort-function #'imenu--sort-by-name))
@@ -1464,7 +1464,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
 (add-hook 'font-lock-mode-hook #'help/try-to-add-imenu)
 ;; org_gcr_2017-05-12_mara_B746C905-E59E-4F33-88F9-5F6CD32C0DE2 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E8A1EB03-CB72-4761-BC0A-555670C0D452][org_gcr_2017-05-12_mara_E8A1EB03-CB72-4761-BC0A-555670C0D452]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_E8A1EB03-CB72-4761-BC0A-555670C0D452][org_gcr_2017-05-12_mara_E8A1EB03-CB72-4761-BC0A-555670C0D452]]
 (use-package imenu-list
   :ensure t
   :config
@@ -1474,7 +1474,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (setq imenu-list-size 40))
 ;; org_gcr_2017-05-12_mara_E8A1EB03-CB72-4761-BC0A-555670C0D452 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9F4ACDEA-BC93-4BB6-BEA2-B622FF676EB6][org_gcr_2017-05-12_mara_9F4ACDEA-BC93-4BB6-BEA2-B622FF676EB6]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_9F4ACDEA-BC93-4BB6-BEA2-B622FF676EB6][org_gcr_2017-05-12_mara_9F4ACDEA-BC93-4BB6-BEA2-B622FF676EB6]]
 (use-package ido)
 (use-package flx-ido
   :ensure t
@@ -1496,34 +1496,34 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right))
 ;; org_gcr_2017-05-12_mara_9F4ACDEA-BC93-4BB6-BEA2-B622FF676EB6 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8C3DB0A1-305E-4746-8455-E8CB880842B1][org_gcr_2017-05-12_mara_8C3DB0A1-305E-4746-8455-E8CB880842B1]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_8C3DB0A1-305E-4746-8455-E8CB880842B1][org_gcr_2017-05-12_mara_8C3DB0A1-305E-4746-8455-E8CB880842B1]]
 (use-package smex
   :ensure t
   :config
   (smex-initialize))
 ;; org_gcr_2017-05-12_mara_8C3DB0A1-305E-4746-8455-E8CB880842B1 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5295DEDE-687E-440B-89B9-9BF9BF301595][org_gcr_2017-05-12_mara_5295DEDE-687E-440B-89B9-9BF9BF301595]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_5295DEDE-687E-440B-89B9-9BF9BF301595][org_gcr_2017-05-12_mara_5295DEDE-687E-440B-89B9-9BF9BF301595]]
 (setq ido-use-url-at-point t)
 (setq ido-use-filename-at-point 'guess)
 ;; org_gcr_2017-05-12_mara_5295DEDE-687E-440B-89B9-9BF9BF301595 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_ADAB043E-BF70-4AE0-BA60-CD08D82474FA][org_gcr_2017-05-12_mara_ADAB043E-BF70-4AE0-BA60-CD08D82474FA]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_ADAB043E-BF70-4AE0-BA60-CD08D82474FA][org_gcr_2017-05-12_mara_ADAB043E-BF70-4AE0-BA60-CD08D82474FA]]
 (global-font-lock-mode t)
 ;; org_gcr_2017-05-12_mara_ADAB043E-BF70-4AE0-BA60-CD08D82474FA ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-04-22T14-17-00-05-00_mara_5C4879AB-6272-4269-A515-CD2FD35F3549][org_gcr_2018-04-22T14-17-00-05-00_mara_5C4879AB-6272-4269-A515-CD2FD35F3549]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-04-22T14-17-00-05-00_mara_5C4879AB-6272-4269-A515-CD2FD35F3549][org_gcr_2018-04-22T14-17-00-05-00_mara_5C4879AB-6272-4269-A515-CD2FD35F3549]]
 (use-package fontawesome
   :ensure t)
 ;; org_gcr_2018-04-22T14-17-00-05-00_mara_5C4879AB-6272-4269-A515-CD2FD35F3549 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_2B0564C9-2091-4364-8A28-E33A548284A2][org_gcr_2017-05-12_mara_2B0564C9-2091-4364-8A28-E33A548284A2]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_2B0564C9-2091-4364-8A28-E33A548284A2][org_gcr_2017-05-12_mara_2B0564C9-2091-4364-8A28-E33A548284A2]]
 (use-package avy
   :ensure t
   :config)
 ;; org_gcr_2017-05-12_mara_2B0564C9-2091-4364-8A28-E33A548284A2 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9336B241-3511-4BB1-9CBA-30CA8BD4EFAB][org_gcr_2017-05-12_mara_9336B241-3511-4BB1-9CBA-30CA8BD4EFAB]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_9336B241-3511-4BB1-9CBA-30CA8BD4EFAB][org_gcr_2017-05-12_mara_9336B241-3511-4BB1-9CBA-30CA8BD4EFAB]]
 (use-package writegood-mode
   :ensure t
   :config
@@ -1531,7 +1531,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
     '(diminish 'writegood-mode)))
 ;; org_gcr_2017-05-12_mara_9336B241-3511-4BB1-9CBA-30CA8BD4EFAB ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1CB16C79-7EC3-4375-BAD3-FC612A1C0B9B][org_gcr_2017-05-12_mara_1CB16C79-7EC3-4375-BAD3-FC612A1C0B9B]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_1CB16C79-7EC3-4375-BAD3-FC612A1C0B9B][org_gcr_2017-05-12_mara_1CB16C79-7EC3-4375-BAD3-FC612A1C0B9B]]
 (use-package langtool
   :ensure t
   :init
@@ -1573,7 +1573,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (key-chord-define-global "qk" #'help/hydra/both/langtool/body))
 ;; org_gcr_2017-05-12_mara_1CB16C79-7EC3-4375-BAD3-FC612A1C0B9B ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A17A873C-5FC0-473F-842F-875CA99981D5][org_gcr_2017-05-12_mara_A17A873C-5FC0-473F-842F-875CA99981D5]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_A17A873C-5FC0-473F-842F-875CA99981D5][org_gcr_2017-05-12_mara_A17A873C-5FC0-473F-842F-875CA99981D5]]
 (with-eval-after-load "flycheck"
   (flycheck-define-checker proselint
     "A linter for prose."
@@ -1588,11 +1588,11 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (add-to-list 'flycheck-checkers 'proselint))
 ;; org_gcr_2017-05-12_mara_A17A873C-5FC0-473F-842F-875CA99981D5 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_54E04F50-33B3-411D-B759-19408AE1DE48][org_gcr_2017-05-12_mara_54E04F50-33B3-411D-B759-19408AE1DE48]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_54E04F50-33B3-411D-B759-19408AE1DE48][org_gcr_2017-05-12_mara_54E04F50-33B3-411D-B759-19408AE1DE48]]
 (setq kmacro-ring-max 32)
 ;; org_gcr_2017-05-12_mara_54E04F50-33B3-411D-B759-19408AE1DE48 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0BE407C6-354F-4E92-B7DC-66000217CCE6][org_gcr_2017-05-12_mara_0BE407C6-354F-4E92-B7DC-66000217CCE6]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_0BE407C6-354F-4E92-B7DC-66000217CCE6][org_gcr_2017-05-12_mara_0BE407C6-354F-4E92-B7DC-66000217CCE6]]
 (use-package elmacro
   :ensure t
   :diminish (elmacro-mode)
@@ -1600,7 +1600,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (elmacro-mode))
 ;; org_gcr_2017-05-12_mara_0BE407C6-354F-4E92-B7DC-66000217CCE6 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_909723A4-3234-40B4-B741-E59C3C9E3E0A][org_gcr_2017-05-12_mara_909723A4-3234-40B4-B741-E59C3C9E3E0A]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_909723A4-3234-40B4-B741-E59C3C9E3E0A][org_gcr_2017-05-12_mara_909723A4-3234-40B4-B741-E59C3C9E3E0A]]
 (use-package fuzzy
   :ensure t)
 (use-package auto-complete
@@ -1616,12 +1616,12 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   :ensure t)
 ;; org_gcr_2017-05-12_mara_909723A4-3234-40B4-B741-E59C3C9E3E0A ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0F225CED-24F2-4801-A3AF-7E45BF787E71][org_gcr_2017-05-12_mara_0F225CED-24F2-4801-A3AF-7E45BF787E71]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_0F225CED-24F2-4801-A3AF-7E45BF787E71][org_gcr_2017-05-12_mara_0F225CED-24F2-4801-A3AF-7E45BF787E71]]
 (use-package auto-complete-chunk
   :ensure t)
 ;; org_gcr_2017-05-12_mara_0F225CED-24F2-4801-A3AF-7E45BF787E71 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_DA93DCF6-E0AB-4B92-9708-4DE4781AA2ED][org_gcr_2017-05-12_mara_DA93DCF6-E0AB-4B92-9708-4DE4781AA2ED]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_DA93DCF6-E0AB-4B92-9708-4DE4781AA2ED][org_gcr_2017-05-12_mara_DA93DCF6-E0AB-4B92-9708-4DE4781AA2ED]]
 (use-package browse-kill-ring
   :ensure t
   :config
@@ -1635,44 +1635,44 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (global-set-key (kbd "M-y") #'browse-kill-ring))
 ;; org_gcr_2017-05-12_mara_DA93DCF6-E0AB-4B92-9708-4DE4781AA2ED ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B696F088-B5EB-4507-8EBE-C719995EB5DA][org_gcr_2017-05-12_mara_B696F088-B5EB-4507-8EBE-C719995EB5DA]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_B696F088-B5EB-4507-8EBE-C719995EB5DA][org_gcr_2017-05-12_mara_B696F088-B5EB-4507-8EBE-C719995EB5DA]]
 (delete-selection-mode t)
 ;; org_gcr_2017-05-12_mara_B696F088-B5EB-4507-8EBE-C719995EB5DA ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_DDBFF500-4387-47FD-95BD-7F6F369AB0E8][org_gcr_2017-05-12_mara_DDBFF500-4387-47FD-95BD-7F6F369AB0E8]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_DDBFF500-4387-47FD-95BD-7F6F369AB0E8][org_gcr_2017-05-12_mara_DDBFF500-4387-47FD-95BD-7F6F369AB0E8]]
 (setq save-interprogram-paste-before-kill t)
 ;; org_gcr_2017-05-12_mara_DDBFF500-4387-47FD-95BD-7F6F369AB0E8 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_087C8A85-9AC0-48C5-A19B-6C5E97F40572][org_gcr_2017-05-12_mara_087C8A85-9AC0-48C5-A19B-6C5E97F40572]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_087C8A85-9AC0-48C5-A19B-6C5E97F40572][org_gcr_2017-05-12_mara_087C8A85-9AC0-48C5-A19B-6C5E97F40572]]
 (setq mouse-drag-copy-region t)
 ;; org_gcr_2017-05-12_mara_087C8A85-9AC0-48C5-A19B-6C5E97F40572 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F19234A5-0F40-46FE-946A-4B3F47C96424][org_gcr_2017-05-12_mara_F19234A5-0F40-46FE-946A-4B3F47C96424]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_F19234A5-0F40-46FE-946A-4B3F47C96424][org_gcr_2017-05-12_mara_F19234A5-0F40-46FE-946A-4B3F47C96424]]
 (fset #'yes-or-no-p #'y-or-n-p)
 ;; org_gcr_2017-05-12_mara_F19234A5-0F40-46FE-946A-4B3F47C96424 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_2B089323-1D60-416F-83A7-792AEE290E67][org_gcr_2017-05-12_mara_2B089323-1D60-416F-83A7-792AEE290E67]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_2B089323-1D60-416F-83A7-792AEE290E67][org_gcr_2017-05-12_mara_2B089323-1D60-416F-83A7-792AEE290E67]]
 (setq resize-mini-windows t)
 (setq max-mini-window-height 0.33)
 ;; org_gcr_2017-05-12_mara_2B089323-1D60-416F-83A7-792AEE290E67 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A0D0BC89-5180-4B18-BFDC-17650901FB7F][org_gcr_2017-05-12_mara_A0D0BC89-5180-4B18-BFDC-17650901FB7F]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_A0D0BC89-5180-4B18-BFDC-17650901FB7F][org_gcr_2017-05-12_mara_A0D0BC89-5180-4B18-BFDC-17650901FB7F]]
 (setq enable-recursive-minibuffers t)
 (minibuffer-depth-indicate-mode t)
 ;; org_gcr_2017-05-12_mara_A0D0BC89-5180-4B18-BFDC-17650901FB7F ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-07-29_mara_59F9B6F3-A62C-424A-AC57-D2677788FF1A][org_gcr_2017-07-29_mara_59F9B6F3-A62C-424A-AC57-D2677788FF1A]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-07-29_mara_59F9B6F3-A62C-424A-AC57-D2677788FF1A][org_gcr_2017-07-29_mara_59F9B6F3-A62C-424A-AC57-D2677788FF1A]]
 (add-hook 'minibuffer-setup-hook #'help/double-gc-cons-threshold)
 (add-hook 'minibuffer-exit-hook #'help/set-gc-cons-threshold)
 ;; org_gcr_2017-07-29_mara_59F9B6F3-A62C-424A-AC57-D2677788FF1A ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_4AA275B8-8C5E-498F-969E-28459D7E88E5][org_gcr_2017-05-12_mara_4AA275B8-8C5E-498F-969E-28459D7E88E5]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_4AA275B8-8C5E-498F-969E-28459D7E88E5][org_gcr_2017-05-12_mara_4AA275B8-8C5E-498F-969E-28459D7E88E5]]
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
 (setq mouse-wheel-progressive-speed nil)
 (setq mouse-wheel-follow-mouse t)
 ;; org_gcr_2017-05-12_mara_4AA275B8-8C5E-498F-969E-28459D7E88E5 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0EB7874B-7C34-4879-97FA-C487115385EE][org_gcr_2017-05-12_mara_0EB7874B-7C34-4879-97FA-C487115385EE]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_0EB7874B-7C34-4879-97FA-C487115385EE][org_gcr_2017-05-12_mara_0EB7874B-7C34-4879-97FA-C487115385EE]]
 (defun help/occur-mode-hook-fn ()
   "HELP customizations."
   (interactive)
@@ -1684,7 +1684,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
 (add-hook 'occur-mode-find-occurrence-hook #'help/recenter-line-near-top-fn)
 ;; org_gcr_2017-05-12_mara_0EB7874B-7C34-4879-97FA-C487115385EE ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_66255B58-A96D-445E-83BF-F597E4BA4FB8][org_gcr_2017-05-12_mara_66255B58-A96D-445E-83BF-F597E4BA4FB8]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_66255B58-A96D-445E-83BF-F597E4BA4FB8][org_gcr_2017-05-12_mara_66255B58-A96D-445E-83BF-F597E4BA4FB8]]
 (use-package alert
   :ensure t
   :config
@@ -1696,11 +1696,11 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (setq alert-reveal-idle-time 120))
 ;; org_gcr_2017-05-12_mara_66255B58-A96D-445E-83BF-F597E4BA4FB8 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-06-12T21-48-52-05-00_mara_AD90D136-9CF3-46CE-8CDF-919A6E95AADD][org_gcr_2018-06-12T21-48-52-05-00_mara_AD90D136-9CF3-46CE-8CDF-919A6E95AADD]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-06-12T21-48-52-05-00_mara_AD90D136-9CF3-46CE-8CDF-919A6E95AADD][org_gcr_2018-06-12T21-48-52-05-00_mara_AD90D136-9CF3-46CE-8CDF-919A6E95AADD]]
 (require 'popup)
 ;; org_gcr_2018-06-12T21-48-52-05-00_mara_AD90D136-9CF3-46CE-8CDF-919A6E95AADD ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_814E8B43-89FD-4EC2-9C5A-EEE03D92A918][org_gcr_2017-05-12_mara_814E8B43-89FD-4EC2-9C5A-EEE03D92A918]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_814E8B43-89FD-4EC2-9C5A-EEE03D92A918][org_gcr_2017-05-12_mara_814E8B43-89FD-4EC2-9C5A-EEE03D92A918]]
 (use-package projectile
   :ensure t
   :config
@@ -1711,7 +1711,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   :diminish projectile-mode)
 ;; org_gcr_2017-05-12_mara_814E8B43-89FD-4EC2-9C5A-EEE03D92A918 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A3BF1E41-D15E-43FD-A379-E5283602BBB3][org_gcr_2017-05-12_mara_A3BF1E41-D15E-43FD-A379-E5283602BBB3]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_A3BF1E41-D15E-43FD-A379-E5283602BBB3][org_gcr_2017-05-12_mara_A3BF1E41-D15E-43FD-A379-E5283602BBB3]]
 (eval-after-load "projectile"
   '(progn (setq magit-repository-directories (mapcar (lambda (dir)
                                                        (substring dir 0 -1))
@@ -1722,17 +1722,17 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
                 magit-repository-directories-depth 1)))
 ;; org_gcr_2017-05-12_mara_A3BF1E41-D15E-43FD-A379-E5283602BBB3 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_22C5C379-532B-488C-A155-6212DB791ED6][org_gcr_2017-05-12_mara_22C5C379-532B-488C-A155-6212DB791ED6]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_22C5C379-532B-488C-A155-6212DB791ED6][org_gcr_2017-05-12_mara_22C5C379-532B-488C-A155-6212DB791ED6]]
 (use-package pp
   :commands (pp-display-expression))
 ;; org_gcr_2017-05-12_mara_22C5C379-532B-488C-A155-6212DB791ED6 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5418551F-1788-4236-B98B-B963BE0032F7][org_gcr_2017-05-12_mara_5418551F-1788-4236-B98B-B963BE0032F7]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_5418551F-1788-4236-B98B-B963BE0032F7][org_gcr_2017-05-12_mara_5418551F-1788-4236-B98B-B963BE0032F7]]
 (setq register-preview-delay 2)
 (setq register-separator "\n\n")
 ;; org_gcr_2017-05-12_mara_5418551F-1788-4236-B98B-B963BE0032F7 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_82232186-B19E-402C-B9E7-6FD6839FD7F6][org_gcr_2017-05-12_mara_82232186-B19E-402C-B9E7-6FD6839FD7F6]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_82232186-B19E-402C-B9E7-6FD6839FD7F6][org_gcr_2017-05-12_mara_82232186-B19E-402C-B9E7-6FD6839FD7F6]]
 (use-package anzu
   :ensure t
   :config
@@ -1743,11 +1743,11 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (setq anzu-replace-to-string-separator " ⇒ "))
 ;; org_gcr_2017-05-12_mara_82232186-B19E-402C-B9E7-6FD6839FD7F6 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9D56BD82-FDED-4326-9078-547457D593ED][org_gcr_2017-05-12_mara_9D56BD82-FDED-4326-9078-547457D593ED]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_9D56BD82-FDED-4326-9078-547457D593ED][org_gcr_2017-05-12_mara_9D56BD82-FDED-4326-9078-547457D593ED]]
 (save-place-mode 1)
 ;; org_gcr_2017-05-12_mara_9D56BD82-FDED-4326-9078-547457D593ED ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_2C0AC56F-8956-4EC1-90A9-2FBCC4AA5AD1][org_gcr_2017-05-12_mara_2C0AC56F-8956-4EC1-90A9-2FBCC4AA5AD1]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_2C0AC56F-8956-4EC1-90A9-2FBCC4AA5AD1][org_gcr_2017-05-12_mara_2C0AC56F-8956-4EC1-90A9-2FBCC4AA5AD1]]
 (setq savehist-save-minibuffer-history t)
 (setq savehist-additional-variables
       '(kill-ring
@@ -1759,26 +1759,26 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
 (savehist-mode t)
 ;; org_gcr_2017-05-12_mara_2C0AC56F-8956-4EC1-90A9-2FBCC4AA5AD1 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D92CB94A-5CDE-49D3-83AD-65242EACA752][org_gcr_2017-05-12_mara_D92CB94A-5CDE-49D3-83AD-65242EACA752]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_D92CB94A-5CDE-49D3-83AD-65242EACA752][org_gcr_2017-05-12_mara_D92CB94A-5CDE-49D3-83AD-65242EACA752]]
 (setq history-delete-duplicates t)
 ;; org_gcr_2017-05-12_mara_D92CB94A-5CDE-49D3-83AD-65242EACA752 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-08-01_mara_98164910-DD0A-4AAE-A9B2-FAF864BCCE1C][org_gcr_2017-08-01_mara_98164910-DD0A-4AAE-A9B2-FAF864BCCE1C]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-08-01_mara_98164910-DD0A-4AAE-A9B2-FAF864BCCE1C][org_gcr_2017-08-01_mara_98164910-DD0A-4AAE-A9B2-FAF864BCCE1C]]
 (setq search-default-mode #'char-fold-to-regexp)
 ;; org_gcr_2017-08-01_mara_98164910-DD0A-4AAE-A9B2-FAF864BCCE1C ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-08-01_mara_1FA6AB2F-B0A9-491E-89D3-BFDFBD173EDD][org_gcr_2017-08-01_mara_1FA6AB2F-B0A9-491E-89D3-BFDFBD173EDD]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-08-01_mara_1FA6AB2F-B0A9-491E-89D3-BFDFBD173EDD][org_gcr_2017-08-01_mara_1FA6AB2F-B0A9-491E-89D3-BFDFBD173EDD]]
 (setq replace-char-fold t)
 ;; org_gcr_2017-08-01_mara_1FA6AB2F-B0A9-491E-89D3-BFDFBD173EDD ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9F40A141-4464-4D4C-A062-54BEC12992FF][org_gcr_2017-05-12_mara_9F40A141-4464-4D4C-A062-54BEC12992FF]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_9F40A141-4464-4D4C-A062-54BEC12992FF][org_gcr_2017-05-12_mara_9F40A141-4464-4D4C-A062-54BEC12992FF]]
 (use-package wgrep
   :ensure t
   :config
   (setq wgrep-auto-save-buffer t))
 ;; org_gcr_2017-05-12_mara_9F40A141-4464-4D4C-A062-54BEC12992FF ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_58F6AD1E-7E9B-4650-B859-F9C0540C74B6][org_gcr_2017-05-12_mara_58F6AD1E-7E9B-4650-B859-F9C0540C74B6]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_58F6AD1E-7E9B-4650-B859-F9C0540C74B6][org_gcr_2017-05-12_mara_58F6AD1E-7E9B-4650-B859-F9C0540C74B6]]
 (use-package ag
   :ensure t
   :config
@@ -1827,20 +1827,20 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
     ("q" nil)))
 ;; org_gcr_2017-05-12_mara_58F6AD1E-7E9B-4650-B859-F9C0540C74B6 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E4E1E1A0-1353-4483-BE1C-746097F60CB6][org_gcr_2017-05-12_mara_E4E1E1A0-1353-4483-BE1C-746097F60CB6]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_E4E1E1A0-1353-4483-BE1C-746097F60CB6][org_gcr_2017-05-12_mara_E4E1E1A0-1353-4483-BE1C-746097F60CB6]]
 (use-package wgrep-ag
   :ensure t
   :after ag)
 ;; org_gcr_2017-05-12_mara_E4E1E1A0-1353-4483-BE1C-746097F60CB6 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-05-21T05-52-58-05-00_mara_D4FEA6C1-C0D9-4B2B-B289-C7C4149CC2A6][org_gcr_2018-05-21T05-52-58-05-00_mara_D4FEA6C1-C0D9-4B2B-B289-C7C4149CC2A6]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-05-21T05-52-58-05-00_mara_D4FEA6C1-C0D9-4B2B-B289-C7C4149CC2A6][org_gcr_2018-05-21T05-52-58-05-00_mara_D4FEA6C1-C0D9-4B2B-B289-C7C4149CC2A6]]
 (use-package google-this
   :ensure t
   :config
   (global-set-key (kbd "M-s-g") #'google-this))
 ;; org_gcr_2018-05-21T05-52-58-05-00_mara_D4FEA6C1-C0D9-4B2B-B289-C7C4149CC2A6 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5EDEEFA9-7DED-41D9-AD9D-5C48BA580AC5][org_gcr_2017-05-12_mara_5EDEEFA9-7DED-41D9-AD9D-5C48BA580AC5]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_5EDEEFA9-7DED-41D9-AD9D-5C48BA580AC5][org_gcr_2017-05-12_mara_5EDEEFA9-7DED-41D9-AD9D-5C48BA580AC5]]
 (defun help/block-regex (special)
   "Make an ispell skip-region alist for a SPECIAL block."
   (interactive)
@@ -1849,35 +1849,35 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
     ,(concat help/org-special-pre "END_" special)))
 ;; org_gcr_2017-05-12_mara_5EDEEFA9-7DED-41D9-AD9D-5C48BA580AC5 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D15F7E3E-9D35-4AB3-A043-67154E3D588A][org_gcr_2017-05-12_mara_D15F7E3E-9D35-4AB3-A043-67154E3D588A]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_D15F7E3E-9D35-4AB3-A043-67154E3D588A][org_gcr_2017-05-12_mara_D15F7E3E-9D35-4AB3-A043-67154E3D588A]]
 (add-to-list 'ispell-skip-region-alist (help/block-regex "SRC"))
 ;; org_gcr_2017-05-12_mara_D15F7E3E-9D35-4AB3-A043-67154E3D588A ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_EB14B834-8486-4750-96C5-E5E3CFB4C19B][org_gcr_2017-05-12_mara_EB14B834-8486-4750-96C5-E5E3CFB4C19B]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_EB14B834-8486-4750-96C5-E5E3CFB4C19B][org_gcr_2017-05-12_mara_EB14B834-8486-4750-96C5-E5E3CFB4C19B]]
 (add-to-list 'ispell-skip-region-alist (help/block-regex "EXAMPLE"))
 ;; org_gcr_2017-05-12_mara_EB14B834-8486-4750-96C5-E5E3CFB4C19B ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F7E77F03-5A3E-4DC1-A345-4BE8E4C7FF11][org_gcr_2017-05-12_mara_F7E77F03-5A3E-4DC1-A345-4BE8E4C7FF11]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_F7E77F03-5A3E-4DC1-A345-4BE8E4C7FF11][org_gcr_2017-05-12_mara_F7E77F03-5A3E-4DC1-A345-4BE8E4C7FF11]]
 (add-to-list 'ispell-skip-region-alist '("^\s*:PROPERTIES\:$" . "^\s*:END\:$"))
 ;; org_gcr_2017-05-12_mara_F7E77F03-5A3E-4DC1-A345-4BE8E4C7FF11 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5459C549-E938-4899-827D-D03707983E52][org_gcr_2017-05-12_mara_5459C549-E938-4899-827D-D03707983E52]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_5459C549-E938-4899-827D-D03707983E52][org_gcr_2017-05-12_mara_5459C549-E938-4899-827D-D03707983E52]]
 (add-to-list 'ispell-skip-region-alist '("\\[fn:.+:" . "\\]"))
 ;; org_gcr_2017-05-12_mara_5459C549-E938-4899-827D-D03707983E52 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_ECD4198B-7335-4141-8256-971748EE4D22][org_gcr_2017-05-12_mara_ECD4198B-7335-4141-8256-971748EE4D22]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_ECD4198B-7335-4141-8256-971748EE4D22][org_gcr_2017-05-12_mara_ECD4198B-7335-4141-8256-971748EE4D22]]
 (add-to-list 'ispell-skip-region-alist '("^http" . "\\]"))
 ;; org_gcr_2017-05-12_mara_ECD4198B-7335-4141-8256-971748EE4D22 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1048E593-5E66-4F70-A591-B17A18634D8F][org_gcr_2017-05-12_mara_1048E593-5E66-4F70-A591-B17A18634D8F]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_1048E593-5E66-4F70-A591-B17A18634D8F][org_gcr_2017-05-12_mara_1048E593-5E66-4F70-A591-B17A18634D8F]]
 (add-to-list 'ispell-skip-region-alist '("- \\*.+" . ".*\\*: "))
 ;; org_gcr_2017-05-12_mara_1048E593-5E66-4F70-A591-B17A18634D8F ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5DB6D56D-1C05-4816-8BB6-8F3E936E5EFC][org_gcr_2017-05-12_mara_5DB6D56D-1C05-4816-8BB6-8F3E936E5EFC]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_5DB6D56D-1C05-4816-8BB6-8F3E936E5EFC][org_gcr_2017-05-12_mara_5DB6D56D-1C05-4816-8BB6-8F3E936E5EFC]]
 (add-to-list 'ispell-skip-region-alist '("\\rarr"))
 ;; org_gcr_2017-05-12_mara_5DB6D56D-1C05-4816-8BB6-8F3E936E5EFC ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5C415ECB-91FC-44C2-9886-29704EF74836][org_gcr_2017-05-12_mara_5C415ECB-91FC-44C2-9886-29704EF74836]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_5C415ECB-91FC-44C2-9886-29704EF74836][org_gcr_2017-05-12_mara_5C415ECB-91FC-44C2-9886-29704EF74836]]
 (let ()
   (--each
       '(("ATTR_LATEX" nil)
@@ -1917,7 +1917,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
          (list special))))))
 ;; org_gcr_2017-05-12_mara_5C415ECB-91FC-44C2-9886-29704EF74836 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BC64FFC2-D587-4D4F-B693-71B3731A71F1][org_gcr_2017-05-12_mara_BC64FFC2-D587-4D4F-B693-71B3731A71F1]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_BC64FFC2-D587-4D4F-B693-71B3731A71F1][org_gcr_2017-05-12_mara_BC64FFC2-D587-4D4F-B693-71B3731A71F1]]
 (help/on-mac-os
  (defun help/ido-find-file ()
    "Find file as root if necessary.
@@ -1930,17 +1930,17 @@ Attribution: URL `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
  (advice-add #'ido-find-file :after #'help/ido-find-file))
 ;; org_gcr_2017-05-12_mara_BC64FFC2-D587-4D4F-B693-71B3731A71F1 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9931B79E-7900-4DE1-B097-45A8DE90CB44][org_gcr_2017-05-12_mara_9931B79E-7900-4DE1-B097-45A8DE90CB44]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_9931B79E-7900-4DE1-B097-45A8DE90CB44][org_gcr_2017-05-12_mara_9931B79E-7900-4DE1-B097-45A8DE90CB44]]
 (use-package flycheck
   :ensure t
   :diminish flycheck-mode)
 ;; org_gcr_2017-05-12_mara_9931B79E-7900-4DE1-B097-45A8DE90CB44 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C23EBD24-B2DC-40CB-9F9E-CAEB03FF8EDC][org_gcr_2017-05-12_mara_C23EBD24-B2DC-40CB-9F9E-CAEB03FF8EDC]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_C23EBD24-B2DC-40CB-9F9E-CAEB03FF8EDC][org_gcr_2017-05-12_mara_C23EBD24-B2DC-40CB-9F9E-CAEB03FF8EDC]]
 (setq-default indent-tabs-mode nil)
 ;; org_gcr_2017-05-12_mara_C23EBD24-B2DC-40CB-9F9E-CAEB03FF8EDC ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_3FFCD7B4-0055-4BE8-938F-EEA09D077343][org_gcr_2017-05-12_mara_3FFCD7B4-0055-4BE8-938F-EEA09D077343]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_3FFCD7B4-0055-4BE8-938F-EEA09D077343][org_gcr_2017-05-12_mara_3FFCD7B4-0055-4BE8-938F-EEA09D077343]]
 (defun help/untabify-buffer-if-not-indent-tabs-mode ()
   "Untabify buffer if `indent-tabs-mode' is false.
 
@@ -1964,11 +1964,11 @@ URL: `http://emacsredux.com/blog/2013/03/27/indent-region-or-buffer/'"
         (message "Untabified buffer.")))))
 ;; org_gcr_2017-05-12_mara_3FFCD7B4-0055-4BE8-938F-EEA09D077343 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5A73C4A8-C2AE-4F36-9D64-3FB6A4FF31E0][org_gcr_2017-05-12_mara_5A73C4A8-C2AE-4F36-9D64-3FB6A4FF31E0]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_5A73C4A8-C2AE-4F36-9D64-3FB6A4FF31E0][org_gcr_2017-05-12_mara_5A73C4A8-C2AE-4F36-9D64-3FB6A4FF31E0]]
 (setq-default tab-width 4)
 ;; org_gcr_2017-05-12_mara_5A73C4A8-C2AE-4F36-9D64-3FB6A4FF31E0 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_3E77B825-E0A4-40EC-88DC-3F5C1E1445CE][org_gcr_2017-05-12_mara_3E77B825-E0A4-40EC-88DC-3F5C1E1445CE]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_3E77B825-E0A4-40EC-88DC-3F5C1E1445CE][org_gcr_2017-05-12_mara_3E77B825-E0A4-40EC-88DC-3F5C1E1445CE]]
 (use-package magit
   :ensure t
   :config
@@ -1978,7 +1978,7 @@ URL: `http://emacsredux.com/blog/2013/03/27/indent-region-or-buffer/'"
                  "~/src/magit/Documentation/")))
 ;; org_gcr_2017-05-12_mara_3E77B825-E0A4-40EC-88DC-3F5C1E1445CE ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-02-24_mara_A2D8DA8E-CE8C-4F26-9DED-7E0AA2DD3CCA][org_gcr_2018-02-24_mara_A2D8DA8E-CE8C-4F26-9DED-7E0AA2DD3CCA]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-02-24_mara_A2D8DA8E-CE8C-4F26-9DED-7E0AA2DD3CCA][org_gcr_2018-02-24_mara_A2D8DA8E-CE8C-4F26-9DED-7E0AA2DD3CCA]]
 (defun help/magit-kill-buffers ()
   "Restore window configuration and kill all Magit buffers.
 
@@ -1991,28 +1991,28 @@ Attribution: URL `https://manuel-uberti.github.io/emacs/2018/02/17/magit-bury-bu
 (bind-key "q" #'help/magit-kill-buffers magit-status-mode-map)
 ;; org_gcr_2018-02-24_mara_A2D8DA8E-CE8C-4F26-9DED-7E0AA2DD3CCA ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A078BCD9-1559-412A-8D51-528CDDD4E402][org_gcr_2017-05-12_mara_A078BCD9-1559-412A-8D51-528CDDD4E402]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_A078BCD9-1559-412A-8D51-528CDDD4E402][org_gcr_2017-05-12_mara_A078BCD9-1559-412A-8D51-528CDDD4E402]]
 (eval-after-load "log-edit"
   '(remove-hook 'log-edit-hook 'log-edit-insert-message-template))
 ;; org_gcr_2017-05-12_mara_A078BCD9-1559-412A-8D51-528CDDD4E402 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A696BECA-ED39-4A7A-911A-66C396E0925C][org_gcr_2017-05-12_mara_A696BECA-ED39-4A7A-911A-66C396E0925C]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_A696BECA-ED39-4A7A-911A-66C396E0925C][org_gcr_2017-05-12_mara_A696BECA-ED39-4A7A-911A-66C396E0925C]]
 (use-package git-timemachine
   :ensure t)
 ;; org_gcr_2017-05-12_mara_A696BECA-ED39-4A7A-911A-66C396E0925C ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A4E407FE-DD42-458A-BD83-2EFD71C1D728][org_gcr_2017-05-12_mara_A4E407FE-DD42-458A-BD83-2EFD71C1D728]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_A4E407FE-DD42-458A-BD83-2EFD71C1D728][org_gcr_2017-05-12_mara_A4E407FE-DD42-458A-BD83-2EFD71C1D728]]
 (global-set-key (kbd "C-M-w") #'help/hydra/words/body)
 (global-set-key (kbd "s-e") #'help/safb-help/magit-status)
 (global-set-key (kbd "s-r") #'help/safb-vc-revert)
 (global-set-key (kbd "s-f") #'help/safb-help/vc-next-action)
 ;; org_gcr_2017-05-12_mara_A4E407FE-DD42-458A-BD83-2EFD71C1D728 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C374930E-5AE3-478D-B3F1-E7791791D530][org_gcr_2017-05-12_mara_C374930E-5AE3-478D-B3F1-E7791791D530]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_C374930E-5AE3-478D-B3F1-E7791791D530][org_gcr_2017-05-12_mara_C374930E-5AE3-478D-B3F1-E7791791D530]]
 (add-to-list 'auto-mode-alist '(".gitignore$" . text-mode))
 ;; org_gcr_2017-05-12_mara_C374930E-5AE3-478D-B3F1-E7791791D530 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0183A8E0-5A59-4A4B-9260-FF5E8C5CAF2C][org_gcr_2017-05-12_mara_0183A8E0-5A59-4A4B-9260-FF5E8C5CAF2C]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_0183A8E0-5A59-4A4B-9260-FF5E8C5CAF2C][org_gcr_2017-05-12_mara_0183A8E0-5A59-4A4B-9260-FF5E8C5CAF2C]]
 (use-package gitignore-mode
   :ensure t)
 
@@ -2023,7 +2023,7 @@ Attribution: URL `https://manuel-uberti.github.io/emacs/2018/02/17/magit-bury-bu
   :ensure t)
 ;; org_gcr_2017-05-12_mara_0183A8E0-5A59-4A4B-9260-FF5E8C5CAF2C ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-12-22_mara_9F9E1F38-1FD7-474F-B2D9-4D9086316632][org_gcr_2017-12-22_mara_9F9E1F38-1FD7-474F-B2D9-4D9086316632]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-12-22_mara_9F9E1F38-1FD7-474F-B2D9-4D9086316632][org_gcr_2017-12-22_mara_9F9E1F38-1FD7-474F-B2D9-4D9086316632]]
 (defhydra help/hydra/commit-message (:color blue
                                             :hint nil)
   "
@@ -2046,7 +2046,7 @@ _A_rchives | Rest_o_res | Re_f_iles
   ("q" nil))
 ;; org_gcr_2017-12-22_mara_9F9E1F38-1FD7-474F-B2D9-4D9086316632 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-12-22_mara_93DCBFA6-1D9E-4126-ABA7-070A42297927][org_gcr_2017-12-22_mara_93DCBFA6-1D9E-4126-ABA7-070A42297927]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-12-22_mara_93DCBFA6-1D9E-4126-ABA7-070A42297927][org_gcr_2017-12-22_mara_93DCBFA6-1D9E-4126-ABA7-070A42297927]]
 (defun help/commit-message-mode-hook-fn ()
   "HELP Commit Message Mode Hook Function"
   (key-chord-define-local "hh" #'help/hydra/commit-message/body))
@@ -2054,11 +2054,11 @@ _A_rchives | Rest_o_res | Re_f_iles
 (add-hook 'git-commit-setup-hook #'help/commit-message-mode-hook-fn)
 ;; org_gcr_2017-12-22_mara_93DCBFA6-1D9E-4126-ABA7-070A42297927 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-01-04_mara_3088E232-25CB-4DCA-8FA0-ADD739504E08][org_gcr_2018-01-04_mara_3088E232-25CB-4DCA-8FA0-ADD739504E08]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-01-04_mara_3088E232-25CB-4DCA-8FA0-ADD739504E08][org_gcr_2018-01-04_mara_3088E232-25CB-4DCA-8FA0-ADD739504E08]]
 (diminish "smerge-mode")
 ;; org_gcr_2018-01-04_mara_3088E232-25CB-4DCA-8FA0-ADD739504E08 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BCF6CC3A-98AD-4845-BBE2-EB601E1A8550][org_gcr_2017-05-12_mara_BCF6CC3A-98AD-4845-BBE2-EB601E1A8550]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_BCF6CC3A-98AD-4845-BBE2-EB601E1A8550][org_gcr_2017-05-12_mara_BCF6CC3A-98AD-4845-BBE2-EB601E1A8550]]
 (defvar yt-iframe-format
   ;; You may want to change your width and height.
   (concat "<iframe width=\"440\""
@@ -2081,7 +2081,7 @@ _A_rchives | Rest_o_res | Re_f_iles
                     path (or desc "video"))))))
 ;; org_gcr_2017-05-12_mara_BCF6CC3A-98AD-4845-BBE2-EB601E1A8550 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_081024E6-F582-40DF-A96F-7216725FDD00][org_gcr_2017-05-12_mara_081024E6-F582-40DF-A96F-7216725FDD00]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_081024E6-F582-40DF-A96F-7216725FDD00][org_gcr_2017-05-12_mara_081024E6-F582-40DF-A96F-7216725FDD00]]
 (use-package whitespace
   :ensure t
   :config
@@ -2094,19 +2094,19 @@ _A_rchives | Rest_o_res | Re_f_iles
   :diminish whitespace-mode global-whitespace-mode)
 ;; org_gcr_2017-05-12_mara_081024E6-F582-40DF-A96F-7216725FDD00 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-06-17T11-45-33-05-00_mara_6EACD283-EEC3-4A5D-968D-85F37294C887][org_gcr_2018-06-17T11-45-33-05-00_mara_6EACD283-EEC3-4A5D-968D-85F37294C887]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-06-17T11-45-33-05-00_mara_6EACD283-EEC3-4A5D-968D-85F37294C887][org_gcr_2018-06-17T11-45-33-05-00_mara_6EACD283-EEC3-4A5D-968D-85F37294C887]]
 (setq user-mail-address "gcr@wisdomandwonder.com")
 ;; org_gcr_2018-06-17T11-45-33-05-00_mara_6EACD283-EEC3-4A5D-968D-85F37294C887 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BC6CD3BC-C736-40EE-84FD-33E2BB514A0C][org_gcr_2017-05-12_mara_BC6CD3BC-C736-40EE-84FD-33E2BB514A0C]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_BC6CD3BC-C736-40EE-84FD-33E2BB514A0C][org_gcr_2017-05-12_mara_BC6CD3BC-C736-40EE-84FD-33E2BB514A0C]]
 (diminish 'visual-line-mode)
 ;; org_gcr_2017-05-12_mara_BC6CD3BC-C736-40EE-84FD-33E2BB514A0C ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_EA8B5E3D-0F0B-4BD8-A510-864EC04BABD7][org_gcr_2017-05-12_mara_EA8B5E3D-0F0B-4BD8-A510-864EC04BABD7]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_EA8B5E3D-0F0B-4BD8-A510-864EC04BABD7][org_gcr_2017-05-12_mara_EA8B5E3D-0F0B-4BD8-A510-864EC04BABD7]]
 (setq visual-line-fringe-indicators '(right-arrow right-curly-arrow))
 ;; org_gcr_2017-05-12_mara_EA8B5E3D-0F0B-4BD8-A510-864EC04BABD7 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-23_mara_9517CF5A-C95B-454E-A68F-1E4BA677C08C][org_gcr_2017-05-23_mara_9517CF5A-C95B-454E-A68F-1E4BA677C08C]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-23_mara_9517CF5A-C95B-454E-A68F-1E4BA677C08C][org_gcr_2017-05-23_mara_9517CF5A-C95B-454E-A68F-1E4BA677C08C]]
 (use-package parent-mode
   :ensure t
   :config
@@ -2117,7 +2117,7 @@ _A_rchives | Rest_o_res | Re_f_iles
       (princ ls))))
 ;; org_gcr_2017-05-23_mara_9517CF5A-C95B-454E-A68F-1E4BA677C08C ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-11-30_mara_75B00948-177E-487A-83A9-2F690611CA59][org_gcr_2017-11-30_mara_75B00948-177E-487A-83A9-2F690611CA59]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-11-30_mara_75B00948-177E-487A-83A9-2F690611CA59][org_gcr_2017-11-30_mara_75B00948-177E-487A-83A9-2F690611CA59]]
 (add-to-list 'load-path "~/src/auto-capitalize")
 (eval-after-load "auto-capitalize" '(diminish "auto-capitalize-mode"))
 (require 'auto-capitalize)
@@ -2142,7 +2142,7 @@ _A_rchives | Rest_o_res | Re_f_iles
              '(auto-capitalize . (lambda (desktop-buffer-locals))))
 ;; org_gcr_2017-11-30_mara_75B00948-177E-487A-83A9-2F690611CA59 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F][org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F][org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F]]
 (defun help/text-mode-fn ()
   "HELP's standard configuration for buffer's working with text, often for
    programming."
@@ -2158,11 +2158,11 @@ _A_rchives | Rest_o_res | Re_f_iles
 (add-hook 'text-mode-hook #'help/text-mode-fn)
 ;; org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-11-17_mara_FCDC3DE5-3584-4431-A443-FFC8F9EA8253][org_gcr_2017-11-17_mara_FCDC3DE5-3584-4431-A443-FFC8F9EA8253]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-11-17_mara_FCDC3DE5-3584-4431-A443-FFC8F9EA8253][org_gcr_2017-11-17_mara_FCDC3DE5-3584-4431-A443-FFC8F9EA8253]]
 (add-to-list 'org-babel-load-languages '(text . t))
 ;; org_gcr_2017-11-17_mara_FCDC3DE5-3584-4431-A443-FFC8F9EA8253 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C][org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C][org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C]]
 (setq help/prog-modes '(makefile-mode-hook
                         ruby-mode-hook
                         sh-mode-hook
@@ -2189,7 +2189,7 @@ _A_rchives | Rest_o_res | Re_f_iles
                         apples-mode-hook))
 ;; org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86][org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86][org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86]]
 (setq help/lisp-modes
       '(emacs-lisp-mode-hook
         ielm-mode-hook
@@ -2201,7 +2201,7 @@ _A_rchives | Rest_o_res | Re_f_iles
 (setq help/prog-modes (append help/prog-modes help/lisp-modes))
 ;; org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_02408658-D767-4D6E-8AAA-2BE1933BCBD1][org_gcr_2017-05-12_mara_02408658-D767-4D6E-8AAA-2BE1933BCBD1]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_02408658-D767-4D6E-8AAA-2BE1933BCBD1][org_gcr_2017-05-12_mara_02408658-D767-4D6E-8AAA-2BE1933BCBD1]]
 (use-package aggressive-indent
   :ensure t
   :diminish aggressive-indent-mode
@@ -2210,7 +2210,7 @@ _A_rchives | Rest_o_res | Re_f_iles
   (add-to-list 'aggressive-indent-excluded-modes 'minibuffer-inactive-mode))
 ;; org_gcr_2017-05-12_mara_02408658-D767-4D6E-8AAA-2BE1933BCBD1 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_3AB5C00B-E0FF-40A1-9C3B-420CB4E8D417][org_gcr_2017-05-12_mara_3AB5C00B-E0FF-40A1-9C3B-420CB4E8D417]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_3AB5C00B-E0FF-40A1-9C3B-420CB4E8D417][org_gcr_2017-05-12_mara_3AB5C00B-E0FF-40A1-9C3B-420CB4E8D417]]
 (use-package smartparens
   :ensure t
   :config
@@ -2219,7 +2219,7 @@ _A_rchives | Rest_o_res | Re_f_iles
   :diminish smartparens-mode)
 ;; org_gcr_2017-05-12_mara_3AB5C00B-E0FF-40A1-9C3B-420CB4E8D417 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A3C53136-65BE-4771-A214-19E102E0158B][org_gcr_2017-05-12_mara_A3C53136-65BE-4771-A214-19E102E0158B]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_A3C53136-65BE-4771-A214-19E102E0158B][org_gcr_2017-05-12_mara_A3C53136-65BE-4771-A214-19E102E0158B]]
 (defun help/prog-mode-hook-fn ()
   (interactive)
   (help/text-mode-fn)
@@ -2236,43 +2236,43 @@ _A_rchives | Rest_o_res | Re_f_iles
     (add-hook it #'help/prog-mode-hook-fn)))
 ;; org_gcr_2017-05-12_mara_A3C53136-65BE-4771-A214-19E102E0158B ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C344E972-D31C-48F4-8E3B-83A799DE7D37][org_gcr_2017-05-12_mara_C344E972-D31C-48F4-8E3B-83A799DE7D37]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_C344E972-D31C-48F4-8E3B-83A799DE7D37][org_gcr_2017-05-12_mara_C344E972-D31C-48F4-8E3B-83A799DE7D37]]
 (setq initial-scratch-message ";; Happy Hacking ☕\n\n")
 ;; org_gcr_2017-05-12_mara_C344E972-D31C-48F4-8E3B-83A799DE7D37 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A929CBE0-E6D3-4A45-8341-15F50EF2F93A][org_gcr_2017-05-12_mara_A929CBE0-E6D3-4A45-8341-15F50EF2F93A]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_A929CBE0-E6D3-4A45-8341-15F50EF2F93A][org_gcr_2017-05-12_mara_A929CBE0-E6D3-4A45-8341-15F50EF2F93A]]
 (setq initial-major-mode 'emacs-lisp-mode)
 ;; org_gcr_2017-05-12_mara_A929CBE0-E6D3-4A45-8341-15F50EF2F93A ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1F06F375-41F5-48FA-B787-8B937BDF56FC][org_gcr_2017-05-12_mara_1F06F375-41F5-48FA-B787-8B937BDF56FC]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_1F06F375-41F5-48FA-B787-8B937BDF56FC][org_gcr_2017-05-12_mara_1F06F375-41F5-48FA-B787-8B937BDF56FC]]
 (with-current-buffer "*scratch*"
   (emacs-lock-mode 'kill))
 ;; org_gcr_2017-05-12_mara_1F06F375-41F5-48FA-B787-8B937BDF56FC ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_2757B16C-18ED-4F29-8DFD-CE51B930BA81][org_gcr_2017-05-12_mara_2757B16C-18ED-4F29-8DFD-CE51B930BA81]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_2757B16C-18ED-4F29-8DFD-CE51B930BA81][org_gcr_2017-05-12_mara_2757B16C-18ED-4F29-8DFD-CE51B930BA81]]
 (use-package persistent-scratch
   :ensure t
   :config
   (persistent-scratch-setup-default))
 ;; org_gcr_2017-05-12_mara_2757B16C-18ED-4F29-8DFD-CE51B930BA81 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BEA970EF-78FA-448D-96B3-1E135640D16A][org_gcr_2017-05-12_mara_BEA970EF-78FA-448D-96B3-1E135640D16A]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_BEA970EF-78FA-448D-96B3-1E135640D16A][org_gcr_2017-05-12_mara_BEA970EF-78FA-448D-96B3-1E135640D16A]]
 (use-package lexbind-mode)
 ;; org_gcr_2017-05-12_mara_BEA970EF-78FA-448D-96B3-1E135640D16A ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-07-16_mara_766EBC8F-2A7C-49BB-9916-BE2AAEE019A4][org_gcr_2017-07-16_mara_766EBC8F-2A7C-49BB-9916-BE2AAEE019A4]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-07-16_mara_766EBC8F-2A7C-49BB-9916-BE2AAEE019A4][org_gcr_2017-07-16_mara_766EBC8F-2A7C-49BB-9916-BE2AAEE019A4]]
 (use-package highlight-quoted
   :ensure t)
 ;; org_gcr_2017-07-16_mara_766EBC8F-2A7C-49BB-9916-BE2AAEE019A4 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-07-16_mara_A1EC88B1-71CF-458E-A626-D6A07108BA3F][org_gcr_2017-07-16_mara_A1EC88B1-71CF-458E-A626-D6A07108BA3F]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-07-16_mara_A1EC88B1-71CF-458E-A626-D6A07108BA3F][org_gcr_2017-07-16_mara_A1EC88B1-71CF-458E-A626-D6A07108BA3F]]
 (use-package highlight-stages
   :ensure t
   :config
   (diminish 'highlight-stages-mode))
 ;; org_gcr_2017-07-16_mara_A1EC88B1-71CF-458E-A626-D6A07108BA3F ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D8F41BFE-D2F5-4B86-BFED-B3DE5EA2133C][org_gcr_2017-05-12_mara_D8F41BFE-D2F5-4B86-BFED-B3DE5EA2133C]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_D8F41BFE-D2F5-4B86-BFED-B3DE5EA2133C][org_gcr_2017-05-12_mara_D8F41BFE-D2F5-4B86-BFED-B3DE5EA2133C]]
 (defun help/elisp-eval-buffer ()
   "Intelligently evaluate an Elisp buffer."
   (interactive)
@@ -2368,12 +2368,12 @@ elisp-mode: _q_uit
 (add-hook 'emacs-lisp-mode-hook #'help/emacs-lisp-mode-hook-fn)
 ;; org_gcr_2017-05-12_mara_D8F41BFE-D2F5-4B86-BFED-B3DE5EA2133C ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7DB4D819-0D2D-482B-AA02-9CB14F6DA288][org_gcr_2017-05-12_mara_7DB4D819-0D2D-482B-AA02-9CB14F6DA288]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_7DB4D819-0D2D-482B-AA02-9CB14F6DA288][org_gcr_2017-05-12_mara_7DB4D819-0D2D-482B-AA02-9CB14F6DA288]]
 (use-package elisp-refs
   :ensure t)
 ;; org_gcr_2017-05-12_mara_7DB4D819-0D2D-482B-AA02-9CB14F6DA288 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_2B359320-563A-4E80-BB8E-04965E20EBEE][org_gcr_2017-05-12_mara_2B359320-563A-4E80-BB8E-04965E20EBEE]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_2B359320-563A-4E80-BB8E-04965E20EBEE][org_gcr_2017-05-12_mara_2B359320-563A-4E80-BB8E-04965E20EBEE]]
 (use-package package-lint
   :ensure t)
 
@@ -2382,21 +2382,21 @@ elisp-mode: _q_uit
   :after (package-lint))
 ;; org_gcr_2017-05-12_mara_2B359320-563A-4E80-BB8E-04965E20EBEE ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-27T21-28-18-05-00_mara_02B76E03-F34A-45A7-A7DC-30209F91095E][org_gcr_2018-03-27T21-28-18-05-00_mara_02B76E03-F34A-45A7-A7DC-30209F91095E]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-27T21-28-18-05-00_mara_02B76E03-F34A-45A7-A7DC-30209F91095E][org_gcr_2018-03-27T21-28-18-05-00_mara_02B76E03-F34A-45A7-A7DC-30209F91095E]]
 (use-package lispy
   :ensure t)
 ;; org_gcr_2018-03-27T21-28-18-05-00_mara_02B76E03-F34A-45A7-A7DC-30209F91095E ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9D21E326-1742-4DD0-BDF9-624D21873F92][org_gcr_2017-05-12_mara_9D21E326-1742-4DD0-BDF9-624D21873F92]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_9D21E326-1742-4DD0-BDF9-624D21873F92][org_gcr_2017-05-12_mara_9D21E326-1742-4DD0-BDF9-624D21873F92]]
 (setq org-babel-min-lines-for-block-output 0)
 ;; org_gcr_2017-05-12_mara_9D21E326-1742-4DD0-BDF9-624D21873F92 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9427EB38-B623-4B99-B562-C2FD737EB0D7][org_gcr_2017-05-12_mara_9427EB38-B623-4B99-B562-C2FD737EB0D7]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_9427EB38-B623-4B99-B562-C2FD737EB0D7][org_gcr_2017-05-12_mara_9427EB38-B623-4B99-B562-C2FD737EB0D7]]
 (setq org-edit-src-auto-save-idle-delay 0)
 (setq org-edit-src-turn-on-auto-save nil)
 ;; org_gcr_2017-05-12_mara_9427EB38-B623-4B99-B562-C2FD737EB0D7 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_780AFFD3-B8F3-4D0F-A3C1-DB30C2182730][org_gcr_2017-05-12_mara_780AFFD3-B8F3-4D0F-A3C1-DB30C2182730]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_780AFFD3-B8F3-4D0F-A3C1-DB30C2182730][org_gcr_2017-05-12_mara_780AFFD3-B8F3-4D0F-A3C1-DB30C2182730]]
 (defun help/org-babel-after-execute-hook ()
   "HELP settings for the `org-babel-after-execute-hook'.
 
@@ -2409,15 +2409,15 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (add-hook 'org-babel-after-execute-hook #'help/org-babel-after-execute-hook)
 ;; org_gcr_2017-05-12_mara_780AFFD3-B8F3-4D0F-A3C1-DB30C2182730 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F0536A1B-195D-4AB9-90B8-D73651740849][org_gcr_2017-05-12_mara_F0536A1B-195D-4AB9-90B8-D73651740849]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_F0536A1B-195D-4AB9-90B8-D73651740849][org_gcr_2017-05-12_mara_F0536A1B-195D-4AB9-90B8-D73651740849]]
 (setq org-confirm-babel-evaluate nil)
 ;; org_gcr_2017-05-12_mara_F0536A1B-195D-4AB9-90B8-D73651740849 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B804AA93-9D3B-4DC8-BFA3-658DD1FB0601][org_gcr_2017-05-12_mara_B804AA93-9D3B-4DC8-BFA3-658DD1FB0601]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_B804AA93-9D3B-4DC8-BFA3-658DD1FB0601][org_gcr_2017-05-12_mara_B804AA93-9D3B-4DC8-BFA3-658DD1FB0601]]
 (setq org-src-tab-acts-natively nil)
 ;; org_gcr_2017-05-12_mara_B804AA93-9D3B-4DC8-BFA3-658DD1FB0601 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9DE5CE12-157D-4516-9FB1-7DAFA02C571E][org_gcr_2017-05-12_mara_9DE5CE12-157D-4516-9FB1-7DAFA02C571E]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_9DE5CE12-157D-4516-9FB1-7DAFA02C571E][org_gcr_2017-05-12_mara_9DE5CE12-157D-4516-9FB1-7DAFA02C571E]]
 (setq org-todo-keywords
       '((sequence
          "TODO(t!)"
@@ -2432,28 +2432,28 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
          )))
 ;; org_gcr_2017-05-12_mara_9DE5CE12-157D-4516-9FB1-7DAFA02C571E ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B237C004-4827-4C39-A9B9-4D0FF9B01053][org_gcr_2017-05-12_mara_B237C004-4827-4C39-A9B9-4D0FF9B01053]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_B237C004-4827-4C39-A9B9-4D0FF9B01053][org_gcr_2017-05-12_mara_B237C004-4827-4C39-A9B9-4D0FF9B01053]]
 (setq org-log-states-order-reversed nil)
 ;; org_gcr_2017-05-12_mara_B237C004-4827-4C39-A9B9-4D0FF9B01053 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_32AAD797-A7D7-416D-9CE2-425EB96781A7][org_gcr_2017-05-12_mara_32AAD797-A7D7-416D-9CE2-425EB96781A7]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_32AAD797-A7D7-416D-9CE2-425EB96781A7][org_gcr_2017-05-12_mara_32AAD797-A7D7-416D-9CE2-425EB96781A7]]
 (setq org-log-into-drawer t)
 ;; org_gcr_2017-05-12_mara_32AAD797-A7D7-416D-9CE2-425EB96781A7 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B6F42ECC-14C0-4C60-8E00-6BBF883B3043][org_gcr_2017-05-12_mara_B6F42ECC-14C0-4C60-8E00-6BBF883B3043]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_B6F42ECC-14C0-4C60-8E00-6BBF883B3043][org_gcr_2017-05-12_mara_B6F42ECC-14C0-4C60-8E00-6BBF883B3043]]
 (setq org-archive-mark-done nil)
 ;; org_gcr_2017-05-12_mara_B6F42ECC-14C0-4C60-8E00-6BBF883B3043 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-05-23T09-03-14-05-00_mara_E899B70E-F49F-4ADC-9C4C-819F1B40D5AE][org_gcr_2018-05-23T09-03-14-05-00_mara_E899B70E-F49F-4ADC-9C4C-819F1B40D5AE]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-05-23T09-03-14-05-00_mara_E899B70E-F49F-4ADC-9C4C-819F1B40D5AE][org_gcr_2018-05-23T09-03-14-05-00_mara_E899B70E-F49F-4ADC-9C4C-819F1B40D5AE]]
 (require 'org-inlinetask)
 ;; org_gcr_2018-05-23T09-03-14-05-00_mara_E899B70E-F49F-4ADC-9C4C-819F1B40D5AE ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_DEE287C2-5B88-4015-9B4F-57DA0F922B0C][org_gcr_2017-05-12_mara_DEE287C2-5B88-4015-9B4F-57DA0F922B0C]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_DEE287C2-5B88-4015-9B4F-57DA0F922B0C][org_gcr_2017-05-12_mara_DEE287C2-5B88-4015-9B4F-57DA0F922B0C]]
 (setq org-refile-targets '((nil . (:maxlevel . 10))))
 (setq org-refile-use-outline-path t)
 ;; org_gcr_2017-05-12_mara_DEE287C2-5B88-4015-9B4F-57DA0F922B0C ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7B11F38B-157A-400A-8F93-68E610D47128][org_gcr_2017-05-12_mara_7B11F38B-157A-400A-8F93-68E610D47128]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_7B11F38B-157A-400A-8F93-68E610D47128][org_gcr_2017-05-12_mara_7B11F38B-157A-400A-8F93-68E610D47128]]
 (defun help/org-refile (arg)
   "Refile to /level/ in /file/ by using use /prefix args/: 2+/this/[none], 1+/this/1, 1/choose-file/2"
   (interactive "P")
@@ -2478,23 +2478,23 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
     (call-interactively 'org-refile))))
 ;; org_gcr_2017-05-12_mara_7B11F38B-157A-400A-8F93-68E610D47128 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_29930A09-6462-4BE7-9AE2-18DC1858666C][org_gcr_2017-05-12_mara_29930A09-6462-4BE7-9AE2-18DC1858666C]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_29930A09-6462-4BE7-9AE2-18DC1858666C][org_gcr_2017-05-12_mara_29930A09-6462-4BE7-9AE2-18DC1858666C]]
 (setq org-reverse-note-order t)
 ;; org_gcr_2017-05-12_mara_29930A09-6462-4BE7-9AE2-18DC1858666C ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E0E01F45-C01E-4F6E-AE8D-1B0073ECB377][org_gcr_2017-05-12_mara_E0E01F45-C01E-4F6E-AE8D-1B0073ECB377]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_E0E01F45-C01E-4F6E-AE8D-1B0073ECB377][org_gcr_2017-05-12_mara_E0E01F45-C01E-4F6E-AE8D-1B0073ECB377]]
 (setq org-outline-path-complete-in-steps nil)
 ;; org_gcr_2017-05-12_mara_E0E01F45-C01E-4F6E-AE8D-1B0073ECB377 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_07650079-9AE1-4291-97A3-BCFD0628C95D][org_gcr_2017-05-12_mara_07650079-9AE1-4291-97A3-BCFD0628C95D]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_07650079-9AE1-4291-97A3-BCFD0628C95D][org_gcr_2017-05-12_mara_07650079-9AE1-4291-97A3-BCFD0628C95D]]
 (setq org-refile-allow-creating-parent-nodes nil)
 ;; org_gcr_2017-05-12_mara_07650079-9AE1-4291-97A3-BCFD0628C95D ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7E513EE1-3EF9-415B-BB94-2135CBFB0E74][org_gcr_2017-05-12_mara_7E513EE1-3EF9-415B-BB94-2135CBFB0E74]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_7E513EE1-3EF9-415B-BB94-2135CBFB0E74][org_gcr_2017-05-12_mara_7E513EE1-3EF9-415B-BB94-2135CBFB0E74]]
 (setq org-log-refile 'note)
 ;; org_gcr_2017-05-12_mara_7E513EE1-3EF9-415B-BB94-2135CBFB0E74 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1F938B98-B056-4381-833C-2C9B835B1C23][org_gcr_2017-05-12_mara_1F938B98-B056-4381-833C-2C9B835B1C23]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_1F938B98-B056-4381-833C-2C9B835B1C23][org_gcr_2017-05-12_mara_1F938B98-B056-4381-833C-2C9B835B1C23]]
 (defun org-read-entry-property-name ()
   "Read a property name from the current entry."
   (let ((completion-ignore-case t)
@@ -2527,7 +2527,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
         (org-set-property prop val))))
 ;; org_gcr_2017-05-12_mara_1F938B98-B056-4381-833C-2C9B835B1C23 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8CE235AC-A7C4-48DF-8C97-46CC7F31CDF4][org_gcr_2017-05-12_mara_8CE235AC-A7C4-48DF-8C97-46CC7F31CDF4]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_8CE235AC-A7C4-48DF-8C97-46CC7F31CDF4][org_gcr_2017-05-12_mara_8CE235AC-A7C4-48DF-8C97-46CC7F31CDF4]]
 (use-package org-table-sticky-header
   :ensure t
   :diminish org-table-sticky-header-mode
@@ -2535,16 +2535,16 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
   (add-hook 'org-mode-hook #'org-table-sticky-header-mode))
 ;; org_gcr_2017-05-12_mara_8CE235AC-A7C4-48DF-8C97-46CC7F31CDF4 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-05-17T22-08-31-05-00_mara_AE590C3B-9E70-4694-A2B1-B4EA164D36FB][org_gcr_2018-05-17T22-08-31-05-00_mara_AE590C3B-9E70-4694-A2B1-B4EA164D36FB]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-05-17T22-08-31-05-00_mara_AE590C3B-9E70-4694-A2B1-B4EA164D36FB][org_gcr_2018-05-17T22-08-31-05-00_mara_AE590C3B-9E70-4694-A2B1-B4EA164D36FB]]
 (setq org-table-export-default-format "orgtbl-to-csv")
 ;; org_gcr_2018-05-17T22-08-31-05-00_mara_AE590C3B-9E70-4694-A2B1-B4EA164D36FB ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-07_mara_D89CE4CB-12B1-47A6-9B0B-EA544343BA85][org_gcr_2018-03-07_mara_D89CE4CB-12B1-47A6-9B0B-EA544343BA85]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-07_mara_D89CE4CB-12B1-47A6-9B0B-EA544343BA85][org_gcr_2018-03-07_mara_D89CE4CB-12B1-47A6-9B0B-EA544343BA85]]
 (setq org-latex-compiler "xelatex")
 (setq org-latex-pdf-process '("latexmk -xelatex -quiet -shell-escape -f %f"))
 ;; org_gcr_2018-03-07_mara_D89CE4CB-12B1-47A6-9B0B-EA544343BA85 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-07_mara_C60306B4-7FB0-45AB-B39F-2BF47FA39604][org_gcr_2018-03-07_mara_C60306B4-7FB0-45AB-B39F-2BF47FA39604]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-07_mara_C60306B4-7FB0-45AB-B39F-2BF47FA39604][org_gcr_2018-03-07_mara_C60306B4-7FB0-45AB-B39F-2BF47FA39604]]
 (setq org-latex-default-packages-alist
       (delq (rassoc '("hyperref" nil) org-latex-default-packages-alist)
             org-latex-default-packages-alist))
@@ -2574,7 +2574,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
               help/org-latex-packages-alist-post-hyperref))
 ;; org_gcr_2018-03-07_mara_C60306B4-7FB0-45AB-B39F-2BF47FA39604 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-04-28T19-58-14-05-00_mara_50C0EEF0-A896-44B3-AC2B-0635552A723A][org_gcr_2018-04-28T19-58-14-05-00_mara_50C0EEF0-A896-44B3-AC2B-0635552A723A]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-04-28T19-58-14-05-00_mara_50C0EEF0-A896-44B3-AC2B-0635552A723A][org_gcr_2018-04-28T19-58-14-05-00_mara_50C0EEF0-A896-44B3-AC2B-0635552A723A]]
 (setq org-latex-listings-options
       '(("basicstyle" "\\ttfamily")
         ("breakatwhitespace" "false")
@@ -2610,11 +2610,11 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
         ("upquote" "false")))
 ;; org_gcr_2018-04-28T19-58-14-05-00_mara_50C0EEF0-A896-44B3-AC2B-0635552A723A ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7EE5307A-ACC5-4FE9-A519-0F273B4589E9][org_gcr_2017-05-12_mara_7EE5307A-ACC5-4FE9-A519-0F273B4589E9]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_7EE5307A-ACC5-4FE9-A519-0F273B4589E9][org_gcr_2017-05-12_mara_7EE5307A-ACC5-4FE9-A519-0F273B4589E9]]
 (defvar help/ltx-cls-opt "12pt")
 ;; org_gcr_2017-05-12_mara_7EE5307A-ACC5-4FE9-A519-0F273B4589E9 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_006EB5E3-5478-43C7-AEAC-34CCF49127AC][org_gcr_2017-05-12_mara_006EB5E3-5478-43C7-AEAC-34CCF49127AC]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_006EB5E3-5478-43C7-AEAC-34CCF49127AC][org_gcr_2017-05-12_mara_006EB5E3-5478-43C7-AEAC-34CCF49127AC]]
 (eval-after-load "ox-latex"
   '(add-to-list 'org-latex-classes
                 `("help-article"
@@ -2625,124 +2625,124 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (setq org-latex-default-class "help-article")
 ;; org_gcr_2017-05-12_mara_006EB5E3-5478-43C7-AEAC-34CCF49127AC ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-04-28T19-58-14-05-00_mara_C24D46F9-B35E-4D87-B47D-662D29F4173A][org_gcr_2018-04-28T19-58-14-05-00_mara_C24D46F9-B35E-4D87-B47D-662D29F4173A]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-04-28T19-58-14-05-00_mara_C24D46F9-B35E-4D87-B47D-662D29F4173A][org_gcr_2018-04-28T19-58-14-05-00_mara_C24D46F9-B35E-4D87-B47D-662D29F4173A]]
 (setq org-latex-listings t)
 ;; org_gcr_2018-04-28T19-58-14-05-00_mara_C24D46F9-B35E-4D87-B47D-662D29F4173A ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-07_mara_22B13787-67AA-4462-949B-3C1E6702EB7C][org_gcr_2018-03-07_mara_22B13787-67AA-4462-949B-3C1E6702EB7C]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-07_mara_22B13787-67AA-4462-949B-3C1E6702EB7C][org_gcr_2018-03-07_mara_22B13787-67AA-4462-949B-3C1E6702EB7C]]
 (setq org-latex-default-figure-position "H")
 ;; org_gcr_2018-03-07_mara_22B13787-67AA-4462-949B-3C1E6702EB7C ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9A50B1B6-9446-4CE2-AC58-5ED8878E9041][org_gcr_2017-05-12_mara_9A50B1B6-9446-4CE2-AC58-5ED8878E9041]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_9A50B1B6-9446-4CE2-AC58-5ED8878E9041][org_gcr_2017-05-12_mara_9A50B1B6-9446-4CE2-AC58-5ED8878E9041]]
 (setq org-startup-with-inline-images (display-graphic-p))
 ;; org_gcr_2017-05-12_mara_9A50B1B6-9446-4CE2-AC58-5ED8878E9041 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_34C0D995-C26A-4FAC-9281-8F1D1BBB16BD][org_gcr_2017-05-12_mara_34C0D995-C26A-4FAC-9281-8F1D1BBB16BD]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_34C0D995-C26A-4FAC-9281-8F1D1BBB16BD][org_gcr_2017-05-12_mara_34C0D995-C26A-4FAC-9281-8F1D1BBB16BD]]
 (setq org-completion-use-ido t)
 (setq org-completion-use-iswitchb nil)
 ;; org_gcr_2017-05-12_mara_34C0D995-C26A-4FAC-9281-8F1D1BBB16BD ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C5BBF231-E413-4A62-9367-A25932090329][org_gcr_2017-05-12_mara_C5BBF231-E413-4A62-9367-A25932090329]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_C5BBF231-E413-4A62-9367-A25932090329][org_gcr_2017-05-12_mara_C5BBF231-E413-4A62-9367-A25932090329]]
 (setq org-use-speed-commands t)
 ;; org_gcr_2017-05-12_mara_C5BBF231-E413-4A62-9367-A25932090329 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D874DF5C-61BE-4EF9-97F7-5C77927F8656][org_gcr_2017-05-12_mara_D874DF5C-61BE-4EF9-97F7-5C77927F8656]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_D874DF5C-61BE-4EF9-97F7-5C77927F8656][org_gcr_2017-05-12_mara_D874DF5C-61BE-4EF9-97F7-5C77927F8656]]
 (setq org-confirm-shell-link-function 'y-or-n-p)
 ;; org_gcr_2017-05-12_mara_D874DF5C-61BE-4EF9-97F7-5C77927F8656 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7715C738-ADCF-4DA7-BB26-DF37B5A55460][org_gcr_2017-05-12_mara_7715C738-ADCF-4DA7-BB26-DF37B5A55460]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_7715C738-ADCF-4DA7-BB26-DF37B5A55460][org_gcr_2017-05-12_mara_7715C738-ADCF-4DA7-BB26-DF37B5A55460]]
 (setq org-confirm-elisp-link-function 'y-or-n-p)
 ;; org_gcr_2017-05-12_mara_7715C738-ADCF-4DA7-BB26-DF37B5A55460 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_40EE32EF-D461-4A4C-BDDA-5203A0EB5279][org_gcr_2017-05-12_mara_40EE32EF-D461-4A4C-BDDA-5203A0EB5279]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_40EE32EF-D461-4A4C-BDDA-5203A0EB5279][org_gcr_2017-05-12_mara_40EE32EF-D461-4A4C-BDDA-5203A0EB5279]]
 (setq org-enforce-todo-dependencies t)
 ;; org_gcr_2017-05-12_mara_40EE32EF-D461-4A4C-BDDA-5203A0EB5279 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_065D8A70-E573-4204-B75B-B69F81926188][org_gcr_2017-05-12_mara_065D8A70-E573-4204-B75B-B69F81926188]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_065D8A70-E573-4204-B75B-B69F81926188][org_gcr_2017-05-12_mara_065D8A70-E573-4204-B75B-B69F81926188]]
 (when (display-graphic-p)
   (use-package org-mouse))
 ;; org_gcr_2017-05-12_mara_065D8A70-E573-4204-B75B-B69F81926188 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BD01DD8A-9BA2-4240-8B63-6479D1C868CC][org_gcr_2017-05-12_mara_BD01DD8A-9BA2-4240-8B63-6479D1C868CC]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_BD01DD8A-9BA2-4240-8B63-6479D1C868CC][org_gcr_2017-05-12_mara_BD01DD8A-9BA2-4240-8B63-6479D1C868CC]]
 (setq org-ellipsis "…")
 ;; org_gcr_2017-05-12_mara_BD01DD8A-9BA2-4240-8B63-6479D1C868CC ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D567F41E-C336-402E-A1A3-EB8D4F91CBDC][org_gcr_2017-05-12_mara_D567F41E-C336-402E-A1A3-EB8D4F91CBDC]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_D567F41E-C336-402E-A1A3-EB8D4F91CBDC][org_gcr_2017-05-12_mara_D567F41E-C336-402E-A1A3-EB8D4F91CBDC]]
 (setq org-hide-leading-stars t)
 ;; org_gcr_2017-05-12_mara_D567F41E-C336-402E-A1A3-EB8D4F91CBDC ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_95F90F5A-E6EB-43BE-9EF1-B3F0CCE4B331][org_gcr_2017-05-12_mara_95F90F5A-E6EB-43BE-9EF1-B3F0CCE4B331]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_95F90F5A-E6EB-43BE-9EF1-B3F0CCE4B331][org_gcr_2017-05-12_mara_95F90F5A-E6EB-43BE-9EF1-B3F0CCE4B331]]
 (setq org-adapt-indentation nil)
 ;; org_gcr_2017-05-12_mara_95F90F5A-E6EB-43BE-9EF1-B3F0CCE4B331 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_563BB770-66CC-431C-98DE-BD3B5B5762AC][org_gcr_2017-05-12_mara_563BB770-66CC-431C-98DE-BD3B5B5762AC]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_563BB770-66CC-431C-98DE-BD3B5B5762AC][org_gcr_2017-05-12_mara_563BB770-66CC-431C-98DE-BD3B5B5762AC]]
 (setq org-fontify-emphasized-text t)
 ;; org_gcr_2017-05-12_mara_563BB770-66CC-431C-98DE-BD3B5B5762AC ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5A4B6DC2-4F16-4177-9C8E-0D0CFDE2B24C][org_gcr_2017-05-12_mara_5A4B6DC2-4F16-4177-9C8E-0D0CFDE2B24C]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_5A4B6DC2-4F16-4177-9C8E-0D0CFDE2B24C][org_gcr_2017-05-12_mara_5A4B6DC2-4F16-4177-9C8E-0D0CFDE2B24C]]
 (setq org-pretty-entities t)
 ;; org_gcr_2017-05-12_mara_5A4B6DC2-4F16-4177-9C8E-0D0CFDE2B24C ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_6488365E-DF20-4300-A979-BA8CE807BBE4][org_gcr_2017-05-12_mara_6488365E-DF20-4300-A979-BA8CE807BBE4]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_6488365E-DF20-4300-A979-BA8CE807BBE4][org_gcr_2017-05-12_mara_6488365E-DF20-4300-A979-BA8CE807BBE4]]
 (setq org-use-sub-superscripts '{})
 ;; org_gcr_2017-05-12_mara_6488365E-DF20-4300-A979-BA8CE807BBE4 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8D163D72-07DD-42F2-93BA-9C70EC04D22F][org_gcr_2017-05-12_mara_8D163D72-07DD-42F2-93BA-9C70EC04D22F]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_8D163D72-07DD-42F2-93BA-9C70EC04D22F][org_gcr_2017-05-12_mara_8D163D72-07DD-42F2-93BA-9C70EC04D22F]]
 (setq org-highlight-latex-and-related '(latex script entities))
 ;; org_gcr_2017-05-12_mara_8D163D72-07DD-42F2-93BA-9C70EC04D22F ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7A828354-84C9-42DE-B123-E9936D2CC914][org_gcr_2017-05-12_mara_7A828354-84C9-42DE-B123-E9936D2CC914]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_7A828354-84C9-42DE-B123-E9936D2CC914][org_gcr_2017-05-12_mara_7A828354-84C9-42DE-B123-E9936D2CC914]]
 (setq org-footnote-define-inline t)
 (setq org-footnote-auto-label 'random)
 (setq org-footnote-auto-adjust nil)
 (setq org-footnote-section nil)
 ;; org_gcr_2017-05-12_mara_7A828354-84C9-42DE-B123-E9936D2CC914 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C7174763-7D1F-491E-9395-8C4100AEA78D][org_gcr_2017-05-12_mara_C7174763-7D1F-491E-9395-8C4100AEA78D]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_C7174763-7D1F-491E-9395-8C4100AEA78D][org_gcr_2017-05-12_mara_C7174763-7D1F-491E-9395-8C4100AEA78D]]
 (setq org-catch-invisible-edits 'error)
 ;; org_gcr_2017-05-12_mara_C7174763-7D1F-491E-9395-8C4100AEA78D ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E8933212-1893-466F-95D1-BE41ADD2DD68][org_gcr_2017-05-12_mara_E8933212-1893-466F-95D1-BE41ADD2DD68]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_E8933212-1893-466F-95D1-BE41ADD2DD68][org_gcr_2017-05-12_mara_E8933212-1893-466F-95D1-BE41ADD2DD68]]
 (setq org-loop-over-headlines-in-active-region t)
 ;; org_gcr_2017-05-12_mara_E8933212-1893-466F-95D1-BE41ADD2DD68 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_018F43BF-99DA-4632-B5B0-A291CEBBA6B5][org_gcr_2017-05-12_mara_018F43BF-99DA-4632-B5B0-A291CEBBA6B5]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_018F43BF-99DA-4632-B5B0-A291CEBBA6B5][org_gcr_2017-05-12_mara_018F43BF-99DA-4632-B5B0-A291CEBBA6B5]]
 (setq org-startup-folded "nofold")
 ;; org_gcr_2017-05-12_mara_018F43BF-99DA-4632-B5B0-A291CEBBA6B5 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_85DCD661-A0DA-4AC2-8EB2-5BD9A4C2D0CB][org_gcr_2017-05-12_mara_85DCD661-A0DA-4AC2-8EB2-5BD9A4C2D0CB]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_85DCD661-A0DA-4AC2-8EB2-5BD9A4C2D0CB][org_gcr_2017-05-12_mara_85DCD661-A0DA-4AC2-8EB2-5BD9A4C2D0CB]]
 (setq org-image-actual-width t)
 ;; org_gcr_2017-05-12_mara_85DCD661-A0DA-4AC2-8EB2-5BD9A4C2D0CB ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_2DD6E6FC-375C-4FA5-BFA4-C6C9B0EAB483][org_gcr_2017-05-12_mara_2DD6E6FC-375C-4FA5-BFA4-C6C9B0EAB483]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_2DD6E6FC-375C-4FA5-BFA4-C6C9B0EAB483][org_gcr_2017-05-12_mara_2DD6E6FC-375C-4FA5-BFA4-C6C9B0EAB483]]
 (setq org-hide-emphasis-markers t)
 ;; org_gcr_2017-05-12_mara_2DD6E6FC-375C-4FA5-BFA4-C6C9B0EAB483 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B5F4B79C-70AD-46D1-AAAF-A4E31091F9B2][org_gcr_2017-05-12_mara_B5F4B79C-70AD-46D1-AAAF-A4E31091F9B2]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_B5F4B79C-70AD-46D1-AAAF-A4E31091F9B2][org_gcr_2017-05-12_mara_B5F4B79C-70AD-46D1-AAAF-A4E31091F9B2]]
 (setq org-startup-align-all-tables t)
 ;; org_gcr_2017-05-12_mara_B5F4B79C-70AD-46D1-AAAF-A4E31091F9B2 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_75CA3C3E-CFA6-4FA5-98DA-7EC394781A17][org_gcr_2017-05-12_mara_75CA3C3E-CFA6-4FA5-98DA-7EC394781A17]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_75CA3C3E-CFA6-4FA5-98DA-7EC394781A17][org_gcr_2017-05-12_mara_75CA3C3E-CFA6-4FA5-98DA-7EC394781A17]]
 (setq org-html-checkbox-type 'unicode)
 ;; org_gcr_2017-05-12_mara_75CA3C3E-CFA6-4FA5-98DA-7EC394781A17 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F04CC035-CFB3-47DB-B1A0-9E58ECE5B01D][org_gcr_2017-05-12_mara_F04CC035-CFB3-47DB-B1A0-9E58ECE5B01D]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_F04CC035-CFB3-47DB-B1A0-9E58ECE5B01D][org_gcr_2017-05-12_mara_F04CC035-CFB3-47DB-B1A0-9E58ECE5B01D]]
 (setq org-src-fontify-natively nil)
 ;; org_gcr_2017-05-12_mara_F04CC035-CFB3-47DB-B1A0-9E58ECE5B01D ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_829BF364-D929-4B12-BFB7-82C6F4105CDA][org_gcr_2017-05-12_mara_829BF364-D929-4B12-BFB7-82C6F4105CDA]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_829BF364-D929-4B12-BFB7-82C6F4105CDA][org_gcr_2017-05-12_mara_829BF364-D929-4B12-BFB7-82C6F4105CDA]]
 (setq org-src-strip-leading-and-trailing-blank-lines t)
 ;; org_gcr_2017-05-12_mara_829BF364-D929-4B12-BFB7-82C6F4105CDA ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A4769342-BBC0-40C1-B144-BD24CE74523C][org_gcr_2017-05-12_mara_A4769342-BBC0-40C1-B144-BD24CE74523C]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_A4769342-BBC0-40C1-B144-BD24CE74523C][org_gcr_2017-05-12_mara_A4769342-BBC0-40C1-B144-BD24CE74523C]]
 (setq org-src-window-setup 'current-window)
 ;; org_gcr_2017-05-12_mara_A4769342-BBC0-40C1-B144-BD24CE74523C ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7120E516-C6D1-4FD5-A925-7F79B3FE9323][org_gcr_2017-05-12_mara_7120E516-C6D1-4FD5-A925-7F79B3FE9323]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_7120E516-C6D1-4FD5-A925-7F79B3FE9323][org_gcr_2017-05-12_mara_7120E516-C6D1-4FD5-A925-7F79B3FE9323]]
 (setq org-babel-no-eval-on-ctrl-c-ctrl-c t)
 ;; org_gcr_2017-05-12_mara_7120E516-C6D1-4FD5-A925-7F79B3FE9323 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E4B28E49-C537-4BA9-B929-A638DBFEED94][org_gcr_2017-05-12_mara_E4B28E49-C537-4BA9-B929-A638DBFEED94]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_E4B28E49-C537-4BA9-B929-A638DBFEED94][org_gcr_2017-05-12_mara_E4B28E49-C537-4BA9-B929-A638DBFEED94]]
 (defun help/vc-next-action ()
   "If in org source block, exit it before `vc-next-action'."
   (interactive)
@@ -2761,11 +2761,11 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
   (magit-status))
 ;; org_gcr_2017-05-12_mara_E4B28E49-C537-4BA9-B929-A638DBFEED94 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1AE94FA9-77C0-4A30-8A70-AFAFD4E4011F][org_gcr_2017-05-12_mara_1AE94FA9-77C0-4A30-8A70-AFAFD4E4011F]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_1AE94FA9-77C0-4A30-8A70-AFAFD4E4011F][org_gcr_2017-05-12_mara_1AE94FA9-77C0-4A30-8A70-AFAFD4E4011F]]
 (setq org-edit-src-code nil)
 ;; org_gcr_2017-05-12_mara_1AE94FA9-77C0-4A30-8A70-AFAFD4E4011F ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_CE6FE001-F609-4096-8807-9AB65010AD53][org_gcr_2017-05-12_mara_CE6FE001-F609-4096-8807-9AB65010AD53]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_CE6FE001-F609-4096-8807-9AB65010AD53][org_gcr_2017-05-12_mara_CE6FE001-F609-4096-8807-9AB65010AD53]]
 (use-package wrap-region
   :ensure t
   :config
@@ -2774,63 +2774,63 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
   (add-hook 'org-mode-hook 'wrap-region-mode))
 ;; org_gcr_2017-05-12_mara_CE6FE001-F609-4096-8807-9AB65010AD53 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_DE1AA644-BCAA-4F1E-AF59-157250A15171][org_gcr_2017-05-12_mara_DE1AA644-BCAA-4F1E-AF59-157250A15171]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_DE1AA644-BCAA-4F1E-AF59-157250A15171][org_gcr_2017-05-12_mara_DE1AA644-BCAA-4F1E-AF59-157250A15171]]
 (wrap-region-add-wrapper "*" "*" nil 'org-mode)
 ;; org_gcr_2017-05-12_mara_DE1AA644-BCAA-4F1E-AF59-157250A15171 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_79D2E885-5A18-486B-BA80-C36C0B78972E][org_gcr_2017-05-12_mara_79D2E885-5A18-486B-BA80-C36C0B78972E]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_79D2E885-5A18-486B-BA80-C36C0B78972E][org_gcr_2017-05-12_mara_79D2E885-5A18-486B-BA80-C36C0B78972E]]
 (wrap-region-add-wrapper "/" "/" nil 'org-mode)
 ;; org_gcr_2017-05-12_mara_79D2E885-5A18-486B-BA80-C36C0B78972E ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_353BB5B3-A864-4AE4-AF08-590AFF0DE831][org_gcr_2017-05-12_mara_353BB5B3-A864-4AE4-AF08-590AFF0DE831]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_353BB5B3-A864-4AE4-AF08-590AFF0DE831][org_gcr_2017-05-12_mara_353BB5B3-A864-4AE4-AF08-590AFF0DE831]]
 (wrap-region-add-wrapper "=" "=" nil 'org-mode)
 ;; org_gcr_2017-05-12_mara_353BB5B3-A864-4AE4-AF08-590AFF0DE831 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9D9579E5-4693-417C-BFDE-B9F532381C44][org_gcr_2017-05-12_mara_9D9579E5-4693-417C-BFDE-B9F532381C44]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_9D9579E5-4693-417C-BFDE-B9F532381C44][org_gcr_2017-05-12_mara_9D9579E5-4693-417C-BFDE-B9F532381C44]]
 (wrap-region-add-wrapper "~" "~" nil 'org-mode)
 ;; org_gcr_2017-05-12_mara_9D9579E5-4693-417C-BFDE-B9F532381C44 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_3331BDE3-CFEA-460B-8E21-45ACF6BAC211][org_gcr_2017-05-12_mara_3331BDE3-CFEA-460B-8E21-45ACF6BAC211]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_3331BDE3-CFEA-460B-8E21-45ACF6BAC211][org_gcr_2017-05-12_mara_3331BDE3-CFEA-460B-8E21-45ACF6BAC211]]
 (wrap-region-add-wrapper "+" "+" nil 'org-mode)
 ;; org_gcr_2017-05-12_mara_3331BDE3-CFEA-460B-8E21-45ACF6BAC211 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_258FD451-015B-4195-8349-8B4EFA61B581][org_gcr_2017-05-12_mara_258FD451-015B-4195-8349-8B4EFA61B581]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_258FD451-015B-4195-8349-8B4EFA61B581][org_gcr_2017-05-12_mara_258FD451-015B-4195-8349-8B4EFA61B581]]
 (setq org-hide-macro-markers nil)
 ;; org_gcr_2017-05-12_mara_258FD451-015B-4195-8349-8B4EFA61B581 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7CFE23CC-8EBC-46F3-889F-BF36EC45D6CA][org_gcr_2017-05-12_mara_7CFE23CC-8EBC-46F3-889F-BF36EC45D6CA]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_7CFE23CC-8EBC-46F3-889F-BF36EC45D6CA][org_gcr_2017-05-12_mara_7CFE23CC-8EBC-46F3-889F-BF36EC45D6CA]]
 (setq org-return-follows-link t)
 ;; org_gcr_2017-05-12_mara_7CFE23CC-8EBC-46F3-889F-BF36EC45D6CA ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-06-15T10-59-11-05-00_mara_18E869DD-ECC4-4267-B019-CBACA6D89465][org_gcr_2018-06-15T10-59-11-05-00_mara_18E869DD-ECC4-4267-B019-CBACA6D89465]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-06-15T10-59-11-05-00_mara_18E869DD-ECC4-4267-B019-CBACA6D89465][org_gcr_2018-06-15T10-59-11-05-00_mara_18E869DD-ECC4-4267-B019-CBACA6D89465]]
 (require 'org-tempo)
 ;; org_gcr_2018-06-15T10-59-11-05-00_mara_18E869DD-ECC4-4267-B019-CBACA6D89465 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_711B4205-DC28-4A35-B620-23AFD46E3973][org_gcr_2017-05-12_mara_711B4205-DC28-4A35-B620-23AFD46E3973]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_711B4205-DC28-4A35-B620-23AFD46E3973][org_gcr_2017-05-12_mara_711B4205-DC28-4A35-B620-23AFD46E3973]]
 (help/on-gui
  (define-key org-mode-map (kbd "<return>") #'org-return-indent)
  (define-key org-mode-map (kbd "C-M-<return>") #'newline))
 ;; org_gcr_2017-05-12_mara_711B4205-DC28-4A35-B620-23AFD46E3973 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1A8FB05F-FF18-45DD-BFC4-89E76C366B9F][org_gcr_2017-05-12_mara_1A8FB05F-FF18-45DD-BFC4-89E76C366B9F]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_1A8FB05F-FF18-45DD-BFC4-89E76C366B9F][org_gcr_2017-05-12_mara_1A8FB05F-FF18-45DD-BFC4-89E76C366B9F]]
 (define-key org-mode-map (kbd "s-6") #'org-babel-load-in-session)
 (define-key org-mode-map (kbd "s-7") #'org-babel-switch-to-session)
 (define-key org-mode-map (kbd "s-8") #'org-babel-switch-to-session-with-code)
 (define-key org-mode-map (kbd "s-9") #'org-todo)
 ;; org_gcr_2017-05-12_mara_1A8FB05F-FF18-45DD-BFC4-89E76C366B9F ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_6BA97DBC-AE5D-4C60-AD03-EF150686A03F][org_gcr_2017-05-12_mara_6BA97DBC-AE5D-4C60-AD03-EF150686A03F]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_6BA97DBC-AE5D-4C60-AD03-EF150686A03F][org_gcr_2017-05-12_mara_6BA97DBC-AE5D-4C60-AD03-EF150686A03F]]
 (key-chord-define org-mode-map "U*" #'org-metaup)
 (key-chord-define org-mode-map "I(" #'org-metadown)
 (key-chord-define org-mode-map "u8" #'org-metaleft)
 (key-chord-define org-mode-map "i9" #'org-metaright)
 ;; org_gcr_2017-05-12_mara_6BA97DBC-AE5D-4C60-AD03-EF150686A03F ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC][org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC][org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC]]
 (global-unset-key (kbd "C-M-t"))
 ;; org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_49522E70-EE2D-4CF9-95D7-8E43524A469D][org_gcr_2017-05-12_mara_49522E70-EE2D-4CF9-95D7-8E43524A469D]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_49522E70-EE2D-4CF9-95D7-8E43524A469D][org_gcr_2017-05-12_mara_49522E70-EE2D-4CF9-95D7-8E43524A469D]]
 (define-key org-mode-map (kbd "s-]") (lambda () (interactive)
                                        (message "Removing all source block resuls")
                                        (help/org-2every-src-block
@@ -2849,7 +2849,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (add-hook 'org-mode-hook #'help/unset-C-M-t)
 ;; org_gcr_2017-05-12_mara_49522E70-EE2D-4CF9-95D7-8E43524A469D ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_EC7D6149-4451-443D-BFFF-1A40073D7D98][org_gcr_2017-05-12_mara_EC7D6149-4451-443D-BFFF-1A40073D7D98]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_EC7D6149-4451-443D-BFFF-1A40073D7D98][org_gcr_2017-05-12_mara_EC7D6149-4451-443D-BFFF-1A40073D7D98]]
 (define-key org-mode-map (kbd "C-c C-k") nil)
 (define-key org-mode-map (kbd "s-h") #'help/safb-org-babel-tangle)
 (define-key org-mode-map (kbd "s-j") #'org-babel-next-src-block)
@@ -2873,21 +2873,21 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (define-key org-mode-map (kbd "s-S") #'help/org-insert-superscript)
 ;; org_gcr_2017-05-12_mara_EC7D6149-4451-443D-BFFF-1A40073D7D98 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-07-12_mara_65D0CDCC-66C7-4C81-ABF3-D22AAF71868E][org_gcr_2017-07-12_mara_65D0CDCC-66C7-4C81-ABF3-D22AAF71868E]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-07-12_mara_65D0CDCC-66C7-4C81-ABF3-D22AAF71868E][org_gcr_2017-07-12_mara_65D0CDCC-66C7-4C81-ABF3-D22AAF71868E]]
 (define-key global-map (kbd "s-o") nil)
 ;; org_gcr_2017-07-12_mara_65D0CDCC-66C7-4C81-ABF3-D22AAF71868E ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8C00E3FE-4AE1-49BA-97E7-FAB2784DD0A9][org_gcr_2017-05-12_mara_8C00E3FE-4AE1-49BA-97E7-FAB2784DD0A9]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_8C00E3FE-4AE1-49BA-97E7-FAB2784DD0A9][org_gcr_2017-05-12_mara_8C00E3FE-4AE1-49BA-97E7-FAB2784DD0A9]]
 (define-key org-mode-map (kbd "s-n") #'org-babel-view-src-block-info)
 (define-key org-mode-map (kbd "s-m") #'org-babel-expand-src-block)
 (define-key org-mode-map (kbd "s-,") #'org-babel-open-src-block-result)
 ;; org_gcr_2017-05-12_mara_8C00E3FE-4AE1-49BA-97E7-FAB2784DD0A9 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-07-12_mara_97C70CDA-DFBF-4422-942A-00E732D3AB6A][org_gcr_2017-07-12_mara_97C70CDA-DFBF-4422-942A-00E732D3AB6A]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-07-12_mara_97C70CDA-DFBF-4422-942A-00E732D3AB6A][org_gcr_2017-07-12_mara_97C70CDA-DFBF-4422-942A-00E732D3AB6A]]
 (define-key global-map (kbd "s-m") nil)
 ;; org_gcr_2017-07-12_mara_97C70CDA-DFBF-4422-942A-00E732D3AB6A ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_90AA8396-E8A0-439C-A1E4-373E90C4DC84][org_gcr_2017-05-12_mara_90AA8396-E8A0-439C-A1E4-373E90C4DC84]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_90AA8396-E8A0-439C-A1E4-373E90C4DC84][org_gcr_2017-05-12_mara_90AA8396-E8A0-439C-A1E4-373E90C4DC84]]
 (defhydra help/hydra/right-side/org-mode (:color blue
                                                  :hint nil)
   "
@@ -2950,24 +2950,24 @@ Row 1: _x_ utf2xtx _c_ org-fill-para _C_ount words _b_ swtch2sessn _n_ n2sbtre _
 (key-chord-define org-mode-map "hh" #'help/hydra/right-side/org-mode/body)
 ;; org_gcr_2017-05-12_mara_90AA8396-E8A0-439C-A1E4-373E90C4DC84 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B41A9D3F-254B-4E44-8585-380BF23D158D][org_gcr_2017-05-12_mara_B41A9D3F-254B-4E44-8585-380BF23D158D]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_B41A9D3F-254B-4E44-8585-380BF23D158D][org_gcr_2017-05-12_mara_B41A9D3F-254B-4E44-8585-380BF23D158D]]
 (define-key org-mode-map (kbd "C-c C-e") #'help/safb-org-export-dispatch)
 ;; org_gcr_2017-05-12_mara_B41A9D3F-254B-4E44-8585-380BF23D158D ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5DE43FD1-AEF3-40D0-8C67-1ACBB6EA8317][org_gcr_2017-05-12_mara_5DE43FD1-AEF3-40D0-8C67-1ACBB6EA8317]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_5DE43FD1-AEF3-40D0-8C67-1ACBB6EA8317][org_gcr_2017-05-12_mara_5DE43FD1-AEF3-40D0-8C67-1ACBB6EA8317]]
 (define-key org-src-mode-map (kbd "s-l") #'org-edit-src-exit)
 ;; org_gcr_2017-05-12_mara_5DE43FD1-AEF3-40D0-8C67-1ACBB6EA8317 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BF73D071-57B8-4DBA-93E9-5A1D532A6321][org_gcr_2017-05-12_mara_BF73D071-57B8-4DBA-93E9-5A1D532A6321]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_BF73D071-57B8-4DBA-93E9-5A1D532A6321][org_gcr_2017-05-12_mara_BF73D071-57B8-4DBA-93E9-5A1D532A6321]]
 (key-chord-define org-mode-map "<<" (lambda () (interactive) (insert "\\laquo{}")))
 (key-chord-define org-mode-map ">>" (lambda () (interactive) (insert "\\raquo{}")))
 ;; org_gcr_2017-05-12_mara_BF73D071-57B8-4DBA-93E9-5A1D532A6321 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-06-21T13-13-25-05-00_mara_91DB03A0-F253-41EF-B3D7-820293D5AD94][org_gcr_2018-06-21T13-13-25-05-00_mara_91DB03A0-F253-41EF-B3D7-820293D5AD94]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-06-21T13-13-25-05-00_mara_91DB03A0-F253-41EF-B3D7-820293D5AD94][org_gcr_2018-06-21T13-13-25-05-00_mara_91DB03A0-F253-41EF-B3D7-820293D5AD94]]
 (setq org-hide-macro-markers nil)
 ;; org_gcr_2018-06-21T13-13-25-05-00_mara_91DB03A0-F253-41EF-B3D7-820293D5AD94 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-15_mara_05415B89-71CA-4176-80EF-FB36F2D97F20][org_gcr_2018-03-15_mara_05415B89-71CA-4176-80EF-FB36F2D97F20]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-15_mara_05415B89-71CA-4176-80EF-FB36F2D97F20][org_gcr_2018-03-15_mara_05415B89-71CA-4176-80EF-FB36F2D97F20]]
 (defun help/prettify-org-mode ()
   (interactive)
   (setq prettify-symbols-alist (help/alist-set "#+NAME\:" ?╭ prettify-symbols-alist))
@@ -3005,36 +3005,36 @@ Row 1: _x_ utf2xtx _c_ org-fill-para _C_ount words _b_ swtch2sessn _n_ n2sbtre _
             (setq prettify-symbols-alist (help/alist-set name replacement prettify-symbols-alist))))))))
 ;; org_gcr_2018-03-15_mara_05415B89-71CA-4176-80EF-FB36F2D97F20 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-06-14T14-15-42-05-00_mara_2F1F424E-F780-4D04-B582-7770987CC960][org_gcr_2018-06-14T14-15-42-05-00_mara_2F1F424E-F780-4D04-B582-7770987CC960]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-06-14T14-15-42-05-00_mara_2F1F424E-F780-4D04-B582-7770987CC960][org_gcr_2018-06-14T14-15-42-05-00_mara_2F1F424E-F780-4D04-B582-7770987CC960]]
 (font-lock-add-keywords
  'org-mode
  '(("^[[:space:]]*\\(-\\) "
     0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "—")))))
 ;; org_gcr_2018-06-14T14-15-42-05-00_mara_2F1F424E-F780-4D04-B582-7770987CC960 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-07-02T07-07-57-05-00_mara_50C8A3C0-835D-4DE9-B5AE-161C127BF850][org_gcr_2018-07-02T07-07-57-05-00_mara_50C8A3C0-835D-4DE9-B5AE-161C127BF850]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-07-02T07-07-57-05-00_mara_50C8A3C0-835D-4DE9-B5AE-161C127BF850][org_gcr_2018-07-02T07-07-57-05-00_mara_50C8A3C0-835D-4DE9-B5AE-161C127BF850]]
 (setq org-html-table-default-attributes
       (plist-put org-html-table-default-attributes :rules "all"))
 (setq org-html-table-default-attributes
       (plist-put org-html-table-default-attributes :frame "border"))
 ;; org_gcr_2018-07-02T07-07-57-05-00_mara_50C8A3C0-835D-4DE9-B5AE-161C127BF850 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-01-04_mara_42B53E96-5046-4A7B-8CC9-A7046CCD3BF1][org_gcr_2018-01-04_mara_42B53E96-5046-4A7B-8CC9-A7046CCD3BF1]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-01-04_mara_42B53E96-5046-4A7B-8CC9-A7046CCD3BF1][org_gcr_2018-01-04_mara_42B53E96-5046-4A7B-8CC9-A7046CCD3BF1]]
 (use-package edit-indirect
   :ensure t)
 ;; org_gcr_2018-01-04_mara_42B53E96-5046-4A7B-8CC9-A7046CCD3BF1 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_37C3019C-7C06-4952-888C-AA4660B4310E][org_gcr_2017-05-12_mara_37C3019C-7C06-4952-888C-AA4660B4310E]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_37C3019C-7C06-4952-888C-AA4660B4310E][org_gcr_2017-05-12_mara_37C3019C-7C06-4952-888C-AA4660B4310E]]
 (use-package blackboard-bold-mode
   :ensure t)
 ;; org_gcr_2017-05-12_mara_37C3019C-7C06-4952-888C-AA4660B4310E ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_AF4667B6-7922-4BC4-840F-63F099E1BC63][org_gcr_2017-05-12_mara_AF4667B6-7922-4BC4-840F-63F099E1BC63]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_AF4667B6-7922-4BC4-840F-63F099E1BC63][org_gcr_2017-05-12_mara_AF4667B6-7922-4BC4-840F-63F099E1BC63]]
 (use-package fraktur-mode
   :ensure t)
 ;; org_gcr_2017-05-12_mara_AF4667B6-7922-4BC4-840F-63F099E1BC63 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A27A9A2F-11B8-4B31-A68C-6A5E27BCCD8D][org_gcr_2017-05-12_mara_A27A9A2F-11B8-4B31-A68C-6A5E27BCCD8D]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_A27A9A2F-11B8-4B31-A68C-6A5E27BCCD8D][org_gcr_2017-05-12_mara_A27A9A2F-11B8-4B31-A68C-6A5E27BCCD8D]]
 (defhydra help/hydra/transliterate (:color blue :hint nil)
   "
 _b_ black-board-bold _f_ fraktur
@@ -3043,7 +3043,7 @@ _b_ black-board-bold _f_ fraktur
   ("f" fraktur-mode))
 ;; org_gcr_2017-05-12_mara_A27A9A2F-11B8-4B31-A68C-6A5E27BCCD8D ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-08-04_mara_24E4983A-3842-4365-8C3A-8D2019AB223D][org_gcr_2017-08-04_mara_24E4983A-3842-4365-8C3A-8D2019AB223D]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-08-04_mara_24E4983A-3842-4365-8C3A-8D2019AB223D][org_gcr_2017-08-04_mara_24E4983A-3842-4365-8C3A-8D2019AB223D]]
 (use-package lorem-ipsum
   :ensure t
   :config
@@ -3119,12 +3119,12 @@ Words: _C_ount, Count In _O_rg , _T_op#, _G_rade Level, _R_eading Ease, _A_ffect
   :ensure t)
 ;; org_gcr_2017-08-04_mara_24E4983A-3842-4365-8C3A-8D2019AB223D ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_AAEBDA8A-3939-42B1-B7A2-230C43EEF1AB][org_gcr_2017-05-12_mara_AAEBDA8A-3939-42B1-B7A2-230C43EEF1AB]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_AAEBDA8A-3939-42B1-B7A2-230C43EEF1AB][org_gcr_2017-05-12_mara_AAEBDA8A-3939-42B1-B7A2-230C43EEF1AB]]
 (use-package dash-at-point
   :ensure t)
 ;; org_gcr_2017-05-12_mara_AAEBDA8A-3939-42B1-B7A2-230C43EEF1AB ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0BCAB755-9914-473F-9543-37130529809F][org_gcr_2017-05-12_mara_0BCAB755-9914-473F-9543-37130529809F]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_0BCAB755-9914-473F-9543-37130529809F][org_gcr_2017-05-12_mara_0BCAB755-9914-473F-9543-37130529809F]]
 (let ((lang 'utf-8))
   (message "In the environment, 'LANG' and 'LC_ALL' are set to '%s' and '%s'."
            (getenv "LANG") (getenv "LC_ALL"))
@@ -3134,43 +3134,43 @@ Words: _C_ount, Count In _O_rg , _T_op#, _G_rade Level, _R_eading Ease, _A_ffect
   (prefer-coding-system lang))
 ;; org_gcr_2017-05-12_mara_0BCAB755-9914-473F-9543-37130529809F ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-06-16T16-57-47-05-00_mara_B04ABAAC-94BC-460E-970F-30E13D8A08BA][org_gcr_2018-06-16T16-57-47-05-00_mara_B04ABAAC-94BC-460E-970F-30E13D8A08BA]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-06-16T16-57-47-05-00_mara_B04ABAAC-94BC-460E-970F-30E13D8A08BA][org_gcr_2018-06-16T16-57-47-05-00_mara_B04ABAAC-94BC-460E-970F-30E13D8A08BA]]
 (help/on-gui
  (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING)))
 ;; org_gcr_2018-06-16T16-57-47-05-00_mara_B04ABAAC-94BC-460E-970F-30E13D8A08BA ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-06-16T16-57-47-05-00_mara_C5558E79-8862-409B-A591-F7401A0EB969][org_gcr_2018-06-16T16-57-47-05-00_mara_C5558E79-8862-409B-A591-F7401A0EB969]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-06-16T16-57-47-05-00_mara_C5558E79-8862-409B-A591-F7401A0EB969][org_gcr_2018-06-16T16-57-47-05-00_mara_C5558E79-8862-409B-A591-F7401A0EB969]]
 (help/on-gui
  (help/on-windows
   (set-clipboard-coding-system 'utf-16le-dos)))
 ;; org_gcr_2018-06-16T16-57-47-05-00_mara_C5558E79-8862-409B-A591-F7401A0EB969 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-06-03T01-16-43-05-00_mara_3374BEB2-6CF3-4F07-B2D6-7D84147CEDF3][org_gcr_2018-06-03T01-16-43-05-00_mara_3374BEB2-6CF3-4F07-B2D6-7D84147CEDF3]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-06-03T01-16-43-05-00_mara_3374BEB2-6CF3-4F07-B2D6-7D84147CEDF3][org_gcr_2018-06-03T01-16-43-05-00_mara_3374BEB2-6CF3-4F07-B2D6-7D84147CEDF3]]
 (use-package unicode-fonts
   :ensure t
   :config
   (unicode-fonts-setup))
 ;; org_gcr_2018-06-03T01-16-43-05-00_mara_3374BEB2-6CF3-4F07-B2D6-7D84147CEDF3 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B7889E2D-2E2E-402B-BFC6-F8EC056D1F6E][org_gcr_2017-05-12_mara_B7889E2D-2E2E-402B-BFC6-F8EC056D1F6E]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_B7889E2D-2E2E-402B-BFC6-F8EC056D1F6E][org_gcr_2017-05-12_mara_B7889E2D-2E2E-402B-BFC6-F8EC056D1F6E]]
 (use-package unicode-escape
   :ensure t
   :config)
 ;; org_gcr_2017-05-12_mara_B7889E2D-2E2E-402B-BFC6-F8EC056D1F6E ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_96974788-400B-439B-9005-04569A326C29][org_gcr_2017-05-12_mara_96974788-400B-439B-9005-04569A326C29]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_96974788-400B-439B-9005-04569A326C29][org_gcr_2017-05-12_mara_96974788-400B-439B-9005-04569A326C29]]
 (use-package unicode-troll-stopper
   :ensure t)
 ;; org_gcr_2017-05-12_mara_96974788-400B-439B-9005-04569A326C29 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-06-06T22-01-54-05-00_mara_15766015-F908-40FF-81B2-71DADC8FE0A7][org_gcr_2018-06-06T22-01-54-05-00_mara_15766015-F908-40FF-81B2-71DADC8FE0A7]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-06-06T22-01-54-05-00_mara_15766015-F908-40FF-81B2-71DADC8FE0A7][org_gcr_2018-06-06T22-01-54-05-00_mara_15766015-F908-40FF-81B2-71DADC8FE0A7]]
 (use-package ucs-utils
   :ensure t
   :config
   (ucs-utils-install-aliases))
 ;; org_gcr_2018-06-06T22-01-54-05-00_mara_15766015-F908-40FF-81B2-71DADC8FE0A7 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-06-07T23-45-23-05-00_mara_B658364A-13A0-411F-8DA7-A3FF3B92F38D][org_gcr_2018-06-07T23-45-23-05-00_mara_B658364A-13A0-411F-8DA7-A3FF3B92F38D]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-06-07T23-45-23-05-00_mara_B658364A-13A0-411F-8DA7-A3FF3B92F38D][org_gcr_2018-06-07T23-45-23-05-00_mara_B658364A-13A0-411F-8DA7-A3FF3B92F38D]]
 (use-package unidecode
   :ensure t
   :config
@@ -3192,7 +3192,7 @@ For example try it on: 北亰"
       (message "Sorry, there was no active region to unidecode sanitize."))))
 ;; org_gcr_2018-06-07T23-45-23-05-00_mara_B658364A-13A0-411F-8DA7-A3FF3B92F38D ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_063B5AFB-C687-49D3-8FE2-3BE2BDCB8E84][org_gcr_2017-05-12_mara_063B5AFB-C687-49D3-8FE2-3BE2BDCB8E84]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_063B5AFB-C687-49D3-8FE2-3BE2BDCB8E84][org_gcr_2017-05-12_mara_063B5AFB-C687-49D3-8FE2-3BE2BDCB8E84]]
 (defun warn-if-utf-8-bom ()
   "Warn if UTF-8 BOM bytes are present.
 
@@ -3204,18 +3204,18 @@ Attribution: URL `https://www.reddit.com/r/emacs/comments/4tw0iz/can_i_have_a_wa
 (add-hook 'find-file-hook #'warn-if-utf-8-bom)
 ;; org_gcr_2017-05-12_mara_063B5AFB-C687-49D3-8FE2-3BE2BDCB8E84 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-06-06T22-01-54-05-00_mara_9533C0F0-AAA8-4B6B-A06A-29AD18CF72D7][org_gcr_2018-06-06T22-01-54-05-00_mara_9533C0F0-AAA8-4B6B-A06A-29AD18CF72D7]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-06-06T22-01-54-05-00_mara_9533C0F0-AAA8-4B6B-A06A-29AD18CF72D7][org_gcr_2018-06-06T22-01-54-05-00_mara_9533C0F0-AAA8-4B6B-A06A-29AD18CF72D7]]
 (use-package list-unicode-display
   :ensure t)
 ;; org_gcr_2018-06-06T22-01-54-05-00_mara_9533C0F0-AAA8-4B6B-A06A-29AD18CF72D7 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-06-18T11-01-53-05-00_mara_CF9E5234-BD32-4119-94F1-31D86953850F][org_gcr_2018-06-18T11-01-53-05-00_mara_CF9E5234-BD32-4119-94F1-31D86953850F]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-06-18T11-01-53-05-00_mara_CF9E5234-BD32-4119-94F1-31D86953850F][org_gcr_2018-06-18T11-01-53-05-00_mara_CF9E5234-BD32-4119-94F1-31D86953850F]]
 (add-to-list 'load-path "~/src/org-utf-to-xetex")
 (require 'org-utf-to-xetex)
 (add-hook 'org-mode-hook #'org-utf-to-xetex-prettify)
 ;; org_gcr_2018-06-18T11-01-53-05-00_mara_CF9E5234-BD32-4119-94F1-31D86953850F ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-06-06T22-01-54-05-00_mara_61574A72-BF05-4C0A-B665-BC80C13C35E5][org_gcr_2018-06-06T22-01-54-05-00_mara_61574A72-BF05-4C0A-B665-BC80C13C35E5]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-06-06T22-01-54-05-00_mara_61574A72-BF05-4C0A-B665-BC80C13C35E5][org_gcr_2018-06-06T22-01-54-05-00_mara_61574A72-BF05-4C0A-B665-BC80C13C35E5]]
 (defhydra help/hydra/unicode (:color blue :hint nil)
   "
 Unicode: (_q_uit)
@@ -3248,7 +3248,7 @@ Unicode: (_q_uit)
 (global-set-key (kbd "C-M-u") #'help/hydra/unicode/body)
 ;; org_gcr_2018-06-06T22-01-54-05-00_mara_61574A72-BF05-4C0A-B665-BC80C13C35E5 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C30EFFA1-FDBA-413F-AD23-29C0C2095231][org_gcr_2017-05-12_mara_C30EFFA1-FDBA-413F-AD23-29C0C2095231]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_C30EFFA1-FDBA-413F-AD23-29C0C2095231][org_gcr_2017-05-12_mara_C30EFFA1-FDBA-413F-AD23-29C0C2095231]]
 (use-package gnu-apl-mode
   :ensure t
   :init
@@ -3323,21 +3323,21 @@ GNU APL: ⏼%(help/gnu-apl-runningp)
   (add-to-list 'org-babel-load-languages '(gnu-apl . t)))
 ;; org_gcr_2017-05-12_mara_C30EFFA1-FDBA-413F-AD23-29C0C2095231 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_CC727094-99D3-4C48-BE27-C28FC738DF34][org_gcr_2017-05-12_mara_CC727094-99D3-4C48-BE27-C28FC738DF34]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_CC727094-99D3-4C48-BE27-C28FC738DF34][org_gcr_2017-05-12_mara_CC727094-99D3-4C48-BE27-C28FC738DF34]]
 (add-to-list 'auto-mode-alist '("\\.scm\\'" . scheme-mode))
 (add-to-list 'auto-mode-alist '("\\.ss\\'" . scheme-mode))
 ;; org_gcr_2017-05-12_mara_CC727094-99D3-4C48-BE27-C28FC738DF34 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_998AB8A6-A934-4E5A-B869-E1348D919529][org_gcr_2017-05-12_mara_998AB8A6-A934-4E5A-B869-E1348D919529]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_998AB8A6-A934-4E5A-B869-E1348D919529][org_gcr_2017-05-12_mara_998AB8A6-A934-4E5A-B869-E1348D919529]]
 (add-to-list 'auto-mode-alist '("\\.sls\\'" . scheme-mode))
 (add-to-list 'auto-mode-alist '("\\.sps\\'" . scheme-mode))
 ;; org_gcr_2017-05-12_mara_998AB8A6-A934-4E5A-B869-E1348D919529 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A80E9E8F-A5B7-4C48-A3E5-2C365178EFAF][org_gcr_2017-05-12_mara_A80E9E8F-A5B7-4C48-A3E5-2C365178EFAF]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_A80E9E8F-A5B7-4C48-A3E5-2C365178EFAF][org_gcr_2017-05-12_mara_A80E9E8F-A5B7-4C48-A3E5-2C365178EFAF]]
 (add-to-list 'auto-mode-alist '("\\.rkt\\'" . scheme-mode))
 ;; org_gcr_2017-05-12_mara_A80E9E8F-A5B7-4C48-A3E5-2C365178EFAF ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-07-27_mara_EAEF335C-A35D-4746-AB2F-58BDDDFB6CC0][org_gcr_2017-07-27_mara_EAEF335C-A35D-4746-AB2F-58BDDDFB6CC0]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-07-27_mara_EAEF335C-A35D-4746-AB2F-58BDDDFB6CC0][org_gcr_2017-07-27_mara_EAEF335C-A35D-4746-AB2F-58BDDDFB6CC0]]
 (use-package scheme
   :config
   (setq scheme-program-name "chez")
@@ -3349,7 +3349,7 @@ GNU APL: ⏼%(help/gnu-apl-runningp)
   (add-hook 'inferior-scheme-mode-hook #'help/inferior-scheme-mode-hook-fn))
 ;; org_gcr_2017-07-27_mara_EAEF335C-A35D-4746-AB2F-58BDDDFB6CC0 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5457F0EC-AAB3-4502-ACCD-7F9C1579293D][org_gcr_2017-05-12_mara_5457F0EC-AAB3-4502-ACCD-7F9C1579293D]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_5457F0EC-AAB3-4502-ACCD-7F9C1579293D][org_gcr_2017-05-12_mara_5457F0EC-AAB3-4502-ACCD-7F9C1579293D]]
 (use-package geiser
   :ensure t
   :config
@@ -3403,7 +3403,7 @@ Geiser REPL: ⏼%(help/geiser-on-p)
   (add-hook 'geiser-repl-mode-hook #'help/geiser-repl-mode-hook-fn))
 ;; org_gcr_2017-05-12_mara_5457F0EC-AAB3-4502-ACCD-7F9C1579293D ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_221DF59F-0817-4F0A-BDE7-01FD9D87BAF9][org_gcr_2017-05-12_mara_221DF59F-0817-4F0A-BDE7-01FD9D87BAF9]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_221DF59F-0817-4F0A-BDE7-01FD9D87BAF9][org_gcr_2017-05-12_mara_221DF59F-0817-4F0A-BDE7-01FD9D87BAF9]]
 (use-package ac-geiser
   :ensure t
   :config
@@ -3413,14 +3413,14 @@ Geiser REPL: ⏼%(help/geiser-on-p)
     '(add-to-list 'ac-modes 'geiser-repl-mode)))
 ;; org_gcr_2017-05-12_mara_221DF59F-0817-4F0A-BDE7-01FD9D87BAF9 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_3C48D997-170E-40F4-9BB6-F6BAA9DE77F2][org_gcr_2017-05-12_mara_3C48D997-170E-40F4-9BB6-F6BAA9DE77F2]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_3C48D997-170E-40F4-9BB6-F6BAA9DE77F2][org_gcr_2017-05-12_mara_3C48D997-170E-40F4-9BB6-F6BAA9DE77F2]]
 (defun help/c-mode-common-hook-fn ()
   "HELP c-mode-common customizations."
   (interactive))
 (add-hook 'c-mode-common-hook #'help/c-mode-common-hook-fn)
 ;; org_gcr_2017-05-12_mara_3C48D997-170E-40F4-9BB6-F6BAA9DE77F2 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-07-30_mara_04B4D7BA-6213-4EC0-8631-461270FE1B71][org_gcr_2017-07-30_mara_04B4D7BA-6213-4EC0-8631-461270FE1B71]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-07-30_mara_04B4D7BA-6213-4EC0-8631-461270FE1B71][org_gcr_2017-07-30_mara_04B4D7BA-6213-4EC0-8631-461270FE1B71]]
 (use-package go-mode
   :ensure t
   :config
@@ -3475,7 +3475,7 @@ Geiser REPL: ⏼%(help/geiser-on-p)
     (interactive)
     (help/save-all-file-buffers)
     (call-interactively 'go-rename))
-  (add-to-list 'load-path "~/git/github/gorepl-mode")
+  (add-to-list 'load-path "~/git/github-anonymous/gorepl-mode")
   (require 'gorepl-mode)
   (defhydra help/hydra/right/go-mode (:color blue :hint nil)
     "
@@ -3517,7 +3517,7 @@ Geiser REPL: ⏼%(help/geiser-on-p)
   (add-hook 'go-mode-hook #'help/go-mode-hook-fn))
 ;; org_gcr_2017-07-30_mara_04B4D7BA-6213-4EC0-8631-461270FE1B71 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-06-28_mara_110DAD24-25A3-46B0-A0B1-FD26BFDB28C7][org_gcr_2017-06-28_mara_110DAD24-25A3-46B0-A0B1-FD26BFDB28C7]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-06-28_mara_110DAD24-25A3-46B0-A0B1-FD26BFDB28C7][org_gcr_2017-06-28_mara_110DAD24-25A3-46B0-A0B1-FD26BFDB28C7]]
 (defun help/python-mode-hook-fn ()
   "HELP python mode customizatin."
   (interactive)
@@ -3525,7 +3525,7 @@ Geiser REPL: ⏼%(help/geiser-on-p)
 (add-hook 'python-mode-hook #'help/python-mode-hook-fn)
 ;; org_gcr_2017-06-28_mara_110DAD24-25A3-46B0-A0B1-FD26BFDB28C7 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B7B9F4BB-5899-4F2B-94B0-B38F098E9528][org_gcr_2017-05-12_mara_B7B9F4BB-5899-4F2B-94B0-B38F098E9528]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_B7B9F4BB-5899-4F2B-94B0-B38F098E9528][org_gcr_2017-05-12_mara_B7B9F4BB-5899-4F2B-94B0-B38F098E9528]]
 (use-package yasnippet
   :ensure t
   :config
@@ -3547,12 +3547,12 @@ Geiser REPL: ⏼%(help/geiser-on-p)
   :diminish yas-minor-mode)
 ;; org_gcr_2017-05-12_mara_B7B9F4BB-5899-4F2B-94B0-B38F098E9528 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E4D8989C-E363-4E6B-A308-B0E667FBCE7C][org_gcr_2017-05-12_mara_E4D8989C-E363-4E6B-A308-B0E667FBCE7C]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_E4D8989C-E363-4E6B-A308-B0E667FBCE7C][org_gcr_2017-05-12_mara_E4D8989C-E363-4E6B-A308-B0E667FBCE7C]]
 (eval-after-load "abbrev"
   '(diminish 'abbrev-mode))
 ;; org_gcr_2017-05-12_mara_E4D8989C-E363-4E6B-A308-B0E667FBCE7C ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_6219D858-98BB-48CF-96F0-ABEB6756A658][org_gcr_2017-05-12_mara_6219D858-98BB-48CF-96F0-ABEB6756A658]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_6219D858-98BB-48CF-96F0-ABEB6756A658][org_gcr_2017-05-12_mara_6219D858-98BB-48CF-96F0-ABEB6756A658]]
 (use-package web-mode
   :ensure t
   :init
@@ -3605,7 +3605,7 @@ Geiser REPL: ⏼%(help/geiser-on-p)
 (add-hook 'web-mode-hook #'help/web-mode-hook-fn)
 ;; org_gcr_2017-05-12_mara_6219D858-98BB-48CF-96F0-ABEB6756A658 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_56F80A50-4914-4F8F-8771-5800A54F8300][org_gcr_2017-05-12_mara_56F80A50-4914-4F8F-8771-5800A54F8300]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_56F80A50-4914-4F8F-8771-5800A54F8300][org_gcr_2017-05-12_mara_56F80A50-4914-4F8F-8771-5800A54F8300]]
 (use-package js2-mode
   :ensure t
   :mode (("\\.js$" . js2-mode)
@@ -3624,7 +3624,7 @@ Geiser REPL: ⏼%(help/geiser-on-p)
   (js2r-add-keybindings-with-prefix "C-c C-m"))
 ;; org_gcr_2017-05-12_mara_56F80A50-4914-4F8F-8771-5800A54F8300 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-04-20T15-46-50-05-00_mara_E248AEB6-4E35-40F3-A23A-E5D7BED863C4][org_gcr_2018-04-20T15-46-50-05-00_mara_E248AEB6-4E35-40F3-A23A-E5D7BED863C4]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-04-20T15-46-50-05-00_mara_E248AEB6-4E35-40F3-A23A-E5D7BED863C4][org_gcr_2018-04-20T15-46-50-05-00_mara_E248AEB6-4E35-40F3-A23A-E5D7BED863C4]]
 (use-package apples-mode
   :ensure t
   :config
@@ -3665,7 +3665,7 @@ Geiser REPL: ⏼%(help/geiser-on-p)
   (add-hook 'apples-mode-hook #'help/apples-mode-hook-fun))
 ;; org_gcr_2018-04-20T15-46-50-05-00_mara_E248AEB6-4E35-40F3-A23A-E5D7BED863C4 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_498DAC46-DA9D-4AAA-82BF-46D712E4DBA5][org_gcr_2017-05-12_mara_498DAC46-DA9D-4AAA-82BF-46D712E4DBA5]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_498DAC46-DA9D-4AAA-82BF-46D712E4DBA5][org_gcr_2017-05-12_mara_498DAC46-DA9D-4AAA-82BF-46D712E4DBA5]]
 (use-package json-mode
   :ensure t
   :diminish json-mode
@@ -3697,7 +3697,7 @@ _b_eautify
   (add-hook 'json-mode-hook #'help/json-mode-hook-fn))
 ;; org_gcr_2017-05-12_mara_498DAC46-DA9D-4AAA-82BF-46D712E4DBA5 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-01-16_mara_B1860F4D-930E-4DDE-8392-BDC52107B11F][org_gcr_2018-01-16_mara_B1860F4D-930E-4DDE-8392-BDC52107B11F]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-01-16_mara_B1860F4D-930E-4DDE-8392-BDC52107B11F][org_gcr_2018-01-16_mara_B1860F4D-930E-4DDE-8392-BDC52107B11F]]
 (use-package yaml-mode
   :ensure t
   :config
@@ -3745,7 +3745,7 @@ YAML: (q to quit)
     (setq flycheck-yaml-yamllint-executable "/Users/gcr/yamllint/env/bin/yamllint")))
 ;; org_gcr_2018-01-16_mara_B1860F4D-930E-4DDE-8392-BDC52107B11F ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-05-11T16-33-31-05-00_mara_0045CEB5-A317-4B3F-8362-C60124D35AD7][org_gcr_2018-05-11T16-33-31-05-00_mara_0045CEB5-A317-4B3F-8362-C60124D35AD7]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-05-11T16-33-31-05-00_mara_0045CEB5-A317-4B3F-8362-C60124D35AD7][org_gcr_2018-05-11T16-33-31-05-00_mara_0045CEB5-A317-4B3F-8362-C60124D35AD7]]
 (use-package csv-mode
   :ensure t
   :config
@@ -3798,12 +3798,12 @@ CSV: (_q_uit)
   (add-hook 'csv-mode-hook #'help/csv-mode-hook-fn))
 ;; org_gcr_2018-05-11T16-33-31-05-00_mara_0045CEB5-A317-4B3F-8362-C60124D35AD7 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D035C4E4-B983-4D74-9E3C-764EF00B3795][org_gcr_2017-05-12_mara_D035C4E4-B983-4D74-9E3C-764EF00B3795]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_D035C4E4-B983-4D74-9E3C-764EF00B3795][org_gcr_2017-05-12_mara_D035C4E4-B983-4D74-9E3C-764EF00B3795]]
 (use-package tex
   :ensure auctex)
 ;; org_gcr_2017-05-12_mara_D035C4E4-B983-4D74-9E3C-764EF00B3795 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-07_mara_F85003E7-83AD-4E9E-B333-E0FBD79872F5][org_gcr_2018-03-07_mara_F85003E7-83AD-4E9E-B333-E0FBD79872F5]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-07_mara_F85003E7-83AD-4E9E-B333-E0FBD79872F5][org_gcr_2018-03-07_mara_F85003E7-83AD-4E9E-B333-E0FBD79872F5]]
 (use-package auctex-latexmk
   :ensure t
   :config
@@ -3811,15 +3811,15 @@ CSV: (_q_uit)
   (auctex-latexmk-setup))
 ;; org_gcr_2018-03-07_mara_F85003E7-83AD-4E9E-B333-E0FBD79872F5 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_4C2DF1A6-C32B-49F5-A88B-1268AFBD94C0][org_gcr_2018-03-06_mara_4C2DF1A6-C32B-49F5-A88B-1268AFBD94C0]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-06_mara_4C2DF1A6-C32B-49F5-A88B-1268AFBD94C0][org_gcr_2018-03-06_mara_4C2DF1A6-C32B-49F5-A88B-1268AFBD94C0]]
 (setq TeX-electric-math t)
 ;; org_gcr_2018-03-06_mara_4C2DF1A6-C32B-49F5-A88B-1268AFBD94C0 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_88B1D568-BECF-464A-A4D0-A5AE34835C7D][org_gcr_2018-03-06_mara_88B1D568-BECF-464A-A4D0-A5AE34835C7D]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-06_mara_88B1D568-BECF-464A-A4D0-A5AE34835C7D][org_gcr_2018-03-06_mara_88B1D568-BECF-464A-A4D0-A5AE34835C7D]]
 (setq LaTeX-electric-left-right-brace t)
 ;; org_gcr_2018-03-06_mara_88B1D568-BECF-464A-A4D0-A5AE34835C7D ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_284DFD79-73E7-41FF-990D-7CD066DB225E][org_gcr_2018-03-06_mara_284DFD79-73E7-41FF-990D-7CD066DB225E]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-06_mara_284DFD79-73E7-41FF-990D-7CD066DB225E][org_gcr_2018-03-06_mara_284DFD79-73E7-41FF-990D-7CD066DB225E]]
 (setq LaTeX-section-hook
       '(LaTeX-section-heading
         LaTeX-section-title
@@ -3828,97 +3828,97 @@ CSV: (_q_uit)
         LaTeX-section-label))
 ;; org_gcr_2018-03-06_mara_284DFD79-73E7-41FF-990D-7CD066DB225E ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_43E5AAFE-542B-4ED2-9E1A-6F744E6EF1CA][org_gcr_2018-03-06_mara_43E5AAFE-542B-4ED2-9E1A-6F744E6EF1CA]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-06_mara_43E5AAFE-542B-4ED2-9E1A-6F744E6EF1CA][org_gcr_2018-03-06_mara_43E5AAFE-542B-4ED2-9E1A-6F744E6EF1CA]]
 (setq TeX-arg-item-label-p t)
 ;; org_gcr_2018-03-06_mara_43E5AAFE-542B-4ED2-9E1A-6F744E6EF1CA ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_0C89F53D-FA9C-4A41-889F-24F4E708AE03][org_gcr_2018-03-06_mara_0C89F53D-FA9C-4A41-889F-24F4E708AE03]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-06_mara_0C89F53D-FA9C-4A41-889F-24F4E708AE03][org_gcr_2018-03-06_mara_0C89F53D-FA9C-4A41-889F-24F4E708AE03]]
 (setq LaTeX-math-menu-unicode t)
 ;; org_gcr_2018-03-06_mara_0C89F53D-FA9C-4A41-889F-24F4E708AE03 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_A73A7792-02FB-400F-8805-B9C89E9F8ADA][org_gcr_2018-03-06_mara_A73A7792-02FB-400F-8805-B9C89E9F8ADA]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-06_mara_A73A7792-02FB-400F-8805-B9C89E9F8ADA][org_gcr_2018-03-06_mara_A73A7792-02FB-400F-8805-B9C89E9F8ADA]]
 (setq TeX-electric-sub-and-superscript t)
 ;; org_gcr_2018-03-06_mara_A73A7792-02FB-400F-8805-B9C89E9F8ADA ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_9FBCFE6F-DFBF-4921-A6E6-DA7B98748A3A][org_gcr_2018-03-06_mara_9FBCFE6F-DFBF-4921-A6E6-DA7B98748A3A]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-06_mara_9FBCFE6F-DFBF-4921-A6E6-DA7B98748A3A][org_gcr_2018-03-06_mara_9FBCFE6F-DFBF-4921-A6E6-DA7B98748A3A]]
 (setq TeX-insert-macro-default-style 'show-all-optional-args)
 ;; org_gcr_2018-03-06_mara_9FBCFE6F-DFBF-4921-A6E6-DA7B98748A3A ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_42A55264-E5F9-4FBE-A0A1-3C53CAB34932][org_gcr_2018-03-06_mara_42A55264-E5F9-4FBE-A0A1-3C53CAB34932]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-06_mara_42A55264-E5F9-4FBE-A0A1-3C53CAB34932][org_gcr_2018-03-06_mara_42A55264-E5F9-4FBE-A0A1-3C53CAB34932]]
 (setq TeX-electric-escape t)
 ;; org_gcr_2018-03-06_mara_42A55264-E5F9-4FBE-A0A1-3C53CAB34932 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_DBAA8162-1455-436D-AD2C-37EFC820ACC4][org_gcr_2018-03-06_mara_DBAA8162-1455-436D-AD2C-37EFC820ACC4]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-06_mara_DBAA8162-1455-436D-AD2C-37EFC820ACC4][org_gcr_2018-03-06_mara_DBAA8162-1455-436D-AD2C-37EFC820ACC4]]
 (setq TeX-insert-braces t)
 ;; org_gcr_2018-03-06_mara_DBAA8162-1455-436D-AD2C-37EFC820ACC4 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_6C656B2D-B4AB-4800-AE8D-C9D38F593430][org_gcr_2018-03-06_mara_6C656B2D-B4AB-4800-AE8D-C9D38F593430]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-06_mara_6C656B2D-B4AB-4800-AE8D-C9D38F593430][org_gcr_2018-03-06_mara_6C656B2D-B4AB-4800-AE8D-C9D38F593430]]
 (setq TeX-complete-expert-commands t)
 ;; org_gcr_2018-03-06_mara_6C656B2D-B4AB-4800-AE8D-C9D38F593430 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_D50FCEC2-0D5A-49C6-B599-E649F315375D][org_gcr_2018-03-06_mara_D50FCEC2-0D5A-49C6-B599-E649F315375D]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-06_mara_D50FCEC2-0D5A-49C6-B599-E649F315375D][org_gcr_2018-03-06_mara_D50FCEC2-0D5A-49C6-B599-E649F315375D]]
 (setq LaTeX-indent-environment-check t)
 ;; org_gcr_2018-03-06_mara_D50FCEC2-0D5A-49C6-B599-E649F315375D ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_24B30BAF-6284-48FA-BBAC-172979A25B71][org_gcr_2018-03-06_mara_24B30BAF-6284-48FA-BBAC-172979A25B71]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-06_mara_24B30BAF-6284-48FA-BBAC-172979A25B71][org_gcr_2018-03-06_mara_24B30BAF-6284-48FA-BBAC-172979A25B71]]
 (setq LaTeX-syntactic-comments t)
 ;; org_gcr_2018-03-06_mara_24B30BAF-6284-48FA-BBAC-172979A25B71 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_851CFD0C-D616-47D1-A0E0-044053B89B03][org_gcr_2017-05-12_mara_851CFD0C-D616-47D1-A0E0-044053B89B03]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_851CFD0C-D616-47D1-A0E0-044053B89B03][org_gcr_2017-05-12_mara_851CFD0C-D616-47D1-A0E0-044053B89B03]]
 (setq TeX-save-query nil)
 ;; org_gcr_2017-05-12_mara_851CFD0C-D616-47D1-A0E0-044053B89B03 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5B99942E-0535-40CC-9C61-F895DAF8C545][org_gcr_2017-05-12_mara_5B99942E-0535-40CC-9C61-F895DAF8C545]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_5B99942E-0535-40CC-9C61-F895DAF8C545][org_gcr_2017-05-12_mara_5B99942E-0535-40CC-9C61-F895DAF8C545]]
 (add-to-list 'auto-mode-alist '("\\.lco?\\'" . TeX-latex-mode))
 ;; org_gcr_2017-05-12_mara_5B99942E-0535-40CC-9C61-F895DAF8C545 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_58F2B467-037A-4DE8-B780-886A7A0BEC09][org_gcr_2018-03-06_mara_58F2B467-037A-4DE8-B780-886A7A0BEC09]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-06_mara_58F2B467-037A-4DE8-B780-886A7A0BEC09][org_gcr_2018-03-06_mara_58F2B467-037A-4DE8-B780-886A7A0BEC09]]
 (setq font-latex-fontify-script t)
 ;; org_gcr_2018-03-06_mara_58F2B467-037A-4DE8-B780-886A7A0BEC09 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_6C92D757-E7A6-4635-B1F5-762DAC8C8503][org_gcr_2018-03-06_mara_6C92D757-E7A6-4635-B1F5-762DAC8C8503]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-06_mara_6C92D757-E7A6-4635-B1F5-762DAC8C8503][org_gcr_2018-03-06_mara_6C92D757-E7A6-4635-B1F5-762DAC8C8503]]
 (setq font-latex-fontify-script-max-level 3)
 ;; org_gcr_2018-03-06_mara_6C92D757-E7A6-4635-B1F5-762DAC8C8503 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_10961961-251E-46A1-B155-FD424A99B2FF][org_gcr_2018-03-06_mara_10961961-251E-46A1-B155-FD424A99B2FF]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-06_mara_10961961-251E-46A1-B155-FD424A99B2FF][org_gcr_2018-03-06_mara_10961961-251E-46A1-B155-FD424A99B2FF]]
 (setq TeX-ispell-extend-skip-list t)
 ;; org_gcr_2018-03-06_mara_10961961-251E-46A1-B155-FD424A99B2FF ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-07_mara_4533FF11-F0B1-48B8-A780-D737AC29F7D6][org_gcr_2018-03-07_mara_4533FF11-F0B1-48B8-A780-D737AC29F7D6]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-07_mara_4533FF11-F0B1-48B8-A780-D737AC29F7D6][org_gcr_2018-03-07_mara_4533FF11-F0B1-48B8-A780-D737AC29F7D6]]
 (setq TeX-PDF-mode t)
 ;; org_gcr_2018-03-07_mara_4533FF11-F0B1-48B8-A780-D737AC29F7D6 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_C3C1359C-0A11-47C1-AEFD-4C657DF7787A][org_gcr_2018-03-06_mara_C3C1359C-0A11-47C1-AEFD-4C657DF7787A]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-06_mara_C3C1359C-0A11-47C1-AEFD-4C657DF7787A][org_gcr_2018-03-06_mara_C3C1359C-0A11-47C1-AEFD-4C657DF7787A]]
 (setq-default TeX-engine 'xetex)
 (setq-default TeX-PDF-mode t)
 ;; org_gcr_2018-03-06_mara_C3C1359C-0A11-47C1-AEFD-4C657DF7787A ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_4826C62E-511D-453D-8FF2-3A916A9D3B65][org_gcr_2018-03-06_mara_4826C62E-511D-453D-8FF2-3A916A9D3B65]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-06_mara_4826C62E-511D-453D-8FF2-3A916A9D3B65][org_gcr_2018-03-06_mara_4826C62E-511D-453D-8FF2-3A916A9D3B65]]
 (setq TeX-show-compilation t)
 ;; org_gcr_2018-03-06_mara_4826C62E-511D-453D-8FF2-3A916A9D3B65 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_88CDF424-3E45-4D0E-838F-B9387054B7DB][org_gcr_2018-03-06_mara_88CDF424-3E45-4D0E-838F-B9387054B7DB]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-06_mara_88CDF424-3E45-4D0E-838F-B9387054B7DB][org_gcr_2018-03-06_mara_88CDF424-3E45-4D0E-838F-B9387054B7DB]]
 (setq TeX-file-line-error t)
 ;; org_gcr_2018-03-06_mara_88CDF424-3E45-4D0E-838F-B9387054B7DB ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-06_mara_214A76EF-F021-4FE3-95B7-AFE7453EDB21][org_gcr_2018-03-06_mara_214A76EF-F021-4FE3-95B7-AFE7453EDB21]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-06_mara_214A76EF-F021-4FE3-95B7-AFE7453EDB21][org_gcr_2018-03-06_mara_214A76EF-F021-4FE3-95B7-AFE7453EDB21]]
 (setq TeX-clean-confirm t)
 ;; org_gcr_2018-03-06_mara_214A76EF-F021-4FE3-95B7-AFE7453EDB21 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-05_mara_5F1D507C-7E7F-40C0-9547-A2864763FFEC][org_gcr_2018-03-05_mara_5F1D507C-7E7F-40C0-9547-A2864763FFEC]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-05_mara_5F1D507C-7E7F-40C0-9547-A2864763FFEC][org_gcr_2018-03-05_mara_5F1D507C-7E7F-40C0-9547-A2864763FFEC]]
 (setq-default TeX-master t)
 ;; org_gcr_2018-03-05_mara_5F1D507C-7E7F-40C0-9547-A2864763FFEC ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-07_mara_8C054399-B5D2-4951-BB01-9D97FD1EBD4F][org_gcr_2018-03-07_mara_8C054399-B5D2-4951-BB01-9D97FD1EBD4F]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-07_mara_8C054399-B5D2-4951-BB01-9D97FD1EBD4F][org_gcr_2018-03-07_mara_8C054399-B5D2-4951-BB01-9D97FD1EBD4F]]
 (setq TeX-parse-self t)
 (setq TeX-auto-save t)
 ;; org_gcr_2018-03-07_mara_8C054399-B5D2-4951-BB01-9D97FD1EBD4F ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-07_mara_DB006B6E-953F-48B8-ABE2-1CC763558DA5][org_gcr_2018-03-07_mara_DB006B6E-953F-48B8-ABE2-1CC763558DA5]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-07_mara_DB006B6E-953F-48B8-ABE2-1CC763558DA5][org_gcr_2018-03-07_mara_DB006B6E-953F-48B8-ABE2-1CC763558DA5]]
 (setq TeX-file-recurse t)
 ;; org_gcr_2018-03-07_mara_DB006B6E-953F-48B8-ABE2-1CC763558DA5 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-05_mara_0A5B88B3-C1DE-4C06-B44C-98E5468CDCC2][org_gcr_2018-03-05_mara_0A5B88B3-C1DE-4C06-B44C-98E5468CDCC2]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-05_mara_0A5B88B3-C1DE-4C06-B44C-98E5468CDCC2][org_gcr_2018-03-05_mara_0A5B88B3-C1DE-4C06-B44C-98E5468CDCC2]]
 (define-key TeX-mode-map (kbd "C-c C-c") #'help/safb-TeX-command-master)
 (define-key TeX-mode-map (kbd "C-j") nil)
 (define-key TeX-mode-map (kbd "C-M-f") nil)
@@ -3929,7 +3929,7 @@ CSV: (_q_uit)
 (define-key TeX-mode-map (kbd "s-l") #'TeX-complete-symbol)
 ;; org_gcr_2018-03-05_mara_0A5B88B3-C1DE-4C06-B44C-98E5468CDCC2 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-05_mara_033D8FD5-B014-40CC-9EBD-095FF51EBD6A][org_gcr_2018-03-05_mara_033D8FD5-B014-40CC-9EBD-095FF51EBD6A]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-05_mara_033D8FD5-B014-40CC-9EBD-095FF51EBD6A][org_gcr_2018-03-05_mara_033D8FD5-B014-40CC-9EBD-095FF51EBD6A]]
 (defhydra help/hydra/auctex (:color blue
                                     :hint nil)
   "
@@ -3990,7 +3990,7 @@ Errors: _R_eport ⏼_B_oxes ⏼_W_arnings
   ("q" nil))
 ;; org_gcr_2018-03-05_mara_033D8FD5-B014-40CC-9EBD-095FF51EBD6A ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-05_mara_8E7A881B-6807-4FA9-A37B-F5E5B1292181][org_gcr_2018-03-05_mara_8E7A881B-6807-4FA9-A37B-F5E5B1292181]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-05_mara_8E7A881B-6807-4FA9-A37B-F5E5B1292181][org_gcr_2018-03-05_mara_8E7A881B-6807-4FA9-A37B-F5E5B1292181]]
 (defun help/TeX-mode-hook ()
   (key-chord-define-local "hh" #'help/hydra/auctex/body)
   (LaTeX-math-mode)
@@ -4003,11 +4003,11 @@ Errors: _R_eport ⏼_B_oxes ⏼_W_arnings
 (add-hook 'TeX-mode-hook 'help/TeX-mode-hook)
 ;; org_gcr_2018-03-05_mara_8E7A881B-6807-4FA9-A37B-F5E5B1292181 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C74104AA-A25C-4BE8-A7DD-99DEA240FF73][org_gcr_2017-05-12_mara_C74104AA-A25C-4BE8-A7DD-99DEA240FF73]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_C74104AA-A25C-4BE8-A7DD-99DEA240FF73][org_gcr_2017-05-12_mara_C74104AA-A25C-4BE8-A7DD-99DEA240FF73]]
 (eval-after-load "ox" '(require 'ox-koma-letter))
 ;; org_gcr_2017-05-12_mara_C74104AA-A25C-4BE8-A7DD-99DEA240FF73 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8A241D12-24B3-4C4C-AC99-B55954611025][org_gcr_2017-05-12_mara_8A241D12-24B3-4C4C-AC99-B55954611025]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_8A241D12-24B3-4C4C-AC99-B55954611025][org_gcr_2017-05-12_mara_8A241D12-24B3-4C4C-AC99-B55954611025]]
 (eval-after-load "ox-koma-letter"
   '(progn
      (add-to-list 'org-latex-classes
@@ -4019,11 +4019,11 @@ Errors: _R_eport ⏼_B_oxes ⏼_W_arnings
      (setq org-koma-letter-default-class "help-letter")))
 ;; org_gcr_2017-05-12_mara_8A241D12-24B3-4C4C-AC99-B55954611025 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_33A83D5A-E541-474C-AA0D-2E039EC74CDD][org_gcr_2017-05-12_mara_33A83D5A-E541-474C-AA0D-2E039EC74CDD]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_33A83D5A-E541-474C-AA0D-2E039EC74CDD][org_gcr_2017-05-12_mara_33A83D5A-E541-474C-AA0D-2E039EC74CDD]]
 (setq org-koma-letter-class-option-file "KomaDefault")
 ;; org_gcr_2017-05-12_mara_33A83D5A-E541-474C-AA0D-2E039EC74CDD ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_42D37E52-A420-4196-8B2C-6755441A5FC3][org_gcr_2017-05-12_mara_42D37E52-A420-4196-8B2C-6755441A5FC3]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_42D37E52-A420-4196-8B2C-6755441A5FC3][org_gcr_2017-05-12_mara_42D37E52-A420-4196-8B2C-6755441A5FC3]]
 (use-package markdown-mode
   :ensure t
   :config
@@ -4037,7 +4037,7 @@ Errors: _R_eport ⏼_B_oxes ⏼_W_arnings
    (setq markdown-open-command "/Users/gcr/util/mark")))
 ;; org_gcr_2017-05-12_mara_42D37E52-A420-4196-8B2C-6755441A5FC3 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-11-19_mara_60445A8D-329F-4816-BFA5-1283AC570D30][org_gcr_2017-11-19_mara_60445A8D-329F-4816-BFA5-1283AC570D30]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-11-19_mara_60445A8D-329F-4816-BFA5-1283AC570D30][org_gcr_2017-11-19_mara_60445A8D-329F-4816-BFA5-1283AC570D30]]
 (use-package el2markdown
   :ensure t
   :config
@@ -4047,24 +4047,24 @@ Errors: _R_eport ⏼_B_oxes ⏼_W_arnings
   (add-hook 'el2markdown-post-convert-hook #'help/el2markdown-post-convert-hook-fn))
 ;; org_gcr_2017-11-19_mara_60445A8D-329F-4816-BFA5-1283AC570D30 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_62E6542A-B340-470A-B7E0-2F4438EBBAE9][org_gcr_2017-05-12_mara_62E6542A-B340-470A-B7E0-2F4438EBBAE9]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_62E6542A-B340-470A-B7E0-2F4438EBBAE9][org_gcr_2017-05-12_mara_62E6542A-B340-470A-B7E0-2F4438EBBAE9]]
 (use-package htmlize
   :config
   (setq org-html-htmlize-output-type htmlize-output-type)
   (setq htmlize-output-type 'inline-css))
 ;; org_gcr_2017-05-12_mara_62E6542A-B340-470A-B7E0-2F4438EBBAE9 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-12-03_mara_70A08E80-7CD1-4D4F-9584-34F6FBD7A32E][org_gcr_2017-12-03_mara_70A08E80-7CD1-4D4F-9584-34F6FBD7A32E]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-12-03_mara_70A08E80-7CD1-4D4F-9584-34F6FBD7A32E][org_gcr_2017-12-03_mara_70A08E80-7CD1-4D4F-9584-34F6FBD7A32E]]
 (use-package ox-clip
   :ensure t)
 ;; org_gcr_2017-12-03_mara_70A08E80-7CD1-4D4F-9584-34F6FBD7A32E ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_41F8B285-650A-4394-8ECD-85C81181DF14][org_gcr_2017-05-12_mara_41F8B285-650A-4394-8ECD-85C81181DF14]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_41F8B285-650A-4394-8ECD-85C81181DF14][org_gcr_2017-05-12_mara_41F8B285-650A-4394-8ECD-85C81181DF14]]
 (setq org-ascii-text-width 80)
 (setq org-ascii-global-margin 0)
 ;; org_gcr_2017-05-12_mara_41F8B285-650A-4394-8ECD-85C81181DF14 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_96A9D762-036A-49C0-9E1B-5ACD3F5AE58E][org_gcr_2017-05-12_mara_96A9D762-036A-49C0-9E1B-5ACD3F5AE58E]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_96A9D762-036A-49C0-9E1B-5ACD3F5AE58E][org_gcr_2017-05-12_mara_96A9D762-036A-49C0-9E1B-5ACD3F5AE58E]]
 (defun help/occur-non-ascii ()
   "Find any non-ascii characters in the current buffer.
 Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
@@ -4072,11 +4072,11 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
   (occur "[^[:ascii:]]"))
 ;; org_gcr_2017-05-12_mara_96A9D762-036A-49C0-9E1B-5ACD3F5AE58E ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8D4105B8-5215-4835-91BF-B0D03ACC3A78][org_gcr_2017-05-12_mara_8D4105B8-5215-4835-91BF-B0D03ACC3A78]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_8D4105B8-5215-4835-91BF-B0D03ACC3A78][org_gcr_2017-05-12_mara_8D4105B8-5215-4835-91BF-B0D03ACC3A78]]
 (use-package ox-beamer)
 ;; org_gcr_2017-05-12_mara_8D4105B8-5215-4835-91BF-B0D03ACC3A78 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B19CF074-8B77-4843-912C-F68B6FB0FE2F][org_gcr_2017-05-12_mara_B19CF074-8B77-4843-912C-F68B6FB0FE2F]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_B19CF074-8B77-4843-912C-F68B6FB0FE2F][org_gcr_2017-05-12_mara_B19CF074-8B77-4843-912C-F68B6FB0FE2F]]
 (use-package fountain-mode
   :config
   (add-to-list 'auto-mode-alist '("\\.fountain$" . fountain-mode))
@@ -4093,7 +4093,7 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
           fountain-stx)))
 ;; org_gcr_2017-05-12_mara_B19CF074-8B77-4843-912C-F68B6FB0FE2F ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-07-16_mara_FB8AD647-F0FA-4004-B930-A9CD97E97900][org_gcr_2017-07-16_mara_FB8AD647-F0FA-4004-B930-A9CD97E97900]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-07-16_mara_FB8AD647-F0FA-4004-B930-A9CD97E97900][org_gcr_2017-07-16_mara_FB8AD647-F0FA-4004-B930-A9CD97E97900]]
 (use-package sh-script
   :config
   (defun help/sh-mode-hook-fn ()
@@ -4102,12 +4102,12 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
   (add-hook 'sh-mode-hook #'help/sh-mode-hook-fn))
 ;; org_gcr_2017-07-16_mara_FB8AD647-F0FA-4004-B930-A9CD97E97900 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-07-16_mara_05CFE4C1-3363-42A3-A517-9A961282BB19][org_gcr_2017-07-16_mara_05CFE4C1-3363-42A3-A517-9A961282BB19]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-07-16_mara_05CFE4C1-3363-42A3-A517-9A961282BB19][org_gcr_2017-07-16_mara_05CFE4C1-3363-42A3-A517-9A961282BB19]]
 (use-package toggle-quotes
   :ensure t)
 ;; org_gcr_2017-07-16_mara_05CFE4C1-3363-42A3-A517-9A961282BB19 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-07-16_mara_B4B1E9B3-3146-46AA-80C8-20B28C352E55][org_gcr_2017-07-16_mara_B4B1E9B3-3146-46AA-80C8-20B28C352E55]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-07-16_mara_B4B1E9B3-3146-46AA-80C8-20B28C352E55][org_gcr_2017-07-16_mara_B4B1E9B3-3146-46AA-80C8-20B28C352E55]]
 (defhydra help/hydra-sh-mode (:color blue
                                      :hint nil)
   "
@@ -4120,7 +4120,7 @@ sh-mode:
 (key-chord-define sh-mode-map "hh" #'help/hydra-sh-mode/body)
 ;; org_gcr_2017-07-16_mara_B4B1E9B3-3146-46AA-80C8-20B28C352E55 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-17T20-26-45-05-00_mara_AF83DB64-A5AD-4853-BE74-6DA4E4A4E2C6][org_gcr_2018-03-17T20-26-45-05-00_mara_AF83DB64-A5AD-4853-BE74-6DA4E4A4E2C6]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-17T20-26-45-05-00_mara_AF83DB64-A5AD-4853-BE74-6DA4E4A4E2C6][org_gcr_2018-03-17T20-26-45-05-00_mara_AF83DB64-A5AD-4853-BE74-6DA4E4A4E2C6]]
 (use-package make-mode
   :config
   (defun help/make-mode-hook ()))
@@ -4128,12 +4128,12 @@ sh-mode:
 (add-to-list 'auto-mode-alist '("Makefile" . makefile-mode))
 ;; org_gcr_2018-03-17T20-26-45-05-00_mara_AF83DB64-A5AD-4853-BE74-6DA4E4A4E2C6 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_96443D6C-1E5B-48C5-9853-544D0EE79B1E][org_gcr_2017-05-12_mara_96443D6C-1E5B-48C5-9853-544D0EE79B1E]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_96443D6C-1E5B-48C5-9853-544D0EE79B1E][org_gcr_2017-05-12_mara_96443D6C-1E5B-48C5-9853-544D0EE79B1E]]
 (use-package apache-mode
   :ensure t)
 ;; org_gcr_2017-05-12_mara_96443D6C-1E5B-48C5-9853-544D0EE79B1E ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D12C607E-C07C-41F8-A0B0-02A228C7AED7][org_gcr_2017-05-12_mara_D12C607E-C07C-41F8-A0B0-02A228C7AED7]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_D12C607E-C07C-41F8-A0B0-02A228C7AED7][org_gcr_2017-05-12_mara_D12C607E-C07C-41F8-A0B0-02A228C7AED7]]
 (use-package ssh-config-mode
   :ensure t
   :mode (("/\\.ssh/config\\'"     . ssh-config-mode)
@@ -4145,13 +4145,13 @@ sh-mode:
   (add-hook 'ssh-config-mode-hook #'help/text-mode-fn))
 ;; org_gcr_2017-05-12_mara_D12C607E-C07C-41F8-A0B0-02A228C7AED7 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-06-13_mara_350A94E2-4280-4D5E-BB58-24887D9A57CD][org_gcr_2017-06-13_mara_350A94E2-4280-4D5E-BB58-24887D9A57CD]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-06-13_mara_350A94E2-4280-4D5E-BB58-24887D9A57CD][org_gcr_2017-06-13_mara_350A94E2-4280-4D5E-BB58-24887D9A57CD]]
 (require 'crontab-mode)
 (add-to-list 'auto-mode-alist '("\\.cron\\(tab\\)?\\'" . crontab-mode))
 (add-hook 'crontab-mode-hook #'turn-on-stripe-buffer-mode)
 ;; org_gcr_2017-06-13_mara_350A94E2-4280-4D5E-BB58-24887D9A57CD ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-01-03_mara_CD4698C2-3650-45E4-94F8-F8B3EB66DA57][org_gcr_2018-01-03_mara_CD4698C2-3650-45E4-94F8-F8B3EB66DA57]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-01-03_mara_CD4698C2-3650-45E4-94F8-F8B3EB66DA57][org_gcr_2018-01-03_mara_CD4698C2-3650-45E4-94F8-F8B3EB66DA57]]
 (use-package ansible
   :ensure t
   :config
@@ -4167,25 +4167,25 @@ Ansible: (q to quit)
   (key-chord-define ansible::key-map "hh" #'help/hydra/ansible/body))
 ;; org_gcr_2018-01-03_mara_CD4698C2-3650-45E4-94F8-F8B3EB66DA57 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_AF516C01-3152-4194-954B-91A44A429972][org_gcr_2017-05-12_mara_AF516C01-3152-4194-954B-91A44A429972]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_AF516C01-3152-4194-954B-91A44A429972][org_gcr_2017-05-12_mara_AF516C01-3152-4194-954B-91A44A429972]]
 (add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
 (add-to-list 'auto-mode-alist '("\\.art" . artist-mode))
 (add-to-list 'auto-mode-alist '("\\.asc" . artist-mode))
 ;; org_gcr_2017-05-12_mara_AF516C01-3152-4194-954B-91A44A429972 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9D0BBF2C-BB7C-4B72-BA10-0B497FE8CAA1][org_gcr_2017-05-12_mara_9D0BBF2C-BB7C-4B72-BA10-0B497FE8CAA1]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_9D0BBF2C-BB7C-4B72-BA10-0B497FE8CAA1][org_gcr_2017-05-12_mara_9D0BBF2C-BB7C-4B72-BA10-0B497FE8CAA1]]
 (defconst help/ditaa-jar (getenv "DITAA"))
 (setq org-ditaa-jar-path help/ditaa-jar)
 ;; org_gcr_2017-05-12_mara_9D0BBF2C-BB7C-4B72-BA10-0B497FE8CAA1 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_362D21E8-3D98-4905-8942-A146C4A555D1][org_gcr_2017-05-12_mara_362D21E8-3D98-4905-8942-A146C4A555D1]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_362D21E8-3D98-4905-8942-A146C4A555D1][org_gcr_2017-05-12_mara_362D21E8-3D98-4905-8942-A146C4A555D1]]
 (use-package graphviz-dot-mode
   :ensure t
   :config
   (setf (cdr (assoc "dot" org-src-lang-modes)) 'graphviz-dot))
 ;; org_gcr_2017-05-12_mara_362D21E8-3D98-4905-8942-A146C4A555D1 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_91D0CFDF-6FC2-4F4A-9CFC-825CED0061B6][org_gcr_2017-05-12_mara_91D0CFDF-6FC2-4F4A-9CFC-825CED0061B6]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_91D0CFDF-6FC2-4F4A-9CFC-825CED0061B6][org_gcr_2017-05-12_mara_91D0CFDF-6FC2-4F4A-9CFC-825CED0061B6]]
 (use-package plantuml-mode
   :ensure t
   :init
@@ -4196,59 +4196,59 @@ Ansible: (q to quit)
     (setq org-plantuml-jar-path help/plantuml-jar)))
 ;; org_gcr_2017-05-12_mara_91D0CFDF-6FC2-4F4A-9CFC-825CED0061B6 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-06-25_mara_B33E6DF0-8A18-4DBA-A39D-B16649F6E793][org_gcr_2017-06-25_mara_B33E6DF0-8A18-4DBA-A39D-B16649F6E793]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-06-25_mara_B33E6DF0-8A18-4DBA-A39D-B16649F6E793][org_gcr_2017-06-25_mara_B33E6DF0-8A18-4DBA-A39D-B16649F6E793]]
 (use-package xpm
   :ensure t)
 ;; org_gcr_2017-06-25_mara_B33E6DF0-8A18-4DBA-A39D-B16649F6E793 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B1FCEF49-334F-4F64-B96F-A888ABE84BB0][org_gcr_2017-05-12_mara_B1FCEF49-334F-4F64-B96F-A888ABE84BB0]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_B1FCEF49-334F-4F64-B96F-A888ABE84BB0][org_gcr_2017-05-12_mara_B1FCEF49-334F-4F64-B96F-A888ABE84BB0]]
 (setq inhibit-eol-conversion t)
 ;; org_gcr_2017-05-12_mara_B1FCEF49-334F-4F64-B96F-A888ABE84BB0 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5D771C42-CAAF-439D-BEC1-5A6559D168D2][org_gcr_2017-05-12_mara_5D771C42-CAAF-439D-BEC1-5A6559D168D2]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_5D771C42-CAAF-439D-BEC1-5A6559D168D2][org_gcr_2017-05-12_mara_5D771C42-CAAF-439D-BEC1-5A6559D168D2]]
 (use-package uniquify)
 (setq uniquify-buffer-name-style 'forward)
 ;; org_gcr_2017-05-12_mara_5D771C42-CAAF-439D-BEC1-5A6559D168D2 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C5DA95E6-0F38-450E-96C8-6CED005DE0D1][org_gcr_2017-05-12_mara_C5DA95E6-0F38-450E-96C8-6CED005DE0D1]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_C5DA95E6-0F38-450E-96C8-6CED005DE0D1][org_gcr_2017-05-12_mara_C5DA95E6-0F38-450E-96C8-6CED005DE0D1]]
 (setq ring-bell-function 'ignore)
 (setq visible-bell t)
 ;; org_gcr_2017-05-12_mara_C5DA95E6-0F38-450E-96C8-6CED005DE0D1 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F6E5E796-E1A4-4599-B6D1-F0729C1619A0][org_gcr_2017-05-12_mara_F6E5E796-E1A4-4599-B6D1-F0729C1619A0]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_F6E5E796-E1A4-4599-B6D1-F0729C1619A0][org_gcr_2017-05-12_mara_F6E5E796-E1A4-4599-B6D1-F0729C1619A0]]
 (setq blink-matching-paren nil)
 (show-paren-mode)
 (setq show-paren-delay 0)
 (setq show-paren-style 'expression)
 ;; org_gcr_2017-05-12_mara_F6E5E796-E1A4-4599-B6D1-F0729C1619A0 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_DD79CB65-2F96-40DD-8BD8-BECDCE8CD399][org_gcr_2017-05-12_mara_DD79CB65-2F96-40DD-8BD8-BECDCE8CD399]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_DD79CB65-2F96-40DD-8BD8-BECDCE8CD399][org_gcr_2017-05-12_mara_DD79CB65-2F96-40DD-8BD8-BECDCE8CD399]]
 (blink-cursor-mode 0)
 (help/on-gui
  (setq-default cursor-type 'box)
  (setq x-stretch-cursor 1))
 ;; org_gcr_2017-05-12_mara_DD79CB65-2F96-40DD-8BD8-BECDCE8CD399 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C53AF7AE-494C-4916-83C8-F175554B1CAE][org_gcr_2017-05-12_mara_C53AF7AE-494C-4916-83C8-F175554B1CAE]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_C53AF7AE-494C-4916-83C8-F175554B1CAE][org_gcr_2017-05-12_mara_C53AF7AE-494C-4916-83C8-F175554B1CAE]]
 (global-hl-line-mode t)
 ;; org_gcr_2017-05-12_mara_C53AF7AE-494C-4916-83C8-F175554B1CAE ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8B8F5CDF-A2FF-49C3-8DB1-3551942F7573][org_gcr_2017-05-12_mara_8B8F5CDF-A2FF-49C3-8DB1-3551942F7573]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_8B8F5CDF-A2FF-49C3-8DB1-3551942F7573][org_gcr_2017-05-12_mara_8B8F5CDF-A2FF-49C3-8DB1-3551942F7573]]
 (setq default-input-method 'TeX)
 ;; org_gcr_2017-05-12_mara_8B8F5CDF-A2FF-49C3-8DB1-3551942F7573 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_DD49BAEE-1C39-40E1-93B5-9CBDCD5E284A][org_gcr_2017-05-12_mara_DD49BAEE-1C39-40E1-93B5-9CBDCD5E284A]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_DD49BAEE-1C39-40E1-93B5-9CBDCD5E284A][org_gcr_2017-05-12_mara_DD49BAEE-1C39-40E1-93B5-9CBDCD5E284A]]
 (setq mouse-drag-copy-region t)
 ;; org_gcr_2017-05-12_mara_DD49BAEE-1C39-40E1-93B5-9CBDCD5E284A ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_828D7008-4B78-44AE-B5B7-15B60B03B3A6][org_gcr_2017-05-12_mara_828D7008-4B78-44AE-B5B7-15B60B03B3A6]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_828D7008-4B78-44AE-B5B7-15B60B03B3A6][org_gcr_2017-05-12_mara_828D7008-4B78-44AE-B5B7-15B60B03B3A6]]
 (use-package multiple-cursors
   :ensure t
   :config
   (setq mc/always-run-for-all t))
 ;; org_gcr_2017-05-12_mara_828D7008-4B78-44AE-B5B7-15B60B03B3A6 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_AA76B6F1-AC3F-42D8-B321-2BD1B05DDE2C][org_gcr_2017-05-12_mara_AA76B6F1-AC3F-42D8-B321-2BD1B05DDE2C]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_AA76B6F1-AC3F-42D8-B321-2BD1B05DDE2C][org_gcr_2017-05-12_mara_AA76B6F1-AC3F-42D8-B321-2BD1B05DDE2C]]
 (defun help/recenter-line-near-top-fn ()
   "Move current line near top"
   (interactive)
@@ -4256,12 +4256,12 @@ Ansible: (q to quit)
     (recenter-top-bottom)))
 ;; org_gcr_2017-05-12_mara_AA76B6F1-AC3F-42D8-B321-2BD1B05DDE2C ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-03-14_mara_385BE196-A42C-4086-9BA4-948DB62C2E26][org_gcr_2018-03-14_mara_385BE196-A42C-4086-9BA4-948DB62C2E26]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-03-14_mara_385BE196-A42C-4086-9BA4-948DB62C2E26][org_gcr_2018-03-14_mara_385BE196-A42C-4086-9BA4-948DB62C2E26]]
 (global-prettify-symbols-mode)
 (setq prettify-symbols-unprettify-at-point 'right-edge)
 ;; org_gcr_2018-03-14_mara_385BE196-A42C-4086-9BA4-948DB62C2E26 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1AD36955-5FAC-4794-A9B0-A8DC6639A04C][org_gcr_2017-05-12_mara_1AD36955-5FAC-4794-A9B0-A8DC6639A04C]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_1AD36955-5FAC-4794-A9B0-A8DC6639A04C][org_gcr_2017-05-12_mara_1AD36955-5FAC-4794-A9B0-A8DC6639A04C]]
 (add-to-list 'load-path "~/src/solarized-emacs")
 (add-to-list 'custom-theme-load-path "~/src/solarized-emacs")
 (setq solarized-distinct-fringe-background t)
@@ -4275,7 +4275,7 @@ Ansible: (q to quit)
   '(sml/setup))
 ;; org_gcr_2017-05-12_mara_1AD36955-5FAC-4794-A9B0-A8DC6639A04C ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_96BD218B-65E7-4ACA-98CE-108C3BFC29A3][org_gcr_2017-05-12_mara_96BD218B-65E7-4ACA-98CE-108C3BFC29A3]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_96BD218B-65E7-4ACA-98CE-108C3BFC29A3][org_gcr_2017-05-12_mara_96BD218B-65E7-4ACA-98CE-108C3BFC29A3]]
 (setq comint-scroll-to-bottom-on-input 'this)
 (setq comint-scroll-to-bottom-on-output 'others)
 (setq comint-move-point-for-output 'others)
@@ -4284,11 +4284,11 @@ Ansible: (q to quit)
 (setq comint-move-point-for-output t)
 ;; org_gcr_2017-05-12_mara_96BD218B-65E7-4ACA-98CE-108C3BFC29A3 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F4517BF4-A876-4E3B-B636-9A60BED7174F][org_gcr_2017-05-12_mara_F4517BF4-A876-4E3B-B636-9A60BED7174F]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_F4517BF4-A876-4E3B-B636-9A60BED7174F][org_gcr_2017-05-12_mara_F4517BF4-A876-4E3B-B636-9A60BED7174F]]
 (setq comint-prompt-read-only nil)
 ;; org_gcr_2017-05-12_mara_F4517BF4-A876-4E3B-B636-9A60BED7174F ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_6B639D09-DA18-40C5-ABA0-8647820507E6][org_gcr_2017-05-12_mara_6B639D09-DA18-40C5-ABA0-8647820507E6]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_6B639D09-DA18-40C5-ABA0-8647820507E6][org_gcr_2017-05-12_mara_6B639D09-DA18-40C5-ABA0-8647820507E6]]
 (help/on-gui
  (defvar help/font-size-current 10 "The preferred font size.")
  (help/on-mac-os (setq help/font-size-current 17))
@@ -4321,28 +4321,28 @@ Ansible: (q to quit)
  (help/update-font))
 ;; org_gcr_2017-05-12_mara_6B639D09-DA18-40C5-ABA0-8647820507E6 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-07-13_mara_A81CE2F3-CD06-40C9-AD1A-8AB74AB88016][org_gcr_2017-07-13_mara_A81CE2F3-CD06-40C9-AD1A-8AB74AB88016]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-07-13_mara_A81CE2F3-CD06-40C9-AD1A-8AB74AB88016][org_gcr_2017-07-13_mara_A81CE2F3-CD06-40C9-AD1A-8AB74AB88016]]
 (setq frame-title-format '("" "%b - PIE Interactive Editor "))
 ;; org_gcr_2017-07-13_mara_A81CE2F3-CD06-40C9-AD1A-8AB74AB88016 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-07-11_mara_27556B29-B77D-445F-8A54-00BDB89B452A][org_gcr_2017-07-11_mara_27556B29-B77D-445F-8A54-00BDB89B452A]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-07-11_mara_27556B29-B77D-445F-8A54-00BDB89B452A][org_gcr_2017-07-11_mara_27556B29-B77D-445F-8A54-00BDB89B452A]]
 (add-to-list 'image-load-path "~/src/help/xpm")
 (add-to-list 'image-load-path "~/src/help/tiff")
 ;; org_gcr_2017-07-11_mara_27556B29-B77D-445F-8A54-00BDB89B452A ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_03B4E8E1-083B-4F5D-A4A0-BAE8A0553FAF][org_gcr_2017-05-12_mara_03B4E8E1-083B-4F5D-A4A0-BAE8A0553FAF]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_03B4E8E1-083B-4F5D-A4A0-BAE8A0553FAF][org_gcr_2017-05-12_mara_03B4E8E1-083B-4F5D-A4A0-BAE8A0553FAF]]
 (menu-bar-mode nil)
 ;; org_gcr_2017-05-12_mara_03B4E8E1-083B-4F5D-A4A0-BAE8A0553FAF ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D462D343-9EA8-4BCF-BD08-8FDD4F3E11E9][org_gcr_2017-05-12_mara_D462D343-9EA8-4BCF-BD08-8FDD4F3E11E9]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_D462D343-9EA8-4BCF-BD08-8FDD4F3E11E9][org_gcr_2017-05-12_mara_D462D343-9EA8-4BCF-BD08-8FDD4F3E11E9]]
 (tool-bar-mode 1)
 ;; org_gcr_2017-05-12_mara_D462D343-9EA8-4BCF-BD08-8FDD4F3E11E9 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-07-13_mara_A03A79D4-52D0-40CC-8149-5E200FAF82FD][org_gcr_2017-07-13_mara_A03A79D4-52D0-40CC-8149-5E200FAF82FD]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-07-13_mara_A03A79D4-52D0-40CC-8149-5E200FAF82FD][org_gcr_2017-07-13_mara_A03A79D4-52D0-40CC-8149-5E200FAF82FD]]
 (setq tool-bar-style 'both)
 ;; org_gcr_2017-07-13_mara_A03A79D4-52D0-40CC-8149-5E200FAF82FD ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-07-11_mara_F035C9D9-EAE9-48CF-BE67-5BFF1F0A23FD][org_gcr_2017-07-11_mara_F035C9D9-EAE9-48CF-BE67-5BFF1F0A23FD]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-07-11_mara_F035C9D9-EAE9-48CF-BE67-5BFF1F0A23FD][org_gcr_2017-07-11_mara_F035C9D9-EAE9-48CF-BE67-5BFF1F0A23FD]]
 (tool-bar-add-item
  "list-alt"
  'ibuffer
@@ -4350,7 +4350,7 @@ Ansible: (q to quit)
  :help "List buffers")
 ;; org_gcr_2017-07-11_mara_F035C9D9-EAE9-48CF-BE67-5BFF1F0A23FD ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-07-11_mara_9D659239-693A-430C-A4CE-6003BD650A60][org_gcr_2017-07-11_mara_9D659239-693A-430C-A4CE-6003BD650A60]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-07-11_mara_9D659239-693A-430C-A4CE-6003BD650A60][org_gcr_2017-07-11_mara_9D659239-693A-430C-A4CE-6003BD650A60]]
 (tool-bar-add-item
  "exchange"
  'help/safb-switch-to-previous-buffer
@@ -4358,7 +4358,7 @@ Ansible: (q to quit)
  :help "Swap buffers")
 ;; org_gcr_2017-07-11_mara_9D659239-693A-430C-A4CE-6003BD650A60 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-06-04T06-09-31-05-00_mara_6DA26126-B1ED-467A-B4FD-DB729AE2B04C][org_gcr_2018-06-04T06-09-31-05-00_mara_6DA26126-B1ED-467A-B4FD-DB729AE2B04C]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-06-04T06-09-31-05-00_mara_6DA26126-B1ED-467A-B4FD-DB729AE2B04C][org_gcr_2018-06-04T06-09-31-05-00_mara_6DA26126-B1ED-467A-B4FD-DB729AE2B04C]]
 (tool-bar-add-item
  "arrow-up"
  'scroll-down-command
@@ -4371,7 +4371,7 @@ Ansible: (q to quit)
  :help "Scroll Up")
 ;; org_gcr_2018-06-04T06-09-31-05-00_mara_6DA26126-B1ED-467A-B4FD-DB729AE2B04C ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-07-23_mara_949332F2-28B2-4BC3-B1E7-C7A24DF56269][org_gcr_2017-07-23_mara_949332F2-28B2-4BC3-B1E7-C7A24DF56269]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-07-23_mara_949332F2-28B2-4BC3-B1E7-C7A24DF56269][org_gcr_2017-07-23_mara_949332F2-28B2-4BC3-B1E7-C7A24DF56269]]
 (help/on-mac-os
  (tool-bar-add-item
   "apple"
@@ -4395,25 +4395,25 @@ Ansible: (q to quit)
   :enable nil))
 ;; org_gcr_2017-07-23_mara_949332F2-28B2-4BC3-B1E7-C7A24DF56269 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D967070F-06B7-4433-94A8-36E360600C9E][org_gcr_2017-05-12_mara_D967070F-06B7-4433-94A8-36E360600C9E]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_D967070F-06B7-4433-94A8-36E360600C9E][org_gcr_2017-05-12_mara_D967070F-06B7-4433-94A8-36E360600C9E]]
 (scroll-bar-mode nil)
 (help/on-gnu/linux
  (horizontal-scroll-bar-mode nil))
 ;; org_gcr_2017-05-12_mara_D967070F-06B7-4433-94A8-36E360600C9E ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_DD263B9E-EFF2-49BF-B367-4F4505F8E618][org_gcr_2017-05-12_mara_DD263B9E-EFF2-49BF-B367-4F4505F8E618]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_DD263B9E-EFF2-49BF-B367-4F4505F8E618][org_gcr_2017-05-12_mara_DD263B9E-EFF2-49BF-B367-4F4505F8E618]]
 (setq make-pointer-invisible t)
 ;; org_gcr_2017-05-12_mara_DD263B9E-EFF2-49BF-B367-4F4505F8E618 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_2E9A617A-5D88-4E71-88EB-595AA1F16EC2][org_gcr_2017-05-12_mara_2E9A617A-5D88-4E71-88EB-595AA1F16EC2]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_2E9A617A-5D88-4E71-88EB-595AA1F16EC2][org_gcr_2017-05-12_mara_2E9A617A-5D88-4E71-88EB-595AA1F16EC2]]
 (setq ediff-split-window-function 'split-window-horizontally)
 ;; org_gcr_2017-05-12_mara_2E9A617A-5D88-4E71-88EB-595AA1F16EC2 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8E367FFF-FCF3-4AC8-9542-A20CE62081C4][org_gcr_2017-05-12_mara_8E367FFF-FCF3-4AC8-9542-A20CE62081C4]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_8E367FFF-FCF3-4AC8-9542-A20CE62081C4][org_gcr_2017-05-12_mara_8E367FFF-FCF3-4AC8-9542-A20CE62081C4]]
 (winner-mode t)
 ;; org_gcr_2017-05-12_mara_8E367FFF-FCF3-4AC8-9542-A20CE62081C4 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_94DA6C06-BCBB-4231-B0C7-EFD4B1310530][org_gcr_2017-05-12_mara_94DA6C06-BCBB-4231-B0C7-EFD4B1310530]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_94DA6C06-BCBB-4231-B0C7-EFD4B1310530][org_gcr_2017-05-12_mara_94DA6C06-BCBB-4231-B0C7-EFD4B1310530]]
 (defun help/1-window ()
   "Work with this buffer in 1 window."
   (interactive)
@@ -4448,11 +4448,11 @@ Ansible: (q to quit)
   (balance-windows))
 ;; org_gcr_2017-05-12_mara_94DA6C06-BCBB-4231-B0C7-EFD4B1310530 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B5190A4E-4174-471F-9C82-C454D269B867][org_gcr_2017-05-12_mara_B5190A4E-4174-471F-9C82-C454D269B867]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_B5190A4E-4174-471F-9C82-C454D269B867][org_gcr_2017-05-12_mara_B5190A4E-4174-471F-9C82-C454D269B867]]
 (setq help-window-select t)
 ;; org_gcr_2017-05-12_mara_B5190A4E-4174-471F-9C82-C454D269B867 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A165E3DB-37E7-49A7-84E4-1CB0D2A137C6][org_gcr_2017-05-12_mara_A165E3DB-37E7-49A7-84E4-1CB0D2A137C6]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_A165E3DB-37E7-49A7-84E4-1CB0D2A137C6][org_gcr_2017-05-12_mara_A165E3DB-37E7-49A7-84E4-1CB0D2A137C6]]
 (use-package ace-window
   :ensure t
   :config
@@ -4461,7 +4461,7 @@ Ansible: (q to quit)
   (setq aw-background nil))
 ;; org_gcr_2017-05-12_mara_A165E3DB-37E7-49A7-84E4-1CB0D2A137C6 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-06-20_mara_6C4B1CDD-CF71-4A5F-B900-6D3CC06D4028][org_gcr_2017-06-20_mara_6C4B1CDD-CF71-4A5F-B900-6D3CC06D4028]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-06-20_mara_6C4B1CDD-CF71-4A5F-B900-6D3CC06D4028][org_gcr_2017-06-20_mara_6C4B1CDD-CF71-4A5F-B900-6D3CC06D4028]]
 (use-package buffer-move
   :ensure t
   :config
@@ -4475,20 +4475,20 @@ Ansible: (q to quit)
   (global-set-key (kbd "<C-S-right>") #'buf-move-right))
 ;; org_gcr_2017-06-20_mara_6C4B1CDD-CF71-4A5F-B900-6D3CC06D4028 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-12-27_mara_AA4152A3-5D5C-4D41-AF55-4828F8BDEF7D][org_gcr_2017-12-27_mara_AA4152A3-5D5C-4D41-AF55-4828F8BDEF7D]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-12-27_mara_AA4152A3-5D5C-4D41-AF55-4828F8BDEF7D][org_gcr_2017-12-27_mara_AA4152A3-5D5C-4D41-AF55-4828F8BDEF7D]]
 (use-package resize-window
   :ensure t
   :config
   (key-chord-define-global "ww" #'resize-window))
 ;; org_gcr_2017-12-27_mara_AA4152A3-5D5C-4D41-AF55-4828F8BDEF7D ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-01-08_mara_82A71AA0-C415-49B1-8554-334215625E4F][org_gcr_2018-01-08_mara_82A71AA0-C415-49B1-8554-334215625E4F]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-01-08_mara_82A71AA0-C415-49B1-8554-334215625E4F][org_gcr_2018-01-08_mara_82A71AA0-C415-49B1-8554-334215625E4F]]
 (global-set-key [(shift f6)] #'kmacro-name-last-macro)
 (global-set-key [(f6)] #'insert-kbd-macro)
 (global-set-key [(f5)] #'elmacro-show-last-macro)
 ;; org_gcr_2018-01-08_mara_82A71AA0-C415-49B1-8554-334215625E4F ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C][org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C][org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C]]
 (global-set-key (kbd "C-4") #'hs-toggle-hiding)
 (global-set-key (kbd "C-3") #'help/my-toggle-hideshow-all)
 (global-set-key (kbd "C-5") #'ido-kill-buffer)
@@ -4516,7 +4516,7 @@ Ansible: (q to quit)
 (global-set-key (kbd "s-6") #'mc/skip-to-next-like-this)
 ;; org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-06-13_mara_2DFDC64B-DBF2-473E-979F-D7D8D0DD2206][org_gcr_2017-06-13_mara_2DFDC64B-DBF2-473E-979F-D7D8D0DD2206]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-06-13_mara_2DFDC64B-DBF2-473E-979F-D7D8D0DD2206][org_gcr_2017-06-13_mara_2DFDC64B-DBF2-473E-979F-D7D8D0DD2206]]
 (defhydra help/hydra-checking (:color blue
                                       :hint nil)
   "
@@ -4538,7 +4538,7 @@ Flycheck: ⏼%(bound-and-true-p flycheck-mode)
 (global-set-key (kbd "C-M-9") #'help/hydra-checking/body)
 ;; org_gcr_2017-06-13_mara_2DFDC64B-DBF2-473E-979F-D7D8D0DD2206 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC][org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC][org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC]]
 (defhydra help/hydra/timestamp (:color blue :hint nil)
   "
 Timestamps: (_q_uit)
@@ -4563,7 +4563,7 @@ Timestamps: (_q_uit)
 (global-set-key (kbd "C-t") #'help/hydra/timestamp/body)
 ;; org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389][org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389][org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389]]
 (global-set-key (kbd "C-M-<tab>") #'help/untabify-buffer-or-region-if-not-indent-tabs-mode)
 (global-set-key (kbd "C-M-1") #'help/1-window)
 (global-set-key (kbd "C-M-2") #'help/2-window)
@@ -4650,7 +4650,7 @@ _w_ where is something defined
   ("w" where-is))
 ;; org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D][org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D][org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D]]
 (global-set-key (kbd "C-M-a") #'help/hydra/apropo/body)
 (global-set-key (kbd "C-d") #'delete-forward-char)
 (global-set-key [(control shift ?d)] #'backward-delete-char)
@@ -4660,21 +4660,21 @@ _w_ where is something defined
 (global-set-key (kbd "M-'") #'yas-insert-snippet)
 ;; org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E8ABDA7D-AC92-4C24-8287-1505E2377B2C][org_gcr_2017-05-12_mara_E8ABDA7D-AC92-4C24-8287-1505E2377B2C]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_E8ABDA7D-AC92-4C24-8287-1505E2377B2C][org_gcr_2017-05-12_mara_E8ABDA7D-AC92-4C24-8287-1505E2377B2C]]
 (global-set-key (kbd "C-h") nil)
 (global-set-key (kbd "C-h") #'ace-window)
 ;; org_gcr_2017-05-12_mara_E8ABDA7D-AC92-4C24-8287-1505E2377B2C ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A26325F2-9D6C-49EE-8CBE-DC552C6F315F][org_gcr_2017-05-12_mara_A26325F2-9D6C-49EE-8CBE-DC552C6F315F]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_A26325F2-9D6C-49EE-8CBE-DC552C6F315F][org_gcr_2017-05-12_mara_A26325F2-9D6C-49EE-8CBE-DC552C6F315F]]
 (global-set-key (kbd "s-h") nil)
 ;; org_gcr_2017-05-12_mara_A26325F2-9D6C-49EE-8CBE-DC552C6F315F ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_20330335-75E6-4AB4-A661-D291315FAFD7][org_gcr_2017-05-12_mara_20330335-75E6-4AB4-A661-D291315FAFD7]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_20330335-75E6-4AB4-A661-D291315FAFD7][org_gcr_2017-05-12_mara_20330335-75E6-4AB4-A661-D291315FAFD7]]
 (global-set-key (kbd "C-M-j") #'help/safb-switch-to-previous-buffer)
 (global-set-key (kbd "s-d") #'er/expand-region)
 ;; org_gcr_2017-05-12_mara_20330335-75E6-4AB4-A661-D291315FAFD7 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_095E1EC7-12A2-43BB-8ED5-CF2BC6E7D158][org_gcr_2017-05-12_mara_095E1EC7-12A2-43BB-8ED5-CF2BC6E7D158]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_095E1EC7-12A2-43BB-8ED5-CF2BC6E7D158][org_gcr_2017-05-12_mara_095E1EC7-12A2-43BB-8ED5-CF2BC6E7D158]]
 (defhydra help/hydra/left-side/global (:color blue
                                               :hint nil)
   "
@@ -4790,11 +4790,11 @@ _?_ tons of scissors
   ("\"" imenu-list-minor-mode))
 ;; org_gcr_2017-05-12_mara_095E1EC7-12A2-43BB-8ED5-CF2BC6E7D158 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_28B4A661-E888-4EFA-ADE3-4B1C05F6E92B][org_gcr_2017-05-12_mara_28B4A661-E888-4EFA-ADE3-4B1C05F6E92B]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_28B4A661-E888-4EFA-ADE3-4B1C05F6E92B][org_gcr_2017-05-12_mara_28B4A661-E888-4EFA-ADE3-4B1C05F6E92B]]
 (key-chord-define-global "vv" #'help/hydra/left-side/global/body)
 ;; org_gcr_2017-05-12_mara_28B4A661-E888-4EFA-ADE3-4B1C05F6E92B ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C93A4DB7-1441-4DBA-B586-76266C5C30DF][org_gcr_2017-05-12_mara_C93A4DB7-1441-4DBA-B586-76266C5C30DF]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_C93A4DB7-1441-4DBA-B586-76266C5C30DF][org_gcr_2017-05-12_mara_C93A4DB7-1441-4DBA-B586-76266C5C30DF]]
 (defhydra help/hydra/apropo (:color blue
                                     :hint nil)
   "
@@ -4833,7 +4833,7 @@ User Options:  \"…user _o_ptions…\"
   ("q" nil))
 ;; org_gcr_2017-05-12_mara_C93A4DB7-1441-4DBA-B586-76266C5C30DF ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_EE5F8793-8604-4041-8D91-DBC419809947][org_gcr_2017-05-12_mara_EE5F8793-8604-4041-8D91-DBC419809947]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_EE5F8793-8604-4041-8D91-DBC419809947][org_gcr_2017-05-12_mara_EE5F8793-8604-4041-8D91-DBC419809947]]
 (defhydra help/trademark (:color blue :hint nil)
   "
 American _R_egistered Trademark
@@ -4849,7 +4849,7 @@ _K_orean Standard
   ("K" (lambda () (interactive) (insert "㉿"))))
 ;; org_gcr_2017-05-12_mara_EE5F8793-8604-4041-8D91-DBC419809947 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E4413D83-9743-468B-BBAF-3FAF9E31F491][org_gcr_2017-05-12_mara_E4413D83-9743-468B-BBAF-3FAF9E31F491]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_E4413D83-9743-468B-BBAF-3FAF9E31F491][org_gcr_2017-05-12_mara_E4413D83-9743-468B-BBAF-3FAF9E31F491]]
 (defhydra help/checks (:color blue :hint nil)
   "
 _a_ ✓ _s_ ✗ _d_ ☐ _f_ ☑ _g_ ☒_
@@ -4861,7 +4861,7 @@ _a_ ✓ _s_ ✗ _d_ ☐ _f_ ☑ _g_ ☒_
   ("g" (lambda () (interactive) (insert "☒")) :exit nil))
 ;; org_gcr_2017-05-12_mara_E4413D83-9743-468B-BBAF-3FAF9E31F491 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D0F37886-4355-478C-A141-93F48E531CE5][org_gcr_2017-05-12_mara_D0F37886-4355-478C-A141-93F48E531CE5]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_D0F37886-4355-478C-A141-93F48E531CE5][org_gcr_2017-05-12_mara_D0F37886-4355-478C-A141-93F48E531CE5]]
 (defhydra help/bibtex (:color blue :hint nil)
   "
 _c_ Clean Entry _C_ Clean Entry & Create New Reference
@@ -4882,11 +4882,11 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
                 (visual-line-mode nil)))))
 ;; org_gcr_2017-05-12_mara_D0F37886-4355-478C-A141-93F48E531CE5 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-05-24T12-09-16-04-00_mara_09A8135C-9B9B-4039-A091-6DB640A7C3EF][org_gcr_2018-05-24T12-09-16-04-00_mara_09A8135C-9B9B-4039-A091-6DB640A7C3EF]]
+;; [[file:~/git/src/help/help.org::org_gcr_2018-05-24T12-09-16-04-00_mara_09A8135C-9B9B-4039-A091-6DB640A7C3EF][org_gcr_2018-05-24T12-09-16-04-00_mara_09A8135C-9B9B-4039-A091-6DB640A7C3EF]]
 (global-set-key (kbd "M-s M-s") #'shell)
 ;; org_gcr_2018-05-24T12-09-16-04-00_mara_09A8135C-9B9B-4039-A091-6DB640A7C3EF ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B][org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B][org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B]]
 ;; Leave C-z free for Tmux
 (global-set-key (kbd "C-z") nil)
 (global-set-key (kbd "C-x C-c") #'help/safb-save-buffers-kill-terminal)
@@ -4905,50 +4905,50 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (global-set-key (kbd "C-M-n") #'info-buffer)
 ;; org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5FAD516B-B4C1-4F47-A6B9-7CA12F9AFF5D][org_gcr_2017-05-12_mara_5FAD516B-B4C1-4F47-A6B9-7CA12F9AFF5D]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_5FAD516B-B4C1-4F47-A6B9-7CA12F9AFF5D][org_gcr_2017-05-12_mara_5FAD516B-B4C1-4F47-A6B9-7CA12F9AFF5D]]
 (global-set-key (kbd "s-SPC") #'cycle-spacing)
 ;; org_gcr_2017-05-12_mara_5FAD516B-B4C1-4F47-A6B9-7CA12F9AFF5D ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0CA60630-37AA-4192-91A1-FFC1B16DC3E4][org_gcr_2017-05-12_mara_0CA60630-37AA-4192-91A1-FFC1B16DC3E4]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_0CA60630-37AA-4192-91A1-FFC1B16DC3E4][org_gcr_2017-05-12_mara_0CA60630-37AA-4192-91A1-FFC1B16DC3E4]]
 (key-chord-define-global "f9" #'help/util-cycle)
 ;; org_gcr_2017-05-12_mara_0CA60630-37AA-4192-91A1-FFC1B16DC3E4 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_921A07BB-6FBA-46E3-824D-F9F0B92F48B3][org_gcr_2017-05-12_mara_921A07BB-6FBA-46E3-824D-F9F0B92F48B3]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_921A07BB-6FBA-46E3-824D-F9F0B92F48B3][org_gcr_2017-05-12_mara_921A07BB-6FBA-46E3-824D-F9F0B92F48B3]]
 (key-chord-define-global "qp" #'ispell)
 (key-chord-define-global "qo" #'ispell-word)
 ;; org_gcr_2017-05-12_mara_921A07BB-6FBA-46E3-824D-F9F0B92F48B3 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_2C04C038-F246-4E90-92C6-15ABF018BCD3][org_gcr_2017-05-12_mara_2C04C038-F246-4E90-92C6-15ABF018BCD3]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_2C04C038-F246-4E90-92C6-15ABF018BCD3][org_gcr_2017-05-12_mara_2C04C038-F246-4E90-92C6-15ABF018BCD3]]
 (key-chord-define-global "fj" #'avy-goto-word-1)
 (key-chord-define-global "fm" #'avy-goto-char)
 (key-chord-define-global "FJ" #'avy-pop-mark)
 ;; org_gcr_2017-05-12_mara_2C04C038-F246-4E90-92C6-15ABF018BCD3 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0729FB1D-FE71-417C-A3F7-AC1A92D71FBC][org_gcr_2017-05-12_mara_0729FB1D-FE71-417C-A3F7-AC1A92D71FBC]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_0729FB1D-FE71-417C-A3F7-AC1A92D71FBC][org_gcr_2017-05-12_mara_0729FB1D-FE71-417C-A3F7-AC1A92D71FBC]]
 (key-chord-define-global "fk" #'help/safb-help/goto-line)
 ;; org_gcr_2017-05-12_mara_0729FB1D-FE71-417C-A3F7-AC1A92D71FBC ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_ED3BE98E-B863-447A-AB97-F4E878F2C483][org_gcr_2017-05-12_mara_ED3BE98E-B863-447A-AB97-F4E878F2C483]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_ED3BE98E-B863-447A-AB97-F4E878F2C483][org_gcr_2017-05-12_mara_ED3BE98E-B863-447A-AB97-F4E878F2C483]]
 (key-chord-define-global "FK" #'pop-to-mark-command)
 ;; org_gcr_2017-05-12_mara_ED3BE98E-B863-447A-AB97-F4E878F2C483 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9302B01F-93C0-4D21-8BB6-53ECF1478153][org_gcr_2017-05-12_mara_9302B01F-93C0-4D21-8BB6-53ECF1478153]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_9302B01F-93C0-4D21-8BB6-53ECF1478153][org_gcr_2017-05-12_mara_9302B01F-93C0-4D21-8BB6-53ECF1478153]]
 (help/on-gui (global-set-key (kbd "s-<return>") #'help/smart-open-line))
 ;; org_gcr_2017-05-12_mara_9302B01F-93C0-4D21-8BB6-53ECF1478153 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_EB0E9368-41FE-4827-9EE2-5CDFCDC1C2BA][org_gcr_2017-05-12_mara_EB0E9368-41FE-4827-9EE2-5CDFCDC1C2BA]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_EB0E9368-41FE-4827-9EE2-5CDFCDC1C2BA][org_gcr_2017-05-12_mara_EB0E9368-41FE-4827-9EE2-5CDFCDC1C2BA]]
 (global-set-key (kbd "M-p") (kbd "C-u 1 C-v"))
 (global-set-key (kbd "M-n") (kbd "C-u 1 M-v"))
 ;; org_gcr_2017-05-12_mara_EB0E9368-41FE-4827-9EE2-5CDFCDC1C2BA ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_078C604D-5762-4763-AD17-A397C5E224E7][org_gcr_2017-05-12_mara_078C604D-5762-4763-AD17-A397C5E224E7]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_078C604D-5762-4763-AD17-A397C5E224E7][org_gcr_2017-05-12_mara_078C604D-5762-4763-AD17-A397C5E224E7]]
 (global-set-key (kbd "C-n") #'next-logical-line)
 (global-set-key (kbd "C-s-n") #'next-line)
 (global-set-key (kbd "C-p") #'previous-logical-line)
 (global-set-key (kbd "C-s-p") #'previous-line)
 ;; org_gcr_2017-05-12_mara_078C604D-5762-4763-AD17-A397C5E224E7 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BF926B57-9097-483F-AB90-E3F55869B0D9][org_gcr_2017-05-12_mara_BF926B57-9097-483F-AB90-E3F55869B0D9]]
+;; [[file:~/git/src/help/help.org::org_gcr_2017-05-12_mara_BF926B57-9097-483F-AB90-E3F55869B0D9][org_gcr_2017-05-12_mara_BF926B57-9097-483F-AB90-E3F55869B0D9]]
 (global-set-key (kbd "M-%") #'anzu-query-replace)
 (global-set-key (kbd "C-M-%") #'anzu-query-replace-regexp)
 ;; org_gcr_2017-05-12_mara_BF926B57-9097-483F-AB90-E3F55869B0D9 ends here
