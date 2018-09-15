@@ -4807,7 +4807,7 @@ Row 1: _z_ insert-superscript _Z_ insert-subscript _c_ org-fill-para _C_ount wor
   ("r" help/org-refile)
   ("R" (lambda () (interactive) (insert "(refile)")))
   ("t" help/org-toggle-macro-markers)
-  ("T" (lambda () (interactive) (insert "#+ATTR_HTML: :border 2 :rules all :frame border")))
+  ("R" (lambda () (interactive) (insert "#+ATTR_HTML: :border 2 :rules all :frame border")))
   ("u" org-utf-to-xetex-insert-or-wrap-with-macro)
   ("p" my-org-region-to-property)
 
