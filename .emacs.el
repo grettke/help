@@ -2893,9 +2893,9 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
   "
 Org-Mode: (_q_uit)
 Row 4: _1_ SHA-1-hash _2_ display images _3_ hide images _4_ id-create _8_ ltx/noindent _9_ o2b/more _0_ o2b/LaTeX
-Row 3: _w_ ob-clip-formatted _e_ edit field  _E_ list entities _r_ help/org-refile _R_ insert \"refile\"  _t_oggle macro marker ATT_R_HTML 4 table export format _u_ goto  _p_ copy-reg-2-property
-Row 2: _a_ archive-subtree _s_ sort _S_ lobigst _d_ g2s-b/hd _k_ ob-check-src-blk _l_ lint _L_ insert inline task
-Row 1: _x_ utf2xtx _c_ org-fill-para _C_ount words _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
+Row 3: _w_ ob-clip-formatted _e_ edit field  _E_ list entities _r_ help/org-refile _R_ insert \"refile\"  _t_oggle macro marker ATT_R_HTML 4 table export format _u_tf2xtx  _p_ copy-reg-2-property
+Row 2: _a_ archive-subtree _s_ sort _S_ lobigst _d_ g2s-b/hd _g_ goto _k_ ob-check-src-blk _l_ lint _L_ insert inline task
+Row 1: _z_ insert-superscript _Z_ insert-subscript _c_ org-fill-para _C_ount words _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
 
   ("q" org-babel-switch-to-session-with-code)
 
@@ -2917,7 +2917,7 @@ Row 1: _x_ utf2xtx _c_ org-fill-para _C_ount words _b_ swtch2sessn _n_ n2sbtre _
   ("R" (lambda () (interactive) (insert "(refile)")))
   ("t" help/org-toggle-macro-markers)
   ("T" (lambda () (interactive) (insert "#+ATTR_HTML: :border 2 :rules all :frame border")))
-  ("u" org-goto)
+  ("u" org-utf-to-xetex-insert-or-wrap-with-macro)
   ("p" my-org-region-to-property)
 
   ;; TODO
@@ -2935,7 +2935,8 @@ Row 1: _x_ utf2xtx _c_ org-fill-para _C_ount words _b_ swtch2sessn _n_ n2sbtre _
   ("L" org-inlinetask-insert-task)
 
   ;; Row 1
-  ("x" org-utf-to-xetex-insert-or-wrap-with-macro)
+  ("z" help/org-insert-superscript)
+  ("Z" help/org-insert-subscript)
   ("c" org-fill-paragraph)
   ("C" help/org-count-words)
   ("b" org-babel-switch-to-session)
