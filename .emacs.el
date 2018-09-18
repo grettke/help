@@ -4902,6 +4902,7 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (global-set-key (kbd "C-M-.") nil)
 (global-set-key (kbd "M-s-m") #'ns-do-hide-emacs)
 (global-set-key (kbd "C-M-n") #'info-buffer)
+(global-set-key (kbd "s-s") #'shell)
 ;; org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5FAD516B-B4C1-4F47-A6B9-7CA12F9AFF5D][org_gcr_2017-05-12_mara_5FAD516B-B4C1-4F47-A6B9-7CA12F9AFF5D]]

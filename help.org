@@ -8223,6 +8223,7 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (global-set-key (kbd "C-M-.") nil)
 (global-set-key (kbd "M-s-m") #'ns-do-hide-emacs)
 (global-set-key (kbd "C-M-n") #'info-buffer)
+(global-set-key (kbd "s-s") #'shell)
 #+END_SRC
 **** Row 1
      :PROPERTIES:
