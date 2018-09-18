@@ -2863,14 +2863,12 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
   (if (s-blank? arg)
       (message "Nothing to insert")
     (insert "_{" arg "} ")))
-(define-key org-mode-map (kbd "s-s") #'help/org-insert-subscript)
 (defun help/org-insert-superscript (arg)
   "Maybe insert a super with the postfix space."
   (interactive "MSuperscript: ")
   (if (s-blank? arg)
       (message "Nothing to insert")
     (insert "^{" arg "} ")))
-(define-key org-mode-map (kbd "s-S") #'help/org-insert-superscript)
 ;; org_gcr_2017-05-12_mara_EC7D6149-4451-443D-BFFF-1A40073D7D98 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-07-12_mara_65D0CDCC-66C7-4C81-ABF3-D22AAF71868E][org_gcr_2017-07-12_mara_65D0CDCC-66C7-4C81-ABF3-D22AAF71868E]]
