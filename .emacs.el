@@ -949,13 +949,31 @@ Attribution: Udyant Wig <udyantw@gmail.com>"
     (if org-p (org-self-insert-command 1)
       (self-insert-command 1))))
 
-(defun help/dot ()
-  (interactive)
-  (let ((dot 46)
-        (org-p (bound-and-true-p org-mode)))
-    (setq last-command-event dot)
-    (if org-p (org-self-insert-command 1)
-      (self-insert-command 1))))
+(defun help/insert-it-then-real-space (char)
+  "Insert CHAR followed by a space using a key event so modes can respond appropriately.
+
+I use this to automatically insert a space after punctuation characters. It
+might sound like a micro-optimization but I think of it more like making the
+keyboard work like it ought to work ;).
+
+When I first tried to set this up I bound the .-key to a function that inserted
+itself and then a space like this `(insert \". \")'. This inserts what you
+want but doesn't generate a key event for other modes to handle. For example
+`auto-fill-mode' won't break the line because it doesn't know that anything
+happened. When you do hit another key `auto-fill-mode' kicks in and breaks the
+line—I found that disturbing to my flow so I set this up instead.
+
+Does the \"right thing\" under `org-mode'."
+  (cl-flet ((do-insert
+             () (if (bound-and-true-p org-mode)
+                    (org-self-insert-command 1)
+                  (self-insert-command 1))))
+    (setq last-command-event char)
+    (do-insert)
+    (setq last-command-event ?\s)
+    (do-insert)))
+
+(defun help/dot-space () (interactive) (help/insert-it-then-real-space ?\.))
 ;; org_gcr_2017-05-12_mara_7D37FFE5-2D2B-4CF7-AF27-F3CB8616D81B ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F][org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F]]
@@ -2154,8 +2172,7 @@ _A_rchives | Rest_o_res | Re_f_iles
   (help/try-to-add-imenu)
   (turn-on-page-break-lines-mode)
   (turn-on-auto-capitalize-mode)
-  (local-set-key (kbd ".") #'help/dot-space)
-  (local-set-key (kbd "C-.") #'help/dot))
+  (local-set-key (kbd ".") #'help/dot-space))
 (add-hook 'text-mode-hook #'help/text-mode-fn)
 ;; org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F ends here
 
@@ -2228,9 +2245,7 @@ _A_rchives | Rest_o_res | Re_f_iles
   (unless (equal major-mode 'fundamental-mode)
     (hs-minor-mode))
   (help/on-gui (local-set-key (kbd "<return>") #'newline-and-indent))
-  (turn-off-auto-capitalize-mode)
-  (local-unset-key (kbd "."))
-  (local-unset-key (kbd "C-.")))
+  (turn-off-auto-capitalize-mode))
 
 (let ()
   (--each help/prog-modes
