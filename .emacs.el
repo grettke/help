@@ -142,6 +142,7 @@
    :ensure t
    :config
    (setq exec-path-from-shell-check-startup-files nil)
+   (setq exec-path-from-shell-debug 1)
    (exec-path-from-shell-initialize)))
 ;; org_gcr_2017-05-12_mara_375D2A3D-54B5-4DBC-B911-38CAB716286A ends here
 
