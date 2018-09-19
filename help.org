@@ -1452,18 +1452,6 @@ Attribution: Udyant Wig <udyantw@gmail.com>"
     (setq buffer-read-only t)
     (goto-char (point-min))))
 
-(defun help/dot-space ()
-  (interactive)
-  (let ((dot 46)
-        (space 32)
-        (org-p (bound-and-true-p org-mode)))
-    (setq last-command-event dot)
-    (if org-p (org-self-insert-command 1)
-      (self-insert-command 1))
-    (setq last-command-event space)
-    (if org-p (org-self-insert-command 1)
-      (self-insert-command 1))))
-
 (defun help/insert-it-then-real-space (char)
   "Insert CHAR followed by a space using a key event so modes can respond appropriately.
 
@@ -1489,6 +1477,8 @@ Does the \"right thing\" under `org-mode'."
     (do-insert)))
 
 (defun help/dot-space () (interactive) (help/insert-it-then-real-space ?\.))
+(defun help/comma-space () (interactive) (help/insert-it-then-real-space ?\,))
+(defun help/question-space () (interactive) (help/insert-it-then-real-space ?\?))
 #+END_SRC
 
 ** Typography
@@ -3440,7 +3430,9 @@ Every text editing buffer needs this.
   (help/try-to-add-imenu)
   (turn-on-page-break-lines-mode)
   (turn-on-auto-capitalize-mode)
-  (local-set-key (kbd ".") #'help/dot-space))
+  (local-set-key (kbd ".") #'help/dot-space)
+  (local-set-key (kbd ",") #'help/comma-space)
+  (local-set-key (kbd "?") #'help/question-space))
 (add-hook 'text-mode-hook #'help/text-mode-fn)
 #+END_SRC
 

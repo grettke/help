@@ -937,18 +937,6 @@ Attribution: Udyant Wig <udyantw@gmail.com>"
     (setq buffer-read-only t)
     (goto-char (point-min))))
 
-(defun help/dot-space ()
-  (interactive)
-  (let ((dot 46)
-        (space 32)
-        (org-p (bound-and-true-p org-mode)))
-    (setq last-command-event dot)
-    (if org-p (org-self-insert-command 1)
-      (self-insert-command 1))
-    (setq last-command-event space)
-    (if org-p (org-self-insert-command 1)
-      (self-insert-command 1))))
-
 (defun help/insert-it-then-real-space (char)
   "Insert CHAR followed by a space using a key event so modes can respond appropriately.
 
@@ -974,6 +962,8 @@ Does the \"right thing\" under `org-mode'."
     (do-insert)))
 
 (defun help/dot-space () (interactive) (help/insert-it-then-real-space ?\.))
+(defun help/comma-space () (interactive) (help/insert-it-then-real-space ?\,))
+(defun help/question-space () (interactive) (help/insert-it-then-real-space ?\?))
 ;; org_gcr_2017-05-12_mara_7D37FFE5-2D2B-4CF7-AF27-F3CB8616D81B ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F][org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F]]
@@ -2172,7 +2162,9 @@ _A_rchives | Rest_o_res | Re_f_iles
   (help/try-to-add-imenu)
   (turn-on-page-break-lines-mode)
   (turn-on-auto-capitalize-mode)
-  (local-set-key (kbd ".") #'help/dot-space))
+  (local-set-key (kbd ".") #'help/dot-space)
+  (local-set-key (kbd ",") #'help/comma-space)
+  (local-set-key (kbd "?") #'help/question-space))
 (add-hook 'text-mode-hook #'help/text-mode-fn)
 ;; org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F ends here
 
