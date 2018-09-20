@@ -6410,6 +6410,11 @@ Set up my default LCO files.
 :PROPERTIES:
 :ID:       org_gcr_2018-09-19T12-32-27-05-00_cosmicality:5B76D1FD-35D2-43F4-8CFB-B434671BEF29
 :END:
+
+#+name: org_gcr_2018-09-19T22-21-28-05-00_cosmicality_38743072-6B0D-4793-903E-E7AC205CF6BC
+#+begin_src emacs-lisp
+(require 'bibtex)
+#+end_src
 #+name: org_gcr_2018-09-19T12-32-27-05-00_cosmicality_4C483D43-7E0D-48E1-88D5-9353A0DBD83A
 #+begin_src emacs-lisp
 (defun help/bibtex-mode-hook-fn ()
@@ -6459,7 +6464,7 @@ same column. Also fill fields."
 (add-to-list 'bibtex-entry-format 'delimiters)
 #+end_src
 
-"Change case of entry types and field names."
+"Change case of entry types and field names."—lower-casing them. 
 
 #+name: org_gcr_2018-09-19T12-32-27-05-00_cosmicality_D5C9AF40-97B8-4F1B-8CBC-373DB521C1EF
 #+begin_src emacs-lisp
@@ -6480,10 +6485,9 @@ same column. Also fill fields."
          ("title")
          ("volume")
          ("year"))))
-(eval-after-load "bibtex-mode"
-  '(setq bibtex-BibTeX-entry-alist
-         (cons my-article-spec
-               (cdr bibtex-BibTeX-entry-alist))))
+(setq bibtex-BibTeX-entry-alist
+      (cons my-article-spec
+            (cdr bibtex-BibTeX-entry-alist)))
 (add-to-list 'bibtex-entry-format 'sort-fields)
 #+end_src
 
