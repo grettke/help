@@ -6440,6 +6440,8 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
   ("F" bibtex-reformat)
   ("m" help/bibtex-maybe-troublesome-mode-disable)
   ("M" help/bibtex-maybe-troublesome-mode-enable))
+(define-key bibtex-mode-map (kbd "C-j") nil)
+(define-key bibtex-mode-map (kbd "s-j") #'bibtex-next-field)
 #+end_src
 
 #+name: org_gcr_2018-09-19T12-32-27-05-00_cosmicality_1CF3A243-94CC-4423-9BC3-35BAAA3C9A23

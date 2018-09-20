@@ -114,7 +114,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-           hidden-mode-line-mode)
+             hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -4058,6 +4058,8 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
   ("F" bibtex-reformat)
   ("m" help/bibtex-maybe-troublesome-mode-disable)
   ("M" help/bibtex-maybe-troublesome-mode-enable))
+(define-key bibtex-mode-map (kbd "C-j") nil)
+(define-key bibtex-mode-map (kbd "s-j") #'bibtex-next-field)
 ;; org_gcr_2018-09-19T12-32-27-05-00_cosmicality_4C483D43-7E0D-48E1-88D5-9353A0DBD83A ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2018-09-19T12-32-27-05-00_cosmicality_1CF3A243-94CC-4423-9BC3-35BAAA3C9A23][org_gcr_2018-09-19T12-32-27-05-00_cosmicality_1CF3A243-94CC-4423-9BC3-35BAAA3C9A23]]
