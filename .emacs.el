@@ -4030,6 +4030,10 @@ Errors: _R_eport ⏼_B_oxes ⏼_W_arnings
 (setq org-koma-letter-class-option-file "KomaDefault")
 ;; org_gcr_2017-05-12_mara_33A83D5A-E541-474C-AA0D-2E039EC74CDD ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-09-19T22-21-28-05-00_cosmicality_38743072-6B0D-4793-903E-E7AC205CF6BC][org_gcr_2018-09-19T22-21-28-05-00_cosmicality_38743072-6B0D-4793-903E-E7AC205CF6BC]]
+(require 'bibtex)
+;; org_gcr_2018-09-19T22-21-28-05-00_cosmicality_38743072-6B0D-4793-903E-E7AC205CF6BC ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2018-09-19T12-32-27-05-00_cosmicality_4C483D43-7E0D-48E1-88D5-9353A0DBD83A][org_gcr_2018-09-19T12-32-27-05-00_cosmicality_4C483D43-7E0D-48E1-88D5-9353A0DBD83A]]
 (defun help/bibtex-mode-hook-fn ()
   (key-chord-define-local "hh" #'help/bibtex/body))
@@ -4068,17 +4072,16 @@ Errors: _R_eport ⏼_B_oxes ⏼_W_arnings
 (setq my-article-spec
       '("Article" "HELP Journal Article Specification"
         (("author")
-         ("journal")
-         ("month")
-         ("number")
-         ("pages")
+         ("year")
          ("title")
-         ("volume")
-         ("year"))))
-(eval-after-load "bibtex-mode"
-  '(setq bibtex-BibTeX-entry-alist
-         (cons my-article-spec
-               (cdr bibtex-BibTeX-entry-alist))))
+         ("journal")
+         ("number")
+         ("month")
+         ("pages")
+         )))
+(setq bibtex-BibTeX-entry-alist
+      (cons my-article-spec
+            (cdr bibtex-BibTeX-entry-alist)))
 (add-to-list 'bibtex-entry-format 'sort-fields)
 ;; org_gcr_2018-09-19T12-32-27-05-00_cosmicality_C6F716C4-6A86-4467-BF50-4A42A0E2AFB5 ends here
 
