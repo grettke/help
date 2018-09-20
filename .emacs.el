@@ -4091,12 +4091,13 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 ;; [[file:~/src/help/help.org::org_gcr_2018-09-19T12-32-27-05-00_cosmicality_C6F716C4-6A86-4467-BF50-4A42A0E2AFB5][org_gcr_2018-09-19T12-32-27-05-00_cosmicality_C6F716C4-6A86-4467-BF50-4A42A0E2AFB5]]
 (setq my-article-spec
       '("Article" "HELP Journal Article Specification"
-        (("author")
-         ("year")
+        (
+         ("author")
          ("title")
          ("journal")
          ("number")
          ("month")
+         ("year")
          ("pages")
          )))
 (setq bibtex-BibTeX-entry-alist

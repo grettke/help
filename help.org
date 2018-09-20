@@ -6505,12 +6505,13 @@ setup that means they are in lower case.
 #+begin_src emacs-lisp
 (setq my-article-spec
       '("Article" "HELP Journal Article Specification"
-        (("author")
-         ("year")
+        (
+         ("author")
          ("title")
          ("journal")
          ("number")
          ("month")
+         ("year")
          ("pages")
          )))
 (setq bibtex-BibTeX-entry-alist
