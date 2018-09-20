@@ -6416,6 +6416,96 @@ Set up my default LCO files.
   (key-chord-define-local "hh" #'help/bibtex/body))
 (add-hook 'bibtex-mode-hook #'help/bibtex-mode-hook-fn)
 #+end_src
+
+#+name: org_gcr_2018-09-19T12-32-27-05-00_cosmicality_1CF3A243-94CC-4423-9BC3-35BAAA3C9A23
+#+begin_src emacs-lisp
+(setq bibtex-entry-format nil)
+#+end_src
+
+"Delete empty optional and alternative fields and remove OPT and ALT prefixes
+from used fields."
+
+#+name: org_gcr_2018-09-19T12-32-27-05-00_cosmicality_94FCD330-3C5E-404E-AA19-0C3E9D1DB6D4
+#+begin_src emacs-lisp
+(add-to-list 'bibtex-entry-format 'opts-or-alts)
+#+end_src
+
+"Signal an error if a required field is missing."
+
+#+name: org_gcr_2018-09-19T12-32-27-05-00_cosmicality_1B324CB4-0390-43F2-9AE4-EDEC5D16614A
+#+begin_src emacs-lisp
+(add-to-list 'bibtex-entry-format 'required-fields)
+#+end_src
+
+"Delete whitespace at the beginning and end of fields."
+
+#+name: org_gcr_2018-09-19T12-32-27-05-00_cosmicality_A0A4865A-E855-463C-8F55-43C47199CAD8
+#+begin_src emacs-lisp
+(add-to-list 'bibtex-entry-format 'whitespace)
+#+end_src
+
+"Realign entries, so that field texts and perhaps equal signs begin in the
+same column. Also fill fields."
+
+#+name: org_gcr_2018-09-19T12-32-27-05-00_cosmicality_21684BCC-04D4-4EE8-90E0-4F65764D1E26
+#+begin_src emacs-lisp
+(add-to-list 'bibtex-entry-format 'realign)
+#+end_src
+
+"Change delimiters according to variables ‘bibtex-field-delimiters’ and ‘bibtex-entry-delimiters’."
+
+#+name: org_gcr_2018-09-19T12-32-27-05-00_cosmicality_B493A48E-FDE3-4B0B-B935-FBDF3BB99C35
+#+begin_src emacs-lisp
+(add-to-list 'bibtex-entry-format 'delimiters)
+#+end_src
+
+"Change case of entry types and field names."
+
+#+name: org_gcr_2018-09-19T12-32-27-05-00_cosmicality_D5C9AF40-97B8-4F1B-8CBC-373DB521C1EF
+#+begin_src emacs-lisp
+(add-to-list 'bibtex-entry-format 'unify-case)
+#+end_src
+
+"Sort fields to match the field order in ‘bibtex-BibTeX-entry-alist’."
+
+#+name: org_gcr_2018-09-19T12-32-27-05-00_cosmicality_C6F716C4-6A86-4467-BF50-4A42A0E2AFB5
+#+begin_src emacs-lisp
+(setq my-article-spec
+      '("Article" "HELP Journal Article Specification"
+        (("author")
+         ("journal")
+         ("month")
+         ("number")
+         ("pages")
+         ("title")
+         ("volume")
+         ("year"))))
+(eval-after-load "bibtex-mode"
+  '(setq bibtex-BibTeX-entry-alist
+         (cons my-article-spec
+               (cdr bibtex-BibTeX-entry-alist))))
+(add-to-list 'bibtex-entry-format 'sort-fields)
+#+end_src
+
+Autokey.
+
+#+name: org_gcr_2018-09-19T12-32-27-05-00_cosmicality_C87F9898-F014-4A14-8CD9-DCA6554DD133
+#+begin_src emacs-lisp
+(setq bibtex-autokey-names 1)
+(setq bibtex-autokey-name-length 10)
+(setq bibtex-autokey-name-case-convert-function #'capitalize)
+
+(setq bibtex-autokey-year-length 4)
+
+(setq bibtex-autokey-titlewords 3)
+(setq bibtex-autokey-titleword-length -1)
+(setq bibtex-autokey-titleword-case-convert-function 'capitalize)
+(setq bibtex-autokey-titleword-separator "")
+
+(setq bibtex-autokey-name-year-separator ":")
+(setq bibtex-autokey-year-title-separator ":")
+(setq bibtex-autokey-edit-before-use nil)
+#+end_src
 *** Texinfo
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:2A19DF86-96B0-4371-8DE9-1F79861F5E89
@@ -8192,6 +8282,9 @@ BibTeX stuff.
 
 #+NAME: org_gcr_2017-05-12_mara_D0F37886-4355-478C-A141-93F48E531CE5
 #+BEGIN_SRC emacs-lisp
+(defun help/bibtex-calculate-new-reference-key ()
+  (interactive)
+  (bibtex-clean-entry 't))
 (defhydra help/bibtex (:color blue :hint nil)
   "
 _c_ Clean Entry _C_ Clean Entry & Create New Reference
@@ -8199,9 +8292,9 @@ _f_ Reindent Field _F_ Reindent Buffer/Region
 _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 "
   ("c" bibtex-clean-entry)
-  ("C" (lambda () (interactive) (bibtex-clean-entry 't)))
-  ("f" #'bibtex-fill-entry)
-  ("F" #'bibtex-reformat)
+  ("C" help/bibtex-calculate-new-reference-key)
+  ("f" bibtex-fill-entry)
+  ("F" bibtex-reformat)
   ;; Disable them
   ("m" (lambda () (interactive)
          (progn (aggressive-indent-mode 'toggle)

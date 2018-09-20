@@ -114,7 +114,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-             hidden-mode-line-mode)
+           hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -4036,6 +4036,69 @@ Errors: _R_eport ⏼_B_oxes ⏼_W_arnings
 (add-hook 'bibtex-mode-hook #'help/bibtex-mode-hook-fn)
 ;; org_gcr_2018-09-19T12-32-27-05-00_cosmicality_4C483D43-7E0D-48E1-88D5-9353A0DBD83A ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-09-19T12-32-27-05-00_cosmicality_1CF3A243-94CC-4423-9BC3-35BAAA3C9A23][org_gcr_2018-09-19T12-32-27-05-00_cosmicality_1CF3A243-94CC-4423-9BC3-35BAAA3C9A23]]
+(setq bibtex-entry-format nil)
+;; org_gcr_2018-09-19T12-32-27-05-00_cosmicality_1CF3A243-94CC-4423-9BC3-35BAAA3C9A23 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-09-19T12-32-27-05-00_cosmicality_94FCD330-3C5E-404E-AA19-0C3E9D1DB6D4][org_gcr_2018-09-19T12-32-27-05-00_cosmicality_94FCD330-3C5E-404E-AA19-0C3E9D1DB6D4]]
+(add-to-list 'bibtex-entry-format 'opts-or-alts)
+;; org_gcr_2018-09-19T12-32-27-05-00_cosmicality_94FCD330-3C5E-404E-AA19-0C3E9D1DB6D4 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-09-19T12-32-27-05-00_cosmicality_1B324CB4-0390-43F2-9AE4-EDEC5D16614A][org_gcr_2018-09-19T12-32-27-05-00_cosmicality_1B324CB4-0390-43F2-9AE4-EDEC5D16614A]]
+(add-to-list 'bibtex-entry-format 'required-fields)
+;; org_gcr_2018-09-19T12-32-27-05-00_cosmicality_1B324CB4-0390-43F2-9AE4-EDEC5D16614A ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-09-19T12-32-27-05-00_cosmicality_A0A4865A-E855-463C-8F55-43C47199CAD8][org_gcr_2018-09-19T12-32-27-05-00_cosmicality_A0A4865A-E855-463C-8F55-43C47199CAD8]]
+(add-to-list 'bibtex-entry-format 'whitespace)
+;; org_gcr_2018-09-19T12-32-27-05-00_cosmicality_A0A4865A-E855-463C-8F55-43C47199CAD8 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-09-19T12-32-27-05-00_cosmicality_21684BCC-04D4-4EE8-90E0-4F65764D1E26][org_gcr_2018-09-19T12-32-27-05-00_cosmicality_21684BCC-04D4-4EE8-90E0-4F65764D1E26]]
+(add-to-list 'bibtex-entry-format 'realign)
+;; org_gcr_2018-09-19T12-32-27-05-00_cosmicality_21684BCC-04D4-4EE8-90E0-4F65764D1E26 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-09-19T12-32-27-05-00_cosmicality_B493A48E-FDE3-4B0B-B935-FBDF3BB99C35][org_gcr_2018-09-19T12-32-27-05-00_cosmicality_B493A48E-FDE3-4B0B-B935-FBDF3BB99C35]]
+(add-to-list 'bibtex-entry-format 'delimiters)
+;; org_gcr_2018-09-19T12-32-27-05-00_cosmicality_B493A48E-FDE3-4B0B-B935-FBDF3BB99C35 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-09-19T12-32-27-05-00_cosmicality_D5C9AF40-97B8-4F1B-8CBC-373DB521C1EF][org_gcr_2018-09-19T12-32-27-05-00_cosmicality_D5C9AF40-97B8-4F1B-8CBC-373DB521C1EF]]
+(add-to-list 'bibtex-entry-format 'unify-case)
+;; org_gcr_2018-09-19T12-32-27-05-00_cosmicality_D5C9AF40-97B8-4F1B-8CBC-373DB521C1EF ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-09-19T12-32-27-05-00_cosmicality_C6F716C4-6A86-4467-BF50-4A42A0E2AFB5][org_gcr_2018-09-19T12-32-27-05-00_cosmicality_C6F716C4-6A86-4467-BF50-4A42A0E2AFB5]]
+(setq my-article-spec
+      '("Article" "HELP Journal Article Specification"
+        (("author")
+         ("journal")
+         ("month")
+         ("number")
+         ("pages")
+         ("title")
+         ("volume")
+         ("year"))))
+(eval-after-load "bibtex-mode"
+  '(setq bibtex-BibTeX-entry-alist
+         (cons my-article-spec
+               (cdr bibtex-BibTeX-entry-alist))))
+(add-to-list 'bibtex-entry-format 'sort-fields)
+;; org_gcr_2018-09-19T12-32-27-05-00_cosmicality_C6F716C4-6A86-4467-BF50-4A42A0E2AFB5 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-09-19T12-32-27-05-00_cosmicality_C87F9898-F014-4A14-8CD9-DCA6554DD133][org_gcr_2018-09-19T12-32-27-05-00_cosmicality_C87F9898-F014-4A14-8CD9-DCA6554DD133]]
+(setq bibtex-autokey-names 1)
+(setq bibtex-autokey-name-length 10)
+(setq bibtex-autokey-name-case-convert-function #'capitalize)
+
+(setq bibtex-autokey-year-length 4)
+
+(setq bibtex-autokey-titlewords 3)
+(setq bibtex-autokey-titleword-length -1)
+(setq bibtex-autokey-titleword-case-convert-function 'capitalize)
+(setq bibtex-autokey-titleword-separator "")
+
+(setq bibtex-autokey-name-year-separator ":")
+(setq bibtex-autokey-year-title-separator ":")
+(setq bibtex-autokey-edit-before-use nil)
+;; org_gcr_2018-09-19T12-32-27-05-00_cosmicality_C87F9898-F014-4A14-8CD9-DCA6554DD133 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_42D37E52-A420-4196-8B2C-6755441A5FC3][org_gcr_2017-05-12_mara_42D37E52-A420-4196-8B2C-6755441A5FC3]]
 (use-package markdown-mode
   :ensure t
@@ -4874,6 +4937,9 @@ _a_ ✓ _s_ ✗ _d_ ☐ _f_ ☑ _g_ ☒_
 ;; org_gcr_2017-05-12_mara_E4413D83-9743-468B-BBAF-3FAF9E31F491 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D0F37886-4355-478C-A141-93F48E531CE5][org_gcr_2017-05-12_mara_D0F37886-4355-478C-A141-93F48E531CE5]]
+(defun help/bibtex-calculate-new-reference-key ()
+  (interactive)
+  (bibtex-clean-entry 't))
 (defhydra help/bibtex (:color blue :hint nil)
   "
 _c_ Clean Entry _C_ Clean Entry & Create New Reference
@@ -4881,9 +4947,9 @@ _f_ Reindent Field _F_ Reindent Buffer/Region
 _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 "
   ("c" bibtex-clean-entry)
-  ("C" (lambda () (interactive) (bibtex-clean-entry 't)))
-  ("f" #'bibtex-fill-entry)
-  ("F" #'bibtex-reformat)
+  ("C" help/bibtex-calculate-new-reference-key)
+  ("f" bibtex-fill-entry)
+  ("F" bibtex-reformat)
   ;; Disable them
   ("m" (lambda () (interactive)
          (progn (aggressive-indent-mode 'toggle)
