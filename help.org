@@ -6464,7 +6464,7 @@ same column. Also fill fields."
 (add-to-list 'bibtex-entry-format 'delimiters)
 #+end_src
 
-"Change case of entry types and field names."—lower-casing them. 
+"Change case of entry types and field names."—lower-casing them.
 
 #+name: org_gcr_2018-09-19T12-32-27-05-00_cosmicality_D5C9AF40-97B8-4F1B-8CBC-373DB521C1EF
 #+begin_src emacs-lisp
@@ -6478,13 +6478,13 @@ same column. Also fill fields."
 (setq my-article-spec
       '("Article" "HELP Journal Article Specification"
         (("author")
-         ("journal")
-         ("month")
-         ("number")
-         ("pages")
+         ("year")
          ("title")
-         ("volume")
-         ("year"))))
+         ("journal")
+         ("number")
+         ("month")
+         ("pages")
+         )))
 (setq bibtex-BibTeX-entry-alist
       (cons my-article-spec
             (cdr bibtex-BibTeX-entry-alist)))
@@ -6502,6 +6502,7 @@ Autokey.
 (setq bibtex-autokey-year-length 4)
 
 (setq bibtex-autokey-titlewords 3)
+(setq bibtex-autokey-title-terminators "[.!?;]")
 (setq bibtex-autokey-titleword-length -1)
 (setq bibtex-autokey-titleword-case-convert-function 'capitalize)
 (setq bibtex-autokey-titleword-separator "")
