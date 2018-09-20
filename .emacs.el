@@ -4030,6 +4030,12 @@ Errors: _R_eport ⏼_B_oxes ⏼_W_arnings
 (setq org-koma-letter-class-option-file "KomaDefault")
 ;; org_gcr_2017-05-12_mara_33A83D5A-E541-474C-AA0D-2E039EC74CDD ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-09-19T12-32-27-05-00_cosmicality_4C483D43-7E0D-48E1-88D5-9353A0DBD83A][org_gcr_2018-09-19T12-32-27-05-00_cosmicality_4C483D43-7E0D-48E1-88D5-9353A0DBD83A]]
+(defun help/bibtex-mode-hook-fn ()
+  (key-chord-define-local "hh" #'help/bibtex/body))
+(add-hook 'bibtex-mode-hook #'help/bibtex-mode-hook-fn)
+;; org_gcr_2018-09-19T12-32-27-05-00_cosmicality_4C483D43-7E0D-48E1-88D5-9353A0DBD83A ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_42D37E52-A420-4196-8B2C-6755441A5FC3][org_gcr_2017-05-12_mara_42D37E52-A420-4196-8B2C-6755441A5FC3]]
 (use-package markdown-mode
   :ensure t
@@ -4719,7 +4725,7 @@ _;_ toggle-lax-whitespace
 _x_ delete-indentation _X_ checkmarks
 _c_ fill-paragraph
 _V_ view-only mode
-_b_ erase-buffer _B_ibtex
+_b_ erase-buffer
 _N_ normal-mode (see also hack-local-variables)
 _m_ font lock _M_ Marked 2
 _<_ double bracket, angle, left
@@ -4792,7 +4798,6 @@ _?_ tons of scissors
   ("}" help/hydra/transliterate/body)
   ("c" fill-paragraph)
   ("b" erase-buffer)
-  ("B" help/bibtex/body)
   ("'" help/move-file)
   ("\"" imenu-list-minor-mode))
 ;; org_gcr_2017-05-12_mara_095E1EC7-12A2-43BB-8ED5-CF2BC6E7D158 ends here

@@ -6406,6 +6406,16 @@ Set up my default LCO files.
 (setq org-koma-letter-class-option-file "KomaDefault")
 #+END_SRC
 
+*** BibTeX
+:PROPERTIES:
+:ID:       org_gcr_2018-09-19T12-32-27-05-00_cosmicality:5B76D1FD-35D2-43F4-8CFB-B434671BEF29
+:END:
+#+name: org_gcr_2018-09-19T12-32-27-05-00_cosmicality_4C483D43-7E0D-48E1-88D5-9353A0DBD83A
+#+begin_src emacs-lisp
+(defun help/bibtex-mode-hook-fn ()
+  (key-chord-define-local "hh" #'help/bibtex/body))
+(add-hook 'bibtex-mode-hook #'help/bibtex-mode-hook-fn)
+#+end_src
 *** Texinfo
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:2A19DF86-96B0-4371-8DE9-1F79861F5E89
@@ -8019,7 +8029,7 @@ _;_ toggle-lax-whitespace
 _x_ delete-indentation _X_ checkmarks
 _c_ fill-paragraph
 _V_ view-only mode
-_b_ erase-buffer _B_ibtex
+_b_ erase-buffer
 _N_ normal-mode (see also hack-local-variables)
 _m_ font lock _M_ Marked 2
 _<_ double bracket, angle, left
@@ -8092,7 +8102,6 @@ _?_ tons of scissors
   ("}" help/hydra/transliterate/body)
   ("c" fill-paragraph)
   ("b" erase-buffer)
-  ("B" help/bibtex/body)
   ("'" help/move-file)
   ("\"" imenu-list-minor-mode))
 #+END_SRC
