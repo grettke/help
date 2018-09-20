@@ -4030,14 +4030,34 @@ Errors: _R_eport ⏼_B_oxes ⏼_W_arnings
 (setq org-koma-letter-class-option-file "KomaDefault")
 ;; org_gcr_2017-05-12_mara_33A83D5A-E541-474C-AA0D-2E039EC74CDD ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-09-19T22-21-28-05-00_cosmicality_38743072-6B0D-4793-903E-E7AC205CF6BC][org_gcr_2018-09-19T22-21-28-05-00_cosmicality_38743072-6B0D-4793-903E-E7AC205CF6BC]]
-(require 'bibtex)
-;; org_gcr_2018-09-19T22-21-28-05-00_cosmicality_38743072-6B0D-4793-903E-E7AC205CF6BC ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2018-09-19T12-32-27-05-00_cosmicality_4C483D43-7E0D-48E1-88D5-9353A0DBD83A][org_gcr_2018-09-19T12-32-27-05-00_cosmicality_4C483D43-7E0D-48E1-88D5-9353A0DBD83A]]
+(require 'bibtex)
 (defun help/bibtex-mode-hook-fn ()
   (key-chord-define-local "hh" #'help/bibtex/body))
 (add-hook 'bibtex-mode-hook #'help/bibtex-mode-hook-fn)
+(defun help/bibtex-calculate-new-reference-key ()
+  (interactive)
+  (bibtex-clean-entry 't))
+(defun help/bibtex-maybe-troublesome-mode-disable
+    (interactive)
+  (aggressive-indent-mode 'toggle)
+  (visual-line-mode 't))
+(defun help/bibtex-maybe-troublesome-mode-enable
+    (interactive)
+  (aggressive-indent-mode nil)
+  (visual-line-mode nil))
+(defhydra help/bibtex (:color blue :hint nil)
+  "
+_c_ Clean Entry _C_ Clean Entry & Create New Reference
+_f_ Reindent Field _F_ Reindent Buffer/Region
+_m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
+"
+  ("c" bibtex-clean-entry)
+  ("C" help/bibtex-calculate-new-reference-key)
+  ("f" bibtex-fill-entry)
+  ("F" bibtex-reformat)
+  ("m" help/bibtex-maybe-troublesome-mode-disable)
+  ("M" help/bibtex-maybe-troublesome-mode-enable))
 ;; org_gcr_2018-09-19T12-32-27-05-00_cosmicality_4C483D43-7E0D-48E1-88D5-9353A0DBD83A ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2018-09-19T12-32-27-05-00_cosmicality_1CF3A243-94CC-4423-9BC3-35BAAA3C9A23][org_gcr_2018-09-19T12-32-27-05-00_cosmicality_1CF3A243-94CC-4423-9BC3-35BAAA3C9A23]]
@@ -4939,30 +4959,6 @@ _a_ ✓ _s_ ✗ _d_ ☐ _f_ ☑ _g_ ☒_
   ("f" (lambda () (interactive) (insert "☑")) :exit nil)
   ("g" (lambda () (interactive) (insert "☒")) :exit nil))
 ;; org_gcr_2017-05-12_mara_E4413D83-9743-468B-BBAF-3FAF9E31F491 ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D0F37886-4355-478C-A141-93F48E531CE5][org_gcr_2017-05-12_mara_D0F37886-4355-478C-A141-93F48E531CE5]]
-(defun help/bibtex-calculate-new-reference-key ()
-  (interactive)
-  (bibtex-clean-entry 't))
-(defhydra help/bibtex (:color blue :hint nil)
-  "
-_c_ Clean Entry _C_ Clean Entry & Create New Reference
-_f_ Reindent Field _F_ Reindent Buffer/Region
-_m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
-"
-  ("c" bibtex-clean-entry)
-  ("C" help/bibtex-calculate-new-reference-key)
-  ("f" bibtex-fill-entry)
-  ("F" bibtex-reformat)
-  ;; Disable them
-  ("m" (lambda () (interactive)
-         (progn (aggressive-indent-mode 'toggle)
-                (visual-line-mode 't))))
-  ;; Enable them
-  ("M" (lambda () (interactive)
-         (progn (aggressive-indent-mode nil)
-                (visual-line-mode nil)))))
-;; org_gcr_2017-05-12_mara_D0F37886-4355-478C-A141-93F48E531CE5 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2018-05-24T12-09-16-04-00_mara_09A8135C-9B9B-4039-A091-6DB640A7C3EF][org_gcr_2018-05-24T12-09-16-04-00_mara_09A8135C-9B9B-4039-A091-6DB640A7C3EF]]
 (global-set-key (kbd "M-s M-s") #'shell)

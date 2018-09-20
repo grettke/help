@@ -6411,15 +6411,35 @@ Set up my default LCO files.
 :ID:       org_gcr_2018-09-19T12-32-27-05-00_cosmicality:5B76D1FD-35D2-43F4-8CFB-B434671BEF29
 :END:
 
-#+name: org_gcr_2018-09-19T22-21-28-05-00_cosmicality_38743072-6B0D-4793-903E-E7AC205CF6BC
-#+begin_src emacs-lisp
-(require 'bibtex)
-#+end_src
 #+name: org_gcr_2018-09-19T12-32-27-05-00_cosmicality_4C483D43-7E0D-48E1-88D5-9353A0DBD83A
 #+begin_src emacs-lisp
+(require 'bibtex)
 (defun help/bibtex-mode-hook-fn ()
   (key-chord-define-local "hh" #'help/bibtex/body))
 (add-hook 'bibtex-mode-hook #'help/bibtex-mode-hook-fn)
+(defun help/bibtex-calculate-new-reference-key ()
+  (interactive)
+  (bibtex-clean-entry 't))
+(defun help/bibtex-maybe-troublesome-mode-disable
+    (interactive)
+  (aggressive-indent-mode 'toggle)
+  (visual-line-mode 't))
+(defun help/bibtex-maybe-troublesome-mode-enable
+    (interactive)
+  (aggressive-indent-mode nil)
+  (visual-line-mode nil))
+(defhydra help/bibtex (:color blue :hint nil)
+  "
+_c_ Clean Entry _C_ Clean Entry & Create New Reference
+_f_ Reindent Field _F_ Reindent Buffer/Region
+_m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
+"
+  ("c" bibtex-clean-entry)
+  ("C" help/bibtex-calculate-new-reference-key)
+  ("f" bibtex-fill-entry)
+  ("F" bibtex-reformat)
+  ("m" help/bibtex-maybe-troublesome-mode-disable)
+  ("M" help/bibtex-maybe-troublesome-mode-enable))
 #+end_src
 
 #+name: org_gcr_2018-09-19T12-32-27-05-00_cosmicality_1CF3A243-94CC-4423-9BC3-35BAAA3C9A23
@@ -8281,33 +8301,6 @@ _a_ ✓ _s_ ✗ _d_ ☐ _f_ ☑ _g_ ☒_
   ("d" (lambda () (interactive) (insert "☐")) :exit nil)
   ("f" (lambda () (interactive) (insert "☑")) :exit nil)
   ("g" (lambda () (interactive) (insert "☒")) :exit nil))
-#+END_SRC
-
-BibTeX stuff.
-
-#+NAME: org_gcr_2017-05-12_mara_D0F37886-4355-478C-A141-93F48E531CE5
-#+BEGIN_SRC emacs-lisp
-(defun help/bibtex-calculate-new-reference-key ()
-  (interactive)
-  (bibtex-clean-entry 't))
-(defhydra help/bibtex (:color blue :hint nil)
-  "
-_c_ Clean Entry _C_ Clean Entry & Create New Reference
-_f_ Reindent Field _F_ Reindent Buffer/Region
-_m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
-"
-  ("c" bibtex-clean-entry)
-  ("C" help/bibtex-calculate-new-reference-key)
-  ("f" bibtex-fill-entry)
-  ("F" bibtex-reformat)
-  ;; Disable them
-  ("m" (lambda () (interactive)
-         (progn (aggressive-indent-mode 'toggle)
-                (visual-line-mode 't))))
-  ;; Enable them
-  ("M" (lambda () (interactive)
-         (progn (aggressive-indent-mode nil)
-                (visual-line-mode nil)))))
 #+END_SRC
 
 #+name: org_gcr_2018-05-24T12-09-16-04-00_mara_09A8135C-9B9B-4039-A091-6DB640A7C3EF
