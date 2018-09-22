@@ -3680,7 +3680,10 @@ Geiser REPL: ⏼%(help/geiser-on-p)
     :config
     (add-to-list 'org-babel-load-languages '(apples . t)))
   (defun help/apples-mode-hook-fun ())
-  (add-hook 'apples-mode-hook #'help/apples-mode-hook-fun))
+  (add-hook 'apples-mode-hook #'help/apples-mode-hook-fun)
+  (autoload 'apples-mode "apples-mode" "Happy AppleScripting!" t)
+  (autoload 'apples-open-scratch "apples-mode" "Open scratch buffer for AppleScript." t)
+  (add-to-list 'auto-mode-alist '("\\.\\(applescri\\|sc\\)pt\\'" . apples-mode)))
 ;; org_gcr_2018-04-20T15-46-50-05-00_mara_E248AEB6-4E35-40F3-A23A-E5D7BED863C4 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_498DAC46-DA9D-4AAA-82BF-46D712E4DBA5][org_gcr_2017-05-12_mara_498DAC46-DA9D-4AAA-82BF-46D712E4DBA5]]
