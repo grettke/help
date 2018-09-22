@@ -10,6 +10,17 @@
 (load-file "~/src/help/.org-mode-contribute.emacs.el")
 ;; org_gcr_2017-05-12_mara_EE00DAED-88BD-4271-9CFE-34BDCEE68932 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-09-21T18-57-01-05-00_cosmicality_71EB64A3-523C-47F4-8FB5-1E29B102192B][org_gcr_2018-09-21T18-57-01-05-00_cosmicality_71EB64A3-523C-47F4-8FB5-1E29B102192B]]
+(use-package benchmark-init
+  :ensure t
+  :config
+  (defun help/benchmark-deactivate ()
+    (benchmark-init/deactivate)
+    (benchmark-init/show-durations-tabulated)
+    (benchmark-init/show-durations-tree))
+  (add-hook 'after-init-hook #'help/benchmark-deactivate))
+;; org_gcr_2018-09-21T18-57-01-05-00_cosmicality_71EB64A3-523C-47F4-8FB5-1E29B102192B ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_289C017E-D5F0-4B8A-987F-A64696094359][org_gcr_2017-05-12_mara_289C017E-D5F0-4B8A-987F-A64696094359]]
 (setq custom-file "~/src/help/custom.el")
 (load custom-file :noerror)

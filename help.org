@@ -378,7 +378,23 @@ reveal.
 The following code and packages are special to this configuration. They provide
 critical functionality for configuring the rest of the system. They provide
 ideas that make the entire system usable, productive, expressive, and fast.
+** Benchmark
+:PROPERTIES:
+:ID:       org_gcr_2018-09-21T18-57-01-05-00_cosmicality:32215650-08D5-448E-8EFE-885CA41A824A
+:END:
+Report startup benchmarks from here forward.
 
+#+name: org_gcr_2018-09-21T18-57-01-05-00_cosmicality_71EB64A3-523C-47F4-8FB5-1E29B102192B
+#+begin_src emacs-lisp
+(use-package benchmark-init
+  :ensure t
+  :config
+  (defun help/benchmark-deactivate ()
+    (benchmark-init/deactivate)
+    (benchmark-init/show-durations-tabulated)
+    (benchmark-init/show-durations-tree))
+  (add-hook 'after-init-hook #'help/benchmark-deactivate))
+#+end_src
 ** Customize
 :PROPERTIES:
 :ID:       org_gcr_2017-05-12_mara:C8E7E545-E716-4ACE-9536-B7278F843632
