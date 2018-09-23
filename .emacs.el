@@ -972,9 +972,19 @@ Does the \"right thing\" under `org-mode'."
     (setq last-command-event ?\s)
     (do-insert)))
 
+(defun help/real-insert (char)
+  (cl-flet ((do-insert
+             () (if (bound-and-true-p org-mode)
+                    (org-self-insert-command 1)
+                  (self-insert-command 1))))
+    (setq last-command-event char)
+    (do-insert)))
+
 (defun help/dot-space () (interactive) (help/insert-it-then-real-space ?\.))
+(defun help/dot-real () (interactive) (help/real-insert ?\.))
+
 (defun help/comma-space () (interactive) (help/insert-it-then-real-space ?\,))
-(defun help/question-space () (interactive) (help/insert-it-then-real-space ?\?))
+(defun help/comma-real () (interactive) (help/real-insert ?\,))
 ;; org_gcr_2017-05-12_mara_7D37FFE5-2D2B-4CF7-AF27-F3CB8616D81B ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F][org_gcr_2017-05-12_mara_7354096C-3F3A-408E-8F1C-79ABB054040F]]
@@ -2174,8 +2184,9 @@ _A_rchives | Rest_o_res | Re_f_iles
   (turn-on-page-break-lines-mode)
   (turn-on-auto-capitalize-mode)
   (local-set-key (kbd ".") #'help/dot-space)
+  (local-set-key (kbd "C-.") #'help/dot-real)
   (local-set-key (kbd ",") #'help/comma-space)
-  (local-set-key (kbd "?") #'help/question-space))
+  (local-set-key (kbd "C-,") #'help/comma-real))
 (add-hook 'text-mode-hook #'help/text-mode-fn)
 ;; org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F ends here
 

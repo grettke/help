@@ -1492,9 +1492,19 @@ Does the \"right thing\" under `org-mode'."
     (setq last-command-event ?\s)
     (do-insert)))
 
+(defun help/real-insert (char)
+  (cl-flet ((do-insert
+             () (if (bound-and-true-p org-mode)
+                    (org-self-insert-command 1)
+                  (self-insert-command 1))))
+    (setq last-command-event char)
+    (do-insert)))
+
 (defun help/dot-space () (interactive) (help/insert-it-then-real-space ?\.))
+(defun help/dot-real () (interactive) (help/real-insert ?\.))
+
 (defun help/comma-space () (interactive) (help/insert-it-then-real-space ?\,))
-(defun help/question-space () (interactive) (help/insert-it-then-real-space ?\?))
+(defun help/comma-real () (interactive) (help/real-insert ?\,))
 #+END_SRC
 
 ** Typography
@@ -3447,8 +3457,9 @@ Every text editing buffer needs this.
   (turn-on-page-break-lines-mode)
   (turn-on-auto-capitalize-mode)
   (local-set-key (kbd ".") #'help/dot-space)
+  (local-set-key (kbd "C-.") #'help/dot-real)
   (local-set-key (kbd ",") #'help/comma-space)
-  (local-set-key (kbd "?") #'help/question-space))
+  (local-set-key (kbd "C-,") #'help/comma-real))
 (add-hook 'text-mode-hook #'help/text-mode-fn)
 #+END_SRC
 
