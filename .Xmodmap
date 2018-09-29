@@ -1,0 +1,12 @@
+! MacBook Pro Keyboard, Keycode
+! =============================
+! Left Option, 66
+! Left Command, 63
+! Right Command, 71
+! Right Option, 69
+
+! Map command keys to alt
+keycode 63 = Alt_L
+keycode 71 = Alt_R
+clear mod1
+add mod1 = Alt_L Alt_R
