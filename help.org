@@ -1540,6 +1540,13 @@ One space after comma.
 #+BEGIN_SRC emacs-lisp
 (setq colon-double-space nil)
 #+END_SRC
+
+Correct quotes in text.
+
+#+name: org_gcr_2018-09-29T16-11-05-05-00_cosmicality_3B4179ED-7D66-43AC-9DC5-5DE279747D6D
+#+begin_src emacs-lisp
+(electric-quote-mode)
+#+end_src
 ** Buffer
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:D4FC68F9-CEA3-455A-B718-EBDB113CFA71

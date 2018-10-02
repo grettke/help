@@ -996,6 +996,10 @@ Does the \"right thing\" under `org-mode'."
 (setq colon-double-space nil)
 ;; org_gcr_2017-05-12_mara_38909B55-115D-44E4-B84F-70285016BF92 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-09-29T16-11-05-05-00_cosmicality_3B4179ED-7D66-43AC-9DC5-5DE279747D6D][org_gcr_2018-09-29T16-11-05-05-00_cosmicality_3B4179ED-7D66-43AC-9DC5-5DE279747D6D]]
+(electric-quote-mode)
+;; org_gcr_2018-09-29T16-11-05-05-00_cosmicality_3B4179ED-7D66-43AC-9DC5-5DE279747D6D ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1986C8FB-6C8F-43F6-811D-D95577160064][org_gcr_2017-05-12_mara_1986C8FB-6C8F-43F6-811D-D95577160064]]
 (desktop-save-mode t)
 (setq desktop-restore-eager 5)
