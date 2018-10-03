@@ -1217,8 +1217,8 @@ Smart-Shift: (q to quit)
 (use-package move-text
   :ensure t
   :config
-  (global-set-key (kbd "M-s-i") #'move-text-up)
-  (global-set-key (kbd "M-s-k") #'move-text-down))
+  (global-set-key (kbd "C-s-p") #'move-text-up)
+  (global-set-key (kbd "C-s-n") #'move-text-down))
 ;; org_gcr_2018-05-21T05-52-58-05-00_mara_33917C9D-A4FF-434A-99BE-E7297D5FE094 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_611E83B9-E797-4512-95EE-643473026607][org_gcr_2017-05-12_mara_611E83B9-E797-4512-95EE-643473026607]]
@@ -5064,9 +5064,7 @@ _a_ ✓ _s_ ✗ _d_ ☐ _f_ ☑ _g_ ☒_
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_078C604D-5762-4763-AD17-A397C5E224E7][org_gcr_2017-05-12_mara_078C604D-5762-4763-AD17-A397C5E224E7]]
 (global-set-key (kbd "C-n") #'next-logical-line)
-(global-set-key (kbd "C-s-n") #'next-line)
 (global-set-key (kbd "C-p") #'previous-logical-line)
-(global-set-key (kbd "C-s-p") #'previous-line)
 ;; org_gcr_2017-05-12_mara_078C604D-5762-4763-AD17-A397C5E224E7 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BF926B57-9097-483F-AB90-E3F55869B0D9][org_gcr_2017-05-12_mara_BF926B57-9097-483F-AB90-E3F55869B0D9]]
