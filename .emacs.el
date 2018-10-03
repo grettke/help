@@ -5052,8 +5052,14 @@ _a_ ✓ _s_ ✗ _d_ ☐ _f_ ☑ _g_ ☒_
 ;; org_gcr_2017-05-12_mara_9302B01F-93C0-4D21-8BB6-53ECF1478153 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_EB0E9368-41FE-4827-9EE2-5CDFCDC1C2BA][org_gcr_2017-05-12_mara_EB0E9368-41FE-4827-9EE2-5CDFCDC1C2BA]]
-(global-set-key (kbd "M-p") (kbd "C-u 1 C-v"))
-(global-set-key (kbd "M-n") (kbd "C-u 1 M-v"))
+(defun help/scroll-up-one-line ()
+  (interactive)
+  (scroll-down 1))
+(defun help/scroll-down-one-line ()
+  (interactive)
+  (scroll-up 1))
+(global-set-key (kbd "M-p") #'help/scroll-down-one-line)
+(global-set-key (kbd "M-n") #'help/scroll-up-one-line)
 ;; org_gcr_2017-05-12_mara_EB0E9368-41FE-4827-9EE2-5CDFCDC1C2BA ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_078C604D-5762-4763-AD17-A397C5E224E7][org_gcr_2017-05-12_mara_078C604D-5762-4763-AD17-A397C5E224E7]]
