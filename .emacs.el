@@ -4734,7 +4734,7 @@ _f_ function
 _F_ flycheck checker
 _g_ categories
 _i_ input method
-_I_ info
+_I_ info buffer
 _k_ key briefly
 _K_ key
 _l_ language environment
@@ -4763,7 +4763,7 @@ _w_ where is something defined
   ("F" flycheck-describe-checker)
   ("g" describe-categories)
   ("i" describe-input-method)
-  ("I" info)
+  ("I" info-buffer)
   ("K" describe-key)
   ("k" describe-key-briefly)
   ("l" describe-language-environment)
