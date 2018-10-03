@@ -1850,8 +1850,8 @@ Moving lines.
 (use-package move-text
   :ensure t
   :config
-  (global-set-key (kbd "M-s-i") #'move-text-up)
-  (global-set-key (kbd "M-s-k") #'move-text-down))
+  (global-set-key (kbd "C-s-p") #'move-text-up)
+  (global-set-key (kbd "C-s-n") #'move-text-down))
 #+end_src
 ** Code Folding
    :PROPERTIES:

@@ -1217,8 +1217,8 @@ Smart-Shift: (q to quit)
 (use-package move-text
   :ensure t
   :config
-  (global-set-key (kbd "M-s-i") #'move-text-up)
-  (global-set-key (kbd "M-s-k") #'move-text-down))
+  (global-set-key (kbd "C-s-p") #'move-text-up)
+  (global-set-key (kbd "C-s-n") #'move-text-down))
 ;; org_gcr_2018-05-21T05-52-58-05-00_mara_33917C9D-A4FF-434A-99BE-E7297D5FE094 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_611E83B9-E797-4512-95EE-643473026607][org_gcr_2017-05-12_mara_611E83B9-E797-4512-95EE-643473026607]]
