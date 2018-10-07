@@ -1842,17 +1842,6 @@ Unfilling
 (use-package unfill
   :ensure t)
 #+end_src
-
-Moving lines.
-
-#+name: org_gcr_2018-05-21T05-52-58-05-00_mara_33917C9D-A4FF-434A-99BE-E7297D5FE094
-#+begin_src emacs-lisp
-(use-package move-text
-  :ensure t
-  :config
-  (global-set-key (kbd "C-s-p") #'move-text-up)
-  (global-set-key (kbd "C-s-n") #'move-text-down))
-#+end_src
 ** Code Folding
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:94245A47-6A25-442A-B458-AD00A3DDA1A2
