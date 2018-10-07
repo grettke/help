@@ -1205,7 +1205,7 @@ Smart-Shift: (q to quit)
     ("i" smart-shift-up :exit nil)
     ("l" smart-shift-right :exit nil)
     ("q" nil))
-  (global-set-key (kbd "C-s-j") #'help/hydra/smart-shift/body))
+  (global-set-key (kbd "C-s-k") #'help/hydra/smart-shift/body))
 ;; org_gcr_2018-01-03_mara_F64F240D-3891-46C0-8989-6124AEF60518 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2018-04-12T21-31-52-05-00_mara_4844006E-A8C3-4F45-BA6D-FFC6B3BFF7DC][org_gcr_2018-04-12T21-31-52-05-00_mara_4844006E-A8C3-4F45-BA6D-FFC6B3BFF7DC]]
@@ -4593,14 +4593,22 @@ Ansible: (q to quit)
 (use-package buffer-move
   :ensure t
   :config
-  (define-key org-mode-map (kbd "<C-S-up>") nil)
-  (global-set-key (kbd "<C-S-up>") #'buf-move-up)
-  (define-key org-mode-map (kbd "<C-S-down>") nil)
-  (global-set-key (kbd "<C-S-down>") #'buf-move-down)
-  (define-key org-mode-map (kbd "<C-S-left>") nil)
-  (global-set-key (kbd "<C-S-left>") #'buf-move-left)
-  (define-key org-mode-map (kbd "<C-S-right>") nil)
-  (global-set-key (kbd "<C-S-right>") #'buf-move-right))
+  (defhydra help/hydra/buf-move (:color blue
+                                        :hint nil)
+    "
+Buf-Move: (q to quit)
+    ↑
+    _i_
+← _j_   _l_ →
+    _k_
+    ↓
+"
+    ("j" buf-move-left :exit nil)
+    ("k" buf-move-down :exit nil)
+    ("i" buf-move-up :exit nil)
+    ("l" buf-move-right :exit nil)
+    ("q" nil))
+  (global-set-key (kbd "C-s-j") #'help/hydra/buf-move/body))
 ;; org_gcr_2017-06-20_mara_6C4B1CDD-CF71-4A5F-B900-6D3CC06D4028 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-12-27_mara_AA4152A3-5D5C-4D41-AF55-4828F8BDEF7D][org_gcr_2017-12-27_mara_AA4152A3-5D5C-4D41-AF55-4828F8BDEF7D]]
