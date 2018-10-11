@@ -3685,7 +3685,8 @@ Geiser REPL: ⏼%(help/geiser-on-p)
     ("9" apples-open-dict-index)
     ("0" apples-send-to-applescript-editor)
     ("q" nil))
-  (key-chord-define apples-mode-map "hh" #'help/hydra/right/apples-mode/body)
+  (eval-after-load "apples-mode"
+    `(key-chord-define apples-mode-map "hh" #'help/hydra/right/apples-mode/body))
   (use-package ob-applescript
     :ensure t
     :config
