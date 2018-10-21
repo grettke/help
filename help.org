@@ -1541,10 +1541,10 @@ One space after comma.
 (setq colon-double-space nil)
 #+END_SRC
 
-Correct quotes in text.
+Don't correct quotes in text until I make ispell handle it correctly.
 
 #+name: org_gcr_2018-09-29T16-11-05-05-00_cosmicality_3B4179ED-7D66-43AC-9DC5-5DE279747D6D
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :tangle no
 (electric-quote-mode)
 #+end_src
 ** Buffer
