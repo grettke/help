@@ -125,7 +125,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-             hidden-mode-line-mode)
+           hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -4147,6 +4147,17 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (setq bibtex-autokey-year-title-separator ":")
 (setq bibtex-autokey-edit-before-use nil)
 ;; org_gcr_2018-09-19T12-32-27-05-00_cosmicality_C87F9898-F014-4A14-8CD9-DCA6554DD133 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-10-15T12-34-46-04-00_cosmicality_E59C952D-3D8E-4CDC-8B84-8DECB51438D4][org_gcr_2018-10-15T12-34-46-04-00_cosmicality_E59C952D-3D8E-4CDC-8B84-8DECB51438D4]]
+(use-package ox-pandoc
+  :ensure t
+  :config
+  (setq org-pandoc-options-for-beamer-pdf '((pdf-engine . "xelatex")))
+  (setq org-pandoc-options-for-latex-pdf '((pdf-engine . "pdflatex")))
+  (setq org-pandoc-format-extensions '(markdown_github+pipe_tables+raw_html))
+  (with-eval-after-load 'ox
+    (require 'ox-pandoc)))
+;; org_gcr_2018-10-15T12-34-46-04-00_cosmicality_E59C952D-3D8E-4CDC-8B84-8DECB51438D4 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_42D37E52-A420-4196-8B2C-6755441A5FC3][org_gcr_2017-05-12_mara_42D37E52-A420-4196-8B2C-6755441A5FC3]]
 (use-package markdown-mode
