@@ -125,7 +125,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-           hidden-mode-line-mode)
+             hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -2164,6 +2164,21 @@ _A_rchives | Rest_o_res | Re_f_iles
              '(auto-capitalize . (lambda (desktop-buffer-locals))))
 ;; org_gcr_2017-11-30_mara_75B00948-177E-487A-83A9-2F690611CA59 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_CE6FE001-F609-4096-8807-9AB65010AD53][org_gcr_2017-05-12_mara_CE6FE001-F609-4096-8807-9AB65010AD53]]
+(use-package wrap-region
+  :ensure t
+  :config
+  :diminish wrap-region-mode
+  :config
+  (wrap-region-add-wrapper "'" "'" nil 'text-mode)
+  (wrap-region-add-wrapper "\"" "\"" nil 'text-mode)
+  (wrap-region-add-wrapper "*" "*" nil 'text-mode)
+  (wrap-region-add-wrapper "/" "/" nil 'text-mode)
+  (wrap-region-add-wrapper "=" "=" nil 'text-mode)
+  (wrap-region-add-wrapper "~" "~" nil 'text-mode)
+  (wrap-region-add-wrapper "+" "+" nil 'text-mode))
+;; org_gcr_2017-05-12_mara_CE6FE001-F609-4096-8807-9AB65010AD53 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F][org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F]]
 (defun help/text-mode-fn ()
   "HELP's standard configuration for buffer's working with text, often for
@@ -2175,6 +2190,7 @@ _A_rchives | Rest_o_res | Re_f_iles
   (help/try-to-add-imenu)
   (turn-on-page-break-lines-mode)
   (turn-on-auto-capitalize-mode)
+  (wrap-region-mode)
   (local-set-key (kbd ".") #'help/dot-space)
   (local-set-key (kbd "C-.") #'help/dot-real)
   (local-set-key (kbd ",") #'help/comma-space)
@@ -2786,35 +2802,6 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1AE94FA9-77C0-4A30-8A70-AFAFD4E4011F][org_gcr_2017-05-12_mara_1AE94FA9-77C0-4A30-8A70-AFAFD4E4011F]]
 (setq org-edit-src-code nil)
 ;; org_gcr_2017-05-12_mara_1AE94FA9-77C0-4A30-8A70-AFAFD4E4011F ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_CE6FE001-F609-4096-8807-9AB65010AD53][org_gcr_2017-05-12_mara_CE6FE001-F609-4096-8807-9AB65010AD53]]
-(use-package wrap-region
-  :ensure t
-  :config
-  :diminish wrap-region-mode
-  :config
-  (add-hook 'org-mode-hook 'wrap-region-mode))
-;; org_gcr_2017-05-12_mara_CE6FE001-F609-4096-8807-9AB65010AD53 ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_DE1AA644-BCAA-4F1E-AF59-157250A15171][org_gcr_2017-05-12_mara_DE1AA644-BCAA-4F1E-AF59-157250A15171]]
-(wrap-region-add-wrapper "*" "*" nil 'org-mode)
-;; org_gcr_2017-05-12_mara_DE1AA644-BCAA-4F1E-AF59-157250A15171 ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_79D2E885-5A18-486B-BA80-C36C0B78972E][org_gcr_2017-05-12_mara_79D2E885-5A18-486B-BA80-C36C0B78972E]]
-(wrap-region-add-wrapper "/" "/" nil 'org-mode)
-;; org_gcr_2017-05-12_mara_79D2E885-5A18-486B-BA80-C36C0B78972E ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_353BB5B3-A864-4AE4-AF08-590AFF0DE831][org_gcr_2017-05-12_mara_353BB5B3-A864-4AE4-AF08-590AFF0DE831]]
-(wrap-region-add-wrapper "=" "=" nil 'org-mode)
-;; org_gcr_2017-05-12_mara_353BB5B3-A864-4AE4-AF08-590AFF0DE831 ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9D9579E5-4693-417C-BFDE-B9F532381C44][org_gcr_2017-05-12_mara_9D9579E5-4693-417C-BFDE-B9F532381C44]]
-(wrap-region-add-wrapper "~" "~" nil 'org-mode)
-;; org_gcr_2017-05-12_mara_9D9579E5-4693-417C-BFDE-B9F532381C44 ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_3331BDE3-CFEA-460B-8E21-45ACF6BAC211][org_gcr_2017-05-12_mara_3331BDE3-CFEA-460B-8E21-45ACF6BAC211]]
-(wrap-region-add-wrapper "+" "+" nil 'org-mode)
-;; org_gcr_2017-05-12_mara_3331BDE3-CFEA-460B-8E21-45ACF6BAC211 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_258FD451-015B-4195-8349-8B4EFA61B581][org_gcr_2017-05-12_mara_258FD451-015B-4195-8349-8B4EFA61B581]]
 (setq org-hide-macro-markers nil)
