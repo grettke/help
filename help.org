@@ -8162,7 +8162,7 @@ _|_ split-window-horizontally
 _[_ single bracket, white, square, left
 _]_ single bracket, white, square, right
 
-_s_ help/toggle-mac-right-option-modifier _S_ help/toggle-mac-function-modifier
+_s_ help/toggle-mac-right-option-modifier
 _d_ dired
 _D_ help/safb-org-babel-detangle
 _f_ ag _F_ ag*
@@ -8215,7 +8215,6 @@ _?_ tons of scissors
   ("H" (lambda () (interactive) (hack-local-variables) (message "Local variables hacked")))
   ("l" visual-line-mode)
   ("L" aggressive-indent-mode)
-  ("S" help/toggle-mac-function-modifier)
   ("x" delete-indentation)
   ("X" help/checks/body)
   ("f" ag)
