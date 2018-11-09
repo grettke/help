@@ -3,5 +3,5 @@
 (setq mac-command-modifier 'meta)
 (setq mac-right-command-modifier 'left)
 (setq mac-option-modifier 'super)
-(setq mac-right-option-modifier 'left)
+(setq mac-right-option-modifier 'none)
 (setq mac-function-modifier 'hyper)
