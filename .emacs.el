@@ -4827,7 +4827,6 @@ _|_ split-window-horizontally
 _[_ single bracket, white, square, left
 _]_ single bracket, white, square, right
 
-_s_ help/toggle-mac-right-option-modifier
 _d_ dired
 _D_ help/safb-org-babel-detangle
 _f_ ag _F_ ag*
@@ -4874,7 +4873,6 @@ _?_ tons of scissors
   ("R" auto-insert)
   ("T" help/trademark/body)
   ("=" reposition-window)
-  ("s" help/toggle-mac-right-option-modifier)
   ("g" grep)
   ("h" hidden-mode-line-mode)
   ("H" (lambda () (interactive) (hack-local-variables) (message "Local variables hacked")))
