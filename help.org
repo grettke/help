@@ -6613,7 +6613,7 @@ Perhaps the [[https://lists.gnu.org/archive/html/emacs-orgmode/2015-07/msg00042.
   :ensure t
   :config
   (setq org-pandoc-options-for-beamer-pdf '((pdf-engine . "xelatex")))
-  (setq org-pandoc-options-for-latex-pdf '((pdf-engine . "pdflatex")))
+  (setq org-pandoc-options-for-latex-pdf '((pdf-engine . "xelatex")))
   (setq org-pandoc-format-extensions '(markdown_github+pipe_tables+raw_html))
   (with-eval-after-load 'ox
     (require 'ox-pandoc)))

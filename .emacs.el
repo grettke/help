@@ -4182,7 +4182,7 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
   :ensure t
   :config
   (setq org-pandoc-options-for-beamer-pdf '((pdf-engine . "xelatex")))
-  (setq org-pandoc-options-for-latex-pdf '((pdf-engine . "pdflatex")))
+  (setq org-pandoc-options-for-latex-pdf '((pdf-engine . "xelatex")))
   (setq org-pandoc-format-extensions '(markdown_github+pipe_tables+raw_html))
   (with-eval-after-load 'ox
     (require 'ox-pandoc)))
