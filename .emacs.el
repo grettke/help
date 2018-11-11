@@ -125,7 +125,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-             hidden-mode-line-mode)
+           hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -3813,6 +3813,48 @@ CSV: (_q_uit)
   ;; todo: can I toggle this: csv-descending
   (add-hook 'csv-mode-hook #'help/csv-mode-hook-fn))
 ;; org_gcr_2018-05-11T16-33-31-05-00_mara_0045CEB5-A317-4B3F-8362-C60124D35AD7 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-11-07T14-59-31-06-00_cosmicality_D4832772-5D0C-437C-8B54-3ECCE63E4C99][org_gcr_2018-11-07T14-59-31-06-00_cosmicality_D4832772-5D0C-437C-8B54-3ECCE63E4C99]]
+(defun help/sparkline-theory-and-practice ()
+  "Sparkline theory and practice"
+  (interactive)
+  (switch-to-buffer "*Sparkline*")
+  (let ((inhibit-read-only t))
+    (erase-buffer))
+  (remove-overlays)
+  (widget-insert "Sparkline theory and practice Edward Tufte\n")
+  (widget-insert "------------------------------------------\n")
+  (widget-insert "\n")
+  (widget-insert "\"A sparkline is a small intense, simple, word-sized graphic with typographic\n")
+  (widget-insert " resolution. Sparklines mean that graphics are no longer cartoonish special\n")
+  (widget-insert " occasions with captions and boxes, but rather sparkline graphics can be\n")
+  (widget-insert " everywhere a word or number can be: embedded in a sentence, table, headline,\n")
+  (widget-insert " map, spreadsheet, graphic. Data graphics should have the resolution of\n")
+  (widget-insert " typography.\"\n")
+  (widget-insert "\n")
+  (widget-insert "See Edward Tufte, ")
+  (widget-create
+   'url-link
+   :tag "Beautiful Evidence"
+   "https://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=000262&topic_id=1")
+  (widget-insert ", 46-63.\n")
+  (widget-insert "\n")
+  (widget-create
+   'url-link
+   :tag "Source"
+   "https://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0001OR")
+  (let ((map (make-sparse-keymap)))
+    (set-keymap-parent map widget-keymap)
+    (define-key map "q" 'kill-this-buffer)
+    (use-local-map map))
+  (widget-setup)
+  (beginning-of-line))
+;; org_gcr_2018-11-07T14-59-31-06-00_cosmicality_D4832772-5D0C-437C-8B54-3ECCE63E4C99 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-11-07T14-59-31-06-00_cosmicality_411AA5A1-6838-4C31-B2D3-D0EB148FA016][org_gcr_2018-11-07T14-59-31-06-00_cosmicality_411AA5A1-6838-4C31-B2D3-D0EB148FA016]]
+(use-package spark
+  :ensure t)
+;; org_gcr_2018-11-07T14-59-31-06-00_cosmicality_411AA5A1-6838-4C31-B2D3-D0EB148FA016 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D035C4E4-B983-4D74-9E3C-764EF00B3795][org_gcr_2017-05-12_mara_D035C4E4-B983-4D74-9E3C-764EF00B3795]]
 (use-package tex
