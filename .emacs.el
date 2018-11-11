@@ -4823,6 +4823,13 @@ _w_ where is something defined
   ("w" where-is))
 ;; org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-11-07T14-59-31-06-00_cosmicality_65D81E9D-49D3-4717-A94F-ED6FC6C696B8][org_gcr_2018-11-07T14-59-31-06-00_cosmicality_65D81E9D-49D3-4717-A94F-ED6FC6C696B8]]
+(defun help/messages ()
+  (interactive)
+  (switch-to-buffer "*Messages*"))
+(global-set-key (kbd "s-a") #'help/messages)
+;; org_gcr_2018-11-07T14-59-31-06-00_cosmicality_65D81E9D-49D3-4717-A94F-ED6FC6C696B8 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D][org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D]]
 (global-set-key (kbd "C-M-a") #'help/hydra/apropo/body)
 (global-set-key (kbd "C-d") #'delete-forward-char)
