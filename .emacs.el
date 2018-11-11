@@ -4575,7 +4575,17 @@ Ansible: (q to quit)
 ;; org_gcr_2017-05-12_mara_2E9A617A-5D88-4E71-88EB-595AA1F16EC2 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8E367FFF-FCF3-4AC8-9542-A20CE62081C4][org_gcr_2017-05-12_mara_8E367FFF-FCF3-4AC8-9542-A20CE62081C4]]
+(setq winner-dont-bind-my-keys t)
 (winner-mode t)
+(defhydra help/hydra/winner-mode (:color blue
+                                         :hint nil)
+  "
+winner-mode: 🚪_q_uit ⟲_p_revious ⟳_n_ext
+"
+  ("p" winner-undo :exit nil)
+  ("n" winner-redo :exit nil)
+  ("q" nil))
+(global-set-key (kbd "s-w") #'help/hydra/winner-mode/body)
 ;; org_gcr_2017-05-12_mara_8E367FFF-FCF3-4AC8-9542-A20CE62081C4 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_94DA6C06-BCBB-4231-B0C7-EFD4B1310530][org_gcr_2017-05-12_mara_94DA6C06-BCBB-4231-B0C7-EFD4B1310530]]
@@ -4749,7 +4759,6 @@ Timestamps: (_q_uit)
     (call-interactively 'mark-whole-buffer)
     (call-interactively 'kill-ring-save)
     (message "Buffer contents copied")))
-(global-set-key (kbd "s-w") #'help/copy-entire-buffer)
 (global-set-key (kbd "s-q") #'kill-buffer)
 (global-set-key (kbd "C-M-y") #'insert-char)
 (global-set-key (kbd "C-M-o") #'help/occur-dwim)

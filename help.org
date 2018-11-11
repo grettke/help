@@ -7357,7 +7357,17 @@ Cycle between configurations.
 
 #+NAME: org_gcr_2017-05-12_mara_8E367FFF-FCF3-4AC8-9542-A20CE62081C4
 #+BEGIN_SRC emacs-lisp
+(setq winner-dont-bind-my-keys t)
 (winner-mode t)
+(defhydra help/hydra/winner-mode (:color blue
+                                         :hint nil)
+  "
+winner-mode: 🚪_q_uit ⟲_p_revious ⟳_n_ext
+"
+  ("p" winner-undo :exit nil)
+  ("n" winner-redo :exit nil)
+  ("q" nil))
+(global-set-key (kbd "s-w") #'help/hydra/winner-mode/body)
 #+END_SRC
 
 Frequently use between 1 and 4 windows.
@@ -8069,7 +8079,6 @@ Timestamps: (_q_uit)
     (call-interactively 'mark-whole-buffer)
     (call-interactively 'kill-ring-save)
     (message "Buffer contents copied")))
-(global-set-key (kbd "s-w") #'help/copy-entire-buffer)
 (global-set-key (kbd "s-q") #'kill-buffer)
 (global-set-key (kbd "C-M-y") #'insert-char)
 (global-set-key (kbd "C-M-o") #'help/occur-dwim)
