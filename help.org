@@ -5962,6 +5962,169 @@ CSV: (_q_uit)
   ;; todo: can I toggle this: csv-descending
   (add-hook 'csv-mode-hook #'help/csv-mode-hook-fn))
 #+end_src
+*** Sparkline
+
+#+name: org_gcr_2018-11-07T14-59-31-06-00_cosmicality_D4832772-5D0C-437C-8B54-3ECCE63E4C99
+#+begin_src emacs-lisp
+(defun universal-emotions-emoticons ()
+  "Insert emoticons for the six universal expressions."
+  (interactive)
+  (switch-to-buffer "*Universal Emotion Emoticons*")
+  (kill-all-local-variables)
+  (make-local-variable 'universal-emotions-emoticons--joy)
+  (make-local-variable 'universal-emotions-emoticons--surprise)
+  (make-local-variable 'universal-emotions-emoticons--sadness)
+  (make-local-variable 'universal-emotions-emoticons--anger)
+  (make-local-variable 'universal-emotions-emoticons--disgust)
+  (make-local-variable 'universal-emotions-emoticons--fear)
+  (make-local-variable 'universal-emotions-emoticons--description)
+  (let ((inhibit-read-only t))
+    (erase-buffer))
+  (remove-overlays)
+  (widget-insert
+   "It is difficult to communicate emotions using words. There are too many.\n")
+  (widget-insert
+   "They mean different things to different people. Facial expressions, however,\n")
+  (widget-insert
+   "are universal.")
+  (widget-insert
+   "\n\n")
+  (widget-insert
+   "\"Psychological research has classified six facial expressions which\n")
+  (widget-insert
+   "correspond to distinct universal emotions: disgust, sadness, happiness,\n")
+  (widget-insert
+   "fear, anger, surprise [Black,Yacoob,95]. ")
+  (widget-create
+   'url-link
+   :tag "Source"
+   "https://people.ece.cornell.edu/land/OldStudentProjects/cs490-95to96/HJKIM/emotions.html")
+  (widget-insert " They are referred to\n")
+  (widget-insert "as the ")
+  (widget-create
+   'url-link
+   :tag "Ekman Expressions"
+   "https://www.paulekman.com/universal-facial-expressions/")
+  (widget-insert ".")
+  (widget-insert "\n\n")
+  (widget-insert "All human emotions can be expressed through the combination of\n")
+  (widget-insert "these six emotions.")
+  (widget-insert "\n\n")
+  (widget-insert "Use them to precisely communicate yours.")
+  (widget-insert "\n\n")
+  (widget-insert "Select the emotion(s) to add them to the kill-ring, \n")
+  (widget-insert "optionally including their description(s).\n\n")
+  (widget-insert "Hit n to go forward, p to go backward, RETURN to select a field,\n")
+  (widget-insert "and q to quit.")
+  (widget-insert "\n\n")
+  (widget-create 'checkbox
+                 :notify
+                 (lambda (&rest args)
+                   (setq universal-emotions-emoticons--joy
+                         (not
+                          universal-emotions-emoticons--joy))
+                   (message (format "%s: %s"
+                                    universal-emotions-emoticons--joy-desc
+                                    universal-emotions-emoticons--joy))
+                   (universal-emotions-emoticons--make-value))
+                 nil)
+  (universal-emotions-emoticons--make-checkbox-description
+   universal-emotions-emoticons--joy-char
+   universal-emotions-emoticons--joy-desc)
+  (widget-create 'checkbox
+                 :notify
+                 (lambda (&rest args)
+                   (setq universal-emotions-emoticons--surprise
+                         (not
+                          universal-emotions-emoticons--surprise))
+                   (message (format "%s: %s"
+                                    universal-emotions-emoticons--surprise-desc
+                                    universal-emotions-emoticons--surprise))
+                   (universal-emotions-emoticons--make-value))
+                 nil)
+  (universal-emotions-emoticons--make-checkbox-description
+   universal-emotions-emoticons--surprise-char
+   universal-emotions-emoticons--surprise-desc)
+  (widget-create 'checkbox
+                 :notify
+                 (lambda (&rest args)
+                   (setq universal-emotions-emoticons--sadness
+                         (not
+                          universal-emotions-emoticons--sadness))
+                   (message (format "%s: %s"
+                                    universal-emotions-emoticons--sadness-desc
+                                    universal-emotions-emoticons--sadness))
+                   (universal-emotions-emoticons--make-value))
+                 nil)
+  (universal-emotions-emoticons--make-checkbox-description
+   universal-emotions-emoticons--sadness-char
+   universal-emotions-emoticons--sadness-desc)
+  (widget-create 'checkbox
+                 :notify
+                 (lambda (&rest args)
+                   (setq universal-emotions-emoticons--anger
+                         (not
+                          universal-emotions-emoticons--anger))
+                   (message (format "%s: %s"
+                                    universal-emotions-emoticons--anger-desc
+                                    universal-emotions-emoticons--anger))
+                   (universal-emotions-emoticons--make-value))
+                 nil)
+  (universal-emotions-emoticons--make-checkbox-description
+   universal-emotions-emoticons--anger-char
+   universal-emotions-emoticons--anger-desc)
+  (widget-create 'checkbox
+                 :notify
+                 (lambda (&rest args)
+                   (setq universal-emotions-emoticons--disgust
+                         (not
+                          universal-emotions-emoticons--disgust))
+                   (message (format "%s: %s"
+                                    universal-emotions-emoticons--disgust-desc
+                                    universal-emotions-emoticons--disgust))
+                   (universal-emotions-emoticons--make-value))
+                 nil)
+  (universal-emotions-emoticons--make-checkbox-description
+   universal-emotions-emoticons--disgust-char
+   universal-emotions-emoticons--disgust-desc)
+  (widget-create 'checkbox
+                 :notify
+                 (lambda (&rest args)
+                   (setq universal-emotions-emoticons--fear
+                         (not
+                          universal-emotions-emoticons--fear))
+                   (message (format "%s: %s"
+                                    universal-emotions-emoticons--fear-desc
+                                    universal-emotions-emoticons--fear))
+                   (universal-emotions-emoticons--make-value))
+                 nil)
+  (universal-emotions-emoticons--make-checkbox-description
+   universal-emotions-emoticons--fear-char
+   universal-emotions-emoticons--fear-desc)
+  (widget-insert "\n")
+  (widget-insert "Include description(s)?\n")
+  (widget-create 'radio-button-choice
+                 :value "No"
+                 :notify
+                 (lambda (widget &rest ignore)
+                   (setq universal-emotions-emoticons--include-description
+                         (equal (widget-value widget) "Yes"))
+                   (message (format "Include description(s)? %s"
+                                    universal-emotions-emoticons--include-description))
+                   (universal-emotions-emoticons--make-value))
+                 '(item "No")
+                 '(item "Yes"))
+  (let ((map (make-sparse-keymap)))
+    (set-keymap-parent map widget-keymap)
+    (define-key map "n" 'widget-forward)
+    (define-key map "p" 'widget-backward)
+    (define-key map "q" 'kill-this-buffer)
+    (use-local-map map))
+  (widget-setup)
+  (progn
+    (search-backward universal-emotions-emoticons--joy-char)
+    (beginning-of-line)))
+#+end_src
 ** Publishing
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:0A4A1510-41F7-4469-87D1-156D44A06216
