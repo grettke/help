@@ -1833,8 +1833,7 @@ Smart-Shift: (q to quit)
     ("k" smart-shift-down :exit nil)
     ("i" smart-shift-up :exit nil)
     ("l" smart-shift-right :exit nil)
-    ("q" nil))
-  (global-set-key (kbd "C-s-k") #'help/hydra/smart-shift/body))
+    ("q" nil)))
 #+END_SRC
 
 Unfilling
@@ -7369,7 +7368,6 @@ winner-mode: 🚪_q_uit ⟲_p_revious ⟳_n_ext
   ("p" winner-undo :exit nil)
   ("n" winner-redo :exit nil)
   ("q" nil))
-(global-set-key (kbd "s-w") #'help/hydra/winner-mode/body)
 #+END_SRC
 
 Frequently use between 1 and 4 windows.
@@ -7452,8 +7450,7 @@ Buf-Move: (q to quit)
     ("k" buf-move-down :exit nil)
     ("i" buf-move-up :exit nil)
     ("l" buf-move-right :exit nil)
-    ("q" nil))
-  (global-set-key (kbd "C-s-j") #'help/hydra/buf-move/body))
+    ("q" nil)))
 #+END_SRC
 
 Resize window.
@@ -8490,6 +8487,10 @@ _a_ ✓ _s_ ✗ _d_ ☐ _f_ ☑ _g_ ☒_
 (global-set-key (kbd "M-s-m") #'ns-do-hide-emacs)
 (global-set-key (kbd "C-M-n") #'info-buffer)
 (global-set-key (kbd "s-s") #'shell)
+
+(global-set-key (kbd "s-v") #'help/hydra/winner-mode/body)
+(global-set-key (kbd "s-c") #'help/hydra/buf-move/body)
+(global-set-key (kbd "s-x") #'help/hydra/smart-shift/body)
 #+END_SRC
 **** Row 1
      :PROPERTIES:

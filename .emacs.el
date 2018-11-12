@@ -1201,8 +1201,7 @@ Smart-Shift: (q to quit)
     ("k" smart-shift-down :exit nil)
     ("i" smart-shift-up :exit nil)
     ("l" smart-shift-right :exit nil)
-    ("q" nil))
-  (global-set-key (kbd "C-s-k") #'help/hydra/smart-shift/body))
+    ("q" nil)))
 ;; org_gcr_2018-01-03_mara_F64F240D-3891-46C0-8989-6124AEF60518 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2018-04-12T21-31-52-05-00_mara_4844006E-A8C3-4F45-BA6D-FFC6B3BFF7DC][org_gcr_2018-04-12T21-31-52-05-00_mara_4844006E-A8C3-4F45-BA6D-FFC6B3BFF7DC]]
@@ -4586,7 +4585,6 @@ winner-mode: 🚪_q_uit ⟲_p_revious ⟳_n_ext
   ("p" winner-undo :exit nil)
   ("n" winner-redo :exit nil)
   ("q" nil))
-(global-set-key (kbd "s-w") #'help/hydra/winner-mode/body)
 ;; org_gcr_2017-05-12_mara_8E367FFF-FCF3-4AC8-9542-A20CE62081C4 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_94DA6C06-BCBB-4231-B0C7-EFD4B1310530][org_gcr_2017-05-12_mara_94DA6C06-BCBB-4231-B0C7-EFD4B1310530]]
@@ -4655,8 +4653,7 @@ Buf-Move: (q to quit)
     ("k" buf-move-down :exit nil)
     ("i" buf-move-up :exit nil)
     ("l" buf-move-right :exit nil)
-    ("q" nil))
-  (global-set-key (kbd "C-s-j") #'help/hydra/buf-move/body))
+    ("q" nil)))
 ;; org_gcr_2017-06-20_mara_6C4B1CDD-CF71-4A5F-B900-6D3CC06D4028 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-12-27_mara_AA4152A3-5D5C-4D41-AF55-4828F8BDEF7D][org_gcr_2017-12-27_mara_AA4152A3-5D5C-4D41-AF55-4828F8BDEF7D]]
@@ -5128,6 +5125,10 @@ _a_ ✓ _s_ ✗ _d_ ☐ _f_ ☑ _g_ ☒_
 (global-set-key (kbd "M-s-m") #'ns-do-hide-emacs)
 (global-set-key (kbd "C-M-n") #'info-buffer)
 (global-set-key (kbd "s-s") #'shell)
+
+(global-set-key (kbd "s-v") #'help/hydra/winner-mode/body)
+(global-set-key (kbd "s-c") #'help/hydra/buf-move/body)
+(global-set-key (kbd "s-x") #'help/hydra/smart-shift/body)
 ;; org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5FAD516B-B4C1-4F47-A6B9-7CA12F9AFF5D][org_gcr_2017-05-12_mara_5FAD516B-B4C1-4F47-A6B9-7CA12F9AFF5D]]
