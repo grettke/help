@@ -125,7 +125,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-           hidden-mode-line-mode)
+             hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -1006,6 +1006,7 @@ Does the \"right thing\" under `org-mode'."
   :ensure t
   :config
   (global-undo-tree-mode 1)
+  (global-set-key (kbd "M-/") #'undo-tree-redo)
   (global-set-key (kbd "C-M-/") #'undo-tree-visualize)
   :diminish undo-tree-mode)
 ;; org_gcr_2017-05-12_mara_40A89EBE-247D-43B1-A606-896B172681D8 ends here
@@ -4680,13 +4681,72 @@ Buf-Move: (q to quit)
 ;; Leave C-8, C-9, and C-0 free for the OS
 
 (defun help/insert-em-dash ()
-  "Inserts an EM-DASH (not a HYPEN, not an N-DASH)"
+  "Insert a EM-DASH.
+
+- \"best limited to two appearances per sentence\"
+- \"can be used in place of commas to enhance readability.
+   Note, however, that dashes are always more emphatic than
+   commas\"
+- \"can replace a pair of parentheses. Dashes are considered
+   less formal than parentheses; they are also more intrusive.
+   If you want to draw attention to the parenthetical content,
+   use dashes. If you want to include the parenthetical content
+   more subtly, use parentheses.\"
+  - \"Note that when dashes are used in place of parentheses,
+     surrounding punctuation should be omitted.\"
+- \"can be used in place of a colon when you want to emphasize
+   the conclusion of your sentence. The dash is less formal than
+   the colon.\"
+- \"Two em dashes can be used to indicate missing portions of a
+   word, whether unknown or intentionally omitted.\"
+  - \"When an entire word is missing, either two or three em
+     dashes can be used. Whichever length you choose, use it
+     consistently throughout your document. Surrounding punctuation
+     should be placed as usual.\"
+- \"The em dash is typically used without spaces on either side,
+   and that is the style used in this guide. Most newspapers,
+   however, set the em dash off with a single space on each side.\"
+
+Source: URL `https://www.thepunctuationguide.com/em-dash.html'"
   (interactive)
-  (insert "—"))
+  (help/real-insert ?—))
+
 (defun help/insert-en-dash ()
-  "Inserts an EN-DASH (not a HYPEN, not an EM-DASH)"
+  "Insert a EN-DASH.
+
+- \"is used to represent a span or range of numbers, dates,
+   or time. There should be no space between the en dash and
+   the adjacent material. Depending on the context, the en
+   dash is read as “to” or “through.”\"
+  - \"If you introduce a span or range with words such as
+     'from' or 'between', do not use the en dash.\"
+- \"is used to report scores or results of contests.\"
+- \"an also be used between words to represent conflict,
+   connection, or direction.\"
+- \"When a compound adjective is formed with an element that
+   is itself an open compound or hyphenated compound, some
+   writers replace the customary hyphen with an en dash. This
+   is an aesthetic choice more than anything.
+
+Source: URL `https://www.thepunctuationguide.com/en-dash.html'"
   (interactive)
-  (insert "–"))
+  (help/real-insert ?–))
+
+(defun help/insert-hyphen ()
+  "Insert a HYPEN
+
+- \"For most writers, the hyphen’s primary function is the
+   formation of certain compound terms. The hyphen is also
+   used for word division [in typesetting].
+- \"Compound terms are those that consist of more than one
+   word but represent a single item or idea.\"
+
+Source: URL `https://www.thepunctuationguide.com/hyphen.html'"
+
+  (interactive)
+  (help/real-insert ?-))
+
+(global-set-key (kbd "-") #'help/insert-hyphen)
 (global-set-key (kbd "s-_") #'help/insert-em-dash)
 (global-set-key (kbd "s--") #'help/insert-en-dash)
 
