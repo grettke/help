@@ -8126,10 +8126,6 @@ Timestamps: (_q_uit)
 #+NAME: org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389
 #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "C-M-<tab>") #'help/untabify-buffer-or-region-if-not-indent-tabs-mode)
-(global-set-key (kbd "C-M-1") #'help/1-window)
-(global-set-key (kbd "C-M-2") #'help/2-window)
-(global-set-key (kbd "C-M-3") #'help/3-window)
-(global-set-key (kbd "C-M-4") #'help/4-window)
 (global-set-key (kbd "C-M-\\") #'help/indent-region-or-buffer)
 (defun help/copy-entire-buffer ()
   (interactive)
