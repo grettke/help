@@ -1728,7 +1728,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   :ensure t
   :config
   (projectile-global-mode t)
-  (global-set-key (kbd "s-c") #'projectile-find-file)
+  (global-set-key (kbd "C-S-o") #'projectile-find-file)
   (help/on-windows
    (setq projectile-indexing-method 'alien))
   :diminish projectile-mode)
