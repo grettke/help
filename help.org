@@ -6466,15 +6466,18 @@ Set up my default LCO files.
 :ID:       org_gcr_2018-09-19T12-32-27-05-00_cosmicality:5B76D1FD-35D2-43F4-8CFB-B434671BEF29
 :END:
 
+Load BibTeX mode.
+
+At some point I want to cut over to BibLaTeX.
+
 #+name: org_gcr_2018-09-19T12-32-27-05-00_cosmicality_4C483D43-7E0D-48E1-88D5-9353A0DBD83A
 #+begin_src emacs-lisp
 (require 'bibtex)
-(defun help/bibtex-mode-hook-fn ()
-  (key-chord-define-local "hh" #'help/bibtex/body))
-(add-hook 'bibtex-mode-hook #'help/bibtex-mode-hook-fn)
-(defun help/bibtex-calculate-new-reference-key ()
-  (interactive)
-  (bibtex-clean-entry 't))
+#+end_src
+
+#+name: org_gcr_2018-11-13T18-00-23-06-00_cosmicality_32B5EE79-9019-4210-B45F-71B2781CEB4E
+#+begin_src emacs-lisp
+(defvaralias help/bibtex-calculate-new-reference-key bibtex-clean-entry)
 (defun help/bibtex-maybe-troublesome-mode-disable
     (interactive)
   (aggressive-indent-mode 'toggle)
@@ -6483,6 +6486,12 @@ Set up my default LCO files.
     (interactive)
   (aggressive-indent-mode nil)
   (visual-line-mode nil))
+#+end_src
+
+Helper Hydra
+
+#+name: org_gcr_2018-11-13T18-00-23-06-00_cosmicality_62AAF44B-D738-4732-BD54-1111BCD6BB6E
+#+begin_src emacs-lisp
 (defhydra help/bibtex (:color blue :hint nil)
   "
 _c_ Clean Entry _C_ Clean Entry & Create New Reference
@@ -6495,9 +6504,23 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
   ("F" bibtex-reformat)
   ("m" help/bibtex-maybe-troublesome-mode-disable)
   ("M" help/bibtex-maybe-troublesome-mode-enable))
-(define-key bibtex-mode-map (kbd "C-j") nil)
-(define-key bibtex-mode-map (kbd "s-j") #'bibtex-next-field)
 #+end_src
+
+Mode hook and key bindings.
+
+#+name: org_gcr_2018-11-13T18-00-23-06-00_cosmicality_3B76ECF1-3D55-4066-BCC1-1436E41D5C2D
+#+begin_src emacs-lisp
+(defun help/bibtex-mode-hook-fn ()
+  (key-chord-define-local "hh" #'help/bibtex/body))
+(add-hook 'bibtex-mode-hook #'help/bibtex-mode-hook-fn)
+#+end_src
+
+**** Entry Format Definition
+:PROPERTIES:
+:ID:       org_gcr_2018-11-13T18-00-23-06-00_cosmicality:715AC227-1607-43DE-AA61-16018C9C53F9
+:END:
+
+Start from scratch.
 
 #+name: org_gcr_2018-09-19T12-32-27-05-00_cosmicality_1CF3A243-94CC-4423-9BC3-35BAAA3C9A23
 #+begin_src emacs-lisp
@@ -6556,47 +6579,122 @@ setup that means they are in lower case.
 (add-to-list 'bibtex-entry-format 'unify-case)
 #+end_src
 
-"Sort fields to match the field order in ‘bibtex-BibTeX-entry-alist’."
+Specify the article format so auto-sort will work.
 
 #+name: org_gcr_2018-09-19T12-32-27-05-00_cosmicality_C6F716C4-6A86-4467-BF50-4A42A0E2AFB5
 #+begin_src emacs-lisp
-(setq my-article-spec
-      '("Article" "HELP Journal Article Specification"
+(setq help/bibtex-article-specification
+      '("Article" "HELP Article Specification"
         (
          ("author")
+         ("year")
          ("title")
          ("journal")
          ("number")
          ("month")
-         ("year")
          ("pages")
          )))
 (setq bibtex-BibTeX-entry-alist
-      (cons my-article-spec
+      (cons help/bibtex-article-specification
             (cdr bibtex-BibTeX-entry-alist)))
+#+end_src
+
+"Sort fields to match the field order in ‘bibtex-BibTeX-entry-alist’."
+
+#+name: org_gcr_2018-11-13T18-00-23-06-00_cosmicality_CE975BCA-7E66-4E82-BC85-941FFBB216C5
+#+begin_src emacs-lisp
 (add-to-list 'bibtex-entry-format 'sort-fields)
 #+end_src
 
-Autokey.
+**** Autokey
+:PROPERTIES:
+:ID:       org_gcr_2018-11-12T12-28-14-06-00_cosmicality:9E369A4B-01ED-4D50-A2A6-1CEB29D56A08
+:END:
+
+The goal is to make key generation 100% automated and 100% future proof. A
+combination of rules and best-practices should make this "just work".
+
+***** Key
+:PROPERTIES:
+:ID:       org_gcr_2018-11-12T12-28-14-06-00_cosmicality:99541FA5-70D7-4FB8-82D6-1C880A9382CE
+:END:
+
+Separate them using a Hyphen-Minus sign. Theye easy to read, acceptable to
+operating systems, ASCII-safe, and don't take up much space.
+
+#+name: org_gcr_2018-11-12T12-28-14-06-00_cosmicality_48463172-68BE-4034-922F-50D0F572F73A
+#+begin_src emacs-lisp
+(setq bibtex-autokey-name-year-separator "-")
+(setq bibtex-autokey-year-title-separator "-")
+(setq bibtex-autokey-titleword-separator "-")
+#+end_src
+
+***** Name
+:PROPERTIES:
+:ID:       org_gcr_2018-11-12T12-28-14-06-00_cosmicality:0BC72687-242E-45C9-8DF6-906E99F85220
+:END:
+
+When there are only one or two authors then include each of them, using their
+full names. Separate them using a Hyphen-Minus sign.
+
+When there are more than two authors then only use the first author, using his
+full name, followed by "[[https://www.merriam-webster.com/dictionary/et%2520al.][et al]]".
+
+#+name: org_gcr_2018-11-12T12-28-14-06-00_cosmicality_9BDC47DE-78C9-460E-9333-3E8E79C51AFD
+#+begin_src emacs-lisp
+(setq bibtex-autokey-names 1)
+(setq bibtex-autokey-names-stretch 1)
+(setq bibtex-autokey-name-separator "-")
+(setq bibtex-autokey-additional-names "-et-al")
+#+end_src
+
+***** Year
+:PROPERTIES:
+:ID:       org_gcr_2018-11-12T12-28-14-06-00_cosmicality:4E9BF2AD-F298-4D3C-B46A-B873FFBC27FD
+:END:
+
+Use four digits for the year: it is easier to read.
+
+#+name: org_gcr_2018-11-12T12-28-14-06-00_cosmicality_E1A42ADA-92E6-4479-9C21-87612AE656C4
+#+begin_src emacs-lisp
+(setq bibtex-autokey-year-length 4)
+#+end_src
+
+***** Title
+:PROPERTIES:
+:ID:       org_gcr_2018-11-12T12-28-14-06-00_cosmicality:12B4D728-DFAB-44DD-B15F-0B453734428D
+:END:
+
+Include two title words.
+
+I don't want them to take up too much space to trim them to 5 characters.
+[[https://www.wolframalpha.com/input/?i=average+english+word+length][WolframAlpha]] says that the average word length in English 5.1 characters. What
+kind of words? All kinds. I looked at examples and it seems good enough to jog
+your memory of the publication.
+
+#+name: org_gcr_2018-11-12T12-28-14-06-00_cosmicality_2C0EDDD9-13CB-4A6D-BB57-D4CDDC671106
+#+begin_src emacs-lisp
+(setq bibtex-autokey-titlewords 2)
+(setq bibtex-autokey-titlewords-stretch 1)
+(setq bibtex-autokey-titleword-length 5)
+#+end_src
+
+***** Suggestions
+:PROPERTIES:
+:ID:       org_gcr_2018-11-12T12-28-14-06-00_cosmicality:A10046EA-810A-46E0-ADDB-7A3B9A89AC4B
+:END:
+
+To reinforce this automated approach: disallow the user from editing the
+generated key before it is used. The idea here is that when key naming issues
+appear that it is better to correct it in the algorithm instead of individual
+key name.
 
 #+name: org_gcr_2018-09-19T12-32-27-05-00_cosmicality_C87F9898-F014-4A14-8CD9-DCA6554DD133
 #+begin_src emacs-lisp
-(setq bibtex-autokey-names 1)
-(setq bibtex-autokey-name-length 10)
-(setq bibtex-autokey-name-case-convert-function #'capitalize)
-
-(setq bibtex-autokey-year-length 4)
-
-(setq bibtex-autokey-titlewords 3)
-(setq bibtex-autokey-title-terminators "[.!?;]")
-(setq bibtex-autokey-titleword-length -1)
-(setq bibtex-autokey-titleword-case-convert-function 'capitalize)
-(setq bibtex-autokey-titleword-separator "")
-
-(setq bibtex-autokey-name-year-separator ":")
-(setq bibtex-autokey-year-title-separator ":")
 (setq bibtex-autokey-edit-before-use nil)
 #+end_src
+
+
 *** Texinfo
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:2A19DF86-96B0-4371-8DE9-1F79861F5E89
