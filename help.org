@@ -2187,7 +2187,6 @@ Future candidates:
 - eval-region
 - help/newline
 - goto-line
-- ido-switch-buffer
 - ielm
 - ispell
 - ispell-word
@@ -2283,53 +2282,24 @@ Provide it in a buffer.
    :ID:       org_gcr_2017-05-12_mara:29AAB820-5824-43F8-9E7F-7FD1CB6F4624
    :END:
 
-IDO is used everywhere possible.
-
-Access nearly every object available in this system from one place.
-
-These configurations are performed in the correct order. Any attempt to refactor
-this Source-Block will break Ido in this system.
-
-#+NAME: org_gcr_2017-05-12_mara_9F4ACDEA-BC93-4BB6-BEA2-B622FF676EB6
-#+BEGIN_SRC emacs-lisp
-(use-package ido)
-(use-package flx-ido
+#+name: org_gcr_2018-11-14T01-09-50-06-00_cosmicality_D0215545-09C4-4118-AA35-BC6FC634E6D1
+#+begin_src emacs-lisp
+(use-package counsel
   :ensure t
   :config
-  (ido-mode t))
-(use-package ido-hacks
-  :ensure t)
-(use-package ido-completing-read+
-  :ensure t
-  :config
-  (ido-ubiquitous-mode t)
-  (setq ido-create-new-buffer 'always)
-  (flx-ido-mode t)
-  (setq ido-use-faces nil))
-(use-package ido-vertical-mode
-  :ensure t
-  :config
-  (ido-vertical-mode t)
-  (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right))
-#+END_SRC
-
-Make functions search-able.
-
-#+NAME: org_gcr_2017-05-12_mara_8C3DB0A1-305E-4746-8455-E8CB880842B1
-#+BEGIN_SRC emacs-lisp
-(use-package smex
-  :ensure t
-  :config
-  (smex-initialize))
-#+END_SRC
-
-Make URLs a first-class object.
-
-#+NAME: org_gcr_2017-05-12_mara_5295DEDE-687E-440B-89B9-9BF9BF301595
-#+BEGIN_SRC emacs-lisp
-(setq ido-use-url-at-point t)
-(setq ido-use-filename-at-point 'guess)
-#+END_SRC
+  (use-package amx
+    :ensure t)
+  (use-package flx
+    :ensure t)
+  (ivy-mode 1)
+  (setq ivy-use-virtual-buffers t)
+  ;; intentional space before end of string
+  (setq ivy-count-format "(%d/%d) ")
+  (setq ivy-initial-inputs-alist nil)
+  (setq ivy-re-builders-alist
+        '((t . ivy--regex-fuzzy)))
+  (diminish 'ivy-mode))
+#+end_src
 
 ** Font
    :PROPERTIES:
@@ -2663,6 +2633,7 @@ with Projectile.
   (global-set-key (kbd "C-S-o") #'projectile-find-file)
   (help/on-windows
    (setq projectile-indexing-method 'alien))
+  (setq projectile-completion-system 'ivy)
   :diminish projectile-mode)
 #+END_SRC
 
@@ -3042,27 +3013,6 @@ Check =SPECIAL LINE= definitions, ignoring their type.
          (list special))))))
 #+END_SRC
 
-** Sudo
-   :PROPERTIES:
-   :ID:       org_gcr_2017-05-12_mara:7853E266-9462-4CEB-A6AB-873EAC06666F
-   :END:
-
-Configure Sudo with Ido.
-
-#+NAME: org_gcr_2017-05-12_mara_BC64FFC2-D587-4D4F-B693-71B3731A71F1
-#+BEGIN_SRC emacs-lisp
-(help/on-mac-os
- (defun help/ido-find-file ()
-   "Find file as root if necessary.
-
-Attribution: URL `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
-   (unless (and buffer-file-name
-              (file-writable-p buffer-file-name))
-     (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
-
- (advice-add #'ido-find-file :after #'help/ido-find-file))
-#+END_SRC
-
 ** Syntax Checking
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:DD506D5A-5F57-4939-B446-536437FDDC97
@@ -3168,8 +3118,9 @@ Use VC for single files and Magit for multiple files.
   :config
   (with-eval-after-load 'info
     (info-initialize)
-    (add-to-list 'Info-directory-list
-                 "~/src/magit/Documentation/")))
+    (add-to-list 'Info-directory-list ;; TODO remove this
+                 "~/src/magit/Documentation/"))
+  (setq magit-completing-read-function 'ivy-completing-read))
 #+END_SRC
 
 Close Magit-process related buffers when they become obselete.
@@ -4362,14 +4313,6 @@ Emacs.
 #+NAME: org_gcr_2017-05-12_mara_9A50B1B6-9446-4CE2-AC58-5ED8878E9041
 #+BEGIN_SRC emacs-lisp
 (setq org-startup-with-inline-images (display-graphic-p))
-#+END_SRC
-
-Use Ido completion in Org-Mode.
-
-#+NAME: org_gcr_2017-05-12_mara_34C0D995-C26A-4FAC-9281-8F1D1BBB16BD
-#+BEGIN_SRC emacs-lisp
-(setq org-completion-use-ido t)
-(setq org-completion-use-iswitchb nil)
 #+END_SRC
 
 Org-Mode lets you use single letter commands to do stuff on headers. I like to
@@ -5641,7 +5584,6 @@ Enable Auto-Complete via Geiser.
 - Never expand with =TAB= *anywhere*.
   - Allow expansion to occur within fields.
 - Load HELP snippets.
-- Use Ido to handle user decisions.
 
 #+NAME: org_gcr_2017-05-12_mara_B7B9F4BB-5899-4F2B-94B0-B38F098E9528
 #+BEGIN_SRC emacs-lisp
@@ -5657,7 +5599,6 @@ Enable Auto-Complete via Geiser.
   (help/on-gui (define-key yas-keymap (kbd "<tab>") #'yas-next-field))
   (add-to-list #'yas-snippet-dirs "~/src/help/yasnippet")
   (yas-reload-all)
-  (setq yas-prompt-functions '(yas-ido-prompt))
   (defun help/yas-after-exit-snippet-hook-fn ()
     (help/prettify-org-mode-names)
     (prettify-symbols-mode)
@@ -8074,7 +8015,7 @@ Try to reserve this for the OS.
 
 (global-set-key (kbd "C-4") #'hs-toggle-hiding)
 (global-set-key (kbd "C-3") #'help/my-toggle-hideshow-all)
-(global-set-key (kbd "C-5") #'ido-kill-buffer)
+(global-set-key (kbd "C-5") #'kill-buffer)
 (global-set-key (kbd "C-M-=") #'edit-indirect-region)
 (global-set-key (kbd "C-M-4") #'help/1-window)
 
@@ -8231,7 +8172,11 @@ Timestamps: (_q_uit)
     (call-interactively 'kill-ring-save)
     (message "Buffer contents copied")))
 (global-set-key (kbd "s-q") #'kill-buffer)
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
 (global-set-key (kbd "C-M-y") #'insert-char)
+(define-key org-mode-map (kbd "C-o") nil)
+(global-set-key (kbd "C-o") nil)
+(global-set-key (kbd "C-o") #'counsel-find-file)
 (global-set-key (kbd "C-M-o") #'help/occur-dwim)
 (global-set-key (kbd "M-i") nil)
 (global-set-key (kbd "M-i") #'help/hydra/left/describe/body)
@@ -8276,7 +8221,7 @@ _w_ where is something defined
   ("r" ucs-eval)
   ("c" (lambda () (interactive) (unicode-fonts-debug-info-at-point)))
   ("C" describe-char)
-  ("f" describe-function)
+  ("f" counsel-describe-function)
   ("F" flycheck-describe-checker)
   ("g" describe-categories)
   ("i" describe-input-method)
@@ -8299,7 +8244,7 @@ _w_ where is something defined
   ("S" describe-coding-system)
   ("t" describe-theme)
   ("T" describe-character-set)
-  ("v" describe-variable)
+  ("v" counsel-describe-variable)
   ("w" where-is))
 #+END_SRC
      :PROPERTIES:
@@ -8308,14 +8253,19 @@ _w_ where is something defined
 
 Org handle ~TAB~ correctly and nothing is bound to it like ~Auto-Complete~ or
 ~yasnippet~ so this doesn't /need/ ot use ~C-i~ freeing it up. Rebinding ~C-g~ seems
-to make the minibuffer, ~eval-*~ and ~smex~ become confused \rarr quit working.
+to make the minibuffer and ~eval-*~ become confused \rarr quit working.
 
 **** Row 3
      :PROPERTIES:
      :ID:       org_gcr_2017-05-12_mara:C0B604C5-F530-4770-9061-92E8468C8557
      :END:
 
-#+name: org_gcr_2018-11-07T14-59-31-06-00_cosmicality_65D81E9D-49D3-4717-A94F-ED6FC6C696B8
+#+name: org_gcr_2018-11-14T01-09-50-06-00_cosmicality_F9D27274-71B1-4AFA-9FEA-610569715A96
+#+begin_src emacs-lisp
+
+#+end_src
+
+     #+name: org_gcr_2018-11-07T14-59-31-06-00_cosmicality_65D81E9D-49D3-4717-A94F-ED6FC6C696B8
 #+begin_src emacs-lisp
 (defun help/messages ()
   (interactive)
@@ -8370,7 +8320,7 @@ _r_ rename this buffer and file
 _R_ insert the default file header
 _t_ rectangle-mark _T_ trademarks
 _y_ yas tables _Y_ transparency
-_u_ universal-emotions-emoticons
+_u_ universal-emotions-emoticons _U_ git-grep
 _i_ scrollUp _I_ prevLogLine
 _o_ dbgOnErr _O_ base64-encode-region
 _p_ query-replace _P_ base64-decode-region
@@ -8381,7 +8331,7 @@ _]_ single bracket, white, square, right
 
 _d_ dired
 _D_ help/safb-org-babel-detangle
-_f_ ag _F_ ag*
+_f_ counsel-ag _F_ ag*
 _g_ grep
 _h_ hidden-mode-line
 _H_ hack-local-variables (see also normal-mode)
@@ -8443,6 +8393,7 @@ _?_ tons of scissors
   ("Y" hydra-transparency/body)
   ("J" org-babel-tangle-jump-to-org)
   ("u" universal-emotions-emoticons)
+  ("U" counsel-git-grep)
   ("i" scroll-down-command :exit nil)
   ("d" dired)
   ("D" help/safb-org-babel-detangle)
@@ -8495,7 +8446,7 @@ Commands       \"…_c_ommands (interactively callable functions)…\"
 Variables      \"…_v_ariables…\"
 Printed Value: \"…symbols whose value’s printed _r_epresentation…\"
 ===============+===================================================
-Library:       \"…variables and functions defined by _l_ibrary…\"
+Library:       \"…variables and functions defined by _l_ibrary…\" or _F_ind It
 User Options:  \"…user _o_ptions…\"
 ===============+===================================================
 "
@@ -8505,6 +8456,7 @@ User Options:  \"…user _o_ptions…\"
   ("d" apropos-documentation)
   ("U" emacs-index-search)
   ("L" elisp-index-search)
+  ("F" counsel-find-library)
 
   ("c" apropos-command)
   ("v" apropos-variable)
@@ -8568,14 +8520,11 @@ _a_ ✓ _s_ ✗ _d_ ☐ _f_ ☑ _g_ ☒_
 (global-set-key (kbd "C-x C-c") #'help/safb-save-buffers-kill-terminal)
 (define-key org-mode-map (kbd "C-j") nil)
 (global-set-key (kbd "C-j") nil)
-(global-set-key (kbd "C-j") #'ido-switch-buffer)
+(global-set-key (kbd "C-j") #'ivy-switch-buffer)
 (global-set-key (kbd "M-j") nil)
 (define-key org-mode-map (kbd "M-j") nil)
-(global-set-key (kbd "M-j") #'smex)
+(global-set-key (kbd "M-j") #'counsel-M-x)
 (global-set-key (kbd "C-M-,") #'ibuffer)
-(define-key org-mode-map (kbd "C-o") nil)
-(global-set-key (kbd "C-o") nil)
-(global-set-key (kbd "C-o") #'ido-find-file)
 (global-set-key (kbd "C-M-.") nil)
 (global-set-key (kbd "M-s-m") #'ns-do-hide-emacs)
 (global-set-key (kbd "C-M-n") #'info-buffer)

@@ -125,7 +125,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-             hidden-mode-line-mode)
+           hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -1496,39 +1496,23 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (setq imenu-list-size 40))
 ;; org_gcr_2017-05-12_mara_E8A1EB03-CB72-4761-BC0A-555670C0D452 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9F4ACDEA-BC93-4BB6-BEA2-B622FF676EB6][org_gcr_2017-05-12_mara_9F4ACDEA-BC93-4BB6-BEA2-B622FF676EB6]]
-(use-package ido)
-(use-package flx-ido
+;; [[file:~/src/help/help.org::org_gcr_2018-11-14T01-09-50-06-00_cosmicality_D0215545-09C4-4118-AA35-BC6FC634E6D1][org_gcr_2018-11-14T01-09-50-06-00_cosmicality_D0215545-09C4-4118-AA35-BC6FC634E6D1]]
+(use-package counsel
   :ensure t
   :config
-  (ido-mode t))
-(use-package ido-hacks
-  :ensure t)
-(use-package ido-completing-read+
-  :ensure t
-  :config
-  (ido-ubiquitous-mode t)
-  (setq ido-create-new-buffer 'always)
-  (flx-ido-mode t)
-  (setq ido-use-faces nil))
-(use-package ido-vertical-mode
-  :ensure t
-  :config
-  (ido-vertical-mode t)
-  (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right))
-;; org_gcr_2017-05-12_mara_9F4ACDEA-BC93-4BB6-BEA2-B622FF676EB6 ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8C3DB0A1-305E-4746-8455-E8CB880842B1][org_gcr_2017-05-12_mara_8C3DB0A1-305E-4746-8455-E8CB880842B1]]
-(use-package smex
-  :ensure t
-  :config
-  (smex-initialize))
-;; org_gcr_2017-05-12_mara_8C3DB0A1-305E-4746-8455-E8CB880842B1 ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5295DEDE-687E-440B-89B9-9BF9BF301595][org_gcr_2017-05-12_mara_5295DEDE-687E-440B-89B9-9BF9BF301595]]
-(setq ido-use-url-at-point t)
-(setq ido-use-filename-at-point 'guess)
-;; org_gcr_2017-05-12_mara_5295DEDE-687E-440B-89B9-9BF9BF301595 ends here
+  (use-package amx
+    :ensure t)
+  (use-package flx
+    :ensure t)
+  (ivy-mode 1)
+  (setq ivy-use-virtual-buffers t)
+  ;; intentional space before end of string
+  (setq ivy-count-format "(%d/%d) ")
+  (setq ivy-initial-inputs-alist nil)
+  (setq ivy-re-builders-alist
+        '((t . ivy--regex-fuzzy)))
+  (diminish 'ivy-mode))
+;; org_gcr_2018-11-14T01-09-50-06-00_cosmicality_D0215545-09C4-4118-AA35-BC6FC634E6D1 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_ADAB043E-BF70-4AE0-BA60-CD08D82474FA][org_gcr_2017-05-12_mara_ADAB043E-BF70-4AE0-BA60-CD08D82474FA]]
 (global-font-lock-mode t)
@@ -1729,6 +1713,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (global-set-key (kbd "C-S-o") #'projectile-find-file)
   (help/on-windows
    (setq projectile-indexing-method 'alien))
+  (setq projectile-completion-system 'ivy)
   :diminish projectile-mode)
 ;; org_gcr_2017-05-12_mara_814E8B43-89FD-4EC2-9C5A-EEE03D92A918 ends here
 
@@ -1938,19 +1923,6 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
          (list special))))))
 ;; org_gcr_2017-05-12_mara_5C415ECB-91FC-44C2-9886-29704EF74836 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BC64FFC2-D587-4D4F-B693-71B3731A71F1][org_gcr_2017-05-12_mara_BC64FFC2-D587-4D4F-B693-71B3731A71F1]]
-(help/on-mac-os
- (defun help/ido-find-file ()
-   "Find file as root if necessary.
-
-Attribution: URL `http://emacsredux.com/blog/2013/04/21/edit-files-as-root/'"
-   (unless (and buffer-file-name
-                (file-writable-p buffer-file-name))
-     (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
-
- (advice-add #'ido-find-file :after #'help/ido-find-file))
-;; org_gcr_2017-05-12_mara_BC64FFC2-D587-4D4F-B693-71B3731A71F1 ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9931B79E-7900-4DE1-B097-45A8DE90CB44][org_gcr_2017-05-12_mara_9931B79E-7900-4DE1-B097-45A8DE90CB44]]
 (use-package flycheck
   :ensure t
@@ -2005,8 +1977,9 @@ URL: `http://emacsredux.com/blog/2013/03/27/indent-region-or-buffer/'"
   :config
   (with-eval-after-load 'info
     (info-initialize)
-    (add-to-list 'Info-directory-list
-                 "~/src/magit/Documentation/")))
+    (add-to-list 'Info-directory-list ;; TODO remove this
+                 "~/src/magit/Documentation/"))
+  (setq magit-completing-read-function 'ivy-completing-read))
 ;; org_gcr_2017-05-12_mara_3E77B825-E0A4-40EC-88DC-3F5C1E1445CE ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2018-02-24_mara_A2D8DA8E-CE8C-4F26-9DED-7E0AA2DD3CCA][org_gcr_2018-02-24_mara_A2D8DA8E-CE8C-4F26-9DED-7E0AA2DD3CCA]]
@@ -2677,11 +2650,6 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9A50B1B6-9446-4CE2-AC58-5ED8878E9041][org_gcr_2017-05-12_mara_9A50B1B6-9446-4CE2-AC58-5ED8878E9041]]
 (setq org-startup-with-inline-images (display-graphic-p))
 ;; org_gcr_2017-05-12_mara_9A50B1B6-9446-4CE2-AC58-5ED8878E9041 ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_34C0D995-C26A-4FAC-9281-8F1D1BBB16BD][org_gcr_2017-05-12_mara_34C0D995-C26A-4FAC-9281-8F1D1BBB16BD]]
-(setq org-completion-use-ido t)
-(setq org-completion-use-iswitchb nil)
-;; org_gcr_2017-05-12_mara_34C0D995-C26A-4FAC-9281-8F1D1BBB16BD ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C5BBF231-E413-4A62-9367-A25932090329][org_gcr_2017-05-12_mara_C5BBF231-E413-4A62-9367-A25932090329]]
 (setq org-use-speed-commands t)
@@ -3553,7 +3521,6 @@ Geiser REPL: ⏼%(help/geiser-on-p)
   (help/on-gui (define-key yas-keymap (kbd "<tab>") #'yas-next-field))
   (add-to-list #'yas-snippet-dirs "~/src/help/yasnippet")
   (yas-reload-all)
-  (setq yas-prompt-functions '(yas-ido-prompt))
   (defun help/yas-after-exit-snippet-hook-fn ()
     (help/prettify-org-mode-names)
     (prettify-symbols-mode)
@@ -4675,7 +4642,7 @@ Buf-Move: (q to quit)
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C][org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C]]
 (global-set-key (kbd "C-4") #'hs-toggle-hiding)
 (global-set-key (kbd "C-3") #'help/my-toggle-hideshow-all)
-(global-set-key (kbd "C-5") #'ido-kill-buffer)
+(global-set-key (kbd "C-5") #'kill-buffer)
 (global-set-key (kbd "C-M-=") #'edit-indirect-region)
 (global-set-key (kbd "C-M-4") #'help/1-window)
 
@@ -4817,7 +4784,11 @@ Timestamps: (_q_uit)
     (call-interactively 'kill-ring-save)
     (message "Buffer contents copied")))
 (global-set-key (kbd "s-q") #'kill-buffer)
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
 (global-set-key (kbd "C-M-y") #'insert-char)
+(define-key org-mode-map (kbd "C-o") nil)
+(global-set-key (kbd "C-o") nil)
+(global-set-key (kbd "C-o") #'counsel-find-file)
 (global-set-key (kbd "C-M-o") #'help/occur-dwim)
 (global-set-key (kbd "M-i") nil)
 (global-set-key (kbd "M-i") #'help/hydra/left/describe/body)
@@ -4862,7 +4833,7 @@ _w_ where is something defined
   ("r" ucs-eval)
   ("c" (lambda () (interactive) (unicode-fonts-debug-info-at-point)))
   ("C" describe-char)
-  ("f" describe-function)
+  ("f" counsel-describe-function)
   ("F" flycheck-describe-checker)
   ("g" describe-categories)
   ("i" describe-input-method)
@@ -4885,9 +4856,13 @@ _w_ where is something defined
   ("S" describe-coding-system)
   ("t" describe-theme)
   ("T" describe-character-set)
-  ("v" describe-variable)
+  ("v" counsel-describe-variable)
   ("w" where-is))
 ;; org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-11-14T01-09-50-06-00_cosmicality_F9D27274-71B1-4AFA-9FEA-610569715A96][org_gcr_2018-11-14T01-09-50-06-00_cosmicality_F9D27274-71B1-4AFA-9FEA-610569715A96]]
+
+;; org_gcr_2018-11-14T01-09-50-06-00_cosmicality_F9D27274-71B1-4AFA-9FEA-610569715A96 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2018-11-07T14-59-31-06-00_cosmicality_65D81E9D-49D3-4717-A94F-ED6FC6C696B8][org_gcr_2018-11-07T14-59-31-06-00_cosmicality_65D81E9D-49D3-4717-A94F-ED6FC6C696B8]]
 (defun help/messages ()
@@ -4933,7 +4908,7 @@ _r_ rename this buffer and file
 _R_ insert the default file header
 _t_ rectangle-mark _T_ trademarks
 _y_ yas tables _Y_ transparency
-_u_ universal-emotions-emoticons
+_u_ universal-emotions-emoticons _U_ git-grep
 _i_ scrollUp _I_ prevLogLine
 _o_ dbgOnErr _O_ base64-encode-region
 _p_ query-replace _P_ base64-decode-region
@@ -4944,7 +4919,7 @@ _]_ single bracket, white, square, right
 
 _d_ dired
 _D_ help/safb-org-babel-detangle
-_f_ ag _F_ ag*
+_f_ counsel-ag _F_ ag*
 _g_ grep
 _h_ hidden-mode-line
 _H_ hack-local-variables (see also normal-mode)
@@ -5006,6 +4981,7 @@ _?_ tons of scissors
   ("Y" hydra-transparency/body)
   ("J" org-babel-tangle-jump-to-org)
   ("u" universal-emotions-emoticons)
+  ("U" counsel-git-grep)
   ("i" scroll-down-command :exit nil)
   ("d" dired)
   ("D" help/safb-org-babel-detangle)
@@ -5054,7 +5030,7 @@ Commands       \"…_c_ommands (interactively callable functions)…\"
 Variables      \"…_v_ariables…\"
 Printed Value: \"…symbols whose value’s printed _r_epresentation…\"
 ===============+===================================================
-Library:       \"…variables and functions defined by _l_ibrary…\"
+Library:       \"…variables and functions defined by _l_ibrary…\" or _F_ind It
 User Options:  \"…user _o_ptions…\"
 ===============+===================================================
 "
@@ -5064,6 +5040,7 @@ User Options:  \"…user _o_ptions…\"
   ("d" apropos-documentation)
   ("U" emacs-index-search)
   ("L" elisp-index-search)
+  ("F" counsel-find-library)
 
   ("c" apropos-command)
   ("v" apropos-variable)
@@ -5113,14 +5090,11 @@ _a_ ✓ _s_ ✗ _d_ ☐ _f_ ☑ _g_ ☒_
 (global-set-key (kbd "C-x C-c") #'help/safb-save-buffers-kill-terminal)
 (define-key org-mode-map (kbd "C-j") nil)
 (global-set-key (kbd "C-j") nil)
-(global-set-key (kbd "C-j") #'ido-switch-buffer)
+(global-set-key (kbd "C-j") #'ivy-switch-buffer)
 (global-set-key (kbd "M-j") nil)
 (define-key org-mode-map (kbd "M-j") nil)
-(global-set-key (kbd "M-j") #'smex)
+(global-set-key (kbd "M-j") #'counsel-M-x)
 (global-set-key (kbd "C-M-,") #'ibuffer)
-(define-key org-mode-map (kbd "C-o") nil)
-(global-set-key (kbd "C-o") nil)
-(global-set-key (kbd "C-o") #'ido-find-file)
 (global-set-key (kbd "C-M-.") nil)
 (global-set-key (kbd "M-s-m") #'ns-do-hide-emacs)
 (global-set-key (kbd "C-M-n") #'info-buffer)
