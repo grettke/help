@@ -2648,17 +2648,11 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
         ("upquote" "false")))
 ;; org_gcr_2018-04-28T19-58-14-05-00_mara_50C0EEF0-A896-44B3-AC2B-0635552A723A ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_7EE5307A-ACC5-4FE9-A519-0F273B4589E9][org_gcr_2017-05-12_mara_7EE5307A-ACC5-4FE9-A519-0F273B4589E9]]
-(defvar help/ltx-cls-opt "12pt")
-;; org_gcr_2017-05-12_mara_7EE5307A-ACC5-4FE9-A519-0F273B4589E9 ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_006EB5E3-5478-43C7-AEAC-34CCF49127AC][org_gcr_2017-05-12_mara_006EB5E3-5478-43C7-AEAC-34CCF49127AC]]
 (eval-after-load "ox-latex"
   '(add-to-list 'org-latex-classes
-                `("help-article"
-                  ,(concat "\\documentclass["
-                           help/ltx-cls-opt
-                           "]{article}"))))
+                '("help-article"
+                  "\\documentclass[12pt]{article}")))
 
 (setq org-latex-default-class "help-article")
 ;; org_gcr_2017-05-12_mara_006EB5E3-5478-43C7-AEAC-34CCF49127AC ends here
@@ -4069,10 +4063,8 @@ Errors: _R_eport ⏼_B_oxes ⏼_W_arnings
 (eval-after-load "ox-koma-letter"
   '(progn
      (add-to-list 'org-latex-classes
-                  `("help-letter"
-                    ,(concat "\\documentclass["
-                             help/ltx-cls-opt
-                             ", pagesize, UScommercial9]{scrlttr2}")))
+                  '("help-letter"
+                    "\\documentclass[12pt, pagesize, UScommercial9]{scrlttr2}"))
 
      (setq org-koma-letter-default-class "help-letter")))
 ;; org_gcr_2017-05-12_mara_8A241D12-24B3-4C4C-AC99-B55954611025 ends here

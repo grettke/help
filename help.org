@@ -4297,12 +4297,6 @@ Copied and customized from [[https://github.com/kaushalmodi/.emacs.d/blob/master
 :PROPERTIES:
 :ID:       org_gcr_2018-03-07_mara:D397AC3E-DFED-4228-B8CD-7D62318414E9
 :END:
-Standard LaTeX class options.
-
-#+NAME: org_gcr_2017-05-12_mara_7EE5307A-ACC5-4FE9-A519-0F273B4589E9
-#+BEGIN_SRC emacs-lisp
-(defvar help/ltx-cls-opt "12pt")
-#+END_SRC
 
 Standard article class.
 
@@ -4310,10 +4304,8 @@ Standard article class.
 #+BEGIN_SRC emacs-lisp
 (eval-after-load "ox-latex"
   '(add-to-list 'org-latex-classes
-                `("help-article"
-                  ,(concat "\\documentclass["
-                           help/ltx-cls-opt
-                           "]{article}"))))
+                '("help-article"
+                  "\\documentclass[12pt]{article}")))
 
 (setq org-latex-default-class "help-article")
 #+END_SRC
@@ -6444,10 +6436,8 @@ for my printed correspondence.
 (eval-after-load "ox-koma-letter"
   '(progn
      (add-to-list 'org-latex-classes
-                  `("help-letter"
-                    ,(concat "\\documentclass["
-                             help/ltx-cls-opt
-                             ", pagesize, UScommercial9]{scrlttr2}")))
+                  '("help-letter"
+                    "\\documentclass[12pt, pagesize, UScommercial9]{scrlttr2}"))
 
      (setq org-koma-letter-default-class "help-letter")))
 #+END_SRC
