@@ -6475,6 +6475,8 @@ At some point I want to cut over to BibLaTeX.
 (require 'bibtex)
 #+end_src
 
+Helper functions. 
+
 #+name: org_gcr_2018-11-13T18-00-23-06-00_cosmicality_32B5EE79-9019-4210-B45F-71B2781CEB4E
 #+begin_src emacs-lisp
 (defvaralias help/bibtex-calculate-new-reference-key bibtex-clean-entry)
