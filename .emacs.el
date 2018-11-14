@@ -1990,6 +1990,16 @@ URL: `http://emacsredux.com/blog/2013/03/27/indent-region-or-buffer/'"
 (setq-default tab-width 4)
 ;; org_gcr_2017-05-12_mara_5A73C4A8-C2AE-4F36-9D64-3FB6A4FF31E0 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-11-14T01-09-50-06-00_cosmicality_928B587E-CCAC-42D3-A727-B579A008FCC1][org_gcr_2018-11-14T01-09-50-06-00_cosmicality_928B587E-CCAC-42D3-A727-B579A008FCC1]]
+(use-package hl-todo
+  :ensure t
+  :config
+  (define-key hl-todo-mode-map (kbd "C-c p") 'hl-todo-previous)
+  (define-key hl-todo-mode-map (kbd "C-c n") 'hl-todo-next)
+  (define-key hl-todo-mode-map (kbd "C-c o") 'hl-todo-occur)
+  (global-hl-todo-mode))
+;; org_gcr_2018-11-14T01-09-50-06-00_cosmicality_928B587E-CCAC-42D3-A727-B579A008FCC1 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_3E77B825-E0A4-40EC-88DC-3F5C1E1445CE][org_gcr_2017-05-12_mara_3E77B825-E0A4-40EC-88DC-3F5C1E1445CE]]
 (use-package magit
   :ensure t
