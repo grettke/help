@@ -4668,6 +4668,7 @@ Buf-Move: (q to quit)
 (global-set-key (kbd "C-3") #'help/my-toggle-hideshow-all)
 (global-set-key (kbd "C-5") #'ido-kill-buffer)
 (global-set-key (kbd "C-M-=") #'edit-indirect-region)
+(global-set-key (kbd "C-M-4") #'help/1-window)
 
 ;; Leave C-8, C-9, and C-0 free for the OS
 
