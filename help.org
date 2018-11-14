@@ -2468,7 +2468,7 @@ Persist keyboard macros in Emacs Lisp alternative to ~insert-kbd-macro~.
   (elmacro-mode))
 #+END_SRC
 
-** Intellisense
+** Word Completion
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:DE05FF62-53EA-491A-881B-650030210591
    :END:
