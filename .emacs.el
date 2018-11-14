@@ -4148,23 +4148,6 @@ _m_ Disable Unhelpful Modes _M_ Enable Unhelpful Modes
 (add-to-list 'bibtex-entry-format 'unify-case)
 ;; org_gcr_2018-09-19T12-32-27-05-00_cosmicality_D5C9AF40-97B8-4F1B-8CBC-373DB521C1EF ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-09-19T12-32-27-05-00_cosmicality_C6F716C4-6A86-4467-BF50-4A42A0E2AFB5][org_gcr_2018-09-19T12-32-27-05-00_cosmicality_C6F716C4-6A86-4467-BF50-4A42A0E2AFB5]]
-(setq help/bibtex-article-specification
-      '("Article" "HELP Article Specification"
-        (
-         ("author")
-         ("year")
-         ("title")
-         ("journal")
-         ("number")
-         ("month")
-         ("pages")
-         )))
-(setq bibtex-BibTeX-entry-alist
-      (cons help/bibtex-article-specification
-            (cdr bibtex-BibTeX-entry-alist)))
-;; org_gcr_2018-09-19T12-32-27-05-00_cosmicality_C6F716C4-6A86-4467-BF50-4A42A0E2AFB5 ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2018-11-13T18-00-23-06-00_cosmicality_CE975BCA-7E66-4E82-BC85-941FFBB216C5][org_gcr_2018-11-13T18-00-23-06-00_cosmicality_CE975BCA-7E66-4E82-BC85-941FFBB216C5]]
 (add-to-list 'bibtex-entry-format 'sort-fields)
 ;; org_gcr_2018-11-13T18-00-23-06-00_cosmicality_CE975BCA-7E66-4E82-BC85-941FFBB216C5 ends here

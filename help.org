@@ -6583,26 +6583,6 @@ setup that means they are in lower case.
 (add-to-list 'bibtex-entry-format 'unify-case)
 #+end_src
 
-Specify the article format so field validation and auto-sort will work.
-
-#+name: org_gcr_2018-09-19T12-32-27-05-00_cosmicality_C6F716C4-6A86-4467-BF50-4A42A0E2AFB5
-#+begin_src emacs-lisp
-(setq help/bibtex-article-specification
-      '("Article" "HELP Article Specification"
-        (
-         ("author")
-         ("year")
-         ("title")
-         ("journal")
-         ("number")
-         ("month")
-         ("pages")
-         )))
-(setq bibtex-BibTeX-entry-alist
-      (cons help/bibtex-article-specification
-            (cdr bibtex-BibTeX-entry-alist)))
-#+end_src
-
 "Sort fields to match the field order in ‘bibtex-BibTeX-entry-alist’."
 
 #+name: org_gcr_2018-11-13T18-00-23-06-00_cosmicality_CE975BCA-7E66-4E82-BC85-941FFBB216C5
