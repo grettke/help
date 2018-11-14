@@ -6479,7 +6479,9 @@ Helper functions.
 
 #+name: org_gcr_2018-11-13T18-00-23-06-00_cosmicality_32B5EE79-9019-4210-B45F-71B2781CEB4E
 #+begin_src emacs-lisp
-(defvaralias help/bibtex-calculate-new-reference-key bibtex-clean-entry)
+(defun help/bibtex-calculate-new-reference-key ()
+  (interactive)
+  (bibtex-clean-entry))
 (defun help/bibtex-maybe-troublesome-mode-disable
     (interactive)
   (aggressive-indent-mode 'toggle)

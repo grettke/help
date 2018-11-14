@@ -4086,7 +4086,9 @@ Errors: _R_eport ⏼_B_oxes ⏼_W_arnings
 ;; org_gcr_2018-09-19T12-32-27-05-00_cosmicality_4C483D43-7E0D-48E1-88D5-9353A0DBD83A ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2018-11-13T18-00-23-06-00_cosmicality_32B5EE79-9019-4210-B45F-71B2781CEB4E][org_gcr_2018-11-13T18-00-23-06-00_cosmicality_32B5EE79-9019-4210-B45F-71B2781CEB4E]]
-(defvaralias help/bibtex-calculate-new-reference-key bibtex-clean-entry)
+(defun help/bibtex-calculate-new-reference-key ()
+  (interactive)
+  (bibtex-clean-entry))
 (defun help/bibtex-maybe-troublesome-mode-disable
     (interactive)
   (aggressive-indent-mode 'toggle)
