@@ -6475,7 +6475,7 @@ At some point I want to cut over to BibLaTeX.
 (require 'bibtex)
 #+end_src
 
-Helper functions. 
+Helper functions.
 
 #+name: org_gcr_2018-11-13T18-00-23-06-00_cosmicality_32B5EE79-9019-4210-B45F-71B2781CEB4E
 #+begin_src emacs-lisp
@@ -6581,7 +6581,7 @@ setup that means they are in lower case.
 (add-to-list 'bibtex-entry-format 'unify-case)
 #+end_src
 
-Specify the article format so auto-sort will work.
+Specify the article format so field validation and auto-sort will work.
 
 #+name: org_gcr_2018-09-19T12-32-27-05-00_cosmicality_C6F716C4-6A86-4467-BF50-4A42A0E2AFB5
 #+begin_src emacs-lisp
