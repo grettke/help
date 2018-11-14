@@ -2278,7 +2278,7 @@ Provide it in a buffer.
   (setq imenu-list-size 40))
 #+END_SRC
 
-** Interactively DO Things
+** Interactive User Interface Completion
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:29AAB820-5824-43F8-9E7F-7FD1CB6F4624
    :END:
