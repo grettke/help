@@ -5163,22 +5163,6 @@ _a_ ✓ _s_ ✗ _d_ ☐ _f_ ☑ _g_ ☒_
 (help/on-gui (global-set-key (kbd "s-<return>") #'help/smart-open-line))
 ;; org_gcr_2017-05-12_mara_9302B01F-93C0-4D21-8BB6-53ECF1478153 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_EB0E9368-41FE-4827-9EE2-5CDFCDC1C2BA][org_gcr_2017-05-12_mara_EB0E9368-41FE-4827-9EE2-5CDFCDC1C2BA]]
-(defun help/scroll-up-one-line ()
-  (interactive)
-  (scroll-down 1))
-(defun help/scroll-down-one-line ()
-  (interactive)
-  (scroll-up 1))
-(global-set-key (kbd "M-p") #'help/scroll-down-one-line)
-(global-set-key (kbd "M-n") #'help/scroll-up-one-line)
-;; org_gcr_2017-05-12_mara_EB0E9368-41FE-4827-9EE2-5CDFCDC1C2BA ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_078C604D-5762-4763-AD17-A397C5E224E7][org_gcr_2017-05-12_mara_078C604D-5762-4763-AD17-A397C5E224E7]]
-(global-set-key (kbd "C-n") #'next-logical-line)
-(global-set-key (kbd "C-p") #'previous-logical-line)
-;; org_gcr_2017-05-12_mara_078C604D-5762-4763-AD17-A397C5E224E7 ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BF926B57-9097-483F-AB90-E3F55869B0D9][org_gcr_2017-05-12_mara_BF926B57-9097-483F-AB90-E3F55869B0D9]]
 (global-set-key (kbd "M-%") #'anzu-query-replace)
 (global-set-key (kbd "C-M-%") #'anzu-query-replace-regexp)
