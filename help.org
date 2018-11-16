@@ -2515,8 +2515,7 @@ Easy kill ring access.
   (setq browse-kill-ring-highlight-inserted-item t)
   (setq browse-kill-ring-show-preview nil)
   (setq browse-kill-ring-separator
-        ".-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-
-")
+        "════════════════════════════════════════════════════════════════════════════════")
   (global-set-key (kbd "M-y") #'browse-kill-ring))
 #+END_SRC
 

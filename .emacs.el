@@ -1652,8 +1652,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (setq browse-kill-ring-highlight-inserted-item t)
   (setq browse-kill-ring-show-preview nil)
   (setq browse-kill-ring-separator
-        ".-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-.-~-
-")
+        "════════════════════════════════════════════════════════════════════════════════")
   (global-set-key (kbd "M-y") #'browse-kill-ring))
 ;; org_gcr_2017-05-12_mara_DA93DCF6-E0AB-4B92-9708-4DE4781AA2ED ends here
 
