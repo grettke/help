@@ -4703,7 +4703,7 @@ Source: URL `https://www.thepunctuationguide.com/en-dash.html'"
   (help/real-insert ?–))
 
 (defun help/insert-hyphen ()
-  "Insert a HYPEN
+  "Insert a HYPHEN
 
 - \"For most writers, the hyphen’s primary function is the
    formation of certain compound terms. The hyphen is also
