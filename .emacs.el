@@ -2176,7 +2176,9 @@ _A_rchives | Rest_o_res | Re_f_iles
   (local-set-key (kbd ".") #'help/dot-space)
   (local-set-key (kbd "C-.") #'help/dot-real)
   (local-set-key (kbd ",") #'help/comma-space)
-  (local-set-key (kbd "C-,") #'help/comma-real))
+  (local-set-key (kbd "C-,") #'help/comma-real)
+  (local-set-key (kbd "C-n") #'next-logical-line)
+  (local-set-key (kbd "C-p") #'previous-logical-line))
 (add-hook 'text-mode-hook #'help/text-mode-fn)
 ;; org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F ends here
 
