@@ -4909,7 +4909,6 @@ _R_ insert the default file header
 _t_ rectangle-mark _T_ trademarks
 _y_ yas tables _Y_ transparency
 _u_ universal-emotions-emoticons _U_ git-grep
-_i_ scrollUp _I_ prevLogLine
 _o_ dbgOnErr _O_ base64-encode-region
 _p_ query-replace _P_ base64-decode-region
 _}_ transliterate
@@ -4924,7 +4923,6 @@ _g_ grep
 _h_ hidden-mode-line
 _H_ hack-local-variables (see also normal-mode)
 _J_ org-babel-tangle-jump-to-org
-_k_ scrollDown
 _l_ visual-line-mode _L_ aggressive-indent-mode
 _K_ nextLogLine
 _;_ toggle-lax-whitespace
@@ -4982,11 +4980,9 @@ _?_ tons of scissors
   ("J" org-babel-tangle-jump-to-org)
   ("u" universal-emotions-emoticons)
   ("U" counsel-git-grep)
-  ("i" scroll-down-command :exit nil)
   ("d" dired)
   ("D" help/safb-org-babel-detangle)
-  ("k" scroll-up-command :exit nil)
-  ("I" previous-logical-line :exit nil)
+
   ("K" next-logical-line :exit nil)
   ("N" (lambda () (interactive) (help/safb-normal-mode) (message "Entering normal-mode")))
   ("m" font-lock-mode)
