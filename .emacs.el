@@ -4552,6 +4552,10 @@ Ansible: (q to quit)
 (setq ediff-split-window-function 'split-window-horizontally)
 ;; org_gcr_2017-05-12_mara_2E9A617A-5D88-4E71-88EB-595AA1F16EC2 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-11-17T16-38-07-06-00_cosmicality_27D8595B-4D4F-48BD-A0C4-D3AB70270721][org_gcr_2018-11-17T16-38-07-06-00_cosmicality_27D8595B-4D4F-48BD-A0C4-D3AB70270721]]
+(diminish 'smerge-mode)
+;; org_gcr_2018-11-17T16-38-07-06-00_cosmicality_27D8595B-4D4F-48BD-A0C4-D3AB70270721 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8E367FFF-FCF3-4AC8-9542-A20CE62081C4][org_gcr_2017-05-12_mara_8E367FFF-FCF3-4AC8-9542-A20CE62081C4]]
 (setq winner-dont-bind-my-keys t)
 (winner-mode t)

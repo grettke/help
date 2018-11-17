@@ -7396,6 +7396,13 @@ Ediff split frame horizontally.
 (setq ediff-split-window-function 'split-window-horizontally)
 #+END_SRC
 
+Smerge.
+
+#+name: org_gcr_2018-11-17T16-38-07-06-00_cosmicality_27D8595B-4D4F-48BD-A0C4-D3AB70270721
+#+begin_src emacs-lisp
+(diminish 'smerge-mode)
+#+end_src
+
 ** Window
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:FBD41A4B-9764-49CB-8439-74581B2211A0
