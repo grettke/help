@@ -2178,13 +2178,18 @@ _A_rchives | Rest_o_res | Re_f_iles
   (local-set-key (kbd ",") #'help/comma-space)
   (local-set-key (kbd "C-,") #'help/comma-real)
   (local-set-key (kbd "C-n") #'next-logical-line)
-  (local-set-key (kbd "C-p") #'previous-logical-line))
+  (local-set-key (kbd "C-p") #'previous-logical-line)
+  (orgtbl-mode nil))
 (add-hook 'text-mode-hook #'help/text-mode-fn)
 ;; org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-11-17_mara_FCDC3DE5-3584-4431-A443-FFC8F9EA8253][org_gcr_2017-11-17_mara_FCDC3DE5-3584-4431-A443-FFC8F9EA8253]]
 (add-to-list 'org-babel-load-languages '(text . t))
 ;; org_gcr_2017-11-17_mara_FCDC3DE5-3584-4431-A443-FFC8F9EA8253 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-11-17T16-38-07-06-00_cosmicality_38A64329-9B5C-4396-BAB2-06818BFE2818][org_gcr_2018-11-17T16-38-07-06-00_cosmicality_38A64329-9B5C-4396-BAB2-06818BFE2818]]
+(diminish 'orgtbl-mode)
+;; org_gcr_2018-11-17T16-38-07-06-00_cosmicality_38A64329-9B5C-4396-BAB2-06818BFE2818 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C][org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C]]
 (setq help/prog-modes '(makefile-mode-hook

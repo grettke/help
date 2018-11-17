@@ -3452,7 +3452,8 @@ Every text editing buffer needs this.
   (local-set-key (kbd ",") #'help/comma-space)
   (local-set-key (kbd "C-,") #'help/comma-real)
   (local-set-key (kbd "C-n") #'next-logical-line)
-  (local-set-key (kbd "C-p") #'previous-logical-line))
+  (local-set-key (kbd "C-p") #'previous-logical-line)
+  (orgtbl-mode nil))
 (add-hook 'text-mode-hook #'help/text-mode-fn)
 #+END_SRC
 
@@ -3463,6 +3464,12 @@ Can use in source blocks.
 (add-to-list 'org-babel-load-languages '(text . t))
 #+END_SRC
 
+OrgTbl.
+
+#+name: org_gcr_2018-11-17T16-38-07-06-00_cosmicality_38A64329-9B5C-4396-BAB2-06818BFE2818
+#+begin_src emacs-lisp
+(diminish 'orgtbl-mode)
+#+end_src
 
 *** Prog-Mode Modes
     :PROPERTIES:
