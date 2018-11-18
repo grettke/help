@@ -3453,7 +3453,8 @@ Every text editing buffer needs this.
   (local-set-key (kbd "C-,") #'help/comma-real)
   (local-set-key (kbd "C-n") #'next-logical-line)
   (local-set-key (kbd "C-p") #'previous-logical-line)
-  (orgtbl-mode nil))
+  (unless (eq major-mode 'org-mode)
+    (orgtbl-mode nil)))
 (add-hook 'text-mode-hook #'help/text-mode-fn)
 #+END_SRC
 
