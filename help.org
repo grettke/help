@@ -5772,6 +5772,19 @@ Add ~JavaScript~ language to Org-Mode.
   (autoload 'apples-open-scratch "apples-mode" "Open scratch buffer for AppleScript." t)
   (add-to-list 'auto-mode-alist '("\\.\\(applescri\\|sc\\)pt\\'" . apples-mode)))
 #+end_src
+
+*** Emacs Speaks Statistics (ESS)
+
+This space used to contain a pretty awesome ESS configuration for The R
+Project. I removed it after switching go RStudio but you can find all of the
+necessary changes and support files here:
+
+- [[https://github.com/grettke/help/commit/f7a332e09371a0a683a2c713162c02902cb3c599][ESS+R Config]]
+- [[https://github.com/grettke/help/blob/master/.Renviron][.Renviron]]
+- [[https://github.com/grettke/help/blob/master/.Rinstall.r][.Rinstall.r]]
+- [[https://github.com/grettke/help/blob/master/.Rprofile][.Rprofile]]
+- [[https://github.com/grettke/help/blob/master/.Rsetup.sh][.Rsetup.sh]]
+
 ** Data
 :PROPERTIES:
 :ID:       org_gcr_2018-04-20T15-46-50-05-00_mara:3259C745-2E58-4F02-B384-A2B341B598DA
