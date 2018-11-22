@@ -125,7 +125,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-           hidden-mode-line-mode)
+             hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -4556,6 +4556,71 @@ Ansible: (q to quit)
 (diminish 'smerge-mode)
 ;; org_gcr_2018-11-17T16-38-07-06-00_cosmicality_27D8595B-4D4F-48BD-A0C4-D3AB70270721 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-11-21T18-07-10-06-00_cosmicality_CBE7DBFB-4758-4A24-862C-D0C95847844C][org_gcr_2018-11-21T18-07-10-06-00_cosmicality_CBE7DBFB-4758-4A24-862C-D0C95847844C]]
+(use-package ace-window
+  :ensure t
+  :config
+  (setq aw-keys '(?j ?k ?l ?i ?o ?p))
+  (setq aw-scope 'frame)
+  (setq aw-background nil))(require 'windmove)
+(use-package eyebrowse
+  :ensure t
+  :config
+  (setq eyebrowse-wrap-around t)
+  (eyebrowse-mode t))
+(setq windmove-wrap-around t)
+(defhydra help/hydra/megawin (:color blue :hint nil)
+  "
+👀: %(let* ((window-configs (eyebrowse--get 'window-configs))(match (assq (eyebrowse--get 'current-slot) window-configs))(desc (eyebrowse-format-slot match))) desc) _0_ _1_ _2_ _3_ _4_ _5_ _6_ _7_ _8_ _9_ _-_
+_C_reate _R_ename _T_o Prev_I_ous _O_ther _P_op
+↑←↓→ 🏃 🡄🡆 ⊕⊕⊕⊕  ─│┼  ☠☣ 🚪
+_e__s__d__f_ _a_  _c__n_  _i__j__k__l_  _v__b__g_  _x__,_ _q_
+"
+  ("0" #'eyebrowse-switch-to-window-config-0 :exit nil)
+  ("1" #'eyebrowse-switch-to-window-config-1 :exit nil)
+  ("2" #'eyebrowse-switch-to-window-config-2 :exit nil)
+  ("3" #'eyebrowse-switch-to-window-config-3 :exit nil)
+  ("4" #'eyebrowse-switch-to-window-config-4 :exit nil)
+  ("5" #'eyebrowse-switch-to-window-config-5 :exit nil)
+  ("6" #'eyebrowse-switch-to-window-config-6 :exit nil)
+  ("7" #'eyebrowse-switch-to-window-config-7 :exit nil)
+  ("8" #'eyebrowse-switch-to-window-config-8 :exit nil)
+  ("9" #'eyebrowse-switch-to-window-config-9 :exit nil)
+  ("-" #'eyebrowse-close-window-config :exit nil)
+  ;;
+  ("C" #'eyebrowse-create-window-config :exit nil)
+  ("R" #'eyebrowse-rename-window-config :exit nil)
+  ("T" #'eyebrowse-switch-to-window-config :exit nil)
+  ("I" #'eyebrowse-prev-window-config :exit nil)
+  ("O" #'eyebrowse-next-window-config :exit nil)
+  ("P" #'eyebrowse-last-window-config :exit nil)
+  ;;;;
+  ("e" windmove-up :exit nil)
+  ("s" windmove-left :exit nil)
+  ("d" windmove-down :exit nil)
+  ("f" windmove-right :exit nil)
+  ;;
+  ("a" ace-window :exit nil)
+  ;;
+  ("c" (lambda () (interactive) (setq current-prefix-arg '(-1)) (call-interactively
+                                                                 'other-window)) :exit nil)
+  ("n" other-window :exit nil)
+  ;;
+  ("i" enlarge-window :exit nil)
+  ("j" enlarge-window-horizontally :exit nil)
+  ("k" shrink-window :exit nil)
+  ("l" shrink-window-horizontally :exit nil)
+  ;;
+  ("v" split-window-vertically :exit nil)
+  ("b" split-window-horizontally :exit nil)
+  ("g" balance-windows :exit nil)
+  ;;
+  ("x" kill-this-buffer)
+  ("," delete-other-windows :exit nil)
+  ;;
+  ("q" nil))
+;; org_gcr_2018-11-21T18-07-10-06-00_cosmicality_CBE7DBFB-4758-4A24-862C-D0C95847844C ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8E367FFF-FCF3-4AC8-9542-A20CE62081C4][org_gcr_2017-05-12_mara_8E367FFF-FCF3-4AC8-9542-A20CE62081C4]]
 (setq winner-dont-bind-my-keys t)
 (winner-mode t)
@@ -4607,15 +4672,6 @@ winner-mode: 🚪_q_uit ⟲_p_revious ⟳_n_ext
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B5190A4E-4174-471F-9C82-C454D269B867][org_gcr_2017-05-12_mara_B5190A4E-4174-471F-9C82-C454D269B867]]
 (setq help-window-select t)
 ;; org_gcr_2017-05-12_mara_B5190A4E-4174-471F-9C82-C454D269B867 ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A165E3DB-37E7-49A7-84E4-1CB0D2A137C6][org_gcr_2017-05-12_mara_A165E3DB-37E7-49A7-84E4-1CB0D2A137C6]]
-(use-package ace-window
-  :ensure t
-  :config
-  (setq aw-keys '(?j ?k ?l ?i ?o ?p))
-  (setq aw-scope 'frame)
-  (setq aw-background nil))
-;; org_gcr_2017-05-12_mara_A165E3DB-37E7-49A7-84E4-1CB0D2A137C6 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-06-20_mara_6C4B1CDD-CF71-4A5F-B900-6D3CC06D4028][org_gcr_2017-06-20_mara_6C4B1CDD-CF71-4A5F-B900-6D3CC06D4028]]
 (use-package buffer-move
@@ -4760,6 +4816,10 @@ Flycheck: ⏼%(bound-and-true-p flycheck-mode)
   ("q" nil))
 (global-set-key (kbd "C-M-9") #'help/hydra-checking/body)
 ;; org_gcr_2017-06-13_mara_2DFDC64B-DBF2-473E-979F-D7D8D0DD2206 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2018-11-22T00-38-52-06-00_cosmicality_B388F591-C237-4181-A4A3-8C971EFDB516][org_gcr_2018-11-22T00-38-52-06-00_cosmicality_B388F591-C237-4181-A4A3-8C971EFDB516]]
+(global-set-key (kbd "s-w") #'help/hydra/megawin/body)
+;; org_gcr_2018-11-22T00-38-52-06-00_cosmicality_B388F591-C237-4181-A4A3-8C971EFDB516 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC][org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC]]
 (defhydra help/hydra/timestamp (:color blue :hint nil)
@@ -5108,7 +5168,7 @@ _a_ ✓ _s_ ✗ _d_ ☐ _f_ ☑ _g_ ☒_
 (global-set-key (kbd "C-M-n") #'info-buffer)
 (global-set-key (kbd "s-s") #'shell)
 
-(global-set-key (kbd "s-v") #'help/hydra/winner-mode/body)
+(global-set-key (kbd "s-v") #'help/hydra/megawin/body)
 (global-set-key (kbd "s-c") #'help/hydra/buf-move/body)
 (global-set-key (kbd "s-x") #'help/hydra/smart-shift/body)
 ;; org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B ends here

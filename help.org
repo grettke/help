@@ -7424,6 +7424,72 @@ Smerge.
    :ID:       org_gcr_2017-05-12_mara:FBD41A4B-9764-49CB-8439-74581B2211A0
    :END:
 
+#+name: org_gcr_2018-11-21T18-07-10-06-00_cosmicality_CBE7DBFB-4758-4A24-862C-D0C95847844C
+#+begin_src emacs-lisp
+(use-package ace-window
+  :ensure t
+  :config
+  (setq aw-keys '(?j ?k ?l ?i ?o ?p))
+  (setq aw-scope 'frame)
+  (setq aw-background nil))(require 'windmove)
+(use-package eyebrowse
+  :ensure t
+  :config
+  (setq eyebrowse-wrap-around t)
+  (eyebrowse-mode t))
+(setq windmove-wrap-around t)
+(defhydra help/hydra/megawin (:color blue :hint nil)
+  "
+👀: %(let* ((window-configs (eyebrowse--get 'window-configs))(match (assq (eyebrowse--get 'current-slot) window-configs))(desc (eyebrowse-format-slot match))) desc) _0_ _1_ _2_ _3_ _4_ _5_ _6_ _7_ _8_ _9_ _-_
+_C_reate _R_ename _T_o Prev_I_ous _O_ther _P_op
+↑←↓→ 🏃 🡄🡆 ⊕⊕⊕⊕  ─│┼  ☠☣ 🚪
+_e__s__d__f_ _a_  _c__n_  _i__j__k__l_  _v__b__g_  _x__,_ _q_
+"
+  ("0" #'eyebrowse-switch-to-window-config-0 :exit nil)
+  ("1" #'eyebrowse-switch-to-window-config-1 :exit nil)
+  ("2" #'eyebrowse-switch-to-window-config-2 :exit nil)
+  ("3" #'eyebrowse-switch-to-window-config-3 :exit nil)
+  ("4" #'eyebrowse-switch-to-window-config-4 :exit nil)
+  ("5" #'eyebrowse-switch-to-window-config-5 :exit nil)
+  ("6" #'eyebrowse-switch-to-window-config-6 :exit nil)
+  ("7" #'eyebrowse-switch-to-window-config-7 :exit nil)
+  ("8" #'eyebrowse-switch-to-window-config-8 :exit nil)
+  ("9" #'eyebrowse-switch-to-window-config-9 :exit nil)
+  ("-" #'eyebrowse-close-window-config :exit nil)
+  ;;
+  ("C" #'eyebrowse-create-window-config :exit nil)
+  ("R" #'eyebrowse-rename-window-config :exit nil)
+  ("T" #'eyebrowse-switch-to-window-config :exit nil)
+  ("I" #'eyebrowse-prev-window-config :exit nil)
+  ("O" #'eyebrowse-next-window-config :exit nil)
+  ("P" #'eyebrowse-last-window-config :exit nil)
+  ;;;;
+  ("e" windmove-up :exit nil)
+  ("s" windmove-left :exit nil)
+  ("d" windmove-down :exit nil)
+  ("f" windmove-right :exit nil)
+  ;;
+  ("a" ace-window :exit nil)
+  ;;
+  ("c" (lambda () (interactive) (setq current-prefix-arg '(-1)) (call-interactively
+                                                            'other-window)) :exit nil)
+  ("n" other-window :exit nil)
+  ;;
+  ("i" enlarge-window :exit nil)
+  ("j" enlarge-window-horizontally :exit nil)
+  ("k" shrink-window :exit nil)
+  ("l" shrink-window-horizontally :exit nil)
+  ;;
+  ("v" split-window-vertically :exit nil)
+  ("b" split-window-horizontally :exit nil)
+  ("g" balance-windows :exit nil)
+  ;;
+  ("x" kill-this-buffer)
+  ("," delete-other-windows :exit nil)
+  ;;
+  ("q" nil))
+#+end_src
+
 Cycle forward and backward in window flow.
 
 #+NAME: org_gcr_2017-05-12_mara_8E367FFF-FCF3-4AC8-9542-A20CE62081C4
@@ -7485,18 +7551,6 @@ configured here.
 #+NAME: org_gcr_2017-05-12_mara_B5190A4E-4174-471F-9C82-C454D269B867
 #+BEGIN_SRC emacs-lisp
 (setq help-window-select t)
-#+END_SRC
-
-Select windows.
-
-#+NAME: org_gcr_2017-05-12_mara_A165E3DB-37E7-49A7-84E4-1CB0D2A137C6
-#+BEGIN_SRC emacs-lisp
-(use-package ace-window
-  :ensure t
-  :config
-  (setq aw-keys '(?j ?k ?l ?i ?o ?p))
-  (setq aw-scope 'frame)
-  (setq aw-background nil))
 #+END_SRC
 
 Fling buffers left and right.
@@ -8166,6 +8220,11 @@ Flycheck: ⏼%(bound-and-true-p flycheck-mode)
 :ID:       org_gcr_2017-12-07_mara:752198AC-06ED-436E-B526-5A3C8ED32375
 :END:
 
+#+name: org_gcr_2018-11-22T00-38-52-06-00_cosmicality_B388F591-C237-4181-A4A3-8C971EFDB516
+#+begin_src emacs-lisp
+(global-set-key (kbd "s-w") #'help/hydra/megawin/body)
+#+end_src
+
 Date related things.
 
 #+NAME: org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC
@@ -8559,7 +8618,7 @@ _a_ ✓ _s_ ✗ _d_ ☐ _f_ ☑ _g_ ☒_
 (global-set-key (kbd "C-M-n") #'info-buffer)
 (global-set-key (kbd "s-s") #'shell)
 
-(global-set-key (kbd "s-v") #'help/hydra/winner-mode/body)
+(global-set-key (kbd "s-v") #'help/hydra/megawin/body)
 (global-set-key (kbd "s-c") #'help/hydra/buf-move/body)
 (global-set-key (kbd "s-x") #'help/hydra/smart-shift/body)
 #+END_SRC
