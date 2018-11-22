@@ -682,7 +682,7 @@ when it is not.
 - Format
   - =drawer=: Enable results replacement
 - Handling
-  - =replace=: Replace theme each time you evaluate the block.
+  - =replace=: Replace them each time you evaluate the block.
 
 #+NAME: org_gcr_2017-05-12_mara_2F6FE420-85A2-4A99-AAB7-20473F02B878
 #+BEGIN_SRC emacs-lisp
