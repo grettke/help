@@ -5774,6 +5774,9 @@ Add ~JavaScript~ language to Org-Mode.
 #+end_src
 
 *** Emacs Speaks Statistics (ESS)
+:PROPERTIES:
+:ID:       org_gcr_2018-11-21T18-07-10-06-00_cosmicality:23926BE2-3E84-4B9D-BDED-6487EF7D5772
+:END:
 
 This space used to contain a pretty awesome ESS configuration for The R
 Project. I removed it after switching go RStudio but you can find all of the
@@ -7421,7 +7424,7 @@ Smerge.
    :ID:       org_gcr_2017-05-12_mara:FBD41A4B-9764-49CB-8439-74581B2211A0
    :END:
 
-Cycle forward and backward in window flow. 
+Cycle forward and backward in window flow.
 
 #+NAME: org_gcr_2017-05-12_mara_8E367FFF-FCF3-4AC8-9542-A20CE62081C4
 #+BEGIN_SRC emacs-lisp
@@ -8410,7 +8413,7 @@ _?_ tons of scissors
   ("L" aggressive-indent-mode)
   ("x" delete-indentation)
   ("X" help/checks/body)
-  ("f" ag)
+  ("f" counsel-ag)
   ("F" help/hydra/ag/body)
   ("v" help/hydra/vocabulary/body)
   ("V" view-mode)

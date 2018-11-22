@@ -4980,7 +4980,7 @@ _?_ tons of scissors
   ("L" aggressive-indent-mode)
   ("x" delete-indentation)
   ("X" help/checks/body)
-  ("f" ag)
+  ("f" counsel-ag)
   ("F" help/hydra/ag/body)
   ("v" help/hydra/vocabulary/body)
   ("V" view-mode)
