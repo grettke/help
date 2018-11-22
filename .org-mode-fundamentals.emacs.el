@@ -211,7 +211,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
 ;; org_gcr_2017-05-12_mara_FE5C21BF-9766-4277-A413-B3AF5C255C39 ends here
 
 ;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_DB816700-04B3-45D0-9847-490BBFE9DBA0][org_gcr_2017-05-12_mara_DB816700-04B3-45D0-9847-490BBFE9DBA0]]
-(setq org-export-babel-evaluate nil)
+(setq org-export-use-babel nil)
 ;; org_gcr_2017-05-12_mara_DB816700-04B3-45D0-9847-490BBFE9DBA0 ends here
 
 ;; [[file:~/src/help/Org-Mode_Fundamentals.org::org_gcr_2017-05-12_mara_2F6FE420-85A2-4A99-AAB7-20473F02B878][org_gcr_2017-05-12_mara_2F6FE420-85A2-4A99-AAB7-20473F02B878]]

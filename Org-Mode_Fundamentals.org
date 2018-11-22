@@ -550,7 +550,7 @@ Never evaluate in-line-source-blocks *on export*.
 
 #+NAME: org_gcr_2017-05-12_mara_DB816700-04B3-45D0-9847-490BBFE9DBA0
 #+BEGIN_SRC emacs-lisp
-(setq org-export-babel-evaluate nil)
+(setq org-export-use-babel nil)
 #+END_SRC
 
 **** file
