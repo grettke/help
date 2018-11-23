@@ -7444,7 +7444,7 @@ Smerge.
   :ensure t
   :config
   (setq golden-ratio-auto-scale t))
-(defhydra help/hydra/megawin (:color blue :hint nil)
+(defhydra help/hydra/megawin (:color blue :hint nil :timeout 10)
   "
 👀: %(let* ((window-configs (eyebrowse--get 'window-configs))(match (assq (eyebrowse--get 'current-slot) window-configs))(desc (eyebrowse-format-slot match))) desc) _1_ _2_ _3_ _4_ _5_ _6_ _7_ _8_ _9_ _0_ _-_
 _C_reate _R_ename _T_o Prev_I_ous _O_ther _P_op
