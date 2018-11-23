@@ -8381,7 +8381,7 @@ Eval expression.
 #+NAME: org_gcr_2017-05-12_mara_E8ABDA7D-AC92-4C24-8287-1505E2377B2C
 #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "C-h") nil)
-(global-set-key (kbd "C-h") #'ace-window)
+(global-set-key (kbd "C-h") #'help/ace-window)
 #+END_SRC
 
 In Org-Mode I constantly use ~s-h~ for tangling. When I forget that I am /out of/

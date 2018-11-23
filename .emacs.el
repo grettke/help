@@ -4955,7 +4955,7 @@ _w_ where is something defined
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_E8ABDA7D-AC92-4C24-8287-1505E2377B2C][org_gcr_2017-05-12_mara_E8ABDA7D-AC92-4C24-8287-1505E2377B2C]]
 (global-set-key (kbd "C-h") nil)
-(global-set-key (kbd "C-h") #'ace-window)
+(global-set-key (kbd "C-h") #'help/ace-window)
 ;; org_gcr_2017-05-12_mara_E8ABDA7D-AC92-4C24-8287-1505E2377B2C ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A26325F2-9D6C-49EE-8CBE-DC552C6F315F][org_gcr_2017-05-12_mara_A26325F2-9D6C-49EE-8CBE-DC552C6F315F]]
