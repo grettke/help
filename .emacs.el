@@ -4577,12 +4577,11 @@ Ansible: (q to quit)
   (setq golden-ratio-auto-scale t))
 (defhydra help/hydra/megawin (:color blue :hint nil)
   "
-👀: %(let* ((window-configs (eyebrowse--get 'window-configs))(match (assq (eyebrowse--get 'current-slot) window-configs))(desc (eyebrowse-format-slot match))) desc) _0_ _1_ _2_ _3_ _4_ _5_ _6_ _7_ _8_ _9_ _-_
+👀: %(let* ((window-configs (eyebrowse--get 'window-configs))(match (assq (eyebrowse--get 'current-slot) window-configs))(desc (eyebrowse-format-slot match))) desc) _1_ _2_ _3_ _4_ _5_ _6_ _7_ _8_ _9_ _0_ _-_
 _C_reate _R_ename _T_o Prev_I_ous _O_ther _P_op
 ↑←↓→ 🏃 🡄🡆 ⊕⊕⊕⊕  ─│┼ φ ☠☣ 🚪
 _e__s__d__f_ _a_  _c__n_  _i__j__k__l_  _v__b__g_ _x_ _z__/_ _q_
 "
-  ("0" #'eyebrowse-switch-to-window-config-0 :exit nil)
   ("1" #'eyebrowse-switch-to-window-config-1 :exit nil)
   ("2" #'eyebrowse-switch-to-window-config-2 :exit nil)
   ("3" #'eyebrowse-switch-to-window-config-3 :exit nil)
@@ -4592,6 +4591,7 @@ _e__s__d__f_ _a_  _c__n_  _i__j__k__l_  _v__b__g_ _x_ _z__/_ _q_
   ("7" #'eyebrowse-switch-to-window-config-7 :exit nil)
   ("8" #'eyebrowse-switch-to-window-config-8 :exit nil)
   ("9" #'eyebrowse-switch-to-window-config-9 :exit nil)
+  ("0" #'eyebrowse-switch-to-window-config-0 :exit nil)
   ("-" #'eyebrowse-close-window-config :exit nil)
   ;;
   ("C" #'eyebrowse-create-window-config :exit nil)
