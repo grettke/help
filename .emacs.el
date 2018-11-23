@@ -125,7 +125,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-             hidden-mode-line-mode)
+           hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -4557,18 +4557,20 @@ Ansible: (q to quit)
 ;; org_gcr_2018-11-17T16-38-07-06-00_cosmicality_27D8595B-4D4F-48BD-A0C4-D3AB70270721 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2018-11-21T18-07-10-06-00_cosmicality_CBE7DBFB-4758-4A24-862C-D0C95847844C][org_gcr_2018-11-21T18-07-10-06-00_cosmicality_CBE7DBFB-4758-4A24-862C-D0C95847844C]]
+(use-package eyebrowse
+  :ensure t
+  :config
+  (setq eyebrowse-wrap-around t)
+  (eyebrowse-mode t))
+(use-package windmove
+  :config
+  (setq windmove-wrap-around t))
 (use-package ace-window
   :ensure t
   :config
   (setq aw-keys '(?j ?k ?l ?i ?o ?p))
   (setq aw-scope 'frame)
   (setq aw-background nil))(require 'windmove)
-(use-package eyebrowse
-  :ensure t
-  :config
-  (setq eyebrowse-wrap-around t)
-  (eyebrowse-mode t))
-(setq windmove-wrap-around t)
 (defhydra help/hydra/megawin (:color blue :hint nil)
   "
 👀: %(let* ((window-configs (eyebrowse--get 'window-configs))(match (assq (eyebrowse--get 'current-slot) window-configs))(desc (eyebrowse-format-slot match))) desc) _0_ _1_ _2_ _3_ _4_ _5_ _6_ _7_ _8_ _9_ _-_

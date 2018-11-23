@@ -7426,18 +7426,20 @@ Smerge.
 
 #+name: org_gcr_2018-11-21T18-07-10-06-00_cosmicality_CBE7DBFB-4758-4A24-862C-D0C95847844C
 #+begin_src emacs-lisp
+(use-package eyebrowse
+  :ensure t
+  :config
+  (setq eyebrowse-wrap-around t)
+  (eyebrowse-mode t))
+(use-package windmove
+  :config
+  (setq windmove-wrap-around t))
 (use-package ace-window
   :ensure t
   :config
   (setq aw-keys '(?j ?k ?l ?i ?o ?p))
   (setq aw-scope 'frame)
   (setq aw-background nil))(require 'windmove)
-(use-package eyebrowse
-  :ensure t
-  :config
-  (setq eyebrowse-wrap-around t)
-  (eyebrowse-mode t))
-(setq windmove-wrap-around t)
 (defhydra help/hydra/megawin (:color blue :hint nil)
   "
 👀: %(let* ((window-configs (eyebrowse--get 'window-configs))(match (assq (eyebrowse--get 'current-slot) window-configs))(desc (eyebrowse-format-slot match))) desc) _0_ _1_ _2_ _3_ _4_ _5_ _6_ _7_ _8_ _9_ _-_
