@@ -125,7 +125,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-           hidden-mode-line-mode)
+             hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -4719,7 +4719,10 @@ Buf-Move: (q to quit)
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C][org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C]]
 (global-set-key (kbd "C-4") #'hs-toggle-hiding)
 (global-set-key (kbd "C-3") #'help/my-toggle-hideshow-all)
-(global-set-key (kbd "C-5") #'kill-buffer)
+(defun help/kill-buffer ()
+  (interactive)
+  (kill-buffer (current-buffer)))
+(global-set-key (kbd "C-5") #'help/kill-buffer)
 (global-set-key (kbd "C-M-=") #'edit-indirect-region)
 (global-set-key (kbd "C-M-4") #'help/1-window)
 
@@ -4864,7 +4867,7 @@ Timestamps: (_q_uit)
     (call-interactively 'mark-whole-buffer)
     (call-interactively 'kill-ring-save)
     (message "Buffer contents copied")))
-(global-set-key (kbd "s-q") #'kill-buffer)
+(global-set-key (kbd "s-q") #'help/kill-buffer)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 (global-set-key (kbd "C-M-y") #'insert-char)
 (define-key org-mode-map (kbd "C-o") nil)
