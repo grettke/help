@@ -125,7 +125,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-             hidden-mode-line-mode)
+           hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -427,7 +427,7 @@ Attribution Nikolaj Schumacher: URL `https://lists.gnu.org/archive/html/help-gnu
   "Attribution URL: `https://iqbalansari.github.io/blog/2014/12/07/automatically-create-parent-directories-on-visiting-a-new-file-in-emacs/'"
   (let ((parent-directory (file-name-directory buffer-file-name)))
     (when (and (not (file-exists-p parent-directory))
-               (y-or-n-p (format "Directory `%s' does not exist. Create it?" parent-directory)))
+             (y-or-n-p (format "Directory `%s' does not exist. Create it?" parent-directory)))
       (make-directory parent-directory t))))
 
 (defun help/occur-dwim ()
@@ -4945,7 +4945,7 @@ _w_ where is something defined
 ;; org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2018-11-14T01-09-50-06-00_cosmicality_F9D27274-71B1-4AFA-9FEA-610569715A96][org_gcr_2018-11-14T01-09-50-06-00_cosmicality_F9D27274-71B1-4AFA-9FEA-610569715A96]]
-
+(global-set-key (kbd "C-s") #'swiper)
 ;; org_gcr_2018-11-14T01-09-50-06-00_cosmicality_F9D27274-71B1-4AFA-9FEA-610569715A96 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2018-11-07T14-59-31-06-00_cosmicality_65D81E9D-49D3-4717-A94F-ED6FC6C696B8][org_gcr_2018-11-07T14-59-31-06-00_cosmicality_65D81E9D-49D3-4717-A94F-ED6FC6C696B8]]

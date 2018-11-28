@@ -8366,7 +8366,7 @@ to make the minibuffer and ~eval-*~ become confused \rarr quit working.
 
 #+name: org_gcr_2018-11-14T01-09-50-06-00_cosmicality_F9D27274-71B1-4AFA-9FEA-610569715A96
 #+begin_src emacs-lisp
-
+(global-set-key (kbd "C-s") #'swiper)
 #+end_src
 
      #+name: org_gcr_2018-11-07T14-59-31-06-00_cosmicality_65D81E9D-49D3-4717-A94F-ED6FC6C696B8
