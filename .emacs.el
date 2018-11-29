@@ -125,7 +125,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-           hidden-mode-line-mode)
+             hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -4571,6 +4571,8 @@ Ansible: (q to quit)
   (setq aw-keys '(?j ?k ?l ?i ?o ?p))
   (setq aw-scope 'frame)
   (setq aw-background nil))(require 'windmove)
+(use-package resize-window
+  :ensure t)
 (use-package golden-ratio
   :ensure t
   :config
@@ -4608,18 +4610,17 @@ _e__s__d__f_ _a_  _c__n_  _i__j__k__l_  _v__b__g_ _x_ _z__/_ _q_
   ;;
   ("a" ace-window :exit nil)
   ;;
-  ("c" (lambda () (interactive) (setq current-prefix-arg '(-1)) (call-interactively
-                                                                 'other-window)) :exit nil)
-  ("n" other-window :exit nil)
+  ("c" (lambda () (interactive) (resize-window--cycle-window-negative)) :exit nil)
+  ("n" (lambda () (interactive) (resize-window--cycle-window-positive)) :exit nil)
   ;;
-  ("i" enlarge-window :exit nil)
-  ("j" enlarge-window-horizontally :exit nil)
-  ("k" shrink-window :exit nil)
-  ("l" shrink-window-horizontally :exit nil)
+  ("i" (lambda () (interactive) (resize-window--enlarge-down)) :exit nil)
+  ("j" (lambda () (interactive) (resize-window--shrink-horizontally)) :exit nil)
+  ("k" (lambda () (interactive) (resize-window--enlarge-up)) :exit nil)
+  ("l" (lambda () (interactive) (resize-window--enlarge-horizontally)) :exit nil)
   ;;
   ("v" split-window-vertically :exit nil)
   ("b" split-window-horizontally :exit nil)
-  ("g" balance-windows :exit nil)
+  ("g" (lambda () (interactive) (resize-window--reset-windows)) :exit nil)
   ;;
   ("x" golden-ratio :exit nil)
   ("X" golden-ratio-toggle-widescreen :exit nil)
