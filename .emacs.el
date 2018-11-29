@@ -4581,8 +4581,8 @@ Ansible: (q to quit)
   "
 👀: %(let* ((window-configs (eyebrowse--get 'window-configs))(match (assq (eyebrowse--get 'current-slot) window-configs))(desc (eyebrowse-format-slot match))) desc) _1_ _2_ _3_ _4_ _5_ _6_ _7_ _8_ _9_ _0_ _-_
 _C_reate _R_ename _T_o Prev_I_ous _O_ther _P_op
-↑←↓→ 🏃 🡄🡆 ⊕⊕⊕⊕  ─│┼ φ ☠☣ 🚪
-_e__s__d__f_ _a_  _c__n_  _i__j__k__l_  _v__b__g_ _x_ _z__/_ _q_
+↑←↓→ 🏃 🡄🡆 ⊕⊕⊕⊕  ─│┼ φ ☠☣ ⟲⟳ 🚪
+_e__s__d__f_ _a_  _c__n_  _i__j__k__l_  _v__b__g_ _x_ _z__/_ _w__r_ _q_
 "
   ("1" #'eyebrowse-switch-to-window-config-1 :exit nil)
   ("2" #'eyebrowse-switch-to-window-config-2 :exit nil)
@@ -4627,6 +4627,9 @@ _e__s__d__f_ _a_  _c__n_  _i__j__k__l_  _v__b__g_ _x_ _z__/_ _q_
   ;;
   ("z" kill-this-buffer)
   ("/" delete-other-windows :exit nil)
+  ;;
+  ("w" winner-undo :exit nil)
+  ("r" winner-redo :exit nil)
   ;;
   ("q" nil))
 ;; org_gcr_2018-11-21T18-07-10-06-00_cosmicality_CBE7DBFB-4758-4A24-862C-D0C95847844C ends here
