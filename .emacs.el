@@ -427,7 +427,7 @@ Attribution Nikolaj Schumacher: URL `https://lists.gnu.org/archive/html/help-gnu
   "Attribution URL: `https://iqbalansari.github.io/blog/2014/12/07/automatically-create-parent-directories-on-visiting-a-new-file-in-emacs/'"
   (let ((parent-directory (file-name-directory buffer-file-name)))
     (when (and (not (file-exists-p parent-directory))
-             (y-or-n-p (format "Directory `%s' does not exist. Create it?" parent-directory)))
+               (y-or-n-p (format "Directory `%s' does not exist. Create it?" parent-directory)))
       (make-directory parent-directory t))))
 
 (defun help/occur-dwim ()
@@ -4983,7 +4983,7 @@ _w_ where is something defined
 (defhydra help/hydra/left-side/global (:color blue
                                               :hint nil)
   "
-_1_ reset-font _2_ -font _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _7_ selectric _8_ 👍_9_ 👎 _0_ 👏_-_ split-window-vertically _=_ reposition-window
+_1_ reset-font _2_ -font _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _8_ 👍_9_ 👎 _0_ 👏_-_ split-window-vertically _=_ reposition-window
 
 _q_uit _Q_ exit-Emacs
 _w_ widen _W_ git time machine
@@ -5035,7 +5035,6 @@ _?_ tons of scissors
   ("4" help/insert-ellipsis)
   ("5" help/uuid)
   ("6" set-buffer-file-coding-system)
-  ("7" selectric-mode)
   ("8" (lambda () (interactive) (insert "👍")))
   ("9" (lambda () (interactive) (insert "👎")))
   ("0" (lambda () (interactive) (insert "👏")) :exit nil)
