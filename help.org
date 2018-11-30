@@ -2292,6 +2292,7 @@ Provide it in a buffer.
   (use-package flx
     :ensure t)
   (ivy-mode 1)
+  (diminish 'ivy-mode)
   (setq ivy-use-virtual-buffers t)
   ;; intentional space before end of string
   (setq ivy-count-format "(%d/%d) ")
@@ -3454,7 +3455,8 @@ Every text editing buffer needs this.
   (local-set-key (kbd "C-n") #'next-logical-line)
   (local-set-key (kbd "C-p") #'previous-logical-line)
   (unless (eq major-mode 'org-mode)
-    (orgtbl-mode nil)))
+    (orgtbl-mode nil)
+    (diminish 'orgtbl-mode)))
 (add-hook 'text-mode-hook #'help/text-mode-fn)
 #+END_SRC
 
@@ -3464,13 +3466,6 @@ Can use in source blocks.
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'org-babel-load-languages '(text . t))
 #+END_SRC
-
-OrgTbl.
-
-#+name: org_gcr_2018-11-17T16-38-07-06-00_cosmicality_38A64329-9B5C-4396-BAB2-06818BFE2818
-#+begin_src emacs-lisp
-(diminish 'orgtbl-mode)
-#+end_src
 
 *** Prog-Mode Modes
     :PROPERTIES:
@@ -4172,9 +4167,9 @@ Essential for using tables with split windows.
 #+BEGIN_SRC emacs-lisp
 (use-package org-table-sticky-header
   :ensure t
-  :diminish org-table-sticky-header-mode
   :config
-  (add-hook 'org-mode-hook #'org-table-sticky-header-mode))
+  (add-hook 'org-mode-hook #'org-table-sticky-header-mode)
+  (diminish 'org-table-sticky-header-mode))
 #+END_SRC
 
 Exports to CSV by default.

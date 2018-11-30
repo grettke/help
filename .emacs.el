@@ -1505,6 +1505,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (use-package flx
     :ensure t)
   (ivy-mode 1)
+  (diminish 'ivy-mode)
   (setq ivy-use-virtual-buffers t)
   ;; intentional space before end of string
   (setq ivy-count-format "(%d/%d) ")
@@ -2180,17 +2181,14 @@ _A_rchives | Rest_o_res | Re_f_iles
   (local-set-key (kbd "C-n") #'next-logical-line)
   (local-set-key (kbd "C-p") #'previous-logical-line)
   (unless (eq major-mode 'org-mode)
-    (orgtbl-mode nil)))
+    (orgtbl-mode nil)
+    (diminish 'orgtbl-mode)))
 (add-hook 'text-mode-hook #'help/text-mode-fn)
 ;; org_gcr_2017-05-12_mara_1FF81C16-BEB0-4B42-806A-D033566FC63F ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-11-17_mara_FCDC3DE5-3584-4431-A443-FFC8F9EA8253][org_gcr_2017-11-17_mara_FCDC3DE5-3584-4431-A443-FFC8F9EA8253]]
 (add-to-list 'org-babel-load-languages '(text . t))
 ;; org_gcr_2017-11-17_mara_FCDC3DE5-3584-4431-A443-FFC8F9EA8253 ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2018-11-17T16-38-07-06-00_cosmicality_38A64329-9B5C-4396-BAB2-06818BFE2818][org_gcr_2018-11-17T16-38-07-06-00_cosmicality_38A64329-9B5C-4396-BAB2-06818BFE2818]]
-(diminish 'orgtbl-mode)
-;; org_gcr_2018-11-17T16-38-07-06-00_cosmicality_38A64329-9B5C-4396-BAB2-06818BFE2818 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C][org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C]]
 (setq help/prog-modes '(makefile-mode-hook
@@ -2558,9 +2556,9 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8CE235AC-A7C4-48DF-8C97-46CC7F31CDF4][org_gcr_2017-05-12_mara_8CE235AC-A7C4-48DF-8C97-46CC7F31CDF4]]
 (use-package org-table-sticky-header
   :ensure t
-  :diminish org-table-sticky-header-mode
   :config
-  (add-hook 'org-mode-hook #'org-table-sticky-header-mode))
+  (add-hook 'org-mode-hook #'org-table-sticky-header-mode)
+  (diminish 'org-table-sticky-header-mode))
 ;; org_gcr_2017-05-12_mara_8CE235AC-A7C4-48DF-8C97-46CC7F31CDF4 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2018-05-17T22-08-31-05-00_mara_AE590C3B-9E70-4694-A2B1-B4EA164D36FB][org_gcr_2018-05-17T22-08-31-05-00_mara_AE590C3B-9E70-4694-A2B1-B4EA164D36FB]]
