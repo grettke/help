@@ -7573,15 +7573,21 @@ Fling buffers left and right.
     "
 Buf-Move: (q to quit)
     ↑
-    _i_
-← _j_   _l_ →
-    _k_
+    _e__i_
+← _s__j_  _f__l_ →
+    _d__k_
     ↓
 "
-    ("j" buf-move-left :exit nil)
-    ("k" buf-move-down :exit nil)
+    ("e" buf-move-up :exit nil)
+    ("d" buf-move-down :exit nil)
+    ("s" buf-move-left :exit nil)
+    ("f" buf-move-right :exit nil)
+
     ("i" buf-move-up :exit nil)
+    ("k" buf-move-down :exit nil)
+    ("j" buf-move-left :exit nil)
     ("l" buf-move-right :exit nil)
+
     ("q" nil)))
 #+END_SRC
 

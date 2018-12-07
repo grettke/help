@@ -4693,15 +4693,21 @@ winner-mode: 🚪_q_uit ⟲_p_revious ⟳_n_ext
     "
 Buf-Move: (q to quit)
     ↑
-    _i_
-← _j_   _l_ →
-    _k_
+    _e__i_
+← _s__j_  _f__l_ →
+    _d__k_
     ↓
 "
-    ("j" buf-move-left :exit nil)
-    ("k" buf-move-down :exit nil)
+    ("e" buf-move-up :exit nil)
+    ("d" buf-move-down :exit nil)
+    ("s" buf-move-left :exit nil)
+    ("f" buf-move-right :exit nil)
+
     ("i" buf-move-up :exit nil)
+    ("k" buf-move-down :exit nil)
+    ("j" buf-move-left :exit nil)
     ("l" buf-move-right :exit nil)
+
     ("q" nil)))
 ;; org_gcr_2017-06-20_mara_6C4B1CDD-CF71-4A5F-B900-6D3CC06D4028 ends here
 
