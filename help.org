@@ -8439,7 +8439,7 @@ _]_ single bracket, white, square, right
 
 _d_ dired
 _D_ help/safb-org-babel-detangle
-_f_ counsel-ag _F_ ag*
+_f_ ag _F_ ag*
 _g_ grep
 _h_ hidden-mode-line
 _H_ hack-local-variables (see also normal-mode)
@@ -8488,7 +8488,7 @@ _?_ tons of scissors
   ("L" aggressive-indent-mode)
   ("x" delete-indentation)
   ("X" help/checks/body)
-  ("f" counsel-ag)
+  ("f" ag)
   ("F" help/hydra/ag/body)
   ("v" help/hydra/vocabulary/body)
   ("V" view-mode)
