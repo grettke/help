@@ -8369,6 +8369,16 @@ to make the minibuffer and ~eval-*~ become confused \rarr quit working.
      :ID:       org_gcr_2017-05-12_mara:C0B604C5-F530-4770-9061-92E8468C8557
      :END:
 
+CAPS-LOCK is disappeared with my Karabiner-Elements config so duplicate it.
+
+#+name: org_gcr_2018-12-08T13-39-29-06-00_cosmicality_24EADA89-3A90-4C39-B04C-C15AE629E401
+#+begin_src emacs-lisp
+(use-package caps-lock
+  :ensure t
+  :config
+  (global-set-key (kbd "C-M-s-c") #'caps-lock-mode))
+#+end_src
+
 #+name: org_gcr_2018-11-14T01-09-50-06-00_cosmicality_F9D27274-71B1-4AFA-9FEA-610569715A96
 #+begin_src emacs-lisp
 (global-set-key (kbd "C-s") #'swiper)

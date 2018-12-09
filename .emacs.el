@@ -4952,6 +4952,13 @@ _w_ where is something defined
   ("w" where-is))
 ;; org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2018-12-08T13-39-29-06-00_cosmicality_24EADA89-3A90-4C39-B04C-C15AE629E401][org_gcr_2018-12-08T13-39-29-06-00_cosmicality_24EADA89-3A90-4C39-B04C-C15AE629E401]]
+(use-package caps-lock
+  :ensure t
+  :config
+  (global-set-key (kbd "C-M-s-c") #'caps-lock-mode))
+;; org_gcr_2018-12-08T13-39-29-06-00_cosmicality_24EADA89-3A90-4C39-B04C-C15AE629E401 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2018-11-14T01-09-50-06-00_cosmicality_F9D27274-71B1-4AFA-9FEA-610569715A96][org_gcr_2018-11-14T01-09-50-06-00_cosmicality_F9D27274-71B1-4AFA-9FEA-610569715A96]]
 (global-set-key (kbd "C-s") #'swiper)
 ;; org_gcr_2018-11-14T01-09-50-06-00_cosmicality_F9D27274-71B1-4AFA-9FEA-610569715A96 ends here
