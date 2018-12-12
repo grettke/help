@@ -57,11 +57,11 @@ Key:
   - C :: Source-Block Evaluation occurred?
   - O :: Org-Macro Expansion occurred?
 
-| Activity   | S | T | W | C | O |
-|------------+---+---+---+---+---|
-| Tangling   | F | T | F | F | F |
-| Evaluating | T | F | F | T | F |
-| Weaving    | F | F | T | F | T |
+| Activity   | S | T | W | C  | O |
+|------------+---+---+---+----+---|
+| Tangling   | F | T | F | F  | F |
+| Evaluating | T | F | F | T  | F |
+| Weaving    | F | F | T | F! | T |
 
 They are separate and distinct operations.
 
@@ -69,6 +69,13 @@ They are separate and distinct operations.
 activites. It is interactively performed by Sysop. It is not a distinct
 or isolated operation. Results of one activity exist here and serve as inputs to
 another activity.
+
+- Note about ~F!~: Weaving Source-Block Evaluation occurred?^{*}
+  - Source block evaluation on export is disabled using header arguments:
+    those source blocks will never be evaluated on weaving
+  - However the /ability/ for them evaluate on weaving /is/ enabled so that weaved
+    source blocks can be replaced by their result value. This gives a kind of
+    template system. More details [[* eval][here]]
 
 *** Helper Functions
    :PROPERTIES:
