@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-08-25 Sat 22:48 -->
+<!-- 2018-12-12 Wed 20:09 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -246,20 +246,20 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org56dc263">1. Org-Mode Exemple Complet Minimal</a>
+<li><a href="#orgba4dd1a">1. Org-Mode Exemple Complet Minimal</a>
 <ul>
-<li><a href="#orgea42d6d">1.1. Principle of Least Astonishment (POLA)</a>
+<li><a href="#org7e80e80">1.1. Principle of Least Astonishment (POLA)</a>
 <ul>
-<li><a href="#org697e351">1.1.1. Time</a></li>
-<li><a href="#org2b164ad">1.1.2. Garbage Collection</a></li>
-<li><a href="#orgfb1fead">1.1.3. Load Behavior</a></li>
+<li><a href="#orge0a8f46">1.1.1. Time</a></li>
+<li><a href="#orgfb6e637">1.1.2. Garbage Collection</a></li>
+<li><a href="#org4709ca8">1.1.3. Load Behavior</a></li>
 </ul>
 </li>
-<li><a href="#org4c379c8">1.2. Org-Mode Exemple Complet Minimal</a>
+<li><a href="#orgcbdfc21">1.2. Org-Mode Exemple Complet Minimal</a>
 <ul>
-<li><a href="#org2f71afb">1.2.1. Things That Must Occur Before Loading Org-Mode</a></li>
-<li><a href="#org7d3e8d2">1.2.2. Loading Org-Mode</a></li>
-<li><a href="#orgabb83a2">1.2.3. Things That Must Occur Only After Loading Org-Mode</a></li>
+<li><a href="#orgb7348d6">1.2.1. Things That Must Occur Before Loading Org-Mode</a></li>
+<li><a href="#org83825ca">1.2.2. Loading Org-Mode</a></li>
+<li><a href="#orga092998">1.2.3. Things That Must Occur Only After Loading Org-Mode</a></li>
 </ul>
 </li>
 </ul>
@@ -272,12 +272,12 @@ Never compile this.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="orga6cd7fe"><span class="org-comment-delimiter">;; </span><span class="org-comment">-*- no-byte-compile: t; -*-</span>
+<pre class="src src-emacs-lisp" id="org076ac85"><span class="org-comment-delimiter">;; </span><span class="org-comment">-*- no-byte-compile: t; -*-</span>
 </pre>
 </div>
 
-<div id="outline-container-org56dc263" class="outline-2">
-<h2 id="org56dc263"><span class="section-number-2">1</span> Org-Mode Exemple Complet Minimal</h2>
+<div id="outline-container-orgba4dd1a" class="outline-2">
+<h2 id="orgba4dd1a"><span class="section-number-2">1</span> Org-Mode Exemple Complet Minimal</h2>
 <div class="outline-text-2" id="text-1">
 <pre class="example">
 ID: org_gcr_2017-05-12_mara:1035FF79-3703-49A6-8522-618B38A48F6C
@@ -300,15 +300,15 @@ emacs --debug-init --no-init-file --no-splash --background-color white --foregro
 </pre>
 </div>
 
-<div id="outline-container-orgea42d6d" class="outline-3">
-<h3 id="orgea42d6d"><span class="section-number-3">1.1</span> Principle of Least Astonishment (POLA)</h3>
+<div id="outline-container-org7e80e80" class="outline-3">
+<h3 id="org7e80e80"><span class="section-number-3">1.1</span> Principle of Least Astonishment (POLA)</h3>
 <div class="outline-text-3" id="text-1-1">
 <pre class="example">
 ID: org_gcr_2017-05-12_mara:626B5DD1-97D8-4B85-96BC-B9A96F18AF1E
 </pre>
 </div>
-<div id="outline-container-org697e351" class="outline-4">
-<h4 id="org697e351"><span class="section-number-4">1.1.1</span> Time</h4>
+<div id="outline-container-orge0a8f46" class="outline-4">
+<h4 id="orge0a8f46"><span class="section-number-4">1.1.1</span> Time</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <pre class="example">
 ID: org_gcr_2018-03-16_mara:BC16A47E-FC4E-4F12-8813-583BF4C3EF5A
@@ -318,7 +318,7 @@ Standardize timestamps.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org7d16fc2">(<span class="org-keyword">defun</span> <span class="org-function-name">help/get-timestamp</span> ()
+<pre class="src src-emacs-lisp" id="orgdf3d89b">(<span class="org-keyword">defun</span> <span class="org-function-name">help/get-timestamp</span> ()
   <span class="org-doc">"Produces a full ISO 8601 format timestamp."</span>
   (<span class="org-keyword">interactive</span>)
   (<span class="org-keyword">let*</span> ((timestamp-without-timezone (format-time-string <span class="org-string">"%Y-%m-%dT%T"</span>))
@@ -356,8 +356,8 @@ Standardize timestamps.
 </div>
 </div>
 </div>
-<div id="outline-container-org2b164ad" class="outline-4">
-<h4 id="org2b164ad"><span class="section-number-4">1.1.2</span> Garbage Collection</h4>
+<div id="outline-container-orgfb6e637" class="outline-4">
+<h4 id="orgfb6e637"><span class="section-number-4">1.1.2</span> Garbage Collection</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <pre class="example">
 ID: org_gcr_2017-07-29_mara:5A6162AE-F0FD-491D-BC05-F288F46F6125
@@ -368,7 +368,7 @@ normal.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org3af8372">(<span class="org-keyword">setq</span> help/default-gc-cons-threshold gc-cons-threshold)
+<pre class="src src-emacs-lisp" id="org2ea0290">(<span class="org-keyword">setq</span> help/default-gc-cons-threshold gc-cons-threshold)
 (<span class="org-keyword">defun</span> <span class="org-function-name">help/set-gc-cons-threshold</span> (<span class="org-type">&amp;optional</span> multiplier notify)
   <span class="org-doc">"Set `</span><span class="org-doc"><span class="org-constant">gc-cons-threshold</span></span><span class="org-doc">' either to its default value or a</span>
 <span class="org-doc">   `</span><span class="org-doc"><span class="org-constant">multiplier</span></span><span class="org-doc">' thereof."</span>
@@ -381,8 +381,8 @@ normal.
 </div>
 </div>
 </div>
-<div id="outline-container-orgfb1fead" class="outline-4">
-<h4 id="orgfb1fead"><span class="section-number-4">1.1.3</span> Load Behavior</h4>
+<div id="outline-container-org4709ca8" class="outline-4">
+<h4 id="org4709ca8"><span class="section-number-4">1.1.3</span> Load Behavior</h4>
 <div class="outline-text-4" id="text-1-1-3">
 <pre class="example">
 ID: org_gcr_2017-05-12_mara:75985F03-F3B9-4DA3-8F6E-393E4C2F06E7
@@ -432,15 +432,15 @@ tangled system.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="orgc4e3e14">(<span class="org-keyword">setq</span> load-prefer-newer t)
+<pre class="src src-emacs-lisp" id="org3eb1e99">(<span class="org-keyword">setq</span> load-prefer-newer t)
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org4c379c8" class="outline-3">
-<h3 id="org4c379c8"><span class="section-number-3">1.2</span> Org-Mode Exemple Complet Minimal</h3>
+<div id="outline-container-orgcbdfc21" class="outline-3">
+<h3 id="orgcbdfc21"><span class="section-number-3">1.2</span> Org-Mode Exemple Complet Minimal</h3>
 <div class="outline-text-3" id="text-1-2">
 <pre class="example">
 ID: org_gcr_2017-05-12_mara:572E2309-5DCA-4AE1-AAC4-36B7E07AD46D
@@ -462,8 +462,8 @@ decide whether or not it is what you expect and prepare an ECM if necessary.
 </p>
 </div>
 
-<div id="outline-container-org2f71afb" class="outline-4">
-<h4 id="org2f71afb"><span class="section-number-4">1.2.1</span> Things That Must Occur Before Loading Org-Mode</h4>
+<div id="outline-container-orgb7348d6" class="outline-4">
+<h4 id="orgb7348d6"><span class="section-number-4">1.2.1</span> Things That Must Occur Before Loading Org-Mode</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <pre class="example">
 ID: org_gcr_2017-07-30_mara:3CF35008-D435-4CCB-90D7-5CFA06E15467
@@ -473,7 +473,7 @@ Add the Org-Mode core distribution the load path.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org08a93e3">(add-to-list <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">load-path</span> <span class="org-string">"~/src/org-mode/lisp"</span>)
+<pre class="src src-emacs-lisp" id="orgedff019">(add-to-list <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">load-path</span> <span class="org-string">"~/src/org-mode/lisp"</span>)
 </pre>
 </div>
 
@@ -483,7 +483,7 @@ are essential.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org6be953a">(add-to-list <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">load-path</span> <span class="org-string">"~/src/org-mode/contrib/lisp"</span>)
+<pre class="src src-emacs-lisp" id="org4ecba5f">(add-to-list <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">load-path</span> <span class="org-string">"~/src/org-mode/contrib/lisp"</span>)
 </pre>
 </div>
 
@@ -493,7 +493,7 @@ before loading Org-Mode. <b>Never</b> remove this from a submitted ECM.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org487cbe7">(<span class="org-keyword">setq</span> org-list-allow-alphabetical t)
+<pre class="src src-emacs-lisp" id="org0862e3e">(<span class="org-keyword">setq</span> org-list-allow-alphabetical t)
 </pre>
 </div>
 
@@ -503,7 +503,7 @@ occur before loading Org-Mode. <b>Never</b> remove this from a submitted ECM.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="orgc650eeb">(<span class="org-keyword">setq</span> org-enforce-todo-checkbox-dependencies t)
+<pre class="src src-emacs-lisp" id="orge9b32af">(<span class="org-keyword">setq</span> org-enforce-todo-checkbox-dependencies t)
 </pre>
 </div>
 
@@ -512,14 +512,14 @@ Use math double brackets for <span class="underline">Literate Programming</span>
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org34ecdbd">(<span class="org-keyword">setq</span> org-babel-noweb-wrap-start <span class="org-string">"&#10218;"</span>)
+<pre class="src src-emacs-lisp" id="org221ae4c">(<span class="org-keyword">setq</span> org-babel-noweb-wrap-start <span class="org-string">"&#10218;"</span>)
 (<span class="org-keyword">setq</span> org-babel-noweb-wrap-end <span class="org-string">"&#10219;"</span>)
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org7d3e8d2" class="outline-4">
-<h4 id="org7d3e8d2"><span class="section-number-4">1.2.2</span> Loading Org-Mode</h4>
+<div id="outline-container-org83825ca" class="outline-4">
+<h4 id="org83825ca"><span class="section-number-4">1.2.2</span> Loading Org-Mode</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <pre class="example">
 ID: org_gcr_2017-07-30_mara:FFA7E062-C039-4F3F-82FC-12A49FF379B8
@@ -529,13 +529,13 @@ Load Org-Mode.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org6d516fc">(<span class="org-keyword">require</span> <span class="org-highlight-quoted-quote">'</span><span class="org-constant">org</span>)
+<pre class="src src-emacs-lisp" id="orgf1c4316">(<span class="org-keyword">require</span> <span class="org-highlight-quoted-quote">'</span><span class="org-constant">org</span>)
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgabb83a2" class="outline-4">
-<h4 id="orgabb83a2"><span class="section-number-4">1.2.3</span> Things That Must Occur Only After Loading Org-Mode</h4>
+<div id="outline-container-orga092998" class="outline-4">
+<h4 id="orga092998"><span class="section-number-4">1.2.3</span> Things That Must Occur Only After Loading Org-Mode</h4>
 <div class="outline-text-4" id="text-1-2-3">
 <pre class="example">
 ID: org_gcr_2017-07-30_mara:D9207828-3783-4599-BA48-A6EB2C3FCAE4
@@ -546,7 +546,7 @@ Helper doubles available memory.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="orgdab7213">(<span class="org-keyword">defun</span> <span class="org-function-name">help/double-gc-cons-threshold</span> () <span class="org-doc">"Double `</span><span class="org-doc"><span class="org-constant">gc-cons-threshold</span></span><span class="org-doc">'."</span> (help/set-gc-cons-threshold 2))
+<pre class="src src-emacs-lisp" id="org859bce2">(<span class="org-keyword">defun</span> <span class="org-function-name">help/double-gc-cons-threshold</span> () <span class="org-doc">"Double `</span><span class="org-doc"><span class="org-constant">gc-cons-threshold</span></span><span class="org-doc">'."</span> (help/set-gc-cons-threshold 2))
 </pre>
 </div>
 
@@ -557,7 +557,7 @@ is always available.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="orgb50282d">(add-hook <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">org-babel-pre-tangle-hook</span> <span class="org-highlight-quoted-quote">#'</span><span class="org-highlight-quoted-symbol">help/double-gc-cons-threshold</span>)
+<pre class="src src-emacs-lisp" id="org20c4ec2">(add-hook <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">org-babel-pre-tangle-hook</span> <span class="org-highlight-quoted-quote">#'</span><span class="org-highlight-quoted-symbol">help/double-gc-cons-threshold</span>)
 (add-hook <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">org-babel-post-tangle-hook</span> <span class="org-highlight-quoted-quote">#'</span><span class="org-highlight-quoted-symbol">help/set-gc-cons-threshold</span>)
 </pre>
 </div>
@@ -567,7 +567,7 @@ Display system info.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org61aeaf1">(<span class="org-keyword">defun</span> <span class="org-function-name">help/display-system-info</span> ()
+<pre class="src src-emacs-lisp" id="org3f1a183">(<span class="org-keyword">defun</span> <span class="org-function-name">help/display-system-info</span> ()
   (<span class="org-keyword">interactive</span>)
   (message <span class="org-string">"&lt;&lt;&lt;ECM Information&gt;&gt;&gt;\nThis buffer file: %s\nAs Of: %s\nOrg-Version: %s\nOrg-Git-Version:%s\nEmacs-Version: %s\nNoweb wrap start and stop delimeters: '%s' and '%s'\norg-babel-default-header-args:\n"</span>
            buffer-file-name
@@ -588,7 +588,7 @@ Display system info.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Grant Rettke</p>
-<p class="date">Created: 2018-08-25 Sat 22:48</p>
+<p class="date">Created: 2018-12-12 Wed 20:09</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

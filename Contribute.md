@@ -1,11 +1,11 @@
-- [Contribute](#org447d267)
-- [xml-rpc](#orgbc4f9eb)
-- [metaweblog](#orgd12dc4b)
-- [Org2blog](#org7b3ce0c)
-- [Pretty Mode](#orgdd6c138)
-- [go-hydra](#orge15dfe8)
-- [universal-emotions-emoticons](#org6fa602c)
-- [corporate-bs-generator](#org1715352)
+- [Contribute](#orgcd4e9c4)
+- [xml-rpc](#orgfaae10d)
+- [metaweblog](#orgd7c98be)
+- [Org2blog](#orgee66932)
+- [Pretty Mode](#orgf91e1d2)
+- [go-hydra](#org206241a)
+- [universal-emotions-emoticons](#orgc2fc997)
+- [corporate-bs-generator](#orgcd31862)
 
 Never compile this.
 
@@ -14,7 +14,7 @@ Never compile this.
 ```
 
 
-<a id="org447d267"></a>
+<a id="orgcd4e9c4"></a>
 
 # Contribute
 
@@ -35,7 +35,7 @@ Start EMACS with this command:
 ```
 
 
-<a id="orgbc4f9eb"></a>
+<a id="orgfaae10d"></a>
 
 # xml-rpc
 
@@ -49,7 +49,7 @@ Start EMACS with this command:
 ```
 
 
-<a id="orgd12dc4b"></a>
+<a id="orgd7c98be"></a>
 
 # metaweblog
 
@@ -63,7 +63,7 @@ Start EMACS with this command:
 ```
 
 
-<a id="org7b3ce0c"></a>
+<a id="orgee66932"></a>
 
 # Org2blog
 
@@ -112,7 +112,7 @@ Configure Org2Blog.
 ```
 
 
-<a id="orgdd6c138"></a>
+<a id="orgf91e1d2"></a>
 
 # Pretty Mode
 
@@ -126,7 +126,7 @@ Visualize ASCII values as their most likely Unicode representation.
 ```
 
 
-<a id="orge15dfe8"></a>
+<a id="org206241a"></a>
 
 # go-hydra
 
@@ -140,7 +140,7 @@ A collection of Go related Hydras for Emacs.
 ```
 
 
-<a id="org6fa602c"></a>
+<a id="orgc2fc997"></a>
 
 # universal-emotions-emoticons
 
@@ -152,7 +152,7 @@ A collection of Go related Hydras for Emacs.
 ```
 
 
-<a id="org1715352"></a>
+<a id="orgcd31862"></a>
 
 # corporate-bs-generator
 

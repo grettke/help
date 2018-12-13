@@ -1,10 +1,10 @@
-- [Org-Mode Fundamentals](#orge170950)
-  - [Literate Programming](#org1349e19)
-    - [Helper Functions](#org1eff3cb)
-    - [Identity](#orge18e117)
-    - [Tangling](#org96a44e8)
-    - [Evaluating](#org1b62fb1)
-    - [Weaving](#orgc2fa338)
+- [Org-Mode Fundamentals](#org63b32f9)
+  - [Literate Programming](#org77478ac)
+    - [Helper Functions](#org045124a)
+    - [Identity](#orgfa01cb4)
+    - [Tangling](#org75a3be7)
+    - [Evaluating](#orgdaa87a8)
+    - [Weaving](#org32cd2fe)
 
 Never compile this.
 
@@ -13,7 +13,7 @@ Never compile this.
 ```
 
 
-<a id="orge170950"></a>
+<a id="org63b32f9"></a>
 
 # Org-Mode Fundamentals
 
@@ -32,7 +32,7 @@ Start EMACS with this command:
 ```
 
 
-<a id="org1349e19"></a>
+<a id="org77478ac"></a>
 
 ## Literate Programming
 
@@ -59,18 +59,22 @@ Key:
     -   **C:** Source-Block Evaluation occurred?
     -   **O:** Org-Macro Expansion occurred?
 
-| Activity   | S | T | W | C | O |
+| Activity   | S | T | W | C  | O |
 |---------- |--- |--- |--- |--- |--- |
-| Tangling   | F | T | F | F | F |
-| Evaluating | T | F | F | T | F |
-| Weaving    | F | F | T | F | T |
+| Tangling   | F | T | F | F  | F |
+| Evaluating | T | F | F | T  | F |
+| Weaving    | F | F | T | F! | T |
 
 They are separate and distinct operations.
 
 "Programming" is logically an activity that is the combination of these 3 activites. It is interactively performed by Sysop. It is not a distinct or isolated operation. Results of one activity exist here and serve as inputs to another activity.
 
+-   Note about `F!`: Weaving Source-Block Evaluation occurred?<sup>\*</sup>
+    -   Source block evaluation on export is disabled using header arguments: those source blocks will never be evaluated on weaving
+    -   However the *ability* for them evaluate on weaving *is* enabled so that weaved source blocks can be replaced by their result value. This gives a kind of template system. More details [here](#org13f8ec1)
 
-<a id="org1eff3cb"></a>
+
+<a id="org045124a"></a>
 
 ### Helper Functions
 
@@ -202,7 +206,7 @@ This is a copy and paste. Additional languages would warrant a refactor."
 ```
 
 
-<a id="orge18e117"></a>
+<a id="orgfa01cb4"></a>
 
 ### Identity
 
@@ -240,7 +244,7 @@ Make sure that `ID` is always unique, portable, and easy to maintain by
 ```
 
 
-<a id="org96a44e8"></a>
+<a id="org75a3be7"></a>
 
 ### Tangling
 
@@ -395,7 +399,7 @@ Assume that tangled document always live within the same directory structure as 
     Configuration likely per Source-Block or System.
 
 
-<a id="org1b62fb1"></a>
+<a id="orgdaa87a8"></a>
 
 ### Evaluating
 
@@ -474,10 +478,35 @@ Org-Mode may use all of the listed languages.
     (help/set-org-babel-default-inline-header-args :eval "never-export")
     ```
 
-    Never evaluate in-line-source-blocks **on export**.
+    `org-export-use-babel`
+
+    How does this overlap with the `:eval` header arg? Are they the same or different? What is the point? For a while I thought I understood the difference and how it worked. Later when I ran into a problem with my exports I realized that I didn't understand the difference!
+
+    I thought that I had configured inline source blocks to
+
+    1.  Have their results replaced on each export
+    2.  Only include their results, excluding their source code
+    3.  Allow execution of source blocks interactively, never on export
+
+    It is all documented here [1.1](#org77478ac).
+
+    Instead of that, when I exported, the results *weren't* replaced and the source code *was* included: exactly the opposite of what I had wanted to happen. Ouch!
+
+    Source blocks include a header arg `:eval` that controls evaluation of source blocks. I'd configured them all (both normal source blocks and inline source blocks) with the setting "never-export". Never-export makes it so that you can evaluate source blocks when you are editing the document but they can never be evaluated during export. That is why #3 worked correctly. But I will still stuck with #1-#2.
+
+    Long story short after reviewing what I was thought every setting regarding evaluating and exportation I ended up on `org-export-use-babel`. It seemed silly to read it's documentation again because I'd read it so many times that I though I knew it inside and out: it controls whether or not code blocks *can* be evaluated on export. I'd set it to true though, to be totally sure that the system worked as I had expected. Now **two** places disabled evaluation on export: header args and this variable. It was here though that my understanding had a major mistake!
+
+    `org-export-use-babel—` answers two questions (controls two features) with one answer:
+
+    1.  Is code evaluated on export?
+    2.  Are header args obeyed?
+
+    The key is the second part: the header args must be obeyed to make `replace` work. My problem was that I never noticed that this variable controls both execution and header args use. The latter, somehow I totally missed that. So no matter how I configured the header-args, those results *could never* be replaced because the header-args are **totally ignored**. Wow, I was so happy to discover this.
+
+    In the end the configuration was super simple: set `org-export-use-babel` to true, make sure the desired source blocks were set to `:never-export`, and the inline source blocks were setup to replace.
 
     ```emacs-lisp
-    (setq org-export-babel-evaluate nil)
+    (setq org-export-use-babel t)
     ```
 
 6.  file
@@ -550,7 +579,7 @@ Org-Mode may use all of the listed languages.
 
     > Specify the type of results and how they will be collected and handled
 
-    Ways to configure `:results`: `(apply '* (-keep 'cdr '((Collection . 2) (Type . 4) (Format . 7) (Handling . 4))))` `224`.
+    Ways to configure `:results`: `224`.
 
     This system stores the results of evaluation in the source document. It believes that the results are critical to the research.
 
@@ -574,7 +603,7 @@ Org-Mode may use all of the listed languages.
     -   Format
         -   `drawer`: Enable results replacement
     -   Handling
-        -   `replace`: Replace theme each time you evaluate the block.
+        -   `replace`: Replace them each time you evaluate the block.
 
     ```emacs-lisp
     (defconst help/org-sb-results-cfg "value scalar drawer replace")
@@ -620,7 +649,7 @@ Org-Mode may use all of the listed languages.
     -   Emacs Lisp evaluation of variables
 
 
-<a id="orgc2fa338"></a>
+<a id="org32cd2fe"></a>
 
 ### Weaving
 

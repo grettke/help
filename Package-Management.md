@@ -1,8 +1,8 @@
-- [Watch What You Eat](#orgd13abcd)
-  - [Use-Package](#org694e713)
-  - [El-Get](#orgfc68303)
-  - [Stand-Alone](#orgc0f38b0)
-  - [Helper](#org5fa6636)
+- [Watch What You Eat](#org8fa58e8)
+  - [Use-Package](#orge3a4d0a)
+  - [El-Get](#org37fa249)
+  - [Stand-Alone](#org7f40b80)
+  - [Helper](#orgf4ec1f8)
 
 Never compile this.
 
@@ -11,14 +11,14 @@ Never compile this.
 ```
 
 
-<a id="orgd13abcd"></a>
+<a id="org8fa58e8"></a>
 
 # Watch What You Eat
 
     ID: org_gcr_2017-05-12_mara:BD133C8B-8DFF-45C0-967D-CB83693C54B4
 
 
-<a id="org694e713"></a>
+<a id="orge3a4d0a"></a>
 
 ## Use-Package
 
@@ -67,7 +67,7 @@ Load Use-Package and it's partner Diminish. Every package loaded before this poi
 ```
 
 
-<a id="orgfc68303"></a>
+<a id="org37fa249"></a>
 
 ## El-Get
 
@@ -197,7 +197,7 @@ Ask el-get to make sure that those desired packages are installed.
 ```
 
 
-<a id="orgc0f38b0"></a>
+<a id="org7f40b80"></a>
 
 ## Stand-Alone
 
@@ -208,7 +208,7 @@ Ask el-get to make sure that those desired packages are installed.
 ```
 
 
-<a id="org5fa6636"></a>
+<a id="orgf4ec1f8"></a>
 
 ## Helper
 

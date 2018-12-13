@@ -1,155 +1,155 @@
-- [README](#org8e390be)
-  - [HELP Enables Literate Programming](#org4515bd4)
-  - [Style Guide](#org476e70a)
-  - [History](#orgd67b2ea)
-    - [Version 1: Sufficient And Slipshod](#org3e1d592)
-    - [Version 2: How to design a file conservator (HTDFC) or The Care and Conservation of Computer Files (TC3F)](#org2b5c997)
-    - [Version 3: ALEC'S A LANGUAGE FOR EXPRESSING CREATIVITY (ALEC)](#orgff4d30e)
-    - [Version 4: HELP Enables Literate Programming](#org47c4c78)
-- [Special Operating Procedure](#org6f72b8c)
-  - [Benchmark](#orgdd954fe)
-  - [Customize](#org60a7dd5)
-  - [Display](#orgf01cf20)
-  - [Hydra](#orgdac29cb)
-  - [Keyboard](#org3266db9)
-  - [Libraries](#orgae9906a)
-  - [Modeline](#org6963b24)
-  - [macOS](#org7b56d1f)
-  - [Windows](#org4f5409d)
-  - [Linux](#orge4733f7)
-- [Standard Operating Procedure](#orge9e2a4c)
-  - [Helper Functions](#orgc42b00a)
-  - [Typography](#org52592c0)
-  - [Buffer](#org166f802)
-  - [Code Folding](#orgeb1327f)
-  - [Emacs Lisp Macros](#org1615f2a)
-  - [Evaluation](#orga71ff6c)
-  - [Encryption](#orgcbe415a)
-  - [Eshell](#org51dd677)
-  - [File Based System](#orga8d698a)
-  - [IMenu](#org0b2e2f6)
-  - [Interactive User Interface Completion](#org9bb8d87)
-  - [Font](#org86aaf1e)
-  - [Going to Objects](#org29908dd)
-  - [Grammar](#orgc2942ab)
-  - [Keyboard Macros](#org3b4f781)
-  - [Word Completion](#orgf8cf2ea)
-  - [Mark, Kill and Region](#org22ca280)
-  - [Minibuffer](#org934c895)
-  - [Mouse](#org271617f)
-  - [Occur](#org6f62658)
-  - [Popups](#orgf23e2c0)
-  - [Projects](#org255b9fc)
-  - [Printing](#orgdcb9500)
-  - [Register](#org5908b12)
-  - [Replacing](#orgbe7500d)
-  - [Save and Restore Operating State](#org768f01b)
-    - [Mark](#orgd8d9a2a)
-    - [Minibuffer](#org6c7e273)
-  - [Searching](#org3fc06c5)
-    - [Internal](#org29bb16c)
-    - [External](#orgb72c0b8)
-  - [Spell Checking](#org798f52d)
-    - [Org-Mode](#org8507871)
-  - [Syntax Checking](#orgf23b64f)
-  - [TAB](#org4ee48d6)
-  - [TODOs](#orgf8667c8)
-  - [Version Control](#orga2eaaf0)
-  - [Video](#orgde67bf5)
-  - [Whitespace Management](#orgee8dc7b)
-  - [whoami](#org92aea0e)
-  - [Word Wrap](#orgbab8626)
-- [Hacking](#org9b2ffd1)
-  - [Common Configurations](#org18fd212)
-    - [Special Mode](#orga5d13dc)
-    - [Text-Mode](#org8b447e8)
-    - [Prog-Mode Modes](#orgc727809)
-    - [Prog-Mode Hook Function](#orgb45847d)
-  - [Literate Programming](#org5d074b9)
-    - [Emacs Lisp](#orgea6e105)
-    - [Org-Mode](#org4097f72)
-    - [Intermittent Literate Programming](#org1843484)
-    - [Transliteration](#org6c5b46d)
-    - [Words](#org6fa02ce)
-    - [Dash](#org84b1c63)
-  - [Unicode](#orgb744831)
-    - [System](#orgb967e08)
-    - [Font](#orgd93bcb1)
-    - [Utility](#orga6a91be)
-    - [Hydra](#orgbe77004)
-  - [Applied Mathematics](#org8f09d0f)
-    - [APL](#org44b026b)
-    - [Scheme](#orgdf709fc)
-    - [C](#org4944f06)
-    - [Go](#orga0676c0)
-    - [Python](#org47a96a7)
-    - [YASnippet & Abbrev](#org0613b43)
-    - [Structured Query Language (SQL)](#orga35d42b)
-    - [Web Development](#orgaac9e4c)
-    - [JavaScript](#orgdce2e02)
-    - [AppleScript](#org4c30b00)
-    - [Emacs Speaks Statistics (ESS)](#org365a6cc)
-  - [Data](#org3b87c92)
-    - [JSON](#org3c7bb51)
-    - [YAML](#org78207ee)
-    - [Comma-Separated Values (CSV)](#org332628b)
-    - [Sparkline](#orgeeef200)
-  - [Publishing](#org860b411)
-    - [AUCTeX](#org6bd2ad8)
-    - [KOMA-Script](#org48c968e)
-    - [BibTeX](#orge3768f2)
-    - [Texinfo](#orgedf384b)
-    - [Pandoc](#orgde67f43)
-    - [Markdown](#orgbf013f5)
-    - [HTML](#orgc3a4768)
-    - [ASCII](#org00fdd0f)
-    - [Beamer](#org5345760)
-    - [Screenwriting](#org42a72d3)
-  - [DevOps](#org3e26e90)
-    - [Shell Scripty](#orgabf8495)
-    - [Make](#orga327714)
-    - [Vagrant](#orga082bb5)
-    - [Apache](#org4385c65)
-    - [SSH](#orged72ac1)
-    - [CRON](#org0945ccc)
-    - [Ansible](#orgec8bd55)
-  - [Multimedia](#org74c5ff8)
-    - [Artist](#orgd6ed5a6)
-    - [DITAA](#org5b940c6)
-    - [Graphviz](#orgac242cf)
-    - [PlantUML](#orgbb4d9be)
-    - [X PixMap (XPM)](#org15e483f)
-  - [Computer-aided design](#orgacc9259)
-  - [Special](#orgb3b81ad)
-- [Quiet and Pleasant Appearance](#orgadd902b)
-  - [Buffer](#orgb102ba9)
-  - [Color Theme](#org54e71d5)
-  - [Comint](#orge1a8698)
-  - [Font](#org49cc569)
-  - [Frame](#org5397ca3)
-    - [Inviting and familiar GUI features](#org42c5e6f)
-  - [Pointer](#org555f61a)
-  - [Version Control](#orge5fbd94)
-  - [Window](#org695901d)
-- [Piano Lessons](#orgec1ae3f)
-  - [A Fine Cup of EMACS](#orgbd4cb69)
-  - [A Keyboard on Every Desk](#orgace4e4e)
-  - [A Display with Every Keyboard](#org9337367)
-  - [A Full Pot of EMACS on Every Desk](#orgafee156)
-    - [Keyboard Layout & Operation](#org52d4048)
-    - [Understanding Your Cognitive Landscape.](#org2465290)
-    - [Key-Bindings Take You to Places to Perform Activities](#orgf76e5e5)
-    - [How to Get There Pleasantly and Quickly](#org20093de)
-    - [Building Your Own Keyboard](#org41e3724)
-  - [Take a Sip](#org2ed2bf0)
-    - [Left Side](#orgea1bbfe)
-    - [Left & Right Side](#orgea579ca)
-    - [Right Side](#org41437df)
-    - [Exceptions](#org3659f9f)
+- [README](#orgd1f7677)
+  - [HELP Enables Literate Programming](#org265906b)
+  - [Style Guide](#org0cce7b5)
+  - [History](#org8d17fb6)
+    - [Version 1: Sufficient And Slipshod](#orga586702)
+    - [Version 2: How to design a file conservator (HTDFC) or The Care and Conservation of Computer Files (TC3F)](#org61ced50)
+    - [Version 3: ALEC'S A LANGUAGE FOR EXPRESSING CREATIVITY (ALEC)](#orgfdd275d)
+    - [Version 4: HELP Enables Literate Programming](#orgf031e08)
+- [Special Operating Procedure](#org7a29fd4)
+  - [Benchmark](#orged7a131)
+  - [Customize](#org5703a4f)
+  - [Display](#orgfe36d3a)
+  - [Hydra](#org3e5abab)
+  - [Keyboard](#org0d2408d)
+  - [Libraries](#org39f1ec3)
+  - [Modeline](#orge13de27)
+  - [macOS](#org85d8222)
+  - [Windows](#org7384c94)
+  - [Linux](#org69ad319)
+- [Standard Operating Procedure](#org017df6f)
+  - [Helper Functions](#org1adfc57)
+  - [Typography](#org1db545b)
+  - [Buffer](#org11b7367)
+  - [Code Folding](#orgd336433)
+  - [Emacs Lisp Macros](#orgda43e8a)
+  - [Evaluation](#org54bd637)
+  - [Encryption](#org755712a)
+  - [Eshell](#org4ba379a)
+  - [File Based System](#org9780599)
+  - [IMenu](#org229c932)
+  - [Interactive User Interface Completion](#orgf9862c7)
+  - [Font](#org51b4a7d)
+  - [Going to Objects](#org39bfc4e)
+  - [Grammar](#org885c476)
+  - [Keyboard Macros](#org54e2c56)
+  - [Word Completion](#org3853aa1)
+  - [Mark, Kill and Region](#org29c9db6)
+  - [Minibuffer](#org77949af)
+  - [Mouse](#orge624da1)
+  - [Occur](#orgdb55f8e)
+  - [Popups](#org3dcb352)
+  - [Projects](#orgeae4e35)
+  - [Printing](#orgba65a03)
+  - [Register](#org14fec01)
+  - [Replacing](#orgd085fb4)
+  - [Save and Restore Operating State](#org0e4736d)
+    - [Mark](#orgab1e995)
+    - [Minibuffer](#org10e5488)
+  - [Searching](#org24e5e56)
+    - [Internal](#org74f9181)
+    - [External](#org5a2cf26)
+  - [Spell Checking](#org2c53057)
+    - [Org-Mode](#org3d9b674)
+  - [Syntax Checking](#org03a1a9c)
+  - [TAB](#orgee7e163)
+  - [TODOs](#orge25a938)
+  - [Version Control](#org61b73e5)
+  - [Video](#orgeab29a0)
+  - [Whitespace Management](#orgf9cc2cb)
+  - [whoami](#org7c5644a)
+  - [Word Wrap](#orgec47851)
+- [Hacking](#org74691ce)
+  - [Common Configurations](#org16ba3ac)
+    - [Special Mode](#org824bf9c)
+    - [Text-Mode](#orgc732c81)
+    - [Prog-Mode Modes](#org8c0b018)
+    - [Prog-Mode Hook Function](#org30946e4)
+  - [Literate Programming](#orge709459)
+    - [Emacs Lisp](#orgd50f152)
+    - [Org-Mode](#org88363a2)
+    - [Intermittent Literate Programming](#orgf73849d)
+    - [Transliteration](#org3e9e58e)
+    - [Words](#org12b5bef)
+    - [Dash](#org00798df)
+  - [Unicode](#org675823c)
+    - [System](#orgd1ac219)
+    - [Font](#org663e2e8)
+    - [Utility](#org1b86cd2)
+    - [Hydra](#org7b86a52)
+  - [Applied Mathematics](#orgef8e08b)
+    - [APL](#orgd89df1f)
+    - [Scheme](#org163fa16)
+    - [C](#org14f0c42)
+    - [Go](#org5feb1dc)
+    - [Python](#org7d5dd11)
+    - [YASnippet & Abbrev](#orgbb42f0d)
+    - [Structured Query Language (SQL)](#orge1f5a4a)
+    - [Web Development](#orga8c7d42)
+    - [JavaScript](#orgb3cadc5)
+    - [AppleScript](#orga4ded89)
+    - [Emacs Speaks Statistics (ESS)](#orgae38992)
+  - [Data](#orgb5afbca)
+    - [JSON](#orgf5c389c)
+    - [YAML](#org6908f9a)
+    - [Comma-Separated Values (CSV)](#orgc8d05d1)
+    - [Sparkline](#orgea93f60)
+  - [Publishing](#org1882ece)
+    - [AUCTeX](#orgb8df119)
+    - [KOMA-Script](#org1b2f213)
+    - [BibTeX](#org4abe208)
+    - [Texinfo](#org4ac1103)
+    - [Pandoc](#org20ac044)
+    - [Markdown](#orgf2bbaff)
+    - [HTML](#org7b9f47f)
+    - [ASCII](#org7725601)
+    - [Beamer](#org58102ea)
+    - [Screenwriting](#orgf7ad493)
+  - [DevOps](#orgde395bd)
+    - [Shell Scripty](#orge5b2e9f)
+    - [Make](#org47ae76f)
+    - [Vagrant](#org3f6d287)
+    - [Apache](#org2cbdd4b)
+    - [SSH](#org01b7c94)
+    - [CRON](#org3203ed3)
+    - [Ansible](#org48ef382)
+  - [Multimedia](#org9abdf63)
+    - [Artist](#org0fe08ce)
+    - [DITAA](#org2b5d642)
+    - [Graphviz](#orgb674593)
+    - [PlantUML](#org565d0ca)
+    - [X PixMap (XPM)](#org8a3d320)
+  - [Computer-aided design](#org716ff95)
+  - [Special](#org0dee3cf)
+- [Quiet and Pleasant Appearance](#org0302421)
+  - [Buffer](#org72b677a)
+  - [Color Theme](#org6704b0f)
+  - [Comint](#orgab3040a)
+  - [Font](#org2f6ae6c)
+  - [Frame](#orgc4ef5ab)
+    - [Inviting and familiar GUI features](#orgc7c421a)
+  - [Pointer](#org7e77cb7)
+  - [Version Control](#org68a2f0b)
+  - [Window](#org3d3484f)
+- [Piano Lessons](#orgedfa00d)
+  - [A Fine Cup of EMACS](#org7eeec2d)
+  - [A Keyboard on Every Desk](#org6b96a7b)
+  - [A Display with Every Keyboard](#orge280377)
+  - [A Full Pot of EMACS on Every Desk](#org664b60e)
+    - [Keyboard Layout & Operation](#org97f7dea)
+    - [Understanding Your Cognitive Landscape.](#org664baf1)
+    - [Key-Bindings Take You to Places to Perform Activities](#orga932397)
+    - [How to Get There Pleasantly and Quickly](#org11724ee)
+    - [Building Your Own Keyboard](#orge3848af)
+  - [Take a Sip](#org1a0c85f)
+    - [Left Side](#org5313bcb)
+    - [Left & Right Side](#org6da0a5c)
+    - [Right Side](#orge7c65b1)
+    - [Exceptions](#org44cee5f)
 
 
 
-<a id="org8e390be"></a>
+<a id="orgd1f7677"></a>
 
 # README
 
@@ -190,7 +190,7 @@ Never compile this.
 ```
 
 
-<a id="org4515bd4"></a>
+<a id="org265906b"></a>
 
 ## HELP Enables Literate Programming
 
@@ -223,7 +223,7 @@ Never compile this.
         -   `ln -s ~/src/help/.emacs.el ~/.emacs.el`
 
 
-<a id="org476e70a"></a>
+<a id="org0cce7b5"></a>
 
 ## Style Guide
 
@@ -386,14 +386,14 @@ Never compile this.
     -   Never describe something as "perfect" or "delightful". If it is part of this system then it is perfect and delightful.
 
 
-<a id="orgd67b2ea"></a>
+<a id="org8d17fb6"></a>
 
 ## History
 
     ID: org_gcr_2017-06-25_mara:F917FFA6-077B-4A9A-B325-7E9A0CFF9720
 
 
-<a id="org3e1d592"></a>
+<a id="orga586702"></a>
 
 ### Version 1: Sufficient And Slipshod
 
@@ -402,7 +402,7 @@ Never compile this.
 Emacs never grew on me the first few times I tried using it. The first was out of curiosity because a friend used `jdee`. Five or ten years later I tried using it for `clojure` and lost interest first in `clojure` and then in Emacs. The third time was for `ocaml` and `sml`. That worked pretty well but I didn't stick with `sml` so I didn't stick with Emacs either. At least five configuration files came out of this time all hand-coded Elisp and they are all either lost or hanging around in a SVN repository on a backup. I never had a sense of how Emacs worked, found any of it interesting or a problem solved by it. That is a reflection of what I did and what I brought to it. And I understand that.
 
 
-<a id="org2b5c997"></a>
+<a id="org61ced50"></a>
 
 ### Version 2: How to design a file conservator (HTDFC) or The Care and Conservation of Computer Files (TC3F)
 
@@ -415,7 +415,7 @@ And I was hooked. The line pulled me into pure exploration. Reading the manuals,
 It meant so much to me that I started naming the configuration finally ending up with [TC3F](https://raw.githubusercontent.com/grettke/home/master/TC3F.txt).
 
 
-<a id="orgff4d30e"></a>
+<a id="orgfdd275d"></a>
 
 ### Version 3: ALEC'S A LANGUAGE FOR EXPRESSING CREATIVITY (ALEC)
 
@@ -428,7 +428,7 @@ That intersection was in the great plains, steaming jungles and snow capped moun
 So I did and I tried and it was a slow and confusing document because that is how it lived in my mind. There were hundreds and hundreds of commits until I was both happy enough with it and comfortable enough to share it. This was the first time that I started to feel like I had some clue about what I was doing.
 
 
-<a id="org47c4c78"></a>
+<a id="orgf031e08"></a>
 
 ### Version 4: HELP Enables Literate Programming
 
@@ -443,7 +443,7 @@ Org-Mode's LP tools are stunning and flawless. They shine so brightly that it ca
 Mark my words for they are sure to change here and probably be struck down by the idiom-zapper plugin that I've yet to write: this will be a stable version of my Emacs configuration for a long time. All of my original desires are satisfied. This fine tool, the infinite abacus, has sat in this hearth long enough. Now it is time to carry it out into the wilderness and far above and beyond the mountaintops to reveal the other side and the mysteries that they reveal.
 
 
-<a id="org6f72b8c"></a>
+<a id="org7a29fd4"></a>
 
 # Special Operating Procedure
 
@@ -452,7 +452,7 @@ Mark my words for they are sure to change here and probably be struck down by th
 The following code and packages are special to this configuration. They provide critical functionality for configuring the rest of the system. They provide ideas that make the entire system usable, productive, expressive, and fast.
 
 
-<a id="orgdd954fe"></a>
+<a id="orged7a131"></a>
 
 ## Benchmark
 
@@ -472,7 +472,7 @@ Report startup benchmarks from here forward.
 ```
 
 
-<a id="org60a7dd5"></a>
+<a id="org5703a4f"></a>
 
 ## Customize
 
@@ -488,7 +488,7 @@ Store Customizations in another file. Avoids the [package-selected-packages](htt
 ```
 
 
-<a id="orgf01cf20"></a>
+<a id="orgfe36d3a"></a>
 
 ## Display
 
@@ -511,7 +511,7 @@ Make it easy to conditionally evaluate code when running with a graphical displa
 ```
 
 
-<a id="orgdac29cb"></a>
+<a id="org3e5abab"></a>
 
 ## Hydra
 
@@ -523,7 +523,7 @@ Make it easy to conditionally evaluate code when running with a graphical displa
 ```
 
 
-<a id="org3266db9"></a>
+<a id="org0d2408d"></a>
 
 ## Keyboard
 
@@ -545,7 +545,7 @@ Echo keystrokes immediately.
 ```
 
 
-<a id="orgae9906a"></a>
+<a id="org39f1ec3"></a>
 
 ## Libraries
 
@@ -597,7 +597,7 @@ Caching.
 ```
 
 
-<a id="org6963b24"></a>
+<a id="orge13de27"></a>
 
 ## Modeline
 
@@ -666,7 +666,7 @@ Fancy progress indicator.
 ```
 
 
-<a id="org7b56d1f"></a>
+<a id="org85d8222"></a>
 
 ## macOS
 
@@ -724,7 +724,7 @@ This is a known issue. [Here](https://superuser.com/questions/125569/how-to-fix-
 ```
 
 
-<a id="org4f5409d"></a>
+<a id="org7384c94"></a>
 
 ## Windows
 
@@ -758,7 +758,7 @@ Enable the `super` key-space.
 ```
 
 
-<a id="orge4733f7"></a>
+<a id="org69ad319"></a>
 
 ## Linux
 
@@ -775,7 +775,7 @@ Make it easy to evaluate code only when running on .
 ```
 
 
-<a id="orge9e2a4c"></a>
+<a id="org017df6f"></a>
 
 # Standard Operating Procedure
 
@@ -784,7 +784,7 @@ Make it easy to evaluate code only when running on .
 Configure EMACS to maximum utility.
 
 
-<a id="orgc42b00a"></a>
+<a id="org1adfc57"></a>
 
 ## Helper Functions
 
@@ -1578,7 +1578,7 @@ Does the \"right thing\" under `org-mode'."
 ```
 
 
-<a id="org52592c0"></a>
+<a id="org1db545b"></a>
 
 ## Typography
 
@@ -1617,7 +1617,7 @@ Don't correct quotes in text until I make ispell handle it correctly.
 ```
 
 
-<a id="org166f802"></a>
+<a id="org11b7367"></a>
 
 ## Buffer
 
@@ -1890,7 +1890,7 @@ Unfilling
 ```
 
 
-<a id="orgeb1327f"></a>
+<a id="orgd336433"></a>
 
 ## Code Folding
 
@@ -1942,7 +1942,7 @@ URL: `https://stackoverflow.com/questions/1587972/how-to-display-indentation-gui
 ```
 
 
-<a id="org1615f2a"></a>
+<a id="orgda43e8a"></a>
 
 ## Emacs Lisp Macros
 
@@ -1967,7 +1967,7 @@ Macro expander:
 ```
 
 
-<a id="orga71ff6c"></a>
+<a id="org54bd637"></a>
 
 ## Evaluation
 
@@ -1986,7 +1986,7 @@ Allow most commands.
 ```
 
 
-<a id="orgcbe415a"></a>
+<a id="org755712a"></a>
 
 ## Encryption
 
@@ -2000,7 +2000,7 @@ Easy to use file-based AES encryption.
 ```
 
 
-<a id="org51dd677"></a>
+<a id="org4ba379a"></a>
 
 ## Eshell
 
@@ -2054,7 +2054,7 @@ Mode hook.
 ```
 
 
-<a id="orga8d698a"></a>
+<a id="org9780599"></a>
 
 ## File Based System
 
@@ -2274,7 +2274,7 @@ Show real end of lines.
 ```
 
 
-<a id="org0b2e2f6"></a>
+<a id="org229c932"></a>
 
 ## IMenu
 
@@ -2307,7 +2307,7 @@ Provide it in a buffer.
 ```
 
 
-<a id="org9bb8d87"></a>
+<a id="orgf9862c7"></a>
 
 ## Interactive User Interface Completion
 
@@ -2333,7 +2333,7 @@ Provide it in a buffer.
 ```
 
 
-<a id="org86aaf1e"></a>
+<a id="org51b4a7d"></a>
 
 ## Font
 
@@ -2353,7 +2353,7 @@ Adds FontAwesome.
 ```
 
 
-<a id="org29908dd"></a>
+<a id="org39bfc4e"></a>
 
 ## Going to Objects
 
@@ -2368,7 +2368,7 @@ Go to any object in the frame quickly.
 ```
 
 
-<a id="orgc2942ab"></a>
+<a id="org885c476"></a>
 
 ## Grammar
 
@@ -2446,7 +2446,7 @@ Integrate Proselint. I wanted to load the executable location from `PROSELINT_HO
 ```
 
 
-<a id="org3b4f781"></a>
+<a id="org54e2c56"></a>
 
 ## Keyboard Macros
 
@@ -2469,7 +2469,7 @@ Persist keyboard macros in Emacs Lisp alternative to `insert-kbd-macro`.
 ```
 
 
-<a id="orgf8cf2ea"></a>
+<a id="org3853aa1"></a>
 
 ## Word Completion
 
@@ -2499,7 +2499,7 @@ Auto-completion for `.`-separated words.
 ```
 
 
-<a id="org22ca280"></a>
+<a id="org29c9db6"></a>
 
 ## Mark, Kill and Region
 
@@ -2543,7 +2543,7 @@ Via Ben Maughan:
 ```
 
 
-<a id="org934c895"></a>
+<a id="org77949af"></a>
 
 ## Minibuffer
 
@@ -2577,7 +2577,7 @@ Temporarily give it unlimited memory to speed it up.
 ```
 
 
-<a id="org271617f"></a>
+<a id="orge624da1"></a>
 
 ## Mouse
 
@@ -2592,7 +2592,7 @@ Scroll pleasantly with the mouse wheel. A slow turn moves the buffer up and down
 ```
 
 
-<a id="org6f62658"></a>
+<a id="orgdb55f8e"></a>
 
 ## Occur
 
@@ -2616,7 +2616,7 @@ Scroll pleasantly with the mouse wheel. A slow turn moves the buffer up and down
 ```
 
 
-<a id="orgf23e2c0"></a>
+<a id="org3dcb352"></a>
 
 ## Popups
 
@@ -2641,7 +2641,7 @@ Provide popup notifications.
 ```
 
 
-<a id="org255b9fc"></a>
+<a id="orgeae4e35"></a>
 
 ## Projects
 
@@ -2675,7 +2675,7 @@ Notify Magit about every working copy that Projectile knows about.
 ```
 
 
-<a id="orgdcb9500"></a>
+<a id="orgba65a03"></a>
 
 ## Printing
 
@@ -2687,7 +2687,7 @@ Notify Magit about every working copy that Projectile knows about.
 ```
 
 
-<a id="org5908b12"></a>
+<a id="org14fec01"></a>
 
 ## Register
 
@@ -2699,7 +2699,7 @@ Notify Magit about every working copy that Projectile knows about.
 ```
 
 
-<a id="orgbe7500d"></a>
+<a id="orgd085fb4"></a>
 
 ## Replacing
 
@@ -2719,14 +2719,14 @@ Display information about search-and-or-replace operation.
 ```
 
 
-<a id="org768f01b"></a>
+<a id="org0e4736d"></a>
 
 ## Save and Restore Operating State
 
     ID: org_gcr_2017-05-12_mara:217B8635-CA69-4F58-A12D-124ED384EE22
 
 
-<a id="orgd8d9a2a"></a>
+<a id="orgab1e995"></a>
 
 ### Mark
 
@@ -2741,7 +2741,7 @@ When you re-open a file return the mark to its last position
 ```
 
 
-<a id="org6c7e273"></a>
+<a id="org10e5488"></a>
 
 ### Minibuffer
 
@@ -2770,14 +2770,14 @@ Use the history as a lookup instead of a log.
 ```
 
 
-<a id="org3fc06c5"></a>
+<a id="org24e5e56"></a>
 
 ## Searching
 
     ID: org_gcr_2017-05-12_mara:AA7F12B0-13E2-4B5A-A8BB-B42E1FCC6E55
 
 
-<a id="org29bb16c"></a>
+<a id="org74f9181"></a>
 
 ### Internal
 
@@ -2834,7 +2834,7 @@ Ditto for replace.
 ```
 
 
-<a id="orgb72c0b8"></a>
+<a id="org5a2cf26"></a>
 
 ### External
 
@@ -2918,7 +2918,7 @@ Google.
 ```
 
 
-<a id="org798f52d"></a>
+<a id="org2c53057"></a>
 
 ## Spell Checking
 
@@ -2927,7 +2927,7 @@ Google.
 Ispell is simple and powerful.
 
 
-<a id="org8507871"></a>
+<a id="org3d9b674"></a>
 
 ### Org-Mode
 
@@ -3031,7 +3031,7 @@ Check `SPECIAL LINE` definitions, ignoring their type.
 ```
 
 
-<a id="orgf23b64f"></a>
+<a id="org03a1a9c"></a>
 
 ## Syntax Checking
 
@@ -3046,7 +3046,7 @@ Do not perform syntactic analysis on-demand. Something about my config makes glo
 ```
 
 
-<a id="org4ee48d6"></a>
+<a id="orgee7e163"></a>
 
 ## TAB
 
@@ -3093,7 +3093,7 @@ JavaScript programmers set tabs to 2. C programmers set it to 8. Makefiles looks
 ```
 
 
-<a id="orgf8667c8"></a>
+<a id="orge25a938"></a>
 
 ## TODOs
 
@@ -3116,7 +3116,7 @@ Normally I would say that this violates the law of least distraction but the don
 ```
 
 
-<a id="orga2eaaf0"></a>
+<a id="org61b73e5"></a>
 
 ## Version Control
 
@@ -3234,7 +3234,7 @@ Smerge.
 ```
 
 
-<a id="orgde67bf5"></a>
+<a id="orgeab29a0"></a>
 
 ## Video
 
@@ -3266,7 +3266,7 @@ Smerge.
 ```
 
 
-<a id="orgee8dc7b"></a>
+<a id="orgf9cc2cb"></a>
 
 ## Whitespace Management
 
@@ -3289,7 +3289,7 @@ Smerge.
 ```
 
 
-<a id="org92aea0e"></a>
+<a id="org7c5644a"></a>
 
 ## whoami
 
@@ -3300,7 +3300,7 @@ Smerge.
 ```
 
 
-<a id="orgbab8626"></a>
+<a id="orgec47851"></a>
 
 ## Word Wrap
 
@@ -3325,7 +3325,7 @@ With these VLM settings, along with delete trailing whitespace on save, you don'
 ```
 
 
-<a id="org9b2ffd1"></a>
+<a id="org74691ce"></a>
 
 # Hacking
 
@@ -3338,7 +3338,7 @@ Emacs has [three primal major modes that you must understand](https://www.gnu.or
 -   `special-mode`
 
 
-<a id="org18fd212"></a>
+<a id="org16ba3ac"></a>
 
 ## Common Configurations
 
@@ -3380,7 +3380,7 @@ Make sense of the current mode.
 ```
 
 
-<a id="orga5d13dc"></a>
+<a id="org824bf9c"></a>
 
 ### Special Mode
 
@@ -3389,7 +3389,7 @@ Make sense of the current mode.
 Every special mode needs this. Which is nothing yet.
 
 
-<a id="org8b447e8"></a>
+<a id="orgc732c81"></a>
 
 ### Text-Mode
 
@@ -3472,7 +3472,7 @@ Can use in source blocks.
 ```
 
 
-<a id="orgc727809"></a>
+<a id="org8c0b018"></a>
 
 ### Prog-Mode Modes
 
@@ -3528,7 +3528,7 @@ Can use in source blocks.
             -   Does one or two more things.
 
 
-<a id="orgb45847d"></a>
+<a id="org30946e4"></a>
 
 ### Prog-Mode Hook Function
 
@@ -3579,14 +3579,14 @@ Can use in source blocks.
     ```
 
 
-<a id="org5d074b9"></a>
+<a id="orge709459"></a>
 
 ## Literate Programming
 
     ID: org_gcr_2017-05-12_mara:18EBD4EF-AFAD-4421-A09F-A7DB14AD1398
 
 
-<a id="orgea6e105"></a>
+<a id="orgd50f152"></a>
 
 ### Emacs Lisp
 
@@ -3764,7 +3764,7 @@ Lispy super editing functions.
 ```
 
 
-<a id="org4097f72"></a>
+<a id="org88363a2"></a>
 
 ### Org-Mode
 
@@ -4695,7 +4695,7 @@ Lispy super editing functions.
     ```
 
 
-<a id="org1843484"></a>
+<a id="orgf73849d"></a>
 
 ### Intermittent Literate Programming
 
@@ -4711,7 +4711,7 @@ Edit region in separate buffer. "Final" version works without carrying over buff
 ```
 
 
-<a id="org6c5b46d"></a>
+<a id="org3e9e58e"></a>
 
 ### Transliteration
 
@@ -4741,7 +4741,7 @@ _b_ black-board-bold _f_ fraktur
 ```
 
 
-<a id="org6fa02ce"></a>
+<a id="org12b5bef"></a>
 
 ### Words
 
@@ -4824,7 +4824,7 @@ Words: _C_ount, Count In _O_rg , _T_op#, _G_rade Level, _R_eading Ease, _A_ffect
 ```
 
 
-<a id="org84b1c63"></a>
+<a id="org00798df"></a>
 
 ### Dash
 
@@ -4836,14 +4836,14 @@ Words: _C_ount, Count In _O_rg , _T_op#, _G_rade Level, _R_eading Ease, _A_ffect
 ```
 
 
-<a id="orgb744831"></a>
+<a id="org675823c"></a>
 
 ## Unicode
 
     ID: org_gcr_2018-06-06T22-01-54-05-00_mara:DD18C2DA-10EE-43BD-AED0-5DD4680CA566
 
 
-<a id="orgb967e08"></a>
+<a id="orgd1ac219"></a>
 
 ### System
 
@@ -4880,7 +4880,7 @@ On Windows.
 ```
 
 
-<a id="orgd93bcb1"></a>
+<a id="org663e2e8"></a>
 
 ### Font
 
@@ -4902,7 +4902,7 @@ Configure fonts for Unicode blocks.
     -   unicode-fonts-debug-insert-block RET Mathematical<sub>Operators</sub> RET
 
 
-<a id="orga6a91be"></a>
+<a id="org1b86cd2"></a>
 
 ### Utility
 
@@ -5008,7 +5008,7 @@ Show all code points in a block
     ```
 
 
-<a id="orgbe77004"></a>
+<a id="org7b86a52"></a>
 
 ### Hydra
 
@@ -5049,14 +5049,14 @@ Unicode: (_q_uit)
 ```
 
 
-<a id="org8f09d0f"></a>
+<a id="orgef8e08b"></a>
 
 ## Applied Mathematics
 
     ID: org_gcr_2017-05-12_mara:423BA6AA-5F7D-450D-B686-78A028A37FE2
 
 
-<a id="org44b026b"></a>
+<a id="orgd89df1f"></a>
 
 ### APL
 
@@ -5144,7 +5144,7 @@ GNU APL: ⏼%(help/gnu-apl-runningp)
 ```
 
 
-<a id="orgdf709fc"></a>
+<a id="org163fa16"></a>
 
 ### Scheme
 
@@ -5253,7 +5253,7 @@ Enable Auto-Complete via Geiser.
 ```
 
 
-<a id="org4944f06"></a>
+<a id="org14f0c42"></a>
 
 ### C
 
@@ -5267,7 +5267,7 @@ Enable Auto-Complete via Geiser.
 ```
 
 
-<a id="orga0676c0"></a>
+<a id="org5feb1dc"></a>
 
 ### Go
 
@@ -5371,7 +5371,7 @@ Enable Auto-Complete via Geiser.
 ```
 
 
-<a id="org47a96a7"></a>
+<a id="org7d5dd11"></a>
 
 ### Python
 
@@ -5386,7 +5386,7 @@ Enable Auto-Complete via Geiser.
 ```
 
 
-<a id="org0613b43"></a>
+<a id="orgbb42f0d"></a>
 
 ### YASnippet & Abbrev
 
@@ -5428,14 +5428,14 @@ Fails with `(eval-after-load 'abbrev (diminish 'abbrev-mode))`.
 ```
 
 
-<a id="orga35d42b"></a>
+<a id="orge1f5a4a"></a>
 
 ### Structured Query Language (SQL)
 
     ID: org_gcr_2017-05-12_mara:74BF0520-1F06-4FAF-921C-64E8109CEF03
 
 
-<a id="orgaac9e4c"></a>
+<a id="orga8c7d42"></a>
 
 ### Web Development
 
@@ -5497,7 +5497,7 @@ Fails with `(eval-after-load 'abbrev (diminish 'abbrev-mode))`.
 ```
 
 
-<a id="orgdce2e02"></a>
+<a id="orgb3cadc5"></a>
 
 ### JavaScript
 
@@ -5527,7 +5527,7 @@ Add `JavaScript` language to Org-Mode.
 ```
 
 
-<a id="org4c30b00"></a>
+<a id="orga4ded89"></a>
 
 ### AppleScript
 
@@ -5579,7 +5579,7 @@ Add `JavaScript` language to Org-Mode.
 ```
 
 
-<a id="org365a6cc"></a>
+<a id="orgae38992"></a>
 
 ### Emacs Speaks Statistics (ESS)
 
@@ -5594,14 +5594,14 @@ This space used to contain a pretty awesome ESS configuration for The R Project.
 -   [.Rsetup.sh](https://github.com/grettke/help/blob/master/.Rsetup.sh)
 
 
-<a id="org3b87c92"></a>
+<a id="orgb5afbca"></a>
 
 ## Data
 
     ID: org_gcr_2018-04-20T15-46-50-05-00_mara:3259C745-2E58-4F02-B384-A2B341B598DA
 
 
-<a id="org3c7bb51"></a>
+<a id="orgf5c389c"></a>
 
 ### JSON
 
@@ -5644,7 +5644,7 @@ _b_eautify
 ```
 
 
-<a id="org78207ee"></a>
+<a id="org6908f9a"></a>
 
 ### YAML
 
@@ -5699,7 +5699,7 @@ YAML: (q to quit)
 ```
 
 
-<a id="org332628b"></a>
+<a id="orgc8d05d1"></a>
 
 ### Comma-Separated Values (CSV)
 
@@ -5761,7 +5761,7 @@ CSV: (_q_uit)
 ```
 
 
-<a id="orgeeef200"></a>
+<a id="orgea93f60"></a>
 
 ### Sparkline
 
@@ -5810,14 +5810,14 @@ CSV: (_q_uit)
 ```
 
 
-<a id="org860b411"></a>
+<a id="org1882ece"></a>
 
 ## Publishing
 
     ID: org_gcr_2017-05-12_mara:0A4A1510-41F7-4469-87D1-156D44A06216
 
 
-<a id="org6bd2ad8"></a>
+<a id="orgb8df119"></a>
 
 ### AUCTeX
 
@@ -6121,7 +6121,7 @@ CSV: (_q_uit)
     ```
 
 
-<a id="org48c968e"></a>
+<a id="org1b2f213"></a>
 
 ### KOMA-Script
 
@@ -6214,7 +6214,7 @@ Set up my default LCO files.
 ```
 
 
-<a id="orge3768f2"></a>
+<a id="org4abe208"></a>
 
 ### BibTeX
 
@@ -6391,7 +6391,7 @@ Mode hook and key bindings.
         ```
 
 
-<a id="orgedf384b"></a>
+<a id="org4ac1103"></a>
 
 ### Texinfo
 
@@ -6400,7 +6400,7 @@ Mode hook and key bindings.
 Perhaps the [first](https://lists.gnu.org/archive/html/emacs-orgmode/2015-07/msg00042.html) document typeset with Org-Texinfo.
 
 
-<a id="orgde67f43"></a>
+<a id="org20ac044"></a>
 
 ### Pandoc
 
@@ -6418,7 +6418,7 @@ Perhaps the [first](https://lists.gnu.org/archive/html/emacs-orgmode/2015-07/msg
 ```
 
 
-<a id="orgbf013f5"></a>
+<a id="orgf2bbaff"></a>
 
 ### Markdown
 
@@ -6453,7 +6453,7 @@ Generate Markdown from Emacs Lisp comments.
 ```
 
 
-<a id="orgc3a4768"></a>
+<a id="org7b9f47f"></a>
 
 ### HTML
 
@@ -6476,7 +6476,7 @@ Export HTML to the clipboard.
 ```
 
 
-<a id="org00fdd0f"></a>
+<a id="org7725601"></a>
 
 ### ASCII
 
@@ -6498,7 +6498,7 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
 ```
 
 
-<a id="org5345760"></a>
+<a id="org58102ea"></a>
 
 ### Beamer
 
@@ -6511,7 +6511,7 @@ Load Beamer for creating presentations.
 ```
 
 
-<a id="org42a72d3"></a>
+<a id="orgf7ad493"></a>
 
 ### Screenwriting
 
@@ -6535,14 +6535,14 @@ Load Beamer for creating presentations.
 ```
 
 
-<a id="org3e26e90"></a>
+<a id="orgde395bd"></a>
 
 ## DevOps
 
     ID: org_gcr_2017-05-12_mara:F79C9679-7887-40B8-8882-51EE6EC1BDE2
 
 
-<a id="orgabf8495"></a>
+<a id="orge5b2e9f"></a>
 
 ### Shell Scripty
 
@@ -6591,7 +6591,7 @@ Load Beamer for creating presentations.
     ```
 
 
-<a id="orga327714"></a>
+<a id="org47ae76f"></a>
 
 ### Make
 
@@ -6606,7 +6606,7 @@ Load Beamer for creating presentations.
 ```
 
 
-<a id="orga082bb5"></a>
+<a id="org3f6d287"></a>
 
 ### Vagrant
 
@@ -6615,7 +6615,7 @@ Load Beamer for creating presentations.
 `ruby-mode` supports `Vagrantfile` OOTB.
 
 
-<a id="org4385c65"></a>
+<a id="org2cbdd4b"></a>
 
 ### Apache
 
@@ -6627,7 +6627,7 @@ Load Beamer for creating presentations.
 ```
 
 
-<a id="orged72ac1"></a>
+<a id="org01b7c94"></a>
 
 ### SSH
 
@@ -6646,7 +6646,7 @@ Load Beamer for creating presentations.
 ```
 
 
-<a id="org0945ccc"></a>
+<a id="org3203ed3"></a>
 
 ### CRON
 
@@ -6659,7 +6659,7 @@ Load Beamer for creating presentations.
 ```
 
 
-<a id="orgec8bd55"></a>
+<a id="org48ef382"></a>
 
 ### Ansible
 
@@ -6686,14 +6686,14 @@ Ansible: (q to quit)
 ```
 
 
-<a id="org74c5ff8"></a>
+<a id="org9abdf63"></a>
 
 ## Multimedia
 
     ID: org_gcr_2017-05-12_mara:D3EE5DB5-EC7B-4D7C-9749-1BC351B8214D
 
 
-<a id="orgd6ed5a6"></a>
+<a id="org0fe08ce"></a>
 
 ### Artist
 
@@ -6706,7 +6706,7 @@ Ansible: (q to quit)
 ```
 
 
-<a id="org5b940c6"></a>
+<a id="org2b5d642"></a>
 
 ### DITAA
 
@@ -6718,7 +6718,7 @@ Ansible: (q to quit)
 ```
 
 
-<a id="orgac242cf"></a>
+<a id="orgb674593"></a>
 
 ### Graphviz
 
@@ -6732,7 +6732,7 @@ Ansible: (q to quit)
 ```
 
 
-<a id="orgbb4d9be"></a>
+<a id="org565d0ca"></a>
 
 ### PlantUML
 
@@ -6750,7 +6750,7 @@ Ansible: (q to quit)
 ```
 
 
-<a id="org15e483f"></a>
+<a id="org8a3d320"></a>
 
 ### X PixMap (XPM)
 
@@ -6766,14 +6766,14 @@ Emacs' provide editing support.
 ```
 
 
-<a id="orgacc9259"></a>
+<a id="org716ff95"></a>
 
 ## Computer-aided design
 
     ID: org_gcr_2017-05-12_mara:50E7A50A-4259-4B6C-8612-99671C6723CC
 
 
-<a id="orgb3b81ad"></a>
+<a id="org0dee3cf"></a>
 
 ## Special
 
@@ -6782,7 +6782,7 @@ Emacs' provide editing support.
 `messages-mode` inherits `special-mode` hooks but it didn't get stripe buffered so I'm trying to set it up here with `message-mode-hook` but that didn't work either
 
 
-<a id="orgadd902b"></a>
+<a id="org0302421"></a>
 
 # Quiet and Pleasant Appearance
 
@@ -6791,7 +6791,7 @@ Emacs' provide editing support.
 Configure EMACS to personal-taste for "noise" and "form".
 
 
-<a id="orgb102ba9"></a>
+<a id="org72b677a"></a>
 
 ## Buffer
 
@@ -6880,7 +6880,7 @@ Visualize ASCII strings with Unicode.
 ```
 
 
-<a id="org54e71d5"></a>
+<a id="org6704b0f"></a>
 
 ## Color Theme
 
@@ -6911,7 +6911,7 @@ Visualize ASCII strings with Unicode.
 ```
 
 
-<a id="orge1a8698"></a>
+<a id="orgab3040a"></a>
 
 ## Comint
 
@@ -6935,7 +6935,7 @@ This configuration had been working fine for a long time. The intent was for it 
 ```
 
 
-<a id="org49cc569"></a>
+<a id="org2f6ae6c"></a>
 
 ## Font
 
@@ -6977,14 +6977,14 @@ The best programming font is Deja Vu Sans Mono because it sans-serif and support
 ```
 
 
-<a id="org5397ca3"></a>
+<a id="orgc4ef5ab"></a>
 
 ## Frame
 
     ID: org_gcr_2017-05-12_mara:8D473EA1-DFEE-408E-A1F5-AF1C7D03317D
 
 
-<a id="org42c5e6f"></a>
+<a id="orgc7c421a"></a>
 
 ### Inviting and familiar GUI features
 
@@ -7132,7 +7132,7 @@ Title.
     ```
 
 
-<a id="org555f61a"></a>
+<a id="org7e77cb7"></a>
 
 ## Pointer
 
@@ -7145,7 +7145,7 @@ Hide the pointer when typing.
 ```
 
 
-<a id="orge5fbd94"></a>
+<a id="org68a2f0b"></a>
 
 ## Version Control
 
@@ -7164,7 +7164,7 @@ Smerge.
 ```
 
 
-<a id="org695901d"></a>
+<a id="org3d3484f"></a>
 
 ## Window
 
@@ -7345,14 +7345,14 @@ Resize window.
 ```
 
 
-<a id="orgec1ae3f"></a>
+<a id="orgedfa00d"></a>
 
 # Piano Lessons
 
     ID: org_gcr_2017-05-12_mara:B9C71531-F4DD-4180-950D-AD3494C5D566
 
 
-<a id="orgbd4cb69"></a>
+<a id="org7eeec2d"></a>
 
 ## A Fine Cup of EMACS
 
@@ -7363,7 +7363,7 @@ Every EMACS user ought to have a [Emacs Reference Mug](http://shop.fsf.org/produ
 This system wants to maximize accessibility for new users. It wants anyone to be able to download and use it without surprises. It wants the mug to serve as a fine reference for anyone to use. It wants to keep things simple and familiar so that anyone who has learned EMACS OOTB can use it pleasantly and productively. These goals are essential to configuring the keyboard for this system. This system will always respect the POLA.
 
 
-<a id="orgace4e4e"></a>
+<a id="org6b96a7b"></a>
 
 ## A Keyboard on Every Desk
 
@@ -7374,7 +7374,7 @@ The configuration of the keyboard on an EMACS system can completely change the e
 Choose a keyboard that will satisfy 80% of EMACS users using 80% of the keyboards out there. Make this system easy to use on any one of those keyboards. Make this system easy to use in English. Make this system easy to use with average hand strength using two hands. These goals are essential to configuring the keyboard for this system.
 
 
-<a id="org9337367"></a>
+<a id="orge280377"></a>
 
 ## A Display with Every Keyboard
 
@@ -7387,14 +7387,14 @@ Some users prefer the former. Some users prefer the latter. Some users prefer to
 This system is configured to work pleasantly for either type of output.
 
 
-<a id="orgafee156"></a>
+<a id="org664b60e"></a>
 
 ## A Full Pot of EMACS on Every Desk
 
     ID: org_gcr_2017-05-12_mara:3165655B-5F9B-4712-896B-32EE9EEEF946
 
 
-<a id="org52d4048"></a>
+<a id="org97f7dea"></a>
 
 ### Keyboard Layout & Operation
 
@@ -7431,7 +7431,7 @@ This system is configured to work pleasantly for either type of output.
     -   Also for escape `ESC` vs `C-[`
 
 
-<a id="org2465290"></a>
+<a id="org664baf1"></a>
 
 ### Understanding Your Cognitive Landscape.
 
@@ -7440,7 +7440,7 @@ This system is configured to work pleasantly for either type of output.
 You operate within a cognitive landscape. Every moment you are in a single `place`. While residing in each `place` you perform logically related `activities`. Activities facilitate logical actions like modification within that `place`. Modifications are performed objects. Objects include things like the contents of a buffer, contents of memory, or the file that backs a buffer. While performing those `activities` there is a logical sense of "flow". That should never be interrupted. Usually an interruption occurs when you are going to go to a new `place`. The `distance` between `places` is measured in the similarity between the `actions` that you find there. As you develop these ides it will be obvious where key-bindings should go
 
 
-<a id="orgf76e5e5"></a>
+<a id="orga932397"></a>
 
 ### Key-Bindings Take You to Places to Perform Activities
 
@@ -7476,7 +7476,7 @@ OOTB you wil be visiting many `places` and performing many `activities`. EMACS c
 These practices say nothing about the `places` or `activities` that you choose to peform. The practices only look at the key-binding configuration. There are a limited number of keys on a keyboard and there are physical limitations on your hands. Along with the previous assuptions it may look like there are less. Fortunately it just looks that way and it isn't true. There are a lot of powerful ways to "go places" with EMACS. The next heading contains my attempt.
 
 
-<a id="org20093de"></a>
+<a id="org11724ee"></a>
 
 ### How to Get There Pleasantly and Quickly
 
@@ -7599,7 +7599,7 @@ The relationship between "doing those things" and those 4 properties is still un
     For example, in Org-Mode I am still learning about functions and haven't used them much and forget their names. It is faster to put them in a Hydra. If they get used a lot, I will add them to `s`.
 
 
-<a id="org41e3724"></a>
+<a id="orge3848af"></a>
 
 ### Building Your Own Keyboard
 
@@ -7686,14 +7686,14 @@ These changes helped guide the custom keyboard design.
     -   C-M-s are for the operating system
 
 
-<a id="org2ed2bf0"></a>
+<a id="org1a0c85f"></a>
 
 ## Take a Sip
 
     ID: org_gcr_2017-05-12_mara:D33533BC-3E1F-4E7E-B9B3-2C0D0518400E
 
 
-<a id="orgea1bbfe"></a>
+<a id="org5313bcb"></a>
 
 ### Left Side
 
@@ -8271,7 +8271,7 @@ Keybindings for every mode. Starts and stop:
     ```
 
 
-<a id="orgea579ca"></a>
+<a id="org6da0a5c"></a>
 
 ### Left & Right Side
 
@@ -8317,7 +8317,7 @@ Pop the mark back.
 ```
 
 
-<a id="org41437df"></a>
+<a id="orge7c65b1"></a>
 
 ### Right Side
 
@@ -8335,7 +8335,7 @@ It starts with:
 Try to use `s-i` for things like `info-at-point`.
 
 
-<a id="org3659f9f"></a>
+<a id="org44cee5f"></a>
 
 ### Exceptions
 

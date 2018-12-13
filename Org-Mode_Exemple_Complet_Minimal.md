@@ -1,12 +1,12 @@
-- [Org-Mode Exemple Complet Minimal](#orgfb61781)
-  - [Principle of Least Astonishment (POLA)](#org18b63e2)
-    - [Time](#org5a79fc4)
-    - [Garbage Collection](#orgd471c6b)
-    - [Load Behavior](#org30e7ad3)
-  - [Org-Mode Exemple Complet Minimal](#org7ad33f4)
-    - [Things That Must Occur Before Loading Org-Mode](#org13dbcbf)
-    - [Loading Org-Mode](#org0cb0c14)
-    - [Things That Must Occur Only After Loading Org-Mode](#org7972f56)
+- [Org-Mode Exemple Complet Minimal](#org57913a9)
+  - [Principle of Least Astonishment (POLA)](#org31fe44f)
+    - [Time](#org4ea41b2)
+    - [Garbage Collection](#org5d07fe5)
+    - [Load Behavior](#orgc312447)
+  - [Org-Mode Exemple Complet Minimal](#org93ebe29)
+    - [Things That Must Occur Before Loading Org-Mode](#org88ee5e5)
+    - [Loading Org-Mode](#orgf9d0ecf)
+    - [Things That Must Occur Only After Loading Org-Mode](#org327ea2c)
 
 Never compile this.
 
@@ -15,7 +15,7 @@ Never compile this.
 ```
 
 
-<a id="orgfb61781"></a>
+<a id="org57913a9"></a>
 
 # Org-Mode Exemple Complet Minimal
 
@@ -30,14 +30,14 @@ Start EMACS with this command:
     emacs --debug-init --no-init-file --no-splash --background-color white --foreground-color black  --vertical-scroll-bars --eval '(switch-to-buffer "*Messages*")' --name ECM-TEST --title ECM-TEST --load ~/src/help/.org-mode-ecm.emacs.el &
 
 
-<a id="org18b63e2"></a>
+<a id="org31fe44f"></a>
 
 ## Principle of Least Astonishment (POLA)
 
     ID: org_gcr_2017-05-12_mara:626B5DD1-97D8-4B85-96BC-B9A96F18AF1E
 
 
-<a id="org5a79fc4"></a>
+<a id="org4ea41b2"></a>
 
 ### Time
 
@@ -83,7 +83,7 @@ Standardize timestamps.
 ```
 
 
-<a id="orgd471c6b"></a>
+<a id="org5d07fe5"></a>
 
 ### Garbage Collection
 
@@ -104,7 +104,7 @@ Clear memory and disable garbage collection or return garbage collection to norm
 ```
 
 
-<a id="org30e7ad3"></a>
+<a id="orgc312447"></a>
 
 ### Load Behavior
 
@@ -127,7 +127,7 @@ This is the **first** thing that *ought* to happen in the initialization of **an
 ```
 
 
-<a id="org7ad33f4"></a>
+<a id="org93ebe29"></a>
 
 ## Org-Mode Exemple Complet Minimal
 
@@ -138,7 +138,7 @@ Every new EMACS releases comes with the latest stable Org-Mode release. To get h
 These detailed and clear [directions](http://orgmode.org/manual/Installation.html) explain how ot run Org-Mode from Git. The only thing worth mentioning again is that in order to use **any** version of Org-Mode other than the one that comes OOTB you **must** load Org-Mode **before** anything else in your initialization file. It is easy to do! When you get unexpected Org-Mode behavior be sure to stop and investigate `org-version` and decide whether or not it is what you expect and prepare an ECM if necessary.
 
 
-<a id="org13dbcbf"></a>
+<a id="org88ee5e5"></a>
 
 ### Things That Must Occur Before Loading Org-Mode
 
@@ -176,7 +176,7 @@ Use math double brackets for <span class="underline">Literate Programming</span>
 ```
 
 
-<a id="org0cb0c14"></a>
+<a id="orgf9d0ecf"></a>
 
 ### Loading Org-Mode
 
@@ -189,7 +189,7 @@ Load Org-Mode.
 ```
 
 
-<a id="org7972f56"></a>
+<a id="org327ea2c"></a>
 
 ### Things That Must Occur Only After Loading Org-Mode
 

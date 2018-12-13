@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-08-25 Sat 22:47 -->
+<!-- 2018-12-12 Wed 20:10 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -246,12 +246,12 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org9f0cdf7">1. Watch What You Eat</a>
+<li><a href="#org50b1f84">1. Watch What You Eat</a>
 <ul>
-<li><a href="#org5ecb105">1.1. Use-Package</a></li>
-<li><a href="#orgd10b10c">1.2. El-Get</a></li>
-<li><a href="#orgb54df07">1.3. Stand-Alone</a></li>
-<li><a href="#org38ffb92">1.4. Helper</a></li>
+<li><a href="#orgbb2a65c">1.1. Use-Package</a></li>
+<li><a href="#orgcdc201f">1.2. El-Get</a></li>
+<li><a href="#org1b766db">1.3. Stand-Alone</a></li>
+<li><a href="#orgd96e7b3">1.4. Helper</a></li>
 </ul>
 </li>
 </ul>
@@ -261,18 +261,18 @@ for the JavaScript code in this tag.
 Never compile this.
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org88851c4"><span class="org-comment-delimiter">;; </span><span class="org-comment">-*- no-byte-compile: t; -*-</span>
+<pre class="src src-emacs-lisp" id="org8398c51"><span class="org-comment-delimiter">;; </span><span class="org-comment">-*- no-byte-compile: t; -*-</span>
 </pre>
 </div>
-<div id="outline-container-org9f0cdf7" class="outline-2">
-<h2 id="org9f0cdf7"><span class="section-number-2">1</span> Watch What You Eat</h2>
+<div id="outline-container-org50b1f84" class="outline-2">
+<h2 id="org50b1f84"><span class="section-number-2">1</span> Watch What You Eat</h2>
 <div class="outline-text-2" id="text-1">
 <pre class="example">
 ID: org_gcr_2017-05-12_mara:BD133C8B-8DFF-45C0-967D-CB83693C54B4
 </pre>
 </div>
-<div id="outline-container-org5ecb105" class="outline-3">
-<h3 id="org5ecb105"><span class="section-number-3">1.1</span> Use-Package</h3>
+<div id="outline-container-orgbb2a65c" class="outline-3">
+<h3 id="orgbb2a65c"><span class="section-number-3">1.1</span> Use-Package</h3>
 <div class="outline-text-3" id="text-1-1">
 <pre class="example">
 ID: org_gcr_2018-04-11T09-44-43-05-00_mara:55083825-349A-44D0-8026-2E652BE228A9
@@ -294,7 +294,7 @@ emacs --debug-init --no-init-file --no-splash --background-color white --foregro
 </pre>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org03ee31f">(load-file <span class="org-string">"~/src/help/.org-mode-fundamentals.emacs.el"</span>)
+<pre class="src src-emacs-lisp" id="org5f3a44e">(load-file <span class="org-string">"~/src/help/.org-mode-fundamentals.emacs.el"</span>)
 </pre>
 </div>
 
@@ -313,7 +313,7 @@ Initialize Package.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org970eaee">(package-initialize)
+<pre class="src src-emacs-lisp" id="org8146d1a">(package-initialize)
 (add-to-list <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">package-archives</span>
              <span class="org-highlight-quoted-quote">'</span>(<span class="org-string">"melpa"</span> . <span class="org-string">"http://melpa.org/packages/"</span>) t)
 (add-to-list <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">package-archives</span>
@@ -331,7 +331,7 @@ Add the Use-Package distribution the load path.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org8c21e88">(add-to-list <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">load-path</span><span class="org-string">"~/src/use-package"</span>)
+<pre class="src src-emacs-lisp" id="orgde9b959">(add-to-list <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">load-path</span><span class="org-string">"~/src/use-package"</span>)
 </pre>
 </div>
 
@@ -341,15 +341,15 @@ point uses <code>require</code>. Every package loaded after this point uses <cod
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="orgdf8fa5e">(<span class="org-keyword">eval-when-compile</span>
+<pre class="src src-emacs-lisp" id="org423ab1c">(<span class="org-keyword">eval-when-compile</span>
   (<span class="org-keyword">require</span> <span class="org-highlight-quoted-quote">'</span><span class="org-constant">use-package</span>))
 (<span class="org-keyword">use-package</span> <span class="org-constant">diminish</span>)
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgd10b10c" class="outline-3">
-<h3 id="orgd10b10c"><span class="section-number-3">1.2</span> El-Get</h3>
+<div id="outline-container-orgcdc201f" class="outline-3">
+<h3 id="orgcdc201f"><span class="section-number-3">1.2</span> El-Get</h3>
 <div class="outline-text-3" id="text-1-2">
 <pre class="example">
 ID: org_gcr_2018-04-11T09-44-43-05-00_mara:925A5891-AB13-4972-9C95-3B49B7D47885
@@ -363,7 +363,7 @@ Initialize EL-Get.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="orgaf57686">(add-to-list <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">load-path</span> <span class="org-string">"~/.emacs.d/el-get/el-get"</span>)
+<pre class="src src-emacs-lisp" id="org4699aea">(add-to-list <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">load-path</span> <span class="org-string">"~/.emacs.d/el-get/el-get"</span>)
 
 (<span class="org-keyword">unless</span> (<span class="org-keyword">require</span> <span class="org-highlight-quoted-quote">'</span><span class="org-constant">el-get</span> nil <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">noerror</span>)
   (<span class="org-keyword">with-current-buffer</span>
@@ -375,7 +375,7 @@ Initialize EL-Get.
 </div>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org1d7aaee">(<span class="org-keyword">setq</span> help/el-get-packages nil)
+<pre class="src src-emacs-lisp" id="org98eed99">(<span class="org-keyword">setq</span> help/el-get-packages nil)
 </pre>
 </div>
 
@@ -385,7 +385,7 @@ Make it really easy to remind yourself and others what EMACS really stands for
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org4020992">(add-to-list
+<pre class="src src-emacs-lisp" id="org3abb802">(add-to-list
  <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">el-get-sources</span>
  <span class="org-highlight-quoted-quote">'</span>(<span class="org-builtin">:name</span> emacs-name
           <span class="org-builtin">:type</span> http
@@ -404,7 +404,7 @@ all about, and here is a way to see some examples of the absurdity of it all.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org5a5e003">(add-to-list
+<pre class="src src-emacs-lisp" id="org7408911">(add-to-list
  <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">el-get-sources</span>
  <span class="org-highlight-quoted-quote">'</span>(<span class="org-builtin">:name</span> flame
           <span class="org-builtin">:type</span> http
@@ -422,7 +422,7 @@ People love horoscopes, so, provide them.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org372b4af">(add-to-list
+<pre class="src src-emacs-lisp" id="org4d5a0ff">(add-to-list
  <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">el-get-sources</span>
  <span class="org-highlight-quoted-quote">'</span>(<span class="org-builtin">:name</span> horoscope
           <span class="org-builtin">:type</span> http
@@ -441,7 +441,7 @@ be honored.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="orgbef793c">(add-to-list
+<pre class="src src-emacs-lisp" id="orgf5658ef">(add-to-list
  <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">el-get-sources</span>
  <span class="org-highlight-quoted-quote">'</span>(<span class="org-builtin">:name</span> kibologize
           <span class="org-builtin">:type</span> http
@@ -464,7 +464,7 @@ you… though not necessarily for wholesale.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org9b6efe0">(add-to-list
+<pre class="src src-emacs-lisp" id="org081a212">(add-to-list
  <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">el-get-sources</span>
  <span class="org-highlight-quoted-quote">'</span>(<span class="org-builtin">:name</span> shop
           <span class="org-builtin">:type</span> http
@@ -483,7 +483,7 @@ your life and bought you a kitten? You will.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org9ad9c19">(add-to-list
+<pre class="src src-emacs-lisp" id="org3aff051">(add-to-list
  <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">el-get-sources</span>
  <span class="org-highlight-quoted-quote">'</span>(<span class="org-builtin">:name</span> youwill
           <span class="org-builtin">:type</span> http
@@ -505,25 +505,25 @@ Ask el-get to make sure that those desired packages are installed.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org8093c65">(el-get <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">sync</span> help/el-get-packages)
+<pre class="src src-emacs-lisp" id="orgf36e8e7">(el-get <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">sync</span> help/el-get-packages)
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgb54df07" class="outline-3">
-<h3 id="orgb54df07"><span class="section-number-3">1.3</span> Stand-Alone</h3>
+<div id="outline-container-org1b766db" class="outline-3">
+<h3 id="org1b766db"><span class="section-number-3">1.3</span> Stand-Alone</h3>
 <div class="outline-text-3" id="text-1-3">
 <pre class="example">
 ID: org_gcr_2018-06-12T21-48-52-05-00_mara:D53227C4-5084-4A36-AD92-49B72D3C198C
 </pre>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org068f78c">(add-to-list <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">load-path</span> <span class="org-string">"~/src/help/lisp"</span>)
+<pre class="src src-emacs-lisp" id="orge308cd3">(add-to-list <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">load-path</span> <span class="org-string">"~/src/help/lisp"</span>)
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org38ffb92" class="outline-3">
-<h3 id="org38ffb92"><span class="section-number-3">1.4</span> Helper</h3>
+<div id="outline-container-orgd96e7b3" class="outline-3">
+<h3 id="orgd96e7b3"><span class="section-number-3">1.4</span> Helper</h3>
 <div class="outline-text-3" id="text-1-4">
 <pre class="example">
 ID: org_gcr_2018-04-11T09-44-43-05-00_mara:27CF9494-7866-4AB9-A2AD-254F84224658
@@ -533,7 +533,7 @@ Speed up code execution. Review as desired.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="orgfdc85f0">(<span class="org-keyword">use-package</span> <span class="org-constant">auto-compile</span>
+<pre class="src src-emacs-lisp" id="org13505af">(<span class="org-keyword">use-package</span> <span class="org-constant">auto-compile</span>
   <span class="org-builtin">:ensure</span> t
   <span class="org-builtin">:config</span>
   (auto-compile-on-load-mode)
@@ -548,14 +548,14 @@ Speed up code execution. Review as desired.
 <h2 class="footnotes">Footnotes: </h2>
 <div id="text-footnotes">
 
-<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><a href="https://en.wikipedia.org/wiki/James_Parry">https://en.wikipedia.org/wiki/James_Parry</a></div></div>
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara"><a href="https://en.wikipedia.org/wiki/James_Parry">https://en.wikipedia.org/wiki/James_Parry</a></p></div></div>
 
 
 </div>
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Grant Rettke</p>
-<p class="date">Created: 2018-08-25 Sat 22:47</p>
+<p class="date">Created: 2018-12-12 Wed 20:10</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
