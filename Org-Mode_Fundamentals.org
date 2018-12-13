@@ -75,7 +75,7 @@ another activity.
     those source blocks will never be evaluated on weaving
   - However the /ability/ for them evaluate on weaving /is/ enabled so that weaved
     source blocks can be replaced by their result value. This gives a kind of
-    template system. More details [[* eval][here]]
+    template system. More details [[eval][here]]
 
 *** Helper Functions
    :PROPERTIES:
