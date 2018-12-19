@@ -4884,16 +4884,23 @@ Timestamps: (_q_uit)
 (global-set-key (kbd "C-M-o") #'help/occur-dwim)
 (global-set-key (kbd "M-i") nil)
 (global-set-key (kbd "M-i") #'help/hydra/left/describe/body)
+(use-package helpful
+  :ensure t
+  :config
+  (global-set-key (kbd "C-c C-a") #'helpful-at-point))
 (defhydra help/hydra/left/describe (:color blue
                                            :hint nil)
   "
 Describe Something: (q to quit)
 _a_ all help for everything screen
+_A_ macro
 _b_ bindings
 _B_ personal bindings
 _r_ character char name only
 _c_ character briefly
 _C_ character full
+_e_ interactive function
+_E_ function, macro or special form
 _T_ character set _1_ list characters in oneset  _2_ list all set2
 _S_ coding system
 _f_ function
@@ -4918,6 +4925,8 @@ _t_ theme
 _v_ variable
 _w_ where is something defined
 "
+  ("e" helpful-command)
+  ("E" helpful-callable)
   ("1" list-charset-chars)
   ("2" list-character-sets)
   ("b" describe-bindings)
@@ -4925,12 +4934,12 @@ _w_ where is something defined
   ("r" ucs-eval)
   ("c" (lambda () (interactive) (unicode-fonts-debug-info-at-point)))
   ("C" describe-char)
-  ("f" counsel-describe-function)
+  ("f" helpful-function)
   ("F" flycheck-describe-checker)
   ("g" describe-categories)
   ("i" describe-input-method)
   ("I" info-buffer)
-  ("K" describe-key)
+  ("K" helpful-key)
   ("k" describe-key-briefly)
   ("l" describe-language-environment)
   ("L" help/parent-mode-display)
@@ -4944,11 +4953,12 @@ _w_ where is something defined
   ("P" describe-text-properties)
   ("q" nil)
   ("a" help)
+  ("A" helpful-macro)
   ("s" describe-symbol)
   ("S" describe-coding-system)
   ("t" describe-theme)
   ("T" describe-character-set)
-  ("v" counsel-describe-variable)
+  ("v" helpful-variable)
   ("w" where-is))
 ;; org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389 ends here
 
@@ -4962,13 +4972,6 @@ _w_ where is something defined
 ;; [[file:~/src/help/help.org::org_gcr_2018-11-14T01-09-50-06-00_cosmicality_F9D27274-71B1-4AFA-9FEA-610569715A96][org_gcr_2018-11-14T01-09-50-06-00_cosmicality_F9D27274-71B1-4AFA-9FEA-610569715A96]]
 (global-set-key (kbd "C-s") #'swiper)
 ;; org_gcr_2018-11-14T01-09-50-06-00_cosmicality_F9D27274-71B1-4AFA-9FEA-610569715A96 ends here
-
-;; [[file:~/src/help/help.org::org_gcr_2018-11-07T14-59-31-06-00_cosmicality_65D81E9D-49D3-4717-A94F-ED6FC6C696B8][org_gcr_2018-11-07T14-59-31-06-00_cosmicality_65D81E9D-49D3-4717-A94F-ED6FC6C696B8]]
-(defun help/messages ()
-  (interactive)
-  (switch-to-buffer "*Messages*"))
-(global-set-key (kbd "s-a") #'help/messages)
-;; org_gcr_2018-11-07T14-59-31-06-00_cosmicality_65D81E9D-49D3-4717-A94F-ED6FC6C696B8 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D][org_gcr_2017-06-13_mara_8E6A3551-A1CE-4879-AC6F-EF74EA1D8A7D]]
 (global-set-key (kbd "C-M-a") #'help/hydra/apropo/body)
