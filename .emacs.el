@@ -2826,6 +2826,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (define-key org-mode-map (kbd "s-u") #'help/safb-org-babel-execute-subtree)
 (define-key org-mode-map (kbd "s-U") #'org-mark-ring-goto)
 (define-key org-mode-map (kbd "s-i") #'org-babel-execute-src-block)
+(define-key org-mode-map (kbd "s-I") #'org-table-insert-row)
 (define-key org-mode-map (kbd "s-o") #'org-babel-remove-result)
 (define-key org-mode-map (kbd "s-p") #'org-babel-execute-maybe)
 (define-key org-mode-map (kbd "s-[") #'org-babel-remove-inline-result)
