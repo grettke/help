@@ -8625,6 +8625,13 @@ _a_ ✓ _s_ ✗ _d_ ☐ _f_ ☑ _g_ ☒_
 (global-set-key (kbd "M-s M-s") #'shell)
 #+end_src
 
+Timestamp.
+
+#+name: org_gcr_2018-12-18T22-18-02-06-00_cosmicality_50833A40-39D4-4EDD-9656-418DB31D9AA3
+#+begin_src emacs-lisp
+(global-set-key (kbd "M-4") #'help/insert-timestamp-no-colons)
+#+end_src
+
 **** Row 2
 :PROPERTIES:
 :ID:       org_gcr_2017-07-17_mara:B91C9779-B2AD-403B-A11F-5847EF8883C6
