@@ -1392,6 +1392,11 @@ Atribution: URL `https://emacs.stackexchange.com/a/33893/341'"
   (interactive)
   (insert (format-time-string "%A %B %d, %Y")))
 
+(defun help/insert-hour-seconds ()
+  "Produces and inserts a Hour:Minute timestamp"
+  (interactive)
+  (insert (format-time-string "%H:%M")))
+
 (defun help/insert-org-datestamp ()
   "Produces and inserts an Org-Mode timestamp."
   (interactive)
@@ -8251,8 +8256,9 @@ Date related things.
   "
 Timestamps: (_q_uit)
   Date: _I_SO, _U_S, US With _Y_ear and _D_ashes, US In _W_ords
-   Date/Time: _N_o Colons or _w_ith
-    Org-Mode: _T_oday, _R_ight Now, or _c_hoose
+    Date/Time: _N_o Colons or _w_ith
+      Time: _H_our:Seconds
+        Org-Mode: _T_oday, _R_ight Now, or _c_hoose
 "
   ("q" nil)
 
@@ -8264,6 +8270,8 @@ Timestamps: (_q_uit)
 
   ("N" help/insert-timestamp-no-colons)
   ("w" help/insert-timestamp)
+
+  ("H" help/insert-hour-seconds)
 
   ("T" help/insert-org-datestamp)
   ("R" help/org-time-stamp-with-seconds-now)
