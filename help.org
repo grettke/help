@@ -8301,7 +8301,7 @@ Timestamps: (_q_uit)
 (use-package helpful
   :ensure t
   :config
-  (global-set-key (kbd "C-c C-a") #'helpful-at-point))
+  (global-set-key (kbd "s-a") #'helpful-at-point))
 (defhydra help/hydra/left/describe (:color blue
                                            :hint nil)
   "
