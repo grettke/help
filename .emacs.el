@@ -3055,7 +3055,8 @@ _b_ black-board-bold _f_ fraktur
                     lorem-ipsum-sentence-separator))
            (words (split-string sentence))
            (word (nth (random (length words)) words)))
-      (insert word))))
+      (insert word))
+    (insert " ")))
 
 (use-package academic-phrases
   :ensure t)
@@ -3068,7 +3069,7 @@ Words: _C_ount, Count In _O_rg , _T_op#, _G_rade Level, _R_eading Ease, _A_ffect
    _E_macs Name (insert _e_macs name)
     _F_lame (insert _f_lame)
      _H_oroscope (insert _h_oroscope)
-      _K_ibologize (insert _k_ibologize)
+      _K_ibologize
        _S_hop _m_iddle name
         _Y_ouwill (insert _y_ouwill)
          Corporate _B_.S.: (_I_nsert B.S.) (A_d_d B.S. To Kill Ring)
@@ -3077,39 +3078,37 @@ Words: _C_ount, Count In _O_rg , _T_op#, _G_rade Level, _R_eading Ease, _A_ffect
 
   ("q" nil)
 
-  ("C" count-words)
-  ("O" help/org-count-words)
+  ("C" count-words :exit nil)
+  ("O" help/org-count-words :exit nil)
   ("T" help/most-used-words)
-  ("G" writegood-grade-level)
-  ("R" writegood-reading-ease)
+  ("G" writegood-grade-level :exit nil)
+  ("R" writegood-reading-ease :exit nil)
   ("A" affect-vs-effect-explanation)
 
-  ("w" help/lorem-ipsum-insert-word)
+  ("w" help/lorem-ipsum-insert-word :exit nil)
   ("s" lorem-ipsum-insert-sentences :exit nil)
   ("p" lorem-ipsum-insert-paragraphs :exit nil)
-  ("l" lorem-ipsum-insert-lists :exit nil)
+  ("l" lorem-ipsum-insert-list :exit nil)
 
   ("a" academic-phrases)
   ("c" academic-phrases-by-section)
 
-  ("E" emacs-name)
-  ("e" (lambda () (interactive) (insert (emacs-name))))
+  ("E" emacs-name :exit nil)
+  ("e" (lambda () (interactive) (insert (emacs-name) " ")) :exit nil)
 
   ("F" flame)
-  ("f" insert-flame)
+  ("f" (lambda () (interactive) (insert-flame) (insert " ")) :exit nil)
 
   ("H" horoscope)
   ("h" (lambda () (interactive) (horoscope t)))
 
   ("K" kibologize)
-  ("k" help/kibologize-insert)
 
   ("S" shop)
-  ("m" shop-middle-name)
+  ("m" shop-middle-name :exit nil)
 
   ("Y" youwill)
-  ("y" help/youwill-insert)
-
+  
   ("B" corporate-bs-generator-create)
   ("I" (lambda () (interactive) (let ((current-prefix-arg '(4))) (corporate-bs-generator-create))))
   ("d" (lambda () (interactive) (let ((current-prefix-arg '(16))) (corporate-bs-generator-create)))))
