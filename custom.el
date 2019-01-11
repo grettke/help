@@ -22,7 +22,7 @@
     (("Org2Blog"
       (:files "~/src/xml-rpc-el/xml-rpc.el" "~/src/metaweblog/metaweblog.el" "~/src/org2blog/ox-wp.el" "~/src/org2blog/org2blog.el"))
      ("HELP"
-      (:pattern "~/src/help" "^.+\\.org$"))
+      (:pattern "~/src/help" "^.+\\.\\(org\\|el\\)$"))
      ("Poetry"
       (:pattern "~/src/poetry" "^.+\\.org$"))
      ("StoneIsle"
