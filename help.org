@@ -2249,6 +2249,13 @@ Show real end of lines.
 (setq inhibit-eol-conversion t)
 #+end_src
 
+Instead of Projectile Projects or other project packages use Filesets.
+
+#+name: org_gcr_2019-01-09T11-33-16-06-00_cosmicality_C82FE1F5-A3B3-4D4B-8949-DD8BEC8CCEA6
+#+begin_src emacs-lisp
+(filesets-init)
+#+end_src
+
 ** IMenu
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:12791F68-A7B0-4F93-9648-386C65C09355

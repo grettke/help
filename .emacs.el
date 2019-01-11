@@ -1479,6 +1479,10 @@ URL: `https://stackoverflow.com/questions/1587972/how-to-display-indentation-gui
 (setq inhibit-eol-conversion t)
 ;; org_gcr_2018-06-16T20-53-59-05-00_mara_FDBFB65D-7BF1-4C66-A322-4818B1EF04A9 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2019-01-09T11-33-16-06-00_cosmicality_C82FE1F5-A3B3-4D4B-8949-DD8BEC8CCEA6][org_gcr_2019-01-09T11-33-16-06-00_cosmicality_C82FE1F5-A3B3-4D4B-8949-DD8BEC8CCEA6]]
+(filesets-init)
+;; org_gcr_2019-01-09T11-33-16-06-00_cosmicality_C82FE1F5-A3B3-4D4B-8949-DD8BEC8CCEA6 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B746C905-E59E-4F33-88F9-5F6CD32C0DE2][org_gcr_2017-05-12_mara_B746C905-E59E-4F33-88F9-5F6CD32C0DE2]]
 (use-package imenu
   :config
