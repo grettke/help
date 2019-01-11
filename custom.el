@@ -24,7 +24,9 @@
      ("HELP"
       (:pattern "~/src/help" "^.+\\.org$"))
      ("Poetry"
-      (:pattern "~/src/poetry" "^.+\\.org$")))))
+      (:pattern "~/src/poetry" "^.+\\.org$"))
+     ("StoneIsle"
+      (:tree "~/src/StoneIsle" "^.+\\.org$")))))
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
  '(highlight-symbol-colors
    (--map
