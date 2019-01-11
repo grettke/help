@@ -19,7 +19,9 @@
  '(fci-rule-color "#073642")
  '(filesets-data
    (quote
-    (("HELP"
+    (("Org2Blog"
+      (:files "~/src/xml-rpc-el/xml-rpc.el" "~/src/metaweblog/metaweblog.el" "~/src/org2blog/ox-wp.el" "~/src/org2blog/org2blog.el"))
+     ("HELP"
       (:pattern "~/src/help" "^.+\\.org$"))
      ("Poetry"
       (:pattern "~/src/poetry" "^.+\\.org$")))))
