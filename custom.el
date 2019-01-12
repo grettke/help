@@ -20,7 +20,7 @@
  '(filesets-data
    (quote
     (("WIP"
-      (:files "/Users/gcr/git/src/StoneIsle/stoneisle.org" "/Users/gcr/git/src/list/elp.org" "/Users/gcr/git/gitlab/wnw/wnw.org" "/Users/gcr/src/hardware/macbooks.org" "~/src/list/scratch.org" "~/src/list/projects.org"))
+      (:files "/Users/gcr/git/src/list/wnw.org" "/Users/gcr/git/src/StoneIsle/stoneisle.org" "/Users/gcr/git/src/list/elp.org" "/Users/gcr/git/gitlab/wnw/wnw.org" "/Users/gcr/src/hardware/macbooks.org" "~/src/list/scratch.org" "~/src/list/projects.org"))
      ("Org2Blog"
       (:files "~/src/xml-rpc-el/xml-rpc.el" "~/src/metaweblog/metaweblog.el" "~/src/org2blog/ox-wp.el" "~/src/org2blog/org2blog.el"))
      ("HELP"
