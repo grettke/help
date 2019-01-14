@@ -3018,6 +3018,12 @@ Row 1: _z_ insert-superscript _Z_ insert-subscript _x_ tangled file permissions 
       (plist-put org-html-table-default-attributes :frame "border"))
 ;; org_gcr_2018-07-02T07-07-57-05-00_mara_50C8A3C0-835D-4DE9-B5AE-161C127BF850 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2019-01-14T09-58-00-06-00_cosmicality_9D450653-5C54-48DB-B0A9-24E8408B0CF2][org_gcr_2019-01-14T09-58-00-06-00_cosmicality_9D450653-5C54-48DB-B0A9-24E8408B0CF2]]
+(defun help/org-mode-hook-fun ()
+  (local-unset-key (kbd "C-j")))
+(add-hook 'org-mode-hook #'help/org-mode-hook-fun)
+;; org_gcr_2019-01-14T09-58-00-06-00_cosmicality_9D450653-5C54-48DB-B0A9-24E8408B0CF2 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2018-01-04_mara_42B53E96-5046-4A7B-8CC9-A7046CCD3BF1][org_gcr_2018-01-04_mara_42B53E96-5046-4A7B-8CC9-A7046CCD3BF1]]
 (use-package edit-indirect
   :ensure t)
@@ -3108,7 +3114,7 @@ Words: _C_ount, Count In _O_rg , _T_op#, _G_rade Level, _R_eading Ease, _A_ffect
   ("m" shop-middle-name :exit nil)
 
   ("Y" youwill)
-  
+
   ("B" corporate-bs-generator-create)
   ("I" (lambda () (interactive) (let ((current-prefix-arg '(4))) (corporate-bs-generator-create))))
   ("d" (lambda () (interactive) (let ((current-prefix-arg '(16))) (corporate-bs-generator-create)))))
