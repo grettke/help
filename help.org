@@ -3414,6 +3414,7 @@ Auto-Capitalize text modes.
               "HTTP"
               "HTTPS"
               "I'll"
+              "I'm"
               "Mantra"
               "SI"
               "Sri"
