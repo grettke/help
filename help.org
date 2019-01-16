@@ -3413,6 +3413,7 @@ Auto-Capitalize text modes.
               "God"
               "HTTP"
               "HTTPS"
+              "I'll"
               "Mantra"
               "SI"
               "Sri"
