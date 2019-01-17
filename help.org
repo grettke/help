@@ -3416,6 +3416,7 @@ Auto-Capitalize text modes.
               "I'll"
               "I'm"
               "Mantra"
+              "OK"
               "SI"
               "Sri"
               "StoneIsle"
