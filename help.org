@@ -7627,7 +7627,7 @@ Resize window.
 (use-package resize-window
   :ensure t
   :config
-  (key-chord-define-global "ww" #'resize-window))
+  (global-set-key (kbd "C-c W") #'resize-window))
 #+END_SRC
 * Piano Lessons
    :PROPERTIES:

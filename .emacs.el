@@ -4732,7 +4732,7 @@ Buf-Move: (q to quit)
 (use-package resize-window
   :ensure t
   :config
-  (key-chord-define-global "ww" #'resize-window))
+  (global-set-key (kbd "C-c W") #'resize-window))
 ;; org_gcr_2017-12-27_mara_AA4152A3-5D5C-4D41-AF55-4828F8BDEF7D ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2018-01-08_mara_82A71AA0-C415-49B1-8554-334215625E4F][org_gcr_2018-01-08_mara_82A71AA0-C415-49B1-8554-334215625E4F]]
