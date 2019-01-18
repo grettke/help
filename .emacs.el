@@ -5206,6 +5206,11 @@ _a_ ✓ _s_ ✗ _d_ ☐ _f_ ☑ _g_ ☒_
 (global-set-key (kbd "M-4") #'help/insert-timestamp-no-colons)
 ;; org_gcr_2018-12-18T22-18-02-06-00_cosmicality_50833A40-39D4-4EDD-9656-418DB31D9AA3 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2019-01-17T16-40-26-06-00_cosmicality_34B10462-8FD6-4AA3-BA6C-9101C7BFB941][org_gcr_2019-01-17T16-40-26-06-00_cosmicality_34B10462-8FD6-4AA3-BA6C-9101C7BFB941]]
+(global-set-key (kbd "C-s-n") (kbd "C-u 1 C-v"))
+(global-set-key (kbd "C-s-p") (kbd "C-u 1 M-v"))
+;; org_gcr_2019-01-17T16-40-26-06-00_cosmicality_34B10462-8FD6-4AA3-BA6C-9101C7BFB941 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B][org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B]]
 ;; Leave C-z free for Tmux
 (global-set-key (kbd "C-z") nil)
