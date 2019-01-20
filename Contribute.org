@@ -104,8 +104,8 @@ Configure Org2Blog.
 (setq org2blog/wp-blog-alist
       '(("wisdomandwonder"
          :url "https://www.wisdomandwonder.com/xmlrpc.php"
-         :username "admin"
-         :default-categories ("Article" "Link")
+         :username "grant"
+         :default-categories ("Happiness" "WisdomAndWonder")
          :confirm t
          :show 'show)))
 #+END_SRC

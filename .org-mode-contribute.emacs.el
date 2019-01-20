@@ -38,8 +38,8 @@
 (setq org2blog/wp-blog-alist
       '(("wisdomandwonder"
          :url "https://www.wisdomandwonder.com/xmlrpc.php"
-         :username "admin"
-         :default-categories ("Article" "Link")
+         :username "grant"
+         :default-categories ("Happiness" "WisdomAndWonder")
          :confirm t
          :show 'show)))
 ;; org_gcr_2017-05-12_mara_854DE6E9-2208-42EB-A164-EC06E489B6B7 ends here
