@@ -1372,6 +1372,15 @@ Atribution: URL `https://emacs.stackexchange.com/a/33893/341'"
   (let ((current-prefix-arg '(16)))
     (call-interactively 'org-time-stamp)))
 
+(defun help/insert-log-entry ()
+  "Produces and inserts a compact datestamp with full year and maybe a log message."
+  (interactive)
+  (let* ((stamp (format-time-string "%Y%m%dT%H%M"))
+         (msg (s-trim (read-string "Log message? (hit return to leave blank): ")))
+         (str (or (and (s-blank? msg) stamp)
+                 (s-concat stamp "-" (s-replace " " "-" msg)))))
+    (insert str)))
+
 (defun help/insert-datestamp-us ()
   "Produces and inserts a US datestamp."
   (interactive)
@@ -8281,7 +8290,7 @@ Date related things.
   "
 Timestamps: (_q_uit)
   Date: _I_SO, _U_S, US With _Y_ear and _D_ashes, US In _W_ords
-    Date/Time: _N_o Colons or _w_ith
+    Date/Time: _N_o Colons or _w_ith, _L_og Entry (compact with note)
       Time: _H_our:Seconds
         Org-Mode: _T_oday, _R_ight Now, or _c_hoose
 "
@@ -8297,6 +8306,7 @@ Timestamps: (_q_uit)
   ("w" help/insert-timestamp)
 
   ("H" help/insert-hour-seconds)
+  ("L" help/insert-log-entry)
 
   ("T" help/insert-org-datestamp)
   ("R" help/org-time-stamp-with-seconds-now)
