@@ -8405,7 +8405,7 @@ _w_ where is something defined
      :END:
 
 Org handle ~TAB~ correctly and nothing is bound to it like ~Auto-Complete~ or
-~yasnippet~ so this doesn't /need/ ot use ~C-i~ freeing it up. Rebinding ~C-g~ seems
+~yasnippet~ so this doesn't /need/ to use ~C-i~ freeing it up. Rebinding ~C-g~ seems
 to make the minibuffer and ~eval-*~ become confused \rarr quit working.
 
 **** Row 3
