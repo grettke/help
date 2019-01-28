@@ -37,10 +37,12 @@
 ;; [[file:~/src/help/Contribute.org::org_gcr_2017-05-12_mara_854DE6E9-2208-42EB-A164-EC06E489B6B7][org_gcr_2017-05-12_mara_854DE6E9-2208-42EB-A164-EC06E489B6B7]]
 (require 'auth-source)
 (let* ((credentials (auth-source-user-and-password "wisdomandwonder"))
+       (username (nth 0 credentials))
+       (password (nth 1 credentials))
        (config `(("wisdomandwonder"
                   :url "https://www.wisdomandwonder.com/xmlrpc.php"
-                  :username ,(nth 0 credentials)
-                  :password ,(nth 1 credentials)
+                  :username ,username
+                  :password ,password
                   :default-categories ("Happiness" "WisdomAndWonder")
                   :confirm t
                   :show 'show))))
