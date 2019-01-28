@@ -130,6 +130,18 @@ tangled system.
 (setq load-prefer-newer t)
 #+END_SRC
 
+*** GnuTLS integration
+:PROPERTIES:
+:ID:       org_gcr_2019-01-26T01-36-06-06-00_cosmicality:CA487B29-55EE-4015-B340-2F1374F96959
+:END:
+
+Forbid [[https://www.gnu.org/software/emacs/manual/html_mono/emacs-gnutls.html#Help-For-Users][Emacs GnuTLS]] from [[https://gnutls.org/manual/html_node/Priority-Strings.html][using TLSv1.3]].
+
+#+name: org_gcr_2019-01-26T01-36-06-06-00_cosmicality_46A574D5-AE39-402A-9F16-AD72732C95CB
+#+begin_src emacs-lisp
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+#+end_src
+
 ** Org-Mode Exemple Complet Minimal
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:572E2309-5DCA-4AE1-AAC4-36B7E07AD46D
