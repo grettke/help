@@ -101,13 +101,16 @@ Configure Org2Blog.
 
 #+NAME: org_gcr_2017-05-12_mara_854DE6E9-2208-42EB-A164-EC06E489B6B7
 #+BEGIN_SRC emacs-lisp
-(setq org2blog/wp-blog-alist
-      '(("wisdomandwonder"
-         :url "https://www.wisdomandwonder.com/xmlrpc.php"
-         :username "grant"
-         :default-categories ("Happiness" "WisdomAndWonder")
-         :confirm t
-         :show 'show)))
+(require 'auth-source)
+(let* ((credentials (auth-source-user-and-password "wisdomandwonder"))
+       (config `(("wisdomandwonder"
+                  :url "https://www.wisdomandwonder.com/xmlrpc.php"
+                  :username ,(nth 0 credentials)
+                  :password ,(nth 1 credentials)
+                  :default-categories ("Happiness" "WisdomAndWonder")
+                  :confirm t
+                  :show 'show))))
+  (setq org2blog/wp-blog-alist config))
 #+END_SRC
 
 * Pretty Mode

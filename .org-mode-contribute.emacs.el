@@ -35,13 +35,16 @@
 ;; org_gcr_2017-08-04_mara_B782FF06-D0E7-4598-89E4-02A76E882E78 ends here
 
 ;; [[file:~/src/help/Contribute.org::org_gcr_2017-05-12_mara_854DE6E9-2208-42EB-A164-EC06E489B6B7][org_gcr_2017-05-12_mara_854DE6E9-2208-42EB-A164-EC06E489B6B7]]
-(setq org2blog/wp-blog-alist
-      '(("wisdomandwonder"
-         :url "https://www.wisdomandwonder.com/xmlrpc.php"
-         :username "grant"
-         :default-categories ("Happiness" "WisdomAndWonder")
-         :confirm t
-         :show 'show)))
+(require 'auth-source)
+(let* ((credentials (auth-source-user-and-password "wisdomandwonder"))
+       (config `(("wisdomandwonder"
+                  :url "https://www.wisdomandwonder.com/xmlrpc.php"
+                  :username ,(nth 0 credentials)
+                  :password ,(nth 1 credentials)
+                  :default-categories ("Happiness" "WisdomAndWonder")
+                  :confirm t
+                  :show 'show))))
+  (setq org2blog/wp-blog-alist config))
 ;; org_gcr_2017-05-12_mara_854DE6E9-2208-42EB-A164-EC06E489B6B7 ends here
 
 ;; [[file:~/src/help/Contribute.org::org_gcr_2017-05-15_mara_5CF1DF19-27F5-4509-8E17-9CA0D1B29314][org_gcr_2017-05-15_mara_5CF1DF19-27F5-4509-8E17-9CA0D1B29314]]
