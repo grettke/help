@@ -2901,7 +2901,7 @@ Org-Mode: (_q_uit)
 Row 4: _1_ SHA-1-hash _2_ display images _3_ hide images _4_ id-create _8_ ltx/noindent _9_ o2b/more _0_ o2b/LaTeX
 Row 3: _w_ ob-clip-formatted _e_ edit field  _E_ list entities _r_ help/org-refile _R_ insert \"refile\"  _t_oggle macro marker ATT_R_HTML 4 table export format _u_tf2xtx  _p_ copy-reg-2-property
 Row 2: _a_ archive-subtree _s_ sort _S_ lobigst _d_ g2s-b/hd _g_ goto _k_ ob-check-src-blk _l_ lint _L_ insert inline task
-Row 1: _z_ insert-superscript _Z_ insert-subscript _x_ tangled file permissions _c_ org-fill-para _C_ount words _b_ swtch2sessn _n_ n2sbtre _m_ mark-subtree"
+Row 1: _z_ insert-superscript _Z_ insert-subscript _x_ tangled file permissions _c_ org-fill-para _C_ount words _b_ swtch2sessn _B_ NOrg2Blog _n_ n2sbtre _m_ mark-subtree"
 
   ("q" org-babel-switch-to-session-with-code)
 
@@ -2947,6 +2947,7 @@ Row 1: _z_ insert-superscript _Z_ insert-subscript _x_ tangled file permissions 
   ("c" org-fill-paragraph)
   ("C" help/org-count-words)
   ("b" org-babel-switch-to-session)
+  ("B" help/hydra/org2blog/body)
   ("n" org-narrow-to-subtree)
   ("m" org-mark-subtree)
   ("M" org-mark-element))
@@ -3035,6 +3036,54 @@ Row 1: _z_ insert-superscript _Z_ insert-subscript _x_ tangled file permissions 
   (local-unset-key (kbd "C-j")))
 (add-hook 'org-mode-hook #'help/org-mode-hook-fun)
 ;; org_gcr_2019-01-14T09-58-00-06-00_cosmicality_9D450653-5C54-48DB-B0A9-24E8408B0CF2 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2019-01-29T21-31-26-06-00_cosmicality_6AEB37AE-9A61-4D22-B5E7-4FAC447AF8C3][org_gcr_2019-01-29T21-31-26-06-00_cosmicality_6AEB37AE-9A61-4D22-B5E7-4FAC447AF8C3]]
+(defhydra help/hydra/org2blog (:color blue :hint nil)
+  "
+Org2Blog
+^╔══════^═══════════╦═^═══^═════════════════════════╦═^══════════════════════════╗^
+^║ Admin^           ║ ^Use^                         ║ ^Do To: Buffer (or Subtree)║^
+^╚══════^═══════════╩═^═══^═════════════════════════╩═^══════════════════════════╝^
+  _i_: Login          _n_: New                        _h_(_H_): Post It
+  _s_: Set Password   _c_: Complete Category or Tag   _v_(_V_): Preview It
+  _o_: Logout         ^^                              _t_(_T_): Publish It As Post
+  ^^                  ^^                              _e_(_E_): Publish It As Page
+  ^^                  ^^                              _k_(_K_): Track It
+ "
+
+  ;;; Admin
+  ("i" org2blog/wp-login)
+  ("s" org2blog/wp-password)
+  ("o" org2blog/wp-logout)
+
+  ;;; Use
+  ("n" org2blog/wp-new-entry)
+  ("c" org2blog/wp-complete-category)
+
+  ;;; Do
+  ("h" org2blog/wp-post-buffer)
+  ("H" org2blog/wp-post-buffer-as-page)
+  ;; Previewing
+  ("v" org2blog/wp-preview-buffer-post)
+  ("V" org2blog/wp-preview-subtree-post)
+  
+  ;; Publishing: Posts
+  ("t" org2blog/wp-post-buffer-and-publish)
+  ("T" org2blog/wp-post-subtree-and-publish)
+  ;; Publishing: Pages
+  ("e" org2blog/wp-post-buffer-as-page-and-publish)
+  ("E" org2blog/wp-post-subtree-as-page-and-publish)
+  ;; Tracking
+  ("k" org2blog/wp-track-buffer)
+  ("K" org2blog/wp-track-subtree)
+
+  ("q" nil))
+
+(defun help/org2blog/wp-mode-hook-fn ()
+  (local-set-key (kbd "M-9") #'help/hydra/org2blog/body))
+
+(add-hook 'org2blog/wp-mode-hook #'help/org2blog/wp-mode-hook-fn)
+;; org_gcr_2019-01-29T21-31-26-06-00_cosmicality_6AEB37AE-9A61-4D22-B5E7-4FAC447AF8C3 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2018-01-04_mara_42B53E96-5046-4A7B-8CC9-A7046CCD3BF1][org_gcr_2018-01-04_mara_42B53E96-5046-4A7B-8CC9-A7046CCD3BF1]]
 (use-package edit-indirect
