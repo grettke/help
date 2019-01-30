@@ -43,7 +43,6 @@
                   :url "https://www.wisdomandwonder.com/xmlrpc.php"
                   :username ,username
                   :password ,password
-                  :default-categories ("Happiness" "WisdomAndWonder")
                   :confirm t
                   :show 'show))))
   (setq org2blog/wp-blog-alist config))
