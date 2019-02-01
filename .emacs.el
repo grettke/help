@@ -3037,59 +3037,6 @@ Row 1: _z_ insert-superscript _Z_ insert-subscript _x_ tangled file permissions 
 (add-hook 'org-mode-hook #'help/org-mode-hook-fun)
 ;; org_gcr_2019-01-14T09-58-00-06-00_cosmicality_9D450653-5C54-48DB-B0A9-24E8408B0CF2 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2019-01-29T21-31-26-06-00_cosmicality_6AEB37AE-9A61-4D22-B5E7-4FAC447AF8C3][org_gcr_2019-01-29T21-31-26-06-00_cosmicality_6AEB37AE-9A61-4D22-B5E7-4FAC447AF8C3]]
-(defhydra help/hydra/org2blog (:color blue :hint nil)
-  "
-Org2Blog
-^╔══════^═══════════╦═^═══^═════════════════════════╦═^══════════════════════════╗
-^║ Admin^           ║ ^Use^                         ║ ^Do To: Buffer (or Subtree)║
-^╚══════^═══════════╩═^═══^═════════════════════════╩═^══════════════════════════╝
-  _i_: Login          _n_: New                        _h_(_H_): Post It
-  _s_: Set Password   _c_: Complete Category or Tag   _v_(_V_): Preview It
-  _D_: Debug On       ^^                              _t_(_T_): Publish It As Post
-  _d_: Debug Off      ^^                              _e_(_E_): Publish It As Page
-  _o_: Logout         ^^                              _k_(_K_): Track It
-  _q_: Quit           ^^
- "
-
-  ;;; Admin
-  ("i" org2blog/wp-login)
-  ("s" org2blog/wp-password)
-  ("D" (lambda () (interactive)
-         (let ((current-prefix-arg '(4)))
-           (call-interactively 'org2blog/wp-debug))))
-  ("d" org2blog/wp-debug)
-  ("o" org2blog/wp-logout)
-  ("q" nil)
-
-  ;;; Use
-  ("n" org2blog/wp-new-entry)
-  ("c" org2blog/wp-complete-category)
-
-  ;;; Do
-  ("h" org2blog/wp-post-buffer)
-  ("H" org2blog/wp-post-buffer-as-page)
-  ;; Previewing
-  ("v" org2blog/wp-preview-buffer-post)
-  ("V" org2blog/wp-preview-subtree-post)
-
-  ;; Publishing: Posts
-  ("t" org2blog/wp-post-buffer-and-publish)
-  ("T" org2blog/wp-post-subtree-and-publish)
-  ;; Publishing: Pages
-  ("e" org2blog/wp-post-buffer-as-page-and-publish)
-  ("E" org2blog/wp-post-subtree-as-page-and-publish)
-  ;; Tracking
-  ("k" org2blog/wp-track-buffer)
-  ("K" org2blog/wp-track-subtree))
-
-(defun help/org2blog/wp-mode-hook-fn ()
-  (local-set-key (kbd "M-9") #'help/hydra/org2blog/body)
-  (local-set-key (kbd "M-0") #'org2blog/wp-complete-category))
-
-(add-hook 'org2blog/wp-mode-hook #'help/org2blog/wp-mode-hook-fn)
-;; org_gcr_2019-01-29T21-31-26-06-00_cosmicality_6AEB37AE-9A61-4D22-B5E7-4FAC447AF8C3 ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2018-01-04_mara_42B53E96-5046-4A7B-8CC9-A7046CCD3BF1][org_gcr_2018-01-04_mara_42B53E96-5046-4A7B-8CC9-A7046CCD3BF1]]
 (use-package edit-indirect
   :ensure t)

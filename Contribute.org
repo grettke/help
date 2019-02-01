@@ -70,6 +70,10 @@ Blog from Org mode to wordpress
 (add-to-list 'load-path "~/src/org2blog")
 (require 'org2blog)
 (add-hook 'org-mode-hook #'org2blog/wp-org-mode-hook-fn)
+(defun help/org2blog/wp-mode-hook-fn ()
+  (local-set-key (kbd "M-9") #'org2blog/wp-hydra/body)
+  (local-set-key (kbd "M-0") #'org2blog/wp-complete-category))
+(add-hook 'org2blog/wp-mode-hook #'help/org2blog/wp-mode-hook-fn)
 #+END_SRC
 
 Use [[https://www.mathjax.org/][MathJax]] instead of =wp-latex= syntax.

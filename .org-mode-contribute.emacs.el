@@ -20,6 +20,10 @@
 (add-to-list 'load-path "~/src/org2blog")
 (require 'org2blog)
 (add-hook 'org-mode-hook #'org2blog/wp-org-mode-hook-fn)
+(defun help/org2blog/wp-mode-hook-fn ()
+  (local-set-key (kbd "M-9") #'org2blog/wp-hydra/body)
+  (local-set-key (kbd "M-0") #'org2blog/wp-complete-category))
+(add-hook 'org2blog/wp-mode-hook #'help/org2blog/wp-mode-hook-fn)
 ;; org_gcr_2017-05-12_mara_EF1B02DF-BDB7-44AA-A018-B0BE6DA1C08F ends here
 
 ;; [[file:~/src/help/Contribute.org::org_gcr_2017-08-14_mara_7625680E-1CA4-428E-A92F-D53114742D28][org_gcr_2017-08-14_mara_7625680E-1CA4-428E-A92F-D53114742D28]]
