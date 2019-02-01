@@ -4967,14 +4967,18 @@ Org2Blog
 ^╚══════^═══════════╩═^═══^═════════════════════════╩═^══════════════════════════╝
   _i_: Login          _n_: New                        _h_(_H_): Post It
   _s_: Set Password   _c_: Complete Category or Tag   _v_(_V_): Preview It
-  _d_: Debug          ^^                              _t_(_T_): Publish It As Post
-  _o_: Logout         ^^                              _e_(_E_): Publish It As Page
-  _q_: Quit           ^^                              _k_(_K_): Track It
+  _D_: Debug On       ^^                              _t_(_T_): Publish It As Post
+  _d_: Debug Off      ^^                              _e_(_E_): Publish It As Page
+  _o_: Logout         ^^                              _k_(_K_): Track It
+  _q_: Quit           ^^
  "
 
   ;;; Admin
   ("i" org2blog/wp-login)
   ("s" org2blog/wp-password)
+  ("D" (lambda () (interactive)
+         (let ((current-prefix-arg '(4)))
+           (call-interactively 'org2blog/wp-debug))))
   ("d" org2blog/wp-debug)
   ("o" org2blog/wp-logout)
   ("q" nil)
