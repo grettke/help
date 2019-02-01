@@ -4962,14 +4962,14 @@ Doctype—use the default.
 (defhydra help/hydra/org2blog (:color blue :hint nil)
   "
 Org2Blog
-^╔══════^═══════════╦═^═══^═════════════════════════╦═^══════════════════════════╗^
-^║ Admin^           ║ ^Use^                         ║ ^Do To: Buffer (or Subtree)║^
-^╚══════^═══════════╩═^═══^═════════════════════════╩═^══════════════════════════╝^
+^╔══════^═══════════╦═^═══^═════════════════════════╦═^══════════════════════════╗
+^║ Admin^           ║ ^Use^                         ║ ^Do To: Buffer (or Subtree)║
+^╚══════^═══════════╩═^═══^═════════════════════════╩═^══════════════════════════╝
   _i_: Login          _n_: New                        _h_(_H_): Post It
   _s_: Set Password   _c_: Complete Category or Tag   _v_(_V_): Preview It
   _d_: Debug          ^^                              _t_(_T_): Publish It As Post
   _o_: Logout         ^^                              _e_(_E_): Publish It As Page
-  ^^                  ^^                              _k_(_K_): Track It
+  _q_: Quit           ^^                              _k_(_K_): Track It
  "
 
   ;;; Admin
@@ -4977,6 +4977,7 @@ Org2Blog
   ("s" org2blog/wp-password)
   ("d" org2blog/wp-debug)
   ("o" org2blog/wp-logout)
+  ("q" nil)
 
   ;;; Use
   ("n" org2blog/wp-new-entry)
@@ -4997,9 +4998,7 @@ Org2Blog
   ("E" org2blog/wp-post-subtree-as-page-and-publish)
   ;; Tracking
   ("k" org2blog/wp-track-buffer)
-  ("K" org2blog/wp-track-subtree)
-
-  ("q" nil))
+  ("K" org2blog/wp-track-subtree))
 
 (defun help/org2blog/wp-mode-hook-fn ()
   (local-set-key (kbd "M-9") #'help/hydra/org2blog/body)
