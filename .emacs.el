@@ -858,7 +858,7 @@ Atribution: URL `https://emacs.stackexchange.com/a/33893/341'"
   (let* ((stamp (format-time-string "%Y%m%dT%H%M"))
          (msg (s-trim (read-string "Log message? (hit return to leave blank): ")))
          (str (or (and (s-blank? msg) stamp)
-                 (s-concat stamp "-" (s-replace " " "-" msg)))))
+                  (s-concat stamp "-" (s-replace " " "-" msg)))))
     (insert str)))
 
 (defun help/insert-datestamp-us ()
@@ -2071,8 +2071,8 @@ _A_rchives | Rest_o_res | Re_f_iles
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-12-22_mara_93DCBFA6-1D9E-4126-ABA7-070A42297927][org_gcr_2017-12-22_mara_93DCBFA6-1D9E-4126-ABA7-070A42297927]]
 (defun help/commit-message-mode-hook-fn ()
-"HELP Commit Message Mode Hook Function"
-(key-chord-define-local "hh" #'help/hydra/commit-message/body))
+  "HELP Commit Message Mode Hook Function"
+  (key-chord-define-local "hh" #'help/hydra/commit-message/body))
 (add-hook 'vc-git-log-edit-mode-hook #'help/commit-message-mode-hook-fn)
 (add-hook 'git-commit-setup-hook #'help/commit-message-mode-hook-fn)
 ;; org_gcr_2017-12-22_mara_93DCBFA6-1D9E-4126-ABA7-070A42297927 ends here
@@ -2546,8 +2546,8 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
   "Read a property name from the current entry."
   (let ((completion-ignore-case t)
         (default-prop (or (and (org-at-property-p)
-                            (org-match-string-no-properties 2))
-                         org-last-set-property)))
+                               (org-match-string-no-properties 2))
+                          org-last-set-property)))
     (org-completing-read
      (format "Property [%s]: " (if default-prop default-prop ""))
      (org-entry-properties nil nil)
@@ -2569,7 +2569,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
                  )
             ;; if none was stated by user, read property from user
             (prop (or property
-                     (org-read-entry-property-name))))
+                      (org-read-entry-property-name))))
         ;; set property
         (org-set-property prop val))))
 ;; org_gcr_2017-05-12_mara_1F938B98-B056-4381-833C-2C9B835B1C23 ends here
@@ -3066,7 +3066,7 @@ Org2Blog
   ;; Previewing
   ("v" org2blog/wp-preview-buffer-post)
   ("V" org2blog/wp-preview-subtree-post)
-  
+
   ;; Publishing: Posts
   ("t" org2blog/wp-post-buffer-and-publish)
   ("T" org2blog/wp-post-subtree-and-publish)
@@ -3080,7 +3080,8 @@ Org2Blog
   ("q" nil))
 
 (defun help/org2blog/wp-mode-hook-fn ()
-  (local-set-key (kbd "M-9") #'help/hydra/org2blog/body))
+  (local-set-key (kbd "M-9") #'help/hydra/org2blog/body)
+  (local-set-key (kbd "M-0") #'org2blog/wp-complete-category))
 
 (add-hook 'org2blog/wp-mode-hook #'help/org2blog/wp-mode-hook-fn)
 ;; org_gcr_2019-01-29T21-31-26-06-00_cosmicality_6AEB37AE-9A61-4D22-B5E7-4FAC447AF8C3 ends here
@@ -3186,7 +3187,7 @@ Words: _C_ount, Count In _O_rg , _T_op#, _G_rade Level, _R_eading Ease, _A_ffect
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_AAEBDA8A-3939-42B1-B7A2-230C43EEF1AB][org_gcr_2017-05-12_mara_AAEBDA8A-3939-42B1-B7A2-230C43EEF1AB]]
 (use-package dash-at-point
- :ensure t)
+  :ensure t)
 ;; org_gcr_2017-05-12_mara_AAEBDA8A-3939-42B1-B7A2-230C43EEF1AB ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0BCAB755-9914-473F-9543-37130529809F][org_gcr_2017-05-12_mara_0BCAB755-9914-473F-9543-37130529809F]]
@@ -3404,14 +3405,14 @@ GNU APL: ⏼%(help/gnu-apl-runningp)
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-07-27_mara_EAEF335C-A35D-4746-AB2F-58BDDDFB6CC0][org_gcr_2017-07-27_mara_EAEF335C-A35D-4746-AB2F-58BDDDFB6CC0]]
 (use-package scheme
-:config
-(setq scheme-program-name "chez")
-(defun help/scheme-mode-hook-fn ()
-  "HELP Scheme Mode Hook Function")
-(add-hook 'scheme-mode-hook #'help/scheme-mode-hook-fn)
-(defun help/inferior-scheme-mode-hook-fn ()
-  "HELP Inferior Scheme Mode Hook Function")
-(add-hook 'inferior-scheme-mode-hook #'help/inferior-scheme-mode-hook-fn))
+  :config
+  (setq scheme-program-name "chez")
+  (defun help/scheme-mode-hook-fn ()
+    "HELP Scheme Mode Hook Function")
+  (add-hook 'scheme-mode-hook #'help/scheme-mode-hook-fn)
+  (defun help/inferior-scheme-mode-hook-fn ()
+    "HELP Inferior Scheme Mode Hook Function")
+  (add-hook 'inferior-scheme-mode-hook #'help/inferior-scheme-mode-hook-fn))
 ;; org_gcr_2017-07-27_mara_EAEF335C-A35D-4746-AB2F-58BDDDFB6CC0 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5457F0EC-AAB3-4502-ACCD-7F9C1579293D][org_gcr_2017-05-12_mara_5457F0EC-AAB3-4502-ACCD-7F9C1579293D]]
@@ -3655,8 +3656,8 @@ Geiser REPL: ⏼%(help/geiser-on-p)
   (setq web-mode-enable-auto-pairing nil)
   (defun sp-web-mode-is-code-context (id action context)
     (and (eq action 'insert)
-       (not (or (get-text-property (point) 'part-side)
-             (get-text-property (point) 'block-side)))))
+         (not (or (get-text-property (point) 'part-side)
+                  (get-text-property (point) 'block-side)))))
 
   (sp-local-pair 'web-mode "<" nil :when '(sp-web-mode-is-code-context))
   (setq web-mode-enable-css-colorization t)

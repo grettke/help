@@ -4987,7 +4987,7 @@ Org2Blog
   ;; Previewing
   ("v" org2blog/wp-preview-buffer-post)
   ("V" org2blog/wp-preview-subtree-post)
-  
+
   ;; Publishing: Posts
   ("t" org2blog/wp-post-buffer-and-publish)
   ("T" org2blog/wp-post-subtree-and-publish)
@@ -5001,7 +5001,8 @@ Org2Blog
   ("q" nil))
 
 (defun help/org2blog/wp-mode-hook-fn ()
-  (local-set-key (kbd "M-9") #'help/hydra/org2blog/body))
+  (local-set-key (kbd "M-9") #'help/hydra/org2blog/body)
+  (local-set-key (kbd "M-0") #'org2blog/wp-complete-category))
 
 (add-hook 'org2blog/wp-mode-hook #'help/org2blog/wp-mode-hook-fn)
 #+end_src
