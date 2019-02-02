@@ -4352,6 +4352,45 @@ Ansible: (q to quit)
   :ensure t
   :config
   (setf (cdr (assoc "dot" org-src-lang-modes)) 'graphviz-dot))
+(defhydra help/hydra/graphviz-dot-mode (:color blue :hint nil)
+  "
+Graphviz
+^╔═^═══^════════════════════════════╗
+^║ ^Use^                            ║
+^╚═^═══^════════════════════════════╝
+  _p_: View
+  _L_: Enable Live Preview On Save
+  _l_: Disable Live Preview On Save
+  _t_: Complete Word
+  _c_: Compile
+  _i_: Indent Graph
+  _s_: Set Layout
+  _q_: Quit "
+
+  ("p" graphviz-dot-preview)
+  ("L" graphviz-turn-on-live-preview)
+  ("l" graphviz-turn-off-live-preview)
+  ("t" graphviz-dot-complete-word)
+  ("c" compile)
+  ("i" graphviz-dot-indent-graph)
+  ("s" graphviz-dot-set-layout)
+  ("q" nil))
+(defun help/graphviz-dot-mode-hook-fun ()
+  (setq
+   graphviz-dot-view-command "open %s"
+   graphviz-dot-view-edit-command nil
+   graphviz-dot-save-before-view t
+   graphviz-dot-auto-indent-on-newline nil
+   graphviz-dot-indent-width 2
+   graphviz-dot-auto-indent-on-braces nil
+   graphviz-dot-auto-indent-on-semi nil
+   graphviz-dot-delete-completions t
+   graphviz-dot-auto-preview-on-save t)
+  (key-chord-define-local "hh" #'help/hydra/graphviz-dot-mode/body)
+  (local-set-key (kbd "M-9") #'compile)
+  (local-set-key (kbd "M-0") #'graphviz-dot-complete-word)
+  (smartparens-global-strict-mode))
+(add-hook 'graphviz-dot-mode-hook #'help/graphviz-dot-mode-hook-fun)
 ;; org_gcr_2017-05-12_mara_362D21E8-3D98-4905-8942-A146C4A555D1 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_91D0CFDF-6FC2-4F4A-9CFC-825CED0061B6][org_gcr_2017-05-12_mara_91D0CFDF-6FC2-4F4A-9CFC-825CED0061B6]]
