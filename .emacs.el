@@ -2827,10 +2827,15 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; org_gcr_2017-05-12_mara_1A8FB05F-FF18-45DD-BFC4-89E76C366B9F ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_6BA97DBC-AE5D-4C60-AD03-EF150686A03F][org_gcr_2017-05-12_mara_6BA97DBC-AE5D-4C60-AD03-EF150686A03F]]
-(key-chord-define org-mode-map "U*" #'org-metaup)
-(key-chord-define org-mode-map "I(" #'org-metadown)
-(key-chord-define org-mode-map "u8" #'org-metaleft)
-(key-chord-define org-mode-map "i9" #'org-metaright)
+(key-chord-define org-mode-map "u8" #'org-shiftmetaleft)
+(key-chord-define org-mode-map "i9" #'org-shiftmetaright)
+(key-chord-define org-mode-map "U*" #'org-shiftmetaup)
+(key-chord-define org-mode-map "I(" #'org-shiftmetadown)
+
+(key-chord-define org-mode-map "o0" #'org-metaleft)
+(key-chord-define org-mode-map "p-" #'org-metaright)
+(key-chord-define org-mode-map "O)" #'org-metaup)
+(key-chord-define org-mode-map "P_" #'org-metadown)
 ;; org_gcr_2017-05-12_mara_6BA97DBC-AE5D-4C60-AD03-EF150686A03F ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC][org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC]]
