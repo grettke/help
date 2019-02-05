@@ -2434,6 +2434,11 @@ elisp-mode: _q_uit
   :ensure t)
 ;; org_gcr_2018-03-27T21-28-18-05-00_mara_02B76E03-F34A-45A7-A7DC-30209F91095E ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2019-02-03T21-22-21-06-00_cosmicality_8E44B122-56DB-45EA-BCE2-4B39C0C2883E][org_gcr_2019-02-03T21-22-21-06-00_cosmicality_8E44B122-56DB-45EA-BCE2-4B39C0C2883E]]
+(require 'checkdoc)
+(setq checkdoc-package-keywords-flag t)
+;; org_gcr_2019-02-03T21-22-21-06-00_cosmicality_8E44B122-56DB-45EA-BCE2-4B39C0C2883E ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9D21E326-1742-4DD0-BDF9-624D21873F92][org_gcr_2017-05-12_mara_9D21E326-1742-4DD0-BDF9-624D21873F92]]
 (setq org-babel-min-lines-for-block-output 0)
 ;; org_gcr_2017-05-12_mara_9D21E326-1742-4DD0-BDF9-624D21873F92 ends here

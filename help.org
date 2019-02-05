@@ -3795,6 +3795,15 @@ Lispy super editing functions.
 (use-package lispy
   :ensure t)
 #+end_src
+
+Quality.
+
+#+name: org_gcr_2019-02-03T21-22-21-06-00_cosmicality_8E44B122-56DB-45EA-BCE2-4B39C0C2883E
+#+begin_src emacs-lisp
+(require 'checkdoc)
+(setq checkdoc-package-keywords-flag t)
+#+end_src
+
 *** Org-Mode
   :PROPERTIES:
   :ID:       org_gcr_2017-05-12_mara:D017621F-5169-442A-A52C-7D91EEB7D796
