@@ -22,7 +22,7 @@
     (("WIP"
       (:files "/Users/gcr/git/src/list/wnw.org" "/Users/gcr/git/src/StoneIsle/stoneisle.org" "/Users/gcr/git/src/list/elp.org" "/Users/gcr/git/gitlab/wnw/wnw.org" "/Users/gcr/src/hardware/macbooks.org" "~/src/list/scratch.org" "~/src/list/projects.org"))
      ("Org2Blog"
-      (:files "~/src/xml-rpc-el/xml-rpc.el" "~/src/metaweblog/metaweblog.el" "~/src/org2blog/ox-wp.el" "~/src/org2blog/org2blog.el"))
+      (:files "/usr/local/Cellar/emacs/26.1_1/share/emacs/26.1/lisp/url/url.el.gz" "/Users/gcr/git/src/metaweblog/metaweblog.el" "/Users/gcr/git/src/xml-rpc-el/xml-rpc.el" "/Users/gcr/src/org2blogwiki/Home.org" "/Users/gcr/src/org2blog/org2blog-pkg.el" "/Users/gcr/src/org2blog/org2blog-autoloads.el" "~/src/org2blog/ox-wp.el" "~/src/org2blog/org2blog.el"))
      ("HELP"
       (:pattern "~/src/help" "^.+\\.\\(org\\|el\\)$"))
      ("Poetry"
