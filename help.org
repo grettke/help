@@ -3723,7 +3723,10 @@ elisp-mode: _q_uit
   (eldoc-mode)
   (diminish 'eldoc-mode)
   (highlight-quoted-mode)
-  (highlight-stages-mode))
+  (highlight-stages-mode)
+  (let ((electric-quote-comment t)
+        (electric-quote-string t))
+    (electric-quote-local-mode)))
 
 (setq ielm-noisy nil)
 
