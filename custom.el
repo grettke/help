@@ -57,8 +57,7 @@
  '(hl-todo-keyword-faces
    (quote
     (("TODO" . "#d0bf8f")
-     ("REVIEW" . "#dca3a3")
-     ("HACK" . "#dc8cc3")
+     ("REVIEW" . "#dc8cc3")
      ("FIXME" . "#8c5353"))))
  '(magit-diff-use-overlays nil)
  '(mouse-wheel-progressive-speed nil)
