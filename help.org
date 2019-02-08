@@ -3101,31 +3101,6 @@ looks great at 4. 4 is the average and it looks good in exported LaTeX listings.
 (setq-default tab-width 4)
 #+END_SRC
 
-** TODOs
-:PROPERTIES:
-:ID:       org_gcr_2018-11-14T01-09-50-06-00_cosmicality:FBB5DEF5-F814-4F81-8EE7-715FF3428782
-:END:
-
-During coding /sometimes/ there is stuff that I want to do later. Highlight them
-so I can see them and also navigate through them and ~Occur~ on them too.
-
-Org provides a TODO mechanism for itself so don't use this there.
-
-Normally I would say that this violates the law of least distraction but the
-don't stay in there very long: either I fix it in the next few days or it add
-it to an Org todo list in my work list file.
-
-#+name: org_gcr_2018-11-14T01-09-50-06-00_cosmicality_928B587E-CCAC-42D3-A727-B579A008FCC1
-#+begin_src emacs-lisp
-(use-package hl-todo
-  :ensure t
-  :config
-  (define-key hl-todo-mode-map (kbd "C-c p") 'hl-todo-previous)
-  (define-key hl-todo-mode-map (kbd "C-c n") 'hl-todo-next)
-  (define-key hl-todo-mode-map (kbd "C-c o") 'hl-todo-occur)
-  (global-hl-todo-mode))
-#+end_src
-
 ** Version Control
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:BDC3035D-4F09-4A7B-8F14-1EE4604ACC0D
@@ -5101,6 +5076,41 @@ Words: _C_ount, Count In _O_rg , _T_op#, _G_rade Level, _R_eading Ease, _A_ffect
 (use-package dash-at-point
  :ensure t)
 #+END_SRC
+
+*** TO-DOs
+:PROPERTIES:
+:ID:       org_gcr_2018-11-14T01-09-50-06-00_cosmicality:FBB5DEF5-F814-4F81-8EE7-715FF3428782
+:END:
+
+- TO-DOs are
+  - Reminders, discussion prompts, and small-scale checklists
+  - Worth remembering to do
+  - Short-lived
+  - Not big enough for
+    - An Org task
+    - For creating an issue
+#+name: org_gcr_2018-11-14T01-09-50-06-00_cosmicality_928B587E-CCAC-42D3-A727-B579A008FCC1
+#+begin_src emacs-lisp
+(use-package hl-todo
+  :ensure t
+  :config
+  (define-key hl-todo-mode-map (kbd "C-c p") 'hl-todo-previous)
+  (define-key hl-todo-mode-map (kbd "C-c n") 'hl-todo-next)
+  (define-key hl-todo-mode-map (kbd "C-c o") 'hl-todo-occur)
+  (global-hl-todo-mode))
+
+
+(defhydra help/hydra/left/todo (:color blue :hint nil)
+
+  "
+(hl-todo): [_n_] Next [_p_] Previous [_i_] Insert [_o_] Occur [_q_] Quit
+"
+  ("n" hl-todo-next :exit nil)
+  ("p" hl-todo-previous :exit nil)
+  ("i" hl-todo-insert-keyword)
+  ("o" hl-todo-occur)
+  ("q" nil))
+#+end_src
 
 ** Unicode
 :PROPERTIES:
