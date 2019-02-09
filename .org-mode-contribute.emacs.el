@@ -48,7 +48,7 @@
                   :username ,username
                   :password ,password
                   :confirm t
-                  :show 'show))))
+                  :show nil))))
   (setq org2blog/wp-blog-alist config))
 ;; org_gcr_2017-05-12_mara_854DE6E9-2208-42EB-A164-EC06E489B6B7 ends here
 
