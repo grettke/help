@@ -114,7 +114,7 @@ Configure Org2Blog.
                   :username ,username
                   :password ,password
                   :confirm t
-                  :show nil))))
+                  :show 'dont))))
   (setq org2blog/wp-blog-alist config))
 #+END_SRC
 
