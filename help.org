@@ -5089,6 +5089,13 @@ Words: _C_ount, Count In _O_rg , _T_op#, _G_rade Level, _R_eading Ease, _A_ffect
   - Not big enough for
     - An Org task
     - For creating an issue
+- Categories (copied from [[https://github.com/bbatsov/emacs-lisp-style-guide#comment-annotations][here]]) (all [[https://www.w3schools.com/colors/colors_picker.asp][RGB]] values 40% of the primary)
+  - Use TODO (yellow )to note missing features or functionality that should be added at a later date.
+  - Use OPTIMIZE (blue) to note slow or inefficient code that may cause performance problems.
+  - Use REVIEW (orange) to note anything that should be looked at to confirm it is working as intended. For example: REVIEW: Are we sure this is how the client does X currently?
+  - Use HACK (fuscia) to note "code smells" where questionable coding practices were used and should be refactored away.
+  - Use FIXME (red) to note broken code that needs to be fixed.
+
 #+name: org_gcr_2018-11-14T01-09-50-06-00_cosmicality_928B587E-CCAC-42D3-A727-B579A008FCC1
 #+begin_src emacs-lisp
 (use-package hl-todo
@@ -8898,3 +8905,4 @@ Ansu.
 (global-set-key (kbd "M-%") #'anzu-query-replace)
 (global-set-key (kbd "C-M-%") #'anzu-query-replace-regexp)
 #+END_SRC
+

@@ -56,9 +56,11 @@
  '(hl-paren-colors (quote ("#2aa198" "#b58900" "#268bd2" "#6c71c4" "#859900")))
  '(hl-todo-keyword-faces
    (quote
-    (("TODO" . "#d0bf8f")
-     ("REVIEW" . "#dc8cc3")
-     ("FIXME" . "#8c5353"))))
+    (("TODO" . "#cccc00")
+     ("OPTIMIZE" . "#0000cc")
+     ("REVIEW" . "#cc8500")
+     ("HACK" .  "#cc00cc")
+     ("FIXME" . "#cc0000"))))
  '(magit-diff-use-overlays nil)
  '(mouse-wheel-progressive-speed nil)
  '(mouse-wheel-scroll-amount (quote (1 ((shift) . 5) ((control)))))
