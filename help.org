@@ -5100,12 +5100,7 @@ Words: _C_ount, Count In _O_rg , _T_op#, _G_rade Level, _R_eading Ease, _A_ffect
 #+begin_src emacs-lisp
 (use-package hl-todo
   :ensure t
-  :config
-  (define-key hl-todo-mode-map (kbd "C-c p") 'hl-todo-previous)
-  (define-key hl-todo-mode-map (kbd "C-c n") 'hl-todo-next)
-  (define-key hl-todo-mode-map (kbd "C-c o") 'hl-todo-occur)
-  (global-hl-todo-mode))
-
+  :config)
 
 (defhydra help/hydra/left/todo (:color blue :hint nil)
 

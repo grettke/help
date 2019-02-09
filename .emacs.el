@@ -3145,12 +3145,7 @@ Words: _C_ount, Count In _O_rg , _T_op#, _G_rade Level, _R_eading Ease, _A_ffect
 ;; [[file:~/src/help/help.org::org_gcr_2018-11-14T01-09-50-06-00_cosmicality_928B587E-CCAC-42D3-A727-B579A008FCC1][org_gcr_2018-11-14T01-09-50-06-00_cosmicality_928B587E-CCAC-42D3-A727-B579A008FCC1]]
 (use-package hl-todo
   :ensure t
-  :config
-  (define-key hl-todo-mode-map (kbd "C-c p") 'hl-todo-previous)
-  (define-key hl-todo-mode-map (kbd "C-c n") 'hl-todo-next)
-  (define-key hl-todo-mode-map (kbd "C-c o") 'hl-todo-occur)
-  (global-hl-todo-mode))
-
+  :config)
 
 (defhydra help/hydra/left/todo (:color blue :hint nil)
 
@@ -4961,6 +4956,7 @@ Timestamps: (_q_uit)
 ;; org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389][org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389]]
+(global-set-key (kbd "s-t") #'help/hydra/left/todo/body)
 (global-set-key (kbd "C-M-<tab>") #'help/untabify-buffer-or-region-if-not-indent-tabs-mode)
 (global-set-key (kbd "C-M-\\") #'help/indent-region-or-buffer)
 (defun help/copy-entire-buffer ()
