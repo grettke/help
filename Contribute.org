@@ -113,8 +113,7 @@ Configure Org2Blog.
                   :url "https://www.wisdomandwonder.com/xmlrpc.php"
                   :username ,username
                   :password ,password
-                  :confirm t
-                  :show 'dont))))
+                  :confirm t))))
   (setq org2blog/wp-blog-alist config))
 #+END_SRC
 
