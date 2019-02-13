@@ -2948,7 +2948,7 @@ Row 1: _z_ insert-superscript _Z_ insert-subscript _x_ tangled file permissions 
   ("c" org-fill-paragraph)
   ("C" help/org-count-words)
   ("b" org-babel-switch-to-session)
-  ("B" help/hydra/org2blog/body)
+  ("B" o2b-gui/body)
   ("n" org-narrow-to-subtree)
   ("m" org-mark-subtree)
   ("M" org-mark-element))
