@@ -71,8 +71,8 @@ Blog from Org mode to wordpress
 (require 'org2blog)
 (add-hook 'org-mode-hook #'org2blog/wp-org-mode-hook-fn)
 (defun help/org2blog/wp-mode-hook-fn ()
-  (local-set-key (kbd "M-9") #'org2blog/wp-hydra/body)
-  (local-set-key (kbd "M-0") #'org2blog/wp-complete-category))
+  (local-set-key (kbd "M-9") #'o2b-ui/body)
+  (local-set-key (kbd "M-0") #'o2b-insert-complete))
 (add-hook 'org2blog/wp-mode-hook #'help/org2blog/wp-mode-hook-fn)
 #+END_SRC
 
