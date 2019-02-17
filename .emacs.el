@@ -5318,8 +5318,7 @@ _a_ ✓ _s_ ✗ _d_ ☐ _f_ ☑ _g_ ☒_
 ;; org_gcr_2017-05-12_mara_921A07BB-6FBA-46E3-824D-F9F0B92F48B3 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_2C04C038-F246-4E90-92C6-15ABF018BCD3][org_gcr_2017-05-12_mara_2C04C038-F246-4E90-92C6-15ABF018BCD3]]
-(key-chord-define-global "fj" #'avy-goto-word-1)
-(key-chord-define-global "fm" #'avy-goto-char)
+(key-chord-define-global "fj" #'avy-goto-char-2)
 (key-chord-define-global "FJ" #'avy-pop-mark)
 ;; org_gcr_2017-05-12_mara_2C04C038-F246-4E90-92C6-15ABF018BCD3 ends here
 

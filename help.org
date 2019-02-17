@@ -8848,8 +8848,7 @@ Go to a word.
 
 #+NAME: org_gcr_2017-05-12_mara_2C04C038-F246-4E90-92C6-15ABF018BCD3
 #+BEGIN_SRC emacs-lisp
-(key-chord-define-global "fj" #'avy-goto-word-1)
-(key-chord-define-global "fm" #'avy-goto-char)
+(key-chord-define-global "fj" #'avy-goto-char-2)
 (key-chord-define-global "FJ" #'avy-pop-mark)
 #+END_SRC
 
