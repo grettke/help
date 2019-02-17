@@ -3157,7 +3157,6 @@ VC activity keybindings.
 #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "C-M-w") #'help/hydra/words/body)
 (global-set-key (kbd "s-e") #'help/safb-help/magit-status)
-(global-set-key (kbd "s-r") #'help/safb-vc-revert)
 (global-set-key (kbd "s-f") #'help/safb-help/vc-next-action)
 #+END_SRC
 
