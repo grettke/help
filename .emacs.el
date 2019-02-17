@@ -4497,7 +4497,7 @@ Graphviz
 (setq solarized-use-more-italic nil)
 (setq solarized-emphasize-indicators nil)
 (setq solarized-scale-org-headlines t)
-(load-theme 'solarized-light t)
+(load-theme 'solarized-dark t)
 (eval-after-load "smart-mode-line"
   '(sml/setup))
 ;; org_gcr_2017-05-12_mara_1AD36955-5FAC-4794-A9B0-A8DC6639A04C ends here
