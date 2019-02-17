@@ -2331,7 +2331,7 @@ _A_rchives | Rest_o_res | Re_f_iles
                                         :hint nil)
   "
 elisp-mode: _q_uit
- Evaluation: buffe_r_, byte _c_ompile file, check _p_arens
+ Evaluation: buffe_r_, byte _c_ompile file, check _p_arens, e_d_ebug defun
   ERT: _i_nteractively, _b_atch, _d_elete all
    Reformat s-expr: _m_ultiline or _o_ne line
     Other: Generate _R_eadme _C_heckdoc
@@ -2341,6 +2341,7 @@ elisp-mode: _q_uit
   ("r" eval-buffer)
   ("c" (lambda () (interactive) (byte-compile-file (buffer-file-name))))
   ("p" check-parens)
+  ("e" edebug-defun)
 
   ("i" (lambda () (interactive) (eval-buffer) (call-interactively 'ert)))
   ("b" (lambda () (interactive) (eval-buffer) (ert-run-tests-batch)))
