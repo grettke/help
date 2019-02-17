@@ -40,8 +40,8 @@ An elisp implementation of clientside XML-RPC
 
 #+NAME: org_gcr_2017-05-12_mara_3989AFAA-23E6-4463-98E8-90F7ED269C1B
 #+BEGIN_SRC emacs-lisp
-(add-to-list 'load-path "~/src/xml-rpc-el")
-(require 'xml-rpc)
+(use-package xml-rpc
+  :ensure t)
 #+END_SRC
 * metaweblog
 :PROPERTIES:
