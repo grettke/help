@@ -125,7 +125,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-             hidden-mode-line-mode)
+           hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -4489,17 +4489,18 @@ Graphviz
 ;; org_gcr_2018-03-14_mara_385BE196-A42C-4086-9BA4-948DB62C2E26 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1AD36955-5FAC-4794-A9B0-A8DC6639A04C][org_gcr_2017-05-12_mara_1AD36955-5FAC-4794-A9B0-A8DC6639A04C]]
-(add-to-list 'load-path "~/src/solarized-emacs")
-(add-to-list 'custom-theme-load-path "~/src/solarized-emacs")
-(setq solarized-distinct-fringe-background t)
-(setq solarized-use-variable-pitch nil)
-(setq solarized-use-less-bold t)
-(setq solarized-use-more-italic nil)
-(setq solarized-emphasize-indicators nil)
-(setq solarized-scale-org-headlines t)
-(load-theme 'solarized-light t)
-(eval-after-load "smart-mode-line"
-  '(sml/setup))
+(use-package solarized-theme
+  :ensure t
+  :config
+  (setq solarized-distinct-fringe-background t)
+  (setq solarized-use-variable-pitch nil)
+  (setq solarized-use-less-bold t)
+  (setq solarized-use-more-italic nil)
+  (setq solarized-emphasize-indicators nil)
+  (setq solarized-scale-org-headlines t)
+  (load-theme 'solarized-dark t)
+  (eval-after-load "smart-mode-line"
+    '(sml/setup)))
 ;; org_gcr_2017-05-12_mara_1AD36955-5FAC-4794-A9B0-A8DC6639A04C ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_96BD218B-65E7-4ACA-98CE-108C3BFC29A3][org_gcr_2017-05-12_mara_96BD218B-65E7-4ACA-98CE-108C3BFC29A3]]
