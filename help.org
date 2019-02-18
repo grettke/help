@@ -5021,7 +5021,7 @@ Words: _C_ount, Count In _O_rg , _T_op#, _G_rade Level, _R_eading Ease, _A_ffect
      _H_oroscope (insert _h_oroscope)
       _K_ibologize
        _S_hop _m_iddle name
-        _Y_ouwill (insert _y_ouwill)
+        _Y_ouwill (insert youwill)
          Corporate _B_.S.: (_I_nsert B.S.) (A_d_d B.S. To Kill Ring)
           _q_uit"
 
