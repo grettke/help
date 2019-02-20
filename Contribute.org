@@ -72,7 +72,7 @@ Blog from Org mode to wordpress
 (add-hook 'org-mode-hook #'org2blog/wp-org-mode-hook-fn)
 (defun help/org2blog/wp-mode-hook-fn ()
   (local-set-key (kbd "M-9") #'o2b-ui/body)
-  (local-set-key (kbd "M-0") #'o2b-insert-complete))
+  (local-set-key (kbd "M-0") #'o2b-complete))
 (add-hook 'org2blog/wp-mode-hook #'help/org2blog/wp-mode-hook-fn)
 #+END_SRC
 

@@ -22,7 +22,7 @@
 (add-hook 'org-mode-hook #'org2blog/wp-org-mode-hook-fn)
 (defun help/org2blog/wp-mode-hook-fn ()
   (local-set-key (kbd "M-9") #'o2b-ui/body)
-  (local-set-key (kbd "M-0") #'o2b-insert-complete))
+  (local-set-key (kbd "M-0") #'o2b-complete))
 (add-hook 'org2blog/wp-mode-hook #'help/org2blog/wp-mode-hook-fn)
 ;; org_gcr_2017-05-12_mara_EF1B02DF-BDB7-44AA-A018-B0BE6DA1C08F ends here
 
