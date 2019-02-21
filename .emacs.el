@@ -4492,6 +4492,7 @@ Graphviz
 (add-to-list 'custom-theme-load-path "~/src/solarized-emacs")
 (setq solarized-distinct-fringe-background t)
 (setq solarized-use-variable-pitch nil)
+(setq solarized-high-contrast-mode-line nil)
 (setq solarized-use-less-bold t)
 (setq solarized-use-more-italic nil)
 (setq solarized-emphasize-indicators nil)
