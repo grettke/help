@@ -4939,7 +4939,7 @@ Doctype—use the default.
 #+begin_src emacs-lisp
 (defun help/org-mode-hook-fun ()
   (local-unset-key (kbd "C-j")))
-(add-hook 'org-mode-hook #'o2b-maybe-start)
+(add-hook 'org-mode-hook #'owp-maybe-start)
 #+end_src
 
 *** Intermittent Literate Programming

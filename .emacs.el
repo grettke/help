@@ -3035,7 +3035,7 @@ Row 1: _z_ insert-superscript _Z_ insert-subscript _x_ tangled file permissions 
 ;; [[file:~/src/help/help.org::org_gcr_2019-01-14T09-58-00-06-00_cosmicality_9D450653-5C54-48DB-B0A9-24E8408B0CF2][org_gcr_2019-01-14T09-58-00-06-00_cosmicality_9D450653-5C54-48DB-B0A9-24E8408B0CF2]]
 (defun help/org-mode-hook-fun ()
   (local-unset-key (kbd "C-j")))
-(add-hook 'org-mode-hook #'o2b-maybe-start)
+(add-hook 'org-mode-hook #'owp-maybe-start)
 ;; org_gcr_2019-01-14T09-58-00-06-00_cosmicality_9D450653-5C54-48DB-B0A9-24E8408B0CF2 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2018-01-04_mara_42B53E96-5046-4A7B-8CC9-A7046CCD3BF1][org_gcr_2018-01-04_mara_42B53E96-5046-4A7B-8CC9-A7046CCD3BF1]]
