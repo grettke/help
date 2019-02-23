@@ -4674,10 +4674,10 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
 
 #+NAME: org_gcr_2017-05-12_mara_1A8FB05F-FF18-45DD-BFC4-89E76C366B9F
 #+BEGIN_SRC emacs-lisp
-(define-key org-mode-map (kbd "s-6") #'org-babel-load-in-session)
-(define-key org-mode-map (kbd "s-7") #'org-babel-switch-to-session)
-(define-key org-mode-map (kbd "s-8") #'org-babel-switch-to-session-with-code)
-(define-key org-mode-map (kbd "s-9") #'org-todo)
+(define-key org-mode-map (kbd "s-7") #'org-babel-load-in-session)
+(define-key org-mode-map (kbd "s-8") #'org-babel-switch-to-session)
+(define-key org-mode-map (kbd "s-9") #'org-babel-switch-to-session-with-code)
+(define-key org-mode-map (kbd "s-0") #'org-todo)
 #+END_SRC
 
 Easily manipulate lists and headlines staying close to home.

@@ -2838,10 +2838,10 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; org_gcr_2017-05-12_mara_711B4205-DC28-4A35-B620-23AFD46E3973 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1A8FB05F-FF18-45DD-BFC4-89E76C366B9F][org_gcr_2017-05-12_mara_1A8FB05F-FF18-45DD-BFC4-89E76C366B9F]]
-(define-key org-mode-map (kbd "s-6") #'org-babel-load-in-session)
-(define-key org-mode-map (kbd "s-7") #'org-babel-switch-to-session)
-(define-key org-mode-map (kbd "s-8") #'org-babel-switch-to-session-with-code)
-(define-key org-mode-map (kbd "s-9") #'org-todo)
+(define-key org-mode-map (kbd "s-7") #'org-babel-load-in-session)
+(define-key org-mode-map (kbd "s-8") #'org-babel-switch-to-session)
+(define-key org-mode-map (kbd "s-9") #'org-babel-switch-to-session-with-code)
+(define-key org-mode-map (kbd "s-0") #'org-todo)
 ;; org_gcr_2017-05-12_mara_1A8FB05F-FF18-45DD-BFC4-89E76C366B9F ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_6BA97DBC-AE5D-4C60-AD03-EF150686A03F][org_gcr_2017-05-12_mara_6BA97DBC-AE5D-4C60-AD03-EF150686A03F]]
