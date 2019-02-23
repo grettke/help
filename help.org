@@ -3579,6 +3579,32 @@ Can use in source blocks.
     (add-hook it #'help/prog-mode-hook-fn)))
 #+END_SRC
 
+** General
+:PROPERTIES:
+:ID:       org_gcr_2019-02-21T21-33-51-06-00_cosmicality:070707B9-13AD-46FC-B41A-515FAC425DAC
+:END:
+
+#+name: org_gcr_2019-02-21T21-33-51-06-00_cosmicality_0D9EEE4B-C8E1-423D-B8FA-68176011EF63
+#+begin_src emacs-lisp
+(use-package dumb-jump
+  :ensure t
+  :config
+  (setq dumb-jump-default-project "~/src")
+  (setq dumb-jump-quiet t)
+  (setq dumb-jump-selector 'ivy)
+  (defhydra help/hydra/dumb-jump (:color blue :hint nil)
+    "
+Dumb Jump _g_o (_o_ther) _b_ack _p_eek promp_t_ go e_x_ternal (othe_r_) _q_uit"
+    ("g" dumb-jump-go)
+    ("o" dumb-jump-go-other-window)
+    ("b" dumb-jump-back)
+    ("p" dumb-jump-quick-look)
+    ("t" dumb-jump-go-prompt)
+    ("x" dumb-jump-go-prefer-external)
+    ("r" dumb-jump-go-prefer-external-other-window)
+    ("q" nil)))
+#+end_src
+
 ** Literate Programming
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:18EBD4EF-AFAD-4421-A09F-A7DB14AD1398
@@ -8773,7 +8799,7 @@ Scroll window by line: pretty sure this is somewhere already in here.
 (global-set-key (kbd "M-s-m") #'ns-do-hide-emacs)
 (global-set-key (kbd "C-M-n") #'info-buffer)
 (global-set-key (kbd "s-s") #'shell)
-
+(global-set-key (kbd "s-g") #'help/hydra/dumb-jump/body)
 (global-set-key (kbd "s-v") #'help/hydra/megawin/body)
 (global-set-key (kbd "s-c") #'help/hydra/buf-move/body)
 (global-set-key (kbd "s-x") #'help/hydra/smart-shift/body)

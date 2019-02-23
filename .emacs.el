@@ -2271,6 +2271,26 @@ _A_rchives | Rest_o_res | Re_f_iles
     (add-hook it #'help/prog-mode-hook-fn)))
 ;; org_gcr_2017-05-12_mara_A3C53136-65BE-4771-A214-19E102E0158B ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2019-02-21T21-33-51-06-00_cosmicality_0D9EEE4B-C8E1-423D-B8FA-68176011EF63][org_gcr_2019-02-21T21-33-51-06-00_cosmicality_0D9EEE4B-C8E1-423D-B8FA-68176011EF63]]
+(use-package dumb-jump
+  :ensure t
+  :config
+  (setq dumb-jump-default-project "~/src")
+  (setq dumb-jump-quiet t)
+  (setq dumb-jump-selector 'ivy)
+  (defhydra help/hydra/dumb-jump (:color blue :hint nil)
+    "
+Dumb Jump _g_o (_o_ther) _b_ack _p_eek promp_t_ go e_x_ternal (othe_r_) _q_uit"
+    ("g" dumb-jump-go)
+    ("o" dumb-jump-go-other-window)
+    ("b" dumb-jump-back)
+    ("p" dumb-jump-quick-look)
+    ("t" dumb-jump-go-prompt)
+    ("x" dumb-jump-go-prefer-external)
+    ("r" dumb-jump-go-prefer-external-other-window)
+    ("q" nil)))
+;; org_gcr_2019-02-21T21-33-51-06-00_cosmicality_0D9EEE4B-C8E1-423D-B8FA-68176011EF63 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C344E972-D31C-48F4-8E3B-83A799DE7D37][org_gcr_2017-05-12_mara_C344E972-D31C-48F4-8E3B-83A799DE7D37]]
 (setq initial-scratch-message ";; Happy Hacking ☕\n\n")
 ;; org_gcr_2017-05-12_mara_C344E972-D31C-48F4-8E3B-83A799DE7D37 ends here
@@ -5298,7 +5318,7 @@ _a_ ✓ _s_ ✗ _d_ ☐ _f_ ☑ _g_ ☒_
 (global-set-key (kbd "M-s-m") #'ns-do-hide-emacs)
 (global-set-key (kbd "C-M-n") #'info-buffer)
 (global-set-key (kbd "s-s") #'shell)
-
+(global-set-key (kbd "s-g") #'help/hydra/dumb-jump/body)
 (global-set-key (kbd "s-v") #'help/hydra/megawin/body)
 (global-set-key (kbd "s-c") #'help/hydra/buf-move/body)
 (global-set-key (kbd "s-x") #'help/hydra/smart-shift/body)
