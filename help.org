@@ -4703,7 +4703,7 @@ Easily manipulate lists and headlines staying close to home.
 
 Release these bindings.
 
-#+NAME: org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC
+#+NAME: org_gcr_2019-02-22T23-11-36-06-00_cosmicality_138EE053-3BAE-45F5-B19B-B8FB19580AF3
 #+BEGIN_SRC emacs-lisp
 (global-unset-key (kbd "C-M-t"))
 #+END_SRC
@@ -8378,7 +8378,7 @@ Flycheck: ⏼%(bound-and-true-p flycheck-mode)
 
 Date related things.
 
-#+NAME: org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC
+#+NAME: org_gcr_2019-02-22T23-11-36-06-00_cosmicality_422125E1-AB16-4F3A-9C82-17DC7713E487
 #+BEGIN_SRC emacs-lisp
 (defhydra help/hydra/timestamp (:color blue :hint nil)
   "

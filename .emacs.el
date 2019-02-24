@@ -125,7 +125,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-             hidden-mode-line-mode)
+           hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -2856,9 +2856,9 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (key-chord-define org-mode-map "P_" #'org-metadown)
 ;; org_gcr_2017-05-12_mara_6BA97DBC-AE5D-4C60-AD03-EF150686A03F ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC][org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC]]
+;; [[file:~/src/help/help.org::org_gcr_2019-02-22T23-11-36-06-00_cosmicality_138EE053-3BAE-45F5-B19B-B8FB19580AF3][org_gcr_2019-02-22T23-11-36-06-00_cosmicality_138EE053-3BAE-45F5-B19B-B8FB19580AF3]]
 (global-unset-key (kbd "C-M-t"))
-;; org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC ends here
+;; org_gcr_2019-02-22T23-11-36-06-00_cosmicality_138EE053-3BAE-45F5-B19B-B8FB19580AF3 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_49522E70-EE2D-4CF9-95D7-8E43524A469D][org_gcr_2017-05-12_mara_49522E70-EE2D-4CF9-95D7-8E43524A469D]]
 (define-key org-mode-map (kbd "s-]") (lambda () (interactive)
@@ -4949,7 +4949,7 @@ Flycheck: ⏼%(bound-and-true-p flycheck-mode)
 (global-set-key (kbd "s-w") #'help/hydra/megawin/body)
 ;; org_gcr_2018-11-22T00-38-52-06-00_cosmicality_B388F591-C237-4181-A4A3-8C971EFDB516 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC][org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC]]
+;; [[file:~/src/help/help.org::org_gcr_2019-02-22T23-11-36-06-00_cosmicality_422125E1-AB16-4F3A-9C82-17DC7713E487][org_gcr_2019-02-22T23-11-36-06-00_cosmicality_422125E1-AB16-4F3A-9C82-17DC7713E487]]
 (defhydra help/hydra/timestamp (:color blue :hint nil)
   "
 Timestamps: (_q_uit)
@@ -4976,7 +4976,7 @@ Timestamps: (_q_uit)
   ("R" help/org-time-stamp-with-seconds-now)
   ("c" org-time-stamp))
 (global-set-key (kbd "C-t") #'help/hydra/timestamp/body)
-;; org_gcr_2017-12-10_mara_A7406ADA-C903-4921-BD1A-2CEB8DF3DAEC ends here
+;; org_gcr_2019-02-22T23-11-36-06-00_cosmicality_422125E1-AB16-4F3A-9C82-17DC7713E487 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389][org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389]]
 (global-set-key (kbd "s-t") #'help/hydra/left/todo/body)
