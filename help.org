@@ -4214,11 +4214,11 @@ Essential for using tables with split windows.
   (diminish 'org-table-sticky-header-mode))
 #+END_SRC
 
-Exports to CSV by default.
+Exports to TSV. CSV is too much of a pain for handling commas.
 
 #+name: org_gcr_2018-05-17T22-08-31-05-00_mara_AE590C3B-9E70-4694-A2B1-B4EA164D36FB
 #+begin_src emacs-lisp
-(setq org-table-export-default-format "orgtbl-to-csv")
+(setq org-table-export-default-format "orgtbl-to-tsv")
 #+end_src
 **** Publishing With TeX
 :PROPERTIES:
