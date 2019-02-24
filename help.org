@@ -4684,8 +4684,8 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
 #+BEGIN_SRC emacs-lisp
 (define-key org-mode-map (kbd "s-7") #'org-babel-load-in-session)
 (define-key org-mode-map (kbd "s-8") #'org-babel-switch-to-session)
-(define-key org-mode-map (kbd "s-9") #'org-babel-switch-to-session-with-code)
-(define-key org-mode-map (kbd "s-0") #'org-todo)
+(define-key org-mode-map (kbd "s-*") #'org-babel-switch-to-session-with-code)
+(define-key org-mode-map (kbd "s-9") #'org-todo)
 #+END_SRC
 
 Easily manipulate lists and headlines staying close to home.
