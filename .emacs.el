@@ -125,7 +125,7 @@
   ;; redisplay the mode-line
   (redraw-display)
   (when (and (called-interactively-p 'interactive)
-           hidden-mode-line-mode)
+             hidden-mode-line-mode)
     (run-with-idle-timer
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
@@ -2290,6 +2290,13 @@ Dumb Jump _g_o (_o_ther) _b_ack _p_eek promp_t_ go e_x_ternal (othe_r_) _q_uit"
     ("r" dumb-jump-go-prefer-external-other-window)
     ("q" nil)))
 ;; org_gcr_2019-02-21T21-33-51-06-00_cosmicality_0D9EEE4B-C8E1-423D-B8FA-68176011EF63 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2019-02-23T23-09-09-06-00_cosmicality_522D8DFE-CD6B-4940-BF4C-73D7C4B0A4C3][org_gcr_2019-02-23T23-09-09-06-00_cosmicality_522D8DFE-CD6B-4940-BF4C-73D7C4B0A4C3]]
+(use-package beginend
+  :ensure t
+  :config
+  (beginend-global-mode))
+;; org_gcr_2019-02-23T23-09-09-06-00_cosmicality_522D8DFE-CD6B-4940-BF4C-73D7C4B0A4C3 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C344E972-D31C-48F4-8E3B-83A799DE7D37][org_gcr_2017-05-12_mara_C344E972-D31C-48F4-8E3B-83A799DE7D37]]
 (setq initial-scratch-message ";; Happy Hacking ☕\n\n")

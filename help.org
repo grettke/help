@@ -3605,6 +3605,14 @@ Dumb Jump _g_o (_o_ther) _b_ack _p_eek promp_t_ go e_x_ternal (othe_r_) _q_uit"
     ("q" nil)))
 #+end_src
 
+#+name: org_gcr_2019-02-23T23-09-09-06-00_cosmicality_522D8DFE-CD6B-4940-BF4C-73D7C4B0A4C3
+#+begin_src emacs-lisp
+(use-package beginend
+  :ensure t
+  :config
+  (beginend-global-mode))
+#+end_src
+
 ** Literate Programming
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:18EBD4EF-AFAD-4421-A09F-A7DB14AD1398
