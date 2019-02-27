@@ -69,7 +69,7 @@ Blog from Org mode to wordpress
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path "~/src/org2blog")
 (require 'org2blog)
-(add-hook 'org-mode-hook #'org2blog/wp-org-mode-hook-fn)
+(add-hook 'org-mode-hook #'owp-maybe-start)
 (defun help/org2blog/wp-mode-hook-fn ()
   (local-set-key (kbd "M-9") #'owp-ui/body)
   (local-set-key (kbd "M-0") #'owp-complete))

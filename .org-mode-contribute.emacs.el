@@ -19,7 +19,7 @@
 ;; [[file:~/src/help/Contribute.org::org_gcr_2017-05-12_mara_EF1B02DF-BDB7-44AA-A018-B0BE6DA1C08F][org_gcr_2017-05-12_mara_EF1B02DF-BDB7-44AA-A018-B0BE6DA1C08F]]
 (add-to-list 'load-path "~/src/org2blog")
 (require 'org2blog)
-(add-hook 'org-mode-hook #'org2blog/wp-org-mode-hook-fn)
+(add-hook 'org-mode-hook #'owp-maybe-start)
 (defun help/org2blog/wp-mode-hook-fn ()
   (local-set-key (kbd "M-9") #'owp-ui/body)
   (local-set-key (kbd "M-0") #'owp-complete))
