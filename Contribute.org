@@ -30,23 +30,27 @@ emacs --debug-init --no-init-file --no-splash --background-color white --foregro
 #+BEGIN_SRC emacs-lisp
 (load-file "~/src/help/.org-mode-package-management.emacs.el")
 #+END_SRC
+
 * xml-rpc
 :PROPERTIES:
 :ID:       org_gcr_2017-12-16_mara:8490F7FD-9718-4ADD-8A84-56A8D6625C12
 :END:
+
 #+BEGIN_QUOTE
 An elisp implementation of clientside XML-RPC
 #+END_QUOTE
 
 #+NAME: org_gcr_2017-05-12_mara_3989AFAA-23E6-4463-98E8-90F7ED269C1B
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lispp
 (use-package xml-rpc
   :ensure t)
 #+END_SRC
+
 * metaweblog
 :PROPERTIES:
 :ID:       org_gcr_2017-12-16_mara:C3B0266C-F9EC-498B-ABBA-486090654DDA
 :END:
+
 #+BEGIN_QUOTE
 Weblog maintenance via XML-RPC APIs
 #+END_QUOTE
@@ -56,11 +60,13 @@ Weblog maintenance via XML-RPC APIs
 (add-to-list 'load-path "~/src/metaweblog")
 (require 'metaweblog)
 #+END_SRC
+
 * Org2blog
 :PROPERTIES:
 :ID:       org_gcr_2018-03-03_mara:60113001-1991-4EB5-BF61-190C198AF742
 :END:
 Configure Org2blog for use, development, and support.
+
 #+BEGIN_QUOTE
 Blog from Org mode to wordpress
 #+END_QUOTE
@@ -129,10 +135,12 @@ Visualize ASCII values as their most likely Unicode representation.
 (add-to-list 'load-path "~/src/pretty-mode")
 (require 'pretty-mode)
 #+END_SRC
+
 * go-hydra
 :PROPERTIES:
 :ID:       org_gcr_2017-08-01_mara:F1CA18C6-F00E-4F1A-BBD3-77FC52B437E8
 :END:
+
 A collection of Go related Hydras for Emacs.
 
 #+NAME: org_gcr_2017-08-01_mara_A0E420CB-EBB0-4D31-BC97-8FE54008F93D
@@ -140,19 +148,23 @@ A collection of Go related Hydras for Emacs.
 (add-to-list 'load-path "~/src/go-hydra")
 (require 'go-hydra)
 #+END_SRC
+
 * universal-emotions-emoticons
 :PROPERTIES:
 :ID:       org_gcr_2017-12-05_mara:BAEA6BB3-614D-4957-BEFF-4AE9E6271BF1
 :END:
+
 #+NAME: org_gcr_2017-12-05_mara_62849D6E-BD7B-4289-AC2C-CF8B51B9C633
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path "~/src/universal-emotions-emoticons")
 (require 'universal-emotions-emoticons)
 #+END_SRC
+
 * corporate-bs-generator
 :PROPERTIES:
 :ID:       org_gcr_2018-07-06T22-26-05-05-00_mara:EBD3FC34-3153-4E01-A8DD-099CF51A08EF
 :END:
+
 #+name: org_gcr_2018-07-06T22-26-05-05-00_mara_8504E527-9CB6-4CF7-AF8D-5E98CCA540E6
 #+begin_src emacs-lisp
 (add-to-list 'load-path "~/src/corporate-bs-generator")
