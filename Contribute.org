@@ -31,7 +31,7 @@ emacs --debug-init --no-init-file --no-splash --background-color white --foregro
 (load-file "~/src/help/.org-mode-package-management.emacs.el")
 #+END_SRC
 
-* xml-rpc
+* XML-RPC
 :PROPERTIES:
 :ID:       org_gcr_2017-12-16_mara:8490F7FD-9718-4ADD-8A84-56A8D6625C12
 :END:
@@ -39,6 +39,8 @@ emacs --debug-init --no-init-file --no-splash --background-color white --foregro
 #+BEGIN_QUOTE
 An elisp implementation of clientside XML-RPC
 #+END_QUOTE
+
+The branch with the Unicode fix isn't necessary anymore so load it from MELPA. 
 
 #+NAME: org_gcr_2017-05-12_mara_3989AFAA-23E6-4463-98E8-90F7ED269C1B
 #+BEGIN_SRC emacs-lispp
