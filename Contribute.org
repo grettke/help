@@ -40,7 +40,7 @@ emacs --debug-init --no-init-file --no-splash --background-color white --foregro
 An elisp implementation of clientside XML-RPC
 #+END_QUOTE
 
-The branch with the Unicode fix isn't necessary anymore so load it from MELPA. 
+The branch with the Unicode fix isn't necessary anymore so load it from MELPA.
 
 #+NAME: org_gcr_2017-05-12_mara_3989AFAA-23E6-4463-98E8-90F7ED269C1B
 #+BEGIN_SRC emacs-lispp
@@ -48,7 +48,7 @@ The branch with the Unicode fix isn't necessary anymore so load it from MELPA.
   :ensure t)
 #+END_SRC
 
-* metaweblog
+* MetaWeblog
 :PROPERTIES:
 :ID:       org_gcr_2017-12-16_mara:C3B0266C-F9EC-498B-ABBA-486090654DDA
 :END:
