@@ -63,7 +63,7 @@ Weblog maintenance via XML-RPC APIs
 (require 'metaweblog)
 #+END_SRC
 
-* Org2blog
+* Org2Blog
 :PROPERTIES:
 :ID:       org_gcr_2018-03-03_mara:60113001-1991-4EB5-BF61-190C198AF742
 :END:
