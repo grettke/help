@@ -4451,6 +4451,17 @@ Graphviz
   :ensure t)
 ;; org_gcr_2017-06-25_mara_B33E6DF0-8A18-4DBA-A39D-B16649F6E793 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2019-02-27T18-39-08-06-00_cosmicality_85137F6F-9253-4F89-AD68-B66583660216][org_gcr_2019-02-27T18-39-08-06-00_cosmicality_85137F6F-9253-4F89-AD68-B66583660216]]
+(use-package gif-screencast
+  :ensure t
+  :config
+  (define-key gif-screencast-mode-map (kbd "M-s-3") #'gif-screencast-toggle-pause)
+  (define-key gif-screencast-mode-map (kbd "M-s-2") #'gif-screencast-stop)
+  (setq gif-screencast-args '("-x"))
+  (setq gif-screencast-cropping-program "mogrify")
+  (setq gif-screencast-capture-format "ppm"))
+;; org_gcr_2019-02-27T18-39-08-06-00_cosmicality_85137F6F-9253-4F89-AD68-B66583660216 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B1FCEF49-334F-4F64-B96F-A888ABE84BB0][org_gcr_2017-05-12_mara_B1FCEF49-334F-4F64-B96F-A888ABE84BB0]]
 (setq inhibit-eol-conversion t)
 ;; org_gcr_2017-05-12_mara_B1FCEF49-334F-4F64-B96F-A888ABE84BB0 ends here
