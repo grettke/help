@@ -70,7 +70,7 @@ Weblog maintenance via XML-RPC APIs
 Configure Org2blog for use, development, and support.
 
 #+BEGIN_QUOTE
-Blog from Org mode to wordpress
+Blog from Org mode to WordPress
 #+END_QUOTE
 
 #+NAME: org_gcr_2017-05-12_mara_EF1B02DF-BDB7-44AA-A018-B0BE6DA1C08F
