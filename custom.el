@@ -29,6 +29,9 @@
       (:pattern "~/src/poetry" "^.+\\.org$"))
      ("StoneIsle"
       (:tree "~/src/StoneIsle" "^.+\\.org$")))))
+ '(gif-screencast-capture-format "ppm")
+ '(gif-screencast-mode nil nil (gif-screencast))
+ '(gif-screencast-title-bar-pixel-height 22)
  '(global-hl-todo-mode t)
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
  '(highlight-symbol-colors
