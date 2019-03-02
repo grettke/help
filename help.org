@@ -4726,6 +4726,7 @@ Release these bindings.
 (define-key org-mode-map (kbd "s-i") #'org-babel-execute-src-block)
 (define-key org-mode-map (kbd "s-I") #'org-table-insert-row)
 (define-key org-mode-map (kbd "s-o") #'org-babel-remove-result-one-or-many)
+(define-key org-mode-map (kbd "s-O") #'org-org-export-to-org)
 (define-key org-mode-map (kbd "s-p") #'org-babel-execute-maybe)
 (define-key org-mode-map (kbd "s-[") #'org-babel-remove-inline-result)
 (defun help/unset-C-M-t ()
