@@ -5145,6 +5145,17 @@ Words: _C_ount, Count In _O_rg , _T_op#, _G_rade Level, _R_eading Ease, _A_ffect
   ("q" nil))
 #+end_src
 
+*** Table of Contents
+:PROPERTIES:
+:ID:       org_gcr_2019-03-01T15-03-54-06-00_cosmicality:891BDA52-62B7-444B-ACBD-0780438766C2
+:END:
+
+#+name: org_gcr_2019-03-01T15-03-54-06-00_cosmicality_003D7FD4-DB09-462E-BBB8-56FD63CD64C7
+#+begin_src emacs-lisp
+(use-package org-make-toc
+  :ensure t)
+#+end_src
+
 ** Unicode
 :PROPERTIES:
 :ID:       org_gcr_2018-06-06T22-01-54-05-00_mara:DD18C2DA-10EE-43BD-AED0-5DD4680CA566
