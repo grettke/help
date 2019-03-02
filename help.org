@@ -7146,23 +7146,6 @@ Emacs' provide editing support.
 (use-package xpm
   :ensure t)
 #+END_SRC
-*** Screencasting
-:PROPERTIES:
-:ID:       org_gcr_2019-02-27T18-39-08-06-00_cosmicality:75C33E21-8547-4615-91C4-CD26F4FB6B62
-:END:
-
-#+name: org_gcr_2019-02-27T18-39-08-06-00_cosmicality_85137F6F-9253-4F89-AD68-B66583660216
-#+begin_src emacs-lisp
-(use-package gif-screencast
-  :ensure t
-  :config
-  (define-key gif-screencast-mode-map (kbd "M-s-3") #'gif-screencast-toggle-pause)
-  (define-key gif-screencast-mode-map (kbd "M-s-2") #'gif-screencast-stop)
-  (setq gif-screencast-args '("-x"))
-  (setq gif-screencast-cropping-program "mogrify")
-  (setq gif-screencast-capture-format "ppm"))
-#+end_src
-
 ** Computer-aided design
 :PROPERTIES:
 :ID:       org_gcr_2017-05-12_mara:50E7A50A-4259-4B6C-8612-99671C6723CC
