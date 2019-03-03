@@ -80,6 +80,10 @@
   :ensure t)
 ;; org_gcr_2017-05-23_mara_5BAD0073-631D-4D4E-83CD-5B0CD0C7CAD6 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2019-03-02T18-08-48-06-00_cosmicality_C0DAC44D-EF0B-4203-A996-A27E65801233][org_gcr_2019-03-02T18-08-48-06-00_cosmicality_C0DAC44D-EF0B-4203-A996-A27E65801233]]
+(require 'let-alist)
+;; org_gcr_2019-03-02T18-08-48-06-00_cosmicality_C0DAC44D-EF0B-4203-A996-A27E65801233 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C063F7CE-637E-43F8-8E16-AFBC68CA7618][org_gcr_2017-05-12_mara_C063F7CE-637E-43F8-8E16-AFBC68CA7618]]
 (use-package persistent-soft
   :ensure t)
@@ -2455,6 +2459,13 @@ elisp-mode: _q_uit
 (require 'checkdoc)
 (setq checkdoc-package-keywords-flag t)
 ;; org_gcr_2019-02-03T21-22-21-06-00_cosmicality_8E44B122-56DB-45EA-BCE2-4B39C0C2883E ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2019-03-02T18-08-48-06-00_cosmicality_0D886E6B-2FB9-4B87-B17E-C67F964E80D4][org_gcr_2019-03-02T18-08-48-06-00_cosmicality_0D886E6B-2FB9-4B87-B17E-C67F964E80D4]]
+(font-lock-add-keywords
+ 'emacs-lisp-mode
+ '(("\\_<\\.\\(?:\\sw\\|\\s_\\)+\\_>" 0
+    font-lock-builtin-face)))
+;; org_gcr_2019-03-02T18-08-48-06-00_cosmicality_0D886E6B-2FB9-4B87-B17E-C67F964E80D4 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9D21E326-1742-4DD0-BDF9-624D21873F92][org_gcr_2017-05-12_mara_9D21E326-1742-4DD0-BDF9-624D21873F92]]
 (setq org-babel-min-lines-for-block-output 0)
