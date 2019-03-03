@@ -7318,18 +7318,19 @@ Visualize ASCII strings with Unicode.
 
 #+NAME: org_gcr_2017-05-12_mara_1AD36955-5FAC-4794-A9B0-A8DC6639A04C
 #+BEGIN_SRC emacs-lisp
-(add-to-list 'load-path "~/src/solarized-emacs")
-(add-to-list 'custom-theme-load-path "~/src/solarized-emacs")
-(setq solarized-distinct-fringe-background t)
-(setq solarized-use-variable-pitch nil)
-(setq solarized-high-contrast-mode-line nil)
-(setq solarized-use-less-bold t)
-(setq solarized-use-more-italic nil)
-(setq solarized-emphasize-indicators nil)
-(setq solarized-scale-org-headlines t)
-(load-theme 'solarized-dark t)
-(eval-after-load "smart-mode-line"
-  '(sml/setup))
+(unless (getenv "EMACSNOTHEME")
+  (add-to-list 'load-path "~/src/solarized-emacs")
+  (add-to-list 'custom-theme-load-path "~/src/solarized-emacs")
+  (setq solarized-distinct-fringe-background t)
+  (setq solarized-use-variable-pitch nil)
+  (setq solarized-high-contrast-mode-line nil)
+  (setq solarized-use-less-bold t)
+  (setq solarized-use-more-italic nil)
+  (setq solarized-emphasize-indicators nil)
+  (setq solarized-scale-org-headlines t)
+  (load-theme 'solarized-dark t)
+  (eval-after-load "smart-mode-line"
+    '(sml/setup)))
 #+END_SRC
 
 ** Comint
