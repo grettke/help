@@ -7464,11 +7464,11 @@ switched to stock Emacs and deleted the TIFF files.
 :ID:       org_gcr_2017-06-23_mara:47EF669D-E999-4573-AA5C-5CF038ADA870
 :END:
 
-Enable the menu bar.
+Disable the menu bar.
 
 #+NAME: org_gcr_2017-05-12_mara_03B4E8E1-083B-4F5D-A4A0-BAE8A0553FAF
 #+BEGIN_SRC emacs-lisp
-(menu-bar-mode nil)
+(menu-bar-mode t)
 #+END_SRC
 **** Tool bar
 :PROPERTIES:
@@ -7479,7 +7479,7 @@ Disable the tool bar.
 
 #+NAME: org_gcr_2017-05-12_mara_D462D343-9EA8-4BCF-BD08-8FDD4F3E11E9
 #+BEGIN_SRC emacs-lisp
-(tool-bar-mode 1)
+(tool-bar-mode t)
 #+END_SRC
 
 Style the tool bar.

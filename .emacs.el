@@ -4612,11 +4612,11 @@ Graphviz
 ;; org_gcr_2017-07-11_mara_27556B29-B77D-445F-8A54-00BDB89B452A ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_03B4E8E1-083B-4F5D-A4A0-BAE8A0553FAF][org_gcr_2017-05-12_mara_03B4E8E1-083B-4F5D-A4A0-BAE8A0553FAF]]
-(menu-bar-mode nil)
+(menu-bar-mode t)
 ;; org_gcr_2017-05-12_mara_03B4E8E1-083B-4F5D-A4A0-BAE8A0553FAF ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_D462D343-9EA8-4BCF-BD08-8FDD4F3E11E9][org_gcr_2017-05-12_mara_D462D343-9EA8-4BCF-BD08-8FDD4F3E11E9]]
-(tool-bar-mode 1)
+(tool-bar-mode t)
 ;; org_gcr_2017-05-12_mara_D462D343-9EA8-4BCF-BD08-8FDD4F3E11E9 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-07-13_mara_A03A79D4-52D0-40CC-8149-5E200FAF82FD][org_gcr_2017-07-13_mara_A03A79D4-52D0-40CC-8149-5E200FAF82FD]]
