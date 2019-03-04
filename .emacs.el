@@ -82,6 +82,8 @@
 
 ;; [[file:~/src/help/help.org::org_gcr_2019-03-02T18-08-48-06-00_cosmicality_C0DAC44D-EF0B-4203-A996-A27E65801233][org_gcr_2019-03-02T18-08-48-06-00_cosmicality_C0DAC44D-EF0B-4203-A996-A27E65801233]]
 (require 'let-alist)
+(use-package a
+  :ensure t)
 ;; org_gcr_2019-03-02T18-08-48-06-00_cosmicality_C0DAC44D-EF0B-4203-A996-A27E65801233 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C063F7CE-637E-43F8-8E16-AFBC68CA7618][org_gcr_2017-05-12_mara_C063F7CE-637E-43F8-8E16-AFBC68CA7618]]
@@ -1991,7 +1993,11 @@ URL: `http://emacsredux.com/blog/2013/03/27/indent-region-or-buffer/'"
     (info-initialize)
     (add-to-list 'Info-directory-list ;; TODO remove this
                  "~/src/magit/Documentation/"))
-  (setq magit-completing-read-function 'ivy-completing-read))
+  (setq magit-completing-read-function 'ivy-completing-read)
+  (use-package magit-filenotify
+    :ensure t
+    :config
+    (add-hook 'magit-status-mode-hook 'magit-filenotify-mode)))
 ;; org_gcr_2017-05-12_mara_3E77B825-E0A4-40EC-88DC-3F5C1E1445CE ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2018-02-24_mara_A2D8DA8E-CE8C-4F26-9DED-7E0AA2DD3CCA][org_gcr_2018-02-24_mara_A2D8DA8E-CE8C-4F26-9DED-7E0AA2DD3CCA]]

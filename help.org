@@ -514,6 +514,8 @@ ALists.
 #+name: org_gcr_2019-03-02T18-08-48-06-00_cosmicality_C0DAC44D-EF0B-4203-A996-A27E65801233
 #+begin_src emacs-lisp
 (require 'let-alist)
+(use-package a
+  :ensure t)
 #+end_src
 
 Caching.
@@ -3123,7 +3125,11 @@ Use VC for single files and Magit for multiple files.
     (info-initialize)
     (add-to-list 'Info-directory-list ;; TODO remove this
                  "~/src/magit/Documentation/"))
-  (setq magit-completing-read-function 'ivy-completing-read))
+  (setq magit-completing-read-function 'ivy-completing-read)
+  (use-package magit-filenotify
+    :ensure t
+    :config
+    (add-hook 'magit-status-mode-hook 'magit-filenotify-mode)))
 #+END_SRC
 
 Close Magit-process related buffers when they become obselete.
