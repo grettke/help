@@ -4712,15 +4712,18 @@ Easily manipulate lists and headlines staying close to home.
 
 #+NAME: org_gcr_2017-05-12_mara_6BA97DBC-AE5D-4C60-AD03-EF150686A03F
 #+BEGIN_SRC emacs-lisp
-(key-chord-define org-mode-map "u8" #'org-shiftmetaleft)
-(key-chord-define org-mode-map "i9" #'org-shiftmetaright)
-(key-chord-define org-mode-map "U*" #'org-shiftmetaup)
-(key-chord-define org-mode-map "I(" #'org-shiftmetadown)
+(progn
+  (key-chord-define org-mode-map "y7" #'org-shiftmetaleft)
+  (key-chord-define org-mode-map "Y&" #'org-shiftmetaup))
+(progn
+  (key-chord-define org-mode-map "u8" #'org-shiftleft)
+  (key-chord-define org-mode-map "U*" #'org-shiftup)
+  (key-chord-define org-mode-map "i9" #'org-shiftright)
+  (key-chord-define org-mode-map "I(" #'org-shiftdown))
+(progn
+  (key-chord-define org-mode-map "o0" #'org-shiftmetaright)
+  (key-chord-define org-mode-map "O)" #'org-shiftmetadown))
 
-(key-chord-define org-mode-map "o0" #'org-metaleft)
-(key-chord-define org-mode-map "p-" #'org-metaright)
-(key-chord-define org-mode-map "O)" #'org-metaup)
-(key-chord-define org-mode-map "P_" #'org-metadown)
 #+END_SRC
 
 ***** Row 4

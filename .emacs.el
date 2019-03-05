@@ -2866,15 +2866,17 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; org_gcr_2017-05-12_mara_1A8FB05F-FF18-45DD-BFC4-89E76C366B9F ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_6BA97DBC-AE5D-4C60-AD03-EF150686A03F][org_gcr_2017-05-12_mara_6BA97DBC-AE5D-4C60-AD03-EF150686A03F]]
-(key-chord-define org-mode-map "u8" #'org-shiftmetaleft)
-(key-chord-define org-mode-map "i9" #'org-shiftmetaright)
-(key-chord-define org-mode-map "U*" #'org-shiftmetaup)
-(key-chord-define org-mode-map "I(" #'org-shiftmetadown)
-
-(key-chord-define org-mode-map "o0" #'org-metaleft)
-(key-chord-define org-mode-map "p-" #'org-metaright)
-(key-chord-define org-mode-map "O)" #'org-metaup)
-(key-chord-define org-mode-map "P_" #'org-metadown)
+(progn
+  (key-chord-define org-mode-map "y7" #'org-shiftmetaleft)
+  (key-chord-define org-mode-map "Y&" #'org-shiftmetaup))
+(progn
+  (key-chord-define org-mode-map "u8" #'org-shiftleft)
+  (key-chord-define org-mode-map "U*" #'org-shiftup)
+  (key-chord-define org-mode-map "i9" #'org-shiftright)
+  (key-chord-define org-mode-map "I(" #'org-shiftdown))
+(progn
+  (key-chord-define org-mode-map "o0" #'org-shiftmetaright)
+  (key-chord-define org-mode-map "O)" #'org-shiftmetadown))
 ;; org_gcr_2017-05-12_mara_6BA97DBC-AE5D-4C60-AD03-EF150686A03F ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2019-02-22T23-11-36-06-00_cosmicality_138EE053-3BAE-45F5-B19B-B8FB19580AF3][org_gcr_2019-02-22T23-11-36-06-00_cosmicality_138EE053-3BAE-45F5-B19B-B8FB19580AF3]]
