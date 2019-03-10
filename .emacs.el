@@ -3069,13 +3069,6 @@ Row 1: _z_ insert-superscript _Z_ insert-subscript _x_ tangled file permissions 
     0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "—")))))
 ;; org_gcr_2018-06-14T14-15-42-05-00_mara_2F1F424E-F780-4D04-B582-7770987CC960 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-07-02T07-07-57-05-00_mara_50C8A3C0-835D-4DE9-B5AE-161C127BF850][org_gcr_2018-07-02T07-07-57-05-00_mara_50C8A3C0-835D-4DE9-B5AE-161C127BF850]]
-(setq org-html-table-default-attributes
-      (plist-put org-html-table-default-attributes :rules "all"))
-(setq org-html-table-default-attributes
-      (plist-put org-html-table-default-attributes :frame "border"))
-;; org_gcr_2018-07-02T07-07-57-05-00_mara_50C8A3C0-835D-4DE9-B5AE-161C127BF850 ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2019-01-14T09-58-00-06-00_cosmicality_9D450653-5C54-48DB-B0A9-24E8408B0CF2][org_gcr_2019-01-14T09-58-00-06-00_cosmicality_9D450653-5C54-48DB-B0A9-24E8408B0CF2]]
 (defun help/org-mode-hook-fun ()
   (local-unset-key (kbd "C-j")))

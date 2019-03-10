@@ -4973,6 +4973,7 @@ Custom font lock
     0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "—")))))
 
 #+end_src
+
 **** HTML Exporter
 :PROPERTIES:
 :ID:       org_gcr_2018-07-02T07-07-57-05-00_mara:7236EDFF-7176-4C5F-842C-7919D3E73C28
@@ -4982,12 +4983,13 @@ Doctype—use the default.
 
 ~org-html-table-default-attributes~ (which are ignored in the ~HTML5~).
 #+name: org_gcr_2018-07-02T07-07-57-05-00_mara_50C8A3C0-835D-4DE9-B5AE-161C127BF850
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :tangle no
 (setq org-html-table-default-attributes
       (plist-put org-html-table-default-attributes :rules "all"))
 (setq org-html-table-default-attributes
       (plist-put org-html-table-default-attributes :frame "border"))
 #+end_src
+
 **** Hooks
 :PROPERTIES:
 :ID:       org_gcr_2019-01-14T09-58-00-06-00_cosmicality:A9834827-BB7D-4DA6-8AD0-F5733437C30F
