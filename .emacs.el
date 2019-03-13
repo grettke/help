@@ -1269,7 +1269,7 @@ URL: `https://stackoverflow.com/questions/1587972/how-to-display-indentation-gui
       (setq col (+ 1 (current-column)))
       (set-selective-display
        (if selective-display nil (or col 1))))))
-(global-set-key (kbd "s-q") #'aj-toggle-fold)
+(global-set-key (kbd "m-$") #'aj-toggle-fold)
 ;; org_gcr_2018-01-03_mara_0B7D49CD-6177-4F18-8C2E-540B01E34340 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_510C1AB4-A266-40A6-9DCF-25B827E60786][org_gcr_2017-05-12_mara_510C1AB4-A266-40A6-9DCF-25B827E60786]]
@@ -5024,7 +5024,6 @@ Timestamps: (_q_uit)
     (call-interactively 'mark-whole-buffer)
     (call-interactively 'kill-ring-save)
     (message "Buffer contents copied")))
-(global-set-key (kbd "s-q") (lambda () (interactive) (switch-to-buffer "*scratch*")))
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 (global-set-key (kbd "C-M-y") #'insert-char)
 (define-key org-mode-map (kbd "C-o") nil)
