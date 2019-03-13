@@ -1532,7 +1532,7 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (diminish 'ivy-mode)
   (setq ivy-use-virtual-buffers t)
   ;; intentional space before end of string
-  (setq ivy-count-format "(%d/%d) ")
+  (setq ivy-count-format "｟%d/%d｠ ")
   (setq ivy-initial-inputs-alist nil)
   (setq ivy-re-builders-alist
         '((t . ivy--regex-fuzzy)))
