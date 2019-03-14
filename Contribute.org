@@ -91,6 +91,13 @@ Use [[https://www.mathjax.org/][MathJax]] instead of =wp-latex= syntax.
 (setq org2blog/wp-use-wp-latex nil)
 #+END_SRC
 
+Use [[https://wordpress.org/plugins/syntaxhighlighter/][SyntaxHighlighter Evolved]]. 
+
+#+name: org_gcr_2019-03-13T19-51-47-05-00_cosmicality_54DAC301-B1D7-4772-9FEE-12FD4FD59CA0
+#+begin_src emacs-lisp
+(setq org2blog/wp-use-sourcecode-shortcode t)
+#+end_src
+
 Org2Blog depends on Org-Mode. This system loads Org-Mode from Git. Enter the
 =ELPA= cache directory and delete it.
 

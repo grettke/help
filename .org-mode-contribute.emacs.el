@@ -30,6 +30,10 @@
 (setq org2blog/wp-use-wp-latex nil)
 ;; org_gcr_2017-08-14_mara_7625680E-1CA4-428E-A92F-D53114742D28 ends here
 
+;; [[file:~/src/help/Contribute.org::org_gcr_2019-03-13T19-51-47-05-00_cosmicality_54DAC301-B1D7-4772-9FEE-12FD4FD59CA0][org_gcr_2019-03-13T19-51-47-05-00_cosmicality_54DAC301-B1D7-4772-9FEE-12FD4FD59CA0]]
+(setq org2blog/wp-use-sourcecode-shortcode t)
+;; org_gcr_2019-03-13T19-51-47-05-00_cosmicality_54DAC301-B1D7-4772-9FEE-12FD4FD59CA0 ends here
+
 ;; [[file:~/src/help/Contribute.org::org_gcr_2017-05-12_mara_FF96F4B6-42B9-45D6-BEE6-6CDC9D6815AE][org_gcr_2017-05-12_mara_FF96F4B6-42B9-45D6-BEE6-6CDC9D6815AE]]
 (setq org2blog/wp-track-posts nil)
 ;; org_gcr_2017-05-12_mara_FF96F4B6-42B9-45D6-BEE6-6CDC9D6815AE ends here
