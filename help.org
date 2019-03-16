@@ -1304,7 +1304,7 @@ Attribution: URL `https://rejeep.github.io/emacs/elisp/2010/11/16/delete-file-an
   (insert-file-contents-literally "~/src/help/ascii/it-was-a-dark-and-stormy-night.asc"))
 
 (defun help/pie-blurb ()
-  "Attribution: FontAwesome"
+  "Insert PIE motto
   (interactive)
   (insert-file-contents-literally "~/src/help/ascii/pie.asc"))
 
