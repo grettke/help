@@ -1528,11 +1528,6 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
 (global-font-lock-mode t)
 ;; org_gcr_2017-05-12_mara_ADAB043E-BF70-4AE0-BA60-CD08D82474FA ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-04-22T14-17-00-05-00_mara_5C4879AB-6272-4269-A515-CD2FD35F3549][org_gcr_2018-04-22T14-17-00-05-00_mara_5C4879AB-6272-4269-A515-CD2FD35F3549]]
-(use-package fontawesome
-  :ensure t)
-;; org_gcr_2018-04-22T14-17-00-05-00_mara_5C4879AB-6272-4269-A515-CD2FD35F3549 ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_2B0564C9-2091-4364-8A28-E33A548284A2][org_gcr_2017-05-12_mara_2B0564C9-2091-4364-8A28-E33A548284A2]]
 (use-package avy
   :ensure t
@@ -5138,7 +5133,7 @@ _1_ reset-font _2_ -font _3_ +font _4_ ellipsis _5_ UUID _6_ bfr-cdng-systm _8_ 
 
 _q_uit _Q_ exit-Emacs
 _w_ widen _W_ git time machine
-_e_ FontAwesome _E_ prettify-symbols-mode
+_E_ prettify-symbols-mode
 _r_ rename this buffer and file
 _R_ insert the default file header
 _t_ rectangle-mark _T_ trademarks
@@ -5176,7 +5171,6 @@ _?_ tons of scissors
 "
   ("Q" help/safb-save-buffers-kill-terminal)
   ("q" nil)
-  ("e" (lambda () (interactive) (insert (call-interactively 'fontawesome))))
   ("E" prettify-symbols-mode)
   ("|" split-window-horizontally)
   ("-" split-window-vertically)
