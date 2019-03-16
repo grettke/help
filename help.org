@@ -2889,16 +2889,6 @@ Writeable Ag.
   :after ag)
 #+END_SRC
 
-Google.
-
-#+name: org_gcr_2018-05-21T05-52-58-05-00_mara_D4FEA6C1-C0D9-4B2B-B289-C7C4149CC2A6
-#+begin_src emacs-lisp
-(use-package google-this
-  :ensure t
-  :config
-  (global-set-key (kbd "M-s-g") #'google-this))
-#+end_src
-
 ** Spell Checking
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:44909368-2D9A-40B9-A3F4-DF297A0EE570

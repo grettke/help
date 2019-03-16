@@ -1843,13 +1843,6 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   :after ag)
 ;; org_gcr_2017-05-12_mara_E4E1E1A0-1353-4483-BE1C-746097F60CB6 ends here
 
-;; [[file:~/src/help/help.org::org_gcr_2018-05-21T05-52-58-05-00_mara_D4FEA6C1-C0D9-4B2B-B289-C7C4149CC2A6][org_gcr_2018-05-21T05-52-58-05-00_mara_D4FEA6C1-C0D9-4B2B-B289-C7C4149CC2A6]]
-(use-package google-this
-  :ensure t
-  :config
-  (global-set-key (kbd "M-s-g") #'google-this))
-;; org_gcr_2018-05-21T05-52-58-05-00_mara_D4FEA6C1-C0D9-4B2B-B289-C7C4149CC2A6 ends here
-
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5EDEEFA9-7DED-41D9-AD9D-5C48BA580AC5][org_gcr_2017-05-12_mara_5EDEEFA9-7DED-41D9-AD9D-5C48BA580AC5]]
 (defun help/block-regex (special)
   "Make an ispell skip-region alist for a SPECIAL block."
