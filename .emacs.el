@@ -1068,6 +1068,7 @@ Does the \"right thing\" under `org-mode'."
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_11CC1DCC-05D6-4564-A40B-DE2AD0A7C46D][org_gcr_2017-05-12_mara_11CC1DCC-05D6-4564-A40B-DE2AD0A7C46D]]
 (use-package page-break-lines
+  :ensure t
   :diminish page-break-lines-mode)
 ;; org_gcr_2017-05-12_mara_11CC1DCC-05D6-4564-A40B-DE2AD0A7C46D ends here
 
@@ -2299,7 +2300,8 @@ Dumb Jump _g_o (_o_ther) _b_ack _p_eek promp_t_ go e_x_ternal (othe_r_) _q_uit"
 ;; org_gcr_2017-05-12_mara_2757B16C-18ED-4F29-8DFD-CE51B930BA81 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BEA970EF-78FA-448D-96B3-1E135640D16A][org_gcr_2017-05-12_mara_BEA970EF-78FA-448D-96B3-1E135640D16A]]
-(use-package lexbind-mode)
+(use-package lexbind-mode
+  :ensure t)
 ;; org_gcr_2017-05-12_mara_BEA970EF-78FA-448D-96B3-1E135640D16A ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-07-16_mara_766EBC8F-2A7C-49BB-9916-BE2AAEE019A4][org_gcr_2017-07-16_mara_766EBC8F-2A7C-49BB-9916-BE2AAEE019A4]]
@@ -3142,9 +3144,6 @@ Words: _C_ount, Count In _O_rg , _T_op#, _G_rade Level, _R_eading Ease, _A_ffect
   ("B" corporate-bs-generator-create)
   ("I" (lambda () (interactive) (let ((current-prefix-arg '(4))) (corporate-bs-generator-create))))
   ("d" (lambda () (interactive) (let ((current-prefix-arg '(16))) (corporate-bs-generator-create)))))
-
-(use-package affect-vs-effect
-  :ensure t)
 ;; org_gcr_2017-08-04_mara_24E4983A-3842-4365-8C3A-8D2019AB223D ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_AAEBDA8A-3939-42B1-B7A2-230C43EEF1AB][org_gcr_2017-05-12_mara_AAEBDA8A-3939-42B1-B7A2-230C43EEF1AB]]
@@ -3505,7 +3504,6 @@ Geiser REPL: ⏼%(help/geiser-on-p)
     (setq flycheck-gometalinter-vendor t))
   (use-package go-guru
     :ensure t)
-  (use-package go-hydra)
   (use-package gotest
     :ensure t)
   (use-package go-rename
@@ -4280,6 +4278,7 @@ Attribution: URL `https://www.emacswiki.org/emacs/FindingNonAsciiCharacters'"
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_B19CF074-8B77-4843-912C-F68B6FB0FE2F][org_gcr_2017-05-12_mara_B19CF074-8B77-4843-912C-F68B6FB0FE2F]]
 (use-package fountain-mode
+  :ensure t
   :config
   (add-to-list 'auto-mode-alist '("\\.fountain$" . fountain-mode))
   (let ((fountain-stx '(

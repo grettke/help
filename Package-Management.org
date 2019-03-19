@@ -67,7 +67,8 @@ point uses ~require~. Every package loaded after this point uses ~use-package~.
 #+BEGIN_SRC emacs-lisp
 (eval-when-compile
   (require 'use-package))
-(use-package diminish)
+(use-package diminish
+  :ensure t)
 #+END_SRC
 ** El-Get
 :PROPERTIES:

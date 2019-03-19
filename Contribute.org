@@ -31,6 +31,129 @@ emacs --debug-init --no-init-file --no-splash --background-color white --foregro
 (load-file "~/src/help/.org-mode-package-management.emacs.el")
 #+END_SRC
 
+* Org2Blog Requirements
+:PROPERTIES:
+:ID:       org_gcr_2019-03-18T08-55-14-05-00_cosmicality:FF159E9D-B6E5-4E40-AC15-F0C01B18E0E9
+:END:
+
+Temporary setup until I get Git versions.
+
+#+name: org_gcr_2019-03-18T08-55-14-05-00_cosmicality_2D133516-C268-4C47-9D67-DC0B258FE70D
+#+begin_src emacs-lisp
+(use-package dash
+  :ensure t
+  :config
+  (dash-enable-font-lock))
+(use-package dash-functional
+  :ensure t)
+
+(use-package xml-rpc
+  :ensure t)
+(use-package f
+  :ensure t)
+(use-package helpful
+  :ensure t
+  :config
+  (global-set-key (kbd "s-a") #'helpful-at-point))
+(use-package ht
+  :ensure t)
+(use-package hydra
+  :ensure t)
+(use-package go-mode
+  :ensure t
+  :config
+  (use-package go-eldoc
+    :ensure t)
+  (use-package go-autocomplete
+    :ensure t
+    :config
+    (ac-config-default))
+  (use-package golint
+    :ensure t)
+  (use-package go-errcheck
+    :ensure t)
+  (use-package ob-go
+    :ensure t
+    :config
+    (add-to-list 'org-babel-load-languages '(go . t)))
+  (use-package go-snippets
+    :ensure t)
+  (use-package flycheck-gometalinter
+    :ensure t
+    :config
+    (add-hook 'flycheck-mode-hook #'flycheck-gometalinter-setup)
+    (setq flycheck-gometalinter-concurrency 2)
+    (setq flycheck-gometalinter-deadline "7s")
+    (setq flycheck-gometalinter-disable-all nil)
+    (setq flycheck-gometalinter-disable-linters nil)
+    (setq flycheck-gometalinter-enable-linters nil)
+    (setq flycheck-gometalinter-errors-only nil)
+    (setq flycheck-gometalinter-fast nil)
+    (setq flycheck-gometalinter-tests t)
+    (setq flycheck-gometalinter-vendor t))
+  (use-package go-guru
+    :ensure t)
+  (use-package gotest
+    :ensure t)
+  (use-package go-rename
+    :ensure t)
+  (use-package go-direx
+    :ensure t)
+  (add-to-list 'load-path "~/src/go-snippets")
+  (require 'go-snippets)
+  (defun help/go-mode/safb/go-run ()
+    ""
+    (interactive)
+    (let* ((compile-command (file-name-nondirectory
+                             (directory-file-name default-directory))))
+      (help/safb/compile)))
+  (defun help/go-mode/safb/go-rename ()
+    ""
+    (interactive)
+    (help/save-all-file-buffers)
+    (call-interactively 'go-rename))
+  (add-to-list 'load-path "~/git/github-anonymous/gorepl-mode")
+  (require 'gorepl-mode)
+  (defhydra help/hydra/right/go-mode (:color blue :hint nil)
+    "
+ Go: (_q_uit)              |^                   ^|^                ^|
+-^------------------------^+^-------------------^+----------------^^+--------
+ _e_: explorer             | _r_: run            | _t_: tools       | g_o_re
+ _g_: guru                 | _j_: previous error | _k_: next error  |
+ _c_: build                | _n_: rename         |                ^^|
+ "
+    ("e" go-direx-switch-to-buffer)
+    ("r" help/go-mode/safb/go-run)
+    ("t" go-hydra-go-mode/body)
+    ("o" gorepl-hydra/body)
+    ("g" go-hydra-guru-go-mode/body)
+    ("k" godef-jump-other-window)
+    ("l" pop-tag-mark)
+    ("c" help/safb/compile)
+    ("n" help/go-mode/safb/go-rename)
+    ("j" previous-error :exit nil)
+    ("k" next-error :exit nil)
+    ("q" nil))
+  (key-chord-define go-mode-map "hh" #'help/hydra/right/go-mode/body)
+  (defun help/go-mode-hook-fn ()
+    (go-eldoc-setup)
+    (setq gofmt-command "goimports")
+    (add-hook 'before-save-hook #'gofmt-before-save)
+    (setq compilation-read-command nil)
+    (setq compile-command "go install && go test -v && gometalinter ./...")
+    (local-set-key (kbd "s-i") #'godoc-at-point)
+    (local-set-key (kbd "s-I") #'godoc)
+    (local-set-key (kbd "s-j") #'help/safb/compile)
+    (local-set-key (kbd "s-k") #'help/go-mode/safb/go-run)
+    (local-set-key (kbd "=") #'(lambda () (interactive) (insert " = ")))
+    (local-set-key (kbd "s-=") #'(lambda () (interactive) (insert " := ")))
+    (local-set-key (kbd "s-<") #'(lambda () (interactive) (insert " <- ")))
+    (local-set-key (kbd "s-o") #'gorepl-hydra/body)
+    (go-guru-hl-identifier-mode)
+    (gorepl-mode))
+  (add-hook 'go-mode-hook #'help/go-mode-hook-fn))
+#+end_src
+
 * XML-RPC
 :PROPERTIES:
 :ID:       org_gcr_2017-12-16_mara:8490F7FD-9718-4ADD-8A84-56A8D6625C12
@@ -91,7 +214,7 @@ Use [[https://www.mathjax.org/][MathJax]] instead of =wp-latex= syntax.
 (setq org2blog/wp-use-wp-latex nil)
 #+END_SRC
 
-Use [[https://wordpress.org/plugins/syntaxhighlighter/][SyntaxHighlighter Evolved]]. 
+Use [[https://wordpress.org/plugins/syntaxhighlighter/][SyntaxHighlighter Evolved]].
 
 #+name: org_gcr_2019-03-13T19-51-47-05-00_cosmicality_54DAC301-B1D7-4772-9FEE-12FD4FD59CA0
 #+begin_src emacs-lisp
@@ -178,4 +301,15 @@ A collection of Go related Hydras for Emacs.
 #+begin_src emacs-lisp
 (add-to-list 'load-path "~/src/corporate-bs-generator")
 (require 'corporate-bs-generator)
+#+end_src
+
+* affect-vs-effect
+:PROPERTIES:
+:ID:       org_gcr_2019-03-18T08-06-20-05-00_cosmicality:306EF58C-4CF8-414D-ACE3-86757037CF12
+:END:
+
+#+name: org_gcr_2019-03-18T08-06-20-05-00_cosmicality_9FB6C955-D16B-4548-911B-DD38AEE256C8
+#+begin_src emacs-lisp
+(add-to-list 'load-path "~/src/affect-vs-effect")
+(require 'affect-vs-effect)
 #+end_src
