@@ -2204,7 +2204,8 @@ _A_rchives | Rest_o_res | Re_f_iles
                         geiser-repl-mode-hook
                         go-mode-hook
                         TeX-mode-hook
-                        apples-mode-hook))
+                        apples-mode-hook
+                        php-mode-hook))
 ;; org_gcr_2017-05-12_mara_B9BA4FF5-62AC-4806-8E74-766E36C5148C ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86][org_gcr_2017-05-12_mara_F410CDAB-D4FE-42B8-BCB7-F37DC500CE86]]
@@ -3711,6 +3712,16 @@ Geiser REPL: ⏼%(help/geiser-on-p)
   (autoload 'apples-open-scratch "apples-mode" "Open scratch buffer for AppleScript." t)
   (add-to-list 'auto-mode-alist '("\\.\\(applescri\\|sc\\)pt\\'" . apples-mode)))
 ;; org_gcr_2018-04-20T15-46-50-05-00_mara_E248AEB6-4E35-40F3-A23A-E5D7BED863C4 ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2019-03-19T18-10-52-05-00_cosmicality_13ABA1E7-2DDA-4496-AC42-FF7F4A52A0FB][org_gcr_2019-03-19T18-10-52-05-00_cosmicality_13ABA1E7-2DDA-4496-AC42-FF7F4A52A0FB]]
+(use-package php-mode
+  :ensure t
+  :config
+  (defun help/php-mode-hook-fn ()
+    "HELP php-mode customization."
+    (php-enable-wordpress-coding-style))
+  (add-hook 'php-mode-hook #'help/php-mode-hook-fn))
+;; org_gcr_2019-03-19T18-10-52-05-00_cosmicality_13ABA1E7-2DDA-4496-AC42-FF7F4A52A0FB ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_498DAC46-DA9D-4AAA-82BF-46D712E4DBA5][org_gcr_2017-05-12_mara_498DAC46-DA9D-4AAA-82BF-46D712E4DBA5]]
 (use-package json-mode

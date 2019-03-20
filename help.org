@@ -3475,7 +3475,8 @@ Can use in source blocks.
                         geiser-repl-mode-hook
                         go-mode-hook
                         TeX-mode-hook
-                        apples-mode-hook))
+                        apples-mode-hook
+                        php-mode-hook))
     #+END_SRC
   - LISP mode hooks.
     - Are hacking modes.
@@ -5881,6 +5882,23 @@ necessary changes and support files here:
 - [[https://github.com/grettke/help/blob/master/.Rinstall.r][.Rinstall.r]]
 - [[https://github.com/grettke/help/blob/master/.Rprofile][.Rprofile]]
 - [[https://github.com/grettke/help/blob/master/.Rsetup.sh][.Rsetup.sh]]
+
+*** PHP
+:PROPERTIES:
+:ID:       org_gcr_2019-03-19T18-10-52-05-00_cosmicality:40EDF04F-3990-4FE8-94D2-196D10BDC1A0
+:END:
+
+#+name: org_gcr_2019-03-19T18-10-52-05-00_cosmicality_13ABA1E7-2DDA-4496-AC42-FF7F4A52A0FB
+#+begin_src emacs-lisp
+(use-package php-mode
+  :ensure t
+  :config
+  (defun help/php-mode-hook-fn ()
+    "HELP php-mode customization."
+    (php-enable-wordpress-coding-style))
+  (add-hook 'php-mode-hook #'help/php-mode-hook-fn))
+
+#+end_src
 
 ** Data
 :PROPERTIES:
