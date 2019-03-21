@@ -3370,6 +3370,7 @@ Auto-Capitalize text modes.
 (diminish 'auto-capitalize-mode)
 (dolist (it '(
               "24B"
+              "Emacs"
               "Fr"
               "God"
               "HTTP"
@@ -3383,6 +3384,7 @@ Auto-Capitalize text modes.
               "StoneIsle"
               "Tantra"
               "Vidya"
+              "VIM"
               "Yantra"
               "Yoga"
               ))

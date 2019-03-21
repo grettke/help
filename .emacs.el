@@ -2119,6 +2119,7 @@ _A_rchives | Rest_o_res | Re_f_iles
 (diminish 'auto-capitalize-mode)
 (dolist (it '(
               "24B"
+              "Emacs"
               "Fr"
               "God"
               "HTTP"
@@ -2132,6 +2133,7 @@ _A_rchives | Rest_o_res | Re_f_iles
               "StoneIsle"
               "Tantra"
               "Vidya"
+              "VIM"
               "Yantra"
               "Yoga"
               ))
