@@ -7374,7 +7374,7 @@ character wide buffer and make it easy to adjust it.
  (help/on-mac-os (setq help/font-size-current 15))
  (help/on-windows (setq help/font-size-current 13))
  (defconst help/font-size-ideal help/font-size-current "The ideal font for this system.")
- (defconst help/font-base "DejaVu Sans Mono" "The preferred font name.")
+ (defconst help/font-base "Hack" "The preferred font name.")
  (defun help/font-ok-p ()
    "Is the configured font valid?"
    (interactive)
