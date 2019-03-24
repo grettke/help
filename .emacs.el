@@ -2862,7 +2862,7 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
                                        (message "Removing all source block resuls")
                                        (help/org-2every-src-block
                                         'org-babel-remove-result)
-                                       (message "Done removing all source block resuls")))
+                                       (message "Done removing all source block results")))
 (define-key org-mode-map (kbd "s-y") #'help/safb-org-babel-execute-buffer)
 (define-key org-mode-map (kbd "s-u") #'help/safb-org-babel-execute-subtree)
 (define-key org-mode-map (kbd "s-U") #'org-mark-ring-goto)
