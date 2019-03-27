@@ -56,7 +56,7 @@
 ;; org_gcr_2017-05-12_mara_E2EECBA9-1ECD-498B-A45B-CE21135CF080 ends here
 
 ;; [[file:~/src/help/Org-Mode_Exemple_Complet_Minimal.org::org_gcr_2019-01-26T01-36-06-06-00_cosmicality_46A574D5-AE39-402A-9F16-AD72732C95CB][org_gcr_2019-01-26T01-36-06-06-00_cosmicality_46A574D5-AE39-402A-9F16-AD72732C95CB]]
-(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+;; (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 ;; org_gcr_2019-01-26T01-36-06-06-00_cosmicality_46A574D5-AE39-402A-9F16-AD72732C95CB ends here
 
 ;; [[file:~/src/help/Org-Mode_Exemple_Complet_Minimal.org::org_gcr_2017-05-12_mara_DAFA4781-7A63-44A1-8817-C4AB75F23130][org_gcr_2017-05-12_mara_DAFA4781-7A63-44A1-8817-C4AB75F23130]]
