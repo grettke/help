@@ -1,4 +1,4 @@
-#+PROPERTY: header-args :tangle "./.org-mode-ecm.emacs.el" :comments "no" :padline "no" :results output silent
+#+PROPERTY: header-args :tangle "./.org-mode-ecm.emacs.el" :results output silent
 #+OPTIONS: toc:3
 
 Never compile this.
