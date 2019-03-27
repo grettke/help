@@ -137,9 +137,11 @@ tangled system.
 
 Forbid [[https://www.gnu.org/software/emacs/manual/html_mono/emacs-gnutls.html#Help-For-Users][Emacs GnuTLS]] from [[https://gnutls.org/manual/html_node/Priority-Strings.html][using TLSv1.3]].
 
+Changing this setting requires a restart. 
+
 #+name: org_gcr_2019-01-26T01-36-06-06-00_cosmicality_46A574D5-AE39-402A-9F16-AD72732C95CB
 #+begin_src emacs-lisp
-;; (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 #+end_src
 
 ** Org-Mode Exemple Complet Minimal

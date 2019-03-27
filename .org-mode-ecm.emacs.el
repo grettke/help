@@ -43,7 +43,7 @@
     (setq gc-cons-threshold new-threshold)
     (when notify (message "Setting `gc-cons-threshold' to %s" new-threshold))))
 (setq load-prefer-newer t)
-;; (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 (add-to-list 'load-path "~/src/org-mode/lisp")
 (add-to-list 'load-path "~/src/org-mode/contrib/lisp")
 (setq org-list-allow-alphabetical t)
