@@ -3104,7 +3104,8 @@ Words: _C_ount, Count In _O_rg , _T_op#, _G_rade Level, _R_eading Ease, _A_ffect
        _S_hop _m_iddle name
         _Y_ouwill (insert youwill)
          Corporate _B_.S.: (_I_nsert B.S.) (A_d_d B.S. To Kill Ring)
-          _q_uit"
+          Spoo_k_
+           _q_uit"
 
 
   ("q" nil)
@@ -3142,7 +3143,10 @@ Words: _C_ount, Count In _O_rg , _T_op#, _G_rade Level, _R_eading Ease, _A_ffect
 
   ("B" corporate-bs-generator-create)
   ("I" (lambda () (interactive) (let ((current-prefix-arg '(4))) (corporate-bs-generator-create))))
-  ("d" (lambda () (interactive) (let ((current-prefix-arg '(16))) (corporate-bs-generator-create)))))
+  ("d" (lambda () (interactive) (let ((current-prefix-arg '(16)))
+                             (corporate-bs-generator-create))))
+
+  ("k" spook))
 ;; org_gcr_2017-08-04_mara_24E4983A-3842-4365-8C3A-8D2019AB223D ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_AAEBDA8A-3939-42B1-B7A2-230C43EEF1AB][org_gcr_2017-05-12_mara_AAEBDA8A-3939-42B1-B7A2-230C43EEF1AB]]
