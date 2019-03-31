@@ -2295,6 +2295,9 @@ Provide it in a buffer.
    :ID:       org_gcr_2017-05-12_mara:29AAB820-5824-43F8-9E7F-7FD1CB6F4624
    :END:
 
+~ivy-use-virtual-buffers~ is a very nice feature but it shoots
+the cognitive way too high.
+
 #+name: org_gcr_2018-11-14T01-09-50-06-00_cosmicality_D0215545-09C4-4118-AA35-BC6FC634E6D1
 #+begin_src emacs-lisp
 (use-package counsel
@@ -2306,7 +2309,7 @@ Provide it in a buffer.
     :ensure t)
   (ivy-mode 1)
   (diminish 'ivy-mode)
-  (setq ivy-use-virtual-buffers t)
+  (setq ivy-use-virtual-buffers nil)
   ;; intentional space before end of string
   (setq ivy-count-format "｟%d/%d｠ ")
   (setq ivy-initial-inputs-alist nil)
