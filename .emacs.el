@@ -3144,7 +3144,7 @@ Words: _C_ount, Count In _O_rg , _T_op#, _G_rade Level, _R_eading Ease, _A_ffect
   ("B" corporate-bs-generator-create)
   ("I" (lambda () (interactive) (let ((current-prefix-arg '(4))) (corporate-bs-generator-create))))
   ("d" (lambda () (interactive) (let ((current-prefix-arg '(16)))
-                             (corporate-bs-generator-create))))
+                                  (corporate-bs-generator-create))))
 
   ("k" spook))
 ;; org_gcr_2017-08-04_mara_24E4983A-3842-4365-8C3A-8D2019AB223D ends here
@@ -3813,6 +3813,7 @@ YAML: (q to quit)
 (use-package csv-mode
   :ensure t
   :config
+  (setq csv-separators (list "	"))
   (use-package pcsv
     :ensure t)
   (use-package nlinum
