@@ -3813,13 +3813,12 @@ YAML: (q to quit)
 (use-package csv-mode
   :ensure t
   :config
-  (setq csv-separators (list "	"))
   (use-package pcsv
     :ensure t)
-  (use-package nlinum
-    :ensure t
-    :config
-    (setq nlinum-format "%04d"))
+  (use-package csv
+    :ensure t)
+  (use-package parse-csv
+    :ensure t)
   (defun help/csv-mode/csv-descending ()
     (interactive)
     csv-descending)
@@ -3857,9 +3856,9 @@ CSV: (_q_uit)
     ("s" csv-yank-as-new-table))
   (key-chord-define csv-mode-map "hh" #'help/hydra/csv-mode/body)
   (defun help/csv-mode-hook-fn ()
+    (setq nlinum-format "%04d")
     (nlinum-mode)
     (visual-line-mode))
-  ;; todo: can I toggle this: csv-descending
   (add-hook 'csv-mode-hook #'help/csv-mode-hook-fn))
 ;; org_gcr_2018-05-11T16-33-31-05-00_mara_0045CEB5-A317-4B3F-8362-C60124D35AD7 ends here
 
@@ -4847,6 +4846,11 @@ Buf-Move: (q to quit)
   :config
   (global-set-key (kbd "C-c W") #'resize-window))
 ;; org_gcr_2017-12-27_mara_AA4152A3-5D5C-4D41-AF55-4828F8BDEF7D ends here
+
+;; [[file:~/src/help/help.org::org_gcr_2019-04-07T11-02-10-05-00_cosmicality_6C49F34A-16C8-428E-BB1B-86DEB2AB8D1B][org_gcr_2019-04-07T11-02-10-05-00_cosmicality_6C49F34A-16C8-428E-BB1B-86DEB2AB8D1B]]
+(use-package nlinum
+  :ensure t)
+;; org_gcr_2019-04-07T11-02-10-05-00_cosmicality_6C49F34A-16C8-428E-BB1B-86DEB2AB8D1B ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2018-01-08_mara_82A71AA0-C415-49B1-8554-334215625E4F][org_gcr_2018-01-08_mara_82A71AA0-C415-49B1-8554-334215625E4F]]
 (global-set-key [(shift f6)] #'kmacro-name-last-macro)

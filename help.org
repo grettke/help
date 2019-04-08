@@ -6020,13 +6020,12 @@ FYI: Strip-buffer-mode doesn't help here.
 (use-package csv-mode
   :ensure t
   :config
-  (setq csv-separators (list "	"))
   (use-package pcsv
     :ensure t)
-  (use-package nlinum
-    :ensure t
-    :config
-    (setq nlinum-format "%04d"))
+  (use-package csv
+    :ensure t)
+  (use-package parse-csv
+    :ensure t)
   (defun help/csv-mode/csv-descending ()
     (interactive)
     csv-descending)
@@ -6064,9 +6063,9 @@ CSV: (_q_uit)
     ("s" csv-yank-as-new-table))
   (key-chord-define csv-mode-map "hh" #'help/hydra/csv-mode/body)
   (defun help/csv-mode-hook-fn ()
+    (setq nlinum-format "%04d")
     (nlinum-mode)
     (visual-line-mode))
-  ;; todo: can I toggle this: csv-descending
   (add-hook 'csv-mode-hook #'help/csv-mode-hook-fn))
 #+end_src
 *** Sparkline
@@ -7791,6 +7790,14 @@ Resize window.
   :config
   (global-set-key (kbd "C-c W") #'resize-window))
 #+END_SRC
+
+Line numbers.
+
+#+name: org_gcr_2019-04-07T11-02-10-05-00_cosmicality_6C49F34A-16C8-428E-BB1B-86DEB2AB8D1B
+#+begin_src emacs-lisp
+(use-package nlinum
+  :ensure t)
+#+end_src
 
 * Piano Lessons
    :PROPERTIES:
