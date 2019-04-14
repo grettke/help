@@ -139,17 +139,18 @@ Forbid [[https://www.gnu.org/software/emacs/manual/html_mono/emacs-gnutls.html#H
 
 Changing this setting requires a restart.
 
-When I used Emacs from Brew, I had to forbid TLS1.3 using this setting.
+When I used Emacs from Brew 26.1, I had to forbid TLS1.3 using this setting.
+
+When I switched to the Emacs for Mac OSX distribution I had to remove that
+setting.
+
+When Brew and Cask merged and I upgraded to 26.2 I had to restore this
+setting. 
 
 #+name: org_gcr_2019-01-26T01-36-06-06-00_cosmicality_46A574D5-AE39-402A-9F16-AD72732C95CB
 #+begin_src emacs-lisp
 (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 #+end_src
-
-When I switched to the Emacs for Mac OSX distribution I had to remove that
-setting.
-
-I'm leaving it commented out for now.
 
 ** Org-Mode Exemple Complet Minimal
    :PROPERTIES:
