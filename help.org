@@ -4628,7 +4628,7 @@ Follow links without using the mouse or more.
 #+END_SRC
 
 In Org mode release 9.2 the template system was replaced by org-tempo. When I
-switched back to Org mode release 9.0.9 I had to commet this out.
+switched back to Org mode release 9.0.9 I had to comment this out.
 
 #+name: org_gcr_2018-06-15T10-59-11-05-00_mara_18E869DD-ECC4-4267-B019-CBACA6D89465
 #+begin_src emacs-lisp :tangle no
