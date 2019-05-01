@@ -1526,6 +1526,9 @@ Does the \"right thing\" under `org-mode'."
 (defun help/dot-space () (interactive) (help/insert-it-then-real-space ?\.))
 (defun help/dot-real () (interactive) (help/real-insert ?\.))
 
+(defun help/semicolon-space () (interactive) (help/insert-it-then-real-space ?\;))
+(defun help/semicolon-real () (interactive) (help/real-insert ?\;))
+
 (defun help/comma-space () (interactive) (help/insert-it-then-real-space ?\,))
 (defun help/comma-real () (interactive) (help/real-insert ?\,))
 #+END_SRC
@@ -3431,6 +3434,8 @@ Every text editing buffer needs this.
   (wrap-region-mode)
   (local-set-key (kbd ".") #'help/dot-space)
   (local-set-key (kbd "C-.") #'help/dot-real)
+  (local-set-key (kbd ";") #'help/semicolon-space)
+  (local-set-key (kbd "C-\;") #'help/semicolon-real)
   (local-set-key (kbd ",") #'help/comma-space)
   (local-set-key (kbd "C-,") #'help/comma-real)
   (local-set-key (kbd "C-n") #'next-logical-line)

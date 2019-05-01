@@ -1003,6 +1003,9 @@ Does the \"right thing\" under `org-mode'."
 (defun help/dot-space () (interactive) (help/insert-it-then-real-space ?\.))
 (defun help/dot-real () (interactive) (help/real-insert ?\.))
 
+(defun help/semicolon-space () (interactive) (help/insert-it-then-real-space ?\;))
+(defun help/semicolon-real () (interactive) (help/real-insert ?\;))
+
 (defun help/comma-space () (interactive) (help/insert-it-then-real-space ?\,))
 (defun help/comma-real () (interactive) (help/real-insert ?\,))
 ;; org_gcr_2017-05-12_mara_7D37FFE5-2D2B-4CF7-AF27-F3CB8616D81B ends here
@@ -2171,6 +2174,8 @@ _A_rchives | Rest_o_res | Re_f_iles
   (wrap-region-mode)
   (local-set-key (kbd ".") #'help/dot-space)
   (local-set-key (kbd "C-.") #'help/dot-real)
+  (local-set-key (kbd ";") #'help/semicolon-space)
+  (local-set-key (kbd "C-\;") #'help/semicolon-real)
   (local-set-key (kbd ",") #'help/comma-space)
   (local-set-key (kbd "C-,") #'help/comma-real)
   (local-set-key (kbd "C-n") #'next-logical-line)
