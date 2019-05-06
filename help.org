@@ -7378,7 +7378,8 @@ obviously is a *big issue* if you actually want to use! ROFL
 
 The best programming font is Deja Vu Sans Mono because it sans-serif and
 support a lot of Unicode characters. Set it to a good default for an 80
-character wide buffer and make it easy to adjust it.
+character wide buffer and make it easy to adjust it. Then Hack made it a
+little better.
 
 #+NAME: org_gcr_2017-05-12_mara_6B639D09-DA18-40C5-ABA0-8647820507E6
 #+BEGIN_SRC emacs-lisp
