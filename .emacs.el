@@ -897,6 +897,11 @@ Atribution: URL `https://emacs.stackexchange.com/a/33893/341'"
   (interactive)
   (insert (format "<%s>"(format-time-string "%F"))))
 
+(defun help/insert-jekyll-timestamp ()
+  "Insert Jekyll timestamp"
+  (interactive)
+  (insert (format-time-string "%Y-%m-%d %H:%M:%S %z")))
+
 (defun help/org-count-words ()
   "If region is active, count words in it; otherwise count words in current subtree."
   (interactive)
@@ -4984,7 +4989,7 @@ Flycheck: ⏼%(bound-and-true-p flycheck-mode)
 (defhydra help/hydra/timestamp (:color blue :hint nil)
   "
 Timestamps: (_q_uit)
-  Date: _I_SO, _U_S, US With _Y_ear and _D_ashes, US In _W_ords
+  Date: _I_SO, _U_S, US With _Y_ear and _D_ashes, US In _W_ords, _J_ekyll
     Date/Time: _N_o Colons or _w_ith, _L_og Entry (compact with note)
       Time: _H_our:Seconds
         Org-Mode: _T_oday, _R_ight Now, or _c_hoose
@@ -4996,6 +5001,7 @@ Timestamps: (_q_uit)
   ("Y" help/insert-datestamp-us-full-year)
   ("D" help/insert-datestamp-us-full-year-and-dashes)
   ("W" help/insert-datestamp-us-words)
+  ("J" help/insert-jekyll-timestamp)
 
   ("N" help/insert-timestamp-no-colons)
   ("w" help/insert-timestamp)
