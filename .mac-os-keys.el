@@ -1,6 +1,6 @@
 (setq ns-command-modifier 'meta)
-(setq ns-option-modifier 'super)
-(setq ns-right-option-modifier 'ignore)
+(setq ns-alternate-modifier 'super)
+(setq ns-right-alternate-modifier 'ignore)
 (setq ns-right-control-modifier 'hyper)
 (defun help/toggle-ns-right-alternate-modifier ()
   "Tottle right alternate key between meta or ignored by Emacs and passed
