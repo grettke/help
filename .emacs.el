@@ -3192,6 +3192,11 @@ Words: _C_ount, Count In _O_rg , _T_op#, _G_rade Level, _R_eading Ease, _A_ffect
   :ensure t)
 ;; org_gcr_2019-03-01T15-03-54-06-00_cosmicality_003D7FD4-DB09-462E-BBB8-56FD63CD64C7 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2019-05-17T23-00-51-05-00_cosmicality_26B9AD8B-3CDD-4A38-BFAD-62755A785497][org_gcr_2019-05-17T23-00-51-05-00_cosmicality_26B9AD8B-3CDD-4A38-BFAD-62755A785497]]
+(use-package speed-type
+  :ensure t)
+;; org_gcr_2019-05-17T23-00-51-05-00_cosmicality_26B9AD8B-3CDD-4A38-BFAD-62755A785497 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0BCAB755-9914-473F-9543-37130529809F][org_gcr_2017-05-12_mara_0BCAB755-9914-473F-9543-37130529809F]]
 (let ((lang 'utf-8))
   (message "In the environment, 'LANG' and 'LC_ALL' are set to '%s' and '%s'."
