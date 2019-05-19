@@ -5181,8 +5181,6 @@ Words: _C_ount, Count In _O_rg , _T_op#, _G_rade Level, _R_eading Ease, _A_ffect
 :ID:       org_gcr_2019-05-17T23-00-51-05-00_cosmicality:34BEE178-C60A-453C-867B-5FFCB070CBF1
 :END:
 
-
-
 #+name: org_gcr_2019-05-17T23-00-51-05-00_cosmicality_26B9AD8B-3CDD-4A38-BFAD-62755A785497
 #+BEGIN_SRC emacs-lisp
 (use-package speed-type
