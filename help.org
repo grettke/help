@@ -7320,6 +7320,14 @@ Visualize ASCII strings with Unicode.
 (global-prettify-symbols-mode)
 (setq prettify-symbols-unprettify-at-point 'right-edge)
 #+end_src
+
+Entire buffer view.
+
+#+name: org_gcr_2019-05-17T23-00-51-05-00_cosmicality_1D0A0BBA-6228-4FA9-BA97-89232B1FF1ED
+#+BEGIN_SRC emacs-lisp
+(require 'bird-mode)
+#+END_SRC
+
 ** Color Theme
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:3C38AF9D-1905-4B33-A4F5-065D17E9B647

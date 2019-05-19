@@ -4543,6 +4543,10 @@ Graphviz
 (setq prettify-symbols-unprettify-at-point 'right-edge)
 ;; org_gcr_2018-03-14_mara_385BE196-A42C-4086-9BA4-948DB62C2E26 ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2019-05-17T23-00-51-05-00_cosmicality_1D0A0BBA-6228-4FA9-BA97-89232B1FF1ED][org_gcr_2019-05-17T23-00-51-05-00_cosmicality_1D0A0BBA-6228-4FA9-BA97-89232B1FF1ED]]
+(require 'bird-mode)
+;; org_gcr_2019-05-17T23-00-51-05-00_cosmicality_1D0A0BBA-6228-4FA9-BA97-89232B1FF1ED ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1AD36955-5FAC-4794-A9B0-A8DC6639A04C][org_gcr_2017-05-12_mara_1AD36955-5FAC-4794-A9B0-A8DC6639A04C]]
 (unless (getenv "EMACSNOTHEME")
   (add-to-list 'load-path "~/src/solarized-emacs")
