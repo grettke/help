@@ -7328,6 +7328,23 @@ Entire buffer view.
 (require 'bird-mode)
 #+END_SRC
 
+Screensaver.
+
+
+#+name: org_gcr_2019-05-17T23-00-51-05-00_cosmicality_F0F23ABE-1931-44F4-8349-203487DAD841
+#+BEGIN_SRC emacs-lisp
+(require 'zone)
+(defun zone-choose (pgm)
+  "Choose a PGM to run for `zone'."
+  (interactive
+   (list
+    (completing-read
+     "Program: "
+     (mapcar 'symbol-name zone-programs))))
+  (let ((zone-programs (list (intern pgm))))
+    (zone)))
+#+END_SRC
+
 ** Color Theme
    :PROPERTIES:
    :ID:       org_gcr_2017-05-12_mara:3C38AF9D-1905-4B33-A4F5-065D17E9B647

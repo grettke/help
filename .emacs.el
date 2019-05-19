@@ -4547,6 +4547,19 @@ Graphviz
 (require 'bird-mode)
 ;; org_gcr_2019-05-17T23-00-51-05-00_cosmicality_1D0A0BBA-6228-4FA9-BA97-89232B1FF1ED ends here
 
+;; [[file:~/src/help/help.org::org_gcr_2019-05-17T23-00-51-05-00_cosmicality_F0F23ABE-1931-44F4-8349-203487DAD841][org_gcr_2019-05-17T23-00-51-05-00_cosmicality_F0F23ABE-1931-44F4-8349-203487DAD841]]
+(require 'zone)
+(defun zone-choose (pgm)
+  "Choose a PGM to run for `zone'."
+  (interactive
+   (list
+    (completing-read
+     "Program: "
+     (mapcar 'symbol-name zone-programs))))
+  (let ((zone-programs (list (intern pgm))))
+    (zone)))
+;; org_gcr_2019-05-17T23-00-51-05-00_cosmicality_F0F23ABE-1931-44F4-8349-203487DAD841 ends here
+
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1AD36955-5FAC-4794-A9B0-A8DC6639A04C][org_gcr_2017-05-12_mara_1AD36955-5FAC-4794-A9B0-A8DC6639A04C]]
 (unless (getenv "EMACSNOTHEME")
   (add-to-list 'load-path "~/src/solarized-emacs")
