@@ -2323,7 +2323,13 @@ the cognitive way too high.
   (setq ivy-initial-inputs-alist nil)
   (setq ivy-re-builders-alist
         '((t . ivy--regex-fuzzy)))
-  (diminish 'ivy-mode))
+  (diminish 'ivy-mode)
+  (use-package ivy-rich
+    :ensure t
+    :config
+    (ivy-rich-mode 1)
+    (setq ivy-format-function #'ivy-format-function-line)
+    (setq ivy-rich-path-style 'abbrev)))
 #+end_src
 
 ** Font

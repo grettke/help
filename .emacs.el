@@ -1530,7 +1530,13 @@ Attribution: URL http://www.emacswiki.org/emacs/ImenuMode"
   (setq ivy-initial-inputs-alist nil)
   (setq ivy-re-builders-alist
         '((t . ivy--regex-fuzzy)))
-  (diminish 'ivy-mode))
+  (diminish 'ivy-mode)
+  (use-package ivy-rich
+    :ensure t
+    :config
+    (ivy-rich-mode 1)
+    (setq ivy-format-function #'ivy-format-function-line)
+    (setq ivy-rich-path-style 'abbrev)))
 ;; org_gcr_2018-11-14T01-09-50-06-00_cosmicality_D0215545-09C4-4118-AA35-BC6FC634E6D1 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_ADAB043E-BF70-4AE0-BA60-CD08D82474FA][org_gcr_2017-05-12_mara_ADAB043E-BF70-4AE0-BA60-CD08D82474FA]]
