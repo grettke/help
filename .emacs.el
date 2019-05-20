@@ -4597,7 +4597,7 @@ Graphviz
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_6B639D09-DA18-40C5-ABA0-8647820507E6][org_gcr_2017-05-12_mara_6B639D09-DA18-40C5-ABA0-8647820507E6]]
 (help/on-gui
  (defvar help/font-size-current 10 "The preferred font size.")
- (help/on-mac-os (setq help/font-size-current 15))
+ (help/on-mac-os (setq help/font-size-current 19))
  (help/on-windows (setq help/font-size-current 13))
  (defconst help/font-size-ideal help/font-size-current "The ideal font for this system.")
  (defconst help/font-base "Hack" "The preferred font name.")

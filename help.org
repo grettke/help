@@ -7432,7 +7432,7 @@ little better.
 #+BEGIN_SRC emacs-lisp
 (help/on-gui
  (defvar help/font-size-current 10 "The preferred font size.")
- (help/on-mac-os (setq help/font-size-current 15))
+ (help/on-mac-os (setq help/font-size-current 19))
  (help/on-windows (setq help/font-size-current 13))
  (defconst help/font-size-ideal help/font-size-current "The ideal font for this system.")
  (defconst help/font-base "Hack" "The preferred font name.")
