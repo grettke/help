@@ -3394,6 +3394,7 @@ Auto-Capitalize text modes.
               "HTTPS"
               "I'll"
               "I'm"
+              "Internet"
               "Mantra"
               "OK"
               "SI"

@@ -2140,6 +2140,7 @@ _A_rchives | Rest_o_res | Re_f_iles
               "HTTPS"
               "I'll"
               "I'm"
+              "Internet"
               "Mantra"
               "OK"
               "SI"
