@@ -2013,8 +2013,8 @@ Attribution: URL `https://manuel-uberti.github.io/emacs/2018/02/17/magit-bury-bu
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A4E407FE-DD42-458A-BD83-2EFD71C1D728][org_gcr_2017-05-12_mara_A4E407FE-DD42-458A-BD83-2EFD71C1D728]]
 (global-set-key (kbd "C-M-w") #'help/hydra/words/body)
-(global-set-key (kbd "s-e") #'help/safb-help/magit-status)
-(global-set-key (kbd "s-f") #'help/safb-help/vc-next-action)
+(global-set-key (kbd "H-e") #'help/safb-help/magit-status)
+(global-set-key (kbd "H-f") #'help/safb-help/vc-next-action)
 ;; org_gcr_2017-05-12_mara_A4E407FE-DD42-458A-BD83-2EFD71C1D728 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_C374930E-5AE3-478D-B3F1-E7791791D530][org_gcr_2017-05-12_mara_C374930E-5AE3-478D-B3F1-E7791791D530]]
@@ -2345,15 +2345,15 @@ Dumb Jump _g_o (_o_ther) _b_ack _p_eek promp_t_ go e_x_ternal (othe_r_) _q_uit"
 
 (defun help/elisp-mode-local-bindings ()
   "Helpful behavior for Elisp buffers."
-  (local-set-key (kbd "s-l eb") #'help/elisp-eval-buffer)
-  (local-set-key (kbd "s-l ep") #'eval-print-last-sexp)
-  (local-set-key (kbd "s-l td") #'toggle-debug-on-error)
-  (local-set-key (kbd "s-l mef") #'macroexpand)
-  (local-set-key (kbd "s-l mea") #'macroexpand-all)
-  (local-set-key (kbd "s-0") #'pp-macroexpand-last-sexp)
-  (local-set-key (kbd "s-8") #'lispy-multiline)
-  (local-set-key (kbd "s-*") #'lispy-oneline)
-  (local-set-key (kbd "s-9") #'macrostep-expand))
+  (local-set-key (kbd "H-l eb") #'help/elisp-eval-buffer)
+  (local-set-key (kbd "H-l ep") #'eval-print-last-sexp)
+  (local-set-key (kbd "H-l td") #'toggle-debug-on-error)
+  (local-set-key (kbd "H-l mef") #'macroexpand)
+  (local-set-key (kbd "H-l mea") #'macroexpand-all)
+  (local-set-key (kbd "H-0") #'pp-macroexpand-last-sexp)
+  (local-set-key (kbd "H-8") #'lispy-multiline)
+  (local-set-key (kbd "H-*") #'lispy-oneline)
+  (local-set-key (kbd "H-9") #'macrostep-expand))
 
 (defhydra help/hydra-elisp-mode (:color blue
                                         :hint nil)
@@ -2850,10 +2850,10 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; org_gcr_2017-05-12_mara_711B4205-DC28-4A35-B620-23AFD46E3973 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1A8FB05F-FF18-45DD-BFC4-89E76C366B9F][org_gcr_2017-05-12_mara_1A8FB05F-FF18-45DD-BFC4-89E76C366B9F]]
-(define-key org-mode-map (kbd "s-7") #'org-babel-load-in-session)
-(define-key org-mode-map (kbd "s-8") #'org-babel-switch-to-session)
-(define-key org-mode-map (kbd "s-*") #'org-babel-switch-to-session-with-code)
-(define-key org-mode-map (kbd "s-9") #'org-todo)
+(define-key org-mode-map (kbd "H-7") #'org-babel-load-in-session)
+(define-key org-mode-map (kbd "H-8") #'org-babel-switch-to-session)
+(define-key org-mode-map (kbd "H-*") #'org-babel-switch-to-session-with-code)
+(define-key org-mode-map (kbd "H-9") #'org-todo)
 ;; org_gcr_2017-05-12_mara_1A8FB05F-FF18-45DD-BFC4-89E76C366B9F ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_6BA97DBC-AE5D-4C60-AD03-EF150686A03F][org_gcr_2017-05-12_mara_6BA97DBC-AE5D-4C60-AD03-EF150686A03F]]
@@ -2875,20 +2875,20 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; org_gcr_2019-02-22T23-11-36-06-00_cosmicality_138EE053-3BAE-45F5-B19B-B8FB19580AF3 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_49522E70-EE2D-4CF9-95D7-8E43524A469D][org_gcr_2017-05-12_mara_49522E70-EE2D-4CF9-95D7-8E43524A469D]]
-(define-key org-mode-map (kbd "s-]") (lambda () (interactive)
+(define-key org-mode-map (kbd "H-]") (lambda () (interactive)
                                        (message "Removing all source block resuls")
                                        (help/org-2every-src-block
                                         'org-babel-remove-result)
                                        (message "Done removing all source block results")))
-(define-key org-mode-map (kbd "s-y") #'help/safb-org-babel-execute-buffer)
-(define-key org-mode-map (kbd "s-u") #'help/safb-org-babel-execute-subtree)
-(define-key org-mode-map (kbd "s-U") #'org-mark-ring-goto)
-(define-key org-mode-map (kbd "s-i") #'org-babel-execute-src-block)
-(define-key org-mode-map (kbd "s-I") #'org-table-insert-row)
-(define-key org-mode-map (kbd "s-o") #'org-babel-remove-result-one-or-many)
-(define-key org-mode-map (kbd "s-O") #'org-org-export-to-org)
-(define-key org-mode-map (kbd "s-p") #'org-babel-execute-maybe)
-(define-key org-mode-map (kbd "s-[") #'org-babel-remove-inline-result)
+(define-key org-mode-map (kbd "H-y") #'help/safb-org-babel-execute-buffer)
+(define-key org-mode-map (kbd "H-u") #'help/safb-org-babel-execute-subtree)
+(define-key org-mode-map (kbd "H-U") #'org-mark-ring-goto)
+(define-key org-mode-map (kbd "H-i") #'org-babel-execute-src-block)
+(define-key org-mode-map (kbd "H-I") #'org-table-insert-row)
+(define-key org-mode-map (kbd "H-o") #'org-babel-remove-result-one-or-many)
+(define-key org-mode-map (kbd "H-O") #'org-org-export-to-org)
+(define-key org-mode-map (kbd "H-p") #'org-babel-execute-maybe)
+(define-key org-mode-map (kbd "H-[") #'org-babel-remove-inline-result)
 (defun help/unset-C-M-t ()
   (interactive)
   (local-unset-key (kbd "C-M-t")))
@@ -2897,11 +2897,11 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_EC7D6149-4451-443D-BFFF-1A40073D7D98][org_gcr_2017-05-12_mara_EC7D6149-4451-443D-BFFF-1A40073D7D98]]
 (define-key org-mode-map (kbd "C-c C-k") nil)
-(define-key org-mode-map (kbd "s-h") #'help/safb-org-babel-tangle)
-(define-key org-mode-map (kbd "s-j") #'org-babel-next-src-block)
-(define-key org-mode-map (kbd "s-k") #'org-babel-previous-src-block)
-(define-key org-mode-map (kbd "s-l") #'help/safb-org-edit-src-code)
-(define-key org-mode-map (kbd "s-;") #'help/safb-help/org-babel-demarcate-block)
+(define-key org-mode-map (kbd "H-h") #'help/safb-org-babel-tangle)
+(define-key org-mode-map (kbd "H-j") #'org-babel-next-src-block)
+(define-key org-mode-map (kbd "H-k") #'org-babel-previouH-src-block)
+(define-key org-mode-map (kbd "H-l") #'help/safb-org-edit-src-code)
+(define-key org-mode-map (kbd "H-;") #'help/safb-help/org-babel-demarcate-block)
 (define-key org-mode-map (kbd "C->") #'(lambda () (interactive) (insert "\\rarr{}")))
 (defun help/org-insert-subscript (arg)
   "Maybe insert a subscript with the postfix space."
@@ -2918,17 +2918,17 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 ;; org_gcr_2017-05-12_mara_EC7D6149-4451-443D-BFFF-1A40073D7D98 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-07-12_mara_65D0CDCC-66C7-4C81-ABF3-D22AAF71868E][org_gcr_2017-07-12_mara_65D0CDCC-66C7-4C81-ABF3-D22AAF71868E]]
-(define-key global-map (kbd "s-o") nil)
+(define-key global-map (kbd "H-o") nil)
 ;; org_gcr_2017-07-12_mara_65D0CDCC-66C7-4C81-ABF3-D22AAF71868E ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8C00E3FE-4AE1-49BA-97E7-FAB2784DD0A9][org_gcr_2017-05-12_mara_8C00E3FE-4AE1-49BA-97E7-FAB2784DD0A9]]
-(define-key org-mode-map (kbd "s-n") #'org-babel-view-src-block-info)
-(define-key org-mode-map (kbd "s-m") #'org-babel-expand-src-block)
-(define-key org-mode-map (kbd "s-,") #'org-babel-open-src-block-result)
+(define-key org-mode-map (kbd "H-n") #'org-babel-view-src-block-info)
+(define-key org-mode-map (kbd "H-m") #'org-babel-expand-src-block)
+(define-key org-mode-map (kbd "H-,") #'org-babel-open-src-block-result)
 ;; org_gcr_2017-05-12_mara_8C00E3FE-4AE1-49BA-97E7-FAB2784DD0A9 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-07-12_mara_97C70CDA-DFBF-4422-942A-00E732D3AB6A][org_gcr_2017-07-12_mara_97C70CDA-DFBF-4422-942A-00E732D3AB6A]]
-(define-key global-map (kbd "s-m") nil)
+(define-key global-map (kbd "H-m") nil)
 ;; org_gcr_2017-07-12_mara_97C70CDA-DFBF-4422-942A-00E732D3AB6A ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_90AA8396-E8A0-439C-A1E4-373E90C4DC84][org_gcr_2017-05-12_mara_90AA8396-E8A0-439C-A1E4-373E90C4DC84]]
@@ -3003,7 +3003,7 @@ Row 1: _z_ insert-superscript _Z_ insert-subscript _x_ tangled file permissions 
 ;; org_gcr_2017-05-12_mara_B41A9D3F-254B-4E44-8585-380BF23D158D ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5DE43FD1-AEF3-40D0-8C67-1ACBB6EA8317][org_gcr_2017-05-12_mara_5DE43FD1-AEF3-40D0-8C67-1ACBB6EA8317]]
-(define-key org-src-mode-map (kbd "s-l") #'org-edit-src-exit)
+(define-key org-src-mode-map (kbd "H-l") #'org-edit-src-exit)
 ;; org_gcr_2017-05-12_mara_5DE43FD1-AEF3-40D0-8C67-1ACBB6EA8317 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BF73D071-57B8-4DBA-93E9-5A1D532A6321][org_gcr_2017-05-12_mara_BF73D071-57B8-4DBA-93E9-5A1D532A6321]]
@@ -3577,14 +3577,14 @@ Geiser REPL: ⏼%(help/geiser-on-p)
     (add-hook 'before-save-hook #'gofmt-before-save)
     (setq compilation-read-command nil)
     (setq compile-command "go install && go test -v && gometalinter ./...")
-    (local-set-key (kbd "s-i") #'godoc-at-point)
-    (local-set-key (kbd "s-I") #'godoc)
-    (local-set-key (kbd "s-j") #'help/safb/compile)
-    (local-set-key (kbd "s-k") #'help/go-mode/safb/go-run)
+    (local-set-key (kbd "H-i") #'godoc-at-point)
+    (local-set-key (kbd "H-I") #'godoc)
+    (local-set-key (kbd "H-j") #'help/safb/compile)
+    (local-set-key (kbd "H-k") #'help/go-mode/safb/go-run)
     (local-set-key (kbd "=") #'(lambda () (interactive) (insert " = ")))
-    (local-set-key (kbd "s-=") #'(lambda () (interactive) (insert " := ")))
-    (local-set-key (kbd "s-<") #'(lambda () (interactive) (insert " <- ")))
-    (local-set-key (kbd "s-o") #'gorepl-hydra/body)
+    (local-set-key (kbd "H-=") #'(lambda () (interactive) (insert " := ")))
+    (local-set-key (kbd "H-<") #'(lambda () (interactive) (insert " <- ")))
+    (local-set-key (kbd "H-o") #'gorepl-hydra/body)
     (go-guru-hl-identifier-mode)
     (gorepl-mode))
   (add-hook 'go-mode-hook #'help/go-mode-hook-fn))
@@ -3644,7 +3644,7 @@ Geiser REPL: ⏼%(help/geiser-on-p)
   (add-to-list 'auto-mode-alist '("\\.xml?\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.php?\\'" . web-mode))
   (setq web-mode-enable-engine-detection t)
-  (define-key web-mode-map (kbd "s-n") 'web-mode-tag-match))
+  (define-key web-mode-map (kbd "H-n") 'web-mode-tag-match))
 
 (defun help/web-mode-hook-fn ()
   "HELP web-mode customizations."
@@ -3820,8 +3820,8 @@ YAML: (q to quit)
   (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
   (define-key yaml-mode-map (kbd "<backspace>") nil)
   (define-key yaml-mode-map (kbd "<backspace>") #'sp-backward-delete-char)
-  (define-key yaml-mode-map (kbd "s-j") #'yaml-next-field)
-  (define-key yaml-mode-map (kbd "s-k") #'yaml-prev-field)
+  (define-key yaml-mode-map (kbd "H-j") #'yaml-next-field)
+  (define-key yaml-mode-map (kbd "H-k") #'yaml-prev-field)
   (key-chord-define yaml-mode-map "hh" #'help/hydra/yaml/body)
   (use-package flycheck-yamllint
     :ensure t
@@ -4053,8 +4053,8 @@ CSV: (_q_uit)
 (define-key TeX-mode-map (kbd "C-M-f") #'LaTeX-find-matching-end)
 (define-key TeX-mode-map (kbd "C-M-b") nil)
 (define-key TeX-mode-map (kbd "C-M-b") #'LaTeX-find-matching-begin)
-(define-key TeX-mode-map (kbd "s-l") nil)
-(define-key TeX-mode-map (kbd "s-l") #'TeX-complete-symbol)
+(define-key TeX-mode-map (kbd "H-l") nil)
+(define-key TeX-mode-map (kbd "H-l") #'TeX-complete-symbol)
 ;; org_gcr_2018-03-05_mara_0A5B88B3-C1DE-4C06-B44C-98E5468CDCC2 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2018-03-05_mara_033D8FD5-B014-40CC-9EBD-095FF51EBD6A][org_gcr_2018-03-05_mara_033D8FD5-B014-40CC-9EBD-095FF51EBD6A]]
@@ -4976,16 +4976,16 @@ Source: URL `https://www.thepunctuationguide.com/hyphen.html'"
   (help/real-insert ?-))
 
 (global-set-key (kbd "-") #'help/insert-hyphen)
-(global-set-key (kbd "s-_") #'help/insert-em-dash)
-(global-set-key (kbd "s--") #'help/insert-en-dash)
+(global-set-key (kbd "H-_") #'help/insert-em-dash)
+(global-set-key (kbd "H--") #'help/insert-en-dash)
 
-(global-set-key (kbd "s-1") #'mc/edit-lines)
-(global-set-key (kbd "s-2") #'mc/mark-all-like-this)
-(global-set-key (kbd "s-3") #'mc/mark-previous-like-this)
-(global-set-key (kbd "s-4") #'mc/mark-next-like-this)
-(global-set-key (kbd "s-$") #'mc-hide-unmatched-lines-mode)
-(global-set-key (kbd "s-5") #'mc/skip-to-previous-like-this)
-(global-set-key (kbd "s-6") #'mc/skip-to-next-like-this)
+(global-set-key (kbd "H-1") #'mc/edit-lines)
+(global-set-key (kbd "H-2") #'mc/mark-all-like-this)
+(global-set-key (kbd "H-3") #'mc/mark-previouH-like-this)
+(global-set-key (kbd "H-4") #'mc/mark-next-like-this)
+(global-set-key (kbd "H-$") #'mc-hide-unmatched-lineH-mode)
+(global-set-key (kbd "H-5") #'mc/skip-to-previouH-like-this)
+(global-set-key (kbd "H-6") #'mc/skip-to-next-like-this)
 ;; org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-06-13_mara_2DFDC64B-DBF2-473E-979F-D7D8D0DD2206][org_gcr_2017-06-13_mara_2DFDC64B-DBF2-473E-979F-D7D8D0DD2206]]
@@ -5011,7 +5011,7 @@ Flycheck: ⏼%(bound-and-true-p flycheck-mode)
 ;; org_gcr_2017-06-13_mara_2DFDC64B-DBF2-473E-979F-D7D8D0DD2206 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2018-11-22T00-38-52-06-00_cosmicality_B388F591-C237-4181-A4A3-8C971EFDB516][org_gcr_2018-11-22T00-38-52-06-00_cosmicality_B388F591-C237-4181-A4A3-8C971EFDB516]]
-(global-set-key (kbd "s-w") #'help/hydra/megawin/body)
+(global-set-key (kbd "H-w") #'help/hydra/megawin/body)
 ;; org_gcr_2018-11-22T00-38-52-06-00_cosmicality_B388F591-C237-4181-A4A3-8C971EFDB516 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2019-02-22T23-11-36-06-00_cosmicality_422125E1-AB16-4F3A-9C82-17DC7713E487][org_gcr_2019-02-22T23-11-36-06-00_cosmicality_422125E1-AB16-4F3A-9C82-17DC7713E487]]
@@ -5045,7 +5045,7 @@ Timestamps: (_q_uit)
 ;; org_gcr_2019-02-22T23-11-36-06-00_cosmicality_422125E1-AB16-4F3A-9C82-17DC7713E487 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389][org_gcr_2017-05-12_mara_1251CF6D-E4D3-45D9-A3DB-FF68D814E389]]
-(global-set-key (kbd "s-t") #'help/hydra/left/todo/body)
+(global-set-key (kbd "H-t") #'help/hydra/left/todo/body)
 (global-set-key (kbd "C-M-<tab>") #'help/untabify-buffer-or-region-if-not-indent-tabs-mode)
 (global-set-key (kbd "C-M-\\") #'help/indent-region-or-buffer)
 (defun help/copy-entire-buffer ()
@@ -5065,7 +5065,7 @@ Timestamps: (_q_uit)
 (use-package helpful
   :ensure t
   :config
-  (global-set-key (kbd "s-a") #'helpful-at-point))
+  (global-set-key (kbd "H-a") #'helpful-at-point))
 (defhydra help/hydra/left/describe (:color blue
                                            :hint nil)
   "
@@ -5167,12 +5167,12 @@ _w_ where is something defined
 ;; org_gcr_2017-05-12_mara_E8ABDA7D-AC92-4C24-8287-1505E2377B2C ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_A26325F2-9D6C-49EE-8CBE-DC552C6F315F][org_gcr_2017-05-12_mara_A26325F2-9D6C-49EE-8CBE-DC552C6F315F]]
-(global-set-key (kbd "s-h") nil)
+(global-set-key (kbd "H-h") nil)
 ;; org_gcr_2017-05-12_mara_A26325F2-9D6C-49EE-8CBE-DC552C6F315F ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_20330335-75E6-4AB4-A661-D291315FAFD7][org_gcr_2017-05-12_mara_20330335-75E6-4AB4-A661-D291315FAFD7]]
 (global-set-key (kbd "C-M-j") #'help/safb-switch-to-previous-buffer)
-(global-set-key (kbd "s-d") #'er/expand-region)
+(global-set-key (kbd "H-d") #'er/expand-region)
 ;; org_gcr_2017-05-12_mara_20330335-75E6-4AB4-A661-D291315FAFD7 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_095E1EC7-12A2-43BB-8ED5-CF2BC6E7D158][org_gcr_2017-05-12_mara_095E1EC7-12A2-43BB-8ED5-CF2BC6E7D158]]
@@ -5381,15 +5381,15 @@ _a_ ✓ _s_ ✗ _d_ ☐ _f_ ☑ _g_ ☒_
 (global-set-key (kbd "C-M-.") nil)
 (global-set-key (kbd "M-s-m") #'ns-do-hide-emacs)
 (global-set-key (kbd "C-M-n") #'info-buffer)
-(global-set-key (kbd "s-s") #'shell)
-(global-set-key (kbd "s-g") #'help/hydra/dumb-jump/body)
-(global-set-key (kbd "s-v") #'help/hydra/megawin/body)
-(global-set-key (kbd "s-c") #'help/hydra/buf-move/body)
-(global-set-key (kbd "s-x") #'help/hydra/smart-shift/body)
+(global-set-key (kbd "H-s") #'shell)
+(global-set-key (kbd "H-g") #'help/hydra/dumb-jump/body)
+(global-set-key (kbd "H-v") #'help/hydra/megawin/body)
+(global-set-key (kbd "H-c") #'help/hydra/buf-move/body)
+(global-set-key (kbd "H-x") #'help/hydra/smart-shift/body)
 ;; org_gcr_2017-05-12_mara_63E4B554-A5C6-46AB-9A34-E93FAF8B848B ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_5FAD516B-B4C1-4F47-A6B9-7CA12F9AFF5D][org_gcr_2017-05-12_mara_5FAD516B-B4C1-4F47-A6B9-7CA12F9AFF5D]]
-(global-set-key (kbd "s-SPC") #'cycle-spacing)
+(global-set-key (kbd "H-SPC") #'cycle-spacing)
 ;; org_gcr_2017-05-12_mara_5FAD516B-B4C1-4F47-A6B9-7CA12F9AFF5D ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_0CA60630-37AA-4192-91A1-FFC1B16DC3E4][org_gcr_2017-05-12_mara_0CA60630-37AA-4192-91A1-FFC1B16DC3E4]]
@@ -5415,7 +5415,7 @@ _a_ ✓ _s_ ✗ _d_ ☐ _f_ ☑ _g_ ☒_
 ;; org_gcr_2017-05-12_mara_ED3BE98E-B863-447A-AB97-F4E878F2C483 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_9302B01F-93C0-4D21-8BB6-53ECF1478153][org_gcr_2017-05-12_mara_9302B01F-93C0-4D21-8BB6-53ECF1478153]]
-(help/on-gui (global-set-key (kbd "s-<return>") #'help/smart-open-line))
+(help/on-gui (global-set-key (kbd "H-<return>") #'help/smart-open-line))
 ;; org_gcr_2017-05-12_mara_9302B01F-93C0-4D21-8BB6-53ECF1478153 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_BF926B57-9097-483F-AB90-E3F55869B0D9][org_gcr_2017-05-12_mara_BF926B57-9097-483F-AB90-E3F55869B0D9]]
