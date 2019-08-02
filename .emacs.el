@@ -4892,9 +4892,12 @@ Buf-Move: (q to quit)
 ;; org_gcr_2019-04-07T11-02-10-05-00_cosmicality_6C49F34A-16C8-428E-BB1B-86DEB2AB8D1B ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2018-01-08_mara_82A71AA0-C415-49B1-8554-334215625E4F][org_gcr_2018-01-08_mara_82A71AA0-C415-49B1-8554-334215625E4F]]
-(global-set-key [(shift f6)] #'kmacro-name-last-macro)
-(global-set-key [(f6)] #'insert-kbd-macro)
-(global-set-key [(f5)] #'elmacro-show-last-macro)
+(global-set-key (kbd "M-H-1") #'help)
+(global-set-key (kbd "M-H-3") #'kmacro-start-macro-or-insert-counter)
+(global-set-key (kbd "M-H-4") #'kmacro-end-or-call-macro)
+(global-set-key [kbd "M-H-5"] #'kmacro-name-last-macro)
+(global-set-key [kbd "M-H-6"] #'insert-kbd-macro)
+(global-set-key (kbd "M-H-7") #'elmacro-show-last-macro)
 ;; org_gcr_2018-01-08_mara_82A71AA0-C415-49B1-8554-334215625E4F ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C][org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C]]

@@ -8355,9 +8355,12 @@ Try to reserve this for the OS.
 :END:
 #+NAME: org_gcr_2018-01-08_mara_82A71AA0-C415-49B1-8554-334215625E4F
 #+BEGIN_SRC emacs-lisp
-(global-set-key [(shift f6)] #'kmacro-name-last-macro)
-(global-set-key [(f6)] #'insert-kbd-macro)
-(global-set-key [(f5)] #'elmacro-show-last-macro)
+(global-set-key (kbd "M-H-1") #'help)
+(global-set-key (kbd "M-H-3") #'kmacro-start-macro-or-insert-counter)
+(global-set-key (kbd "M-H-4") #'kmacro-end-or-call-macro)
+(global-set-key [kbd "M-H-5"] #'kmacro-name-last-macro)
+(global-set-key [kbd "M-H-6"] #'insert-kbd-macro)
+(global-set-key (kbd "M-H-7") #'elmacro-show-last-macro)
 #+END_SRC
 **** Row 4
 :PROPERTIES:
