@@ -4717,7 +4717,7 @@ Easily manipulate lists and headlines staying close to home.
 
 #+END_SRC
 
-***** Row 4
+***** Row 3
      :PROPERTIES:
      :ID:       org_gcr_2017-05-12_mara:ADB2113A-6D9F-4145-9D78-1DDFE5A2C916
      :END:
@@ -4752,7 +4752,7 @@ Release these bindings.
 (add-hook 'org-mode-hook #'help/unset-C-M-t)
 #+END_SRC
 
-***** Row 3
+***** Row 2
      :PROPERTIES:
      :ID:       org_gcr_2017-05-12_mara:AA97F835-E969-43E4-AC84-B3CF472B8726
      :END:
@@ -4787,7 +4787,7 @@ Because I only use this for Org-Mode.
 (define-key global-map (kbd "s-o") nil)
 #+END_SRC
 
-***** Row 2
+***** Row 1
      :PROPERTIES:
      :ID:       org_gcr_2017-05-12_mara:680824E4-2C0B-4E0F-BA6E-62AA84D484E4
      :END:
@@ -8344,7 +8344,7 @@ Keybindings for every mode. Starts and stop:
 - A-G
 - Z-B
 
-**** Row 6
+**** Row 5
 :PROPERTIES:
 :ID:       org_gcr_2018-04-04T19-35-03-05-00_mara:5674E80B-C4B1-4AFA-A93D-E466FA7C37EB
 :END:
@@ -8359,7 +8359,7 @@ Try to reserve this for the OS.
 (global-set-key [(f6)] #'insert-kbd-macro)
 (global-set-key [(f5)] #'elmacro-show-last-macro)
 #+END_SRC
-**** Row 5
+**** Row 4
 :PROPERTIES:
 :ID:       org_gcr_2018-04-03T15-26-04-05-00_mara:8EE3BC1F-945D-422C-847F-4EFD8D02A8C6
 :END:
@@ -8481,7 +8481,7 @@ Flycheck: ⏼%(bound-and-true-p flycheck-mode)
   ("q" nil))
 (global-set-key (kbd "C-M-9") #'help/hydra-checking/body)
 #+END_SRC
-**** Row 4
+**** Row 3
 :PROPERTIES:
 :ID:       org_gcr_2018-06-06T22-01-54-05-00_mara:D34D40ED-F8E3-405D-88AA-AB8C52533706
 :END:
@@ -8632,7 +8632,7 @@ Org handle ~TAB~ correctly and nothing is bound to it like ~Auto-Complete~ or
 ~yasnippet~ so this doesn't /need/ to use ~C-i~ freeing it up. Rebinding ~C-g~ seems
 to make the minibuffer and ~eval-*~ become confused \rarr quit working.
 
-**** Row 3
+**** Row 2
      :PROPERTIES:
      :ID:       org_gcr_2017-05-12_mara:C0B604C5-F530-4770-9061-92E8468C8557
      :END:
@@ -8888,7 +8888,7 @@ Timestamp.
 (global-set-key (kbd "M-4") #'help/insert-timestamp-no-colons)
 #+end_src
 
-**** Row 2
+**** Row 1
 :PROPERTIES:
 :ID:       org_gcr_2017-07-17_mara:B91C9779-B2AD-403B-A11F-5847EF8883C6
 :END:
@@ -8922,7 +8922,7 @@ Scroll window by line: pretty sure this is somewhere already in here.
 (global-set-key (kbd "s-c") #'help/hydra/buf-move/body)
 (global-set-key (kbd "s-x") #'help/hydra/smart-shift/body)
 #+END_SRC
-**** Row 1
+**** Row 0
      :PROPERTIES:
      :ID:       org_gcr_2017-05-12_mara:A791BE09-ED4B-46F4-8225-EE73C15C1DD0
      :END:
