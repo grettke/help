@@ -4400,7 +4400,7 @@ Ansible: (q to quit)
     ("D" #'ansible::decrypt-buffer)
     ("E" #'ansible::encrypt-buffer)
     ("q" nil))
-  (key-chord-define ansible::key-map "hh" #'help/hydra/ansible/body))
+  (key-chord-define ansible-key-map "hh" #'help/hydra/ansible/body))
 ;; org_gcr_2018-01-03_mara_CD4698C2-3650-45E4-94F8-F8B3EB66DA57 ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_AF516C01-3152-4194-954B-91A44A429972][org_gcr_2017-05-12_mara_AF516C01-3152-4194-954B-91A44A429972]]
