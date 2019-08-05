@@ -4480,7 +4480,7 @@ Graphviz
 (use-package gif-screencast
   :ensure t
   :config
-  (global-set-key (kbd "M-s-1") 'gif-screencast)
+  (global-set-key (kbd "M-H-1") 'gif-screencast)
   (define-key gif-screencast-mode-map (kbd "M-s-3") 'gif-screencast-toggle-pause)
   (define-key gif-screencast-mode-map (kbd "M-s-2") 'gif-screencast-stop)
   (help/on-mac-os
