@@ -8458,6 +8458,7 @@ Source: URL `https://www.thepunctuationguide.com/hyphen.html'"
 (global-set-key (kbd "H-$") #'mc-hide-unmatched-lineH-mode)
 (global-set-key (kbd "H-5") #'mc/skip-to-previouH-like-this)
 (global-set-key (kbd "H-6") #'mc/skip-to-next-like-this)
+(global-set-key (kbd "H-=") #'owp-user-interface)
 #+END_SRC
 
 Checking things.

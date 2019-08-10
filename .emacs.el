@@ -4989,6 +4989,7 @@ Source: URL `https://www.thepunctuationguide.com/hyphen.html'"
 (global-set-key (kbd "H-$") #'mc-hide-unmatched-lineH-mode)
 (global-set-key (kbd "H-5") #'mc/skip-to-previouH-like-this)
 (global-set-key (kbd "H-6") #'mc/skip-to-next-like-this)
+(global-set-key (kbd "H-=") #'owp-user-interface)
 ;; org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-06-13_mara_2DFDC64B-DBF2-473E-979F-D7D8D0DD2206][org_gcr_2017-06-13_mara_2DFDC64B-DBF2-473E-979F-D7D8D0DD2206]]
