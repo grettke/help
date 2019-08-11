@@ -3694,9 +3694,11 @@ Quasi-Quote visualization.
   (local-set-key (kbd "H-l mef") #'macroexpand)
   (local-set-key (kbd "H-l mea") #'macroexpand-all)
   (local-set-key (kbd "H-0") #'pp-macroexpand-last-sexp)
-  (local-set-key (kbd "H-8") #'lispy-multiline)
-  (local-set-key (kbd "H-*") #'lispy-oneline)
-  (local-set-key (kbd "H-9") #'macrostep-expand))
+  ;; TODO Don’t bind right side
+  ;; (local-set-key (kbd "H-*") #'lispy-oneline)
+  ;; (local-set-key (kbd "H-9") #'macrostep-expand)
+  ;; (local-set-key (kbd "H-8") #'lispy-multiline)
+  )
 
 (defhydra help/hydra-elisp-mode (:color blue
                                         :hint nil)
@@ -4696,7 +4698,6 @@ in mind, RETURN is bound to that now. Now HELP has four different kinds of
 (define-key org-mode-map (kbd "H-7") #'org-babel-load-in-session)
 (define-key org-mode-map (kbd "H-8") #'org-babel-switch-to-session)
 (define-key org-mode-map (kbd "H-*") #'org-babel-switch-to-session-with-code)
-(define-key org-mode-map (kbd "H-9") #'org-todo)
 #+END_SRC
 
 Easily manipulate lists and headlines staying close to home.
@@ -8458,7 +8459,7 @@ Source: URL `https://www.thepunctuationguide.com/hyphen.html'"
 (global-set-key (kbd "H-$") #'mc-hide-unmatched-lineH-mode)
 (global-set-key (kbd "H-5") #'mc/skip-to-previouH-like-this)
 (global-set-key (kbd "H-6") #'mc/skip-to-next-like-this)
-(global-set-key (kbd "H-=") #'owp-user-interface)
+(global-set-key (kbd "H-9") #'owp-user-interface)
 #+END_SRC
 
 Checking things.

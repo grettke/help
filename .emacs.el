@@ -2351,9 +2351,11 @@ Dumb Jump _g_o (_o_ther) _b_ack _p_eek promp_t_ go e_x_ternal (othe_r_) _q_uit"
   (local-set-key (kbd "H-l mef") #'macroexpand)
   (local-set-key (kbd "H-l mea") #'macroexpand-all)
   (local-set-key (kbd "H-0") #'pp-macroexpand-last-sexp)
-  (local-set-key (kbd "H-8") #'lispy-multiline)
-  (local-set-key (kbd "H-*") #'lispy-oneline)
-  (local-set-key (kbd "H-9") #'macrostep-expand))
+  ;; TODO Don’t bind right side
+  ;; (local-set-key (kbd "H-*") #'lispy-oneline)
+  ;; (local-set-key (kbd "H-9") #'macrostep-expand)
+  ;; (local-set-key (kbd "H-8") #'lispy-multiline)
+  )
 
 (defhydra help/hydra-elisp-mode (:color blue
                                         :hint nil)
@@ -2853,7 +2855,6 @@ Attribution: URL `https://lists.gnu.org/archive/html/emacs-orgmode/2015-01/msg00
 (define-key org-mode-map (kbd "H-7") #'org-babel-load-in-session)
 (define-key org-mode-map (kbd "H-8") #'org-babel-switch-to-session)
 (define-key org-mode-map (kbd "H-*") #'org-babel-switch-to-session-with-code)
-(define-key org-mode-map (kbd "H-9") #'org-todo)
 ;; org_gcr_2017-05-12_mara_1A8FB05F-FF18-45DD-BFC4-89E76C366B9F ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-05-12_mara_6BA97DBC-AE5D-4C60-AD03-EF150686A03F][org_gcr_2017-05-12_mara_6BA97DBC-AE5D-4C60-AD03-EF150686A03F]]
@@ -4989,7 +4990,7 @@ Source: URL `https://www.thepunctuationguide.com/hyphen.html'"
 (global-set-key (kbd "H-$") #'mc-hide-unmatched-lineH-mode)
 (global-set-key (kbd "H-5") #'mc/skip-to-previouH-like-this)
 (global-set-key (kbd "H-6") #'mc/skip-to-next-like-this)
-(global-set-key (kbd "H-=") #'owp-user-interface)
+(global-set-key (kbd "H-9") #'owp-user-interface)
 ;; org_gcr_2017-05-12_mara_8125C96A-8971-45FC-A8D2-30FDC438B71C ends here
 
 ;; [[file:~/src/help/help.org::org_gcr_2017-06-13_mara_2DFDC64B-DBF2-473E-979F-D7D8D0DD2206][org_gcr_2017-06-13_mara_2DFDC64B-DBF2-473E-979F-D7D8D0DD2206]]
